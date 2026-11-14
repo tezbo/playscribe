@@ -351,8 +351,6 @@ struct TabletopRail: View {
                 ForEach(model.gameActions(id).filter { $0.id != "refresh" }) { RailButton(action: $0) }
                 // Share the open update as a card (lower rail, 44 pt target; TT-0).
                 if let r = model.readerRelease(id), r.isPS5Listed { ShareUpdateButton(release: r) }
-                RailButton(action: ScreenAction(id: "more", title: "More", systemImage: "ellipsis", kind: .menu(moreItems(id))))
-                    .accessibilityHint("Check for updates, Links")
             } else if model.nav.tab == .search {
                 // Search is a dead end without this: Back to where it was opened from (Terry, 0.2.0 build 5).
                 RailButton(action: ScreenAction(id: "back", title: "Back", systemImage: "chevron.backward",
@@ -392,13 +390,20 @@ struct TabletopRail: View {
             .scrollBounceBehavior(.basedOnSize)
             .scrollIndicators(.hidden)
             // When the lower half is short the controls scroll: fade the edge so a cut-off button reads as "more",
-            // and leave room so the last one scrolls clear of the tab capsule.
+            // and leave room so the last one (More) rests fully clear of the tab capsule and of the edge fade at the end of the scroll
+            // (Iris, bug-tabletop-rail-more-hidden: 8 pt left More under the fade on KCD II).
             .contentMargins(.bottom, 8, for: .scrollContent)
             .onScrollGeometryChange(for: Bool.self) { g in
                 g.contentSize.height - g.contentOffset.y > g.containerSize.height + 1
             } action: { _, more in moreBelow = more }
             .mask(LinearGradient(stops: [.init(color: .black, location: moreBelow ? 0.9 : 1), .init(color: moreBelow ? .clear : .black, location: 1)],
                                  startPoint: .top, endPoint: .bottom))
+            // More is pinned between the scrolling controls and the tabs, so on a long rail it is never a sliver under the
+            // fade or the capsule at rest or at the end (Mac, 5734fd92: KCD II).
+            if let id = model.nav.gameID, model.nav.tab == .library {
+                RailButton(action: ScreenAction(id: "more", title: "More", systemImage: "ellipsis", kind: .menu(moreItems(id))))
+                    .accessibilityHint("Check for updates, Links")
+            }
             // Iris: the same floating capsule as Closed's tab bar, no full-height strip or hairline.
             VStack(spacing: 0) {
                 tab(.library, "Library", "books.vertical", badge: model.totalUnread)
