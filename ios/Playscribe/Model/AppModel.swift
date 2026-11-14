@@ -209,6 +209,10 @@ final class AppModel {
     var deckSelection: String?
     /// Tabletop's Links sheet (J-11).
     var linksSheetOpen = false
+    /// More > Share (0.5.6 hotfix): the update whose card the share sheet is showing.
+    var shareReleaseID: String?
+    /// More > Swap sides (D-10, 0.5.6 hotfix): each bump flips Contents and Page.
+    var swapSidesRequest = 0
     /// The verification tag whose explainer is open (0.5.0).
     var tagExplainer: Verification?
     /// N-9: the follow-list card's "What is sent" sheet, the full wording, one tap from the choice (Iris, #455).
@@ -637,6 +641,9 @@ final class AppModel {
             n.expanded["rel:\(releaseID)"] = true
             n.anchors[Self.bookKey(gameID, .updates)] = "rel-\(releaseID)"
         } else if !sameGame, let first = ps5Releases(gameID).first {
+            // R-1 (Terry, 14 Nov: Cyberpunk opened on Patch 2.31, an earlier pick, not Update 2.5): a game opened afresh shows
+            // its newest update; a pick only lasts for the visit.
+            n.selected?[gameID] = nil
             // R-1: newest On PS5 release expanded, at the top.
             if n.expanded["rel:\(first.id)"] == nil { n.expanded["rel:\(first.id)"] = true }
         }
@@ -672,6 +679,16 @@ final class AppModel {
         nav.selected = (nav.selected ?? [:]).merging([gameID: releaseID]) { $1 }
         readerIndex[gameID] = 0
         if let r = release(gameID, releaseID), isUnread(r) { markRead(r.id) }
+    }
+
+    /// J-1: a tap on an All updates row. Side by side (and Tabletop) the Page shows the release in place; where pushing is the
+    /// layout (Closed, open portrait) the release is pushed as its own screen.
+    /// Pushed, the Page underneath keeps its release, so Back returns to the update the reader was on (Terry, 14 Nov: Back
+    /// showed the pushed update again, with the full page); opening it still reads it (R-6a).
+    func listTap(_ gameID: String, releaseID: String, pushes: Bool) {
+        guard pushes else { return select(gameID, releaseID: releaseID) }
+        if let r = release(gameID, releaseID), isUnread(r) { markRead(r.id) }
+        nav.detailReleaseID = releaseID
     }
 
     static func bookKey(_ gameID: String, _ chapter: Chapter) -> String { "book-\(gameID)-\(chapter.rawValue)" }
@@ -782,12 +799,27 @@ final class AppModel {
             nav.tab = .library; nav.gameID = nil
         // QA (INTERNAL): "no-notes/<game>": only that game in the Library with its update history hidden from the deck, so the
         // hero is the no-release card ("No patch notes yet", or the untracked line). The game needs a past release date.
-        case "no-notes" where parts.count == 1 || parts.count == 2:
+        // QA (INTERNAL, PP-1 guard): "parity/<game>/<tracked|untracked>[/nonotes][/nofeed]" sets the library on purpose, then opens the
+        // game's page. tracked = the game is in the collection; untracked = browsed, not in it. nonotes hides the update history;
+        // nofeed shows the "we don't track this game's updates yet" line.
+        case "parity" where parts.count >= 2:
+            resetDemo()
+            data = PersistedState(collection: [])
+            guard let g = games[parts[0]] else { break }
+            if parts[1] == "tracked" { addGames([g], status: .owned) }
+            qaNoReleases = parts.contains("nonotes")
+            qaUntracked = parts.contains("nofeed")
+            if parts[1] == "tracked" { openGame(g.id, chapter: .updates) } else { browseGame(g) }
+            nav.detailReleaseID = nil; linksSheetOpen = false
+        // "no-notes-page/<game>[/untracked]": the same, then the game's page itself (the pose parity guard needs the page, PP-1).
+        case "no-notes", "no-notes-page":
+            guard parts.count == 1 || parts.count == 2 else { break }
             resetDemo()
             data = PersistedState(collection: [])
             if let g = fixtures.games.first(where: { $0.id == parts[0] }) { addGames([g], status: .owned) }
             qaNoReleases = true
             qaUntracked = parts.count == 2 && parts[1] == "untracked"
+            if url.host() == "no-notes-page" { openGame(parts[0], chapter: .updates); nav.detailReleaseID = nil; linksSheetOpen = false }
         case "plus-demo": resetDemo(); PlusStore.shared.qaShowDemoMonth()
         case "pill": holdQAPill()
         // QA (INTERNAL, B-10): "quick/tip" shows the press-and-hold tip; "quick/undo" removes the first game so the

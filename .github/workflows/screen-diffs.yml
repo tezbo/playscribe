@@ -69,14 +69,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with: { fetch-depth: 2 }
-      - name: "Before side: put main's app sources in place (the PR's harness stays, so both sides use the same harness)"
+      - name: "Before side: put main's app sources and tests in place (the PR's harness stays, so both sides use the same harness)"
         if: matrix.side == 'before'
         run: |
           base=${{ needs.scope.outputs.base }}
-          for p in ios/Playscribe ios/Shared ios/PlayscribeWidget; do
-            git diff --name-only --diff-filter=A "$base" HEAD -- "$p" | xargs -r rm -f
+          # Main's own tests too, apart from the harness: a PR test that calls new app code does not compile against main's
+          # app, which left the before side with no stills (#507).
+          keep=':(exclude)ios/PlayscribeTests/Harness'
+          for p in ios/Playscribe ios/Shared ios/PlayscribeWidget ios/PlayscribeTests ios/PlayscribeUITests; do
+            git diff --name-only --diff-filter=A "$base" HEAD -- "$p" "$keep" | xargs -r rm -f
           done
           git checkout "$base" -- ios/Playscribe ios/Shared ios/PlayscribeWidget ios/project.yml
+          git checkout "$base" -- ios/PlayscribeTests ios/PlayscribeUITests "$keep"
           git status --short | head -20
       - run: command -v xcodegen >/dev/null || brew install xcodegen; (cd ios && xcodegen generate)
       - run: sudo xcode-select -s "$XCODE_APP" && xcodebuild -version
@@ -139,13 +143,15 @@ jobs:
           render
           n=$(ls stills/*.png 2>/dev/null | wc -l | tr -d ' ')
           note=""
-          # If the PR's tests use app code main doesn't have yet, main can't build with them: use main's own tests instead.
+          # Main's own tests are already in place apart from the harness. If the PR's harness itself uses app code main doesn't
+          # have yet, fall back to main's harness too. Files the PR added are removed: a checkout alone leaves them behind (#507).
           if [ "$n" -eq 0 ] && [ "${{ matrix.side }}" = before ]; then
+            git diff --name-only --diff-filter=A "${{ needs.scope.outputs.base }}" HEAD -- ios/PlayscribeTests | xargs -r rm -f
             git checkout "${{ needs.scope.outputs.base }}" -- ios/PlayscribeTests
             (cd ios && xcodegen generate)
             render
             n=$(ls stills/*.png 2>/dev/null | wc -l | tr -d ' ')
-            note="main rendered with main's own harness (the PR's tests did not build against main)"
+            note="main rendered with main's own harness (the PR's harness did not build against main)"
           fi
           grep -E 'harness still|error:|\*\* TEST' stills/build.log | grep -v '\[info' | tail -40 || true
           {
