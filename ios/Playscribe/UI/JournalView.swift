@@ -193,6 +193,8 @@ struct ReleaseBody: View {
     @Environment(\.marginReleaseID) private var marginReleaseID
     @Environment(\.dynamicTypeSize) private var typeSize
     var release: Release
+    /// The update page draws the headline and read time itself, in Card A's order.
+    var headerInPage = false
     /// D-13: facts expanded or collapsed persists.
     @AppStorage("factsOpen") private var factsOpen = false
     @State private var summaryOpen = false
@@ -201,11 +203,11 @@ struct ReleaseBody: View {
         let r = release
         let ps5Page = r.isPS5Listed
         VStack(alignment: .leading, spacing: 14) {
-            if let h = ps5Page ? r.ps5Headline : r.headline {
+            if !headerInPage, let h = ps5Page ? r.ps5Headline : r.headline {
                 // At accessibility sizes: the standing 4 whole-word line cap, "…" only when it still overflows.
                 if typeSize.isAccessibilitySize { WholeWordText(text: h, font: PlayscribeFont.title3, lines: 4) }
                 else { Text(h).font(PlayscribeFont.title3) }
-            } else if !r.notes.isEmpty {
+            } else if !headerInPage, !r.notes.isEmpty {
                 Text("Fixes and tuning").font(PlayscribeFont.title3)
             }
             if let summary = ps5Page ? r.ps5Summary : r.summary {
@@ -227,7 +229,7 @@ struct ReleaseBody: View {
                     }
                 }
             }
-            if let minutes = r.readMinutes {
+            if !headerInPage, let minutes = r.readMinutes {
                 Text("\(minutes) min read").font(PlayscribeFont.footnote.weight(.semibold)).foregroundStyle(.secondary)
                     .accessibilityLabel("About \(minutes) minute\(minutes == 1 ? "" : "s") to read")
             }
