@@ -209,6 +209,10 @@ final class AppModel {
     var deckSelection: String?
     /// Tabletop's Links sheet (J-11).
     var linksSheetOpen = false
+    /// More > Share (0.5.6 hotfix): the update whose card the share sheet is showing.
+    var shareReleaseID: String?
+    /// More > Swap sides (D-10, 0.5.6 hotfix): each bump flips Contents and Page.
+    var swapSidesRequest = 0
     /// The verification tag whose explainer is open (0.5.0).
     var tagExplainer: Verification?
     /// N-9: the follow-list card's "What is sent" sheet, the full wording, one tap from the choice (Iris, #455).

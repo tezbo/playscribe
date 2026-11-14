@@ -221,8 +221,14 @@ final class ReleaseFeatureTests: XCTestCase {
     /// Share card: the button is reachable and offers the card.
     func testShareUpdateButton() throws {
         launch("release/dawnwalker/dawnwalker@1.1")
+        // Tabletop (0.5.6 hotfix, Iris): Share is behind More on the rail; the stage above the fold has nothing tappable.
+        if inTabletop {
+            let more = app.descendants(matching: .any)["rail.more"]
+            XCTAssertTrue(more.waitForExistence(timeout: 10), "More is on the rail")
+            more.tap()
+        }
         let share = app.buttons["Share update"]
-        XCTAssertTrue(share.waitForExistence(timeout: 10), "Share update is offered (Tabletop: on the lower rail)")
+        XCTAssertTrue(share.waitForExistence(timeout: 10), "Share update is offered (Tabletop: behind More)")
         if inTabletop { XCTAssertGreaterThanOrEqual(share.frame.minY, app.frame.midY - 1, "Tabletop: Share sits in the lower half") }
         XCTAssertGreaterThanOrEqual(share.frame.height, 44, "44 pt target")
         assertFrames("release")

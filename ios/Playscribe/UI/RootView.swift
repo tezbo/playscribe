@@ -165,6 +165,13 @@ struct RootView: View {
                 }
             }
             .animation(poseAnimation, value: duo.pose)
+            // More > Share (0.5.6 hotfix): half height, so in Tabletop the sheet stays in the lower half.
+            .sheet(isPresented: Binding(get: { model.shareReleaseID != nil }, set: { if !$0 { model.shareReleaseID = nil } })) {
+                if let gameID = model.nav.gameID, let id = model.shareReleaseID, let r = model.release(gameID, id) {
+                    ShareActivitySheet(items: ([model.shareCardImage(for: r), model.shareText(r)] as [Any?]).compactMap { $0 })
+                        .presentationDetents([.medium])
+                }
+            }
             // The sheet keeps its form while the launch pose settles, but a real change still switches it: folding into Book
             // at once, Open landscape once it has held for 10 s (the launch settling showed it for about 5 s).
             .onChange(of: duo.pose == .book) { _, book in
@@ -324,14 +331,11 @@ struct TabletopRail: View {
             ScrollView {
               VStack(spacing: 6) {
             if let id = model.nav.gameID, model.nav.tab == .library {
-                // The same name and id as the other poses' back button ("Library, back", gameBack); a bare "Library" read as the tab.
-                RailButton(action: ScreenAction(id: "back", title: "Library, back", systemImage: "chevron.backward",
+                // Iris (0.5.6 hotfix): Back, Notifications, Status, More, the same set and order as every other pose's bar, and
+                // few enough to fit the lower half on any fold without scrolling. Share and Check for updates are behind More.
+                RailButton(action: ScreenAction(id: "back", title: "Back to Library", systemImage: "chevron.backward",
                                                 kind: .button { model.closeGame() }))
-                    .accessibilityIdentifier("gameBack")
-                // Only five buttons fit the lower half (297a799): Check for updates and Links go in a More menu.
-                ForEach(model.gameActions(id).filter { $0.id != "refresh" }) { RailButton(action: $0) }
-                // Share the open update as a card (lower rail, 44 pt target; TT-0).
-                if let r = model.readerRelease(id), r.isPS5Listed { ShareUpdateButton(release: r) }
+                ForEach(model.gameActions(id)) { RailButton(action: $0) }
             } else if model.nav.tab == .search {
                 // Search is a dead end without this: Back to where it was opened from (Terry, 0.2.0 build 5).
                 RailButton(action: ScreenAction(id: "back", title: "Back", systemImage: "chevron.backward",
@@ -379,12 +383,6 @@ struct TabletopRail: View {
             } action: { _, more in moreBelow = more }
             .mask(LinearGradient(stops: [.init(color: .black, location: moreBelow ? 0.9 : 1), .init(color: moreBelow ? .clear : .black, location: 1)],
                                  startPoint: .top, endPoint: .bottom))
-            // More is pinned between the scrolling controls and the tabs, so on a long rail it is never a sliver under the
-            // fade or the capsule at rest or at the end (Mac, 5734fd92: KCD II).
-            if let id = model.nav.gameID, model.nav.tab == .library {
-                RailButton(action: ScreenAction(id: "more", title: "More", systemImage: "ellipsis", kind: .menu(moreItems(id))))
-                    .accessibilityHint("Check for updates, Links")
-            }
             // Iris: the same floating capsule as Closed's tab bar, no full-height strip or hairline.
             VStack(spacing: 0) {
                 tab(.library, "Library", "books.vertical", badge: model.totalUnread)
@@ -400,21 +398,6 @@ struct TabletopRail: View {
         .frame(maxHeight: .infinity)
         // The rail's buttons are 44 pt and do not grow with text (0.5.1 spec 3): at AX sizes the icons overlapped.
         .dynamicTypeSize(...DynamicTypeSize.large)
-    }
-
-    private func moreItems(_ id: String) -> [ScreenAction.MenuSection] {
-        var items: [ScreenAction.MenuItem] = [
-            .init(id: "refresh", title: "Check for updates") {
-                Task {
-                    await model.refreshFeed(); await model.refreshHistories([id])
-                    await NewsStore.shared.load(gameID: id, igdbID: model.game(id)?.igdbID)
-                }
-            },
-        ]
-        if LinksSheet.hasLinks(model, id) {
-            items.append(.init(id: "links", title: "Links") { model.linksSheetOpen = true })
-        }
-        return [.init(items: items)]
     }
 
     private func tab(_ t: AppTab, _ title: String, _ symbol: String, badge: Int = 0) -> some View {

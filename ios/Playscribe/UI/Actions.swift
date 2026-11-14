@@ -179,6 +179,9 @@ struct RailButton: View {
             }
         }
         .accessibilityLabel(action.title)
+        // The game's Back keeps the id every pose's back button has (gameBack).
+        .accessibilityIdentifier(action.id == "back" ? "gameBack" : "rail.\(action.id)")
+        .accessibilityShowsLargeContentViewer { Label(action.title, systemImage: action.systemImage) }
         .tappableFrame()
     }
 
@@ -264,14 +267,35 @@ extension AppModel {
             if !menu.isEmpty { menu[0].title = "\(name) is in your library as…" }
             out.append(ScreenAction(id: "status", title: "Status: \(status.label)", systemImage: status.symbol, kind: .menu(menu), priority: .high))
         }
-        // A way to ask for an update check from the game itself (Terry): the same refresh as the Library's pull.
-        out.append(ScreenAction(id: "refresh", title: "Check for updates", systemImage: "arrow.clockwise",
-                                kind: .button { [weak self] in Task {
-                                    await self?.refreshFeed(); await self?.refreshHistories([gameID])
-                                    // Tabletop's News page is view only, so this is also its retry.
-                                    await NewsStore.shared.load(gameID: gameID, igdbID: self?.game(gameID)?.igdbID)
-                                } }))
+        // 0.5.6 hotfix (Iris): Check for updates, Links, Share and (side by side only) Swap sides live behind More, so the rail is
+        // the same four buttons in every pose and never scrolls (Terry, 14 Nov: icons changed between poses and were half hidden).
+        out.append(ScreenAction(id: "more", title: "More", systemImage: "ellipsis", kind: .menu(moreMenu(gameID)), priority: .high))
         return out
+    }
+}
+
+extension AppModel {
+    /// Behind More, in Iris's order: Check for updates, Links, Share, then Swap sides while Contents and Page are side by side.
+    func moreMenu(_ gameID: String) -> [ScreenAction.MenuSection] {
+        var items: [ScreenAction.MenuItem] = [
+            .init(id: "refresh", title: "Check for updates") { [weak self] in
+                Task {
+                    await self?.refreshFeed(); await self?.refreshHistories([gameID])
+                    // Tabletop's News page is view only, so this is also its retry.
+                    await NewsStore.shared.load(gameID: gameID, igdbID: self?.game(gameID)?.igdbID)
+                }
+            },
+        ]
+        if LinksSheet.hasLinks(self, gameID) {
+            items.append(.init(id: "links", title: "Links") { [weak self] in self?.linksSheetOpen = true })
+        }
+        if let r = readerRelease(gameID), r.isPS5Listed {
+            items.append(.init(id: "share", title: "Share", spoken: "Share update") { [weak self] in self?.shareReleaseID = r.id })
+        }
+        if liveRightPage {
+            items.append(.init(id: "swap", title: "Swap sides") { [weak self] in self?.swapSidesRequest += 1 })
+        }
+        return [.init(items: items)]
     }
 }
 
@@ -285,9 +309,11 @@ struct ActionToolbar: ToolbarContent {
                 case .button(let run):
                     Button(action: run) { Label(a.title, systemImage: a.systemImage) }
                         .accessibilityShowsLargeContentViewer()
+                        .accessibilityIdentifier("rail.\(a.id)")
                 case .menu(let sections):
                     Menu { ActionMenuContent(sections: sections) } label: { Label(a.title, systemImage: a.systemImage) }
                         .accessibilityShowsLargeContentViewer()
+                        .accessibilityIdentifier("rail.\(a.id)")
                 }
             }
             .visibilityPriority(a.priority)

@@ -6,6 +6,7 @@ struct GameBookView: View {
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
     @AppStorage(ReadingSide.key) private var pageOnLeft = false
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
     var gameID: String
 
     var body: some View {
@@ -55,16 +56,17 @@ struct GameBookView: View {
                         .background(Circle().fill(.regularMaterial))
                         .contentShape(Rectangle())
                 }
-                .accessibilityLabel("Library, back")
+                // Iris (0.5.6 hotfix): "Back to <origin>", the same label on the Tabletop rail.
+                .accessibilityLabel("Back to Library")
                 .accessibilityIdentifier("gameBack")
             }
             .sharedBackgroundVisibility(.hidden)
+            // Back, Notifications, Status, More in every pose (Iris, 0.5.6 hotfix); D-10's Swap sides is in More while side by side.
             ActionToolbar(actions: model.gameActions(gameID))
-            // D-10: only when Contents and Page are side by side; absent, not disabled, otherwise.
-            if sideBySide {
-                ToolbarSpacer(.fixed, placement: .primaryAction)
-                ToolbarItem(placement: .primaryAction) { SwapSidesButton(pageOnLeft: $pageOnLeft) }
-            }
+        }
+        .onChange(of: model.swapSidesRequest) { _, _ in
+            guard sideBySide else { return }
+            withAnimation(reduceMotion ? .easeInOut(duration: 0.25) : .spring(duration: 0.45, bounce: 0.12)) { pageOnLeft.toggle() }
         }
         .onAppear { model.nav.lastGameID = gameID }
         // The game's full history, not only what's in the newest-100 feed.
