@@ -291,3 +291,22 @@ test('ingest: announcement and stream posts are news and make no release; backfi
   const titles = store.newsOf(db, 'dawnwalker').map((n: { title: string }) => n.title)
   assert.ok(titles.some((t: string) => /what.s coming/i.test(t)), 'the preview is kept as news')
 })
+
+// P0 (bug-056-pc-build-in-update-name): a Steam title that is only the PC build number is not a name for a PS5 update.
+test('a title that is the post\'s own BUILD number reads "Update"; other numbered titles keep the studio\'s name', async () => {
+  const tpm = (n: string, build: string) => ({ gid: n, title: `Update - ${build}`, date: ago(Number(n) * 3), contents: `Patch notes for today's update.\n[h2]CHANGELOG - BUILD: ${build}[/h2][list][*][p]Fixed a crash when opening the Finance menu.[/p][/list]`, tags: ['patchnotes'] })
+  const { db, deps } = await setup([
+    tpm('4', '12.1.247768'),
+    { gid: '5', title: 'Patch 1.0.8.14860', date: ago(20), contents: 'Version: 1.0.8.14860\nUpdate Time: August 29, 2024\n- Fixed a crash', tags: ['patchnotes'] },
+    { gid: '6', title: 'Update 1.0.2.101103', date: ago(25), contents: '- Fixed an infinite loading screen after the World Tree boss.', tags: ['patchnotes'] },
+    { gid: '7', title: 'Update 2.5', date: ago(30), contents: 'BUILD NUMBER: 2.5.0\n- Fixed a crash', tags: ['patchnotes'] },
+  ])
+  assert.equal(store.getRelease(db, 'dawnwalker@12.1.247768')?.displayName, 'Update', 'the PC build number is not the name')
+  assert.equal(store.getRelease(db, 'dawnwalker@1.0.8.14860')?.displayName, 'Patch 1.0.8.14860', 'Wukong-style: "Version:" is not a build line')
+  assert.equal(store.getRelease(db, 'dawnwalker@1.0.2.101103')?.displayName, 'Update 1.0.2.101103', 'Palworld-style: no build line, studio title kept')
+  assert.equal(store.getRelease(db, 'dawnwalker@2.5')?.displayName, 'Update 2.5', 'a build line that differs from the title leaves the title alone')
+  // Backfill renames the rows the old rules named with the build number.
+  db.prepare("UPDATE releases SET display_name = 'Update 12.1.247768' WHERE id = 'dawnwalker@12.1.247768'").run()
+  await runIngest(deps, { force: true, until: new Date(Date.now() - 90 * 86400e3).toISOString() })
+  assert.equal(store.getRelease(db, 'dawnwalker@12.1.247768')?.displayName, 'Update')
+})
