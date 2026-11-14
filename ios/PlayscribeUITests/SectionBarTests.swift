@@ -22,14 +22,6 @@ final class SectionBarTests: XCTestCase {
         XCTAssertTrue(bar.exists, "bar still in the tree at the end of the list")
         XCTAssertTrue(window.contains(bar.frame), "bar on screen at the end: \(bar.frame) in \(window)")
         XCTAssertTrue(bar.buttons.firstMatch.isHittable, "a section is tappable at the end of the list [\(ReleaseRowTests.pose(app))]")
-        // Nothing scrolls, sliced, above the pinned bar (Mac at ad665e9: "Hotfix 1.0.3" above the bar in Open landscape, "Patch 1.7"
-        // in Book). The 4 pt strip just above the bar is page ink: no text there. Tabletop pins the bar outside its scroll, under the
-        // stage, so the strip above it is the fold, not the list. The strip starts 6 pt up, past Book's header padding.
-        if !ReleaseRowTests.pose(app).contains("tabletop") {
-            let strip = CGRect(x: bar.frame.minX, y: bar.frame.minY - 10, width: bar.frame.width, height: 4)
-            let lum = Self.maxLuminance(in: strip, of: app.screenshot().image)
-            XCTAssertLessThan(lum, 0.25, "no list text in the 4 pt strip just above the pinned bar: max luminance \(lum) in \(strip) [\(ReleaseRowTests.pose(app))]")
-        }
         let shot = XCTAttachment(screenshot: app.screenshot())
         shot.name = "section-bar-end [\(ReleaseRowTests.pose(app))]"; shot.lifetime = .keepAlways; add(shot)
 
@@ -44,6 +36,11 @@ final class SectionBarTests: XCTestCase {
             if let backLabel { XCTAssertEqual(back.label, backLabel, "switching a section leaves Back as it was") }
         }
     }
+
+    // No pixel check for text above the pinned bar (card test-pinned-bar-luminance, closed 14 Nov). Two versions, a 4 pt strip
+    // after a fling and the whole gap at slow-drag stops, both stayed green at 43a1d69, where the bug showed on the Mac, so
+    // neither caught it and both were deleted rather than kept as false comfort. The fix (7cb8b33: the pinned bar's ink reaches
+    // up over the strip) is checked by eye in the Open landscape and Book stills.
 
     /// The brightest pixel (relative luminance, 0 to 1) in `rect`, given in points, of a screenshot.
     static func maxLuminance(in rect: CGRect, of image: UIImage) -> Double {
