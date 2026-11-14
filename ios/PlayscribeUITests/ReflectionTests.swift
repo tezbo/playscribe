@@ -13,6 +13,8 @@ final class ReflectionTests: XCTestCase {
         let audit = app.descendants(matching: .any)["mirrorAudit"]
         XCTAssertTrue(audit.waitForExistence(timeout: 10), "mirror audit present")
         let pose = ReleaseRowTests.pose(app)
+        // The pose in the run's output, so one log shows every pose the test covered (Quinn on #533).
+        print("ReflectionTests pose: \(pose)")
         sleep(2)
         XCTAssertEqual(audit.label, "mirror: off", "no mirror before the video plays [\(pose)]")
         guard pose.contains("tabletop") else {
@@ -26,6 +28,7 @@ final class ReflectionTests: XCTestCase {
         play.tap()
         let on = expectation(for: NSPredicate(format: "label == %@", "mirror: on"), evaluatedWith: audit)
         wait(for: [on], timeout: 30)
+        print("ReflectionTests pose: \(pose) mirror after Play: \(audit.label)")
         let shot = XCTAttachment(screenshot: app.screenshot())
         shot.name = "reflection-playing [\(pose)]"; shot.lifetime = .keepAlways; add(shot)
     }
