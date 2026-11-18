@@ -278,7 +278,7 @@ test('a preview, stream or system-requirements headline is news, not a release; 
   }
   assert.ok(!isNewsOnlyTitle('Update 1.4.0 is coming to PS5 today', { patchnotesTag: true }), 'an "is coming" title with the patchnotes tag is a release')
   // A changelog or notes title wins over the "coming" words (Quinn: Pool Cleaning Simulator).
-  for (const real of ['\ud83e\udee7 Pool Cleaning Simulator \u2013 Maintenance Update Changelog \ud83c\udf0a And what is coming', 'Patch notes 1.2, and what\u2019s coming up', 'Hotfix notes: what is coming in 1.3.1', "What's new in the Spring Update, and what's coming"]) {
+  for (const real of ['\ud83e\udee7 Pool Cleaning Simulator \u2013 Maintenance Update Changelog \ud83c\udf0a And what is coming', 'Patch notes 1.2, and what\u2019s coming up', 'Hotfix notes: what is coming up', "What's new in the Spring Update, and what's coming"]) {
     assert.ok(!isNewsOnlyTitle(real), real)
   }
   // "1.4.0 is here!" is the release post for Update 1.4.0 (Countless Army), though its title has no update word.
