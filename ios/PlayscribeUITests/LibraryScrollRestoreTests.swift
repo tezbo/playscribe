@@ -4,6 +4,7 @@ import XCTest
 /// Run each on main and on the branch: a failure on both is not a regression of #513. Closed portrait only (the poses where the page
 /// scrolls under the large title).
 final class LibraryScrollRestoreTests: XCTestCase {
+    @MainActor
     private func launch() throws -> XCUIApplication {
         let app = XCUIApplication()
         app.launchArguments = ["-qaRoute", "fill-library/12"]
