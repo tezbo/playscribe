@@ -44,7 +44,14 @@ struct GameBookView: View {
         // cannot be set. This one says where it goes (HIG: the previous screen's title).
         .navigationBarBackButtonHidden(true)
         .keepsSwipeBack()
+        // Closed landscape (Iris, 0.5.6 walk at 1c5ebfc): the system bar had room for two of the four buttons beside the tab
+        // column and dropped Back and Status. Here the rail is our own second column, immediately leading of the tab column, and
+        // the page reflows beside it.
+        .safeAreaInset(edge: .trailing, spacing: 0) {
+            if closedLandscape { ClosedLandscapeRail(gameID: gameID) }
+        }
         .toolbar {
+          if !closedLandscape {
             // A custom 44 x 44 button (Iris: the 36 pt floor is for system-drawn toolbar buttons only), so no system glass around it:
             // the glass would size it to about 38. The chevron stays centred, whatever the frame.
             ToolbarItem(placement: .topBarLeading) {
@@ -63,6 +70,7 @@ struct GameBookView: View {
             .sharedBackgroundVisibility(.hidden)
             // Back, Notifications, Status, More in every pose (Iris, 0.5.6 hotfix); D-10's Swap sides is in More while side by side.
             ActionToolbar(actions: model.gameActions(gameID, sideBySide: sideBySide))
+          }
         }
         .onChange(of: model.swapSidesRequest) { _, _ in
             guard sideBySide else { return }
@@ -73,6 +81,8 @@ struct GameBookView: View {
         .task(id: gameID) { await model.refreshHistories([gameID]) }
 
     }
+
+    private var closedLandscape: Bool { duo.pose == .closed && duo.isLandscape }
 
     /// Open landscape and Book in a regular-width scene (D-11).
     private var sideBySide: Bool { duo.pose != .closed && duo.pose != .tabletop && duo.isLandscape }
@@ -156,5 +166,24 @@ struct ChapterBar: View {
             }
             .padding(.horizontal, 2)
         }
+    }
+}
+
+/// Closed landscape's rail (Iris, 0.5.6): Back, Notifications, Status, More top to bottom, the same buttons, order and gaps as the
+/// Tabletop rail, in a 56 pt column beside the tab column. 44 pt buttons that do not grow with text; the large content viewer
+/// shows each title.
+struct ClosedLandscapeRail: View {
+    @Environment(AppModel.self) private var model
+    var gameID: String
+    var body: some View {
+        VStack(spacing: 6) {
+            RailButton(action: ScreenAction(id: "back", title: "Back to Library", systemImage: "chevron.backward",
+                                            kind: .button { model.closeGame() }))
+            ForEach(model.gameActions(gameID)) { RailButton(action: $0) }
+        }
+        .padding(.top, 8)
+        .frame(width: TabletopRail.width)
+        .frame(maxHeight: .infinity, alignment: .top)
+        .dynamicTypeSize(...DynamicTypeSize.large)
     }
 }
