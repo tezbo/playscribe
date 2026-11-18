@@ -269,12 +269,17 @@ struct LibraryShelf: View {
 
     @FocusState private var searchFocused: Bool
     @State private var searchWasFocused = false
-    @State private var scrollInteracting = false
+    /// Whether a finger is on the page. A reference the view never observes: as plain @State, its two flips per swipe (down, up) re-ran this
+    /// whole body twice a swipe, 40 runs in 20 swipes (Mac profile of #513, bug-056). Only the Task closures below read it.
+    private final class ScrollFlags { var interacting = false }
+    @State private var scrollFlags = ScrollFlags()
+    @Environment(\.scenePhase) private var scenePhase
     /// Where the page is scrolled to. Local state: bound straight to `model.nav.anchors` it wrote the model on every scroll step, which
     /// re-ran this whole body once or twice per swipe (Mac timing of #513: 37 body runs in 20 Tabletop swipes). Only a programmatic move
     /// (search focus, back to top) goes through `setAnchor`, which also records it in the model; the model gets the scrolled position
     /// when the Library goes away, so it still reopens where it was.
     @State private var scrollID: String?
+    private func commitAnchor() { if model.nav.anchors["library"] != scrollID { model.nav.anchors["library"] = scrollID } }
     private func setAnchor(_ id: String?) {
         scrollID = id
         model.nav.anchors["library"] = id
@@ -374,7 +379,7 @@ struct LibraryShelf: View {
                             Task { @MainActor in
                                 try? await Task.sleep(for: .milliseconds(60))
                                 // A drag-down dismissal may still have the finger on the page: no scroll then.
-                                if !searchFocused, !scrollInteracting { setAnchor("library-top") }
+                                if !searchFocused, !scrollFlags.interacting { setAnchor("library-top") }
                             }
                         }
                         guard f, duo.pose != .tabletop else { return }
@@ -605,11 +610,11 @@ struct LibraryShelf: View {
         }
         // Terry, 8 Nov: no way to put the keyboard away. Scrolling dismisses it, and so does a tap outside the field.
         .dismissesKeyboardOnOutsideTap()
-        .onScrollPhaseChange { _, phase in
-            scrollInteracting = (phase == .interacting)
-            // Once the page has come to rest, not on every step, the scrolled position goes to the model (it is saved with the app's state).
-            if phase == .idle, model.nav.anchors["library"] != scrollID { model.nav.anchors["library"] = scrollID }
-        }
+        .onScrollPhaseChange { _, phase in scrollFlags.interacting = (phase == .interacting) }
+        // The scrolled position goes to the model (it is saved with the app's state) when the Library goes away or the app leaves the
+        // foreground, never while scrolling or when a swipe ends: each model write re-ran this body.
+        .onDisappear { commitAnchor() }
+        .onChange(of: scenePhase) { _, phase in if phase != .active { commitAnchor() } }
         // A move made elsewhere (QA routes, a game added) reaches the page; this view's own moves already match and do nothing.
         .onChange(of: model.nav.anchors["library"]) { _, id in if id != scrollID { scrollID = id } }
         .onAppear { if scrollID == nil { scrollID = model.nav.anchors["library"] } }
