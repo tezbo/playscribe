@@ -29,7 +29,7 @@ final class LibraryScrollRestoreTests: XCTestCase {
         let label = target.label
         let before = target.frame.minY
         target.tap()
-        let back = app.navigationBars.buttons.firstMatch
+        let back = app.buttons["gameBack"]
         XCTAssertTrue(back.waitForExistence(timeout: 10), "the game page has a back button")
         back.tap()
         let again = app.buttons.matching(NSPredicate(format: "label == %@", label)).firstMatch
@@ -50,9 +50,8 @@ final class LibraryScrollRestoreTests: XCTestCase {
         let clear = app.buttons["Clear search"]
         XCTAssertTrue(clear.waitForExistence(timeout: 3))
         clear.tap()
-        let keys = app.keyboards.buttons
-        let returnKey = ["Search", "search", "Return", "return"].map { keys[$0] }.first { $0.exists } ?? keys["Search"]
-        returnKey.tap()
+        // The Search key sits below the 678 pt Closed window and cannot be tapped; a newline from the keyboard dismisses it.
+        field.typeText("\n")
         sleep(2)
         let picker = app.descendants(matching: .any)["libraryTabPicker"]
         XCTAssertTrue(picker.waitForExistence(timeout: 5))
