@@ -45,8 +45,10 @@ struct LibraryView: View {
             try? await Task.sleep(for: .seconds(1.5))
             model.showPressTipIfNeeded()
         }
-        .navigationTitle("Library")
-        .toolbarTitleDisplayMode(.large)
+        // Everywhere but Tabletop (no bar) "Library" is the first row of the page, not a navigation-bar large title: the bar's
+        // large-title state did not survive Back from a game and left it over the tiles (bug-library-back-scroll-jump, Iris fallback B).
+        .navigationTitle(duo.pose == .tabletop ? "Library" : "")
+        .toolbarTitleDisplayMode(.inline)
         .toolbar {
             // Add trails, Settings leads: the system collapsed a second trailing item away in Closed and
             // Open (0.5.0 Mac stills, TB-1), so the cog sits in its own region and is always drawn.
@@ -305,12 +307,12 @@ struct LibraryShelf: View {
                         if !binding.wrappedValue.isEmpty {
                             Button {
                                 binding.wrappedValue = ""
-                                // Cleared with the keyboard away: the deck and News return above, so the page goes to its top, once.
+                                // Cleared with the keyboard away: the deck and News return above, so the page goes to the "Library" title row, once.
                                 // Focused, the field stays pinned and nothing scrolls to the top.
                                 if !searchFocused, portraitTilesFirst {
                                     Task { @MainActor in
                                         try? await Task.sleep(for: .milliseconds(60))
-                                        if !searchFocused { model.nav.anchors["library"] = "library-top" }
+                                        if !searchFocused { model.nav.anchors["library"] = "library-title" }
                                     }
                                 }
                             } label: {
@@ -364,7 +366,7 @@ struct LibraryShelf: View {
                             Task { @MainActor in
                                 try? await Task.sleep(for: .milliseconds(60))
                                 // A drag-down dismissal may still have the finger on the page: no scroll then.
-                                if !searchFocused, !scrollInteracting { model.nav.anchors["library"] = "library-top" }
+                                if !searchFocused, !scrollInteracting { model.nav.anchors["library"] = "library-title" }
                             }
                         }
                         guard f, duo.pose != .tabletop else { return }
@@ -383,6 +385,11 @@ struct LibraryShelf: View {
         let all = model.libraryRows
         ScrollView {
             VStack(alignment: .leading, spacing: 14) {
+                if duo.pose != .tabletop && !heroOnRightPage {
+                    Text("Library").font(PlayscribeFont.largeTitle).accessibilityAddTraits(.isHeader)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .id("library-title")
+                }
                 // Book: the control stays on the left page; it never crosses the fold (Iris, hero-wide-layouts).
                 if closedWide {
                     // Closed landscape: the control and the search field share one row, 44 pt each (Iris, cf6c889).
@@ -458,6 +465,9 @@ struct LibraryShelf: View {
                     }()
                     HStack(alignment: .top, spacing: 0) {
                         VStack(alignment: .leading, spacing: 14) {
+                            // Book with a hero: the title heads the left page, one page wide, never across the fold.
+                            Text("Library").font(PlayscribeFont.largeTitle).accessibilityAddTraits(.isHeader)
+                                .frame(maxWidth: .infinity, alignment: .leading)
                             LibraryTabPicker()
                             // N-9 above the search field (Iris, #455); the other cards stay below it.
                             keepCurrentAsk
