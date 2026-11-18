@@ -21,6 +21,7 @@ final class ReflectionTests: XCTestCase {
             // Outside Tabletop nothing turns it on: the player's own controls play the video, and the mirror stays off.
             sleep(3)
             XCTAssertEqual(audit.label, "mirror: off", "no mirror outside Tabletop [\(pose)]")
+            print("ReflectionTests pose: \(pose) after waiting: \(audit.label)")
             return
         }
         let play = app.buttons["Play"]
