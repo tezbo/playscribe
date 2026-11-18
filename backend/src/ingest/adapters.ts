@@ -44,7 +44,7 @@ const steam = async (fetchFn: FetchFn, s: SourceDef, count: number, until?: stri
       title: n.title,
       publishedAt: new Date(n.date * 1000).toISOString(),
       body: n.contents,
-      ...(!isNewsOnlyTitle(n.title) && (n.tags?.includes('patchnotes') || looksLikePatch(n.title)) ? {} : { news: true }),
+      ...(!isNewsOnlyTitle(n.title, { patchnotesTag: !!n.tags?.includes('patchnotes') }) && (n.tags?.includes('patchnotes') || looksLikePatch(n.title)) ? {} : { news: true }),
     }))
 }
 

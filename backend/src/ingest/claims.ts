@@ -136,13 +136,20 @@ export const statedLiveTime = (raw: string, publishedAt: string): string | null 
 
 /**
  * A Steam post that talks about an update without being it: a preview of what is coming ("Check out what's coming to Cyberpunk 2077 in
- * the Edgerunners 2 Update!"), a stream or event ("REDstreams: ... Update (2.5) is coming!"), or system requirements ("Update to PC
- * System Requirements"), plus every announcement headline above. It is news; the release is the post that says the update is out
- * (bug-055-feed-steam-announcements). A post saying "is out now" or carrying "Update 2.5" is never matched.
+ * the Edgerunners 2 Update!"), a post saying an update "is coming" ("REDstreams: ... Update (2.5) is coming!"), an announcement
+ * headline (above), a stream or an event, or system requirements. It is news; the release is the post that says the update is out
+ * (bug-055-feed-steam-announcements).
+ * Strong arms (announcement, "what's coming", "is coming") decide alone. The weak arms (stream, Twitch, system requirements) are
+ * words a real patch title can carry ("Update 2.1: Twitch Drops fix", "Hotfix 1.0.4 (Live Stream bug fixed)"), so they apply only
+ * when the title names no numbered Update, Patch or Hotfix and Steam did not tag the post `patchnotes`.
  */
-export const isNewsOnlyTitle = (title: string) =>
-  isAnnouncementTitle(title) ||
-  /\bwhat['\u2019]?s\s+coming\b/i.test(title) ||
-  /\b(?:update|patch|hotfix|season|expansion)\b[^|]{0,40}\bis\s+coming\b/i.test(title) ||
-  /\b(?:red\s*streams?|live\s*streams?|dev\s*streams?|twitch)\b/i.test(title) ||
-  /\bsystem\s+requirements?\b/i.test(title)
+export const isNewsOnlyTitle = (title: string, opts: { patchnotesTag?: boolean } = {}) => {
+  if (
+    isAnnouncementTitle(title) ||
+    /\bwhat['\u2019]?s\s+coming\b/i.test(title) ||
+    /\b(?:update|patch|hotfix|season|expansion)\b[^|]{0,40}\bis\s+coming\b/i.test(title)
+  )
+    return true
+  if (opts.patchnotesTag || /\b(?:update|patch|hot\s*-?fix|version|ver\.?|v)\s*#?\s*\d+(?:\.\d+)*/i.test(title)) return false
+  return /\b(?:red\s*streams?|live\s*streams?|dev\s*streams?|twitch)\b/i.test(title) || /\bsystem\s+requirements?\b/i.test(title)
+}
