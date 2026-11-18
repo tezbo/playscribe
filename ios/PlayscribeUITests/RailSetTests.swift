@@ -31,11 +31,13 @@ final class RailSetTests: XCTestCase {
         return CGFloat(d[1] + d[3])
     }
 
-    private func check(pose: String?, ax5: Bool, tracked: Bool = true) {
+    private func check(pose: String?, ax5: Bool, tracked: Bool = true, landscape: Bool = false) {
         // Untracked = not in the library, so no Status (Iris). The game page opens with Add to library (Quinn, #442).
         let route = tracked ? "gamepage/dawnwalker" : "gamepage/alan-wake-2"
         let app = launch(pose: pose, ax5: ax5, route: route)
-        let tag = "\(pose ?? "closed") \(ax5 ? "AX5" : "std") \(tracked ? "tracked" : "untracked")"
+        if landscape { XCUIDevice.shared.orientation = .landscapeLeft; sleep(3) }
+        defer { if landscape { XCUIDevice.shared.orientation = .portrait } }
+        let tag = "\(pose ?? "closed")\(landscape ? " landscape" : "") \(ax5 ? "AX5" : "std") \(tracked ? "tracked" : "untracked")"
         let window = app.windows.firstMatch.frame
         let ids = tracked ? ["gameBack", "rail.notify", "rail.status", "rail.more"] : ["gameBack", "rail.notify", "rail.more"]
         var frames: [CGRect] = []
@@ -72,6 +74,19 @@ final class RailSetTests: XCTestCase {
             } else {
                 XCTFail("\(tag): no tab capsule on the rail")
             }
+        } else if landscape {
+            // Closed landscape (Iris, 1c5ebfc walk): a second column immediately leading of the tab column, top to bottom.
+            XCTAssertEqual(valid, valid.sorted { $0.minY < $1.minY }, "\(tag): the rail order changed")
+            let tabs = app.buttons.matching(NSPredicate(format: "label == 'Library'")).allElementsBoundByIndex
+                .filter { $0.frame.minX > window.width / 2 }
+            if let tab = tabs.first?.frame {
+                for (id, f) in zip(ids, valid) {
+                    XCTAssertLessThanOrEqual(f.maxX, tab.minX + 0.5, "\(tag): \(id) overlaps the tab column")
+                    XCTAssertEqual(f.width, 44, accuracy: 0.5, "\(tag): \(id) is not a 44 pt button")
+                }
+            } else {
+                XCTFail("\(tag): no tab column found")
+            }
         } else {
             // A bar or a column (Closed's rail is a column): top to bottom, then leading to trailing on one line (Mac, 909fe8b:
             // Closed's column put Status at x 398.7 and Notifications at 399, so x alone misread the order).
@@ -88,6 +103,10 @@ final class RailSetTests: XCTestCase {
     func testTabletopStd() { check(pose: "tabletop", ax5: false) }
     func testTabletopAX5() { check(pose: "tabletop", ax5: true) }
     func testTabletopUntrackedAX5() { check(pose: "tabletop", ax5: true, tracked: false) }
+    func testClosedLandscapeStd() { check(pose: nil, ax5: false, landscape: true) }
+    func testClosedLandscapeAX5() { check(pose: nil, ax5: true, landscape: true) }
+    func testClosedLandscapeUntracked() { check(pose: nil, ax5: false, tracked: false, landscape: true) }
+    func testClosedLandscapeUntrackedAX5() { check(pose: nil, ax5: true, tracked: false, landscape: true) }
     func testClosedUntracked() { check(pose: nil, ax5: false, tracked: false) }
 
     /// D-10 survives behind More while the pages are side by side, and is listed nowhere else (Iris). One pose per test, so the
