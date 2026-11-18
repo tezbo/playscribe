@@ -292,6 +292,7 @@ test('a preview, stream or system-requirements headline is news, not a release; 
   assert.ok(isNewsOnlyTitle('Development Update #7 - TFH is Coming to Consoles'))
   assert.ok(!isNewsOnlyTitle('Development Update #7 - TFH is Coming to Consoles', { patchnotesTag: true }))
   assert.ok(!isNewsOnlyTitle('Update 1.2 Patch Notes'))
+  assert.ok(!isNewsOnlyTitle('Developer Update 17.1.0'))
   for (const news of ['Update Preview Livestream (Cycles Reforged)', 'Developer Livestream - Balance Update', 'Enshrouded: Pact of the Flame Update Livestream', 'Dawn of Equinox Update is Coming for Free on November 12!', "What's coming in the Plant a Tree Update?"]) {
     assert.ok(isNewsOnlyTitle(news), news)
   }

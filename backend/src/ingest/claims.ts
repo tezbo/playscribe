@@ -153,8 +153,8 @@ export const isNewsOnlyTitle = (title: string, opts: { patchnotesTag?: boolean }
   const hasNotes = /\b(?:change\s*-?logs?|(?:patch|release|hot\s*-?fix)\s+notes?|what['\u2019]?s\s+new)\b/i.test(title)
   if (isAnnouncementTitle(title)) return true
   if (hasNotes) return false
-  // A developer diary is news, numbered or not ("Development Update #7 - TFH is Coming to Consoles"), unless Steam tagged it patch notes.
-  if (/\bdev(?:elopment|eloper)?s?['\u2019]?\s+(?:update|diary|diaries|log)\b/i.test(title)) return !opts.patchnotesTag
+  // A developer diary with no version number is news, `#N` or not ("Development Update #7 - TFH is Coming to Consoles"), unless Steam tagged it patch notes.
+  if (!/\d+\.\d+/.test(title) && /\bdev(?:elopment|eloper)?s?['\u2019]?\s+(?:update|diary|diaries|log)\b/i.test(title)) return !opts.patchnotesTag
   if (/\bwhat['\u2019]?s\s+coming\b/i.test(title)) return !isOut
   // "<update> ... is coming": a release when Steam tagged the post as patch notes ("Update 1.4.0 is coming to PS5 today").
   if (/\b(?:update|patch|hotfix|season|expansion)\b(?:(?!\s[-\u2013\u2014]\s)[^|]){0,40}\bis\s+coming\b/i.test(title)) return !opts.patchnotesTag
