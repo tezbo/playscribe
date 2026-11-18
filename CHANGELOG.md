@@ -12,6 +12,7 @@ A fix release for problems found in 0.5.5.
 - The buttons beside a game are the same in every position of the phone: Back, Notifications, Status and More. They no longer change, scroll or sit half hidden in Tabletop. Check for updates, Links, Share and (in Book) Swap sides are under More.
 - The video reflection now shows only in Tabletop, and it mirrors the video as it plays.
 - The Dawnwalker launch entry no longer says its launch hotfixes weren't tracked.
+- News posts no longer show up as updates in All updates, and update titles no longer show bare build numbers. This was fixed on our server, so it applies as soon as the list refreshes.
 
 Feedback you send through TestFlight, including its comment, may appear in our public issue tracker, so leave out personal details.
 
