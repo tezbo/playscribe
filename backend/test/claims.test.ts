@@ -280,7 +280,7 @@ test('a preview, stream or system-requirements headline is news, not a release; 
     assert.ok(isNewsOnlyTitle(news), news)
   }
   assert.ok(isNewsOnlyTitle("Check out what's coming to Cyberpunk 2077 in the Edgerunners 2 Update!", { patchnotesTag: true }), 'a preview stays news even with the tag')
-  assert.ok(isNewsOnlyTitle('REDstreams \u2014 Cyberpunk 2077: Edgerunners 2 Update (2.5) is coming!', { patchnotesTag: true }))
+  assert.ok(isNewsOnlyTitle('REDstreams \u2014 Cyberpunk 2077: Edgerunners 2 Update (2.5) is coming!', { patchnotesTag: false }), 'the real post is untagged')
   for (const real of ["Cyberpunk 2077's Edgerunners 2 Update (2.5) is out now!", 'Update 2.5', 'Patch 2.31', 'Hotfix available', 'Update 1.2 Patch Notes', 'Hotfix 1.0.5 is now live', 'DLSS 3 & Reflex PC Update']) {
     assert.ok(!isNewsOnlyTitle(real), real)
   }
