@@ -394,7 +394,7 @@ struct LibraryShelf: View {
     var body: some View {
         // QA only (debug builds, launch with `-qaPrintChanges`): says which input made this body run, for the scroll-lag count (bug-056).
         #if DEBUG
-        if ProcessInfo.processInfo.arguments.contains("-qaPrintChanges") { Self._printChanges() }
+        let _ = ProcessInfo.processInfo.arguments.contains("-qaPrintChanges") ? Self._printChanges() : ()
         #endif
         @Bindable var model = model
         let rows = duo.pose == .tabletop && letter != nil
