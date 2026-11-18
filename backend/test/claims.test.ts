@@ -266,6 +266,13 @@ test('a preview, stream or system-requirements headline is news, not a release; 
   assert.ok(isNewsOnlyTitle('System requirements for Cyberpunk 2077 - UPDATE!'))
   assert.ok(isNewsOnlyTitle('Update to PC System Requirements'))
   assert.ok(isNewsOnlyTitle("Palworld's next major update, Feybreak, releases on Dec. 23"))
+  // Real patch titles that carry a weak word (Quinn, #537): a numbered Update, Patch or Hotfix, or Steam's patchnotes tag, wins.
+  for (const real of ['Patch 1.3 - Updated System Requirements and bug fixes', 'Update 2.1: Twitch Drops fix and balance', 'Hotfix 1.0.4 (Live Stream bug fixed)']) {
+    assert.ok(!isNewsOnlyTitle(real), real)
+  }
+  assert.ok(!isNewsOnlyTitle('Stream fix and system requirements change', { patchnotesTag: true }), 'the patchnotes tag wins over the weak arms')
+  assert.ok(isNewsOnlyTitle("Check out what's coming to Cyberpunk 2077 in the Edgerunners 2 Update!", { patchnotesTag: true }), 'a preview stays news even with the tag')
+  assert.ok(isNewsOnlyTitle('REDstreams \u2014 Cyberpunk 2077: Edgerunners 2 Update (2.5) is coming!', { patchnotesTag: true }))
   for (const real of ["Cyberpunk 2077's Edgerunners 2 Update (2.5) is out now!", 'Update 2.5', 'Patch 2.31', 'Hotfix available', 'Update 1.2 Patch Notes', 'Hotfix 1.0.5 is now live', 'DLSS 3 & Reflex PC Update']) {
     assert.ok(!isNewsOnlyTitle(real), real)
   }
