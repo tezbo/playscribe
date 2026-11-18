@@ -310,7 +310,13 @@ struct LibraryRoot: View {
         // the page that was underneath (0.5.6 hotfix). Here, not in the game book, which is hidden
         // under the push.
         .onChange(of: duo.pose != .closed && (duo.isLandscape || duo.pose == .tabletop), initial: true) { _, onPage in
-            if onPage, let id = model.nav.detailReleaseID, let gameID = model.nav.gameID { model.select(gameID, releaseID: id) }
+            if onPage, let id = model.nav.detailReleaseID, let gameID = model.nav.gameID {
+                // The section of the pushed release being read goes with it onto the Page (0.5.6, Mac walk step 5).
+                let pageKey = "page-\(gameID)-\(Chapter.updates.rawValue)"
+                model.nav.anchors[pageKey] = model.nav.anchors[ReleaseDetailView.anchorKey(id)]
+                model.nav.anchors[ReadingPlace.offsetKey(pageKey)] = nil
+                model.select(gameID, releaseID: id)
+            }
             if onPage { model.nav.detailReleaseID = nil }
         }
     }

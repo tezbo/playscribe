@@ -19,6 +19,8 @@ struct PageView: View {
     @AppStorage(ReadingSide.key) private var pageOnLeft = false
     @State private var position = ScrollPosition(idType: String.self)
     @State private var liveOffset: CGFloat = 0
+    @State private var insetTop: CGFloat = 0
+    @State private var marks = ReadingPlace.Marks()
     var gameID: String
     /// Closed: one stacked book, the Contents below the Page.
     var withContents = false
@@ -29,6 +31,7 @@ struct PageView: View {
             Divider().overlay(PlayscribeColor.ink700)
             ContentsBody(gameID: gameID, addControl: false)
         }
+        .readingMark("mark-allupdates")
     }
 
     var body: some View {
@@ -65,7 +68,7 @@ struct PageView: View {
                                 if withContents { closedContents }
                                 if let g = model.game(gameID) {
                                     Divider().overlay(PlayscribeColor.ink700)
-                                    GameBasicsView(game: g)
+                                    GameBasicsView(game: g).readingMark("mark-about")
                                 }
                             }
                             .pageTurn(key: r.id)
@@ -89,6 +92,7 @@ struct PageView: View {
                 }
             }
             .padding(.bottom, 24)
+            .environment(\.readingMarks, marks)
             // The column is exactly what the scroll view proposes (its viewport beside the rail: 382 pt in Closed, 372 in Book) as
             // long as every child can shrink to it. A vertical scroll view centres content wider than its viewport, so one child
             // that could not (the PS4 update + Reported tag row at AX5, 514 pt) pushed the whole page 66 pt left under the screen
@@ -126,13 +130,25 @@ struct PageView: View {
         .onScrollGeometryChange(for: CGFloat.self) { $0.contentOffset.y + $0.contentInsets.top } action: { _, y in
             liveOffset = y
         }
-        .onScrollPhaseChange { _, phase in
-            if phase == .idle { model.nav.anchors[anchorKey] = String(Int(liveOffset)) }
+        .onScrollGeometryChange(for: CGFloat.self) { $0.contentInsets.top } action: { _, top in insetTop = top }
+        // Saved only when the reader scrolled: a restore's own scroll in a new layout settled at the top and saved that,
+        // so the next pose change opened at the top (0.5.6, Mac walk 1c5ebfc steps 5 and 6).
+        .onScrollPhaseChange { old, phase in
+            guard phase == .idle, old == .interacting || old == .decelerating else { return }
+            let key = anchorKey
+            model.nav.anchors[ReadingPlace.offsetKey(key)] = String(Int(liveOffset))
+            model.nav.anchors[key] = ReadingPlace.current(marks.tops, slack: insetTop + 1).map(ReadingPlace.encode)
+                ?? String(Int(liveOffset))
         }
         .onAppear(perform: restore)
         .onChange(of: duo.pose) { restore() }
-        // Closed, the list shares this scroll; jumping to the top would lose the tapped row (J-1).
-        .onChange(of: model.nav.selected?[gameID]) { if !withContents { position.scrollTo(edge: .top) } }
+        .onChange(of: duo.isLandscape) { restore() }
+        // Closed, the list shares this scroll; jumping to the top would lose the tapped row (J-1). A pushed release moved onto
+        // the Page by unfolding keeps the section it was read at (RootView copies it here).
+        .onChange(of: model.nav.selected?[gameID]) { _, new in
+            if let new, ReadingPlace.mark(model.nav.anchors[anchorKey])?.hasPrefix("mark-\(new)-") == true { restore(); return }
+            if !withContents { position.scrollTo(edge: .top) }
+        }
         .background(Color.ink0)
         .foldAudited()
     }
@@ -140,9 +156,18 @@ struct PageView: View {
     private var anchorKey: String { "page-\(gameID)-\(model.nav.chapter.rawValue)" }
 
     private func restore() {
-        guard let y = model.nav.anchors[anchorKey].flatMap(Double.init), y > 0 else { return }
-        // After layout, so the content has its new height.
-        Task { @MainActor in position.scrollTo(y: y) }
+        let saved = model.nav.anchors[anchorKey]
+        let mark = ReadingPlace.mark(saved)
+        let y = (mark == nil ? saved : model.nav.anchors[ReadingPlace.offsetKey(anchorKey)]).flatMap(Double.init) ?? 0
+        guard y > 0 || mark != nil else { return }
+        // After layout, so the content has its new height. A pixel offset means another place in another layout, so the
+        // section the reader was in wins; the offset only stands when this layout has no such section.
+        Task { @MainActor in
+            if y > 0 { position.scrollTo(y: y) }
+            guard let mark else { return }
+            try? await Task.sleep(for: .milliseconds(300))
+            position.scrollTo(id: mark, anchor: .top)
+        }
     }
 }
 
@@ -1050,8 +1075,16 @@ struct TabletopOutline: View {
 /// J-1: one release as its own screen, pushed from the list in Closed and open portrait.
 struct ReleaseDetailView: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.duo) private var duo
+    @State private var position = ScrollPosition(idType: String.self)
+    @State private var insetTop: CGFloat = 0
+    @State private var marks = ReadingPlace.Marks()
     var gameID: String
     var releaseID: String
+
+    /// Where this pushed release was read (0.5.6): unfolding moves it onto the Page, which picks this up (RootView).
+    static func anchorKey(_ releaseID: String) -> String { "detail-\(releaseID)" }
+
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
@@ -1061,6 +1094,18 @@ struct ReleaseDetailView: View {
                 }
             }
             .padding(.bottom, 24)
+            .environment(\.readingMarks, marks)
+        }
+        .scrollPosition($position)
+        .onScrollGeometryChange(for: CGFloat.self) { $0.contentInsets.top } action: { _, top in insetTop = top }
+        .onScrollPhaseChange { old, phase in
+            guard phase == .idle, old == .interacting || old == .decelerating else { return }
+            model.nav.anchors[Self.anchorKey(releaseID)] = ReadingPlace.current(marks.tops, slack: insetTop + 1).map(ReadingPlace.encode)
+        }
+        // Closed portrait to landscape rewraps the notes: back to the section, not the old offset.
+        .onChange(of: duo.isLandscape) {
+            guard let mark = ReadingPlace.mark(model.nav.anchors[Self.anchorKey(releaseID)]) else { return }
+            Task { @MainActor in try? await Task.sleep(for: .milliseconds(300)); position.scrollTo(id: mark, anchor: .top) }
         }
         .clearsMessages()
         .background(Color.ink0)
