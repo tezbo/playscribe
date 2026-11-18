@@ -279,6 +279,7 @@ test('a preview, stream or system-requirements headline is news, not a release; 
   // "Winter is coming!" after a dash is a tagline, not the update coming (Espresso Tycoon Update 11).
   assert.ok(!isNewsOnlyTitle('Espresso Tycoon - Update 11 - Winter is coming!'), 'a tagline after a dash does not make an update post news')
   assert.ok(isNewsOnlyTitle('Update 18.0 is coming: Start of Open Beta #1'))
+  assert.ok(isNewsOnlyTitle('Union Update: Something big is coming'))
   for (const news of ['Update Preview Livestream (Cycles Reforged)', 'Developer Livestream - Balance Update', 'Enshrouded: Pact of the Flame Update Livestream', 'Dawn of Equinox Update is Coming for Free on November 12!', "What's coming in the Plant a Tree Update?"]) {
     assert.ok(isNewsOnlyTitle(news), news)
   }

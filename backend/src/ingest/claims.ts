@@ -152,7 +152,7 @@ export const isNewsOnlyTitle = (title: string, opts: { patchnotesTag?: boolean }
   if (isAnnouncementTitle(title)) return true
   if (/\bwhat['\u2019]?s\s+coming\b/i.test(title)) return !isOut
   // "<update> ... is coming": a release when Steam tagged the post as patch notes ("Update 1.4.0 is coming to PS5 today").
-  if (/\b(?:update|patch|hotfix|season|expansion)\b[^|]{0,40}\bis\s+coming\b/i.test(title)) return !opts.patchnotesTag
+  if (/\b(?:update|patch|hotfix|season|expansion)\b(?:(?!\s[-\u2013\u2014]\s)[^|]){0,40}\bis\s+coming\b/i.test(title)) return !opts.patchnotesTag
   if (opts.patchnotesTag || numbered || isOut || namesPatch) return false
   return /\b(?:red\s*streams?|live\s*streams?|dev\s*streams?|twitch)\b/i.test(title) || /\bsystem\s+requirements?\b/i.test(title)
 }
