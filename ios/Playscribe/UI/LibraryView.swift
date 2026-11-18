@@ -278,10 +278,18 @@ struct LibraryShelf: View {
     /// re-ran this whole body once or twice per swipe (Mac timing of #513: 37 body runs in 20 Tabletop swipes). Only a programmatic move
     /// (search focus, back to top) goes through `setAnchor`, which also records it in the model; the model gets the scrolled position
     /// when the Library goes away, so it still reopens where it was.
-    @State private var scrollID: String?
+    /// The id lives in a reference the view does not observe, so SwiftUI writing it as the page scrolls re-runs nothing (printChanges on
+    /// Tabletop: "_scrollID changed" re-ran the body 9 times in 20 swipes). `moves` is the one thing the body reads: it changes only when
+    /// the code moves the page (search focus, back to top, a QA route), which is when the body must run to hand the page the new id.
+    private final class ScrollPosition { var id: String? }
+    @State private var position = ScrollPosition()
+    @State private var moves = 0
+    private var scrollID: String? { position.id }
+    private var scrollIDBinding: Binding<String?> { Binding(get: { position.id }, set: { position.id = $0 }) }
     private func commitAnchor() { if model.nav.anchors["library"] != scrollID { model.nav.anchors["library"] = scrollID } }
+    private func moveTo(_ id: String?) { position.id = id; moves += 1 }
     private func setAnchor(_ id: String?) {
-        scrollID = id
+        moveTo(id)
         model.nav.anchors["library"] = id
     }
 
@@ -397,6 +405,7 @@ struct LibraryShelf: View {
         let _ = ProcessInfo.processInfo.arguments.contains("-qaPrintChanges") ? Self._printChanges() : ()
         #endif
         @Bindable var model = model
+        let _ = moves   // the body runs when the code moves the page, so the scroll position below is re-read (see ScrollPosition)
         let rows = duo.pose == .tabletop && letter != nil
             ? model.shownRows().filter { LetterIndex.matches($0.game.name, letter ?? "") } : model.shownRows()
         let all = model.libraryRows
@@ -620,11 +629,11 @@ struct LibraryShelf: View {
         .onDisappear { commitAnchor() }
         .onChange(of: scenePhase) { _, phase in if phase != .active { commitAnchor() } }
         // A move made elsewhere (QA routes, a game added) reaches the page; this view's own moves already match and do nothing.
-        .onChange(of: model.nav.anchors["library"]) { _, id in if id != scrollID { scrollID = id } }
-        .onAppear { if scrollID == nil { scrollID = model.nav.anchors["library"] } }
+        .onChange(of: model.nav.anchors["library"]) { _, id in if id != scrollID { moveTo(id) } }
+        .onAppear { if scrollID == nil { moveTo(model.nav.anchors["library"]) } }
         // Focused search: the field must always show above the keyboard. Where it is the last block (tiles-first portrait) it is
         // aligned to the bottom of the visible area, with as many tiles above it as fit; elsewhere it sits above the results, top.
-        .scrollPosition(id: $scrollID,
+        .scrollPosition(id: scrollIDBinding,
                         anchor: searchFocused && portraitTilesFirst ? .bottom : .top)
         // Tabletop only (Quinn, a8859d3): scrolled, the lower half's top edge cut a headline through its glyphs. The same edge as
         // the "What is sent" sheet. Not in other poses: a soft-edge mask there hid the Open portrait title (see below).
