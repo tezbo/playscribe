@@ -1,6 +1,8 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
 import { openDb } from '../src/db.ts'
+import { looksLikePatch } from '../src/ingest/adapters.ts'
+import { nameRelease } from '../src/ingest/classify.ts'
 import { isNewsOnlyTitle, isAnnouncementTitle, isTestBuildPost, pcScopedPost, statedLiveTime } from '../src/ingest/claims.ts'
 import { nameRelease } from '../src/ingest/classify.ts'
 import { runIngest, seedGames } from '../src/ingest/pipeline.ts'
@@ -276,6 +278,14 @@ test('a preview, stream or system-requirements headline is news, not a release; 
     assert.ok(!isNewsOnlyTitle(real), real)
   }
   assert.ok(!isNewsOnlyTitle('Update 1.4.0 is coming to PS5 today', { patchnotesTag: true }), 'an "is coming" title with the patchnotes tag is a release')
+  // A changelog or notes title wins over the "coming" words (Quinn: Pool Cleaning Simulator).
+  for (const real of ['\ud83e\udee7 Pool Cleaning Simulator \u2013 Maintenance Update Changelog \ud83c\udf0a And what is coming', 'Patch notes 1.2 and what\u2019s coming next', 'Hotfix notes: what is coming in 1.3.1', "What's new in the Spring Update, and what's coming"]) {
+    assert.ok(!isNewsOnlyTitle(real), real)
+  }
+  // "1.4.0 is here!" is the release post for Update 1.4.0 (Countless Army), though its title has no update word.
+  assert.ok(looksLikePatch('1.4.0 is here!'))
+  assert.ok(!looksLikePatch('Hades is here!'))
+  assert.equal(nameRelease('1.4.0 is here!', '2025-04-03T00:00:00Z').versionKey, '1.4.0')
   // "Winter is coming!" after a dash is a tagline, not the update coming (Espresso Tycoon Update 11).
   assert.ok(!isNewsOnlyTitle('Espresso Tycoon - Update 11 - Winter is coming!'), 'a tagline after a dash does not make an update post news')
   assert.ok(isNewsOnlyTitle('Update 18.0 is coming: Start of Open Beta #1'))
