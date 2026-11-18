@@ -271,6 +271,14 @@ test('a preview, stream or system-requirements headline is news, not a release; 
     assert.ok(!isNewsOnlyTitle(real), real)
   }
   assert.ok(!isNewsOnlyTitle('Stream fix and system requirements change', { patchnotesTag: true }), 'the patchnotes tag wins over the weak arms')
+  // From the dry run on the live feed state (14-18 Nov): real releases the first rules would have dropped.
+  for (const real of ['Dev Stream - Major Update out now! - Bosses & Relics', 'OTXO - 666 UPDATE OUT NOW (Livestream)', 'PATCH RELEASE AND LIVE STREAM', 'Dev Stream #11 - New Patch! A few features and a lot of bug fixes', 'New Steam Update Available \u2014 What\u2019s Coming Up', 'Union-Update: Multiplayer-Hotfix, Livestream und Community Spotlight']) {
+    assert.ok(!isNewsOnlyTitle(real), real)
+  }
+  assert.ok(!isNewsOnlyTitle('Update 1.4.0 is coming to PS5 today', { patchnotesTag: true }), 'an "is coming" title with the patchnotes tag is a release')
+  for (const news of ['Update Preview Livestream (Cycles Reforged)', 'Developer Livestream - Balance Update', 'Enshrouded: Pact of the Flame Update Livestream', 'Dawn of Equinox Update is Coming for Free on November 12!', "What's coming in the Plant a Tree Update?"]) {
+    assert.ok(isNewsOnlyTitle(news), news)
+  }
   assert.ok(isNewsOnlyTitle("Check out what's coming to Cyberpunk 2077 in the Edgerunners 2 Update!", { patchnotesTag: true }), 'a preview stays news even with the tag')
   assert.ok(isNewsOnlyTitle('REDstreams \u2014 Cyberpunk 2077: Edgerunners 2 Update (2.5) is coming!', { patchnotesTag: true }))
   for (const real of ["Cyberpunk 2077's Edgerunners 2 Update (2.5) is out now!", 'Update 2.5', 'Patch 2.31', 'Hotfix available', 'Update 1.2 Patch Notes', 'Hotfix 1.0.5 is now live', 'DLSS 3 & Reflex PC Update']) {
