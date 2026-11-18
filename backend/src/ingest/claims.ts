@@ -149,7 +149,10 @@ export const isNewsOnlyTitle = (title: string, opts: { patchnotesTag?: boolean }
   const isOut = /\b(?:out\s+now|now\s+(?:live|available|out)|available(?:\s+now)?|(?:has\s+been\s+|is\s+)?released?)\b/i.test(title)
   const namesPatch = /\b(?:patch|hot\s*-?fix)(?:es)?\b/i.test(title)
   const numbered = /\b(?:update|patch|hot\s*-?fix|version|ver\.?|v)\s*#?\s*\d+(?:\.\d+)*/i.test(title)
+  // A changelog or notes title is the notes, whatever else it says ("Maintenance Update Changelog and what is coming").
+  const hasNotes = /\b(?:change\s*-?logs?|(?:patch|release|hot\s*-?fix)\s+notes?|what['\u2019]?s\s+new)\b/i.test(title)
   if (isAnnouncementTitle(title)) return true
+  if (hasNotes) return false
   if (/\bwhat['\u2019]?s\s+coming\b/i.test(title)) return !isOut
   // "<update> ... is coming": a release when Steam tagged the post as patch notes ("Update 1.4.0 is coming to PS5 today").
   if (/\b(?:update|patch|hotfix|season|expansion)\b(?:(?!\s[-\u2013\u2014]\s)[^|]){0,40}\bis\s+coming\b/i.test(title)) return !opts.patchnotesTag
