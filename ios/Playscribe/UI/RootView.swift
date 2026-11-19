@@ -351,6 +351,19 @@ struct TabletopRail: View {
     var duo: DuoContext
     /// True only while the actions overflow and more lies below the visible part (Iris: no fade at rest).
     @State private var moreBelow = false
+    /// The room above the tabs and the actions' full height, measured; the actions' viewport is cut from them (`viewport`).
+    @State private var room: CGFloat = 0
+    @State private var actionsContent: CGFloat = 0
+
+    /// 0.5.7 gate (Mac walk on 74b15ab, step 13): when the actions outgrow the room above the tabs, the viewport ends at a whole
+    /// button (44 pt and 6 pt gaps), never partway into the next one: a 21 pt arc of Upcoming read as a broken button. nil while
+    /// unmeasured, and the whole room when everything fits.
+    static func viewport(room: CGFloat, content: CGFloat) -> CGFloat? {
+        guard room > 0, content > 0 else { return nil }
+        if content <= room + 0.5 { return room }
+        let step: CGFloat = 44 + 6
+        return max(44, ((room + 6) / step).rounded(.down) * step - 6)
+    }
 
     var body: some View {
         VStack(spacing: 6) {
@@ -411,9 +424,13 @@ struct TabletopRail: View {
             .onScrollGeometryChange(for: Bool.self) { g in
                 g.contentSize.height - g.contentOffset.y > g.containerSize.height + 1
             } action: { _, more in moreBelow = more }
+            .onScrollGeometryChange(for: CGFloat.self) { $0.contentSize.height } action: { _, h in actionsContent = h }
             .mask(LinearGradient(stops: [.init(color: .black, location: moreBelow ? 0.9 : 1), .init(color: moreBelow ? .clear : .black, location: 1)],
                                  startPoint: .top, endPoint: .bottom))
+            .frame(height: Self.viewport(room: room, content: actionsContent))
             .namedFrame("tabletopRailActions")
+            .frame(maxHeight: .infinity, alignment: .top)
+            .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { room = $0 }
             // Iris: the same floating capsule as Closed's tab bar, no full-height strip or hairline.
             VStack(spacing: 0) {
                 tab(.library, "Library", "books.vertical", badge: model.totalUnread)

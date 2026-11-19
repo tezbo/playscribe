@@ -777,9 +777,13 @@ final class AppModel {
     func leaveOneColumn() {
         if let u = nav.updatesRelease {
             nav.updatesRelease = nil
-            if nav.tab == .updates { openGame(u.gameID, chapter: .updates, releaseID: u.releaseID) }
+            if nav.tab == .updates {
+                openGame(u.gameID, chapter: .updates, releaseID: u.releaseID)
+                nav.pagedPush = PagedPush(ref: u, fromUpdates: true)
+            }
         }
         if let id = nav.detailReleaseID, let gameID = nav.gameID {
+            nav.pagedPush = PagedPush(ref: ReleaseRef(gameID: gameID, releaseID: id), fromUpdates: false)
             // The section of the pushed release being read goes with it onto the Page (0.5.6, Mac walk step 5).
             let pageKey = "page-\(gameID)-\(Chapter.updates.rawValue)"
             nav.anchors[pageKey] = nav.anchors[ReleaseDetailView.anchorKey(id)]
@@ -789,8 +793,27 @@ final class AppModel {
         nav.detailReleaseID = nil
     }
 
-    /// J-1: back to one column (Closed, Open both ways).
-    func enterOneColumn() {}
+    /// J-1, T-5 (0.5.7 gate, Mac walk step 5): back to one column (Closed, Open both ways), the update that folding moved onto
+    /// the Page is pushed again where it was, so every pose shows the same content. Only while the Page still shows it: a
+    /// different pick, section or game, or Back, in Book or Tabletop is the reader's own move and stands.
+    func enterOneColumn() {
+        guard let p = nav.pagedPush else { return }
+        nav.pagedPush = nil
+        let g = p.ref.gameID
+        guard nav.tab == .library, nav.gameID == g, section(g) == .updates, nav.selected?[g] == p.ref.releaseID else { return }
+        if p.fromUpdates && nav.returnTab == .updates {
+            // Pushed from the Updates tab: back on the Updates tab's push, so Back returns to the list (D-1).
+            nav.gameID = nil
+            nav.returnTab = nil
+            nav.tab = .updates
+            nav.updatesRelease = p.ref
+        } else {
+            // The reading place goes back with it (the Page's anchor to the pushed page's).
+            let pageKey = "page-\(g)-\(Chapter.updates.rawValue)"
+            if let a = nav.anchors[pageKey] { nav.anchors[ReleaseDetailView.anchorKey(p.ref.releaseID)] = a }
+            nav.detailReleaseID = p.ref.releaseID
+        }
+    }
 
     /// D-1 (0.5.6, Card D, Nadia 13 Nov): an Updates-tab row pushes the update page over the list in Closed and Open
     /// portrait, so Back returns to the list in one step, at the same scroll. Side by side and in Tabletop it opens the
