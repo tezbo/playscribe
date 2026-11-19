@@ -174,4 +174,24 @@ struct FrontCoverTests {
             #expect(!eyebrow.contains("·")) // dot-ok: asserts the dot is absent
         }
     }
+
+    /// cover/<game> (Mac at cf4a8c0 and 09eeddb): the feed's sweep leaves the lead unread; opening it reads it, so the cover's unread dot and the deck's unread
+    /// state clear, as in the real app. The QA route only picks the starting state.
+    @Test func coverRouteHonoursAReadUpdate() throws {
+        let m = demoModel()
+        m.handle(url: URL(string: "playscribe://cover/kcd2")!)
+        let lead = try #require(m.latestDeck.first)
+        let r = try #require(lead.release)
+        #expect(lead.game.id == "kcd2")
+        // The first feed refresh after a reset marks every update older than 72 hours read in the store (FeedClient). The route's
+        // fresh update must survive that (Mac at 09eeddb: KCD lost its lead and its dot).
+        for id in m.latestDeck.compactMap(\.release?.id) { m.data.read[id] = .now }
+        #expect(m.isUnread(r))
+        #expect(m.latestDeck.first?.release?.id == r.id && m.latestDeck.first?.unread == true)
+        m.openGame("kcd2", chapter: .updates, releaseID: r.id)
+        m.markRead(r.id)
+        #expect(!m.isUnread(r))
+        // Read, it leaves the unread state (and leaves the deck when it is older than 90 days).
+        #expect(m.latestDeck.first { $0.release?.id == r.id }?.unread != true)
+    }
 }

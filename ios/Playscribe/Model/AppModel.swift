@@ -278,6 +278,9 @@ final class AppModel {
     var qaKeepReadCards = false
     /// QA (route `cover/<game>`): the fresh update is this game's newest, so its page leads the cover.
     var qaFreshGame: String?
+    /// QA routes with fresh updates: the updates the person has read since the route (open, Mark read, Mark n read, catch-up),
+    /// so reading one clears it as in the real app. Kept apart from the store, which the reset's sweep also writes.
+    var qaReads: Set<String> = []
     var qaSingleUpdate: Bool {
         get { qaUpdateCount > 0 && !qaKeepReadCards }
         set { qaUpdateCount = newValue ? 1 : 0 }
@@ -375,7 +378,7 @@ final class AppModel {
 
     func markCatchUpRead() {
         let ids = catchUpItems.map(\.release.id)
-        for id in ids { data.read[id] = .now }
+        for id in ids { data.read[id] = .now; qaReads.insert(id) }
         catchUpHidden = true
         NotificationService.shared.updateBadge(badgeCount)
     }
@@ -511,7 +514,11 @@ final class AppModel {
     }
 
     func isUnread(_ r: Release) -> Bool {
-        if qaUpdateCount > 0 { return r.ps5State == .onPS5 && qaFreshIDs().contains(r.id) }
+        // QA routes pick which updates start unread, and opening one still reads it (cover/kcd2 stayed "New update" after
+        // Patch 1.5.6 was opened, Mac at cf4a8c0): the route chooses the starting state, never overrides a read.
+        // Only the person's own reads count here (qaReads): the reset's 72 hour sweep marks the route's fresh updates read in the
+        // store too (Mac at 09eeddb: cover/kcd2 lost KCD's lead), and must not.
+        if qaUpdateCount > 0 { return r.ps5State == .onPS5 && qaFreshIDs().contains(r.id) && !qaReads.contains(r.id) }
         return r.ps5State == .onPS5 && data.read[r.id] == nil
     }
 
@@ -1091,18 +1098,18 @@ final class AppModel {
     }
 
     func markRead(_ releaseID: String, _ read: Bool = true) {
-        if read { data.read[releaseID] = .now } else { data.read[releaseID] = nil }
+        if read { data.read[releaseID] = .now; qaReads.insert(releaseID) } else { data.read[releaseID] = nil; qaReads.remove(releaseID) }
         if read, pill?.releaseID == releaseID { pill = nil }
         NotificationService.shared.updateBadge(badgeCount)
     }
 
     func markAllRead(_ gameID: String) {
         let ids = releases(gameID).filter(isUnread).map(\.id)
-        for id in ids { data.read[id] = .now }
+        for id in ids { data.read[id] = .now; qaReads.insert(id) }
         NotificationService.shared.updateBadge(badgeCount)
         show(Toast(text: "\(ids.count) update\(ids.count == 1 ? "" : "s") marked read", undo: { [weak self] in
             guard let self else { return }
-            for id in ids { self.data.read[id] = nil }
+            for id in ids { self.data.read[id] = nil; self.qaReads.remove(id) }
             NotificationService.shared.updateBadge(self.badgeCount)
         }))
     }
@@ -1362,6 +1369,7 @@ final class AppModel {
         qaUpdateCount = 0
         qaFreshCache = nil
         qaFreshGame = nil
+        qaReads = []
         data = PersistedState(collection: fixtures.seedCollection)
         UserDefaults.standard.set(true, forKey: "didOnboard")
         NotificationService.shared.updateBadge(badgeCount)
