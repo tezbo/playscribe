@@ -133,3 +133,31 @@ export const statedLiveTime = (raw: string, publishedAt: string): string | null 
   }
   return best === null ? null : new Date(best).toISOString()
 }
+
+/**
+ * A Steam post that talks about an update without being it: a preview of what is coming ("Check out what's coming to Cyberpunk 2077 in
+ * the Edgerunners 2 Update!"), a post saying an update "is coming" ("REDstreams: ... Update (2.5) is coming!"), an announcement
+ * headline (above), a stream or an event, or system requirements. It is news; the release is the post that says the update is out
+ * (bug-055-feed-steam-announcements).
+ * Strong arms (announcement, "what's coming", "is coming") decide alone. The weak arms (stream, Twitch, system requirements) are
+ * words a real patch title can carry ("Update 2.1: Twitch Drops fix", "Hotfix 1.0.4 (Live Stream bug fixed)"), so they apply only
+ * when the title names no numbered Update, Patch or Hotfix and Steam did not tag the post `patchnotes`.
+ */
+export const isNewsOnlyTitle = (title: string, opts: { patchnotesTag?: boolean } = {}) => {
+  // A title that says the thing is out ("out now", "available", "released", "now live") or names a patch or hotfix is the release,
+  // even when it also mentions a stream or what's coming ("Dev Stream - Major Update out now!", "New Steam Update Available - What's Coming Up").
+  const isOut = /\b(?:out\s+now|now\s+(?:live|available|out)|available(?:\s+now)?|(?:has\s+been\s+|is\s+)?released?)\b/i.test(title)
+  const namesPatch = /\b(?:patch|hot\s*-?fix)(?:es)?\b/i.test(title)
+  const numbered = /\b(?:update|patch|hot\s*-?fix|version|ver\.?|v)\s*#?\s*\d+(?:\.\d+)*/i.test(title)
+  // A changelog or notes title is the notes, whatever else it says ("Maintenance Update Changelog and what is coming").
+  const hasNotes = /\b(?:change\s*-?logs?|(?:patch|release|hot\s*-?fix)\s+notes?|what['\u2019]?s\s+new)\b/i.test(title)
+  if (isAnnouncementTitle(title)) return true
+  if (hasNotes) return false
+  // A developer diary with no version number is news, `#N` or not ("Development Update #7 - TFH is Coming to Consoles"), unless Steam tagged it patch notes.
+  if (!/\d+\.\d+/.test(title) && /\bdev(?:elopment|eloper)?s?['\u2019]?\s+(?:update|diary|diaries|log)\b/i.test(title)) return !opts.patchnotesTag
+  if (/\bwhat['\u2019]?s\s+coming\b/i.test(title)) return !isOut
+  // "<update> ... is coming": a release when Steam tagged the post as patch notes ("Update 1.4.0 is coming to PS5 today").
+  if (/\b(?:update|patch|hotfix|season|expansion)\b(?:(?!\s[-\u2013\u2014]\s)[^|]){0,40}\bis\s+coming\b/i.test(title)) return !opts.patchnotesTag
+  if (opts.patchnotesTag || numbered || isOut || namesPatch) return false
+  return /\b(?:red\s*streams?|live\s*streams?|dev\s*streams?|twitch)\b/i.test(title) || /\bsystem\s+requirements?\b/i.test(title)
+}

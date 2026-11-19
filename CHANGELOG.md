@@ -3,6 +3,19 @@
 Playscribe follows semantic versioning. Each `## x.y.z` section becomes that build's "What to Test" in TestFlight,
 so write it for testers. Release steps are in docs/release.md.
 
+## 0.5.6
+
+A fix release for problems found in 0.5.5.
+
+- Opening a game now shows its newest PS5 update, not one you looked at on an earlier visit.
+- Tapping an update in All updates and then going back returns you to the page you were on, with All updates still there.
+- The buttons beside a game are the same in every position of the phone: Back, Notifications, Status and More. They no longer change, scroll or sit half hidden in Tabletop. Check for updates, Links, Share and (in Book) Swap sides are under More.
+- The video reflection now shows only in Tabletop, and it mirrors the video as it plays.
+- The Dawnwalker launch entry no longer says its launch hotfixes weren't tracked.
+- News posts no longer show up as updates in All updates, and update titles no longer show bare build numbers. This was fixed on our server, so it applies as soon as the list refreshes.
+
+Feedback you send through TestFlight, including its comment, may appear in our public issue tracker, so leave out personal details.
+
 ## 0.5.5
 
 - New in Settings: "Help keep my games up to date". Off until you turn it on. When on, the app sends our server the games you follow and a random code, so those games are checked every hour instead of about every 14 hours. The card in the Library explains exactly what is sent, what never is, and that the record is deleted when you turn it off.

@@ -269,10 +269,12 @@ struct ReleaseBody: View {
             // A-reader: changes grouped New, Fixed, Balance; the heading has no count, the sub-sections keep theirs (Terry, 0.5.4).
             let groups = ChangeKind.grouped(r.notes, ps5Only: ps5Page)
             ForEach(groups, id: \.kind) { g in
+                // Reading marks (0.5.6): a pose change returns to the heading or section being read.
                 Text(g.kind.rawValue).font(PlayscribeFont.title3).padding(.top, 6)
                     .accessibilityAddTraits(.isHeader)
-                ForEach(Array(g.sections.enumerated()), id: \.offset) { _, section in
-                    NoteSectionView(release: r, section: section)
+                    .readingMark("mark-\(r.id)-\(g.kind.rawValue)")
+                ForEach(Array(g.sections.enumerated()), id: \.offset) { i, section in
+                    NoteSectionView(release: r, section: section).readingMark("mark-\(r.id)-\(g.kind.rawValue)-\(i)")
                 }
             }
             // Accessibility sizes: the Bookmark and Mark as read buttons stack, each the full width, so a label wraps on

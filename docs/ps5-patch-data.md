@@ -143,7 +143,7 @@ Each note item is tagged with the platforms it is about (`NoteItem.platforms`), 
 
 ## PS5 version
 
-The PS5 version is the console's `XX.YYY.ZZZ` string. A studio's "Ver. 1.005.000" is the same build with the leading zero dropped, so it is stored as `01.005.000`. In a post that covers several platforms, only a version written next to "PS5" counts. A studio display name ("Update 1.1") or a PC build number is never stored as the PS5 version.
+The PS5 version is the console's `XX.YYY.ZZZ` string. A studio's "Ver. 1.005.000" is the same build with the leading zero dropped, so it is stored as `01.005.000`. In a post that covers several platforms, only a version written next to "PS5" counts. A studio display name ("Update 1.1") or a PC build number is never stored as the PS5 version. A Steam post whose title is only the number its own "BUILD NUMBER:" or "BUILD:" line repeats (Two Point Museum "Update - 12.1.247768") is named just "Update", with the stored key unchanged; titles with no such line (Wukong "1.0.8.14860", Palworld "1.0.2.101103") keep the studio's name (bug-056). A Steam post that only previews, streams or announces an update ("what's coming", "... is coming!", REDstreams, system requirements) is news, never a release (bug-055).
 
 ## Backend jobs
 

@@ -19,6 +19,8 @@ struct PageView: View {
     @AppStorage(ReadingSide.key) private var pageOnLeft = false
     @State private var position = ScrollPosition(idType: String.self)
     @State private var liveOffset: CGFloat = 0
+    @State private var insetTop: CGFloat = 0
+    @State private var marks = ReadingPlace.Marks()
     var gameID: String
 
     var body: some View {
@@ -35,7 +37,7 @@ struct PageView: View {
                                 ReleasePage(release: r)
                                 if let g = model.game(gameID) {
                                     Divider().overlay(PlayscribeColor.ink700)
-                                    GameBasicsView(game: g)
+                                    GameBasicsView(game: g).readingMark("mark-about")
                                 }
                             }
                             .pageTurn(key: r.id)
@@ -54,6 +56,7 @@ struct PageView: View {
                 .padding(.trailing, duo.hingeInset(20, facingHinge: pageOnLeft))
             }
             .padding(.bottom, 24)
+            .environment(\.readingMarks, marks)
             // The column is exactly what the scroll view proposes (its viewport beside the rail: 382 pt in Closed, 372 in Book) as
             // long as every child can shrink to it. A vertical scroll view centres content wider than its viewport, so one child
             // that could not (the PS4 update + Reported tag row at AX5, 514 pt) pushed the whole page 66 pt left under the screen
@@ -84,13 +87,25 @@ struct PageView: View {
         .onScrollGeometryChange(for: CGFloat.self) { $0.contentOffset.y + $0.contentInsets.top } action: { _, y in
             liveOffset = y
         }
-        .onScrollPhaseChange { _, phase in
-            if phase == .idle { model.nav.anchors[anchorKey] = String(Int(liveOffset)) }
+        .onScrollGeometryChange(for: CGFloat.self) { $0.contentInsets.top } action: { _, top in insetTop = top }
+        // Saved only when the reader scrolled: a restore's own scroll in a new layout settled at the top and saved that,
+        // so the next pose change opened at the top (0.5.6, Mac walk 1c5ebfc steps 5 and 6).
+        .onScrollPhaseChange { old, phase in
+            guard phase == .idle, old == .interacting || old == .decelerating else { return }
+            let key = anchorKey
+            model.nav.anchors[ReadingPlace.offsetKey(key)] = String(Int(liveOffset))
+            model.nav.anchors[key] = ReadingPlace.current(marks.tops, slack: insetTop + 1).map(ReadingPlace.encode)
+                ?? String(Int(liveOffset))
         }
         .onAppear(perform: restore)
         .onChange(of: duo.pose) { restore() }
-        // A new update on the Page starts at its top.
-        .onChange(of: model.nav.selected?[gameID]) { position.scrollTo(edge: .top) }
+        .onChange(of: duo.isLandscape) { restore() }
+        // A new update on the Page starts at its top. A pushed release moved onto the Page by unfolding keeps the section it was
+        // read at (RootView copies it here; 0.5.6 hotfix).
+        .onChange(of: model.nav.selected?[gameID]) { _, new in
+            if let new, ReadingPlace.mark(model.nav.anchors[anchorKey])?.hasPrefix("mark-\(new)-") == true { restore(); return }
+            position.scrollTo(edge: .top)
+        }
         .background(Color.ink0)
         .foldAudited()
     }
@@ -98,9 +113,18 @@ struct PageView: View {
     private var anchorKey: String { "page-\(gameID)-\(model.section(gameID).rawValue)" }
 
     private func restore() {
-        guard let y = model.nav.anchors[anchorKey].flatMap(Double.init), y > 0 else { return }
-        // After layout, so the content has its new height.
-        Task { @MainActor in position.scrollTo(y: y) }
+        let saved = model.nav.anchors[anchorKey]
+        let mark = ReadingPlace.mark(saved)
+        let y = (mark == nil ? saved : model.nav.anchors[ReadingPlace.offsetKey(anchorKey)]).flatMap(Double.init) ?? 0
+        guard y > 0 || mark != nil else { return }
+        // After layout, so the content has its new height. A pixel offset means another place in another layout, so the
+        // section the reader was in wins; the offset only stands when this layout has no such section.
+        Task { @MainActor in
+            if y > 0 { position.scrollTo(y: y) }
+            guard let mark else { return }
+            try? await Task.sleep(for: .milliseconds(300))
+            position.scrollTo(id: mark, anchor: .top)
+        }
     }
 }
 
@@ -598,41 +622,42 @@ struct TrailerView: View {
     @AppStorage(VideoReflection.key) private var reflectionMode = VideoReflection.defaultOn
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @Environment(\.accessibilityReduceTransparency) private var reduceTransparency
+    /// What the replicator reports it is drawing (QA audit, R-11).
+    @State private var mirrorDrawn = false
+    @State private var areaHeight: CGFloat = 0
     var body: some View {
         NavigationStack {
             // R-11 (Iris, 13 Nov): the player is always 16:9 and sized to the open area, the width of the area or, where the area is
             // short (the Tabletop lower half), as wide as the height allows after a two-line caption. Centred, with the caption
-            // centred under it; the reflection below stays.
+            // centred under it. In Tabletop only, the live video is mirrored under it (Terry, 14 Nov).
+            let mirror = VideoReflection.shows(pose: duo.pose, setting: reflectionMode, reduceMotion: reduceMotion, reduceTransparency: reduceTransparency)
+            let live = mirror && controller?.started == true
             GeometryReader { geo in
-                // Room kept under the video: a two-line caption (64 pt) and the reflection's 120 pt fade.
+                // Room kept under the video: a two-line caption (64 pt) and the reflection's fade (at most 120 pt).
                 let captionRoom: CGFloat = 64 + 120
                 let h = max(0, min(geo.size.width * 9 / 16, geo.size.height - captionRoom))
                 let w = h * 16 / 9
                 VStack(spacing: 0) {
                     Color.black.frame(width: w, height: h)
-                        .overlay { if let controller { WebSurface(webView: controller.webView) } }
-                        .overlay { if VideoReflection.fixture { Image(uiImage: VideoReflection.fixtureFrame(0)).resizable() } }
+                        .overlay { if let controller { MirroredVideoSurface(webView: controller.webView, mirrored: live) { mirrorDrawn = $0 } } }
                         .frame(maxWidth: .infinity)
                     VStack(spacing: 0) {
                         Text(name).font(PlayscribeFont.headline)
                             .multilineTextAlignment(.center)
-                            .overMirror(VideoReflection.mode(setting: reflectionMode, reduceMotion: reduceMotion, reduceTransparency: reduceTransparency) != .off)
+                            .overMirror(mirror)
                             .padding(.horizontal, 16).padding(.top, 12)
                         Spacer(minLength: 0)
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-                    // R-11: the trailer gets the same mirror as an update video in every pose, flush under the video. It takes no
-                    // layout room and no touches (Terry, 12 Nov: trailers never had one).
-                    .background(alignment: .top) {
-                        let mode = VideoReflection.mode(setting: reflectionMode, reduceMotion: reduceMotion, reduceTransparency: reduceTransparency)
-                        if mode != .off, let controller {
-                            VideoReflection(controller: controller, mode: mode, posterAsset: nil, youtubeID: videoID)
-                        }
-                    }
+                    // R-11: the mirror lands flush under the video and shows through this fade, under the caption. It takes no
+                    // layout room and no touches.
+                    .background(alignment: .top) { if live { MirrorFade(band: VideoReflection.band(lowerHalf: geo.size.height)) } else { Color.black } }
                     .clipped()
                 }
             }
             .background(Color.black)
+            .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { areaHeight = $0 }
+            .overlay(alignment: .topLeading) { MirrorAudit(on: mirrorDrawn && VideoReflection.band(lowerHalf: areaHeight) > 0) }
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button { model.trailer = nil } label: { Label("Close", systemImage: "xmark") }
@@ -957,14 +982,9 @@ struct ReleaseTimeline: View {
 
     private func row(_ r: Release, selected: Bool, divided: Bool) -> some View {
         Button {
-            // J-1: Book (and Tabletop, where the Page is the standing half) the Page shows it; the one-column
-            // poses (Closed, Open both ways) push it as its own screen.
-            if duo.oneColumn {
-                model.select(gameID, releaseID: r.id)
-                model.nav.detailReleaseID = r.id
-            } else {
-                model.select(gameID, releaseID: r.id)
-            }
+            // J-1: Book (and Tabletop, where the Page is the standing half) the Page shows it; the one-column poses (Closed, Open
+            // both ways) push it as its own screen without selecting it, so Back returns to the update underneath (0.5.6 hotfix).
+            model.listTap(gameID, releaseID: r.id, pushes: duo.oneColumn)
         } label: {
             // s-06: patch name first, headline second, then the date and the PS5 line (UpdateRow.swift).
             UpdateRowLabel(release: r, unread: model.isUnread(r), selected: selected, divided: divided)
@@ -1082,8 +1102,16 @@ struct TabletopOutline: View {
 /// J-1: one release as its own screen, pushed from the list in Closed and open portrait.
 struct ReleaseDetailView: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.duo) private var duo
+    @State private var position = ScrollPosition(idType: String.self)
+    @State private var insetTop: CGFloat = 0
+    @State private var marks = ReadingPlace.Marks()
     var gameID: String
     var releaseID: String
+
+    /// Where this pushed release was read (0.5.6): unfolding moves it onto the Page, which picks this up (RootView).
+    static func anchorKey(_ releaseID: String) -> String { "detail-\(releaseID)" }
+
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
@@ -1093,6 +1121,18 @@ struct ReleaseDetailView: View {
                 }
             }
             .padding(.bottom, 24)
+            .environment(\.readingMarks, marks)
+        }
+        .scrollPosition($position)
+        .onScrollGeometryChange(for: CGFloat.self) { $0.contentInsets.top } action: { _, top in insetTop = top }
+        .onScrollPhaseChange { old, phase in
+            guard phase == .idle, old == .interacting || old == .decelerating else { return }
+            model.nav.anchors[Self.anchorKey(releaseID)] = ReadingPlace.current(marks.tops, slack: insetTop + 1).map(ReadingPlace.encode)
+        }
+        // Closed portrait to landscape rewraps the notes: back to the section, not the old offset.
+        .onChange(of: duo.isLandscape) {
+            guard let mark = ReadingPlace.mark(model.nav.anchors[Self.anchorKey(releaseID)]) else { return }
+            Task { @MainActor in try? await Task.sleep(for: .milliseconds(300)); position.scrollTo(id: mark, anchor: .top) }
         }
         .clearsMessages()
         .background(Color.ink0)
