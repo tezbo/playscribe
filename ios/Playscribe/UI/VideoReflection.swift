@@ -3,20 +3,22 @@ import UIKit
 import WebKit
 
 /// Reflection mode (R-11; Terry's Duo test, 14 Nov, 0.5.5): in Tabletop only, the playing video is mirrored under the fold,
-/// behind the lower-half controls. The system compositor draws the mirror: the video's web view sits in a `CAReplicatorLayer`
-/// whose second instance is the same layer tree flipped and moved below the fold, so the mirror is the live picture itself,
-/// frame for frame. Nothing is snapshotted and no still stands in for it (the poster mirror of 0.5.4 read as a fake). When
-/// there is no live picture to mirror (before playback starts, under Reduce Motion or Reduce Transparency, the setting off,
-/// or any pose but Tabletop) there is no mirror at all. View only: replicated instances take no touches (Tabletop rule).
+/// behind the lower-half controls. The mirror is the render server's replica of the playing web view, refreshed 15 times a
+/// second (see `MirroredVideoSurface`), so it is the live picture. No poster or held frame stands in for it (the poster mirror
+/// of 0.5.4 read as a fake): when a replica cannot be made, the mirror is cleared. When there is no live picture to mirror
+/// (before playback starts, under Reduce Motion or Reduce Transparency, the setting off, or any pose but Tabletop) there is no
+/// mirror at all. View only: the mirror takes no touches (Tabletop rule).
 enum VideoReflection {
     static let key = "reflectionMode"
     /// On unless the person turns it off (Terry, 2026-11-06). The Settings toggle reads the same value.
     static let defaultOn = true
 
-    /// Strength at the video's bottom edge, at most 30%, and the band it fades out over: at most 120 pt and never more than 15%
+    /// Strength at the video's bottom edge, 55%, and the band it fades out over: at most 120 pt and never more than 15%
     /// of the lower half, the Tabletop edge-band cap (Iris on #533, 14 Nov: the 60%, 120 pt mirror was 20% of the half and the
     /// player's own chrome read upside down in it).
-    static let opacity = 0.3
+    /// Raised from 30% (19 Nov): at 30%, under the fade and the quarter squash, the Mac measured the mirror's brightest pixels at
+    /// 25% of the video's (63 of 255 under letters at 249), a ghost a person reads as no mirror at all.
+    static let opacity = 0.55
     static let height: CGFloat = 120
     static let maxShare: CGFloat = 0.15
 
@@ -49,49 +51,103 @@ enum VideoReflection {
     }
 }
 
-/// The player's web view, hosted in a `CAReplicatorLayer` (R-11). `mirrored` adds the flipped second instance at
-/// `VideoReflection.opacity`; off, it is the plain web view. The mirror draws outside this view's frame, from `gap` below its
-/// bottom edge; the caller lays the fade over it.
+/// The player's web view with its mirror (R-11). `mirrored` adds the flipped, squashed copy at `VideoReflection.opacity`, from
+/// `gap` below the view's bottom edge (outside its frame); the caller lays the fade over it.
+///
+/// The copy is the render server's own replica of the web view (`snapshotView(afterScreenUpdates: false)`), refreshed 15 times a
+/// second while the mirror shows, so it is the live picture, never a poster or a still. 0.5.5 to 0.5.7 used a `CAReplicatorLayer`
+/// instead: on the simulator it drew, but on Terry's Duo the mirror was missing entirely (19 Nov). On a device WebKit draws the
+/// video in its GPU process into a hosted layer, which a replicator's second instance does not copy; a replica view is drawn by
+/// the render server from what is on screen, hosted video included.
 struct MirroredVideoSurface: UIViewRepresentable {
     var webView: WKWebView
     var mirrored: Bool
     var gap: CGFloat = 0
-    /// Called with what the layer is actually drawing (`VideoReflection.rendering`), whenever that changes. For the QA audit.
+    /// Called with what is actually drawn (`VideoReflection.rendering`), whenever that changes. For the QA audit.
     var report: (Bool) -> Void = { _ in }
 
     final class Host: UIView {
-        override class var layerClass: AnyClass { CAReplicatorLayer.self }
-        var mirrored = false { didSet { if mirrored != oldValue { setNeedsLayout() } } }
+        var mirrored = false { didSet { if mirrored != oldValue { setNeedsLayout(); updateLink() } } }
         var gap: CGFloat = 0 { didSet { if gap != oldValue { setNeedsLayout() } } }
         var report: (Bool) -> Void = { _ in }
+        weak var video: UIView?
+        /// The mirror: the video's frame, flipped and squashed below it by `VideoReflection.instanceTransform`. Takes no touches.
+        let mirror = UIView()
+        private var link: CADisplayLink?
         private var reported: Bool?
+
+        override init(frame: CGRect) {
+            super.init(frame: frame)
+            mirror.isUserInteractionEnabled = false
+            mirror.clipsToBounds = true
+            mirror.isAccessibilityElement = false
+            mirror.accessibilityElementsHidden = true
+            mirror.alpha = VideoReflection.opacity
+            addSubview(mirror)
+        }
+        required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
 
         override func layoutSubviews() {
             super.layoutSubviews()
-            for v in subviews { v.frame = bounds }
-            guard let r = layer as? CAReplicatorLayer else { return }
-            r.masksToBounds = false
-            r.instanceCount = mirrored ? 2 : 1
-            r.instanceTransform = VideoReflection.instanceTransform(videoHeight: bounds.height, gap: gap)
-            r.instanceAlphaOffset = Float(VideoReflection.opacity - 1)
+            video?.frame = bounds
+            mirror.layer.transform = CATransform3DIdentity
+            mirror.frame = bounds
+            mirror.layer.transform = VideoReflection.instanceTransform(videoHeight: bounds.height, gap: gap)
+            mirror.isHidden = !mirrored
+            for v in mirror.subviews { v.frame = mirror.bounds }
             publish()
         }
 
         override func didMoveToWindow() {
             super.didMoveToWindow()
+            updateLink()
             setNeedsLayout()
             publish()
         }
 
+        private func updateLink() {
+            let want = mirrored && window != nil
+            if want, link == nil {
+                let l = CADisplayLink(target: self, selector: #selector(refresh))
+                l.preferredFrameRateRange = CAFrameRateRange(minimum: 10, maximum: 15, preferred: 15)
+                l.add(to: .main, forMode: .common)
+                link = l
+            } else if !want {
+                link?.invalidate(); link = nil
+                for v in mirror.subviews { v.removeFromSuperview() }
+                publish()
+            }
+        }
+
+        @objc private func refresh() {
+            guard mirrored, let video, video.superview === self, bounds.height > 0,
+                  let copy = video.snapshotView(afterScreenUpdates: false) else {
+                // No replica this frame: clear the mirror rather than hold the last frame (Quinn on #550).
+                if !mirror.subviews.isEmpty { mirror.subviews.forEach { $0.removeFromSuperview() }; publish() }
+                return
+            }
+            copy.isUserInteractionEnabled = false
+            copy.frame = mirror.bounds
+            let old = mirror.subviews
+            mirror.addSubview(copy)
+            old.forEach { $0.removeFromSuperview() }
+            publish()
+        }
+
         private func publish() {
-            guard let r = layer as? CAReplicatorLayer else { return }
-            let now = VideoReflection.rendering(instanceCount: r.instanceCount, height: bounds.height,
-                                                mirrorAlpha: 1 + r.instanceAlphaOffset, onScreen: window != nil && !subviews.isEmpty)
+            let now = VideoReflection.rendering(instanceCount: mirrored && !mirror.isHidden && !mirror.subviews.isEmpty ? 2 : 1,
+                                                height: bounds.height, mirrorAlpha: Float(mirror.alpha),
+                                                onScreen: window != nil && video?.superview === self)
             guard now != reported else { return }
             reported = now
             let report = report
             // Out of the layout pass: the callback writes SwiftUI state.
             DispatchQueue.main.async { report(now) }
+        }
+
+        override func removeFromSuperview() {
+            link?.invalidate(); link = nil
+            super.removeFromSuperview()
         }
     }
 
@@ -99,32 +155,34 @@ struct MirroredVideoSurface: UIViewRepresentable {
         let host = Host()
         host.clipsToBounds = false
         host.backgroundColor = .clear
-        host.addSubview(webView)
+        host.insertSubview(webView, belowSubview: host.mirror)
+        host.video = webView
         return host
     }
 
     func updateUIView(_ host: Host, context: Context) {
         // The one web view moves between poses (P-2): take it back if another surface held it.
-        if webView.superview !== host { host.addSubview(webView); host.setNeedsLayout() }
+        if webView.superview !== host { host.insertSubview(webView, belowSubview: host.mirror); host.video = webView; host.setNeedsLayout() }
         host.report = report
         host.mirrored = mirrored
         host.gap = gap
     }
 
     static func dismantleUIView(_ host: Host, coordinator: ()) {
+        host.mirrored = false
         // Only if it is still here: the next pose's surface may already have taken it.
-        for v in host.subviews { v.removeFromSuperview() }
+        if host.video?.superview === host { host.video?.removeFromSuperview() }
     }
 }
 
-/// Over the mirror (R-11): a fade that is clear for the first 35% of the band and the page's black at its end, and black below,
+/// Over the mirror (R-11): a fade that is clear for the first half of the band and the page's black at its end, and black below,
 /// so only the squashed picture's light shows, strongest at the edge. No material: it lifts black to grey (Mac at 95d9f3b).
 /// Takes no touches; hidden from VoiceOver.
 struct MirrorFade: View {
     var band: CGFloat
     var body: some View {
         VStack(spacing: 0) {
-            LinearGradient(stops: [.init(color: .black.opacity(0), location: 0), .init(color: .black.opacity(0), location: 0.35),
+            LinearGradient(stops: [.init(color: .black.opacity(0), location: 0), .init(color: .black.opacity(0), location: 0.5),
                                    .init(color: .black, location: 1)], startPoint: .top, endPoint: .bottom)
                 .frame(height: band)
             Color.black
@@ -154,6 +212,9 @@ extension View {
 /// in any pose. A screenshot cannot: it shows only one display, and video pixels are not readable on the simulator.
 struct MirrorAudit: View {
     var on: Bool
+    /// Where the video and the mirror band sit, in window points, for a UI test that measures the band's pixels (R-11, 19 Nov:
+    /// the label alone said on while Terry's Duo showed no visible mirror). "video x y w h band top height", or empty.
+    var geometry: String = ""
     var body: some View {
         #if INTERNAL
         Text("mirror")
@@ -161,7 +222,15 @@ struct MirrorAudit: View {
             .opacity(0.01)
             .accessibilityIdentifier("mirrorAudit")
             .accessibilityLabel("mirror: \(on ? "on" : "off")")
+            .accessibilityValue(geometry)
             .allowsHitTesting(false)
         #endif
+    }
+}
+
+extension MirrorAudit {
+    /// The audit's geometry string: the video frame and the band, rounded to whole points.
+    static func geometry(video v: CGRect, bandTop: CGFloat, band: CGFloat) -> String {
+        [v.minX, v.minY, v.width, v.height, bandTop, band].map { String(Int($0.rounded())) }.joined(separator: " ")
     }
 }

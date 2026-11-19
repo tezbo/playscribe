@@ -640,9 +640,9 @@ struct AutoplayTests {
         #expect(!VideoReflection.rendering(instanceCount: 2, height: 200, mirrorAlpha: 0.3, onScreen: false))
     }
 
-    @Test("The mirror is at most 30% and its band at most 15% of the lower half, never over 120 pt (R-11, Iris on #533)")
+    @Test("The mirror is at most 55% (Iris on #550, a ceiling) and its band at most 15% of the lower half, never over 120 pt (R-11, Iris on #533)")
     @MainActor func mirrorBand() {
-        #expect(VideoReflection.opacity <= 0.3)
+        #expect(VideoReflection.opacity <= 0.55)
         #expect(VideoReflection.band(lowerHalf: 380) == 57)
         #expect(VideoReflection.band(lowerHalf: 2000) == 120)
         #expect(VideoReflection.band(lowerHalf: -10) == 0)

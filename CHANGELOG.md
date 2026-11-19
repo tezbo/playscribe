@@ -3,6 +3,14 @@
 Playscribe follows semantic versioning. Each `## x.y.z` section becomes that build's "What to Test" in TestFlight,
 so write it for testers. Release steps are in docs/release.md.
 
+## 0.5.8
+
+A one-fix build for the video reflection, which was missing on the Duo in 0.5.7.
+
+1. In Tabletop, play an update video or a trailer. A soft reflection of the playing video shows under it, at the top of the lower half, and moves with the video. Pause it and the reflection holds; close the video and it goes.
+
+Feedback you send through TestFlight, including its comment, may appear in our public issue tracker, so leave out personal details.
+
 ## 0.5.7
 
 This covers everything you reported as fixed or added in 0.5.6 and 0.5.7. Each line says what to do, then what you should see.
