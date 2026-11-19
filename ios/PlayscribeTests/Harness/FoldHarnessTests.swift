@@ -126,9 +126,9 @@ struct FoldHarnessTests {
 
     // MARK: Tabletop rail, no sliver (0.5.7 gate, Mac walk on 74b15ab step 13)
 
-    /// The Library's Tabletop rail has five actions (Add, View, Settings, Playing, Upcoming) and the lower half has room for four
-    /// above the tabs, so the actions scroll. At rest the viewport cut the fifth button 21 pt in, leaving a dark arc between Playing
-    /// and the tab group that read as a broken button. The viewport ends at a whole button: none sits partly inside it.
+    /// The Library's Tabletop rail had five actions (Add, View, Settings, Playing, Upcoming) with room for four above the tabs, so
+    /// the actions scrolled and the fifth showed as a dark arc at the tab group. Iris: Playing / Upcoming is the page's own switch,
+    /// so the rail is Add, View and Settings, whole, with nothing to scroll and no part of a button showing.
     @Test(arguments: [false, true])
     func tabletopRailShowsNoSliverOfAButton(_ ax5: Bool) async throws {
         let p = HarnessPose.named("tabletop")
@@ -141,6 +141,8 @@ struct FoldHarnessTests {
         let cut = rail.filter { $0.height > 0.5 && $0.height < 43.5 }
         print("harness rail: tabletop \(ax5 ? "AX5" : "std") viewport \(HarnessRules.brief(v)) buttons \(rail.map(HarnessRules.brief)) cut \(cut.map(HarnessRules.brief))")
         #expect(cut.isEmpty, "Tabletop rail: \(cut.map(HarnessRules.brief)) shows only partly at the viewport's foot \(Int(v.maxY))")
+        let whole = rail.filter { abs($0.height - 44) < 0.5 }
+        #expect(whole.count == 3, "Tabletop Library rail: Add, View and Settings, whole; found \(whole.map(HarnessRules.brief))")
     }
 
     // MARK: Section order (N-1, Terry 19 Nov)
