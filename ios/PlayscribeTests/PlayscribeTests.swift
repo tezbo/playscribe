@@ -27,6 +27,18 @@ struct ModelTests {
         }
     }
 
+    @Test("A Gallery link gives a YouTube ID only for YouTube hosts (Quinn on #551)")
+    func galleryYouTubeID() {
+        func id(_ href: String) -> String? { GalleryItem(id: "x", gameID: "g", kind: .video, asset: "", title: "", alt: "", href: href).youtubeID }
+        #expect(id("https://www.youtube.com/watch?v=abc") == "abc")
+        #expect(id("https://m.youtube.com/watch?v=abc") == "abc")
+        #expect(id("https://youtu.be/abc") == "abc")
+        #expect(id("https://www.youtube.com/embed/abc") == "abc")
+        #expect(id("https://www.youtube.com/shorts/abc") == "abc")
+        #expect(id("https://notyoutube.com/watch?v=abc") == nil)
+        #expect(id("https://www.youtube.com/watch") == nil)
+    }
+
     @Test("Fixtures decode and every release follows the PS5 spec")
     func fixtures() {
         let f = Fixtures.shared

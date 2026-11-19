@@ -206,11 +206,14 @@ struct GalleryItem: Codable, Hashable, Identifiable {
     var alt: String
     var href: String?
 
-    /// The YouTube video ID from `href` (a youtube.com/watch?v= or youtu.be/ link), or nil.
+    /// The YouTube video ID from `href`: youtube.com (or a *.youtube.com host) /watch?v=, /embed/ or /shorts/, or youtu.be/.
+    /// Nil for anything else, and then the row is not a button.
     var youtubeID: String? {
         guard let href, let c = URLComponents(string: href), let host = c.host?.lowercased() else { return nil }
-        if host == "youtu.be" { return c.path.split(separator: "/").first.map(String.init) }
-        guard host.hasSuffix("youtube.com") else { return nil }
+        let path = c.path.split(separator: "/").map(String.init)
+        if host == "youtu.be" { return path.first.flatMap { $0.isEmpty ? nil : $0 } }
+        guard host == "youtube.com" || host.hasSuffix(".youtube.com") else { return nil }
+        if path.count >= 2, path[0] == "embed" || path[0] == "shorts" { return path[1].isEmpty ? nil : path[1] }
         return c.queryItems?.first { $0.name == "v" }?.value.flatMap { $0.isEmpty ? nil : $0 }
     }
 }
