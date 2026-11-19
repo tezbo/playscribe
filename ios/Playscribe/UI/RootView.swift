@@ -263,13 +263,12 @@ struct TabRoot: View {
                         }
                 }
                 .auditActive(model.nav.tab == .updates)
-                // Only the one-column poses (Closed, Open both ways) push. Folding to Book or Tabletop (where the standing half is view
-                // only, G-4) moves the update to the game's Page, with Back still leading to Updates.
-                .onChange(of: duo.oneColumn, initial: true) { _, pushes in
-                    if !pushes, let u = model.nav.updatesRelease {
-                        model.nav.updatesRelease = nil
-                        if model.nav.tab == .updates { model.openGame(u.gameID, chapter: .updates, releaseID: u.releaseID) }
-                    }
+                // J-1 (0.5.7 gate): an update the fold moved onto the game's Page comes back as this tab's push once the tab is
+                // showing and the pose change has settled; pushed in the same update as the tab switch, it drew blank.
+                .task(id: model.pendingUpdatesRelease) {
+                    guard model.pendingUpdatesRelease != nil else { return }
+                    try? await Task.sleep(for: .milliseconds(500))
+                    model.applyPendingUpdatesPush()
                 }
             }
 
@@ -280,6 +279,12 @@ struct TabRoot: View {
             Tab(value: AppTab.search, role: .search) {
                 NavigationStack { SearchView().tabletopChrome(duo) }.auditActive(model.nav.tab == .search)
             }
+        }
+        // J-1: a pushed update only exists where pushing is the layout (one column: Closed, Open both ways). Folding to Book or
+        // Tabletop moves it onto the game's Page; unfolding back to one column pushes it again (AppModel). Here, once for both
+        // stacks, not in the game book, which is hidden under the push.
+        .onChange(of: duo.oneColumn, initial: true) { _, one in
+            if one { model.enterOneColumn() } else { model.leaveOneColumn() }
         }
         .onChange(of: model.data.nav.tab) { old, new in
             if new == .search && old != .search { model.searchReturnTab = old }
@@ -343,20 +348,6 @@ struct LibraryRoot: View {
                     }
                 }
         }
-        // J-1: a pushed release only exists where pushing is the layout (one column: Closed, Open both ways).
-        // Folding to Book or Tabletop pops it and selects it on the Page, so the reader keeps reading the same update. The push
-        // itself never selects, so Back from it lands on the page that was underneath (0.5.6 hotfix). Here, not in the game
-        // book, which is hidden under the push.
-        .onChange(of: !duo.oneColumn, initial: true) { _, onPage in
-            if onPage, let id = model.nav.detailReleaseID, let gameID = model.nav.gameID {
-                // The section of the pushed release being read goes with it onto the Page (0.5.6, Mac walk step 5).
-                let pageKey = "page-\(gameID)-\(Chapter.updates.rawValue)"
-                model.nav.anchors[pageKey] = model.nav.anchors[ReleaseDetailView.anchorKey(id)]
-                model.nav.anchors[ReadingPlace.offsetKey(pageKey)] = nil
-                model.select(gameID, releaseID: id)
-            }
-            if onPage { model.nav.detailReleaseID = nil }
-        }
     }
 }
 
@@ -402,19 +393,8 @@ struct TabletopRail: View {
                 // Settings has its own cog on the rail, not inside the View menu (Terry, 0.2.0 build 5).
                 RailButton(action: ScreenAction(id: "settings", title: "Settings", systemImage: "gearshape", kind: .button { model.settingsOpen = true }))
                     .accessibilityIdentifier("settingsButton")
-                // 0.5.0: Playing and Upcoming on the rail (Tabletop's lower half), not above the fold.
-                if !model.data.collection.isEmpty {
-                    RailButton(action: ScreenAction(id: "playing", title: "Playing",
-                                                    systemImage: model.libraryTab == .playing ? "gamecontroller.fill" : "gamecontroller",
-                                                    kind: .button { model.libraryTab = .playing }, selected: model.libraryTab == .playing))
-                        .accessibilityAddTraits(model.libraryTab == .playing ? .isSelected : [])
-                        .accessibilityIdentifier("playingRail")
-                    RailButton(action: ScreenAction(id: "upcoming", title: "Upcoming",
-                                                    systemImage: model.libraryTab == .upcoming ? "calendar.badge.clock" : "calendar",
-                                                    kind: .button { model.libraryTab = .upcoming }, selected: model.libraryTab == .upcoming))
-                        .accessibilityAddTraits(model.libraryTab == .upcoming ? .isSelected : [])
-                        .accessibilityIdentifier("upcomingRail")
-                }
+                // Playing / Upcoming is the page's own switch, in the lower half like every other pose; not repeated here (Iris,
+                // 0.5.7 gate: with it the rail needed five actions, scrolled, and cut the fifth at the tab group).
             }
               }
             }
@@ -429,6 +409,7 @@ struct TabletopRail: View {
             } action: { _, more in moreBelow = more }
             .mask(LinearGradient(stops: [.init(color: .black, location: moreBelow ? 0.9 : 1), .init(color: moreBelow ? .clear : .black, location: 1)],
                                  startPoint: .top, endPoint: .bottom))
+            .namedFrame("tabletopRailActions")
             // Iris: the same floating capsule as Closed's tab bar, no full-height strip or hairline.
             VStack(spacing: 0) {
                 tab(.library, "Library", "books.vertical", badge: model.totalUnread)

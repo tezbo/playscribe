@@ -26,11 +26,9 @@ final class ReleaseFeatureTests: XCTestCase {
         return audit.exists ? audit.label : "unknown"
     }
 
-    /// The Playing / Upcoming switch: a rail button in Tabletop, else a segmented Picker whose segments are not
-    /// reliably exposed (the gate found none by label in any pose), so the picker itself is tapped at its half.
+    /// The Playing / Upcoming switch: the page's segmented Picker in every pose (Tabletop too since the 0.5.7 gate, Iris), whose
+    /// segments are not reliably exposed (the gate found none by label in any pose), so the picker itself is tapped at its half.
     private func switchTo(_ label: String) -> Bool {
-        let rail = app.descendants(matching: .any)[label == "Upcoming" ? "upcomingRail" : "playingRail"]
-        if rail.waitForExistence(timeout: 10) { rail.tap(); return true }
         let seg = app.descendants(matching: .any).matching(NSPredicate(format: "label == %@", label)).firstMatch
         if seg.exists { seg.tap(); return true }
         let picker = app.descendants(matching: .any)["libraryTabPicker"]
@@ -483,7 +481,7 @@ final class ReleaseFeatureTests: XCTestCase {
     }
 
     /// Every 0.5.0 surface keeps the frame rules in the current pose: no frame crosses a division,
-    /// and in Tabletop nothing tappable sits above the fold. Upcoming is reached from the rail.
+    /// and in Tabletop nothing tappable sits above the fold. Upcoming is reached from the page's switch.
     func testNewSurfacesKeepFrameRules() throws {
         let routes = ["demo", "chapter/dawnwalker/news", "updates", "news", "release/dawnwalker/dawnwalker@1.1",
                       "add", "settings", "first-run"]
@@ -494,9 +492,10 @@ final class ReleaseFeatureTests: XCTestCase {
             assertFrames(route)
             if route == "demo" {
                 if pose().contains("pose: tabletop") {
-                    let rail = app.descendants(matching: .any)["upcomingRail"]
-                    XCTAssertTrue(rail.waitForExistence(timeout: 10), "Upcoming rail button")
-                    XCTAssertGreaterThanOrEqual(rail.frame.minY, app.frame.midY - 1, "Upcoming rail button is on the flat half")
+                    let picker = app.descendants(matching: .any)["libraryTabPicker"]
+                    XCTAssertTrue(picker.waitForExistence(timeout: 10), "the Playing / Upcoming switch")
+                    XCTAssertGreaterThanOrEqual(picker.frame.minY, app.frame.midY - 1, "the Playing / Upcoming switch is on the flat half")
+                    XCTAssertFalse(app.descendants(matching: .any)["upcomingRail"].exists, "no Upcoming button on the rail (Iris, 0.5.7)")
                 }
                 XCTAssertTrue(switchTo("Upcoming"), "Upcoming control")
                 sleep(1)

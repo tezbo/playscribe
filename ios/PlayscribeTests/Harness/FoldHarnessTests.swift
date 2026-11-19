@@ -124,6 +124,27 @@ struct FoldHarnessTests {
         }
     }
 
+    // MARK: Tabletop rail, no sliver (0.5.7 gate, Mac walk on 74b15ab step 13)
+
+    /// The Library's Tabletop rail had five actions (Add, View, Settings, Playing, Upcoming) with room for four above the tabs, so
+    /// the actions scrolled and the fifth showed as a dark arc at the tab group. Iris: Playing / Upcoming is the page's own switch,
+    /// so the rail is Add, View and Settings, whole, with nothing to scroll and no part of a button showing.
+    @Test(arguments: [false, true])
+    func tabletopRailShowsNoSliverOfAButton(_ ax5: Bool) async throws {
+        let p = HarnessPose.named("tabletop")
+        let r = try #require(await FoldHost.render(p, type: ax5 ? .accessibilityExtraExtraExtraLarge : .large), "a window scene to host in")
+        defer { FoldHost.dispose(r) }
+        let v = try #require(r.named["tabletopRailActions"], "the rail's actions report their viewport")
+        // Tappable frames are reported clipped to what shows (the CI dump had "619,622 44x7"), so a sliver is a frame in the
+        // viewport shorter than a button.
+        let rail = r.frames.filter { $0.minX >= v.minX - 1 && $0.maxX <= v.maxX + 1 && $0.minY >= v.minY - 0.5 && $0.maxY <= v.maxY + 0.5 }
+        let cut = rail.filter { $0.height > 0.5 && $0.height < 43.5 }
+        print("harness rail: tabletop \(ax5 ? "AX5" : "std") viewport \(HarnessRules.brief(v)) buttons \(rail.map(HarnessRules.brief)) cut \(cut.map(HarnessRules.brief))")
+        #expect(cut.isEmpty, "Tabletop rail: \(cut.map(HarnessRules.brief)) shows only partly at the viewport's foot \(Int(v.maxY))")
+        let whole = rail.filter { abs($0.height - 44) < 0.5 }
+        #expect(whole.count == 3, "Tabletop Library rail: Add, View and Settings, whole; found \(whole.map(HarnessRules.brief))")
+    }
+
     // MARK: Section order (N-1, Terry 19 Nov)
 
     /// Every pose shows the Library in one order: the games, then the alerts, catch-up and PS Plus cards. Before this, Open
