@@ -1115,6 +1115,11 @@ final class AppModel {
             openGame(parts[0], chapter: .updates)
             nav.detailReleaseID = nil
             linksSheetOpen = false
+        // QA (INTERNAL): the game page on one section, e.g. gamepage/dawnwalker/gallery (R-11 stills at AX5, where the tabs are a picker).
+        case "gamepage" where parts.count == 2:
+            openGame(parts[0], chapter: Chapter(rawValue: parts[1]) ?? .updates)
+            nav.detailReleaseID = nil
+            linksSheetOpen = false
         case "close": player = nil; addSheetOpen = false; simulatedScan = false; settingsOpen = false; linksSheetOpen = false; tagExplainer = nil; keepCurrentDetailsOpen = false; addSearchFocus = false
         case "fill-library" where parts.count == 1:
             // QA: a library of N games (the demo set plus popular PS5 games), for layout tests.
