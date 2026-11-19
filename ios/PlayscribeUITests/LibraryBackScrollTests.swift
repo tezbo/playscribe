@@ -16,6 +16,8 @@ final class LibraryBackScrollTests: XCTestCase {
         app.launchArguments = ["-qaRoute", "fill-library/12"]
             + (ax5 ? ["-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityXXXL"] : [])
         app.launch()
+        // Closed portrait, asked for and checked: a simulator left in landscape gave 149 and 125 pt misses (Nadia, f1fdde8).
+        guard app.require(.portrait) else { return }
         let tiles = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'tile-'"))
         XCTAssertTrue(tiles.firstMatch.waitForExistence(timeout: 15), "the library shows tiles")
         let pose = ReleaseRowTests.pose(app)
@@ -25,8 +27,12 @@ final class LibraryBackScrollTests: XCTestCase {
         let visible = (0..<tiles.count).map { tiles.element(boundBy: $0) }.filter { $0.isHittable }
         let target = try XCTUnwrap(visible.first, "a tile is on screen after scrolling")
         let label = target.label
-        let before = target.frame.minY
-        target.tap()
+        // Every tile carries the same id ("tile-<cover width>", by design: the fold audit measures the cover), so index-based elements can
+        // re-resolve to another tile as the layout settles. Find the tile again by its label, which is unique, before measuring and tapping.
+        let chosen = app.buttons.matching(NSPredicate(format: "label == %@", label)).firstMatch
+        XCTAssertTrue(chosen.waitForExistence(timeout: 5) && chosen.isHittable, "the chosen tile is on screen by its label")
+        let before = chosen.frame.minY
+        chosen.tap()
         let back = app.buttons["gameBack"]
         XCTAssertTrue(back.waitForExistence(timeout: 10), "the game page has a back button")
         back.tap()
@@ -45,6 +51,7 @@ final class LibraryBackScrollTests: XCTestCase {
         let app = XCUIApplication()
         app.launchArguments = ["-qaRoute", "fill-library/12"]
         app.launch()
+        guard app.require(.portrait) else { return }
         XCTAssertTrue(app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'tile-'")).firstMatch.waitForExistence(timeout: 15))
         try XCTSkipUnless(ReleaseRowTests.pose(app).contains("pose: closed"), "Closed only")
         for _ in 0..<3 { app.scrollViews.firstMatch.swipeUp(velocity: .slow) }
