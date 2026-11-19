@@ -1005,7 +1005,29 @@ struct TabletopTrailerRow: View {
     var gameID: String
     var body: some View {
         Group {
-            if let g = model.game(gameID), let v = GameBasicsView.trailers(g).first {
+            // The Gallery's videos sit on the view-only stage in Tabletop, so their controls live here, one row each (R-11; Mac at
+            // 0e1f3e5: tapping "Launch Trailer" on the stage did nothing, as the stage rule says it must).
+            let videos = model.section(gameID) == .gallery ? model.gallery(gameID).filter { $0.kind == .video && $0.youtubeID != nil } : []
+            if !videos.isEmpty {
+                VStack(spacing: 0) {
+                    ForEach(videos) { v in
+                        Button { model.playGalleryVideo(v) } label: {
+                            HStack(spacing: 8) {
+                                Image(systemName: "play.fill").accessibilityHidden(true)
+                                Text(v.title).font(PlayscribeFont.subheadline.weight(.semibold))
+                                    .fixedSize(horizontal: false, vertical: true)
+                                Spacer(minLength: 0)
+                            }
+                            .foregroundStyle(PlayscribeColor.accent)
+                            .padding(.horizontal, 10).frame(maxWidth: .infinity, minHeight: 44).contentShape(Rectangle())
+                        }
+                        .buttonStyle(.plain)
+                        .accessibilityLabel("Play \(v.title)")
+                        .accessibilityIdentifier("galleryPlay-\(v.id)")
+                        .tappableFrame()
+                    }
+                }
+            } else if let g = model.game(gameID), let v = GameBasicsView.trailers(g).first {
                 Button { model.trailer = (v.youtubeId, v.name) } label: {
                     HStack(spacing: 8) {
                         Image(systemName: "play.fill").accessibilityHidden(true)
