@@ -511,7 +511,9 @@ final class AppModel {
     }
 
     func isUnread(_ r: Release) -> Bool {
-        if qaUpdateCount > 0 { return r.ps5State == .onPS5 && qaFreshIDs().contains(r.id) }
+        // QA routes pick which updates start unread, and opening one still reads it (cover/kcd2 stayed "New update" after
+        // Patch 1.5.6 was opened, Mac at cf4a8c0): the route chooses the starting state, never overrides a read.
+        if qaUpdateCount > 0 { return r.ps5State == .onPS5 && qaFreshIDs().contains(r.id) && data.read[r.id] == nil }
         return r.ps5State == .onPS5 && data.read[r.id] == nil
     }
 
