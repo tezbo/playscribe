@@ -793,6 +793,16 @@ final class AppModel {
         nav.detailReleaseID = nil
     }
 
+    /// An Updates-tab push waiting for the tab to be on screen (`enterOneColumn`); not persisted.
+    var pendingUpdatesRelease: ReleaseRef?
+
+    /// Pushes the waiting Updates-tab update, if the Updates tab is still the one showing.
+    func applyPendingUpdatesPush() {
+        guard let ref = pendingUpdatesRelease else { return }
+        pendingUpdatesRelease = nil
+        if nav.tab == .updates, pushesReleases { nav.updatesRelease = ref }
+    }
+
     /// J-1, T-5 (0.5.7 gate, Mac walk step 5): back to one column (Closed, Open both ways), the update that folding moved onto
     /// the Page is pushed again where it was, so every pose shows the same content. Only while the Page still shows it: a
     /// different pick, section or game, or Back, in Book or Tabletop is the reader's own move and stands.
@@ -803,10 +813,12 @@ final class AppModel {
         guard nav.tab == .library, nav.gameID == g, section(g) == .updates, nav.selected?[g] == p.ref.releaseID else { return }
         if p.fromUpdates && nav.returnTab == .updates {
             // Pushed from the Updates tab: back on the Updates tab's push, so Back returns to the list (D-1).
+            // The tab first; the push once the Updates tab is on screen (applyPendingUpdatesPush). Setting both in the same
+            // update showed a blank pushed page in Closed (Mac at 22ad66b: a Back button over no content, three runs).
             nav.gameID = nil
             nav.returnTab = nil
             nav.tab = .updates
-            nav.updatesRelease = p.ref
+            pendingUpdatesRelease = p.ref
         } else {
             // The reading place goes back with it (the Page's anchor to the pushed page's).
             let pageKey = "page-\(g)-\(Chapter.updates.rawValue)"

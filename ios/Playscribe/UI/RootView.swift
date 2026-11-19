@@ -263,6 +263,13 @@ struct TabRoot: View {
                         }
                 }
                 .auditActive(model.nav.tab == .updates)
+                // J-1 (0.5.7 gate): an update the fold moved onto the game's Page comes back as this tab's push once the tab is
+                // showing and the pose change has settled; pushed in the same update as the tab switch, it drew blank.
+                .task(id: model.pendingUpdatesRelease) {
+                    guard model.pendingUpdatesRelease != nil else { return }
+                    try? await Task.sleep(for: .milliseconds(500))
+                    model.applyPendingUpdatesPush()
+                }
             }
 
             Tab("News", systemImage: "megaphone", value: AppTab.news) {

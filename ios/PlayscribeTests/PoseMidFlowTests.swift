@@ -38,8 +38,11 @@ struct PoseMidFlowTests {
 
         m.livePose = .closed
         m.enterOneColumn()
+        #expect(m.nav.tab == .updates && m.nav.gameID == nil, "back on the Updates tab")
+        #expect(m.nav.updatesRelease == nil, "the push waits for the tab to be on screen (Mac at 22ad66b: pushed at once, it drew blank)")
+        m.applyPendingUpdatesPush()
         #expect(m.isViewing(r.gameID, r.id), "back in Closed the same update shows, not the game page's list")
-        #expect(m.nav.tab == .updates && m.nav.updatesRelease == ReleaseRef(gameID: r.gameID, releaseID: r.id),
+        #expect(m.nav.updatesRelease == ReleaseRef(gameID: r.gameID, releaseID: r.id),
                 "and it is the Updates tab's push again, so Back returns to the Updates list")
     }
 
@@ -60,6 +63,21 @@ struct PoseMidFlowTests {
         m.livePose = .closed
         m.enterOneColumn()
         #expect(m.nav.detailReleaseID == r.id, "back in Closed the pushed update shows again")
+    }
+
+    /// A tab change before the waiting push lands wins: the push is dropped.
+    @Test func aWaitingUpdatesPushIsDroppedIfTheReaderLeavesTheTab() throws {
+        let m = model()
+        let r = try history(m)[0]
+        m.nav.tab = .updates
+        m.openFromUpdates(r)
+        m.livePose = .tabletop
+        m.leaveOneColumn()
+        m.livePose = .closed
+        m.enterOneColumn()
+        m.nav.tab = .news
+        m.applyPendingUpdatesPush()
+        #expect(m.nav.updatesRelease == nil)
     }
 
     /// What the reader did in Book or Tabletop wins: another pick, another section or Back drops the old push.
