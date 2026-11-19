@@ -28,8 +28,8 @@ Nothing ships to TestFlight by itself. Merging to main never uploads a build; on
    with `dry_run: true`, then with `false`. It refuses unless the SHA is on main, every push-triggered run on it
    passed, an iOS run on it succeeded (if main's tip has none, run `ios.yml` on main first), the CHANGELOG section
    exists without "candidate", and the tag is new or already at that SHA. It then creates the tag and calls
-   `testflight.yml` itself (a tag made by the workflow token fires no push event). Before tagging it waits for an
-   Approve on the `testflight` environment (Terry as required reviewer, one tap on his phone); after a successful
+   `testflight.yml` itself (a tag made by the workflow token fires no push event). It does not wait for an Approve
+   click (the `testflight` environment has no required reviewer), so never ask Terry to click one; after a successful
    upload it creates the GitHub release with the CHANGELOG section as notes. `notes_only: true` creates just the
    GitHub release for a tag that already exists at that SHA (no tag, no build), e.g. to backfill v0.5.3. Terry's go is still required for
    every release; the workflow only removes the manual tag push. A person can still push a `v*` tag by hand.
