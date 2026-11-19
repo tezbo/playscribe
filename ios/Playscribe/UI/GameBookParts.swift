@@ -822,6 +822,10 @@ struct ContentsBody: View {
                     }
                     ReleaseTimeline(gameID: gameID)
                     if duo.pose == .tabletop, let game { TabletopGameTail(game: game) }
+                } else if chapter == .gallery, duo.pose == .tabletop {
+                    // The Gallery is on the view-only stage, so its videos' play rows are here (R-11; Mac at 1f3ae6f: with Gallery
+                    // selected the lower half had no row to tap, only the outline's Updates rows carried one).
+                    TabletopTrailerRow(gameID: gameID)
                 }
             }
     }
