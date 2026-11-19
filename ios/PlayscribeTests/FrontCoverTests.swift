@@ -158,4 +158,20 @@ struct FrontCoverTests {
             if r.noteCount > 1 { #expect(chips.contains { $0.text == "\(r.noteCount) changes" }) }
         }
     }
+
+    /// Iris (19 Nov): the patch name is the largest line; the game and the day sit above it in one comma-separated eyebrow,
+    /// and the day is no longer a chip.
+    @Test func patchNameLeadsWithGameAndDayAbove() {
+        for card in demoModel().latestDeck {
+            guard let r = card.release else { continue }
+            #expect(FrontCoverPlate.headline(card) == r.displayName)
+            let eyebrow = FrontCoverPlate.eyebrow(card) ?? ""
+            #expect(eyebrow.hasPrefix(card.game.name.gluingTrailingNumeral))
+            if let d = card.date {
+                #expect(eyebrow.hasSuffix(", \(AppModel.tileDay(d))"))
+                #expect(!FrontCoverPlate.chips(card).contains { $0.text == AppModel.tileDay(d) })
+            }
+            #expect(!eyebrow.contains("·")) // dot-ok: asserts the dot is absent
+        }
+    }
 }
