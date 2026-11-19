@@ -94,6 +94,36 @@ struct FoldHarnessTests {
         if p.expected != .tabletop { HarnessRules.checkLibraryToolbar(r) }
     }
 
+    // MARK: Closed landscape rail after a rotation (Mac RailSetTests at 8f45d30)
+
+    /// Iris's Closed landscape rail (Back, Notifications, Status, More, 44 pt each, one column leading of the tab column) after
+    /// the device turns, the way RailSetTests reaches it: open the game in Closed portrait, then rotate. At 8f45d30 the Mac saw the
+    /// system bar's 38 pt items there instead, 40 pt into the tab column; launched in landscape the rail was right, so this
+    /// test turns the same render rather than hosting Closed landscape afresh.
+    @Test(arguments: [false, true])
+    func closedLandscapeRailAfterRotating(_ ax5: Bool) async throws {
+        let type: UIContentSizeCategory = ax5 ? .accessibilityExtraExtraExtraLarge : .large
+        let model = FoldHost.demoModel()
+        model.handle(url: URL(string: "playscribe://gamepage/dawnwalker")!)
+        let portrait = try #require(await FoldHost.render(HarnessPose.named("closed"), type: type, model: model), "a window scene to host in")
+        let r = await FoldHost.rotate(portrait, to: HarnessPose.named("closedLandscape"), type: type)
+        defer { FoldHost.dispose(r) }
+        #expect(model.livePose == .closed, "the app reads Closed after the turn, read \(model.livePose)")
+        let size = r.pose.container
+        // The rail's buttons: 44 x 44 tappable frames in one column on the trailing third of the page.
+        let square = r.frames.filter { abs($0.width - 44) < 0.5 && abs($0.height - 44) < 0.5 && $0.minX > size.width * 0.6 }
+        let columns = Dictionary(grouping: square) { Int($0.minX.rounded()) }
+        let rail = columns.values.max { $0.count < $1.count } ?? []
+        print("harness rail: rotated \(type.rawValue) view \(r.viewSize) insets \(r.appliedInsets) rail \(rail.map(HarnessRules.brief)) squares \(square.map(HarnessRules.brief)) top \(r.topInventory)")
+        #expect(rail.count == 4, "Closed landscape after a turn: the rail has \(rail.count) of Back, Notifications, Status and More (squares \(square.map(HarnessRules.brief)))")
+        // The system bar must not carry the game's buttons as well (the rail replaces it in Closed landscape).
+        for id in ["rail.notify", "rail.status", "rail.more"] {
+            if let f = r.uikitControl(identifier: id) {
+                #expect(abs(f.width - 44) < 0.5, "\(id) is \(HarnessRules.brief(f)), not a 44 pt rail button")
+            }
+        }
+    }
+
     // MARK: Section order (N-1, Terry 19 Nov)
 
     /// Every pose shows the Library in one order: the games, then the alerts, catch-up and PS Plus cards. Before this, Open
