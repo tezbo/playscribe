@@ -6,6 +6,8 @@ import SwiftUI
 struct ReaderSection: Identifiable, Hashable {
     var id: String
     var title: String
+    /// A second line under the title, smaller: the overview's headline, under the patch name.
+    var subtitle: String? = nil
     var body: String
 }
 
@@ -21,7 +23,7 @@ enum ReaderTitle {
     static func parse(_ text: String, maxWords: Int = 7) -> Parsed {
         var t = text.trimmingCharacters(in: .whitespacesAndNewlines)
         // Leading bullets, then a list number such as "3." or "3)".
-        t = String(t.drop { "•-–—*· \t".contains($0) })
+        t = String(t.drop { "•-–—*\u{00B7} \t".contains($0) }) // dot-ok: strips a pasted bullet from imported text, never shown
         if let r = t.range(of: #"^\d+[.)]\s+"#, options: .regularExpression) { t.removeSubrange(r) }
         // A group prefix such as "Fixed:".
         var group: String?
@@ -67,7 +69,13 @@ extension AppModel {
 
     /// Overview, each key change, Fixes, then PS5 facts and video.
     func readerSections(_ r: Release) -> [ReaderSection] {
-        var out = [ReaderSection(id: "overview", title: r.headline ?? r.displayName, body: qaLongText ? Self.qaLongBody : (r.summary ?? ""))]
+        // The patch name leads in the largest type and the headline sits under it, as on the update page (Iris, 0.5.6: the
+        // Dawnwalker stage led with its headline, not "Update 1.1"). A blank name gives way to the headline.
+        let name = r.displayName.trimmingCharacters(in: .whitespaces)
+        let headline = (r.ps5Headline ?? r.headline)?.trimmingCharacters(in: .whitespaces)
+        let title = name.isEmpty ? (headline?.isEmpty == false ? headline! : "Update") : name
+        let subtitle = headline.flatMap { $0.isEmpty || $0 == title ? nil : $0 }
+        var out = [ReaderSection(id: "overview", title: title, subtitle: subtitle, body: qaLongText ? Self.qaLongBody : (r.summary ?? ""))]
         for (i, k) in (r.keyChanges ?? []).enumerated() {
             let parts = k.split(separator: ":", maxSplits: 1).map { $0.trimmingCharacters(in: .whitespaces) }
             let parsed = ReaderTitle.parse(k)
@@ -175,23 +183,36 @@ struct TabletopReaderStage: View {
                         } else {
                             Text(model.gameDisplayName(gameID))
                         }
-                        if let r = release { Text((r.isPS5Listed ? r.ps5Date : r.latestDate).dayMonthOrYear).foregroundStyle(.secondary).fixedSize() }
+                        // Near-white at 80%, not the accent's .secondary: that was dim brown on the scrim, 3.6:1 (Quinn, #526).
+                        if let r = release {
+                            Text((r.isPS5Listed ? r.ps5Date : r.latestDate).dayMonthOrYear)
+                                .foregroundStyle(PlayscribeColor.textPrimary.opacity(0.8)).fixedSize()
+                        }
                     }
                     .font(PlayscribeFont.subheadline.weight(.semibold))
                     .foregroundStyle(PlayscribeColor.accent)
                     // One phrase ("Enshrouded, 5 November") instead of two stops.
                     .accessibilityElement(children: .combine)
-                    // The release name for VoiceOver (and J-4), when the title is a headline.
+                    // The release name for VoiceOver (and J-4). On the overview the title is the name itself, so this element is
+                    // the heading and the drawn title is not read twice.
+                    let namesRelease = section.title == release?.displayName
                     Color.clear.frame(width: 1, height: 1)
                         .accessibilityElement()
                         .accessibilityLabel(release?.displayName ?? "")
-                        .accessibilityAddTraits(.isStaticText)
+                        .accessibilityAddTraits(namesRelease ? [.isStaticText, .isHeader] : .isStaticText)
                         .accessibilityIdentifier("releaseTitle")
                     // Whole words only (G-8): the stage plate ends on a word and "…", never a cut word.
                     WholeWordText(text: ReaderBody.title(section.title), font: PlayscribeFont.title, lines: typeSize.isAccessibilitySize ? 2 : 4, color: nil)
                         // The stage caps the title; VoiceOver reads all of it, as a heading.
                         .accessibilityLabel(section.title)
                         .accessibilityAddTraits(.isHeader)
+                        .accessibilityHidden(namesRelease)
+                    // The overview's headline, secondary: smaller than the patch name, never larger (Iris, 0.5.6).
+                    if let sub = section.subtitle {
+                        WholeWordText(text: ReaderBody.title(sub), font: PlayscribeFont.headline, lines: typeSize.isAccessibilitySize ? 1 : 2, color: PlayscribeColor.textPrimary.opacity(0.92))
+                            .accessibilityLabel(sub)
+                            .accessibilityIdentifier("readerHeadline")
+                    }
                     WholeWordText(text: ReaderBody.stage(section.body), font: PlayscribeFont.body, lines: typeSize.isAccessibilitySize ? 1 : 4,
                                   color: PlayscribeColor.textPrimary.opacity(0.92))
                         // At accessibility sizes the half-height stage has no room for a body line under a two-line title
@@ -245,7 +266,7 @@ struct TabletopReaderControls: View {
         let sections = model.readerRelease(gameID).map(model.readerSections) ?? []
         let index = min(model.readerIndex[gameID] ?? 0, max(0, sections.count - 1))
         VStack(alignment: .leading, spacing: 10) {
-            ChapterBar(gameID: gameID, selected: .updates)
+            SectionBar(gameID: gameID)
             ScrollViewReader { proxy in
                 ScrollView {
                     VStack(spacing: 2) {

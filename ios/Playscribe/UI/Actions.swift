@@ -257,7 +257,31 @@ extension AppModel {
 
     /// D-6: the rail holds only actions that visibly do something: Notifications and Status.
     /// Spoilers live inline on the Page; Mark read lives in the Contents next to the unread rows.
-    func gameActions(_ gameID: String, sideBySide: Bool = false) -> [ScreenAction] {
+    /// The Companion entries the page shows now (the World / Tips filter applied), in the page's order.
+    func companionEntries(_ gameID: String) -> [BookEntry] {
+        let kind = companionKind(gameID)
+        return fixtures.book.filter { $0.gameID == gameID && (kind == nil || $0.chapter == kind) }
+            .sorted { ($0.chapter == .world ? 0 : 1) < ($1.chapter == .world ? 0 : 1) }
+    }
+
+    /// Tabletop, Companion: bookmarking an entry from the lower half, since the stage above is view only (G-4, design on #521).
+    /// One item per entry the stage shows, ticked when bookmarked; nil with no entries. Since the 0.5.6 rail set it is a section
+    /// of More, so the rail keeps its four buttons and never scrolls.
+    func companionBookmarkAction(_ gameID: String) -> ScreenAction? {
+        let entries = companionEntries(gameID)
+        guard !entries.isEmpty else { return nil }
+        let items = entries.map { e in
+            let marked = isBookmarked(kind: .entry, id: e.id)
+            return ScreenAction.MenuItem(id: e.id, title: e.title, checked: marked,
+                                         spoken: marked ? "Remove bookmark: \(e.title)" : "Bookmark \(e.title)") { [weak self] in
+                self?.toggleBookmark(kind: .entry, id: e.id, gameID: gameID)
+            }
+        }
+        return ScreenAction(id: "bookmarks", title: "Bookmarks", systemImage: "bookmark",
+                            kind: .menu([ScreenAction.MenuSection(title: "Bookmark an entry", items: items)]))
+    }
+
+    func gameActions(_ gameID: String, sideBySide: Bool = false, bookmarks: Bool = false) -> [ScreenAction] {
         let name = game(gameID)?.name ?? "this game"
         let level = notifyLevel(gameID)
         var out = [ScreenAction(id: "notify", title: "Notifications", systemImage: level == .off ? "bell.slash" : "bell",
@@ -269,7 +293,7 @@ extension AppModel {
         }
         // 0.5.6 hotfix (Iris): Check for updates, Links, Share and (side by side only) Swap sides live behind More, so the rail is
         // the same four buttons in every pose and never scrolls (Terry, 14 Nov: icons changed between poses and were half hidden).
-        out.append(ScreenAction(id: "more", title: "More", systemImage: "ellipsis", kind: .menu(moreMenu(gameID, sideBySide: sideBySide)), priority: .high))
+        out.append(ScreenAction(id: "more", title: "More", systemImage: "ellipsis", kind: .menu(moreMenu(gameID, sideBySide: sideBySide, bookmarks: bookmarks)), priority: .high))
         return out
     }
 }
@@ -278,7 +302,7 @@ extension AppModel {
     /// Behind More, in Iris's order: Check for updates, Links, Share, then Swap sides while Contents and Page are side by side.
     /// `sideBySide` comes from the view that shows the pages (D-10), not from a stored pose: the stored one is not observed,
     /// so a menu built during launch settling kept Swap sides in Closed (Mac, 909fe8b).
-    func moreMenu(_ gameID: String, sideBySide: Bool) -> [ScreenAction.MenuSection] {
+    func moreMenu(_ gameID: String, sideBySide: Bool, bookmarks: Bool = false) -> [ScreenAction.MenuSection] {
         var items: [ScreenAction.MenuItem] = [
             .init(id: "refresh", title: "Check for updates") { [weak self] in
                 Task {
@@ -296,6 +320,10 @@ extension AppModel {
         }
         if sideBySide {
             items.append(.init(id: "swap", title: "Swap sides") { [weak self] in self?.swapSidesRequest += 1 })
+        }
+        // Tabletop, Companion: the stage's cards carry no bookmark glyph, so bookmarking is a section here, in the lower half.
+        if bookmarks, section(gameID) == .companion, let a = companionBookmarkAction(gameID), case .menu(let sections) = a.kind {
+            return [.init(items: items)] + sections
         }
         return [.init(items: items)]
     }
