@@ -16,6 +16,8 @@ final class LibraryBackScrollTests: XCTestCase {
         app.launchArguments = ["-qaRoute", "fill-library/12"]
             + (ax5 ? ["-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityXXXL"] : [])
         app.launch()
+        // Closed portrait, asked for and checked: a simulator left in landscape gave 149 and 125 pt misses (Nadia, f1fdde8).
+        guard app.require(.portrait) else { return }
         let tiles = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'tile-'"))
         XCTAssertTrue(tiles.firstMatch.waitForExistence(timeout: 15), "the library shows tiles")
         let pose = ReleaseRowTests.pose(app)
@@ -49,6 +51,7 @@ final class LibraryBackScrollTests: XCTestCase {
         let app = XCUIApplication()
         app.launchArguments = ["-qaRoute", "fill-library/12"]
         app.launch()
+        guard app.require(.portrait) else { return }
         XCTAssertTrue(app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'tile-'")).firstMatch.waitForExistence(timeout: 15))
         try XCTSkipUnless(ReleaseRowTests.pose(app).contains("pose: closed"), "Closed only")
         for _ in 0..<3 { app.scrollViews.firstMatch.swipeUp(velocity: .slow) }
