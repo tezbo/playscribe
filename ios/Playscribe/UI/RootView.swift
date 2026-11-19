@@ -294,8 +294,13 @@ extension View {
     /// hidden and the lower rail carries them instead (G-4).
     /// Apply to each screen inside a navigation stack: bar visibility is read from the visible
     /// screen, not from the stack or the TabView.
+    /// Open portrait (Iris, 19 Nov, on Terry's "scrolling behind another menu"): the top bar (Back, Notifications, Status, More
+    /// on a game) and the bottom tab bar are solid ink, so nothing scrolls under either bar. The other poses keep the system's.
+    /// One modifier chain in every pose, so a pose change never swaps the screen's identity (and its scroll and focus state).
     func tabletopChrome(_ duo: DuoContext) -> some View {
         toolbarVisibility(duo.pose == .tabletop ? .hidden : .automatic, for: .navigationBar, .tabBar)
+            .toolbarBackground(Color.ink0, for: .navigationBar, .tabBar)
+            .toolbarBackgroundVisibility(duo.pose == .flat && !duo.isLandscape ? .visible : .automatic, for: .navigationBar, .tabBar)
     }
 }
 

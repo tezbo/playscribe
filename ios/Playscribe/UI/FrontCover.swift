@@ -160,13 +160,15 @@ struct FrontCoverPage: View {
                        startPoint: .top, endPoint: .bottom)
     }
 
-    /// The shade's stops, as (opacity, location). Standard sizes: unchanged (signed). Accessibility sizes (Iris, 0a4230d): the
+    /// The shade's stops, as (opacity, location). Standard sizes: the signed shade, solid under the lockup. Accessibility sizes (Iris, 0a4230d): the
     /// plate covers the lower half and its eyebrow sat on pale art at about 40 percent, so the shade follows the plate: clear
     /// until just above it, 88 percent black at the eyebrow's top edge (the accent holds 4.5:1 over art up to about 60 percent
     /// luminance there), 92 percent by the title, solid at the foot.
     static func fadeStops(accessibility: Bool, plateTop: Double?) -> [(opacity: Double, location: Double)] {
         guard accessibility else {
-            return [(0.55, 0), (0, 0.18), (0, 0.45), (0.92, 0.85), (1, 1)]
+            // Solid from 90 percent down (Iris, 19 Nov, on Terry's cover review): a title logo in the key art read as a ghost
+            // behind the Playscribe mark, so the foot under the lockup is plain ink.
+            return [(0.55, 0), (0, 0.18), (0, 0.45), (0.92, 0.82), (1, 0.9), (1, 1)]
         }
         guard let top = plateTop.map({ min(max($0, 0.2), 0.9) }) else {
             return [(0.55, 0), (0, 0.18), (0, 0.25), (0.92, 0.7), (1, 1)]

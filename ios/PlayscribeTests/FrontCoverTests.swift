@@ -116,8 +116,10 @@ struct FrontCoverTests {
             #expect(atPlate.allSatisfy { $0.opacity >= 0.88 })
             #expect(stops.first?.location == 0 && stops.last?.location == 1)
         }
-        // Standard sizes keep the signed shade.
-        #expect(FrontCoverPage.fadeStops(accessibility: false, plateTop: 0.4).map(\.location) == [0, 0.18, 0.45, 0.85, 1])
+        // Standard sizes keep the signed shade, solid from 90 percent down so no logo in the art ghosts behind the mark.
+        let std = FrontCoverPage.fadeStops(accessibility: false, plateTop: 0.4)
+        #expect(std.map(\.location) == [0, 0.18, 0.45, 0.82, 0.9, 1])
+        #expect(std.filter { $0.location >= 0.9 }.allSatisfy { $0.opacity == 1 })
     }
 
     /// Iris (#467): the cover is Closed-only. Any other pose closes it at once, the route's Settings with it, and the deck
