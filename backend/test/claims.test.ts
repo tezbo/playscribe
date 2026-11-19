@@ -2,7 +2,7 @@ import assert from 'node:assert/strict'
 import { test } from 'node:test'
 import { openDb } from '../src/db.ts'
 import { looksLikePatch } from '../src/ingest/adapters.ts'
-import { isNewsOnlyTitle, isAnnouncementTitle, isTestBuildPost, pcScopedPost, statedLiveTime } from '../src/ingest/claims.ts'
+import { isNewsOnlyTitle, isAnnouncementTitle, isTestBuildPost, pcScopedPost, pcTitledPost, statedLiveTime } from '../src/ingest/claims.ts'
 import { nameRelease } from '../src/ingest/classify.ts'
 import { runIngest, seedGames } from '../src/ingest/pipeline.ts'
 import * as store from '../src/store.ts'
@@ -341,4 +341,51 @@ test('a title that is the post\'s own BUILD number reads "Update"; other numbere
   db.prepare("UPDATE releases SET display_name = 'Update 12.1.247768' WHERE id = 'dawnwalker@12.1.247768'").run()
   await runIngest(deps, { force: true, until: new Date(Date.now() - 90 * 86400e3).toISOString() })
   assert.equal(store.getRelease(db, 'dawnwalker@12.1.247768')?.displayName, 'Update')
+})
+
+test('a PC-titled hotfix or update says nothing about PS5 (bug-058, Cyberpunk "PC Hotfix", "DLSS 3 & Reflex PC Update")', () => {
+  assert.ok(pcTitledPost('PC Hotfix'))
+  assert.ok(pcTitledPost('DLSS 3 & Reflex PC Update'))
+  assert.ok(pcTitledPost('Hotfix 1.2 for PC'))
+  assert.ok(pcTitledPost('Patch 2.1 (PC only)'))
+  assert.ok(!pcTitledPost('Hotfix available'))
+  assert.ok(!pcTitledPost('Update 2.5 for PC, PS5 and Xbox'))
+  assert.ok(!pcTitledPost('Patch 1.2: PC performance and PS5 stability'))
+  assert.ok(!pcTitledPost('PCI Express fix'))
+  assert.ok(!pcTitledPost('Consoles out now, new PC update, and a stream!'))
+  assert.ok(!pcTitledPost('Rearmament Update Segment on the PC Gaming Tokyo Direct!'))
+  assert.ok(!pcTitledPost('Launch Update On PC Performance'))
+})
+
+test('a patch for another game in the same Steam feed is news (bug-058, KCD2 feed carrying KCD1 Patch 1.9.7)', () => {
+  assert.ok(isNewsOnlyTitle('A Legacy Updated: Patch 1.9.7 for the first Kingdom Come: Deliverance is live'))
+  assert.ok(isNewsOnlyTitle('Patch 1.2 for the original Sunset Rider is out now'))
+  assert.ok(!isNewsOnlyTitle('Patch 1.5.3: Native Windows on ARM Support'))
+})
+
+test('server maintenance and downtime notices are news, patch titles that mention maintenance are not (bug-058)', () => {
+  assert.ok(isNewsOnlyTitle('Application Data Update and Server Maintenance Notice'))
+  assert.ok(isNewsOnlyTitle('Scheduled maintenance on 12 Nov'))
+  assert.ok(isNewsOnlyTitle('Server downtime tonight'))
+  assert.ok(!isNewsOnlyTitle('Server maintenance and Hotfix at 14:15 CEST'))
+  assert.ok(!isNewsOnlyTitle("It's Time For The First Patch!"))
+  assert.ok(!isNewsOnlyTitle('Patch 1.4.2: server maintenance fixes'))
+  assert.ok(!isNewsOnlyTitle('Maintenance Update Changelog'))
+  assert.ok(!isNewsOnlyTitle('Maintenance 27th August - Item Salvage, Splash Screen, & Contract Fixes'))
+  assert.ok(!isNewsOnlyTitle('9/14(Sat) Maintenance-Free Patch Notice'))
+  assert.ok(!isNewsOnlyTitle('Update 3.1 patch notes', { patchnotesTag: true }))
+})
+
+test('ingest: a PC-titled post makes no PS5 row, a plain hotfix post still does (bug-058)', async () => {
+  const { db, summary } = await setup([
+    { gid: '1', title: 'PC Hotfix', date: ago(25), contents: 'A hotfix is out now. It fixes crashes.', tags: ['patchnotes'] },
+    { gid: '2', title: 'DLSS 3 & Reflex PC Update', date: ago(20), contents: 'Adds DLSS 3 and Reflex.', tags: ['patchnotes'] },
+    { gid: '3', title: 'Hotfix 1.0.7', date: ago(10), contents: 'A hotfix is out now. It fixes crashes.', tags: ['patchnotes'] },
+  ])
+  const ids = (db.prepare("SELECT id FROM releases WHERE game_id = 'dawnwalker' ORDER BY announced_at").all() as { id: string }[]).map((r) => r.id)
+  assert.equal(ids.length, 3)
+  assert.equal(ps5Of(db, ids[0]!), undefined)
+  assert.equal(ps5Of(db, ids[1]!), undefined)
+  assert.equal(ps5Of(db, 'dawnwalker@1.0.7')?.verification, 'assumed')
+  assert.equal(summary.held?.pcScoped, 2)
 })

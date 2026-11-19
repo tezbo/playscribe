@@ -7,7 +7,7 @@ import * as store from '../store.ts'
 import type { PlatformStatus, Post } from '../types.ts'
 import newsSources from '../sources/news-sources.json' with { type: 'json' }
 import { fetchPosts, looksLikePatch, type PageOpts } from './adapters.ts'
-import { isAnnouncementTitle, isTestBuildPost, pcScopedPost, statedLiveTime } from './claims.ts'
+import { isAnnouncementTitle, isTestBuildPost, pcScopedPost, pcTitledPost, statedLiveTime } from './claims.ts'
 import { classify, consoleVersionOf, pcBuildTitle, nameRelease, ps5LiveStated, ps5StatusOf, sizeBytesOf } from './classify.ts'
 import { IGDB_REV, type Igdb } from './igdb.ts'
 import { extractNotes, mentionsPs4, mentionsPs5, ps5PageOf, isPromoTitle } from './notes.ts'
@@ -333,7 +333,7 @@ const handlePost = (deps: IngestDeps, game: Record<string, any>, s: SourceDef, p
     store.upsertPlatform(db, releaseId, 'pc', { status: 'live', verification: 'official', liveAt: store.field(post.publishedAt, 'official', s.id) })
     store.addLinks(db, releaseId, links())
     // A test build, or a post listing other platforms' builds without PlayStation, says nothing about PS5.
-    if (testBuild || (pcScopedPost(text) && !ps5LiveStated(text))) {
+    if (testBuild || ((pcScopedPost(text) || pcTitledPost(post.title)) && !ps5LiveStated(text))) {
       held(testBuild ? 'testBuild' : 'pcScoped')
       if (deps.repairClaims) store.dropOwnPs5Row(db, releaseId, s.id, post.publishedAt)
       return releaseId
