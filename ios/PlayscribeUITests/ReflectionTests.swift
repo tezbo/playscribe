@@ -47,7 +47,7 @@ final class ReflectionTests: XCTestCase {
         let band = CGRect(x: g[0], y: g[4], width: g[2], height: min(g[5], g[3] * 0.25))
         var best = 0.0
         for i in 0..<8 {
-            let shot = XCUIScreen.main.screenshot()
+            let shot = XCUIApplication().screenshot()
             guard let src = MirrorPixels.peak(shot.image, video, columns: 0.6...0.9),
                   let mir = MirrorPixels.peak(shot.image, band, columns: 0.6...0.9) else { return XCTFail("screenshot unreadable [\(pose)]") }
             print("ReflectionTests pixels [\(pose)] frame \(i): video peak \(src), mirror peak \(mir)")
