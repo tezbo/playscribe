@@ -154,6 +154,9 @@ extension View {
 /// in any pose. A screenshot cannot: it shows only one display, and video pixels are not readable on the simulator.
 struct MirrorAudit: View {
     var on: Bool
+    /// Where the video and the mirror band sit, in window points, for a UI test that measures the band's pixels (R-11, 19 Nov:
+    /// the label alone said on while Terry's Duo showed no visible mirror). "video x y w h band top height", or empty.
+    var geometry: String = ""
     var body: some View {
         #if INTERNAL
         Text("mirror")
@@ -161,7 +164,15 @@ struct MirrorAudit: View {
             .opacity(0.01)
             .accessibilityIdentifier("mirrorAudit")
             .accessibilityLabel("mirror: \(on ? "on" : "off")")
+            .accessibilityValue(geometry)
             .allowsHitTesting(false)
         #endif
+    }
+}
+
+extension MirrorAudit {
+    /// The audit's geometry string: the video frame and the band, rounded to whole points.
+    static func geometry(video v: CGRect, bandTop: CGFloat, band: CGFloat) -> String {
+        [v.minX, v.minY, v.width, v.height, bandTop, band].map { String(Int($0.rounded())) }.joined(separator: " ")
     }
 }

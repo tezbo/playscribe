@@ -124,6 +124,14 @@ struct PlayerView: View {
     @State private var playerHeight: CGFloat = 0
     /// What the replicator reports it is drawing (QA audit, R-11).
     @State private var mirrorDrawn = false
+    /// The player's origin on screen, so the audit reports the video and band in window points.
+    @State private var playerOrigin: CGPoint = .zero
+    private var auditGeometry: String {
+        guard let v = stageVideo else { return "" }
+        let top = lowerTop ?? v.maxY
+        return MirrorAudit.geometry(video: v.offsetBy(dx: playerOrigin.x, dy: playerOrigin.y), bandTop: top + playerOrigin.y,
+                                    band: VideoReflection.band(lowerHalf: playerHeight - top))
+    }
 
     var body: some View {
         NavigationStack {
@@ -194,9 +202,11 @@ struct PlayerView: View {
                         .allowsHitTesting(false)
                 }
                 .arrangementViewStyle(.overlay)
-                MirrorAudit(on: mirrorDrawn && VideoReflection.band(lowerHalf: playerHeight - (lowerTop ?? playerHeight)) > 0)
+                MirrorAudit(on: mirrorDrawn && VideoReflection.band(lowerHalf: playerHeight - (lowerTop ?? playerHeight)) > 0,
+                            geometry: auditGeometry)
             }
             .coordinateSpace(.named("player"))
+            .onGeometryChange(for: CGPoint.self) { $0.frame(in: .global).origin } action: { playerOrigin = $0 }
             .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { playerHeight = $0 }
         case .book:
             // VB-2: the video and its details on the left page; Watch along on the right.
