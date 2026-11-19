@@ -248,7 +248,7 @@ struct LibraryShelf: View {
         ((duo.pose == .flat && !duo.isLandscape) || duo.pose == .closed) && model.libraryTab != .upcoming
     }
 
-    /// Catch-up, PS Plus and notification cards. In Book they are one page wide and never cross the fold (G-4).
+    /// Catch-up, PS Plus and notification cards, after the tiles in every pose. In Book they are one page wide and never cross the fold (G-4).
     @ViewBuilder
     private func topCards(_ all: [AppModel.LibraryRow]) -> some View {
         let pageWidth: CGFloat? = duo.pose == .book ? duo.division.map { max(0, $0.minX - 24 - 16) } : nil
@@ -265,6 +265,7 @@ struct LibraryShelf: View {
         // Never wider than the column it sits in (Iris: the card ran past the left page's search field in Book).
         .frame(maxWidth: pageWidth, alignment: .leading)
         .frame(maxWidth: .infinity, alignment: .leading)
+        .namedFrame("libraryCards")
     }
 
     @FocusState private var searchFocused: Bool
@@ -412,11 +413,8 @@ struct LibraryShelf: View {
                         }
                     }
                 }
-                // Book: these cards stay on the left page; with a hero they sit in the left column below.
-                if !heroOnRightPage && duo.pose != .book && duo.pose != .tabletop && !portraitTilesFirst { topCards(all) }
                 // Tabletop: the search button and A to Z strip come after the tiles (see below), so a first view shows games.
                 if duo.pose != .tabletop, !portraitTilesFirst, !heroOnRightPage, !closedWide, !all.isEmpty { searchField(binding: $model.data.nav.query) }
-                if !heroOnRightPage && duo.pose == .book { topCards(all) }
                 // D-7: a narrowed list always says so and offers the way back.
                 if model.nav.filter != .all && layout == .list {
                     HStack(spacing: 12) {
@@ -461,13 +459,14 @@ struct LibraryShelf: View {
                             LibraryTabPicker()
                             // N-9 above the search field (Iris, #455); the other cards stay below it.
                             keepCurrentAsk
-                            // Controls first, the offer second (Iris, Book compact card).
                             if !all.isEmpty { searchField(binding: $model.data.nav.query) }
-                            topCards(all)
                             if all.count >= 2 && layout == .tiles {
                                 FilterBar().frame(maxWidth: .infinity, alignment: .leading).clipped().contentShape(Rectangle())
                             }
-                            if layout == .tiles { pageGrid(Array(rows.prefix(leftCount)), fit: left) }
+                            if layout == .tiles { pageGrid(Array(rows.prefix(leftCount)), fit: left).namedFrame("libraryGames") }
+                            // One order in every pose (Terry, 19 Nov: PS Plus moved above or below other sections between poses):
+                            // the alerts, catch-up and PS Plus cards always follow the games. Here, under the left page's tiles.
+                            topCards(all)
                         }
                         .frame(width: leftWidth, alignment: .topLeading)
                         VStack(alignment: .leading, spacing: 14) {
@@ -540,6 +539,7 @@ struct LibraryShelf: View {
                     FlowLayout(spacing: 10) {
                         ForEach(rows) { row in GameTile(row: row, size: tileSize).id("lib-\(row.id)") }
                     }
+                    .namedFrame("libraryGames")
                 } else {
                     LazyVGrid(columns: columns, alignment: .leading, spacing: 10) {
                         ForEach(cells(rows), id: \.id) { cell in
@@ -555,7 +555,11 @@ struct LibraryShelf: View {
                     // The search text is part of the identity: a fast "control" in Closed left the grid blank (1 tile, nothing drawn, and
                     // deleting a letter did not bring it back, Mac 677e7eb run 3 of 10): a stuck lazy grid, rebuilt on every query change.
                     .id("\(poseKey)|\(model.data.nav.query)")
+                    .namedFrame("libraryGames")
                 }
+                // One order in every pose (Terry, 19 Nov): the alerts, catch-up and PS Plus cards always follow the tiles,
+                // as Closed, Open portrait and Tabletop already had them (Iris, v0.5.3). Open landscape and Book (no hero) here.
+                if !portraitTilesFirst && duo.pose != .tabletop && !heroOnRightPage { topCards(all) }
                 // Open and Closed portrait (Iris, v0.5.3): the PS Plus cards and search come after the tiles.
                 if portraitTilesFirst && closedWide {
                     // Closed landscape (Iris, v0.5.3): switch and search, chips, tiles, then the deck, the PS Plus card.

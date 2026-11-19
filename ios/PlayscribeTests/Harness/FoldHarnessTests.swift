@@ -94,6 +94,24 @@ struct FoldHarnessTests {
         if p.expected != .tabletop { HarnessRules.checkLibraryToolbar(r) }
     }
 
+    // MARK: Section order (N-1, Terry 19 Nov)
+
+    /// Every pose shows the Library in one order: the games, then the alerts, catch-up and PS Plus cards. Before this, Open
+    /// landscape and Book put the cards above the tiles and Closed, Open portrait and Tabletop below them, so PS Plus jumped
+    /// between poses. One-sided with the harness's 14 pt y margin: the cards must start clearly below where the games start.
+    @Test(arguments: ["closed", "closedLandscape", "open", "openPortrait", "book", "tabletop"])
+    func plusCardFollowsTheGamesInEveryPose(_ id: String) async throws {
+        let p = HarnessPose.named(id)
+        let model = FoldHost.demoModel()
+        model.handle(url: URL(string: "playscribe://plus-demo")!)
+        let r = try #require(await FoldHost.render(p, model: model), "\(p.id): a window scene to host in")
+        defer { FoldHost.dispose(r) }
+        let games = try #require(r.named["libraryGames"], "\(p.id): the games grid reports its frame")
+        let cards = try #require(r.named["libraryCards"], "\(p.id): the cards report their frame")
+        print("harness order: \(p.id) games \(HarnessRules.brief(games)) cards \(HarnessRules.brief(cards))")
+        #expect(cards.minY > games.minY + 14, "\(p.id): the PS Plus and catch-up cards start at y \(Int(cards.minY)), above the games at \(Int(games.minY)); every pose puts the games first")
+    }
+
     // MARK: Accessibility text sizes (7fe84f4, AX3; all poses at AX3 and AX5 since the #292 / landscape-width review)
 
     /// The deck bound at AX3 and AX5 in the three poses it was asserted in before. A hung or looping layout (#292 in Tabletop) now
