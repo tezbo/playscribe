@@ -4,9 +4,10 @@ import WebKit
 
 /// Reflection mode (R-11; Terry's Duo test, 14 Nov, 0.5.5): in Tabletop only, the playing video is mirrored under the fold,
 /// behind the lower-half controls. The mirror is the render server's replica of the playing web view, refreshed 15 times a
-/// second (see `MirroredVideoSurface`), so it is the live picture. Nothing is snapshotted and no still stands in for it (the poster mirror of 0.5.4 read as a fake). When
-/// there is no live picture to mirror (before playback starts, under Reduce Motion or Reduce Transparency, the setting off,
-/// or any pose but Tabletop) there is no mirror at all. View only: replicated instances take no touches (Tabletop rule).
+/// second (see `MirroredVideoSurface`), so it is the live picture. No poster or held frame stands in for it (the poster mirror
+/// of 0.5.4 read as a fake): when a replica cannot be made, the mirror is cleared. When there is no live picture to mirror
+/// (before playback starts, under Reduce Motion or Reduce Transparency, the setting off, or any pose but Tabletop) there is no
+/// mirror at all. View only: the mirror takes no touches (Tabletop rule).
 enum VideoReflection {
     static let key = "reflectionMode"
     /// On unless the person turns it off (Terry, 2026-11-06). The Settings toggle reads the same value.
@@ -120,7 +121,11 @@ struct MirroredVideoSurface: UIViewRepresentable {
 
         @objc private func refresh() {
             guard mirrored, let video, video.superview === self, bounds.height > 0,
-                  let copy = video.snapshotView(afterScreenUpdates: false) else { return }
+                  let copy = video.snapshotView(afterScreenUpdates: false) else {
+                // No replica this frame: clear the mirror rather than hold the last frame (Quinn on #550).
+                if !mirror.subviews.isEmpty { mirror.subviews.forEach { $0.removeFromSuperview() }; publish() }
+                return
+            }
             copy.isUserInteractionEnabled = false
             copy.frame = mirror.bounds
             let old = mirror.subviews
