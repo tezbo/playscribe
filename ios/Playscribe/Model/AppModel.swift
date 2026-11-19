@@ -664,8 +664,13 @@ final class AppModel {
         nav.anchors[Self.bookKey(e.gameID, .companion)] = "entry-\(e.id)"
     }
 
-    /// A Gallery video row was tapped (R-11). Today: nothing in the app; the row hands the link to the system.
-    func playGalleryVideo(_ item: GalleryItem) {}
+    /// A Gallery video row was tapped (R-11): it plays in the app's own trailer player, in every pose, so Tabletop gets the
+    /// transport and the reflection. Before 19 Nov the row opened its youtube.com link, which the system handed to the YouTube app
+    /// (Terry: "the dawn walker ones all open in YouTube").
+    func playGalleryVideo(_ item: GalleryItem) {
+        guard item.kind == .video, let id = item.youtubeID else { return }
+        trailer = (id, item.title)
+    }
 
     func gallery(_ gameID: String) -> [GalleryItem] {
         let items = fixtures.gallery.filter { $0.gameID == gameID }

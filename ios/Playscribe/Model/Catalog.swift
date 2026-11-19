@@ -205,6 +205,14 @@ struct GalleryItem: Codable, Hashable, Identifiable {
     var title: String
     var alt: String
     var href: String?
+
+    /// The YouTube video ID from `href` (a youtube.com/watch?v= or youtu.be/ link), or nil.
+    var youtubeID: String? {
+        guard let href, let c = URLComponents(string: href), let host = c.host?.lowercased() else { return nil }
+        if host == "youtu.be" { return c.path.split(separator: "/").first.map(String.init) }
+        guard host.hasSuffix("youtube.com") else { return nil }
+        return c.queryItems?.first { $0.name == "v" }?.value.flatMap { $0.isEmpty ? nil : $0 }
+    }
 }
 
 struct CollectionEntry: Codable, Hashable {

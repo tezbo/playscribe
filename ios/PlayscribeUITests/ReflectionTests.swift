@@ -25,9 +25,17 @@ final class ReflectionTests: XCTestCase {
             print("ReflectionTests pose: \(pose) after waiting: \(audit.label)")
             return
         }
+        // Mac at 29f6d44: one tap before the YouTube player was ready left the video at 0:00 (video peak 0), so the test measured
+        // nothing. Tap the orange Play until the transport says Pause, up to three times.
         let play = app.buttons["Play"]
         XCTAssertTrue(play.waitForExistence(timeout: 10) && play.isHittable, "Play on the transport")
-        play.tap()
+        let pause = app.buttons["Pause"]
+        for attempt in 1...3 where !pause.exists {
+            if play.exists && play.isHittable { play.tap() }
+            if pause.waitForExistence(timeout: 10) { break }
+            print("ReflectionTests pose: \(pose) Play attempt \(attempt) did not start the video")
+        }
+        guard pause.exists else { return XCTFail("the video never started, so there is nothing to mirror [\(pose)]") }
         let on = expectation(for: NSPredicate(format: "label == %@", "mirror: on"), evaluatedWith: audit)
         wait(for: [on], timeout: 30)
         print("ReflectionTests pose: \(pose) mirror after Play: \(audit.label)")

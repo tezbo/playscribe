@@ -57,7 +57,6 @@ struct EntryCard: View {
 
 struct GalleryChapter: View {
     @Environment(AppModel.self) private var model
-    @Environment(\.openURL) private var openURL
     var gameID: String
 
     var body: some View {
@@ -91,12 +90,13 @@ struct GalleryChapter: View {
             if !videos.isEmpty {
                 SectionHeader(title: "Official videos")
                 ForEach(videos) { v in
-                    Button { if let s = v.href, let u = URL(string: s) { openURL(u) } } label: {
+                    // Plays in the app's own player (R-11), never handed to YouTube (Terry, 19 Nov).
+                    Button { model.playGalleryVideo(v) } label: {
                         HStack(spacing: 12) {
                             Image(v.asset).resizable().scaledToFill().frame(width: 96, height: 54).clipShape(RoundedRectangle(cornerRadius: 8))
                             VStack(alignment: .leading) {
                                 Text(v.title).font(PlayscribeFont.subheadline.weight(.semibold))
-                                Text("Opens in YouTube").font(PlayscribeFont.caption).foregroundStyle(.secondary)
+                                Text("Video").font(PlayscribeFont.caption).foregroundStyle(.secondary)
                             }
                             Spacer()
                         }
