@@ -19,15 +19,15 @@ From 0.5.6
 6. Tap Cyberpunk 2077 in the Library. It opens on Update 2.5, the newest, not Patch 2.31. Open Patch 2.31, go back to the Library, and tap Cyberpunk again. It opens on Update 2.5 again.
 7. Cyberpunk, All updates: no "Check out what's coming…" or "REDstreams" rows. Those posts are under News instead.
 8. Two Point Museum, 2 Nov update: the name reads "Update", not "Update 12.1.247768".
-9. Closed sideways, on any update page: the rail has Back, Notifications, Status and More.
-10. The Blood of Dawnwalker, Launch entry: it says the game launched worldwide on PC, PlayStation 5 and Xbox Series X|S, and nothing about hotfixes not being tracked.
+9. Closed sideways, on a game page: the rail has Back, Notifications, Status and More.
+10. The Blood of Dawnwalker, Launch entry: it reads "Available on PC, PlayStation 5 and Xbox Series X|S", and says nothing about hotfixes not being tracked.
 
 New in 0.5.7
-11. Any update page: the patch name is the biggest thing on the page. The status line starts "Out on PS5". No dot separators anywhere.
+11. Any update page: the patch name is the biggest thing on the page. The status line starts "Out on PS5". No dot separators anywhere (orange dots mean unread).
 12. Any game page, closed or unfolded: the section bar (What’s new, News, Gallery and the rest) stays pinned at the top as you scroll, and tapping a section jumps to it. In Book the same sections are a contents list on the left page.
 13. All updates rows lead with the patch name, then the headline, then the date.
 14. Tabletop on an update: the patch name shows on the top half.
-15. The Library scrolls smoothly, including your own games, with no stutter or covers reloading as you scroll back. The search field no longer starts with a capital letter.
+15. Back keeps the Library where it was and covers don’t flash. The search field no longer starts with a capital letter.
 16. Long-running games such as Cyberpunk and KCD II now show their full update history, older years included, with no PC-only rows.
 
 Known, coming in 0.5.8 (no need to report)
