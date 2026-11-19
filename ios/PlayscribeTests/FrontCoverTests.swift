@@ -116,8 +116,10 @@ struct FrontCoverTests {
             #expect(atPlate.allSatisfy { $0.opacity >= 0.88 })
             #expect(stops.first?.location == 0 && stops.last?.location == 1)
         }
-        // Standard sizes keep the signed shade.
-        #expect(FrontCoverPage.fadeStops(accessibility: false, plateTop: 0.4).map(\.location) == [0, 0.18, 0.45, 0.85, 1])
+        // Standard sizes keep the signed shade, solid from 90 percent down so no logo in the art ghosts behind the mark.
+        let std = FrontCoverPage.fadeStops(accessibility: false, plateTop: 0.4)
+        #expect(std.map(\.location) == [0, 0.18, 0.45, 0.82, 0.9, 1])
+        #expect(std.filter { $0.location >= 0.9 }.allSatisfy { $0.opacity == 1 })
     }
 
     /// Iris (#467): the cover is Closed-only. Any other pose closes it at once, the route's Settings with it, and the deck
@@ -154,6 +156,22 @@ struct FrontCoverTests {
             #expect(chips.allSatisfy { !$0.text.contains("·") }) // dot-ok: asserts the dot is absent
             #expect(chips.filter { $0.live }.count == 1)
             if r.noteCount > 1 { #expect(chips.contains { $0.text == "\(r.noteCount) changes" }) }
+        }
+    }
+
+    /// Iris (19 Nov): the patch name is the largest line; the game and the day sit above it in one comma-separated eyebrow,
+    /// and the day is no longer a chip.
+    @Test func patchNameLeadsWithGameAndDayAbove() {
+        for card in demoModel().latestDeck {
+            guard let r = card.release else { continue }
+            #expect(FrontCoverPlate.headline(card) == r.displayName)
+            let eyebrow = FrontCoverPlate.eyebrow(card) ?? ""
+            #expect(eyebrow.hasPrefix(card.game.name.gluingTrailingNumeral))
+            if let d = card.date {
+                #expect(eyebrow.hasSuffix(", \(AppModel.tileDay(d))"))
+                #expect(!FrontCoverPlate.chips(card).contains { $0.text == AppModel.tileDay(d) })
+            }
+            #expect(!eyebrow.contains("·")) // dot-ok: asserts the dot is absent
         }
     }
 }
