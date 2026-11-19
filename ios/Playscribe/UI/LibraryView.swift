@@ -276,26 +276,10 @@ struct LibraryShelf: View {
     /// whole body twice a swipe, 40 runs in 20 swipes (Mac profile of #513, bug-056). Only the Task closures below read it.
     private final class ScrollFlags { var interacting = false }
     @State private var scrollFlags = ScrollFlags()
-    @Environment(\.scenePhase) private var scenePhase
-    /// Where the page is scrolled to. Local state: bound straight to `model.nav.anchors` it wrote the model on every scroll step, which
-    /// re-ran this whole body once or twice per swipe (Mac timing of #513: 37 body runs in 20 Tabletop swipes). Only a programmatic move
-    /// (search focus, back to top) goes through `setAnchor`, which also records it in the model; the model gets the scrolled position
-    /// when the Library goes away, so it still reopens where it was.
-    /// The id lives in a reference the view does not observe, so SwiftUI writing it as the page scrolls re-runs nothing (printChanges on
-    /// Tabletop: "_scrollID changed" re-ran the body 9 times in 20 swipes). `moves` is the one thing the body reads: it changes only when
-    /// the code moves the page (search focus, back to top, a QA route), which is when the body must run to hand the page the new id.
-    private final class ScrollPosition { var id: String? }
-    @State private var position = ScrollPosition()
-    @State private var moves = 0
-    @State private var offsetKeeper = LibraryOffsetKeeper()
-    private var scrollID: String? { position.id }
-    private var scrollIDBinding: Binding<String?> { Binding(get: { position.id }, set: { position.id = $0 }) }
-    private func commitAnchor() { if model.nav.anchors["library"] != scrollID { model.nav.anchors["library"] = scrollID } }
-    private func moveTo(_ id: String?) { position.id = id; moves += 1 }
-    private func setAnchor(_ id: String?) {
-        moveTo(id)
-        model.nav.anchors["library"] = id
-    }
+    /// Where the page is scrolled to is `model.nav.anchors["library"]`, as on main: the scroll position is bound to the model so Back from a game
+    /// lands where it was (a local holder drifted 8 to 118 pt on Back, Mac 45983f0). `setAnchor` is the code's own move.
+    private func setAnchor(_ id: String?) { model.nav.anchors["library"] = id }
+    private var scrollID: String? { model.nav.anchors["library"] }
 
     /// Closed portrait, field focused or holding text: the deck steps aside like News and the cards, so the matches get the room and
     /// the card is not squeezed by the keyboard's safe area (its title clipped under the badge, Mac 0027a78 Closed). Open portrait keeps
@@ -409,7 +393,6 @@ struct LibraryShelf: View {
         let _ = ProcessInfo.processInfo.arguments.contains("-qaPrintChanges") ? Self._printChanges() : ()
         #endif
         @Bindable var model = model
-        let _ = moves   // the body runs when the code moves the page, so the scroll position below is re-read (see ScrollPosition)
         let rows = duo.pose == .tabletop && letter != nil
             ? model.shownRows().filter { LetterIndex.matches($0.game.name, letter ?? "") } : model.shownRows()
         let all = model.libraryRows
@@ -632,7 +615,6 @@ struct LibraryShelf: View {
                 }
             }
             .scrollTargetLayout()
-            .background(LibraryScrollFinder(keeper: offsetKeeper))
             .padding(.horizontal, 16)
             .padding(.vertical, 12)
             .padding(.trailing, railWidth)
@@ -640,20 +622,9 @@ struct LibraryShelf: View {
         // Terry, 8 Nov: no way to put the keyboard away. Scrolling dismisses it, and so does a tap outside the field.
         .dismissesKeyboardOnOutsideTap()
         .onScrollPhaseChange { _, phase in scrollFlags.interacting = (phase == .interacting) }
-        // The scrolled position goes to the model (it is saved with the app's state) when the Library goes away or the app leaves the
-        // foreground, never while scrolling or when a swipe ends: each model write re-ran this body.
-        .onDisappear { offsetKeeper.freeze(); commitAnchor() }
-        .onChange(of: scenePhase) { _, phase in if phase != .active { commitAnchor() } }
-        // A move made elsewhere (QA routes, a game added) reaches the page; this view's own moves already match and do nothing.
-        .onChange(of: model.nav.anchors["library"]) { _, id in if id != scrollID { moveTo(id) } }
-        .onAppear {
-            if scrollID == nil { moveTo(model.nav.anchors["library"]) }
-            // Back from a game: the page returns to the offset it left at (the id alone lands on its container's top).
-            Task { @MainActor in try? await Task.sleep(for: .milliseconds(120)); offsetKeeper.restore() }
-        }
         // Focused search: the field must always show above the keyboard. Where it is the last block (tiles-first portrait) it is
         // aligned to the bottom of the visible area, with as many tiles above it as fit; elsewhere it sits above the results, top.
-        .scrollPosition(id: scrollIDBinding,
+        .scrollPosition(id: Binding(get: { model.nav.anchors["library"] }, set: { model.nav.anchors["library"] = $0 }),
                         anchor: searchFocused && portraitTilesFirst ? .bottom : .top)
         // Tabletop only (Quinn, a8859d3): scrolled, the lower half's top edge cut a headline through its glyphs. The same edge as
         // the "What is sent" sheet. Not in other poses: a soft-edge mask there hid the Open portrait title (see below).
