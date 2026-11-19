@@ -263,14 +263,6 @@ struct TabRoot: View {
                         }
                 }
                 .auditActive(model.nav.tab == .updates)
-                // Only the one-column poses (Closed, Open both ways) push. Folding to Book or Tabletop (where the standing half is view
-                // only, G-4) moves the update to the game's Page, with Back still leading to Updates.
-                .onChange(of: duo.oneColumn, initial: true) { _, pushes in
-                    if !pushes, let u = model.nav.updatesRelease {
-                        model.nav.updatesRelease = nil
-                        if model.nav.tab == .updates { model.openGame(u.gameID, chapter: .updates, releaseID: u.releaseID) }
-                    }
-                }
             }
 
             Tab("News", systemImage: "megaphone", value: AppTab.news) {
@@ -280,6 +272,12 @@ struct TabRoot: View {
             Tab(value: AppTab.search, role: .search) {
                 NavigationStack { SearchView().tabletopChrome(duo) }.auditActive(model.nav.tab == .search)
             }
+        }
+        // J-1: a pushed update only exists where pushing is the layout (one column: Closed, Open both ways). Folding to Book or
+        // Tabletop moves it onto the game's Page; unfolding back to one column pushes it again (AppModel). Here, once for both
+        // stacks, not in the game book, which is hidden under the push.
+        .onChange(of: duo.oneColumn, initial: true) { _, one in
+            if one { model.enterOneColumn() } else { model.leaveOneColumn() }
         }
         .onChange(of: model.data.nav.tab) { old, new in
             if new == .search && old != .search { model.searchReturnTab = old }
@@ -342,20 +340,6 @@ struct LibraryRoot: View {
                         GameBookView(gameID: id).tabletopChrome(duo).auditActive(model.nav.detailReleaseID == nil)
                     }
                 }
-        }
-        // J-1: a pushed release only exists where pushing is the layout (one column: Closed, Open both ways).
-        // Folding to Book or Tabletop pops it and selects it on the Page, so the reader keeps reading the same update. The push
-        // itself never selects, so Back from it lands on the page that was underneath (0.5.6 hotfix). Here, not in the game
-        // book, which is hidden under the push.
-        .onChange(of: !duo.oneColumn, initial: true) { _, onPage in
-            if onPage, let id = model.nav.detailReleaseID, let gameID = model.nav.gameID {
-                // The section of the pushed release being read goes with it onto the Page (0.5.6, Mac walk step 5).
-                let pageKey = "page-\(gameID)-\(Chapter.updates.rawValue)"
-                model.nav.anchors[pageKey] = model.nav.anchors[ReleaseDetailView.anchorKey(id)]
-                model.nav.anchors[ReadingPlace.offsetKey(pageKey)] = nil
-                model.select(gameID, releaseID: id)
-            }
-            if onPage { model.nav.detailReleaseID = nil }
         }
     }
 }
@@ -429,6 +413,7 @@ struct TabletopRail: View {
             } action: { _, more in moreBelow = more }
             .mask(LinearGradient(stops: [.init(color: .black, location: moreBelow ? 0.9 : 1), .init(color: moreBelow ? .clear : .black, location: 1)],
                                  startPoint: .top, endPoint: .bottom))
+            .namedFrame("tabletopRailActions")
             // Iris: the same floating capsule as Closed's tab bar, no full-height strip or hairline.
             VStack(spacing: 0) {
                 tab(.library, "Library", "books.vertical", badge: model.totalUnread)

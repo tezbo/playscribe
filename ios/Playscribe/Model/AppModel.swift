@@ -102,6 +102,15 @@ struct NavState: Codable, Hashable {
     var returnTab: AppTab?
     /// D-1 (0.5.6, Card D): an update pushed from the Updates tab (Closed, Open portrait). Back returns to the list.
     var updatesRelease: ReleaseRef?
+    /// J-1, T-5 (0.5.7 gate): a pushed update that folding to Book or Tabletop moved onto the game's Page, and which tab pushed
+    /// it, so going back to one column pushes it again instead of landing on the list.
+    var pagedPush: PagedPush?
+}
+
+/// An update moved from a push onto the Page (`NavState.pagedPush`).
+struct PagedPush: Codable, Hashable {
+    var ref: ReleaseRef
+    var fromUpdates: Bool
 }
 
 /// One update, as a navigation value.
@@ -762,6 +771,26 @@ final class AppModel {
         nav.returnTab = nil
         if let back { nav.tab = back }
     }
+
+    /// J-1: leaving the one-column poses for Book or Tabletop (the standing half is view only, G-4). A pushed update (Library or
+    /// Updates tab) moves onto the game's Page with its reading place, and Back still leads where it did.
+    func leaveOneColumn() {
+        if let u = nav.updatesRelease {
+            nav.updatesRelease = nil
+            if nav.tab == .updates { openGame(u.gameID, chapter: .updates, releaseID: u.releaseID) }
+        }
+        if let id = nav.detailReleaseID, let gameID = nav.gameID {
+            // The section of the pushed release being read goes with it onto the Page (0.5.6, Mac walk step 5).
+            let pageKey = "page-\(gameID)-\(Chapter.updates.rawValue)"
+            nav.anchors[pageKey] = nav.anchors[ReleaseDetailView.anchorKey(id)]
+            nav.anchors[ReadingPlace.offsetKey(pageKey)] = nil
+            select(gameID, releaseID: id)
+        }
+        nav.detailReleaseID = nil
+    }
+
+    /// J-1: back to one column (Closed, Open both ways).
+    func enterOneColumn() {}
 
     /// D-1 (0.5.6, Card D, Nadia 13 Nov): an Updates-tab row pushes the update page over the list in Closed and Open
     /// portrait, so Back returns to the list in one step, at the same scroll. Side by side and in Tabletop it opens the
