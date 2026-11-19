@@ -126,6 +126,20 @@ extension String {
         return String(self[..<space]) + "\u{00A0}" + last
     }
 
+    /// A version number ("01.004.000", "v1.1") with a word joiner after each dot, so it drops to the next line whole and never breaks
+    /// at a dot ("01.002." then "000"). Only digit.digit runs change; every other string is returned unchanged. Display only.
+    var keepingVersionsTogether: String {
+        var out = ""
+        var prev: Character?
+        let chars = Array(self)
+        for (i, c) in chars.enumerated() {
+            out.append(c)
+            if c == ".", let p = prev, p.isNumber, i + 1 < chars.count, chars[i + 1].isNumber { out.append("\u{2060}") }
+            prev = c
+        }
+        return out
+    }
+
     /// ISO day ("2026-09-03") to a Date at noon UTC.
     var isoDay: Date? {
         var c = DateComponents()

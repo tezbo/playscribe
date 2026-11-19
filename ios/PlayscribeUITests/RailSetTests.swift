@@ -35,7 +35,22 @@ final class RailSetTests: XCTestCase {
         // Untracked = not in the library, so no Status (Iris). The game page opens with Add to library (Quinn, #442).
         let route = tracked ? "gamepage/dawnwalker" : "gamepage/alan-wake-2"
         let app = launch(pose: pose, ax5: ax5, route: route)
-        if landscape { XCUIDevice.shared.orientation = .landscapeLeft; sleep(3) }
+        if landscape {
+            // Wait for the window itself to turn, not a fixed time: at 8f45d30 the Mac's run measured Closed portrait's toolbar column
+            // (38 pt items beside a tab column at x 396.5 in a 466 pt window) as if it were the landscape rail, while a hand check at
+            // 328d564 found the rail right once the window had turned (44 pt buttons at x 544, tab column at 608, window 678 wide).
+            XCUIDevice.shared.orientation = .landscapeLeft
+            func turned() -> Bool { let f = app.windows.firstMatch.frame; return f.width > f.height }
+            let deadline = Date().addingTimeInterval(15)
+            while !turned() && Date() < deadline { sleep(1) }
+            guard turned() else {
+                XCTFail("the window did not turn to landscape within 15 s (\(app.windows.firstMatch.frame)); this run measures nothing")
+                XCUIDevice.shared.orientation = .portrait
+                app.terminate()
+                return
+            }
+            sleep(2)
+        }
         defer { if landscape { XCUIDevice.shared.orientation = .portrait } }
         let tag = "\(pose ?? "closed")\(landscape ? " landscape" : "") \(ax5 ? "AX5" : "std") \(tracked ? "tracked" : "untracked")"
         let window = app.windows.firstMatch.frame
@@ -79,9 +94,12 @@ final class RailSetTests: XCTestCase {
             XCTAssertEqual(valid, valid.sorted { $0.minY < $1.minY }, "\(tag): the rail order changed")
             let tabs = app.buttons.matching(NSPredicate(format: "label == 'Library'")).allElementsBoundByIndex
                 .filter { $0.frame.minX > window.width / 2 }
+            // Which window and tab column the limit came from, so a failure can be told from a simulator left in another pose
+            // (Mac at 8f45d30 reported a 396.5 limit; a hand check at 328d564 found the tab column at 608 in a 678 pt window).
+            print("RailSetTests \(tag): window \(window) tabs \(tabs.map(\.frame)) rail \(zip(ids, valid).map { "\($0) \($1)" })")
             if let tab = tabs.first?.frame {
                 for (id, f) in zip(ids, valid) {
-                    XCTAssertLessThanOrEqual(f.maxX, tab.minX + 0.5, "\(tag): \(id) overlaps the tab column")
+                    XCTAssertLessThanOrEqual(f.maxX, tab.minX + 0.5, "\(tag): \(id) \(f) overlaps the tab column \(tab) in window \(window)")
                     XCTAssertEqual(f.width, 44, accuracy: 0.5, "\(tag): \(id) is not a 44 pt button")
                 }
             } else {

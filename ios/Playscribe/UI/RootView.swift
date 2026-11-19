@@ -254,7 +254,23 @@ struct TabRoot: View {
             .badge(model.totalUnread)
 
             Tab("Updates", systemImage: "newspaper", value: AppTab.updates) {
-                NavigationStack { UpdatesView().tabletopChrome(duo) }.auditActive(model.nav.tab == .updates)
+                // D-1 (0.5.6, Card D): an update pushed from a row; Back pops to the list at the same scroll.
+                NavigationStack(path: Binding(get: { model.nav.updatesRelease.map { [$0] } ?? [] },
+                                              set: { model.nav.updatesRelease = $0.last })) {
+                    UpdatesView().tabletopChrome(duo)
+                        .navigationDestination(for: ReleaseRef.self) { ref in
+                            ReleaseDetailView(gameID: ref.gameID, releaseID: ref.releaseID).tabletopChrome(duo)
+                        }
+                }
+                .auditActive(model.nav.tab == .updates)
+                // Only the one-column poses (Closed, Open both ways) push. Folding to Book or Tabletop (where the standing half is view
+                // only, G-4) moves the update to the game's Page, with Back still leading to Updates.
+                .onChange(of: duo.oneColumn, initial: true) { _, pushes in
+                    if !pushes, let u = model.nav.updatesRelease {
+                        model.nav.updatesRelease = nil
+                        if model.nav.tab == .updates { model.openGame(u.gameID, chapter: .updates, releaseID: u.releaseID) }
+                    }
+                }
             }
 
             Tab("News", systemImage: "megaphone", value: AppTab.news) {
@@ -265,17 +281,38 @@ struct TabRoot: View {
                 NavigationStack { SearchView().tabletopChrome(duo) }.auditActive(model.nav.tab == .search)
             }
         }
-        .onChange(of: model.data.nav.tab) { old, new in if new == .search && old != .search { model.searchReturnTab = old } }
+        .onChange(of: model.data.nav.tab) { old, new in
+            if new == .search && old != .search { model.searchReturnTab = old }
+            // D-1: leaving the Library by its tab drops the open game's way back, so a later Back goes to the Library.
+            if new != .library { model.nav.returnTab = nil }
+        }
     }
 }
+
+enum TopBarFade { static let height: CGFloat = 16 }
 
 extension View {
     /// Tabletop: the system's horizontal bars would put controls in the upper half, so they are
     /// hidden and the lower rail carries them instead (G-4).
     /// Apply to each screen inside a navigation stack: bar visibility is read from the visible
     /// screen, not from the stack or the TabView.
+    /// Open portrait (Iris, 19 Nov, on Terry's "scrolling behind another menu"): the top bar (Back, Notifications, Status, More
+    /// on a game) and the bottom tab bar are solid ink, so nothing scrolls under either bar. The other poses keep the system's.
+    /// One modifier chain in every pose, so a pose change never swaps the screen's identity (and its scroll and focus state).
+    /// Scroll edges fade (Quinn, on #541): under the solid top bar, a 16 pt band from ink to clear, so content fades out instead of
+    /// being cut at the bar's edge. A safe-area inset, so the page's rest position starts below it and only scrolled content passes
+    /// under; 0 pt in the other poses (the same view, so identity holds).
     func tabletopChrome(_ duo: DuoContext) -> some View {
-        toolbarVisibility(duo.pose == .tabletop ? .hidden : .automatic, for: .navigationBar, .tabBar)
+        let solid = duo.pose == .flat && !duo.isLandscape
+        return toolbarVisibility(duo.pose == .tabletop ? .hidden : .automatic, for: .navigationBar, .tabBar)
+            .toolbarBackground(Color.ink0, for: .navigationBar, .tabBar)
+            .toolbarBackgroundVisibility(solid ? .visible : .automatic, for: .navigationBar, .tabBar)
+            .safeAreaInset(edge: .top, spacing: 0) {
+                LinearGradient(colors: [Color.ink0, Color.ink0.opacity(0)], startPoint: .top, endPoint: .bottom)
+                    .frame(height: solid ? TopBarFade.height : 0)
+                    .allowsHitTesting(false)
+                    .accessibilityHidden(true)
+            }
     }
 }
 
@@ -289,6 +326,8 @@ struct LibraryRoot: View {
         NavigationStack(path: Binding(
             get: { (model.nav.gameID.map { [$0] } ?? []) + (model.nav.gameID != nil ? model.nav.detailReleaseID.map { ["release:" + $0] } ?? [] : []) },
             set: { path in
+                // A swipe back from the game leaves it the way the Back button does (D-1: to where it was opened from).
+                if path.isEmpty, model.nav.gameID != nil { model.closeGame(); return }
                 model.nav.gameID = path.first
                 model.nav.detailReleaseID = path.count > 1 ? String(path[1].dropFirst("release:".count)) : nil
             }
@@ -304,12 +343,11 @@ struct LibraryRoot: View {
                     }
                 }
         }
-        // J-1: a pushed release only exists where pushing is the layout (Closed, open portrait).
-        // Unfolding to side by side or Tabletop pops it and selects it on the Page, so the reader
-        // keeps reading the same update. The push itself never selects, so Back from it lands on
-        // the page that was underneath (0.5.6 hotfix). Here, not in the game book, which is hidden
-        // under the push.
-        .onChange(of: duo.pose != .closed && (duo.isLandscape || duo.pose == .tabletop), initial: true) { _, onPage in
+        // J-1: a pushed release only exists where pushing is the layout (one column: Closed, Open both ways).
+        // Folding to Book or Tabletop pops it and selects it on the Page, so the reader keeps reading the same update. The push
+        // itself never selects, so Back from it lands on the page that was underneath (0.5.6 hotfix). Here, not in the game
+        // book, which is hidden under the push.
+        .onChange(of: !duo.oneColumn, initial: true) { _, onPage in
             if onPage, let id = model.nav.detailReleaseID, let gameID = model.nav.gameID {
                 // The section of the pushed release being read goes with it onto the Page (0.5.6, Mac walk step 5).
                 let pageKey = "page-\(gameID)-\(Chapter.updates.rawValue)"
@@ -338,10 +376,12 @@ struct TabletopRail: View {
               VStack(spacing: 6) {
             if let id = model.nav.gameID, model.nav.tab == .library {
                 // Iris (0.5.6 hotfix): Back, Notifications, Status, More, the same set and order as every other pose's bar, and
-                // few enough to fit the lower half on any fold without scrolling. Share and Check for updates are behind More.
-                RailButton(action: ScreenAction(id: "back", title: "Back to Library", systemImage: "chevron.backward",
+                // few enough to fit the lower half on any fold without scrolling. Share and Check for updates are behind More, and
+                // so is Companion's Bookmarks (its stage cards carry no glyph in Tabletop). Back keeps the other poses' id.
+                RailButton(action: ScreenAction(id: "back", title: model.backTitle, systemImage: "chevron.backward",
                                                 kind: .button { model.closeGame() }))
-                ForEach(model.gameActions(id)) { RailButton(action: $0) }
+                    .accessibilityIdentifier("gameBack")
+                ForEach(model.gameActions(id, bookmarks: true)) { RailButton(action: $0) }
             } else if model.nav.tab == .search {
                 // Search is a dead end without this: Back to where it was opened from (Terry, 0.2.0 build 5).
                 RailButton(action: ScreenAction(id: "back", title: "Back", systemImage: "chevron.backward",
@@ -499,7 +539,7 @@ struct LowerMessages: View {
                 } label: {
                     HStack(spacing: 8) {
                         UnreadDot()
-                        Text("New on PS5: \(game.name) \(r.displayName)")
+                        Text("New on PS5: \(game.name.gluingTrailingNumeral) \(r.displayName)")
                             .font(PlayscribeFont.subheadline.weight(.semibold))
                             // Never cut: up to three lines at the capped size (Iris, 0.5.1 spec 2).
                             .lineLimit(3)
