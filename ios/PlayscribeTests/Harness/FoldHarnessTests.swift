@@ -135,8 +135,10 @@ struct FoldHarnessTests {
         let r = try #require(await FoldHost.render(p, type: ax5 ? .accessibilityExtraExtraExtraLarge : .large), "a window scene to host in")
         defer { FoldHost.dispose(r) }
         let v = try #require(r.named["tabletopRailActions"], "the rail's actions report their viewport")
-        let rail = r.frames.filter { $0.minX >= v.minX - 1 && $0.maxX <= v.maxX + 1 && abs($0.height - 44) < 0.5 }
-        let cut = rail.filter { $0.minY < v.maxY - 0.5 && $0.maxY > v.maxY + 0.5 }
+        // Tappable frames are reported clipped to what shows (the CI dump had "619,622 44x7"), so a sliver is a frame in the
+        // viewport shorter than a button.
+        let rail = r.frames.filter { $0.minX >= v.minX - 1 && $0.maxX <= v.maxX + 1 && $0.minY >= v.minY - 0.5 && $0.maxY <= v.maxY + 0.5 }
+        let cut = rail.filter { $0.height > 0.5 && $0.height < 43.5 }
         print("harness rail: tabletop \(ax5 ? "AX5" : "std") viewport \(HarnessRules.brief(v)) buttons \(rail.map(HarnessRules.brief)) cut \(cut.map(HarnessRules.brief))")
         #expect(cut.isEmpty, "Tabletop rail: \(cut.map(HarnessRules.brief)) shows only partly at the viewport's foot \(Int(v.maxY))")
     }

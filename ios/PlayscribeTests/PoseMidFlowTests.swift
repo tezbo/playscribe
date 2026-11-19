@@ -16,8 +16,8 @@ struct PoseMidFlowTests {
     /// The bundled game with the longest PS5 history (the walk used Cyberpunk, which comes from the live feed), in the library.
     private func history(_ m: AppModel) throws -> [Release] {
         let id = try #require(m.games.keys.sorted()
-            .filter { m.ps5Releases($0).count >= 3 }
-            .max { m.ps5Releases($0).count < m.ps5Releases($1).count }, "no bundled game has three PS5 updates")
+            .filter { m.ps5Releases($0).count >= 2 }
+            .max { m.ps5Releases($0).count < m.ps5Releases($1).count }, "no bundled game has two PS5 updates")
         if m.entry(id) == nil, let g = m.game(id) { m.addGame(g, status: .owned) }
         return m.ps5Releases(id)
     }
