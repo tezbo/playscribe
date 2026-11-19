@@ -3,6 +3,11 @@
 Playscribe follows semantic versioning. Each `## x.y.z` section becomes that build's "What to Test" in TestFlight,
 so write it for testers. Release steps are in docs/release.md.
 
+## 0.5.7 (in progress)
+
+- The Library scrolls more smoothly, Upcoming most of all: game covers are kept ready at the size the tiles need, and release dates are worked out once instead of on every redraw.
+- The Library search field no longer starts with a capital letter.
+
 ## 0.5.6
 
 A fix release for problems found in 0.5.5.

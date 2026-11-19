@@ -4,16 +4,23 @@ import XCTest
 /// the page came back 58 pt lower with its large title expanded. Fixed by making "Library" the first page row instead of a bar large title.
 /// Closed only; Tabletop hides the navigation bar.
 final class LibraryBackScrollTests: XCTestCase {
+    @MainActor func testBackFromAGameKeepsTheLibraryWhereItWas() throws { try backKeepsPlace(ax5: false, swipes: 3) }
+    /// Mac 45983f0: Dawnwalker 434.7 to 316.7 (-118) at AX5 with 3 drags, and 457.3 to 445.3 (-12) at std with 20 swipes; both red until the
+    /// scroll position is bound to the model again, as on main.
+    @MainActor func testBackKeepsTheLibraryWhereItWasAtAX5() throws { try backKeepsPlace(ax5: true, swipes: 3) }
+    @MainActor func testBackKeepsTheLibraryWhereItWasAfterALongScroll() throws { try backKeepsPlace(ax5: false, swipes: 20) }
+
     @MainActor
-    func testBackFromAGameKeepsTheLibraryWhereItWas() throws {
+    private func backKeepsPlace(ax5: Bool, swipes: Int) throws {
         let app = XCUIApplication()
         app.launchArguments = ["-qaRoute", "fill-library/12"]
+            + (ax5 ? ["-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityXXXL"] : [])
         app.launch()
         let tiles = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'tile-'"))
         XCTAssertTrue(tiles.firstMatch.waitForExistence(timeout: 15), "the library shows tiles")
         let pose = ReleaseRowTests.pose(app)
         try XCTSkipUnless(pose.contains("pose: closed"), "Closed only (pose: \(pose))")
-        for _ in 0..<3 { app.scrollViews.firstMatch.swipeUp(velocity: .slow) }
+        for _ in 0..<swipes { app.scrollViews.firstMatch.swipeUp(velocity: .slow) }
         sleep(1)
         let visible = (0..<tiles.count).map { tiles.element(boundBy: $0) }.filter { $0.isHittable }
         let target = try XCTUnwrap(visible.first, "a tile is on screen after scrolling")

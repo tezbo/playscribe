@@ -272,7 +272,14 @@ struct LibraryShelf: View {
 
     @FocusState private var searchFocused: Bool
     @State private var searchWasFocused = false
-    @State private var scrollInteracting = false
+    /// Whether a finger is on the page. A reference the view never observes: as plain @State, its two flips per swipe (down, up) re-ran this
+    /// whole body twice a swipe, 40 runs in 20 swipes (Mac profile of #513, bug-056). Only the Task closures below read it.
+    private final class ScrollFlags { var interacting = false }
+    @State private var scrollFlags = ScrollFlags()
+    /// Where the page is scrolled to is `model.nav.anchors["library"]`, as on main: the scroll position is bound to the model so Back from a game
+    /// lands where it was (a local holder drifted 8 to 118 pt on Back, Mac 45983f0). `setAnchor` is the code's own move.
+    private func setAnchor(_ id: String?) { model.nav.anchors["library"] = id }
+    private var scrollID: String? { model.nav.anchors["library"] }
 
     /// Closed portrait, field focused or holding text: the deck steps aside like News and the cards, so the matches get the room and
     /// the card is not squeezed by the keyboard's safe area (its title clipped under the badge, Mac 0027a78 Closed). Open portrait keeps
@@ -302,6 +309,7 @@ struct LibraryShelf: View {
                         TextField("Search your library", text: binding)
                             .submitLabel(.search)
                             .autocorrectionDisabled()
+                            .textInputAutocapitalization(.never)
                             .focused($searchFocused)
                         // The standard clear control, shown only with text: the way back to News and the cards, which stay
                         // hidden while the field has text. A button of its own, so the row's tap target is untouched.
@@ -313,7 +321,7 @@ struct LibraryShelf: View {
                                 if !searchFocused, portraitTilesFirst {
                                     Task { @MainActor in
                                         try? await Task.sleep(for: .milliseconds(60))
-                                        if !searchFocused { model.nav.anchors["library"] = "library-title" }
+                                        if !searchFocused { setAnchor("library-title") }
                                     }
                                 }
                             } label: {
@@ -349,16 +357,16 @@ struct LibraryShelf: View {
                         guard searchFocused, portraitTilesFirst, duo.pose != .tabletop else { return }
                         try? await Task.sleep(for: .milliseconds(60))
                         if Task.isCancelled { return }
-                        model.nav.anchors["library"] = nil
+                        setAnchor(nil)
                         try? await Task.sleep(for: .milliseconds(30))
                         // Never leave the position nil while the field is focused: a cancel after the nil write (the next key) still
                         // writes the id, and the next run starts again. Blur writes its own state, so it is not overridden here.
-                        if searchFocused { model.nav.anchors["library"] = "library-search" }
+                        if searchFocused { setAnchor("library-search") }
                     }
                     .onChange(of: searchFocused) { _, f in
                         // On blur the position id is dropped, so the flip of the anchor back to .top cannot re-align the page
                         // to the field and jump it to the top as the keyboard goes.
-                        if !f, model.nav.anchors["library"] == "library-search" { model.nav.anchors["library"] = nil }
+                        if !f, scrollID == "library-search" { setAnchor(nil) }
                         if f { searchWasFocused = true }
                         // Blur with no text: the deck returns, so the page goes to its top, never left at the old bottom position.
                         // (With text the matches stay where they are.) Once per blur; a later focus makes it stale, so it checks.
@@ -367,19 +375,23 @@ struct LibraryShelf: View {
                             Task { @MainActor in
                                 try? await Task.sleep(for: .milliseconds(60))
                                 // A drag-down dismissal may still have the finger on the page: no scroll then.
-                                if !searchFocused, !scrollInteracting { model.nav.anchors["library"] = "library-title" }
+                                if !searchFocused, !scrollFlags.interacting { setAnchor("library-title") }
                             }
                         }
                         guard f, duo.pose != .tabletop else { return }
                         Task { @MainActor in
                             try? await Task.sleep(for: .milliseconds(350))
                             guard searchFocused else { return }
-                            model.nav.anchors["library"] = "library-search"
+                            setAnchor("library-search")
                         }
                     }
     }
 
     var body: some View {
+        // QA only (debug builds, launch with `-qaPrintChanges`): says which input made this body run, for the scroll-lag count (bug-056).
+        #if DEBUG
+        let _ = ProcessInfo.processInfo.arguments.contains("-qaPrintChanges") ? Self._printChanges() : ()
+        #endif
         @Bindable var model = model
         let rows = duo.pose == .tabletop && letter != nil
             ? model.shownRows().filter { LetterIndex.matches($0.game.name, letter ?? "") } : model.shownRows()
@@ -609,7 +621,7 @@ struct LibraryShelf: View {
         }
         // Terry, 8 Nov: no way to put the keyboard away. Scrolling dismisses it, and so does a tap outside the field.
         .dismissesKeyboardOnOutsideTap()
-        .onScrollPhaseChange { _, phase in scrollInteracting = (phase == .interacting) }
+        .onScrollPhaseChange { _, phase in scrollFlags.interacting = (phase == .interacting) }
         // Focused search: the field must always show above the keyboard. Where it is the last block (tiles-first portrait) it is
         // aligned to the bottom of the visible area, with as many tiles above it as fit; elsewhere it sits above the results, top.
         .scrollPosition(id: Binding(get: { model.nav.anchors["library"] }, set: { model.nav.anchors["library"] = $0 }),
@@ -1035,7 +1047,7 @@ struct TileCover: View {
         Color.ink1
             .overlay {
                 if game.coverAsset != nil || game.coverURL != nil {
-                    CoverView(game: game, cornerRadius: 0)
+                    CoverView(game: game, cornerRadius: 0, maxPixel: 480)
                 } else if let art = game.keyArtAsset {
                     Image(art).resizable().scaledToFill()
                         .overlay(alignment: .top) {
@@ -1045,7 +1057,7 @@ struct TileCover: View {
                                 .background(LinearGradient(colors: [.black.opacity(0.7), .clear], startPoint: .top, endPoint: .bottom))
                         }
                 } else {
-                    CoverView(game: game, cornerRadius: 0)
+                    CoverView(game: game, cornerRadius: 0, maxPixel: 480)
                 }
             }
             .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
