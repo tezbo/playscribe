@@ -287,11 +287,11 @@ struct LibraryShelf: View {
     private final class ScrollPosition { var id: String? }
     @State private var position = ScrollPosition()
     @State private var moves = 0
+    @State private var offsetKeeper = LibraryOffsetKeeper()
     private var scrollID: String? { position.id }
-    private static func dbg(_ s: @autoclosure () -> String) { if ProcessInfo.processInfo.arguments.contains("-qaRoute") { NSLog("LIBPOS %@", s()) } }
-    private var scrollIDBinding: Binding<String?> { Binding(get: { position.id }, set: { Self.dbg("scroll set \(String(describing: $0)) (was \(String(describing: position.id)))"); position.id = $0 }) }
-    private func commitAnchor() { Self.dbg("commit id=\(String(describing: scrollID)) model=\(String(describing: model.nav.anchors["library"]))"); if model.nav.anchors["library"] != scrollID { model.nav.anchors["library"] = scrollID } }
-    private func moveTo(_ id: String?) { Self.dbg("moveTo \(String(describing: id)) (was \(String(describing: position.id)))"); position.id = id; moves += 1 }
+    private var scrollIDBinding: Binding<String?> { Binding(get: { position.id }, set: { position.id = $0 }) }
+    private func commitAnchor() { if model.nav.anchors["library"] != scrollID { model.nav.anchors["library"] = scrollID } }
+    private func moveTo(_ id: String?) { position.id = id; moves += 1 }
     private func setAnchor(_ id: String?) {
         moveTo(id)
         model.nav.anchors["library"] = id
@@ -632,6 +632,7 @@ struct LibraryShelf: View {
                 }
             }
             .scrollTargetLayout()
+            .background(LibraryScrollFinder(keeper: offsetKeeper))
             .padding(.horizontal, 16)
             .padding(.vertical, 12)
             .padding(.trailing, railWidth)
@@ -641,11 +642,15 @@ struct LibraryShelf: View {
         .onScrollPhaseChange { _, phase in scrollFlags.interacting = (phase == .interacting) }
         // The scrolled position goes to the model (it is saved with the app's state) when the Library goes away or the app leaves the
         // foreground, never while scrolling or when a swipe ends: each model write re-ran this body.
-        .onDisappear { commitAnchor() }
+        .onDisappear { offsetKeeper.freeze(); commitAnchor() }
         .onChange(of: scenePhase) { _, phase in if phase != .active { commitAnchor() } }
         // A move made elsewhere (QA routes, a game added) reaches the page; this view's own moves already match and do nothing.
         .onChange(of: model.nav.anchors["library"]) { _, id in if id != scrollID { moveTo(id) } }
-        .onAppear { Self.dbg("appear id=\(String(describing: scrollID)) model=\(String(describing: model.nav.anchors["library"]))"); if scrollID == nil { moveTo(model.nav.anchors["library"]) } }
+        .onAppear {
+            if scrollID == nil { moveTo(model.nav.anchors["library"]) }
+            // Back from a game: the page returns to the offset it left at (the id alone lands on its container's top).
+            Task { @MainActor in try? await Task.sleep(for: .milliseconds(120)); offsetKeeper.restore() }
+        }
         // Focused search: the field must always show above the keyboard. Where it is the last block (tiles-first portrait) it is
         // aligned to the bottom of the visible area, with as many tiles above it as fit; elsewhere it sits above the results, top.
         .scrollPosition(id: scrollIDBinding,
