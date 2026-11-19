@@ -664,6 +664,9 @@ final class AppModel {
         nav.anchors[Self.bookKey(e.gameID, .companion)] = "entry-\(e.id)"
     }
 
+    /// A Gallery video row was tapped (R-11). Today: nothing in the app; the row hands the link to the system.
+    func playGalleryVideo(_ item: GalleryItem) {}
+
     func gallery(_ gameID: String) -> [GalleryItem] {
         let items = fixtures.gallery.filter { $0.gameID == gameID }
         if !items.isEmpty { return items }

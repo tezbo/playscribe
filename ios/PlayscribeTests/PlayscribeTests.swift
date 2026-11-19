@@ -12,6 +12,21 @@ struct ModelTests {
         return AppModel(storeURL: url)
     }
 
+    @Test("Gallery videos play in the app's own player, never hand off to YouTube (R-11; Terry 19 Nov: the Dawnwalker ones all open in YouTube)")
+    func galleryVideosPlayInApp() {
+        let m = freshModel()
+        let videos = m.gallery("dawnwalker").filter { $0.kind == .video }
+        #expect(videos.count >= 5)
+        for v in videos {
+            m.trailer = nil
+            m.playGalleryVideo(v)
+            let id = v.href.flatMap { URLComponents(string: $0)?.queryItems?.first { $0.name == "v" }?.value }
+            #expect(id != nil, "\(v.title) has a YouTube watch link")
+            #expect(m.trailer?.videoID == id, "\(v.title) opens the in-app player")
+            #expect(m.trailer?.name == v.title)
+        }
+    }
+
     @Test("Fixtures decode and every release follows the PS5 spec")
     func fixtures() {
         let f = Fixtures.shared
