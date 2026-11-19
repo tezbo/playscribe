@@ -3,10 +3,40 @@
 Playscribe follows semantic versioning. Each `## x.y.z` section becomes that build's "What to Test" in TestFlight,
 so write it for testers. Release steps are in docs/release.md.
 
-## 0.5.7 (in progress)
+## 0.5.7
 
-- The Library scrolls more smoothly, Upcoming most of all: game covers are kept ready at the size the tiles need, and release dates are worked out once instead of on every redraw.
-- The Library search field no longer starts with a capital letter.
+This covers everything you reported as fixed or added in 0.5.6 and 0.5.7. Each line says what to do, then what you should see.
+Reply with the numbers that failed, or "all good".
+
+Fold check (about 2 minutes)
+1. Open Cyberpunk 2077 and scroll halfway down Update 2.5. Unfold, half-fold into Tabletop, then close. You should stay on Update 2.5 at about the same place. After closing, the cover screen shows Playscribe on the same update, not the home screen.
+2. In Tabletop, play a trailer. The top half only shows things, and every button is in the bottom half. The reflection moves with the video, and only in Tabletop.
+3. Look at the side buttons in each pose (closed upright, closed sideways, open, Tabletop, book). You should see the same set every time, with none cut off and no scrolling.
+4. Unfolded, tap an older patch under All updates, then swipe back. You should land on the game page with All updates showing.
+5. Closed, scroll the Library down a bit, open a game, then go Back. The Library should be where you left it.
+
+From 0.5.6
+6. Tap Cyberpunk 2077 in the Library. It opens on Update 2.5, the newest, not Patch 2.31. Open Patch 2.31, go back to the Library, and tap Cyberpunk again. It opens on Update 2.5 again.
+7. Cyberpunk, All updates: no "Check out what's coming…" or "REDstreams" rows. Those posts are under News instead.
+8. Two Point Museum, 2 Nov update: the name reads "Update", not "Update 12.1.247768".
+9. Closed sideways, on any update page: the rail has Back, Notifications, Status and More.
+10. The Blood of Dawnwalker, Launch entry: it says the game launched worldwide on PC, PlayStation 5 and Xbox Series X|S, and nothing about hotfixes not being tracked.
+
+New in 0.5.7
+11. Any update page: the patch name is the biggest thing on the page. The status line starts "Out on PS5". No dot separators anywhere.
+12. Any game page, closed or unfolded: the section bar (What’s new, News, Gallery and the rest) stays pinned at the top as you scroll, and tapping a section jumps to it. In Book the same sections are a contents list on the left page.
+13. All updates rows lead with the patch name, then the headline, then the date.
+14. Tabletop on an update: the patch name shows on the top half.
+15. The Library scrolls smoothly, including your own games, with no stutter or covers reloading as you scroll back. The search field no longer starts with a capital letter.
+16. Long-running games such as Cyberpunk and KCD II now show their full update history, older years included, with no PC-only rows.
+
+Known, coming in 0.5.8 (no need to report)
+- A game you haven't added says "No updates yet" even when it has had patches.
+- In Open portrait, the date under the first Library row is cut off hard by the tab bar.
+- A feed refresh during a fast scroll can cause a brief stutter.
+- After a pose change, the page can land a little above or below your reading place.
+
+Feedback you send through TestFlight, including its comment, may appear in our public issue tracker, so leave out personal details.
 
 ## 0.5.6
 
