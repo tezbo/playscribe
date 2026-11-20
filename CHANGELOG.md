@@ -5,10 +5,10 @@ so write it for testers. Release steps are in docs/release.md.
 
 ## 0.5.9
 
-Videos now stay inside Playscribe. In 0.5.8, Play in Tabletop opened the iPhone's own fullscreen player, so the reflection could never show. Each line says what to do, then what you should see.
+Videos now stay inside Playscribe. In 0.5.8, Play in Tabletop opened your Duo's own fullscreen player, so the reflection could never show. Each line says what to do, then what you should see.
 Reply with the numbers that failed, or "all good".
 
-1. In Tabletop, open Dawnwalker's Update 1.1, play its "Update 1.1 overview" video and press Play in the bottom half. The video plays in the top half, inside Playscribe, with the reflection under it. The iPhone's fullscreen player never opens.
+1. In Tabletop, open Dawnwalker's Update 1.1, open its "Update 1.1 overview" video and press Play in the bottom half. The video plays in the top half, inside Playscribe, with the reflection under it. Your Duo's own fullscreen player never opens.
 2. Same in Tabletop with a game trailer (a game page, then Play trailer) and with a Dawnwalker Gallery video. Both play in the top half with the reflection, and the controls stay in the bottom half.
 3. Before you press Play, the top half shows the game's art, not YouTube's screen. Once it plays, YouTube's play bar and buttons never show on the video in Tabletop; only its title and logo do.
 4. While a video plays in Tabletop, open the phone flat, then fold back to Tabletop. The video carries on from the same place (expect a short reload as it switches).
