@@ -650,7 +650,7 @@ struct TrailerView: View {
                 }
             }
         }
-        .onAppear { if controller == nil { controller = YouTubeController(videoID: videoID) } }
+        .onAppear { if controller == nil { controller = YouTubeController(videoID: videoID, nativeControls: model.livePose != .tabletop) } }
         .onDisappear { controller?.stop() }
     }
 

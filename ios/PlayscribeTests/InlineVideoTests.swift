@@ -45,4 +45,14 @@ struct VideoControlsTests {
         #expect(!controller.nativeControls)
         #expect(!controller.ready, "the rebuilt player is not ready until it says so")
     }
+
+    @Test("A video opened in Tabletop builds without YouTube's controls from the start (TT-4; Iris on #552)")
+    func tabletopOpenBuildsWithoutControls() {
+        #expect(YouTubeController.html("abc", captions: false, controls: false).contains("controls=0;"))
+        #expect(YouTubeController.html("abc", captions: false).contains("controls=1;"))
+        let tabletop = YouTubeController(videoID: "abc", autoplay: false, nativeControls: false)
+        #expect(!tabletop.nativeControls)
+        // The page reports what it built with, so a pose change it missed is re-applied on ready.
+        #expect(YouTubeController.html("abc", captions: false).contains("controls:controls}"))
+    }
 }

@@ -32,7 +32,9 @@ final class YouTubeController: NSObject, WKScriptMessageHandler {
         UserDefaults.standard.bool(forKey: autoplayKey) && !UIAccessibility.isReduceMotionEnabled
     }
 
-    init(videoID: String, autoplay: Bool = YouTubeController.autoplayEnabled) {
+    /// `nativeControls`: YouTube's own controls from the first build (false when opened in Tabletop, TT-4). The page is not loaded
+    /// yet when the view first learns its pose, so the starting value goes into the page itself (Iris on #552).
+    init(videoID: String, autoplay: Bool = YouTubeController.autoplayEnabled, nativeControls: Bool = true) {
         let config = WKWebViewConfiguration()
         config.allowsInlineMediaPlayback = true
         // D-11: the trailer keeps playing in Picture in Picture when the person leaves the app.
@@ -54,7 +56,8 @@ final class YouTubeController: NSObject, WKScriptMessageHandler {
         super.init()
         content.add(self, name: "player")
         playRequested = autoplay
-        webView.loadHTMLString(Self.html(videoID, captions: captionsOn, autoplay: autoplay), baseURL: URL(string: "https://playscribe.app"))
+        self.nativeControls = nativeControls
+        webView.loadHTMLString(Self.html(videoID, captions: captionsOn, autoplay: autoplay, controls: nativeControls), baseURL: URL(string: "https://playscribe.app"))
     }
 
     nonisolated func userContentController(_ controller: WKUserContentController, didReceive message: WKScriptMessage) {
@@ -65,7 +68,11 @@ final class YouTubeController: NSObject, WKScriptMessageHandler {
             let time = body["time"] as? Double
             let duration = body["duration"] as? Double
             switch event {
-            case "ready": self.ready = true; self.duration = duration ?? 0
+            case "ready":
+                self.duration = duration ?? 0
+                // A pose change before the page loaded could not reach it: re-apply, and stay not ready while it rebuilds.
+                let want = self.nativeControls ? 1 : 0
+                if let built = body["controls"] as? Int, built != want { self.run("setControls(\(want))") } else { self.ready = true }
             case "state":
                 self.isPlaying = state == 1
                 if state == 1 { self.started = true }
@@ -103,6 +110,8 @@ final class YouTubeController: NSObject, WKScriptMessageHandler {
         guard on != nativeControls else { return }
         nativeControls = on
         ready = false   // the player is rebuilt; its onReady sets this again
+        // Paused, the rebuilt player would show YouTube's thumbnail: our art returns until it buffers or plays (Iris on #552).
+        if !isPlaying { playerShown = false }
         run("setControls(\(on ? 1 : 0))")
     }
     private func run(_ js: String) { webView.evaluateJavaScript(js) }
@@ -122,21 +131,21 @@ final class YouTubeController: NSObject, WKScriptMessageHandler {
     })();
     """
 
-    static func html(_ id: String, captions: Bool, autoplay: Bool = false) -> String {
+    static func html(_ id: String, captions: Bool, autoplay: Bool = false, controls: Bool = true) -> String {
         """
         <!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1">
         <style>html,body{margin:0;height:100%;background:#000;overflow:hidden}#p{position:absolute;inset:0;width:100%;height:100%}</style>
         </head><body><div id="p"></div>
         <script src="https://www.youtube.com/iframe_api"></script>
         <script>
-        var player, controls=1;
+        var player, controls=\(controls ? 1 : 0);
         function post(m){window.webkit.messageHandlers.player.postMessage(m)}
         // Builds the player. Rebuilt in place (same web view, same position) when the pose switches between YouTube's own
         // controls (Closed, Book, Open) and ours (Tabletop), since the IFrame API cannot change controls on a live player.
         function build(start,play){
           player=new YT.Player('p',{videoId:'\(id)',host:'https://www.youtube-nocookie.com',
             playerVars:{playsinline:1,fs:0,controls:controls,start:Math.floor(start),cc_load_policy:\(captions ? 1 : 0),autoplay:play?1:0,rel:0,modestbranding:1,iv_load_policy:3,origin:'https://playscribe.app'},
-            events:{onReady:function(){if(start>0){player.seekTo(start,true)}post({event:'ready',duration:player.getDuration()});if(play){player.playVideo()}},
+            events:{onReady:function(){if(start>0){player.seekTo(start,true)}post({event:'ready',duration:player.getDuration(),controls:controls});if(play){player.playVideo()}},
                     onStateChange:function(e){post({event:'state',state:e.data})},
                     onError:function(e){post({event:'error',code:e.data})}}});
         }
@@ -202,7 +211,7 @@ struct PlayerView: View {
         }
         .onAppear {
             if controller == nil, let id = model.release(gameID, releaseID)?.video?.youtubeID {
-                controller = YouTubeController(videoID: id)
+                controller = YouTubeController(videoID: id, nativeControls: model.livePose != .tabletop)
             }
         }
     }
@@ -319,6 +328,8 @@ struct TabletopVideoStage: View {
         .coordinateSpace(.named("player"))
         .onGeometryChange(for: CGPoint.self) { $0.frame(in: .global).origin } action: { playerOrigin = $0 }
         .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { playerHeight = $0 }
+        // A screen for watching: dark in light and dark mode, so the white text, the grey and the rail's bar all hold (Iris on #552).
+        .environment(\.colorScheme, .dark)
     }
 }
 
