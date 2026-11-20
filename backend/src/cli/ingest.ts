@@ -14,14 +14,14 @@ import { exportStatic } from '../export.ts'
 import { failingSources, healthSummary } from '../health.ts'
 import { infoContractProblems } from '../contract.ts'
 import { feedProblems } from '../quality.ts'
-import { appendFileSync } from 'node:fs'
+import { appendFileSync, writeFileSync } from 'node:fs'
 import { Igdb } from '../ingest/igdb.ts'
 import { runIngest, seedGames } from '../ingest/pipeline.ts'
 import { deriveAutoRegistry, seedAutoGames } from '../ingest/autoRegistry.ts'
 import { fetchPlus, resolvePlusCovers } from '../plusAuto.ts'
 import { loadPlus } from '../plus.ts'
 import { Apns } from '../push/apns.ts'
-import { pushNewPs5 } from '../push/notify.ts'
+import { pushNewPs5, queueNewPs5 } from '../push/notify.ts'
 
 const args = process.argv.slice(2)
 const exportDir = args.includes('--export') ? args[args.indexOf('--export') + 1] : undefined
@@ -47,8 +47,16 @@ if (!args.includes('--hot')) {
 const { keyId, teamId, key, topic } = config.apns
 const apns = process.env.PUSH_ENABLED === '1' && keyId && teamId && key ? new Apns({ keyId, teamId, key, topic }) : null
 // PUSH_DEFER=1: the Feed job could not load the relay's devices. Claiming a release now would lose its alert for everyone, so leave it for the next run.
-const alerts = process.env.PUSH_DEFER === '1' ? [] : await pushNewPs5(db, apns, { maxAgeHours: config.pushMaxAgeHours })
+// PUSH_QUEUE=<file>: the Feed job. Claim the releases now (the claim travels with the state into Publish) but send nothing: the jobs go to the file
+// and scripts/push-send.ts sends them after Publish succeeds, so a run that fails to publish never alerts for a release the feed does not hold.
+let alerts: unknown[] = []
 if (process.env.PUSH_DEFER === '1') console.log('push deferred: relay devices not loaded')
+else if (process.env.PUSH_QUEUE) {
+  const q = queueNewPs5(db, { maxAgeHours: config.pushMaxAgeHours, hasApns: !!apns })
+  alerts = q.outcomes
+  writeFileSync(process.env.PUSH_QUEUE, JSON.stringify(q.jobs), { mode: 0o600 })
+  console.log(`push queued for after Publish: ${q.jobs.length} releases`)
+} else alerts = await pushNewPs5(db, apns, { maxAgeHours: config.pushMaxAgeHours })
 if (alerts.length) console.log('alerts:', JSON.stringify(alerts))
 apns?.close()
 if (exportDir) console.log('exported', exportStatic(db, exportDir))

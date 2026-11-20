@@ -37,6 +37,19 @@ export const pcScopedPost = (text: string) => {
   )
 }
 
+/**
+ * True when a post's title scopes it to PC: "PC Hotfix", "DLSS 3 & Reflex PC Update", "Hotfix 1.2 for PC", "Patch 2.1 (PC only)".
+ * A title that names PlayStation or another platform alongside PC is not PC-scoped (bug-058).
+ */
+export const pcTitledPost = (title: string) => {
+  if (PLAYSTATION.test(title) || /\bconsoles?\b|\bpc\s+gaming\b|\bpc\s+performance\b/i.test(title)) return false
+  return (
+    /\bpc\s+(?:only\s+|version\s+)?(?:hot\s*-?fix(?:es)?|update|patch(?:es)?)\b/i.test(title) ||
+    /\b(?:hot\s*-?fix(?:es)?|update|patch(?:es)?)\b[^|]{0,40}\b(?:for|on)\s+(?:the\s+)?pc\b(?!\s*(?:,|and|&|\/)\s*\w)/i.test(title) ||
+    /\(\s*pc\s+only\s*\)|\bpc[-\s]only\b/i.test(title)
+  )
+}
+
 const MONTHS = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december']
 const MONTH = '(january|february|march|april|may|june|july|august|september|october|november|december|jan|feb|mar|apr|jun|jul|aug|sep|sept|oct|nov|dec)\\.?'
 const DATE = new RegExp(`\\b${MONTH}\\s+(\\d{1,2})(?:st|nd|rd|th)?(?:,?\\s+(\\d{4}))?\\b|\\b(\\d{1,2})(?:st|nd|rd|th)?\\s+(?:of\\s+)?${MONTH}(?:,?\\s+(\\d{4}))?\\b`, 'gi')
@@ -132,4 +145,39 @@ export const statedLiveTime = (raw: string, publishedAt: string): string | null 
     }
   }
   return best === null ? null : new Date(best).toISOString()
+}
+
+/**
+ * A Steam post that talks about an update without being it: a preview of what is coming ("Check out what's coming to Cyberpunk 2077 in
+ * the Edgerunners 2 Update!"), a post saying an update "is coming" ("REDstreams: ... Update (2.5) is coming!"), an announcement
+ * headline (above), a stream or an event, or system requirements. It is news; the release is the post that says the update is out
+ * (bug-055-feed-steam-announcements).
+ * Strong arms (announcement, "what's coming", "is coming") decide alone. The weak arms (stream, Twitch, system requirements) are
+ * words a real patch title can carry ("Update 2.1: Twitch Drops fix", "Hotfix 1.0.4 (Live Stream bug fixed)"), so they apply only
+ * when the title names no numbered Update, Patch or Hotfix and Steam did not tag the post `patchnotes`.
+ */
+export const isNewsOnlyTitle = (title: string, opts: { patchnotesTag?: boolean } = {}) => {
+  // A title that says the thing is out ("out now", "available", "released", "now live") or names a patch or hotfix is the release,
+  // even when it also mentions a stream or what's coming ("Dev Stream - Major Update out now!", "New Steam Update Available - What's Coming Up").
+  const isOut = /\b(?:out\s+now|now\s+(?:live|available|out)|available(?:\s+now)?|(?:has\s+been\s+|is\s+)?released?)\b/i.test(title)
+  const namesPatch = /\b(?:patch|hot\s*-?fix)(?:es)?\b/i.test(title)
+  const numbered = /\b(?:update|patch|hot\s*-?fix|version|ver\.?|v)\s*#?\s*\d+(?:\.\d+)*/i.test(title)
+  // A changelog or notes title is the notes, whatever else it says ("Maintenance Update Changelog and what is coming").
+  const hasNotes = /\b(?:change\s*-?logs?|(?:patch|release|hot\s*-?fix)\s+notes?|what['\u2019]?s\s+new)\b/i.test(title)
+  if (isAnnouncementTitle(title)) return true
+  if (hasNotes) return false
+  // A developer diary with no version number is news, `#N` or not ("Development Update #7 - TFH is Coming to Consoles"), unless Steam tagged it patch notes.
+  if (!/\d+\.\d+/.test(title) && /\bdev(?:elopment|eloper)?s?['\u2019]?\s+(?:update|diary|diaries|log)\b/i.test(title)) return !opts.patchnotesTag
+  // A patch for another title in the same Steam feed ("Patch 1.9.7 for the first Kingdom Come: Deliverance") is not this game's release.
+  if (/\bfor\s+the\s+(?:original|first)\s+(?!(?:patch|update|hot\s*-?fix|release|version|time|season|day)\b)[A-Z]/.test(title)) return !opts.patchnotesTag
+  // Server maintenance and downtime notices are news. A title that names a patch, update or hotfix is that release
+  // ("Server maintenance and Hotfix at 14:15 CEST"), unless it is itself headed as a notice.
+  const maintenance = /\b(?:maintenance|downtime)\b/i.test(title) && !/\bmaintenance[-\s]free\b/i.test(title) && !/\bfix(?:es|ed)?\b/i.test(title)
+  const noticeLike = /\b(?:notices?|announcements?|schedule)\b/i.test(title)
+  if (maintenance && !opts.patchnotesTag && !numbered && (noticeLike || !(namesPatch || /\bupdate\b/i.test(title)))) return true
+  if (/\bwhat['\u2019]?s\s+coming\b/i.test(title)) return !isOut
+  // "<update> ... is coming": a release when Steam tagged the post as patch notes ("Update 1.4.0 is coming to PS5 today").
+  if (/\b(?:update|patch|hotfix|season|expansion)\b(?:(?!\s[-\u2013\u2014]\s)[^|]){0,40}\bis\s+coming\b/i.test(title)) return !opts.patchnotesTag
+  if (opts.patchnotesTag || numbered || isOut || namesPatch) return false
+  return /\b(?:red\s*streams?|live\s*streams?|dev\s*streams?|twitch)\b/i.test(title) || /\bsystem\s+requirements?\b/i.test(title)
 }

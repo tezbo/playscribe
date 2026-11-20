@@ -14,7 +14,7 @@ name: Release to TestFlight
 #     TestFlight build of the same tag is left out, so a failed upload can be re-run;
 #   - CHANGELOG.md at that SHA has a `## X.Y.Z` section with no "candidate" in its heading;
 #   - tag vX.Y.Z does not exist, or already points at exactly this SHA (re-running a failed build).
-# Then the tag job waits for Terry's Approve (environment "testflight", required reviewer tezbo), tags with the
+# Then the tag job tags with the
 # workflow token (which fires no push event, so this workflow calls testflight.yml itself), and after a successful
 # upload creates the GitHub release with the CHANGELOG section as notes.
 on:
@@ -121,8 +121,8 @@ jobs:
           echo "tag=$tag" >> "$GITHUB_OUTPUT"
           echo "existing=$existing" >> "$GITHUB_OUTPUT"
 
-  # Waits here for Terry's Approve when the "testflight" environment has him as a required reviewer
-  # (Settings > Environments). Nothing is tagged or built before that tap.
+  # Runs as soon as the guards pass: the "testflight" environment has no required reviewer, so there is no Approve
+  # to wait for. Terry's go is the `approval` input, given before the run is started.
   tag:
     needs: check
     if: needs.check.outputs.tag != '' && !inputs.notes_only

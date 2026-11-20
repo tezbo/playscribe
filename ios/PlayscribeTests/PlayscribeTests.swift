@@ -1,4 +1,5 @@
 import Foundation
+import QuartzCore
 import Testing
 import SwiftUI
 import UserNotifications
@@ -9,6 +10,33 @@ struct ModelTests {
     func freshModel() -> AppModel {
         let url = URL.temporaryDirectory.appending(path: "state-\(UUID().uuidString).json")
         return AppModel(storeURL: url)
+    }
+
+    @Test("Gallery videos play in the app's own player, never hand off to YouTube (R-11; Terry 19 Nov: the Dawnwalker ones all open in YouTube)")
+    func galleryVideosPlayInApp() {
+        let m = freshModel()
+        let videos = m.gallery("dawnwalker").filter { $0.kind == .video }
+        #expect(videos.count >= 5)
+        for v in videos {
+            m.trailer = nil
+            m.playGalleryVideo(v)
+            let id = v.href.flatMap { URLComponents(string: $0)?.queryItems?.first { $0.name == "v" }?.value }
+            #expect(id != nil, "\(v.title) has a YouTube watch link")
+            #expect(m.trailer?.videoID == id, "\(v.title) opens the in-app player")
+            #expect(m.trailer?.name == v.title)
+        }
+    }
+
+    @Test("A Gallery link gives a YouTube ID only for YouTube hosts (Quinn on #551)")
+    func galleryYouTubeID() {
+        func id(_ href: String) -> String? { GalleryItem(id: "x", gameID: "g", kind: .video, asset: "", title: "", alt: "", href: href).youtubeID }
+        #expect(id("https://www.youtube.com/watch?v=abc") == "abc")
+        #expect(id("https://m.youtube.com/watch?v=abc") == "abc")
+        #expect(id("https://youtu.be/abc") == "abc")
+        #expect(id("https://www.youtube.com/embed/abc") == "abc")
+        #expect(id("https://www.youtube.com/shorts/abc") == "abc")
+        #expect(id("https://notyoutube.com/watch?v=abc") == nil)
+        #expect(id("https://www.youtube.com/watch") == nil)
     }
 
     @Test("Fixtures decode and every release follows the PS5 spec")
@@ -311,10 +339,10 @@ struct DatePrecisionTests {
         func g(_ o: String?, _ on: String? = nil, _ p: DatePrecision? = .tbd) -> CatalogGame {
             CatalogGame(id: "t", name: "T", platforms: [.ps5], releaseDate: nil, releasePrecision: p, playableSince: nil, releasedElsewhere: o, releasedElsewhereOn: on, coverage: .none)
         }
-        #expect(g("2012-10-16", "PC").ps5DateLine == "Not on PS5 · PC, 2012")
-        #expect(g("2012-10-16", "PC").ps5AvailabilityLine == "Not on PS5 · PC, 2012")
-        #expect(g("2012-10-19", "PC (Microsoft Windows)").ps5AvailabilityLine == "Not on PS5 · PC, 2012")
-        #expect(g("2012-10-16").ps5AvailabilityLine == "Not on PS5 · 2012")
+        #expect(g("2012-10-16", "PC").ps5DateLine == "Not on PS5 (PC, 2012)")
+        #expect(g("2012-10-16", "PC").ps5AvailabilityLine == "Not on PS5 (PC, 2012)")
+        #expect(g("2012-10-19", "PC (Microsoft Windows)").ps5AvailabilityLine == "Not on PS5 (PC, 2012)")
+        #expect(g("2012-10-16").ps5AvailabilityLine == "Not on PS5 (2012)")
         #expect(g("2012-10-16").ps5ShortLine == "Not on PS5")
         // Truly no release anywhere, or a release still to come, stays TBA.
         #expect(g(nil).ps5AvailabilityLine == "Release date TBA")
@@ -378,13 +406,27 @@ struct GameBookStateTests {
         let url = URL.temporaryDirectory.appending(path: "d13-\(UUID().uuidString).json")
         let m = AppModel(storeURL: url)
         m.openGame("dawnwalker")
-        m.nav.chapter = .world
+        m.nav.chapter = .companion
         m.openGame("kcd2")
         #expect(m.nav.chapter == .updates)
         m.saveNow()
         let again = AppModel(storeURL: url)
         again.openGame("dawnwalker")
-        #expect(again.nav.chapter == .world)
+        #expect(again.nav.chapter == .companion)
+    }
+
+    @Test("D-13, R-7 (0.5.6): a World chapter saved by 0.5.5 reopens as Companion")
+    func savedWorldReopensAsCompanion() {
+        let url = URL.temporaryDirectory.appending(path: "d13w-\(UUID().uuidString).json")
+        let m = AppModel(storeURL: url)
+        m.openGame("dawnwalker")
+        m.nav.chapter = .world
+        m.openGame("kcd2")
+        m.saveNow()
+        let again = AppModel(storeURL: url)
+        again.openGame("dawnwalker")
+        #expect(again.nav.chapter == .companion)
+        #expect(again.section("dawnwalker") == .companion)
     }
 
     @Test("D-4: with nothing selected the Page shows the newest PS5 release")
@@ -584,34 +626,57 @@ struct ReaderPositionTests {
 struct AutoplayTests {
     @Test("Player page autoplays only when asked (R-11)")
     func html() {
-        #expect(YouTubeController.html("abc", captions: true).contains("autoplay:0"))
+        // The player is built by build(start, play) (rebuilt in place on a Tabletop switch, #552); the first build plays only
+        // when autoplay is asked for, and play sets both the embed's autoplay and the explicit playVideo().
+        let off = YouTubeController.html("abc", captions: true)
+        #expect(off.contains("build(0,false)") && !off.contains("build(0,true)"))
         let on = YouTubeController.html("abc", captions: true, autoplay: true)
-        #expect(on.contains("autoplay:1") && on.contains("player.playVideo();"))
+        #expect(on.contains("build(0,true)"))
+        #expect(on.contains("autoplay:play?1:0") && on.contains("if(play){player.playVideo()}"))
     }
 
-    @Test("Reflection is on by default and accessibility settings win (R-11, G-9)")
-    @MainActor func reflectionDefault() {
+    @Test("Reflection is on by default, in Tabletop only, and accessibility settings win (R-11, G-9; Terry 14 Nov)")
+    @MainActor func reflectionOnlyInTabletop() {
         #expect(VideoReflection.defaultOn)
-        #expect(VideoReflection.mode(setting: VideoReflection.defaultOn, reduceMotion: false, reduceTransparency: false) == .live)
-        // Reduce Motion keeps the mirror on the still, never live frames (G-9, Iris 12 Nov).
-        #expect(VideoReflection.mode(setting: true, reduceMotion: true, reduceTransparency: false) == .still)
-        #expect(VideoReflection.mode(setting: true, reduceMotion: false, reduceTransparency: true) == .off)
-        #expect(VideoReflection.mode(setting: false, reduceMotion: false, reduceTransparency: false) == .off)
+        #expect(VideoReflection.shows(pose: .tabletop, setting: VideoReflection.defaultOn, reduceMotion: false, reduceTransparency: false))
+        for pose in [Pose.closed, .flat, .book] {
+            #expect(!VideoReflection.shows(pose: pose, setting: true, reduceMotion: false, reduceTransparency: false))
+        }
+        // A live mirror moves, so Reduce Motion turns it off; there is no still mirror any more (G-9).
+        #expect(!VideoReflection.shows(pose: .tabletop, setting: true, reduceMotion: true, reduceTransparency: false))
+        #expect(!VideoReflection.shows(pose: .tabletop, setting: true, reduceMotion: false, reduceTransparency: true))
+        #expect(!VideoReflection.shows(pose: .tabletop, setting: false, reduceMotion: false, reduceTransparency: false))
     }
 
-    private func solid(_ color: UIColor) -> UIImage {
-        UIGraphicsImageRenderer(size: CGSize(width: 32, height: 18)).image { ctx in color.setFill(); ctx.fill(CGRect(x: 0, y: 0, width: 32, height: 18)) }
+    @Test("The mirror instance lands flipped, its bottom row at the gap below the video (R-11)")
+    @MainActor func mirrorTransform() {
+        let t = VideoReflection.instanceTransform(videoHeight: 200, gap: 30)
+        // About the replicator's centre (y 100), squashed to a quarter: the bottom row (y 200) lands at 230, the top row (y 0)
+        // at 280, so the whole picture fits in 50 pt and text in it is flattened past reading (Iris on #533).
+        func map(_ y: CGFloat) -> CGFloat { 100 + (y - 100) * t.m22 + t.m42 }
+        #expect(abs(map(200) - 230) < 0.001)
+        #expect(abs(map(0) - 280) < 0.001)
+        #expect(t.m11 == 1)
+        // Unsquashed it is a plain flip.
+        let flat = VideoReflection.instanceTransform(videoHeight: 200, gap: 30, squash: 1)
+        #expect(abs(100 + (0 - 100) * flat.m22 + flat.m42 - 430) < 0.001)
     }
 
-    @Test("A black live frame never replaces the still (R-11; Terry 12 Nov, reflections don't work)")
-    @MainActor func blackFrameKeepsTheStill() {
-        let black = solid(.black), poster = solid(UIColor(red: 0.6, green: 0.4, blue: 0.2, alpha: 1)), frame = solid(.gray)
-        #expect(VideoReflection.isBlank(black))
-        #expect(!VideoReflection.isBlank(poster))
-        #expect(VideoReflection.pick(live: black, still: poster) === poster)
-        #expect(VideoReflection.pick(live: nil, still: poster) === poster)
-        #expect(VideoReflection.pick(live: frame, still: poster) === frame)
-        #expect(VideoReflection.thumbnailURL("abc")?.host == "i.ytimg.com")
+    @Test("The audit reports what the replicator draws, not the intent (R-11, Mac at 95d9f3b)")
+    @MainActor func mirrorRendering() {
+        #expect(VideoReflection.rendering(instanceCount: 2, height: 200, mirrorAlpha: 0.3, onScreen: true))
+        #expect(!VideoReflection.rendering(instanceCount: 1, height: 200, mirrorAlpha: 0.3, onScreen: true))
+        #expect(!VideoReflection.rendering(instanceCount: 2, height: 0, mirrorAlpha: 0.3, onScreen: true))
+        #expect(!VideoReflection.rendering(instanceCount: 2, height: 200, mirrorAlpha: 0, onScreen: true))
+        #expect(!VideoReflection.rendering(instanceCount: 2, height: 200, mirrorAlpha: 0.3, onScreen: false))
+    }
+
+    @Test("The mirror is at most 55% (Iris on #550, a ceiling) and its band at most 15% of the lower half, never over 120 pt (R-11, Iris on #533)")
+    @MainActor func mirrorBand() {
+        #expect(VideoReflection.opacity <= 0.55)
+        #expect(VideoReflection.band(lowerHalf: 380) == 57)
+        #expect(VideoReflection.band(lowerHalf: 2000) == 120)
+        #expect(VideoReflection.band(lowerHalf: -10) == 0)
     }
 }
 
@@ -931,6 +996,17 @@ struct QAPoseTests {
 }
 
 
+@Suite("Version glue")
+struct VersionGlueTests {
+    @Test("a version never breaks at its dots (G-14)")
+    func keepsVersionWhole() {
+        #expect("01.004.000".keepingVersionsTogether == "01.\u{2060}004.\u{2060}000")
+        #expect("v1.1".keepingVersionsTogether == "v1.\u{2060}1")
+        #expect("Hades II".keepingVersionsTogether == "Hades II")
+        #expect("Fixed. Next".keepingVersionsTogether == "Fixed. Next", "a full stop between words is left alone")
+    }
+}
+
 @Suite("Roman numeral glue")
 struct RomanNumeralGlueTests {
     @Test("a trailing numeral is tied to the word before it (r060-nbsp-roman-numerals)")
@@ -1082,5 +1158,31 @@ struct OpenMarksReadTests {
         #expect(m.isUnread(r), "Mark as unread (R-6a)")
         // The cover's NEW UPDATE eyebrow and the deck's "New update" chip read isUnread, so they come back with it.
         #expect(m.unreadCount(r.gameID) >= 1)
+    }
+}
+
+/// TT-2 (Iris, 0.5.6): the Tabletop stage leads with the patch name in the largest type, not the headline.
+struct ReaderStageTitleTests {
+    @MainActor
+    private func overview(name: String, headline: String?) -> ReaderSection? {
+        let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "rt-\(UUID().uuidString).json"))
+        let r = Release(id: "r", gameID: "g", displayName: name, kind: .major, kindBasis: .studio, announcedAt: Date(timeIntervalSince1970: 1_745_020_800),
+                        notes: [], sourceIDs: [], platforms: [], headline: headline)
+        return m.readerSections(r).first { $0.id == "overview" }
+    }
+
+    @Test("TT-2: the overview's title is the patch name, with or without a headline")
+    @MainActor func overviewLeadsWithThePatchName() {
+        #expect(overview(name: "Update 1.1", headline: "Photo mode and a new hunt")?.title == "Update 1.1")
+        #expect(overview(name: "Update 1.1", headline: nil)?.title == "Update 1.1")
+        #expect(overview(name: " ", headline: "Photo mode and a new hunt")?.title == "Photo mode and a new hunt")
+    }
+
+    @Test("TT-2: the headline is the overview's secondary line, dropped when it repeats the title")
+    @MainActor func headlineIsSecondary() {
+        #expect(overview(name: "Update 1.1", headline: "Photo mode and a new hunt")?.subtitle == "Photo mode and a new hunt")
+        #expect(overview(name: "Update 1.1", headline: nil)?.subtitle == nil)
+        #expect(overview(name: " ", headline: "Photo mode and a new hunt")?.subtitle == nil)
+        #expect(overview(name: "Update 1.1", headline: "Update 1.1")?.subtitle == nil)
     }
 }
