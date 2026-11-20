@@ -796,12 +796,14 @@ struct DeckStage: View {
                 }
                 .font(PlayscribeFont.subheadline).fixedSize(horizontal: false, vertical: true)
             }
-            // bug-text-on-bright-art: 75% black behind the block, since the ember eyebrow needs more than white lines (Iris 2b).
-            .brightArtScrim(0.75)
             .padding(20)
             .dynamicTypeSize(...DynamicTypeSize.accessibility3)
             // The caption ends 24 pt above the division, measured in screen space (as in 0.2.0 #174/#176).
             .padding(.bottom, duo.clearance(forBottom: stageBottom))
+            // bug-text-on-bright-art: 75% black behind the block, since the ember eyebrow needs more than white lines (Iris 2b).
+            // Full bleed: the whole stage width, held to the stage's bottom edge, so it has no side, top or bottom edge on the art
+            // (Iris on #514: the boxed scrim showed its right and top edges in Tabletop).
+            .brightArtScrim(0.75, fullBleed: true)
             }
             .background(Color.clear.onGeometryChange(for: CGFloat.self) { $0.frame(in: .global).maxY.rounded() } action: { new in
                 if abs(new - stageBottom) > 0.5 { stageBottom = new }
@@ -824,16 +826,40 @@ struct BrightArtScrim: ViewModifier {
     var tail: CGFloat = 8
     var fade: CGFloat = 28
     var feather: CGFloat = 40
+    /// Tabletop stage: the scrim spans the block's full width (the block fills the stage) and holds full strength to its bottom
+    /// edge, with no side feather and no bottom fade; only the top eases in, over `stageRamp`. A box with feathered sides showed
+    /// its right and top edges on bright art (Iris on #514).
+    var fullBleed = false
+    /// Under the Tabletop cap of 15% of the stage (about 56 pt).
+    static let stageRamp: CGFloat = 56
 
-    /// An eased (smoothstep-like) ramp so there is no visible edge where the scrim starts.
-    private func eased(_ top: Double) -> [Gradient.Stop] {
-        [0.0, 0.2, 0.4, 0.6, 0.8, 1.0].map { t in
+    /// An eased (smoothstep) ramp so there is no visible edge where the scrim starts. More stops for the long stage ramp, so its
+    /// straight segments leave no bands.
+    private func eased(_ top: Double, steps: Int = 5) -> [Gradient.Stop] {
+        (0...steps).map { i in
+            let t = Double(i) / Double(steps)
             let k = t * t * (3 - 2 * t)
             return Gradient.Stop(color: .black.opacity(top * k), location: t)
         }
     }
 
     func body(content: Content) -> some View {
+        if fullBleed {
+            content.frame(maxWidth: .infinity, alignment: .leading).background(alignment: .bottom) {
+                VStack(spacing: 0) {
+                    LinearGradient(stops: eased(strength, steps: 16), startPoint: .top, endPoint: .bottom).frame(height: Self.stageRamp)
+                    Color.black.opacity(strength)
+                }
+                .padding(.top, -Self.stageRamp)
+                .allowsHitTesting(false)
+                .accessibilityHidden(true)
+            }
+        } else {
+            boxed(content)
+        }
+    }
+
+    private func boxed(_ content: Content) -> some View {
         content.background(alignment: .bottom) {
             VStack(spacing: 0) {
                 LinearGradient(stops: eased(strength), startPoint: .top, endPoint: .bottom).frame(height: ramp)
@@ -855,5 +881,7 @@ struct BrightArtScrim: ViewModifier {
 }
 
 extension View {
-    func brightArtScrim(_ strength: Double) -> some View { modifier(BrightArtScrim(strength: strength)) }
+    func brightArtScrim(_ strength: Double, fullBleed: Bool = false) -> some View {
+        modifier(BrightArtScrim(strength: strength, fullBleed: fullBleed))
+    }
 }
