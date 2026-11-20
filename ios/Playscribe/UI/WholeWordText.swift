@@ -91,6 +91,21 @@ private struct PickVariant: Layout {
 
     private func width(_ p: ProposedViewSize) -> CGFloat? { p.width.flatMap { $0.isFinite ? $0 : nil } }
 
+    /// The choice for each width asked about in this layout pass. `choose` measures every word and, one by one, the variants, and
+    /// SwiftUI asks for the size and then for the placement (often more than once) at the same width, so an Upcoming tile repeated that
+    /// measuring for each call and every title in a lazy grid paid for it as it scrolled in (Mac timing: Upcoming scrolled 2.6x slower
+    /// than Playing, 13 Nov). The cache lives only as long as the subviews do, so a changed text or cap measures afresh.
+    struct Cache { var chosen: [Int: Int] = [:] }
+    func makeCache(subviews: Subviews) -> Cache { Cache() }
+
+    private func choose(_ subviews: Subviews, width: CGFloat?, cache: inout Cache) -> Int {
+        let key = width.map { Int(($0 * 4).rounded()) } ?? -1
+        if let hit = cache.chosen[key] { return hit }
+        let pick = choose(subviews, width: width)
+        cache.chosen[key] = pick
+        return pick
+    }
+
     private func choose(_ subviews: Subviews, width: CGFloat?) -> Int {
         guard variantCount > 0, subviews.count >= variantCount else { return 0 }
         var start = 0
@@ -106,16 +121,16 @@ private struct PickVariant: Layout {
         return variantCount - 1
     }
 
-    func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) -> CGSize {
+    func sizeThatFits(proposal: ProposedViewSize, subviews: Subviews, cache: inout Cache) -> CGSize {
         guard !subviews.isEmpty else { return .zero }
         let w = width(proposal)
-        let size = subviews[choose(subviews, width: w)].sizeThatFits(ProposedViewSize(width: w, height: nil))
+        let size = subviews[choose(subviews, width: w, cache: &cache)].sizeThatFits(ProposedViewSize(width: w, height: nil))
         return CGSize(width: size.width, height: cap.map { min(size.height, $0) } ?? size.height)
     }
 
-    func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) {
+    func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout Cache) {
         guard !subviews.isEmpty else { return }
-        let chosen = choose(subviews, width: bounds.width)
+        let chosen = choose(subviews, width: bounds.width, cache: &cache)
         for (i, s) in subviews.enumerated() {
             let proposal = i == chosen ? ProposedViewSize(width: bounds.width, height: nil) : .zero
             s.place(at: bounds.origin, anchor: .topLeading, proposal: proposal)

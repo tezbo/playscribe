@@ -55,23 +55,40 @@ export const alertCopy = (gameName: string, label: string, d: Digest): { title: 
   }
 }
 
-export const pushPs5Release = async (db: DB, apns: Apns | null, releaseId: string, opts: { maxAgeHours: number; allow?: boolean }): Promise<PushOutcome> => {
+/** What one release's alert needs to be sent: the payload and the devices, with nothing left to read from the database. */
+export interface PushJob {
+  releaseId: string
+  payload: { aps: Record<string, unknown>; [k: string]: unknown }
+  targets: { id: string; token: string; environment: ApnsEnvironment; quiet: { from: number; until: number; timeZone: string } | null }[]
+}
+
+export interface PushDelivery {
+  outcome: PushOutcome
+  log: { deviceId: string; status: number; reason: string | null }[]
+  dead: { id: string; tokenSha: string }[]
+}
+
+/**
+ * Step one of a push: decide, and claim the release (pushed_at) in the database. Sends nothing. The feed job calls this during the
+ * poll and sends only after Publish has put the claim on the feed branch (src/cli/ingest.ts, scripts/push-send.ts); a run that fails
+ * before Publish loses its claim with the rest of the run, so the release is claimed again and never alerted from an unpublished state.
+ */
+export const preparePs5Push = (db: DB, releaseId: string, opts: { maxAgeHours: number; allow?: boolean; hasApns?: boolean }): { outcome: PushOutcome; job?: PushJob } => {
   const out: PushOutcome = { releaseId, sent: 0, failed: 0 }
   const row = getPlatformRow(db, releaseId, 'ps5')
   const release = getRelease(db, releaseId)
   const style = row && release ? alertStyleOf(row as { status: string; verification: string }, release.links) : null
-  if (!row || !release || !style) return { ...out, skipped: 'notLive' }
+  if (!row || !release || !style) return { outcome: { ...out, skipped: 'notLive' } }
   out.style = style
   // Claim the push before sending, so two runs can never both send it.
   const claimed = db.prepare('UPDATE platform_releases SET pushed_at = ? WHERE release_id = ? AND platform = ? AND pushed_at IS NULL').run(now(), releaseId, 'ps5')
-  if (!Number(claimed.changes)) return { ...out, skipped: 'alreadyPushed' }
-  if (opts.allow === false) return { ...out, skipped: 'pushDisabled' }
+  if (!Number(claimed.changes)) return { outcome: { ...out, skipped: 'alreadyPushed' } }
+  if (opts.allow === false) return { outcome: { ...out, skipped: 'pushDisabled' } }
   const liveAt = alertFromOf(row) ?? release.announcedAt
-  if (Date.now() - Date.parse(liveAt) > opts.maxAgeHours * 3600_000) return { ...out, skipped: 'tooOld' }
-  if (!apns) return { ...out, skipped: 'noApns' }
+  if (Date.now() - Date.parse(liveAt) > opts.maxAgeHours * 3600_000) return { outcome: { ...out, skipped: 'tooOld' } }
+  if (opts.hasApns === false) return { outcome: { ...out, skipped: 'noApns' } }
 
   const game = db.prepare('SELECT name FROM games WHERE id = ?').get(release.gameId) as { name: string }
-  const version = (JSON.parse(row.version ?? 'null') as { value: string } | null)?.value
   const targets = db
     .prepare(
       `SELECT d.id, d.apns_token, d.environment, d.quiet_from, d.quiet_until, d.quiet_tz FROM follows f JOIN devices d ON d.id = f.device_id
@@ -93,32 +110,76 @@ export const pushPs5Release = async (db: DB, apns: Apns | null, releaseId: strin
     digest: { new: release.digest.new, fixed: release.digest.fixed, balance: release.digest.balance, ps5: release.digest.ps5 },
     verification: row.verification,
   }
-  // Inside the device's registered quiet hours the push is passive and silent; the 72 h guard and the once-only claim are unchanged.
-  const forDevice = (p: typeof payload, t: (typeof targets)[number]) => {
-    if (t.quiet_from === null || t.quiet_until === null || !t.quiet_tz || !inQuietHours({ from: t.quiet_from, until: t.quiet_until, timeZone: t.quiet_tz })) return p
-    const { sound: _sound, ...aps } = p.aps
-    return { ...p, aps: { ...aps, 'interruption-level': 'passive' } }
+  return {
+    outcome: out,
+    job: {
+      releaseId,
+      payload,
+      targets: targets.map((t) => ({
+        id: t.id,
+        token: t.apns_token,
+        environment: t.environment,
+        quiet: t.quiet_from === null || t.quiet_until === null || !t.quiet_tz ? null : { from: t.quiet_from, until: t.quiet_until, timeZone: t.quiet_tz },
+      })),
+    },
   }
-  const log = db.prepare('INSERT INTO push_log (release_id, device_id, status, reason, sent_at) VALUES (?, ?, ?, ?, ?)')
-  for (const t of targets) {
+}
+
+/** Step two: send a prepared job. Touches no database; the caller records the log and the dead tokens. */
+export const deliverPush = async (apns: Apns, job: PushJob, outcome: PushOutcome): Promise<PushDelivery> => {
+  const out: PushOutcome = { ...outcome }
+  const log: PushDelivery['log'] = []
+  const dead: PushDelivery['dead'] = []
+  // Inside the device's registered quiet hours the push is passive and silent; the 72 h guard and the once-only claim are unchanged.
+  const forDevice = (t: PushJob['targets'][number]) => {
+    if (!t.quiet || !inQuietHours({ from: t.quiet.from, until: t.quiet.until, timeZone: t.quiet.timeZone })) return job.payload
+    const { sound: _sound, ...aps } = job.payload.aps
+    return { ...job.payload, aps: { ...aps, 'interruption-level': 'passive' } }
+  }
+  for (const t of job.targets) {
     try {
-      const r = await apns.send(t.apns_token, t.environment, forDevice(payload, t), { collapseId: release.id })
-      log.run(releaseId, t.id, r.status, r.reason ?? null, now())
+      const r = await apns.send(t.token, t.environment, forDevice(t), { collapseId: job.releaseId })
+      log.push({ deviceId: t.id, status: r.status, reason: r.reason ?? null })
       if (r.status === 200) out.sent++
       else {
         out.failed++
-        if (tokenIsDead(r)) {
-          // Dropped for the rest of this run, and noted so relay-dead.ts can tell the relay, which holds the lasting copy (r071).
-          db.prepare('UPDATE devices SET apns_token = NULL, updated_at = ? WHERE id = ?').run(now(), t.id)
-          db.prepare('INSERT OR REPLACE INTO dead_tokens (device_id, token_sha, found_at) VALUES (?, ?, ?)').run(t.id, tokenSha(t.apns_token), now())
-        }
+        if (tokenIsDead(r)) dead.push({ id: t.id, tokenSha: tokenSha(t.token) })
       }
     } catch (e) {
       out.failed++
-      log.run(releaseId, t.id, 0, (e as Error).message, now())
+      log.push({ deviceId: t.id, status: 0, reason: (e as Error).message })
     }
   }
-  return out
+  return { outcome: out, log, dead }
+}
+
+/** Prepare and send in one go (local runs and tests): the old behaviour, claim then send. */
+export const pushPs5Release = async (db: DB, apns: Apns | null, releaseId: string, opts: { maxAgeHours: number; allow?: boolean }): Promise<PushOutcome> => {
+  const { outcome, job } = preparePs5Push(db, releaseId, { ...opts, hasApns: !!apns })
+  if (!job || !apns) return outcome
+  const d = await deliverPush(apns, job, outcome)
+  const ins = db.prepare('INSERT INTO push_log (release_id, device_id, status, reason, sent_at) VALUES (?, ?, ?, ?, ?)')
+  for (const l of d.log) ins.run(releaseId, l.deviceId, l.status, l.reason, now())
+  for (const x of d.dead) {
+    // Dropped for the rest of this run, and noted so relay-dead.ts can tell the relay, which holds the lasting copy (r071).
+    db.prepare('UPDATE devices SET apns_token = NULL, updated_at = ? WHERE id = ?').run(now(), x.id)
+    db.prepare('INSERT OR REPLACE INTO dead_tokens (device_id, token_sha, found_at) VALUES (?, ?, ?)').run(x.id, x.tokenSha, now())
+  }
+  return d.outcome
+}
+
+/** After a poll in the feed job: claim every PS5 row now live and return the jobs to send after Publish (nothing is sent here). */
+export const queueNewPs5 = (db: DB, opts: { maxAgeHours: number; allow?: boolean; hasApns?: boolean }) => {
+  const ids = db.prepare("SELECT release_id FROM platform_releases WHERE platform = 'ps5' AND status = 'live' AND pushed_at IS NULL").all() as { release_id: string }[]
+  const outcomes: PushOutcome[] = []
+  const jobs: { job: PushJob; outcome: PushOutcome }[] = []
+  for (const { release_id } of ids) {
+    const r = preparePs5Push(db, release_id, opts)
+    if (r.outcome.skipped === 'notLive') continue
+    outcomes.push(r.outcome)
+    if (r.job) jobs.push({ job: r.job, outcome: r.outcome })
+  }
+  return { outcomes, jobs }
 }
 
 /** After a poll: the one alert for each PS5 row that is now live (none for a press-only report). */

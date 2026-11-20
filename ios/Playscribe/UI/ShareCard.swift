@@ -115,7 +115,7 @@ struct ShareUpdateButton: View {
                 .buttonStyle(RailPressStyle())
             } else if failed {
                 Button { render() } label: { Text("Retry").frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()) }.font(PlayscribeFont.footnote)
-                    .accessibilityHint("Couldn't make the card. Try again.")
+                    .accessibilityHint("Couldn’t make the card. Try again.")
             } else {
                 ProgressView().frame(width: 44, height: 44).accessibilityLabel("Making your card")
             }
@@ -154,4 +154,13 @@ enum ShareText {
         c.percentEncodedPath = "/r/" + [gameID, releaseID].map { $0.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed.subtracting(CharacterSet(charactersIn: "/"))) ?? $0 }.joined(separator: "/")
         return c.url
     }
+}
+
+/// More > Share (0.5.6 hotfix): the system share sheet with the update's card and its text, the same as the Share button's link.
+struct ShareActivitySheet: UIViewControllerRepresentable {
+    var items: [Any]
+    func makeUIViewController(context: Context) -> UIActivityViewController {
+        UIActivityViewController(activityItems: items, applicationActivities: nil)
+    }
+    func updateUIViewController(_ vc: UIActivityViewController, context: Context) {}
 }

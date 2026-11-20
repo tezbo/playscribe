@@ -3,7 +3,77 @@
 Playscribe follows semantic versioning. Each `## x.y.z` section becomes that build's "What to Test" in TestFlight,
 so write it for testers. Release steps are in docs/release.md.
 
-## 0.5.5 (candidate, not released)
+## 0.5.9
+
+Videos now stay inside Playscribe. In 0.5.8, Play in Tabletop opened your Duo's own fullscreen player, so the reflection could never show. Each line says what to do, then what you should see.
+Reply with the numbers that failed, or "all good".
+
+1. In Tabletop, open Dawnwalker's Update 1.1, open its "Update 1.1 overview" video and press Play in the bottom half. The video plays in the top half, inside Playscribe, with the reflection under it. Your Duo's own fullscreen player never opens.
+2. Same in Tabletop with a game trailer (a game page, then Play trailer) and with a Dawnwalker Gallery video. Both play in the top half with the reflection, and the controls stay in the bottom half.
+3. Before you press Play, the top half shows the game's art, not YouTube's screen. Once it plays, YouTube's play bar and buttons never show on the video in Tabletop; only its title and logo do.
+4. While a video plays in Tabletop, open the phone flat, then fold back to Tabletop. The video carries on from the same place (expect a short reload as it switches).
+5. Switch the phone to light mode and open a video in Tabletop. The video screen stays dark and every label is readable.
+6. Closed, open Dawnwalker's Gallery and tap a video. It plays in Playscribe, not in the YouTube app.
+
+Feedback you send through TestFlight, including its comment, may appear in our public issue tracker, so leave out personal details.
+
+## 0.5.8
+
+A one-fix build for the video reflection, which was missing on the Duo in 0.5.7.
+
+1. In Tabletop, play an update video or a trailer. A soft reflection of the playing video shows under it, at the top of the lower half, and moves with the video. Pause it and the reflection holds; close the video and it goes.
+
+Feedback you send through TestFlight, including its comment, may appear in our public issue tracker, so leave out personal details.
+
+## 0.5.7
+
+This covers everything you reported as fixed or added in 0.5.6 and 0.5.7. Each line says what to do, then what you should see.
+Reply with the numbers that failed, or "all good".
+
+Fold check (about 2 minutes)
+1. Open Cyberpunk 2077 and scroll halfway down Update 2.5. Unfold, half-fold into Tabletop, then close. You should stay on Update 2.5 at about the same place. After closing, the cover screen shows Playscribe on the same update, not the home screen.
+2. In Tabletop, play a trailer. The top half only shows things, and every button is in the bottom half. The reflection moves with the video, and only in Tabletop.
+3. Look at the side buttons in each pose (closed upright, closed sideways, open, Tabletop, book). You should see the same set every time, with none cut off and no scrolling.
+4. Unfolded, tap an older patch under All updates, then swipe back. You should land on the game page with All updates showing.
+5. Closed, scroll the Library down a bit, open a game, then go Back. The Library should be where you left it.
+
+From 0.5.6
+6. Tap Cyberpunk 2077 in the Library. It opens on Update 2.5, the newest, not Patch 2.31. Open Patch 2.31, go back to the Library, and tap Cyberpunk again. It opens on Update 2.5 again.
+7. Cyberpunk, All updates: no "Check out what's coming…" or "REDstreams" rows. Those posts are under News instead.
+8. Two Point Museum, 2 Nov update: the name reads "Update", not "Update 12.1.247768".
+9. Closed sideways, on a game page: the rail has Back, Notifications, Status and More.
+10. The Blood of Dawnwalker, Launch entry: it reads "Available on PC, PlayStation 5 and Xbox Series X|S", and says nothing about hotfixes not being tracked.
+
+New in 0.5.7
+11. Any update page: the patch name is the biggest thing on the page. The status line starts "Out on PS5". No dot separators anywhere (orange dots mean unread).
+12. Any game page, closed or unfolded: the section bar (What’s new, News, Gallery and the rest) stays pinned at the top as you scroll, and tapping a section jumps to it. In Book the same sections are a contents list on the left page.
+13. All updates rows lead with the patch name, then the headline, then the date.
+14. Tabletop on an update: the patch name shows on the top half.
+15. Back keeps the Library where it was and covers don’t flash. The search field no longer starts with a capital letter.
+16. Long-running games such as Cyberpunk and KCD II now show their full update history, older years included, with no PC-only rows.
+
+Known, coming in 0.5.8 (no need to report)
+- A game you haven't added says "No updates yet" even when it has had patches.
+- In Open portrait, the date under the first Library row is cut off hard by the tab bar.
+- A feed refresh during a fast scroll can cause a brief stutter.
+- After a pose change, the page can land a little above or below your reading place.
+
+Feedback you send through TestFlight, including its comment, may appear in our public issue tracker, so leave out personal details.
+
+## 0.5.6
+
+A fix release for problems found in 0.5.5.
+
+- Opening a game now shows its newest PS5 update, not one you looked at on an earlier visit.
+- Tapping an update in All updates and then going back returns you to the page you were on, with All updates still there.
+- The buttons beside a game are the same in every position of the phone: Back, Notifications, Status and More. They no longer change, scroll or sit half hidden in Tabletop. Check for updates, Links, Share and (in Book) Swap sides are under More.
+- The video reflection now shows only in Tabletop, and it mirrors the video as it plays.
+- The Dawnwalker launch entry no longer says its launch hotfixes weren't tracked.
+- News posts no longer show up as updates in All updates, and update titles no longer show bare build numbers. This was fixed on our server, so it applies as soon as the list refreshes.
+
+Feedback you send through TestFlight, including its comment, may appear in our public issue tracker, so leave out personal details.
+
+## 0.5.5
 
 - New in Settings: "Help keep my games up to date". Off until you turn it on. When on, the app sends our server the games you follow and a random code, so those games are checked every hour instead of about every 14 hours. The card in the Library explains exactly what is sent, what never is, and that the record is deleted when you turn it off.
 - The update deck at the top of the Library shows one card per game: its newest unread update, or its newest if all are read. Games with something unread come first, then the rest, up to five, and the dots match the cards.

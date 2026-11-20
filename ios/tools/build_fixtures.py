@@ -110,7 +110,7 @@ releases = [
         "platforms": [plat("ps5", "live", "official", "2026-09-03", "dawnwalker-news")]
                      + [plat(p, "live", "reported", "2026-09-03", "shacknews") for p in ("pc", "xboxSeries")],
         "headline": "Available on PC, PlayStation 5 and Xbox Series X|S",
-        "summary": "The game launched worldwide. Playscribe has not tracked any launch-window hotfixes, so this entry marks where the journal starts rather than listing changes.",
+        "summary": "The game launched worldwide on PC, PlayStation 5 and Xbox Series X|S.",
         "keyChanges": [],
     },
 ]
@@ -167,7 +167,9 @@ for r in releases:
 
 # ---------------------------------------------------------------- catalogue
 snap = json.loads((src / "catalog.snapshot.json").read_text())["games"]
-igdb = lambda gid: (snap.get(gid, {}).get("igdb") or {}).get("id")
+# The feed registry's ids for games the web snapshot has no IGDB block for (backend/src/sources/registry.json, igdbId).
+IGDB_FALLBACK = {"astro-bot": 303811, "yotei": 317627}
+igdb = lambda gid: (snap.get(gid, {}).get("igdb") or {}).get("id") or IGDB_FALLBACK.get(gid)
 catalog = [
     {"id": "dawnwalker", "name": "The Blood of Dawnwalker", "developer": "Rebel Wolves", "publisher": "Bandai Namco Entertainment",
      "platforms": ["ps5", "pc", "xboxSeries"], "releaseDate": "2026-09-03", "igdbID": igdb("dawnwalker"),
