@@ -744,7 +744,7 @@ struct ContentsView: View {
             .scrollIndicators(.hidden)
         }
         // Book: the page colour, so the art fades into it as on the right page; Tabletop's lower half stays ink1.
-        .background(duo.pose == .book ? PlayscribeRole.surface : PlayscribeRole.surface)
+        .background(duo.pose == .book ? PlayscribeRole.bg : PlayscribeRole.surface)
         .foldAudited()
     }
 }
