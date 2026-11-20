@@ -344,7 +344,10 @@ struct CompactDeckCard: View {
     var body: some View {
         // The caller gives a `height` that already holds the whole caption at accessibility sizes (measured by the deck's
         // ruler), so nothing can overflow the card; the art and its scrim are the background.
+        // Full bleed at 75%, held to the card's bottom: the boxed 60% scrim left the byline at 3.2:1 on Two Point Museum's
+        // masonry in Open portrait std (Iris on #514, Mac contrast at 2528ae64). The scrim is clipped by the card's corners.
         AdaptiveCaption(card: card)
+            .brightArtScrim(0.75, fullBleed: true)
             .frame(maxWidth: .infinity, alignment: .bottomLeading)
             .frame(height: height, alignment: .bottomLeading)
             .background {
@@ -798,11 +801,88 @@ struct DeckStage: View {
             .dynamicTypeSize(...DynamicTypeSize.accessibility3)
             // The caption ends 24 pt above the division, measured in screen space (as in 0.2.0 #174/#176).
             .padding(.bottom, duo.clearance(forBottom: stageBottom))
+            // bug-text-on-bright-art: 75% black behind the block, since the ember eyebrow needs more than white lines (Iris 2b).
+            // Full bleed: the whole stage width, held to the stage's bottom edge, so it has no side, top or bottom edge on the art
+            // (Iris on #514: the boxed scrim showed its right and top edges in Tabletop).
+            .brightArtScrim(0.75, fullBleed: true)
             }
             .background(Color.clear.onGeometryChange(for: CGFloat.self) { $0.frame(in: .global).maxY.rounded() } action: { new in
                 if abs(new - stageBottom) > 0.5 { stageBottom = new }
             })
         .allowsHitTesting(false)
         .accessibilityElement(children: .contain)
+    }
+}
+
+
+/// bug-text-on-bright-art (Iris spec 2b): a fixed black scrim behind a text block over key art, so small text keeps 4.5:1 on
+/// the brightest art. 0% a line and a half above the block, eased, full `strength` from the block's top to 8 pt under its last line, soft
+/// side edges, no box. It belongs to the text, not the art, so it does not move under key-art motion. `strength` is at least
+/// 0.6 behind white lines and 0.75 behind the ember eyebrow ("New update", "Coming soon").
+struct BrightArtScrim: ViewModifier {
+    var strength: Double
+    /// One text line and a half above the block, well under the Tabletop cap of 15% of the stage (about 56 pt).
+    var ramp: CGFloat = 40
+    /// Full strength holds this far under the last line, then eases out over `fade` more, so the bottom is no hard edge either.
+    var tail: CGFloat = 8
+    var fade: CGFloat = 28
+    var feather: CGFloat = 40
+    /// Tabletop stage: the scrim spans the block's full width (the block fills the stage) and holds full strength to its bottom
+    /// edge, with no side feather and no bottom fade; only the top eases in, over `stageRamp`. A box with feathered sides showed
+    /// its right and top edges on bright art (Iris on #514).
+    var fullBleed = false
+    /// Under the Tabletop cap of 15% of the stage (about 56 pt).
+    static let stageRamp: CGFloat = 56
+
+    /// An eased (smoothstep) ramp so there is no visible edge where the scrim starts. More stops for the long stage ramp, so its
+    /// straight segments leave no bands.
+    private func eased(_ top: Double, steps: Int = 5) -> [Gradient.Stop] {
+        (0...steps).map { i in
+            let t = Double(i) / Double(steps)
+            let k = t * t * (3 - 2 * t)
+            return Gradient.Stop(color: .black.opacity(top * k), location: t)
+        }
+    }
+
+    func body(content: Content) -> some View {
+        if fullBleed {
+            content.frame(maxWidth: .infinity, alignment: .leading).background(alignment: .bottom) {
+                VStack(spacing: 0) {
+                    LinearGradient(stops: eased(strength, steps: 16), startPoint: .top, endPoint: .bottom).frame(height: Self.stageRamp)
+                    Color.black.opacity(strength)
+                }
+                .padding(.top, -Self.stageRamp)
+                .allowsHitTesting(false)
+                .accessibilityHidden(true)
+            }
+        } else {
+            boxed(content)
+        }
+    }
+
+    private func boxed(_ content: Content) -> some View {
+        content.background(alignment: .bottom) {
+            VStack(spacing: 0) {
+                LinearGradient(stops: eased(strength), startPoint: .top, endPoint: .bottom).frame(height: ramp)
+                Color.black.opacity(strength)
+                LinearGradient(stops: eased(strength), startPoint: .bottom, endPoint: .top).frame(height: fade)
+            }
+            .mask {
+                HStack(spacing: 0) {
+                    LinearGradient(stops: eased(1), startPoint: .leading, endPoint: .trailing).frame(width: feather)
+                    Color.black
+                    LinearGradient(stops: eased(1), startPoint: .trailing, endPoint: .leading).frame(width: feather)
+                }
+            }
+            .padding(.top, -ramp).padding(.bottom, -(tail + fade)).padding(.horizontal, -feather)
+            .allowsHitTesting(false)
+            .accessibilityHidden(true)
+        }
+    }
+}
+
+extension View {
+    func brightArtScrim(_ strength: Double, fullBleed: Bool = false) -> some View {
+        modifier(BrightArtScrim(strength: strength, fullBleed: fullBleed))
     }
 }
