@@ -344,9 +344,10 @@ struct CompactDeckCard: View {
     var body: some View {
         // The caller gives a `height` that already holds the whole caption at accessibility sizes (measured by the deck's
         // ruler), so nothing can overflow the card; the art and its scrim are the background.
+        // Full bleed at 75%, held to the card's bottom: the boxed 60% scrim left the byline at 3.2:1 on Two Point Museum's
+        // masonry in Open portrait std (Iris on #514, Mac contrast at 2528ae64). The scrim is clipped by the card's corners.
         AdaptiveCaption(card: card)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .brightArtScrim(0.6)
+            .brightArtScrim(0.75, fullBleed: true)
             .frame(maxWidth: .infinity, alignment: .bottomLeading)
             .frame(height: height, alignment: .bottomLeading)
             .background {
