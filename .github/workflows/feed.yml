@@ -123,6 +123,9 @@ jobs:
           # Auto-onboarding: games polled per full run from the derived registry. Unset or 0 = off (dry run only).
           # Set the AUTO_SLICE repository variable (600 = a full cycle in about 9 runs) to turn it on.
           AUTO_SLICE: ${{ vars.AUTO_SLICE }}
+          # Alerts are claimed here but sent after Publish (scripts/push-send.ts): a run that fails to publish loses its claim with the
+          # rest of the run and never alerts for a release the feed does not hold (12 Nov: Rogue Prince pushed 3 times, never published).
+          PUSH_QUEUE: ${{ runner.temp }}/push-queue.json
         run: npm run ingest --silent -- $HOT_RUN --export "$GITHUB_WORKSPACE/out"
       - name: Backfill
         if: inputs.action == 'backfill'
@@ -168,19 +171,6 @@ jobs:
           stamp="$GITHUB_WORKSPACE/out/v1/upcoming/fetched-at"
           if [ "${{ inputs.action }}" != info ] && [ -f "$stamp" ] && [ $(( $(date +%s) - $(date -d "$(cat "$stamp")" +%s) )) -lt 82800 ]; then echo "Upcoming is fresh"; exit 0; fi
           npm run upcoming --silent -- "$GITHUB_WORKSPACE/out" && date -u +%FT%TZ > "$stamp"
-      # r071: devices whose APNs token came back dead this run are removed from the relay (a follow-list opt-in keeps its
-      # ids-only record). Ids and token hashes only. Never fatal; a report that fails is made again on the next failed push.
-      - name: Report dead tokens to the relay
-        if: vars.PUSH_ENABLED == '1' && steps.load.outcome == 'success'
-        continue-on-error: true
-        working-directory: backend
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-        run: |
-          export RELAY_URL="$(cat "$GITHUB_WORKSPACE/relay/url.txt")"
-          export RELAY_ADMIN_TOKEN="$(printf 'relay-admin:%s' "$CLOUDFLARE_API_TOKEN" | sha256sum | cut -d' ' -f1)"
-          echo "::add-mask::$RELAY_ADMIN_TOKEN"
-          npx tsx scripts/relay-dead.ts
       # Always runs, and Publish does not run if it fails: the state database goes to a public branch, so it must hold
       # no device and no APNs token. Counts only in the log.
       - name: Scrub devices
@@ -188,6 +178,7 @@ jobs:
         working-directory: backend
         run: npx tsx scripts/relay-scrub.ts "$RUNNER_TEMP/relay-tokens"
       - name: Publish
+        id: publish
         working-directory: out
         run: |
           sqlite_wal="state/playscribe.db-wal"; [ -f "$sqlite_wal" ] && echo "WAL left behind" && exit 1
@@ -208,4 +199,19 @@ jobs:
           git -c user.name="playscribe-feed[bot]" -c user.email="feed@users.noreply.github.com" commit -q -m "Feed $(date -u +%FT%TZ)"
           git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" feed
           echo "Published $(find v1 -name '*.json' | wc -l) files"
+          echo "published=1" >> "$GITHUB_OUTPUT"
           if [ "$db_bytes" -ge 90000000 ]; then echo "::error title=Feed state database is ${db_mb} MB::Compressed state reached 90 MB (limit 100). Published this run; the next growth may stop the feed. Prune or move state now."; exit 1; fi
+      # Alerts go out only now, once the feed branch holds the release and its pushed claim. Runs even when the size guard above failed after
+      # publishing. r071: tokens that come back dead are reported to the relay (ids and token hashes only). Never fatal: a failure here loses
+      # this run's alerts at most and cannot repeat one.
+      - name: Send pushes
+        if: always() && steps.publish.outputs.published == '1' && vars.PUSH_ENABLED == '1' && steps.load.outcome == 'success'
+        continue-on-error: true
+        working-directory: backend
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          export RELAY_URL="$(cat "$GITHUB_WORKSPACE/relay/url.txt")"
+          export RELAY_ADMIN_TOKEN="$(printf 'relay-admin:%s' "$CLOUDFLARE_API_TOKEN" | sha256sum | cut -d' ' -f1)"
+          echo "::add-mask::$RELAY_ADMIN_TOKEN"
+          npx tsx scripts/push-send.ts "$RUNNER_TEMP/push-queue.json"

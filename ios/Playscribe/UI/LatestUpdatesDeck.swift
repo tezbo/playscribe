@@ -17,7 +17,7 @@ struct DeckCard: Identifiable, Hashable {
     /// The line under a hero headline for a card with no release: the headline is already the game name, so the line
     /// never repeats it (r053-hero-duplicate-title-no-notes). A game the feed does not follow says so, as the Page does.
     static func noReleaseLine(tracked: Bool) -> String {
-        tracked ? "No patch notes yet" : "We don't track this game's updates yet"
+        tracked ? "No patch notes yet" : "We don’t track this game’s updates yet"
     }
 }
 
@@ -305,7 +305,7 @@ struct DeckCardView: View {
             } else {
             VStack(alignment: .leading, spacing: 8) {
                 DeckCardArt(card: card, height: artHeight)
-                Text(card.release.map { $0.ps5Headline ?? $0.displayName } ?? game.name)
+                Text(card.release.map { $0.ps5Headline ?? $0.displayName } ?? game.name.gluingTrailingNumeral)
                     .font(PlayscribeFont.title3).foregroundStyle(PlayscribeColor.textPrimary)
                     .lineLimit(typeSize.isAccessibilitySize ? 3 : 2).fixedSize(horizontal: false, vertical: true)
                 DeckByline(card: card, dateText: dateText)
@@ -477,7 +477,7 @@ struct DeckChips: View {
     }
 
     private func chip(_ text: String, filled: Bool) -> some View {
-        Text(text).font(PlayscribeFont.caption).monospacedDigit()
+        Text(text.keepingVersionsTogether).font(PlayscribeFont.caption).monospacedDigit()
             .foregroundStyle(filled ? PlayscribeColor.ink950 : PlayscribeColor.accent)
             .padding(.horizontal, 8).frame(minHeight: 22)
             .background(Capsule().fill(filled ? PlayscribeColor.accent : PlayscribeColor.ink950.opacity(0.75)))
@@ -513,16 +513,16 @@ struct DeckByline: View {
             // stacked, which is what the headline needs under the J-5 cap.
             Group {
                 if card.release != nil && !dateText.isEmpty {
-                    Text("\(Text(card.game.name).foregroundStyle(PlayscribeColor.textPrimary))  \(Text(dateText).foregroundStyle(PlayscribeColor.textSecondary))")
+                    Text("\(Text(card.game.name.gluingTrailingNumeral).foregroundStyle(PlayscribeColor.textPrimary))  \(Text(dateText).foregroundStyle(PlayscribeColor.textSecondary))")
                 } else {
-                    Text(card.game.name).foregroundStyle(PlayscribeColor.textPrimary)
+                    Text(card.game.name.gluingTrailingNumeral).foregroundStyle(PlayscribeColor.textPrimary)
                 }
             }
             .lineLimit(tight ? 2 : 3).fixedSize(horizontal: false, vertical: true)
             .font(PlayscribeFont.subheadline)
         } else {
             HStack(spacing: 8) {
-                Text(card.game.name).foregroundStyle(PlayscribeColor.textPrimary)
+                Text(card.game.name.gluingTrailingNumeral).foregroundStyle(PlayscribeColor.textPrimary)
                 if card.release != nil { Text(dateText).foregroundStyle(PlayscribeColor.textSecondary) }
             }
             .font(PlayscribeFont.subheadline).lineLimit(1)
@@ -572,7 +572,7 @@ struct WideDeckCard: View {
     private var accessibilityCard: some View {
         VStack(alignment: .leading, spacing: 6) {
             if card.unread { chip("New update", filled: true) }
-            Text(card.game.name).font(PlayscribeFont.title2.bold())
+            Text(card.game.name.gluingTrailingNumeral).font(PlayscribeFont.title2.bold())
                 .foregroundStyle(PlayscribeColor.textPrimary).fixedSize(horizontal: false, vertical: true)
             headline
         }
@@ -603,7 +603,7 @@ struct WideDeckCard: View {
                                startPoint: .leading, endPoint: .trailing)
                 VStack(alignment: .leading, spacing: 6) {
                     if card.unread { chip("New update", filled: true) }
-                    Text(card.game.name).font(PlayscribeFont.title2.bold())
+                    Text(card.game.name.gluingTrailingNumeral).font(PlayscribeFont.title2.bold())
                         .foregroundStyle(PlayscribeColor.textPrimary).lineLimit(2).fixedSize(horizontal: false, vertical: true)
                     Text(card.release.map { $0.ps5Headline ?? $0.displayName } ?? "Released " + (card.date.map(AppModel.tileDay) ?? ""))
                         .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textPrimary.opacity(0.9))
@@ -625,7 +625,7 @@ struct WideDeckCard: View {
     }
 
     private func chip(_ text: String, filled: Bool) -> some View {
-        Text(text).font(PlayscribeFont.caption).monospacedDigit()
+        Text(text.keepingVersionsTogether).font(PlayscribeFont.caption).monospacedDigit()
             .foregroundStyle(filled ? PlayscribeColor.ink950 : PlayscribeColor.accent)
             .padding(.horizontal, 8).padding(.vertical, 2).frame(minHeight: 22)
             .background(Capsule().fill(filled ? PlayscribeColor.accent : PlayscribeColor.ink950.opacity(0.75)))
@@ -669,7 +669,7 @@ struct DeckCardArt: View {
     }
 
     private func chip(_ text: String, filled: Bool) -> some View {
-        Text(text).font(PlayscribeFont.caption).monospacedDigit()
+        Text(text.keepingVersionsTogether).font(PlayscribeFont.caption).monospacedDigit()
             .foregroundStyle(filled ? PlayscribeColor.ink950 : PlayscribeColor.accent)
             .padding(.horizontal, 8).padding(.vertical, 2).frame(minHeight: 22)
             .background(Capsule().fill(filled ? PlayscribeColor.accent : PlayscribeColor.ink950.opacity(0.75)))
@@ -756,7 +756,7 @@ struct DeckStage: View {
                 FlowLayout(spacing: 8) {
                     if upcomingLine != nil { Text("Coming soon").foregroundStyle(PlayscribeColor.accent) }
                     if card.unread { Text("New update").foregroundStyle(PlayscribeColor.accent) }
-                    if let v = card.release?.versionChip { Text(v).monospacedDigit().foregroundStyle(PlayscribeColor.textPrimary.opacity(0.9)) }
+                    if let v = card.release?.versionChip { Text(v.keepingVersionsTogether).monospacedDigit().foregroundStyle(PlayscribeColor.textPrimary.opacity(0.9)) }
                 }
                 .font(PlayscribeFont.caption)
                 .shadow(color: .black.opacity(0.6), radius: 3)
@@ -780,16 +780,16 @@ struct DeckStage: View {
                                     Text("Released " + dateText).foregroundStyle(PlayscribeColor.vellum100)
                                 }
                             } else {
-                                Text("\(Text(line).foregroundStyle(PlayscribeColor.textPrimary))  \u{00B7}  \(Text("Released " + dateText).foregroundStyle(PlayscribeColor.vellum100))")
+                                Text("\(Text(line).foregroundStyle(PlayscribeColor.textPrimary))  \(Text("Released " + dateText).foregroundStyle(PlayscribeColor.vellum100))")
                                     .lineLimit(1).minimumScaleFactor(0.85)
                             }
                         } else {
                             Text(line).foregroundStyle(PlayscribeColor.textPrimary)
                         }
                     } else if let dateText {
-                        Text("\(Text(card.game.name).foregroundStyle(PlayscribeColor.textPrimary))  \(Text(dateText).foregroundStyle(PlayscribeColor.vellum100))")
+                        Text("\(Text(card.game.name.gluingTrailingNumeral).foregroundStyle(PlayscribeColor.textPrimary))  \(Text(dateText).foregroundStyle(PlayscribeColor.vellum100))")
                     } else {
-                        Text(card.game.name).foregroundStyle(PlayscribeColor.textPrimary)
+                        Text(card.game.name.gluingTrailingNumeral).foregroundStyle(PlayscribeColor.textPrimary)
                     }
                 }
                 .font(PlayscribeFont.subheadline).fixedSize(horizontal: false, vertical: true)

@@ -114,7 +114,7 @@ struct CatalogGame: Codable, Hashable, Identifiable {
         return "Plays on PS5 since " + b.formatted(Date.FormatStyle(locale: Locale(identifier: "en_GB")).month(.abbreviated).year())
     }
 
-    /// Out elsewhere, not on PS5 or PS4: "Not on PS5 · PC, 2012". Nil when the game has a PS5 or PS4
+    /// Out elsewhere, not on PS5 or PS4: "Not on PS5 (PC, 2012)". Nil when the game has a PS5 or PS4
     /// release, or no release anywhere (that one is genuinely TBA).
     var notOnPS5Line: String? {
         guard releaseDate?.isoDay == nil, playableSince?.isoDay == nil,
@@ -124,7 +124,7 @@ struct CatalogGame: Codable, Hashable, Identifiable {
         let year = cal.component(.year, from: o)
         // "PC (Microsoft Windows)" reads "PC": drop the parenthetical.
         let platform = releasedElsewhereOn.map { String($0.split(separator: "(").first ?? "").trimmingCharacters(in: .whitespaces) }.flatMap { $0.isEmpty ? nil : $0 }
-        return "Not on PS5 · " + [platform, String(year)].compactMap { $0 }.joined(separator: ", ")
+        return "Not on PS5 (" + [platform, String(year)].compactMap { $0 }.joined(separator: ", ") + ")"
     }
 
     /// A PS4-only game that plays on PS5: no PS5 release date, but not "TBA".
@@ -205,6 +205,17 @@ struct GalleryItem: Codable, Hashable, Identifiable {
     var title: String
     var alt: String
     var href: String?
+
+    /// The YouTube video ID from `href`: youtube.com (or a *.youtube.com host) /watch?v=, /embed/ or /shorts/, or youtu.be/.
+    /// Nil for anything else, and then the row is not a button.
+    var youtubeID: String? {
+        guard let href, let c = URLComponents(string: href), let host = c.host?.lowercased() else { return nil }
+        let path = c.path.split(separator: "/").map(String.init)
+        if host == "youtu.be" { return path.first.flatMap { $0.isEmpty ? nil : $0 } }
+        guard host == "youtube.com" || host.hasSuffix(".youtube.com") else { return nil }
+        if path.count >= 2, path[0] == "embed" || path[0] == "shorts" { return path[1].isEmpty ? nil : path[1] }
+        return c.queryItems?.first { $0.name == "v" }?.value.flatMap { $0.isEmpty ? nil : $0 }
+    }
 }
 
 struct CollectionEntry: Codable, Hashable {

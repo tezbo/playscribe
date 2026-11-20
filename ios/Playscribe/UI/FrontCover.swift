@@ -160,13 +160,15 @@ struct FrontCoverPage: View {
                        startPoint: .top, endPoint: .bottom)
     }
 
-    /// The shade's stops, as (opacity, location). Standard sizes: unchanged (signed). Accessibility sizes (Iris, 0a4230d): the
+    /// The shade's stops, as (opacity, location). Standard sizes: the signed shade, solid under the lockup. Accessibility sizes (Iris, 0a4230d): the
     /// plate covers the lower half and its eyebrow sat on pale art at about 40 percent, so the shade follows the plate: clear
     /// until just above it, 88 percent black at the eyebrow's top edge (the accent holds 4.5:1 over art up to about 60 percent
     /// luminance there), 92 percent by the title, solid at the foot.
     static func fadeStops(accessibility: Bool, plateTop: Double?) -> [(opacity: Double, location: Double)] {
         guard accessibility else {
-            return [(0.55, 0), (0, 0.18), (0, 0.45), (0.92, 0.85), (1, 1)]
+            // Solid from 90 percent down (Iris, 19 Nov, on Terry's cover review): a title logo in the key art read as a ghost
+            // behind the Playscribe mark, so the foot under the lockup is plain ink.
+            return [(0.55, 0), (0, 0.18), (0, 0.45), (0.92, 0.82), (1, 0.9), (1, 1)]
         }
         guard let top = plateTop.map({ min(max($0, 0.2), 0.9) }) else {
             return [(0.55, 0), (0, 0.18), (0, 0.25), (0.92, 0.7), (1, 1)]
@@ -193,17 +195,19 @@ struct FrontCoverPlate: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            // Iris (#467): NEW UPDATE until the person opens that update; read pages show no eyebrow. CONTINUE (partly
-            // read, a resume point) waits for a resume-point model; the app only records read or unread today.
-            if card.unread {
-                Text("NEW UPDATE")
-                    .font(PlayscribeFont.caption.weight(.semibold))
-                    .tracking(12 * 0.12)
-                    .foregroundStyle(PlayscribeColor.accent)
+            // Iris (19 Nov, on #541): the patch name is the most prominent text on an update's cover. A small eyebrow carries the
+            // game and the day ("Kingdom Come: Deliverance II, 25 Jun"), with the unread dot before it until the update is
+            // opened (#467's NEW UPDATE). The game name is never cut: the eyebrow wraps.
+            if let eyebrow = Self.eyebrow(card) {
+                HStack(alignment: .firstTextBaseline, spacing: 6) {
+                    if card.unread { UnreadDot() }
+                    Text(eyebrow)
+                        .font(PlayscribeFont.subheadline.weight(.semibold))
+                        .foregroundStyle(PlayscribeColor.textPrimary.opacity(0.85))
+                        .fixedSize(horizontal: false, vertical: true)
+                }
             }
-            // Iris (#467): the game name is never cut on a cover. It takes the lines it needs (four at most for real names
-            // at the AX3 cap) and pushes the plate up; the art gives way, never the name.
-            Text(card.game.name)
+            Text(Self.headline(card))
                 .font(PlayscribeFont.title).foregroundStyle(PlayscribeColor.textPrimary)
                 .fixedSize(horizontal: false, vertical: true)
             FlowLayout(spacing: 6) {
@@ -214,13 +218,28 @@ struct FrontCoverPlate: View {
         .dynamicTypeSize(...DynamicTypeSize.accessibility3)
     }
 
-    /// "v1.1 · On PS5" (accent), the UTC day, and the change count. The version is always the PS5 one: the deck holds
+    /// The largest line: the patch name ("Patch 1.5.6"); a card with no release shows the game's name.
+    static func headline(_ card: DeckCard) -> String {
+        card.release?.displayName ?? card.game.name.gluingTrailingNumeral
+    }
+
+    /// Above the patch name: the game and the UTC day, comma separated (no dot separators). Nil for a card with no release,
+    /// whose headline is already the game.
+    static func eyebrow(_ card: DeckCard) -> String? {
+        guard card.release != nil else { return nil }
+        let name = card.game.name.gluingTrailingNumeral
+        return card.date.map { "\(name), \(AppModel.tileDay($0))" } ?? name
+    }
+
+    /// "Out on PS5" (accent), the PS5 version chip when there is one, and the change count. The version is always the PS5 one: the deck holds
     /// only releases live on PS5, and `versionChip` comes from the PS5 release's own name.
     static func chips(_ card: DeckCard) -> [(text: String, live: Bool)] {
         var list: [(text: String, live: Bool)] = []
         if let r = card.release {
-            list.append(((r.versionChip.map { $0 + " · " } ?? "") + "On PS5", true))
-            if let d = card.date { list.append((AppModel.tileDay(d), false)) }
+            // "Out on PS5", then the PS5 version as its own chip, only when the PS5 row has one (Card B, no dot separators).
+            list.append(("Out on PS5", true))
+            if let v = r.ps5Version { list.append((v, false)) }
+            // The day is in the eyebrow (Iris, 19 Nov).
             let n = r.noteCount
             if n > 0 { list.append((n == 1 ? "1 change" : "\(n) changes", false)) }
         } else if let d = card.date {
@@ -230,7 +249,7 @@ struct FrontCoverPlate: View {
     }
 
     private func chip(_ text: String, live: Bool) -> some View {
-        Text(text).font(PlayscribeFont.caption.weight(.semibold)).monospacedDigit()
+        Text(text.keepingVersionsTogether).font(PlayscribeFont.caption.weight(.semibold)).monospacedDigit()
             .foregroundStyle(live ? PlayscribeColor.onAccent : PlayscribeColor.textPrimary)
             .padding(.horizontal, 8).padding(.vertical, 3).frame(minHeight: 24)
             .background(RoundedRectangle(cornerRadius: 6, style: .continuous)

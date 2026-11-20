@@ -113,7 +113,7 @@ struct SayItView: View {
                 .padding(.horizontal, 16).padding(.top, 24)
             } else if capture.denied || capture.unavailable {
                 VStack(spacing: 12) {
-                    Text(capture.denied ? "Say it is off" : "Speech isn't available on this device right now")
+                    Text(capture.denied ? "Say it is off" : "Speech isn’t available on this device right now")
                         .font(PlayscribeFont.headline).multilineTextAlignment(.center)
                     if capture.denied {
                         Text("You can turn on the microphone and speech recognition for Playscribe in Settings.")

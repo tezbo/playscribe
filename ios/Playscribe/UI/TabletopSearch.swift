@@ -92,5 +92,7 @@ struct TabletopLetterStrip: View {
                 }
             }
         }
+        // R-7: the strip fades at its edges instead of cutting a chip hard at the right (Quinn, #526 Tabletop std).
+        .edgeFade(24)
     }
 }

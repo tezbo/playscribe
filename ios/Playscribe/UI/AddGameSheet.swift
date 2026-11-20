@@ -301,14 +301,14 @@ struct AddGameSheet: View {
             let rows = results
             Section(letter != nil && duo.pose == .tabletop ? "Starting with \(letter ?? "")" : debounced.count >= 2 ? "Best matches" : "Popular on PS5") {
                 if rows.isEmpty {
-                    Text("No PS5 game matches '\(debounced)'").foregroundStyle(.secondary)
-                    Button("Add '\(debounced)' yourself") { customName = debounced; custom = true }.hitTarget()
+                    Text("No PS5 game matches ‘\(debounced)’").foregroundStyle(.secondary)
+                    Button("Add ‘\(debounced)’ yourself") { customName = debounced; custom = true }.hitTarget()
                 }
                 ForEach(rows) { g in AddRow(game: g, status: status, selected: picked[g.id] != nil) { tap(g) } }
             }
             Section {
                 Button { customName = query; custom = true } label: {
-                    Label("Add a game that isn't listed", systemImage: "plus")
+                    Label("Add a game that isn’t listed", systemImage: "plus")
                 }
                 .hitTarget()
             } footer: {
@@ -328,7 +328,7 @@ struct AddGameSheet: View {
                     ForEach([Platform.ps5, .xboxSeries, .switch2, .pc], id: \.self) { Text($0.label).tag($0) }
                 }
             } footer: {
-                Text("\(Brand.name) won't invent patch information for this game. Its journal stays empty until coverage exists.")
+                Text("\(Brand.name) won’t invent patch information for this game. Its journal stays empty until coverage exists.")
             }
             Section {
                 Button("Add as \(status.label)") {
@@ -385,7 +385,7 @@ struct AddRow: View {
                 // One mark per row: the circle on the right becomes a tick (no badge on the cover).
                 CoverView(game: game, cornerRadius: 4).frame(width: 40)
                 VStack(alignment: .leading, spacing: 2) {
-                    Text(game.name).font(PlayscribeFont.subheadline.weight(.semibold)).fixedSize(horizontal: false, vertical: true)
+                    Text(game.name.gluingTrailingNumeral).font(PlayscribeFont.subheadline.weight(.semibold)).fixedSize(horizontal: false, vertical: true)
                     Text(added ? "In library" : subtitle).font(PlayscribeFont.caption).foregroundStyle(.secondary)
                 }
                 Spacer(minLength: 8)
@@ -773,7 +773,7 @@ struct PopularCover: View {
             model.addGame(game, status: .owned)           // an upcoming game goes in as Wishlist; the pop plays here only
             if model.entry(game.id) == nil {               // rolled back: say so, restore the tick
                 phase = .idle
-                model.show(Toast(text: "Couldn't add \(game.name)"))
+                model.show(Toast(text: "Couldn’t add \(game.name.gluingTrailingNumeral)"))
             }
         }
     }
