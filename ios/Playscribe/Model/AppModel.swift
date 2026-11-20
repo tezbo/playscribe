@@ -527,6 +527,8 @@ final class AppModel {
         // Patch 1.5.6 was opened, Mac at cf4a8c0): the route chooses the starting state, never overrides a read.
         // Only the person's own reads count here (qaReads): the reset's 72 hour sweep marks the route's fresh updates read in the
         // store too (Mac at 09eeddb: cover/kcd2 lost KCD's lead), and must not.
+        // A launch marker is history, never new (bug-061): no badge, Continue, catch-up or unread dot.
+        if r.launch == true { return false }
         if qaUpdateCount > 0 { return r.ps5State == .onPS5 && qaFreshIDs().contains(r.id) && !qaReads.contains(r.id) }
         return r.ps5State == .onPS5 && data.read[r.id] == nil
     }
