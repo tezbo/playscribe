@@ -46,6 +46,10 @@ struct DuoContext: Equatable {
         return s.width > s.height
     }
     var isFolded: Bool { division != nil }
+    /// R-7 (0.5.6, Card C): the game page is one column, with the section bar pinned and updates pushed, in Closed and on the
+    /// open inner display in both orientations (spec: "Open and Open portrait: same column, reading width capped at 600 pt").
+    /// Book and Tabletop split on the fold.
+    var oneColumn: Bool { pose == .closed || pose == .flat }
     func withStableSize(_ s: CGSize) -> DuoContext { var c = self; c.stableSize = s; return c }
 
     /// Tabletop: how far content whose bottom edge is at `bottom` (screen coordinates) must be
@@ -398,5 +402,15 @@ struct SplitArrangement<Primary: View, Secondary: View>: View {
             ArrangementView { primary() } secondary: { secondary() }
                 .arrangementViewStyle(.split)
         }
+    }
+}
+
+/// G-4, TT-1: true inside Tabletop's view-only standing half. Views there draw no controls at all (a dead glyph above the fold
+/// invites taps, and XCUITest and VoiceOver still find a Button under allowsHitTesting(false)); the lower half carries them.
+private struct ViewOnlyStageKey: EnvironmentKey { static let defaultValue = false }
+extension EnvironmentValues {
+    var viewOnlyStage: Bool {
+        get { self[ViewOnlyStageKey.self] }
+        set { self[ViewOnlyStageKey.self] = newValue }
     }
 }

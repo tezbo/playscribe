@@ -78,7 +78,7 @@ struct NoteSearchResults: View {
             if hits.isEmpty {
                 let name = gameID.flatMap { model.game($0)?.name } ?? "your games"
                 VStack(alignment: .leading, spacing: 10) {
-                    Text(scope == .thisGame ? "No mention of '\(query)' in \(name)'s PS5 notes" : "No mention of '\(query)' in your games' PS5 notes")
+                    Text(scope == .thisGame ? "No mention of ‘\(query)’ in \(name)’s PS5 notes" : "No mention of ‘\(query)’ in your games’ PS5 notes")
                         .font(PlayscribeFont.headline)
                     if scope == .thisGame {
                         Button("Search all my games", action: onSwitchScope).hitTarget()

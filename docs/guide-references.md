@@ -15,7 +15,7 @@ storybook look.
 
 | Pattern | What it looks like | Why it's exciting |
 |---|---|---|
-| **Chapter thumb tabs** | A coloured tab on the page edge with the chapter number and name, running down the spine ("3 · Chapter 5 – The Magic Steps", "5 · Creatures"). | You can find your place by feel; the book has a geography. |
+| **Chapter thumb tabs** | A coloured tab on the page edge with the chapter number and name, running down the spine ("3, Chapter 5 – The Magic Steps", "5, Creatures"). | You can find your place by feel; the book has a geography. |
 | **Ornate frames** | Every page sits inside a decorative border in the game's art style; full-bleed art pages have a heavy illustrated frame. | It feels like an artefact from the world, not a manual. |
 | **Walkthrough strips** | Numbered steps ("8. Finally, …") beside in-game screenshots with dialogue visible, grouped under illustrated section banners named after places ("Mummy's Tummy"). | You read along while you play; the screenshot shows exactly what you should be seeing. |
 | **Tip callouts** | Small labelled boxes ("Tip") set into the walkthrough. | Optional depth without breaking the steps. |

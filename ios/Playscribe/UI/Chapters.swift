@@ -1,15 +1,19 @@
 import SwiftUI
 
+/// R-7 (0.5.6): Companion, the World and Tips entries in one section, with a World / Tips filter only when the game has both
+/// kinds. In Tabletop the section sits on the view-only standing half (G-4), so the filter is in the lower half under the
+/// section bar (ContentsView) and drives what the stage shows.
 struct EntriesChapter: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.duo) private var duo
     var gameID: String
-    var chapter: Chapter
 
     var body: some View {
-        let entries = model.fixtures.book.filter { $0.gameID == gameID && $0.chapter.rawValue == chapter.rawValue }
+        let entries = model.companionEntries(gameID)
         var sections: [String] = []
         for e in entries where !sections.contains(e.section) { sections.append(e.section) }
         return VStack(alignment: .leading, spacing: 14) {
+            if duo.pose != .tabletop { CompanionFilter(gameID: gameID) }
             ForEach(sections, id: \.self) { sec in
                 SectionHeader(title: sec).id("sec-\(sec)")
                 ForEach(entries.filter { $0.section == sec }) { EntryCard(entry: $0).id("entry-\($0.id)") }
@@ -20,6 +24,7 @@ struct EntriesChapter: View {
 
 struct EntryCard: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.viewOnlyStage) private var viewOnly
     var entry: BookEntry
 
     var body: some View {
@@ -29,12 +34,15 @@ struct EntryCard: View {
                 Text(entry.title).font(PlayscribeFont.headline)
                 if entry.verification == "illustrative" { Tag(text: "Illustrative", tint: .ember) }
                 Spacer()
-                Button { model.toggleBookmark(kind: .entry, id: entry.id, gameID: entry.gameID) } label: {
-                    Image(systemName: marked ? "bookmark.fill" : "bookmark").hitTarget()
+                // Tabletop's stage is view only: no glyph at all here; the rail's Bookmarks menu does it (design, #521).
+                if !viewOnly {
+                    Button { model.toggleBookmark(kind: .entry, id: entry.id, gameID: entry.gameID) } label: {
+                        Image(systemName: marked ? "bookmark.fill" : "bookmark").hitTarget()
+                    }
+                    .buttonStyle(.plain)
+                    .accessibilityLabel(marked ? "Remove bookmark: \(entry.title)" : "Bookmark \(entry.title)")
+                    .tappableFrame()
                 }
-                .buttonStyle(.plain)
-                .accessibilityLabel(marked ? "Remove bookmark: \(entry.title)" : "Bookmark \(entry.title)")
-                .tappableFrame()
             }
             if entry.spoiler {
                 SpoilerText(text: entry.body, gameID: entry.gameID, key: "entry:\(entry.id)")
@@ -47,9 +55,33 @@ struct EntryCard: View {
     }
 }
 
+/// One Official videos row: the thumbnail, with a play badge when it plays in the app (Iris on #551), and the title.
+struct GalleryVideoRow: View {
+    var item: GalleryItem
+    var playable: Bool
+    var body: some View {
+        HStack(spacing: 12) {
+            Image(item.asset).resizable().scaledToFill().frame(width: 96, height: 54)
+                .clipShape(RoundedRectangle(cornerRadius: 8))
+                .overlay {
+                    if playable {
+                        Image(systemName: "play.fill")
+                            .font(.system(size: 14, weight: .bold))
+                            .foregroundStyle(.white)
+                            .frame(width: 32, height: 32)
+                            .background(.black.opacity(0.6), in: Circle())
+                            .accessibilityHidden(true)
+                    }
+                }
+            Text(item.title).font(PlayscribeFont.subheadline.weight(.semibold))
+                .frame(maxWidth: .infinity, alignment: .leading)
+        }
+        .contentShape(Rectangle())
+    }
+}
+
 struct GalleryChapter: View {
     @Environment(AppModel.self) private var model
-    @Environment(\.openURL) private var openURL
     var gameID: String
 
     var body: some View {
@@ -59,7 +91,7 @@ struct GalleryChapter: View {
         let picked = model.data.selectedArtwork[gameID]
         VStack(alignment: .leading, spacing: 14) {
             if items.isEmpty { GalleryEmpty(gameID: gameID) }
-            if !art.isEmpty { Text("Choose a picture to use as this game's backdrop.").font(PlayscribeFont.footnote).foregroundStyle(.secondary) }
+            if !art.isEmpty { Text("Choose a picture to use as this game’s backdrop.").font(PlayscribeFont.footnote).foregroundStyle(.secondary) }
             LazyVGrid(columns: [GridItem(.adaptive(minimum: 150), spacing: 10)], spacing: 10) {
                 ForEach(art) { item in
                     Button { model.selectArtwork(gameID, item.id) } label: {
@@ -83,19 +115,16 @@ struct GalleryChapter: View {
             if !videos.isEmpty {
                 SectionHeader(title: "Official videos")
                 ForEach(videos) { v in
-                    Button { if let s = v.href, let u = URL(string: s) { openURL(u) } } label: {
-                        HStack(spacing: 12) {
-                            Image(v.asset).resizable().scaledToFill().frame(width: 96, height: 54).clipShape(RoundedRectangle(cornerRadius: 8))
-                            VStack(alignment: .leading) {
-                                Text(v.title).font(PlayscribeFont.subheadline.weight(.semibold))
-                                Text("Opens in YouTube").font(PlayscribeFont.caption).foregroundStyle(.secondary)
-                            }
-                            Spacer()
-                        }
-                        .contentShape(Rectangle())
+                    if v.youtubeID != nil {
+                        // Plays in the app's own player (R-11), never handed to YouTube (Terry, 19 Nov).
+                        Button { model.playGalleryVideo(v) } label: { GalleryVideoRow(item: v, playable: true) }
+                            .buttonStyle(.plain)
+                            .accessibilityLabel("\(v.title), video")
+                            .tappableFrame()
+                    } else {
+                        // Nothing to play: not a button (Iris on #551), so a tap never does nothing.
+                        GalleryVideoRow(item: v, playable: false)
                     }
-                    .buttonStyle(.plain)
-                    .tappableFrame()
                 }
             }
         }
@@ -159,11 +188,7 @@ struct MyBookChapter: View {
                 HStack {
                     Button {
                         if b.kind == .release { model.openGame(gameID, chapter: .updates, releaseID: b.id) }
-                        else if let e = model.fixtures.book.first(where: { $0.id == b.id }) {
-                            let ch: Chapter = e.chapter == .world ? .world : .companion
-                            model.nav.chapter = ch
-                            model.nav.anchors[AppModel.bookKey(gameID, ch)] = "entry-\(e.id)"
-                        }
+                        else if let e = model.fixtures.book.first(where: { $0.id == b.id }) { model.openEntry(e) }
                     } label: {
                         Label(title ?? "Removed item", systemImage: b.kind == .release ? "list.bullet.rectangle.portrait" : "bookmark")
                             .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
