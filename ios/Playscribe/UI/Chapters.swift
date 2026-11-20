@@ -55,9 +55,33 @@ struct EntryCard: View {
     }
 }
 
+/// One Official videos row: the thumbnail, with a play badge when it plays in the app (Iris on #551), and the title.
+struct GalleryVideoRow: View {
+    var item: GalleryItem
+    var playable: Bool
+    var body: some View {
+        HStack(spacing: 12) {
+            Image(item.asset).resizable().scaledToFill().frame(width: 96, height: 54)
+                .clipShape(RoundedRectangle(cornerRadius: 8))
+                .overlay {
+                    if playable {
+                        Image(systemName: "play.fill")
+                            .font(.system(size: 14, weight: .bold))
+                            .foregroundStyle(.white)
+                            .frame(width: 32, height: 32)
+                            .background(.black.opacity(0.6), in: Circle())
+                            .accessibilityHidden(true)
+                    }
+                }
+            Text(item.title).font(PlayscribeFont.subheadline.weight(.semibold))
+                .frame(maxWidth: .infinity, alignment: .leading)
+        }
+        .contentShape(Rectangle())
+    }
+}
+
 struct GalleryChapter: View {
     @Environment(AppModel.self) private var model
-    @Environment(\.openURL) private var openURL
     var gameID: String
 
     var body: some View {
@@ -91,19 +115,16 @@ struct GalleryChapter: View {
             if !videos.isEmpty {
                 SectionHeader(title: "Official videos")
                 ForEach(videos) { v in
-                    Button { if let s = v.href, let u = URL(string: s) { openURL(u) } } label: {
-                        HStack(spacing: 12) {
-                            Image(v.asset).resizable().scaledToFill().frame(width: 96, height: 54).clipShape(RoundedRectangle(cornerRadius: 8))
-                            VStack(alignment: .leading) {
-                                Text(v.title).font(PlayscribeFont.subheadline.weight(.semibold))
-                                Text("Opens in YouTube").font(PlayscribeFont.caption).foregroundStyle(.secondary)
-                            }
-                            Spacer()
-                        }
-                        .contentShape(Rectangle())
+                    if v.youtubeID != nil {
+                        // Plays in the app's own player (R-11), never handed to YouTube (Terry, 19 Nov).
+                        Button { model.playGalleryVideo(v) } label: { GalleryVideoRow(item: v, playable: true) }
+                            .buttonStyle(.plain)
+                            .accessibilityLabel("\(v.title), video")
+                            .tappableFrame()
+                    } else {
+                        // Nothing to play: not a button (Iris on #551), so a tap never does nothing.
+                        GalleryVideoRow(item: v, playable: false)
                     }
-                    .buttonStyle(.plain)
-                    .tappableFrame()
                 }
             }
         }

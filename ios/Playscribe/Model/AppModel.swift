@@ -664,6 +664,14 @@ final class AppModel {
         nav.anchors[Self.bookKey(e.gameID, .companion)] = "entry-\(e.id)"
     }
 
+    /// A Gallery video row was tapped (R-11): it plays in the app's own trailer player, in every pose, so Tabletop gets the
+    /// transport and the reflection. Before 19 Nov the row opened its youtube.com link, which the system handed to the YouTube app
+    /// (Terry: "the dawn walker ones all open in YouTube").
+    func playGalleryVideo(_ item: GalleryItem) {
+        guard item.kind == .video, let id = item.youtubeID else { return }
+        trailer = (id, item.title)
+    }
+
     func gallery(_ gameID: String) -> [GalleryItem] {
         let items = fixtures.gallery.filter { $0.gameID == gameID }
         if !items.isEmpty { return items }
@@ -1105,6 +1113,11 @@ final class AppModel {
         // QA (INTERNAL): the game page itself (Contents in Open portrait and Book, the Page in Closed), never a pushed release.
         case "gamepage" where parts.count == 1:
             openGame(parts[0], chapter: .updates)
+            nav.detailReleaseID = nil
+            linksSheetOpen = false
+        // QA (INTERNAL): the game page on one section, e.g. gamepage/dawnwalker/gallery (R-11 stills at AX5, where the tabs are a picker).
+        case "gamepage" where parts.count == 2:
+            openGame(parts[0], chapter: Chapter(rawValue: parts[1]) ?? .updates)
             nav.detailReleaseID = nil
             linksSheetOpen = false
         case "close": player = nil; addSheetOpen = false; simulatedScan = false; settingsOpen = false; linksSheetOpen = false; tagExplainer = nil; keepCurrentDetailsOpen = false; addSearchFocus = false
