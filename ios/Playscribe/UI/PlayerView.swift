@@ -215,7 +215,10 @@ struct PlayerView: View {
         }
         .onAppear {
             if controller == nil, let id = model.release(gameID, releaseID)?.video?.youtubeID {
-                controller = YouTubeController(videoID: id, nativeControls: model.livePose != .tabletop)
+                let c = YouTubeController(videoID: id, nativeControls: model.livePose != .tabletop)
+                // QA (route `video-blocked/<game>/<release>[/<code>]`): show the R-12 state without a real blocked video.
+                if let code = model.qaVideoError { c.failed = true; c.errorCode = code }
+                controller = c
             }
         }
     }
