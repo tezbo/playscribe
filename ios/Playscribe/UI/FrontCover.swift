@@ -195,10 +195,10 @@ struct FrontCoverPlate: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            // r060 day-one (Iris): an unread day-one patch keeps its DAY-ONE PATCH line above the eyebrow; a plain new update
+            // r060 day-one (Iris): an unread day-one patch keeps its "Day-one patch" line above the eyebrow, sentence case (Iris, ux-copy); a plain new update
             // has only the unread dot (Iris, 19 Nov).
             if card.unread, let label = card.freshLabel {
-                Text(label.uppercased())
+                Text(label)
                     .font(PlayscribeFont.caption.weight(.semibold))
                     .tracking(12 * 0.12)
                     .foregroundStyle(PlayscribeColor.accent)
