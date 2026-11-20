@@ -238,6 +238,8 @@ struct RootView: View {
         .fullScreenCover(isPresented: Binding(get: { model.trailer != nil }, set: { if !$0 { model.trailer = nil } })) {
             if let t = model.trailer { TrailerView(videoID: t.videoID, name: t.name, gameID: t.gameID) }
         }
+        // R-11: every link the app opens passes here, sheets and covers included; a YouTube video plays in our player.
+        .environment(\.openURL, OpenURLAction { url in model.playVideoLink(url) ? .handled : .systemAction })
     }
 }
 

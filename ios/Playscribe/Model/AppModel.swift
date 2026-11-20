@@ -667,6 +667,15 @@ final class AppModel {
     /// A Gallery video row was tapped (R-11): it plays in the app's own trailer player, in every pose, so Tabletop gets the
     /// transport and the reflection. Before 19 Nov the row opened its youtube.com link, which the system handed to the YouTube app
     /// (Terry: "the dawn walker ones all open in YouTube").
+    /// R-11: a YouTube link opened anywhere in the app (news, notes, Links) plays in our player. True when it did; anything else
+    /// goes to the system as before.
+    @discardableResult
+    func playVideoLink(_ url: URL, title: String = "Video") -> Bool {
+        guard let id = YouTubeLink.id(from: url) else { return false }
+        trailer = (id, title, nav.gameID)
+        return true
+    }
+
     func playGalleryVideo(_ item: GalleryItem) {
         guard item.kind == .video, let id = item.youtubeID else { return }
         trailer = (id, item.title, item.gameID)

@@ -629,7 +629,7 @@ struct TrailerView: View {
                 Group {
                     if let controller {
                         if controller.failed {
-                            VideoUnavailable(url: URL(string: "https://www.youtube.com/watch?v=\(videoID)")) { close() }
+                            VideoUnavailable { close() }
                         } else if duo.pose == .tabletop {
                             let game = gameID.flatMap { model.game($0) }
                             TabletopVideoStage(controller: controller,
@@ -1311,7 +1311,7 @@ struct LinksSheet: View {
         // One log line per opened row, so a QA run can confirm the tap reached the system (#493: the simulator showed black).
         .environment(\.openURL, OpenURLAction { url in
             Logger(subsystem: "co.codeconnectors.playscribe", category: "links").info("links open: \(url.host() ?? "?", privacy: .public)")
-            return .systemAction
+            return model.playVideoLink(url) ? .handled : .systemAction
         })
     }
 

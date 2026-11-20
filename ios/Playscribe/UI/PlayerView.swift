@@ -191,12 +191,12 @@ struct PlayerView: View {
                 Group {
                     if let release, let video = release.video, let controller {
                         if controller.failed {
-                            VideoUnavailable(url: video.watchURL) { close() }
+                            VideoUnavailable { close() }
                         } else {
                             layout(duo: duo, release: release, video: video, controller: controller)
                         }
                     } else {
-                        VideoUnavailable(url: release?.video?.watchURL) { close() }
+                        VideoUnavailable { close() }
                     }
                 }
                 .background(.black)
@@ -509,15 +509,12 @@ enum PlayerTime {
     }
 }
 
-/// R-12.
+/// R-12. No hand-off to YouTube (Terry, 20 Nov: every video plays in our own player): a video that cannot play here says so.
 struct VideoUnavailable: View {
-    var url: URL?
     var onClose: () -> Void
-    @Environment(\.openURL) private var openURL
     var body: some View {
         VStack(spacing: 16) {
-            ContentUnavailableView("Video unavailable", systemImage: "play.slash")
-            if let url { Button("Watch on YouTube") { openURL(url) }.buttonStyle(.borderedProminent).foregroundStyle(PlayscribeColor.onAccent) }
+            ContentUnavailableView("Video unavailable", systemImage: "play.slash", description: Text("This video can’t play in Playscribe."))
             Button("Close", action: onClose).hitTarget()
         }
     }
