@@ -14,6 +14,8 @@ final class YouTubeController: NSObject, WKScriptMessageHandler {
     var duration: Double = 0
     var current: Double = 0
     var failed = false
+    /// The IFrame API's error code: 101 and 150 mean the owner blocks playing it in other apps (R-12).
+    var errorCode: Int?
     var ready = false
     /// True once playback has begun at least once.
     var started = false
@@ -79,7 +81,7 @@ final class YouTubeController: NSObject, WKScriptMessageHandler {
                 // 1 playing, 3 buffering: the player has the picture, so the stage can show it (Iris, 20 Nov).
                 if state == 1 || state == 3 { self.playerShown = true }
             case "time": self.current = time ?? 0; if let duration, duration > 0 { self.duration = duration }
-            case "error": self.failed = true
+            case "error": self.failed = true; self.errorCode = body["code"] as? Int
             case "fullscreenRefused": self.fullscreenRefused += 1
             default: break
             }
@@ -191,12 +193,14 @@ struct PlayerView: View {
                 Group {
                     if let release, let video = release.video, let controller {
                         if controller.failed {
-                            VideoUnavailable { close() }
+                            VideoUnavailable(videoID: video.youtubeID, code: controller.errorCode) { close() }
                         } else {
                             layout(duo: duo, release: release, video: video, controller: controller)
                         }
+                    } else if release?.video != nil {
+                        Color.black   // the controller is made on appear
                     } else {
-                        VideoUnavailable { close() }
+                        ContentUnavailableView("Video unavailable", systemImage: "play.slash")
                     }
                 }
                 .background(.black)
@@ -509,12 +513,28 @@ enum PlayerTime {
     }
 }
 
-/// R-12. No hand-off to YouTube (Terry, 20 Nov: every video plays in our own player): a video that cannot play here says so.
+/// R-12. The one hand-off (Terry, 20 Nov: "If video unavailable then it must instead say open in YouTube"): a video whose owner
+/// blocks playing it in other apps offers Open in YouTube. Opened straight through the system, never through the app's openURL
+/// handler, which would route a YouTube link back into this player.
 struct VideoUnavailable: View {
+    var videoID: String
+    /// The player's error code, when it gave one.
+    var code: Int? = nil
     var onClose: () -> Void
+    static func blocksEmbedding(_ code: Int?) -> Bool { code == 101 || code == 150 }
     var body: some View {
         VStack(spacing: 16) {
-            ContentUnavailableView("Video unavailable", systemImage: "play.slash", description: Text("This video can’t play in Playscribe."))
+            if Self.blocksEmbedding(code) {
+                ContentUnavailableView("This video plays only on YouTube", systemImage: "play.slash",
+                                       description: Text("Its owner doesn’t allow it to play in other apps."))
+            } else {
+                ContentUnavailableView("This video can’t play here", systemImage: "play.slash")
+            }
+            if let url = URL(string: "https://www.youtube.com/watch?v=\(videoID)") {
+                Button("Open in YouTube") { UIApplication.shared.open(url) }
+                    .buttonStyle(.borderedProminent).foregroundStyle(PlayscribeColor.onAccent)
+                    .tappableFrame()
+            }
             Button("Close", action: onClose).hitTarget()
         }
     }

@@ -629,7 +629,7 @@ struct TrailerView: View {
                 Group {
                     if let controller {
                         if controller.failed {
-                            VideoUnavailable { close() }
+                            VideoUnavailable(videoID: videoID, code: controller.errorCode) { close() }
                         } else if duo.pose == .tabletop {
                             let game = gameID.flatMap { model.game($0) }
                             TabletopVideoStage(controller: controller,

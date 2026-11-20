@@ -1151,6 +1151,12 @@ struct VideoLinkTests {
         #expect(!m.playVideoLink(URL(string: "https://notyoutube.com/watch?v=abc")!))
         #expect(m.trailer == nil, "other links go to the system as before")
     }
+
+    @Test("A video its owner blocks from other apps says so and offers Open in YouTube (R-12; Terry 20 Nov)")
+    func blockedEmbedOffersYouTube() {
+        #expect(VideoUnavailable.blocksEmbedding(101) && VideoUnavailable.blocksEmbedding(150))
+        #expect(!VideoUnavailable.blocksEmbedding(2) && !VideoUnavailable.blocksEmbedding(100) && !VideoUnavailable.blocksEmbedding(nil))
+    }
 }
 
 @MainActor
