@@ -35,7 +35,8 @@ extension AppModel {
         var cards: [DeckCard] = []
         for c in data.collection {
             guard let g = game(c.gameID) else { continue }
-            for r in ps5Releases(c.gameID) where r.ps5State == .onPS5 && !qaNoReleases {
+            // A launch marker is history, not an update (bug-061).
+            for r in ps5Releases(c.gameID) where r.ps5State == .onPS5 && r.launch != true && !qaNoReleases {
                 let unread = isUnread(r)
                 if unread || r.ps5Date > cutoff { cards.append(DeckCard(game: g, release: r, unread: unread, date: r.ps5Date)) }
             }
