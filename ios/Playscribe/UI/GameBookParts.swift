@@ -621,6 +621,8 @@ struct TrailerView: View {
     var name: String
     var gameID: String?
     @State private var controller: YouTubeController?
+    /// Room for a two-line caption under the video, growing with Dynamic Type so a long name at AX5 is never pushed off.
+    @ScaledMetric(relativeTo: .headline) private var captionRoom: CGFloat = 64
     var body: some View {
         NavigationStack {
             DuoReader { duo in
@@ -639,6 +641,7 @@ struct TrailerView: View {
                     }
                 }
                 .background(Color.black)
+                .onChange(of: [duo.pose == .tabletop, controller != nil], initial: true) { controller?.setNativeControls(duo.pose != .tabletop) }
                 .toolbarVisibility(duo.pose == .tabletop ? .hidden : .automatic, for: .navigationBar)
                 .toolbar {
                     ToolbarItem(placement: .cancellationAction) {
@@ -655,7 +658,7 @@ struct TrailerView: View {
     /// with YouTube's own controls. No mirror outside Tabletop.
     private func framed(_ controller: YouTubeController) -> some View {
         GeometryReader { geo in
-            let h = max(0, min(geo.size.width * 9 / 16, geo.size.height - 64))
+            let h = max(0, min(geo.size.width * 9 / 16, geo.size.height - captionRoom))
             VStack(spacing: 0) {
                 Color.black.frame(width: h * 16 / 9, height: h)
                     .overlay { WebSurface(webView: controller.webView) }

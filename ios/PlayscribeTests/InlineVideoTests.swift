@@ -30,3 +30,19 @@ struct InlineVideoTests {
         #expect(html.contains("fs:0"))
     }
 }
+
+@MainActor
+struct VideoControlsTests {
+    @Test("Tabletop drops YouTube's own controls; other poses keep them; Play waits for the player (TT-4, VB-3; Iris, Quinn on #552)")
+    func controlsFollowPose() {
+        let html = YouTubeController.html("abc", captions: false)
+        #expect(html.contains("controls:controls"), "controls are chosen per build, not fixed")
+        #expect(html.contains("function setControls"))
+        let controller = YouTubeController(videoID: "abc", autoplay: false)
+        #expect(controller.nativeControls)
+        #expect(!controller.ready)
+        controller.setNativeControls(false)
+        #expect(!controller.nativeControls)
+        #expect(!controller.ready, "the rebuilt player is not ready until it says so")
+    }
+}

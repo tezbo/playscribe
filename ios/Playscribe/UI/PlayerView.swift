@@ -20,6 +20,8 @@ final class YouTubeController: NSObject, WKScriptMessageHandler {
     /// True once the person has pressed Play (or autoplay asked for it). Until then the Tabletop stage shows our own art and no
     /// player at all; from then on YouTube's player is shown unobscured, with its own branding (YouTube API terms).
     var playRequested = false
+    /// True once the player reports buffering or playing after Play, so a slow load never shows YouTube's loading screen.
+    var playerShown = false
     /// Fullscreen requests the inline guard refused (R-11), counted for QA.
     var fullscreenRefused = 0
 
@@ -64,7 +66,11 @@ final class YouTubeController: NSObject, WKScriptMessageHandler {
             let duration = body["duration"] as? Double
             switch event {
             case "ready": self.ready = true; self.duration = duration ?? 0
-            case "state": self.isPlaying = state == 1; if state == 1 { self.started = true }
+            case "state":
+                self.isPlaying = state == 1
+                if state == 1 { self.started = true }
+                // 1 playing, 3 buffering: the player has the picture, so the stage can show it (Iris, 20 Nov).
+                if state == 1 || state == 3 { self.playerShown = true }
             case "time": self.current = time ?? 0; if let duration, duration > 0 { self.duration = duration }
             case "error": self.failed = true
             case "fullscreenRefused": self.fullscreenRefused += 1
@@ -89,6 +95,16 @@ final class YouTubeController: NSObject, WKScriptMessageHandler {
         run(captionsOn ? "player.loadModule('captions')" : "player.unloadModule('captions')")
     }
     func stop() { run("player.stopVideo()") }
+    /// YouTube's own controls outside Tabletop (VB-3); none in Tabletop, where our transport is the only one and the stage
+    /// takes no touches (TT-4; Iris, 20 Nov: YouTube's bar on the stage looked tappable, did nothing and was mirrored).
+    /// The title bar and logo stay either way.
+    private(set) var nativeControls = true
+    func setNativeControls(_ on: Bool) {
+        guard on != nativeControls else { return }
+        nativeControls = on
+        ready = false   // the player is rebuilt; its onReady sets this again
+        run("setControls(\(on ? 1 : 0))")
+    }
     private func run(_ js: String) { webView.evaluateJavaScript(js) }
 
     /// Injected at document start into every frame. Video and element fullscreen calls do nothing, and if WebKit enters
@@ -113,14 +129,28 @@ final class YouTubeController: NSObject, WKScriptMessageHandler {
         </head><body><div id="p"></div>
         <script src="https://www.youtube.com/iframe_api"></script>
         <script>
-        var player;
+        var player, controls=1;
         function post(m){window.webkit.messageHandlers.player.postMessage(m)}
-        function onYouTubeIframeAPIReady(){
+        // Builds the player. Rebuilt in place (same web view, same position) when the pose switches between YouTube's own
+        // controls (Closed, Book, Open) and ours (Tabletop), since the IFrame API cannot change controls on a live player.
+        function build(start,play){
           player=new YT.Player('p',{videoId:'\(id)',host:'https://www.youtube-nocookie.com',
-            playerVars:{playsinline:1,fs:0,controls:1,cc_load_policy:\(captions ? 1 : 0),autoplay:\(autoplay ? 1 : 0),rel:0,modestbranding:1,iv_load_policy:3,origin:'https://playscribe.app'},
-            events:{onReady:function(){post({event:'ready',duration:player.getDuration()});\(autoplay ? "player.playVideo();" : "")},
+            playerVars:{playsinline:1,fs:0,controls:controls,start:Math.floor(start),cc_load_policy:\(captions ? 1 : 0),autoplay:play?1:0,rel:0,modestbranding:1,iv_load_policy:3,origin:'https://playscribe.app'},
+            events:{onReady:function(){if(start>0){player.seekTo(start,true)}post({event:'ready',duration:player.getDuration()});if(play){player.playVideo()}},
                     onStateChange:function(e){post({event:'state',state:e.data})},
                     onError:function(e){post({event:'error',code:e.data})}}});
+        }
+        function setControls(c){
+          if(c===controls){return}
+          controls=c;
+          if(!player||!player.getCurrentTime){return}
+          var t=player.getCurrentTime(), play=player.getPlayerState()===1;
+          player.destroy();
+          var d=document.createElement('div');d.id='p';document.body.appendChild(d);
+          build(t,play);
+        }
+        function onYouTubeIframeAPIReady(){
+          build(0,\(autoplay ? "true" : "false"));
           setInterval(function(){if(player&&player.getCurrentTime){post({event:'time',time:player.getCurrentTime(),duration:player.getDuration()})}},500);
         }
         </script></body></html>
@@ -161,6 +191,7 @@ struct PlayerView: View {
                     }
                 }
                 .background(.black)
+                .onChange(of: [duo.pose == .tabletop, controller != nil], initial: true) { controller?.setNativeControls(duo.pose != .tabletop) }
                 .toolbarVisibility(duo.pose == .tabletop ? .hidden : .automatic, for: .navigationBar)
                 .toolbar {
                     ToolbarItem(placement: .cancellationAction) {
@@ -259,8 +290,8 @@ struct TabletopVideoStage: View {
                     // Before Play no player is on screen at all: our art, never a black box or YouTube's start screen.
                     MirroredVideoSurface(webView: controller.webView, mirrored: live, gap: max(0, top - v.maxY)) { mirrorDrawn = $0 }
                         .background(.black)
-                        .opacity(controller.playRequested ? 1 : 0)
-                    if !controller.playRequested { VideoPoster(asset: video.posterAsset, game: game) }
+                        .opacity(controller.playerShown ? 1 : 0)
+                    if !controller.playerShown { VideoPoster(asset: video.posterAsset, game: game) }
                 }
                 .frame(width: v.width, height: v.height)
                 .offset(x: v.minX, y: v.minY)
@@ -296,11 +327,15 @@ struct VideoPoster: View {
     var asset: String?
     var game: CatalogGame?
     var body: some View {
-        if let asset {
-            ZStack { Color.black; Image(asset).resizable().scaledToFit() }
-        } else {
-            ArtView(asset: game?.keyArtAsset, game: game).clipped()
+        Group {
+            if let asset {
+                ZStack { Color.black; Image(asset).resizable().scaledToFit() }
+            } else {
+                ArtView(asset: game?.keyArtAsset, game: game).clipped()
+            }
         }
+        // Decoration: VoiceOver would read the asset's name (Iris, 20 Nov).
+        .accessibilityHidden(true)
     }
 }
 
@@ -407,6 +442,9 @@ struct TabletopTransport: View {
                             .foregroundStyle(PlayscribeColor.onAccent)
                     }
                     .accessibilityLabel(controller.isPlaying ? "Pause" : "Play")
+                    // Until the player is ready a press would do nothing (Quinn on #552).
+                    .disabled(!controller.ready)
+                    .opacity(controller.ready ? 1 : 0.5)
                     .tappableFrame()
                     Spacer()
                     transportButton("goforward.10", "Forward 10 seconds") { controller.skip(10) }
