@@ -180,7 +180,8 @@ struct UpcomingView: View {
 
     /// AX row: cover 84 pt (72 in Closed, where the page is narrowest) (3:4) beside the text; name on whole words up to 4 lines, date on its own line, status on its own row.
     private func row(_ g: CatalogGame, watching: Bool) -> some View {
-        Button {
+        let date = dateLine(g), move = moveLine(g)
+        return Button {
             model.browseGame(g)
         } label: {
             // Closed is the narrowest page: the cover sits above the text there so the name and date get the whole column.
@@ -188,9 +189,9 @@ struct UpcomingView: View {
             layout {
                 TileCover(game: g).aspectRatio(3 / 4, contentMode: .fit).frame(width: duo.pose == .closed ? 72 : 84)
                 VStack(alignment: .leading, spacing: 6) {
-                    WholeWordText(text: g.name, font: PlayscribeFont.subheadline.weight(.semibold), lines: 4)
-                    Text(dateLine(g)).font(PlayscribeFont.caption).foregroundStyle(.secondary).fixedSize(horizontal: false, vertical: true)
-                    if let move = moveLine(g) {
+                    WholeWordText(text: g.name.gluingTrailingNumeral, font: PlayscribeFont.subheadline.weight(.semibold), lines: 4)
+                    Text(date).font(PlayscribeFont.caption).foregroundStyle(.secondary).fixedSize(horizontal: false, vertical: true)
+                    if let move {
                         // Status on its own row, 24 pt clear of the rail; the name and date keep the full column.
                         Text(move).font(PlayscribeFont.caption.weight(.semibold)).foregroundStyle(PlayscribeColor.accent).fixedSize(horizontal: false, vertical: true)
                             .padding(.trailing, 24)
@@ -202,7 +203,7 @@ struct UpcomingView: View {
         }
         .buttonStyle(.plain)
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel("\(g.name), \(dateLine(g))\(moveLine(g).map { ", " + $0 } ?? "")\(watching ? ", on your watchlist" : "")")
+        .accessibilityLabel("\(g.name), \(date)\(move.map { ", " + $0 } ?? "")\(watching ? ", on your watchlist" : "")")
         .accessibilityAddTraits(.isButton)
         .tappableFrame()
         .gameQuickActions(g)
@@ -223,22 +224,23 @@ struct UpcomingView: View {
     }
 
     private func tile(_ g: CatalogGame, watching: Bool) -> some View {
-        Button {
+        let date = dateLine(g), move = moveLine(g)
+        return Button {
             // Opening a game never changes its status; watching is the game page's own control.
             model.browseGame(g)
         } label: {
             VStack(alignment: .leading, spacing: 6) {
                 TileCover(game: g).aspectRatio(3 / 4, contentMode: .fit)
-                WholeWordText(text: g.name, font: PlayscribeFont.subheadline.weight(.semibold), lines: 4)
-                Text(dateLine(g)).font(PlayscribeFont.caption).foregroundStyle(.secondary).lineLimit(2).fixedSize(horizontal: false, vertical: true)
-                if let move = moveLine(g) {
+                WholeWordText(text: g.name.gluingTrailingNumeral, font: PlayscribeFont.subheadline.weight(.semibold), lines: 4)
+                Text(date).font(PlayscribeFont.caption).foregroundStyle(.secondary).lineLimit(2).fixedSize(horizontal: false, vertical: true)
+                if let move {
                     Text(move).font(PlayscribeFont.caption.weight(.semibold)).foregroundStyle(PlayscribeColor.accent).lineLimit(2)
                 }
             }
         }
         .buttonStyle(.plain)
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel("\(g.name), \(dateLine(g))\(moveLine(g).map { ", " + $0 } ?? "")\(watching ? ", on your watchlist" : "")")
+        .accessibilityLabel("\(g.name), \(date)\(move.map { ", " + $0 } ?? "")\(watching ? ", on your watchlist" : "")")
         .accessibilityAddTraits(.isButton)
         .tappableFrame()
         .gameQuickActions(g)
@@ -250,7 +252,7 @@ struct UpcomingView: View {
         VStack(alignment: .leading, spacing: 14) {
             if UpcomingStore.shared.failed && more.isEmpty {
                 HStack {
-                    Text("Couldn't load upcoming games. Check your connection and try again.").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                    Text("Couldn’t load upcoming games. Check your connection and try again.").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
                     Spacer(minLength: 0)
                     Button { Task { await UpcomingStore.shared.load() } } label: { Text("Retry").frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()) }
                         .font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.accent)
@@ -260,7 +262,7 @@ struct UpcomingView: View {
             if watched.isEmpty {
                 VStack(spacing: 8) {
                     Text("Nothing on your watchlist yet").font(PlayscribeFont.headline)
-                    Text("Watch a game that isn't out yet and Playscribe will tell you when its first update lands.")
+                    Text("Watch a game that isn’t out yet and Playscribe will tell you when its first update lands.")
                         .font(PlayscribeFont.subheadline).foregroundStyle(.secondary).multilineTextAlignment(.center)
                 }
                 // Book: the empty state stays on the left page, centred there, never across the spine (Quinn, #348).

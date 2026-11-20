@@ -127,9 +127,10 @@ struct FrontCoverTests {
             #expect(atPlate.allSatisfy { $0.opacity >= 0.88 })
             #expect(stops.first?.location == 0 && stops.last?.location == 1)
         }
-        // Standard sizes keep the signed shade in portrait. A wide page passes accessibility: true (FrontCoverPage.fade), so
-        // Closed landscape's eyebrow sits on 88 percent black at any size (Quinn, 0e77e33 landscape still).
-        #expect(FrontCoverPage.fadeStops(accessibility: false, plateTop: 0.4).map(\.location) == [0, 0.18, 0.45, 0.85, 1])
+        // Standard sizes keep the signed shade, solid from 90 percent down so no logo in the art ghosts behind the mark.
+        let std = FrontCoverPage.fadeStops(accessibility: false, plateTop: 0.4)
+        #expect(std.map(\.location) == [0, 0.18, 0.45, 0.82, 0.9, 1])
+        #expect(std.filter { $0.location >= 0.9 }.allSatisfy { $0.opacity == 1 })
     }
 
     /// Iris (#467): the cover is Closed-only. Any other pose closes it at once, the route's Settings with it, and the deck
@@ -161,10 +162,47 @@ struct FrontCoverTests {
             let chips = FrontCoverPlate.chips(card)
             guard let r = card.release else { continue }
             #expect(chips.first?.live == true)
-            #expect(chips.first?.text.hasSuffix("On PS5") == true)
-            if let v = r.versionChip { #expect(chips.first?.text.hasPrefix(v) == true) }
+            #expect(chips.first?.text == "Out on PS5")
+            if let v = r.ps5Version { #expect(chips.contains { $0.text == v }) }
+            #expect(chips.allSatisfy { !$0.text.contains("·") }) // dot-ok: asserts the dot is absent
             #expect(chips.filter { $0.live }.count == 1)
             if r.noteCount > 1 { #expect(chips.contains { $0.text == "\(r.noteCount) changes" }) }
         }
+    }
+
+    /// Iris (19 Nov): the patch name is the largest line; the game and the day sit above it in one comma-separated eyebrow,
+    /// and the day is no longer a chip.
+    @Test func patchNameLeadsWithGameAndDayAbove() {
+        for card in demoModel().latestDeck {
+            guard let r = card.release else { continue }
+            #expect(FrontCoverPlate.headline(card) == r.displayName)
+            let eyebrow = FrontCoverPlate.eyebrow(card) ?? ""
+            #expect(eyebrow.hasPrefix(card.game.name.gluingTrailingNumeral))
+            if let d = card.date {
+                #expect(eyebrow.hasSuffix(", \(AppModel.tileDay(d))"))
+                #expect(!FrontCoverPlate.chips(card).contains { $0.text == AppModel.tileDay(d) })
+            }
+            #expect(!eyebrow.contains("·")) // dot-ok: asserts the dot is absent
+        }
+    }
+
+    /// cover/<game> (Mac at cf4a8c0 and 09eeddb): the feed's sweep leaves the lead unread; opening it reads it, so the cover's unread dot and the deck's unread
+    /// state clear, as in the real app. The QA route only picks the starting state.
+    @Test func coverRouteHonoursAReadUpdate() throws {
+        let m = demoModel()
+        m.handle(url: URL(string: "playscribe://cover/kcd2")!)
+        let lead = try #require(m.latestDeck.first)
+        let r = try #require(lead.release)
+        #expect(lead.game.id == "kcd2")
+        // The first feed refresh after a reset marks every update older than 72 hours read in the store (FeedClient). The route's
+        // fresh update must survive that (Mac at 09eeddb: KCD lost its lead and its dot).
+        for id in m.latestDeck.compactMap(\.release?.id) { m.data.read[id] = .now }
+        #expect(m.isUnread(r))
+        #expect(m.latestDeck.first?.release?.id == r.id && m.latestDeck.first?.unread == true)
+        m.openGame("kcd2", chapter: .updates, releaseID: r.id)
+        m.markRead(r.id)
+        #expect(!m.isUnread(r))
+        // Read, it leaves the unread state (and leaves the deck when it is older than 90 days).
+        #expect(m.latestDeck.first { $0.release?.id == r.id }?.unread != true)
     }
 }
