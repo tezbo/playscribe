@@ -481,7 +481,7 @@ struct GameBasicsView: View {
             }
             if !videos.isEmpty {
                 ForEach(videos, id: \.youtubeId) { v in
-                    Button { model.trailer = (v.youtubeId, v.name) } label: {
+                    Button { model.trailer = (v.youtubeId, v.name, game.id) } label: {
                         // At accessibility sizes the thumbnail sits above the title, so the title has the whole column and a word
                         // like "Cinematic" is not cut by letter beside a 112 pt picture (Iris, r054 Closed AX5).
                         let layout = typeSize.isAccessibilitySize ? AnyLayout(VStackLayout(alignment: .leading, spacing: 8)) : AnyLayout(HStackLayout(spacing: 12))
@@ -612,60 +612,69 @@ struct SimilarGamesRow: View {
     }
 }
 
-/// A game's trailer, from its basics (not tied to a release).
+/// A game's trailer or Gallery video (not tied to a release). One presentation in every pose, so playback carries through pose
+/// changes (P-2). Tabletop uses the same stage and transport as update videos (TT-4, R-11; Iris, 20 Nov): before 20 Nov it opened
+/// in the lower-half panel with YouTube's own start screen, a view seen nowhere else (Terry).
 struct TrailerView: View {
     @Environment(AppModel.self) private var model
     var videoID: String
     var name: String
+    var gameID: String?
     @State private var controller: YouTubeController?
-    @Environment(\.duo) private var duo
-    @AppStorage(VideoReflection.key) private var reflectionMode = VideoReflection.defaultOn
-    @Environment(\.accessibilityReduceMotion) private var reduceMotion
-    @Environment(\.accessibilityReduceTransparency) private var reduceTransparency
-    /// What the replicator reports it is drawing (QA audit, R-11).
-    @State private var mirrorDrawn = false
-    @State private var areaHeight: CGFloat = 0
+    /// Room for a two-line caption under the video, growing with Dynamic Type so a long name at AX5 is never pushed off.
+    @ScaledMetric(relativeTo: .headline) private var captionRoom: CGFloat = 64
     var body: some View {
         NavigationStack {
-            // R-11 (Iris, 13 Nov): the player is always 16:9 and sized to the open area, the width of the area or, where the area is
-            // short (the Tabletop lower half), as wide as the height allows after a two-line caption. Centred, with the caption
-            // centred under it. In Tabletop only, the live video is mirrored under it (Terry, 14 Nov).
-            let mirror = VideoReflection.shows(pose: duo.pose, setting: reflectionMode, reduceMotion: reduceMotion, reduceTransparency: reduceTransparency)
-            let live = mirror && controller?.started == true
-            GeometryReader { geo in
-                // Room kept under the video: a two-line caption (64 pt) and the reflection's fade (at most 120 pt).
-                let captionRoom: CGFloat = 64 + 120
-                let h = max(0, min(geo.size.width * 9 / 16, geo.size.height - captionRoom))
-                let w = h * 16 / 9
-                VStack(spacing: 0) {
-                    Color.black.frame(width: w, height: h)
-                        .overlay { if let controller { MirroredVideoSurface(webView: controller.webView, mirrored: live) { mirrorDrawn = $0 } } }
-                        .frame(maxWidth: .infinity)
-                    VStack(spacing: 0) {
-                        Text(name).font(PlayscribeFont.headline)
-                            .multilineTextAlignment(.center)
-                            .overMirror(mirror)
-                            .padding(.horizontal, 16).padding(.top, 12)
-                        Spacer(minLength: 0)
+            DuoReader { duo in
+                Group {
+                    if let controller {
+                        if controller.failed {
+                            VideoUnavailable(url: URL(string: "https://www.youtube.com/watch?v=\(videoID)")) { close() }
+                        } else if duo.pose == .tabletop {
+                            let game = gameID.flatMap { model.game($0) }
+                            TabletopVideoStage(controller: controller,
+                                               video: ReleaseVideo(youtubeID: videoID, label: name, duration: nil, posted: "", posterAsset: nil),
+                                               game: game, gameName: game?.name ?? "", release: nil, onClose: close)
+                        } else {
+                            framed(controller)
+                        }
                     }
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-                    // R-11: the mirror lands flush under the video and shows through this fade, under the caption. It takes no
-                    // layout room and no touches.
-                    .background(alignment: .top) { if live { MirrorFade(band: VideoReflection.band(lowerHalf: geo.size.height)) } else { Color.black } }
-                    .clipped()
                 }
-            }
-            .background(Color.black)
-            .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { areaHeight = $0 }
-            .overlay(alignment: .topLeading) { MirrorAudit(on: mirrorDrawn && VideoReflection.band(lowerHalf: areaHeight) > 0) }
-            .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button { model.trailer = nil } label: { Label("Close", systemImage: "xmark") }
+                .background(Color.black)
+                .onChange(of: [duo.pose == .tabletop, controller != nil], initial: true) { controller?.setNativeControls(duo.pose != .tabletop) }
+                .toolbarVisibility(duo.pose == .tabletop ? .hidden : .automatic, for: .navigationBar)
+                .toolbar {
+                    ToolbarItem(placement: .cancellationAction) {
+                        Button(action: close) { Label("Close", systemImage: "xmark") }
+                    }
                 }
             }
         }
-        .onAppear { if controller == nil { controller = YouTubeController(videoID: videoID) } }
+        .onAppear { if controller == nil { controller = YouTubeController(videoID: videoID, nativeControls: model.livePose != .tabletop) } }
         .onDisappear { controller?.stop() }
+    }
+
+    /// Outside Tabletop (R-11, Iris 13 Nov): the player is 16:9, as wide as the area allows after a two-line caption, centred,
+    /// with YouTube's own controls. No mirror outside Tabletop.
+    private func framed(_ controller: YouTubeController) -> some View {
+        GeometryReader { geo in
+            let h = max(0, min(geo.size.width * 9 / 16, geo.size.height - captionRoom))
+            VStack(spacing: 0) {
+                Color.black.frame(width: h * 16 / 9, height: h)
+                    .overlay { WebSurface(webView: controller.webView) }
+                    .frame(maxWidth: .infinity)
+                Text(name).font(PlayscribeFont.headline).foregroundStyle(.white)
+                    .multilineTextAlignment(.center)
+                    .padding(.horizontal, 16).padding(.top, 12)
+                Spacer(minLength: 0)
+            }
+        }
+        .overlay(alignment: .topLeading) { MirrorAudit(on: false) }
+    }
+
+    private func close() {
+        controller?.stop()
+        model.trailer = nil
     }
 }
 
@@ -1032,7 +1041,7 @@ struct TabletopTrailerRow: View {
                     }
                 }
             } else if let g = model.game(gameID), let v = GameBasicsView.trailers(g).first {
-                Button { model.trailer = (v.youtubeId, v.name) } label: {
+                Button { model.trailer = (v.youtubeId, v.name, gameID) } label: {
                     HStack(spacing: 8) {
                         Image(systemName: "play.fill").accessibilityHidden(true)
                         Text("Play trailer").font(PlayscribeFont.subheadline.weight(.semibold))

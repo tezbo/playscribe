@@ -626,9 +626,13 @@ struct ReaderPositionTests {
 struct AutoplayTests {
     @Test("Player page autoplays only when asked (R-11)")
     func html() {
-        #expect(YouTubeController.html("abc", captions: true).contains("autoplay:0"))
+        // The player is built by build(start, play) (rebuilt in place on a Tabletop switch, #552); the first build plays only
+        // when autoplay is asked for, and play sets both the embed's autoplay and the explicit playVideo().
+        let off = YouTubeController.html("abc", captions: true)
+        #expect(off.contains("build(0,false)") && !off.contains("build(0,true)"))
         let on = YouTubeController.html("abc", captions: true, autoplay: true)
-        #expect(on.contains("autoplay:1") && on.contains("player.playVideo();"))
+        #expect(on.contains("build(0,true)"))
+        #expect(on.contains("autoplay:play?1:0") && on.contains("if(play){player.playVideo()}"))
     }
 
     @Test("Reflection is on by default, in Tabletop only, and accessibility settings win (R-11, G-9; Terry 14 Nov)")

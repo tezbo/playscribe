@@ -1145,8 +1145,8 @@ final class Release050Tests: XCTestCase {
     }
 
     /// R-11, bug-tabletop-trailer-tile-missing (Mac at c54003b: no "Play" control anywhere in Tabletop's game page): the lower half
-    /// carries "Play trailer", hittable and wholly below the fold, at std and AX5; tapping it opens the trailer in the lower-half
-    /// panel; nothing tappable on the stage names the trailer. Needs the game's basics (network) for its trailer list.
+    /// carries "Play trailer", hittable and wholly below the fold, at std and AX5; tapping it opens the trailer on the Tabletop video
+    /// stage (TT-4); nothing tappable on the stage names the trailer. Needs the game's basics (network) for its trailer list.
     func testTabletopGamePageTrailerIsPlayable() throws {
         for ax5 in [false, true] {
             let app = XCUIApplication()
@@ -1169,7 +1169,7 @@ final class Release050Tests: XCTestCase {
             XCTAssertFalse(app.buttons["stageTrailerTile"].exists, "the stage tile takes no touches [\(size)]")
             play.tap()
             sleep(2)
-            XCTAssertTrue(app.buttons["Close"].waitForExistence(timeout: 5), "the trailer opens in the lower-half panel [\(size)]")
+            XCTAssertTrue(app.buttons["Close"].waitForExistence(timeout: 5), "the trailer opens on the Tabletop video stage, Close on its rail [\(size)]")
             app.terminate()
         }
     }
