@@ -88,7 +88,7 @@ struct LowerHalfPanel: View {
     var duo: DuoContext
     var fold: CGRect
 
-    private var open: Bool { model.addSheetOpen || model.settingsOpen || model.trailer != nil || model.linksSheetOpen || model.tagExplainer != nil || model.keepCurrentDetailsOpen }
+    private var open: Bool { model.addSheetOpen || model.settingsOpen || model.linksSheetOpen || model.tagExplainer != nil || model.keepCurrentDetailsOpen }
 
     var body: some View {
         if open {
@@ -99,7 +99,6 @@ struct LowerHalfPanel: View {
                 Group {
                     if model.addSheetOpen { AddGameSheet() }
                     else if model.settingsOpen { SettingsView() }
-                    else if let t = model.trailer { TrailerView(videoID: t.videoID, name: t.name) }
                     else if model.linksSheetOpen, let id = model.nav.gameID { LinksSheet(gameID: id) }
                     else if let k = model.tagExplainer { VerificationExplainer(kind: k) }
                     else if model.keepCurrentDetailsOpen { KeepCurrentDetailsSheet() }
@@ -235,8 +234,9 @@ struct RootView: View {
         .fullScreenCover(isPresented: Binding(get: { model.player != nil }, set: { if !$0 { model.player = nil } })) {
             if let p = model.player { PlayerView(gameID: p.gameID, releaseID: p.releaseID) }
         }
-        .fullScreenCover(isPresented: Binding(get: { model.trailer != nil && model.livePose != .tabletop }, set: { if !$0 && model.livePose != .tabletop { model.trailer = nil } })) {
-            if let t = model.trailer { TrailerView(videoID: t.videoID, name: t.name) }
+        // Trailers and Gallery videos: one cover in every pose, Tabletop included (TT-4, P-2).
+        .fullScreenCover(isPresented: Binding(get: { model.trailer != nil }, set: { if !$0 { model.trailer = nil } })) {
+            if let t = model.trailer { TrailerView(videoID: t.videoID, name: t.name, gameID: t.gameID) }
         }
     }
 }

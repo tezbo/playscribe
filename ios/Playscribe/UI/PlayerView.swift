@@ -17,6 +17,11 @@ final class YouTubeController: NSObject, WKScriptMessageHandler {
     var ready = false
     /// True once playback has begun at least once.
     var started = false
+    /// True once the person has pressed Play (or autoplay asked for it). Until then the Tabletop stage shows our own art and no
+    /// player at all; from then on YouTube's player is shown unobscured, with its own branding (YouTube API terms).
+    var playRequested = false
+    /// Fullscreen requests the inline guard refused (R-11), counted for QA.
+    var fullscreenRefused = 0
 
     /// Settings key for "Autoplay videos". Off by default (R-11, G-9).
     static let autoplayKey = "autoplayVideos"
@@ -31,8 +36,14 @@ final class YouTubeController: NSObject, WKScriptMessageHandler {
         // D-11: the trailer keeps playing in Picture in Picture when the person leaves the app.
         config.allowsPictureInPictureMediaPlayback = true
         config.mediaTypesRequiringUserActionForPlayback = []
+        // R-11 (Terry's Duo, 20 Nov): Play in Tabletop opened the iOS fullscreen player, so our layout, transport and reflection
+        // were gone. Inline playback was already allowed; the hand-off came from a fullscreen request inside YouTube's embed,
+        // which WebKit fulfils with the native player. Element fullscreen stays off, and the guard below refuses every route
+        // into fullscreen in every frame, including YouTube's cross-origin one.
+        config.preferences.isElementFullscreenEnabled = false
         try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .moviePlayback)
         let content = WKUserContentController()
+        content.addUserScript(WKUserScript(source: Self.inlineGuard, injectionTime: .atDocumentStart, forMainFrameOnly: false))
         config.userContentController = content
         webView = WKWebView(frame: .zero, configuration: config)
         webView.isOpaque = false
@@ -40,6 +51,7 @@ final class YouTubeController: NSObject, WKScriptMessageHandler {
         webView.scrollView.isScrollEnabled = false
         super.init()
         content.add(self, name: "player")
+        playRequested = autoplay
         webView.loadHTMLString(Self.html(videoID, captions: captionsOn, autoplay: autoplay), baseURL: URL(string: "https://playscribe.app"))
     }
 
@@ -55,12 +67,16 @@ final class YouTubeController: NSObject, WKScriptMessageHandler {
             case "state": self.isPlaying = state == 1; if state == 1 { self.started = true }
             case "time": self.current = time ?? 0; if let duration, duration > 0 { self.duration = duration }
             case "error": self.failed = true
+            case "fullscreenRefused": self.fullscreenRefused += 1
             default: break
             }
         }
     }
 
-    func playPause() { run(isPlaying ? "player.pauseVideo()" : "player.playVideo()") }
+    func playPause() {
+        if !isPlaying { playRequested = true }
+        run(isPlaying ? "player.pauseVideo()" : "player.playVideo()")
+    }
     func seek(to t: Double) { current = t; run("player.seekTo(\(t), true)") }
     func toggleMute() { isMuted.toggle(); run(isMuted ? "player.mute()" : "player.unMute()") }
     func skip(_ seconds: Double) { seek(to: max(0, min(duration, current + seconds))) }
@@ -75,6 +91,21 @@ final class YouTubeController: NSObject, WKScriptMessageHandler {
     func stop() { run("player.stopVideo()") }
     private func run(_ js: String) { webView.evaluateJavaScript(js) }
 
+    /// Injected at document start into every frame. Video and element fullscreen calls do nothing, and if WebKit enters
+    /// fullscreen anyway (a native gesture, a rotation) the video is returned to inline at once. Picture in Picture is untouched.
+    static let inlineGuard = """
+    (function(){
+      function told(){try{window.webkit.messageHandlers.player.postMessage({event:'fullscreenRefused'})}catch(e){}}
+      var V=window.HTMLVideoElement&&HTMLVideoElement.prototype, E=Element.prototype;
+      ['webkitEnterFullscreen','webkitEnterFullScreen'].forEach(function(k){if(V&&k in V){V[k]=function(){told()}}});
+      ['requestFullscreen','webkitRequestFullscreen','webkitRequestFullScreen'].forEach(function(k){
+        if(k in E){E[k]=function(){told();return Promise.reject(new TypeError('inline only'))}}});
+      document.addEventListener('webkitbeginfullscreen',function(e){told();try{e.target.webkitExitFullscreen()}catch(_){}},true);
+      document.addEventListener('webkitpresentationmodechanged',function(e){var v=e.target;
+        if(v&&v.webkitPresentationMode==='fullscreen'){told();try{v.webkitSetPresentationMode('inline')}catch(_){}}},true);
+    })();
+    """
+
     static func html(_ id: String, captions: Bool, autoplay: Bool = false) -> String {
         """
         <!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -86,7 +117,7 @@ final class YouTubeController: NSObject, WKScriptMessageHandler {
         function post(m){window.webkit.messageHandlers.player.postMessage(m)}
         function onYouTubeIframeAPIReady(){
           player=new YT.Player('p',{videoId:'\(id)',host:'https://www.youtube-nocookie.com',
-            playerVars:{playsinline:1,controls:1,cc_load_policy:\(captions ? 1 : 0),autoplay:\(autoplay ? 1 : 0),rel:0,modestbranding:1,iv_load_policy:3,origin:'https://playscribe.app'},
+            playerVars:{playsinline:1,fs:0,controls:1,cc_load_policy:\(captions ? 1 : 0),autoplay:\(autoplay ? 1 : 0),rel:0,modestbranding:1,iv_load_policy:3,origin:'https://playscribe.app'},
             events:{onReady:function(){post({event:'ready',duration:player.getDuration()});\(autoplay ? "player.playVideo();" : "")},
                     onStateChange:function(e){post({event:'state',state:e.data})},
                     onError:function(e){post({event:'error',code:e.data})}}});
@@ -114,25 +145,6 @@ struct PlayerView: View {
     var gameID: String
     var releaseID: String
     @State private var controller: YouTubeController?
-    @AppStorage(VideoReflection.key) private var reflectionMode = VideoReflection.defaultOn
-    @Environment(\.accessibilityReduceMotion) private var reduceMotion
-    @Environment(\.accessibilityReduceTransparency) private var reduceTransparency
-    /// Tabletop (R-11): the video's frame on the stage and the top of the lower half, both in the "player" space, so the video
-    /// and its mirror can be drawn behind the arrangement, in one replicator, across the fold.
-    @State private var stageVideo: CGRect?
-    @State private var lowerTop: CGFloat?
-    @State private var playerHeight: CGFloat = 0
-    /// What the replicator reports it is drawing (QA audit, R-11).
-    @State private var mirrorDrawn = false
-    /// The player's origin on screen, so the audit reports the video and band in window points.
-    @State private var playerOrigin: CGPoint = .zero
-    private var auditGeometry: String {
-        guard let v = stageVideo else { return "" }
-        let top = lowerTop ?? v.maxY
-        return MirrorAudit.geometry(video: v.offsetBy(dx: playerOrigin.x, dy: playerOrigin.y), bandTop: top + playerOrigin.y,
-                                    band: VideoReflection.band(lowerHalf: playerHeight - top))
-    }
-
     var body: some View {
         NavigationStack {
             DuoReader { duo in
@@ -171,43 +183,7 @@ struct PlayerView: View {
         let gameName = model.game(gameID)?.name ?? ""
         switch duo.pose {
         case .tabletop:
-            // TT-4: the standing half shows only the video; the flat half holds the transport. R-11: the video itself is drawn
-            // behind the arrangement, at the frame its stage placeholder measures, inside a replicator whose mirror lands at the
-            // top of the lower half (the hinge band stays unpainted), under the fade and behind the transport.
-            let mirror = VideoReflection.shows(pose: duo.pose, setting: reflectionMode, reduceMotion: reduceMotion, reduceTransparency: reduceTransparency)
-            let live = mirror && controller.started
-            ZStack(alignment: .topLeading) {
-                if let v = stageVideo {
-                    let top = lowerTop ?? v.maxY
-                    MirroredVideoSurface(webView: controller.webView, mirrored: live, gap: max(0, top - v.maxY)) { mirrorDrawn = $0 }
-                        .background(.black)
-                        .overlay { if !controller.started { PosterCover(video: video) } }
-                        .frame(width: v.width, height: v.height)
-                        .offset(x: v.minX, y: v.minY)
-                        // The stage is view only: the video behind it takes no touches either (TT-1).
-                        .allowsHitTesting(false)
-                    if live {
-                        MirrorFade(band: VideoReflection.band(lowerHalf: playerHeight - top))
-                            .frame(width: v.width, height: v.height)
-                            .offset(x: v.minX, y: top)
-                    }
-                }
-                ArrangementView {
-                    TabletopTransport(controller: controller, video: video, game: gameName, release: release, overMirror: mirror, onClose: close)
-                        .onGeometryChange(for: CGFloat.self) { $0.frame(in: .named("player")).minY } action: { lowerTop = $0 }
-                } secondary: {
-                    Color.clear.aspectRatio(16 / 9, contentMode: .fit)
-                        .onGeometryChange(for: CGRect.self) { $0.frame(in: .named("player")) } action: { stageVideo = $0 }
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .allowsHitTesting(false)
-                }
-                .arrangementViewStyle(.overlay)
-                MirrorAudit(on: mirrorDrawn && VideoReflection.band(lowerHalf: playerHeight - (lowerTop ?? playerHeight)) > 0,
-                            geometry: auditGeometry)
-            }
-            .coordinateSpace(.named("player"))
-            .onGeometryChange(for: CGPoint.self) { $0.frame(in: .global).origin } action: { playerOrigin = $0 }
-            .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { playerHeight = $0 }
+            TabletopVideoStage(controller: controller, video: video, game: model.game(gameID), gameName: gameName, release: release, onClose: close)
         case .book:
             // VB-2: the video and its details on the left page; Watch along on the right.
             if let fold = duo.division {
@@ -242,13 +218,88 @@ struct PlayerView: View {
     }
 }
 
-/// Covers YouTube's start screen on the Tabletop stage until playback begins.
-struct PosterCover: View {
+/// TT-4, R-11: Tabletop video, for update videos and trailers alike. Pre-play and playing are one screen (Iris, 20 Nov): the
+/// standing half shows our own art until Play is pressed, then YouTube's player, unobscured and with its own branding (YouTube
+/// API terms); the flat half holds the only controls. The video is drawn behind the arrangement, at the frame its stage
+/// placeholder measures, with its mirror at the top of the lower half (the hinge band stays unpainted), under the fade and
+/// behind the transport.
+struct TabletopVideoStage: View {
+    var controller: YouTubeController
     var video: ReleaseVideo
+    var game: CatalogGame?
+    var gameName: String
+    /// The update the video belongs to; nil for a trailer, which has no Watch along.
+    var release: Release?
+    var onClose: () -> Void
+    @AppStorage(VideoReflection.key) private var reflectionMode = VideoReflection.defaultOn
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @Environment(\.accessibilityReduceTransparency) private var reduceTransparency
+    @State private var stageVideo: CGRect?
+    @State private var lowerTop: CGFloat?
+    @State private var playerHeight: CGFloat = 0
+    /// What the replicator reports it is drawing (QA audit, R-11).
+    @State private var mirrorDrawn = false
+    /// The player's origin on screen, so the audit reports the video and band in window points.
+    @State private var playerOrigin: CGPoint = .zero
+    private var auditGeometry: String {
+        guard let v = stageVideo else { return "" }
+        let top = lowerTop ?? v.maxY
+        return MirrorAudit.geometry(video: v.offsetBy(dx: playerOrigin.x, dy: playerOrigin.y), bandTop: top + playerOrigin.y,
+                                    band: VideoReflection.band(lowerHalf: playerHeight - top))
+    }
+
     var body: some View {
-        ZStack {
-            Color.black
-            if let poster = video.posterAsset { Image(poster).resizable().scaledToFit() }
+        let mirror = VideoReflection.shows(pose: .tabletop, setting: reflectionMode, reduceMotion: reduceMotion, reduceTransparency: reduceTransparency)
+        let live = mirror && controller.started
+        ZStack(alignment: .topLeading) {
+            Color.ink0.ignoresSafeArea()
+            if let v = stageVideo {
+                let top = lowerTop ?? v.maxY
+                ZStack {
+                    // Before Play no player is on screen at all: our art, never a black box or YouTube's start screen.
+                    MirroredVideoSurface(webView: controller.webView, mirrored: live, gap: max(0, top - v.maxY)) { mirrorDrawn = $0 }
+                        .background(.black)
+                        .opacity(controller.playRequested ? 1 : 0)
+                    if !controller.playRequested { VideoPoster(asset: video.posterAsset, game: game) }
+                }
+                .frame(width: v.width, height: v.height)
+                .offset(x: v.minX, y: v.minY)
+                // The stage is view only: the video behind it takes no touches either (TT-1).
+                .allowsHitTesting(false)
+                if live {
+                    MirrorFade(band: VideoReflection.band(lowerHalf: playerHeight - top))
+                        .frame(width: v.width, height: v.height)
+                        .offset(x: v.minX, y: top)
+                }
+            }
+            ArrangementView {
+                TabletopTransport(controller: controller, video: video, game: gameName, release: release, overMirror: live, onClose: onClose)
+                    .onGeometryChange(for: CGFloat.self) { $0.frame(in: .named("player")).minY } action: { lowerTop = $0 }
+            } secondary: {
+                Color.clear.aspectRatio(16 / 9, contentMode: .fit)
+                    .onGeometryChange(for: CGRect.self) { $0.frame(in: .named("player")) } action: { stageVideo = $0 }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .allowsHitTesting(false)
+            }
+            .arrangementViewStyle(.overlay)
+            MirrorAudit(on: mirrorDrawn && VideoReflection.band(lowerHalf: playerHeight - (lowerTop ?? playerHeight)) > 0,
+                        geometry: auditGeometry)
+        }
+        .coordinateSpace(.named("player"))
+        .onGeometryChange(for: CGPoint.self) { $0.frame(in: .global).origin } action: { playerOrigin = $0 }
+        .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { playerHeight = $0 }
+    }
+}
+
+/// The Tabletop stage before Play: the update video's own poster, else the game's key art cropped to 16:9 (Iris, 20 Nov).
+struct VideoPoster: View {
+    var asset: String?
+    var game: CatalogGame?
+    var body: some View {
+        if let asset {
+            ZStack { Color.black; Image(asset).resizable().scaledToFit() }
+        } else {
+            ArtView(asset: game?.keyArtAsset, game: game).clipped()
         }
     }
 }
@@ -256,13 +307,20 @@ struct PosterCover: View {
 struct VideoCaption: View {
     var video: ReleaseVideo
     var game: String
+    /// The player's reported length, used when the video has no stored one (trailers). The line is always there (it holds the
+    /// game's name), so nothing moves when the length arrives (Iris, 20 Nov).
+    var length: Double = 0
     /// True when the mirror sits behind the caption: the plate hugs the text, not the whole row, so the mirror shows beside
     /// and below it (the full-width plate darkened the band to 10 to 12 of 255, 12 Nov).
     var overMirror = false
+    private var detail: String {
+        [game, video.duration ?? (length > 0 ? PlayerTime.format(length) : nil)].compactMap { $0 }.filter { !$0.isEmpty }.joined(separator: ", ")
+    }
+
     var body: some View {
         VStack(alignment: .leading, spacing: 3) {
             Text(video.label).font(PlayscribeFont.headline).foregroundStyle(.white)
-            Text([game, video.duration].compactMap { $0 }.joined(separator: ", "))
+            Text(detail.isEmpty ? " " : detail)
                 .font(PlayscribeFont.subheadline)
                 // Over the mirror the grey is lifted so it keeps 4.5:1 on any frame (Mac, 12 Nov: 4.1 and 3.2 with .secondary).
                 .foregroundStyle(overMirror ? AnyShapeStyle(Color.white.opacity(0.8)) : AnyShapeStyle(.secondary))
@@ -308,7 +366,8 @@ struct TabletopTransport: View {
     @Bindable var controller: YouTubeController
     var video: ReleaseVideo
     var game: String
-    var release: Release
+    /// The update the video belongs to; nil for a trailer, which has no Watch along.
+    var release: Release?
     /// True when the mirror sits behind this column (R-11), so its text gets the plate and the lifted grey.
     var overMirror = false
     var onClose: () -> Void
@@ -319,7 +378,7 @@ struct TabletopTransport: View {
         let over = overMirror
         HStack(alignment: .top, spacing: 0) {
             VStack(alignment: .leading, spacing: 10) {
-                VideoCaption(video: video, game: game, overMirror: over)
+                VideoCaption(video: video, game: game, length: controller.duration, overMirror: over)
                 Slider(value: Binding(get: { controller.current }, set: { controller.seek(to: $0) }), in: 0...max(1, controller.duration))
                     .accessibilityLabel("Playback position")
                     // Spoken as time, not a percent, and the printed times below are not read a second time.
@@ -355,8 +414,10 @@ struct TabletopTransport: View {
                     transportButton(controller.isMuted ? "speaker.slash.fill" : "speaker.wave.2.fill",
                                     controller.isMuted ? "Unmute" : "Mute", action: controller.toggleMute)
                 }
-                WatchAlong(controller: controller, release: release, openNotes: onClose)
-                    .padding(.horizontal, -20)
+                if let release {
+                    WatchAlong(controller: controller, release: release, openNotes: onClose)
+                        .padding(.horizontal, -20)
+                }
             }
             .padding(.horizontal, 20)
             .padding(.top, 12)

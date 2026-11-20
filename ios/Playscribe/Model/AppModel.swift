@@ -225,8 +225,8 @@ final class AppModel {
     var addSearchFocus = false
     var settingsOpen = false
     var player: (gameID: String, releaseID: String)?
-    /// A game's trailer from its basics (no release).
-    var trailer: (videoID: String, name: String)?
+    /// A game's trailer from its basics, or a Gallery video (no release). The game gives the Tabletop stage its key art.
+    var trailer: (videoID: String, name: String, gameID: String?)?
     var highlight: String?
     /// GR-4: the in-book and Search tab note query, and its scope. Kept across pose changes (P-1).
     var noteQuery = ""
@@ -669,7 +669,7 @@ final class AppModel {
     /// (Terry: "the dawn walker ones all open in YouTube").
     func playGalleryVideo(_ item: GalleryItem) {
         guard item.kind == .video, let id = item.youtubeID else { return }
-        trailer = (id, item.title)
+        trailer = (id, item.title, item.gameID)
     }
 
     func gallery(_ gameID: String) -> [GalleryItem] {
