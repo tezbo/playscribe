@@ -9,6 +9,16 @@ extension EnvironmentValues {
     }
 }
 
+/// Tabletop: run before any rail button's own action, so a rail tap closes an open lower-half panel and then does what the
+/// button says (Iris, #556 at 894ee2c3, J-20). Nil elsewhere.
+private struct RailPreActionKey: EnvironmentKey { static let defaultValue: (() -> Void)? = nil }
+extension EnvironmentValues {
+    var railPreAction: (() -> Void)? {
+        get { self[RailPreActionKey.self] }
+        set { self[RailPreActionKey.self] = newValue }
+    }
+}
+
 /// Tabletop: a sheet's controls must sit in the lower half (the upper half is view only), so
 /// sheets there are this panel, bottom-aligned under the division, instead of a presented sheet.
 private struct PanelCloseKey: EnvironmentKey { static let defaultValue: (() -> Void)? = nil }
@@ -402,10 +412,15 @@ struct TabletopRail: View {
                         .font(PlayscribeFont.title3)
                         .frame(width: 44, height: 44)
                         .background(Circle().fill(.regularMaterial))
+                        // A Menu has no action of ours to run first: close any open panel as the tap lands.
+                        .simultaneousGesture(TapGesture().onEnded { model.closeLowerPanels() })
                         .tappableFrame()
                 }
                 // Settings has its own cog on the rail, not inside the View menu (Terry, 0.2.0 build 5).
-                RailButton(action: ScreenAction(id: "settings", title: "Settings", systemImage: "gearshape", kind: .button { model.settingsOpen = true }))
+                // The gear toggles: tapped while Settings is open, it closes it (Iris, #556). The pre-action has already closed
+                // every panel, so this reads whether Settings was open before the tap.
+                RailButton(action: ScreenAction(id: "settings", title: "Settings", systemImage: "gearshape",
+                                                kind: .button { [settingsWasOpen = model.settingsOpen] in if !settingsWasOpen { model.settingsOpen = true } }))
                     .accessibilityIdentifier("settingsButton")
                 // Playing / Upcoming is the page's own switch, in the lower half like every other pose; not repeated here (Iris,
                 // 0.5.7 gate: with it the rail needed five actions, scrolled, and cut the fifth at the tab group).
@@ -437,12 +452,15 @@ struct TabletopRail: View {
         }
         .padding(.vertical, 8)
         .frame(maxHeight: .infinity)
+        // A rail tap closes an open lower-half panel first, then does what the button says (Iris, #556; J-20).
+        .environment(\.railPreAction, { model.closeLowerPanels() })
         // The rail's buttons are 44 pt and do not grow with text (0.5.1 spec 3): at AX sizes the icons overlapped.
         .dynamicTypeSize(...DynamicTypeSize.large)
     }
 
     private func tab(_ t: AppTab, _ title: String, _ symbol: String, badge: Int = 0) -> some View {
         Button {
+            model.closeLowerPanels()
             model.nav.tab = t
         } label: {
             Image(systemName: symbol)

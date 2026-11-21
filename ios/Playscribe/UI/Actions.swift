@@ -162,14 +162,15 @@ struct RailButton: View {
     /// unlabelled button to XCUITest and VoiceOver (Mac frame dumps at f78ee25, 40c142a and cc89583, and no accessibility modifier
     /// removed it), so there is one element here by construction (bug-rail-menu-unlabelled-buttons).
     @State private var choosing = false
+    @Environment(\.railPreAction) private var preAction
     var body: some View {
         Group {
             switch action.kind {
             case .button(let run):
-                Button(action: run) { icon }
+                Button { preAction?(); run() } label: { icon }
                     .buttonStyle(RailPressStyle())
             case .menu(let sections):
-                Button { choosing = true } label: { icon }
+                Button { preAction?(); choosing = true } label: { icon }
                     .buttonStyle(RailPressStyle())
                     .popover(isPresented: $choosing) {
                         RailMenuList(title: action.title, sections: sections) { choosing = false }

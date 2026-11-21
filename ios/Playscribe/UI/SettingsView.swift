@@ -281,6 +281,8 @@ struct SettingsView: View {
             }
             // 24 pt between a footer and the next section's title (Iris, 0.5.1 spec 1).
             .listSectionSpacing(24)
+            // Tabletop: the page surface under the rows, the same as the header above, so there is no seam (Iris, #556).
+            .scrollContentBackground(duo.pose == .tabletop ? .hidden : .automatic)
             .navigationTitle("Settings")
             .toolbarTitleDisplayMode(.inline)
             // Tabletop's root page has its own header (above); pushed pages show the bar again for Back.

@@ -1224,6 +1224,15 @@ final class AppModel {
 
     func setExpanded(_ key: String, _ value: Bool) { nav.expanded[key] = value }
 
+    /// Tabletop's lower-half panels, all closed (a rail tap, J-20). The trailer player is not a panel and stays.
+    func closeLowerPanels() {
+        addSheetOpen = false
+        settingsOpen = false
+        linksSheetOpen = false
+        tagExplainer = nil
+        keepCurrentDetailsOpen = false
+    }
+
     /// A cold launch opens on the Library, not the last screen.
     func startFresh() {
         nav.gameID = nil
