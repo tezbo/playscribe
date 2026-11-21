@@ -49,7 +49,10 @@ struct BrightArtScrimTests {
         // Behind the block, in the ramp above it, and at the stage's bottom row: the far right matches the far left.
         for y in [h - 30, h - Int(block.height) - 20, h - 1] {
             let left = try patch(cg, 4, y), right = try patch(cg, Int(stage.width) - 5, y)
-            #expect(abs(left - right) <= 2, "row \(y): left \(left), right \(right) (no side edge)")
+            // Intermittent on CI (main 881601bc: row 270, left 59, right 64; passes on most runs). The row profile says where
+            // the step is: a side edge would sit at the block's right side (x 120), anything else is a render difference.
+            let profile = try [0, 4, 60, 118, 122, 200, 300, 395, 399].map { "\($0):\(try grey(cg, $0, y))" }.joined(separator: " ")
+            #expect(abs(left - right) <= 2, "row \(y): left \(left), right \(right) (no side edge); profile \(profile)")
         }
     }
 
