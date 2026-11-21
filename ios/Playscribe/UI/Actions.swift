@@ -306,11 +306,7 @@ extension AppModel {
     func moreMenu(_ gameID: String, sideBySide: Bool, bookmarks: Bool = false) -> [ScreenAction.MenuSection] {
         var items: [ScreenAction.MenuItem] = [
             .init(id: "refresh", title: "Check for updates") { [weak self] in
-                Task {
-                    await self?.refreshFeed(); await self?.refreshHistories([gameID])
-                    // Tabletop's News page is view only, so this is also its retry.
-                    await NewsStore.shared.load(gameID: gameID, igdbID: self?.game(gameID)?.igdbID)
-                }
+                Task { await self?.checkForUpdates(gameID) }
             },
         ]
         if LinksSheet.hasLinks(self, gameID) {

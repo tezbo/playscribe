@@ -481,6 +481,8 @@ struct GameBasicsView: View {
             }
             if !genres.isEmpty {
                 Text(genres.joined(separator: ", ")).font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                    // Wraps, never a silent cut (Iris: Tabletop AX5 showed only "Role-playing").
+                    .fixedSize(horizontal: false, vertical: true)
             }
             if !videos.isEmpty {
                 ForEach(videos, id: \.youtubeId) { v in
