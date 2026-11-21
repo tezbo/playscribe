@@ -35,23 +35,25 @@ extension AppModel {
     }
 
     /// More > Check for updates (Terry, 21 Nov: it gave no feedback). A toast says it is checking, then what happened:
-    /// new PS5 updates for this game, up to date with the Checked time, or why it couldn't check. Toasts are announced.
+    /// new PS5 updates for this game ("Up to date" would read as the player's PS5 being current; Iris), no new updates with the Checked time, or why it couldn't check. Toasts are announced.
     func checkForUpdates(_ gameID: String) async {
         show(Toast(text: "Checking for updates…", seconds: 30))
         let before = Set(releases(gameID).filter(\.isPS5Listed).map(\.id))
         await refreshFeed()
         await refreshHistories([gameID])
         let added = releases(gameID).filter { $0.isPS5Listed && !before.contains($0.id) }.count
-        show(Toast(text: Self.checkResult(checkState, newUpdates: added)))
+        // About 4 s, longer at accessibility sizes (Iris).
+        let seconds: Double = UIApplication.shared.preferredContentSizeCategory.isAccessibilityCategory ? 7 : 4
+        show(Toast(text: Self.checkResult(checkState, newUpdates: added), seconds: seconds))
         // Tabletop's News page is view only, so this is also its retry.
         await NewsStore.shared.load(gameID: gameID, igdbID: game(gameID)?.igdbID)
     }
 
-    /// "2 new updates", "Up to date. Checked 21 Nov, 6:51 am", "Couldn’t check. You’re offline" or "Couldn’t check. Try again later".
+    /// "2 new updates", "No new updates. Checked 21 Nov, 6:51 am", "Couldn’t check. You’re offline" or "Couldn’t check. Try again later".
     static func checkResult(_ state: CheckState, newUpdates: Int) -> String {
         switch state {
         case .checked(let d):
-            newUpdates > 0 ? "\(newUpdates) new update\(newUpdates == 1 ? "" : "s")" : "Up to date. Checked \(checkedStamp(d))"
+            newUpdates > 0 ? "\(newUpdates) new update\(newUpdates == 1 ? "" : "s")" : "No new updates. Checked \(checkedStamp(d))"
         case .failed(let offline): offline ? "Couldn’t check. You’re offline" : "Couldn’t check. Try again later"
         case .notChecked: "Couldn’t check. Try again later"
         }

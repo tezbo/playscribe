@@ -9,7 +9,7 @@ struct CheckForUpdatesTests {
         let d = Date(timeIntervalSince1970: 1_763_700_000)
         #expect(AppModel.checkResult(.checked(d), newUpdates: 1) == "1 new update")
         #expect(AppModel.checkResult(.checked(d), newUpdates: 2) == "2 new updates")
-        #expect(AppModel.checkResult(.checked(d), newUpdates: 0) == "Up to date. Checked \(AppModel.checkedStamp(d))")
+        #expect(AppModel.checkResult(.checked(d), newUpdates: 0) == "No new updates. Checked \(AppModel.checkedStamp(d))")
         #expect(AppModel.checkResult(.failed(offline: true), newUpdates: 0) == "Couldn’t check. You’re offline")
         #expect(AppModel.checkResult(.failed(offline: false), newUpdates: 0) == "Couldn’t check. Try again later")
         #expect(AppModel.checkResult(.notChecked, newUpdates: 0) == "Couldn’t check. Try again later")
@@ -19,5 +19,8 @@ struct CheckForUpdatesTests {
         let src = try String(contentsOf: URL(fileURLWithPath: #filePath).deletingLastPathComponent().deletingLastPathComponent()
             .appendingPathComponent("Playscribe/UI/Actions.swift"), encoding: .utf8)
         #expect(src.contains("checkForUpdates(gameID)"))
+        let root = try String(contentsOf: URL(fileURLWithPath: #filePath).deletingLastPathComponent().deletingLastPathComponent()
+            .appendingPathComponent("Playscribe/UI/RootView.swift"), encoding: .utf8)
+        #expect(root.contains("Text(toast.text).font(PlayscribeFont.subheadline).lineLimit(4)"), "the toast wraps at AX5, never truncates")
     }
 }

@@ -582,8 +582,8 @@ struct LowerMessages: View {
             }
             if let toast = model.toast {
                 HStack(spacing: 12) {
-                    // Wraps to two lines at large sizes instead of shrinking (Iris, AX3).
-                    Text(toast.text).font(PlayscribeFont.subheadline).lineLimit(2).fixedSize(horizontal: false, vertical: true)
+                    // Wraps instead of shrinking or truncating (Iris, AX3; up to four lines at AX5 for the check result).
+                    Text(toast.text).font(PlayscribeFont.subheadline).lineLimit(4).fixedSize(horizontal: false, vertical: true)
                     if let undo = toast.undo {
                         Button(toast.actionLabel) { undo(); model.toastClear() }
                             .font(PlayscribeFont.subheadline.weight(.semibold))
