@@ -53,10 +53,13 @@ final class TileArtLoader {
     /// Mostly white or barely coloured: mean brightness above 0.8 or mean saturation below 0.12.
     nonisolated static func isWashedOut(_ image: CGImage) -> Bool {
         let side = 24
-        var px = [UInt8](repeating: 0, count: side * side * 4)
-        guard let ctx = CGContext(data: &px, width: side, height: side, bitsPerComponent: 8, bytesPerRow: side * 4,
+        guard let ctx = CGContext(data: nil, width: side, height: side, bitsPerComponent: 8, bytesPerRow: side * 4,
                                   space: CGColorSpaceCreateDeviceRGB(), bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue) else { return false }
+        // The context owns its buffer: `&array` is only valid for the init call, so a later draw wrote through a dangling
+        // pointer and a read could come back 0 (BrightArtScrimTests on CI: one sample of 15 read 0, row 270 left 59 right 64).
+        ctx.clear(CGRect(x: 0, y: 0, width: side, height: side))
         ctx.draw(image, in: CGRect(x: 0, y: 0, width: side, height: side))
+        let px = Array(UnsafeBufferPointer(start: ctx.data!.assumingMemoryBound(to: UInt8.self), count: side * side * 4))
         var brightness = 0.0, saturation = 0.0
         for i in stride(from: 0, to: px.count, by: 4) {
             let r = Double(px[i]) / 255, g = Double(px[i + 1]) / 255, b = Double(px[i + 2]) / 255

@@ -25,11 +25,14 @@ struct BrightArtScrimTests {
 
     /// Grey level 0...255 at a point in points (scale 1), from the top-left.
     private func grey(_ cg: CGImage, _ x: Int, _ y: Int) throws -> Int {
-        var rgba = [UInt8](repeating: 0, count: 4)
-        let ctx = try #require(CGContext(data: &rgba, width: 1, height: 1, bitsPerComponent: 8, bytesPerRow: 4,
+        let ctx = try #require(CGContext(data: nil, width: 1, height: 1, bitsPerComponent: 8, bytesPerRow: 4,
                                          space: CGColorSpaceCreateDeviceRGB(),
                                          bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue))
+        // The context owns its buffer: `&array` is only valid for the init call, so a later draw wrote through a dangling
+        // pointer and a read could come back 0 (BrightArtScrimTests on CI: one sample of 15 read 0, row 270 left 59 right 64).
+        ctx.clear(CGRect(x: 0, y: 0, width: 1, height: 1))
         ctx.draw(cg, in: CGRect(x: -x, y: -(cg.height - 1 - y), width: cg.width, height: cg.height))
+        let rgba = Array(UnsafeBufferPointer(start: ctx.data!.assumingMemoryBound(to: UInt8.self), count: 4))
         return (Int(rgba[0]) + Int(rgba[1]) + Int(rgba[2])) / 3
     }
 
@@ -49,8 +52,8 @@ struct BrightArtScrimTests {
         // Behind the block, in the ramp above it, and at the stage's bottom row: the far right matches the far left.
         for y in [h - 30, h - Int(block.height) - 20, h - 1] {
             let left = try patch(cg, 4, y), right = try patch(cg, Int(stage.width) - 5, y)
-            // Intermittent on CI (main 881601bc: row 270, left 59, right 64; passes on most runs). The row profile says where
-            // the step is: a side edge would sit at the block's right side (x 120), anything else is a render difference.
+            // Was intermittent on CI (row 270, left 59, right 64) while every profile point read 64: one of the patch's 15 reads
+            // came back 0 through a dangling buffer in `grey` (fixed there). The profile stays: a real side edge sits at x 120.
             let profile = try [0, 4, 60, 118, 122, 200, 300, 395, 399].map { "\($0):\(try grey(cg, $0, y))" }.joined(separator: " ")
             #expect(abs(left - right) <= 2, "row \(y): left \(left), right \(right) (no side edge); profile \(profile)")
         }
