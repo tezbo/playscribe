@@ -319,10 +319,13 @@ struct FullBleedVideo: View {
 
     static func offered(in pose: Pose) -> Bool { pose == .closed || pose == .flat }
 
-    /// The 16:9 frame that fits `size`, centred.
-    static func frame(in size: CGSize) -> CGRect {
+    /// The 16:9 frame that fits `size`, centred, leaving `reserve` above it (and the same below, so it stays centred). The
+    /// reserve is the safe area's top plus room for Exit, so the way out always shows in the black margin, never on YouTube's
+    /// controls and never faded (Iris on dbf1bc12: Closed landscape had no visible Exit; "a full-screen mode with no visible
+    /// way out is a trap").
+    static func frame(in size: CGSize, reserve: CGFloat = 0) -> CGRect {
         guard size.width > 0, size.height > 0 else { return .zero }
-        let w = min(size.width, size.height * 16 / 9)
+        let w = min(size.width, max(0, size.height - 2 * reserve) * 16 / 9)
         let h = w * 9 / 16
         return CGRect(x: (size.width - w) / 2, y: (size.height - h) / 2, width: w, height: h)
     }
@@ -343,7 +346,7 @@ struct FullBleedVideo: View {
         GeometryReader { geo in
             let full = CGSize(width: geo.size.width + geo.safeAreaInsets.leading + geo.safeAreaInsets.trailing,
                               height: geo.size.height + geo.safeAreaInsets.top + geo.safeAreaInsets.bottom)
-            let f = Self.frame(in: full)
+            let f = Self.frame(in: full, reserve: geo.safeAreaInsets.top + Self.marginForExit)
             let inMargin = Self.exitInMargin(video: f, safeTop: geo.safeAreaInsets.top)
             ZStack(alignment: .topLeading) {
                 Color.black
@@ -383,7 +386,7 @@ struct FullBleedVideo: View {
     private var exitButton: some View {
         Button(action: onExit) {
             Image(systemName: "arrow.down.right.and.arrow.up.left")
-                .font(.system(size: 17, weight: .semibold))
+                .font(.system(size: 22, weight: .semibold))
                 .foregroundStyle(.white)
                 .frame(width: 44, height: 44)
                 .background(.black.opacity(0.6), in: Circle())
