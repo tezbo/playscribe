@@ -17,4 +17,11 @@ struct PixelBufferTests {
         }
         #expect(offenders.isEmpty, "bitmap contexts borrowing an array: \(offenders)")
     }
+
+    /// Tiles classified through the old dangling read are cached under v2; the cache moved to v3 so every tile is checked again.
+    @Test func tileCentresCacheWasReset() throws {
+        let ios = URL(fileURLWithPath: #filePath).deletingLastPathComponent().deletingLastPathComponent()
+        let src = try String(contentsOf: ios.appendingPathComponent("Playscribe/Services/TileArt.swift"), encoding: .utf8)
+        #expect(src.contains("appending(path: \"tile-crop-centres-v3.json\")"))
+    }
 }

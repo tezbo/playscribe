@@ -13,9 +13,12 @@ final class TileArtLoader {
     private var memory: [URL: Loaded] = [:]
     private var inFlight: [URL: Task<Loaded?, Never>] = [:]
     private var centres: [String: Double]
-    private let centresURL = URL.cachesDirectory.appending(path: "tile-crop-centres-v2.json")
+    /// v3 (Quinn, on the pixel-buffer fix): `isWashedOut` read its pixels through a dangling buffer before, so a cached
+    /// "washed out" (a negative centre) may be wrong and is never re-checked. A new name classifies every tile again.
+    private let centresURL = URL.cachesDirectory.appending(path: "tile-crop-centres-v3.json")
 
     private init() {
+        try? FileManager.default.removeItem(at: URL.cachesDirectory.appending(path: "tile-crop-centres-v2.json"))
         centres = (try? Data(contentsOf: centresURL)).flatMap { try? JSONDecoder().decode([String: Double].self, from: $0) } ?? [:]
     }
 
