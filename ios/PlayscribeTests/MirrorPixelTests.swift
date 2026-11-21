@@ -67,3 +67,14 @@ struct MirrorPixelTests {
         }
     }
 }
+
+/// R-10 (Mac at 7f61fac9: the name under the Gallery card was cut by the fold): the Tabletop Gallery card ends above the fold.
+@MainActor
+struct GalleryStageFitTests {
+    @Test func cardEndsAboveTheFold() {
+        #expect(GalleryStage.maxHeight(top: 100, foldTop: 373) == 373 - 100 - GalleryStage.foldGap)
+        #expect(GalleryStage.maxHeight(top: 100, foldTop: nil) == .infinity)
+        // A very short stage still shows a card, never a zero-height one.
+        #expect(GalleryStage.maxHeight(top: 340, foldTop: 373) == 90)
+    }
+}
