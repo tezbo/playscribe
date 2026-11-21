@@ -648,35 +648,61 @@ struct AutoplayTests {
         #expect(!VideoReflection.shows(pose: .tabletop, setting: false, reduceMotion: false, reduceTransparency: false))
     }
 
-    @Test("The mirror instance lands flipped, its bottom row at the gap below the video (R-11)")
-    @MainActor func mirrorTransform() {
-        let t = VideoReflection.instanceTransform(videoHeight: 200, gap: 30)
-        // About the replicator's centre (y 100), squashed to a quarter: the bottom row (y 200) lands at 230, the top row (y 0)
-        // at 280, so the whole picture fits in 50 pt and text in it is flattened past reading (Iris on #533).
-        func map(_ y: CGFloat) -> CGFloat { 100 + (y - 100) * t.m22 + t.m42 }
-        #expect(abs(map(200) - 230) < 0.001)
-        #expect(abs(map(0) - 280) < 0.001)
-        #expect(t.m11 == 1)
-        // Unsquashed it is a plain flip.
-        let flat = VideoReflection.instanceTransform(videoHeight: 200, gap: 30, squash: 1)
-        #expect(abs(100 + (0 - 100) * flat.m22 + flat.m42 - 430) < 0.001)
+    @Test("The mirror is the video's bottom strip at 1:1: the replica's last row sits on the strip's edge (R-11, reflection-0.6 spec 4, 8.1)")
+    @MainActor func mirrorStrip() {
+        let f = VideoReflection.replicaFrame(video: CGSize(width: 400, height: 225), band: 57)
+        // Before the flip the replica's bottom row is the strip's bottom row, so after it the video's last row comes first.
+        #expect(f.maxY == 57)
+        // True scale: no squash, the same size as the video.
+        #expect(f.width == 400 && f.height == 225)
+        // Only the bottom 57 rows are inside the strip.
+        #expect(f.minY == 57 - 225)
     }
 
-    @Test("The audit reports what the replicator draws, not the intent (R-11, Mac at 95d9f3b)")
+    @Test("The fade is quadratic, monotonic, ends at zero, and no stop steps by more than 4/255 at full edge strength (spec 8.2)")
+    @MainActor func mirrorFade() {
+        #expect(VideoReflection.fade(0) == 1)
+        #expect(VideoReflection.fade(1) == 0)
+        #expect(abs(VideoReflection.fade(0.5) - 0.25) < 1e-9)
+        var last = 1.0
+        for i in 1...255 {
+            let v = VideoReflection.fade(Double(i) / 255)
+            #expect(v <= last)
+            // Scaled by the 35% edge, one step of the band is well under 4/255.
+            #expect((last - v) * VideoReflection.edgeHidden * 255 < 4)
+            last = v
+        }
+    }
+
+    @Test("The mirror is 35% with the controls faded and 20% with them shown, never more (spec 4, contrast with no plates)")
+    @MainActor func mirrorStrength() {
+        #expect(VideoReflection.edgeOpacity(controlsShown: false) == 0.35)
+        #expect(VideoReflection.edgeOpacity(controlsShown: true) == 0.20)
+        #expect(VideoReflection.blur == 3)
+    }
+
+    @Test("The audit reports what the strip draws, not the intent (R-11, Mac at 95d9f3b)")
     @MainActor func mirrorRendering() {
-        #expect(VideoReflection.rendering(instanceCount: 2, height: 200, mirrorAlpha: 0.3, onScreen: true))
-        #expect(!VideoReflection.rendering(instanceCount: 1, height: 200, mirrorAlpha: 0.3, onScreen: true))
-        #expect(!VideoReflection.rendering(instanceCount: 2, height: 0, mirrorAlpha: 0.3, onScreen: true))
-        #expect(!VideoReflection.rendering(instanceCount: 2, height: 200, mirrorAlpha: 0, onScreen: true))
-        #expect(!VideoReflection.rendering(instanceCount: 2, height: 200, mirrorAlpha: 0.3, onScreen: false))
+        #expect(VideoReflection.rendering(hasReplica: true, band: 57, onScreen: true))
+        #expect(!VideoReflection.rendering(hasReplica: false, band: 57, onScreen: true))
+        #expect(!VideoReflection.rendering(hasReplica: true, band: 0, onScreen: true))
+        #expect(!VideoReflection.rendering(hasReplica: true, band: 57, onScreen: false))
     }
 
-    @Test("The mirror is at most 55% (Iris on #550, a ceiling) and its band at most 15% of the lower half, never over 120 pt (R-11, Iris on #533)")
+    @Test("The band is at most 15% of the lower half, never over 120 pt (R-11, Iris on #533)")
     @MainActor func mirrorBand() {
-        #expect(VideoReflection.opacity <= 0.55)
         #expect(VideoReflection.band(lowerHalf: 380) == 57)
         #expect(VideoReflection.band(lowerHalf: 2000) == 120)
         #expect(VideoReflection.band(lowerHalf: -10) == 0)
+    }
+
+    @Test("Tabletop controls fade only while playing, never under VoiceOver or Switch Control (TT-4, spec 5)")
+    @MainActor func controlsAutoHide() {
+        #expect(TabletopTransport.autoHides(playing: true, voiceOver: false, switchControl: false))
+        #expect(!TabletopTransport.autoHides(playing: false, voiceOver: false, switchControl: false))
+        #expect(!TabletopTransport.autoHides(playing: true, voiceOver: true, switchControl: false))
+        #expect(!TabletopTransport.autoHides(playing: true, voiceOver: false, switchControl: true))
+        #expect(TabletopTransport.hideAfter == .seconds(4))
     }
 }
 

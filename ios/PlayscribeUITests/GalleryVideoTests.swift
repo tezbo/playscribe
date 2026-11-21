@@ -21,4 +21,18 @@ final class GalleryVideoTests: XCTestCase {
         XCTAssertTrue(app.buttons["Close"].waitForExistence(timeout: 10), "the in-app player opens [\(pose)]")
         let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "gallery-video [\(pose)]"; shot.lifetime = .keepAlways; add(shot)
     }
+
+    /// Spec 6 (Terry's Duo, 21 Nov: the top half was a list that wasn't interactive, and the same videos were listed below). In
+    /// Tabletop the Gallery's stage is a picture: no list heading and no video rows above the fold; the rows are in the lower half.
+    func testTabletopGalleryHasOneList() throws {
+        let app = XCUIApplication()
+        app.launchArguments = ["-qaRoute", "gamepage/dawnwalker/gallery"]
+        app.launch()
+        let pose = ReleaseRowTests.pose(app)
+        guard pose.contains("tabletop") else { print("GalleryVideoTests one list: skipped in \(pose)"); return }
+        XCTAssertTrue(app.buttons["galleryPlay-v-launch"].waitForExistence(timeout: 15), "Launch Trailer row in the lower half")
+        XCTAssertFalse(app.staticTexts["Official videos"].exists, "no list heading on the stage")
+        XCTAssertFalse(app.buttons["Launch Trailer, video"].exists, "no second, dead copy of the row")
+        let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "gallery-one-list [\(pose)]"; shot.lifetime = .keepAlways; add(shot)
+    }
 }

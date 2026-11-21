@@ -46,12 +46,13 @@ final class ReflectionTests: XCTestCase {
     /// The pixels (19 Nov, Terry: "it's missing entirely" on his Duo while the label said on). An XCUITest screenshot of the inner
     /// display in Tabletop is all black on the Duo simulator (Mac at 0e1f3e5), so the test cannot read them itself. It prints where
     /// the video and the mirror band are and keeps the video playing for 15 s; tools/qa/mirror-pixels.sh, running the test, takes
-    /// `simctl io` screenshots meanwhile and fails unless the band's brightest pixels reach 40% of the video's on a bright frame.
+    /// `simctl io` screenshots meanwhile and fails unless the band's brightest pixels reach 25% of the video's on a bright frame (the
+    /// controls fade after 4 s, and the mirror is then at 35%: Iris, reflection-0.6 spec 8.3).
     private func measureMirror(_ audit: XCUIElement, pose: String) {
         let g = (audit.value as? String ?? "").split(separator: " ").compactMap { Double($0) }
         guard g.count == 6, g[2] > 0, g[3] > 0, g[5] > 0 else { return XCTFail("mirror geometry missing: \(audit.value ?? "nil") [\(pose)]") }
         let w = XCUIApplication().windows.firstMatch.frame
-        print("MIRROR_GEOMETRY window \(Int(w.width)) \(Int(w.height)) video \(g[0]) \(g[1]) \(g[2]) \(g[3]) band \(g[4]) \(min(g[5], g[3] * 0.25))")
+        print("MIRROR_GEOMETRY window \(Int(w.width)) \(Int(w.height)) video \(g[0]) \(g[1]) \(g[2]) \(g[3]) band \(g[4]) \(g[5])")
         sleep(15)
         print("MIRROR_GEOMETRY done")
     }

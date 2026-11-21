@@ -82,6 +82,7 @@ struct GalleryVideoRow: View {
 
 struct GalleryChapter: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.viewOnlyStage) private var viewOnly
     var gameID: String
 
     var body: some View {
@@ -89,6 +90,16 @@ struct GalleryChapter: View {
         let art = items.filter { $0.kind == .artwork }
         let videos = items.filter { $0.kind == .video }
         let picked = model.data.selectedArtwork[gameID]
+        if viewOnly, !items.isEmpty {
+            // Tabletop (Terry's Duo, 21 Nov: the stage was a dead copy of the list below it). The play rows are in the lower
+            // half, so the stage shows the game's art and name (GalleryStage).
+            GalleryStage(gameID: gameID)
+        } else {
+            list(items: items, art: art, videos: videos, picked: picked)
+        }
+    }
+
+    private func list(items: [GalleryItem], art: [GalleryItem], videos: [GalleryItem], picked: String?) -> some View {
         VStack(alignment: .leading, spacing: 14) {
             if items.isEmpty { GalleryEmpty(gameID: gameID) }
             if !art.isEmpty { Text("Choose a picture to use as this game’s backdrop.").font(PlayscribeFont.footnote).foregroundStyle(.secondary) }
@@ -128,6 +139,26 @@ struct GalleryChapter: View {
                 }
             }
         }
+    }
+}
+
+/// TT-1, R-10 and R-11: the Gallery on Tabletop's view-only stage (Iris, reflection-0.6 spec section 6; Terry's Duo, 21 Nov: the
+/// stage was a list that looked tappable and wasn't, and the same videos were listed again below). The stage is a picture: the
+/// game's art at 16:9 with its name, never a list. Every video and picture is a row in the lower half (`TabletopGalleryList`).
+struct GalleryStage: View {
+    @Environment(AppModel.self) private var model
+    var gameID: String
+
+    var body: some View {
+        let game = model.game(gameID)
+        VStack(alignment: .leading, spacing: 10) {
+            ArtView(asset: model.backdrop(gameID, chapter: .gallery, tall: false), game: game)
+                .frame(maxWidth: .infinity).aspectRatio(16 / 9, contentMode: .fit)
+                .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+                .accessibilityHidden(true)
+            if let game { Text(game.name).font(PlayscribeFont.title3).lineLimit(2) }
+        }
+        .allowsHitTesting(false)
     }
 }
 

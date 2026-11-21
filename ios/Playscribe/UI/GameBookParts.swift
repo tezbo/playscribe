@@ -1020,26 +1020,9 @@ struct TabletopTrailerRow: View {
         Group {
             // The Gallery's videos sit on the view-only stage in Tabletop, so their controls live here, one row each (R-11; Mac at
             // 0e1f3e5: tapping "Launch Trailer" on the stage did nothing, as the stage rule says it must).
-            let videos = model.section(gameID) == .gallery ? model.gallery(gameID).filter { $0.kind == .video && $0.youtubeID != nil } : []
-            if !videos.isEmpty {
-                VStack(spacing: 0) {
-                    ForEach(videos) { v in
-                        Button { model.playGalleryVideo(v) } label: {
-                            HStack(spacing: 8) {
-                                Image(systemName: "play.fill").accessibilityHidden(true)
-                                Text(v.title).font(PlayscribeFont.subheadline.weight(.semibold))
-                                    .fixedSize(horizontal: false, vertical: true)
-                                Spacer(minLength: 0)
-                            }
-                            .foregroundStyle(PlayscribeColor.accent)
-                            .padding(.horizontal, 10).frame(maxWidth: .infinity, minHeight: 44).contentShape(Rectangle())
-                        }
-                        .buttonStyle(.plain)
-                        .accessibilityLabel("Play \(v.title)")
-                        .accessibilityIdentifier("galleryPlay-\(v.id)")
-                        .tappableFrame()
-                    }
-                }
+            let gallery = model.section(gameID) == .gallery ? model.gallery(gameID) : []
+            if !gallery.isEmpty {
+                TabletopGalleryList(gameID: gameID, items: gallery)
             } else if let g = model.game(gameID), let v = GameBasicsView.trailers(g).first {
                 Button { model.trailer = (v.youtubeId, v.name, gameID) } label: {
                     HStack(spacing: 8) {
@@ -1062,6 +1045,59 @@ struct TabletopTrailerRow: View {
         .task(id: model.game(gameID)?.igdbID) {
             if let id = model.game(gameID)?.igdbID { await GameInfoStore.shared.load(igdbID: id) }
         }
+    }
+}
+
+/// The Gallery's only list in Tabletop (Iris, reflection-0.6 spec section 6): the stage above is a picture, so every video is a
+/// row here, with its thumbnail (72 x 40 pt, play badge), the title in headline and a 44 pt row. Pictures follow under "Photos";
+/// tapping one makes it the game's backdrop, as in every other pose.
+struct TabletopGalleryList: View {
+    @Environment(AppModel.self) private var model
+    var gameID: String
+    var items: [GalleryItem]
+    var body: some View {
+        let videos = items.filter { $0.kind == .video && $0.youtubeID != nil }
+        let art = items.filter { $0.kind == .artwork }
+        let picked = model.data.selectedArtwork[gameID]
+        VStack(alignment: .leading, spacing: 2) {
+            ForEach(videos) { v in
+                Button { model.playGalleryVideo(v) } label: { row(v, badge: "play.fill", selected: false) }
+                    .buttonStyle(.plain)
+                    .accessibilityLabel("Play \(v.title)")
+                    .accessibilityIdentifier("galleryPlay-\(v.id)")
+                    .tappableFrame()
+            }
+            if !art.isEmpty {
+                SectionHeader(title: "Photos").padding(.top, 8).padding(.horizontal, 10)
+                ForEach(art) { a in
+                    Button { model.selectArtwork(gameID, a.id) } label: { row(a, badge: nil, selected: picked == a.id) }
+                        .buttonStyle(.plain)
+                        .accessibilityLabel(a.alt)
+                        .accessibilityHint("Uses it as this game’s backdrop")
+                        .accessibilityAddTraits(picked == a.id ? .isSelected : [])
+                        .tappableFrame()
+                }
+            }
+        }
+    }
+
+    private func row(_ item: GalleryItem, badge: String?, selected: Bool) -> some View {
+        HStack(spacing: 12) {
+            Image(item.asset).resizable().scaledToFill().frame(width: 72, height: 40)
+                .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
+                .overlay {
+                    if let badge {
+                        Image(systemName: badge).font(.system(size: 11, weight: .bold)).foregroundStyle(.white)
+                            .frame(width: 24, height: 24).background(.black.opacity(0.6), in: Circle())
+                    }
+                }
+                .accessibilityHidden(true)
+            Text(item.title).font(PlayscribeFont.headline).fixedSize(horizontal: false, vertical: true)
+            Spacer(minLength: 0)
+            if selected { Image(systemName: "checkmark.circle.fill").foregroundStyle(PlayscribeColor.accent).accessibilityHidden(true) }
+        }
+        .padding(.horizontal, 10).padding(.vertical, 2)
+        .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading).contentShape(Rectangle())
     }
 }
 
