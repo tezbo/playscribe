@@ -1,0 +1,402 @@
+{
+ "game": {
+  "id": "schildmaid-mx-187651",
+  "igdbId": 187651,
+  "name": "Schildmaid MX",
+  "cover": {
+   "imageId": "coajap",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coajap.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1dfl",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1dfl.jpg"
+  },
+  "ps5Release": "2025-11-26",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "schildmaid-mx-187651@2.0.1",
+   "gameId": "schildmaid-mx-187651",
+   "displayName": "Hotfix 2.0.1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-03-30T11:06:03.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed a bug that did not consider repeat achievements when calculating AP. Retroactively awards the missing points.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2154760"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2154760/view/6839319551981601617"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-30T11:06:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-2154760",
+      "checkedAt": "2026-11-12T10:23:50.364Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:50.365Z"
+  },
+  {
+   "id": "schildmaid-mx-187651@2.0.1.1",
+   "gameId": "schildmaid-mx-187651",
+   "displayName": "Update 2.0.1.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-03-30T09:26:25.000Z",
+   "notes": [
+    {
+     "title": "UI",
+     "items": [
+      {
+       "text": "Cleaned up achievements panel some more, added spent AP value.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Music",
+     "items": [
+      {
+       "text": "Added a new track by Ed Tremblay for Combat Training.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "improved the music timing at the beginning of stages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed the wrong music playing sometimes in the first stages of some loops in replays.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Misc",
+     "items": [
+      {
+       "text": "Removed debug info that was briefly displaying during stage loading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made the title scroll even slower :D",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various small bug fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 1,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2154760"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2154760/view/6839319551981349430"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-30T09:26:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-2154760",
+      "checkedAt": "2026-11-12T10:23:50.364Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:50.364Z"
+  },
+  {
+   "id": "schildmaid-mx-187651@2.0.1.0",
+   "gameId": "schildmaid-mx-187651",
+   "displayName": "Update 2.0.1.0",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2023-03-27T08:40:30.000Z",
+   "notes": [
+    {
+     "title": "Gameplay/Graphics",
+     "items": [
+      {
+       "text": "Added some different VFX to bottom portals (you will know when you see them) to make them stand out from the regular portals.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved contrast/visibility on corrupted projectiles and AOEs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Localization",
+     "items": [
+      {
+       "text": "Fixed some formatting issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adapted the title scroll and ending texts speeds to the length of the localized texts and generally made them slower.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated some texts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "UI",
+     "items": [
+      {
+       "text": "Removed some superfluous buttons that snuck into the leaderboard entry details.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved color contrast/readability on achievements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed not being able to close windows when a scrollbar is selected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Saving",
+     "items": [
+      {
+       "text": "Added triggering a save immediately after unlocking a new mode, added some safeguards against parallel file access.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Misc",
+     "items": [
+      {
+       "text": "Preparing some backend systems for merging with the old leaderboards on itch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 2,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2154760"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2154760/view/5143713753742531489"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-27T08:40:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-2154760",
+      "checkedAt": "2026-11-12T10:23:50.363Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:50.363Z"
+  },
+  {
+   "id": "schildmaid-mx-187651@2.0.0.12",
+   "gameId": "schildmaid-mx-187651",
+   "displayName": "Hotfix 2.0.0.12",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-03-24T23:25:43.000Z",
+   "notes": [
+    {
+     "title": "Localization",
+     "items": [
+      {
+       "text": "Added a missing string (on the Steam login button of all places).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2154760"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2154760/view/5143713753733841512"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-24T23:25:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-2154760",
+      "checkedAt": "2026-11-12T10:23:50.363Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:50.363Z"
+  },
+  {
+   "id": "schildmaid-mx-187651@2.0.0.11",
+   "gameId": "schildmaid-mx-187651",
+   "displayName": "Hotfix 2.0.0.11",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-03-24T20:32:17.000Z",
+   "notes": [
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "Fixed Tutorial length (dragged on for too long).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2154760"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2154760/view/5143713753733402528"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-24T20:32:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-2154760",
+      "checkedAt": "2026-11-12T10:23:50.362Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:50.362Z"
+  }
+ ],
+ "issues": []
+}

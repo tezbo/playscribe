@@ -1,0 +1,811 @@
+{
+ "game": {
+  "id": "sumerian-six-305175",
+  "igdbId": 305175,
+  "name": "Sumerian Six",
+  "cover": {
+   "imageId": "co8buj",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co8buj.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar2zjg",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar2zjg.jpg"
+  },
+  "ps5Release": "2026-03-06",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "sumerian-six-305175@1.0.3",
+   "gameId": "sumerian-six-305175",
+   "displayName": "Patch 1.0.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-12-17T11:38:28.000Z",
+   "notes": [
+    {
+     "title": "Greetings!",
+     "items": [
+      {
+       "text": "Firstly, we wish to sincerely thank you for your patience and ongoing support. It's been amazing to see so many positive words about Sumerian Six, and we are extremely proud that many of you are enjoying the game we created! <3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As some of you may have noticed, Kacper, our CEO, posted an explanation last month as to why further work on patches & improvements was going slow after the release. For those who have not read it, you may get up to speed in this thread to better understand our situation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Nonetheless, this little announcement is about positives! ːsteamhappyː",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As promised, we did our best to commit some time to look into issues that have been reported by you since the release, split them into those that we cannot afford or are unable to tackle, as well as those that we can. We hope that the fixes we were able to commit to will result in a better overall experience, and less frustration for those of you encountering the issues previously.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Important",
+     "items": [
+      {
+       "text": "Please note, that the patch will be initially rolled out to a test branch, to make sure that it is, in fact, an improvement over the current live version, and that it doesn't break progression for those of you still going through the campaign for the first time. Of course, we have tested the changes as much as we could internally, including older save files provided by some of you, but at the same time, with limited Team capabilities, we wish to stay on the safe side, and ask for your assistance before we release this patch to everyone. If everything looks well, we'll have the patch released properly to live in about a week, just before Christmas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now, if you are kind enough to help us out, you may access the testing branch immediately on Steam and download the updated build, following the guide below.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "In your Steam library view, right-click on Sumerian Six",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Press Properties",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Navigate to the Betas tab",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Input SumerianSixGame password into the window as shown, and press Check Code",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Select public_test_branch from the Beta Participation dropdown menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "At this point, after closing the window, the game should start updating",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch 1.0.3 notes",
+     "items": [
+      {
+       "text": "[CRASH FIX] The game should no longer crash when blowing up enemies with Rosa’s Human Bomb ability, while another enemy in the explosion area is affected by Siegfried's Distract ability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[CRASH FIX] The game should no longer crash when attempting to cancel Rosa’s Stunning Link ability after loading specific save files, in which the ability was already affecting the enemy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[CRASH FIX] The game should no longer crash after patrolling Panzerwolves walk into a checkpoint gate",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[CRASH FIX] The game should no longer crash when using environmental kills on enemies in specific conditions (we eliminated such issues across several levels, but if you manage to spot more, please let us know)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Issues with audio playback (glitching, crackling in certain conditions) should now be improved and occur less often (we suspect the issue to be hardware/driver dependent, but we did all we could with the reproduction steps provided by users experiencing it)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Disrupted player characters abilities should no longer stay permanently disabled after deactivating Disruptors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rosa should now be able to correctly use her Stunning Link ability on enemies who are under the effects of Siegfried's Scare Off ability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sid should no longer get stuck or stuck less often after Dash-killing enemies near ledges",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Player characters should now properly return to crouch stance, after being ordered to quickly run up to and dispose of enemies from crouching stance, while in the Action Planning mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Grouped player characters in mixed stances should always enter crouch first, upon pressing space",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cancelling the action of picking up bodies before fully executed should now be possible and more responsive (B button), similarly to how it works on mouse & keyboard",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Opening doors when carrying bodies should now be possible",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Save compatibility between game versions 1.0.2 (current) and 1.0.3 (patch) has been retained.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We would very much appreciate your help with switching to the testing branch, and letting us know if the game feels better, before we fully release this patch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Artificer Development Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 25,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1429850"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1429850/view/1785774543684370"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-17T11:38:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-1429850",
+      "checkedAt": "2026-11-12T15:39:51.060Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:39:51.060Z"
+  },
+  {
+   "id": "sumerian-six-305175@1.0.2",
+   "gameId": "sumerian-six-305175",
+   "displayName": "Hotfix 1.0.2",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-09-06T11:48:49.000Z",
+   "notes": [
+    {
+     "title": "Hotfix 1.0.2 includes",
+     "items": [
+      {
+       "text": "Fixes/improvements to border scrolling acting out sometimes, especially for those of you playing in windowed fullscreen mode and on multi-monitor setups",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixes/improvements to a number of issues related to Disruptor. The biggest culprit here concerned some abilities no longer being available to use after leaving the Disruptor's effects. Please let us know if you find more serious issues with this one after the hotfix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes/improvements to the countermeasure which we implemented to minimise occurrences of player characters getting stuck on various obstacles when playing on gamepad. In some cases, this system could teleport a character unpredictably in an attempt to prevent getting stuck. It should feel better now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes/improvements to vertical range of some thrown abilities. In the case of some thrown abilities, the vertical ranges were improperly set, resulting in annoying camera behaviour in some arenas",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We hope that those fixes reflect the most often reported issues that we could quickly and safely tackle after the launch of Sumerian Six on Monday. We will continue to monitor your feedback throughout the in-game bug reporter, Steam forums, and Discord, and prioritise further work, based on severity of issues and our ability to find suitable solutions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Please note that we're aware of some issues with audio reported by a number of you.",
+     "items": [
+      {
+       "text": "We still haven't got to the bottom of things on that, and we would appreciate your help with it, if possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you're among those affected by the audio issues, please reach out to us (via Artificer Discord ) and provide:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Detailed description, and reproduction steps + ways you manage to get the audio back to normal",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Provide us with a DXDiag file: instruction on how to export a DXDiag file: We are extremely happy that a lot of you are enjoying Sumerian Six, sincerely thank you for giving the game a go, and sharing your feedback with us. <3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1429850"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1429850/view/6242640076600161457"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-09-06T11:48:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-1429850",
+      "checkedAt": "2026-11-12T15:39:51.059Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:39:51.059Z"
+  },
+  {
+   "id": "sumerian-six-305175@major-2024-08-08",
+   "gameId": "sumerian-six-305175",
+   "displayName": "A major Sumerian Six Demo update is now live",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-08-08T12:46:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey there!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sumerian Six is coming along nicely. Based on the feedback we received from everyone enjoying the demo, we made a bunch of changes to the game, which is why we thought we'd update it to the latest version. This new demo build comes with more than a handful of tweaks and fixes and should make for a more enjoyable Nazi-hunting experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please continue sharing your feedback with us here on the Steam community or on our Discord. It's absolutely invaluable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We'll have some major news to share this month, so stay tuned for more!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Artificer Dev Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bugfixes",
+     "items": [
+      {
+       "text": "The game should no longer freeze nor crash in the second part of the Lilleby level, if the player successfully killed a nazi patrol with a murderous truck earlier",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A number of improvements to enemy behaviour were made, particularly in the case of group patrols encountered in the demo, who had trouble adapting to all the cool, but difficult to comprehend abilities thrown at them by members of the Enigma Squad",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The soldier near the watermill on the Löwenfels Castle level should no longer become an unscripted nazi zombie under certain conditions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Einar Pedersen should no longer attempt to engage in strange conversations with his already electrocuted nazi companion on the Lilleby level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enemies should enter their silent search state correctly after witnessing an environmental kill when the game is loaded",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enemies should no longer take strange and repeated interest in their previously discovered companions who had perished in environmental kills, after loading a save file",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Player characters, under certain conditions, should no longer be invisible to enemies in silent search state",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Double-click behaviour for sprinting has been improved",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Player characters should no longer be blocked under certain conditions after the game is loaded from the main menu while climbing ladders",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Player characters should no longer be able to drop carried bodies while going through doors or passages, which sometimes resulted in further movement being blocked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enemies should get tangled in ladders much less often (please note that we're still working on some corner cases)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Switching viewcones of enemies while in active pause mode should now work as expected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Sid should no longer be able to enter a stairway to heaven state after attempting to climb the ladder near the watermill on the Löwenfels Castle level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Izzie should no longer refuse to unlock all of her abilities if the player decides to leaveher behind and progress only with Sid on the Löwenfels Castle level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Izzy should no longer erratically flap her arms when attempting to use her Swap Places ability. Why so dramatic, Sis?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Rosa should no longer delay her crouch to flex a bit after viciously dissolving her foes into thin air",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Loading the game should no longer break highlights",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ability buttons should no longer remain in pressed state under certain conditions (i.e. alt-tabbing), effectively forcing you to restart the game and perhaps hating us just a tiny bit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tutorial popups should no longer display blank squares instead of actual icons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Pressing while in map view now properly closes the map instead of invoking the pause menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "A number of issues with audio sometimes acting unpredictably (crackling) should now be fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Combat music should no longer persist if the game is quick loaded the moment you get caught with your pants down deep into enemy trenches.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Music previously disabled in audio settings should no longer unmute itself after loading a save file",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Improvements",
+     "items": [
+      {
+       "text": "The game went through another optimization pass, which should result in better frame rates across the board and reduced startup time, particularly for players using hard disk drives. An additional loading screen has been added for those who still find themselves wondering if the black screen on startup means that their screen went kaputt",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Skills, their upgrades and XP values have been rebalanced across the board based on feedback we’ve been receiving so far",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Save limit from hard difficulty was lifted. You were right, it was badly communicated, which led to bad experience. We might restore it in the future, while making sure that the number of available save slots is communicated properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Rebinding panel to change controls was added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Controller support was added (we're still working on it, and we'll appreciate any constructive feedback). In addition, a number of settings to fine-tune controller behaviour were added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Behaviour of ability upgrade popups was improved, particularly for cases in which you masterfully manage to trigger two upgrades at the same time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Minimap maximum zoom out level was increased, giving you a better overview of what's actually going on in the world",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The ammo depot puzzle on the Löwenfels Castle level has been slightly redesigned to be a bit more fair and interesting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The toon outline and shading were refined, and options to toggle them were added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Colour-blind modes were added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fullscreen map on zoom out option was added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Player character markers option was added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Enemy visibility indicator option was added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Border scrolling option was added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Clamp mouse to window option was added",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Auto camera follow option was added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Mouse drag rotation speed option was added",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The game is now paused when the bug reporting tool is invoked, giving you the chance to lay it all on us without nervously looking over your keyboard",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Important notes",
+     "items": [
+      {
+       "text": "Please be advised that your saved games from the old version of the demo will, most likely, not be compatible with the updated demo at all",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you tried out the previous version of the demo, we strongly advise you to clear the Saved folder in C:\\Users\\%username%\\AppData\\Local\\SumerianSixDemo before launching the updated demo, in order to avoid any conflicts, particularly with the game settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 15,
+    "fixed": 23,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0,
+    "topNew": [
+     "Skills, their upgrades and XP values have been rebalanced across the board based on feedback we’ve been receiving so far",
+     "Rebinding panel to change controls was added",
+     "Minimap maximum zoom out level was increased, giving you a better overview of what's actually going on in the world"
+    ]
+   },
+   "sourceIds": [
+    "steam-1429850"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1429850/view/5963414363390412138"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-08T12:46:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-1429850",
+      "checkedAt": "2026-11-12T15:39:51.058Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:39:51.058Z"
+  },
+  {
+   "id": "sumerian-six-305175@hotfix-2024-06-11",
+   "gameId": "sumerian-six-305175",
+   "displayName": "Performance Hotfix - Lilleby",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-11T16:49:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey there!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "First of all, we wanted to sincerely thank you for all the feedback and support for Sumerian Six so far!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Seeing that some of you encountered performance issues during the second level in the Demo (Lilleby), which may happen in specific circumstances, we decided to push a hotfix in order to facilitate a full playthrough of the Demo.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The hotfix to our best understanding should address performance issues (medium to severe FPS drops, occasional freezes) for players who activated the environment kill with the truck in Lilleby (screenshot attached below), and then continued their playthrough, while saving and loading the game multiple times afterwards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The hotfix, however, comes with a caveat, meaning that there is a risk that for those of you who progressed past the first part of the level, Lilleby saves after interaction with this murderous truck may no longer be compatible or act out. You should be however able to restart the level and progress without further issues if that happens.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We sincerely apologise for any trouble it may cause, but having in mind that the demo will be available to you until at least the end of the Steam Next Fest and objectively improves the game, we feel this is the right step to take.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We hope that you've been enjoying Sumerian Six Demo so far! ːsteamthumbsupː",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Artificer Dev Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1429850"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1429850/view/5746109972567645418"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-11T16:49:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-1429850",
+      "checkedAt": "2026-11-12T15:39:51.057Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:39:51.057Z"
+  }
+ ],
+ "issues": []
+}

@@ -1,0 +1,1839 @@
+{
+ "game": {
+  "id": "spy-drops-307538",
+  "igdbId": 307538,
+  "name": "Spy Drops",
+  "cover": {
+   "imageId": "cocaib",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/cocaib.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar35nf",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar35nf.jpg"
+  },
+  "ps5Release": "2026-04-28",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "spy-drops-307538@1.4.1.8",
+   "gameId": "spy-drops-307538",
+   "displayName": "Update 1.4.1.8",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-03-11T08:22:10.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "-The mini map in HUD has been zoomed out",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Mini map with orbital camera now only moves if you hold the \"minimap enlarge\" button",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added options to invert the aim camera",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "FIXED: discrepancy in keyboard button item assignments between HUD and menu( buttons 2/3)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "FIXED: Mouse when click in on the number of items to buy (+/-) was overly sensitive",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3034070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3034070/view/1826992588589339"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-11T08:22:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-3034070",
+      "checkedAt": "2026-11-12T10:24:44.340Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:44.340Z"
+  },
+  {
+   "id": "spy-drops-307538@1.4.1.7",
+   "gameId": "spy-drops-307538",
+   "displayName": "Update 1.4.1.7",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-02-18T08:11:56.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Separated aiming camera sensitivity from the main one and separated the X/Y settings for both",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed: you can sneak take down soldiers already taken down",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Dreamcatcher not working on standalone if you don't complete the first mission",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: developing the explosive drone could cause a softlock",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: scrolling with the mouse in the Standalone menu",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed: some button settings in StandAlone mode were double clicking",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: when using KB/M closing the option menu with the Right Button would leave the game in an unresponsive state, unless you try to enter the menu again",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: some odd texturing in Ripley's stomach",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: When the Dream Catcher feature is unlocked during the mission preparation screen, garbled text appears at the bottom of the unlock dialog when transitioning to the preparation screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: In the mission \"Neutralize all enemies (soldiers, bots, turrets, lasers, and security cameras),\" if you kill an enemy soldier with a gun or melee, the remaining enemy count in the mission progress bar in the upper right corner of the screen does not decrease, preventing you from completing the mission.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: mission text screen in VS sometimes was overrunning the screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: in VS mode, the description of some items in the item's menu was cut-off by the screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 10,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3034070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3034070/view/1825093633181682"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-18T08:11:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-3034070",
+      "checkedAt": "2026-11-12T10:24:44.340Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:44.340Z"
+  },
+  {
+   "id": "spy-drops-307538@1.4.1.5",
+   "gameId": "spy-drops-307538",
+   "displayName": "Update 1.4.1.5",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-01-14T12:45:22.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "-When playing Standalone Mode you are now granted 200 credits and access to a fully unlocked shop in-game. XP is traded always 1 to 1 in that mode. It is up to the player if they want to buy something and lose time waiting for a delivery.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-The price of the Taser and Tranquilizer pistol have been greatly increased so players won’t over-buy it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-When selecting the shop in-game the different menus display the current balance in the description",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed: the IK animation when crawling with a weapon is off",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed: when using Keyboard and Mouse the default buttons for weapons could not be correctly assigned and could cause softlocks in dialogues -If you happen to have still dialogues softlocked, try to go to the settings and control bindings and check if any action doesn’t have a button assigned to it",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "-Fixed: some keys in the tutorials weren’t displayed in the PC version when using KB and mouse",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "-Fixed: When grabbing and killing a soldier the button prompts could stay on screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed: the camera close distance on collision has been moved slightly back as to avoid seeing inside the chest when wall-hugging",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed: unlocking some weapons could cause a softlock with KB and Mouse when entering the shop",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3034070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3034070/view/1821922921810537"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-14T12:45:22.000Z",
+      "verification": "official",
+      "sourceId": "steam-3034070",
+      "checkedAt": "2026-11-12T10:24:44.339Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:44.339Z"
+  },
+  {
+   "id": "spy-drops-307538@1.4.0.3",
+   "gameId": "spy-drops-307538",
+   "displayName": "Hotfix 1.4.0.3",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-19T16:41:46.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "-Fixed: when agains a wall, if you open the item's menu, garbabe text might be displayed in the contextual text.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed: when using fire weapons, the ammo count for the gun will decrease by two rounds instead of one.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed: During missions, using the following weapons on enemy soldiers will damage and kill them (Tranquilizer Gun and Taser)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed: the remaining ammo count will not update even if you pick up the grenades while equipped and replenish your ammo.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed: During the final mission after the battle with the boss, enemy soldiers don't attack and just stand there.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3034070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3034070/view/1819386365096168"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-19T16:41:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-3034070",
+      "checkedAt": "2026-11-12T10:24:44.338Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:44.338Z"
+  },
+  {
+   "id": "spy-drops-307538@1.4.0.2",
+   "gameId": "spy-drops-307538",
+   "displayName": "Patch 1.4.0.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-19T08:29:12.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This update introduces a new way to experience the game. You can now choose between the classic top-down camera and a new orbital camera, switch between chunky pixels or a toned-down, higher-fidelity visual style, and the shooting mechanics have been completely rewritten with a new over-the-shoulder camera.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "And that’s not all, here’s the full list of changes",
+     "items": [
+      {
+       "text": "-Orbital camera",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-New shooting system",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Option to increase resolution",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Killing while grabbing is now assigned to R/RB also the button description while grabbing has been assigned from Left to Right",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Triangle representing the player in the mini-map has a gradient color to better display the orientation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Now when approaching a wall it will display “LB Cover”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Some hints displayed in the loading screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-The button to deactivate the bots and turrets is now the action button and the action is 10x faster",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Added the button description to get out of the wall while wall-hugging. Also, the button description has been modified to be made consistent with other descriptions (icon/Text)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed: Having a failed Leaderboard retrieval blocks some functionality that should not be blocked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed: the button description to KO while next to a dumpster was incorrect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed: when picking up ammo on the floor from the dead soldiers the ammo counter doesn’t get updated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed: you could peek and shot while wall-hanging and not in a corner",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed: Robots should have the collider size decreased not to block any doors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Tutorial trigger in Mika's room has been moved closer to the door",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed: trying to kill a soldier after hiding a body on a spy device mission could soft lock the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed: Walking slow animations enter weird cycles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed: During a mission, if you hold one of the grenades listed below and throw it when you have only one grenade left, the player will perform a melee attack motion while throwing the grenade.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed: During the following mission, no passages are generated between maps, causing players to fall into the abyss ID: 1152885852",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed: When you complete a mission and return to the mission selection screen, the button icons for \"Return to Title Screen\" and \"Select Mission\" in the relevant text at the bottom of the screen will be replaced with different button icons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed: When you start the game, after the movie showing the company logo, there is a loading animation in the bottom right of the screen. When the second animation is displayed, the \"○\" part of the animation shifts to the right and is displayed in two places.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed: During missions from the Jungle onwards, if you approach an enemy bot from behind and attempt to dismantle it, holding down the Circle button while the following text is displayed will dismantle the bot. However, if you release the Circle button, the protagonist will perform a fighting motion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed: When returning to the title screen from within the game, a black horizontal line covering approximately 10% of the screen appears at the top of the screen and a cloud-like background appears from the upper left, causing the screen to appear to flicker.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed: During a mission, if you approach a wall and the \"R1 Hide\" button UI appears, opening the item menu and moving the cursor will change the \"R1\" button icon to \"\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed: In \"Multiplayer PvP,\" under \"Select Player,\" you can toggle between \"Environment\" and \"Mode\" settings in \"VS Options\" using the following controls. However, the buttons assigned to toggle these settings (L1/R2 for Environment and Options/R1 for Mode) are awkwardly positioned.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Fixed: when starting a new game after reaching the end, shadows might not show up",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Remember you can play vs online with Steam Play Together!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 28,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3034070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3034070/view/1819386365094115"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-19T08:29:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-3034070",
+      "checkedAt": "2026-11-12T10:24:44.337Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:44.338Z"
+  },
+  {
+   "id": "spy-drops-307538@1.3.0.1",
+   "gameId": "spy-drops-307538",
+   "displayName": "Patch 1.3.0.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-04T09:28:24.000Z",
+   "notes": [
+    {
+     "title": "The following changes were introduced",
+     "items": [
+      {
+       "text": "Soldiers drop more ammo now (before they were dropping but unless you had some luck leveled up they would drop next to 0)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed: the camera movement would acts weird if VSYNC was disable and the frame rate were high",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Both buttons of the sniper Zoom in/out will toggle the zoom",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed: If you inverted the camera Axis in the options while in First person view the changes would not take effect until you closed and open the first person view again",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Strafe is disabled with the sniper rifer if you enter the snipe view while the aiming button is hold. Once released strafing is enabled again.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Options menu is now accessible from items menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue that could make the level generation fails on some 4/5 star missions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "There is an option now to toggle first person view between a Toggle/Hold action",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed: mission some Xbox controller icons in the rebinding options",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Tilka was oversized in the last mission",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You cannot hide now while wall-hugging",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed: you could crawl through tight spaces",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed: you could release from wall-hugging in tight spaces behind dumpsters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed: Explosive drones might trigger if spawned at a certain distance from the wall",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed: Bots can stunt lock players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed: when aborting a Standalone mission and going back to the leaderboards the results might not load",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed: Grenades and smoke grenades can be picked right before the explosion and don’t hurt Ripley",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed: Grenades HUD counter will not update on throw",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You can now dash while crawling",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed: you cannot hide bodies in Dumpsters with the new grabbing system (not holding)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed: a leaderboard error message could be displayed while loading already a level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Now the collision camera when wall-hugging is more snappy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed: ROOM_B01_06/07 – Hiding cabinet not grounded",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed: pROOM_B03_courtyard – Blocking back wall was too extruded",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Gas could sometime block the view if you were a level under it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed: incorrect description of the unlockable dreamcatcher function displayed in the credits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed: Colliders' plane in the desert could interfere with the route of the soldiers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed: if you have selected a stat for upgrade and press return to previous screen you will lose focus on the UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed: some snitch soldiers weren’t coughing when idle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The camera now only offsets ahead while moving",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 30,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0,
+    "topNew": [
+     "Fixed: the camera movement would acts weird if VSYNC was disable and the frame rate were high",
+     "Both buttons of the sniper Zoom in/out will toggle the zoom",
+     "Options menu is now accessible from items menu"
+    ]
+   },
+   "sourceIds": [
+    "steam-3034070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3034070/view/1815034433028760"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-04T09:28:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-3034070",
+      "checkedAt": "2026-11-12T10:24:44.336Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:44.336Z"
+  },
+  {
+   "id": "spy-drops-307538@1.2.6.5",
+   "gameId": "spy-drops-307538",
+   "displayName": "Update 1.2.6.5",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-01T07:22:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Another small update is in.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There have been some recent changes to button mappings. If you run into issues, try resetting them to default first in the main menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I really appreciate all the feedback and bug reports. I may not have time to reply to each one, but I’ve read and taken all of them into consideration.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "These are the changes on this patch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• First-person view is now a toggle button.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Grab soldier is also now a toggle button.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Leaderboard timing adjusted – In the previous build, the game was trying to load too many entries too quickly, which caused Steam to reject some connections and trigger a leaderboard error. Now it takes a bit longer to load everything, but you won’t see that error the first time you enter. You can still navigate the leaderboards while they load in the background.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Diagonal inputs are no longer registered when equipping items with the D-pad.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• If no weapon is assigned (but one is available in your inventory), pressing the aim button will automatically equip the first weapon in the inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed: Some actions were missing from the rebinding menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed: softlock when unlocking the explosive drone",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There were a couple of hot fixes that were released recently as small updates, just adding there here since those might be lost after the recent updates:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• The second mission in the story mode would be stuck in a loop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Last minute change created an issue when closing the error leaderboard notification",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 14,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3034070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3034070/view/1811772772434645"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-01T07:22:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-3034070",
+      "checkedAt": "2026-11-12T10:24:44.336Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:44.336Z"
+  },
+  {
+   "id": "spy-drops-307538@hotfix-2025-09-30",
+   "gameId": "spy-drops-307538",
+   "displayName": "Hot fix",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-09-30T06:06:31.000Z",
+   "notes": [
+    {
+     "title": "Hot fix",
+     "items": [
+      {
+       "text": "-The second mission in the story mode would be stuck in a loop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3034070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3034070/view/1811772772399126"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-30T06:06:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-3034070",
+      "checkedAt": "2026-11-12T10:24:44.335Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:44.335Z"
+  },
+  {
+   "id": "spy-drops-307538@hotfix-2025-09-29",
+   "gameId": "spy-drops-307538",
+   "displayName": "Hot fix",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-09-29T14:53:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hot fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Last minute change created an issue when closing the error leaderboard notification",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3034070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3034070/view/1811772772376803"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-29T14:53:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-3034070",
+      "checkedAt": "2026-11-12T10:24:44.335Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:44.335Z"
+  },
+  {
+   "id": "spy-drops-307538@1.1.1.2",
+   "gameId": "spy-drops-307538",
+   "displayName": "Patch 1.1.1.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-08-29T07:32:09.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "• When crawling in first person strafing is now slower",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• The last Dreamcatcher option wasn't unlocked after credits (you need to play the last cinematic to unlock it)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Prisoner now runs faster if the player is standing and far away from the player",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed: Elite operative trophy description is incorrect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed: White sphere displayed when strafing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3034070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3034070/view/1809235871611663"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-29T07:32:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-3034070",
+      "checkedAt": "2026-11-12T10:24:44.334Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:44.334Z"
+  },
+  {
+   "id": "spy-drops-307538@1.1.1",
+   "gameId": "spy-drops-307538",
+   "displayName": "Patch 1.1.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-08-25T12:19:47.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The patch featuring real voice actors is finally out! Alongside this, we’ve added a number of changes and fixes. We know there are still some bug reports that haven’t been addressed yet, but don’t worry, they’ll be coming in future updates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We hope you see these changes as a step in the right direction, and we’re grateful for your continued support of the project!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here’s the full list of changes",
+     "items": [
+      {
+       "text": "· AI voices have been replaced by real actors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· You have now the option to scout the area by moving the camera with the right stick/mouse",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "· The camera no longer zooms in, if there is a blocking element a “pierce” shader will display the inner parts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· You can now strafe left and right with (LB/RB) in the first-person view",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· The melee combat is now faster, orientates automatically on hit and also you can manually rotate in between attacks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Default controls are now closer to the original MGS1 (check the controls in the options menu and reset to default settings if you made any changes)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Enemies that didn’t trigger the alarm will now be more prone to visit the location where the alarm was triggered",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· The alarm status time will increase now more if a soldier keeps seeing you",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· If you hit now a soldier that detected you (while the eye icon is displayed) it will increase the allowed time before they rise the alarm, allowing you to KO soldiers easily before the raise the alarm",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Soldiers can now hit you more easily while in melee attack, the higher the difficulty the more likely they will hit you during melee",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Soldiers will knock you down on close attack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· The menus can now be controlled with the DPAD, this affects how you quick assign items in the menus (now you have to hold the RT button and then press the corresponding directional button)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· The items menu now opens with the one of the middle buttons (Back, Select, “-“, Share, etc...) and can be closed with B, also the options menu opens with the other middle button.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Wall hugging now stays fixed on the frontal camera unless is a tight space",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Switching tabs in the menus is now done with LB/RB",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Added an extra explanation for targets in the mission description pop-up at the beginning of each mission",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed some icons missing for the PS4 controller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Smoothed out the Dreamcatcher camera transition",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Robots can now be taken down with melee attacks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Added a new radio line for PC to explain how to force the Sneak Walk with Keyboard",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "· Enemy arrows are now displayed when using the Drone",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Drone activation and deactivation is a toggle, no need to hold the button",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Added an icon that represents the target and the distance on Drone missions when operating one in a Drone Mission Type",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Audio HUD slider turns red when making noise over the threshold enemies can hear",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Returning to the mission screen from the options menu is now on hold instead of on double-tap",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· On caught if you are back to the wall, it will be automatically released",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· You can now hide yourself or soldiers in Dumpsters during the alarm state provided you are in an area far from your last known location.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· When back to the wall now is more difficult for a soldier to spot you if they just pass by",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· The running animation is now more stable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Lasers have now a shader",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed: Drone turning camera doesn't change based on sensitivity",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed: Ripley could pick up active grenades",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed: restore default controls window could be occluded on gamepad",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed: if crawling over a ledge, the crawling animation might be stuck and prevent falling damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed: sometimes lasers would not disappear on explosion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed: The Intel extraction points have been reduced on scripted missions to prevent jumping from scripted-to-scripted mission",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed: when skipping lines in the mission screen the faces might not be correct",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed: in a drone mission picking up the document, throwing it and picking it up again could cause the document to stay graphically permanent",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed: pathfinding error on soldiers going through open hangar doors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed: tutorials in the options menu won’t auto scroll to the last text",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed: when starting a new mission, the Voice Audio might not be set at the settings menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 41,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3034070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3034070/view/1808601382574925"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-25T12:19:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-3034070",
+      "checkedAt": "2026-11-12T10:24:44.333Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:44.333Z"
+  },
+  {
+   "id": "spy-drops-307538@patch-2025-08-08",
+   "gameId": "spy-drops-307538",
+   "displayName": "Voice Acting Patch Incoming",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-08-08T08:43:17.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Edit 25/08/2025 : The patch is out. More info here",
+     "items": [
+      {
+       "text": "[dynamiclink href=\"https://steamcommunity.com/games/3034070/announcements/detail/512967159089987971\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve seen your feedback about the AI voices in the game. We’re a small studio, and using AI was originally a tough call mostly driven by budget constraints.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "But after hearing from so many of you, we realize that it’s just not the right choice for this project or for our community.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "So, we’re making the change.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It’s a big stretch for us financially, but we’ve already started working with professional voice actors to re-record everything. We’re aiming to release a patch with all-new voiceovers in the next couple of weeks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks for calling us out, and thanks even more for caring enough to do it. We’re learning, growing, and doing our best to make something worth your time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rainy Frog and Rainy Night Creations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3034070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3034070/view/1807332909597792"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-08T08:43:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-3034070",
+      "checkedAt": "2026-11-12T10:24:44.332Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:44.332Z"
+  },
+  {
+   "id": "spy-drops-307538@1.00.1005",
+   "gameId": "spy-drops-307538",
+   "displayName": "Update 1.00.1005",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-08-07T08:19:12.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This is a small patch that fixes a few issues and incorporates some of your suggestions. We're also working in parallel on deeper changes and new features, so please bear with us a little longer. In the meantime, we'll continue releasing these smaller updates to keep things moving forward.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here are the changes introduced in this patch",
+     "items": [
+      {
+       "text": "• Fixed: Traditional Chinese language wasn't booting on Steam",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "• Fixed: restore default button mapping on Mouse/KB don't work",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "• Fixed: fences in pROOM_B01_17 can be crawled under",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "• Added binoculars to Mika's room in case the player through them before",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "• Changed prisoner's text to indicate he should be returned to the point designated in the map (\"D\")",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "• You could trigger Crastall cinematic with a drone",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "• Added a radio reminder to Duncan in the desert Eye Door",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "• Removed zoom on melee combat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "• Lowered the sound detection threshold on soldiers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "• Fixed: With KB/Mouse if you click on \"Options\" and then \"Load Game\" in the front end, it will open the options again",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "• Now the player has to manually skip all dialogues and audio will always play. There is an option in the menus to auto-skip",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "• Fixed: when reassigning the A button, the Dreamcatcher could turn unresponsive",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "• Fixed: you can accidentally skip two audio lines with a single button press",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "• Added a shadows and lighting setting for PC",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "• Added an option to skip stealth attacks by pression the left shoulder button",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 11,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0,
+    "topNew": [
+     "• Fixed: fences in pROOM_B01_17 can be crawled under",
+     "• Added binoculars to Mika's room in case the player through them before",
+     "• Changed prisoner's text to indicate he should be returned to the point designated in the map (\"D\")"
+    ]
+   },
+   "sourceIds": [
+    "steam-3034070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3034070/view/1807332909563662"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-07T08:19:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-3034070",
+      "checkedAt": "2026-11-12T10:24:44.331Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:44.331Z"
+  },
+  {
+   "id": "spy-drops-307538@post-2025-08-02",
+   "gameId": "spy-drops-307538",
+   "displayName": "Updates in progress",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-08-02T06:19:34.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "While there is some criticism, it’s great to see players enjoying the game and discovering why it is different. It takes a little time before it “clicks”, but we think the game loop with the Dream Catcher is quite unique.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’re working some updates that will roll out in the coming weeks, including bug fixes, adjustments and new features, and would welcome any comments or suggestions that you would like to share.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "However, please note that it was never our intention to remake an old game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "While there are some obvious influences, we strove to innovate and add new features, including randomised missions and extracting intel from soldier's minds. We don’t want to change that.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rainy Frog",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3034070"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3034070/view/1806698490738984"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-02T06:19:34.000Z",
+      "verification": "official",
+      "sourceId": "steam-3034070",
+      "checkedAt": "2026-11-12T10:24:44.330Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:44.331Z"
+  }
+ ],
+ "issues": []
+}

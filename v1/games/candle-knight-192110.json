@@ -1,0 +1,821 @@
+{
+ "game": {
+  "id": "candle-knight-192110",
+  "igdbId": 192110,
+  "name": "Candle Knight",
+  "cover": {
+   "imageId": "co4ilf",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co4ilf.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1gz9",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1gz9.jpg"
+  },
+  "ps5Release": "2024-05-02",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "candle-knight-192110@1.0.5",
+   "gameId": "candle-knight-192110",
+   "displayName": "Patch 1.0.5",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-06-30T17:07:36.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Small patch addressing the performance in the Platforming Trials. We've also added a lot of backend support for DirectX12 which we are expecting to push in the next patch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Upcoming changes",
+     "items": [
+      {
+       "text": "DLSS and Intel XeSS implemented.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1879680"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1879680/view/5124582150135018204"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-30T17:07:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-1879680",
+      "checkedAt": "2026-11-11T21:57:50.534Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:50.535Z"
+  },
+  {
+   "id": "candle-knight-192110@1.0.4",
+   "gameId": "candle-knight-192110",
+   "displayName": "Patch 1.0.4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-06-23T04:42:53.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This is mainly a performance patch and should help immensely in both lower and higher resolutions as we overhauled most of the levels in the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "General",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Performance improvements in real-time cutscenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Performance with Ultra Settings in 4K has been improved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Performance has been greatly improved throughout all areas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted collisions for the moving books section in the Library.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted some Cameras being blurry or out of focus in late game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Optimization has been added to a lot of objects, textures and animations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a Combat Trial which would not reset after completing certain checkpoints and would not give the expected reward to players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Enemy AI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue in which The Scholar would spawn facing the wrong way, which would cause players to be unable to continue past the second phase.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Upcoming changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "DLSS and Intel XeSS.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Direct X12 implementation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 2,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1879680"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1879680/view/5124581515257092616"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-23T04:42:53.000Z",
+      "verification": "official",
+      "sourceId": "steam-1879680",
+      "checkedAt": "2026-11-11T21:57:50.534Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:50.534Z"
+  },
+  {
+   "id": "candle-knight-192110@1.0.3",
+   "gameId": "candle-knight-192110",
+   "displayName": "Patch 1.0.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-06-17T18:31:48.000Z",
+   "notes": [
+    {
+     "title": "Patch Notes 1.0.3",
+     "items": [
+      {
+       "text": "General",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted some cameras out of focus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted collisions in the first area of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Modified existing ambient SFX in the final area of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug which caused the final achievement to not be unlocked, players who should have unlocked it will unlock when they play the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug which caused the camera to snap when changing locations fast.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "User Interface",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed alignment of multiple icons not centered correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in which random icons would appear in Spanish and Portuguese after buying all Sword and Shield upgrades.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Worked on the backend of translations which caused random English lines to appear in other languages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enemy AI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue in which Cricket Bandits would get stuck mid-animation until dying.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in which The Scholar would sometimes ignore the player if they completed certain tasks in a specific order.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Known issues we are still working on",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chinese localization needs further polish.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ultra Settings in 4K have persistent performance issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Scholar can sometimes get stuck and will do nothing for the second half of the boss fight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Upcoming changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "DLSS and intel XeSS.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 2,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1879680"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1879680/view/5896948309847513933"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-17T18:31:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-1879680",
+      "checkedAt": "2026-11-11T21:57:50.533Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:50.533Z"
+  },
+  {
+   "id": "candle-knight-192110@1.0.2",
+   "gameId": "candle-knight-192110",
+   "displayName": "Patch 1.0.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-06-09T17:22:11.000Z",
+   "notes": [
+    {
+     "title": "Patch Notes 1.0.2",
+     "items": [
+      {
+       "text": "General",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Upgraded Unreal Engine 4 versions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted multiple sound effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed an issue in which Painting 05 would teleport players to an incorrect location.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue which caused players to explore locations out of bounds after leaving Painting 04.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "After completing the game, choosing “Continue” on the Main Menu starts the game at the last checkpoint instead of starting a new game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue in which upon respawning in a specific location, three different gamepad icons would display at the same time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "User Interface",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed various Menu screens.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an error which caused the HP icons not updating properly until players paused and resumed the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some lines in the Spanish version of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some lines in the Portuguese version of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Menus in the German version of the game have been adjusted to avoid overlapping text.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed collisions in the Royal Chambers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed multiple floating assets in various levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed multiple cameras that were out of focus.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Visual",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted fog for multiple levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed reflections in the Alchemy Lab area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Known issues we are still working on",
+     "items": [
+      {
+       "text": "Chinese localization needs further fixing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ultra Settings in 4K have persistent performance issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Upcoming changes",
+     "items": [
+      {
+       "text": "DLSS and Intel XeSS.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 11,
+    "balance": 2,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1879680"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1879680/view/5129083846343264492"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-09T17:22:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-1879680",
+      "checkedAt": "2026-11-11T21:57:50.532Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:50.532Z"
+  },
+  {
+   "id": "candle-knight-192110@1.0.1",
+   "gameId": "candle-knight-192110",
+   "displayName": "Patch 1.0.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-06-02T02:55:56.000Z",
+   "notes": [
+    {
+     "title": "Patch Notes 1.0.1",
+     "items": [
+      {
+       "text": "General",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a feature that allows players to skip Credits at the end of the game by holding a button.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Tweaked the dead zones and aiming for a smoother experience using a gamepad controller while using Flamberge.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added touch pad functionality to the Steam Deck while using Flamberge.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed some crashes caused in the second area of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an error in the Inventory UI Screen in which the total of Solar Vials was x99.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in which dying right after using Dash while crouching, the game would freeze.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in which randomly spamming buttons while respawning would crash the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added some options to the Main Menu and a version number for easier tracking of future bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue in which if players died fighting a specific white orb in the area before the final boss, they would fall endlessly upon respawning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "After completing the game, if players bought all Sword and Shield upgrades, upon starting a new game they would still be in the player's inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Difficulty",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Modified Hitstop timing for some enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced Hitboxes and sizes for some enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Polished collisions for the second and third areas of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a hidden chest that was previously unreachable in the tutorial area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in which the Interact Prompt would disappear in the Library Area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an error in which players could see underneath the Map by crouching in the first area of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that would make respawned cricket bandits turn invisible after getting hit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Known issues we are still working on for future patches",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chinese localization has translation errors pointed out by some users, we’re currently working on fixing them on future patches.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ultra Settings in 4K have some performance issues that are being worked on.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Scholar boss sometimes ignores the players if they've skipped some checkpoint Chalices.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changing tabs while in full screen in certain resolutions causes the game window to not behave properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cricket Bandits occasionally freeze when jumping",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We will continue patching the game in the coming days so please keep reporting any and all issues and suggestions, we thank you very much for your continued support and we’re working to make Candle Knight the best experience it can be.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 9,
+    "balance": 1,
+    "other": 14,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1879680"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1879680/view/5151601211228160471"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-02T02:55:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-1879680",
+      "checkedAt": "2026-11-11T21:57:50.531Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:50.531Z"
+  }
+ ],
+ "issues": [
+  {
+   "id": "67517e4349da",
+   "text": "Chinese localization needs further fixing.",
+   "status": "addressed",
+   "firstReleaseId": "candle-knight-192110@1.0.2",
+   "addressedBy": "candle-knight-192110@1.0.3",
+   "addressedAt": "2023-06-17T18:31:48.000Z"
+  },
+  {
+   "id": "05c1b01cd241",
+   "text": "Ultra Settings in 4K have persistent performance issues.",
+   "status": "addressed",
+   "firstReleaseId": "candle-knight-192110@1.0.2",
+   "addressedBy": "candle-knight-192110@1.0.3",
+   "addressedAt": "2023-06-17T18:31:48.000Z"
+  }
+ ]
+}

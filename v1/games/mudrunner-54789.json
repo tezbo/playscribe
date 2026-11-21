@@ -1,0 +1,589 @@
+{
+ "game": {
+  "id": "mudrunner-54789",
+  "igdbId": 54789,
+  "name": "MudRunner",
+  "cover": {
+   "imageId": "co1m95",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co1m95.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "arpa8",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/arpa8.jpg"
+  },
+  "ps5Release": "2026-08-26",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "mudrunner-54789@major-2021-04-07",
+   "gameId": "mudrunner-54789",
+   "displayName": "Update - mod multiplayer improvements",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-04-07T09:26:03.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello MudRunners!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're excited to bring you an update with a number of fixes and the introduction of mods across both PC platforms!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To play mods across platforms, please check this guide we've prepared: https://bit.ly/3mmgmD0",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you run into any issues, don't hesitate to report them to us. Thank you!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Multiplayer matches with mods now available for both versions of the game on PC. Cross-platform multiplayer matches with mods are also available now.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixed an issue that caused the selected trucks in the lobby to reset to the default ones after opening and closing the friends list",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where accepting invitations didn't open the lobby at once if the player's game wasn't running",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that caused the messages sent in the lobby chat to be received with a significant delay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that caused the client name to be displayed incorrectly after inviting a third player",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that caused players' nicknames to be displayed as 'null' for hosts with different connection methods",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with voice chat unstable behavior in the lobby",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that caused Steam players to be unable to be invited again in the lobby they once left",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 7,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-675010"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/675010/view/4117954072994588595"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-04-07T09:26:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-675010",
+      "checkedAt": "2026-11-12T08:24:39.994Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:39.995Z"
+  },
+  {
+   "id": "mudrunner-54789@post-2020-11-27",
+   "gameId": "mudrunner-54789",
+   "displayName": "Crossplay now available for Steam and the Epic Games Store!",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2020-11-27T15:19:58.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello MudRunners!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With this small update, we're excited to introduce crossplay between Steam and the Epic Games Store.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "If you’re playing on Steam and want to play MudRunner with players on the Epic Games Store (EGS), you'll need to have an EGS account.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "When joining the multiplayer menu, you’ll be asked if you want to enable crossplay.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you don’t accept, you can only play with other Steam players that haven’t enabled crossplay.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you accept, a web page will open in your browser asking you to log in to (or create) an EGS account.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To play MudRunner with friends from the Epic Game Store, you'll need to link your EGS account and Steam account.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "How to find my friends from the Epic Games Store",
+     "items": [
+      {
+       "text": "First, you must link your Steam and Epic Games account. Please follow these instructions.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Once you've linked your accounts, a permission box will appear in your internet browser the next time you launch MudRunner on Steam.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Finally, to find your Epic Friends on Steam, you need to allow this permission:",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Now, after creating a lobby, you will find your EGS friends in the friends list.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "This update also fixes an issue with mods on Steam where mods created after June 2020 were not working in multiplayer.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "We hope you enjoy playing with your friends across both Steam and the EGS!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "In case you encounter major issues with this update, you can revert to the previous build.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "To do this, go to your library, right-click on MudRunner > Properties > BETAS > Select “vers_11_05_19”",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Roll out, MudRunners!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-675010"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/675010/view/3856733252010033450"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-11-27T15:19:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-675010",
+      "checkedAt": "2026-11-12T08:24:39.994Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:39.994Z"
+  },
+  {
+   "id": "mudrunner-54789@patch-2019-08-07",
+   "gameId": "mudrunner-54789",
+   "displayName": "MudRunner Patch 07/08/2019",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2019-08-07T09:39:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello MudRunners!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We just put out a small update for MudRunner on PC, with a new addon for the GMC DW950 and some bug fixes. Here are the patch notes:",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a sound-related crash",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "GMC DW950 now has its own unique cistern addon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2 new vehicle parameters exposed via XML for modders, both in \"Motor\" section:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "EngineResponsiveness (defaults to 0.04), controls how fast the vehicle accelerates in response to user input.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "ClutchDelay (defaults to 0.1), idle engine time after changing gears in automatic gearbox mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Random addons don't spawn for vehicles in proving grounds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "\"RELOAD\" in proving grounds now updates textures the same way as \"UPDATE\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor legacy camera position fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We know you're all eager for some news on the sequel, and trust us when we say we're eager to share some! Hold on tight, it's on the way. 🙂",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Have a good one!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-675010"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/675010/view/2412160539849910497"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-08-07T09:39:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-675010",
+      "checkedAt": "2026-11-12T08:24:39.993Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:39.993Z"
+  },
+  {
+   "id": "mudrunner-54789@major-2018-12-27",
+   "gameId": "mudrunner-54789",
+   "displayName": "American Wilds Update 27/12/2018",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2018-12-27T13:29:43.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Today, we’re happy to launch a patch on PC, featuring bug fixes and gameplay improvements. As usual, please don’t hesitate to leave your feedback or ask us any questions you may have with regards to the changes.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "You can find the full changelist below",
+     "items": [
+      {
+       "text": "Bug fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Conflict between controller and mouse in fullscreen fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Multiple mesh/texture issues corrected (new trucks, houses, addons)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor fixes to some of the truck attributes (suspension, mass properties)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Behaviour of 4x4 scout vehicles in the mud improved: smaller vehicles are more off-road capable now and more stable in mud",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Visual improvements to USA maps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor improvements to some of the addons (platform with loader is now longer)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some visual improvements: \"birch\" trees have now brown bark",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Modifications to new USA maps : additional routes added, and only 1 instead of 2 fuel stations are now available per map, making them more challenging and requiring more strategic thinking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The MudRunner Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-675010"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/675010/view/2417769111308862500"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2018-12-27T13:29:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-675010",
+      "checkedAt": "2026-11-12T08:24:39.992Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:39.992Z"
+  }
+ ],
+ "issues": []
+}

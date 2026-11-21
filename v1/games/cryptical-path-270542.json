@@ -1,0 +1,671 @@
+{
+ "game": {
+  "id": "cryptical-path-270542",
+  "igdbId": 270542,
+  "name": "Cryptical Path",
+  "cover": {
+   "imageId": "co9c1z",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co9c1z.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar2kbt",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar2kbt.jpg"
+  },
+  "ps5Release": "2026-03-04",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "cryptical-path-270542@1.0.2",
+   "gameId": "cryptical-path-270542",
+   "displayName": "PATCH 1.0.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-05-14T15:41:52.000Z",
+   "notes": [
+    {
+     "title": "Improvements",
+     "items": [
+      {
+       "text": "Procedural challenge layouts no longer repeat the same object placement each time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Steam Deck resolution list now excludes unintended low-resolution options when using Borderless mode.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "“The Architect’s Knowledge” achievement can now be completed. It no longer requires the golden gem that was previously locked behind the achievement itself.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The “Soda Star” item no longer reduces its own critical bonus damage due to a hidden modifier.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Bol-Love-Aro achievement now properly tracks item purchases made during challenges.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Restored the missing text in Bernardo’s dialogue after losing to the Doppelganger.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various localization fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 5,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0,
+    "topNew": [
+     "Procedural challenge layouts no longer repeat the same object placement each time."
+    ]
+   },
+   "sourceIds": [
+    "steam-2549380"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2549380/view/1799722702497443"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-14T15:41:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-2549380",
+      "checkedAt": "2026-11-11T21:58:39.078Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:39.078Z"
+  },
+  {
+   "id": "cryptical-path-270542@1.0.1",
+   "gameId": "cryptical-path-270542",
+   "displayName": "PATCH 1.0.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-02-11T13:20:07.000Z",
+   "notes": [
+    {
+     "title": "Improvements",
+     "items": [
+      {
+       "text": "Reduced enemies' health in Biomes 2 & 3.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Combo now lasts 2.5s and fades for 1s",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Effects for the following items have been adjusted:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Real Estate Expert → Entering a hostile room generates 5/10/20/35 10/20/30/50 shards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Certified pyrotechnician → Hitting an enemy with a bomb generates 1/2/3/5 3/5/7/10 explosive shards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Auric Obsession → Grant 1 1/2/3/5 gold every 30/25/20/10 20 combo points",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Drinkable Gunpowder → Weapon becomes a bomb every 35/30/25/15 30/25/20/10 combo points",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Static Electricity → Remain at 40/35/25/10 20/15/10/5 combo points, weapon attacks generate electric arcs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Weaponsmith Expert → As long as you remain at 10+ combo points, generate 2 5 shards every 1s 3/2.5/2/1s",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Shattered heart → Weapon generates shard every 0.25s 0.2s",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Echo dice effects now trigger directly when interacting with “heart” items such as Infernal Heart.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New icons added for the patterns to make them easier to understand.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Various improvements and fixes for some of the Experiences.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Patterns can no longer be farmed indefinitely.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Bomb Room description no longer claims to grant control.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Doors in the 2nd Biome no longer unexpectedly lock players behind them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue where the Doppelganger unlock sequence dialog triggered too early.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed lag caused by Echo Device + Electricity",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Potion \"Hazardous Duplicator\" no longer grants common versions of items that were unintended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Boss achievements unlock correctly if defeated without taking any hits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue preventing the Bo-Love-Aro achievement from unlocking correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Addressed problem where the quality control item appeared incorrectly in Act 1.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed card VFX not displaying properly during ACT unlocking sequences.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Rotten Egg gives the correct amount of empty hearts for each curse.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Bernardo's Codex entry has been restored in English.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Codex entries are no longer cut off in Spanish.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Character names are correctly translated in certain languages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various localization fixes in all languages.: 1.0.1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 13,
+    "fixed": 15,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0,
+    "topNew": [
+     "Reduced enemies' health in Biomes 2 & 3.",
+     "Combo now lasts 2.5s and fades for 1s",
+     "Effects for the following items have been adjusted:"
+    ]
+   },
+   "sourceIds": [
+    "steam-2549380"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2549380/view/1790848102783354"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-11T13:20:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-2549380",
+      "checkedAt": "2026-11-11T21:58:39.077Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:39.077Z"
+  },
+  {
+   "id": "cryptical-path-270542@1",
+   "gameId": "cryptical-path-270542",
+   "displayName": "Hotfix 1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-01-29T17:46:41.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed challenges that could sometimes corrupt saves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2549380"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2549380/view/1790214123056582"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-29T17:46:41.000Z",
+      "verification": "official",
+      "sourceId": "steam-2549380",
+      "checkedAt": "2026-11-11T21:58:39.076Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:39.076Z"
+  },
+  {
+   "id": "cryptical-path-270542@major-2024-11-25",
+   "gameId": "cryptical-path-270542",
+   "displayName": "Cryptical Path Release Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-11-25T14:41:44.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Greetings, adventurers! 🗺️⚔️",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’re thrilled to officially announce that Cryptical Path, the first-ever Roguelite Builder, is coming!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Originally set for winter 2024, Cryptical Path will now be released in early 2025.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This journey has been all about crafting an epic roguelike experience where you don’t just survive the dungeon—you build it. With the Hexium Map, intense battles, and endless strategies to explore, we can’t wait for you to dive in and start forging your path.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The team is hard at work polishing the game to ensure it’s everything you’re hoping for—and more. Your patience and support mean the world to us, and we promise it’ll be worth the wait.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stay tuned for more updates, sneak peeks, and devlogs as we get closer to launch. And don’t forget to wishlist Cryptical Path to be notified the moment it’s available!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for being part of this adventure. See you in the dungeon!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🏴‍☠️ The Old Skull Games Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2549380"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2549380/view/1783872412112808"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-25T14:41:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-2549380",
+      "checkedAt": "2026-11-11T21:58:39.075Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:39.075Z"
+  },
+  {
+   "id": "cryptical-path-270542@major-2024-01-29",
+   "gameId": "cryptical-path-270542",
+   "displayName": "Demo Update: Take the Tour",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-01-29T18:49:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi Architects,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As we prepare for the Steam Next Fest period, we are releasing a new demo with several improvements. These include a brand new weapon to help you navigate the dungeon, balancing fixes, and an enhanced onboarding experience for newcomers. Take a look at the complete list below:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Main Changes",
+     "items": [
+      {
+       "text": "New weapon: the Dice. The Architect is now carrying a brand new weapon that replaces the old one: the dice. Roll it and meet your destiny. 10 New items comes with the dice, creating new possibilities for synergy and massive destructions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "By popular demand, we added invincibility frames on dash",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve worked on an improved onboarding experience to allow newcomers to start their journey in the dungeon more easily",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Progression",
+     "items": [
+      {
+       "text": "You can now collect frozen souls during your run to spend in your hub",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can now access the Hub and meet Bernardo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can purchase new items to find in your future runs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can unlock new rooms to use on the board",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes and polish to increase overhaul immersion and correct multiple issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Board",
+     "items": [
+      {
+       "text": "Art and FX have been reworked to make board more clear & readable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When the board is locked (-10 controls) path is now created leading to the boss and raising the difficulty to its maximum instead of giving the ability to teleport to the boss room.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Balancing",
+     "items": [
+      {
+       "text": "Difficulty of visited rooms increases overtime",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Changed the price of rooms you can place",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "You start the game with 5 hearts (was 3)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "You start the game with 10 control (was 5)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Boss has New attack patterns",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Boss attacks order patterns is now random",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Have a suggestion for more improvements? Join the Cryptical Path Community on Discord and share your ideas in the server.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 7,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2549380"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2549380/view/5519792046263737612"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-01-29T18:49:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-2549380",
+      "checkedAt": "2026-11-11T21:58:39.074Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:39.074Z"
+  }
+ ],
+ "issues": []
+}

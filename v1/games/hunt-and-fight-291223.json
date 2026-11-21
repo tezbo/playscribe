@@ -1,0 +1,386 @@
+{
+ "game": {
+  "id": "hunt-and-fight-291223",
+  "igdbId": 291223,
+  "name": "Hunt and Fight",
+  "cover": {
+   "imageId": "coahw5",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coahw5.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar2t9c",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar2t9c.jpg"
+  },
+  "ps5Release": "2024-11-06",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "hunt-and-fight-291223@0.3.0",
+   "gameId": "hunt-and-fight-291223",
+   "displayName": "Update 0.3.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-08-24T00:09:38.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have prepared a new demo build update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New battle mechanics",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Bug fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved a quality of rendering: Best Hunt and Fight,: Two Cakes Studio",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2882830"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2882830/view/5875595438693499844"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-24T00:09:38.000Z",
+      "verification": "official",
+      "sourceId": "steam-2882830",
+      "checkedAt": "2026-11-12T07:24:02.730Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:02.731Z"
+  },
+  {
+   "id": "hunt-and-fight-291223@0.2.0",
+   "gameId": "hunt-and-fight-291223",
+   "displayName": "Update 0.2.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-22T00:19:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have prepared a new demo build update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Patch Notes - Version 0.2.0",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed an issue where enemies continued to move after being defeated.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved a blocker that occurred when opening chests.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated the description in the quests window for clarity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the game would unpause if a manual save was performed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Game now properly pauses when the map window is open.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Addressed input blocker during the block state when the pause window is opened.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a blocker caused by pressing pause during death animation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected the texture for the coins panel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the destruction of dialog popups.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted window ordering for better organization.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Coins now display in the correct position.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed enemy animation flow during death.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Item names now display correctly when selling.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Implemented a new scene loading flow for improved performance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimized lighting by compressing lightmaps and disabling lightmap streaming.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay Changes",
+     "items": [
+      {
+       "text": "Adjusted weapon positions in hand for better alignment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Changed loot drop positions for easier collection.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added splash screens for a more polished experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Implemented loot dropping mechanics for defeated enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Players can now heal during combat for added strategy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enabled pickup and chest opening actions during combat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chests and doors now auto-rotate for easier interaction.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Implemented healing prompts for better feedback during gameplay.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Auto-hiding of close button for gamepad users.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Optimizations and Enhancements",
+     "items": [
+      {
+       "text": "Implemented optimized item activation for smoother gameplay.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Refactored debug information for better clarity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adjusted spacing between lines of active quests on the HUD.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Optimized saving process for faster performance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved selector awake method.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Addressed CPU spikes related to weapon effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Streamlined music resource loading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Optimized Guardian update method for improved performance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed input player addition for better control.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed settings saving for consistency.: Happy gaming,: Two Cakes Studio",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 13,
+    "fixed": 15,
+    "balance": 1,
+    "other": 8,
+    "ps5": 0,
+    "topNew": [
+     "Implemented optimized item activation for smoother gameplay.",
+     "Refactored debug information for better clarity.",
+     "Adjusted spacing between lines of active quests on the HUD."
+    ]
+   },
+   "sourceIds": [
+    "steam-2882830"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2882830/view/5741605105601652581"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-22T00:19:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-2882830",
+      "checkedAt": "2026-11-12T07:24:02.729Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:02.730Z"
+  }
+ ],
+ "issues": []
+}

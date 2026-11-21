@@ -1,0 +1,2443 @@
+{
+ "game": {
+  "id": "mortal-sin-148700",
+  "igdbId": 148700,
+  "name": "Mortal Sin",
+  "cover": {
+   "imageId": "coa8i5",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coa8i5.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar3yvw",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar3yvw.jpg"
+  },
+  "ps5Release": "2026-10-21",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "mortal-sin-148700@major-2025-12-18",
+   "gameId": "mortal-sin-148700",
+   "displayName": "Final Boss Flow Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-18T18:00:36.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Sinners! I have been cooking up some new content and features, but they need a bit more time in the oven. In the meantime, I wanted to ship these quality of life improvements to make the overall experience smoother and more enjoyable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Quick reminder that Mortal Sin will be discounted 20 percent during the Winter Sale, so this is a great time to jump in or gift a friend a taste of sin this holiday season.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Final Boss Flow Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I reworked the flow leading up to Enimatik to make repeated attempts faster and less frustrating. After completing the Maw of Sin, if you die to Enimatik while holding a token, subsequent respawns allow you to enter the Maw portal and teleport directly to the final boss fight, skipping the filler content in between.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "On repeated attempts, Enimatik now plays a double speed intro animation to reduce downtime and get you back into the fight faster.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Each additional Enimatik attempt also grants a free token to collect. This is capped at 10 free tokens total, so retries are limited and cannot be repeated indefinitely as before. The intent here is to give a fair number of attempts for a very difficult fight without trivializing sin tokens or completely removing the tension of eventual permadeath. Let me know how this feels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/39316249/d9c4ff4bad6eff7178ff9ce8c8f11db733e5a601.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bug Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed a projectile damage stacking bug that could cause extreme damage and one shot kills on Enimatik. Projectiles and AoE effects such as shock blasts were incorrectly multiplying bonuses on reuse, leading to absurd damage values.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed per run skin unlock trackers carrying over between rounds. Actions performed in earlier rounds could prevent unlocks from triggering later. These trackers now properly reset each run.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Fixed Forest foliage appearing overly bright when using the Stylized color palette.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Balance Changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Added a 0.5 second internal cooldown to Jolt critical strike procs to prevent excessive triggering and damage spam.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Visual and UI Updates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Added a color palette dropdown to the left side of the settings menu. Many players were missing the palette menu on the right and could not switch back to the Realistic style.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Renamed the Classic art style to Stylized to reduce confusion, especially since the visual presets dropdown also included a Classic option.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Performance and Optimization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Upgraded the project from Unity 2021 to Unity 6.3. This is a major engine jump of roughly four years. Newer Unity versions default to DX12 instead of DX11 and appear to be noticeably more performant overall.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "• Performance improvements are especially noticeable on Steam Deck, where average framerate appears to be roughly 30 percent higher. For the smoothest experience on Steam Deck, I recommend disabling the built in frame limiter.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/39316249/7f42aa7ec0f128108d61571478f28f82fdd98408.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always, thank you for the incredible support. I would love to hear your thoughts on these changes, so please let me know how they feel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you are enjoying the game, leaving a review on Steam helps a ton with visibility and goes a long way in supporting development.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Stay tuned for more updates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 20,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1494810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1494810/view/1819386365091170"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-18T18:00:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-1494810",
+      "checkedAt": "2026-11-12T08:24:35.335Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:35.335Z"
+  },
+  {
+   "id": "mortal-sin-148700@major-2025-10-27",
+   "gameId": "mortal-sin-148700",
+   "displayName": "Remnants of Sin Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-27T16:54:58.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This update is mainly about two things: making runs feel more worth chaining, and pushing performance further. The new Sin Remnants system lets you pick one of three on death or when continuing to the next run, and some of them can completely flip how your next round plays. The idea is to make the next run feel tempting instead of starting over from zero.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/39316249/7500eec1a349eb7b632d0432cf0e54a486ae3cf1.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "On the performance side I hit a lot of the obvious wins across blood, projectiles, foliage, hit detection and lighting. I still want to bring RAM down more and I am still not happy with Steam Deck performance yet, so that remains a priority going forward.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "New Feature — Sin Remnants",
+     "items": [
+      {
+       "text": "New system that appears only on death or when continuing to the next round",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "These twist the next run in a strong way and push runs toward distinct paths",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added 40 Sin Remnants",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Performance and Optimization",
+     "items": [
+      {
+       "text": "Upgraded Unity version to fix a security vulnerability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimized hit detection performance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimized blood effects with pooling",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimized projectiles with pooling",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimized lighting performance in various rooms",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimized foliage in the forest area for a large performance gain",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimized various systems to avoid allocations when not necessary",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay and Systems",
+     "items": [
+      {
+       "text": "Essence now moves to the center of the screen before routing to the UI so its source and destination are more clear",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug where you could run back through the Trial of Resolve start gate before it closed and get stuck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "UI / UX",
+     "items": [
+      {
+       "text": "Polished the death screen UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a loading indicator for first time level entrance loads when starting the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where the main menu saved session selector could not be navigated with a controller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Audio",
+     "items": [
+      {
+       "text": "Lowered crit and gunshot SFX volume slightly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Defensive leaning",
+     "items": [
+      {
+       "text": "Anchor — Reduced damage and combo timer is paused while standing still",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crush — Parry makes your next slow power strike very strong",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Deprived — More damage while you have no health potions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dryfire — Gain speed while you have no wizard oils",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Frostskin — Taking damage can freeze the attacker",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reckless — More damage with reduced invincibility duration",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shatter — More damage to frozen targets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Offensive leaning",
+     "items": [
+      {
+       "text": "Ascended — All normal enemies are elites and elites can drop skill chests",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bloodlust — Speed scales with missing health",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Brood — Standing still fires a slow skull",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Commit — Block becomes a slow power strike that deals increased damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cruciform — Each combo level summons a rotating cross",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Doomroll — All attacks critically strike but you cannot become invincible",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dropkick — Knockback kills cause explosions that scale with kick damage and knockback strength",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Execution — More damage to bosses and elites",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Focus — More damage when firing a single projectile at a time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Graviton — Charging pulls enemies and grants damage per nearby enemy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Haunt — Each combo level summons a piercing spirit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hexrush — Gain speed for each unpurged curse",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Imbibe — Health potion causes a fiery explosion and oils freeze nearby enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Jackpot — Next drop is guaranteed unique and rare chance is increased",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Jolt — Critical strikes shock nearby enemies and scale with hit damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lunge — Crouch attacks always thrust and deal increased damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Primed — Standing still fires a delayed blast once per combo level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Resonance — Consuming gold stuns and damages, consuming vital explodes, consuming magic freezes nearby",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Retort — Parrying fires an energy beam",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rhythm — Attack speed scales with combo level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ricochet — Hitting surfaces spawns a delayed blast at the impact point",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rollback — Each combo level can reset your ability cooldown",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Skyfury — Kick jump anywhere (at reduced height) and deal more airborne damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tempo — Damage scales with combo level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Trailblaze — Running fires a fireball",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Trigger — Healing makes your next attack a whirlwind",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Wick — Dashing summons a fiery wisp",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Impulse — Every critical strike reduces your ability cooldown",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Run economy and carryover",
+     "items": [
+      {
+       "text": "Carryover — Retain some passive skills in the next run",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Greed — Start with extra gold essence and gain more gold",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rush — Speed boost in the first area",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stacked — Carry one skill into the next run with high stacks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Windfall — Selling items causes a large explosion and enemies can drop loot crates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks again to everyone still playing and supporting the game. If you enjoy the updates, a review genuinely helps more than anything right now. The Overwhelmingly Positive rating stays on a razor edge and every big sale wave brings some snap negative low playtime reviews, but the core players always manage to pull it back and I really appreciate that.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Let me know what you would most like to see next. I try to read everything.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "👁",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/39316249/1a84d4d198d3868c003097d3c041ead9dfd10f9f.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 2,
+    "balance": 1,
+    "other": 55,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1494810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1494810/view/1814309641575594"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-27T16:54:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-1494810",
+      "checkedAt": "2026-11-12T08:24:35.334Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:35.334Z"
+  },
+  {
+   "id": "mortal-sin-148700@major-2025-09-29",
+   "gameId": "mortal-sin-148700",
+   "displayName": "Skins of Sin Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-09-29T16:45:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "For this update I wanted to make the classes feel more distinct while also expanding the game’s meta progression. To do that, I’ve added a set of skill-based unlockable objectives that challenge you to play in specific ways. These objectives reward you with unique class skins, giving both a new visual identity and another layer of long-term goals to chase.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/39316249/7ce80b739dbb3e4fe85cec89791c6ca500186b3f.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New Content",
+     "items": [
+      {
+       "text": "Added unique class skins with 3 variants per character (48 total).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Skins are unlocked by completing special objectives such as defeating multiple enemies in a single attack, finishing areas under time limits, or acquiring specific skills and items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Every class still has its classic default skin available.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Unique arms and legs are now visible in first-person, and you can preview the full model in the skin selector UI.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The skin selector is available for both new games and saved sessions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added damage and death sounds for female skin variants.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay Changes",
+     "items": [
+      {
+       "text": "Removed the cooldown reset from Hoarder’s Liquidate combo (basic whirlwind attack).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced the hitflash intensity on Wall Hand and Wall Face enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Starting weapons for each class now display a tooltip on the class select screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Quality of Life",
+     "items": [
+      {
+       "text": "On first boot, players now see the character selection screen instead of being dropped straight into gameplay.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "While only the Berserker is available at the start, this gives players a clear preview of class progression.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Helena’s “Breaking the Cycle” dialogue is now color-coded to stand out more clearly. She does in fact explain how to reach Enimatik there.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "UI Improvements and Fixes",
+     "items": [
+      {
+       "text": "Fixed tooltips that remained on screen after deselection. They now disappear correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Enimatik clear badge being visible off-screen while scrolling.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where forest rooms with Fractured Oath lost door collision when entering Vessel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Achievements and Progression",
+     "items": [
+      {
+       "text": "Path of Torment now also rewards achievements from lower difficulties.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Note: This is not retroactive.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Enimatik fight improvements",
+     "items": [
+      {
+       "text": "Falling off grants 1 second of invincibility to prevent unfair follow-up hits and saw blade damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Enimatik’s hands no longer push the player during movement animations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Outer platforms are now static for easier positioning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Middle platforms reduced in size to prevent clipping through the edges of outer platforms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "This update is about giving every class more personality and rewarding players who push their skills in new ways. The new skins are both a visual prize and a symbol of achievement, while the balance and quality-of-life changes should make the overall experience smoother and more satisfying.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "If you’ve been enjoying Mortal Sin, I would be incredibly grateful if you left a review on Steam. The game is on a razor’s edge of keeping its overwhelmingly positive rating, and every supportive review makes a real difference. Some players come in with mismatched expectations and leave quick negative reviews without giving the game a fair chance. What truly helps the game thrive is the support of those who see what it’s aiming for and appreciate it for what it is.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Your encouragement and feedback are what keep me motivated to keep building, fixing, and expanding. Thank you for being part of this journey with me.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/39316249/2b37f18f76f22558a39acc2a79da97fb52043912.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 13,
+    "fixed": 3,
+    "balance": 1,
+    "other": 9,
+    "ps5": 0,
+    "topNew": [
+     "Added unique class skins with 3 variants per character (48 total).",
+     "Every class still has its classic default skin available.",
+     "Unique arms and legs are now visible in first-person, and you can preview the full model in the skin selector UI."
+    ]
+   },
+   "sourceIds": [
+    "steam-1494810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1494810/view/1811772772379815"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-29T16:45:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-1494810",
+      "checkedAt": "2026-11-12T08:24:35.333Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:35.333Z"
+  },
+  {
+   "id": "mortal-sin-148700@hotfix-2025-09-01",
+   "gameId": "mortal-sin-148700",
+   "displayName": "Hotfixes 8/31",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-09-01T06:49:04.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Sinners,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you so much for the incredible support during launch. Mortal Sin has been trending on Steam and the response has been amazing to see. I’m truly grateful for all of you who picked up the game, shared it, and gave it a shot.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Here’s what’s in today’s update",
+     "items": [
+      {
+       "text": "Fixed the Hunter’s Eviscerate combo to work with non-spear weapons such as the Halberd and Guan Dao.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed large mushrooms in one of the cave rooms that could box players in. Technically you could crouch to get out, but since crouch is rarely used (and some of you might only be learning it exists reading this), I’ve adjusted the room accordingly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a soft lock in the combat tutorial if you pressed back on gamepad before opening the combo menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where completing the game on Easy would not count towards unlocking the Enigma class.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Completing a run will now show “Next Round” instead of “New Game” on the button.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some translation issues, including Spanish not showing the death screen results correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "While most of the feedback is positive, as the game reaches a wider audience beyond those who usually enjoy roguelikes or hack and slash games, there has also been a flood of negative reviews from players with low playtime (often 15 minutes or less). If you are enjoying Mortal Sin, I would greatly appreciate it if you left a review. It makes a real difference for the game’s continued success and helps your voice be heard.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also, if you run into any bugs or issues, please consider stopping by the Discord and leaving as many details as possible. Screenshots, videos, and especially your player log file are a huge help in tracking down and fixing problems quickly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1494810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1494810/view/1809235871707013"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-01T06:49:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-1494810",
+      "checkedAt": "2026-11-12T08:24:35.332Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:35.332Z"
+  },
+  {
+   "id": "mortal-sin-148700@post-2025-08-01",
+   "gameId": "mortal-sin-148700",
+   "displayName": "Keeping Up The Momentum",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-08-01T23:57:40.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone, while I’m working on some bigger content, I wanted to keep the momentum going with a gameplay-focused polish update. This patch is all about improving hit feedback, cleaning up visual effects, and fixing some long-standing collision annoyances. Enjoy the smoother experience!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed a bug where upgrading unique items didn’t work correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where you could clip through the wall in one of the cave boss rooms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a timestop bug where enemies would stay frozen after the effect ended until hit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where Gift of Might was still granting skill stacks when it shouldn’t.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Combat & Feedback Improvements",
+     "items": [
+      {
+       "text": "Hitflash effects on Realistic Mode are now a strong white, making hits stand out more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Hitflash now also plays on severed limbs for better dismemberment feedback.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added wall hit effects, sound, and screen shake. Metal weapons create sparks on impact.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Bloody Palm now drains health per projectile, preventing infinite healing with Echo or Fracture. Added a brief damage cooldown to prevent excessive burst damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Greatly smoothed screen shake animations to remove jittering. This allowed for longer, more noticeable shake effects for better impact feel.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Visual & Environmental Polish",
+     "items": [
+      {
+       "text": "Smoothed cave floor and collision to reduce getting stuck or popping upwards. Removed collision from small ground debris like rocks and bricks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved Shockwave effect visuals (used in Quake, Block, Combos, etc).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved Explode on Hit effect visuals (used in Abilities, Combos, Parries, etc).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 7,
+    "fixed": 4,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1494810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1494810/view/1806698490730663"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-01T23:57:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-1494810",
+      "checkedAt": "2026-11-12T08:24:35.331Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:35.331Z"
+  },
+  {
+   "id": "mortal-sin-148700@major-2025-07-25",
+   "gameId": "mortal-sin-148700",
+   "displayName": "Unique Items, Loot Overhaul, Accessibility Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-07-25T21:32:40.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Before we dive into the full patch notes, I wanted to make a quick request: I’m looking for a Spanish (Spain) localizer, ideally someone who actively plays the game like our Russian and Chinese translators. If that sounds like you, or you know someone who might be a good fit, please reach out.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This update is focused on improving early and mid-game retention. I’ve been looking closely at the data, and far too many players are dropping off early. As much as I’d love to spend all my time adding new challenging content for hardcore players, over 90% of people never even reach that point. I want more players to actually experience the content I’ve worked so hard on.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "That said, I still plan to add a super challenging true ending fight that completes the story, along with a leaderboard-based challenge mode. But first, I want to make sure more people are getting far enough to see everything the game already has to offer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🛡️ 12 New Unique Items",
+     "items": [
+      {
+       "text": "The biggest addition in this update is a full set of 12 all-new ultra-rare unique items. These are designed to feel wild, overpowered, and synergistic with other stats and skills. They’re not just stronger — they break rules, open up fresh builds, and add rare moments of power that can completely reshape your run.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You’ll have a better chance of finding them by stacking Luck, or by visiting crafting anvils and completing rare armor quest rewards. Right now these are all armor, boots, helmets, and gloves, but I plan to add more unique weapons later. The only current one is Helena’s Divine Retribution.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "There’s already plenty of randomness in the game that exists to challenge you — enemies, traps, curses, scares — but not a lot that surprises you in a good way. I want to change that. Let me know what kinds of uniques you’d like to see in future updates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "⛑️ Helmets",
+     "items": [
+      {
+       "text": "Neuroshard Helmet – Synaptic Freeze: Freezes time while you are invincible. Invincibility duration scales with your speed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Calistra’s Embrace – Singularity: Every combo level summons a black hole. It pulls in enemies and detonates after a short delay.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enimatik’s Eclipse – Sinburst: Using your ability triggers a delayed explosive blast.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "👢 Boots",
+     "items": [
+      {
+       "text": "Phantom Treads – Ghost Skin: You have a chance to evade damage based on your luck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Infernal Treads – Ember Wake: Greatly increases movement speed while charging attacks. Charging summons fiery wisps that damage nearby enemies. You cannot be stunned.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Spectral March – Soul Conduit: Kicking an enemy summons void blades and casts all of your spells. Can only trigger once per combo level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🧤 Gloves",
+     "items": [
+      {
+       "text": "Crystal Fang – Glass Reaver: Greatly increases all damage dealt. Reduces your maximum health.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Divino’s Decree – Finger of Death: Thrusting attacks fire death beams. Death beam damage scales with your thrust damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Teraminkla’s Grasp – Hellwheel: Power Strike Whirlwinds trigger bursts of flame. Flame damage scales with your Whirlwind damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🛡️ Chest Armor",
+     "items": [
+      {
+       "text": "Stormplate – Arc Lash: When you block an attack, release a shock blast. Its damage scales with your defense.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bloodhide – Blood Magic: Skills consume health instead of mana, at a greatly reduced cost. Greatly increases your maximum health.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sparkcoil – Static Discharge: Bashing an enemy unleashes a shock blast. Shock blast damage scales with your Bash damage. Can only trigger once per combo level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "⚙️ General Improvements and Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed issue where quests were being regenerated every time you entered the game, even during a session already in progress.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a highlight to the item inspect hotkey since a lot of people were missing it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Quest objective UI bounce animation now only shows for quests you can still visit in the current run.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the cannon skeleton's kick parry warning would stay on screen after the animation ended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Slightly reduced damage on sword skeleton (dual-wielding enemy).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a softlock caused by getting grabbed by the Pursuer while he was despawned.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added generic weapon descriptions for all weapons. Also added equipment descriptions to commonly asked-about armors like Caestus, Claws, and Guillotines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Skills that require armor or weapon slots now show red text if you don’t have the slot, and green if you do.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Falling in levels is no longer an instant kill.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "You’ll now be teleported back to the level, but lose one piece of equipment, 10 percent essence, and 25 percent health. This applies to places like the Cave and the infamous Maw of Sin spike pit or blood ocean.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "While I have to admit I got some good laughs watching people fall into the spike pit, it’s just not polished game design, especially for a roguelike. This change keeps the punishment but avoids the cheap frustration.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "🧠 Item and Stat System Changes",
+     "items": [
+      {
+       "text": "Implicit stats were accidentally removed last update. I’ve decided to leave them out permanently, but the amount they used to give is now added directly on top of whatever stat the item rolls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gift of Might no longer raises stat caps. Increased the defense percentage hard cap from 75 percent to 80 percent.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gift of Insight now grants stats equal to 50 percent of the normal value. It still gives bonus skill stacks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Major item rework",
+     "items": [
+      {
+       "text": "Items now roll at most one stat and one skill, but both are greatly increased — sometimes 4 times higher than before.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "This change serves two big goals",
+     "items": [
+      {
+       "text": "Speed up item comparisons, so you can tell quickly whether something is worth using.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Make items feel more impactful, so a single pickup can meaningfully shift your build.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now when you find something with Speed or Attack, it might give +40 percent instead of the old +5 percent. A single Health or Defense item can now make the difference between being squishy or tanky.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "To further differentiate equipment types",
+     "items": [
+      {
+       "text": "Armors now roll stats.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Weapons do not roll stats, but have increased skill stacks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can still get stats on weapons by upgrading them or using Gift of Might.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Luck formula for item rarity now uses diminishing returns. It still helps a lot with finding unique items, but it no longer guarantees the best drops every time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Doubled the duration of Sin Ward.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug where unarmed thrusts didn’t count as thrusts for skill purposes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "💥 Difficulty and Progression",
+     "items": [
+      {
+       "text": "Added Easy Mode: Path of Grace",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduces enemy speed, health, and damage. Also reduces scare speed. Grants one free cheat death per run.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "This mode is mostly intended for new players who want to learn the game, but it’s also great for experienced players who want to try out new builds or have a more relaxed run.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "I’ve noticed that the difficulty of the game often pressures people into sticking with one strategy. Hopefully this gives you room to experiment without losing progress.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "This mode does not grant achievements except for class completions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed bug where Path of Torment didn’t grant class completion achievements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Class completion achievements now unlock retroactively when you boot up the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Save data is now unified across all difficulties, so you no longer need to unlock things again when switching modes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Path of Torment is now unlocked from the start.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "🧙 Class Changes",
+     "items": [
+      {
+       "text": "Hoarder can now use armor but not weapons. No longer scales with gold essence.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I’m trying to emphasize build diversity, and Hoarder was too much of an outlier. He’s now stronger than ever and can use many skills he previously couldn’t.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Last week I asked for help because of an influx of low-effort reviews. You came through in a big way, raising the recent average from 87 percent to 94 percent. That’s huge and I appreciate it more than I can say.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "That said, the Overwhelmingly Positive overall score is still on a razor’s edge. If you’ve been enjoying the game and haven’t left a review yet, now is the time. It really helps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "My next focus is to flesh out replayable content, complete the lore and final area, and add the true final boss fight, which will unlock after you complete a run with 3 Oaths and have Divine Retribution. That’s meant to be the ultimate challenge for the most hardcore players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "In the meantime, I’d love your thoughts",
+     "items": [
+      {
+       "text": "What kinds of things would keep you chaining runs back to back?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Let me know.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Nikola",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 12,
+    "balance": 9,
+    "other": 36,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1494810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1494810/view/1806064758654820"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-25T21:32:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-1494810",
+      "checkedAt": "2026-11-12T08:24:35.330Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:35.330Z"
+  },
+  {
+   "id": "mortal-sin-148700@major-2025-07-18",
+   "gameId": "mortal-sin-148700",
+   "displayName": "Major Class Overhaul + New Combos Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-07-18T22:26:40.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "It’s time for another hefty update! This one brings major class revamps, new combos, UI upgrades, performance boosts, and some long-requested quality-of-life changes. Whether you're a seasoned brawler or just jumping in, there's plenty to explore. And smash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🔥 Class Overhauls & Balance",
+     "items": [
+      {
+       "text": "Pirate Revamp: Complete overhaul! Pirate now has all-new combos and attacks significantly faster. Features two unique ability combos—one resets your cooldown, the other ends in a powerful explosion finisher.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Vampire Revamp: Faster attacks and new staff-focused combos to better handle late-game threats. The weapon swap combo (staff to fists) has been streamlined and powered up. Bloodthirst no longer requires an equipment slot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Hoarder Revamp: Now has powerful on-demand combos instead of relying solely on charge attacks. His charge is still deadly, and his whirlwind gains bonus properties. Hoarder essence loss is now capped at 15% per hit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Mage Buffs: Added a new combo, Evocation—a long manual chain that resets ability cooldown and grants the Power Overwhelming buff. Also improved Arcane Rush to trigger a fast whirlwind and shock blast.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Duelist Buff: Added a new manual combo: Encore. Resets your ability cooldown when executed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "💥 Combat & Combo Enhancements",
+     "items": [
+      {
+       "text": "Dragon Punch and Fist Overhead Slow Strike hitboxes extended for better consistency.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Auto Combo Targeting: If a combo is visible on-screen, auto combo will now prioritize it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Shuffle Combos: Now shows combos involving fists, staves, or melee weapons if they’re in your inventory—even if not equipped. Helps weapon-swapping classes like Vampire, Struggler, and Monk.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Cooldown Reset Combo Fix: Fixed a bug where Resets Ability Cooldown Every X Seconds combos triggered their internal cooldown even if your ability wasn't actually on cooldown.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Cooldown Reset Rework: These combos now scale their reset timer based on your ability's cooldown instead of a flat 10 seconds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Oath – Sanguine Flow: Converts cooldown reset combos to drain health instead of using a timer. Great for aggressive builds that can sustain through lifesteal.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🧨 Visual & Feedback Improvements",
+     "items": [
+      {
+       "text": "Bombs now cause screen shake based on explosion proximity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Blood Ritual explosion now triggers a light screen shake.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Rare skills like Indomitable Spirit, Judgement, Unyielding Faith, and Transcendence now glow for added flair.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You can no longer be guard broken while parrying. Instead, your guard meter is reduced to 1.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Bloody Palm can no longer kill you via health drain. Health drain reduced from 5% → 3.5%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🛠️ Performance & UI Updates",
+     "items": [
+      {
+       "text": "Shaders now stay loaded to help reduce hitches.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor camera performance improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Revamped item comparison UI: now merges panels and shows global stat/skill changes, making upgrades easier to judge. Hold ALT to inspect without comparison view.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Main popup UI now expands horizontally to prevent excessive vertical stacking.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/39316249/803f1d05c9eac008b0cd2e2a8511d10ec27b88b2.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "📈 Stats, Systems & Progression",
+     "items": [
+      {
+       "text": "Stats now have soft and hard caps (e.g., Attack up to 400%, Speed up to 100%). The soft cap is where scaling slows; hard caps are nearly unreachable but offer added ceiling for extreme builds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Renamed “Slash” input to “Melee Weapon Attack” for clarity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Swapped Pirate and Mage on the class unlock order since Pirate’s now a top-tier pick.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Regenerator skill now restores health faster.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Drop chests will now spawn yellow essence if no loot is inside (fixes issue for Hoarder).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added new uncommon Hoarder skills for more build diversity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🏆 Achievements & Progress Tracking",
+     "items": [
+      {
+       "text": "Removed Path 5, 10, 15, and 20 achievements. While a few players achieved them, they were generally seen as unrewarding and unnecessary. I’d rather keep endless modes as a fun extra, not something the game is balanced around.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added 16 new class completion achievements—beat the game with each class on either Path of Absolution or Path of Torment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🎃 Miscellaneous Tweaks",
+     "items": [
+      {
+       "text": "Reduced Feast of Fright oath scare rate from 100% → 35%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Thanks again for all your support as we close in on the 1.0 launch. Every bit of feedback helps shape the game into something stronger, faster, and bloodier. Try out the new class kits, experiment with the updated combos, and let me know what you think!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "In case you haven’t noticed already, the price of Mortal Sin has increased from $20 to $25 in preparation for launch (announcement coming soon). As I mentioned in a previous post, the discount schedule has also reset and won’t return for quite some time. I’m sure most active players understand the reasoning, but for anyone unfamiliar: I’ve essentially rebuilt the game from the ground up over the past two years and massively expanded the content.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "If Mortal Sin had launched at 1.0 today, you could say I’ve already delivered the equivalent of a full remake and multiple DLCs. From AI and level design to combat flow, player animations, UI, and visuals—nearly every core system has been reworked to create the best possible experience. I believe the new price fairly reflects the value that’s been added since Early Access.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Also, if you’ve enjoyed the game, please consider leaving a review. Mortal Sin is at risk of losing its “Overwhelmingly Positive” rating, largely due to a recent wave of sub-30-minute reviews lacking meaningful feedback. Ratings aren’t everything, but for a still relatively underground indie game, they make a huge difference.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "—Nikola",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Solo developer of Mortal Sin",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 13,
+    "fixed": 0,
+    "balance": 12,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1494810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1494810/view/1805431065382692"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-18T22:26:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-1494810",
+      "checkedAt": "2026-11-12T08:24:35.329Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:35.329Z"
+  },
+  {
+   "id": "mortal-sin-148700@major-2025-06-28",
+   "gameId": "mortal-sin-148700",
+   "displayName": "The Oathbound Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-06-28T00:47:12.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "As I approach the full 1.0 launch, the price will soon increase and future discounts will reset to much lower levels. So if you’ve been on the fence, now is the best time to dive in — or gift a friend while the sale lasts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This is a massive update that brings the game closer than ever to my original vision. It also includes the full Quest Update Part I, which introduced new quest types built around spatial and timing-based objectives. If you missed it, read that announcement here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🧬 New Feature: Oath System",
+     "items": [
+      {
+       "text": "A brand-new Oath System has been added! These are powerful run modifiers unlocked through Helena’s questline. Each one drastically alters gameplay with its own risk–reward twist, encouraging unique builds and new playstyles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Oaths are unlocked as you level up Helena.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "At levels 2, 4, and 6, you’ll choose between two Oaths per tier.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Most Oaths can be mixed and matched, but some (like level layout modifiers) are mutually exclusive.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/39316249/73e7b53efd5106d2b26d5b5327a10d2262097acc.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "✨ New Oaths",
+     "items": [
+      {
+       "text": "🧩 Fractured Realm",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Each level becomes a branching puzzle of floor plates and locked rooms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Rewards and traps appear more frequently.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Rooms from other areas always appear at the end of branching paths.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Portal rooms are longer and have branching paths.[img src=\"{STEAM_CLAN_IMAGE}/39316249/5ce1d92a880462873d08dc1b8c23839495bf7408.png\"]There's a forest in my dungeon...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "🔥 Crucible Path",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Each area has fewer rooms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "All rooms are replaced with arena battles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Bosses drop up to 3 skill chests per arena battle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "💨 Divine Grace",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Your block is replaced with a dodge.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Dodges consume guard meter and grant brief invincibility.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Dodging in time triggers a dodge parry.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Your next attack becomes a slow power strike dealing 400% bonus damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "😱 Feast of Fright",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Scares occur more frequently.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Scares have a chance to spawn Sinful Essence, up to 5 per level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "🧠 Gift of Insight",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Equipment no longer provides stats.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "All equipment grants skill stacks increasing with rarity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "💪 Gift of Might",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Equipment no longer grants skills.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "All equipment provides +50% increased stats.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Your stat limits are increased by 10%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "🕳 Hollow Tribute",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Loot rooms no longer appear during the run.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Gain +30% more gold essence.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "🌕 Providence Path",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Each level becomes a long winding corridor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Loot appears in each corridor and improves the farther you go.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "⚔️ Sacred Flow",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Only Shuffle Combos generate combo meter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Combo meter gain is doubled when performing a Shuffle Combo.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "🛡 Sacred Reflex",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Parries have a much stricter timing window.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Parries grant more combo meter and unleash a shockblast.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "💎 Snare of Avarice",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Each room is either filled with traps or filled with rewards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Breakable objects have a chance to drop loot chests.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "🧬 Twisted Lineage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Enemies are randomized in each room.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Gain +15% chance to find rare items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🛠 Gameplay & Content Updates",
+     "items": [
+      {
+       "text": "Meta quest rewards like Divine Retribution and Oaths now have distinct icons and colors to differentiate them from standard rewards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Helena’s quest UI no longer closes after each reward — making it easier to claim multiple rewards in one go.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Gold Essence quest reward base amount increased from 15,000 → 50,000.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Skill stacking now goes beyond level 5, up to a hard cap of 25, with diminishing returns beyond the soft cap.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Class list reorder: Mage is now listed above Pirate to better reflect newcomer viability. Pirate will be reworked soon, and I’m planning changes to Vampire as well based on community feedback.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Auto combo improvements: You can now correctly charge a thrust or hold attack mid-combo.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Arena slow motion improvement: Buffered input is cleared if you're mashing during a slow-mo finisher to keep it cinematic.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🧩 World & Level Adjustments",
+     "items": [
+      {
+       "text": "Cave drop rooms now have elevators for backtracking, preventing softlocks in the Fractured Realm layout.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Quest storage overhaul: Dying now adds quests to a global reserve pool, which is only accessed on new saves. This fixes previous confusion and bugs around quest inheritance. Otherwise, once you hit the first save point, your saved session will track it's own quest rewards on that round as well as quests that are carried over to the next round.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "🐛 Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed: Divine Retribution would sometimes reappear even after being claimed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed: Issues with old quest reward reserve system that would delete rewards unexpectedly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "🎨 Visual & UI",
+     "items": [
+      {
+       "text": "Added a new loading splash screen that reflects the game’s realistic visual style. The classic version still appears if you're using legacy visuals.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🎁 Final Note",
+     "items": [
+      {
+       "text": "If you haven’t seen it yet, the Sulfur x Mortal Sin bundle is now available!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pick it up here: Steam Bundle Page",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for playing and supporting Mortal Sin — I’m incredibly grateful to be building this alongside such a passionate community. I can’t wait to deliver a full, robust 1.0 that brings the full vision to life.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stay sinful,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "–Nikola",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/39316249/fca0578efd6e9e1e57b4ab9e4a21a080e5917804.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 55,
+    "fixed": 2,
+    "balance": 2,
+    "other": 8,
+    "ps5": 0,
+    "topNew": [
+     "Oaths are unlocked as you level up Helena.",
+     "At levels 2, 4, and 6, you’ll choose between two Oaths per tier.",
+     "Most Oaths can be mixed and matched, but some (like level layout modifiers) are mutually exclusive."
+    ]
+   },
+   "sourceIds": [
+    "steam-1494810"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1494810/view/1803527891559001"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-28T00:47:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-1494810",
+      "checkedAt": "2026-11-12T08:24:35.328Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:35.328Z"
+  }
+ ],
+ "issues": []
+}

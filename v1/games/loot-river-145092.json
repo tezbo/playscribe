@@ -1,0 +1,1113 @@
+{
+ "game": {
+  "id": "loot-river-145092",
+  "igdbId": 145092,
+  "name": "Loot River",
+  "cover": {
+   "imageId": "co2wa9",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co2wa9.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1m2b",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1m2b.jpg"
+  },
+  "ps5Release": "2023-12-19",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "loot-river-145092@major-2022-12-14",
+   "gameId": "loot-river-145092",
+   "displayName": "Loot River Development Update!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-12-14T13:24:40.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi Friends!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I know it was some time since our last update - and I apologize.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Don't worry, we are still working on Loot River! Sadly our currently planned update is just a little bit bigger than expected and takes a little bit more time than we anticipated.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are working on a Level Editor - design your own levels in game and share them with other players!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We hoped to bring this to you before Christmas, but it seems we might just need a little bit longer to make sure everything works as it's supposed to.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stay tuned and have a great holiday,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Miro and Loot River Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1494260"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1494260/view/4991708208074629378"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-12-14T13:24:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-1494260",
+      "checkedAt": "2026-11-12T08:23:49.100Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:49.100Z"
+  },
+  {
+   "id": "loot-river-145092@1.1.01",
+   "gameId": "loot-river-145092",
+   "displayName": "Update 1.1.01",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-10-12T13:15:35.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This is a small update that addresses saving bug introduced at the last update:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for time not properly erased when player died",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for changed platform positions not properly cleared upon death, resulting is some platforms possibly being in improper places on subsequent runs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1494260"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1494260/view/4867853509331066346"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-12T13:15:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-1494260",
+      "checkedAt": "2026-11-12T08:23:49.099Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:49.099Z"
+  },
+  {
+   "id": "loot-river-145092@1.0.998",
+   "gameId": "loot-river-145092",
+   "displayName": "Update 1.0.998",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-10-10T08:33:58.000Z",
+   "notes": [
+    {
+     "title": "Player Movement",
+     "items": [
+      {
+       "text": "Prevents situations where player could get 'stuck' on stairs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for situations where player could not get onto stairs diagonally",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for sudden 'jumps' when boarding stairs from tile above or below",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various movement tweaks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Saving",
+     "items": [
+      {
+       "text": "Fix for possible data loss when player quits the game during death animation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Various",
+     "items": [
+      {
+       "text": "Additional checks to prevent Laser Mages from rotating during their laser emitting phase",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix Backstab Charm placing player on tile of conflicting elevation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for seed 9555809 and related, where progression was impossible due to First City layout generation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for UI interaction prompt occasionally not disappearing during cutscenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for delayed camera relocation on load of the save",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 7,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1494260"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1494260/view/4613399405954049780"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-10-10T08:33:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-1494260",
+      "checkedAt": "2026-11-12T08:23:49.099Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:49.099Z"
+  },
+  {
+   "id": "loot-river-145092@major-2022-08-29",
+   "gameId": "loot-river-145092",
+   "displayName": "Daily Runs Update!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-08-29T13:52:45.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added Daily Runs: Daily Runs can be started from the Load menu after securing at least one Victory or Escape",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reworked level loading system: Loading should be a bit faster now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Entrance to the Divide becomes auto unlocked after some time: Many users have trouble finding Karla and the Divide, so now this area is accessible after several runs even without having Gantley in the level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug where Mod that prevented Extended Spears was not working",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where item drop would sometimes not have a visible sprite",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where player could be soft-locked if an unreachable Protector on one platform protected a Platform Locker enemy on another platform",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a visual bug where the Bat would have active shadow-mesh after death",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a visual bug where the Protector range indicator would flicker after death",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a visual bug where litter on elevated platforms was unaffected by light",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a UI bug where sometimes mouse position would select a button even if user is using keys/controller only",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 6,
+    "balance": 1,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1494260"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1494260/view/4514316500017350756"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-08-29T13:52:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-1494260",
+      "checkedAt": "2026-11-12T08:23:49.098Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:49.098Z"
+  },
+  {
+   "id": "loot-river-145092@1.0.94",
+   "gameId": "loot-river-145092",
+   "displayName": "Update 1.0.94",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-07-29T10:55:31.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "added Protector enemy - low spawn chance in all levels, protects nearby enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "added variations for boss arenas of The Usurper and The First One, so they change each run",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "various small tweaks and bugfixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1494260"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1494260/view/4587497456684084165"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-07-29T10:55:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-1494260",
+      "checkedAt": "2026-11-12T08:23:49.098Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:49.098Z"
+  },
+  {
+   "id": "loot-river-145092@1.0.8",
+   "gameId": "loot-river-145092",
+   "displayName": "Update 1.0.8",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-06-19T17:33:24.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Leaderboards - Best times in both Victory and Escape mode are recorded now - if the time is achieved in New Game +, the entry has a little + sign as well.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Animation adjustment: when an executed enemy falls down and doesn't die, it plays get up animation instead of blending into idle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lowered knockback across all weapons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed several enemy outline issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Trade Off Charm imbalance - critical damage is now properly multiplied",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed scaling issues of dropped loot icon when dropped in certain areas",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Backstab Charm teleporting player on the second attack instead of the first",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed parrying on Laser Mage Knights",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 1,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1494260"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1494260/view/6214419350715928967"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-19T17:33:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-1494260",
+      "checkedAt": "2026-11-12T08:23:49.097Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:49.097Z"
+  },
+  {
+   "id": "loot-river-145092@1.0.75",
+   "gameId": "loot-river-145092",
+   "displayName": "Update 1.0.75",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-06-10T12:40:42.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Upon death, your body is discoverable and lootable in the next run, in the level where you died",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Knowledge kept upon death set to 1/3rd of the Knowledge owned upon dying, to balance for body recovery",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for when defeating final boss while frozen, the dialogue would not appear",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Slider to adjust duration of the conversation window in the accessibility settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Saving adjustments to prepare for new content",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Locking player controls during final credits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Collision fix in Opulent Sanctum that enabled players to exit the map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for a possible dash exploit in The Divide",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1494260"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1494260/view/4480532686351149075"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-10T12:40:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-1494260",
+      "checkedAt": "2026-11-12T08:23:49.096Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:49.096Z"
+  },
+  {
+   "id": "loot-river-145092@1.0.67",
+   "gameId": "loot-river-145092",
+   "displayName": "Update 1.0.67",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-05-17T11:02:18.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "there is now a menu to preview equipped Modifiers at any time - next to Map and Inventory",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "default weapon speed is now higher",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "additional fixes for platform locking mages sometimes not releasing the platforms they locked after death",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "all shop prices are now lower",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1494260"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1494260/view/5849624375836034915"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-17T11:02:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-1494260",
+      "checkedAt": "2026-11-12T08:23:49.096Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:49.096Z"
+  },
+  {
+   "id": "loot-river-145092@1.0.66",
+   "gameId": "loot-river-145092",
+   "displayName": "Update 1.0.66",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-05-16T12:34:16.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "fix for when dash onto stairs from above would not parent player to correct platform",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix for incorrect visuals when dashing using armor with cloth",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "increased damage buff from each chained attack from 10% to 20%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "electric bears lightning attack collision now ends sooner to be more in sync with particle effect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fix for sometimes losing Modifiers when quitting during death animation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "on start of new game there is now [at this point only in English] a difficulty warning",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "reverted walk attack cancelling for now - sorry but after watching some videos you all became murder machines with this",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 1,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1494260"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1494260/view/5849624375832624699"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-16T12:34:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-1494260",
+      "checkedAt": "2026-11-12T08:23:49.095Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:49.095Z"
+  },
+  {
+   "id": "loot-river-145092@1.0.65",
+   "gameId": "loot-river-145092",
+   "displayName": "Update 1.0.65",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-05-13T09:49:19.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "player can now 'walk' out attack animations a little bit sooner, so you should have a more control and faster response in combat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "if one of equipped spells is Leap, mana slowly regenerates until you are able to use it again, to prevent getting stuck on otherwise inaccessible platform",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "player can no longer teleport to backstab position with Backstab Charm using long range weapons such as Panopticon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Backstab Charm not only positions the player, but also parents them to appropriate platform",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1494260"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1494260/view/5849624375821282096"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-13T09:49:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-1494260",
+      "checkedAt": "2026-11-12T08:23:49.095Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:49.095Z"
+  },
+  {
+   "id": "loot-river-145092@1.0.64",
+   "gameId": "loot-river-145092",
+   "displayName": "Update 1.0.64",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-05-12T12:52:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "fix for enemies getting stuck in execution state",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix for parrying and executing an enemy while wearing Hat with knock back spell on a dodge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "time is frozen now already when taking the elevator in Sunken Village",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "when dashing, player light used to teleport to destination, it is now smoothed along with the player model",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1494260"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1494260/view/5849624375818101858"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-12T12:52:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-1494260",
+      "checkedAt": "2026-11-12T08:23:49.094Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:49.094Z"
+  },
+  {
+   "id": "loot-river-145092@1.0.63",
+   "gameId": "loot-river-145092",
+   "displayName": "Update 1.0.63",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-05-11T15:29:26.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "partial knowledge spend: you can add small amounts of Knowledge to the item or spell you wish to purchase over time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "laser mages now do a little taunt/warning move before the sudden melee attack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "chest rewards are now significantly better - there are no more coins in them, either item, or Knowledge, or both, and if Knowledge, there is more of it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "increased chance of finding already enchanted elemental weapons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "parrying no longer teleports you to the enemy; you make a fast dash instead",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "heavy attack now charges significantly faster with increased Strength: normal speed at 10 Strength, 5 times faster (almost instant) at 20 Strength",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "parried bombs from mages can now hurt enemies in blast radius",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 1,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1494260"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1494260/view/4288001105332686345"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-11T15:29:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-1494260",
+      "checkedAt": "2026-11-12T08:23:49.094Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:49.094Z"
+  },
+  {
+   "id": "loot-river-145092@1.0.62",
+   "gameId": "loot-river-145092",
+   "displayName": "Update 1.0.62",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-05-10T16:42:33.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "time is now paused while in Sanctuary",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "additional fixes for enemies that lock platforms",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gwen attack patterns are slightly more randomized",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "various small bugfixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1494260"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1494260/view/4348799082209001280"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-05-10T16:42:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-1494260",
+      "checkedAt": "2026-11-12T08:23:49.093Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:49.093Z"
+  }
+ ],
+ "issues": []
+}

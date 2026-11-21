@@ -1,0 +1,595 @@
+{
+ "game": {
+  "id": "bible-puzzle-319723",
+  "igdbId": 319723,
+  "name": "Bible Puzzle",
+  "cover": {
+   "imageId": "cob2u7",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/cob2u7.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar35ji",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar35ji.jpg"
+  },
+  "ps5Release": "2025-11-27",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "bible-puzzle-319723@1.4.6",
+   "gameId": "bible-puzzle-319723",
+   "displayName": "Update 1.4.6",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-07-11T00:01:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "🛠️ Fixed a visual bug that appeared when switching the difficulty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🎨 Improved button colors at the bottom of popups to make navigation clearer and more intuitive.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3175310"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3175310/view/1804977324430406"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-11T00:01:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-3175310",
+      "checkedAt": "2026-11-11T18:34:39.659Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:39.659Z"
+  },
+  {
+   "id": "bible-puzzle-319723@1.4.5",
+   "gameId": "bible-puzzle-319723",
+   "displayName": "Update 1.4.5",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-06-14T05:18:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Make use of the Steam keyboard when filling the \"Sign in with Code\" field.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3175310"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3175310/view/1802354289617518"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-14T05:18:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-3175310",
+      "checkedAt": "2026-11-11T18:34:39.659Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:39.659Z"
+  },
+  {
+   "id": "bible-puzzle-319723@1.4.4",
+   "gameId": "bible-puzzle-319723",
+   "displayName": "Update 1.4.4",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-06-12T04:43:54.000Z",
+   "notes": [
+    {
+     "title": "🆕 New Features",
+     "items": [
+      {
+       "text": "The virtual keyboard is now supported in Big Picture Mode and on the Steam Deck, making text input more convenient on those platforms.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "🔁 Quality of Life",
+     "items": [
+      {
+       "text": "When returning from a puzzle match, the Home screen will now be open with the last story and picture you selected, so you can pick up right where you left off.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🎨 Visual Improvements",
+     "items": [
+      {
+       "text": "The Leaderboard entry button is now bigger and more visually appealing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added particle effects to highlight the top 3 ranks (1st, 2nd, 3rd) on the Leaderboard.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Introduced particle effects on the \"Ranking\" label below the difficulty selection.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added informational text explaining what the Ranked difficulties mean.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🐞 Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed a visual issue when scrolling through the picture selection screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 1,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0,
+    "topNew": [
+     "The Leaderboard entry button is now bigger and more visually appealing.",
+     "Added particle effects to highlight the top 3 ranks (1st, 2nd, 3rd) on the Leaderboard.",
+     "Introduced particle effects on the \"Ranking\" label below the difficulty selection."
+    ]
+   },
+   "sourceIds": [
+    "steam-3175310"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3175310/view/1802354289550794"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-12T04:43:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-3175310",
+      "checkedAt": "2026-11-11T18:34:39.658Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:39.658Z"
+  },
+  {
+   "id": "bible-puzzle-319723@1.4.2",
+   "gameId": "bible-puzzle-319723",
+   "displayName": "Update 1.4.2",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-05-16T21:41:45.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Now available in Korean, Japanese, and Russian! Enjoy Bible Puzzle in your language!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3175310"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3175310/view/1799817379513419"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-16T21:41:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-3175310",
+      "checkedAt": "2026-11-11T18:34:39.658Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:39.658Z"
+  },
+  {
+   "id": "bible-puzzle-319723@1.3.2",
+   "gameId": "bible-puzzle-319723",
+   "displayName": "Update 1.3.2",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-03-18T03:04:00.000Z",
+   "notes": [
+    {
+     "title": "🚀 Bible Puzzle is now available on the Apple Store!",
+     "items": [
+      {
+       "text": "We have finally released our game on the Apple Store! Now you can take your progress with you on your iPhone, iPad, and Apple Vision.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🙌🏽 New Achievement",
+     "items": [
+      {
+       "text": "You can now unlock the new achievement by visiting our App Store page directly from the game settings menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "📉 Game Size Reduction!",
+     "items": [
+      {
+       "text": "We have restructured our video system so that only one base video is used, with different audio and subtitles for each language.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "📚 Before: 600 MB",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "📚 Now: 300 MB",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This means more free space on your device and faster downloads! 🙌🏽🚀",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🧩 What's Next?",
+     "items": [
+      {
+       "text": "📚 The story of David is nearing completion. Discover the tale of a young shepherd who had the courage to face a giant!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "💬 Feedback and Community",
+     "items": [
+      {
+       "text": "We hope you are enjoying our game. See you on the Leaderboards! 🎉",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0,
+    "topNew": [
+     "You can now unlock the new achievement by visiting our App Store page directly from the game settings menu."
+    ]
+   },
+   "sourceIds": [
+    "steam-3175310"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3175310/view/1794102528222883"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-18T03:04:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-3175310",
+      "checkedAt": "2026-11-11T18:34:39.657Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:39.657Z"
+  },
+  {
+   "id": "bible-puzzle-319723@1.0.3",
+   "gameId": "bible-puzzle-319723",
+   "displayName": "Update 1.0.3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-11-21T02:41:45.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added a video story to Noah's scroll.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added two more pictures to Moses scroll.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Now the video story will play automatically only the first time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed achievements for 30, 50, 100 puzzles completed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed minor visual issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 1,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3175310"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3175310/view/1783872411966731"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-21T02:41:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-3175310",
+      "checkedAt": "2026-11-11T18:34:39.656Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:39.656Z"
+  },
+  {
+   "id": "bible-puzzle-319723@1.0.2",
+   "gameId": "bible-puzzle-319723",
+   "displayName": "Update 1.0.2",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-11-14T21:46:33.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fix the Load More button in the Leaderboards screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3175310"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3175310/view/1783238125225451"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-14T21:46:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-3175310",
+      "checkedAt": "2026-11-11T18:34:39.656Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:39.656Z"
+  },
+  {
+   "id": "bible-puzzle-319723@1.0.1",
+   "gameId": "bible-puzzle-319723",
+   "displayName": "Update 1.0.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-11-14T20:51:31.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Resolved an issue that was causing the Leaderboard rankings to display incorrectly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3175310"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3175310/view/1783238125224127"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-14T20:51:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-3175310",
+      "checkedAt": "2026-11-11T18:34:39.655Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:39.655Z"
+  }
+ ],
+ "issues": []
+}

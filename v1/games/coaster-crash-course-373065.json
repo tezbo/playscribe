@@ -1,0 +1,80 @@
+{
+ "game": {
+  "id": "coaster-crash-course-373065",
+  "igdbId": 373065,
+  "name": "Coaster Crash Course",
+  "cover": {
+   "imageId": "cob0s3",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/cob0s3.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar4fw8",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar4fw8.jpg"
+  },
+  "ps5Release": "2026-09-22",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "coaster-crash-course-373065@post-2025-12-11",
+   "gameId": "coaster-crash-course-373065",
+   "displayName": "Patch Notes for December 11",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-12-11T14:58:45.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed a bug where the savegame could get corrupted when saving in a broken state",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added support for loading a broken savegame without leaving the game in an unplayable state",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3962470"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3962470/view/1818752592124022"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-11T14:58:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-3962470",
+      "checkedAt": "2026-11-11T21:58:19.945Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:19.945Z"
+  }
+ ],
+ "issues": []
+}

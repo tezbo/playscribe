@@ -1,0 +1,1659 @@
+{
+ "game": {
+  "id": "ferocious-152017",
+  "igdbId": 152017,
+  "name": "Ferocious",
+  "cover": {
+   "imageId": "co9y7q",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co9y7q.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar4vaf",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar4vaf.jpg"
+  },
+  "ps5Release": "2026-09-14",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "ferocious-152017@1.10",
+   "gameId": "ferocious-152017",
+   "displayName": "Patch 1.10",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-09-04T14:21:29.000Z",
+   "notes": [
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed Parasaur mount that was still broken in some scenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed player falling out of the world with no underwater effect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed slider label displaying inconsistent numbers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Fixed issue where some achievements wouldn’t trigger",
+     "items": [
+      {
+       "text": "Unstoppable achievement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Overkill achievement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Man's best friend achievement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed regression with map icons where they would display the default icon instead of the correct one",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed dialogue being cut short",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed in-game music abruptly stopping",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with using bandages from inventory causing the player to get stuck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed weapons with multiple hits executing kill triggers multiple times. This fixes the Terminator achievement",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "All kill related achievements now correctly track melee kills",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Objectives that include finding keys are now completed if the key is already in possession",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Number of Gore effects have been disabled when Gore is off",
+     "items": [
+      {
+       "text": "Blood pools",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enemies being Obliterated (by Grenades or Lightning Gun)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Performance Fixes",
+     "items": [
+      {
+       "text": "Foliage can now more easily return to rest position, removing it from the simulation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Shallow water initialisation has been improved",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Crash Fixes",
+     "items": [
+      {
+       "text": "Some of the logic that used other threads has been moved to the main thread",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Portion of the logic that ran on other threads has been made safer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Issue with AI trying to access unavailable memory has been fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Improvements in the following systems",
+     "items": [
+      {
+       "text": "Breakable Glass",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Foliage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Gadgets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Impact Decals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Particle systems related to decals and weapons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Raptor fur",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Skinned Decals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Water",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Level Fixes",
+     "items": [
+      {
+       "text": "LowLands",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "T-Rex nest objective can no longer be given if the player has already completed it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed a placeholder text in the lowlands",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Grass Valley",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Dying when going to water at the start of Grass Valley looks more correct",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "T-Rex baby is no longer tied to the vehicle at the start of Grass Valley when it’s not in the vehicle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Player can no longer randomly die after the General cutscene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix NPC being invisible before the General boss fight",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "General Improvements",
+     "items": [
+      {
+       "text": "Game is even more resistant to crashes in Old Jungle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The glyphs for zooming and activating the notebook are easier to see",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 11,
+    "fixed": 26,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0,
+    "topNew": [
+     "Breakable Glass",
+     "Foliage",
+     "Gadgets"
+    ]
+   },
+   "sourceIds": [
+    "steam-1645630"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1645630/view/1842846814446738"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-09-04T14:21:29.000Z",
+      "verification": "official",
+      "sourceId": "steam-1645630",
+      "checkedAt": "2026-11-12T03:00:19.263Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:19.263Z"
+  },
+  {
+   "id": "ferocious-152017@1.09",
+   "gameId": "ferocious-152017",
+   "displayName": "Patch 1.09",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-17T14:07:45.000Z",
+   "notes": [
+    {
+     "title": "Achievements",
+     "items": [
+      {
+       "text": "Added achievements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Fixes & General Improvements",
+     "items": [
+      {
+       "text": "Localization fixes for controllers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved loading times",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved memory usage and stability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 3,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1645630"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1645630/view/1835871199300804"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-17T14:07:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-1645630",
+      "checkedAt": "2026-11-12T03:00:19.261Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:19.262Z"
+  },
+  {
+   "id": "ferocious-152017@hotfix-2026-06-11",
+   "gameId": "ferocious-152017",
+   "displayName": "Hotfix: Bug Fixes",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-11T14:19:56.000Z",
+   "notes": [
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed an issue where weapons would not be gripped properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where closing the backpack would break physics if it contained flowers or bananas",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1645630"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1645630/view/1835236783560562"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-11T14:19:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-1645630",
+      "checkedAt": "2026-11-12T03:00:19.260Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:19.261Z"
+  },
+  {
+   "id": "ferocious-152017@1.07",
+   "gameId": "ferocious-152017",
+   "displayName": "Patch 1.07",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-03T14:04:06.000Z",
+   "notes": [
+    {
+     "title": "AI Improvements",
+     "items": [
+      {
+       "text": "Enemies now stop patrolling when the target is found",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Enemies are now properly flagged injured when hit by an explosion",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where AI would get stuck while trying to flush the player out of cover",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Controls & Controller Improvements",
+     "items": [
+      {
+       "text": "Controller rumble disabled when using keyboard and mouse",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Motorised vehicles use triggers for driving on gamepad",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Removed the additional delay before starting to run",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "It's now possible to do more actions from the run without manually interrupting the action",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reloading",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Shooting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Healing no longer interrupts the tab selection on journal when the player is not at full health",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Journal is now disabled when starting to run",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added aim assist for the controller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "General Fixes",
+     "items": [
+      {
+       "text": "Unity Editor update from 2022.3.37f1 to 6.3.8f1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Wwise update from 2023.1.3 to 2023.1.18",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated the UI for DCD (Dinosaur Communication Device)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a version number to the top right corner on the title screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Optimisations",
+     "items": [
+      {
+       "text": "Lowered resolution for some of the lower priority textures",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Memory optimisation on meshes, animations, levels and textures",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Located and fixed a large number of memory leaks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Audio",
+     "items": [
+      {
+       "text": "Deprecated the Unity audio",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for the music cutting out",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Replaced most of the Unity audio with Wwise audio events",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There is still some audio that might require implementation and adjustments",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fix for the first start on a new device where the game would hang in an empty language selection menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes to reflection probes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor fixes to shaders to replicate the functionality from before the Unity Editor Update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor fallback handling to failed saves",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an edge case where it was possible to rebind controller inputs to keyboard and mouse and vice versa",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a number of colliders with incompatible setup",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrupted save files now give an error when trying to load a save",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for keys disappearing from the map when loading a save",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed LODs for Amalgasaurus",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the elevator getting stuck in Manifesto Base",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjustments to prevent player from getting stuck in geometry",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjustments to prevent player from going out of bounds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 11,
+    "fixed": 16,
+    "balance": 1,
+    "other": 5,
+    "ps5": 0,
+    "topNew": [
+     "Enemies now stop patrolling when the target is found",
+     "Enemies are now properly flagged injured when hit by an explosion",
+     "Fixed an issue where AI would get stuck while trying to flush the player out of cover"
+    ]
+   },
+   "sourceIds": [
+    "steam-1645630"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1645630/view/1834602721184923"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-03T14:04:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-1645630",
+      "checkedAt": "2026-11-12T03:00:19.259Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:19.259Z"
+  },
+  {
+   "id": "ferocious-152017@1.06",
+   "gameId": "ferocious-152017",
+   "displayName": "Patch 1.06",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-02-12T16:50:13.000Z",
+   "notes": [
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed missing compass on some maps",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed missing localization of some objectives",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the kayak failing to spawn",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where some players were unable to start the game with a controller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1645630"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1645630/view/1824459501607432"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-12T16:50:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-1645630",
+      "checkedAt": "2026-11-12T03:00:19.258Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:19.258Z"
+  },
+  {
+   "id": "ferocious-152017@1.05",
+   "gameId": "ferocious-152017",
+   "displayName": "Patch 1.05",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-18T15:22:26.000Z",
+   "notes": [
+    {
+     "title": "AI Improvements",
+     "items": [
+      {
+       "text": "Enemies are now much better at abandoning bad or exposed cover instead of lingering too long.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where enemies could get stuck looping between repositioning and attacking, causing them to run in circles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved enemy cover behavior and awareness. Enemies now abandon exposed or invalid cover more reliably and make better use of peeking during combat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved enemy combat reactions. Enemies now correctly drop weapons after losing a limb and behave more consistently when engaging the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where enemies could behave incorrectly when reacting to player visibility and positioning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Controls & Controller Support Fixes and Improvements",
+     "items": [
+      {
+       "text": "Fixed several PlayStation controller binding issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Vehicle controls on the controller have been adjusted to better match common standards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added separate driving controls for cars and motorboats on gamepad:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a dedicated Turbo binding, fixing cases where sprinting could fail to trigger correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Attacks can now be performed while running.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Weapons can now be reloaded using the primary attack button when the magazine is empty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved controller flow: you can now resume running after weapon actions as long as you keep moving forward.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Workbench now correctly reacts to both keyboard and gamepad input.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed Tutorial system improvements:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tutorial text now updates correctly if the input device changes while the tutorial is active.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tutorials no longer force controller prompts when the player is using keyboard and mouse.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed missing key binding prompts for tutorial messages.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "General refactoring to improve tutorial readability and stability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Other Fixes and Improvements",
+     "items": [
+      {
+       "text": "Fixed an issue where audio settings could not be adjusted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the flashlight could not be turned on in certain situations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved music transitions for smoother playback between gameplay states.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 13,
+    "balance": 0,
+    "other": 0,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-1645630"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1645630/view/1819386365090150"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-18T15:22:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-1645630",
+      "checkedAt": "2026-11-12T03:00:19.257Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:19.257Z"
+  },
+  {
+   "id": "ferocious-152017@1.04",
+   "gameId": "ferocious-152017",
+   "displayName": "Patch 1.04",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-12T20:09:37.000Z",
+   "notes": [
+    {
+     "title": "🎮CONTROLLER SUPPORT🎮",
+     "items": [
+      {
+       "text": "The game now supports Xbox and PS controllers. Players can remap controls in settings, just like with keyboard and mouse.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "pc",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Please share feedback about your expericence with controller in the comments. We are planning to make further improvements in the future patches.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In case controller fails to reassign the buttons, please check steam input. Disabling it might resolve the issue.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "AI IMPROVEMENTS",
+     "items": [
+      {
+       "text": "Improved enemy combat behavior and responsiveness.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed cases where enemies could get stuck reloading their weapons indefinitely.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved enemy movement and positioning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Smoothed out cover behavior.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved melee combat logic.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reduced situations where enemies remain stuck in cover instead of reacting to nearby threats.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "General AI stability improvements, reducing edge cases that caused enemies to freeze, loop behaviors, or act unpredictably.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "BUG FIXES",
+     "items": [
+      {
+       "text": "Fixed the Manifesto HQ elevator failing to open or activate, which could block campaign progress.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where using shotgun may cause game crash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a campaign soft-lock where the Manifesto Commander could fail to spawn if the treetop camp was cleared early.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where finding baby T. rex objective dialogue may not trigger, which blocks progress.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Manifesto Key was required for some doors in the Lowlands.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where music may not play as intended in cutscenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed a misleading dialogue in Creavasse.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Players are now given an MP5 in the first combat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduced the difficulty of early crab-heavy encounters in the first area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 7,
+    "fixed": 9,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0,
+    "topNew": [
+     "Improved enemy combat behavior and responsiveness.",
+     "Fixed cases where enemies could get stuck reloading their weapons indefinitely.",
+     "Improved enemy movement and positioning."
+    ]
+   },
+   "sourceIds": [
+    "steam-1645630"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1645630/view/1818752592128637"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-12T20:09:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-1645630",
+      "checkedAt": "2026-11-12T03:00:19.256Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:19.256Z"
+  },
+  {
+   "id": "ferocious-152017@1.03",
+   "gameId": "ferocious-152017",
+   "displayName": "Patch 1.03",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-10T21:21:30.000Z",
+   "notes": [
+    {
+     "title": "BUG FIXES",
+     "items": [
+      {
+       "text": "Fixed a missing audio bug affecting certain actions and ambient sounds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a regression introduced in 1.02 where all crafting ingredients incorrectly appeared green regardless of their actual status.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the bone knife model could remain floating in mid-air near the first campfire exit after prying it open.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Addressed a responsiveness issue with buggy driving introduced in 1.02.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted flashlight reflections to reduce harsh glare.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the bone knife model could remain floating in mid-air near the first campfire exit after prying it open.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted flashlight reflections to reduce harsh glare.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "INVESTIGATING",
+     "items": [
+      {
+       "text": "We're in the process of fixing the following issues but they're taking a bit longer than expected. We appreciate your patience. If you have some info to share regarding these issues (for example save files or player log), please contact our team on Steam forum or Discord.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The elevator in Manifesto HQ may not open or activate for certain players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A crash may be caused by the DP-12 when too many particle effects spawned simultaneously (e.g., buckshot hitting multiple surface types).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're also making good progress on other bug fixes not listed here, and working on a few highly requested features and improvements including but not limited to controller support and enemy AI. Thank you for your patience and stay tuned!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks again for playing FEROCIOUS, please leave a Steam review if you have a moment, that would mean a lot to our team!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 7,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1645630"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1645630/view/1818752592122067"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-10T21:21:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-1645630",
+      "checkedAt": "2026-11-12T03:00:19.255Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:19.255Z"
+  },
+  {
+   "id": "ferocious-152017@1.02",
+   "gameId": "ferocious-152017",
+   "displayName": "Patch 1.02",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-08T18:41:48.000Z",
+   "notes": [
+    {
+     "title": "BUG FIXES",
+     "items": [
+      {
+       "text": "Fixed an issue where the buggy was prone to flipping over and behaving unpredictably on slopes and bridge edges.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved a physics issue causing raptors to launch the buggy across the map on impact.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the player might get stuck in a thorny bush in Coast.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare bug where the giant crab boss vanished when shot with firearms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rendering issue that could cause the buggy to become invisible under specific conditions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed missing interior mech textures upon entering the mech, which previously made the feature appear broken.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed empty tutorial messages appearing after acquiring the flamethrower when exiting the lab building.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash that could occur when entering the gate area during the T-rex baby handoff sequence.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "(Updated at 22:16 CET) Fixed an issue where settings menu does not behave properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "GAMEPLAY & UX IMPROVEMENTS",
+     "items": [
+      {
+       "text": "Added an option to enable/disable visual cues such as blinking climbable vines, levers, enemy bodies, and harvestable items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Highlighted crab targets more clearly during encounters to improve combat readability.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "A MESSAGE FROM THE DEV TEAM",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "While we continue to work on bug fixes (more patches coming soon), having heard your feedback in the past couple of days, we're also actively working on controller support, enemy AI improvements, and optimization in the background. These improvements may take some time to implement, we'll try our best to deliver them as soon as possible!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Also here are couple of reminders for a smoother and more immersive experience:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "In addition to the new options added in the patch today, you can also manually turn off the red enemy highlight in the gameplay settings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You can adjust brightness and contrast in settings to deal with some areas being dark on your screen.: Thank you again for your support and for playing the game! Your feedback is invaluable, so if you haven't left a Steam review, we'd really appreciate it!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 7,
+    "fixed": 9,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1645630"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1645630/view/1818118366183538"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-08T18:41:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-1645630",
+      "checkedAt": "2026-11-12T03:00:19.254Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:19.254Z"
+  },
+  {
+   "id": "ferocious-152017@hotfix-2025-12-05",
+   "gameId": "ferocious-152017",
+   "displayName": "Hotfix: More Graphics Settings, Optimization, Sound Fixes",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-05T23:10:34.000Z",
+   "notes": [
+    {
+     "title": "VISUALS",
+     "items": [
+      {
+       "text": "Added more graphics settings:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Contrast",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Upscaler (DLSS, FSR, TAAU)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Render Scale",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "ChromaticAberration",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Vignette",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "FilmGrain",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "AntiAliasing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "ShadowQuality",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "DepthOfField",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased LOD bias for less LOD popping",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Improved optimizations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "SOUND",
+     "items": [
+      {
+       "text": "Updated audio mix and music system (new music parts and transitions)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved audio memory/streaming settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added missing cutscene SFX and did a general bug-fix pass across levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "OTHER CHANGES",
+     "items": [
+      {
+       "text": "Added enemies to the bridge in Coast",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "A MESSAGE FROM THE DEV TEAM",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "First of all, we want to thank all of you for checking FEROCIOUS out. It's an honor to have you playing our game after all those years of creating it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We acknowledge all the issues the community has reported to us one hundred percent. Our team is working at a high pace to resolve them, so expect more patches in the coming days. Please don't hesitate to share your valuable feedback here; let us know if you run into bugs on this subforum.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 0,
+    "balance": 1,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1645630"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1645630/view/1818118366177999"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-05T23:10:34.000Z",
+      "verification": "official",
+      "sourceId": "steam-1645630",
+      "checkedAt": "2026-11-12T03:00:19.252Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:19.253Z"
+  }
+ ],
+ "issues": []
+}

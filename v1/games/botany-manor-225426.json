@@ -1,0 +1,290 @@
+{
+ "game": {
+  "id": "botany-manor-225426",
+  "igdbId": 225426,
+  "name": "Botany Manor",
+  "cover": {
+   "imageId": "co5rg6",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co5rg6.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1yte",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1yte.jpg"
+  },
+  "ps5Release": "2025-01-28",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "botany-manor-225426@1.0.3",
+   "gameId": "botany-manor-225426",
+   "displayName": "Patch 1.0.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-17T15:51:56.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have another botanical patch for you all!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "This patch includes a small amount of fixes",
+     "items": [
+      {
+       "text": "* If you're holding an item when saving, you'll still be holding the item when you later load the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Added a fix for disappearing items, and any previously disappeared items will be in the spot they were placed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Have a great Tuesday!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Botany Manor Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1425350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1425350/view/5762994032387622452"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-17T15:51:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-1425350",
+      "checkedAt": "2026-11-11T21:57:30.778Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:30.778Z"
+  },
+  {
+   "id": "botany-manor-225426@1.0.2",
+   "gameId": "botany-manor-225426",
+   "displayName": "Patch 1.0.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-13T21:06:34.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey botanists! We’re so happy to see you all enjoying Botany Manor!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you all for communicating and reporting issues, we have fixed up a bunch and listed them below. Please understand we are a very small team and are still addressing other issues, which will roll out in due time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Full list of fixes",
+     "items": [
+      {
+       "text": "* Replaced ‘move up’ with ‘move down’ on the tower lever.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Added a collider to the kitchen wall so the interaction dots of the scale weights don’t see through.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Some localisation fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Make sure saving doesn’t happen while sitting down, causing a potential locked player state on resuming the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fix a typo in the letter from Arabella’s sister in the Flower Room.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fix a typo on the squirrel card in the Boat House.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Make sure the letter lock is correctly localised in Traditional and Simplified Chinese at the start of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Trigger the plant growth achievement after growing a plant, so players with missing achievements can trigger it even after completing the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Added a chapter select to main menu, so you can easily restart/replay a chapter. This should help currently soft-locked players while we work on more fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fix an issue where the Formal Garden key would be missing when resuming the game, if it was not picked up in previous session.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 10,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1425350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1425350/view/6474562312189634194"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-13T21:06:34.000Z",
+      "verification": "official",
+      "sourceId": "steam-1425350",
+      "checkedAt": "2026-11-11T21:57:30.777Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:30.777Z"
+  },
+  {
+   "id": "botany-manor-225426@patch-2024-04-09",
+   "gameId": "botany-manor-225426",
+   "displayName": "Small Launch Patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-09T21:27:36.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "* Prevent players from exiting the tower while it's going up, causing them to soft lock the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Make sure the game doesn't autosave on resuming in main menu, overriding their save data.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1425350"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1425350/view/5756237364327606578"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-09T21:27:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-1425350",
+      "checkedAt": "2026-11-11T21:57:30.777Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:30.777Z"
+  }
+ ],
+ "issues": []
+}

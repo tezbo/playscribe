@@ -1,0 +1,982 @@
+{
+ "game": {
+  "id": "vambrace-dungeon-monarch-294339",
+  "igdbId": 294339,
+  "name": "Vambrace: Dungeon Monarch",
+  "cover": {
+   "imageId": "co9ayy",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co9ayy.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar2uzc",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar2uzc.jpg"
+  },
+  "ps5Release": "2025-12-17",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "vambrace-dungeon-monarch-294339@major-2025-10-07",
+   "gameId": "vambrace-dungeon-monarch-294339",
+   "displayName": "❗Update Required❗",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-07T11:59:33.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44946660/baae466eb3bd5f5d9dd8705752f0e3111c29fd4f.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hey friends,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We want to let you know about an important update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A recently identified security vulnerability within Unity has been spotted, and while there is currently no evidence of impact on users, we’re taking all relevant steps to ensure you’re on the latest and safest version of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To keep you safe, we’ve released a new patch that addresses the issue. Please update your game as soon as possible to stay protected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can read more about it here: https://unity.com/security/sept-2025-01",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always, our priority will be on keeping our games as safe and enjoyable for everyone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Your Headup Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2753600"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2753600/view/1811772772636464"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-07T11:59:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-2753600",
+      "checkedAt": "2026-11-12T16:50:42.715Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:42.715Z"
+  },
+  {
+   "id": "vambrace-dungeon-monarch-294339@1.0.8",
+   "gameId": "vambrace-dungeon-monarch-294339",
+   "displayName": "Patch 1.0.8",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-06-18T02:34:09.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44946660/e93f838ae3c900945f8cecf826f0fd43651bdb55.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch Notes",
+     "items": [
+      {
+       "text": "This update introduces Japanese language support, improves UI usability, and fixes various in-game bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Language Support Expansion",
+     "items": [
+      {
+       "text": "Added Japanese translation to make the game accessible to more players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "UI/UX Enhancements",
+     "items": [
+      {
+       "text": "Added control button guide UI to help players understand game controls more easily.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added key guidance displays for auxiliary functions and shortcuts across various UI screens.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "Fixed an issue where certain unit skills were not functioning properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved a problem where certain card effects would not trigger despite meeting their conditions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Text and Cards",
+     "items": [
+      {
+       "text": "Corrected errors in specific card descriptions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "UI",
+     "items": [
+      {
+       "text": "Fixed bugs that occurred when using arrow buttons in the Prison UI.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved abnormal tile functionality in the Construction UI.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Thank you to everyone who reported bugs! We will continue to work hard to provide a better gaming experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 5,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0,
+    "topNew": [
+     "Added control button guide UI to help players understand game controls more easily.",
+     "Added key guidance displays for auxiliary functions and shortcuts across various UI screens."
+    ]
+   },
+   "sourceIds": [
+    "steam-2753600"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2753600/view/1802893906681918"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-18T02:34:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-2753600",
+      "checkedAt": "2026-11-12T16:50:42.714Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:42.714Z"
+  },
+  {
+   "id": "vambrace-dungeon-monarch-294339@1.0.7",
+   "gameId": "vambrace-dungeon-monarch-294339",
+   "displayName": "Patch 1.0.7",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-05-30T02:32:38.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dear Monarchs,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This update focuses on improving the quality of the Chinese and English translations, along with addressing various issues in the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Translation Quality Improvements",
+     "items": [
+      {
+       "text": "Corrected typos and awkward expressions in the Chinese and English translations to make them more natural.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Translation and Text",
+     "items": [
+      {
+       "text": "Fixed an issue where tooltips and card texts were not displaying.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected inaccurate descriptions on certain cards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where incorrect character names appeared in dialogue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "UI and Features",
+     "items": [
+      {
+       "text": "Improved the edge-scrolling feature for smoother movement when the mouse is near the edge of the screen.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue where card keywords were not visible in the deck UI. (Pressing \"K\" now activates keywords.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a bug where ascended units remained in the queue after being ascended in the Ritual Altar UI.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Resolved an issue where abnormal prisons could appear in the Prison UI.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "Fixed an issue where certain building effects could block game progression.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved bugs related to building requisition.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where acquiring the Monarch Summoning Trait would remove existing summon effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a feature to prevent duplicate rewards from being granted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved the stability of the save function.: Thank you to everyone who reported bugs! We will continue to work hard to provide a better gaming experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 6,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0,
+    "topNew": [
+     "Corrected typos and awkward expressions in the Chinese and English translations to make them more natural.",
+     "Fixed an issue where card keywords were not visible in the deck UI. (Pressing \"K\" now activates keywords.)",
+     "Fixed a bug where ascended units remained in the queue after being ascended in the Ritual Altar UI."
+    ]
+   },
+   "sourceIds": [
+    "steam-2753600"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2753600/view/1800991756329761"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-30T02:32:38.000Z",
+      "verification": "official",
+      "sourceId": "steam-2753600",
+      "checkedAt": "2026-11-12T16:50:42.714Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:42.714Z"
+  },
+  {
+   "id": "vambrace-dungeon-monarch-294339@1.0.6",
+   "gameId": "vambrace-dungeon-monarch-294339",
+   "displayName": "Hotfix 1.0.6",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-05-14T08:32:36.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dear Monarchs of the Dungeon,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I'm writing to update you with a 1.0.6 hotfix.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "+ Fixed an A-class bug that prevented players from entering Round 7 after clearing Round 6 during Story Chapter 1 in some situations.",
+     "items": [
+      {
+       "text": "Besides, we've received a lot of great feedback since the game's release, and there are some things we haven't been able to address during the Early Access period, so we'd like to outline our plans going forward:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Upcoming Update Features ",
+     "items": [
+      {
+       "text": "Improving the control sensor to move the screen when the mouse pointer is on the edge of the screen.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixing the card keywords not showing up in the Deck UI.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Working on localisation issues in the Simplified Chinese and English translations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixing for text displayed in tooltips or on cards not displaying correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixing for incorrect character display in some dialogue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixing an issue where gaining the Monarch Summon-related Perk would cause existing summons to lose their effect.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Preventing rewards from being duplicated.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Issues currently identified, and in the process of being fixed ",
+     "items": [
+      {
+       "text": "Work is underway on controller support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adding input info for using secondary actions or features in each UI will be added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Prison UI is being fixed for spawning incorrect prisoners.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We are fixing an issue in the Ritual Altar UI where units could remain in the queue after being ascended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We're working on a fix for situations where tooltips would not activate and deactivate correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We are fixing a situation where combat acceleration was not being applied correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We're working on an issue in the Construction UI where some tile selections become unavailable in certain situations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Working on improvements to the save function.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixing a bug with building conscription.: We look forward to improving the game and making sure you have a great experience.: Best Regards,: Minho,: Dvora Studio.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 10,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0,
+    "topNew": [
+     "Fixing the card keywords not showing up in the Deck UI.",
+     "Working on localisation issues in the Simplified Chinese and English translations.",
+     "Fixing for text displayed in tooltips or on cards not displaying correctly."
+    ]
+   },
+   "sourceIds": [
+    "steam-2753600"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2753600/view/1799722702487398"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-14T08:32:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-2753600",
+      "checkedAt": "2026-11-12T16:50:42.713Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:42.713Z"
+  },
+  {
+   "id": "vambrace-dungeon-monarch-294339@0.2.10",
+   "gameId": "vambrace-dungeon-monarch-294339",
+   "displayName": "Patch 0.2.10",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-07T04:04:04.000Z",
+   "notes": [
+    {
+     "title": "Patch Notes 0.2.10",
+     "items": [
+      {
+       "text": "Greetings, Dungeon Monarchs!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With this update, 0.2.10, we’ve made several important improvements based on your valuable feedback. Read on for the details of the latest changes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Blueprint Store Added",
+     "items": [
+      {
+       "text": "A new store for purchasing blueprints required for construction has been added. You can now easily buy blueprints for lower-tier buildings, making it easier and more flexible to proceed with construction. Please note that building costs will be adjusted in the next patch due to the addition of this store.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Unit Spawn Save Logic Improve",
+     "items": [
+      {
+       "text": "We’ve updated the save logic related to unit spawns, ensuring that the game now runs more smoothly without issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Upgrade UI Bug Fixes",
+     "items": [
+      {
+       "text": "All bugs related to the upgrade UI in the previous version have been fixed. The UI should now function without any problems.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Tooltip Display Fixed",
+     "items": [
+      {
+       "text": "We’ve resolved issues with tooltips not displaying correctly, and now all tooltips should appear properly in the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Thank you for your continued feedback! We hope this update makes your gameplay experience even better, and we look forward to hearing more from you in the future.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minho",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Dvora Studio",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 5,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2753600"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2753600/view/1795917897440995"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-07T04:04:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-2753600",
+      "checkedAt": "2026-11-12T16:50:42.712Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:42.712Z"
+  },
+  {
+   "id": "vambrace-dungeon-monarch-294339@0.2.09",
+   "gameId": "vambrace-dungeon-monarch-294339",
+   "displayName": "Update 0.2.09",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-03-25T01:43:23.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dear Monarchs of the Hellforn's Dungeon,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This is Minho Kim from Dvora Studio. :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "**Overview**",
+     "items": [
+      {
+       "text": "This build includes the addition of Part 1 of the story, improvements to the tutorial section, and updated UI for game modes in the main menu. We’ve also added detailed card information to make it easier for players to access card variation data, and improved the design of the upgrade UI.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "**Added Content**",
+     "items": [
+      {
+       "text": "● Content for Story Part 1 has been included.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "● The tutorial has been separated into its own mode, with additional content and",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "● You can now progress dialogue not only with the mouse, but also by pressing the Space or",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Enter key.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "● The design of the Ritual Altar (Upgrade UI) has been improved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "● In card-related UI, pressing the ‘I’ key will show detailed information about the selected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "**Known Bugs**",
+     "items": [
+      {
+       "text": "● There are still flickering issues with the dungeon entrance gate and some cards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "**Regarding Development**",
+     "items": [
+      {
+       "text": "● The overall structure of the game is planned to consist of [Story Part 1 + Part 2] and [Free Play",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "modes: Easy and Hard]. (In this Early Access, a version intertwining Free Play Easy and Story Part 1 are unveiled.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 1,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0,
+    "topNew": [
+     "● Content for Story Part 1 has been included.",
+     "● The tutorial has been separated into its own mode, with additional content and",
+     "improvements."
+    ]
+   },
+   "sourceIds": [
+    "steam-2753600"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2753600/view/1794830911017602"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-25T01:43:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-2753600",
+      "checkedAt": "2026-11-12T16:50:42.712Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:42.712Z"
+  },
+  {
+   "id": "vambrace-dungeon-monarch-294339@0.2.0.7",
+   "gameId": "vambrace-dungeon-monarch-294339",
+   "displayName": "Update 0.2.0.7",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-02-09T14:26:08.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Greetings, Dungeon Monarchs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We recently released update 0.2.07 for Vambrace: Dungeon Monarch. This update takes into account the feedback we've received from gamers who've purchased the game, as well as various improvement ideas, and addresses some of the negative feedback we've received. Below are the details of the update:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "1. Finalised Save System: We've improved the save system so that you can now autosave in Freeplay mode and manually save in Story mode. We've also changed the game so that if you're in Story mode and Gameover, you can still go back to the previous stage and try again. This gives you the opportunity to try again rather than give up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2. We finally added a Skip button to video cutscenes. This allows you to move on if you've seen the video again.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "3. The first Simplified Chinese localization is now live. We've had some great responses to the game in China and requests for Chinese, so we're hoping to get more diverse gamers to come and give us feedback on the game. It's not perfect, but we'll try to get it checked by native speakers soon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "March is here! We've got a lot of improvements and additions planned for the month of March that we think you'll enjoy. We'll be improving content for upgrades and building construction, as well as releasing the full story part 1. We'll also be releasing a separate tutorial for the mod changes, so stay tuned for that. Thank you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minho,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dvora Studio",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2753600"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2753600/view/1790848102719203"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-09T14:26:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-2753600",
+      "checkedAt": "2026-11-12T16:50:42.710Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:42.711Z"
+  }
+ ],
+ "issues": [
+  {
+   "id": "f0625006efe8",
+   "text": "● There are still flickering issues with the dungeon entrance gate and some cards.",
+   "status": "open",
+   "firstReleaseId": "vambrace-dungeon-monarch-294339@0.2.09"
+  }
+ ]
+}

@@ -1,0 +1,117 @@
+{
+ "game": {
+  "id": "patrick-s-parabox-133227",
+  "igdbId": 133227,
+  "name": "Patrick's Parabox",
+  "cover": {
+   "imageId": "co2obc",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co2obc.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "arrtf",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/arrtf.jpg"
+  },
+  "ps5Release": "2023-07-26",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "patrick-s-parabox-133227@2022",
+   "gameId": "patrick-s-parabox-133227",
+   "displayName": "Update 2022",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-04-13T21:47:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi all, I've just uploaded a minor bugfix update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Tweak puzzle Open 5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Change puzzle Challenge 35 due to the solution relying on a bug which has since been fixed. (whoops!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add settings to disable player eye movement, and to disable mouse click zooming.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Bugfixes",
+     "items": [
+      {
+       "text": "For custom levels, make Unity editor project export level files consistently using periods instead of commas (if your operating system is set to a locale which uses commas in decimal numbers, please use this new version)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Minor bugfixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1260520"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1260520/view/4353300763401046061"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-04-13T21:47:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-1260520",
+      "checkedAt": "2026-11-12T09:23:56.189Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:56.189Z"
+  }
+ ],
+ "issues": []
+}

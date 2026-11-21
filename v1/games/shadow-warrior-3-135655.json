@@ -1,0 +1,1471 @@
+{
+ "game": {
+  "id": "shadow-warrior-3-135655",
+  "igdbId": 135655,
+  "name": "Shadow Warrior 3",
+  "cover": {
+   "imageId": "co45x3",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co45x3.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1gz5",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1gz5.jpg"
+  },
+  "ps5Release": "2023-02-16",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "shadow-warrior-3-135655@1.05b",
+   "gameId": "shadow-warrior-3-135655",
+   "displayName": "Hotfix 1.05b",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2022-06-23T15:48:10.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey guys, 1.05b hotfix is now live! Thank you for your feedback and support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed bug where player would lose challenge progress on death. Dying after progressing in a challenge that was started since the last checkpoint will now display correct progress in the inventory after respawning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed bug where wrong string would be displayed in the hero mode death screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1036890"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1036890/view/4474904295730193144"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-23T15:48:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-1036890",
+      "checkedAt": "2026-11-12T10:24:00.929Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:00.929Z"
+  },
+  {
+   "id": "shadow-warrior-3-135655@1.05",
+   "gameId": "shadow-warrior-3-135655",
+   "displayName": "Patch 1.05",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-06-15T11:45:03.000Z",
+   "notes": [
+    {
+     "title": "Hey everyone, we have some exciting news today!",
+     "items": [
+      {
+       "text": "The new Shadow Warrior 3 update includes a heavily requested feature, and that is the \"New Game+\" game mode!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Start any level of the game with all of your weapons in the inventory. The weapon pickups are still present in pre-defines spots on locations just like in the regular campaign, but this time around they simply add ammunition to that weapon in the Inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You also get to keep all your upgrades and progress for challenges you haven not unlocked yet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "On top of that! There are new special challenges specifically made for New Game+ that are added under the \"Challenges\" tab.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Killing Bunnies in \"New Game+\" deals damage to the player but does not apply \"The Curse\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "However in the player is permanently cursed and a special version of Oni-Hanma demons now appear on pre-defined arenas more often throughout the game and sometimes in larger numbers with one encounter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Each of these new challenges consists of description of the task that Player must perform, progress counter and the new reward called “Warrior Point”. Player obtains one Warrior Point for each Special Challenge. Claiming that point builds up the “Warrior Rank” with which you get to unlock new weapon skins, which you claim from the newly added “Rewards” section in the main menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There are many more new additions and quality of life changes, so check a look at the full changelog!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Full Patch Notes",
+     "items": [
+      {
+       "text": "Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for a bug where ledges near the grappling point in the Ancient Cock arena weren’t transitioning the player into a climbing animation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for a bug where enemies were permanently stuck in their floating animation after being struck by the Seeking Eye.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for a bug where the rabbit outfit immediately disappears from the Cursed Oni-Hanma's corpse once it is killed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for a bug where the Cursed Oni-Hanma could spawn without its rabbit outfit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for a bug where a weapon's projectiles could bounce off a Cursed Oni-Hanma's bunny ears.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for a bug where enemies frozen by a Brain Freeze would keep playing their idle animation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for a bug where the player was not killed when jumping down to the previous traversal to the left of the temple arena on the Doomsday Device level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for a bug where a permanent freeze could occur after opening and closing the Pause Menu right after using the Grapple during the Way to Motoko level tutorial.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for a bug where the next-used Swarm Launcher might stop dealing damage after discarding the previously used Swarm Launcher.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for a bug where the last surviving enemies were not highlighted properly in various arenas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for a bug where loading screen elements would not scale when changing resolution.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for a bug where using wall climbs in the Laser Shogun’s intro arena might sometimes not allow the player to climb the same objects in Motoko’s Thunderdome arena.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for a bug where an incorrect amount of available upgrade points was shown in the Chapter Select screen for the Midnight Snack level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for a bug where the notification for picking up an upgrade point was missing after loading a level via Chapter Select.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for a bug where the Hattori remained alive after performing a Finisher on it while it was also reacting to a hit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for a bug where Hattori corpses had the wrong shader applied.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for a bug where aim-assist could slow down controller movement too much.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "New Additions!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Game Plus",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Additional challenges added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New weapon skins added as rewards for completed challenges.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Quality of Life improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Discord icon to the menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Audio volume range on PC has been extended.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Last wave enemy highlight option has been added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Subtitles size option added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hide HUD option added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "VFX optimization for the Walking on Eggshells level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Asset optimization for Midnight Snack level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Blast mesh code.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Finisher indicator code.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Kill triggers mechanic.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Quality of Life improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "VFX optimization for the Walking on Eggshells level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Asset optimization for Midnight Snack level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Blast mesh code.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Finisher indicator code.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Kill triggers mechanic.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "User Interface improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for a bug where loading screen elements could blink erratically.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for a bug where leaving and re-entering Way to Motoko via the Continue option after the last",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "checkpoint of a level had been saved was causing the UI prompts to appear over inactive buttons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated Credits list.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix for a bug where subtitles size was incorrectly translated in Polish.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for a bug where we had missing spaces in control bindings when in Simplified Chinese.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for a bug where we had missing dots in some descriptions in Polish.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated text for Hero Mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 23,
+    "balance": 0,
+    "other": 30,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1036890"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1036890/view/4480533160882161930"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-15T11:45:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-1036890",
+      "checkedAt": "2026-11-12T10:24:00.928Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:00.928Z"
+  },
+  {
+   "id": "shadow-warrior-3-135655@1.03",
+   "gameId": "shadow-warrior-3-135655",
+   "displayName": "Update 1.03",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-04-13T13:03:26.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey there everyone! Today’s fortune cookie tells us there is a new patch for Shadow Warrior 3, which includes brand new Hardcore difficulty, a hard difficulty rebalance, and many more quality of life improvements. Let's give them a look!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Introducing - Hardcore difficulty!",
+     "items": [
+      {
+       "text": "On Hardcore difficulty, enemies hit even harder and use every opportunity to punish your mistakes. Resources also come in less generous numbers, so long story short Grasshopper - don't get hit and watch your aim! Last stand invulnerability timer has been reduced.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "General Balance Changes.",
+     "items": [
+      {
+       "text": "Katana fire attack projectile speed, explosion range and burn chance increased.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Katana ice attack freeze effect duration reduced.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Katana's electric attack range decreased.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Sidekicks’ damage slightly increased and spread decreased.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "HP amount restored from the Finishers now varies with Difficulty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted the Health Points of certain enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Enemy Health Points are now the same across difficulties (except bosses).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Shuriken Spitter does not register headshots anymore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Health and Ammo orbs respawn-time now varies with Difficulty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The amount of Health and Ammo restored from the orbs now varies with Difficulty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Last Stand invulnerability-time decreased.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Thorn's damage now varies with Difficulty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Kugutsu accuracy and projectile speed increased.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Laser Shogun laser now stops on enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Riot Gun range slightly decreased.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Oni Hanma's stagger delay increased.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Lifetime for Seeking Eye and Blade of Hattori have been reduced.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Removed temporary invincibility after usage of Brain Tonic.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Fixes and Improvements",
+     "items": [
+      {
+       "text": "Various Balance changes (see below).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for Achievements not unlocking in rare cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for an unwanted second attack being made with the upgraded Katana if the weapon wheel was used during an attack.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for the Shuriken Spitter not causing damage during some attacks on the Guardian of The Heart.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for a bug where the player might get locked in the Guardian of The Heart’s third phase on Hard difficulty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for Shogai not reacting to Katana hits if they are performing a melee attack at the time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for headshots on Kugutsu from Sidekicks making the ragdoll spin.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for one of the upgrade points on \"The Fast and the Furry\" disappearing after the player respawns.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for some weapons not shooting when the \"ranged attack\" input is being held while switching between guns.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various User Interface fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes for when the player could fall out of the world.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes for players leaving the gameplay space.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Additional checkpoint added to \"Doomsday Device\" level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FOV minimum value set to 80.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various progression issues fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for Thorns popping up inappropriately.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for a bug where the Thorns wouldn't wither on the final arena of \"Egg Express\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various edge case logic bugs in various levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for a bug where the player could move with the Tanuki in their hands. Shame.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed LoD and popping issues in various places.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for a rare crash when performing a Finisher on Chef Oboro Guruma.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various performance enhancements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for tutorial messages staying on screen after the player's death.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for the weapon disappearing when the weapon change was performed right before a cutscene had started.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for a bug where the player could shoot their weapons during transition cutscenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for the Grappling Hook remaining open after performing certain actions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updates for French, Spanish and Russian localization.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "(PC) Fix for the weapon disappearing when trying to choose an unobtained weapon using keyboard shortcuts.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 27,
+    "balance": 19,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1036890"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1036890/view/4353300763399720617"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-04-13T13:03:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-1036890",
+      "checkedAt": "2026-11-12T10:24:00.926Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:00.926Z"
+  },
+  {
+   "id": "shadow-warrior-3-135655@major-2022-04-13",
+   "gameId": "shadow-warrior-3-135655",
+   "displayName": "Update notes for April 13 release.",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-04-13T13:02:28.000Z",
+   "notes": [
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Added - new Hardcore difficulty!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Rebalanced Hard difficulty to make it more challenging.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various Balance changes (see below).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for Achievements not unlocking in rare cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for an unwanted second attack being made with the upgraded Katana if the weapon wheel was used during an attack.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for the Shuriken Spitter not causing damage during some attacks on the Guardian of The Heart.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for a bug where the player might get locked in the Guardian of The Heartâ€™s third phase on Hard difficulty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for Shogai not reacting to Katana hits if they are performing a melee attack at the time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for headshots on Kugutsu from Sidekicks making the ragdoll spin.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for one of the upgrade points on \"The Fast and the Furry\" disappearing after the player respawns.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for some weapons not shooting when the \"ranged attack\" input is being held while switching between guns.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various User Interface fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes for when the player could fall out of the world.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixes for players leaving the gameplay space.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Additional checkpoint added to \"Doomsday Device\" level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "FOV minimum value set to 80.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various progression issues fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for Thorns popping up inappropriately.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for a bug where the Thorns wouldn't wither on the final arena of \"Egg Express\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various edge case logic bugs in various levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for a bug where the player could move with the Tanuki in their hands. Shame.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed LoD and popping issues in various places.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for a rare crash when performing a Finisher on Chef Oboro Guruma.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various performance enhancements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for tutorial messages staying on screen after the player's death.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for the weapon disappearing when the weapon change was performed right before a cutscene had started.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for a bug where the player could shoot their weapons during transition cutscenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix for the Grappling Hook remaining open after performing certain actions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updates for French, Spanish and Russian localization.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "(PC) Fix for the weapon disappearing when trying to choose an unobtained weapon using keyboard shortcuts.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Balance changes",
+     "items": [
+      {
+       "text": "Katana fire attack projectile speed, explosion range and burn chance increased.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Katana ice attack freeze effect duration reduced.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Katana's electric attack range decreased.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Sidekicksâ€™ damage slightly increased and spread decreased.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "HP amount restored from the Finishers now varies with Difficulty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted the Health Points of certain enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Enemy Health Points are now the same across difficulties (except bosses).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Shuriken Spitter does not register headshots anymore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Health and Ammo orbs respawn-time now varies with Difficulty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The amount of Health and Ammo restored from the orbs now varies with Difficulty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Last Stand invulnerability-time decreased.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Thorn's damage now varies with Difficulty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Kugutsu accuracy and projectile speed increased.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Laser Shogun laser now stops on enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Riot Gun range slightly decreased.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Oni Hanma's stagger delay increased.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Lifetime for Seeking Eye and Blade of Hattori have been reduced.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Removed temporary invincibility after usage of Brain Tonic.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 29,
+    "balance": 18,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1036890"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1036890/view/4353300763399718165"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-04-13T13:02:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-1036890",
+      "checkedAt": "2026-11-12T10:24:00.925Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:00.925Z"
+  },
+  {
+   "id": "shadow-warrior-3-135655@1.02",
+   "gameId": "shadow-warrior-3-135655",
+   "displayName": "Update 1.02",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-03-23T18:24:57.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone! We are happy to announce that patch 1.02 is now live. The patch delivers bug fixes and performance improvements, as well as a bunch of gameplay improvements based on community feedback!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are actively reading and considering all the feedback you guys have been kindly providing us with via our social platforms like Discord and the Steam forums,thank you and keep it up!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here is the full changelog and happy katana slashing!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch Notes",
+     "items": [
+      {
+       "text": "Fixed situation where weapon ammo count could be incorrect on pickup.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed default controller sensitivities .",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Aim Assist improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed it so that Katana Elemental attacks can be used on triggers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Level optimisations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various Improved performances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various audio fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a rabbit's curse.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Stopped some enemies dodging freezing barrels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a few instances of enemies getting stuck in the environment",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a few places where the player could get stuck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where Wang could be armless if the Grapple Hook tutorial was reloaded.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Tanuki sticking around when he should have moved on.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "More Improvements on the French Localisation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed missing Japanese translation in menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with the ice raft for machines running the game at more than 180fps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Various level and collision fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the bad behaviour of a number of demons in certain circumstances.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made wall running more reliable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved viciousness of Seeking Eye on certain enemies (that were being overlooked).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved character model LoDs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Better stability when resuming title.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Controller rumble fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 10,
+    "balance": 0,
+    "other": 14,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1036890"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1036890/view/4258723269505218528"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-03-23T18:24:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-1036890",
+      "checkedAt": "2026-11-12T10:24:00.924Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:00.924Z"
+  },
+  {
+   "id": "shadow-warrior-3-135655@major-2022-03-04",
+   "gameId": "shadow-warrior-3-135655",
+   "displayName": "Shadow Warrior 3 Update in the Works",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-03-04T17:03:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It's been a very exciting period of time for us at Flying Wild Hog team with the release of Shadow Warrior 3. We would like to let you know that our job with Shadow Warrior 3 is not done!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've been watching you play our game and taking notes from your feedback that you guys are so gladly providing on our social networks. We are working on a patch that will address the issues you've been reporting on and it will be available soon on all platforms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are extremely grateful for what you guys have been doing for us, please keep on doing it! We have also opened our new Discord community in which we would love to have you in and hear from you!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Best Regards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Flying Wild Hog team.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1036890"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1036890/view/4247462367434686648"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-03-04T17:03:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-1036890",
+      "checkedAt": "2026-11-12T10:24:00.923Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:00.923Z"
+  }
+ ],
+ "issues": []
+}

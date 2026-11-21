@@ -1,0 +1,883 @@
+{
+ "game": {
+  "id": "bunny-mahjo-111384",
+  "igdbId": 111384,
+  "name": "Bunny Mahjo",
+  "cover": {
+   "imageId": "co3mnc",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co3mnc.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "armn2",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/armn2.jpg"
+  },
+  "ps5Release": "2024-02-20",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "bunny-mahjo-111384@7.1",
+   "gameId": "bunny-mahjo-111384",
+   "displayName": "Update 7.1",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-02-24T10:56:26.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "fixed bug when you can match one tiles without the second this could prevent you from completing the puzzle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "added autocompletion if only one tile left (just in case)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "added some visual improvements to the UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "now when you unlock secret puzzle it will be first in the list for easier navigation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "added version to the menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "fixed that you cannot open pause in splitscreen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed some inner errors in splitscreen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 3,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-968470"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/968470/view/4246335832507778682"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-02-24T10:56:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-968470",
+      "checkedAt": "2026-11-11T21:57:43.266Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:43.266Z"
+  },
+  {
+   "id": "bunny-mahjo-111384@post-2019-07-09",
+   "gameId": "bunny-mahjo-111384",
+   "displayName": "Linux Support",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2019-07-09T22:26:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We glad to announce that Bunny Mahjo now can be run on Linux OS.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Have a fun!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-968470"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/968470/view/2436926440611658080"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-07-09T22:26:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-968470",
+      "checkedAt": "2026-11-11T21:57:43.265Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:43.265Z"
+  },
+  {
+   "id": "bunny-mahjo-111384@7",
+   "gameId": "bunny-mahjo-111384",
+   "displayName": "Update 7",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-07-04T21:37:09.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "fixed bug when you can't return from shuffle menu after opening and closing the pause menu. Now you cannot open pause menu if there is anything but main HUD",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed some localization issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "adjusted toggle music button",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 1,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-968470"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/968470/view/2436926440593466354"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-07-04T21:37:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-968470",
+      "checkedAt": "2026-11-11T21:57:43.264Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:43.264Z"
+  },
+  {
+   "id": "bunny-mahjo-111384@6",
+   "gameId": "bunny-mahjo-111384",
+   "displayName": "Update 6",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-06-13T17:35:07.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Split Screen mode came to Bunny Mahjo!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enjoy playing mahjong on your couch with all your family or friends.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Look for matching pairs together!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2 controllers required.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also added localization to Chinese, Korean and Japanese.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-968470"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/968470/view/2408777766638014714"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-06-13T17:35:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-968470",
+      "checkedAt": "2026-11-11T21:57:43.264Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:43.264Z"
+  },
+  {
+   "id": "bunny-mahjo-111384@5",
+   "gameId": "bunny-mahjo-111384",
+   "displayName": "Update 5",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-02-19T08:59:00.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "The game is translated to german now",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If your operating system is in one of the supported languages then the game will start in your language automatically",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If not (or you want to change language) go to your steam library, right click Bunny Mahjo, select Properties. On the tab General there is a button \"Set launch options\". Press it and in the window type: \"culture=\"your language\"\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "culture=\"en\" (for english)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "culture=\"ru\" (for russian)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "culture=\"fr\" (for french)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "culture=\"de\" (for german)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Other",
+     "items": [
+      {
+       "text": "fixed some localized text didn't fit the screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed the problem with shuffle menu when host and client both had it opened and after the host shuffled the tile the client menu remained on screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-968470"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/968470/view/3702426087255382503"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-02-19T08:59:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-968470",
+      "checkedAt": "2026-11-11T21:57:43.263Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:43.263Z"
+  },
+  {
+   "id": "bunny-mahjo-111384@4",
+   "gameId": "bunny-mahjo-111384",
+   "displayName": "Update 4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-02-05T12:56:56.000Z",
+   "notes": [
+    {
+     "title": "We localized the game to the following languages",
+     "items": [
+      {
+       "text": "russian",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "french: If your operating system is in one of these languages than the game will start in your language automatically: If not (or you want to change language) go to your steam library, right click Bunny Mahjo, select Properties. On the tab General there is a button \"Set launch options\". Press it and in the window type: \"culture=\"your language\"\": culture=\"en\" (for english): culture=\"ru\" (for russian): culture=\"fr\" (for french): If you find any mistakes in translation feel free to let us know in the steam discussians or e-mail and we'll fix it ASAP: P.S.: more languages coming soon: P.P.S.: achievements and the game page are localized too",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-968470"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/968470/view/2461683368377580984"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-02-05T12:56:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-968470",
+      "checkedAt": "2026-11-11T21:57:43.262Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:43.262Z"
+  },
+  {
+   "id": "bunny-mahjo-111384@3.1",
+   "gameId": "bunny-mahjo-111384",
+   "displayName": "Hotfix 3.1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2019-01-18T20:11:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This hotfix fixed the issue with the expert achievement. Now if you have all puzzles completed but has no expert achievement you will be granted it when entering the main puzzle level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-968470"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/968470/view/2426778849020572372"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-01-18T20:11:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-968470",
+      "checkedAt": "2026-11-11T21:57:43.262Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:43.262Z"
+  },
+  {
+   "id": "bunny-mahjo-111384@3",
+   "gameId": "bunny-mahjo-111384",
+   "displayName": "Update 3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-01-14T13:55:19.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added 2 more audio tracks to the background music (now there are 3 tracks). They will be chosen randomly when the previous ends",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "minor fixes and code optimization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-968470"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/968470/view/2711631078228143733"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-01-14T13:55:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-968470",
+      "checkedAt": "2026-11-11T21:57:43.261Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:43.261Z"
+  },
+  {
+   "id": "bunny-mahjo-111384@2",
+   "gameId": "bunny-mahjo-111384",
+   "displayName": "Update 2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2018-12-30T17:28:49.000Z",
+   "notes": [
+    {
+     "title": "Happy New Year!",
+     "items": [
+      {
+       "text": "We added 2 new puzzles with achievements nad its leaderboards. They will be unlock after completing the Lock puzzle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0,
+    "topNew": [
+     "We added 2 new puzzles with achievements nad its leaderboards. They will be unlock after completing the Lock puzzle."
+    ]
+   },
+   "sourceIds": [
+    "steam-968470"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/968470/view/2417769111320303180"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2018-12-30T17:28:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-968470",
+      "checkedAt": "2026-11-11T21:57:43.260Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:43.261Z"
+  },
+  {
+   "id": "bunny-mahjo-111384@1.2",
+   "gameId": "bunny-mahjo-111384",
+   "displayName": "Update 1.2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2018-12-07T13:21:24.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed you cannot move untill run after starting new game without victory",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed message \"wait till host starts a new game\" appears when you're host, now only clients will see it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-968470"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/968470/view/2416641943175872279"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2018-12-07T13:21:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-968470",
+      "checkedAt": "2026-11-11T21:57:43.260Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:43.260Z"
+  },
+  {
+   "id": "bunny-mahjo-111384@1.1",
+   "gameId": "bunny-mahjo-111384",
+   "displayName": "Update 1.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2018-11-15T20:27:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "fixed the problem that the puzzle 101 results were in the leaderboard for the Crown puzzle",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "now the 101 puzzle has its own leaderboard",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-968470"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/968470/view/3316234163915093199"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2018-11-15T20:27:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-968470",
+      "checkedAt": "2026-11-11T21:57:43.259Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:43.259Z"
+  },
+  {
+   "id": "bunny-mahjo-111384@1",
+   "gameId": "bunny-mahjo-111384",
+   "displayName": "Update 1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2018-11-12T10:37:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "added options to join friends. Now you can see if any friends are playing Bunny Mahjo and you can join them if they play alone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "added the number of the left matching pairs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "added the name of the player to the hall of fame (players sees their own hall of fames with their own achievements)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "fixed the leaderboard showed the last puzzle best result after completing the custom puzzle. Now there is no result.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed the achievements with no hints don't open when the last tile was pressed by the client-bunny",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed the issue with the loading best results at the end of the match from the save in some puzzles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed that after the client leaves the party the information about him stayed in the hud",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Other",
+     "items": [
+      {
+       "text": "reduced the sound of effects of connecting tiles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "reduces the sound of victory",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "reduces the time of showing the system message to 4 s",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "bunny's speed slightly increased",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "there won't be the string about best result in custom puzzles anymore",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 4,
+    "balance": 1,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-968470"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/968470/view/2423394806010859022"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2018-11-12T10:37:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-968470",
+      "checkedAt": "2026-11-11T21:57:43.259Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:43.259Z"
+  }
+ ],
+ "issues": []
+}

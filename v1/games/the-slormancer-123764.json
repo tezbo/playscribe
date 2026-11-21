@@ -1,0 +1,807 @@
+{
+ "game": {
+  "id": "the-slormancer-123764",
+  "igdbId": 123764,
+  "name": "The Slormancer",
+  "cover": {
+   "imageId": "co9ohn",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co9ohn.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar476k",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar476k.jpg"
+  },
+  "ps5Release": "2026-11-05",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "the-slormancer-123764@1.0.2",
+   "gameId": "the-slormancer-123764",
+   "displayName": "Patch 1.0.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-07-09T12:03:27.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The 1.0.2 patch is now live on the Experimental Branch. Mostly focused on fixing bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Just in case I've broken something while fixing another, this patch will stay on the Experimental Branch for a few days, until I'm sure that everything is working properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changes and Additions",
+     "items": [
+      {
+       "text": "Added a new setting called \"Dynamic Casting\":",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Enabled: The Skill is cast at the current position of the cursor when the animation ends. This is the default setting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Disabled: The Skill is cast at the position of the cursor at the moment of activation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bugs Fixes",
+     "items": [
+      {
+       "text": "Important",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the issue preventing the game to start at fullscreen (I think).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "General",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Defeating an Obelisk of Illusion should now immediately grant 3 Choices for the next Challenge in The Great Forge.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Life and Mana Lock greyed parts should now be displayed properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Gravity Cataclysm should now properly slow Projectiles with a modified Projectile Speed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ghosts (Suffering Souls) can now be dodged.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ancestral Strikes from DoTs can now properly trigger Ancestral Effects (such as Gazloka's Conquest)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "War Chests should no longer spawn when switching classes or loading other saves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Achievements tracking Maxxed out Skills will no longer be removed once they have been awarded if players rank down a Skill. Same goes for Ancestral Skills and Attributes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Achievements counting Floors in specific Environments will now also count Floor done inside The Netherworld.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cataclysm : Reconstruction should now work properly and the timer should be reset on every hit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "On the Netherworld Map, Expeditions completed by other classes should now appear with the proper gold border.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "\"Map Transparency\" is now called \"Map Opacity\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Damage Numbers should now appear at the correct location even when using higher resolutions such as 2k and 4k.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Keybinds should now appear at the proper size when using higher resolutions such as 2k and 4k.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Automatically picking up lots of loot (and materials) should no longer slow the game down (at all).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Influence gained should now display the proper value on the result menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare crash occuring when displaying Enemies Buffs Icons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare crash occuring when exiting the Blacksmith.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bunch of typos.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Attributes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Willpower 45 should now grant the proper amount of Minion Increased Damage per minion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Attributes with a condition such as \"less than X% Mana\" or \"less than Y% Life\" will now trigger when Life / Mana is less or equal. This includes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Determination 60.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Toughness 60.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Savagery 30.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Willpower 15.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Dexterity 45.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ancestral Legacy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Elemental Synergy should now count every equipped Aura.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Life and Mana per Second Skills should no longer display an incorrect Life / Mana Cost value when Elemental Swap is toggled on.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Elemental Pact is now properly set as a Conversion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "One Last Round now properly increase the stack limit of Enfeeble.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Power Surge now interracts properly will Skills scaling on Mana on Hit such as Arcane Missile / Voracious Missile.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "To prevent people from going crazy, The Judge of Light's sound will stop looping after a few seconds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Comfort Zone should now work properly with Indirect Damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Mighty Knight",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Grappling Hook / Commandeer should now have the proper Mana Cost.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Grappling Hook / Commandeer should no longer work on Obelisks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Deflect should now properly deflect Projectiles from Light Totems.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ascension / The Flying Man should no longer remove \"cooldown debuffs\" such as Reaper of the Bloodthirsty Beast passive effect.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Fierce Huntress",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Smoke Screen / Fairy Dust should now be properly removed when Smoke Screen ends.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Smoke Screen's damage buff should now work properly with Heavy Explosive Projectile.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ravenous Daggers should now properly deal Additional Damage when being merged.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Using Steel Manipulator and Amulet of Transferance should no longer mess with Immortal Arrow's tooltip.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fist of the Wild / Double Palm should now properly target two different enemies.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Void Arrow / Netherfire from the Void can now properly deal damage when dealing only Elemental Damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Self-Control now reads: \"You have +25% Attack Speed. While Tormented or Delighted, this effect is disabled.\" (On top of making it clearer, this is also quite a buff)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "While using Click to Move, Tumble should now always be cast toward your cursor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Wandering Arrows should no longer be visible when not attacking inside The Netherworld.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Mischievous Mage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Attunement Pulse / Reshape : Should now properly grant the \"Projectile\" tag to Attunement Pulse (and properly interact with effects such as Drum-Reaper of War).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Attunement Pulse / Elemental Weakness should now properly increase Elemental Weakness.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Orb of the Arcane Master / Drunken Master: Should now properly cast Additional Projectiles granted from % Additional Projectiles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Arcane Clones now also benefit from your Attack Speed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Chrono-Puncture / Chrono-Speed now properly displays Cooldown Reduction instead of Attack Speed, and now properly grants 2% per stack instead of 3%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Arcane Breach / Arcane Explosion should no longer deal insane damage when casting Arcane Breach on top of an Orb of the Arcane Master.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Orb of the Arcane Master / Drunken Master should now cast the proper amount of projectiles no matter the Legendary effect or Reaper used.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Arcane Clones should now work properly with Drum-Staff of War.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Slorm Reapers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Equipping a Slorm Reaper will now reset Shield back to 0.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reaper of the Untouchable One: Untouchable Dash should now always trigger when the key is pressed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reaper of Benediction should now heal the proper amount of Life.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Altior, Arah's Perfect Reaper should now properly benefit from Aura Increased Effect.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Primordial Reaper of the Many's Life Projectile now deal the proper damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Heals from Reaper of Benediction should no longer be dodgeable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Vengeance, Ohm Agad's Cursed Reaper should now properly apply its Max Life buff.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reaper of the Many: Orbs of Life should now properly set damage to 0.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reaper of Resonating Thunder should now properly calculate Ancestral Strike Chance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Legendaries",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Avg Skill Damage when using Steel Manipulator and Amulet of Transferance should now be properly calculated.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Arnaldow's Shimmering Pauldrons should now behave properly when Area Rapid Cast is off.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Celestial Shackles should now properly benefit from Aura Increased Effect.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Celestial Shackles should no longer toggle itself off when leaving a map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Chest of Immense Vitality should now properly benefit from Aura Increased Effect.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ultrasonic Bracers should now properly benefit from Aura Increased Effect.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Immortal Grasp should now heal based on Skill and Elemental Damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The Awoken: Reaching Tormented by using a Support Skill will no longer trigger it twice.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Gloves of the Unleashed Surge should no longer trigger when casting Support Skills.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Armor of the Unstoppable Shaman will now trigger the Mini-Keeper.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fulgurorn's Might should now properly trigger every 0.5 second.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Ultrasonic Bracers should no longer toggle itself off when leaving a map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Boots of Extreme Confidence should now always work regardless of the direction.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Stacks from Ring of the Blood Seeker should now be properly removed when unequipping the Ring.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Damasius Awareness should now work properly with Indirect Damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Aiming Assistance Pads should now work properly with Indirect Damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Lowey's Wave of Fervor should now work properly with Indirect Damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Sahrusiel's Barrage: The Holy Spirit should no longer receive damage and / or die.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Steel Manipulator is now properly set as a Conversion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Skyward Guardian Girdle's Celestial Protection should now work properly (and no longer disappear after 5 seconds).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Midos' Collector's Bracers should no longer slow the game down.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Inextricable Waistguard should no longer work on Bosses.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Edit: 1.0.2c",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash occuring with The Fierce Huntress using Poison.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the Discord link in the menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Achievements linked to Slormites should no longer count Slormites that are being transfered back from The Slormitizer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Coward's Belt should now work properly with Vengeance, Ohm Agad's Cursed Reaper.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Rune of the Shaman should now properly display Wood Sticks instead of Mighty Swing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cheers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 100,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0,
+    "topNew": [
+     "Added a new setting called \"Dynamic Casting\":",
+     "Enabled: The Skill is cast at the current position of the cursor when the animation ends. This is the default setting.",
+     "Disabled: The Skill is cast at the position of the cursor at the moment of activation."
+    ]
+   },
+   "sourceIds": [
+    "steam-1104280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1104280/view/1803527891926895"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-09T12:03:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-1104280",
+      "checkedAt": "2026-11-12T15:41:06.878Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:06.878Z"
+  },
+  {
+   "id": "the-slormancer-123764@1.0.1e",
+   "gameId": "the-slormancer-123764",
+   "displayName": "Hotfix 1.0.1e",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-06-12T09:15:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Don't mind me, I'm fixing a few details.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "One is important though: The Final cutscene after defeating The Slormancer should now be properly played.: Since there were no way for me to figure out if a player saw said cinematic or not, it will be trigerred once you log into the game if you've defeated The Slormancer even if you saw it once.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dark Ritual should now properly cause Skills to cost Life.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thundestruck should now deal the proper amount of damage when triggered with Blazingspark Amulet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Holding Left Mouse Button while the Next Wave is automatically triggered in the Great Forge should no longer register when the button is released.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1104280"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1104280/view/1802354289557069"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-12T09:15:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-1104280",
+      "checkedAt": "2026-11-12T15:41:06.877Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:41:06.877Z"
+  }
+ ],
+ "issues": []
+}

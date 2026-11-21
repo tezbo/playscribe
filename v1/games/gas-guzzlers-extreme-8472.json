@@ -1,0 +1,264 @@
+{
+ "game": {
+  "id": "gas-guzzlers-extreme-8472",
+  "igdbId": 8472,
+  "name": "Gas Guzzlers Extreme",
+  "cover": {
+   "imageId": "co2d29",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co2d29.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "arlc7",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/arlc7.jpg"
+  },
+  "ps5Release": "2021-10-19",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "gas-guzzlers-extreme-8472@1.8",
+   "gameId": "gas-guzzlers-extreme-8472",
+   "displayName": "Patch 1.8",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2016-06-01T14:28:18.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "----------------------------------------------------------------------------------------------------",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Version 1.8.0.0: ----------------------------------------------------------------------------------------------------",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New DirectX 11 rendering engine (DirectX 9 rendering is available as different branch)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "5-10 times faster map loading times",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lots of optimizations across the engine: (new animation system, new math library, new binary mesh format, new texture loader)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Data optimizations. Game is 1 GB smaller for the same content",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rendering optimizations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved probe reflection quality and ambient light",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed frame drops regarding particles at start of the race",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "More stable FPS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Faster and higher quality SSAO",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Bloom bug on AMD graphics cards",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed bug with human player applying too much damage and taking 0 damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Engine switched to Visual Studio 2015: More information here: http://steamcommunity.com/app/243800/discussions/0/358417461601693479/",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-243800"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/243800/view/3819571572130565008"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2016-06-01T14:28:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-243800",
+      "checkedAt": "2026-11-12T07:23:14.861Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 2,
+   "updatedAt": "2026-11-12T07:23:14.862Z"
+  },
+  {
+   "id": "gas-guzzlers-extreme-8472@1.07",
+   "gameId": "gas-guzzlers-extreme-8472",
+   "displayName": "Update 1.07",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2015-12-21T14:12:04.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi everyone !",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The new 1.07 Gas Guzzlers Extreme patch is available now !",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As a reminder, please don't forget to update and restart all servers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The full list of bug fixes and features implemented in this patch is:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a new Christmas map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Christmas stickers for all cars",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a bug with the Katyusha model appearing bigger than usual",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the game crashed whilst in the zombie game mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug with custom team car paint in multiplayer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The first wave can be specified in multiplayer zombie modes for the dedicated server launcher",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 3,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-243800"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/243800/view/377538916277079412"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2015-12-21T14:12:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-243800",
+      "checkedAt": "2026-11-12T07:23:14.860Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:14.854Z"
+  }
+ ],
+ "issues": []
+}

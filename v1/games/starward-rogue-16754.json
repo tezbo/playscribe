@@ -1,0 +1,246 @@
+{
+ "game": {
+  "id": "starward-rogue-16754",
+  "igdbId": 16754,
+  "name": "Starward Rogue",
+  "cover": {
+   "imageId": "co2d1y",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co2d1y.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "argr5",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/argr5.jpg"
+  },
+  "ps5Release": "2024-01-25",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "starward-rogue-16754@2.601",
+   "gameId": "starward-rogue-16754",
+   "displayName": "Update 2.601",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-03-03T23:52:46.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "New build! https://wiki.arcengames.com/index.php?title=Starward_Rogue:Post-1.5_Release_Notes#Version_2.601_.28XInput_Fix.29",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "This one fixes a memory leak that was part of XInput.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-410820"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/410820/view/4247462367432080475"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-03-03T23:52:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-410820",
+      "checkedAt": "2026-11-12T10:24:51.297Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:51.298Z"
+  },
+  {
+   "id": "starward-rogue-16754@1.507",
+   "gameId": "starward-rogue-16754",
+   "displayName": "Update 1.507",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2017-01-10T20:40:17.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone, Craig here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The “Difficulty Smoothing” update is now out! For those not aware, the update prior to this one was huge, adding in a ton of new perks and also altering the balance significantly (for reasons I’ll go into below). Unfortunately, the balance was a bit too much on the difficult side, and this update should hopefully address that.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Quick Background",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Before I go into the changes for this update, let me first explain why the changes for the previous update were needed. For a good while now, overly strong damage boosting upgrades have had an unhealthy grip on the game, causing the following problems:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "1) The ability to stack upgrades to such a degree that the end game would become trivial. There have been many times when we’ve seen players tear through the final super boss of the game in a matter of seconds, and this was not a rare occurrence. It’s fine to hit an occasionally super powerful run that allows the player to do this, but it was happening way too often.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2) Having damage bonus numbers in the region of 50% to 75% for perks would mean that there would be no real choice for the player to make when choosing them. A player is always going to choose 50% damage over 2 extra missiles or a 25 bonus to energy, so coming up with perks to compete with those damage numbers would be very difficult.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "3) As a result of the out-of-control damage bonuses, in the event that a player would get unlucky with RNG, and not encounter any, the game would become a very hard slog. Defensive builds could not really be used without the player intentionally wanting to handicap themselves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "4) In order to keep the game challenging so that players weren’t tearing through the end game, we would have to keep upping the HP on late game enemies which would make defensive builds even more worthless. It was a bad cycle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Our Solution In The Last Update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In order to break free from the stranglehold of the above challenges so that other parts of the game -- like perks -- could flourish, we had to reduce the amount damage bonuses would give you. Then we needed to try and tone down the enemy HP so that there was a bit more of a balance between damage and defense.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We did this, and we knew that this might cause some short-term balance issues. We tried to mitigate this by running a few betas over the course of a couple of months, but unfortunately it seems that wasn’t enough. The build was indeed certainly much too on the difficult side, and overly tanky in particular. For a few folks, we know that was super duper frustrating, so thanks for bearing with us on that and also helping us find the trouble spots.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "So What's In This Update?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now we finally get to the changes for this update. :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As a result of feedback since the build went out, we’ve managed to adjust a lot in order to get the current build much more nicely balanced. Here are the major changes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "1) Enemy HP has been reduced across the board by 25%. From our play-testing, this seems to have worked well and the game is in a much nicer place now. Far less tanky, and runs are a fair bit shorter too.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2) Damage bonuses have been adjusted back up somewhat. I went a little bit too heavy with the nerfbat on these and so most have been buffed significantly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "3) Health pickup frequency has been increased, and we have also added two new variants of pickup -- so it’s now possible to grab health packs worth 2 and 3 health. These also now appear in the cheap item shop, so you now have more options to spend your credits on.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "4) Specific overly-dangerous or tanky enemies have been adjusted. Many enemies on floors 6 and 7 had been pushed up too much in difficulty as a result of trying to compensate for the previously out-of-control damage boosts; so now they needed to be nerfed a fair bit. Rusted Lumiflare in particular!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "5) Quite a few rooms have been adjusted to reduce enemy density. A few of these rooms were just too crowded, making them unusual difficulty spikes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "So that’s it, everyone! We hope that this build proves to be a lot nicer in terms of difficulty. Thanks to everyone for their feedback and patience while we were fixing this up. We wouldn’t be able to keep improving the game without your help, so it’s really appreciated. Thanks!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 20,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-410820"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/410820/view/4249665521683309068"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2017-01-10T20:40:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-410820",
+      "checkedAt": "2026-11-12T10:24:51.295Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:51.294Z"
+  }
+ ],
+ "issues": []
+}

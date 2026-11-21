@@ -1,0 +1,413 @@
+{
+ "game": {
+  "id": "carrier-deck-40566",
+  "igdbId": 40566,
+  "name": "Carrier Deck",
+  "cover": {
+   "imageId": "co22v6",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co22v6.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "arlkb",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/arlkb.jpg"
+  },
+  "ps5Release": "2025-06-05",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "carrier-deck-40566@post-2025-01-23",
+   "gameId": "carrier-deck-40566",
+   "displayName": "Crew Texture Fix",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-01-23T07:14:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed the Crew textures not displaying",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-580720"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/580720/view/1789580505297359"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-23T07:14:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-580720",
+      "checkedAt": "2026-11-11T21:57:55.647Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:55.647Z"
+  },
+  {
+   "id": "carrier-deck-40566@1.1.2",
+   "gameId": "carrier-deck-40566",
+   "displayName": "Update 1.1.2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2017-07-07T11:41:40.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Balanced survival Mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Achievements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various landing bugs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various mission queue bugs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-580720"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/580720/view/2078825132635434426"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2017-07-07T11:41:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-580720",
+      "checkedAt": "2026-11-11T21:57:55.645Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:55.645Z"
+  },
+  {
+   "id": "carrier-deck-40566@1.1.1",
+   "gameId": "carrier-deck-40566",
+   "displayName": "Update 1.1.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2017-06-30T16:25:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Improved feedback for invalid launches",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved mission launching mechanism where missions can be launched without needing to select units",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changed cargo missions to immediately add Logistics mission on landing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Missions no longer have to be launched in their order in the mission queue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced number of slots in the mission queue to 3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Missions in queue show chevrons when the mission is ready to launch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Aircraft can turn around on elevators",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed unnecessary loadout options from loadout radial on Greyhound, Hawkeye and Osprey",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved damage effects on units",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changed Abort Mission behaviour to be a once off deferral rather than ditching the aircraft and launching a rescue mission",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed mouse clicks not being recognised on some occasions",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "HOW TO UPDATE TO V1.1.1 Open Beta",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In your Steam Library, right-click \"Carrier Deck\" and select “Properties.”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Select the “Betas” tab.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Beta tag \"Beta - Open Beta\" will appear in the Beta dropdown list. Select it and close the Properties window.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steam should now update \"Carrier Deck\" to the beta version.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If the update does not start automatically, launch the game to force the update process or...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Select \"Local Files\" tab",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Select \"Verify Intergrity of Game Files\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 0,
+    "balance": 1,
+    "other": 14,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-580720"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/580720/view/2564086801865193219"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2017-06-30T16:25:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-580720",
+      "checkedAt": "2026-11-11T21:57:55.644Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:55.643Z"
+  },
+  {
+   "id": "carrier-deck-40566@1.0.2",
+   "gameId": "carrier-deck-40566",
+   "displayName": "Patch 1.0.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2017-06-22T05:31:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added clear feedback when player attempting an invalid launch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reduced sensitivity of the click-and-hold radial menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased the amount of time a traffic jam has to get unstuck before returning: to previous positions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed South Pacific mission 01 failing after Carrier is hit once",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed submarine bug in North Atlantic mission 04",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Stopped rescue missions jumping the mission queue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Renamed Cancel button in camera presets to Deck for clarity",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lt level in Quick and Survival game modes modified for a more 'paced' game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Alt-Tabbing removing unit colors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduced Bloom Effect on explosions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 3,
+    "balance": 3,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-580720"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/580720/view/1980870483554626666"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2017-06-22T05:31:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-580720",
+      "checkedAt": "2026-11-11T21:57:55.642Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:55.642Z"
+  }
+ ],
+ "issues": []
+}

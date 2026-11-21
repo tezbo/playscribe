@@ -1,0 +1,693 @@
+{
+ "game": {
+  "id": "showgunners-210947",
+  "igdbId": 210947,
+  "name": "Showgunners",
+  "cover": {
+   "imageId": "cocvv5",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/cocvv5.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1qsd",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1qsd.jpg"
+  },
+  "ps5Release": "2026-02-19",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "showgunners-210947@1.1.1",
+   "gameId": "showgunners-210947",
+   "displayName": "Hotfix 1.1.1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-07-24T14:52:40.000Z",
+   "notes": [
+    {
+     "title": "Greetings contestants!",
+     "items": [
+      {
+       "text": "We were thrilled to see your enthusiasm for embracing our new, free DLC \"Security Breach\"!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’re super hyped that you are enjoying the new challenges and experiences it brings to the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some of you experienced the \"Abandoned Housing Block\" elevator bug.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've been working during the weekend to identify the root cause of the issue and create an effective solution.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We would like to send a big “thank you” to all the players who took the time to send us logs and saves, aiding us in locating the bug and finding a resolution swiftly. ːsteamhappyː",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks to your support, we implemented the 1.1.1 hotfix to get your Showgunners experience back on track.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you are still experiencing this bug, please contact us through support@artificer.com or our Discord channel: https://discord.gg/EhtbdgbdBa",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It would be mighty helpful if you attached a dxdiag log, since in some cases the issue may result from specific hardware/driver setups.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "How to get access to dxdiag log",
+     "items": [
+      {
+       "text": "1. While on desktop, click on the Windows icon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2. Search for \"dxdiag\" and launch the tool.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "3. To the right, at the bottom of the pop-up window, click \"Save all information...\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "4. Save the log as \".txt\" file and send it us.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1155330"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1155330/view/5124584051984627200"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-07-24T14:52:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-1155330",
+      "checkedAt": "2026-11-12T10:24:09.054Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:09.055Z"
+  },
+  {
+   "id": "showgunners-210947@1.0.3",
+   "gameId": "showgunners-210947",
+   "displayName": "PATCH 1.0.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-06-06T16:08:38.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Greetings contestants!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Today, we are happy to announce the release of Patch 1.0.3, which includes several bug fixes and enhancements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Our team has worked hard to cover as much ground as possible based on your continuing support, and please keep the feedback coming! We are excited to keep refining and expanding Showgunners with your help.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here are the highlights of the latest fixes included in Patch 1.0.3:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Crucial bugfixes",
+     "items": [
+      {
+       "text": "Fix attempt for crashes occurring in the inventory for some users.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues with displaying inventory videos that occurred for some users.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Other bugfixes",
+     "items": [
+      {
+       "text": "Fixed incorrect display of Marcus' healing smoke range in areas with varied elevation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the display resolution reverting to the incorrect default setting upon restarting the title if the display mode is set to fullscreen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed AOE enemy healing in Horror Hospital level breaking down after save/load.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed AOE enemy healing in Horror Hospital not removing the bleeding buff.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed the risk of not completing the optional objective in the Hecatomb at the Catacombs level despite player actions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added Omega Guard to the defenders list before the final tactical level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The health bar of enemies now properly displays the damage preview done by Marcus' AOE explosive shots.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "See you in the next episode!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 10,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1155330"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1155330/view/5151601211244745664"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-06T16:08:38.000Z",
+      "verification": "official",
+      "sourceId": "steam-1155330",
+      "checkedAt": "2026-11-12T10:24:09.054Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:09.054Z"
+  },
+  {
+   "id": "showgunners-210947@1.0.2",
+   "gameId": "showgunners-210947",
+   "displayName": "Patch 1.0.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-05-24T16:13:46.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Contestants!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The 1.0.2 patch for Showgunners is live!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are incredibly grateful for your warm support during these last few weeks. The game keeps receiving a lot of love from you, and we want to send our love right back at you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For this patch, we took our time to dig deeper into the backlog of bugs and feedback you shared with us. We focused on delivering a bigger batch of fixes that address some of the nastier buggos reported by some players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We sincerely hope this patch can boost your gameplay experience even more and prepare you for some exciting future updates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please enjoy the game in its updated shape. As always, we'd love to hear more from you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Once again, thank you so much for your awesome support. Have fun!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Artificer team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crucial bug fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the freezing season wrap-up Gala cutscene after prolonged gameplay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed game sometimes getting partially unresponsive after Tybalt's Body Swap ability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed player being unable to proceed through the first fan due to saving game before the interaction",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Additional sequence fixes to Horror Hospital for issues that could block progress or cause crash",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the crash after killing last enemy unit with an Overwatch shot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed blocking by Scarlett standing on top of the Rejuvenation Chamber bed after a save/load",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed getting stuck behind the shop station near the ferris wheel in the Amber Harbor episode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the bug with auto-skipping cinematics and cutscenes due to skipping previous cutscenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Other bug fixes",
+     "items": [
+      {
+       "text": "Scarlett's Assault ability now deals damage to generators and similar object in a visible manner",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the container and acid disappearing in one of Amber Harbor puzzles after save/load",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added the missing autosaves in the Resting Area after using the Rejuvenation Chamber",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed the risk of player character dying at the end of one of Disaster Area puzzles do to following the active character through traps",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the wrong sequence of enemy reinforcements preventing player from reacting in some levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the risk of Scarlett getting stuck on stairs near the first lootbox in the Industrial Zone",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed Ronin from the enemy list of one of optional arenas in Industrial Zone",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Bridge triggered by destroying drones in the Old Quarter no longer pushes Scarlett away",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added the missing note about weapon being exclusive for Scarlett to the Letal fame reward description",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Additional fixes to resolution issues when UI scale > 100% in Windows",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed the possibility to get outside the level near the second fan in Industrial Zone",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Improvements",
+     "items": [
+      {
+       "text": "Improved the wording of side objectives in Horror Hospital",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Small contextual fixes to translations in German localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Tweaked the Marty's melee attack animation so that it connects properly with the target",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 18,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0,
+    "topNew": [
+     "Improved the wording of side objectives in Horror Hospital",
+     "Small contextual fixes to translations in German localization",
+     "Tweaked the Marty's melee attack animation so that it connects properly with the target"
+    ]
+   },
+   "sourceIds": [
+    "steam-1155330"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1155330/view/5151600576584866462"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-24T16:13:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-1155330",
+      "checkedAt": "2026-11-12T10:24:09.053Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:09.053Z"
+  },
+  {
+   "id": "showgunners-210947@1.0.1",
+   "gameId": "showgunners-210947",
+   "displayName": "Patch 1.0.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2023-05-09T16:00:11.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Greetings contestants!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We arehere to announce the release of the very first patch for Showgunners!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The game was released just a few days ago, and we've been thrilled with the positive reception from players, reviewers, and streamers alike.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Your feedback and support have been invaluable to us, and we feel so grateful when watching and reading about your experiences with the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've been closely monitoring the community's feedback and know that a few bugs have been identified since the game's launch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As a result, we at Artificer have been working day and night to address these issues, and we're happy to report that the first patch is now live!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "These changes will help make Showgunners even more enjoyable for everyone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Once again, we want to thank you for your support. We couldn't have done it without you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Keep playing, keep talking with us, and stay tuned for more updates in the future. Come out, and slay!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Artificer team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-------------------------------------------------------------------------------------------------------------\\",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "PATCH 1.0.1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Improvements",
+     "items": [
+      {
+       "text": "Added the button in Options screen to swap the licensed music tracks used in some tactical levels for originally composed tracks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added the support for HUD hotkeys in AZERTY keyboard layout and other non-QWERTY layouts.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "Fixed the issue where Scarlett would sometimes get blocked while interacting with a lootbox or other interactive object.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the risk of progress being blocked due to teleporting outside the windmill puzzle in the Abandoned Housing Block.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed the risk of healing station in Horror Hospital level being revived after destruction, leading to other serious issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 3,
+    "balance": 0,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1155330"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1155330/view/5138087875098115793"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-05-09T16:00:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-1155330",
+      "checkedAt": "2026-11-12T10:24:09.052Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:09.052Z"
+  }
+ ],
+ "issues": []
+}

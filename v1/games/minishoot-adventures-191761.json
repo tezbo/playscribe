@@ -1,0 +1,316 @@
+{
+ "game": {
+  "id": "minishoot-adventures-191761",
+  "igdbId": 191761,
+  "name": "Minishoot' Adventures",
+  "cover": {
+   "imageId": "co7udo",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co7udo.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1hxw",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1hxw.jpg"
+  },
+  "ps5Release": "2026-03-03",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "minishoot-adventures-191761@major-2024-08-10",
+   "gameId": "minishoot-adventures-191761",
+   "displayName": "Steam Deck Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-08-10T09:58:49.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "After taking a break to recover from launch, we focused on making the game Verified on Steam Deck, while making it more fluid and fix some major issues.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "We rebuilt all UI components that were poorly readable on SteamDeck. Which makes UI more user friendly and accessible for Steam Deck and PC as well.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "We did a final pass on optimization to remove nasty lag spikes and FPS drops. Gameplay on PC is more fluid than ever in epic fights which is especially crucial on SteamDeck.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "We changed the Steam API to make sure Achievements would work for MacOs user as well. Sorry about that, you should be able to redeem your Achievements if you have a save file around (if not you can find one in the forums about lost save).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Smaller changes",
+     "items": [
+      {
+       "text": "Fixed a bug where unique keys were carried over to new games",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue that caused lag and freeze after reloading the game several times. (Many thanks to xcvdgb and Zookster on discord)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added the lowest difficulty chosen on the Save slot so you know which Achievement you are eligible to",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Made it easier to skip intro (just press Enter or Escape, or Start on gamepad)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Special thanks to our friend and consultant Maxime who helped us a lot during all this process <3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1634860"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1634860/view/5963414363397275385"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-08-10T09:58:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-1634860",
+      "checkedAt": "2026-11-12T08:24:23.349Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:23.349Z"
+  },
+  {
+   "id": "minishoot-adventures-191761@post-2024-04-29",
+   "gameId": "minishoot-adventures-191761",
+   "displayName": "Whoops \"map won't stop beeping\" fixed.",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-04-29T22:16:42.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "If you scanned the map, it would start beeping again where the map piece used to be. That should be fixed! Sorry for the confusion ^^'",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Argl",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1634860"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1634860/view/5759616966680516802"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-29T22:16:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-1634860",
+      "checkedAt": "2026-11-12T08:24:23.349Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:23.349Z"
+  },
+  {
+   "id": "minishoot-adventures-191761@post-2024-04-04",
+   "gameId": "minishoot-adventures-191761",
+   "displayName": "Minipatch #1 - Covfefe Jar",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-04-04T15:57:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "First patch is here! Thank you all for your precious feedback and especially to Moojuiceman for the help with the achievement issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I fixed all that was fast and safe to fix, will get back to work asap to fix the rest!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Important",
+     "items": [
+      {
+       "text": "Fixed softlock at the final boss, being stuck behind the crystal barrier. It will now re-open if needed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Arena achievement being awarded one arena too soon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where you could finish the game in Advanced without getting the achievement. Unfortunately this in not retroactive as I have no way to know who picked what difficulty due to the bug itself. I apologize for your lost efforts. If you still care to get the achievement, I’d suggest waiting for a future content update, and redo the game in Advanced on such occasion. Really sorry about this annoying issue :'(",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Minor",
+     "items": [
+      {
+       "text": "Removed confusing map icon/ping and fixed a cave position",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some typoes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Lowered Teleport module price",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Removed a softlocking gap in dungeon 1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed the annoying crackling looping sound",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added the covfefe jar",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 4,
+    "balance": 1,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1634860"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1634860/view/5756237364308543570"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-04T15:57:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-1634860",
+      "checkedAt": "2026-11-12T08:24:23.347Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:23.347Z"
+  }
+ ],
+ "issues": []
+}

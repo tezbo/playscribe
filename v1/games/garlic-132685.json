@@ -1,0 +1,278 @@
+{
+ "game": {
+  "id": "garlic-132685",
+  "igdbId": 132685,
+  "name": "Garlic",
+  "cover": {
+   "imageId": "co2ny2",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co2ny2.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "aro0k",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/aro0k.jpg"
+  },
+  "ps5Release": "2023-07-07",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "garlic-132685@post-2021-07-19",
+   "gameId": "garlic-132685",
+   "displayName": "BUGS FIXING",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-07-19T14:23:07.000Z",
+   "notes": [
+    {
+     "title": "fixed bugs",
+     "items": [
+      {
+       "text": "weird double dash against ceilings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "climb move stuck against no wall",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "diseppearing garlicoins on 7-3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "bubbles not catching you",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "minigame lockers intro speed corrected for hi-freq screens",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "stuck landing on moving up platforms",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "changes",
+     "items": [
+      {
+       "text": "2 saws wrong pattern corrected in 4-4",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "tuto sign for clouds using in 5-1 (\"hold jump to jump higher\")",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "unbearable location of garlicoins in 7-2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1250440"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1250440/view/4204657340180172217"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-07-19T14:23:07.000Z",
+      "verification": "official",
+      "sourceId": "steam-1250440",
+      "checkedAt": "2026-11-12T03:00:54.836Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:54.836Z"
+  },
+  {
+   "id": "garlic-132685@post-2021-06-23",
+   "gameId": "garlic-132685",
+   "displayName": "TRAPS SYNCHRONIZATION TO HERO",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-06-23T18:04:33.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Before, traps were all following a universal timer, it means if you reach some place with more of less 0.5second (or even 0.1 second) you were up to hit different situations (that fire ball already popped up, or still not you may not know how much time would it take it to pop up).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now, it's a bit like TRAPS ARE WAITING FOR YOU to activate, this way you can handle way MORE INTUITIVELY TIMINGS and try more speedrun stuffs, without landing on that tube popping at you its fireball, for exemple.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Don't worry, it does'nt mean the game will be all easy now, it's still hard, it's still Garlic, but way more suitable for rush plays,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "and by the way, RUSH MODE is coming out very soon too!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Other adds/debugs",
+     "items": [
+      {
+       "text": "lvl 10-1 : bubbles missing on the end back there",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "sfx \"baby cry\" less loud (you struggled enough)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1250440"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1250440/view/4032392655060846244"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-06-23T18:04:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-1250440",
+      "checkedAt": "2026-11-12T03:00:54.835Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:54.835Z"
+  },
+  {
+   "id": "garlic-132685@post-2021-06-16",
+   "gameId": "garlic-132685",
+   "displayName": "boss 2 and some levels easier",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-06-16T15:25:04.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "boss 2 : less life points, way easier to beat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2-8 : one more checkpoint at that precise place hah",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "3-2 : less flame balls trhowing from tubes, no more nightmare",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1250440"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1250440/view/4056035920051497970"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-06-16T15:25:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-1250440",
+      "checkedAt": "2026-11-12T03:00:54.834Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:54.834Z"
+  }
+ ],
+ "issues": []
+}

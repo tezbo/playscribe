@@ -1,0 +1,684 @@
+{
+ "game": {
+  "id": "hyper-5-145378",
+  "igdbId": 145378,
+  "name": "Hyper-5",
+  "cover": {
+   "imageId": "co2wzx",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co2wzx.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar166t",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar166t.jpg"
+  },
+  "ps5Release": "2023-04-12",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "hyper-5-145378@major-2022-07-30",
+   "gameId": "hyper-5-145378",
+   "displayName": "Hyper-5 \"Armoury Update\"",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-07-30T07:20:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "V9 is the “Armoury Update” release of Hyper-5.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I have added in four new unlockable weapons to help you defeat the enemy, as well as new texturing for the main ship and bug fixes. Thanks to everyone who has supported the game and I very much hope you enjoy playing!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated Hyper-5 ship visuals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "retextured",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "added Gravity Whip and Shield Tech Bay models: Weapon Update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "added Gamma Sweep, Electro Trace, Pod and Swarm weapons, and associated challenges",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "one less extremity destruction needed to defeat Level 5 boss",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "vulkan rendering path (linux native build)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "menu text. \"Use Cannon\" -> \"Use Tech Bay\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "environment distance fog in level 2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed possible state machine error during Dendrite enemy death",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed terrain collision failing in some circumstances",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed issue with level 5 boss tail initialisation when skipping cut scene: Many thanks, especially to players who left reviews and feedback 😊: Jamie, Developer of Hyper-5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 5,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1662090"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1662090/view/4587497456687161490"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-07-30T07:20:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-1662090",
+      "checkedAt": "2026-11-12T07:24:03.660Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:03.660Z"
+  },
+  {
+   "id": "hyper-5-145378@8",
+   "gameId": "hyper-5-145378",
+   "displayName": "Update 8",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-04-20T07:22:18.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hyper-5 V8 update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hi all! V8 is a “maintenance” style update. The big change “under the hood” is a migration of the game to a more recent version of Unity. This allows better optimisation of the game which should now be more CPU efficient. I have also taken the opportunity to make a few gameplay tweaks based on player feedback, and to fix some minor bugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Quality-of-life / Gameplay improvements",
+     "items": [
+      {
+       "text": "Downgrading weapons now recovers all spent UP (previously only 66%)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reduced firepower of Sawtooth-P in Level 2 ravine section",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added additional checkpoint to assist progress in Level 5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "Fixed Level 3 boss cutscene on repeated play",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Halo-Bomb mini-missile deployment fixed in Time Trial missions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed minor menu UI rendering issue on level select images: As always, many thanks to everyone for your support, and especially to those who left reviews and feedback!: Jamie, Developer of Hyper-5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 3,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0,
+    "topNew": [
+     "Downgrading weapons now recovers all spent UP (previously only 66%)",
+     "Reduced firepower of Sawtooth-P in Level 2 ravine section",
+     "Added additional checkpoint to assist progress in Level 5"
+    ]
+   },
+   "sourceIds": [
+    "steam-1662090"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1662090/view/4348797798070832833"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-04-20T07:22:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-1662090",
+      "checkedAt": "2026-11-12T07:24:03.659Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:03.659Z"
+  },
+  {
+   "id": "hyper-5-145378@7",
+   "gameId": "hyper-5-145378",
+   "displayName": "Update 7",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-01-21T16:41:42.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hyper-5 V7 “release tweaks” update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks to everyone who played the V5 & V6 versions of Hyper-5 and left reviews and feedback. In advance of the full release on steam and itch.io on the 28th of January I have some small fixes / tweaks addressing some of the comments received on these builds of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Quality-of-life / Gameplay improvements",
+     "items": [
+      {
+       "text": "Improved visibility of turret projectiles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added ability to modify Loadout between levels in arcade mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Tweaked \"start game\" button assignment, added button overlay to load-out menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Weapons now equippable in armoury using gamepad / keyboard select button for convenience",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Experimental reduction of texture memory consumption for <4GB cards, e.g. 1060 3GB",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Clarified arcade mode and time trial text",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Support via Noto Font for symbols and JP character display, e.g. in leaderboard names",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added menu option to disable 3D tilting of UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "Fixed bug in options menu when selecting leaderboard to view",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tweaked terrain to reduce collision issues in level 2 end of ravine and level 3 boss fight",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed tutorial pop-ups to change to current controller + text changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed UI bug related to armoury upgrade modal",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed layout of leaderboard scores for stylised font",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Leaderboard buttons in Options menu hidden for standalone build",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduced enemy mine splash damage radius",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Turrets on far side of level 1 boss no longer fire when player is alongside them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "As always, many thanks to everyone for your interest and support of my game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Jamie, Developer of Hyper-5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 7,
+    "fixed": 10,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0,
+    "topNew": [
+     "Improved visibility of turret projectiles",
+     "Added ability to modify Loadout between levels in arcade mode",
+     "Tweaked \"start game\" button assignment, added button overlay to load-out menu"
+    ]
+   },
+   "sourceIds": [
+    "steam-1662090"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1662090/view/4237325463675444596"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-01-21T16:41:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-1662090",
+      "checkedAt": "2026-11-12T07:24:03.658Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:03.658Z"
+  },
+  {
+   "id": "hyper-5-145378@5",
+   "gameId": "hyper-5-145378",
+   "displayName": "Update 5",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-11-16T13:18:00.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Many thanks to everyone who tried out the demo of Hyper-5 during steam NextFest and especially those who took the time to provide feedback. As a result, I have made some improvements which I am pleased to announce are available now in the V5 update of the demo. This will be the last demo update before release. The most significant changes are:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Faster ship movement speed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Although speed upgrades are available, the player ship movement was too slow by default. This has been increased by +25%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Selectable font for menus and on-screen display",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Choose between original “stylised” and new “readable”",
+     "items": [
+      {
+       "text": "High visibility display mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "This disables “cluttering” visual effects such as particles, trails etc and also enables a new “terrain collision guide”. Damage rate from terrain collision has also been reduced significantly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Support for mouse button input for firing controls",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Mouse buttons can now be used to trigger weapons, movement remains via keyboard / gamepad only.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Improved post-processing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Depth-of-field has been implemented which as well as looking nice in cut scenes helps separate foreground from background in certain sections of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New and improved options to reduce GPU load",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Raymarching effects e.g. clouds, fog, volumetric lighting can now be fully toggled off, significantly reducing GPU burden. AMD Fidelity FX 1.0 has been implemented which can also reduce load for a minor decrease in fidelity. With Fidelity FX “Quality” mode enabled I can run in-game at 4k 60hz vSync on a RTX2070. Of course, YMMV, especially in cut-scenes. Yes, vSync is now an option 😊",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "I hope you like these improvements and look forward to your feedback. The full game is now content-complete including two bonus “top-down” time-trial stages and going through internal testing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "I am now intending to release end January 2022. Thanks again to everyone for your interest and support!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Jamie, Developer of Hyper-5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 8,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0,
+    "topNew": [
+     "High visibility display mode",
+     "Improved post-processing",
+     "New and improved options to reduce GPU load"
+    ]
+   },
+   "sourceIds": [
+    "steam-1662090"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1662090/view/4971406207536957137"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-11-16T13:18:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-1662090",
+      "checkedAt": "2026-11-12T07:24:03.657Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:03.657Z"
+  },
+  {
+   "id": "hyper-5-145378@major-2021-08-05",
+   "gameId": "hyper-5-145378",
+   "displayName": "Update on Demo & Development",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-08-05T17:30:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi Everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Firstly, thank you all for your interest and support for Hyper-5. I am very much looking forward to releasing the game later this year.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I have had several people contact me regards the Demo of the game which I had hoped to release by now. This has been completed and approved from a technical perspective but unfortunately due to difficulties with a promotional tie-in I am unable to release on steam at this time. I sincerely apologise for the delay and I ask for your patience.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "In terms of the game itself, I am pleased to report that an initial build of the complete main set of five levels has gone for alpha testing with my internal team. I am working on finalising a couple of the remaining weapon systems at the moment, including the \"Gravity Whip\", a system which allows your ship to attract enemy debris and use it into a powerful weapon!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Jamie",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1662090"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1662090/view/4032396530941333721"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-08-05T17:30:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-1662090",
+      "checkedAt": "2026-11-12T07:24:03.656Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:03.656Z"
+  }
+ ],
+ "issues": []
+}

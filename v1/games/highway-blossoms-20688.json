@@ -1,0 +1,492 @@
+{
+ "game": {
+  "id": "highway-blossoms-20688",
+  "igdbId": 20688,
+  "name": "Highway Blossoms",
+  "cover": {
+   "imageId": "co2h7p",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co2h7p.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "aroy6",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/aroy6.jpg"
+  },
+  "ps5Release": "2026-10-07",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "highway-blossoms-20688@1.2.5",
+   "gameId": "highway-blossoms-20688",
+   "displayName": "Update 1.2.5",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-07-28T01:42:42.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello, everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Highway Blossoms 1.2.5 has just been released, which fixes a few minor issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always, thank you for continuing to support Studio Élan!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "〜 Karen/あけみ (akemin_dayo) and adirosa",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changelog for 1.2.5",
+     "items": [
+      {
+       "text": "On PC, it targets Ren'Py SDK versions 8.1.3.23091805 〜 7.5.3.22090809.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Certain trophies will no longer unlock simply by opening the preference pane. You have to unlock them the intended way now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made a certain Goofball Mode feature easier to find in the UI.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Merged changes and improvements made in common code shared with other Studio Élan games.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved graphical sharpness and presentation on the Steam Deck when launched via SteamOS Gaming Mode (`gamescope`). (※ Specifically, the game will now always launch in fullscreen mode if launched from SteamOS `gamescope`. Running the game from the KDE desktop environment is unaffected by this change.)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "You can now scroll CGs with the keyboard in the CG viewer by holding down the arrow keys instead of having to rapidly tap them.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Made various other internal refactors and improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "※ Newer copies of the Gold Rush Edition physical PC release will be using 1.2.5 going forward, instead of the previous 1.2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-451760"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/451760/view/5963413094357446895"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-07-28T01:42:42.000Z",
+      "verification": "official",
+      "sourceId": "steam-451760",
+      "checkedAt": "2026-11-12T07:23:53.788Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:53.788Z"
+  },
+  {
+   "id": "highway-blossoms-20688@1.2.3",
+   "gameId": "highway-blossoms-20688",
+   "displayName": "Update 1.2.3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-11-10T10:40:46.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello, everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Highway Blossoms 1.2.3 has just been released, which fixes a few issues of varying severity!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Of particular note, this release fixes the \"FTFont NoneType\" crash that was affecting certain users — thank you to everyone that reported and helped test this elusive issue, as we were completely unable to reproduce this on our local testing environments without your help! And our apologies for all the inconvenience that was experienced.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Additionally, using the Steam \"Betas\" feature to downgrade to 1.1.1, 1.1, and 1.0 should now work correctly, fixing the \"unsupported pickle protocol: 5\" error. (※ You may need to restart your Steam client for the changes to take effect, as the changes were made to Steamworks metadata and not to any actual game code or data.)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Thank you all for remaining patient, and as always, thank you for continuing to support Studio Élan!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "〜 Karen/あけみ (akemin_dayo) and adirosa",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changelog for 1.2.3",
+     "items": [
+      {
+       "text": "On PC, it targets Ren'Py SDK versions 8.1.3.23091805 〜 7.5.3.22090809.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed the infamous \"FTFont NoneType\" crash that would occur only for certain users when attempting to draw a text box.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Running Highway Blossoms 1.2.3 at least once will apply modifications to your persistent save data in such a way that downgrading back to any version that was previously affected by the crash (1.2.2 〜 1.2) will now work on system configurations that were previously crashing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "※ Note for people running downgraded versions: Fully deleting your persistent save data while on an affected version above will cause the crash to come back until 1.2.3 or newer is run at least once again to fix up your persistent save data.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a crash that would occur if the user navigated to Marina's Thoughts, then to either the CG Gallery or the Guest Art sections in that specific order.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the wrong item name being used for the \"Miner's Journal\" (as \"Hiker's Journal\") in Marina's Thoughts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a typo in the \"Cassette\" item (as \"Casette\") in Marina's Thoughts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made various other internal refactors and improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-451760"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/451760/view/5302486388001344196"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-11-10T10:40:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-451760",
+      "checkedAt": "2026-11-12T07:23:53.788Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:53.788Z"
+  },
+  {
+   "id": "highway-blossoms-20688@post-2022-11-08",
+   "gameId": "highway-blossoms-20688",
+   "displayName": "Highway Blossoms: Next Exit Now Available in Chinese!",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-11-08T05:19:52.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "《花开公路：下一站出口》终于更新了官方中文！谢谢各位玩家的耐心等待，我们也十分感谢参与汉化的几位翻译和校对。希望大家会喜欢安铂和玛丽娜的新冒险！",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "如果DLC没有显示中文，请重装DLC或验证游戏文件的完整性。",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "At long last, we're excited to release the Chinese translation for Highway Blossoms: Next Exit. Thank you for your patience, and a big thanks to the translators and editors who worked on the patch to make it a reality. We hope you enjoy this extension of Amber and Marina's story!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It took us a couple tries to update properly, so if you saw multiple downloads for the game over the past couple days, that's why no you didn't.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-451760"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/451760/view/4732747437218967252"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-11-08T05:19:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-451760",
+      "checkedAt": "2026-11-12T07:23:53.787Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:53.787Z"
+  },
+  {
+   "id": "highway-blossoms-20688@major-2020-09-25",
+   "gameId": "highway-blossoms-20688",
+   "displayName": "Highway Blossoms: Next Exit & Artbook Release, Base Game Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-09-25T19:08:08.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Heyo everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lots of big news today. The main ones, of course, are the releases of Highway Blossoms: Next Exit and the artbook! I've talked about those a bunch before, so I won't repeat myself too much here. Go pick them up!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To access Highway Blossoms: Next Exit, go to the \"Extras\" tab from the main menu (which may require beating the game once to unlock) and then go to \"DLC Content.\" You'll be able to start the DLC story from there!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Alongside that, we've got a big update for the base Highway Blossoms game again, arguably even bigger than the Remastered update a couple years ago. Buckle in, because it's about to get bumpy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Longtime HB fans might not be surprised to see this, but unfortunately, this update is likely going to break your saves. It's an unfortunate result of the engine that we use for Highway Blossoms (more specifically some custom modifications to it) and there's not really a way to avoid it. We're sorry for the inconvenience 😔 You can hold down ctrl to quickly skip through text to get back to where you were before.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Broken saves is the only bad news, though. Now onto the good!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The first change you'll probably notice is the new GUI in the game. We've totally renovated all of the menus and interface, and added some extra features. For one, there are new accessibility options, and a light/dark mode for the game. Now you can play Good Highway Blossoms and Evil Highway Blossoms. There's also a new music player and improved art gallery (make sure to check out the Next Exit guest art too!).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the gallery, you might notice a new section called \"Marina's Thoughts.\" We've added a number of cut-in illustrations throughout the game for certain items that come up in the story - stuff like the journal, the gold, meals the girls eat, and more. In addition to seeing them in-game, you can check them out in the gallery as well, for a quick opinion from Marina on each item.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There are a couple other new sections that you can find under \"Extras\" in the Legacy Content area. For one thing, you can now find all things Goofball mode here: EZ Mode, Extreme Mode, and the new form of Goofball mode itself: rather than requiring a whole other playthrough with a couple changed lines, Goofball mode is now in more of a highlight reel format that simply features The Jokes. We did remove a couple jokes that we felt weren't in good taste, though.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "On that note, the Jumbo Scene from the original game has also been moved to the Legacy Content area. This means that the scene is no longer part of a playthrough of the regular game. However, you can reread that scene in its entirety from the menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Finally, we made the slightest of changes to music in the game, by adding one new track. It's a song that was written for Next Exit, but we chose to add it into the base game too. If you own the soundtrack DLC here on Steam, you'll automatically get the new tracks from Next Exit - even if you don't own Next Exit itself. Instead you can listen to the songs and imagine how they might be used, I suppose.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "A Chinese translation for Next Exit is in the works, and will be added as soon as it's completed. Also, 'cause I've seen a few people asking: there's no new adult content or new Goofball Mode content in Next Exit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Whether you play NE or not, we hope you enjoy these newest improvements to Highway Blossoms. Can't wait to be on my deathbed in a few decades and still rolling out updates to the game then.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-451760"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/451760/view/3715990047699010889"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-09-25T19:08:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-451760",
+      "checkedAt": "2026-11-12T07:23:53.786Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:23:53.786Z"
+  }
+ ],
+ "issues": []
+}

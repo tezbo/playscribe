@@ -1,0 +1,174 @@
+{
+ "game": {
+  "id": "neon-white-143612",
+  "igdbId": 143612,
+  "name": "Neon White",
+  "cover": {
+   "imageId": "co2tgh",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co2tgh.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar6dh4",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar6dh4.jpg"
+  },
+  "ps5Release": "2022-12-13",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "neon-white-143612@1.0",
+   "gameId": "neon-white-143612",
+   "displayName": "Patch 1.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-06-27T21:40:30.000Z",
+   "notes": [
+    {
+     "title": "Features",
+     "items": [
+      {
+       "text": "Added Voiceover Volume slider",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Application no longer pauses when losing focus",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Game now automatically creates backup save files periodically",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Cancel option for Miracle Katana discard screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Implemented known hacker ban list",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Insight Aim setting defaults to 'On' (Insight Aim only ever applies while using gamepad)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added \"dontUploadToLeaderboard\" option to powerprefs.txt. This prevents your game from submitting any scores to leaderboards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed issue that caused BGM to play multiple instances at once",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed certain cases that made the last Heavenly Delight ticket unobtainable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some movement exploits that were possible only at super-low framerates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed numbers from Heavenly Delights prize board graphic (This was confusing some players into thinking the numbers were ticket cost values rather than the order of the delights)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Global Neon Ranking level counter total",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "White's Heaven Rush: BGM now starts from the beginning of the song when playing in non-shuffle mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resident Saw II: Fixed misplaced Tripwire demon at the ending (to preserve top run times we have introduced an intentional shortcut here to replace the skip)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Changed Demon screech onomatopoeia dialogue in Raz's free time conversation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed player ghosts not appearing in certain sidequest levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 7,
+    "fixed": 9,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0,
+    "topNew": [
+     "Added Voiceover Volume slider",
+     "Application no longer pauses when losing focus",
+     "Game now automatically creates backup save files periodically"
+    ]
+   },
+   "sourceIds": [
+    "steam-1533420"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1533420/view/4474904295745656688"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-27T21:40:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-1533420",
+      "checkedAt": "2026-11-12T09:23:16.091Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:23:16.091Z"
+  }
+ ],
+ "issues": []
+}

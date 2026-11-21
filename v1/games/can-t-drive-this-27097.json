@@ -1,0 +1,293 @@
+{
+ "game": {
+  "id": "can-t-drive-this-27097",
+  "igdbId": 27097,
+  "name": "Can't Drive This",
+  "cover": {
+   "imageId": "co2oyy",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co2oyy.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "arcxj",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/arcxj.jpg"
+  },
+  "ps5Release": "2021-03-19",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "can-t-drive-this-27097@2",
+   "gameId": "can-t-drive-this-27097",
+   "displayName": "Update 2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-04-16T10:17:58.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We've got a brand new batch of update-sauce for all you drivers and builders out there.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Performance Improvements",
+     "items": [
+      {
+       "text": "We worked hard on getting the game running on as many devices as possible. Over the past few weeks, we sifted through the entire game like gold panners, hunting those precious performance nuggets. Then we separated the dirt, and rocks, and the remaining alluvial deposits, melted the pure separated performance in a melting pot, and poured it into a mold, to get the shiny new update that you can download right now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Reduced Polygon Count",
+     "items": [
+      {
+       "text": "In all seriousness, we reduced the polycount of most of the models in the game. Overall, we're now rendering about 40-60% less polygons than before. This means less strain on your CPU for sending data over to the GPU, and less strain on the GPU for actually converting the data into a visible image.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Faster Rendering",
+     "items": [
+      {
+       "text": "Additionally, we switched to a faster rendering solution. This should have the game running at 60fps with four players for most modern desktop PCs. For the technically interested among you, we switched to the LWRP, which is far faster because it allows us to not render things we don't actually use (like a depth pass, depth+normals texture, motion vectors, and other fancy-pants shenanigans).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you still run into performance issues or frame drops, please let us know on the forums – we'd really like to fix those.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Customization I",
+     "items": [
+      {
+       "text": "Vehicle customization is back, sorta! The first batch of customization goodness brings you basic colors and patterns. We know this doesn't scratch your creative itch to completion, but we're getting there. More customization options will be added in future updates. (Read the \"I\" in the heading as the Roman numeral, not the letter).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also note that you won't be able to unlock more colors for now, as we're still working on an unlockable system – which will allow you to unlock customization options during the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here's some of the minor changes this update",
+     "items": [
+      {
+       "text": "Fixed a bug where key maps weren't saved (reported by Freekill and Ramprage)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where audio was disabled by default",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Made ghost tiles more easily readable for the builder (reported by Paragon | Jocy)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed color scheme in settings menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Linux launch config (as reported by Liam)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a bug where controllers were sometimes not recognized on start",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed visual seam in skybox",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added contact buttons to menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Removed garbage allocation in some scripts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where physics breaks at ~9000pts (reported by Paragon | Jocy)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Displays Controller icons on start screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed Start button from SPACE to RETURN",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where tiles can rotate to an arbitrary value (reported by Paragon | Jocy)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added \"Waiting for other player\" when playing online",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added support for most controllers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "What's next?",
+     "items": [
+      {
+       "text": "Here are things not in the game yet, we're looking to add back in future updates (in no particular order):",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Street customization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Remaining vehicle customization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Achievements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Leaderboards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More game modes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Unlockables-System",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Online Matchmaking",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Trailer & Box Art",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "As usual, if you find any issues (frame drops, bugs, glitches, etc.), we'd love to hear from you! Just open a thread on the Forums, and we'll see to it asap.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 6,
+    "balance": 0,
+    "other": 20,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-466980"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/466980/view/4654976078203822728"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-04-16T10:17:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-466980",
+      "checkedAt": "2026-11-11T21:57:50.399Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:50.399Z"
+  }
+ ],
+ "issues": []
+}

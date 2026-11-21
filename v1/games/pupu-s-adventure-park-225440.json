@@ -1,0 +1,2039 @@
+{
+ "game": {
+  "id": "pupu-s-adventure-park-225440",
+  "igdbId": 225440,
+  "name": "PuPu's Adventure Park",
+  "cover": {
+   "imageId": "co6eqm",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co6eqm.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar2fqs",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar2fqs.jpg"
+  },
+  "ps5Release": "2026-09-24",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "pupu-s-adventure-park-225440@1.0.18",
+   "gameId": "pupu-s-adventure-park-225440",
+   "displayName": "Update 1.0.18",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-11-28T11:28:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Ver. 1.0.18 Bug Fixes & Updates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "1. Fixed an issue where abnormal adventurer states could cause all adventurers on screen to become stuck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2. Fixed an issue where weather events caused abnormal tile occupation on the map.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "3. Fixed an issue where PuPus participating in research at the Tower of Union could be mistakenly selected for automation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "4. Fixed an issue where selecting PuPus in the Tower of Courage could cause them to become stuck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "5. Fixed an issue where, after a hero level-up popup appeared while the camera was in the PuPu Nest, the park menu was displayed inside the nest view.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "6. Fixed an issue where the park’s bottom menu occasionally disappeared under certain conditions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "7. Added instruction manual entries related to the Tower of Union.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "8. Fixed an issue where, in non-Simplified Chinese languages, certain hero commissions could not be dispatched properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "9. Added local save version detection — if the configuration file format is incorrect, it will now be automatically cleared.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(This primarily affects local config files from Demo or early versions, preventing related gameplay errors.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "10. Added corrupted save file detection to prevent data loss caused by faulty save operations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "11. Added missing localization for some text content.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(Some late-game and Tower of Union content is still being localized and will be completed in the next update.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "12. Added a new button to the bottom of park building and adventurer interfaces.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "---",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🧩 About the New “Unstuck” Function",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When adventurers become motionless inside a building or stand idle in the park,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "you can now click on the adventurer/building interface.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The game will attempt to clear abnormal data and teleport the stuck adventurer back to the Summoning Circle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⚠ Note: The feature does not apply to cases where an adventurer or hero is immobile due to missing road tiles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If this happens, please try adding road tiles beneath their feet — they will then be able to leave the park or return to their tent/inn normally.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you still encounter stuck adventurers, please upload your affected save through the in-game feedback system.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This helps us reproduce and resolve the issue more efficiently.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 24,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1683380"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1683380/view/1817483467039022"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-28T11:28:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-1683380",
+      "checkedAt": "2026-11-12T09:24:24.978Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:24.978Z"
+  },
+  {
+   "id": "pupu-s-adventure-park-225440@1.0.15",
+   "gameId": "pupu-s-adventure-park-225440",
+   "displayName": "Update 1.0.15",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-10-31T03:13:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed an issue where abnormal Illusion Building data caused save files to fail to load for some players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where a PuPu recovering mood inside a transforming building could enter an exclusive dormitory and cause abnormal PuPu states.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where certain operations on the new map incorrectly displayed tutorial prompts when the tutorial had not been skipped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1683380"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1683380/view/1815034432890843"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-31T03:13:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-1683380",
+      "checkedAt": "2026-11-12T09:24:24.977Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:24.977Z"
+  },
+  {
+   "id": "pupu-s-adventure-park-225440@1.0.13",
+   "gameId": "pupu-s-adventure-park-225440",
+   "displayName": "Update 1.0.13",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-10-22T04:40:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "1. Fixed an issue where opening the PuPu List in certain save files caused abnormal error messages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2. Fixed an issue where a newly bred PuPu was incorrectly set to Level 1.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "3. Fixed an issue where opening the Illusion Building – Hot Spring displayed abnormal information in some save files.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Additionally, we are currently testing fixes for issues such as rooms freezing, adventurers becoming stuck, and PuPu disappearing or duplicating in the Playtest branch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Because these involve significant logic adjustments, the fixes are still under testing and will be released to the main branch once the version is confirmed to be stable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1683380"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1683380/view/1814309641399071"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-22T04:40:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-1683380",
+      "checkedAt": "2026-11-12T09:24:24.977Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:24.977Z"
+  },
+  {
+   "id": "pupu-s-adventure-park-225440@1.0.12",
+   "gameId": "pupu-s-adventure-park-225440",
+   "displayName": "Update 1.0.12",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-10-18T02:51:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed an issue where the game could pause abnormally when the Diligence Tower’s exclusive room had no selected work type.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where a PuPu removed from automation in the Diligence Tower’s exclusive room could still be mistakenly managed for work after becoming an Emissary.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where newly bred PuPus from the Fountain did not correctly inherit the current level attributes after obtaining a gem for the first time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added logical safeguards for certain cases where saving was impossible — restarting the game will now allow saving again, preventing save loss.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added logic protection for abnormal room interactions occurring after loading a save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed an issue where pop-up windows appearing during building placement caused construction state errors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 4,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1683380"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1683380/view/1813674388990184"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-18T02:51:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-1683380",
+      "checkedAt": "2026-11-12T09:24:24.976Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:24.976Z"
+  },
+  {
+   "id": "pupu-s-adventure-park-225440@1.0.10",
+   "gameId": "pupu-s-adventure-park-225440",
+   "displayName": "Update 1.0.10",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-10-14T11:43:45.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed an issue where some players received a “Save File Corrupted” message after loading and then saving their game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Since some fixes involves several logic adjustments, we are currently testing the adventurer stuck in room and missing PuPu in room issues on the Playtest branch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Once the build proves stable, it will be merged into the main (public) branch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1683380"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1683380/view/1813041031369922"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-14T11:43:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-1683380",
+      "checkedAt": "2026-11-12T09:24:24.976Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:24.976Z"
+  },
+  {
+   "id": "pupu-s-adventure-park-225440@1.0.9",
+   "gameId": "pupu-s-adventure-park-225440",
+   "displayName": "Update 1.0.9",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-10-13T11:57:51.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "1. Fixed an issue where abnormal Illusion Building data caused some players’ save files to fail to load.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2. Fixed an issue where the Royal Palace Altar in the Royal City became stuck after triggering the tech [Brave New World].",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "3. Fixed an issue where the Auto-Select Recovery Path option was not checked automatically.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "4. Adjusted the drop items for the [Buried Past] storyline in [Depths of the Forest].",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1683380"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1683380/view/1813041031335946"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-13T11:57:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-1683380",
+      "checkedAt": "2026-11-12T09:24:24.976Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:24.976Z"
+  },
+  {
+   "id": "pupu-s-adventure-park-225440@1.0.8",
+   "gameId": "pupu-s-adventure-park-225440",
+   "displayName": "Update 1.0.8",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-10-10T13:57:38.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Bug Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "1. Fixed an issue where the Diligence Tower’s exclusive dormitory did not prioritize work assignments by type.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2. Fixed an issue where some players’ save files showed negative Park Satisfaction values.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "3. Fixed an issue where abnormal queue numbers caused hot spring state errors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "4. Fixed an issue where selecting certain PuPus in the Diligence Tower did not take effect properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "---",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Issues Under Repair",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve received feedback on the following problems, which are being fixed and will be addressed in upcoming versions:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "1. Abnormal behavior when switching from Demo or test versions to the full release.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2. Building freezes caused by abnormal adventurer states.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "3. Save-load errors caused by corrupted hot spring data.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "---",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Issues Under Investigation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We are still investigating the causes of the following issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you encounter similar cases, please share your gameplay steps—this will greatly help our debugging process!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "1. Abnormal leftover occupied tiles after weeding in certain cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2. Newly summoned adventurers sometimes stand idle at the Summoning Circle (resolved after loading a save).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "3. Newly summoned adventurers sometimes stand idle in front of the Commission Board (resolved after loading a save).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 18,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1683380"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1683380/view/1813041031241951"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-10T13:57:38.000Z",
+      "verification": "official",
+      "sourceId": "steam-1683380",
+      "checkedAt": "2026-11-12T09:24:24.975Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:24.975Z"
+  },
+  {
+   "id": "pupu-s-adventure-park-225440@1.0.7",
+   "gameId": "pupu-s-adventure-park-225440",
+   "displayName": "Update 1.0.7",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-10-09T12:42:39.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Bug Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "1. Fixed an issue where abnormal adventurer data caused save-load failures.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2. Fixed an issue where abnormal hot springs caused save-load failures.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "3. Fixed an issue where, after loading a corrupted save, players could no longer load other saves or start a new game normally.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "4. Fixed a crash that occurred when the Alchemist performed the wish [Special Purpose].",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "5. Fixed an issue where the [Self-Directed Performance] tech in the Mound Maze caused save-load errors in certain cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "6. Fixed an issue where saving/loading immediately after summoning a hero at the Summoning Circle while the game was paused caused the hero to become stuck.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "7. Fixed an issue where opening certain interfaces caused the ESC key and game speed hotkeys to stop working.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "8. Fixed an issue where attempting to repair the Tower of Union with insufficient Gem Shards incorrectly triggered the comic playback.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "9. Added compatibility handling for corrupted data; some damaged PuPus or Illusion Buildings may be cleared automatically. Simply re-transform or rebuild them to restore normal function.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Issues Under Repair",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve received feedback on the following problems, which will be fixed in upcoming versions:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "1. Adventurer satisfaction drops abnormally into negative values after saving/loading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2. Abnormal behavior when transitioning from Demo or test versions to the full release.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "3. Buildings becoming inaccessible to adventurers due to abnormal PuPu states.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "4. Hot springs becoming inaccessible due to abnormal Illusion Building states.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Issues Under Investigation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’re still investigating the causes of the following issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you encounter similar situations, please submit your gameplay actions and conditions — it helps us a lot!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "1. Abnormal leftover occupied tiles after weeding in certain cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2. Newly summoned adventurers sometimes remain idle at the Summoning Circle (resolved after loading a save).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "3. Newly summoned adventurers sometimes remain idle in front of the Commission Board (resolved after loading a save).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 22,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1683380"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1683380/view/1813041031206856"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-09T12:42:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-1683380",
+      "checkedAt": "2026-11-12T09:24:24.975Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:24.975Z"
+  },
+  {
+   "id": "pupu-s-adventure-park-225440@1.0.6",
+   "gameId": "pupu-s-adventure-park-225440",
+   "displayName": "Update 1.0.6",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-09-28T15:10:38.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Content Adjustments",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "1. Adjusted available identities and rewards for certain commissions:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Commission [Overbearing Patrol]: Added available identities — Traveling Merchant, Foreign Poet, Guard, Vendor. Drops [Construction Brick].",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Commission [Dazed Scholar]: Added available identity — Passerby A. Drops [Construction Brick]. Original Foreign Poet reward adjusted to drop [Construction Brick].",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Commission [There Are Bad Guys]: Added available identities — Botanist, Librarian, Savage Warrior, Treasure Hunter, Bounty Hunter. All drop [Vine Tendril].",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Commission [Exploring the Ruins]: Adjusted available identities to Hooded Assassin, Free Maid, Checkered Detective, Drifting Sailor, Savage Warrior, Botanist. All drop [Enchanted Gas].: 2. Added new building tech in the Central Plaza: [Thorough Scavenging]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "3. Adjusted blueprint unlock point costs",
+     "items": [
+      {
+       "text": "Mound Maze: from 12 → 6",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Depths of the Sand: from 18 → 12",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Weapon Shop: from 12 → 6",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stone City Street: from 16 → 12",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Secondhand Market: from 12 → 6",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Blacksmith: from 10 → 6",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Library: from 12 → 6",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Secret Chamber: from 14 → 12",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Vine Maze: from 10 → 12: ---: Bug Fixes: 1. Fixed an issue where adventurers could get stuck at the illusion building [Hot Spring]. Players who encountered this issue need to recycle the hot spring in-game and re-cast it.: 2. Fixed an issue where some building states became abnormal. Players who encountered this need to close the building and manually assign a PuPu to work again.: 3. Fixed an issue where the ESC key stopped working after opening the Summoning Circle.: 4. Fixed an issue where, after unlocking Hero Story 2, interactions with buildings did not correctly display their effects.: 5. Fixed an issue in Monthly Challenges where descriptions overlapped when completing wish-related challenges.: ---: Known Issues (Currently Under Investigation): 1. In some cases, adventurers in the park may suddenly get stuck in place.: 2. In some cases, when park buildings are operating, a PuPu may be duplicated, causing the building to freeze.: 3. In some cases, after removing weather-spawned cherry blossom piles, the empty ground cannot be built on properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 15,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1683380"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1683380/view/1811772772344356"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-28T15:10:38.000Z",
+      "verification": "official",
+      "sourceId": "steam-1683380",
+      "checkedAt": "2026-11-12T09:24:24.974Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:24.974Z"
+  },
+  {
+   "id": "pupu-s-adventure-park-225440@1.0.4",
+   "gameId": "pupu-s-adventure-park-225440",
+   "displayName": "Update 1.0.4",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-09-26T11:54:08.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "1. Fixed an issue where toggling rooms while PiPi were in a low state, with the Diligence Tower automation enabled, caused game errors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2. Fixed an issue where the PuPu selection list in the Diligence Tower was difficult to click.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "3. Fixed an issue where starred PiPi were not displayed correctly in some tower selection interfaces.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "4. Added explanatory text after failing a Park Challenge.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1683380"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1683380/view/1811772772275854"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-26T11:54:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-1683380",
+      "checkedAt": "2026-11-12T09:24:24.973Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:24.973Z"
+  },
+  {
+   "id": "pupu-s-adventure-park-225440@1.0.3",
+   "gameId": "pupu-s-adventure-park-225440",
+   "displayName": "Update 1.0.3",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-09-25T13:03:11.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "1. Fixed an issue where map point-occupation data was not cleared after certain weather events ended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2. Fixed an issue where the game paused after completing the first two steps of the new-player tutorial in a new save.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "3. Fixed an issue where the broken-road icon was not centered when illusion buildings’ roads were disconnected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "4. Fixed an issue where the Abandoned Mine tech [Relics of Predecessors] did not take effect.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "5. Fixed an issue where heroes became stuck in place after saving/loading while interacting with adventurers in parade mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1683380"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1683380/view/1811772772244316"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-25T13:03:11.000Z",
+      "verification": "official",
+      "sourceId": "steam-1683380",
+      "checkedAt": "2026-11-12T09:24:24.973Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:24.973Z"
+  },
+  {
+   "id": "pupu-s-adventure-park-225440@1.0.2",
+   "gameId": "pupu-s-adventure-park-225440",
+   "displayName": "Update 1.0.2",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-09-24T14:36:27.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "·Fixed an issue where a PuPu could already start working in the park but still be selected as an Emissary at the same moment in the PuPu Nest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "·Fixed an issue where adventurers could get stuck in rooms under certain conditions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "·Fixed an issue where the text on the right side of certain triggered tutorials displayed incorrectly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "·Fixed an issue in the Conversion Factory where clicking without adjusting the conversion quantity caused display errors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "·Fixed an issue where some item icons were displayed incorrectly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1683380"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1683380/view/1811772772213239"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-24T14:36:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-1683380",
+      "checkedAt": "2026-11-12T09:24:24.972Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:24.972Z"
+  },
+  {
+   "id": "pupu-s-adventure-park-225440@1.0.1",
+   "gameId": "pupu-s-adventure-park-225440",
+   "displayName": "Update 1.0.1",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-09-23T11:34:51.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "1. Fixed an issue where adventurers stuck when the Library tech [Little Flying Book] was active.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2. Fixed an issue where the Adventurer List tab did not work properly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "3. Fixed an issue where the message list was not displayed after saving/loading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "4. Fixed an issue where the Building Tech [A Little More] did not function correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "5. Adjusted the cost points of the Building Techs [Extreme Comfort], [Three O’Clock in the Afternoon], and .",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "6. Fixed an issue where speed hotkeys stopped working after switching from the Identity Upgrade interface.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1683380"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1683380/view/1811138915552730"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-23T11:34:51.000Z",
+      "verification": "official",
+      "sourceId": "steam-1683380",
+      "checkedAt": "2026-11-12T09:24:24.972Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:24.972Z"
+  },
+  {
+   "id": "pupu-s-adventure-park-225440@1.0.0",
+   "gameId": "pupu-s-adventure-park-225440",
+   "displayName": "Update 1.0.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-09-23T02:14:05.000Z",
+   "notes": [
+    {
+     "title": "New Game Content",
+     "items": [
+      {
+       "text": "New Map: \\[Desert Region]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/41029929/8d2658bb869a41ff2c1df52ff244f00c610fa7a6.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Barren and dry, low sweat collection rate, with mysterious interference.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Unique weather: Scorching Sun, Sandstorm, Ancient Curse.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Map: \\[Dark Jungle Region]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/41029929/af7e20d45abcad08cdecc1517c4e6b1ec020113d.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "A lush forest full of water, but dangerous for adventurers from another world.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Unique weather: Thunderstorm, Spore Season, Toxic Fumes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Adventure Buildings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Between Earth and Gold: Provides gem inlay for equipment, enhancing combat power.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Garden Pavilion: Offers storyline interactions related to the Royal City.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Council Hall: Provides a high-difficulty, multi-stage final battle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Royal Palace Altar: Offers Royal City story interactions and extra support for the final battle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Palace Back Garden: A maze exploration with rich rewards—watch out for traps!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Building Tech",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Every Royal City building has received upgrades (not listed one by one).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Oh, and the Council Hall’s tech is seriously overpowered!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Park Commissions Subtle Probe, Guidance of an Old Friend, Peril Everywhere, The Instigator, Prism and Kingdom, Chaos in the Palace, What Happened After, Forest’s Yearning, King of Slackers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Adventurer Identities",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Hooded Assassin: A gray force walking between light and darkness, extremely dangerous. Prefers silent weapons and name-written notes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Checkered Detective: Never lets a clue slip away, solves mysteries by unraveling threads. Sometimes takes small jobs to make ends meet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Free Maid: Loves cleaning and earning extra cash—everything shines wherever she goes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/41029929/db8510a067b88a19950931b545bbf5b240f0a792.png\"][img src=\"{STEAM_CLAN_IMAGE}/41029929/ce51d37f72cb4eec2c81f1a726870dfe26689fb9.png\"][img src=\"{STEAM_CLAN_IMAGE}/41029929/5b52e90d4f2d7bacde4bc8f9f0620e6e998e0665.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Heroes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/41029929/4cbb8b635af207f1abd4e4f53e93d0f412a4da32.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "(General) Xuanmo: A brotherly leader, bonded with fellow gem bearers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "(Desert) Xuě Duōduō, Jim, Abberadin, Duke.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "(Jungle) Sis, Scarlet, Belle, Lanoxia.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New PuPu Divine Tower: Tower of Union",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Buildings: Four ??? production zones, with related gameplay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Illusion Building: Royal City Signpost",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "PuPu level cap increased to 5, Fountain of Life cap raised to 20",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New PuPu Nest Building: Cake Machine",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New PuPu Transformation Toys: Suspicious Machine, Bald Imp, Savage Mask, Seasonal Fish, Time Model, Frying Pan, Pizza Base",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Hero Adventure Skills",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Each hero unlocks a unique adventure skill after completing \\[Hero Story 2] commission.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adventure skills are passively active during hero adventures, granting powerful buffs to park buildings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Hero Research Skills",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Each hero unlocks a research skill after completing \\[Hero Story 3] commission.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Research skills are passively active during ??? research, providing corresponding improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New tutorial guidance for Emissary Tower operations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New \\[Adventurer List] to view adventurers’ status in the park.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New \\[PuPu Marker] function.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Content Adjustments",
+     "items": [
+      {
+       "text": "Adjusted weather types, seasonal months, and frequency for different maps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted certain adventurer wish objectives, adding optional paths for some.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted preferences of certain adventurer identities, lowered some preference requirements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted scene visual effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Grassland terrain: added “Cherry Blossom Season,” removed “Spore Season.”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added loading screens when switching certain scenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted point requirements for unlocking Park Blueprint buildings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted item sale logic when adventurers perform selling interactions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added save-file upload option to the problem report page.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Other interface adjustments.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 43,
+    "fixed": 0,
+    "balance": 10,
+    "other": 0,
+    "ps5": 0,
+    "topNew": [
+     "New Map: \\[Desert Region]",
+     "[img src=\"{STEAM_CLAN_IMAGE}/41029929/8d2658bb869a41ff2c1df52ff244f00c610fa7a6.png\"]",
+     "Barren and dry, low sweat collection rate, with mysterious interference."
+    ]
+   },
+   "sourceIds": [
+    "steam-1683380"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1683380/view/1811138915540099"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-23T02:14:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-1683380",
+      "checkedAt": "2026-11-12T09:24:24.969Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:24.969Z"
+  },
+  {
+   "id": "pupu-s-adventure-park-225440@0.9.0.2",
+   "gameId": "pupu-s-adventure-park-225440",
+   "displayName": "Patch 0.9.0.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-06-05T08:03:18.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[Game Adjustments]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· The Goblin Shop now includes Max and Min quantity buttons for more convenient shopping.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Adjusted the overhead prompts for Heroes in different adventure states.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Optimized the hero queue for multiple hot springs, now heroes will prefer to go to the hot spring with a shorter queue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Optimized the bubble display for building technologies; now, when activating a duplicate technology, a cycle technology bubble will be shown.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Adjusted the unlocking sequence of certain hero identity wishes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Optimized the interface display when upgrading hero identities; you can now navigate to wish adjustments directly from the upgrade interface.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Optimized the hero information panel; the smiley face count will now be shown when pointing at the satisfaction display position.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Optimized the hero adventure path panel; when storylines have limited-time sale items, they will be displayed separately.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[Bug Fixes]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed an issue where some older save files caused the game to freeze when heroes left a room.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed a bug where dispatching Kexin after unlocking the Grassland Hero Inn caused a game error.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed an issue where after completing an inn dispatch commission, other commissions could not be completed when returning to the inn.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed a bug where the prompt still appeared when repeating the commission after unlocking Hero Biography 1’s skill.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed an issue where heroes summoned by the summoning circle sometimes lacked a jump animation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed an error in the text display when triggering stamina recovery in the hero adventure log.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed an issue where hero commission count wasn't correctly displayed in some cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed an issue where the hero's patrol route lacked punctuation at the turn points.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed missing translations for some text in the hero patrol interface in other languages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· Fixed an issue with some panels being clickable through.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 20,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1683380"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1683380/view/1801617199385148"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-05T08:03:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-1683380",
+      "checkedAt": "2026-11-12T09:24:24.968Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T09:24:24.968Z"
+  },
+  {
+   "id": "pupu-s-adventure-park-225440@0.9.0.1",
+   "gameId": "pupu-s-adventure-park-225440",
+   "displayName": "Update 0.9.0.1",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-05-14T14:33:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "【新增】",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· 噗噗窝资源建筑-转化工厂：",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "为不同的精华之间增加了转化途经，泉水升至4级即可解锁",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "通过消耗新资源【精华粉末】，将选定精华以特定比例转化成其他精华",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "在挑战中增加了【精华粉末】作为完成奖励",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "【调整】",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· 英雄帐篷未链接时添加了移动按钮",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· 调整了部分勇者冒险中提升战斗力的道具的实际效果",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "【问题修复】",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· 修复了部分英雄做武器/防具征集时获得词缀类的装备导致委托无法完成的问题",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· 修复了部分挑战奖励没有正常生效的问题",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· 修复了勇者获得西风的巡游技能buff后掉落物品错误的问题",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· 修复了勇者获得爱丽丝的巡游技能buff后掉落物品没有触发概率的问题",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· 修复了勇者获得艾斯达的巡游技能buff后没有正常生效的问题",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· 修复了英雄旅店选择委托的界面显示异常的问题",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "【已知问题】",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· 英雄在某些情况下卡在帐篷门口无法正常进行委托",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "· 噗噗泉水在某些情况下勇者卡住、不正常消耗行动力",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 18,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1683380"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1683380/view/1799722702496014"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-14T14:33:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-1683380",
+      "checkedAt": "2026-11-12T09:24:24.967Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 2,
+   "updatedAt": "2026-11-12T09:24:24.968Z"
+  }
+ ],
+ "issues": []
+}

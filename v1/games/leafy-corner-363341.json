@@ -1,0 +1,591 @@
+{
+ "game": {
+  "id": "leafy-corner-363341",
+  "igdbId": 363341,
+  "name": "Leafy Corner",
+  "cover": {
+   "imageId": "coccpl",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coccpl.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar67ct",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar67ct.jpg"
+  },
+  "ps5Release": "2026-07-30",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "leafy-corner-363341@1.0.3",
+   "gameId": "leafy-corner-363341",
+   "displayName": "Patch 1.0.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-08-02T09:53:15.000Z",
+   "notes": [
+    {
+     "title": "Balance",
+     "items": [
+      {
+       "text": "Reduced watering required when there are more plants in the shop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased 'Reduced Watering' effect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Localization",
+     "items": [
+      {
+       "text": "Fixed Russian localization referring to unlocking 10 pots instead of plants to reach the next reputation level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "Orders requiring the 'Trailing' attribute will no longer appear before reaching the 4th level of reputation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed crash when the same plant was selected for more than one customer while the game was paused",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a visual issue where the sofa clipped into a plant in the background",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 4,
+    "balance": 2,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3558600"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3558600/view/1839676055892341"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-02T09:53:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-3558600",
+      "checkedAt": "2026-11-19T11:47:09.354Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-02T09:53:15.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3558600",
+      "checkedAt": "2026-11-19T11:47:09.355Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-08-02T09:53:15.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:34.438Z"
+  },
+  {
+   "id": "leafy-corner-363341@1.0.2",
+   "gameId": "leafy-corner-363341",
+   "displayName": "Patch 1.0.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-19T14:41:29.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Russian translation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Italian translation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Indonesian translation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Traditional Chinese translation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed various localization bugs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Game balance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Further reduced water usage when 'Reduced Watering' is enabled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "'Reduced Watering' is now correctly handled for plants that are overwatered",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased initial water level for succulents after planting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "UI/UX",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed language selection to a drop-down",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Graphics and Customization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added new floor patterns",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added red undertones for Peperomia Rosso",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Tweaked furniture colors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Music and sounds",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced volume of 'Variegation Discovered' notification",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Music is now faded out properly when travelling back to the Main Menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bugs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed getting stuck in Character Creation when entering it while the Tutorial is active",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed being able to remove objects that have other objects placed on them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 3,
+    "balance": 2,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3558600"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3558600/view/1838407329263753"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-19T14:41:29.000Z",
+      "verification": "official",
+      "sourceId": "steam-3558600",
+      "checkedAt": "2026-11-19T11:47:09.354Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:34.437Z"
+  },
+  {
+   "id": "leafy-corner-363341@1.0.1",
+   "gameId": "leafy-corner-363341",
+   "displayName": "Patch 1.0.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-05T09:37:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Thai translation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed various localization bugs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Gameplay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a button to duplicate furniture and decorations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Watering is now possible through metal furniture parts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added new customer requests",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added an additional task",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Game Balance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed purchase and sell prices for some plants",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed the amount of tokens required to unlock some plants and pots",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed the amount of tokens obtained for completing tasks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted some of the task requirements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Made certain requests accept additional plants",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Graphics and Customization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added new wallpaper options (brick wall and night sky wallpaper)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed shirt geometry that was causing glitches on one of the body types",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added a semi-transparent cursor for active watering",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added an option to disable motion blur",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Implemented a few performance optimizations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Other",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added information about variegated plants in the tips menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 9,
+    "fixed": 2,
+    "balance": 1,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3558600"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3558600/view/1834602721190050"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-05T09:37:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-3558600",
+      "checkedAt": "2026-11-19T11:47:09.354Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:34.437Z"
+  },
+  {
+   "id": "leafy-corner-363341@major-2025-12-08",
+   "gameId": "leafy-corner-363341",
+   "displayName": "Leafy Corner 🍃 Decemeber Developement Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-08T18:31:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We wanted to share a few exciting updates about Leafy Corner. 🍃",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Many of you have been asking whether the game will include variegated plants, so... we added them to the game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "They have a small chance to appear when you plant normally, and you can’t simply purchase them the same way you buy regular plants. We hope this makes discovering them feel more exciting!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For the last month, we were also working on controller support (the game is now fully playable with a controller!), and we ran the game on Steam Deck for the first time. Reaching that milestone helped us confirm that the game already works well on a handheld, and we’re now focused on refining the experience for the next round of playtests.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "We are also filling the game with more content, including new plants and decorations, but there is still a lot to come.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you so much for all your support. We will keep working on improving the game so stay tuned for more updates!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Take care,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Kasia & Kacper 💚",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3558600"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3558600/view/1818118366183513"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-08T18:31:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-3558600",
+      "checkedAt": "2026-11-19T11:47:09.353Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:34.432Z"
+  }
+ ],
+ "issues": []
+}
