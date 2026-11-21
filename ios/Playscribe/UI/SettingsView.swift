@@ -58,196 +58,198 @@ struct SettingsView: View {
         @Bindable var model = model
         NavigationStack {
             Form {
-                // Tabletop's panel is half a screen: the build version leads, so it is on screen
-                // without scrolling (Terry checks it to verify the build).
-                if duo.pose == .tabletop {
-                    Section { LabeledContent("Version", value: Self.version).accessibilityElement(children: .combine).accessibilityIdentifier("appVersion") }
-                }
-                // One default for every game (Terry, 0.2.0); a game's own setting lives on its bell.
-                Section {
-                    // N-1: a way back after "Not now" or a denial, always one tap from Settings.
-                    switch NotificationService.shared.authorization {
-                    case .notDetermined:
-                        Button("Turn on alerts") { Task { await NotificationService.shared.requestAuthorization() } }
+                CardSections {
+                    // Tabletop's panel is half a screen: the build version leads, so it is on screen
+                    // without scrolling (Terry checks it to verify the build).
+                    if duo.pose == .tabletop {
+                        Section { LabeledContent("Version", value: Self.version).accessibilityElement(children: .combine).accessibilityIdentifier("appVersion") }
+                    }
+                    // One default for every game (Terry, 0.2.0); a game's own setting lives on its bell.
+                    Section {
+                        // N-1: a way back after "Not now" or a denial, always one tap from Settings.
+                        switch NotificationService.shared.authorization {
+                        case .notDetermined:
+                            Button("Turn on alerts") { Task { await NotificationService.shared.requestAuthorization() } }
+                                .frame(minHeight: 52)
+                                .accessibilityIdentifier("turnOnAlerts")
+                        case .denied:
+                            Button {
+                                if let url = URL(string: UIApplication.openSettingsURLString) { UIApplication.shared.open(url) }
+                            } label: {
+                                // The arrow reads as a link out of the app (Iris).
+                                HStack { Text("Open iOS Settings"); Spacer(minLength: 8); Image(systemName: "arrow.up.forward").font(PlayscribeFont.footnote) }
+                            }
                             .frame(minHeight: 52)
-                            .accessibilityIdentifier("turnOnAlerts")
-                    case .denied:
-                        Button {
-                            if let url = URL(string: UIApplication.openSettingsURLString) { UIApplication.shared.open(url) }
-                        } label: {
-                            // The arrow reads as a link out of the app (Iris).
-                            HStack { Text("Open iOS Settings"); Spacer(minLength: 8); Image(systemName: "arrow.up.forward").font(PlayscribeFont.footnote) }
+                            .accessibilityIdentifier("openIOSSettings")
+                        default: EmptyView()
                         }
-                        .frame(minHeight: 52)
-                        .accessibilityIdentifier("openIOSSettings")
-                    default: EmptyView()
-                    }
-                    Picker("Notify me about", selection: Binding(get: { model.notifyDefault }, set: { model.data.notifyDefault = $0 })) {
-                        ForEach(NotifyLevel.allCases) { Text($0.label).tag($0) }
-                    }
-                    .opacity(NotificationService.shared.authorization == .denied ? 0.5 : 1)
-                    let overrides = model.notifyOverrides
-                    if !overrides.isEmpty {
-                        NavigationLink("\(overrides.count) game\(overrides.count == 1 ? " has its" : "s have their") own setting") {
-                            List(overrides, id: \.game.id) { o in
-                                LabeledContent(o.game.name, value: o.level.label)
+                        Picker("Notify me about", selection: Binding(get: { model.notifyDefault }, set: { model.data.notifyDefault = $0 })) {
+                            ForEach(NotifyLevel.allCases) { Text($0.label).tag($0) }
+                        }
+                        .opacity(NotificationService.shared.authorization == .denied ? 0.5 : 1)
+                        let overrides = model.notifyOverrides
+                        if !overrides.isEmpty {
+                            NavigationLink("\(overrides.count) game\(overrides.count == 1 ? " has its" : "s have their") own setting") {
+                                List(overrides, id: \.game.id) { o in
+                                    LabeledContent(o.game.name, value: o.level.label)
+                                }
+                                .navigationTitle("Own settings")
                             }
-                            .navigationTitle("Own settings")
+                        }
+                    } header: {
+                        Text("Notifications")
+                    } footer: {
+                        // The footer explains the row above it (0.5.1 spec 1).
+                        // Said once (Quinn, Iris): the footer carries the denied message.
+                        Text(NotificationService.shared.authorization == .denied
+                             ? "Notifications are off for \(Brand.name) in iOS Settings."
+                             : "Change a single game from the bell on its page.")
+                    }
+                    Section {
+                        Toggle("Pause all", isOn: $model.data.pauseAll).frame(minHeight: 52)
+                        quietHoursRows
+                    } footer: {
+                        if let q = model.data.quietHours {
+                            // The relay honours the window too (#198), so the plain promise is true again.
+                            Text(q.from == q.until
+                                 ? "These hours are empty, so nothing is quiet. Choose different times, or turn quiet hours off."
+                                 : "Alerts arrive silently during these hours.")
                         }
                     }
-                } header: {
-                    Text("Notifications")
-                } footer: {
-                    // The footer explains the row above it (0.5.1 spec 1).
-                    // Said once (Quinn, Iris): the footer carries the denied message.
-                    Text(NotificationService.shared.authorization == .denied
-                         ? "Notifications are off for \(Brand.name) in iOS Settings."
-                         : "Change a single game from the bell on its page.")
-                }
-                Section {
-                    Toggle("Pause all", isOn: $model.data.pauseAll).frame(minHeight: 52)
-                    quietHoursRows
-                } footer: {
-                    if let q = model.data.quietHours {
-                        // The relay honours the window too (#198), so the plain promise is true again.
-                        Text(q.from == q.until
-                             ? "These hours are empty, so nothing is quiet. Choose different times, or turn quiet hours off."
-                             : "Alerts arrive silently during these hours.")
-                    }
-                }
-                // 0.5.4, N-9: the follow list without alerts. Off until the player chooses; the copy is KeepCurrentCopy (Ezra).
-                Section {
-                    Toggle(KeepCurrentCopy.settingsTitle, isOn: Binding(get: { model.data.keepCurrent == true }, set: { model.setKeepCurrent($0) }))
-                        .frame(minHeight: 52)
-                        .accessibilityValue(model.data.keepCurrent == true ? "on. \(KeepCurrentCopy.settingsOnVoiceOver)" : "off")
-                        .accessibilityHint(KeepCurrentCopy.settingsHint)
-                        .accessibilityIdentifier("keepCurrent")
-                    NavigationLink(KeepCurrentCopy.whatIsSent) { KeepCurrentDetailsView() }
-                        .frame(minHeight: 44)
-                        .accessibilityIdentifier("keepCurrentWhatIsSent")
-                } header: {
-                    Text("Keep my games up to date")
-                } footer: {
-                    VStack(alignment: .leading, spacing: 6) {
-                        Text(KeepCurrentCopy.settingsCaption)
-                        // "Last sent: today", so you can see it working; nothing before the first follow is sent.
-                        if model.data.keepCurrent == true, let line = KeepCurrentCopy.lastSent(PushRegistrar.keepCurrentLastSent) {
-                            Text(line).accessibilityIdentifier("keepCurrentLastSent")
-                        }
-                    }
-                }
-                Section {
-                    // Not everyone has PS Plus: the Library card is on by default and can be hidden. Off also stops the reminder.
-                    Toggle("PS Plus card in Library", isOn: Binding(get: { model.data.plusCardOff != true }, set: { model.data.plusCardOff = $0 ? nil : true }))
-                        .frame(minHeight: 52)
-                        .accessibilityHint("Shows this month’s PS Plus games in the Library, with a reminder before they leave")
-                        .accessibilityIdentifier("plusCardToggle")
-                        .onChange(of: model.data.plusCardOff) { _, _ in NotificationService.shared.syncPlusLeavingSoon() }
-                    // Shown only while a PS Plus month exists and the card is on, the same condition as the Library card.
-                    if model.data.plusCardOff != true, PlusLogic.current(PlusStore.shared.months) != nil {
-                        // PS Plus: a reminder in the last three days a month's games can be claimed.
-                        Toggle(isOn: Binding(get: { model.data.plusLeavingSoonOff != true }, set: { model.data.plusLeavingSoonOff = $0 ? nil : true })) {
-                            VStack(alignment: .leading, spacing: 6) {
-                                PlusBadge(height: 20)
-                                Text("Games leaving soon")
+                    // 0.5.4, N-9: the follow list without alerts. Off until the player chooses; the copy is KeepCurrentCopy (Ezra).
+                    Section {
+                        Toggle(KeepCurrentCopy.settingsTitle, isOn: Binding(get: { model.data.keepCurrent == true }, set: { model.setKeepCurrent($0) }))
+                            .frame(minHeight: 52)
+                            .accessibilityValue(model.data.keepCurrent == true ? "on. \(KeepCurrentCopy.settingsOnVoiceOver)" : "off")
+                            .accessibilityHint(KeepCurrentCopy.settingsHint)
+                            .accessibilityIdentifier("keepCurrent")
+                        NavigationLink(KeepCurrentCopy.whatIsSent) { KeepCurrentDetailsView() }
+                            .frame(minHeight: 44)
+                            .accessibilityIdentifier("keepCurrentWhatIsSent")
+                    } header: {
+                        Text("Keep my games up to date")
+                    } footer: {
+                        VStack(alignment: .leading, spacing: 6) {
+                            Text(KeepCurrentCopy.settingsCaption)
+                            // "Last sent: today", so you can see it working; nothing before the first follow is sent.
+                            if model.data.keepCurrent == true, let line = KeepCurrentCopy.lastSent(PushRegistrar.keepCurrentLastSent) {
+                                Text(line).accessibilityIdentifier("keepCurrentLastSent")
                             }
-                            .frame(minHeight: 52, alignment: .leading)
                         }
-                            .accessibilityLabel("PS Plus games leaving soon")
-                            .accessibilityHint("A reminder in the last three days before this month’s PS Plus games leave")
-                            .accessibilityIdentifier("plusLeavingSoon")
-                            .onChange(of: model.data.plusLeavingSoonOff) { _, _ in NotificationService.shared.syncPlusLeavingSoon() }
-                            .onChange(of: model.data.pauseAll) { _, _ in NotificationService.shared.syncPlusLeavingSoon() }
                     }
-                } footer: {
-                    Text("PS Plus reminders are separate from game notifications.")
-                }
-                Section {
-                    Toggle("Sounds", isOn: Binding(get: { model.data.soundsOff != true }, set: { model.data.soundsOff = $0 ? nil : true }))
-                        .frame(minHeight: 52)
-                        .accessibilityHint("Plays a soft pop when games are added")
-                        .accessibilityIdentifier("sounds")
-                } footer: {
-                    Text("A soft pop when you add games. Never plays while you are listening to something else.")
-                }
-
-                Section {
-                    Toggle("Autoplay videos", isOn: $autoplayVideos).frame(minHeight: 52)
-                        .accessibilityHint("Videos start as soon as they open. Off when Reduce Motion is on.")
-                    Toggle("Reflection mode", isOn: $reflectionMode).frame(minHeight: 52)
-                        .accessibilityHint("A soft mirror of the video under the controls when the Duo stands folded. Off when Reduce Motion or Reduce Transparency is on.")
-                } header: {
-                    Text("Video")
-                } footer: {
-                    Text("Trailers and update videos start as soon as they open. Reflection mode mirrors the playing video under the controls when the Duo stands folded like a laptop. With Reduce Motion on, videos never start on their own and there’s no mirror.")
-                }
-
-                // 0.7 front cover (duo-closed-cover): internal preview only until the Library wraps it.
-                CoverMotionSection()
-
-                #if INTERNAL
-                if BuildChannel.showsTeamAlerts {
-                Section {
-                    Toggle("Team alerts", isOn: $teamAlerts)
-                        .frame(minHeight: 52)
-                        .accessibilityIdentifier("teamAlerts")
-                        .onChange(of: teamAlerts) { _, on in if PushRegistrar.appCallsEnabled { PushRegistrar.syncTeam(on) } }
-                } header: {
-                    Text("Team alerts (TestFlight and development builds)")
-                } footer: {
-                    Text("Also receive the team’s test notifications from the push relay. Off by default; it never appears in an App Store build.")
-                }
-
-                }
-                #endif
-
-                #if INTERNAL
-                if BuildChannel.showsInternalTools {
-                Section {
-                    Picker("Game", selection: $simGame) {
-                        ForEach(model.libraryRows) { Text($0.game.name.gluingTrailingNumeral).tag($0.id) }
+                    Section {
+                        // Not everyone has PS Plus: the Library card is on by default and can be hidden. Off also stops the reminder.
+                        Toggle("PS Plus card in Library", isOn: Binding(get: { model.data.plusCardOff != true }, set: { model.data.plusCardOff = $0 ? nil : true }))
+                            .frame(minHeight: 52)
+                            .accessibilityHint("Shows this month’s PS Plus games in the Library, with a reminder before they leave")
+                            .accessibilityIdentifier("plusCardToggle")
+                            .onChange(of: model.data.plusCardOff) { _, _ in NotificationService.shared.syncPlusLeavingSoon() }
+                        // Shown only while a PS Plus month exists and the card is on, the same condition as the Library card.
+                        if model.data.plusCardOff != true, PlusLogic.current(PlusStore.shared.months) != nil {
+                            // PS Plus: a reminder in the last three days a month's games can be claimed.
+                            Toggle(isOn: Binding(get: { model.data.plusLeavingSoonOff != true }, set: { model.data.plusLeavingSoonOff = $0 ? nil : true })) {
+                                VStack(alignment: .leading, spacing: 6) {
+                                    PlusBadge(height: 20)
+                                    Text("Games leaving soon")
+                                }
+                                .frame(minHeight: 52, alignment: .leading)
+                            }
+                                .accessibilityLabel("PS Plus games leaving soon")
+                                .accessibilityHint("A reminder in the last three days before this month’s PS Plus games leave")
+                                .accessibilityIdentifier("plusLeavingSoon")
+                                .onChange(of: model.data.plusLeavingSoonOff) { _, _ in NotificationService.shared.syncPlusLeavingSoon() }
+                                .onChange(of: model.data.pauseAll) { _, _ in NotificationService.shared.syncPlusLeavingSoon() }
+                        }
+                    } footer: {
+                        Text("PS Plus reminders are separate from game notifications.")
                     }
-                    Picker("Kind", selection: $simKind) {
-                        ForEach(AppModel.SimKind.allCases) { Text($0.label).tag($0) }
+                    Section {
+                        Toggle("Sounds", isOn: Binding(get: { model.data.soundsOff != true }, set: { model.data.soundsOff = $0 ? nil : true }))
+                            .frame(minHeight: 52)
+                            .accessibilityHint("Plays a soft pop when games are added")
+                            .accessibilityIdentifier("sounds")
+                    } footer: {
+                        Text("A soft pop when you add games. Never plays while you are listening to something else.")
                     }
-                    Stepper("Arrives in \(Int(simDelay)) s", value: $simDelay, in: 3...120, step: 1)
-                    Button("Simulate update") {
-                        guard !simGame.isEmpty else { return }
-                        model.simulateUpdate(gameID: simGame, kind: simKind, delay: simDelay)
-                        dismiss()
-                    }
-                    .disabled(simGame.isEmpty)
-                } header: {
-                    Text("Simulate an update (internal builds)")
-                } footer: {
-                    Text("Creates a release marked Simulated and schedules its notification. Close or lock the device to see it arrive on the outer display.")
-                }
 
-                Section("Testing") {
-                    Toggle("Show tappable frames and reserved regions", isOn: Binding(
-                        get: { model.showDebugOverlay },
-                        set: { model.showDebugOverlay = $0; if $0 { FoldAuditSwitch.enabled = true } }))
-                    Button("Reset to first run", role: .destructive) { model.resetToFirstRun(); dismiss() }
-                    Button("Reset to demo library") { model.resetDemo(); dismiss() }
-                    // The app's pose, from the root container: a sheet is outside the reader, so its own `duo` is the default (closed).
-                    LabeledContent("Pose", value: model.livePose.label)
-                    if let token = NotificationService.shared.deviceToken {
-                        LabeledContent("APNs token", value: String(token.prefix(12)) + "…")
+                    Section {
+                        Toggle("Autoplay videos", isOn: $autoplayVideos).frame(minHeight: 52)
+                            .accessibilityHint("Videos start as soon as they open. Off when Reduce Motion is on.")
+                        Toggle("Reflection mode", isOn: $reflectionMode).frame(minHeight: 52)
+                            .accessibilityHint("A soft mirror of the video under the controls when the Duo stands folded. Off when Reduce Motion or Reduce Transparency is on.")
+                    } header: {
+                        Text("Video")
+                    } footer: {
+                        Text("Trailers and update videos start as soon as they open. Reflection mode mirrors the playing video under the controls when the Duo stands folded like a laptop. With Reduce Motion on, videos never start on their own and there’s no mirror.")
                     }
-                }
-                }
-                #endif
 
-                Section {
-                    if duo.pose != .tabletop {
-                        LabeledContent("Version", value: Self.version)
-                            .accessibilityElement(children: .combine)
-                            .accessibilityIdentifier("appVersion")
+                    // 0.7 front cover (duo-closed-cover): internal preview only until the Library wraps it.
+                    CoverMotionSection()
+
+                    #if INTERNAL
+                    if BuildChannel.showsTeamAlerts {
+                    Section {
+                        Toggle("Team alerts", isOn: $teamAlerts)
+                            .frame(minHeight: 52)
+                            .accessibilityIdentifier("teamAlerts")
+                            .onChange(of: teamAlerts) { _, on in if PushRegistrar.appCallsEnabled { PushRegistrar.syncTeam(on) } }
+                    } header: {
+                        Text("Team alerts (TestFlight and development builds)")
+                    } footer: {
+                        Text("Also receive the team’s test notifications from the push relay. Off by default; it never appears in an App Store build.")
                     }
-                } footer: {
-                    Text("Artwork and trailers belong to their publishers. \(Brand.trademarkNotice)")
-                        // The form's last line: the UI tests scroll to it to prove every row above is reachable.
-                        .accessibilityIdentifier("settingsLastLine")
+
+                    }
+                    #endif
+
+                    #if INTERNAL
+                    if BuildChannel.showsInternalTools {
+                    Section {
+                        Picker("Game", selection: $simGame) {
+                            ForEach(model.libraryRows) { Text($0.game.name.gluingTrailingNumeral).tag($0.id) }
+                        }
+                        Picker("Kind", selection: $simKind) {
+                            ForEach(AppModel.SimKind.allCases) { Text($0.label).tag($0) }
+                        }
+                        Stepper("Arrives in \(Int(simDelay)) s", value: $simDelay, in: 3...120, step: 1)
+                        Button("Simulate update") {
+                            guard !simGame.isEmpty else { return }
+                            model.simulateUpdate(gameID: simGame, kind: simKind, delay: simDelay)
+                            dismiss()
+                        }
+                        .disabled(simGame.isEmpty)
+                    } header: {
+                        Text("Simulate an update (internal builds)")
+                    } footer: {
+                        Text("Creates a release marked Simulated and schedules its notification. Close or lock the device to see it arrive on the outer display.")
+                    }
+
+                    Section("Testing") {
+                        Toggle("Show tappable frames and reserved regions", isOn: Binding(
+                            get: { model.showDebugOverlay },
+                            set: { model.showDebugOverlay = $0; if $0 { FoldAuditSwitch.enabled = true } }))
+                        Button("Reset to first run", role: .destructive) { model.resetToFirstRun(); dismiss() }
+                        Button("Reset to demo library") { model.resetDemo(); dismiss() }
+                        // The app's pose, from the root container: a sheet is outside the reader, so its own `duo` is the default (closed).
+                        LabeledContent("Pose", value: model.livePose.label)
+                        if let token = NotificationService.shared.deviceToken {
+                            LabeledContent("APNs token", value: String(token.prefix(12)) + "…")
+                        }
+                    }
+                    }
+                    #endif
+
+                    Section {
+                        if duo.pose != .tabletop {
+                            LabeledContent("Version", value: Self.version)
+                                .accessibilityElement(children: .combine)
+                                .accessibilityIdentifier("appVersion")
+                        }
+                    } footer: {
+                        Text("Artwork and trailers belong to their publishers. \(Brand.trademarkNotice)")
+                            // The form's last line: the UI tests scroll to it to prove every row above is reachable.
+                            .accessibilityIdentifier("settingsLastLine")
+                    }
                 }
             }
             // 24 pt between a footer and the next section's title (Iris, 0.5.1 spec 1).

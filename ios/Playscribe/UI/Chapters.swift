@@ -202,6 +202,7 @@ struct MyBookChapter: View {
                       axis: .vertical)
                 .lineLimit(3...8)
                 .textFieldStyle(.roundedBorder)
+                .controlBorder(.textField, in: RoundedRectangle(cornerRadius: 5, style: .continuous))
             Button("Save note") {
                 let text = (model.nav.noteDraft[gameID] ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
                 guard !text.isEmpty else { return }
@@ -216,6 +217,7 @@ struct MyBookChapter: View {
                 VStack(alignment: .leading, spacing: 8) {
                     if editing == n.id {
                         TextField("Edit note", text: $editText, axis: .vertical).textFieldStyle(.roundedBorder)
+                            .controlBorder(.textField, in: RoundedRectangle(cornerRadius: 5, style: .continuous))
                         HStack {
                             Button("Cancel") { editing = nil }.hitTarget()
                             Button("Save") {
