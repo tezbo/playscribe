@@ -215,6 +215,8 @@ struct NewsView: View {
                 List {
                     ForEach(list, id: \.item.id) { post in NewsRow(gameID: post.game, item: post.item) }
                 }
+                // The list's own ground is the page's bg (Iris on #563: the system grouped grey met the cream stage at the fold).
+                .scrollContentBackground(.hidden)
                 .padding(.trailing, railWidth + (duo.pose == .tabletop ? 0 : badgeExtra))
                 .clearsMessages()
                 .refreshable { await load(force: true) }
@@ -223,6 +225,8 @@ struct NewsView: View {
         // Tabletop: the list lives on the flat half; the standing half only titles it (G-4, TT-0).
         .frame(maxHeight: duo.pose == .tabletop ? max(0, duo.size.height - (duo.division?.maxY ?? 0)) : .infinity)
         .frame(maxHeight: .infinity, alignment: .bottom)
+        // The standing half is the stage: on the bg token like every other page, never the window's black (cream in light).
+        .background(PlayscribeRole.bg.ignoresSafeArea())
         .overlay(alignment: .topLeading) {
             if duo.pose == .tabletop {
                 Text("News").font(PlayscribeFont.largeTitle).padding(24).allowsHitTesting(false)
