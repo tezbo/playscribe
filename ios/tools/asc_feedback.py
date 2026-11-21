@@ -4,8 +4,12 @@
 One issue per submission, labelled testflight-feedback, deduplicated by a hidden marker with the submission id.
 The repo is public, so an issue carries only: type, build, device, OS, locale, date and the tester's comment
 (switch off with INCLUDE_COMMENT=0). Never the tester's email or name, never a screenshot or crash-log URL
-(they expire and are tied to the key). Runs every 5 minutes; exits 0 always. Logs print counts and ids only. Needs ASC_KEY_ID, ASC_ISSUER_ID and
+(they expire and are tied to the key). Runs every 5 minutes. Logs print counts and ids only. Needs ASC_KEY_ID, ASC_ISSUER_ID and
 ASC_KEY_P8 or ASC_KEY_P8_BASE64, GITHUB_TOKEN and GITHUB_REPOSITORY, plus pyjwt, cryptography and requests.
+
+Exit code: 0 for everything except a refused key. When App Store Connect answers 401 or 403 (the key is dead, or its
+role can't read feedback or crashes) the run exits 1, so nobody is told "all quiet" by a feedback reader that can't read.
+Network errors, missing secrets and other API errors stay warnings and exit 0.
 
 Endpoints and attributes checked against Apple's App Store Connect OpenAPI 4.6:
 GET /v1/apps?filter[bundleId], /v1/apps/{id}/betaFeedbackScreenshotSubmissions and .../betaFeedbackCrashSubmissions.
@@ -25,6 +29,11 @@ MAX_NEW = int(os.environ.get("MAX_NEW", "30"))
 INCLUDE_COMMENT = os.environ.get("INCLUDE_COMMENT", "1") != "0"
 DRY_RUN = os.environ.get("DRY_RUN", "0") == "1"
 KINDS = [("betaFeedbackScreenshotSubmissions", "Screenshot feedback"), ("betaFeedbackCrashSubmissions", "Crash report")]
+REFUSED = (401, 403)
+
+
+class KeyRefused(Exception):
+    """App Store Connect refused the key (401 or 403). The only failure that turns the run red."""
 
 
 def warn(msg):
@@ -99,12 +108,15 @@ def main():
         app_id = apps.json()["data"][0]["id"]
     except (requests.HTTPError, IndexError, KeyError) as e:
         code = getattr(getattr(e, "response", None), "status_code", "no app")
+        if code in REFUSED:
+            raise KeyRefused(f"App Store Connect refused the key ({code}) looking up the app")
         warn(f"Could not find the app in App Store Connect ({code}); check the key's role and the bundle id")
         return
     gh = requests.Session()
     gh.headers.update({"Authorization": "Bearer " + os.environ["GITHUB_TOKEN"], "Accept": "application/vnd.github+json"})
     seen = existing_ids(gh)
     todo = []
+    refused = []
     for path, title in KINDS:
         try:
             for j in pages(s, f"{ASC}/v1/apps/{app_id}/{path}",
@@ -118,39 +130,51 @@ def main():
                     if item["id"] not in seen:
                         todo.append((path, title, item, num))
         except requests.HTTPError as e:
-            warn(f"{path}: App Store Connect returned {e.response.status_code}; the key's role may not allow feedback")
+            code = e.response.status_code
+            if code in REFUSED:
+                refused.append(f"{path} ({code})")
+            warn(f"{path}: App Store Connect returned {code}; the key's role may not allow feedback")
+    if refused:
+        # Still file what the other list returned, then go red.
+        todo_note = f"{len(todo)} item(s) from the readable list"
+        print(f"Key refused for {', '.join(refused)}; {todo_note}")
     todo.sort(key=lambda t: t[2]["attributes"].get("createdDate") or "")
     print(f"{len(todo)} new feedback item(s); creating up to {MAX_NEW}{' (dry run)' if DRY_RUN else ''}")
-    if DRY_RUN or not todo:
-        return
-    ensure_label(gh)
-    for path, title, item, num in todo[:MAX_NEW]:
-        a = item["attributes"]
-        build = f"build {num}" if num else "unknown build"
-        comment = clean(a.get("comment")) if INCLUDE_COMMENT else ""
-        head = (comment.splitlines()[0][:70] if comment else title)
-        lines = [f"**{title}** on {build}", "",
-                 f"- Device: {a.get('deviceModel', '?')}, iOS {a.get('osVersion', '?')}, locale {a.get('locale', '?')}",
-                 f"- Sent: {a.get('createdDate', '?')}"]
-        if path == "betaFeedbackScreenshotSubmissions":
-            lines.append(f"- Screenshots: {len(a.get('screenshots') or [])} (open in App Store Connect › TestFlight › Feedback)")
-        else:
-            lines.append("- Crash log: open in App Store Connect › TestFlight › Crashes")
-        if comment:
-            lines += ["", "Tester comment:", "", "> " + comment.replace("\n", "\n> ")]
-        lines += ["", f"<!-- asc-feedback:{item['id']} -->"]
-        r = gh.post(f"{GH}/repos/{os.environ['GITHUB_REPOSITORY']}/issues", timeout=60,
-                    json={"title": f"TestFlight: {head} ({build})", "body": "\n".join(lines), "labels": [LABEL], "assignees": [ASSIGNEE]})
-        r.raise_for_status()
-        print("created issue", r.json()["number"], "for", item["id"])
-    if len(todo) > MAX_NEW:
-        print(f"{len(todo) - MAX_NEW} more wait for the next run")
+    if not (DRY_RUN or not todo):
+        ensure_label(gh)
+        for path, title, item, num in todo[:MAX_NEW]:
+            a = item["attributes"]
+            build = f"build {num}" if num else "unknown build"
+            comment = clean(a.get("comment")) if INCLUDE_COMMENT else ""
+            head = (comment.splitlines()[0][:70] if comment else title)
+            lines = [f"**{title}** on {build}", "",
+                     f"- Device: {a.get('deviceModel', '?')}, iOS {a.get('osVersion', '?')}, locale {a.get('locale', '?')}",
+                     f"- Sent: {a.get('createdDate', '?')}"]
+            if path == "betaFeedbackScreenshotSubmissions":
+                lines.append(f"- Screenshots: {len(a.get('screenshots') or [])} (open in App Store Connect › TestFlight › Feedback)")
+            else:
+                lines.append("- Crash log: open in App Store Connect › TestFlight › Crashes")
+            if comment:
+                lines += ["", "Tester comment:", "", "> " + comment.replace("\n", "\n> ")]
+            lines += ["", f"<!-- asc-feedback:{item['id']} -->"]
+            r = gh.post(f"{GH}/repos/{os.environ['GITHUB_REPOSITORY']}/issues", timeout=60,
+                        json={"title": f"TestFlight: {head} ({build})", "body": "\n".join(lines), "labels": [LABEL], "assignees": [ASSIGNEE]})
+            r.raise_for_status()
+            print("created issue", r.json()["number"], "for", item["id"])
+        if len(todo) > MAX_NEW:
+            print(f"{len(todo) - MAX_NEW} more wait for the next run")
+    if refused:
+        raise KeyRefused("App Store Connect refused the key for " + ", ".join(refused))
 
 
 def run():
-    # Always exit green: a red run emails Terry. Problems become warnings with no tester text in them.
+    # Green unless the key is refused (401 or 403): then red, because a reader that can't read looks the same as
+    # "no feedback". Every other problem becomes a warning with no tester text in it.
     try:
         main()
+    except KeyRefused as e:
+        print(f"::error::{e}; check the key's role in App Store Connect (needs Developer or higher)")
+        return 1
     except Exception as e:  # noqa: BLE001
         warn(f"Feedback run stopped: {type(e).__name__}")
     return 0
