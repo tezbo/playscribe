@@ -78,6 +78,17 @@ enum VideoReflection {
     static let frameRate = CAFrameRateRange(minimum: 15, maximum: 30, preferred: 30)
 }
 
+extension View {
+    /// The mirror's finish, used by the stage and by `MirrorPixelTests` on a pure white frame: blur, the quadratic fade and the
+    /// edge strength (spec 4). The blur is opaque, so it clamps at the strip's edges: a transparent-edge blur pulled the first row
+    /// toward clear and halved the strength right at the video's base, where the reflection must meet the picture (spec 8.1).
+    func mirrorFinish(controlsShown: Bool) -> some View {
+        blur(radius: VideoReflection.blur, opaque: true)
+            .mask(VideoReflection.fadeMask)
+            .opacity(VideoReflection.edgeOpacity(controlsShown: controlsShown))
+    }
+}
+
 /// The player's web view on the stage. One web view lives for the whole presentation and moves between poses (P-2), so the
 /// surface takes it back if another surface held it.
 struct VideoSurface: UIViewRepresentable {

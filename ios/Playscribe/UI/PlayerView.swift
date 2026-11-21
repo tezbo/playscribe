@@ -334,9 +334,7 @@ struct TabletopVideoStage: View {
                 if live, band > 0 {
                     VideoMirrorStrip(source: controller.webView, band: band) { mirrorDrawn = $0 }
                         .frame(width: v.width, height: band)
-                        .blur(radius: VideoReflection.blur, opaque: false)
-                        .mask(VideoReflection.fadeMask)
-                        .opacity(VideoReflection.edgeOpacity(controlsShown: controlsShown))
+                        .mirrorFinish(controlsShown: controlsShown)
                         .offset(x: v.minX, y: top)
                         .allowsHitTesting(false)
                         .accessibilityHidden(true)
