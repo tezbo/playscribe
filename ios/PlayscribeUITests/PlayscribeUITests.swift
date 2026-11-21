@@ -986,7 +986,7 @@ final class LatestUpdatesDeckTests: XCTestCase {
     /// card and its leaf can be reached. Runs in the simulator's pose (CI: Closed portrait; the Mac: Open landscape, Book).
     func testDeckMovesOneCardPerSwipe() throws {
         let app = XCUIApplication()
-        app.launchArguments = ["-qaRoute", "demo"]
+        app.launchArguments = ["-qaRoute", "fill-library/12"]   // five deck cards; `demo` has two or fewer pages in some poses
         app.launch()
         sleep(4)
         if ReleaseRowTests.pose(app).contains("pose: tabletop") { app.terminate(); throw XCTSkip("Tabletop's upper half is view only") }
@@ -998,7 +998,9 @@ final class LatestUpdatesDeckTests: XCTestCase {
             return (n[0], n[1])
         }
         let (start, count) = page()
-        guard count > 2 else { app.terminate(); throw XCTSkip("needs three or more cards: \(pager.label)") }
+        // The label is read before terminate: reading an element of a terminated app fails the test (Mac fc60406d).
+        let label = pager.label
+        guard count > 2 else { app.terminate(); throw XCTSkip("needs three or more cards: \(label)") }
         XCTAssertEqual(start, 1)
         // The leading card on screen: the lazy row keeps cards that have scrolled away in the tree.
         func card() -> XCUIElement {
