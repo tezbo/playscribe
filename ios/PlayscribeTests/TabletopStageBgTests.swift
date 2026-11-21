@@ -25,6 +25,15 @@ struct TabletopStageBgTests {
                 "\(title): the Tabletop stage must paint PlayscribeRole.bg behind the upper half")
     }
 
+    /// The lists draw no ground of their own, so the lower half is the same bg as the stage: no grey seam at the fold in light
+    /// (Iris on #563, system grouped grey 242,242,247 against cream).
+    @Test(arguments: [("FeedViews.swift", 2), ("NewsChapter.swift", 1)])
+    func listsShowTheStageGround(file: String, lists: Int) throws {
+        let src = try source(file)
+        #expect(src.components(separatedBy: ".scrollContentBackground(.hidden)").count - 1 == lists,
+                "\(file): every lower-half list hides its own background")
+    }
+
     /// The Tabletop video stage's ground is the bg token; the video surface itself stays black.
     @Test func videoStageGroundIsTheBgToken() throws {
         let src = try source("PlayerView.swift")

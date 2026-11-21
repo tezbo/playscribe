@@ -44,6 +44,8 @@ struct UpdatesView: View {
                 }
                 // The inset is on the list itself: row backgrounds, separators and tap frames all stop at the
                 // rail and the time/Wi-Fi badge; scroll-content margins left them running underneath.
+                // The list's own ground is the page's bg (Iris on #563: the system grouped grey met the cream stage at the fold).
+                .scrollContentBackground(.hidden)
                 .padding(.trailing, railWidth + (duo.pose == .tabletop ? 0 : badgeExtra))
                 .clearsMessages()
             }
@@ -340,6 +342,8 @@ struct SearchView: View {
                 }
             }
         }
+        // The list's own ground is the page's bg (Iris on #563: the system grouped grey met the cream stage at the fold).
+        .scrollContentBackground(.hidden)
         .contentMargins(.trailing, railWidth + (tabletop ? 0 : badgeExtra), for: .scrollContent)
         .clearsMessages()
         // Book: Search lives on the right page, never across the fold (0.2.0 gate: field and hint ran full width).

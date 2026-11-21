@@ -215,6 +215,8 @@ struct NewsView: View {
                 List {
                     ForEach(list, id: \.item.id) { post in NewsRow(gameID: post.game, item: post.item) }
                 }
+                // The list's own ground is the page's bg (Iris on #563: the system grouped grey met the cream stage at the fold).
+                .scrollContentBackground(.hidden)
                 .padding(.trailing, railWidth + (duo.pose == .tabletop ? 0 : badgeExtra))
                 .clearsMessages()
                 .refreshable { await load(force: true) }
