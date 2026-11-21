@@ -304,7 +304,7 @@ struct TabletopVideoStage: View {
         guard let v = stageVideo else { return "" }
         let top = lowerTop ?? v.maxY
         return MirrorAudit.geometry(video: v.offsetBy(dx: playerOrigin.x, dy: playerOrigin.y), bandTop: top + playerOrigin.y,
-                                    band: VideoReflection.band(lowerHalf: playerHeight - top))
+                                    band: VideoReflection.band(lowerHalf: playerHeight - top, tallIdle: tallIdle, controlsShown: controlsShown))
     }
 
     /// TT-4: shown or faded, owned here so the mirror's strength follows the controls (spec 5, mirror link).
@@ -355,7 +355,7 @@ struct TabletopVideoStage: View {
                     .allowsHitTesting(false)
             }
             .arrangementViewStyle(.overlay)
-            MirrorAudit(on: live && mirrorDrawn && VideoReflection.band(lowerHalf: playerHeight - (lowerTop ?? playerHeight)) > 0,
+            MirrorAudit(on: live && mirrorDrawn && VideoReflection.band(lowerHalf: playerHeight - (lowerTop ?? playerHeight), tallIdle: tallIdle, controlsShown: controlsShown) > 0,
                         geometry: auditGeometry)
         }
         .coordinateSpace(.named("player"))
