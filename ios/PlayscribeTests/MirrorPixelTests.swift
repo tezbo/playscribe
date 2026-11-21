@@ -35,11 +35,14 @@ struct MirrorPixelTests {
         renderer.scale = 1
         let image = try #require(renderer.cgImage, "the strip rendered")
         let w = image.width, h = image.height
-        var px = [UInt8](repeating: 0, count: w * h * 4)
-        let ctx = try #require(CGContext(data: &px, width: w, height: h, bitsPerComponent: 8, bytesPerRow: w * 4,
+        let ctx = try #require(CGContext(data: nil, width: w, height: h, bitsPerComponent: 8, bytesPerRow: w * 4,
                                          space: CGColorSpace(name: CGColorSpace.sRGB)!,
                                          bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue))
+        // The context owns its buffer: `&array` is only valid for the init call, so a later draw wrote through a dangling
+        // pointer and a read could come back 0 (BrightArtScrimTests on CI: one sample of 15 read 0, row 270 left 59 right 64).
+        ctx.clear(CGRect(x: 0, y: 0, width: w, height: h))
         ctx.draw(image, in: CGRect(x: 0, y: 0, width: w, height: h))
+        let px = Array(UnsafeBufferPointer(start: ctx.data!.assumingMemoryBound(to: UInt8.self), count: w * h * 4))
         let x = w / 2
         // The context's first row in memory is the image's top row.
         return (0..<h).map { y in Int(px[(y * w + x) * 4 + 1]) }

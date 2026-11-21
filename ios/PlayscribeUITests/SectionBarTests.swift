@@ -50,10 +50,13 @@ final class SectionBarTests: XCTestCase {
             .integral.intersection(CGRect(x: 0, y: 0, width: cg.width, height: cg.height))
         guard px.width > 0, px.height > 0, let crop = cg.cropping(to: px) else { return 1 }
         let w = crop.width, h = crop.height
-        var bytes = [UInt8](repeating: 0, count: w * h * 4)
-        guard let ctx = CGContext(data: &bytes, width: w, height: h, bitsPerComponent: 8, bytesPerRow: w * 4,
+        guard let ctx = CGContext(data: nil, width: w, height: h, bitsPerComponent: 8, bytesPerRow: w * 4,
                                   space: CGColorSpaceCreateDeviceRGB(), bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue) else { return 1 }
+        // The context owns its buffer: `&array` is only valid for the init call, so a later draw wrote through a dangling
+        // pointer and a read could come back 0 (BrightArtScrimTests on CI: one sample of 15 read 0, row 270 left 59 right 64).
+        ctx.clear(CGRect(x: 0, y: 0, width: w, height: h))
         ctx.draw(crop, in: CGRect(x: 0, y: 0, width: w, height: h))
+        let bytes = Array(UnsafeBufferPointer(start: ctx.data!.assumingMemoryBound(to: UInt8.self), count: w * h * 4))
         var top = 0.0
         for i in stride(from: 0, to: bytes.count, by: 4) {
             let l = (0.2126 * Double(bytes[i]) + 0.7152 * Double(bytes[i + 1]) + 0.0722 * Double(bytes[i + 2])) / 255
