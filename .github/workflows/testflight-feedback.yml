@@ -10,6 +10,8 @@ on:
     inputs:
       dry_run: {description: "Count new items without creating issues", type: boolean, default: true}
       min_build: {description: "Oldest build number to include", default: "8"}
+      crash_id: {description: "Fetch this crash submission's log, encrypted (asc_crashlog.py)", default: ""}
+      crash_pubkey: {description: "Requester's RSA public key (PEM) for the crash log", default: ""}
 
 concurrency: testflight-feedback
 
@@ -32,4 +34,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: pip install pyjwt cryptography requests
-      - run: python3 ios/tools/asc_feedback.py
+      - if: ${{ !inputs.crash_id }}
+        run: python3 ios/tools/asc_feedback.py
+      # One crash log, encrypted to the requester's key: the log text never reaches the job log or the repo.
+      - if: ${{ inputs.crash_id }}
+        env:
+          CRASH_ID: ${{ inputs.crash_id }}
+          CRASH_PUBKEY: ${{ inputs.crash_pubkey }}
+        run: python3 ios/tools/asc_crashlog.py
+      - if: ${{ inputs.crash_id }}
+        uses: actions/upload-artifact@v4
+        with: {name: crashlog-encrypted, path: "crashlog.*", retention-days: 1}
