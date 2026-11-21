@@ -51,6 +51,8 @@ struct UpdatesView: View {
         // G-4, TT-0: in Tabletop the list lives on the flat half; the standing half only titles it.
         .frame(maxHeight: duo.pose == .tabletop ? max(0, duo.size.height - (duo.division?.maxY ?? 0)) : .infinity)
         .frame(maxHeight: .infinity, alignment: .bottom)
+        // The standing half is the stage: on the bg token like every other page, never the window's black (cream in light).
+        .background(PlayscribeRole.bg.ignoresSafeArea())
         .overlay(alignment: .topLeading) {
             if duo.pose == .tabletop {
                 Text("Updates").font(PlayscribeFont.largeTitle).padding(24).allowsHitTesting(false)
@@ -345,6 +347,8 @@ struct SearchView: View {
         // G-4, TT-0: in Tabletop the list lives on the flat half; the standing half only titles it.
         .frame(maxHeight: tabletop ? max(0, duo.size.height - (duo.division?.maxY ?? 0)) : .infinity)
         .frame(maxHeight: .infinity, alignment: .bottom)
+        // The standing half is the stage: on the bg token like every other page, never the window's black (cream in light).
+        .background(PlayscribeRole.bg.ignoresSafeArea())
         .overlay(alignment: .topLeading) {
             if tabletop {
                 Text("Search").font(PlayscribeFont.largeTitle).padding(24).allowsHitTesting(false)
