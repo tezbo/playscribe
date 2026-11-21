@@ -144,7 +144,7 @@ struct FrontCoverPage: View {
         // CM-7: one element; the motion mode is never announced.
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(FrontCoverPage.label(card))
-        .accessibilityValue(card.unread ? "New update" : "")
+        .accessibilityValue(card.unread ? card.chipText : "")
         .accessibilityAddTraits(.isButton)
         .accessibilityIdentifier("frontCover")
     }
@@ -155,7 +155,9 @@ struct FrontCoverPage: View {
     /// frame). The top darkens a little for the status bar and the rail.
     private var fade: some View {
         LinearGradient(stops: Self.fadeStops(accessibility: typeSize.isAccessibilitySize,
-                                             plateTop: pageHeight > 0 && plateTop > 0 ? Double(plateTop / pageHeight) : nil)
+                                             plateTop: pageHeight > 0 && plateTop > 0 ? Double(plateTop / pageHeight) : nil,
+                                             followPlate: card.unread && card.freshLabel != nil,
+                                             pageHeight: Double(pageHeight))
                         .map { .init(color: PlayscribeColor.ink950.opacity($0.opacity), location: $0.location) },
                        startPoint: .top, endPoint: .bottom)
     }
@@ -164,8 +166,17 @@ struct FrontCoverPage: View {
     /// plate covers the lower half and its eyebrow sat on pale art at about 40 percent, so the shade follows the plate: clear
     /// until just above it, 88 percent black at the eyebrow's top edge (the accent holds 4.5:1 over art up to about 60 percent
     /// luminance there), 92 percent by the title, solid at the foot.
-    static func fadeStops(accessibility: Bool, plateTop: Double?) -> [(opacity: Double, location: Double)] {
-        guard accessibility else {
+    /// `followPlate` (r060 day-one, Iris on #506): the "Day-one patch" line sits above the eyebrow, where the standard shade was
+    /// still ramping (2.3:1 over KCD II's armour in Closed landscape), so the shade follows the plate at standard sizes too,
+    /// 88 percent from the line's top edge, and keeps the signed solid foot from 90 percent down.
+    /// `pageHeight` (points): when known, the shade eases in over `plateRamp` points above the plate (smoothstep, 16 stops)
+    /// instead of 6 percent of the page, which was about 20 pt in Closed landscape and read as a cut across the art (Iris on
+    /// #506). The ramp ends at the plate's top edge, so the plate itself stays 88 percent or more.
+    static let plateRamp: Double = 96
+
+    static func fadeStops(accessibility: Bool, plateTop: Double?, followPlate: Bool = false,
+                          pageHeight: Double = 0) -> [(opacity: Double, location: Double)] {
+        guard accessibility || followPlate else {
             // Solid from 90 percent down (Iris, 19 Nov, on Terry's cover review): a title logo in the key art read as a ghost
             // behind the Playscribe mark, so the foot under the lockup is plain ink.
             return [(0.55, 0), (0, 0.18), (0, 0.45), (0.92, 0.82), (1, 0.9), (1, 1)]
@@ -173,7 +184,19 @@ struct FrontCoverPage: View {
         guard let top = plateTop.map({ min(max($0, 0.2), 0.9) }) else {
             return [(0.55, 0), (0, 0.18), (0, 0.25), (0.92, 0.7), (1, 1)]
         }
-        return [(0.55, 0), (0, min(0.18, top - 0.1)), (0, top - 0.06), (0.88, top), (0.92, min(0.98, top + 0.08)), (1, 1)]
+        var plate: [(opacity: Double, location: Double)]
+        if pageHeight > 0 {
+            let start = max(0.05, top - Self.plateRamp / pageHeight)
+            let ramp = (0...16).map { i -> (opacity: Double, location: Double) in
+                let t = Double(i) / 16
+                return (0.88 * t * t * (3 - 2 * t), start + (top - start) * t)
+            }
+            plate = [(0.55, 0), (0, min(0.18, start))] + ramp + [(0.92, min(0.98, top + 0.08)), (1, 1)]
+        } else {
+            plate = [(0.55, 0), (0, min(0.18, top - 0.1)), (0, top - 0.06), (0.88, top), (0.92, min(0.98, top + 0.08)), (1, 1)]
+        }
+        guard !accessibility else { return plate }
+        return plate.filter { $0.location < 0.9 } + [(1, 0.9), (1, 1)]
     }
 
     /// CM-7: "<Game> cover, update 1.1 on PS5, 22 Oct". A card with no release says when the game came out.
@@ -195,6 +218,15 @@ struct FrontCoverPlate: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
+            // r060 day-one (Iris): an unread day-one patch keeps its "Day-one patch" line above the eyebrow, sentence case (Iris, ux-copy); a plain new update
+            // has only the unread dot (Iris, 19 Nov).
+            if card.unread, let label = card.freshLabel {
+                Text(label)
+                    .font(PlayscribeFont.caption.weight(.semibold))
+                    .tracking(12 * 0.12)
+                    .foregroundStyle(PlayscribeColor.accent)
+                    .accessibilityIdentifier("dayOneEyebrow")
+            }
             // Iris (19 Nov, on #541): the patch name is the most prominent text on an update's cover. A small eyebrow carries the
             // game and the day ("Kingdom Come: Deliverance II, 25 Jun"), with the unread dot before it until the update is
             // opened (#467's NEW UPDATE). The game name is never cut: the eyebrow wraps.

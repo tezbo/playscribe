@@ -780,7 +780,20 @@ struct ContentsHead: View {
         let game = model.game(gameID)
         VStack(alignment: .leading, spacing: 14) {
             HStack(alignment: .top) {
-                GameTitleWithStatus(gameID: gameID, name: model.gameDisplayName(gameID))
+                VStack(alignment: .leading, spacing: 4) {
+                    // r060 day-one (Iris): in Tabletop the install line is the lower half's first line, above the game title,
+                    // plain secondary text; the standing half already carries the eyebrow and headline. Gone on the next visit.
+                    if duo.pose == .tabletop, let note = model.readerRelease(gameID).flatMap(model.dayOneNote) {
+                        Text(note)
+                            .font(PlayscribeFont.subheadline)
+                            // textSecondary, not .secondary (about 5:1): the one action the player needs (Iris on #506).
+                            .foregroundStyle(PlayscribeColor.textSecondary)
+                            .fixedSize(horizontal: false, vertical: true)
+                            .accessibilityIdentifier("dayOneNote")
+                            .accessibilitySortPriority(1)
+                    }
+                    GameTitleWithStatus(gameID: gameID, name: model.gameDisplayName(gameID))
+                }
                 Spacer(minLength: 8)
             }
             // Once per page (Terry): in Tabletop the links are on the Links panel instead.
