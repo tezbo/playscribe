@@ -44,16 +44,18 @@ extension AppModel {
         let added = releases(gameID).filter { $0.isPS5Listed && !before.contains($0.id) }.count
         // About 4 s, longer at accessibility sizes (Iris).
         let seconds: Double = UIApplication.shared.preferredContentSizeCategory.isAccessibilityCategory ? 7 : 4
-        show(Toast(text: Self.checkResult(checkState, newUpdates: added), seconds: seconds))
+        show(Toast(text: Self.checkResult(checkState, newUpdates: added, at: .now), seconds: seconds))
         // Tabletop's News page is view only, so this is also its retry.
         await NewsStore.shared.load(gameID: gameID, igdbID: game(gameID)?.igdbID)
     }
 
     /// "2 new updates", "No new updates. Checked 21 Nov, 6:51 am", "Couldn’t check. You’re offline" or "Couldn’t check. Try again later".
-    static func checkResult(_ state: CheckState, newUpdates: Int) -> String {
+    /// The stamp is when the player checked (`at`), not when the feed was last built: a 4:32 am feed time read as stale
+    /// after a 7:15 am check (Mac, a1f48b94).
+    static func checkResult(_ state: CheckState, newUpdates: Int, at now: Date) -> String {
         switch state {
-        case .checked(let d):
-            newUpdates > 0 ? "\(newUpdates) new update\(newUpdates == 1 ? "" : "s")" : "No new updates. Checked \(checkedStamp(d))"
+        case .checked:
+            newUpdates > 0 ? "\(newUpdates) new update\(newUpdates == 1 ? "" : "s")" : "No new updates. Checked \(checkedStamp(now))"
         case .failed(let offline): offline ? "Couldn’t check. You’re offline" : "Couldn’t check. Try again later"
         case .notChecked: "Couldn’t check. Try again later"
         }

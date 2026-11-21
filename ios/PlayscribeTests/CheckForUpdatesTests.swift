@@ -7,12 +7,13 @@ import Testing
 struct CheckForUpdatesTests {
     @Test func resultLines() {
         let d = Date(timeIntervalSince1970: 1_763_700_000)
-        #expect(AppModel.checkResult(.checked(d), newUpdates: 1) == "1 new update")
-        #expect(AppModel.checkResult(.checked(d), newUpdates: 2) == "2 new updates")
-        #expect(AppModel.checkResult(.checked(d), newUpdates: 0) == "No new updates. Checked \(AppModel.checkedStamp(d))")
-        #expect(AppModel.checkResult(.failed(offline: true), newUpdates: 0) == "Couldn’t check. You’re offline")
-        #expect(AppModel.checkResult(.failed(offline: false), newUpdates: 0) == "Couldn’t check. Try again later")
-        #expect(AppModel.checkResult(.notChecked, newUpdates: 0) == "Couldn’t check. Try again later")
+        let now = d.addingTimeInterval(9_780)  // feed built 4:32, checked 7:15: the toast says 7:15
+        #expect(AppModel.checkResult(.checked(d), newUpdates: 1, at: now) == "1 new update")
+        #expect(AppModel.checkResult(.checked(d), newUpdates: 2, at: now) == "2 new updates")
+        #expect(AppModel.checkResult(.checked(d), newUpdates: 0, at: now) == "No new updates. Checked \(AppModel.checkedStamp(now))")
+        #expect(AppModel.checkResult(.failed(offline: true), newUpdates: 0, at: now) == "Couldn’t check. You’re offline")
+        #expect(AppModel.checkResult(.failed(offline: false), newUpdates: 0, at: now) == "Couldn’t check. Try again later")
+        #expect(AppModel.checkResult(.notChecked, newUpdates: 0, at: now) == "Couldn’t check. Try again later")
     }
 
     @Test func menuItemRunsTheCheck() throws {
