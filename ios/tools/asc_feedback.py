@@ -7,8 +7,10 @@ The repo is public, so an issue carries only: type, build, device, OS, locale, d
 (they expire and are tied to the key). Runs every 5 minutes. Logs print counts and ids only. Needs ASC_KEY_ID, ASC_ISSUER_ID and
 ASC_KEY_P8 or ASC_KEY_P8_BASE64, GITHUB_TOKEN and GITHUB_REPOSITORY, plus pyjwt, cryptography and requests.
 
-Exit code: 0 for everything except a refused key. When App Store Connect answers 401 or 403 (the key is dead, or its
-role can't read feedback or crashes) the run exits 1, so nobody is told "all quiet" by a feedback reader that can't read.
+Exit code: 0 for everything except the first refused run. When App Store Connect answers 401 or 403 (the key is dead,
+or its role can't read feedback or crashes) the script opens ONE issue labelled testflight-feedback-broken and exits 1,
+so a reader that can't read never looks like "no feedback". While that issue stays open, later runs only warn and exit 0,
+so a dead key emails once, not every 5 minutes. Close the issue after fixing the key; the next refusal opens a new one.
 Network errors, missing secrets and other API errors stay warnings and exit 0.
 
 Endpoints and attributes checked against Apple's App Store Connect OpenAPI 4.6:
@@ -21,6 +23,7 @@ from prune_certs import pem
 ASC = "https://api.appstoreconnect.apple.com"
 GH = "https://api.github.com"
 LABEL = "testflight-feedback"
+BROKEN_LABEL = "testflight-feedback-broken"
 ASSIGNEE = os.environ.get("FEEDBACK_ASSIGNEE", "tezbo")  # assigning him is what makes GitHub Mobile push to his phone
 # The TestFlight app's bundle id (the release lane overrides the project's co.codeconnectors one; docs/push-relay.md).
 BUNDLE_ID = os.environ.get("BUNDLE_ID", "tezbo.Playscribe")
@@ -33,11 +36,17 @@ REFUSED = (401, 403)
 
 
 class KeyRefused(Exception):
-    """App Store Connect refused the key (401 or 403). The only failure that turns the run red."""
+    """App Store Connect refused the key (401 or 403). The only failure that can turn the run red."""
 
 
 def warn(msg):
     print(f"::warning::{msg}")
+
+
+def gh_session():
+    gh = requests.Session()
+    gh.headers.update({"Authorization": "Bearer " + os.environ["GITHUB_TOKEN"], "Accept": "application/vnd.github+json"})
+    return gh
 
 
 def asc_session():
@@ -78,11 +87,10 @@ def existing_ids(gh):
     return seen
 
 
-def ensure_label(gh):
+def ensure_label(gh, name=LABEL, color="d93f0b", description="From TestFlight beta feedback"):
     base = f"{GH}/repos/{os.environ['GITHUB_REPOSITORY']}/labels"
-    if gh.get(f"{base}/{LABEL}", timeout=60).status_code == 404:
-        gh.post(base, json={"name": LABEL, "color": "d93f0b", "description": "From TestFlight beta feedback"},
-                timeout=60).raise_for_status()
+    if gh.get(f"{base}/{name}", timeout=60).status_code == 404:
+        gh.post(base, json={"name": name, "color": color, "description": description}, timeout=60).raise_for_status()
 
 
 def build_info(j):
@@ -112,8 +120,7 @@ def main():
             raise KeyRefused(f"App Store Connect refused the key ({code}) looking up the app")
         warn(f"Could not find the app in App Store Connect ({code}); check the key's role and the bundle id")
         return
-    gh = requests.Session()
-    gh.headers.update({"Authorization": "Bearer " + os.environ["GITHUB_TOKEN"], "Accept": "application/vnd.github+json"})
+    gh = gh_session()
     seen = existing_ids(gh)
     todo = []
     refused = []
@@ -134,10 +141,6 @@ def main():
             if code in REFUSED:
                 refused.append(f"{path} ({code})")
             warn(f"{path}: App Store Connect returned {code}; the key's role may not allow feedback")
-    if refused:
-        # Still file what the other list returned, then go red.
-        todo_note = f"{len(todo)} item(s) from the readable list"
-        print(f"Key refused for {', '.join(refused)}; {todo_note}")
     todo.sort(key=lambda t: t[2]["attributes"].get("createdDate") or "")
     print(f"{len(todo)} new feedback item(s); creating up to {MAX_NEW}{' (dry run)' if DRY_RUN else ''}")
     if not (DRY_RUN or not todo):
@@ -167,14 +170,44 @@ def main():
         raise KeyRefused("App Store Connect refused the key for " + ", ".join(refused))
 
 
+def report_broken(reason):
+    """True when this run is the first to find the refusal (it opened the issue); False when one is already open."""
+    gh = gh_session()
+    repo = os.environ["GITHUB_REPOSITORY"]
+    r = gh.get(f"{GH}/repos/{repo}/issues", params={"labels": BROKEN_LABEL, "state": "open", "per_page": 1}, timeout=60)
+    r.raise_for_status()
+    if r.json():
+        return False
+    if DRY_RUN:
+        return True
+    ensure_label(gh, BROKEN_LABEL, "b60205", "TestFlight feedback reader can't read App Store Connect")
+    body = (f"The TestFlight feedback reader was refused by App Store Connect: {reason}.\n\n"
+            "While this stays unfixed, tester feedback and crash reports are NOT being turned into issues.\n\n"
+            "Fix: check the App Store Connect API key in the repo secrets (ASC_KEY_ID, ASC_ISSUER_ID, ASC_KEY_P8). "
+            "It needs the Developer role or higher. Then run the \"TestFlight feedback\" workflow with dry_run on "
+            "and close this issue.\n\n"
+            "Later runs warn and stay green while this issue is open.")
+    gh.post(f"{GH}/repos/{repo}/issues", timeout=60,
+            json={"title": "TestFlight feedback reader is refused by App Store Connect", "body": body,
+                  "labels": [BROKEN_LABEL], "assignees": [ASSIGNEE]}).raise_for_status()
+    return True
+
+
 def run():
-    # Green unless the key is refused (401 or 403): then red, because a reader that can't read looks the same as
-    # "no feedback". Every other problem becomes a warning with no tester text in it.
+    # Red only on the first run that finds a refused key (401 or 403), because a reader that can't read looks the same
+    # as "no feedback". Every other problem, and every later refusal while the broken issue is open, is a warning.
     try:
         main()
     except KeyRefused as e:
-        print(f"::error::{e}; check the key's role in App Store Connect (needs Developer or higher)")
-        return 1
+        try:
+            first = report_broken(str(e))
+        except Exception as e2:  # noqa: BLE001
+            warn(f"Couldn't check or open the broken-reader issue: {type(e2).__name__}")
+            first = True
+        if first:
+            print(f"::error::{e}; check the key's role in App Store Connect (needs Developer or higher)")
+            return 1
+        warn(f"{e}; the testflight-feedback-broken issue is already open")
     except Exception as e:  # noqa: BLE001
         warn(f"Feedback run stopped: {type(e).__name__}")
     return 0
