@@ -1002,25 +1002,21 @@ final class LatestUpdatesDeckTests: XCTestCase {
         let label = pager.label
         guard count > 2 else { app.terminate(); throw XCTSkip("needs three or more cards: \(label)") }
         XCTAssertEqual(start, 1)
-        // A card inside the deck's own frame: the lazy row keeps cards that have scrolled away in the tree, and in Book the deck is
-        // on the right page, so a kept card can be off screen ("visible frame is empty", Mac 6d1d9d18). With no such card, swipe
-        // the deck container itself, which holds the scroll view.
-        func card() -> XCUIElement {
-            let deck = pager.frame
-            return app.buttons.matching(identifier: "deckCard").allElementsBoundByIndex.first {
-                !$0.frame.isEmpty && deck.contains(CGPoint(x: $0.frame.midX, y: $0.frame.midY)) && $0.isHittable
-            } ?? pager
+        // Drag on the deck container itself, from 80% to 20% of its width. Swiping a deckCard failed in Book ("visible frame is
+        // empty", Mac 6d1d9d18 and f6e57712): the lazy row keeps off-screen cards that still pass isHittable and frame checks.
+        func flick(_ velocity: XCUIGestureVelocity) {
+            let from = pager.coordinate(withNormalizedOffset: CGVector(dx: 0.8, dy: 0.5))
+            let to = pager.coordinate(withNormalizedOffset: CGVector(dx: 0.2, dy: 0.5))
+            from.press(forDuration: 0.05, thenDragTo: to, withVelocity: velocity, thenHoldForDuration: 0)
+            sleep(1)
         }
-        card().swipeLeft(velocity: .slow)
-        sleep(1)
+        flick(.slow)
         XCTAssertEqual(page().0, 2, "a swipe from card 1 lands on card 2")
-        card().swipeLeft(velocity: .fast)
-        sleep(1)
+        flick(.fast)
         XCTAssertEqual(page().0, 3, "a fast flick moves exactly one card")
         var last = page().0
         for _ in 0..<count {
-            card().swipeLeft(velocity: .fast)
-            sleep(1)
+            flick(.fast)
             let now = page().0
             XCTAssertLessThanOrEqual(now - last, 1, "one card per flick")
             if now == last { break }
