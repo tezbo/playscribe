@@ -52,10 +52,14 @@ struct BrightArtScrimTests {
         // Behind the block, in the ramp above it, and at the stage's bottom row: the far right matches the far left.
         for y in [h - 30, h - Int(block.height) - 20, h - 1] {
             let left = try patch(cg, 4, y), right = try patch(cg, Int(stage.width) - 5, y)
-            // Was intermittent on CI (row 270, left 59, right 64) while every profile point read 64: one of the patch's 15 reads
-            // came back 0 through a dangling buffer in `grey` (fixed there). The profile stays: a real side edge sits at x 120.
+            // Intermittent on CI (row 270, left 59, right 64, three times, also after the buffer fix in `grey`) while every
+            // profile point read 64. A real side edge would sit at x 120 (Quinn: that must be fixed, not loosened).
             let profile = try [0, 4, 60, 118, 122, 200, 300, 395, 399].map { "\($0):\(try grey(cg, $0, y))" }.joined(separator: " ")
-            #expect(abs(left - right) <= 2, "row \(y): left \(left), right \(right) (no side edge); profile \(profile)")
+            // Every read of both patches (rows y-1...y+1, x 2...6 and 393...397): three CI failures gave left 59 with the whole
+            // row at 64, which needs one read near 0 inside the left patch. This says which pixel, and which row.
+            let reads = { (x: Int) in try (y - 1...y + 1).map { yy in try (x - 2...x + 2).map { try grey(cg, $0, min(cg.height - 1, yy)) } } }
+            #expect(abs(left - right) <= 2,
+                    "row \(y): left \(left), right \(right) (no side edge); profile \(profile); image \(cg.width)x\(cg.height); left reads \(try reads(4)); right reads \(try reads(Int(stage.width) - 5))")
         }
     }
 
