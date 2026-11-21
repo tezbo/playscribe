@@ -23,6 +23,7 @@ extension FoldHost {
             .tint(PlayscribeColor.accent)
             .foregroundStyle(PlayscribeColor.textPrimary)
             .background(Color.ink0)
+            .modifier(HarnessStableMotion())
         let hc = UIHostingController(rootView: root)
         hc.traitOverrides.horizontalSizeClass = tall.compactWidth ? .compact : .regular
         hc.traitOverrides.verticalSizeClass = tall.windowSize.height > 500 ? .regular : .compact

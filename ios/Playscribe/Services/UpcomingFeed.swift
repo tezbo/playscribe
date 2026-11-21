@@ -67,10 +67,7 @@ final class UpcomingStore {
             g.releasePrecision = precision
             return g
         }
-        games = mapped.sorted {
-            ($0.releaseDate?.isoDay ?? .distantFuture, $0.name) < ($1.releaseDate?.isoDay ?? .distantFuture, $1.name)
-        }
-        .prefix(120).map { $0 }
+        games = mapped.sorted { CatalogGame.upcomingOrder($0, $1) }.prefix(120).map { $0 }
         NotificationService.shared.notifyDateMoves()
     }
 }
@@ -90,13 +87,14 @@ extension UpcomingStore.Move {
 
     private var previousLabel: String? {
         guard let previousDate, let d = previousDate.isoDay else { return nil }
-        let cal = Calendar.current
+        // A previous release date is a UTC day, printed as one (r060-utc-day-labels).
+        let cal = Date.utcCalendar
         let year = cal.component(.year, from: d)
         switch previousPrecision {
         case "year": return String(year)
         case "quarter": return "Q\((cal.component(.month, from: d) - 1) / 3 + 1) \(year)"
-        case "month": return d.formatted(.dateTime.month(.wide).year())
-        case "day": return d.formatted(.dateTime.day().month(.wide))
+        case "month": return d.formatted(Date.FormatStyle(timeZone: .gmt).month(.wide).year())
+        case "day": return d.formatted(Date.FormatStyle(timeZone: .gmt).day().month(.wide))
         default: return nil
         }
     }

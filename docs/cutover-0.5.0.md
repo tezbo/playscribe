@@ -1,6 +1,6 @@
 # Shipping 0.5.0 backend changes to main
 
-The feed is built by `.github/workflows/feed.yml` from **main**, so a backend change reaches installed apps (0.2.0 now) only when it is on main. The feed is published to the `feed` branch as one commit that is replaced on every run, with the SQLite state (`state/playscribe.db`) inside it. That means **the feed branch has no history**: a bad run overwrites the only copy. Everything below is built around that.
+The feed is built by `.github/workflows/feed.yml` from **main**, so a backend change reaches installed apps (0.2.0 now) only when it is on main. The feed is published to the `feed` branch as one commit that is replaced on every run, with the SQLite state (`state/playscribe.db.gz`, gzipped; `gunzip` it before use) inside it. That means **the feed branch has no history**: a bad run overwrites the only copy. Everything below is built around that.
 
 ## Before any step
 
@@ -14,6 +14,7 @@ The feed is built by `.github/workflows/feed.yml` from **main**, so a backend ch
 4. **Dry-run the publish.** Build the feed from a copy of the live state and diff it against the live feed:
    ```sh
    git fetch --depth 1 origin feed && mkdir -p /tmp/new && git --work-tree=/tmp/new checkout FETCH_HEAD -- . && git reset -q && cd backend
+   gunzip -f /tmp/new/state/playscribe.db.gz   # the feed branch stores the state gzipped
    DATABASE_PATH=/tmp/new/state/playscribe.db npm run ingest -- --export /tmp/new
    npm run publish-diff -- /tmp/new
    ```

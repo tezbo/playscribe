@@ -1,0 +1,16 @@
+name: Typography guard
+
+# No middle-dot separators and no straight apostrophes in user-facing text (Terry, 13 Nov 2026). Cheap: runs on every PR.
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  typography:
+    name: typography guard
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 tools/ci/typography_guard.py --gha

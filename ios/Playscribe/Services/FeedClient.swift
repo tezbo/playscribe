@@ -98,7 +98,7 @@ extension AppModel {
                 known.insert(r.id)
                 // Like the server: nothing that went live more than 72 hours ago alerts.
                 // It's the past, so it's read too: adding a game doesn't flood it with unread updates.
-                guard r.alertDate > .now.addingTimeInterval(-72 * 3600) else {
+                guard r.isAlertWorthy() else {
                     if data.read[r.id] == nil { data.read[r.id] = .now }
                     continue
                 }
@@ -121,7 +121,7 @@ extension AppModel {
     var feedStatusLine: String? {
         switch feedStatus {
         case .offline(let d): "Offline" + (d.map { ". Updated \($0.formatted(.relative(presentation: .named)))." } ?? "")
-        case .failed: "Couldn't refresh"
+        case .failed: "Couldn’t refresh"
         default: nil
         }
     }

@@ -4,7 +4,7 @@ Live board: https://claude.ai/artifact/8mRkcMcHMa3jox19BszVpb
 
 **Mark.** An open book whose spine is the hinge, with a spark rising from it. The spark's long lower point, slit and breather hole make it a pen nib (the scribe). The left page holds patch-note lines. The right page holds a line and a console-style update bar, part filled in ember. In the wordmark the spark dots the i. Below 24 pt use `logo/mark-small.svg`, which drops the nib cut and the page details.
 
-**Voice.** The tagline is "The story of every update". Copy always invites the player back: what changed, then "Catch up, then jump back in". Write like a fellow player, not a changelog.
+**Voice.** Copy always invites the player back: what changed, then "Catch up, then jump back in". Write like a fellow player, not a changelog.
 
 **Console cues.** These come from shared console vernacular, never from PlayStation's own marks:
 - the update bar: in the mark, and filling on the splash

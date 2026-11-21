@@ -64,4 +64,62 @@ struct UpcomingBrowseTests {
         #expect(m.entry(g.id)?.status == .watching)
         #expect(m.browsedGames[g.id] == nil)
     }
+
+    // r053-tap-opens-tick-adds (Iris): the first-run "Popular on PS5" covers. A tap opens the game; the tick adds it, once.
+    @Test func tappingAFirstRunCoverOpensTheGameAndLeavesTheLibraryUnchanged() {
+        let m = model()
+        let g = feedGame
+        let before = m.data.collection.count
+        m.browseGame(g)                          // what PopularCover's cover button calls
+        #expect(m.nav.gameID == g.id)
+        #expect(m.data.collection.count == before)
+        #expect(m.entry(g.id) == nil)
+    }
+
+    @Test func tickingACoverAddsTheGameExactlyOnceAndAnUpcomingOneAsWishlist() {
+        let m = model()
+        let g = feedGame
+        let before = m.data.collection.count
+        m.addGame(g, status: .owned)             // what PopularCover's tick calls
+        m.addGame(g, status: .owned)             // a second tick (or a double tap) is a no-op
+        #expect(m.data.collection.count == before + 1)
+        #expect(m.entry(g.id)?.status == .wishlist)
+    }
+
+    // Iris (#431): the strip stays under the finger for a moment after the first tick, and only the tick holds it.
+    @Test func theFirstRunStripIsHeldAfterATickOnlyWhileTheLibraryIsEmpty() {
+        let m = model()
+        m.holdFirstRun()
+        #expect(m.firstRunHold)                 // empty Library: the strip is kept up
+        let n = model()
+        n.addGame(feedGame, status: .owned)     // the Add sheet path: straight to the Library, no hold
+        #expect(!n.firstRunHold)
+        n.holdFirstRun()
+        #expect(!n.firstRunHold)                // a library with a game never goes back to the strip
+    }
+
+    /// Quinn, #442: `gamepage/alan-wake-2` (a feed id with no CatalogGame) opened a blank Closed page with no Add control.
+    /// Quinn, #445: it opens as the PS5 index game under its own id, so an add never files a second copy under the feed id.
+    @Test func openingAFeedOnlyIdOpensTheIndexGameWithoutAddingIt() {
+        let m = model()
+        #expect(m.game("alan-wake-2") == nil)
+        let before = m.data.collection.count
+        m.openGame("alan-wake-2")
+        #expect(m.nav.gameID == "igdb-185246")
+        #expect(m.game("igdb-185246")?.igdbID == 185246)
+        #expect(m.entry("igdb-185246") == nil)
+        #expect(m.data.collection.count == before)
+        m.openGame("zzzz-no-such-game-9999")
+        #expect(m.nav.gameID == "zzzz-no-such-game-9999")
+        #expect(m.game("zzzz-no-such-game-9999") == nil)
+    }
+
+    @Test func aFeedOnlyIdOpensTheLibraryCopyOfTheSameGame() {
+        let m = model()
+        let mine = CatalogGame(id: "my-alan-wake", name: "Alan Wake 2", platforms: [.ps5], igdbID: 185246, coverage: .none)
+        m.addGame(mine, status: .owned)
+        m.openGame("alan-wake-2")
+        #expect(m.nav.gameID == "my-alan-wake")
+        #expect(m.data.collection.filter { m.game($0.gameID)?.igdbID == 185246 }.count == 1)
+    }
 }

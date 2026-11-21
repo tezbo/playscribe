@@ -62,8 +62,14 @@ Claude Code loads these on its own in any session that checks out the repo, and 
 | `decision-review` | About to add, change, remove or reverse anything: goal, still needed, worth, alternatives, decide, log the learning (`docs/decisions/TEMPLATE.md`). |
 | `workaround-first` | About to say "can't", "only", "missing" or "needs Terry": check repo, other thread, build it, then report the route. |
 | `playscribe-code-review` | Reviewing a diff with the repo rules first. |
+| `swiftui-pro` | Writing or reviewing SwiftUI (modern API, data flow, layout as the window resizes incl. iPhone Duo, Dynamic Type/VoiceOver). Vendored, MIT, Paul Hudson; Playscribe rules win. |
+| `swiftui-accessibility-auditor` | Auditing a SwiftUI view for VoiceOver, Dynamic Type, focus, touch targets; P0/P1/P2 findings. Vendored, MIT, rgmez; does not replace the AX5 stills gate. |
+| `release-manager` | Tagging a release, creating a GitHub release, rolling one back, or any git/gh command that changes tags, releases or remote refs. Held by the release manager (Ollie) alone. |
+| `swift-testing-pro` | Writing or reviewing `import Testing` unit and logic tests (UI tests stay XCTest). Vendored, MIT, Paul Hudson. |
 
 **General skills.** Teammates also see the shared design, engineering, marketing and product-management skills (for example `engineering:code-review`, `design:accessibility-review`, `marketing:brand-review`, `product-management:write-spec`). Say "Skill: <name>" in the reply when you use one.
+
+**Plugin skills (superpowers).** Terry installed the superpowers plugin (v7.0.2, user scope on the Mac, 2026-11-09). Its skills are namespaced `superpowers:*`, so no name collides with a repo skill. Where one overlaps a Playscribe skill, the Playscribe skill wins: merges and sign-offs go through `review-merge-handoff` (not `finishing-a-development-branch`), reviews through `playscribe-code-review`, decisions through `decision-review` (not `brainstorming`). `subagent-driven-development` and `dispatching-parallel-agents` only when Terry asks. `systematic-debugging`, `verification-before-completion` and `test-driven-development` are welcome; cite them as "Skill: superpowers:<name>". Decision: `docs/decisions/superpowers-plugin.md`.
 
 **Outside sources.** Candidates come from Anthropic's skills and agent docs and from the VoltAgent awesome-agent-skills list. That list only links to other repos, each with its own licence. Nothing is copied in until its licence is checked; a copied skill keeps its licence file and credit in its folder. Propose a new skill when the same gap shows up twice, to Gabrielle (the "Assess agents and plan skill growth" thread). Per-agent plans: `/mnt/project-files/team/improvement-plans.md`.
 

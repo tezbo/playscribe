@@ -44,7 +44,8 @@ struct TabletopSearchButton: View {
             }
             .padding(.horizontal, 12)
             .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
-            .background(PlayscribeColor.ink700, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+            .background(PlayscribeRole.chipFill, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+            .controlBorder(.tabletopSearch, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
@@ -69,6 +70,8 @@ struct TabletopSearchHint: View {
 
 struct TabletopLetterStrip: View {
     @Binding var letter: String?
+    /// The chip grows with the text size, so a letter at AX5 sits inside its own circle instead of running into the next one.
+    @ScaledMetric(relativeTo: .headline) private var chip: CGFloat = 44
 
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
@@ -77,9 +80,9 @@ struct TabletopLetterStrip: View {
                     let on = letter == l
                     Button { letter = on ? nil : l } label: {
                         Text(l).font(PlayscribeFont.headline)
-                            .foregroundStyle(on ? PlayscribeColor.onAccent : PlayscribeColor.textPrimary)
-                            .frame(width: 44, height: 44)
-                            .background(Circle().fill(on ? PlayscribeColor.accent : PlayscribeColor.ink700))
+                            .foregroundStyle(on ? PlayscribeRole.onAction : PlayscribeRole.textPrimary)
+                            .frame(width: chip, height: chip)
+                            .background(Circle().fill(on ? PlayscribeRole.action : PlayscribeRole.chipFill))
                             .contentShape(Rectangle())
                     }
                     .buttonStyle(.plain)
@@ -90,5 +93,7 @@ struct TabletopLetterStrip: View {
                 }
             }
         }
+        // R-7: the strip fades at its edges instead of cutting a chip hard at the right (Quinn, #526 Tabletop std).
+        .edgeFade(24)
     }
 }

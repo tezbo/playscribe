@@ -3,7 +3,6 @@ import SwiftUI
 enum Brand {
     /// The product name. One constant, so a rename is one line.
     static let name = "Playscribe"
-    static let tagline = "The story of every update"
     static let trademarkNotice = "PlayStation, PS5, PlayStation Plus and the PlayStation Family Mark, and their logos, icons and branding, are trademarks of Sony Interactive Entertainment Inc. Playscribe is not affiliated with or endorsed by Sony Interactive Entertainment."
 }
 
@@ -75,7 +74,7 @@ struct StatusPill: View {
 
 struct UnreadDot: View {
     var body: some View {
-        Circle().fill(PlayscribeColor.accent).frame(width: 8, height: 8)
+        Circle().fill(PlayscribeRole.newGraphic).frame(width: 8, height: 8)
             .accessibilityLabel("Unread")
     }
 }
@@ -94,8 +93,12 @@ extension Date {
     private static let utc: Calendar = { var c = Calendar(identifier: .gregorian); c.timeZone = .gmt; return c }()
     /// Patch and release dates are facts about the patch, not the reader: the UTC calendar day, whatever the device's zone
     /// (Nadia, 7 Nov 2026; docs/decisions/release-date-timezone.md). The same patch reads the same on every phone, shared card and runner.
-    var shortDay: String { formatted(Date.FormatStyle(locale: Self.dayFirst, timeZone: .gmt).day().month(.abbreviated).year()) }
-    var dayMonth: String { formatted(Date.FormatStyle(locale: Self.dayFirst, timeZone: .gmt).day().month(.abbreviated)) }
+    /// Building a Date.FormatStyle and formatting with it costs far more than a tile can spare while scrolling (Upcoming formats
+    /// two dates per tile on every redraw), and the result depends only on the date, so it is remembered (scroll lag, 13 Nov).
+    var shortDay: String { DayLabelMemo.shared.label(self, short: true) }
+    var dayMonth: String { DayLabelMemo.shared.label(self, short: false) }
+    fileprivate var shortDayUncached: String { formatted(Date.FormatStyle(locale: Self.dayFirst, timeZone: .gmt).day().month(.abbreviated).year()) }
+    fileprivate var dayMonthUncached: String { formatted(Date.FormatStyle(locale: Self.dayFirst, timeZone: .gmt).day().month(.abbreviated)) }
     /// "16 Oct" this year, "16 Oct 2025" before (years counted in UTC too).
     var dayMonthOrYear: String { Self.utc.isDate(self, equalTo: .now, toGranularity: .year) ? dayMonth : shortDay }
     /// A moment on this device ("Checked 7 Nov, 11:20"): the device's own zone, not the patch rule above.
@@ -107,9 +110,61 @@ extension Date {
     static func sameUTCDay(_ a: Date, _ b: Date) -> Bool { utc.isDate(a, inSameDayAs: b) }
     /// Whether `a` and `b` fall in the same UTC calendar year.
     static func sameUTCYear(_ a: Date, _ b: Date) -> Bool { utc.isDate(a, equalTo: b, toGranularity: .year) }
+    /// Whether this release day is today or in the next six UTC days: the "coming this week" window. A day-precision release
+    /// date is a UTC day, so the window is counted in UTC days and never disagrees with the printed date (r060-utc-day-labels).
+    func isInUTCWeek(from now: Date = .now) -> Bool {
+        let start = Self.utc.startOfDay(for: now)
+        return self >= start && self < start.addingTimeInterval(7 * 86400)
+    }
+}
+
+/// Remembers the printed day for each date (UTC day, en_GB), so the same date is formatted once.
+final class DayLabelMemo: @unchecked Sendable {
+    static let shared = DayLabelMemo()
+    private let lock = NSLock()
+    private var short: [Date: String] = [:]
+    private var medium: [Date: String] = [:]
+
+    func label(_ d: Date, short isShort: Bool) -> String {
+        lock.lock(); let hit = isShort ? short[d] : medium[d]; lock.unlock()
+        if let hit { return hit }
+        let text = isShort ? d.shortDayUncached : d.dayMonthUncached
+        lock.lock()
+        if short.count + medium.count > 2000 { short.removeAll(); medium.removeAll() }
+        if isShort { short[d] = text } else { medium[d] = text }
+        lock.unlock()
+        return text
+    }
 }
 
 extension String {
+    /// "Deliverance II" with a no-break space before a trailing Roman numeral, so the numeral never wraps onto a line of its own
+    /// (Open portrait showed "II ✓" alone under "Deliverance"; r060-nbsp-roman-numerals). Only a numeral up to XX after at least one
+    /// other word; every other title is returned unchanged.
+    var gluingTrailingNumeral: String {
+        guard let space = lastIndex(of: " ") else { return self }
+        let last = self[index(after: space)...]
+        let numerals: Set<Substring> = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XIX", "XX"]
+        guard numerals.contains(last), self[..<space].contains(where: { !$0.isWhitespace }) else { return self }
+        return String(self[..<space]) + "\u{00A0}" + last
+    }
+
+    private static let isoDayCalendar = Calendar(identifier: .gregorian)
+
+    /// A version number ("01.004.000", "v1.1") with a word joiner after each dot, so it drops to the next line whole and never breaks
+    /// at a dot ("01.002." then "000"). Only digit.digit runs change; every other string is returned unchanged. Display only.
+    var keepingVersionsTogether: String {
+        var out = ""
+        var prev: Character?
+        let chars = Array(self)
+        for (i, c) in chars.enumerated() {
+            out.append(c)
+            if c == ".", let p = prev, p.isNumber, i + 1 < chars.count, chars[i + 1].isNumber { out.append("\u{2060}") }
+            prev = c
+        }
+        return out
+    }
+
     /// ISO day ("2026-09-03") to a Date at noon UTC.
     var isoDay: Date? {
         var c = DateComponents()
@@ -117,7 +172,8 @@ extension String {
         guard p.count == 3 else { return nil }
         c.year = p[0]; c.month = p[1]; c.day = p[2]; c.hour = 12
         c.timeZone = .gmt
-        return Calendar(identifier: .gregorian).date(from: c)
+        // One shared calendar: a new one per call was the cost when a list sorted or labelled many games.
+        return Self.isoDayCalendar.date(from: c)
     }
 }
 
@@ -144,8 +200,8 @@ private struct AdaptiveGlass<S: InsettableShape>: ViewModifier {
     func body(content: Content) -> some View {
         if reduceTransparency || contrast == .increased || qaSolid {
             content
-                .background(Color.ink2, in: shape)
-                .overlay(shape.strokeBorder(PlayscribeColor.vellum500, lineWidth: 1))
+                .background(PlayscribeRole.card, in: shape)
+                .controlBorder(.solidGlass, in: shape, keepingDark: PlayscribeColor.vellum500)
         } else {
             content.glassEffect(interactive ? .regular.interactive() : .regular, in: shape)
         }

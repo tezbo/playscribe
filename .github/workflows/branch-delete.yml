@@ -1,21 +1,28 @@
-name: Delete a leftover branch
+name: Delete leftover branches
 
-# Manual only. This removes a manual step (agents' git pushes cannot delete remote branches: the proxy returns 403);
-# it does NOT replace Terry's approval. Deleting a branch still needs Terry's plain yes every time, quoted by whoever
-# runs this. Guards: only claude/* branches, never the default branch, the tip must equal expected_sha (so you delete
-# exactly what was reviewed), and a branch with an open PR is refused.
+# Manual only. Agents' git pushes cannot delete remote branches (the proxy returns 403), so this workflow does the
+# delete. Every run quotes its approval in `approval`: Terry's yes, or the coordinator's under Terry's cloud admin
+# grant (12 Nov 2026). The guards below are what keep it safe.
+#
+# Guards, all checked for every branch before anything is deleted:
+#   - never the default branch or a kept data/backup branch (`feed`, `gh-pages`, `ps5-index-update`, `backup/*`, `release/*`, `rc/*`);
+#   - the tip must equal the SHA given (so you delete exactly what was reviewed);
+#   - a branch with an open PR is refused;
+#   - the tip must already be in main (merged, so nothing is lost) unless `allow_unmerged` is true.
+# Each deleted branch's restore command is printed in the run summary.
 on:
   workflow_dispatch:
     inputs:
-      branch:
-        description: 'Branch to delete, must start with claude/'
-        required: true
-      expected_sha:
-        description: 'Full 40-character tip SHA you verified; the delete is refused if the tip differs'
+      branches:
+        description: 'Space-separated name@sha pairs (full 40-character tip SHA), up to 50, e.g. claude/x@0123...'
         required: true
       approval:
         description: "Where Terry said yes (message id or quote), at least 10 characters"
         required: true
+      allow_unmerged:
+        description: 'true also deletes branches whose tip is not in main (their commits survive only by SHA)'
+        type: boolean
+        default: false
       dry_run:
         description: 'true runs every guard and stops before the delete; set false for the real run'
         type: boolean
@@ -25,34 +32,74 @@ permissions:
   contents: write
   pull-requests: read
 
+concurrency: branch-delete
+
 jobs:
-  delete:
+  check:
     runs-on: ubuntu-latest
-    timeout-minutes: 3
+    timeout-minutes: 5
     steps:
-      - name: Delete the branch if every guard holds
+      - name: Check every guard
         env:
           GH_TOKEN: ${{ github.token }}
           REPO: ${{ github.repository }}
-          BRANCH: ${{ inputs.branch }}
-          EXPECTED: ${{ inputs.expected_sha }}
+          BRANCHES: ${{ inputs.branches }}
           APPROVAL: ${{ inputs.approval }}
-          DRY_RUN: ${{ inputs.dry_run }}
+          ALLOW_UNMERGED: ${{ inputs.allow_unmerged }}
           DEFAULT: ${{ github.event.repository.default_branch }}
         run: |
           set -euo pipefail
-          case "$BRANCH" in claude/*) ;; *) echo "refused: only claude/* branches"; exit 1;; esac
-          [ "$BRANCH" != "$DEFAULT" ] || { echo "refused: default branch"; exit 1; }
-          [ "${#APPROVAL}" -ge 10 ] || { echo "refused: approval reference must be at least 10 characters"; exit 1; }
-          case "$EXPECTED" in *[!0-9a-f]*|"") echo "refused: expected_sha must be 40 hex characters"; exit 1;; esac
-          [ "${#EXPECTED}" -eq 40 ] || { echo "refused: expected_sha must be 40 hex characters"; exit 1; }
-          tip=$(gh api "repos/$REPO/git/ref/heads/$BRANCH" --jq .object.sha)
-          [ "$tip" = "$EXPECTED" ] || { echo "refused: tip is $tip, not $EXPECTED"; exit 1; }
-          open=$(gh pr list --repo "$REPO" --head "$BRANCH" --state open --json number --jq length)
-          [ "$open" = "0" ] || { echo "refused: $open open PR(s) on this branch"; exit 1; }
-          echo "Restore with: git push origin $tip:refs/heads/$BRANCH"
-          echo "  or: gh api -X POST repos/$REPO/git/refs -f ref=refs/heads/$BRANCH -f sha=$tip"
-          if [ "$DRY_RUN" = "true" ]; then echo "Dry run: every guard passed, nothing deleted."; exit 0; fi
-          echo "Deleting $BRANCH at $tip. Approval: $APPROVAL"
-          gh api -X DELETE "repos/$REPO/git/refs/heads/$BRANCH"
-          echo "Deleted."
+          refuse() { echo "::error::refused: $*"; echo "Refused: $*" >> "$GITHUB_STEP_SUMMARY"; exit 1; }
+          [ "${#APPROVAL}" -ge 10 ] || refuse "approval reference must be at least 10 characters"
+          n=0
+          for pair in $BRANCHES; do
+            n=$((n + 1)); [ "$n" -le 50 ] || refuse "more than 50 branches in one run"
+            name=${pair%@*}; sha=${pair##*@}
+            [ "$name" != "$pair" ] || refuse "$pair is not name@sha"
+            case "$name" in "$DEFAULT"|feed|gh-pages|ps5-index-update|backup/*|release/*|rc/*) refuse "$name is kept";; esac
+            [[ "$sha" =~ ^[0-9a-f]{40}$ ]] || refuse "$name: sha must be 40 lowercase hex characters"
+            tip=$(gh api "repos/$REPO/git/ref/heads/$name" --jq .object.sha) || refuse "$name does not exist"
+            [ "$tip" = "$sha" ] || refuse "$name tip is $tip, not $sha"
+            open=$(gh pr list --repo "$REPO" --head "$name" --state open --json number --jq length)
+            [ "$open" = "0" ] || refuse "$name has $open open PR(s)"
+            rel=$(gh api "repos/$REPO/compare/$sha...$DEFAULT" --jq .status)
+            case "$rel" in identical|ahead) merged=yes;; *) merged=no;; esac
+            [ "$merged" = yes ] || [ "$ALLOW_UNMERGED" = "true" ] || refuse "$name is not merged into $DEFAULT (set allow_unmerged to delete it anyway)"
+            echo "ok $name@$sha merged=$merged" | tee -a "$GITHUB_STEP_SUMMARY"
+          done
+          [ "$n" -ge 1 ] || refuse "no branches given"
+
+  delete:
+    needs: check
+    if: ${{ !inputs.dry_run }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Re-check and delete
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          BRANCHES: ${{ inputs.branches }}
+          APPROVAL: ${{ inputs.approval }}
+          ALLOW_UNMERGED: ${{ inputs.allow_unmerged }}
+          DEFAULT: ${{ github.event.repository.default_branch }}
+        run: |
+          set -euo pipefail
+          refuse() { echo "::error::refused: $*"; echo "Refused: $*" >> "$GITHUB_STEP_SUMMARY"; exit 1; }
+          # Every guard runs again right before the delete, in case a branch moved since the check job.
+          for pair in $BRANCHES; do
+            name=${pair%@*}; sha=${pair##*@}
+            case "$name" in "$DEFAULT"|feed|gh-pages|ps5-index-update|backup/*|release/*|rc/*) refuse "$name is kept";; esac
+            tip=$(gh api "repos/$REPO/git/ref/heads/$name" --jq .object.sha) || refuse "$name does not exist"
+            [ "$tip" = "$sha" ] || refuse "$name tip is now $tip, not $sha"
+            open=$(gh pr list --repo "$REPO" --head "$name" --state open --json number --jq length)
+            [ "$open" = "0" ] || refuse "$name has $open open PR(s)"
+            rel=$(gh api "repos/$REPO/compare/$sha...$DEFAULT" --jq .status)
+            case "$rel" in identical|ahead) ;; *) [ "$ALLOW_UNMERGED" = "true" ] || refuse "$name is not merged";; esac
+          done
+          echo "Approval: $APPROVAL" >> "$GITHUB_STEP_SUMMARY"
+          for pair in $BRANCHES; do
+            name=${pair%@*}; sha=${pair##*@}
+            gh api -X DELETE "repos/$REPO/git/refs/heads/$name"
+            echo "Deleted $name at $sha. Restore: gh api -X POST repos/$REPO/git/refs -f ref=refs/heads/$name -f sha=$sha" | tee -a "$GITHUB_STEP_SUMMARY"
+          done

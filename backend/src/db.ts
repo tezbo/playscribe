@@ -131,6 +131,14 @@ CREATE TABLE IF NOT EXISTS news (
   PRIMARY KEY (game_id, url)
 );
 
+-- r071: devices whose APNs token came back dead in this run, for scripts/relay-dead.ts to report to the relay. Holds the
+-- token's sha256, never the token, and is emptied by scrubDevices with the devices, so the published file never keeps a row.
+CREATE TABLE IF NOT EXISTS dead_tokens (
+  device_id TEXT PRIMARY KEY,
+  token_sha TEXT NOT NULL,
+  found_at TEXT NOT NULL
+);
+
 CREATE TABLE IF NOT EXISTS push_log (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   release_id TEXT NOT NULL,
@@ -161,6 +169,11 @@ export const openDb = (path: string): DB => {
   if (!has('devices', 'quiet_from')) db.exec('ALTER TABLE devices ADD COLUMN quiet_from INTEGER')
   if (!has('devices', 'quiet_until')) db.exec('ALTER TABLE devices ADD COLUMN quiet_until INTEGER')
   if (!has('devices', 'quiet_tz')) db.exec('ALTER TABLE devices ADD COLUMN quiet_tz TEXT')
+  if (!has('devices', 'hourly')) db.exec('ALTER TABLE devices ADD COLUMN hourly INTEGER NOT NULL DEFAULT 0')
+  // Auto-onboarding (0.5.4): games the feed follows from IGDB's Steam link, not the hand registry; polled in rotating slices.
+  if (!has('games', 'auto')) db.exec('ALTER TABLE games ADD COLUMN auto INTEGER NOT NULL DEFAULT 0')
+  if (!has('games', 'auto_polled_at')) db.exec('ALTER TABLE games ADD COLUMN auto_polled_at TEXT')
+  if (!has('games', 'steam_is_pc_port')) db.exec('ALTER TABLE games ADD COLUMN steam_is_pc_port INTEGER NOT NULL DEFAULT 0')
   if (!has('games', 'square_cover_image_id')) db.exec('ALTER TABLE games ADD COLUMN square_cover_image_id TEXT')
   // Tile art picked under older rules (before concept art was excluded) is cleared once, so the next
   // seed asks IGDB again. Bump ART_RULES when src/artwork.ts changes what it picks.

@@ -1,0 +1,83 @@
+# r053-tap-opens-tick-adds
+
+Iris's call (v0.5.3 blocker, from Terry's "tapping on a title in Upcoming adds it to my library, and the sound is weird"): a tap on a cover never adds a game; it opens the game. Adding is a deliberate act, a tick on the cover or an explicit Add button. The pop plays only on an explicit add, opening is silent, and the sound default stays off.
+
+Finding: the v0.5.2 build Terry runs (2669d75) still adds to Wishlist when an Upcoming tile is tapped (UpcomingView.tile called addGame); the #243 fix (1ace3d9) is in main, not in 2669d75, so v0.5.3 closes his exact report. In main the only one-tap adds were the first-run "Popular on PS5" covers (strip in Closed and Open, grid on the Book right page).
+
+Change: those covers are now `PopularCover`: the cover opens the game (`browseGame`, silent); a 44 pt tick at the cover's top right adds it (`addGame`, so an upcoming game goes in as Wishlist and the Library row shows "Wishlist"). The 44 pt plate sits in the cover's top right corner, inside the cover's own frame (containment, which the fold audit's overlap rule allows; it only fires on crossing frames). It covers 44 pt of a 96 to 108 pt wide cover: about 40 to 46 percent of the width and 12 to 16 percent of the area. The cover below it still opens the game. Iris judges from the stills whether the plate is too heavy on the small strip covers. In Book the plate is on each cover's right edge, so on the first column it is at least tile width minus 44 pt (about 46 pt or more) plus the page inset away from the hinge side, never within 24 pt of it. The glyph is a fixed 22 pt system size, so Dynamic Type does not grow it past the plate; the plate is capped to the cover's own size on a very small tile.
+
+Tests: UpcomingBrowseTests (a tap opens the game and leaves the Library unchanged; a tick adds exactly once, an upcoming game as Wishlist). Stills: first-run in Closed portrait and Open, and the Book right page, for Iris.
+
+Back from an opened game returns to first-run with nothing added (browse never writes to the collection; the unit test covers the model, the Mac hand-checks the screen). Not claimed: no relaunch on a device yet.
+Learning: a one-tap add on a browsing surface is a trap; make the adding a separate, visible control and keep the tap for looking.
+
+Update 1 (Mac, ade556b, Closed): a tap on the centre of the Roblox "+" plate added Roblox, but the empty-Library strip stayed up for about 1.5 s with no toast; a second tap then landed on the cover and opened the game page (no sound), and Back showed the Library with Roblox in it. So the add worked and the screen lagged, and a double tap now opens a page by accident (before this PR a second tap on the same cover was a harmless no-op). Cause not proven: addGames runs insert, markPastAsRead, the toast, the pop and the badge in one synchronous call, and any of them could hold the main thread for a first add of a game with no bundled history (Roblox). Stills cannot tell which. Change (INTERNAL only): addGames logs the time after each stage to os.Logger (subsystem co.codeconnectors.playscribe, category add): read it with `xcrun simctl spawn booted log show --last 2m --predicate 'subsystem == "co.codeconnectors.playscribe" AND category == "add"'`. Not claimed: that the delay is in addGames; if the laps are all under 50 ms the delay is in the view swap (OnboardingView to Library) and the next step is the Library's first layout, not the add.
+Learning: time each stage before guessing; a still shows a symptom, a lap log shows the stage.
+
+Update 2 (Iris, #431): whatever the timing shows, the tick answers at once and a second tap cannot fall through. Change: (1) the tick has a pressed state (dims and shrinks on the press); on the press `PopularCover` flips optimistically to a check and shows a quiet "Added" (or "Wishlist" for an upcoming game) on the cover, then, one run-loop turn later (30 ms), runs the add so the state is on screen before the add's synchronous work; if the add did not land it restores the tick and shows "Couldn't add <game>". (2) The cover's tap-to-open is disabled while an add is in flight and once the game is added, so a second tap on the cover does nothing; the tick keeps its 44 pt frame. (3) `AppModel.firstRunHold`: for 1.2 s after a tick on an empty Library the first-run strip stays up (the covers stay, marked Added) before the Library replaces it, so the strip never jumps away under the finger; only the tick sets it, the Add sheet goes straight to the Library. (4) The pop plays once, in addGames, on the add only; opening is silent. The INTERNAL lap log from Update 1 stays so the Mac can still say where the 1.5 s went. Test: `theFirstRunStripIsHeldAfterATickOnlyWhileTheLibraryIsEmpty`. Not claimed: that this removes the 1.5 s; it makes the state visible and the second tap harmless even if the stall remains, and the lap log says whether the stall is in the add or in the view swap. Stills owed for Iris: pressed, Added and Wishlist, Closed portrait and Open.
+Learning: when the work behind a tap may stall, show the answer before the work, and make the tap that follows it harmless.
+
+Update 3 (Mac lap logs, 4a31d98, Closed, fresh first-run, 3 runs each; the laps are elapsed time since the call started): Roblox insert 1 to 3 ms, toast up to 11 ms, sound 146 to 272 ms; Minecraft insert 0 to 1 ms, toast 1 ms, sound 139 to 160 ms. The pop (audio session category and player play) is the only slow stage, about 135 to 260 ms on the main actor, and no 1.5 s stall showed in any run, so the 1.5 s on ade556b is not reproduced; ade556b also had no optimistic state, so the screen had nothing to show while the call ran. Change: the pop now plays 60 ms after addGames returns, so the toast, the check and the view swap are rendered first and the hitch lands after the feedback. It still plays once, on the add only. Not claimed: that this explains the original 1.5 s (a first audio-session activation on a cold sim could be slower than the 3 runs measured); if the Mac sees a stall again, the lap log names it. `log show` needs `--info` for these lines.
+Learning: lap logs print elapsed time, not stage time; subtract before naming the slow stage.
+
+Update 4 (Iris, from 5374742-closed-tick-pressed-adding.png): the pressed still showed the plate dimmed with the "+" and no "Added": a button's action fires on release, so the check and the word only appeared after the finger lifted. Change: the tick's press style reports the press (`onChange(of: isPressed)`), and the cover shows the check and "Added" (or "Wishlist") on the press itself; a press that slides off or is cancelled clears it. The tick stays enabled during the press (only `inLibrary || adding` disable it), because disabling a button mid-press cancels the tap. The 2 s the Mac saw between the press and the Library: the hold is 1.2 s from the release, then the Library replaces the strip; the rest is the Mac's screenshot cadence (each simctl capture takes a moment); not measured separately here. Not claimed: the exact frame the check lands on; the Mac's still of a held press shows it.
+Learning: a button's action fires on release; "on press" feedback has to come from the pressed state, not the action.
+
+Update 5 (Mac, 1ea80f2, Closed, 1ea80f2-closed-after-tick-hold-roblox-dimmed.png): after the tick the added cover dimmed to about 35 to 40 percent (the check and "Added" showed, the capsule low-contrast), the other covers stayed bright. Cause: the cover and the tick used `.disabled(...)`, and a disabled plain Button dims its label. Change: neither is disabled any more; the cover's action does nothing once the game is marked (and drops its button trait for VoiceOver), the tick's action ignores a tap once the game is in or being added, so the added cover stays at full brightness. The proof of Quinn's under-100 ms check: the Mac cannot shoot inside a held press (its captures lag about 1 s), so INTERNAL builds log "press to check: N ms" (os.Logger, subsystem co.codeconnectors.playscribe, category add, `log show --info`): the time from the press-down state to the frame the "Added" word is built. It measures state-to-view inside the app, not the display's own latency, and says so. Not claimed: the display latency; an XCUITest could not hold a press and read the cover in the same moment.
+Learning: `.disabled` is also a dim; to stop a tap without changing how a control looks, guard the action.
+
+## Update 6: tick moves to the bottom-trailing corner
+
+Iris (legibility): at the top right the "+" hid the last letter of long titles ("MINECR+"). The tick now sits bottom-trailing, the disc inset 8 pt with a dark ring, the 44 pt hit frame unchanged. The "Added"/"Wishlist" word moves to bottom-leading. Open: the tick stays on the page's outer edge, well over 24 pt from the hinge.
+
+## Update 7: toast announcement
+
+Under VoiceOver the add toast is announced as "Added Roblox, Undo" (it was "Added Roblox. Undo available."). The toast stays until dismissed under VoiceOver, otherwise 8 s; the Undo button's frame is `.hitTarget()` (minimum 44 x 44) inside a 44 pt minimum capsule.
+
+## Update 8: toast room on the first-run page
+
+The Added toast floated over the first-run footer caption (on main too). OnboardingView now has a bottom safe-area inset of the toast stack's reach from the bottom edge plus 8 pt (model.messageInset) while a toast shows (zero otherwise), in the scrolling pages (closed, open, Book left page, Tabletop lower half), so the caption scrolls clear. Nothing new is tappable.
+
+## Update 9: word and disc share the bottom edge (Quinn)
+
+On a cover narrower than 125 pt (the first-run strip, AX5) the Added/Wishlist word would touch the disc, so the check alone shows there; VoiceOver still reads "<game>, in your library". The disc's 3 pt shift is now on the glyph inside the frame, not on the button, so the 44 pt hit frame stays inside the cover and the fold audit sees no frame past a page edge. The "press to check" log fires on the state change, not on the word.
+
+## Update 10: the page scrolls to its foot when a toast shows
+
+d8dbafa (Closed, frame 55): the inset alone left the caption under the toast, because a page that fits does not move when its viewport shrinks. The first-run page now also scrolls to its bottom edge, animated, 80 ms after a toast appears.
+Correction in the same head: the inset is `model.messageInset` (bottom edge to the toast's top, plus 8 pt), not the toast's own height, because the toast floats above the bottom padding and the first measure left 100 pt short.
+
+## Update 11: no toast scroll in Book (Iris, 6a31718)
+
+In Book the first-run page's scroll to the foot slid the hero under the navigation bar, which drew a lighter slab (hard right and bottom edges) behind "Library". In Book the toast covers nothing (it sits under "Skip for now"; the caption is on the right page), so the toast room and the scroll are off there. Closed, Open and Tabletop keep them.
+Also in Book (Iris's spec: no tinted edge over the hero): the left page's scroll view hides its top edge effect (`scrollEdgeEffectHidden`), because the slab is that scroll view's own edge effect, clipped to the page's width, so a hand scroll would show the same seam. The scroll-to-foot stays off in Book as well.
+
+## Update 12: first-run headline at AX (Quinn, 6a31718)
+
+At AX5 the first-run hero headline cut mid-word ("Follow a game to g...") and clipped at the top, in a fixed 220 pt stage. At accessibility sizes the headline is now `WholeWordText` with a four-line cap (any ellipsis at a word boundary), and the stage is 120 pt taller so four lines fit. Standard sizes are unchanged.
+
+## Update 13: VoiceOver labels after the tick (Iris)
+
+The cover keeps one label ("<game>") and hint ("Opens the game") before and after the tick, and a tap on an added cover opens the game (only an add in flight ignores it). The tick reads "Add <game>" and, once added, "<game>, in your library" as static text rather than a button.
+
+## Update 14: toast room is back in Book (517d94f)
+
+Update 11 turned the toast room and scroll off in Book on the guess that the toast covers nothing there. The Mac's 517d94f still showed it covering "From a photo" on the left page. They are on again in every pose. The slab is handled by hiding the left page's top scroll-edge effect (Update 11), not by not scrolling.
+
+## Update 15: no sparkle behind the AX headline (Iris)
+
+The sparkle belongs to the default header art, so it cannot move; at AX5 it touched the "y" of "every" on line 3. At accessibility sizes the first-run stage draws the art's own two colours as a plain gradient, with no art, so nothing decorative shares a line with the headline.
+
+## Update 16: game page back button label; cover-tap log (Mac back check, 380e71b)
+
+1. The system back button on a game page had an empty accessibility label in Closed (first rail button), so VoiceOver read nothing and tests could not find it. A system back button's label cannot be set, so the game page hides it and shows its own leading toolbar button, "Library" (the previous screen's title, HIG), identifier `gameBack`, calling `closeGame()`. Cost: the edge-swipe back gesture of the system button is not available on the game page; the rail and toolbar buttons are.
+2. A single tap on an added cover during the 1.2 s hold did not open the game page. Cause not established from the code. INTERNAL logs (category "add") now print "cover tap: ... inLibrary phase hold opens" and "first-run hold ended (library swap)", so the Mac can compare the two timestamps.
+Update to 16 (Iris): the edge-swipe back is kept. `keepsSwipeBack()` (UI/SwipeBack.swift) gives the navigation controller's interactive pop gesture a delegate that lets it begin whenever the stack is deeper than one screen, and restores the previous delegate when the game page goes. The button has a 44 x 44 frame and reads "Library, back". If the Mac's real swipe fails in any pose, the fallback is the system back button with a real title on the previous screen.
+
+## Update 17: back button 44 x 44; QA hold (Mac 20a31e1)
+
+- The game page's back button measured 38 x 38 (Closed), 38 x 39 (Book) and 40 x 41 (Open): the toolbar's system glass sized it. Iris: it is a custom button, so 44 x 44 in every pose (the 36 pt floor is for system-drawn toolbar buttons only). The toolbar item now hides its system background and draws its own 44 x 44 disc with the chevron centred, so the glyph does not shift when the frame grows.
+- The edge swipe: open question until the Mac compares it with main (a synthetic drag may be a harness limit). No code change yet; if main pops and this head does not, the helper is fixed.
+- INTERNAL: `-qaFirstRunHold <seconds>` stretches the first-run hold, and the add logs "tick: ... add begins", so a tap during the hold can be driven by hand and timed against "cover tap: ..." lines.
+
+Update to 17 (Mac, Tabletop): the Tabletop rail has its own game-page back (RailButton), which read a bare "Library" (same as the Library tab) and had no identifier. It is now "Library, back" with id `gameBack`, as in Closed, Open and Book.

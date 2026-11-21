@@ -1,4 +1,5 @@
 import Foundation
+import QuartzCore
 import Testing
 import SwiftUI
 import UserNotifications
@@ -9,6 +10,33 @@ struct ModelTests {
     func freshModel() -> AppModel {
         let url = URL.temporaryDirectory.appending(path: "state-\(UUID().uuidString).json")
         return AppModel(storeURL: url)
+    }
+
+    @Test("Gallery videos play in the app's own player, never hand off to YouTube (R-11; Terry 19 Nov: the Dawnwalker ones all open in YouTube)")
+    func galleryVideosPlayInApp() {
+        let m = freshModel()
+        let videos = m.gallery("dawnwalker").filter { $0.kind == .video }
+        #expect(videos.count >= 5)
+        for v in videos {
+            m.trailer = nil
+            m.playGalleryVideo(v)
+            let id = v.href.flatMap { URLComponents(string: $0)?.queryItems?.first { $0.name == "v" }?.value }
+            #expect(id != nil, "\(v.title) has a YouTube watch link")
+            #expect(m.trailer?.videoID == id, "\(v.title) opens the in-app player")
+            #expect(m.trailer?.name == v.title)
+        }
+    }
+
+    @Test("A Gallery link gives a YouTube ID only for YouTube hosts (Quinn on #551)")
+    func galleryYouTubeID() {
+        func id(_ href: String) -> String? { GalleryItem(id: "x", gameID: "g", kind: .video, asset: "", title: "", alt: "", href: href).youtubeID }
+        #expect(id("https://www.youtube.com/watch?v=abc") == "abc")
+        #expect(id("https://m.youtube.com/watch?v=abc") == "abc")
+        #expect(id("https://youtu.be/abc") == "abc")
+        #expect(id("https://www.youtube.com/embed/abc") == "abc")
+        #expect(id("https://www.youtube.com/shorts/abc") == "abc")
+        #expect(id("https://notyoutube.com/watch?v=abc") == nil)
+        #expect(id("https://www.youtube.com/watch") == nil)
     }
 
     @Test("Fixtures decode and every release follows the PS5 spec")
@@ -311,10 +339,10 @@ struct DatePrecisionTests {
         func g(_ o: String?, _ on: String? = nil, _ p: DatePrecision? = .tbd) -> CatalogGame {
             CatalogGame(id: "t", name: "T", platforms: [.ps5], releaseDate: nil, releasePrecision: p, playableSince: nil, releasedElsewhere: o, releasedElsewhereOn: on, coverage: .none)
         }
-        #expect(g("2012-10-16", "PC").ps5DateLine == "Not on PS5 · PC, 2012")
-        #expect(g("2012-10-16", "PC").ps5AvailabilityLine == "Not on PS5 · PC, 2012")
-        #expect(g("2012-10-19", "PC (Microsoft Windows)").ps5AvailabilityLine == "Not on PS5 · PC, 2012")
-        #expect(g("2012-10-16").ps5AvailabilityLine == "Not on PS5 · 2012")
+        #expect(g("2012-10-16", "PC").ps5DateLine == "Not on PS5 (PC, 2012)")
+        #expect(g("2012-10-16", "PC").ps5AvailabilityLine == "Not on PS5 (PC, 2012)")
+        #expect(g("2012-10-19", "PC (Microsoft Windows)").ps5AvailabilityLine == "Not on PS5 (PC, 2012)")
+        #expect(g("2012-10-16").ps5AvailabilityLine == "Not on PS5 (2012)")
         #expect(g("2012-10-16").ps5ShortLine == "Not on PS5")
         // Truly no release anywhere, or a release still to come, stays TBA.
         #expect(g(nil).ps5AvailabilityLine == "Release date TBA")
@@ -378,13 +406,27 @@ struct GameBookStateTests {
         let url = URL.temporaryDirectory.appending(path: "d13-\(UUID().uuidString).json")
         let m = AppModel(storeURL: url)
         m.openGame("dawnwalker")
-        m.nav.chapter = .world
+        m.nav.chapter = .companion
         m.openGame("kcd2")
         #expect(m.nav.chapter == .updates)
         m.saveNow()
         let again = AppModel(storeURL: url)
         again.openGame("dawnwalker")
-        #expect(again.nav.chapter == .world)
+        #expect(again.nav.chapter == .companion)
+    }
+
+    @Test("D-13, R-7 (0.5.6): a World chapter saved by 0.5.5 reopens as Companion")
+    func savedWorldReopensAsCompanion() {
+        let url = URL.temporaryDirectory.appending(path: "d13w-\(UUID().uuidString).json")
+        let m = AppModel(storeURL: url)
+        m.openGame("dawnwalker")
+        m.nav.chapter = .world
+        m.openGame("kcd2")
+        m.saveNow()
+        let again = AppModel(storeURL: url)
+        again.openGame("dawnwalker")
+        #expect(again.nav.chapter == .companion)
+        #expect(again.section("dawnwalker") == .companion)
     }
 
     @Test("D-4: with nothing selected the Page shows the newest PS5 release")
@@ -584,18 +626,93 @@ struct ReaderPositionTests {
 struct AutoplayTests {
     @Test("Player page autoplays only when asked (R-11)")
     func html() {
-        #expect(YouTubeController.html("abc", captions: true).contains("autoplay:0"))
+        // The player is built by build(start, play) (rebuilt in place on a Tabletop switch, #552); the first build plays only
+        // when autoplay is asked for, and play sets both the embed's autoplay and the explicit playVideo().
+        let off = YouTubeController.html("abc", captions: true)
+        #expect(off.contains("build(0,false)") && !off.contains("build(0,true)"))
         let on = YouTubeController.html("abc", captions: true, autoplay: true)
-        #expect(on.contains("autoplay:1") && on.contains("player.playVideo();"))
+        #expect(on.contains("build(0,true)"))
+        #expect(on.contains("autoplay:play?1:0") && on.contains("if(play){player.playVideo()}"))
     }
 
-    @Test("Reflection is on by default and accessibility settings win (R-11, G-9)")
-    @MainActor func reflectionDefault() {
+    @Test("Reflection is on by default, in Tabletop only, and accessibility settings win (R-11, G-9; Terry 14 Nov)")
+    @MainActor func reflectionOnlyInTabletop() {
         #expect(VideoReflection.defaultOn)
-        #expect(VideoReflection.isShown(setting: VideoReflection.defaultOn, reduceMotion: false, reduceTransparency: false))
-        #expect(!VideoReflection.isShown(setting: true, reduceMotion: true, reduceTransparency: false))
-        #expect(!VideoReflection.isShown(setting: true, reduceMotion: false, reduceTransparency: true))
-        #expect(!VideoReflection.isShown(setting: false, reduceMotion: false, reduceTransparency: false))
+        #expect(VideoReflection.shows(pose: .tabletop, setting: VideoReflection.defaultOn, reduceMotion: false, reduceTransparency: false))
+        for pose in [Pose.closed, .flat, .book] {
+            #expect(!VideoReflection.shows(pose: pose, setting: true, reduceMotion: false, reduceTransparency: false))
+        }
+        // A live mirror moves, so Reduce Motion turns it off; there is no still mirror any more (G-9).
+        #expect(!VideoReflection.shows(pose: .tabletop, setting: true, reduceMotion: true, reduceTransparency: false))
+        #expect(!VideoReflection.shows(pose: .tabletop, setting: true, reduceMotion: false, reduceTransparency: true))
+        #expect(!VideoReflection.shows(pose: .tabletop, setting: false, reduceMotion: false, reduceTransparency: false))
+    }
+
+    @Test("The mirror is the video's bottom strip at 1:1: the replica's last row sits on the strip's edge (R-11, reflection-0.6 spec 4, 8.1)")
+    @MainActor func mirrorStrip() {
+        let f = VideoReflection.replicaFrame(video: CGSize(width: 400, height: 225), band: 57)
+        // Before the flip the replica's bottom row is the strip's bottom row, so after it the video's last row comes first.
+        #expect(f.maxY == 57)
+        // True scale: no squash, the same size as the video.
+        #expect(f.width == 400 && f.height == 225)
+        // Only the bottom 57 rows are inside the strip.
+        // A named CGFloat: inside #expect a literal `57 - 225` is expanded as its own Int expression (CI at d7ff266).
+        let top: CGFloat = 57 - 225
+        #expect(f.minY == top)
+    }
+
+    @Test("The fade is quadratic, monotonic, ends at zero, and no stop steps by more than 4/255 at full edge strength (spec 8.2)")
+    @MainActor func mirrorFade() {
+        #expect(VideoReflection.fade(0) == 1)
+        #expect(VideoReflection.fade(1) == 0)
+        #expect(abs(VideoReflection.fade(0.5) - 0.25) < 1e-9)
+        var last = 1.0
+        for i in 1...255 {
+            let v = VideoReflection.fade(Double(i) / 255)
+            #expect(v <= last)
+            // Scaled by the 55% edge, one step of the fade is well under 4/255 (MirrorPixelTests reads the rendered rows).
+            #expect((last - v) * VideoReflection.edgeHidden * 255 < 4)
+            last = v
+        }
+    }
+
+    @Test("The mirror is 55% with the controls faded and 20% with them shown, never more (spec 4, contrast with no plates)")
+    @MainActor func mirrorStrength() {
+        #expect(VideoReflection.edgeOpacity(controlsShown: false) == 0.55)
+        #expect(VideoReflection.edgeOpacity(controlsShown: true) == 0.20)
+        #expect(VideoReflection.blur == 3)
+    }
+
+    @Test("The audit reports what the strip draws, not the intent (R-11, Mac at 95d9f3b)")
+    @MainActor func mirrorRendering() {
+        #expect(VideoReflection.rendering(hasReplica: true, band: 57, onScreen: true))
+        #expect(!VideoReflection.rendering(hasReplica: false, band: 57, onScreen: true))
+        #expect(!VideoReflection.rendering(hasReplica: true, band: 0, onScreen: true))
+        #expect(!VideoReflection.rendering(hasReplica: true, band: 57, onScreen: false))
+    }
+
+    @Test("The band is at most 15% of the lower half, never over 120 pt (R-11, Iris on #533)")
+    @MainActor func mirrorBand() {
+        #expect(VideoReflection.band(lowerHalf: 380) == 57)
+        #expect(VideoReflection.band(lowerHalf: 2000) == 120)
+        #expect(VideoReflection.band(lowerHalf: -10) == 0)
+    }
+
+    @Test("Idle-band variant: 30% of the lower half, at most 140 pt, only while the controls are faded and the switch is on (Iris, 21 Nov)")
+    @MainActor func mirrorIdleBand() {
+        #expect(VideoReflection.band(lowerHalf: 380, tallIdle: true, controlsShown: false) == 114)
+        #expect(VideoReflection.band(lowerHalf: 600, tallIdle: true, controlsShown: false) == 140)
+        #expect(VideoReflection.band(lowerHalf: 380, tallIdle: true, controlsShown: true) == 57)
+        #expect(VideoReflection.band(lowerHalf: 380, tallIdle: false, controlsShown: false) == 57)
+    }
+
+    @Test("Tabletop controls fade only while playing, never under VoiceOver or Switch Control (TT-4, spec 5)")
+    @MainActor func controlsAutoHide() {
+        #expect(TabletopTransport.autoHides(playing: true, voiceOver: false, switchControl: false))
+        #expect(!TabletopTransport.autoHides(playing: false, voiceOver: false, switchControl: false))
+        #expect(!TabletopTransport.autoHides(playing: true, voiceOver: true, switchControl: false))
+        #expect(!TabletopTransport.autoHides(playing: true, voiceOver: false, switchControl: true))
+        #expect(TabletopTransport.hideAfter == .seconds(4))
     }
 }
 
@@ -797,6 +914,36 @@ struct BackCatalogueTests {
         #expect(model.data.read[fresh.id] == nil)
     }
 
+    @Test("A newly added game keeps only its latest update unread, even when several are recent")
+    func onlyLatestStaysUnread() {
+        let model = AppModel(storeURL: URL.temporaryDirectory.appending(path: "flood-\(UUID().uuidString).json"))
+        let a = release("g@a", patchedDaysAgo: 2, alertDaysAgo: 2)
+        let b = release("g@b", patchedDaysAgo: 1, alertDaysAgo: 1)
+        let c = release("g@c", patchedDaysAgo: 0.2, alertDaysAgo: 0.2)
+        model.markPastAsRead([a, b, c], backCatalogue: true)
+        #expect(model.data.read[a.id] != nil)
+        #expect(model.data.read[b.id] != nil)
+        #expect(model.data.read[c.id] == nil)
+    }
+
+    @Test("An alert needs the patch itself inside 72 h, not just the alert date")
+    func alertGuardChecksPatchDate() {
+        #expect(release("g@today", patchedDaysAgo: 1, alertDaysAgo: 1).isAlertWorthy())
+        #expect(!release("g@port", patchedDaysAgo: 1_800, alertDaysAgo: 1).isAlertWorthy(), "folded history is the past")
+        #expect(!release("g@stale", patchedDaysAgo: 5, alertDaysAgo: 5).isAlertWorthy())
+    }
+
+    @Test("Each game keeps its own latest update unread when several are added together")
+    func perGameGrouping() {
+        let model = AppModel(storeURL: URL.temporaryDirectory.appending(path: "flood-\(UUID().uuidString).json"))
+        func rel(_ id: String, _ game: String, _ days: Double) -> Release {
+            var r = release(id, patchedDaysAgo: days, alertDaysAgo: days); r.gameID = game; return r
+        }
+        let all = [rel("a@1", "a", 2), rel("a@2", "a", 0.5), rel("b@1", "b", 1.5), rel("b@2", "b", 0.2), rel("b@3", "b", 1)]
+        model.markPastAsRead(all, backCatalogue: true)
+        #expect(all.filter { model.data.read[$0.id] == nil }.map(\.id).sorted() == ["a@2", "b@2"])
+    }
+
     @Test("Without the back-catalogue rule the alert date still decides (an update for a followed game)")
     func followedGameUnchanged() {
         let model = AppModel(storeURL: URL.temporaryDirectory.appending(path: "flood-\(UUID().uuidString).json"))
@@ -844,6 +991,17 @@ struct UTCDayTests {
             #expect(Date.sameUTCDay(after, after.addingTimeInterval(86_000)))
         }
     }
+
+    @Test("the coming-this-week window is today and the next six UTC days in every zone (r060-utc-day-labels)", arguments: ["Pacific/Auckland", "UTC", "Pacific/Pago_Pago"])
+    func weekWindow(_ zone: String) {
+        let now = Date(timeIntervalSince1970: 1_782_431_999)      // 2026-06-25T23:59:59Z: already 26 Jun in Auckland, still 25 Jun in Pago Pago
+        withZone(zone) {
+            #expect("2026-06-25".isoDay!.isInUTCWeek(from: now), "today (UTC) is in the window [\(zone)]")
+            #expect("2026-07-01".isoDay!.isInUTCWeek(from: now), "the sixth day after is in [\(zone)]")
+            #expect(!"2026-07-02".isoDay!.isInUTCWeek(from: now), "the seventh day after is out [\(zone)]")
+            #expect(!"2026-06-24".isoDay!.isInUTCWeek(from: now), "yesterday (UTC) is out [\(zone)]")
+        }
+    }
 }
 
 @Suite("QAPose launch argument")
@@ -870,5 +1028,213 @@ struct QAPoseTests {
         defer { BuildChannel.overrideIsDistribution = nil; QAPose.overrideName = nil }
         #expect(QAPose.name == nil)
         #expect(QAPose.injected(size: CGSize(width: 669, height: 835)) == nil)
+    }
+}
+
+
+@Suite("Version glue")
+struct VersionGlueTests {
+    @Test("a version never breaks at its dots (G-14)")
+    func keepsVersionWhole() {
+        #expect("01.004.000".keepingVersionsTogether == "01.\u{2060}004.\u{2060}000")
+        #expect("v1.1".keepingVersionsTogether == "v1.\u{2060}1")
+        #expect("Hades II".keepingVersionsTogether == "Hades II")
+        #expect("Fixed. Next".keepingVersionsTogether == "Fixed. Next", "a full stop between words is left alone")
+    }
+}
+
+@Suite("Roman numeral glue")
+struct RomanNumeralGlueTests {
+    @Test("a trailing numeral is tied to the word before it (r060-nbsp-roman-numerals)")
+    func gluesTrailingNumeral() {
+        #expect("Kingdom Come: Deliverance II".gluingTrailingNumeral == "Kingdom Come: Deliverance\u{00A0}II")
+        #expect("Final Fantasy X".gluingTrailingNumeral == "Final Fantasy\u{00A0}X")
+        #expect("Hades II".gluingTrailingNumeral.split(separator: " ").count == 1, "no breaking space is left")
+    }
+
+    @Test("other titles are unchanged")
+    func leavesOthers() {
+        for t in ["Hades", "X", "II", "Control Resonant", "Wukong 2", "Civilization VII Remastered", "Tower of Mix", "Alien: Isolation"] {
+            #expect(t.gluingTrailingNumeral == t, "\(t)")
+        }
+    }
+}
+
+@Suite("Library sort: recently updated (r053-sort-recent-updated)")
+struct RecentlyUpdatedSortTests {
+    private let now = Date(timeIntervalSince1970: 1_800_000_000)
+    private func day(_ d: Double) -> Date { now.addingTimeInterval(d * 86400) }   // negative: days ago
+    private func key(_ name: String, updated: Double? = nil, released: Double? = nil) -> AppModel.UpdatedKey {
+        AppModel.UpdatedKey(latest: updated.map(day), releaseDate: released.map(day), name: name)
+    }
+    private func order(_ keys: [AppModel.UpdatedKey]) -> [String] {
+        keys.sorted { AppModel.updatedFirst($0, $1, now: now) }.map(\.name)
+    }
+
+    @Test("games with an update come first, newest first; a newer release never outranks an update")
+    func updatesFirst() {
+        #expect(order([key("Out, no update", released: -1), key("Patched last week", updated: -7, released: -400), key("Patched today", updated: 0, released: -30)])
+                == ["Patched today", "Patched last week", "Out, no update"])
+    }
+
+    @Test("games with no update that are out follow, newest release first (Terry's 47 games)")
+    func releasedGroupByReleaseDate() {
+        let list = order([key("Mar 2025", released: -600), key("Oct 2025", released: -20), key("Aug 2025", released: -100), key("May 2025", released: -300)])
+        #expect(list == ["Oct 2025", "Aug 2025", "May 2025", "Mar 2025"])
+    }
+
+    @Test("games not out yet come after, soonest first, undated last")
+    func upcomingAfterReleased() {
+        let list = order([key("TBA"), key("31 Dec", released: 53), key("10 Nov", released: 2), key("Out", released: -5)])
+        #expect(list == ["Out", "10 Nov", "31 Dec", "TBA"])
+    }
+
+    @Test("a game with an update but no release date still sorts by its update, ahead of every game without one")
+    func updateWithoutReleaseDate() {
+        let list = order([key("Out, no update", released: -1), key("Dateless, patched long ago", updated: -90), key("Dateless, patched today", updated: 0), key("TBA")])
+        #expect(list == ["Dateless, patched today", "Dateless, patched long ago", "Out, no update", "TBA"])
+    }
+
+    @Test("equal dates fall back to name")
+    func tieByName() {
+        #expect(order([key("b", updated: -2), key("A", updated: -2)]) == ["A", "b"])
+        #expect(order([key("b"), key("A")]) == ["A", "b"])
+    }
+}
+
+@MainActor
+struct SearchTextColdLaunchTests {
+    private func url() -> URL { URL.temporaryDirectory.appending(path: "search-\(UUID().uuidString).json") }
+
+    @Test("a cold launch has an empty search and every game; selected game, filter and scroll anchors are still restored")
+    func coldLaunchClearsSearchOnly() throws {
+        let u = url()
+        let m = AppModel(storeURL: u)
+        m.data.collection = Fixtures.shared.seedCollection
+        let all = m.shownRows().count
+        try #require(all > 1)
+        m.nav.query = "dawn"
+        #expect(m.shownRows().count < all)   // the typed text is filtering, so the test can tell the difference
+        m.nav.gameID = "dawnwalker"
+        m.nav.filter = .wishlist
+        m.nav.anchors["library"] = "lib-kcd2"
+        m.saveNow()
+
+        let reopened = AppModel(storeURL: u)
+        #expect(reopened.nav.query == "")
+        #expect(reopened.nav.gameID == "dawnwalker")
+        #expect(reopened.nav.filter == .wishlist)
+        #expect(reopened.nav.anchors["library"] == "lib-kcd2")
+        reopened.nav.filter = .all
+        #expect(reopened.shownRows().count == all)
+    }
+
+    @Test("a saved Library anchor that is not a game tile (the search field) is dropped on a cold launch; a tile anchor is kept")
+    func nonTileAnchorDropped() {
+        let u = url()
+        let m = AppModel(storeURL: u)
+        m.data.collection = Fixtures.shared.seedCollection
+        m.nav.anchors["library"] = "library-search"
+        m.nav.anchors["other"] = "keep"
+        m.saveNow()
+        let reopened = AppModel(storeURL: u)
+        #expect(reopened.nav.anchors["library"] == nil)
+        #expect(reopened.nav.anchors["other"] == "keep")
+        reopened.nav.anchors["library"] = "lib-kcd2"
+        reopened.saveNow()
+        #expect(AppModel(storeURL: u).nav.anchors["library"] == "lib-kcd2")
+    }
+
+    @Test("a fold or unfold keeps the typed text: the model is not rebuilt, so the search is untouched")
+    func foldKeepsTypedText() {
+        let m = AppModel(storeURL: url())
+        m.data.collection = Fixtures.shared.seedCollection
+        m.nav.query = "dawn"
+        m.saveNow()
+        m.tick()          // what a pose change drives
+        #expect(m.nav.query == "dawn")
+    }
+}
+
+/// 0.6.0 (s-06-videos-in-our-player): "Find trailers online" was a YouTube search and is gone. No Links row, in any pose, sends
+/// a person to a video search; an empty Gallery offers only the official website.
+@MainActor
+struct NoTrailerSearchTests {
+    @Test func linksPanelHasNoTrailerSearch() {
+        let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "links-\(UUID().uuidString).json"))
+        m.resetDemo()
+        for g in m.fixtures.games {
+            let rows = LinksSheet.rows(m, g.id)
+            #expect(!rows.contains { $0.id == "trailers" }, "\(g.id) has no trailer search row")
+            #expect(!rows.contains { $0.url.absoluteString.contains("search_query") }, "\(g.id) has no video search link")
+        }
+    }
+}
+
+/// R-11 (Terry, 20 Nov: every video plays in our own player): a YouTube link opened anywhere plays in our player.
+@MainActor
+struct VideoLinkTests {
+    @Test func youtubeLinksOpenOurPlayer() {
+        let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "vl-\(UUID().uuidString).json"))
+        for href in ["https://www.youtube.com/watch?v=abc", "https://youtu.be/abc", "https://m.youtube.com/shorts/abc",
+                     "https://www.youtube.com/live/abc", "https://www.youtube-nocookie.com/embed/abc"] {
+            m.trailer = nil
+            #expect(m.playVideoLink(URL(string: href)!), "\(href) plays in the app")
+            #expect(m.trailer?.videoID == "abc")
+        }
+        m.trailer = nil
+        #expect(!m.playVideoLink(URL(string: "https://www.playstation.com/en-us/games/")!))
+        #expect(!m.playVideoLink(URL(string: "https://notyoutube.com/watch?v=abc")!))
+        #expect(m.trailer == nil, "other links go to the system as before")
+    }
+
+    @Test("A video its owner blocks from other apps says so and offers Open in YouTube (R-12; Terry 20 Nov)")
+    func blockedEmbedOffersYouTube() {
+        #expect(VideoUnavailable.blocksEmbedding(101) && VideoUnavailable.blocksEmbedding(150))
+        #expect(!VideoUnavailable.blocksEmbedding(2) && !VideoUnavailable.blocksEmbedding(100) && !VideoUnavailable.blocksEmbedding(nil))
+    }
+}
+
+@MainActor
+struct OpenMarksReadTests {
+    /// R-6a: opening an unread update reads it at once; Mark as unread puts it back.
+    @Test func openingAnUnreadUpdateMarksItReadAndItCanBeUnmarked() {
+        let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "r6a-\(UUID().uuidString).json"))
+        m.resetDemo()
+        guard let r = m.data.collection.flatMap({ m.releases($0.gameID) }).first(where: { m.isUnread($0) }) else {
+            Issue.record("the demo has no unread update"); return
+        }
+        m.openGame(r.gameID, chapter: .updates, releaseID: r.id)
+        #expect(!m.isUnread(r), "opened on purpose, so read (R-6a)")
+        m.markRead(r.id, false)
+        #expect(m.isUnread(r), "Mark as unread (R-6a)")
+        // The cover's NEW UPDATE eyebrow and the deck's "New update" chip read isUnread, so they come back with it.
+        #expect(m.unreadCount(r.gameID) >= 1)
+    }
+}
+
+/// TT-2 (Iris, 0.5.6): the Tabletop stage leads with the patch name in the largest type, not the headline.
+struct ReaderStageTitleTests {
+    @MainActor
+    private func overview(name: String, headline: String?) -> ReaderSection? {
+        let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "rt-\(UUID().uuidString).json"))
+        let r = Release(id: "r", gameID: "g", displayName: name, kind: .major, kindBasis: .studio, announcedAt: Date(timeIntervalSince1970: 1_745_020_800),
+                        notes: [], sourceIDs: [], platforms: [], headline: headline)
+        return m.readerSections(r).first { $0.id == "overview" }
+    }
+
+    @Test("TT-2: the overview's title is the patch name, with or without a headline")
+    @MainActor func overviewLeadsWithThePatchName() {
+        #expect(overview(name: "Update 1.1", headline: "Photo mode and a new hunt")?.title == "Update 1.1")
+        #expect(overview(name: "Update 1.1", headline: nil)?.title == "Update 1.1")
+        #expect(overview(name: " ", headline: "Photo mode and a new hunt")?.title == "Photo mode and a new hunt")
+    }
+
+    @Test("TT-2: the headline is the overview's secondary line, dropped when it repeats the title")
+    @MainActor func headlineIsSecondary() {
+        #expect(overview(name: "Update 1.1", headline: "Photo mode and a new hunt")?.subtitle == "Photo mode and a new hunt")
+        #expect(overview(name: "Update 1.1", headline: nil)?.subtitle == nil)
+        #expect(overview(name: " ", headline: "Photo mode and a new hunt")?.subtitle == nil)
+        #expect(overview(name: "Update 1.1", headline: "Update 1.1")?.subtitle == nil)
     }
 }

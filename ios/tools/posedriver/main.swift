@@ -81,6 +81,7 @@ usleep(300_000)
 switch args.first {
 case "tree":
     let depth = args.count > 1 ? Int(args[1]) ?? 30 : 30, nodes = args.count > 2 ? Int(args[2]) ?? 6000 : 6000
+    emit("windows \(windows().count) app \(hub.bundleIdentifier ?? "?") pid \(hub.processIdentifier)")
     search(maxDepth: depth, maxNodes: nodes) { e, d in emit(String(repeating: "  ", count: d) + describe(e)); return false }
 case "press":
     guard args.count > 1, let e = find(args[1...].joined(separator: " ")) else { emit("ERROR no match"); finish(4) }

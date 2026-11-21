@@ -25,6 +25,8 @@ enum Pose: String {
 }
 
 struct DuoContext: Equatable {
+    /// The named coordinate space of `DuoReader`'s container, the one `division` is in.
+    static let space = "duoContainer"
     var pose: Pose = .closed
     var size: CGSize = .zero
     /// The active fold, in the root container's coordinates.
@@ -33,14 +35,43 @@ struct DuoContext: Equatable {
     var occlusions: [CGRect] = []
     /// The container's safe-area insets, as the system reports them (fold harness calibration).
     var safeArea = EdgeInsets()
-    var isLandscape: Bool { size.width > size.height }
+    /// The container's size with the keyboard's safe area ignored. Zero until measured.
+    var stableSize: CGSize = .zero
+    /// Landscape of the container, not of what the keyboard leaves of it: on the near-square inner display the keyboard takes
+    /// enough height to turn portrait into "landscape", which moved the Add sheet between forms and dropped its keyboard
+    /// (probe log bc6bd42: wide flipped about 1.2 s after each presentation change).
+    var isLandscape: Bool {
+        // stableSize is measured a frame later than size. It is used only when it is the same container with the keyboard's
+        // height added back (same width, at least as tall); after a rotation or resize it is stale, so the live size wins.
+        let useStable = stableSize != .zero && stableSize.width == size.width && stableSize.height >= size.height
+        let s = useStable ? stableSize : size
+        return s.width > s.height
+    }
     var isFolded: Bool { division != nil }
+    /// R-7 (0.5.6, Card C): the game page is one column, with the section bar pinned and updates pushed, in Closed and on the
+    /// open inner display in both orientations (spec: "Open and Open portrait: same column, reading width capped at 600 pt").
+    /// Book and Tabletop split on the fold.
+    var oneColumn: Bool { pose == .closed || pose == .flat }
+    func withStableSize(_ s: CGSize) -> DuoContext { var c = self; c.stableSize = s; return c }
 
     /// Tabletop: how far content whose bottom edge is at `bottom` (screen coordinates) must be
     /// lifted so it ends `gap` pt above the division band. Zero in every other pose.
     func clearance(forBottom bottom: CGFloat, gap: CGFloat = 24) -> CGFloat {
         guard pose == .tabletop, let d = division, bottom > 0 else { return 0 }
         return max(0, bottom - (d.minY - gap))
+    }
+
+    /// Book: how far a page's text and controls stay clear of the division band: the 24 pt keep-out used everywhere else, plus 1 pt
+    /// because the band starts at a half point (455.5 on the Duo) and a pane's frame is reported rounded up (456), so 24 from the
+    /// pane edge read as 432 against a limit of 431 (Mac frame dump on 12f0b47).
+    static let hingeGap: CGFloat = 25
+
+    /// The inset for the edge of a page that faces the hinge in Book: the page's own inset, or the keep-out if that is more.
+    /// The two panes meet the band exactly (the left one ends where it starts, the right one starts where it ends), so the
+    /// band's width is not part of the inset. Every other pose, and the edges that face the screen, keep `base`.
+    func hingeInset(_ base: CGFloat, facingHinge: Bool) -> CGFloat {
+        guard pose == .book, division != nil, facingHinge else { return base }
+        return max(base, Self.hingeGap)
     }
 }
 
@@ -109,12 +140,21 @@ struct DuoReader<Content: View>: View {
     @Environment(\.horizontalSizeClass) private var hSize
     @Environment(\.injectedRegions) private var injected
     @ViewBuilder var content: (DuoContext) -> Content
+    @State private var stableSize: CGSize = .zero
 
     var body: some View {
         GeometryReader { proxy in
-            let ctx = Self.context(proxy: proxy, compact: hSize == .compact, injected: injected)
+            let ctx = Self.context(proxy: proxy, compact: hSize == .compact, injected: injected).withStableSize(stableSize)
             content(ctx)
                 .environment(\.duo, ctx)
+        }
+        // The space the division is reported in, so a view can measure itself against the fold.
+        .coordinateSpace(.named(DuoContext.space))
+        .background {
+            GeometryReader { p in
+                Color.clear.onChange(of: p.size, initial: true) { _, new in stableSize = new }
+            }
+            .ignoresSafeArea(.keyboard)
         }
     }
 
@@ -366,5 +406,15 @@ struct SplitArrangement<Primary: View, Secondary: View>: View {
             ArrangementView { primary() } secondary: { secondary() }
                 .arrangementViewStyle(.split)
         }
+    }
+}
+
+/// G-4, TT-1: true inside Tabletop's view-only standing half. Views there draw no controls at all (a dead glyph above the fold
+/// invites taps, and XCUITest and VoiceOver still find a Button under allowsHitTesting(false)); the lower half carries them.
+private struct ViewOnlyStageKey: EnvironmentKey { static let defaultValue = false }
+extension EnvironmentValues {
+    var viewOnlyStage: Bool {
+        get { self[ViewOnlyStageKey.self] }
+        set { self[ViewOnlyStageKey.self] = newValue }
     }
 }

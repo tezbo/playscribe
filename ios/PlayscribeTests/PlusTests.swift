@@ -85,6 +85,18 @@ struct PlusCoverTests {
         #expect(PlusCard.resolve(g, tracked: { _ in nil })?.igdbID == 185246)
     }
 
+    @Test func anUntrackedPlusTitleOpensItsPageWithoutJoiningTheLibrary() {
+        let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "plus-\(UUID().uuidString).json"))
+        let g = PlusMonth.Game(name: "Zzzz Not In The Index 9999", gameId: nil, coverId: "co1abc")
+        let game = PlusCard.resolve(g, tracked: { m.game($0) })!
+        let before = m.data.collection.count
+        m.browseGame(game)                       // what a Plus cover or name row calls
+        #expect(m.nav.gameID == game.id)
+        #expect(m.game(game.id)?.name == g.name)
+        #expect(m.data.collection.count == before)
+        #expect(PlusCard.resolve(.init(name: "Zzzz Nothing 9999", gameId: nil), tracked: { _ in nil }) == nil)
+    }
+
     @Test func aFeedCoverIdFillsAGapInTheIndexButNeverReplacesAMatch() {
         let missing = PlusMonth.Game(name: "Zzzz Not In The Index 9999", gameId: nil, coverId: "co1abc")
         let hit = PlusCard.resolve(missing, tracked: { _ in nil })
@@ -105,8 +117,10 @@ struct PlusCoverTests {
         #expect(PlusCard.coverLimit(accessibility: false) == 3)
     }
 
-    @Test func accessibilitySizesShowTwoCovers() {
+    @Test func accessibilitySizesShowTwoCoversInBookAndWrapThreeElsewhere() {
         #expect(PlusCard.coverLimit(accessibility: true) == 2)
+        #expect(PlusCard.accessibilityCoversPerRow == 2)
+        #expect(PlusCard.maxCovers == 3)
     }
 }
 

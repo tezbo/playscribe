@@ -27,7 +27,7 @@ struct JournalView: View {
                 // GR-1: never an empty game. When it's out, and that we're watching for notes.
                 VStack(alignment: .leading, spacing: 6) {
                     Text(game.ps5AvailabilityLine).font(PlayscribeFont.headline)
-                    NoUpdatesLine()
+                    NoUpdatesLine(gameID: gameID)
                 }
                 .padding(.vertical, 8)
             }
@@ -92,7 +92,7 @@ struct ReleaseEntry: View {
                         Text(r.kind.label)
                         Text(r.isPS5Listed ? r.ps5Date.shortDay : r.latestDate.shortDay)
                         // R-2 / V-2: the PS5 version exactly as the console shows it; never a PC number.
-                        if let v = r.ps5Version { Text(v).monospacedDigit() }
+                        if let v = r.ps5Version { Text(v.keepingVersionsTogether).monospacedDigit() }
                     }
                     Group {
                         if typeSize.isAccessibilitySize { VStack(alignment: .leading, spacing: 2) { facts } }
@@ -125,7 +125,7 @@ struct ReleaseEntry: View {
             }
         }
         .padding(14)
-        .background(model.highlight == r.id ? PlayscribeColor.accent.opacity(0.18) : Color.ink2, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+        .background(model.highlight == r.id ? PlayscribeRole.action.opacity(0.18) : PlayscribeRole.card, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
         .task(id: model.highlight) {
             guard model.highlight == r.id else { return }
             try? await Task.sleep(for: .milliseconds(300))
@@ -137,7 +137,9 @@ struct ReleaseEntry: View {
 struct ReleaseTag: View {
     var release: Release
     var body: some View {
-        HStack(spacing: 6) {
+        // Wraps onto a second row when the tags don't fit one: "PS4 update" and "Reported" ran under the rail at Closed AX5
+        // (9d8c3e2, Witcher). Each tag stays one unbroken word group.
+        FlowLayout(spacing: 6) {
             // Every PS4 patch says so, whatever its state; the patch name stays the title (R-2).
             if let l = release.ps4Label { Tag(text: l, tint: .secondary) }
             state
@@ -191,20 +193,30 @@ struct ReleaseBody: View {
     @Environment(\.marginReleaseID) private var marginReleaseID
     @Environment(\.dynamicTypeSize) private var typeSize
     var release: Release
+    /// The update page draws the headline and read time itself, in Card A's order.
+    var headerInPage = false
     /// D-13: facts expanded or collapsed persists.
     @AppStorage("factsOpen") private var factsOpen = false
     @State private var summaryOpen = false
+    /// r060-dayone-patch-alert-app: "Install this before you first play." while the day-one patch is unread. Taken when the
+    /// page appears, so reading it (R-6 marks it read after a second on screen) clears it on the next visit, not under the reader's eyes.
+    @State private var dayOneNote: String?
 
     var body: some View {
         let r = release
         let ps5Page = r.isPS5Listed
         VStack(alignment: .leading, spacing: 14) {
-            if let h = ps5Page ? r.ps5Headline : r.headline {
+            if !headerInPage, let h = ps5Page ? r.ps5Headline : r.headline {
                 // At accessibility sizes: the standing 4 whole-word line cap, "…" only when it still overflows.
                 if typeSize.isAccessibilitySize { WholeWordText(text: h, font: PlayscribeFont.title3, lines: 4) }
                 else { Text(h).font(PlayscribeFont.title3) }
-            } else if !r.notes.isEmpty {
+            } else if !headerInPage, !r.notes.isEmpty {
                 Text("Fixes and tuning").font(PlayscribeFont.title3)
+            }
+            if let note = dayOneNote {
+                Text(note).font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.accent)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .accessibilityIdentifier("dayOneNote")
             }
             if let summary = ps5Page ? r.ps5Summary : r.summary {
                 VStack(alignment: .leading, spacing: 4) {
@@ -225,17 +237,17 @@ struct ReleaseBody: View {
                     }
                 }
             }
-            if let minutes = r.readMinutes {
+            if !headerInPage, let minutes = r.readMinutes {
                 Text("\(minutes) min read").font(PlayscribeFont.footnote.weight(.semibold)).foregroundStyle(.secondary)
                     .accessibilityLabel("About \(minutes) minute\(minutes == 1 ? "" : "s") to read")
             }
             let keys = ps5Page ? r.ps5KeyChanges : (r.keyChanges ?? [])
             if !keys.isEmpty {
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("What's new").font(PlayscribeFont.headline).accessibilityAddTraits(.isHeader)
+                    Text("What’s new").font(PlayscribeFont.headline).accessibilityAddTraits(.isHeader)
                     ForEach(keys, id: \.self) { k in
                         HStack(alignment: .firstTextBaseline, spacing: 10) {
-                            Circle().fill(PlayscribeColor.accent).frame(width: 6, height: 6)
+                            Circle().fill(PlayscribeRole.action).frame(width: 6, height: 6)
                             Text(k).font(PlayscribeFont.subheadline)
                         }
                     }
@@ -244,28 +256,15 @@ struct ReleaseBody: View {
             if marginReleaseID != r.id {
                 Button { withAnimation(.snappy) { factsOpen.toggle() } } label: {
                     let chevron = Image(systemName: "chevron.down").rotationEffect(.degrees(factsOpen ? 180 : 0)).foregroundStyle(.secondary)
-                    if typeSize.isAccessibilitySize {
-                        // AX: one block, "Released ...", then the size, then the chevron, full width (R-2, Iris on #288 at AX3).
-                        VStack(alignment: .leading, spacing: 4) {
-                            Text(FactsLine.text(for: r)).font(PlayscribeFont.subheadline).fixedSize(horizontal: false, vertical: true)
-                            if let d = FactsLine.detail(for: r) {
-                                Text(d).font(PlayscribeFont.subheadline).monospacedDigit().foregroundStyle(.secondary)
-                                    .fixedSize(horizontal: false, vertical: true)
-                            }
-                            HStack { Spacer(minLength: 0); chevron }
-                        }
-                        .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
-                        .contentShape(Rectangle())
-                    } else {
-                        HStack {
-                            Text(FactsLine.text(for: r)).font(PlayscribeFont.subheadline)
-                            if let d = FactsLine.detail(for: r) { Text(d).font(PlayscribeFont.subheadline).monospacedDigit().foregroundStyle(.secondary) }
-                            Spacer()
-                            chevron
-                        }
-                        .frame(minHeight: 44)
-                        .contentShape(Rectangle())
+                    // Card A (Iris, #529): the collapsed row says only "Details" and the chevron. The date and status are in the
+                    // header above; a bare version beside "Released" read as a PC version.
+                    HStack {
+                        Text("Details").font(PlayscribeFont.subheadline)
+                        Spacer()
+                        chevron
                     }
+                    .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
+                    .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
                 .accessibilityHint(factsOpen ? "Hides the PS5 facts" : "Shows the PS5 facts")
@@ -275,13 +274,15 @@ struct ReleaseBody: View {
             if r.isSilent && r.notes.isEmpty {
                 Text("No official notes").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
             }
-            // A-reader: changes grouped New, Fixed, Balance, each heading with its count.
+            // A-reader: changes grouped New, Fixed, Balance; the heading has no count, the sub-sections keep theirs (Terry, 0.5.4).
             let groups = ChangeKind.grouped(r.notes, ps5Only: ps5Page)
             ForEach(groups, id: \.kind) { g in
-                Text("\(g.kind.rawValue) \(g.count)").font(PlayscribeFont.title3).padding(.top, 6)
+                // Reading marks (0.5.6): a pose change returns to the heading or section being read.
+                Text(g.kind.rawValue).font(PlayscribeFont.title3).padding(.top, 6)
                     .accessibilityAddTraits(.isHeader)
-                ForEach(Array(g.sections.enumerated()), id: \.offset) { _, section in
-                    NoteSectionView(release: r, section: section)
+                    .readingMark("mark-\(r.id)-\(g.kind.rawValue)")
+                ForEach(Array(g.sections.enumerated()), id: \.offset) { i, section in
+                    NoteSectionView(release: r, section: section).readingMark("mark-\(r.id)-\(g.kind.rawValue)-\(i)")
                 }
             }
             // Accessibility sizes: the Bookmark and Mark as read buttons stack, each the full width, so a label wraps on
@@ -294,6 +295,7 @@ struct ReleaseBody: View {
                     Label(marked ? "Bookmarked" : "Bookmark", systemImage: marked ? "bookmark.fill" : "bookmark")
                 }
                 .buttonStyle(.bordered)
+                .controlBorder(.outlinedButton, in: Capsule())
                 .hitTarget()
                 .tappableFrame()
                 if r.ps5State == .onPS5 {
@@ -302,35 +304,13 @@ struct ReleaseBody: View {
                         Label(unread ? "Mark as read" : "Mark as unread", systemImage: unread ? "envelope.open" : "envelope.badge")
                     }
                     .buttonStyle(.bordered)
+                    .controlBorder(.outlinedButton, in: Capsule())
                     .hitTarget()
                     .tappableFrame()
                 }
             }
         }
-    }
-}
-
-/// "Released 22 Oct" (GR-3), with the version and size as secondary detail.
-enum FactsLine {
-    static func text(for r: Release) -> String {
-        // "19 Apr 2025" once the year is not this one, so an old update never reads as recent.
-        let date = (r.isPS5Listed ? r.ps5Date : r.latestDate).dayMonthOrYear
-        switch r.ps5State {
-        case .onPS5, .pending: return "Released \(date)"
-        case .announced: return "Announced for PS5, \(date)"
-        case .reported: return "Released \(date)"
-        case .notPlanned: return "Not planned for PS5"
-        }
-    }
-
-    static func detail(for r: Release) -> String? {
-        var parts: [String] = []
-        if let v = r.ps5Version { parts.append(v) }
-        if let size = r.ps5?.sizeBytes {
-            let text = ByteCountFormatter.string(fromByteCount: size.value, countStyle: .decimal)
-            parts.append(text)
-        }
-        return parts.isEmpty ? nil : parts.joined(separator: ", ")
+        .onAppear { dayOneNote = model.dayOneNote(r) }
     }
 }
 
@@ -340,7 +320,7 @@ struct FactsCard: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 8) { Facts(release: release) }
             .padding(12)
-            .background(Color.ink1.opacity(0.7), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+            .background(PlayscribeRole.surface.opacity(0.7), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
     }
 }
 
@@ -406,7 +386,7 @@ struct Facts: View {
     @ViewBuilder private func row(_ label: String, _ value: some View) -> some View {
         if stacked {
             VStack(alignment: .leading, spacing: 3) {
-                Text(label).font(PlayscribeFont.caption).foregroundStyle(PlayscribeColor.textTertiary)
+                Text(label).font(PlayscribeFont.caption).foregroundStyle(PlayscribeRole.textTertiary)
                 value
             }
         } else {
@@ -428,7 +408,7 @@ struct VideoFact: View {
             Button { model.player = (release.gameID, release.id) } label: {
                 HStack(spacing: 10) {
                     ZStack {
-                        if let poster = v.posterAsset { Image(poster).resizable().scaledToFill() } else { Color.ink3 }
+                        if let poster = v.posterAsset { Image(poster).resizable().scaledToFill() } else { PlayscribeRole.chipFill }
                         Image(systemName: "play.fill").font(PlayscribeFont.caption).padding(8).background(.ultraThinMaterial, in: Circle())
                     }
                     .frame(width: 88, height: 50)
@@ -452,6 +432,7 @@ struct VideoFact: View {
 
 struct NoteSectionView: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.dynamicTypeSize) private var typeSize
     var release: Release
     var section: NoteSection
     @State private var showPC = false
@@ -468,15 +449,33 @@ struct NoteSectionView: View {
         let hidden = ps5Items.filter { $0.spoiler == true }.count
         VStack(alignment: .leading, spacing: 8) {
             Button { model.setExpanded(key, !open) } label: {
-                HStack {
-                    Text(LinkedText.clean(section.title)).font(PlayscribeFont.subheadline.weight(.semibold))
-                    Text("\(ps5Items.count)\(hidden > 0 && !model.spoilersShown(release.gameID) ? ", \(hidden) hidden for spoilers" : "")")
-                        .font(PlayscribeFont.caption).foregroundStyle(.secondary)
-                    Spacer()
-                    Image(systemName: "chevron.down").rotationEffect(.degrees(open ? 180 : 0)).foregroundStyle(.secondary)
+                let title = LinkedText.clean(section.title)
+                let count = "\(ps5Items.count)\(hidden > 0 && !model.spoilersShown(release.gameID) ? ", \(hidden) hidden for spoilers" : "")"
+                let chevron = Image(systemName: "chevron.down").rotationEffect(.degrees(open ? 180 : 0)).foregroundStyle(.secondary)
+                if typeSize.isAccessibilitySize {
+                    // Stacked (Iris, r054 Closed AX5): the name on its own full-width lines in whole words, the count and the
+                    // chevron under it. Side by side the name got a few letters of width and broke as "Gene/ral", "Quest/s".
+                    VStack(alignment: .leading, spacing: 4) {
+                        WholeWordText(text: title, font: PlayscribeFont.subheadline.weight(.semibold), lines: 3, color: nil)
+                        HStack(alignment: .firstTextBaseline, spacing: 8) {
+                            Text(count).font(PlayscribeFont.caption).foregroundStyle(.secondary)
+                            Spacer(minLength: 0)
+                            chevron
+                        }
+                    }
+                    .padding(.vertical, 6)
+                    .frame(maxWidth: .infinity, minHeight: 44, alignment: .topLeading)
+                    .contentShape(Rectangle())
+                } else {
+                    HStack {
+                        Text(title).font(PlayscribeFont.subheadline.weight(.semibold))
+                        Text(count).font(PlayscribeFont.caption).foregroundStyle(.secondary)
+                        Spacer()
+                        chevron
+                    }
+                    .frame(minHeight: 44)
+                    .contentShape(Rectangle())
                 }
-                .frame(minHeight: 44)
-                .contentShape(Rectangle())
             }
             .buttonStyle(.plain)
             .tappableFrame()
@@ -501,7 +500,7 @@ struct NoteSectionView: View {
             }
         }
         .padding(.horizontal, 10)
-        .background(Color.ink1.opacity(0.6), in: RoundedRectangle(cornerRadius: 10, style: .continuous))
+        .background(PlayscribeRole.surface.opacity(0.6), in: RoundedRectangle(cornerRadius: 10, style: .continuous))
     }
 }
 
@@ -542,7 +541,7 @@ struct SpoilerText: View {
             Button { model.reveal(key) } label: {
                 ZStack(alignment: .leading) {
                     Text(LinkedText.clean(text)).blur(radius: 6).accessibilityHidden(true)
-                    Label("Spoiler. Tap to show", systemImage: "eye.slash")
+                    Label("Spoiler. Tap to show.", systemImage: "eye.slash")
                         .font(PlayscribeFont.caption.weight(.semibold))
                         .padding(.horizontal, 8).padding(.vertical, 4)
                         .background(.ultraThinMaterial, in: Capsule())
@@ -551,7 +550,8 @@ struct SpoilerText: View {
                 .contentShape(Rectangle())
             }
             .buttonStyle(.plain)
-            .accessibilityLabel("Story spoiler. Double-tap to show.")
+            .accessibilityLabel("Spoiler")
+            .accessibilityHint("Tap to show")
             .tappableFrame()
         }
     }
@@ -561,21 +561,31 @@ struct SpoilerText: View {
 struct SourceLinks: View {
     var release: Release
     var body: some View {
-        HStack(spacing: 16) {
-            if let url = release.links?.ps5Page {
-                Link(destination: url) { Label(LinkHost.label("PS5 update page", url), systemImage: "arrow.up.right.square") }
-                    .frame(minHeight: 44).tappableFrame()
-                    .accessibilityHint("Opens in browser")
-            }
-            if let url = release.links?.steamNotes {
-                Link(destination: url) { Label(LinkHost.label("Read full notes", url), systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }
-                    .padding(.trailing, 8)
-                    .tappableFrame()
-                    .accessibilityHint("Opens in browser")
-            }
+        // Side by side only when both fit on one line. A plain HStack grew wider than the column at accessibility sizes
+        // when a release carries both links ("PS5 update page on PlayStation" + "Read full notes on Steam"), and the parent
+        // centred the overflow: the whole page shifted left, clipping its titles and putting the share button behind the
+        // rail (Witcher 5.01, Closed AX5, 870f75d; the same on main). Otherwise they stack, each on the column's width.
+        ViewThatFits(in: .horizontal) {
+            HStack(spacing: 16) { links }
+            VStack(alignment: .leading, spacing: 0) { links }
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
         .font(PlayscribeFont.subheadline)
-        .foregroundStyle(PlayscribeColor.accent)
+        .foregroundStyle(PlayscribeRole.action)
+    }
+
+    @ViewBuilder private var links: some View {
+        if let url = release.links?.ps5Page {
+            Link(destination: url) { Label(LinkHost.label("PS5 update page", url), systemImage: "arrow.up.right.square").multilineTextAlignment(.leading) }
+                .frame(minHeight: 44).tappableFrame()
+                .accessibilityHint("Opens in browser")
+        }
+        if let url = release.links?.steamNotes {
+            Link(destination: url) { Label(LinkHost.label("Read full notes", url), systemImage: "arrow.up.right.square").multilineTextAlignment(.leading).frame(minHeight: 44).contentShape(Rectangle()) }
+                .padding(.trailing, 8)
+                .tappableFrame()
+                .accessibilityHint("Opens in browser")
+        }
     }
 }
 
@@ -638,7 +648,7 @@ enum LinkHost {
         "activision": "Activision", "2k": "2K", "warhorsestudios": "Warhorse Studios", "konami": "Konami",
         "pushsquare": "Push Square", "playstationlifestyle": "PlayStation LifeStyle"
     ]
-    static let unknown = "the developer's site"
+    static let unknown = "the developer’s site"
 
     /// The brand for a known host; nil for one we don't know or a URL with no host.
     static func name(_ url: URL) -> String? {

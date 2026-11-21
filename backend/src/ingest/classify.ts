@@ -5,7 +5,7 @@ import type { KindBasis, NoteSection, PlatformStatus, ReleaseKind } from '../typ
 
 // A number followed by a slash or AM/PM is a date or time ("Latest Update 5/14", "Update 5PM PT"), not a version.
 const VERSION = /\b(?:update|patch|hotfix|version|ver\.?|v)\s*#?\s*(\d+(?:\.\d+){0,3}[a-z]?)\b(?!\s*\/|\s*[ap]\.?m\b)/i
-const BARE_VERSION = /\b(\d+\.\d+(?:\.\d+){0,2})\b/
+const BARE_VERSION = /\b(\d+\.\d+(?:\.\d+){0,2}[a-z]?)\b/
 
 export interface Naming {
   displayName: string
@@ -23,6 +23,19 @@ export const studioKindOf = (title: string): ReleaseKind | null => {
   // "Wukong 1.0.8.14860 Patch Notes": the studio publishes it as patch notes for a numbered build.
   if (/\bpatch\s*notes?\b/i.test(title) && BARE_VERSION.test(title)) return 'patch'
   return null
+}
+
+/**
+ * A Steam post whose own "BUILD NUMBER: 12.1.247768" or "CHANGELOG - BUILD: 12.1.247768" line repeats the number its title is made of
+ * names a PC build, not an update a PS5 player knows by that number (bug-056). Returns that number, else null. Only an exact match
+ * with the title's version counts: "Version:" lines and differing build lines leave the studio's title alone.
+ */
+export const pcBuildTitle = (title: string, body: string): boolean => {
+  const v = (title.match(VERSION) ?? title.match(BARE_VERSION))?.[1]
+  if (!v || !/^\d+(?:\.\d+){2,3}$/.test(v)) return false
+  const re = /\bbuild(?:\s*(?:number|no\.?|id))?\s*[:#]\s*v?(\d+(?:\.\d+){2,3})\b/gi
+  for (const m of body.matchAll(re)) if (m[1] === v) return true
+  return false
 }
 
 const LABEL: Record<ReleaseKind, string> = { dayOne: 'Day one patch', hotfix: 'Hotfix', patch: 'Patch', major: 'Update', silent: 'Update' }

@@ -1,0 +1,391 @@
+import assert from 'node:assert/strict'
+import { test } from 'node:test'
+import { openDb } from '../src/db.ts'
+import { looksLikePatch } from '../src/ingest/adapters.ts'
+import { isNewsOnlyTitle, isAnnouncementTitle, isTestBuildPost, pcScopedPost, pcTitledPost, statedLiveTime } from '../src/ingest/claims.ts'
+import { nameRelease } from '../src/ingest/classify.ts'
+import { runIngest, seedGames } from '../src/ingest/pipeline.ts'
+import * as store from '../src/store.ts'
+import { seedAutoGames } from '../src/ingest/autoRegistry.ts'
+import { fakeFetch, steamNews } from './helpers.ts'
+
+// r050-feed-ps5-claim-fixes: wording taken from the posts Quinn's spot-check found wrong.
+
+test('a PTB, public test, test build, beta or preview post is not a release', () => {
+  assert.ok(isTestBuildPost('10.3.0 | Terrifier PTB Patch Notes'))
+  assert.ok(isTestBuildPost('Public Test Build 0.9 Patch Notes'))
+  assert.ok(isTestBuildPost('Open Beta Update 1.2'))
+  assert.ok(isTestBuildPost('Patch 2.0 Preview Notes'))
+  assert.ok(!isTestBuildPost('10.2.2a Backend Bugfix Patch'))
+  assert.ok(!isTestBuildPost('AC Black Flag Resynced Title Update 1.0.8 – Patch Notes'))
+})
+
+test('a headline announcing a not-yet-shipped update is not a release (Palworld Feybreak)', () => {
+  assert.ok(isAnnouncementTitle("Palworld's next major update, Feybreak, releases on Dec. 23"))
+  assert.ok(isAnnouncementTitle('Update 1.2 Coming Tomorrow'))
+  assert.ok(!isAnnouncementTitle('Update 1.2 Patch Notes'))
+  assert.ok(!isAnnouncementTitle('Hotfix 1.0.5 is now live'))
+  assert.ok(!isAnnouncementTitle('10.2.2a Backend Bugfix Patch'))
+})
+
+test('a post listing platform builds without PlayStation, or rolling out to other platforms later, is PC-scoped', () => {
+  assert.ok(pcScopedPost('Hotfix\nWindows: v1.0.6.2132\nMac: v1.0.6.776\n- Fixed a crash'))
+  assert.ok(pcScopedPost('We added a new option on PC and are rolling it out soon to other platforms.'))
+  assert.ok(!pcScopedPost('Windows: v1.0.6.2132\nMac: v1.0.6.776\nPS5: 1.0.6'))
+  assert.ok(!pcScopedPost('Fixed a crash on startup.'))
+})
+
+test('a stated later time is read; past, vague and non-release dates are not', () => {
+  const pub = '2026-11-08T10:00:00.000Z'
+  assert.equal(statedLiveTime('At 02:00 UTC+0 on November 10, the updates for Xbox Series X|S and PlayStation 5 will be available.', pub), '2026-11-10T02:00:00.000Z')
+  assert.equal(statedLiveTime('Update 1.2 is starting on November 12, 2026 at 06:00 (UTC+0) and rolling out to all platforms.', pub), '2026-11-12T06:00:00.000Z')
+  assert.equal(statedLiveTime('The free update arrives on November 20, 2026 on all platforms.', pub), '2026-11-20T23:59:00.000Z')
+  assert.equal(statedLiveTime('The update will be live at 14:00 UTC-5 on November 10.', pub), '2026-11-10T19:00:00.000Z')
+  assert.equal(statedLiveTime('The update released on November 1 fixed a lot.', pub), null)
+  assert.equal(statedLiveTime('The sale ends on November 12. Patch notes below.', pub), null)
+  assert.equal(statedLiveTime('Fixed a crash.', pub), null)
+})
+
+test('the time that counts is the one in the sentence naming PlayStation (Delta Force); a maintenance notice titled as an update lands when the maintenance ends (Crystal of Atlan)', () => {
+  const delta = `Major Update: Season Aurora Is Coming!
+Dear Operators,
+
+We plan to launch a non-stop update for PC, mobile, and console versions on November 10, opening the new season "Aurora"!
+The expected update cadence for the PC version is as follows:
+At 00:30 UTC+0 on November 10, Operations and Warfare ranked matches will be off-season and temporarily closed.
+At 02:00 UTC+0 on November 10, the PC update will be available.
+
+The expected update cadence for the console version is as follows:
+At 00:30 UTC+0 on November 10, Operations and Warfare ranked matches will be off-season and temporarily closed.
+At 01:59 UTC+0 on November 10, the Operations entrance and matchmaking mode will be closed.
+At 02:00 UTC+0 on November 10, the updates for Xbox Series X|S and PlayStation 5 will be available.`
+  assert.equal(statedLiveTime(delta, '2026-11-07T12:00:03.000Z'), '2026-11-10T02:00:00.000Z')
+  const crystal = `November 12 Version Update Notice
+Dear Adventurer,
+To provide adventurers with a better experience, the Guild will be issuing a temporary restraining order on all adventurer activities in Atlan starting on November 12, 2026 at 06:00 (UTC+0). This order is expected to remain in effect for approximately 4 hours (maintenance may end earlier or be extended depending on actual conditions).`
+  assert.equal(statedLiveTime(crystal, '2026-11-11T07:29:28.000Z'), '2026-11-12T10:00:00.000Z')
+  // Without an update title the same maintenance wording is not a release time.
+  assert.equal(statedLiveTime(crystal.replace('Version Update Notice', 'Server Notice'), '2026-11-11T07:29:28.000Z'), null)
+})
+
+test('live patches that mention another date are not held (Quinn scan of 2,664 real posts, 12 Nov)', () => {
+  const pub = '2026-11-05T10:00:00.000Z'
+  // wording modelled on the false firings: CoH3 3.0.0 (a DLC date), DbD 10.0.3 and 10.0.1 (an event start, a survivor),
+  // Helldivers 6.0.1 (a store item), Apex (a matchmaking test tomorrow)
+  for (const t of [
+    '3.0.0 Update Patch Notes\nThe new DLC will be released on November 25, 2026.',
+    '10.0.3 Bugfix Patch\nThe Summer Screams event will start on November 12 with new rewards.',
+    '10.0.1 Patch Notes\nA new survivor will be available on November 7.',
+    '6.0.1 Patch Notes\nThe warbond store item will return on November 10.',
+    'Latest Update 10/6/2026\nA matchmaking test will begin tomorrow, November 6.',
+    'November 5 Update\nWe will roll out the update on November 5 with no downtime.',
+  ]) assert.equal(statedLiveTime(t, pub), null, t)
+  assert.equal(statedLiveTime('Patch notes\nThe 3.0 update will arrive on November 30.', pub), null, 'beyond 14 days')
+})
+
+test('a post that is itself the release, or talks about the next one, is not held (Rematch S3.0, Slay the Spire)', () => {
+  assert.equal(statedLiveTime('S3.0 Patch Notes - 1.203.000\nS3.0 Release Date: March 25th\n1v1 will be back during season 3! April 3rd', '2026-03-25T09:00:00.000Z'), null)
+  assert.equal(statedLiveTime('Weekly Patch 53\nThe next patch will be on January 3, 2019.', '2018-12-21T18:00:00.000Z'), null)
+})
+
+test('a hotfix or another version announced inside a post is a different release: it does not hold this one (Dead by Daylight 9.1.1)', () => {
+  const pub = '2025-08-05T18:03:00.000Z'
+  // The real wording: patch notes for 9.1.1 that say a hotfix follows tomorrow.
+  assert.equal(statedLiveTime('Bug Fix Status Update + 9.1.1 Patch Notes\nTomorrow (August 6) we are releasing a hotfix to address a number of issues\nintroduced recently.', pub), null)
+  // A post that names another version for the later time is about that version.
+  assert.equal(statedLiveTime('Patch 1.3 Notes\nPatch 1.4 will be available on November 12.', '2026-11-10T10:00:00.000Z'), null)
+  // The sentence for this very version or this very hotfix still holds.
+  assert.ok(statedLiveTime('Patch 1.3 Notes\nPatch 1.3 will be available on November 12.', '2026-11-10T10:00:00.000Z'))
+  assert.ok(statedLiveTime('Hotfix 9.1.2 Notes\nTomorrow (August 6) we are releasing this hotfix on all platforms.', pub))
+  // A sentence about the console keeps its own build number: "PS5 version 1.05.000" under "Update 1.5" still holds, and so does a console hotfix line.
+  assert.ok(statedLiveTime('Update 1.5\nPS5 version 1.05.000 will be available on November 12 at 02:00 UTC.', '2026-11-10T10:00:00.000Z'))
+  assert.ok(statedLiveTime('Update 1.5 Notes\nThe PlayStation 5 hotfix will be available on November 12.', '2026-11-10T10:00:00.000Z'))
+  // A sentence that names no version, in a post that is not a hotfix and says nothing of hotfixes, still holds (DDV).
+  assert.ok(statedLiveTime('Season of Scares Update Patch Notes\nOur Season of Scares free update arrives on November 12, 2026.', '2026-11-10T10:00:00.000Z'))
+})
+
+test('a letter after the version stays in its name (10.2.2a)', () => {
+  const n = nameRelease('10.2.2a Backend Bugfix Patch', '2026-11-02T10:00:00.000Z')
+  assert.deepEqual([n.displayName, n.versionKey], ['Patch 10.2.2a', '10.2.2a'])
+})
+
+const day = (n: number) => new Date(Date.now() + n * 86400e3)
+const ago = (h: number) => new Date(Date.now() - h * 3600e3).toISOString()
+const monthDay = (d: Date) => `${d.toLocaleString('en-US', { month: 'long', timeZone: 'UTC' })} ${d.getUTCDate()}`
+
+const setup = async (items: Parameters<typeof steamNews>[0]) => {
+  const db = openDb(':memory:')
+  const deps = { db, fetchFn: fakeFetch({ 'https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid=3751260': steamNews(items) }), igdb: null }
+  await seedGames(deps)
+  const summary = await runIngest(deps)
+  return { db, deps, summary }
+}
+const ps5Of = (db: ReturnType<typeof openDb>, id: string) => store.getRelease(db, id)?.platforms.find((p) => p.platform === 'ps5')
+
+test('ingest: test builds and PC-scoped posts make no PS5 row; a stated later time holds the row announced until then', async () => {
+  const when = day(2)
+  const { db, summary } = await setup([
+    { gid: '1', title: '10.3.0 | Terrifier PTB Patch Notes', date: ago(30), contents: 'Public test build. Fixed a crash.', tags: ['patchnotes'] },
+    { gid: '2', title: 'Hotfix 1.0.6', date: ago(25), contents: 'Windows: v1.0.6.2132\nMac: v1.0.6.776\n- Fixed a crash', tags: ['patchnotes'] },
+    { gid: '3', title: 'Patch 1.3', date: ago(20), contents: `At 02:00 UTC+0 on ${monthDay(when)}, the updates for Xbox Series X|S and PlayStation 5 will be available.`, tags: ['patchnotes'] },
+    { gid: '4', title: '10.2.2a Backend Bugfix Patch', date: ago(10), contents: 'Fixed a backend bug. Live on PC.', tags: ['patchnotes'] },
+  ])
+  assert.ok(store.getRelease(db, 'dawnwalker@10.3.0'))
+  assert.equal(ps5Of(db, 'dawnwalker@10.3.0'), undefined)
+  assert.equal(ps5Of(db, 'dawnwalker@1.0.6'), undefined)
+  const held = ps5Of(db, 'dawnwalker@1.3')!
+  assert.deepEqual([held.status, held.verification, held.liveAt?.value], ['announced', 'official', `${when.toISOString().slice(0, 10)}T02:00:00.000Z`])
+  assert.equal(held.alert, undefined)
+  assert.ok(store.getRelease(db, 'dawnwalker@10.2.2a'))
+  assert.deepEqual(summary.held, { stated: 1, testBuild: 1, pcScoped: 1, announcement: 0 })
+  // Nothing happens early; once the time has passed the row is live and earns its one alert from now.
+  assert.equal(store.promoteStated(db, day(1)), 0)
+  assert.equal(store.promoteStated(db, day(3)), 1)
+  const live = ps5Of(db, 'dawnwalker@1.3')!
+  assert.deepEqual([live.status, live.verification], ['live', 'official'])
+  assert.ok(live.alert)
+  // A stated time long past (a backfill reading an old post) goes live without a fresh alert window.
+  db.prepare("UPDATE platform_releases SET status = 'announced', pushed_at = NULL, alert_from = NULL WHERE release_id = 'dawnwalker@1.3' AND platform = 'ps5'").run()
+  assert.equal(store.promoteStated(db, day(30)), 1)
+  assert.equal(ps5Of(db, 'dawnwalker@1.3')!.alert?.from, held.liveAt?.value) // the old time, so the 72 h guard keeps it quiet
+})
+
+test('backfill repairs rows the old rules made from the same post, and leaves other sources alone', async () => {
+  const when = day(2)
+  const items = [
+    { gid: '1', title: 'Patch 1.3', date: ago(20), contents: `At 02:00 UTC+0 on ${monthDay(when)}, the updates for Xbox Series X|S and PlayStation 5 will be available.`, tags: ['patchnotes'] },
+    { gid: '2', title: '10.3.0 | Terrifier PTB Patch Notes', date: ago(30), contents: 'Public test build.', tags: ['patchnotes'] },
+  ]
+  const { db, deps } = await setup(items)
+  // The old rules: live on PS5 at the post's own time.
+  for (const [id, verification] of [['dawnwalker@1.3', 'official'], ['dawnwalker@10.3.0', 'assumed']] as const) {
+    const pc = ps5Of(db, id) ?? store.getRelease(db, id)!.platforms.find((p) => p.platform === 'pc')!
+    const at = store.getRelease(db, id)!.platforms.find((p) => p.platform === 'pc')!.liveAt!
+    db.prepare("DELETE FROM platform_releases WHERE release_id = ? AND platform = 'ps5'").run(id)
+    store.upsertPlatform(db, id, 'ps5', { status: 'live', verification, liveAt: store.field(at.value, verification, at.sourceId) })
+    void pc
+  }
+  assert.equal(ps5Of(db, 'dawnwalker@1.3')!.status, 'live')
+  await runIngest(deps, { force: true, until: new Date(Date.now() - 90 * 86400e3).toISOString() })
+  const fixed = ps5Of(db, 'dawnwalker@1.3')!
+  assert.deepEqual([fixed.status, fixed.verification], ['announced', 'official'])
+  assert.equal(ps5Of(db, 'dawnwalker@10.3.0'), undefined)
+})
+
+test('backfill drops the mislabelled release the same post made before (10.2 -> 10.2.2a)', async () => {
+  const { db, deps } = await setup([{ gid: '1', title: '10.2.2a Backend Bugfix Patch', date: ago(10), contents: 'Fixed a backend bug. Live on PC.', tags: ['patchnotes'] }])
+  const pc = store.getRelease(db, 'dawnwalker@10.2.2a')!
+  // The old rules stored it as 10.2 and remembered that on the post: a copy of the release under the old key.
+  const row = db.prepare("SELECT * FROM releases WHERE id = 'dawnwalker@10.2.2a'").get() as Record<string, any>
+  db.prepare('INSERT INTO releases (' + Object.keys(row).join(',') + ') VALUES (' + Object.keys(row).map(() => '?').join(',') + ')').run(...Object.values({ ...row, id: 'dawnwalker@10.2', version_key: '10.2', display_name: 'Patch 10.2' }))
+  db.prepare("UPDATE seen_posts SET release_id = 'dawnwalker@10.2'").run()
+  assert.ok(pc)
+  await runIngest(deps, { force: true, until: new Date(Date.now() - 90 * 86400e3).toISOString() })
+  assert.ok(!store.getRelease(db, 'dawnwalker@10.2'))
+  assert.equal(store.getRelease(db, 'dawnwalker@10.2.2a')?.displayName, 'Patch 10.2.2a')
+})
+
+test('backfill also repairs derived (auto-onboarded) games, which the slice never re-reads', async () => {
+  const db = openDb(':memory:')
+  const when = day(2)
+  const fetchFn = fakeFetch({
+    'https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid=111': steamNews([
+      { gid: 'a1', title: 'Patch 1.3', date: ago(20), contents: `At 02:00 UTC+0 on ${monthDay(when)}, the updates for Xbox Series X|S and PlayStation 5 will be available.`, tags: ['patchnotes'] },
+      { gid: 'a2', title: 'Developer diary', date: ago(19), contents: 'No patch here.' },
+    ]),
+  })
+  const deps = { db, fetchFn, igdb: null }
+  await seedGames(deps)
+  seedAutoGames(db, [{ id: 'alpha-1', steamAppId: 111, name: 'alpha-1', igdbId: 1, ps5TitleIds: [], ps5Release: '2024-01-01', sources: [{ id: 'auto-111-steam', kind: 'steamNews', url: 'https://store.steampowered.com/feeds/news/app/111/', platforms: ['pc'], trust: 'official', fetch: 'auto', ps5Signal: 'explicit' }] }])
+  await runIngest(deps, { autoSlice: 1 })
+  const at = store.getRelease(db, 'alpha-1@1.3')!.platforms.find((p) => p.platform === 'pc')!.liveAt!
+  // The old rules: live on PS5 at the post's own time.
+  db.prepare("DELETE FROM platform_releases WHERE release_id = 'alpha-1@1.3' AND platform = 'ps5'").run()
+  store.upsertPlatform(db, 'alpha-1@1.3', 'ps5', { status: 'live', verification: 'official', liveAt: store.field(at.value, 'official', at.sourceId) })
+  assert.equal(ps5Of(db, 'alpha-1@1.3')!.status, 'live')
+  const s = await runIngest(deps, { force: true, until: new Date(Date.now() - 90 * 86400e3).toISOString() })
+  assert.deepEqual([ps5Of(db, 'alpha-1@1.3')!.status, ps5Of(db, 'alpha-1@1.3')!.verification], ['announced', 'official'])
+  assert.ok(s.polled.includes('steam-111'))
+  assert.equal(store.newsOf(db, 'alpha-1').length, 0)
+})
+
+test('backfill removes the release an announcement headline made before, and a stated live row survives later runs', async () => {
+  const date = new Date(Math.floor((Date.now() - 100 * 3600e3) / 1000) * 1000).toISOString()
+  const { db, deps } = await setup([
+    { gid: '1', title: 'Title Update coming this week!', date, contents: 'Fixes and new content, now on PC and PS5.', tags: ['patchnotes'] },
+    { gid: '2', title: 'Patch 1.3', date: ago(20), contents: `At 02:00 UTC+0 on ${monthDay(day(2))}, the updates for Xbox Series X|S and PlayStation 5 will be available.`, tags: ['patchnotes'] },
+  ])
+  const at = date
+  // The old rules: an announcement made a release with an assumed live PS5 row.
+  const id = store.upsertRelease(db, { gameId: 'dawnwalker', versionKey: 'major-announce', displayName: 'Title Update coming this week!', kind: 'major', kindBasis: 'inferred', announcedAt: at, notes: [], sourceId: 'dawnwalker-steam' }).id
+  store.upsertPlatform(db, id, 'ps5', { status: 'live', verification: 'assumed', liveAt: store.field(at, 'assumed', 'dawnwalker-steam') })
+  db.prepare("UPDATE seen_posts SET release_id = ? WHERE post_id = '1'").run(id)
+  await runIngest(deps, { force: true, until: new Date(Date.now() - 90 * 86400e3).toISOString() })
+  assert.ok(!store.getRelease(db, id))
+  // A stated time that passed keeps its own time: no pass moves it back to the post.
+  const held = ps5Of(db, 'dawnwalker@1.3')!.liveAt!.value
+  assert.equal(store.promoteStated(db, day(3)), 1)
+  await runIngest(deps, { force: true })
+  assert.equal(ps5Of(db, 'dawnwalker@1.3')!.liveAt!.value, held)
+})
+
+test('alert age: a promoted row whose own live date is old keeps no fresh alert window (feed and push)', async () => {
+  const { alertFromOf } = await import('../src/alerts.ts')
+  const now = Date.parse('2026-11-12T17:05:00.000Z')
+  const live = (v: string) => JSON.stringify({ value: v })
+  // Years-old patch promoted today: the alert counts from its own date, so the 72 h guard stops it.
+  assert.equal(alertFromOf({ alert_from: '2026-11-12T17:05:01.005Z', live_at: live('2025-06-11T22:50:42.000Z') }, now), '2025-06-11T22:50:42.000Z')
+  // A console-later update a few days after its Steam post still counts from the moment it went live on PS5.
+  assert.equal(alertFromOf({ alert_from: '2026-11-12T17:05:01.005Z', live_at: live('2026-11-02T10:00:00.000Z') }, now), '2026-11-12T17:05:01.005Z')
+  assert.equal(alertFromOf({ alert_from: null, live_at: live('2026-11-12T10:00:00.000Z') }, now), '2026-11-12T10:00:00.000Z')
+})
+
+test('backfill applies a post\'s stated time even when a second post of the same day wrote the assumed row (DDV Season of Scares)', async () => {
+  const when = day(2)
+  const first = ago(30), second = new Date(Math.floor(Date.parse(first) / 1000) * 1000 + 36e3).toISOString()
+  const { db, deps } = await setup([
+    { gid: '1', title: 'Season of Scares Update Patch Notes', date: first, contents: `Our Season of Scares free update arrives on ${monthDay(when)}, 2026. Details below.`, tags: ['patchnotes'] },
+    { gid: '2', title: 'Season of Scares Update Patch Notes', date: second, contents: 'Hotfix notes. More details soon.', tags: ['patchnotes'] },
+  ])
+  const id = [...(db.prepare('SELECT DISTINCT release_id AS id FROM seen_posts WHERE release_id IS NOT NULL').all() as { id: string }[])][0]!.id
+  // Read forward, the later plain post does not release the row the first one held.
+  assert.equal(ps5Of(db, id)!.status, 'announced')
+  // The old rules: the second post wrote the assumed live row, at its own time.
+  db.prepare("DELETE FROM platform_releases WHERE release_id = ? AND platform = 'ps5'").run(id)
+  store.upsertPlatform(db, id, 'ps5', { status: 'live', verification: 'assumed', liveAt: store.field(second, 'assumed', 'dawnwalker-steam') })
+  await runIngest(deps, { force: true, until: new Date(Date.now() - 90 * 86400e3).toISOString() })
+  const row = ps5Of(db, id)!
+  assert.deepEqual([row.status, row.liveAt?.value.slice(0, 10)], ['announced', when.toISOString().slice(0, 10)])
+})
+
+// P0 (bug-055-feed-steam-announcements): Cyberpunk's "Check out what's coming ... Update!" and the REDstreams "is coming!" post
+// were ingested as releases and opened as update pages. They are news.
+test('a preview, stream or system-requirements headline is news, not a release; real update posts are not', () => {
+  assert.ok(isNewsOnlyTitle("Check out what's coming to Cyberpunk 2077 in the Edgerunners 2 Update!"))
+  assert.ok(isNewsOnlyTitle('REDstreams \u2014 Cyberpunk 2077: Edgerunners 2 Update (2.5) is coming!'))
+  assert.ok(isNewsOnlyTitle('REDstreams \u2013 Cyberpunk: Edgerunners 2'))
+  assert.ok(isNewsOnlyTitle('System requirements for Cyberpunk 2077 - UPDATE!'))
+  assert.ok(isNewsOnlyTitle('Update to PC System Requirements'))
+  assert.ok(isNewsOnlyTitle("Palworld's next major update, Feybreak, releases on Dec. 23"))
+  // Real patch titles that carry a weak word (Quinn, #537): a numbered Update, Patch or Hotfix, or Steam's patchnotes tag, wins.
+  for (const real of ['Patch 1.3 - Updated System Requirements and bug fixes', 'Update 2.1: Twitch Drops fix and balance', 'Hotfix 1.0.4 (Live Stream bug fixed)']) {
+    assert.ok(!isNewsOnlyTitle(real), real)
+  }
+  assert.ok(!isNewsOnlyTitle('Stream fix and system requirements change', { patchnotesTag: true }), 'the patchnotes tag wins over the weak arms')
+  // From the dry run on the live feed state (14-18 Nov): real releases the first rules would have dropped.
+  for (const real of ['Dev Stream - Major Update out now! - Bosses & Relics', 'OTXO - 666 UPDATE OUT NOW (Livestream)', 'PATCH RELEASE AND LIVE STREAM', 'Dev Stream #11 - New Patch! A few features and a lot of bug fixes', 'New Steam Update Available \u2014 What\u2019s Coming Up', 'Union-Update: Multiplayer-Hotfix, Livestream und Community Spotlight']) {
+    assert.ok(!isNewsOnlyTitle(real), real)
+  }
+  assert.ok(!isNewsOnlyTitle('Update 1.4.0 is coming to PS5 today', { patchnotesTag: true }), 'an "is coming" title with the patchnotes tag is a release')
+  // A changelog or notes title wins over the "coming" words (Quinn: Pool Cleaning Simulator).
+  for (const real of ['\ud83e\udee7 Pool Cleaning Simulator \u2013 Maintenance Update Changelog \ud83c\udf0a And what is coming', 'Patch notes 1.2, and what\u2019s coming up', 'Hotfix notes: what is coming up', "What's new in the Spring Update, and what's coming"]) {
+    assert.ok(!isNewsOnlyTitle(real), real)
+  }
+  // "1.4.0 is here!" is the release post for Update 1.4.0 (Countless Army), though its title has no update word.
+  assert.ok(looksLikePatch('1.4.0 is here!'))
+  assert.ok(!looksLikePatch('Hades is here!'))
+  assert.equal(nameRelease('1.4.0 is here!', '2025-04-03T00:00:00Z').versionKey, '1.4.0')
+  // "Winter is coming!" after a dash is a tagline, not the update coming (Espresso Tycoon Update 11).
+  assert.ok(!isNewsOnlyTitle('Espresso Tycoon - Update 11 - Winter is coming!'), 'a tagline after a dash does not make an update post news')
+  assert.ok(isNewsOnlyTitle('Update 18.0 is coming: Start of Open Beta #1'))
+  assert.ok(isNewsOnlyTitle('Union Update: Something big is coming'))
+  assert.ok(isNewsOnlyTitle('Development Update #7 - TFH is Coming to Consoles'))
+  assert.ok(!isNewsOnlyTitle('Development Update #7 - TFH is Coming to Consoles', { patchnotesTag: true }))
+  assert.ok(!isNewsOnlyTitle('Update 1.2 Patch Notes'))
+  assert.ok(!isNewsOnlyTitle('Developer Update 17.1.0'))
+  for (const news of ['Update Preview Livestream (Cycles Reforged)', 'Developer Livestream - Balance Update', 'Enshrouded: Pact of the Flame Update Livestream', 'Dawn of Equinox Update is Coming for Free on November 12!', "What's coming in the Plant a Tree Update?"]) {
+    assert.ok(isNewsOnlyTitle(news), news)
+  }
+  assert.ok(isNewsOnlyTitle("Check out what's coming to Cyberpunk 2077 in the Edgerunners 2 Update!", { patchnotesTag: true }), 'a preview stays news even with the tag')
+  assert.ok(isNewsOnlyTitle('REDstreams \u2014 Cyberpunk 2077: Edgerunners 2 Update (2.5) is coming!', { patchnotesTag: false }), 'the real post is untagged')
+  for (const real of ["Cyberpunk 2077's Edgerunners 2 Update (2.5) is out now!", 'Update 2.5', 'Patch 2.31', 'Hotfix available', 'Update 1.2 Patch Notes', 'Hotfix 1.0.5 is now live', 'DLSS 3 & Reflex PC Update']) {
+    assert.ok(!isNewsOnlyTitle(real), real)
+  }
+})
+
+test('ingest: announcement and stream posts are news and make no release; backfill drops the ones made before', async () => {
+  const preview = { gid: '1', title: "Check out what's coming to Dawnwalker in the Edgerunners 2 Update!", date: ago(12), contents: 'Patch notes for the Edgerunners 2 Update (2.5) are now available before the update hits on October 22nd.\n- Added a quest', tags: ['patchnotes'] }
+  const stream = { gid: '2', title: 'REDstreams \u2014 Dawnwalker: Edgerunners 2 Update (2.5) is coming!', date: ago(13), contents: 'Join us on Twitch for a closer look.' }
+  const real = { gid: '3', title: "Dawnwalker's Edgerunners 2 Update (2.5) is out now!", date: ago(11), contents: 'The update is live on PC and PS5.\n- Fixed a crash', tags: ['patchnotes'] }
+  const { db, deps } = await setup([preview, stream, real])
+  assert.deepEqual(store.getRelease(db, 'dawnwalker@2.5') ? ['2.5'] : [], ['2.5'], 'the real post makes release 2.5')
+  const ids = (db.prepare('SELECT id FROM releases').all() as { id: string }[]).map((r) => r.id)
+  assert.deepEqual(ids, ['dawnwalker@2.5'], `only the real update is a release: ${ids}`)
+  // The old rules made releases from the preview and the stream post, each its own source and its own day.
+  for (const [post, key, name] of [[preview, 'major-' + preview.date.slice(0, 10), preview.title], [stream, 'major-' + stream.date.slice(0, 10), stream.title]] as const) {
+    const id = store.upsertRelease(db, { gameId: 'dawnwalker', versionKey: key, displayName: name, kind: 'major', kindBasis: 'inferred', announcedAt: post.date, notes: [], sourceId: 'dawnwalker-steam' }).id
+    store.upsertPlatform(db, id, 'ps5', { status: 'live', verification: 'assumed', liveAt: store.field(post.date, 'assumed', 'dawnwalker-steam') })
+    db.prepare('UPDATE seen_posts SET release_id = ? WHERE post_id = ?').run(id, post.gid)
+  }
+  await runIngest(deps, { force: true, until: new Date(Date.now() - 90 * 86400e3).toISOString() })
+  const after = (db.prepare('SELECT id FROM releases').all() as { id: string }[]).map((r) => r.id)
+  assert.deepEqual(after, ['dawnwalker@2.5'], `backfill removes the announcement releases: ${after}`)
+  const titles = store.newsOf(db, 'dawnwalker').map((n: { title: string }) => n.title)
+  assert.ok(titles.some((t: string) => /what.s coming/i.test(t)), 'the preview is kept as news')
+})
+
+// P0 (bug-056-pc-build-in-update-name): a Steam title that is only the PC build number is not a name for a PS5 update.
+test('a title that is the post\'s own BUILD number reads "Update"; other numbered titles keep the studio\'s name', async () => {
+  const tpm = (n: string, build: string) => ({ gid: n, title: `Update - ${build}`, date: ago(Number(n) * 3), contents: `Patch notes for today's update.\n[h2]CHANGELOG - BUILD: ${build}[/h2][list][*][p]Fixed a crash when opening the Finance menu.[/p][/list]`, tags: ['patchnotes'] })
+  const { db, deps } = await setup([
+    tpm('4', '12.1.247768'),
+    { gid: '5', title: 'Patch 1.0.8.14860', date: ago(20), contents: 'Version: 1.0.8.14860\nUpdate Time: August 29, 2024\n- Fixed a crash', tags: ['patchnotes'] },
+    { gid: '6', title: 'Update 1.0.2.101103', date: ago(25), contents: '- Fixed an infinite loading screen after the World Tree boss.', tags: ['patchnotes'] },
+    { gid: '7', title: 'Update 2.5', date: ago(30), contents: 'BUILD NUMBER: 2.5.0\n- Fixed a crash', tags: ['patchnotes'] },
+  ])
+  assert.equal(store.getRelease(db, 'dawnwalker@12.1.247768')?.displayName, 'Update', 'the PC build number is not the name')
+  assert.equal(store.getRelease(db, 'dawnwalker@1.0.8.14860')?.displayName, 'Patch 1.0.8.14860', 'Wukong-style: "Version:" is not a build line')
+  assert.equal(store.getRelease(db, 'dawnwalker@1.0.2.101103')?.displayName, 'Update 1.0.2.101103', 'Palworld-style: no build line, studio title kept')
+  assert.equal(store.getRelease(db, 'dawnwalker@2.5')?.displayName, 'Update 2.5', 'a build line that differs from the title leaves the title alone')
+  // Backfill renames the rows the old rules named with the build number.
+  db.prepare("UPDATE releases SET display_name = 'Update 12.1.247768' WHERE id = 'dawnwalker@12.1.247768'").run()
+  await runIngest(deps, { force: true, until: new Date(Date.now() - 90 * 86400e3).toISOString() })
+  assert.equal(store.getRelease(db, 'dawnwalker@12.1.247768')?.displayName, 'Update')
+})
+
+test('a PC-titled hotfix or update says nothing about PS5 (bug-058, Cyberpunk "PC Hotfix", "DLSS 3 & Reflex PC Update")', () => {
+  assert.ok(pcTitledPost('PC Hotfix'))
+  assert.ok(pcTitledPost('DLSS 3 & Reflex PC Update'))
+  assert.ok(pcTitledPost('Hotfix 1.2 for PC'))
+  assert.ok(pcTitledPost('Patch 2.1 (PC only)'))
+  assert.ok(!pcTitledPost('Hotfix available'))
+  assert.ok(!pcTitledPost('Update 2.5 for PC, PS5 and Xbox'))
+  assert.ok(!pcTitledPost('Patch 1.2: PC performance and PS5 stability'))
+  assert.ok(!pcTitledPost('PCI Express fix'))
+  assert.ok(!pcTitledPost('Consoles out now, new PC update, and a stream!'))
+  assert.ok(!pcTitledPost('Rearmament Update Segment on the PC Gaming Tokyo Direct!'))
+  assert.ok(!pcTitledPost('Launch Update On PC Performance'))
+})
+
+test('a patch for another game in the same Steam feed is news (bug-058, KCD2 feed carrying KCD1 Patch 1.9.7)', () => {
+  assert.ok(isNewsOnlyTitle('A Legacy Updated: Patch 1.9.7 for the first Kingdom Come: Deliverance is live'))
+  assert.ok(isNewsOnlyTitle('Patch 1.2 for the original Sunset Rider is out now'))
+  assert.ok(!isNewsOnlyTitle('Patch 1.5.3: Native Windows on ARM Support'))
+})
+
+test('server maintenance and downtime notices are news, patch titles that mention maintenance are not (bug-058)', () => {
+  assert.ok(isNewsOnlyTitle('Application Data Update and Server Maintenance Notice'))
+  assert.ok(isNewsOnlyTitle('Scheduled maintenance on 12 Nov'))
+  assert.ok(isNewsOnlyTitle('Server downtime tonight'))
+  assert.ok(!isNewsOnlyTitle('Server maintenance and Hotfix at 14:15 CEST'))
+  assert.ok(!isNewsOnlyTitle("It's Time For The First Patch!"))
+  assert.ok(!isNewsOnlyTitle('Patch 1.4.2: server maintenance fixes'))
+  assert.ok(!isNewsOnlyTitle('Maintenance Update Changelog'))
+  assert.ok(!isNewsOnlyTitle('Maintenance 27th August - Item Salvage, Splash Screen, & Contract Fixes'))
+  assert.ok(!isNewsOnlyTitle('9/14(Sat) Maintenance-Free Patch Notice'))
+  assert.ok(!isNewsOnlyTitle('Update 3.1 patch notes', { patchnotesTag: true }))
+})
+
+test('ingest: a PC-titled post makes no PS5 row, a plain hotfix post still does (bug-058)', async () => {
+  const { db, summary } = await setup([
+    { gid: '1', title: 'PC Hotfix', date: ago(25), contents: 'A hotfix is out now. It fixes crashes.', tags: ['patchnotes'] },
+    { gid: '2', title: 'DLSS 3 & Reflex PC Update', date: ago(20), contents: 'Adds DLSS 3 and Reflex.', tags: ['patchnotes'] },
+    { gid: '3', title: 'Hotfix 1.0.7', date: ago(10), contents: 'A hotfix is out now. It fixes crashes.', tags: ['patchnotes'] },
+  ])
+  const ids = (db.prepare("SELECT id FROM releases WHERE game_id = 'dawnwalker' ORDER BY announced_at").all() as { id: string }[]).map((r) => r.id)
+  assert.equal(ids.length, 3)
+  assert.equal(ps5Of(db, ids[0]!), undefined)
+  assert.equal(ps5Of(db, ids[1]!), undefined)
+  assert.equal(ps5Of(db, 'dawnwalker@1.0.7')?.verification, 'assumed')
+  assert.equal(summary.held?.pcScoped, 2)
+})

@@ -19,7 +19,7 @@ extension Verification {
     var meaning: String {
         switch self {
         case .official: "This comes from the people who make the game or the console, in their own announcement."
-        case .reported: "Independent outlets reported this. It did not come from the game's makers."
+        case .reported: "Independent outlets reported this. It did not come from the game’s makers."
         case .pending, .assumed: "Not confirmed yet. Playscribe will update this when it is."
         }
     }
@@ -65,7 +65,7 @@ struct VerificationExplainer: View {
                 ForEach(Verification.ladder, id: \.self) { v in
                     HStack(spacing: 8) {
                         Image(systemName: v == kind ? "checkmark.circle.fill" : "circle")
-                            .foregroundStyle(v == kind ? PlayscribeColor.accent : .secondary)
+                            .foregroundStyle(v == kind ? PlayscribeRole.action : .secondary)
                         Text(v.tagName).font(PlayscribeFont.subheadline.weight(v == kind ? .semibold : .regular))
                         if v == kind { Text("This one").font(PlayscribeFont.footnote).foregroundStyle(.secondary) }
                     }

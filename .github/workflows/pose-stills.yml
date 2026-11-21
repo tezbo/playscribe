@@ -1,0 +1,152 @@
+name: Pose stills (CI simulator)
+
+# Real-simulator stills without the Mac (pick 2 of /mnt/project-files/qa/faster-screen-testing-research.md): one job per pose on
+# the free xcode-27 runner, each running PoseStillsTests once (every route x size is a launch with -qaRoute, -qaPose and
+# -UIPreferredContentSizeCategoryName), with the PNGs exported from the .xcresult into the pose-stills-<pose> artifact.
+# Advisory: a pilot to compare against the Mac on the same SHA. The Mac stays the sign-off.
+# Open, Book and Tabletop need the inner panel: tools/qa/ci-pose.sh tries Device Hub's Open control and logs `panel=` either way.
+# Runs by hand (workflow_dispatch, once this file is on main) or on a push to claude/** that adds or changes
+# .github/pose-stills-request.txt (KEY=VALUE lines: APP_SHA, POSES, ROUTES, SIZES, WAIT). Always finishes green.
+# Pilot result (#485, 12 Nov): CI cannot select the inner panel (Device Hub does not start on the runner); Closed portrait works.
+on:
+  workflow_dispatch:
+    inputs:
+      poses: { description: 'Comma list: closed, closedLandscape, open, openPortrait, book, tabletop', default: 'closed,closedLandscape,book,tabletop,open' }
+      routes: { description: 'Comma list of -qaRoute values (blank: the default set)', default: '' }
+      sizes: { description: 'std, ax3, ax5', default: 'std,ax5' }
+      app_sha: { description: 'Commit to take ios/Playscribe from (blank: this branch)', default: '' }
+  push:
+    branches: ['claude/**']
+    paths: ['.github/pose-stills-request.txt']
+
+concurrency:
+  group: pose-stills-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+env:
+  XCODE_APP: /Applications/Xcode_27.1.app
+  HOMEBREW_NO_AUTO_UPDATE: 1
+  HOMEBREW_NO_INSTALL_CLEANUP: 1
+  HOMEBREW_NO_ANALYTICS: 1
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    outputs:
+      poses: ${{ steps.p.outputs.poses }}
+      routes: ${{ steps.p.outputs.routes }}
+      sizes: ${{ steps.p.outputs.sizes }}
+      app_sha: ${{ steps.p.outputs.app_sha }}
+      wait: ${{ steps.p.outputs.wait }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: p
+        run: |
+          if [ "${{ github.event_name }}" = push ]; then
+            # A push that removes the request file shoots nothing (the pilot's request was dropped before #485 merged).
+            [ -f .github/pose-stills-request.txt ] || { echo "poses=[]" >> "$GITHUB_OUTPUT"; exit 0; }
+            set -a; . ./.github/pose-stills-request.txt; set +a
+          fi
+          poses=${POSES:-${{ inputs.poses }}}; poses=${poses:-closed,closedLandscape,book,tabletop,open}
+          echo "poses=$(python3 -c 'import json,sys; print(json.dumps([p.strip() for p in sys.argv[1].split(",") if p.strip()]))' "$poses")" >> "$GITHUB_OUTPUT"
+          echo "routes=${ROUTES:-${{ inputs.routes }}}" >> "$GITHUB_OUTPUT"
+          s=${SIZES:-${{ inputs.sizes }}}; echo "sizes=${s:-std,ax5}" >> "$GITHUB_OUTPUT"
+          echo "app_sha=${APP_SHA:-${{ inputs.app_sha }}}" >> "$GITHUB_OUTPUT"
+          echo "wait=${WAIT:-4}" >> "$GITHUB_OUTPUT"
+
+  shoot:
+    needs: plan
+    if: needs.plan.outputs.poses != '[]'
+    strategy:
+      fail-fast: false
+      matrix:
+        pose: ${{ fromJSON(needs.plan.outputs.poses) }}
+    runs-on: xcode-27
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - name: Take the app sources from the requested commit
+        if: needs.plan.outputs.app_sha != ''
+        run: git checkout "${{ needs.plan.outputs.app_sha }}" -- ios/Playscribe ios/Shared && git rev-parse --short "${{ needs.plan.outputs.app_sha }}"
+      - run: command -v xcodegen >/dev/null || brew install xcodegen; (cd ios && xcodegen generate)
+      - run: sudo xcode-select -s "$XCODE_APP" && xcodebuild -version
+      - name: Pick the iPhone Duo simulator
+        id: sim
+        run: |
+          udid=$(xcrun simctl list devices available -j | python3 -c "
+          import json, sys
+          d = json.load(sys.stdin)['devices']
+          phones = [x for k in d if 'iOS-27-1' in k for x in d[k] if 'Duo' in x['name']]
+          print(phones[0]['udid'] if phones else '')
+          ")
+          echo "udid=$udid" >> "$GITHUB_OUTPUT"; echo "Duo sim: ${udid:-none}"
+      - name: Build (generic simulator, before booting)
+        run: |
+          t=$SECONDS
+          xcodebuild build-for-testing -project ios/Playscribe.xcodeproj -scheme PlayscribeUI \
+            -destination 'generic/platform=iOS Simulator' -derivedDataPath dd CODE_SIGNING_ALLOWED=NO > build.log 2>&1 \
+            || { grep -E 'error:' build.log | head -20; }
+          echo "build $(( SECONDS - t )) s"
+      - name: Boot and set the pose
+        id: pose
+        run: |
+          udid=${{ steps.sim.outputs.udid }}
+          t=$SECONDS
+          xcrun simctl boot "$udid" 2>/dev/null || true
+          xcrun simctl bootstatus "$udid" -b >/dev/null 2>&1 || true
+          echo "boot $(( SECONDS - t )) s"
+          zsh ios/tools/qa/ci-pose.sh "$udid" "${{ matrix.pose }}" 2>&1 | tee pose.log
+          echo "panel=$(tail -1 pose.log | sed 's/^panel=//')" >> "$GITHUB_OUTPUT"
+      - name: Shoot
+        env:
+          TEST_RUNNER_POSE_STILLS_POSE: ${{ matrix.pose }}
+          TEST_RUNNER_POSE_STILLS_ROUTES: ${{ needs.plan.outputs.routes }}
+          TEST_RUNNER_POSE_STILLS_SIZES: ${{ needs.plan.outputs.sizes }}
+          TEST_RUNNER_POSE_STILLS_WAIT: ${{ needs.plan.outputs.wait }}
+        run: |
+          t=$SECONDS
+          rm -rf r.xcresult
+          xcodebuild test-without-building -project ios/Playscribe.xcodeproj -scheme PlayscribeUI \
+            -destination "id=${{ steps.sim.outputs.udid }}" -derivedDataPath dd \
+            -only-testing:PlayscribeUITests/PoseStillsTests -resultBundlePath r.xcresult \
+            CODE_SIGNING_ALLOWED=NO > test.log 2>&1 || true
+          grep -E 'pose still:|error:|\*\* TEST' test.log | tail -60 || true
+          echo "shoot $(( SECONDS - t )) s"
+      - name: Export the PNGs from the result bundle
+        id: export
+        run: |
+          mkdir -p raw out
+          xcrun xcresulttool export attachments --path r.xcresult --output-path raw > /dev/null 2>&1 || echo "export attachments failed"
+          python3 - <<'EOF'
+          import json, os, re, shutil
+          try:
+              manifest = json.load(open("raw/manifest.json"))
+          except Exception as e:
+              manifest = []; print("no manifest:", e)
+          n = 0
+          for test in manifest:
+              for a in test.get("attachments", []):
+                  # Not splitext: route names hold dots (dawnwalker@1.1), so only a trailing .png comes off.
+                  name = re.sub(r"\.png$", "", a.get("suggestedHumanReadableName") or a["exportedFileName"])
+                  name = re.sub(r"_\d+_[0-9A-Fa-f-]{36}$", "", name)
+                  shutil.copy(os.path.join("raw", a["exportedFileName"]), os.path.join("out", name + ".png")); n += 1
+          print(f"{n} PNG")
+          open(os.environ["GITHUB_OUTPUT"], "a").write(f"n={n}\n")
+          EOF
+          cp pose.log test.log build.log out/ 2>/dev/null || true
+          # The simulator's own screenshot of each panel, as a cross-check on which one the stills came from.
+          for d in LCD LCD-1; do xcrun simctl io "${{ steps.sim.outputs.udid }}" screenshot --display=$d "out/_panel-$d-${{ matrix.pose }}.png" >/dev/null 2>&1 || true; done
+          echo "### ${{ matrix.pose }}: ${{ steps.export.outputs.n || '?' }} PNG, panel ${{ steps.pose.outputs.panel }}" >> "$GITHUB_STEP_SUMMARY"
+          exit 0
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pose-stills-${{ matrix.pose }}
+          path: out/
+          if-no-files-found: ignore
+          retention-days: 14

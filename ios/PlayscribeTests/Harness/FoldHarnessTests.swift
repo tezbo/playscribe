@@ -40,6 +40,9 @@ struct FoldHarnessTests {
         #expect(HarnessRules.overlappingPairs([a, CGRect(x: 60, y: 20, width: 100, height: 40)]).count == 1)
         #expect(HarnessRules.overlappingPairs([a, CGRect(x: 10, y: 5, width: 30, height: 30)]).isEmpty)
         #expect(HarnessRules.overlappingPairs([a, CGRect(x: 0, y: 60, width: 100, height: 40)]).isEmpty)
+        // The same control reported twice, 7 pt apart, is not an overlap; two different controls offset by half a width are.
+        #expect(HarnessRules.overlappingPairs([CGRect(x: 23, y: 65, width: 131, height: 44), CGRect(x: 16, y: 65, width: 131, height: 44)]).isEmpty)
+        #expect(HarnessRules.overlappingPairs([CGRect(x: 0, y: 65, width: 131, height: 44), CGRect(x: 60, y: 65, width: 131, height: 44)]).count == 1)
     }
 
     @Test func libraryToolbarItemsEachHaveTheirOwnSlot() {
@@ -91,6 +94,75 @@ struct FoldHarnessTests {
         if p.expected != .tabletop { HarnessRules.checkLibraryToolbar(r) }
     }
 
+    // MARK: Closed landscape rail after a rotation (Mac RailSetTests at 8f45d30)
+
+    /// Iris's Closed landscape rail (Back, Notifications, Status, More, 44 pt each, one column leading of the tab column) after
+    /// the device turns, the way RailSetTests reaches it: open the game in Closed portrait, then rotate. At 8f45d30 the Mac saw the
+    /// system bar's 38 pt items there instead, 40 pt into the tab column; launched in landscape the rail was right, so this
+    /// test turns the same render rather than hosting Closed landscape afresh.
+    @Test(arguments: [false, true])
+    func closedLandscapeRailAfterRotating(_ ax5: Bool) async throws {
+        let type: UIContentSizeCategory = ax5 ? .accessibilityExtraExtraExtraLarge : .large
+        let model = FoldHost.demoModel()
+        model.handle(url: URL(string: "playscribe://gamepage/dawnwalker")!)
+        let portrait = try #require(await FoldHost.render(HarnessPose.named("closed"), type: type, model: model), "a window scene to host in")
+        let r = await FoldHost.rotate(portrait, to: HarnessPose.named("closedLandscape"), type: type)
+        defer { FoldHost.dispose(r) }
+        #expect(model.livePose == .closed, "the app reads Closed after the turn, read \(model.livePose)")
+        let size = r.pose.container
+        // The rail's buttons: 44 x 44 tappable frames in one column on the trailing third of the page.
+        let square = r.frames.filter { abs($0.width - 44) < 0.5 && abs($0.height - 44) < 0.5 && $0.minX > size.width * 0.6 }
+        let columns = Dictionary(grouping: square) { Int($0.minX.rounded()) }
+        let rail = columns.values.max { $0.count < $1.count } ?? []
+        print("harness rail: rotated \(type.rawValue) view \(r.viewSize) insets \(r.appliedInsets) rail \(rail.map(HarnessRules.brief)) squares \(square.map(HarnessRules.brief)) top \(r.topInventory)")
+        #expect(rail.count == 4, "Closed landscape after a turn: the rail has \(rail.count) of Back, Notifications, Status and More (squares \(square.map(HarnessRules.brief)))")
+        // The system bar must not carry the game's buttons as well (the rail replaces it in Closed landscape).
+        for id in ["rail.notify", "rail.status", "rail.more"] {
+            if let f = r.uikitControl(identifier: id) {
+                #expect(abs(f.width - 44) < 0.5, "\(id) is \(HarnessRules.brief(f)), not a 44 pt rail button")
+            }
+        }
+    }
+
+    // MARK: Tabletop rail, no sliver (0.5.7 gate, Mac walk on 74b15ab step 13)
+
+    /// The Library's Tabletop rail had five actions (Add, View, Settings, Playing, Upcoming) with room for four above the tabs, so
+    /// the actions scrolled and the fifth showed as a dark arc at the tab group. Iris: Playing / Upcoming is the page's own switch,
+    /// so the rail is Add, View and Settings, whole, with nothing to scroll and no part of a button showing.
+    @Test(arguments: [false, true])
+    func tabletopRailShowsNoSliverOfAButton(_ ax5: Bool) async throws {
+        let p = HarnessPose.named("tabletop")
+        let r = try #require(await FoldHost.render(p, type: ax5 ? .accessibilityExtraExtraExtraLarge : .large), "a window scene to host in")
+        defer { FoldHost.dispose(r) }
+        let v = try #require(r.named["tabletopRailActions"], "the rail's actions report their viewport")
+        // Tappable frames are reported clipped to what shows (the CI dump had "619,622 44x7"), so a sliver is a frame in the
+        // viewport shorter than a button.
+        let rail = r.frames.filter { $0.minX >= v.minX - 1 && $0.maxX <= v.maxX + 1 && $0.minY >= v.minY - 0.5 && $0.maxY <= v.maxY + 0.5 }
+        let cut = rail.filter { $0.height > 0.5 && $0.height < 43.5 }
+        print("harness rail: tabletop \(ax5 ? "AX5" : "std") viewport \(HarnessRules.brief(v)) buttons \(rail.map(HarnessRules.brief)) cut \(cut.map(HarnessRules.brief))")
+        #expect(cut.isEmpty, "Tabletop rail: \(cut.map(HarnessRules.brief)) shows only partly at the viewport's foot \(Int(v.maxY))")
+        let whole = rail.filter { abs($0.height - 44) < 0.5 }
+        #expect(whole.count == 3, "Tabletop Library rail: Add, View and Settings, whole; found \(whole.map(HarnessRules.brief))")
+    }
+
+    // MARK: Section order (N-1, Terry 19 Nov)
+
+    /// Every pose shows the Library in one order: the games, then the alerts, catch-up and PS Plus cards. Before this, Open
+    /// landscape and Book put the cards above the tiles and Closed, Open portrait and Tabletop below them, so PS Plus jumped
+    /// between poses. One-sided with the harness's 14 pt y margin: the cards must start clearly below where the games start.
+    @Test(arguments: ["closed", "closedLandscape", "open", "openPortrait", "book", "tabletop"])
+    func plusCardFollowsTheGamesInEveryPose(_ id: String) async throws {
+        let p = HarnessPose.named(id)
+        let model = FoldHost.demoModel()
+        model.handle(url: URL(string: "playscribe://plus-demo")!)
+        let r = try #require(await FoldHost.render(p, model: model), "\(p.id): a window scene to host in")
+        defer { FoldHost.dispose(r) }
+        let games = try #require(r.named["libraryGames"], "\(p.id): the games grid reports its frame")
+        let cards = try #require(r.named["libraryCards"], "\(p.id): the cards report their frame")
+        print("harness order: \(p.id) games \(HarnessRules.brief(games)) cards \(HarnessRules.brief(cards))")
+        #expect(cards.minY > games.minY + 14, "\(p.id): the PS Plus and catch-up cards start at y \(Int(cards.minY)), above the games at \(Int(games.minY)); every pose puts the games first")
+    }
+
     // MARK: Accessibility text sizes (7fe84f4, AX3; all poses at AX3 and AX5 since the #292 / landscape-width review)
 
     /// The deck bound at AX3 and AX5 in the three poses it was asserted in before. A hung or looping layout (#292 in Tabletop) now
@@ -121,12 +193,15 @@ struct FoldHarnessTests {
 @MainActor
 enum HarnessRules {
     /// Render budget. The usual render settles for 1.8 s; anything past this is a layout loop or hang (#292, Tabletop).
-    static let renderBudget: Double = 20
+    /// 90 s, not 20: a shared macOS runner under load took 47 s for one Book render (#386) with no layout problem. The simulator
+    /// does not inherit the runner's environment, so there is no reliable "am I on CI" switch; one generous budget it is. A real
+    /// loop never settles and still fails the test's `.timeLimit(.minutes(2))`, which is the hang net.
+    static let renderBudget: Double = 90
 
     /// `FoldHost.render` with a wall-clock check, so a slow or looping layout fails with the pose and size in the message.
-    static func timedRender(_ pose: HarnessPose, type: UIContentSizeCategory, sourceLocation: SourceLocation = #_sourceLocation) async -> Rendered? {
+    static func timedRender(_ pose: HarnessPose, type: UIContentSizeCategory, model: AppModel = FoldHost.demoModel(), sourceLocation: SourceLocation = #_sourceLocation) async -> Rendered? {
         let start = ContinuousClock.now
-        let r = await FoldHost.render(pose, type: type)
+        let r = await FoldHost.render(pose, type: type, model: model)
         let d = ContinuousClock.now - start
         let secs = Double(d.components.seconds) + Double(d.components.attoseconds) / 1e18
         if secs > renderBudget {
@@ -170,6 +245,9 @@ enum HarnessRules {
                 let a = fs[i], b = fs[j], x = a.intersection(b)
                 guard !x.isNull, x.width > 4, x.height > 4 else { continue }
                 if a.insetBy(dx: -2, dy: -2).contains(b) || b.insetBy(dx: -2, dy: -2).contains(a) { continue }
+                // One control reported twice (same size, origin within 8 pt): the constant Open/Book pairs at 23,65 vs 16,65 and
+                // 178,65 vs 171,65 (r054-probe-constant-pairs). Not two controls on top of each other.
+                if abs(a.width - b.width) < 2, abs(a.height - b.height) < 2, abs(a.minX - b.minX) <= 8, abs(a.minY - b.minY) <= 8 { continue }
                 pairs.append("\(brief(a)) x \(brief(b))")
             }
         }

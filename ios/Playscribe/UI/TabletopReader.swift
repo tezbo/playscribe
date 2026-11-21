@@ -6,6 +6,8 @@ import SwiftUI
 struct ReaderSection: Identifiable, Hashable {
     var id: String
     var title: String
+    /// A second line under the title, smaller: the overview's headline, under the patch name.
+    var subtitle: String? = nil
     var body: String
 }
 
@@ -21,7 +23,7 @@ enum ReaderTitle {
     static func parse(_ text: String, maxWords: Int = 7) -> Parsed {
         var t = text.trimmingCharacters(in: .whitespacesAndNewlines)
         // Leading bullets, then a list number such as "3." or "3)".
-        t = String(t.drop { "•-–—*· \t".contains($0) })
+        t = String(t.drop { "•-–—*\u{00B7} \t".contains($0) }) // dot-ok: strips a pasted bullet from imported text, never shown
         if let r = t.range(of: #"^\d+[.)]\s+"#, options: .regularExpression) { t.removeSubrange(r) }
         // A group prefix such as "Fixed:".
         var group: String?
@@ -56,6 +58,8 @@ enum ReaderTitle {
 extension AppModel {
     /// The release the Reader shows: the focused one, else the newest On PS5 release.
     func readerRelease(_ gameID: String) -> Release? {
+        // QA "no-notes" hides the whole history, so the stage agrees with the lower half (it showed a real release headline over "No updates yet").
+        if qaNoReleases { return nil }
         if let id = focusReleaseID, let r = release(gameID, id) { return r }
         // J-1: the release picked in the list, as on every other Page.
         return selectedRelease(gameID) ?? releases(gameID).first
@@ -65,7 +69,13 @@ extension AppModel {
 
     /// Overview, each key change, Fixes, then PS5 facts and video.
     func readerSections(_ r: Release) -> [ReaderSection] {
-        var out = [ReaderSection(id: "overview", title: r.headline ?? r.displayName, body: qaLongText ? Self.qaLongBody : (r.summary ?? ""))]
+        // The patch name leads in the largest type and the headline sits under it, as on the update page (Iris, 0.5.6: the
+        // Dawnwalker stage led with its headline, not "Update 1.1"). A blank name gives way to the headline.
+        let name = r.displayName.trimmingCharacters(in: .whitespaces)
+        let headline = (r.ps5Headline ?? r.headline)?.trimmingCharacters(in: .whitespaces)
+        let title = name.isEmpty ? (headline?.isEmpty == false ? headline! : "Update") : name
+        let subtitle = headline.flatMap { $0.isEmpty || $0 == title ? nil : $0 }
+        var out = [ReaderSection(id: "overview", title: title, subtitle: subtitle, body: qaLongText ? Self.qaLongBody : (r.summary ?? ""))]
         for (i, k) in (r.keyChanges ?? []).enumerated() {
             let parts = k.split(separator: ":", maxSplits: 1).map { $0.trimmingCharacters(in: .whitespaces) }
             let parsed = ReaderTitle.parse(k)
@@ -94,7 +104,8 @@ extension AppModel {
             facts.append("Download: " + ByteCountFormatter.string(fromByteCount: size.value, countStyle: .decimal) + (size.verification == .reported ? " (reported)" : ""))
         }
         if let v = r.video { facts.append("Video: \(v.label)" + (v.duration.map { ", \($0)" } ?? "")) }
-        out.append(ReaderSection(id: "facts", title: "On your PS5", body: facts.joined(separator: "\n")))
+        // Never "On your PS5": the app cannot know what a player has installed (Terry).
+        out.append(ReaderSection(id: "facts", title: "On PS5", body: facts.joined(separator: "\n")))
         return out
     }
 }
@@ -129,8 +140,18 @@ enum ReaderBody {
 struct TabletopReaderStage: View {
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
+    @Environment(\.dynamicTypeSize) private var typeSize
     /// The stage's bottom edge in screen space; the text ends 24 pt above the division.
     @State private var stageBottom: CGFloat = 0
+    @State private var stageWidth: CGFloat = 0
+
+    /// The room right of the text panel (16 pt margin, up to 560 pt, 24 pt gap, 16 pt margin): the tile is 240 pt at most and
+    /// is left out below 140 pt, so it never sits under the text.
+    private var trailerTileWidth: CGFloat {
+        let room = stageWidth - 16 - 560 - 24 - 16
+        // Accessibility sizes: the label is larger, so the poster gets smaller rather than the tile being cut by the stage.
+        return room >= 140 ? min(typeSize.isAccessibilitySize ? 160 : 240, room) : 0
+    }
     var gameID: String
 
     var body: some View {
@@ -148,42 +169,68 @@ struct TabletopReaderStage: View {
                 .onGeometryChange(for: CGFloat.self) { $0.frame(in: .global).maxY } action: { new in
                     if abs(new - stageBottom) > 0.5 { stageBottom = new }
                 }
-            if let section = sections[safe: index] {
+            // The text block sits in an overlay on a view that takes exactly the stage's proposed size, so however tall the block is
+            // it cannot grow the stage, and the art layer measured above cannot move with it. A sibling in the ZStack could: a block
+            // taller than the upper half (AX5, whole-word text that ignores the proposed height) grew the ZStack, which moved the
+            // art's bottom edge, which changed the clearance padding, which grew the block again, with the stage body (and its
+            // note parsing) re-run each time (hang at 2dbcd13, Mac sample). The block grows upward and is clipped by the stage.
+            Color.clear.overlay(alignment: .bottomLeading) { if let section = sections[safe: index] {
                 VStack(alignment: .leading, spacing: 14) {
                     // Eyebrow: the game and the date; the release itself is the title below.
+                    // At accessibility sizes the name is one line cut on a whole word ("The Blood of…"), never "The Blood of Daw…", and the date keeps its place.
                     HStack(spacing: 8) {
-                        Text(model.game(gameID)?.name ?? "")
-                        if let r = release { Text((r.isPS5Listed ? r.ps5Date : r.latestDate).dayMonthOrYear).foregroundStyle(.secondary) }
+                        // r060 day-one (Iris): a day-one patch's eyebrow says so on the visit it is new; the game name is in the lower half.
+                        let eyebrow = release.flatMap { model.dayOneNote($0) } != nil ? FreshCopy.dayOne : model.gameDisplayName(gameID)
+                        if typeSize.isAccessibilitySize {
+                            WholeWordText(text: eyebrow, font: PlayscribeFont.subheadline.weight(.semibold), lines: 1, color: PlayscribeRole.action)
+                        } else {
+                            Text(eyebrow)
+                        }
+                        // Near-white at 80%, not the accent's .secondary: that was dim brown on the scrim, 3.6:1 (Quinn, #526).
+                        if let r = release {
+                            Text((r.isPS5Listed ? r.ps5Date : r.latestDate).dayMonthOrYear)
+                                .foregroundStyle(PlayscribeColor.textPrimary.opacity(0.8)).fixedSize()
+                        }
                     }
                     .font(PlayscribeFont.subheadline.weight(.semibold))
-                    .foregroundStyle(PlayscribeColor.accent)
+                    .foregroundStyle(PlayscribeRole.action)
                     // One phrase ("Enshrouded, 5 November") instead of two stops.
                     .accessibilityElement(children: .combine)
-                    // The release name for VoiceOver (and J-4), when the title is a headline.
+                    // The release name for VoiceOver (and J-4). On the overview the title is the name itself, so this element is
+                    // the heading and the drawn title is not read twice.
+                    let namesRelease = section.title == release?.displayName
                     Color.clear.frame(width: 1, height: 1)
                         .accessibilityElement()
                         .accessibilityLabel(release?.displayName ?? "")
-                        .accessibilityAddTraits(.isStaticText)
+                        .accessibilityAddTraits(namesRelease ? [.isStaticText, .isHeader] : .isStaticText)
                         .accessibilityIdentifier("releaseTitle")
-                    Text(ReaderBody.title(section.title))
-                        .font(PlayscribeFont.title)
-                        .lineLimit(4)
-                        .minimumScaleFactor(0.8)
+                    // Whole words only (G-8): the stage plate ends on a word and "…", never a cut word.
+                    WholeWordText(text: ReaderBody.title(section.title), font: PlayscribeFont.title, lines: typeSize.isAccessibilitySize ? 2 : 4, color: nil)
                         // The stage caps the title; VoiceOver reads all of it, as a heading.
                         .accessibilityLabel(section.title)
                         .accessibilityAddTraits(.isHeader)
-                    Text(ReaderBody.stage(section.body))
-                        .font(PlayscribeFont.body)
-                        .foregroundStyle(PlayscribeColor.textPrimary.opacity(0.92))
-                        .lineSpacing(4)
-                        .lineLimit(4)
-                        .minimumScaleFactor(0.7)
+                        .accessibilityHidden(namesRelease)
+                    // The overview's headline, secondary: smaller than the patch name, never larger (Iris, 0.5.6).
+                    if let sub = section.subtitle {
+                        WholeWordText(text: ReaderBody.title(sub), font: PlayscribeFont.headline, lines: typeSize.isAccessibilitySize ? 1 : 2, color: PlayscribeColor.textPrimary.opacity(0.92))
+                            .accessibilityLabel(sub)
+                            .accessibilityIdentifier("readerHeadline")
+                    }
+                    WholeWordText(text: ReaderBody.stage(section.body), font: PlayscribeFont.body, lines: typeSize.isAccessibilitySize ? 1 : 4,
+                                  color: PlayscribeRole.textPrimary.opacity(0.92))
+                        // At accessibility sizes the half-height stage has no room for a body line under a two-line title
+                        // and the eyebrow (the eyebrow was clipped at the top, fccccaa). The body is not drawn there; it stays
+                        // in the accessibility tree and the full text is one tap away.
+                        .frame(height: typeSize.isAccessibilitySize ? 0 : nil)
+                        .clipped()
                         .accessibilityLabel(section.body)
                         .accessibilityIdentifier("readerBody")
                 }
                 // Iris (same rule as #232, every Tabletop stage): the whole block sits on one ink panel, 70%, 12 pt
                 // radius and padding, so the text keeps 4.5:1 over any art, logo or banner. Left on the 16 pt margin,
                 // up to 560 pt wide, its bottom edge 24 pt above the division; it grows upward only.
+                // The plate is dark in both modes, so its text keeps the dark roles (0.6 tokens).
+                .environment(\.colorScheme, .dark)
                 .padding(12)
                 .frame(maxWidth: 560, alignment: .leading)
                 .background(PlayscribeColor.ink950.opacity(0.7), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
@@ -192,8 +239,22 @@ struct TabletopReaderStage: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
                 .id(section.id)
                 .transition(.opacity)
+            } }
+            // Clip the block, not the ZStack: the art above draws under the status bar on purpose.
+            .clipped()
+            // R-11 (bug-tabletop-trailer-tile-missing, Iris): the game's trailer poster, whole and uncropped, with a play glyph for
+            // orientation only. The stage takes no touches; "Play trailer" in the lower half is the control. Drawn only where it
+            // fits beside the text panel, on the same bottom line, 24 pt or more above the fold; at large text it scales down.
+            if let g = model.game(gameID), let v = GameBasicsView.trailers(g).first, trailerTileWidth > 0 {
+                Color.clear.overlay(alignment: .bottomTrailing) {
+                    StageTrailerTile(youtubeID: v.youtubeId, width: trailerTileWidth)
+                        .padding(.trailing, 16)
+                        .padding(.bottom, duo.clearance(forBottom: stageBottom))
+                }
+                .clipped()
             }
         }
+        .onGeometryChange(for: CGFloat.self) { $0.size.width } action: { w in if abs(w - stageWidth) > 0.5 { stageWidth = w } }
         .animation(.easeInOut(duration: 0.2), value: index)
         // Its parts stay separate elements, so the release title is findable (J-4).
         .accessibilityElement(children: .contain)
@@ -210,7 +271,7 @@ struct TabletopReaderControls: View {
         let sections = model.readerRelease(gameID).map(model.readerSections) ?? []
         let index = min(model.readerIndex[gameID] ?? 0, max(0, sections.count - 1))
         VStack(alignment: .leading, spacing: 10) {
-            ChapterBar(gameID: gameID, selected: .updates)
+            SectionBar(gameID: gameID)
             ScrollViewReader { proxy in
                 ScrollView {
                     VStack(spacing: 2) {
@@ -223,7 +284,7 @@ struct TabletopReaderControls: View {
                                 }
                                 .padding(.horizontal, 12)
                                 .frame(minHeight: 44)
-                                .background(i == index ? PlayscribeColor.ink700 : .clear, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
+                                .background(i == index ? PlayscribeRole.chipFill : .clear, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
                                 .contentShape(Rectangle())
                             }
                             .buttonStyle(.plain)
@@ -246,7 +307,7 @@ struct TabletopReaderControls: View {
         .padding(.top, 10)
         .padding(.bottom, 12)
         .padding(.trailing, railWidth)
-        .background(Color.ink1)
+        .background(PlayscribeRole.surface)
     }
 
     private func go(_ i: Int) {
@@ -264,7 +325,7 @@ struct TabletopReaderControls: View {
             Label(title, systemImage: symbol)
                 .font(PlayscribeFont.headline)
                 .frame(maxWidth: .infinity, minHeight: 52)
-                .background(PlayscribeColor.ink700, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                .background(PlayscribeRole.chipFill, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
         }
         .buttonStyle(.plain)
         .accessibilityLabel(title + " section")
@@ -276,4 +337,35 @@ struct TabletopReaderControls: View {
 
 extension Array {
     subscript(safe i: Int) -> Element? { indices.contains(i) ? self[i] : nil }
+}
+
+/// The Tabletop stage's trailer tile: the poster at 16:9, uncropped, a play glyph for orientation, and "Trailer" under it on
+/// the stage's ink panel. View only. VoiceOver reads one element, "Trailer"; the action is "Play trailer" in the lower half.
+struct StageTrailerTile: View {
+    var youtubeID: String
+    var width: CGFloat
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 6) {
+            AsyncImage(url: URL(string: "https://i.ytimg.com/vi/\(youtubeID)/mqdefault.jpg")) { $0.resizable().aspectRatio(16 / 9, contentMode: .fit) } placeholder: { PlayscribeRole.surface }
+                .frame(width: width, height: width * 9 / 16)
+                .background(PlayscribeRole.surface)
+                .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
+                .overlay {
+                    Image(systemName: "play.fill").font(.title2).foregroundStyle(.white)
+                        .padding(12).background(PlayscribeColor.ink950.opacity(0.6), in: Circle())
+                }
+            Text("Trailer").font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeRole.textPrimary)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+        .frame(width: width, alignment: .leading)
+        .environment(\.colorScheme, .dark)
+        .padding(8)
+        .background(PlayscribeColor.ink950.opacity(0.7), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+        .allowsHitTesting(false)
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("Trailer")
+        .accessibilityAddTraits(.isStaticText)
+        .accessibilityIdentifier("stageTrailerTile")
+    }
 }

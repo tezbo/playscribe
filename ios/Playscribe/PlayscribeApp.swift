@@ -19,14 +19,23 @@ struct PlayscribeApp: App {
         }
     }
 
+    /// 0.6: the app is dark until the system-setting story lands. `-qaAppearance light` (internal builds) forces light so the light
+    /// screens can be shot; it is ignored in a distribution build, like `-qaRoute`.
+    static var colorScheme: ColorScheme {
+        #if INTERNAL
+        if UserDefaults.standard.string(forKey: "qaAppearance") == "light" { return .light }
+        #endif
+        return .dark
+    }
+
     var body: some Scene {
         WindowGroup {
             RootView()
                 .environment(model)
-                .preferredColorScheme(.dark)
+                .preferredColorScheme(Self.colorScheme)
                 .font(PlayscribeFont.body)
-                .tint(PlayscribeColor.accent)
-                .foregroundStyle(PlayscribeColor.textPrimary)
+                .tint(PlayscribeRole.action)
+                .foregroundStyle(PlayscribeRole.textPrimary)
                 .onAppear {
                     NotificationService.shared.attach(model)
                     // Terry, 2 Nov: a cold launch starts fresh on the splash and the Library.
@@ -52,7 +61,12 @@ struct PlayscribeApp: App {
                     if p == .active {
                         model.tick()
                         // Quiet hours for server pushes: the relay needs the current window and zone (r050-quiet-hours-push).
-                        if PushRegistrar.appCallsEnabled { PushRegistrar.syncQuietHours(model.data.quietHours) }
+                        if PushRegistrar.appCallsEnabled {
+                            PushRegistrar.syncQuietHours(model.data.quietHours)
+                            // A record an earlier install left, if its delete did not get through at launch.
+                            PushRegistrar.deleteStaleRecord()
+                        }
+                        model.keepCurrentStillHere()
                         Task { await model.refreshFeed() }
                         Task { await NotificationService.shared.refreshAuthorization() }
                         NotificationService.shared.updateBadge(model.badgeCount)

@@ -7,28 +7,42 @@ struct DeckCard: Identifiable, Hashable {
     var release: Release?
     var unread: Bool
     var date: Date?
+    /// The chip on an unread card: "New update", or "Day-one patch" (r060-dayone-patch-alert-app); nil once read.
+    var freshLabel: String? = nil
+    /// The unread chip's words: "Day-one patch" for a day-one patch, else "New update".
+    var chipText: String { freshLabel ?? FreshCopy.newUpdate }
     var id: String { release.map { "u-" + $0.id } ?? "r-" + game.id }
 
-    static func == (a: DeckCard, b: DeckCard) -> Bool { a.id == b.id }
-    func hash(into h: inout Hasher) { h.combine(id) }
+    // `unread` is part of equality: SwiftUI skips re-rendering a view whose Equatable inputs compare equal, so a card that
+    // went from unread to read (opened, or Mark as read) kept its "New update" chip on the Library deck (Mac, 9c62a8b).
+    static func == (a: DeckCard, b: DeckCard) -> Bool { a.id == b.id && a.unread == b.unread }
+    func hash(into h: inout Hasher) { h.combine(id); h.combine(unread) }
+
+    /// The line under a hero headline for a card with no release: the headline is already the game name, so the line
+    /// never repeats it (r053-hero-duplicate-title-no-notes). A game the feed does not follow says so, as the Page does.
+    static func noReleaseLine(tracked: Bool) -> String {
+        tracked ? "No patch notes yet" : "We don’t track this game’s updates yet"
+    }
 }
 
 extension AppModel {
-    /// Up to 8 cards: unread On PS5 updates first, then the rest from the last 90 days, newest first.
+    /// Up to 5 cards, one per game (one dot each): games with an unread On PS5 update first, then the rest from the last 90 days, newest first.
     /// With nothing in 90 days, the newest release dates of the library's games.
-    var latestDeck: [DeckCard] { Array(latestDeckAll.prefix(8)) }
+    static let deckLimit = 5
+    var latestDeck: [DeckCard] { Array(latestDeckAll.prefix(Self.deckLimit)) }
 
-    /// Updates beyond the deck's 8 cards: the Open portrait "+N more updates" chip opens the Updates list.
-    var latestDeckOverflow: Int { max(0, latestDeckAll.count - 8) }
+    /// Updates beyond the deck's 5 cards: the Open portrait "+N more updates" chip opens the Updates list.
+    var latestDeckOverflow: Int { max(0, latestDeckAll.count - Self.deckLimit) }
 
     private var latestDeckAll: [DeckCard] {
         let cutoff = Date.now.addingTimeInterval(-90 * 86400)
         var cards: [DeckCard] = []
         for c in data.collection {
             guard let g = game(c.gameID) else { continue }
-            for r in ps5Releases(c.gameID) where r.ps5State == .onPS5 {
+            // A launch marker is history, not an update (bug-061).
+            for r in ps5Releases(c.gameID) where r.ps5State == .onPS5 && r.launch != true && !qaNoReleases {
                 let unread = isUnread(r)
-                if unread || r.ps5Date > cutoff { cards.append(DeckCard(game: g, release: r, unread: unread, date: r.ps5Date)) }
+                if unread || r.ps5Date > cutoff { cards.append(DeckCard(game: g, release: r, unread: unread, date: r.ps5Date, freshLabel: freshLabel(r))) }
             }
         }
         if cards.isEmpty {
@@ -43,12 +57,11 @@ extension AppModel {
         cards.sort { a, b in
             a.unread != b.unread ? a.unread : (a.date ?? .distantPast) > (b.date ?? .distantPast)
         }
-        // At most 2 cards per game, so one busy game cannot fill the deck (Quinn, PR 55).
-        var perGame: [String: Int] = [:]
-        let spread = cards.filter { c in
-            perGame[c.game.id, default: 0] += 1
-            return perGame[c.game.id]! <= 2
-        }
+        // One card per game (bug-hero-deck-one-per-game, Iris 13 Nov): the sort above puts a game's unread updates first, newest
+        // first, then its read ones, so the first card seen for a game is its newest unread update, or its newest if none is unread.
+        // Older hotfixes of the same game never take a card, and the page dots equal the games shown.
+        var seen = Set<String>()
+        let spread = cards.filter { seen.insert($0.game.id).inserted }
         guard qaPadDeck, !spread.isEmpty else { return spread }
         var padded = spread, n = 0
         while padded.count < 12 {
@@ -114,7 +127,12 @@ struct LatestUpdatesDeck: View {
         return min(max(base, captionH), max(base, axCap - edgeHeight))
     }
 
-    private var edgeHeight: CGFloat { cards.count > 1 ? Self.pageEdgeHeight : 0 }
+    /// Whether the dots row (page edge, and/or the "+N more updates" chip) is on screen under the deck.
+    private var hasEdgeRow: Bool { cards.count > 1 || (compact && moreCount > 0) }
+    private var edgeHeight: CGFloat { hasEdgeRow ? Self.pageEdgeHeight : 0 }
+
+    /// Compact: the card's art height. The card keeps `maxHeight` less the page edge whether or not that row shows.
+    private var compactArt: CGFloat { grownArt(max(96, maxHeight - Self.pageEdgeHeight)) }
 
     /// J-5: the deck is at most half the container's height (the harness allows 12 pt more; 4 pt here for rounding).
     private var axCap: CGFloat { (duo.size.height * 0.5).rounded(.down) + 4 }
@@ -138,12 +156,13 @@ struct LatestUpdatesDeck: View {
             // Explicit geometry: every card is exactly the column wide, so a swipe snaps card to card, and the
             // art is capped so the deck never grows past maxHeight (the 727 pt card, 20d77ea).
             GeometryReader { g in
-                let art = grownArt(max(96, maxHeight - Self.pageEdgeHeight))
-                deck(cardWidth: g.size.width, artHeight: art)
+                deck(cardWidth: g.size.width, artHeight: compactArt)
                     .background(alignment: .topLeading) { ruler(width: g.size.width) }
             }
             // The wrapped chip at accessibility sizes sits on its own row under the dots: the deck grows by that row.
-            .frame(height: maxHeight > 0 ? grown(maxHeight) + (typeSize.isAccessibilitySize && moreCount > 0 ? Self.chipRowAX : 0) : nil)
+            // The page-edge row is reserved only when it shows (several cards, or the "+N more" chip): a lone update has
+            // no dots, so the deck ends at the card and nothing is left empty under it (0.5.3, Iris: dead space under the hero).
+            .frame(height: maxHeight > 0 ? compactArt + edgeHeight + (typeSize.isAccessibilitySize && moreCount > 0 ? Self.chipRowAX : 0) : nil)
         } else if typeSize.isAccessibilitySize && !(duo.pose == .closed && duo.isLandscape) {
             // Accessibility sizes: one card per screen at an explicit height. The unsized pager let the card fill the
             // screen (7fe84f4, AX3).
@@ -183,7 +202,8 @@ struct LatestUpdatesDeck: View {
 
 
     private var pageEdge: some View {
-        PageEdge(cards: cards, current: current ?? cards.first?.id) { id in
+        // Open shows two cards across: both are lit, so the last leaf lights when the deck reaches its end (Iris on #512).
+        PageEdge(cards: cards, current: current ?? cards.first?.id, visible: max(1, Int(perScreen.rounded(.down)))) { id in
             withAnimation(reduceMotion ? .easeInOut(duration: 0.2) : .snappy) { current = id }
         }
     }
@@ -217,7 +237,8 @@ struct LatestUpdatesDeck: View {
             .onGeometryChange(for: CGFloat.self) { $0.size.width } action: { if scrollHeight != nil, abs($0 - pagerWidth) > 0.5 { pagerWidth = $0 } }
             .scrollPosition(id: $current)
             .onChange(of: current) { _, new in model.deckSelection = new }
-            .scrollTargetBehavior(.viewAligned)
+            // One card per flick, however fast (Iris on #512: a 120 pt flick in Open landscape jumped KCD to Phantom Blade).
+            .scrollTargetBehavior(.viewAligned(limitBehavior: .alwaysByOne))
             .contentMargins(.trailing, 0, for: .scrollContent)
             // Closed landscape (scrollHeight set): the dots sit inside the hero's bottom edge, centred, so the
             // first screen still shows the chips and the first tile row (Iris, cf6c889).
@@ -254,6 +275,7 @@ struct LatestUpdatesDeck: View {
         .accessibilityElement(children: .contain)
         .accessibilityLabel(compact || cards.count > 1
             ? "Latest updates, page \((cards.firstIndex { $0.id == (current ?? cards.first?.id) } ?? 0) + 1) of \(cards.count)" : "Latest updates")
+        .accessibilityIdentifier("latestDeckPager")
     }
 }
 
@@ -290,7 +312,7 @@ struct DeckCardView: View {
             } else {
             VStack(alignment: .leading, spacing: 8) {
                 DeckCardArt(card: card, height: artHeight)
-                Text(card.release.map { $0.ps5Headline ?? $0.displayName } ?? game.name)
+                Text(card.release.map { $0.ps5Headline ?? $0.displayName } ?? game.name.gluingTrailingNumeral)
                     .font(PlayscribeFont.title3).foregroundStyle(PlayscribeColor.textPrimary)
                     .lineLimit(typeSize.isAccessibilitySize ? 3 : 2).fixedSize(horizontal: false, vertical: true)
                 DeckByline(card: card, dateText: dateText)
@@ -311,9 +333,9 @@ struct DeckCardView: View {
     private var label: String {
         if let r = card.release {
             let summary = (r.summary?.isEmpty == false) ? ", \(r.summary!)" : ""
-            return "\(card.unread ? "New update, " : "")\(r.ps5Headline ?? r.displayName), \(card.game.name), \(r.versionChip.map { $0 + ", " } ?? "")\(dateText)\(summary)"
+            return "\(card.unread ? card.chipText + ", " : "")\(r.ps5Headline ?? r.displayName), \(card.game.name), \(r.versionChip.map { $0 + ", " } ?? "")\(dateText)\(summary)"
         }
-        return "\(card.game.name), released \(dateText)"
+        return "\(card.game.name), released \(dateText), \(DeckCard.noReleaseLine(tracked: model.feedTracksGame(card.game.id)).lowercased())"
     }
 }
 
@@ -329,7 +351,10 @@ struct CompactDeckCard: View {
     var body: some View {
         // The caller gives a `height` that already holds the whole caption at accessibility sizes (measured by the deck's
         // ruler), so nothing can overflow the card; the art and its scrim are the background.
+        // Full bleed at 75%, held to the card's bottom: the boxed 60% scrim left the byline at 3.2:1 on Two Point Museum's
+        // masonry in Open portrait std (Iris on #514, Mac contrast at 2528ae64). The scrim is clipped by the card's corners.
         AdaptiveCaption(card: card)
+            .brightArtScrim(0.75, fullBleed: true)
             .frame(maxWidth: .infinity, alignment: .bottomLeading)
             .frame(height: height, alignment: .bottomLeading)
             .background {
@@ -452,7 +477,7 @@ struct DeckChips: View {
     private var items: [(text: String, filled: Bool)] {
         var list: [(text: String, filled: Bool)] = []
         if let v = card.release?.versionChip { list.append((v, false)) }
-        if card.unread { list.append(("New update", true)) }
+        if card.unread { list.append((card.chipText, true)) }
         if card.release == nil, let d = card.date { list.append(("Released " + AppModel.tileDay(d), false)) }
         return list
     }
@@ -462,7 +487,7 @@ struct DeckChips: View {
     }
 
     private func chip(_ text: String, filled: Bool) -> some View {
-        Text(text).font(PlayscribeFont.caption).monospacedDigit()
+        Text(text.keepingVersionsTogether).font(PlayscribeFont.caption).monospacedDigit()
             .foregroundStyle(filled ? PlayscribeColor.ink950 : PlayscribeColor.accent)
             .padding(.horizontal, 8).frame(minHeight: 22)
             .background(Capsule().fill(filled ? PlayscribeColor.accent : PlayscribeColor.ink950.opacity(0.75)))
@@ -477,23 +502,37 @@ struct DeckByline: View {
     /// Accessibility sizes, when the card is capped: the name on one line.
     var tight = false
     @Environment(\.dynamicTypeSize) private var typeSize
+    /// Optional so a preview or test host without the model does not crash; an absent model reads as tracked.
+    @Environment(AppModel.self) private var model: AppModel?
 
     var body: some View {
-        if typeSize.isAccessibilitySize {
+        if card.release == nil {
+            // The headline is the game name already; say why there is no update instead of repeating it.
+            let line = DeckCard.noReleaseLine(tracked: model?.feedTracksGame(card.game.id) ?? true)
+            if typeSize.isAccessibilitySize {
+                // Whole-word cut, trailing punctuation trimmed before the ellipsis (never mid-word).
+                WholeWordText(text: line, font: PlayscribeFont.subheadline, lines: tight ? 2 : 3, color: PlayscribeColor.textPrimary.opacity(0.9))
+            } else {
+                Text(line)
+                    .foregroundStyle(PlayscribeColor.textPrimary.opacity(0.9)).shadow(color: .black.opacity(0.5), radius: 2)
+                    .lineLimit(2).fixedSize(horizontal: false, vertical: true)
+                    .font(PlayscribeFont.subheadline)
+            }
+        } else if typeSize.isAccessibilitySize {
             // One text, name then date, so the date shares the name's last line: a line less than name and date
             // stacked, which is what the headline needs under the J-5 cap.
             Group {
                 if card.release != nil && !dateText.isEmpty {
-                    Text("\(Text(card.game.name).foregroundStyle(PlayscribeColor.textPrimary))  \(Text(dateText).foregroundStyle(PlayscribeColor.textSecondary))")
+                    Text("\(Text(card.game.name.gluingTrailingNumeral).foregroundStyle(PlayscribeColor.textPrimary))  \(Text(dateText).foregroundStyle(PlayscribeColor.textSecondary))")
                 } else {
-                    Text(card.game.name).foregroundStyle(PlayscribeColor.textPrimary)
+                    Text(card.game.name.gluingTrailingNumeral).foregroundStyle(PlayscribeColor.textPrimary)
                 }
             }
             .lineLimit(tight ? 2 : 3).fixedSize(horizontal: false, vertical: true)
             .font(PlayscribeFont.subheadline)
         } else {
             HStack(spacing: 8) {
-                Text(card.game.name).foregroundStyle(PlayscribeColor.textPrimary)
+                Text(card.game.name.gluingTrailingNumeral).foregroundStyle(PlayscribeColor.textPrimary)
                 if card.release != nil { Text(dateText).foregroundStyle(PlayscribeColor.textSecondary) }
             }
             .font(PlayscribeFont.subheadline).lineLimit(1)
@@ -542,8 +581,8 @@ struct WideDeckCard: View {
 
     private var accessibilityCard: some View {
         VStack(alignment: .leading, spacing: 6) {
-            if card.unread { chip("New update", filled: true) }
-            Text(card.game.name).font(PlayscribeFont.title2.bold())
+            if card.unread { chip(card.chipText, filled: true) }
+            Text(card.game.name.gluingTrailingNumeral).font(PlayscribeFont.title2.bold())
                 .foregroundStyle(PlayscribeColor.textPrimary).fixedSize(horizontal: false, vertical: true)
             headline
         }
@@ -573,8 +612,8 @@ struct WideDeckCard: View {
                 LinearGradient(colors: [PlayscribeColor.ink950.opacity(0.92), PlayscribeColor.ink950.opacity(0.55), .clear],
                                startPoint: .leading, endPoint: .trailing)
                 VStack(alignment: .leading, spacing: 6) {
-                    if card.unread { chip("New update", filled: true) }
-                    Text(card.game.name).font(PlayscribeFont.title2.bold())
+                    if card.unread { chip(card.chipText, filled: true) }
+                    Text(card.game.name.gluingTrailingNumeral).font(PlayscribeFont.title2.bold())
                         .foregroundStyle(PlayscribeColor.textPrimary).lineLimit(2).fixedSize(horizontal: false, vertical: true)
                     Text(card.release.map { $0.ps5Headline ?? $0.displayName } ?? "Released " + (card.date.map(AppModel.tileDay) ?? ""))
                         .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textPrimary.opacity(0.9))
@@ -596,7 +635,7 @@ struct WideDeckCard: View {
     }
 
     private func chip(_ text: String, filled: Bool) -> some View {
-        Text(text).font(PlayscribeFont.caption).monospacedDigit()
+        Text(text.keepingVersionsTogether).font(PlayscribeFont.caption).monospacedDigit()
             .foregroundStyle(filled ? PlayscribeColor.ink950 : PlayscribeColor.accent)
             .padding(.horizontal, 8).padding(.vertical, 2).frame(minHeight: 22)
             .background(Capsule().fill(filled ? PlayscribeColor.accent : PlayscribeColor.ink950.opacity(0.75)))
@@ -630,7 +669,7 @@ struct DeckCardArt: View {
             .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous).strokeBorder(PlayscribeColor.vellum100.opacity(0.6), lineWidth: 1.5))
             .overlay(alignment: .topLeading) {
                 HStack(spacing: 6) {
-                    if card.unread { chip("New update", filled: true) }
+                    if card.unread { chip(card.chipText, filled: true) }
                     if let v = card.release?.versionChip { chip(v, filled: false) }
                     if card.release == nil, let d = card.date { chip("Released " + AppModel.tileDay(d), filled: false) }
                 }
@@ -640,7 +679,7 @@ struct DeckCardArt: View {
     }
 
     private func chip(_ text: String, filled: Bool) -> some View {
-        Text(text).font(PlayscribeFont.caption).monospacedDigit()
+        Text(text.keepingVersionsTogether).font(PlayscribeFont.caption).monospacedDigit()
             .foregroundStyle(filled ? PlayscribeColor.ink950 : PlayscribeColor.accent)
             .padding(.horizontal, 8).padding(.vertical, 2).frame(minHeight: 22)
             .background(Capsule().fill(filled ? PlayscribeColor.accent : PlayscribeColor.ink950.opacity(0.75)))
@@ -651,23 +690,46 @@ struct DeckCardArt: View {
 /// Each leaf is a 44 pt target labelled "Update n of N".
 struct PageEdge: View {
     var cards: [DeckCard]
+    /// The leading card on screen (the scroll position).
     var current: String?
+    /// Cards fully on screen at once: 2 in Open (two across), else 1.
+    var visible: Int = 1
     var select: (String) -> Void
+
+    /// The leaves lit: the leading card and the others fully on screen beside it. At the deck's end the pager cannot lead
+    /// with the last card when two show, so lighting only the leading one left the last leaf dark for good (Iris on #512).
+    static func lit(cards: [DeckCard], current: String?, visible: Int) -> Set<Int> {
+        guard !cards.isEmpty else { return [] }
+        let lead = cards.firstIndex { $0.id == current } ?? 0
+        let first = min(lead, max(0, cards.count - max(1, visible)))
+        return Set(first..<min(cards.count, first + max(1, visible)))
+    }
+
+    /// The card that leads after one step (VoiceOver increment or decrement on a leaf): exactly one card, clamped so the last
+    /// lead still shows the last card. Nil when already at that end.
+    static func step(cards: [DeckCard], current: String?, visible: Int, by delta: Int) -> String? {
+        guard !cards.isEmpty else { return nil }
+        let lastLead = max(0, cards.count - max(1, visible))
+        let lead = min(cards.firstIndex { $0.id == current } ?? 0, lastLead)
+        let next = min(max(0, lead + (delta > 0 ? 1 : -1)), lastLead)
+        return next == lead ? nil : cards[next].id
+    }
 
     /// At most 5 leaves, in a window that slides with the current card (Iris, 6589abf): the current one
     /// ember and tall, the outer ones of a longer deck smaller, centred under the deck.
     private var window: [(index: Int, card: DeckCard)] {
         let all = Array(cards.enumerated())
         guard all.count > 5 else { return all.map { ($0.offset, $0.element) } }
-        let cur = cards.firstIndex { $0.id == current } ?? 0
+        let cur = Self.lit(cards: cards, current: current, visible: visible).max() ?? 0
         let start = min(max(0, cur - 2), all.count - 5)
         return all[start..<(start + 5)].map { ($0.offset, $0.element) }
     }
 
     var body: some View {
+        let lit = Self.lit(cards: cards, current: current, visible: visible)
         HStack(spacing: 0) {
             ForEach(window, id: \.card.id) { item in
-                let isCurrent = item.card.id == current
+                let isCurrent = lit.contains(item.index)
                 // The ends of a window that has more cards beyond it are drawn smaller.
                 let trimmed = cards.count > 5 && !isCurrent
                     && ((item.index == window.first?.index && item.index > 0) || (item.index == window.last?.index && item.index < cards.count - 1))
@@ -682,6 +744,11 @@ struct PageEdge: View {
                 .tappableFrame()
                 .accessibilityLabel("Update \(item.index + 1) of \(cards.count)")
                 .accessibilityAddTraits(isCurrent ? [.isButton, .isSelected] : .isButton)
+                // VoiceOver swipe up or down on any leaf moves the deck one card (Quinn and Iris on #512).
+                .accessibilityAdjustableAction { direction in
+                    let delta = direction == .increment ? 1 : direction == .decrement ? -1 : 0
+                    if delta != 0, let id = Self.step(cards: cards, current: current, visible: visible, by: delta) { select(id) }
+                }
             }
         }
         .frame(maxWidth: .infinity, alignment: .center)
@@ -693,6 +760,7 @@ struct DeckStage: View {
     var card: DeckCard
     /// Upcoming tab: the stage fronts the soonest unreleased game, so it carries an eyebrow and the date line, not an update.
     var upcomingLine: String? = nil
+    @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
     @Environment(\.dynamicTypeSize) private var typeSize
     @State private var stageBottom: CGFloat = 0
@@ -725,8 +793,8 @@ struct DeckStage: View {
                 // Wraps instead of squeezing "New update" away at accessibility sizes (28c6063 Tabletop AX3).
                 FlowLayout(spacing: 8) {
                     if upcomingLine != nil { Text("Coming soon").foregroundStyle(PlayscribeColor.accent) }
-                    if card.unread { Text("New update").foregroundStyle(PlayscribeColor.accent) }
-                    if let v = card.release?.versionChip { Text(v).monospacedDigit().foregroundStyle(PlayscribeColor.textPrimary.opacity(0.9)) }
+                    if card.unread { Text(card.chipText).foregroundStyle(PlayscribeColor.accent) }
+                    if let v = card.release?.versionChip { Text(v.keepingVersionsTogether).monospacedDigit().foregroundStyle(PlayscribeColor.textPrimary.opacity(0.9)) }
                 }
                 .font(PlayscribeFont.caption)
                 .shadow(color: .black.opacity(0.6), radius: 3)
@@ -738,10 +806,28 @@ struct DeckStage: View {
                 Group {
                     if let line = upcomingLine {
                         Text(line).foregroundStyle(PlayscribeColor.vellum100)
+                    } else if card.release == nil {
+                        // The stage headline is the game name already: the line says why there is no update (the date stays).
+                        let line = DeckCard.noReleaseLine(tracked: model.feedTracksGame(card.game.id))
+                        if let dateText {
+                            // "Released 14 Apr" matches the Closed chip (same UTC day), after the line and a thin separator.
+                            // Standard size: one line. Accessibility sizes: the date wraps to its own line and is never dropped.
+                            if typeSize.isAccessibilitySize {
+                                VStack(alignment: .leading, spacing: 2) {
+                                    WholeWordText(text: line, font: PlayscribeFont.subheadline, lines: 3, color: PlayscribeColor.textPrimary)
+                                    Text("Released " + dateText).foregroundStyle(PlayscribeColor.vellum100)
+                                }
+                            } else {
+                                Text("\(Text(line).foregroundStyle(PlayscribeColor.textPrimary))  \(Text("Released " + dateText).foregroundStyle(PlayscribeColor.vellum100))")
+                                    .lineLimit(1).minimumScaleFactor(0.85)
+                            }
+                        } else {
+                            Text(line).foregroundStyle(PlayscribeColor.textPrimary)
+                        }
                     } else if let dateText {
-                        Text("\(Text(card.game.name).foregroundStyle(PlayscribeColor.textPrimary))  \(Text(dateText).foregroundStyle(PlayscribeColor.vellum100))")
+                        Text("\(Text(card.game.name.gluingTrailingNumeral).foregroundStyle(PlayscribeColor.textPrimary))  \(Text(dateText).foregroundStyle(PlayscribeColor.vellum100))")
                     } else {
-                        Text(card.game.name).foregroundStyle(PlayscribeColor.textPrimary)
+                        Text(card.game.name.gluingTrailingNumeral).foregroundStyle(PlayscribeColor.textPrimary)
                     }
                 }
                 .font(PlayscribeFont.subheadline).fixedSize(horizontal: false, vertical: true)
@@ -750,11 +836,88 @@ struct DeckStage: View {
             .dynamicTypeSize(...DynamicTypeSize.accessibility3)
             // The caption ends 24 pt above the division, measured in screen space (as in 0.2.0 #174/#176).
             .padding(.bottom, duo.clearance(forBottom: stageBottom))
+            // bug-text-on-bright-art: 75% black behind the block, since the ember eyebrow needs more than white lines (Iris 2b).
+            // Full bleed: the whole stage width, held to the stage's bottom edge, so it has no side, top or bottom edge on the art
+            // (Iris on #514: the boxed scrim showed its right and top edges in Tabletop).
+            .brightArtScrim(0.75, fullBleed: true)
             }
             .background(Color.clear.onGeometryChange(for: CGFloat.self) { $0.frame(in: .global).maxY.rounded() } action: { new in
                 if abs(new - stageBottom) > 0.5 { stageBottom = new }
             })
         .allowsHitTesting(false)
         .accessibilityElement(children: .contain)
+    }
+}
+
+
+/// bug-text-on-bright-art (Iris spec 2b): a fixed black scrim behind a text block over key art, so small text keeps 4.5:1 on
+/// the brightest art. 0% a line and a half above the block, eased, full `strength` from the block's top to 8 pt under its last line, soft
+/// side edges, no box. It belongs to the text, not the art, so it does not move under key-art motion. `strength` is at least
+/// 0.6 behind white lines and 0.75 behind the ember eyebrow ("New update", "Coming soon").
+struct BrightArtScrim: ViewModifier {
+    var strength: Double
+    /// One text line and a half above the block, well under the Tabletop cap of 15% of the stage (about 56 pt).
+    var ramp: CGFloat = 40
+    /// Full strength holds this far under the last line, then eases out over `fade` more, so the bottom is no hard edge either.
+    var tail: CGFloat = 8
+    var fade: CGFloat = 28
+    var feather: CGFloat = 40
+    /// Tabletop stage: the scrim spans the block's full width (the block fills the stage) and holds full strength to its bottom
+    /// edge, with no side feather and no bottom fade; only the top eases in, over `stageRamp`. A box with feathered sides showed
+    /// its right and top edges on bright art (Iris on #514).
+    var fullBleed = false
+    /// Under the Tabletop cap of 15% of the stage (about 56 pt).
+    static let stageRamp: CGFloat = 56
+
+    /// An eased (smoothstep) ramp so there is no visible edge where the scrim starts. More stops for the long stage ramp, so its
+    /// straight segments leave no bands.
+    private func eased(_ top: Double, steps: Int = 5) -> [Gradient.Stop] {
+        (0...steps).map { i in
+            let t = Double(i) / Double(steps)
+            let k = t * t * (3 - 2 * t)
+            return Gradient.Stop(color: .black.opacity(top * k), location: t)
+        }
+    }
+
+    func body(content: Content) -> some View {
+        if fullBleed {
+            content.frame(maxWidth: .infinity, alignment: .leading).background(alignment: .bottom) {
+                VStack(spacing: 0) {
+                    LinearGradient(stops: eased(strength, steps: 16), startPoint: .top, endPoint: .bottom).frame(height: Self.stageRamp)
+                    Color.black.opacity(strength)
+                }
+                .padding(.top, -Self.stageRamp)
+                .allowsHitTesting(false)
+                .accessibilityHidden(true)
+            }
+        } else {
+            boxed(content)
+        }
+    }
+
+    private func boxed(_ content: Content) -> some View {
+        content.background(alignment: .bottom) {
+            VStack(spacing: 0) {
+                LinearGradient(stops: eased(strength), startPoint: .top, endPoint: .bottom).frame(height: ramp)
+                Color.black.opacity(strength)
+                LinearGradient(stops: eased(strength), startPoint: .bottom, endPoint: .top).frame(height: fade)
+            }
+            .mask {
+                HStack(spacing: 0) {
+                    LinearGradient(stops: eased(1), startPoint: .leading, endPoint: .trailing).frame(width: feather)
+                    Color.black
+                    LinearGradient(stops: eased(1), startPoint: .trailing, endPoint: .leading).frame(width: feather)
+                }
+            }
+            .padding(.top, -ramp).padding(.bottom, -(tail + fade)).padding(.horizontal, -feather)
+            .allowsHitTesting(false)
+            .accessibilityHidden(true)
+        }
+    }
+}
+
+extension View {
+    func brightArtScrim(_ strength: Double, fullBleed: Bool = false) -> some View {
+        modifier(BrightArtScrim(strength: strength, fullBleed: fullBleed))
     }
 }

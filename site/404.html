@@ -1,0 +1,15 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Open in Playscribe</title><meta name="robots" content="noindex"><style>:root{--ink:#0F0E14;--vellum:#FBF4E6;--ember:#FFB04F;--mute:#A39BAE}*{box-sizing:border-box}body{margin:0;background:var(--ink);color:var(--vellum);font:17px/1.6 Georgia,"Iowan Old Style",serif}main{max-width:40rem;margin:0 auto;padding:4rem 16px}h1{font-size:2.2rem;line-height:1.15;margin:0 0 .5rem}.sub{color:var(--mute)}a{color:var(--ember)}.pill{display:inline-block;background:var(--ember);color:#2A1600;padding:.6rem 1.2rem;border-radius:2rem;font-family:system-ui,sans-serif;font-weight:600;text-decoration:none}footer{color:var(--mute);font:14px system-ui,sans-serif;margin-top:4rem}</style></head><body><main>
+<h1 id="h">Page not found</h1><p class="sub" id="p">That page doesn't exist. <a href="/">Go to Playscribe</a>.</p><p id="b"></p>
+<footer><a href="/">Playscribe</a> · <a href="/privacy.html">Privacy</a> · <a href="/support.html">Support</a></footer></main>
+<script>
+// Fallback for a shared link (/r/<game>/<update>, /g/<game>) opened where the app isn't installed
+// or the universal link didn't fire: offer to open it in the app.
+var m=location.pathname.match(/^\/(r|g)\/([^\/]+)(?:\/([^\/]+))?\/?$/);
+if(m){
+  var app=m[1]==='r'&&m[3]?'playscribe://release/'+m[2]+'/'+m[3]:'playscribe://game/'+m[2];
+  document.getElementById('h').textContent='Open this update in Playscribe';
+  document.getElementById('p').textContent='Playscribe keeps PS5 patch notes for the games you play. If the app is installed, tap below.';
+  document.getElementById('b').innerHTML='<a class="pill" href="'+app+'">Open in Playscribe</a>';
+  document.title='Open in Playscribe';
+}
+</script></body></html>

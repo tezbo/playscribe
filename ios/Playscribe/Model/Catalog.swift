@@ -56,6 +56,9 @@ struct CatalogGame: Codable, Hashable, Identifiable {
     var coverage: Coverage
     /// Backdrop artwork per chapter: [wide, tall].
     var chapterArt: [String: [String]]?
+    /// The Closed front cover's focal point on the key art (Iris, #467): x and y from 0 to 1, and an optional zoom (1 or
+    /// more); nil centres it. A wide image on the tall cover loses most of its width, so an off-centre subject needs this.
+    var coverFocus: CoverFocus?
     /// Added by the person: no catalogue record behind it.
     var custom: Bool?
 
@@ -111,7 +114,7 @@ struct CatalogGame: Codable, Hashable, Identifiable {
         return "Plays on PS5 since " + b.formatted(Date.FormatStyle(locale: Locale(identifier: "en_GB")).month(.abbreviated).year())
     }
 
-    /// Out elsewhere, not on PS5 or PS4: "Not on PS5 · PC, 2012". Nil when the game has a PS5 or PS4
+    /// Out elsewhere, not on PS5 or PS4: "Not on PS5 (PC, 2012)". Nil when the game has a PS5 or PS4
     /// release, or no release anywhere (that one is genuinely TBA).
     var notOnPS5Line: String? {
         guard releaseDate?.isoDay == nil, playableSince?.isoDay == nil,
@@ -121,7 +124,7 @@ struct CatalogGame: Codable, Hashable, Identifiable {
         let year = cal.component(.year, from: o)
         // "PC (Microsoft Windows)" reads "PC": drop the parenthetical.
         let platform = releasedElsewhereOn.map { String($0.split(separator: "(").first ?? "").trimmingCharacters(in: .whitespaces) }.flatMap { $0.isEmpty ? nil : $0 }
-        return "Not on PS5 · " + [platform, String(year)].compactMap { $0 }.joined(separator: ", ")
+        return "Not on PS5 (" + [platform, String(year)].compactMap { $0 }.joined(separator: ", ") + ")"
     }
 
     /// A PS4-only game that plays on PS5: no PS5 release date, but not "TBA".
@@ -202,6 +205,25 @@ struct GalleryItem: Codable, Hashable, Identifiable {
     var title: String
     var alt: String
     var href: String?
+
+    /// The YouTube video ID from `href`: youtube.com (or a *.youtube.com host) /watch?v=, /embed/ or /shorts/, or youtu.be/.
+    /// Nil for anything else, and then the row is not a button.
+    var youtubeID: String? { href.flatMap(YouTubeLink.id(from:)) }
+}
+
+/// R-11 (Terry, 20 Nov: "all videos playing inside our own player from now on"): the video ID in a YouTube link, so any such link
+/// the app is asked to open plays in our player instead of the YouTube app.
+enum YouTubeLink {
+    /// youtube.com (or a *.youtube.com host) /watch?v=, /embed/, /shorts/ or /live/, or youtu.be/. Nil for anything else.
+    nonisolated static func id(from href: String) -> String? {
+        guard let c = URLComponents(string: href), let host = c.host?.lowercased() else { return nil }
+        let path = c.path.split(separator: "/").map(String.init)
+        if host == "youtu.be" { return path.first.flatMap { $0.isEmpty ? nil : $0 } }
+        guard host == "youtube.com" || host.hasSuffix(".youtube.com") || host == "youtube-nocookie.com" || host.hasSuffix(".youtube-nocookie.com") else { return nil }
+        if path.count >= 2, ["embed", "shorts", "live"].contains(path[0]) { return path[1].isEmpty ? nil : path[1] }
+        return c.queryItems?.first { $0.name == "v" }?.value.flatMap { $0.isEmpty ? nil : $0 }
+    }
+    nonisolated static func id(from url: URL) -> String? { id(from: url.absoluteString) }
 }
 
 struct CollectionEntry: Codable, Hashable {

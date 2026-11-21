@@ -13,14 +13,25 @@ export const alertStyleOf = (row: { status: string; verification: string }, link
 /** Roadmap 11: an alert older than this is never raised, by the push job or by the app. */
 export const ALERT_MAX_AGE_HOURS = 72
 
-/** When the alert's 72 h guard counts from: the moment a console-later update went live, else its live date. */
-export const alertFromOf = (row: { alert_from?: string | null; live_at?: string | null }): string | undefined => {
-  if (row.alert_from) return row.alert_from
+/** An update whose own live date is older than this never earns an alert, whatever moved its alert_from (the PS5 row can be promoted long after the post). */
+export const ALERT_MAX_LIVE_AGE_DAYS = 30
+
+/**
+ * When the alert's 72 h guard counts from: the moment a console-later update went live, else its live date. A console-later
+ * moment only counts while the update's own live date is recent, so a years-old patch promoted today stays silent.
+ */
+export const alertFromOf = (row: { alert_from?: string | null; live_at?: string | null }, now = Date.now()): string | undefined => {
+  let live: string | undefined
   try {
-    return (JSON.parse(row.live_at ?? 'null') as { value?: string } | null)?.value ?? undefined
+    live = (JSON.parse(row.live_at ?? 'null') as { value?: string } | null)?.value ?? undefined
   } catch {
-    return undefined
+    live = undefined
   }
+  if (row.alert_from) {
+    const liveMs = live ? Date.parse(live) : NaN
+    return Number.isFinite(liveMs) && now - liveMs > ALERT_MAX_LIVE_AGE_DAYS * 86400e3 ? live : row.alert_from
+  }
+  return live
 }
 
 export const alertOf = (row: { platform: string; status: string; verification: string; alert_from?: string | null; live_at?: string | null }, links: { steamNotes?: string; ps5Page?: string }) => {
