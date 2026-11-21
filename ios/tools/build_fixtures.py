@@ -109,6 +109,7 @@ releases = [
         "notes": [], "sourceIds": ["dawnwalker-news", "shacknews"],
         "platforms": [plat("ps5", "live", "official", "2026-09-03", "dawnwalker-news")]
                      + [plat(p, "live", "reported", "2026-09-03", "shacknews") for p in ("pc", "xboxSeries")],
+        "launch": True,  # a launch marker: in the Updates history, never a deck card (bug-061)
         "headline": "Available on PC, PlayStation 5 and Xbox Series X|S",
         "summary": "The game launched worldwide on PC, PlayStation 5 and Xbox Series X|S.",
         "keyChanges": [],

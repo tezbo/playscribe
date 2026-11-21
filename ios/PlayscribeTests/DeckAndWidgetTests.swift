@@ -12,6 +12,21 @@ struct DeckAndWidgetTests {
         return m
     }
 
+    /// bug-061: a launch marker (Dawnwalker "Launch", headline "Available on PC, PlayStation 5 and Xbox Series X|S") stays in
+    /// the history but is never a "New update" deck card and never counts as unread (badge, Continue), though On PS5 and never opened.
+    @Test func launchEntryIsNeverADeckCard() throws {
+        let m = demoModel()
+        let launch = try #require(m.fixtures.releases.first { $0.id == "dawnwalker@1.0" })
+        #expect(launch.launch == true)
+        let game = try #require(m.game(launch.gameID))
+        if !m.data.collection.contains(where: { $0.gameID == game.id }) { m.addGame(game, status: .owned) }
+        m.data.read[launch.id] = nil
+        #expect(m.releases(game.id).contains { $0.id == launch.id }, "the Launch entry stays in the Updates history")
+        #expect(!m.isUnread(m.releases(game.id).first { $0.id == launch.id }!), "a launch marker is never unread: no badge, Continue or dot")
+        #expect(m.continueItem?.release.id != launch.id)
+        #expect(!m.latestDeck.contains { $0.release?.id == launch.id }, "no deck card for a launch marker")
+    }
+
     /// J-1: at most 5 cards (AppModel.deckLimit), one per game, unread cards first, no card twice.
     @Test func deckIsCappedSpreadAndUnreadFirst() {
         let deck = demoModel().latestDeck
