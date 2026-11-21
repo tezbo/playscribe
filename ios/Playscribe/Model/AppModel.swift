@@ -300,6 +300,8 @@ final class AppModel {
     /// QA: the internal route last applied (host of the URL), shown on the Library probe so the Mac can
     /// confirm a `-qaRoute` took effect.
     var qaRoute: String?
+    /// QA (route `video-blocked/<game>/<release>[/<code>]`): the update video's player reports this IFrame error (R-12).
+    var qaVideoError: Int?
     /// QA (route `no-notes/<game>`): the deck ignores every release, so a game with a release date shows as a no-release hero.
     var qaNoReleases = false
     /// QA (route `no-notes/<game>/untracked`): the feed is treated as not tracking any game, for the untracked line.
@@ -670,6 +672,15 @@ final class AppModel {
     /// A Gallery video row was tapped (R-11): it plays in the app's own trailer player, in every pose, so Tabletop gets the
     /// transport and the reflection. Before 19 Nov the row opened its youtube.com link, which the system handed to the YouTube app
     /// (Terry: "the dawn walker ones all open in YouTube").
+    /// R-11: a YouTube link opened anywhere in the app (news, notes, Links) plays in our player. True when it did; anything else
+    /// goes to the system as before.
+    @discardableResult
+    func playVideoLink(_ url: URL, title: String = "Video") -> Bool {
+        guard let id = YouTubeLink.id(from: url) else { return false }
+        trailer = (id, title, nav.gameID)
+        return true
+    }
+
     func playGalleryVideo(_ item: GalleryItem) {
         guard item.kind == .video, let id = item.youtubeID else { return }
         trailer = (id, item.title, item.gameID)
@@ -944,6 +955,10 @@ final class AppModel {
         case "news": nav.tab = .news   // QA: the News tab
         case "search": nav.tab = .search
         case "video" where parts.count == 2: openGame(parts[0], releaseID: parts[1]); player = (parts[0], parts[1])
+        case "video-blocked" where parts.count >= 2:
+            // R-12: 150 (owner blocks other apps) by default; any other code shows the generic reason.
+            qaVideoError = parts.count > 2 ? Int(parts[2]) ?? 150 : 150
+            openGame(parts[0], releaseID: parts[1]); player = (parts[0], parts[1])
         case "chapter" where parts.count == 2:
             openGame(parts[0], chapter: Chapter(rawValue: parts[1]))
             // R-7: `chapter/<game>/world` opens Companion on its World filter.

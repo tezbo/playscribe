@@ -82,6 +82,7 @@ struct GalleryVideoRow: View {
 
 struct GalleryChapter: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.viewOnlyStage) private var viewOnly
     var gameID: String
 
     var body: some View {
@@ -120,6 +121,9 @@ struct GalleryChapter: View {
                         Button { model.playGalleryVideo(v) } label: { GalleryVideoRow(item: v, playable: true) }
                             .buttonStyle(.plain)
                             .accessibilityLabel("\(v.title), video")
+                            // The same id as Tabletop's lower-panel row, so QA finds a Gallery video in every pose (Iris on #554).
+                            // Not on Tabletop's view-only stage, where the lower panel's row carries it.
+                            .accessibilityIdentifier(viewOnly ? "" : "galleryPlay-\(v.id)")
                             .tappableFrame()
                     } else {
                         // Nothing to play: not a button (Iris on #551), so a tap never does nothing.
@@ -131,14 +135,10 @@ struct GalleryChapter: View {
     }
 }
 
-/// A game with no pictures or videos (Terry, 0.2.0 build 5, Fortnite): say so, and point to media elsewhere.
+/// A game with no pictures or videos (Terry, 0.2.0 build 5, Fortnite): say so, and offer the official website when there is one.
+/// No "Find trailers online" (0.6.0, Iris and Nadia): it was a YouTube search, and every video now plays in our own player
+/// (Terry, 20 Nov), so a game with no trailer simply has no trailer row.
 struct GalleryEmpty: View {
-    /// "Find trailers online": a video search for the game's PS5 trailer. Also Tabletop's Links panel row.
-    static func trailerSearchURL(_ name: String) -> URL? {
-        "https://www.youtube.com/results?search_query=\(name) PS5 trailer"
-            .addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed).flatMap(URL.init(string:))
-    }
-
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
     var gameID: String
@@ -146,25 +146,19 @@ struct GalleryEmpty: View {
     var body: some View {
         let game = model.game(gameID)
         let links = game?.igdbID.flatMap { GameInfoStore.shared.basics[$0] }?.links
-        let search = game.flatMap { Self.trailerSearchURL($0.name) }
         VStack(alignment: .leading, spacing: 8) {
             if duo.pose == .tabletop {
                 // The stage is view-only and cannot scroll: one sentence, no headline and no grey stand-in rows that look like
                 // buttons, so it fits in three lines at AX5 (Mac, 0a7830d). The controls are on the Links panel; the rail shows an
                 // ellipsis, not the word "More", so the line names what the person sees (Iris, 12 Nov).
-                Text("No trailers yet. Find them in Links, in the menu below.").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                Text("No pictures or videos here yet.").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
             } else {
                 Text("No pictures or videos here yet").font(PlayscribeFont.headline)
-                Text("You can find trailers and screenshots elsewhere.").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
-                FlowLayout(spacing: 24) {
-                    if let url = links?.official {
-                        Link(destination: url) { Label("Official website", systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }.tappableFrame()
-                    }
-                    if let url = search {
-                        Link(destination: url) { Label("Find trailers online", systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }.tappableFrame()
-                    }
+                if let url = links?.official {
+                    Link(destination: url) { Label("Official website", systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }
+                        .tappableFrame()
+                        .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.action)
                 }
-                .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.action)
             }
         }
         .accessibilityElement(children: .contain)
