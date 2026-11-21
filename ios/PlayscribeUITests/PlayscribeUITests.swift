@@ -1002,10 +1002,14 @@ final class LatestUpdatesDeckTests: XCTestCase {
         let label = pager.label
         guard count > 2 else { app.terminate(); throw XCTSkip("needs three or more cards: \(label)") }
         XCTAssertEqual(start, 1)
-        // The leading card on screen: the lazy row keeps cards that have scrolled away in the tree.
+        // A card inside the deck's own frame: the lazy row keeps cards that have scrolled away in the tree, and in Book the deck is
+        // on the right page, so a kept card can be off screen ("visible frame is empty", Mac 6d1d9d18). With no such card, swipe
+        // the deck container itself, which holds the scroll view.
         func card() -> XCUIElement {
-            app.buttons.matching(identifier: "deckCard").allElementsBoundByIndex.first { $0.isHittable }
-                ?? app.buttons.matching(identifier: "deckCard").firstMatch
+            let deck = pager.frame
+            return app.buttons.matching(identifier: "deckCard").allElementsBoundByIndex.first {
+                !$0.frame.isEmpty && deck.contains(CGPoint(x: $0.frame.midX, y: $0.frame.midY)) && $0.isHittable
+            } ?? pager
         }
         card().swipeLeft(velocity: .slow)
         sleep(1)
