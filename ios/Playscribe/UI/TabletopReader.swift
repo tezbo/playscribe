@@ -104,7 +104,8 @@ extension AppModel {
             facts.append("Download: " + ByteCountFormatter.string(fromByteCount: size.value, countStyle: .decimal) + (size.verification == .reported ? " (reported)" : ""))
         }
         if let v = r.video { facts.append("Video: \(v.label)" + (v.duration.map { ", \($0)" } ?? "")) }
-        out.append(ReaderSection(id: "facts", title: "On your PS5", body: facts.joined(separator: "\n")))
+        // Never "On your PS5": the app cannot know what a player has installed (Terry).
+        out.append(ReaderSection(id: "facts", title: "On PS5", body: facts.joined(separator: "\n")))
         return out
     }
 }
@@ -178,10 +179,12 @@ struct TabletopReaderStage: View {
                     // Eyebrow: the game and the date; the release itself is the title below.
                     // At accessibility sizes the name is one line cut on a whole word ("The Blood of…"), never "The Blood of Daw…", and the date keeps its place.
                     HStack(spacing: 8) {
+                        // r060 day-one (Iris): a day-one patch's eyebrow says so on the visit it is new; the game name is in the lower half.
+                        let eyebrow = release.flatMap { model.dayOneNote($0) } != nil ? FreshCopy.dayOne : model.gameDisplayName(gameID)
                         if typeSize.isAccessibilitySize {
-                            WholeWordText(text: model.gameDisplayName(gameID), font: PlayscribeFont.subheadline.weight(.semibold), lines: 1, color: PlayscribeRole.action)
+                            WholeWordText(text: eyebrow, font: PlayscribeFont.subheadline.weight(.semibold), lines: 1, color: PlayscribeRole.action)
                         } else {
-                            Text(model.gameDisplayName(gameID))
+                            Text(eyebrow)
                         }
                         // Near-white at 80%, not the accent's .secondary: that was dim brown on the scrim, 3.6:1 (Quinn, #526).
                         if let r = release {
