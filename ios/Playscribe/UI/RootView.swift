@@ -93,7 +93,10 @@ struct LowerHalfPanel: View {
     var body: some View {
         if open {
             let height = max(0, duo.size.height - fold.maxY)
-            ZStack(alignment: .bottom) {
+            // Beside the rail, never under it (Mac at 86a4b104: Settings rows ran to x 649 under the rail at 619 to 663, so a tap
+            // on the Video lab switch hit the rail's Library button). The rail stays visible and works while a panel is open.
+            let width = max(0, duo.size.width - TabletopRail.width)
+            ZStack(alignment: .bottomLeading) {
                 // The stage above stays view only: a dimmer that takes no touches.
                 Color.black.opacity(0.4).ignoresSafeArea().allowsHitTesting(false)
                 Group {
@@ -105,7 +108,7 @@ struct LowerHalfPanel: View {
                 }
                 .environment(\.panelClose, { model.addSheetOpen = false; model.settingsOpen = false; model.trailer = nil; model.linksSheetOpen = false; model.tagExplainer = nil; model.keepCurrentDetailsOpen = false })
                 .environment(\.railWidth, 0)
-                .frame(width: duo.size.width, height: height)
+                .frame(width: width, height: height)
                 // Solid through the bottom safe area too: the Library's tiles used to show, and take
                 // taps, in the strip under the sheet.
                 .background(PlayscribeRole.bg.ignoresSafeArea(edges: .bottom))
@@ -115,7 +118,7 @@ struct LowerHalfPanel: View {
             // The panel stops at the bottom safe area, so the Library's chips showed, and took taps,
             // in the strip below it. A solid filler hangs below the panel's bottom edge (outside the
             // clip) to cover it; the panel itself still starts exactly at the fold.
-            .overlay(alignment: .bottom) { PlayscribeRole.bg.frame(height: 120).offset(y: 120) }
+            .overlay(alignment: .bottomLeading) { PlayscribeRole.bg.frame(width: width, height: 120).offset(y: 120) }
             .transition(.move(edge: .bottom))
             .zIndex(5)
         }
