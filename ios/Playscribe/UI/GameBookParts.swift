@@ -21,13 +21,16 @@ struct PageView: View {
     @State private var liveOffset: CGFloat = 0
     @State private var insetTop: CGFloat = 0
     @State private var marks = ReadingPlace.Marks()
+    @Environment(\.viewOnlyStage) private var viewOnly
     var gameID: String
 
     var body: some View {
         let chapter = model.section(gameID)
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
-                PageArtBand(gameID: gameID)
+                // Tabletop Gallery: the stage's art card is the one image (Iris on #556 at 6bc9f703: the art band above it showed
+                // the same key art a second time, its logo cut off).
+                if !(viewOnly && chapter == .gallery && !model.gallery(gameID).isEmpty) { PageArtBand(gameID: gameID) }
                 StaleHint()
                 Group {
                     switch chapter {

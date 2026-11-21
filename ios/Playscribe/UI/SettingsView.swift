@@ -183,6 +183,24 @@ struct SettingsView: View {
                     Text("Trailers and update videos start as soon as they open. Reflection mode mirrors the playing video under the controls when the Duo stands folded like a laptop. With Reduce Motion on, videos never start on their own and there’s no mirror.")
                 }
 
+                #if INTERNAL
+                // Next to Video, so it is a short scroll at the default size (Mac at 6bc9f703: below the team sections it was
+                // hard to reach). TestFlight and development builds only.
+                if BuildChannel.showsTeamAlerts {
+                // Iris's idle-band variant, for Terry to compare on his Duo (21 Nov). TestFlight and development builds only.
+                Section {
+                    Toggle("Taller reflection while controls are hidden", isOn: $tallIdleReflection)
+                        .frame(minHeight: 52)
+                        .accessibilityIdentifier("tallIdleReflection")
+                } header: {
+                    Text("Video lab (TestFlight and development builds)")
+                } footer: {
+                    Text("In Tabletop, while a video plays and its controls have faded, the reflection grows to about twice its height. It returns to normal when the controls show.")
+                }
+
+                }
+                #endif
+
                 // 0.7 front cover (duo-closed-cover): internal preview only until the Library wraps it.
                 CoverMotionSection()
 
@@ -198,17 +216,6 @@ struct SettingsView: View {
                 } footer: {
                     Text("Also receive the team’s test notifications from the push relay. Off by default; it never appears in an App Store build.")
                 }
-                // Iris's idle-band variant, for Terry to compare on his Duo (21 Nov). TestFlight and development builds only.
-                Section {
-                    Toggle("Taller reflection while controls are hidden", isOn: $tallIdleReflection)
-                        .frame(minHeight: 52)
-                        .accessibilityIdentifier("tallIdleReflection")
-                } header: {
-                    Text("Video lab (TestFlight and development builds)")
-                } footer: {
-                    Text("In Tabletop, while a video plays and its controls have faded, the reflection grows to about twice its height. It returns to normal when the controls show.")
-                }
-
                 }
                 #endif
 
