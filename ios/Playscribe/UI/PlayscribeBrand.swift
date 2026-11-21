@@ -4,7 +4,7 @@
 
 import SwiftUI
 
-enum PlayscribeColor {
+nonisolated enum PlayscribeColor {
     static let ink950 = Color(red: 0.035, green: 0.031, blue: 0.047)
     static let ink900 = Color(red: 0.059, green: 0.055, blue: 0.078)
     static let ink800 = Color(red: 0.094, green: 0.086, blue: 0.122)
