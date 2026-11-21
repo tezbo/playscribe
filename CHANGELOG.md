@@ -15,8 +15,9 @@ Playscribe 0.6 is a fresh coat: new colour roles, clearer art, one deck card per
 6. Play an update video, a trailer and a Gallery video, Closed and in Tabletop. All play inside Playscribe. In Tabletop the reflection sits under the video. If a video can't play here, you see an Open in YouTube button instead of an error.
 7. Turn on Reduce Transparency in your phone's Settings (Accessibility, then Display & Text Size). In Playscribe, the cards in Settings and Add a game have a visible outline.
 8. Open Settings, then Video lab. Nothing crashes.
-9. Add a game with Say it: Add a game, Say it, then hold the button and say a title. If asked, allow Speech Recognition and the Microphone. Playscribe stays open and starts listening. To see the permission prompts again, go to the phone's Settings, General, Transfer or Reset iPhone, Reset, Reset Location & Privacy, then try Say it again.
+9. Add a game with Say it: Add a game, Say it, then hold the button and say a title. If asked, allow Speech Recognition and the Microphone. Playscribe stays open and starts listening. To see the permission prompts again, delete Playscribe and reinstall it from TestFlight, then tap Say it and Allow. Deleting the app clears your library and reading progress, so add your games again afterwards.
 10. On a game page, open More, then Check for updates. A message says it is checking, then either how many new updates there are, "No new updates" with the time you checked, or why it couldn’t check (try it in Airplane Mode too).
+11. Closed or Open, play an update video or a trailer, then tap Full screen (top right, beside Close). The video fills the screen and keeps playing from the same point, with YouTube’s controls still there. Tap Exit full screen (above the video in portrait; top left in landscape, where it fades after 4 seconds and a tap brings it back) and the player is as it was. Turning the phone, or folding into Book or Tabletop, also leaves full screen and playback carries on. Book and Tabletop have no Full screen button.
 
 Feedback you send through TestFlight, including its comment, may appear in our public issue tracker, so leave out personal details.
 
