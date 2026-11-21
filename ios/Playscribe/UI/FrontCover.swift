@@ -156,7 +156,8 @@ struct FrontCoverPage: View {
     private var fade: some View {
         LinearGradient(stops: Self.fadeStops(accessibility: typeSize.isAccessibilitySize,
                                              plateTop: pageHeight > 0 && plateTop > 0 ? Double(plateTop / pageHeight) : nil,
-                                             followPlate: card.unread && card.freshLabel != nil)
+                                             followPlate: card.unread && card.freshLabel != nil,
+                                             pageHeight: Double(pageHeight))
                         .map { .init(color: PlayscribeColor.ink950.opacity($0.opacity), location: $0.location) },
                        startPoint: .top, endPoint: .bottom)
     }
@@ -168,7 +169,13 @@ struct FrontCoverPage: View {
     /// `followPlate` (r060 day-one, Iris on #506): the "Day-one patch" line sits above the eyebrow, where the standard shade was
     /// still ramping (2.3:1 over KCD II's armour in Closed landscape), so the shade follows the plate at standard sizes too,
     /// 88 percent from the line's top edge, and keeps the signed solid foot from 90 percent down.
-    static func fadeStops(accessibility: Bool, plateTop: Double?, followPlate: Bool = false) -> [(opacity: Double, location: Double)] {
+    /// `pageHeight` (points): when known, the shade eases in over `plateRamp` points above the plate (smoothstep, 16 stops)
+    /// instead of 6 percent of the page, which was about 20 pt in Closed landscape and read as a cut across the art (Iris on
+    /// #506). The ramp ends at the plate's top edge, so the plate itself stays 88 percent or more.
+    static let plateRamp: Double = 96
+
+    static func fadeStops(accessibility: Bool, plateTop: Double?, followPlate: Bool = false,
+                          pageHeight: Double = 0) -> [(opacity: Double, location: Double)] {
         guard accessibility || followPlate else {
             // Solid from 90 percent down (Iris, 19 Nov, on Terry's cover review): a title logo in the key art read as a ghost
             // behind the Playscribe mark, so the foot under the lockup is plain ink.
@@ -177,8 +184,17 @@ struct FrontCoverPage: View {
         guard let top = plateTop.map({ min(max($0, 0.2), 0.9) }) else {
             return [(0.55, 0), (0, 0.18), (0, 0.25), (0.92, 0.7), (1, 1)]
         }
-        let plate: [(opacity: Double, location: Double)] =
-            [(0.55, 0), (0, min(0.18, top - 0.1)), (0, top - 0.06), (0.88, top), (0.92, min(0.98, top + 0.08)), (1, 1)]
+        var plate: [(opacity: Double, location: Double)]
+        if pageHeight > 0 {
+            let start = max(0.05, top - Self.plateRamp / pageHeight)
+            let ramp = (0...16).map { i -> (opacity: Double, location: Double) in
+                let t = Double(i) / 16
+                return (0.88 * t * t * (3 - 2 * t), start + (top - start) * t)
+            }
+            plate = [(0.55, 0), (0, min(0.18, start))] + ramp + [(0.92, min(0.98, top + 0.08)), (1, 1)]
+        } else {
+            plate = [(0.55, 0), (0, min(0.18, top - 0.1)), (0, top - 0.06), (0.88, top), (0.92, min(0.98, top + 0.08)), (1, 1)]
+        }
         guard !accessibility else { return plate }
         return plate.filter { $0.location < 0.9 } + [(1, 0.9), (1, 1)]
     }
