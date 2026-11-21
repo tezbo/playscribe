@@ -113,6 +113,8 @@ struct LowerHalfPanel: View {
                 // taps, in the strip under the sheet.
                 .background(PlayscribeRole.bg.ignoresSafeArea(edges: .bottom))
                 .clipShape(UnevenRoundedRectangle(topLeadingRadius: 20, topTrailingRadius: 20))
+                // Every touch inside the panel's frame is the panel's, never the page's beneath it.
+                .contentShape(Rectangle())
                 .accessibilityAddTraits(.isModal)
             }
             // The panel stops at the bottom safe area, so the Library's chips showed, and took taps,
@@ -138,6 +140,7 @@ struct RootView: View {
     @State private var unlatchTask: Task<Void, Never>?
     @State private var frames: [CGRect] = []
     @State private var named: [String: CGRect] = [:]
+    private var lowerPanelOpen: Bool { model.addSheetOpen || model.settingsOpen || model.linksSheetOpen || model.tagExplainer != nil || model.keepCurrentDetailsOpen }
 
     var body: some View {
         DuoReader { duo in
@@ -146,6 +149,11 @@ struct RootView: View {
                 TabRoot(duo: duo)
                     .environment(\.railWidth, duo.pose == .tabletop ? TabletopRail.width : 0)
                     .auditActive(!model.addSheetOpen && !model.settingsOpen && !model.linksSheetOpen && model.tagExplainer == nil && !model.keepCurrentDetailsOpen && model.player == nil)
+                    // While a Tabletop panel is open the page under it takes no touches and is hidden from VoiceOver: the
+                    // Library's A to Z strip read out over the rail (x 592 to 636, Mac at c1c1191e), and a tap that missed the
+                    // panel must never act on the page beneath it.
+                    .allowsHitTesting(!(duo.pose == .tabletop && lowerPanelOpen))
+                    .accessibilityHidden(duo.pose == .tabletop && lowerPanelOpen)
 
                 if duo.pose == .tabletop, let fold = duo.division {
                     TabletopRail(duo: duo)

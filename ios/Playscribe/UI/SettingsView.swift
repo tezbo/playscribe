@@ -58,6 +58,13 @@ struct SettingsView: View {
     var body: some View {
         @Bindable var model = model
         NavigationStack {
+            VStack(spacing: 0) {
+            // Tabletop: the title and Close sit in a plain header above the form, not in the navigation bar. With the bar,
+            // rows scrolled up under it and a tap meant for a row (Video lab at std, y 527, Mac at c1c1191e) went to the bar
+            // and closed Settings. Here the form starts below the header, so no row is ever under it or above the fold (G-4, TT-1).
+            if duo.pose == .tabletop {
+                PanelHeader(title: "Settings", close: dismiss)
+            }
             Form {
                 // Tabletop's panel is half a screen: the build version leads, so it is on screen
                 // without scrolling (Terry checks it to verify the build).
@@ -94,6 +101,7 @@ struct SettingsView: View {
                                 LabeledContent(o.game.name, value: o.level.label)
                             }
                             .navigationTitle("Own settings")
+                            .toolbar(.visible, for: .navigationBar)
                         }
                     }
                 } header: {
@@ -123,7 +131,7 @@ struct SettingsView: View {
                         .accessibilityValue(model.data.keepCurrent == true ? "on. \(KeepCurrentCopy.settingsOnVoiceOver)" : "off")
                         .accessibilityHint(KeepCurrentCopy.settingsHint)
                         .accessibilityIdentifier("keepCurrent")
-                    NavigationLink(KeepCurrentCopy.whatIsSent) { KeepCurrentDetailsView() }
+                    NavigationLink(KeepCurrentCopy.whatIsSent) { KeepCurrentDetailsView().toolbar(.visible, for: .navigationBar) }
                         .frame(minHeight: 44)
                         .accessibilityIdentifier("keepCurrentWhatIsSent")
                 } header: {
@@ -272,19 +280,57 @@ struct SettingsView: View {
             .listSectionSpacing(24)
             .navigationTitle("Settings")
             .toolbarTitleDisplayMode(.inline)
+            // Tabletop's root page has its own header (above); pushed pages show the bar again for Back.
+            .toolbar(duo.pose == .tabletop ? .hidden : .automatic, for: .navigationBar)
             .toolbar {
-                // Tabletop: Close at top trailing, a 44 pt target inside its label, clear of the rail (0.5.1 spec 1).
-                ToolbarItem(placement: duo.pose == .tabletop ? .topBarTrailing : .cancellationAction) {
-                    Button { dismiss() } label: {
-                        Label("Close", systemImage: "xmark").labelStyle(.iconOnly)
-                            .frame(minWidth: 44, minHeight: 44).contentShape(Rectangle())
+                if duo.pose != .tabletop {
+                    ToolbarItem(placement: .cancellationAction) {
+                        Button { dismiss() } label: {
+                            Label("Close", systemImage: "xmark").labelStyle(.iconOnly)
+                                .frame(minWidth: 44, minHeight: 44).contentShape(Rectangle())
+                        }
                     }
                 }
             }
             .onAppear { if simGame.isEmpty { simGame = model.libraryRows.first?.id ?? "" } }
             // 0.7 front cover preview (internal): opened by -qaRoute cover or the button in the cover section.
             .frontCoverPreview()
+            }
+            .background(PlayscribeRole.bg)
         }
         .presentationPlacement(duo.pose == .closed ? .automatic : .trailing)
+    }
+}
+
+/// Tabletop's lower-half panels: the title and Close in a plain row above the content, so nothing scrolls under them.
+/// Close is a 44 pt target at top trailing, clear of the rail (0.5.1 spec 1).
+struct PanelHeader: View {
+    var title: String
+    var close: () -> Void
+
+    var body: some View {
+        ZStack {
+            Text(title).font(PlayscribeFont.headline)
+                .lineLimit(1).minimumScaleFactor(0.7)
+                .padding(.horizontal, 64)
+                .accessibilityAddTraits(.isHeader)
+            HStack {
+                Spacer()
+                Button(action: close) {
+                    Label("Close", systemImage: "xmark").labelStyle(.iconOnly)
+                        .font(PlayscribeFont.headline)
+                        .foregroundStyle(PlayscribeRole.action)
+                        .frame(width: 44, height: 44)
+                        .background(Circle().fill(PlayscribeRole.chipFill))
+                        .contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+                .accessibilityLabel("Close")
+                .padding(.trailing, 16)
+            }
+        }
+        .frame(minHeight: 60)
+        .padding(.top, 6)
+        .background(PlayscribeRole.bg)
     }
 }
