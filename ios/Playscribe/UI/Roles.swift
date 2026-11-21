@@ -5,7 +5,9 @@ import UIKit
 /// Views read a role, never a hex. Every role has a light and a dark value; the dark values are the 0.5 colours, unchanged.
 /// `new` and `action` are two roles that share one dark value (#FFB04F) so they can diverge later; `new` is for unread items only.
 /// Scrims and covers are not roles: they keep `PlayscribeColor.ink950` and stay dark in both modes.
-enum PlayscribeRole {
+/// Nonisolated (the app target defaults to MainActor): UIKit and SwiftUI resolve a dynamic colour on render threads, and a
+/// main-actor provider trapped there in `swift_task_isCurrentExecutor` (Mac crash, Settings > Video lab on 4e3e96cd).
+nonisolated enum PlayscribeRole {
     /// One row of the role table: the light hex, and the dark colour it replaces.
     struct Spec {
         var name: String
@@ -72,7 +74,7 @@ enum PlayscribeRole {
     static func color(_ spec: Spec) -> Color { Color(uiColor(spec)) }
 
     static func uiColor(_ spec: Spec) -> UIColor {
-        UIColor { traits in resolved(spec, light: traits.userInterfaceStyle == .light) }
+        UIColor { @Sendable traits in resolved(spec, light: traits.userInterfaceStyle == .light) }
     }
 
     /// The colour of a role in one scheme, for the contrast tests.
@@ -121,14 +123,14 @@ extension View {
     }
 }
 
-extension UIColor {
+nonisolated extension UIColor {
     convenience init(hex: UInt32) {
         self.init(red: CGFloat((hex >> 16) & 0xFF) / 255, green: CGFloat((hex >> 8) & 0xFF) / 255, blue: CGFloat(hex & 0xFF) / 255, alpha: 1)
     }
 }
 
 /// WCAG 2.x relative luminance and contrast, for the role tests.
-enum Contrast {
+nonisolated enum Contrast {
     static func luminance(_ c: UIColor) -> Double {
         var r: CGFloat = 0, g: CGFloat = 0, b: CGFloat = 0, a: CGFloat = 0
         c.getRed(&r, green: &g, blue: &b, alpha: &a)
