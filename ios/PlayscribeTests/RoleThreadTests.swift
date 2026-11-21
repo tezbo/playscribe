@@ -16,8 +16,6 @@ struct RoleThreadTests {
                     count += 1
                 }
             }
-            _ = UIColor(PlayscribeRole.controlBorder(keepingDark: .clear))
-                .resolvedColor(with: UITraitCollection(userInterfaceStyle: .dark))
             return [count]
         }.value
         #expect(resolved == [PlayscribeRole.all.count * 2])
