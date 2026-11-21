@@ -352,6 +352,14 @@ struct FullBleedVideo: View {
                     .overlay { VideoStartCover(controller: controller, posterAsset: posterAsset, game: game) }
                     .frame(width: f.width, height: f.height)
                     .offset(x: f.minX, y: f.minY)
+                // While Exit is faded, the first tap only brings it back and never reaches YouTube, so leaving full screen
+                // doesn't pause the video first (Mac at 015cae17). Once Exit shows, taps go to YouTube's player again.
+                if !(inMargin || voiceOver || exitShown) {
+                    Color.clear
+                        .contentShape(Rectangle())
+                        .onTapGesture { showExit() }
+                        .accessibilityHidden(true)
+                }
                 exitButton
                     .opacity(inMargin || voiceOver || exitShown ? 1 : 0)
                     .allowsHitTesting(inMargin || voiceOver || exitShown)
