@@ -13,7 +13,7 @@ Playscribe 0.6 is a fresh coat: new colour roles, clearer art, one deck card per
 4. When a game has an unread day-one patch, its card shows a Day-one patch chip, the front cover says so, and Tabletop shows the install line. Reading the patch clears all three.
 5. Close and open the front cover. The game's key art moves gently; with Reduce Motion on, it stays still.
 6. Play an update video, a trailer and a Gallery video, Closed and in Tabletop. All play inside Playscribe. In Tabletop the reflection sits under the video. If a video can't play here, you see an Open in YouTube button instead of an error.
-7. Search fields, text fields and outlined buttons have a visible border. With Reduce Transparency on, the cards in Settings and Add a game have a visible outline.
+7. Turn on Reduce Transparency in your phone's Settings (Accessibility, then Display & Text Size). In Playscribe, the cards in Settings and Add a game have a visible outline.
 8. Open Settings, then Video lab. Nothing crashes.
 
 Feedback you send through TestFlight, including its comment, may appear in our public issue tracker, so leave out personal details.
