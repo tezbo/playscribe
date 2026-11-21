@@ -1,17 +1,23 @@
 import XCTest
 
 extension XCUIApplication {
-    /// Scrolls the page up by about a third of the window, starting the drag low in the lower display. `swipeUp()` starts at the
-    /// window's centre, which in Open portrait is the fold's division band: the drag never reached the page (Mac at a5221d12:
-    /// 14 swipes left the Open portrait game page at its top, so no Gallery or trailer row ever became hittable).
+    /// Scrolls the page up by swiping the scroll view element itself, the way `ReleaseRowTests.reveal` does: the Contents list
+    /// where there is one (Book, Tabletop's lower half), otherwise the one-column page. A drag built from `windows.firstMatch`
+    /// coordinates never moved the Open portrait game page (Mac at e354e0e1: 20 drags, page still at its top), while element
+    /// swipes on the same page pass there (OpenPortraitTabBarTests, PageBottomFadeTests, ReleaseRowTests). Logs the window and
+    /// app frames once so the Mac log shows which coordinate space the old drag used.
     func scrollPageUpAvoidingFold() {
-        let w = windows.firstMatch
-        let from = w.coordinate(withNormalizedOffset: CGVector(dx: 0.4, dy: 0.9))
-        let to = w.coordinate(withNormalizedOffset: CGVector(dx: 0.4, dy: 0.6))
-        from.press(forDuration: 0.05, thenDragTo: to)
+        let contents = scrollViews["contentsScroll"], page = scrollViews["pageScroll"].firstMatch
+        if !FoldSafeScrollLog.logged {
+            FoldSafeScrollLog.logged = true
+            print("FoldSafeScroll: window \(windows.firstMatch.frame) app \(frame) page \(page.exists ? "\(page.frame)" : "none")")
+        }
+        if contents.exists && contents.isHittable { contents.swipeUp(velocity: .slow) }
+        else if page.exists && page.isHittable { page.swipeUp(velocity: .slow) }
+        else { swipeUp(velocity: .slow) }
     }
 
-    /// Scrolls until `element` is hittable, up to `limit` drags. Returns whether it got there.
+    /// Scrolls until `element` is hittable, up to `limit` swipes. Returns whether it got there.
     @discardableResult
     func scrollUntilHittable(_ element: XCUIElement, limit: Int = 25) -> Bool {
         for _ in 0..<limit {
@@ -21,6 +27,8 @@ extension XCUIApplication {
         return element.exists && element.isHittable
     }
 }
+
+@MainActor enum FoldSafeScrollLog { static var logged = false }
 
 /// Quinn (Mac at a5221d12): scrolled to the end, the game page's last rows clear the bottom tab bar, so nothing at the end of a
 /// page sits behind it. The About section's trailer rows are the page's last controls.
