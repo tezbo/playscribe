@@ -253,6 +253,9 @@ struct RootView: View {
         .fullScreenCover(isPresented: Binding(get: { model.trailer != nil }, set: { if !$0 { model.trailer = nil } })) {
             if let t = model.trailer { TrailerView(videoID: t.videoID, name: t.name, gameID: t.gameID) }
         }
+        // bug-064: in light mode the status bar is light over art and the player, dark over the cream page (StatusBarTone).
+        .background(StatusBarToneAnchor().frame(width: 0, height: 0).accessibilityHidden(true))
+        .onChange(of: model.player != nil || model.trailer != nil, initial: true) { _, up in StatusBarTone.shared.setCover(up) }
         // R-11: every link the app opens passes here, sheets and covers included; a YouTube video plays in our player.
         .environment(\.openURL, OpenURLAction { url in model.playVideoLink(url) ? .handled : .systemAction })
     }
