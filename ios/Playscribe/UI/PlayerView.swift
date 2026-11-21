@@ -304,8 +304,12 @@ struct TabletopVideoStage: View {
         guard let v = stageVideo else { return "" }
         let top = lowerTop ?? v.maxY
         return MirrorAudit.geometry(video: v.offsetBy(dx: playerOrigin.x, dy: playerOrigin.y), bandTop: top + playerOrigin.y,
-                                    band: VideoReflection.band(lowerHalf: playerHeight - top))
+                                    band: VideoReflection.band(lowerHalf: playerHeight - top, tallIdle: tallIdle, controlsShown: controlsShown))
     }
+
+    /// TT-4: shown or faded, owned here so the mirror's strength follows the controls (spec 5, mirror link).
+    @State private var controlsShown = true
+    @AppStorage(VideoReflection.idleKey) private var tallIdle = false
 
     var body: some View {
         let mirror = VideoReflection.shows(pose: .tabletop, setting: reflectionMode, reduceMotion: reduceMotion, reduceTransparency: reduceTransparency)
@@ -313,10 +317,12 @@ struct TabletopVideoStage: View {
         ZStack(alignment: .topLeading) {
             Color.ink0.ignoresSafeArea()
             if let v = stageVideo {
+                // The reflection starts where the lower half starts, directly under the video on the fold (spec 3 and 4).
                 let top = lowerTop ?? v.maxY
+                let band = VideoReflection.band(lowerHalf: playerHeight - top, tallIdle: tallIdle, controlsShown: controlsShown)
                 ZStack {
                     // Before Play no player is on screen at all: our art, never a black box or YouTube's start screen.
-                    MirroredVideoSurface(webView: controller.webView, mirrored: live, gap: max(0, top - v.maxY)) { mirrorDrawn = $0 }
+                    VideoSurface(webView: controller.webView)
                         .background(.black)
                         .opacity(controller.playerShown ? 1 : 0)
                     if !controller.playerShown { VideoPoster(asset: video.posterAsset, game: game) }
@@ -325,23 +331,31 @@ struct TabletopVideoStage: View {
                 .offset(x: v.minX, y: v.minY)
                 // The stage is view only: the video behind it takes no touches either (TT-1).
                 .allowsHitTesting(false)
-                if live {
-                    MirrorFade(band: VideoReflection.band(lowerHalf: playerHeight - top))
-                        .frame(width: v.width, height: v.height)
+                if live, band > 0 {
+                    VideoMirrorStrip(source: controller.webView, band: band) { mirrorDrawn = $0 }
+                        .frame(width: v.width, height: band)
+                        .mirrorFinish(controlsShown: controlsShown)
                         .offset(x: v.minX, y: top)
+                        .allowsHitTesting(false)
+                        .accessibilityHidden(true)
+                        .animation(reduceMotion ? nil : .easeInOut(duration: 0.3), value: controlsShown)
                 }
             }
             ArrangementView {
-                TabletopTransport(controller: controller, video: video, game: gameName, release: release, overMirror: live, onClose: onClose)
+                TabletopTransport(controller: controller, video: video, game: gameName, release: release, controlsShown: $controlsShown,
+                                  onClose: onClose)
                     .onGeometryChange(for: CGFloat.self) { $0.frame(in: .named("player")).minY } action: { lowerTop = $0 }
             } secondary: {
+                // One column (spec 3): the video spans from the leading edge to the rail, as the controls below do, and stands
+                // on the fold. The rail's column above the fold stays empty.
                 Color.clear.aspectRatio(16 / 9, contentMode: .fit)
                     .onGeometryChange(for: CGRect.self) { $0.frame(in: .named("player")) } action: { stageVideo = $0 }
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
+                    .padding(.trailing, TabletopRail.width)
                     .allowsHitTesting(false)
             }
             .arrangementViewStyle(.overlay)
-            MirrorAudit(on: mirrorDrawn && VideoReflection.band(lowerHalf: playerHeight - (lowerTop ?? playerHeight)) > 0,
+            MirrorAudit(on: live && mirrorDrawn && VideoReflection.band(lowerHalf: playerHeight - (lowerTop ?? playerHeight), tallIdle: tallIdle, controlsShown: controlsShown) > 0,
                         geometry: auditGeometry)
         }
         .coordinateSpace(.named("player"))
@@ -409,8 +423,8 @@ struct VideoCaption: View {
     /// The player's reported length, used when the video has no stored one (trailers). The line is always there (it holds the
     /// game's name), so nothing moves when the length arrives (Iris, 20 Nov).
     var length: Double = 0
-    /// True when the mirror sits behind the caption: the plate hugs the text, not the whole row, so the mirror shows beside
-    /// and below it (the full-width plate darkened the band to 10 to 12 of 255, 12 Nov).
+    /// True in Tabletop, over the mirror: the grey is white at 85%, which keeps 4.5:1 over a mirrored white frame at the mirror's
+    /// 20% with no plate behind it (Iris, reflection-0.6 spec 4).
     var overMirror = false
     private var detail: String {
         [game, video.duration ?? (length > 0 ? PlayerTime.format(length) : nil)].compactMap { $0 }.filter { !$0.isEmpty }.joined(separator: ", ")
@@ -422,9 +436,8 @@ struct VideoCaption: View {
             Text(detail.isEmpty ? " " : detail)
                 .font(PlayscribeFont.subheadline)
                 // Over the mirror the grey is lifted so it keeps 4.5:1 on any frame (Mac, 12 Nov: 4.1 and 3.2 with .secondary).
-                .foregroundStyle(overMirror ? AnyShapeStyle(Color.white.opacity(0.8)) : AnyShapeStyle(.secondary))
+                .foregroundStyle(overMirror ? AnyShapeStyle(Color.white.opacity(0.85)) : AnyShapeStyle(.secondary))
         }
-        .overMirror(overMirror)
         .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
@@ -467,64 +480,53 @@ struct TabletopTransport: View {
     var game: String
     /// The update the video belongs to; nil for a trailer, which has no Watch along.
     var release: Release?
-    /// True when the mirror sits behind this column (R-11), so its text gets the plate and the lifted grey.
-    var overMirror = false
+    /// TT-4 (Terry's Duo, 21 Nov: the controls "look like they should dim or could be dismissed but they can't"; Iris,
+    /// reflection-0.6 spec 5). While the video plays they fade after 4 s with no touch, leaving the picture, its reflection, the
+    /// rail and a 2 pt progress line. A tap anywhere in the lower half beside the rail brings them back, and that first tap does
+    /// nothing else. Paused, buffering, ended, or with VoiceOver or Switch Control on, they stay.
+    @Binding var controlsShown: Bool
     var onClose: () -> Void
+    @Environment(\.accessibilityVoiceOverEnabled) private var voiceOver
+    @Environment(\.accessibilitySwitchControlEnabled) private var switchControl
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @State private var hideTask: Task<Void, Never>?
+    /// True once the fade-out has finished: the controls are then hidden outright, out of the accessibility tree and of reach
+    /// (Mac at 5ddf0d74: under opacity 0 and accessibilityHidden, XCUITest still found Pause).
+    @State private var controlsGone = false
+    static let hideAfter: Duration = .seconds(4)
+
+    /// Whether the controls may fade now (spec 5): only while playing, and never under VoiceOver or Switch Control.
+    static func autoHides(playing: Bool, voiceOver: Bool, switchControl: Bool) -> Bool {
+        playing && !voiceOver && !switchControl
+    }
+
+    private var hides: Bool { Self.autoHides(playing: controller.isPlaying, voiceOver: voiceOver, switchControl: switchControl) }
 
     var body: some View {
-        // The mirror sits behind this whole column, so the text on it gets the plate and the lifted grey (R-11; Mac 12 Nov:
-        // the Tabletop subtitle measured 3.3:1 median, 2.3:1 worst).
-        let over = overMirror
         HStack(alignment: .top, spacing: 0) {
-            VStack(alignment: .leading, spacing: 10) {
-                VideoCaption(video: video, game: game, length: controller.duration, overMirror: over)
-                Slider(value: Binding(get: { controller.current }, set: { controller.seek(to: $0) }), in: 0...max(1, controller.duration))
-                    .accessibilityLabel("Playback position")
-                    // Spoken as time, not a percent, and the printed times below are not read a second time.
-                    .accessibilityValue("\(PlayerTime.spoken(controller.current)) of \(PlayerTime.spoken(controller.duration))")
-                    .tappableFrame()
-                HStack {
-                    Text(PlayerTime.format(controller.current))
-                    Spacer()
-                    Text("-" + PlayerTime.format(max(0, controller.duration - controller.current)))
-                }
-                .font(PlayscribeFont.caption.monospacedDigit())
-                .foregroundStyle(over ? AnyShapeStyle(Color.white.opacity(0.8)) : AnyShapeStyle(.secondary))
-                .overMirror(over)
-                .accessibilityHidden(true)
-                HStack(spacing: 0) {
-                    transportButton(controller.captionsOn ? "captions.bubble.fill" : "captions.bubble", "Captions", action: controller.toggleCaptions)
-                        .accessibilityValue(controller.captionsOn ? "On" : "Off")
-                    Spacer()
-                    transportButton("gobackward.10", "Back 10 seconds") { controller.skip(-10) }
-                    Spacer()
-                    Button(action: controller.playPause) {
-                        Image(systemName: controller.isPlaying ? "pause.fill" : "play.fill")
-                            .font(.system(size: 26, weight: .semibold))
-                            .frame(width: 64, height: 64)
-                            .background(PlayscribeRole.action, in: Circle())
-                            .foregroundStyle(PlayscribeRole.onAction)
-                    }
-                    .accessibilityLabel(controller.isPlaying ? "Pause" : "Play")
-                    .accessibilityIdentifier("videoPlay")
-                    // Until the player is ready a press would do nothing (Quinn on #552).
-                    .disabled(!controller.ready)
-                    .opacity(controller.ready ? 1 : 0.5)
-                    .tappableFrame()
-                    Spacer()
-                    transportButton("goforward.10", "Forward 10 seconds") { controller.skip(10) }
-                    Spacer()
-                    transportButton(controller.isMuted ? "speaker.slash.fill" : "speaker.wave.2.fill",
-                                    controller.isMuted ? "Unmute" : "Mute", action: controller.toggleMute)
-                }
-                if let release {
-                    WatchAlong(controller: controller, release: release, openNotes: onClose)
-                        .padding(.horizontal, -20)
-                }
+            Group {
+                if controlsGone { controls.hidden() } else { controls }
             }
-            .padding(.horizontal, 20)
-            .padding(.top, 12)
-            // The rail: Close at its top (TT-4).
+                .opacity(controlsShown ? 1 : 0)
+                .allowsHitTesting(controlsShown)
+                .accessibilityHidden(!controlsShown)
+                // Any touch on a control counts as use and restarts the 4 s; it never blocks the control itself.
+                .simultaneousGesture(DragGesture(minimumDistance: 0).onChanged { _ in wake() })
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+                .overlay(alignment: .top) {
+                    if !controlsShown {
+                        ZStack(alignment: .top) {
+                            // The first tap only reveals (spec 5): this layer takes it, so no control under it fires.
+                            Color.clear.contentShape(Rectangle()).onTapGesture { wake() }
+                                .accessibilityLabel("Show controls")
+                                .accessibilityAddTraits(.isButton)
+                                .accessibilityIdentifier("showControls")
+                            ProgressHairline(progress: controller.duration > 0 ? controller.current / controller.duration : 0)
+                                .accessibilityHidden(true)
+                        }
+                    }
+                }
+            // The rail: Close at its top (TT-4), identical in every pose; it stays when the controls fade.
             VStack {
                 Button(action: onClose) {
                     Image(systemName: "xmark").font(.title3).frame(width: 48, height: 48)
@@ -538,12 +540,104 @@ struct TabletopTransport: View {
             .background(.bar)
         }
         .foregroundStyle(.white)
+        .onChange(of: hides, initial: true) { _, on in on ? schedule() : show() }
+        .onDisappear { hideTask?.cancel() }
+    }
+
+    private var controls: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            VideoCaption(video: video, game: game, length: controller.duration, overMirror: true)
+            Slider(value: Binding(get: { controller.current }, set: { controller.seek(to: $0) }), in: 0...max(1, controller.duration))
+                .accessibilityLabel("Playback position")
+                // Spoken as time, not a percent, and the printed times below are not read a second time.
+                .accessibilityValue("\(PlayerTime.spoken(controller.current)) of \(PlayerTime.spoken(controller.duration))")
+                .tappableFrame()
+            HStack {
+                Text(PlayerTime.format(controller.current))
+                Spacer()
+                Text("-" + PlayerTime.format(max(0, controller.duration - controller.current)))
+            }
+            .font(PlayscribeFont.caption.monospacedDigit())
+            // White at 85% keeps 4.5:1 over the mirror at 20% with no plate (spec 4).
+            .foregroundStyle(Color.white.opacity(0.85))
+            .accessibilityHidden(true)
+            HStack(spacing: 0) {
+                transportButton(controller.captionsOn ? "captions.bubble.fill" : "captions.bubble", "Captions", action: controller.toggleCaptions)
+                    .accessibilityValue(controller.captionsOn ? "On" : "Off")
+                Spacer()
+                transportButton("gobackward.10", "Back 10 seconds") { controller.skip(-10) }
+                Spacer()
+                Button(action: controller.playPause) {
+                    Image(systemName: controller.isPlaying ? "pause.fill" : "play.fill")
+                        .font(.system(size: 26, weight: .semibold))
+                        .frame(width: 64, height: 64)
+                        .background(PlayscribeRole.action, in: Circle())
+                        .foregroundStyle(PlayscribeRole.onAction)
+                }
+                .accessibilityLabel(controller.isPlaying ? "Pause" : "Play")
+                .accessibilityIdentifier("videoPlay")
+                // Until the player is ready a press would do nothing (Quinn on #552).
+                .disabled(!controller.ready)
+                .opacity(controller.ready ? 1 : 0.5)
+                .tappableFrame()
+                Spacer()
+                transportButton("goforward.10", "Forward 10 seconds") { controller.skip(10) }
+                Spacer()
+                transportButton(controller.isMuted ? "speaker.slash.fill" : "speaker.wave.2.fill",
+                                controller.isMuted ? "Unmute" : "Mute", action: controller.toggleMute)
+            }
+            if let release {
+                WatchAlong(controller: controller, release: release, openNotes: onClose)
+                    .padding(.horizontal, -20)
+            }
+        }
+        .padding(.horizontal, 20)
+        .padding(.top, 12)
+    }
+
+    private func wake() {
+        show()
+        if hides { schedule() }
+    }
+
+    private func show() {
+        hideTask?.cancel()
+        controlsGone = false
+        guard !controlsShown else { return }
+        // Fade in 200 ms; under Reduce Motion an instant change (spec 5).
+        withAnimation(reduceMotion ? nil : .easeInOut(duration: 0.2)) { controlsShown = true }
+    }
+
+    private func schedule() {
+        hideTask?.cancel()
+        hideTask = Task { @MainActor in
+            try? await Task.sleep(for: Self.hideAfter)
+            guard !Task.isCancelled, hides else { return }
+            // Fade out 300 ms (spec 5), then hide outright.
+            withAnimation(reduceMotion ? nil : .easeInOut(duration: 0.3)) { controlsShown = false } completion: {
+                if !controlsShown { controlsGone = true }
+            }
+        }
     }
 
     private func transportButton(_ symbol: String, _ label: String, action: @escaping () -> Void) -> some View {
         Button(action: action) { Image(systemName: symbol).font(.title3).frame(width: 48, height: 48) }
             .accessibilityLabel(label)
             .tappableFrame()
+    }
+}
+
+/// TT-4: while the controls are faded, a 2 pt accent line along the top of the lower half shows how far the video has played.
+/// View only.
+struct ProgressHairline: View {
+    var progress: Double
+    var body: some View {
+        GeometryReader { g in
+            Rectangle().fill(PlayscribeRole.action)
+                .frame(width: g.size.width * min(1, max(0, progress)), height: 2)
+        }
+        .frame(height: 2)
+        .allowsHitTesting(false)
     }
 }
 

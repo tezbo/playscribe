@@ -955,6 +955,11 @@ final class AppModel {
         case "news": nav.tab = .news   // QA: the News tab
         case "search": nav.tab = .search
         case "video" where parts.count == 2: openGame(parts[0], releaseID: parts[1]); player = (parts[0], parts[1])
+        // QA: `trailer/<youtubeID>[/<game>]` plays any YouTube video in our trailer player, as a Gallery row does (R-11), e.g. a
+        // bright one for the Tabletop reflection's bright-frame check (Iris, #556).
+        case "trailer" where !parts.isEmpty:
+            if parts.count > 1 { openGame(parts[1]) }
+            trailer = (parts[0], parts.count > 1 ? (game(parts[1])?.name ?? "Video") : "Video", parts.count > 1 ? parts[1] : nil)
         case "video-blocked" where parts.count >= 2:
             // R-12: 150 (owner blocks other apps) by default; any other code shows the generic reason.
             qaVideoError = parts.count > 2 ? Int(parts[2]) ?? 150 : 150
@@ -1218,6 +1223,15 @@ final class AppModel {
     func isExpanded(_ key: String, default value: Bool = false) -> Bool { nav.expanded[key] ?? value }
 
     func setExpanded(_ key: String, _ value: Bool) { nav.expanded[key] = value }
+
+    /// Tabletop's lower-half panels, all closed (a rail tap, J-20). The trailer player is not a panel and stays.
+    func closeLowerPanels() {
+        addSheetOpen = false
+        settingsOpen = false
+        linksSheetOpen = false
+        tagExplainer = nil
+        keepCurrentDetailsOpen = false
+    }
 
     /// A cold launch opens on the Library, not the last screen.
     func startFresh() {

@@ -90,6 +90,16 @@ struct GalleryChapter: View {
         let art = items.filter { $0.kind == .artwork }
         let videos = items.filter { $0.kind == .video }
         let picked = model.data.selectedArtwork[gameID]
+        if viewOnly, !items.isEmpty {
+            // Tabletop (Terry's Duo, 21 Nov: the stage was a dead copy of the list below it). The play rows are in the lower
+            // half, so the stage shows the game's art and name (GalleryStage).
+            GalleryStage(gameID: gameID)
+        } else {
+            list(items: items, art: art, videos: videos, picked: picked)
+        }
+    }
+
+    private func list(items: [GalleryItem], art: [GalleryItem], videos: [GalleryItem], picked: String?) -> some View {
         VStack(alignment: .leading, spacing: 14) {
             if items.isEmpty { GalleryEmpty(gameID: gameID) }
             if !art.isEmpty { Text("Choose a picture to use as this game’s backdrop.").font(PlayscribeFont.footnote).foregroundStyle(.secondary) }
@@ -132,6 +142,55 @@ struct GalleryChapter: View {
                 }
             }
         }
+    }
+}
+
+/// TT-1, R-10 and R-11: the Gallery on Tabletop's view-only stage (Iris, reflection-0.6 spec section 6; Terry's Duo, 21 Nov: the
+/// stage was a list that looked tappable and wasn't, and the same videos were listed again below). The stage is a picture: the
+/// game's art at 16:9 with its name, never a list. Every video and picture is a row in the lower half (`TabletopGalleryList`).
+struct GalleryStage: View {
+    @Environment(AppModel.self) private var model
+    @Environment(\.duo) private var duo
+    /// The card's top edge in the container's space, where the division is reported.
+    @State private var top: CGFloat = 0
+    @State private var width: CGFloat = 0
+    var gameID: String
+
+    /// Clear of the fold under the card.
+    static let foldGap: CGFloat = 12
+
+    /// The tallest the card may be so it ends above the fold; never under 90 pt.
+    static func maxHeight(top: CGFloat, foldTop: CGFloat?) -> CGFloat {
+        guard let foldTop else { return .infinity }
+        return max(90, foldTop - top - foldGap)
+    }
+
+    var body: some View {
+        let game = model.game(gameID)
+        // One card, the name on it (Mac at 7f61fac9: a name under the card was cut by the fold at std and gone at AX5). The card
+        // is 16:9, made smaller when the stage is short, so it always ends above the fold.
+        Color.clear
+            .frame(maxWidth: .infinity)
+            .frame(height: min(width * 9 / 16, Self.maxHeight(top: top, foldTop: duo.division?.minY)))
+            .overlay { ArtView(asset: model.backdrop(gameID, chapter: .gallery, tall: false), game: game) }
+            .overlay(alignment: .bottomLeading) {
+                if let game {
+                    Text(game.name.gluingTrailingNumeral)
+                        .font(PlayscribeFont.title3.weight(.semibold))
+                        .foregroundStyle(.white)
+                        .lineLimit(2)
+                        .minimumScaleFactor(0.6)
+                        .padding(14)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .background(LinearGradient(colors: [.black.opacity(0), .black.opacity(0.75)], startPoint: .top, endPoint: .bottom))
+                }
+            }
+            .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+            .onGeometryChange(for: CGFloat.self) { $0.frame(in: .named(DuoContext.space)).minY } action: { top = $0 }
+            .onGeometryChange(for: CGFloat.self) { $0.size.width } action: { width = $0 }
+            .accessibilityElement(children: .ignore)
+            .accessibilityLabel(game?.name ?? "")
+            .allowsHitTesting(false)
     }
 }
 
