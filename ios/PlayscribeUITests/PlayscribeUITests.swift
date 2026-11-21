@@ -981,6 +981,49 @@ final class LatestUpdatesDeckTests: XCTestCase {
         cards.firstMatch.tap()
         XCTAssertTrue(app.descendants(matching: .any)["releaseTitle"].waitForExistence(timeout: 5), "card opens its update")
     }
+
+    /// Iris and Quinn on #512: a swipe from card 1 lands on card 2, a fast flick still moves exactly one card, and the last
+    /// card and its leaf can be reached. Runs in the simulator's pose (CI: Closed portrait; the Mac: Open landscape, Book).
+    func testDeckMovesOneCardPerSwipe() throws {
+        let app = XCUIApplication()
+        app.launchArguments = ["-qaRoute", "demo"]
+        app.launch()
+        sleep(4)
+        if ReleaseRowTests.pose(app).contains("pose: tabletop") { app.terminate(); throw XCTSkip("Tabletop's upper half is view only") }
+        let pager = app.descendants(matching: .any)["latestDeckPager"]
+        XCTAssertTrue(pager.waitForExistence(timeout: 5), "the deck is on screen")
+        func page() -> (Int, Int) {
+            guard let r = pager.label.range(of: #"page (\d+) of (\d+)"#, options: .regularExpression) else { return (0, 0) }
+            let n = pager.label[r].split(separator: " ").compactMap { Int($0) }
+            return (n[0], n[1])
+        }
+        let (start, count) = page()
+        guard count > 2 else { app.terminate(); throw XCTSkip("needs three or more cards: \(pager.label)") }
+        XCTAssertEqual(start, 1)
+        // The leading card on screen: the lazy row keeps cards that have scrolled away in the tree.
+        func card() -> XCUIElement {
+            app.buttons.matching(identifier: "deckCard").allElementsBoundByIndex.first { $0.isHittable }
+                ?? app.buttons.matching(identifier: "deckCard").firstMatch
+        }
+        card().swipeLeft(velocity: .slow)
+        sleep(1)
+        XCTAssertEqual(page().0, 2, "a swipe from card 1 lands on card 2")
+        card().swipeLeft(velocity: .fast)
+        sleep(1)
+        XCTAssertEqual(page().0, 3, "a fast flick moves exactly one card")
+        var last = page().0
+        for _ in 0..<count {
+            card().swipeLeft(velocity: .fast)
+            sleep(1)
+            let now = page().0
+            XCTAssertLessThanOrEqual(now - last, 1, "one card per flick")
+            if now == last { break }
+            last = now
+        }
+        let lastLeaf = app.buttons["Update \(count) of \(count)"]
+        XCTAssertTrue(lastLeaf.exists, "the last leaf is on screen at the deck's end")
+        XCTAssertTrue(lastLeaf.isSelected, "the last leaf is lit at the deck's end")
+    }
 }
 
 extension PlayscribeUITests {
