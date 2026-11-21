@@ -26,7 +26,7 @@ struct DeckCard: Identifiable, Hashable {
 }
 
 extension AppModel {
-    /// Up to 5 cards (one dot each): unread On PS5 updates first, then the rest from the last 90 days, newest first.
+    /// Up to 5 cards, one per game (one dot each): games with an unread On PS5 update first, then the rest from the last 90 days, newest first.
     /// With nothing in 90 days, the newest release dates of the library's games.
     static let deckLimit = 5
     var latestDeck: [DeckCard] { Array(latestDeckAll.prefix(Self.deckLimit)) }
@@ -56,12 +56,11 @@ extension AppModel {
         cards.sort { a, b in
             a.unread != b.unread ? a.unread : (a.date ?? .distantPast) > (b.date ?? .distantPast)
         }
-        // At most 2 cards per game, so one busy game cannot fill the deck (Quinn, PR 55).
-        var perGame: [String: Int] = [:]
-        let spread = cards.filter { c in
-            perGame[c.game.id, default: 0] += 1
-            return perGame[c.game.id]! <= 2
-        }
+        // One card per game (bug-hero-deck-one-per-game, Iris 13 Nov): the sort above puts a game's unread updates first, newest
+        // first, then its read ones, so the first card seen for a game is its newest unread update, or its newest if none is unread.
+        // Older hotfixes of the same game never take a card, and the page dots equal the games shown.
+        var seen = Set<String>()
+        let spread = cards.filter { seen.insert($0.game.id).inserted }
         guard qaPadDeck, !spread.isEmpty else { return spread }
         var padded = spread, n = 0
         while padded.count < 12 {
@@ -202,7 +201,8 @@ struct LatestUpdatesDeck: View {
 
 
     private var pageEdge: some View {
-        PageEdge(cards: cards, current: current ?? cards.first?.id) { id in
+        // Open shows two cards across: both are lit, so the last leaf lights when the deck reaches its end (Iris on #512).
+        PageEdge(cards: cards, current: current ?? cards.first?.id, visible: max(1, Int(perScreen.rounded(.down)))) { id in
             withAnimation(reduceMotion ? .easeInOut(duration: 0.2) : .snappy) { current = id }
         }
     }
@@ -236,7 +236,8 @@ struct LatestUpdatesDeck: View {
             .onGeometryChange(for: CGFloat.self) { $0.size.width } action: { if scrollHeight != nil, abs($0 - pagerWidth) > 0.5 { pagerWidth = $0 } }
             .scrollPosition(id: $current)
             .onChange(of: current) { _, new in model.deckSelection = new }
-            .scrollTargetBehavior(.viewAligned)
+            // One card per flick, however fast (Iris on #512: a 120 pt flick in Open landscape jumped KCD to Phantom Blade).
+            .scrollTargetBehavior(.viewAligned(limitBehavior: .alwaysByOne))
             .contentMargins(.trailing, 0, for: .scrollContent)
             // Closed landscape (scrollHeight set): the dots sit inside the hero's bottom edge, centred, so the
             // first screen still shows the chips and the first tile row (Iris, cf6c889).
@@ -273,6 +274,7 @@ struct LatestUpdatesDeck: View {
         .accessibilityElement(children: .contain)
         .accessibilityLabel(compact || cards.count > 1
             ? "Latest updates, page \((cards.firstIndex { $0.id == (current ?? cards.first?.id) } ?? 0) + 1) of \(cards.count)" : "Latest updates")
+        .accessibilityIdentifier("latestDeckPager")
     }
 }
 
@@ -687,23 +689,46 @@ struct DeckCardArt: View {
 /// Each leaf is a 44 pt target labelled "Update n of N".
 struct PageEdge: View {
     var cards: [DeckCard]
+    /// The leading card on screen (the scroll position).
     var current: String?
+    /// Cards fully on screen at once: 2 in Open (two across), else 1.
+    var visible: Int = 1
     var select: (String) -> Void
+
+    /// The leaves lit: the leading card and the others fully on screen beside it. At the deck's end the pager cannot lead
+    /// with the last card when two show, so lighting only the leading one left the last leaf dark for good (Iris on #512).
+    static func lit(cards: [DeckCard], current: String?, visible: Int) -> Set<Int> {
+        guard !cards.isEmpty else { return [] }
+        let lead = cards.firstIndex { $0.id == current } ?? 0
+        let first = min(lead, max(0, cards.count - max(1, visible)))
+        return Set(first..<min(cards.count, first + max(1, visible)))
+    }
+
+    /// The card that leads after one step (VoiceOver increment or decrement on a leaf): exactly one card, clamped so the last
+    /// lead still shows the last card. Nil when already at that end.
+    static func step(cards: [DeckCard], current: String?, visible: Int, by delta: Int) -> String? {
+        guard !cards.isEmpty else { return nil }
+        let lastLead = max(0, cards.count - max(1, visible))
+        let lead = min(cards.firstIndex { $0.id == current } ?? 0, lastLead)
+        let next = min(max(0, lead + (delta > 0 ? 1 : -1)), lastLead)
+        return next == lead ? nil : cards[next].id
+    }
 
     /// At most 5 leaves, in a window that slides with the current card (Iris, 6589abf): the current one
     /// ember and tall, the outer ones of a longer deck smaller, centred under the deck.
     private var window: [(index: Int, card: DeckCard)] {
         let all = Array(cards.enumerated())
         guard all.count > 5 else { return all.map { ($0.offset, $0.element) } }
-        let cur = cards.firstIndex { $0.id == current } ?? 0
+        let cur = Self.lit(cards: cards, current: current, visible: visible).max() ?? 0
         let start = min(max(0, cur - 2), all.count - 5)
         return all[start..<(start + 5)].map { ($0.offset, $0.element) }
     }
 
     var body: some View {
+        let lit = Self.lit(cards: cards, current: current, visible: visible)
         HStack(spacing: 0) {
             ForEach(window, id: \.card.id) { item in
-                let isCurrent = item.card.id == current
+                let isCurrent = lit.contains(item.index)
                 // The ends of a window that has more cards beyond it are drawn smaller.
                 let trimmed = cards.count > 5 && !isCurrent
                     && ((item.index == window.first?.index && item.index > 0) || (item.index == window.last?.index && item.index < cards.count - 1))
@@ -718,6 +743,11 @@ struct PageEdge: View {
                 .tappableFrame()
                 .accessibilityLabel("Update \(item.index + 1) of \(cards.count)")
                 .accessibilityAddTraits(isCurrent ? [.isButton, .isSelected] : .isButton)
+                // VoiceOver swipe up or down on any leaf moves the deck one card (Quinn and Iris on #512).
+                .accessibilityAdjustableAction { direction in
+                    let delta = direction == .increment ? 1 : direction == .decrement ? -1 : 0
+                    if delta != 0, let id = Self.step(cards: cards, current: current, visible: visible, by: delta) { select(id) }
+                }
             }
         }
         .frame(maxWidth: .infinity, alignment: .center)
