@@ -737,10 +737,10 @@ struct ContentsView: View {
                     } header: {
                         if duo.pose == .book {
                             // Pinned, the list fades out under it as in one column (Quinn, #521: "Patch 1.7" was sliced).
-                            PinnedSectionHeader(gameID: gameID, ink: PlayscribeColor.heroGround, onDark: true, inset: 0, style: .contents, vertical: 6,
+                            PinnedSectionHeader(gameID: gameID, ink: PlayscribeRole.bg, inset: 0, style: .contents, vertical: 6,
                                                 anchorY: anchorY, gap: 14, pinned: $tocPinned)
                                 .padding(.leading, leading).padding(.trailing, trailing)
-                                .background(PlayscribeColor.heroGround)
+                                .background(PlayscribeRole.bg)
                         }
                     }
                 }

@@ -45,7 +45,8 @@ struct HeroGroundTests {
         }
         #expect(bar.contains("onDark ? PlayscribeColor.onDarkText : PlayscribeRole.textPrimary"))
         let book = try source("GameBookParts.swift")
-        #expect(book.contains("ink: PlayscribeColor.heroGround, onDark: true"), "the Book contents header is on the hero ground")
+        #expect(book.contains("PinnedSectionHeader(gameID: gameID, ink: PlayscribeRole.bg, inset: 0, style: .contents,"),
+                "the Book contents header is on bg with role text (Iris: a dark strip between cream art and a cream page reads as a stripe)")
         #expect(try source("GamePageColumn.swift").contains("PinnedSectionHeader(gameID: gameID, ink: PlayscribeRole.bg,"))
     }
 }
