@@ -12,10 +12,13 @@ let n = a[2...].compactMap { Double($0) }
 let (winW, vx, vy, vw, vh, bt, bh) = (n[0], n[1], n[2], n[3], n[4], n[5], n[6])
 let w = img.width, h = img.height
 let s = Double(w) / winW
-var px = [UInt8](repeating: 0, count: w * h * 4)
-let ctx = CGContext(data: &px, width: w, height: h, bitsPerComponent: 8, bytesPerRow: w * 4,
+let ctx = CGContext(data: nil, width: w, height: h, bitsPerComponent: 8, bytesPerRow: w * 4,
                     space: CGColorSpaceCreateDeviceRGB(), bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue)!
+// The context owns its buffer: `&array` is only valid for the init call, so a later draw wrote through a dangling
+// pointer and a read could come back 0 (BrightArtScrimTests on CI: one sample of 15 read 0, row 270 left 59 right 64).
+ctx.clear(CGRect(x: 0, y: 0, width: w, height: h))
 ctx.draw(img, in: CGRect(x: 0, y: 0, width: w, height: h))
+let px = Array(UnsafeBufferPointer(start: ctx.data!.assumingMemoryBound(to: UInt8.self), count: w * h * 4))
 func peak(_ y0: Double, _ y1: Double) -> Int {
     let x0 = Int((vx + vw * 0.6) * s), x1 = Int((vx + vw * 0.9) * s)
     var v: [Int] = []

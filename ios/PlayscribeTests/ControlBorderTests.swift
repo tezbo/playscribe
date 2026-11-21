@@ -82,11 +82,14 @@ struct ControlBorderTests {
             return try #require(r.cgImage)
         }
         func pixel(_ cg: CGImage, _ x: Int, _ y: Int) throws -> UIColor {
-            var rgba = [UInt8](repeating: 0, count: 4)
-            let ctx = try #require(CGContext(data: &rgba, width: 1, height: 1, bitsPerComponent: 8, bytesPerRow: 4,
+            let ctx = try #require(CGContext(data: nil, width: 1, height: 1, bitsPerComponent: 8, bytesPerRow: 4,
                                              space: CGColorSpaceCreateDeviceRGB(),
                                              bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue))
+            // The context owns its buffer: `&array` is only valid for the init call, so a later draw wrote through a dangling
+            // pointer and a read could come back 0 (BrightArtScrimTests on CI: one sample of 15 read 0, row 270 left 59 right 64).
+            ctx.clear(CGRect(x: 0, y: 0, width: 1, height: 1))
             ctx.draw(cg, in: CGRect(x: -x, y: -(cg.height - 1 - y), width: cg.width, height: cg.height))
+            let rgba = Array(UnsafeBufferPointer(start: ctx.data!.assumingMemoryBound(to: UInt8.self), count: 4))
             return UIColor(red: CGFloat(rgba[0]) / 255, green: CGFloat(rgba[1]) / 255, blue: CGFloat(rgba[2]) / 255, alpha: 1)
         }
         // The field spans x 20...180, y 20...64; its top edge's border row is y 20, mid-width.
