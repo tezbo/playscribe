@@ -71,4 +71,6 @@ jobs:
           TAG: ${{ inputs.tag || github.ref_name }}
         run: |
           version="${TAG#v}"
+          # A beta tag (v0.6.0-beta.1) builds marketing version 0.6.0: App Store versions take three numbers only.
+          version="${version%%-*}"
           bundle exec fastlane beta marketing_version:"$version"
