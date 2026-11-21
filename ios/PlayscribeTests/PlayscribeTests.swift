@@ -656,7 +656,9 @@ struct AutoplayTests {
         // True scale: no squash, the same size as the video.
         #expect(f.width == 400 && f.height == 225)
         // Only the bottom 57 rows are inside the strip.
-        #expect(f.minY == 57 - 225)
+        // A named CGFloat: inside #expect a literal `57 - 225` is expanded as its own Int expression (CI at d7ff266).
+        let top: CGFloat = 57 - 225
+        #expect(f.minY == top)
     }
 
     @Test("The fade is quadratic, monotonic, ends at zero, and no stop steps by more than 4/255 at full edge strength (spec 8.2)")
