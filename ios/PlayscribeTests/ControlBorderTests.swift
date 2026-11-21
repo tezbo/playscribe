@@ -49,6 +49,11 @@ struct ControlBorderTests {
         var a: CGFloat = 1
         PlayscribeRole.resolved(PlayscribeRole.controlBorderSpec, light: false).getRed(nil, green: nil, blue: nil, alpha: &a)
         #expect(a == 0)
+        // The default every field uses: clear in dark, not black (1c086d4 drew opaque black here).
+        var b: CGFloat = 1
+        UIColor(PlayscribeRole.controlBorder(keepingDark: .clear))
+            .resolvedColor(with: UITraitCollection(userInterfaceStyle: .dark)).getRed(nil, green: nil, blue: nil, alpha: &b)
+        #expect(b == 0, "the default control border is clear in dark")
         let kept = UIColor(PlayscribeRole.controlBorder(keepingDark: PlayscribeColor.vellum500))
             .resolvedColor(with: UITraitCollection(userInterfaceStyle: .dark))
         #expect(Contrast.ratio(kept, UIColor(PlayscribeColor.vellum500)) == 1)

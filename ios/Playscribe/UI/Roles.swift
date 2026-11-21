@@ -60,8 +60,12 @@ enum PlayscribeRole {
     static let hairline = color(hairlineSpec)
 
     /// The control border in light, and the colour this control already drew in dark (dark is unchanged by 0.6).
+    /// The dark colour's own alpha carries through: `.withAlphaComponent(1)` would turn `.clear` into opaque black (screen diffs
+    /// on 1c086d4 showed a dark outline on every field).
     static func controlBorder(keepingDark dark: Color) -> Color {
-        color(Spec(name: controlBorderSpec.name, light: controlBorderSpec.light, dark: dark))
+        var alpha: CGFloat = 0
+        UIColor(dark).getRed(nil, green: nil, blue: nil, alpha: &alpha)
+        return color(Spec(name: controlBorderSpec.name, light: controlBorderSpec.light, dark: dark, darkAlpha: Double(alpha)))
     }
 
     /// The role as a colour that follows the environment's colour scheme (a view forced dark, such as a cover, gets the dark value).
