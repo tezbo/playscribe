@@ -320,9 +320,9 @@ extension View {
     /// Apply to each screen inside a navigation stack: bar visibility is read from the visible
     /// screen, not from the stack or the TabView.
     /// Open portrait (Iris, 19 Nov, on Terry's "scrolling behind another menu"): the top bar (Back, Notifications, Status, More
-    /// on a game) and the bottom tab bar are solid ink, so nothing scrolls under either bar. The other poses keep the system's.
+    /// on a game) and the bottom tab bar are solid bg, so nothing scrolls under either bar. The other poses keep the system's.
     /// One modifier chain in every pose, so a pose change never swaps the screen's identity (and its scroll and focus state).
-    /// Scroll edges fade (Quinn, on #541): under the solid top bar, a 16 pt band from ink to clear, so content fades out instead of
+    /// Scroll edges fade (Quinn, on #541): under the solid top bar, a 16 pt band from bg to clear, so content fades out instead of
     /// being cut at the bar's edge. A safe-area inset, so the page's rest position starts below it and only scrolled content passes
     /// under; 0 pt in the other poses (the same view, so identity holds).
     /// While a Tabletop lower-half panel is open, the tab's page under it takes no touches and is hidden from VoiceOver: the
@@ -334,10 +334,10 @@ extension View {
     func tabletopChrome(_ duo: DuoContext) -> some View {
         let solid = duo.pose == .flat && !duo.isLandscape
         return toolbarVisibility(duo.pose == .tabletop ? .hidden : .automatic, for: .navigationBar, .tabBar)
-            .toolbarBackground(Color.ink0, for: .navigationBar, .tabBar)
+            .toolbarBackground(PlayscribeRole.bg, for: .navigationBar, .tabBar)
             .toolbarBackgroundVisibility(solid ? .visible : .automatic, for: .navigationBar, .tabBar)
             .safeAreaInset(edge: .top, spacing: 0) {
-                LinearGradient(colors: [Color.ink0, Color.ink0.opacity(0)], startPoint: .top, endPoint: .bottom)
+                LinearGradient(colors: [PlayscribeRole.bg, PlayscribeRole.bg.opacity(0)], startPoint: .top, endPoint: .bottom)
                     .frame(height: solid ? TopBarFade.height : 0)
                     .allowsHitTesting(false)
                     .accessibilityHidden(true)

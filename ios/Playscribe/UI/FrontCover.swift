@@ -253,7 +253,7 @@ struct FrontCoverPlate: View {
                 Text(label)
                     .font(PlayscribeFont.caption.weight(.semibold))
                     .tracking(12 * 0.12)
-                    .foregroundStyle(PlayscribeColor.accent)
+                    .foregroundStyle(PlayscribeColor.onDarkAccent)
                     .accessibilityIdentifier("dayOneEyebrow")
             }
             // Iris (19 Nov, on #541): the patch name is the most prominent text on an update's cover. A small eyebrow carries the
@@ -264,12 +264,12 @@ struct FrontCoverPlate: View {
                     if card.unread { UnreadDot() }
                     Text(eyebrow)
                         .font(PlayscribeFont.subheadline.weight(.semibold))
-                        .foregroundStyle(PlayscribeColor.textPrimary.opacity(0.85))
+                        .foregroundStyle(PlayscribeColor.onDarkText.opacity(0.85))
                         .fixedSize(horizontal: false, vertical: true)
                 }
             }
             Text(Self.headline(card))
-                .font(PlayscribeFont.title).foregroundStyle(PlayscribeColor.textPrimary)
+                .font(PlayscribeFont.title).foregroundStyle(PlayscribeColor.onDarkText)
                 .fixedSize(horizontal: false, vertical: true)
             FlowLayout(spacing: 6) {
                 ForEach(Self.chips(card), id: \.text) { chip($0.text, live: $0.live) }
@@ -311,10 +311,10 @@ struct FrontCoverPlate: View {
 
     private func chip(_ text: String, live: Bool) -> some View {
         Text(text.keepingVersionsTogether).font(PlayscribeFont.caption.weight(.semibold)).monospacedDigit()
-            .foregroundStyle(live ? PlayscribeColor.onAccent : PlayscribeColor.textPrimary)
+            .foregroundStyle(live ? PlayscribeColor.onAccent : PlayscribeColor.onDarkText)
             .padding(.horizontal, 8).padding(.vertical, 3).frame(minHeight: 24)
             .background(RoundedRectangle(cornerRadius: 6, style: .continuous)
-                .fill(live ? PlayscribeColor.accent : PlayscribeColor.ink950.opacity(0.6)))
+                .fill(live ? PlayscribeColor.onDarkAccent : PlayscribeColor.ink950.opacity(0.6)))
             .overlay(RoundedRectangle(cornerRadius: 6, style: .continuous)
                 .strokeBorder(live ? .clear : PlayscribeColor.vellum100.opacity(0.25), lineWidth: 1))
     }
@@ -327,7 +327,7 @@ struct CoverLockup: View {
     var body: some View {
         HStack(spacing: 6) {
             BrandMark(size: glyph)
-            Text(Brand.name).font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.textPrimary)
+            Text(Brand.name).font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.onDarkText)
         }
         .accessibilityElement(children: .combine)
         .accessibilityLabel(Brand.name)
@@ -391,7 +391,7 @@ struct CoverLeaves: View {
                 let isCurrent = card.id == current
                 Button { select(card.id) } label: {
                     RoundedRectangle(cornerRadius: 1.5)
-                        .fill(isCurrent ? PlayscribeColor.accent : (card.unread ? PlayscribeColor.vellum100 : PlayscribeColor.textSecondary.opacity(0.6)))
+                        .fill(isCurrent ? PlayscribeColor.onDarkAccent : (card.unread ? PlayscribeColor.vellum100 : PlayscribeColor.onDarkTextSecondary.opacity(0.6)))
                         .frame(width: 3, height: isCurrent ? 22 : 12)
                         .shadow(color: .black.opacity(0.6), radius: 2)
                         .frame(width: 44, height: 44)
@@ -416,7 +416,7 @@ struct CoverRailButton: View {
         Button(action: action) {
             Image(systemName: symbol)
                 .font(.system(size: 17, weight: .semibold))
-                .foregroundStyle(PlayscribeColor.textPrimary)
+                .foregroundStyle(PlayscribeColor.onDarkText)
                 .frame(width: 44, height: 44)
                 .background(Circle().fill(PlayscribeColor.ink950.opacity(0.6)))
                 .overlay(Circle().strokeBorder(PlayscribeColor.vellum100.opacity(0.18), lineWidth: 1))
@@ -439,7 +439,7 @@ struct FrontCoverPreviewScreen: View {
             if FrontCoverPreview.shows(pose: duo.pose) {
                 content
             } else {
-                Color.ink0.ignoresSafeArea()
+                PlayscribeColor.heroGround.ignoresSafeArea()
                     .onAppear { FrontCoverPreview.shared.closeForPose(model) }
             }
         }
@@ -449,7 +449,7 @@ struct FrontCoverPreviewScreen: View {
         VStack(spacing: 0) {
             if model.latestDeck.isEmpty {
                 Text("No updates in the deck. Try -qaRoute cover with a demo library.")
-                    .font(PlayscribeFont.body).foregroundStyle(PlayscribeColor.textSecondary)
+                    .font(PlayscribeFont.body).foregroundStyle(PlayscribeColor.onDarkTextSecondary)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
             } else {
                 ZStack(alignment: .topTrailing) {
@@ -461,7 +461,7 @@ struct FrontCoverPreviewScreen: View {
                 }
             }
         }
-        .background(Color.ink0)
+        .background(PlayscribeColor.heroGround)
         // Iris (#467): white text on the shade in both modes, so the status bar is light content over the cover whatever
         // the system appearance. The Library wrap does the same while the cover is on screen.
         .preferredColorScheme(.dark)

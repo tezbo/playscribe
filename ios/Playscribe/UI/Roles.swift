@@ -148,3 +148,20 @@ nonisolated enum Contrast {
         return (max(x, y) + 0.05) / (min(x, y) + 0.05)
     }
 }
+
+/// Hero ground (Iris, 21 Nov): the cover, the game page's art hero header and the Book contents header stay dark in both modes.
+/// They sit on `heroGround`, never a bare ink, and text and glyphs on them use the fixed on-dark set below, never
+/// `PlayscribeRole.textPrimary` or `textSecondary` (those turn dark in light mode). Headers and stages with no art use `bg`.
+/// The video surface and the player stay black.
+nonisolated extension PlayscribeColor {
+    static let heroGround = PlayscribeColor.ink950
+    /// Cream, for text and glyphs on the hero ground.
+    static let onDarkText = PlayscribeColor.textPrimary
+    /// Cream secondary.
+    static let onDarkTextSecondary = PlayscribeColor.textSecondary
+    /// The existing amber.
+    static let onDarkAccent = PlayscribeColor.accent
+    /// The selected row's fill and the hairline on the hero ground (the 0.5 values).
+    static let onDarkSelectedFill = PlayscribeColor.ink700
+    static let onDarkHairline = PlayscribeColor.ink600
+}

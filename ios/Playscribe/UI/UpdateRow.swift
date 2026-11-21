@@ -91,10 +91,10 @@ struct UpdateRowLabel: View {
         .padding(.horizontal, 10)
         .padding(.vertical, 10)
         .frame(maxWidth: .infinity, minHeight: 48, alignment: .leading)
-        .background(selected ? PlayscribeColor.ink700 : .clear, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
+        .background(selected ? PlayscribeRole.chipFill : .clear, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
         .overlay(alignment: .top) {
             // Between rows only: the list's first row has none, and the Divider before About marks the end (design, #526).
-            if divided { Rectangle().fill(PlayscribeColor.ink700).frame(height: 1).padding(.horizontal, 10).accessibilityHidden(true) }
+            if divided { Rectangle().fill(PlayscribeRole.hairline).frame(height: 1).padding(.horizontal, 10).accessibilityHidden(true) }
         }
         .contentShape(Rectangle())
         .accessibilityElement(children: .ignore)

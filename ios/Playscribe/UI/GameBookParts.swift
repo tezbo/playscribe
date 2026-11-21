@@ -711,7 +711,7 @@ struct ContentsView: View {
                 .padding(.leading, leading)
                 .padding(.trailing, trailing)
                 .padding(.top, 6)
-                .background(Color.ink1)
+                .background(PlayscribeRole.surface)
                 .zIndex(1)
             }
             ScrollView {
@@ -737,10 +737,10 @@ struct ContentsView: View {
                     } header: {
                         if duo.pose == .book {
                             // Pinned, the list fades out under it as in one column (Quinn, #521: "Patch 1.7" was sliced).
-                            PinnedSectionHeader(gameID: gameID, ink: Color.ink0, inset: 0, style: .contents, vertical: 6,
+                            PinnedSectionHeader(gameID: gameID, ink: PlayscribeColor.heroGround, onDark: true, inset: 0, style: .contents, vertical: 6,
                                                 anchorY: anchorY, gap: 14, pinned: $tocPinned)
                                 .padding(.leading, leading).padding(.trailing, trailing)
-                                .background(Color.ink0)
+                                .background(PlayscribeColor.heroGround)
                         }
                     }
                 }
@@ -748,8 +748,8 @@ struct ContentsView: View {
                 .padding(.bottom, 14)
             }
             // Tabletop only, as the Library shelf (#487): scrolled, the list's top edge cut a Contents row through its glyphs at
-            // AX5 (Iris, 21efef8 still: "Better targeting, look-on…"). The panel is ink1, so the edge is too.
-            .modifier(ScrolledTopEdge(active: duo.pose == .tabletop, ink: Color.ink1))
+            // AX5 (Iris, 21efef8 still: "Better targeting, look-on…"). The panel is the surface role, so the edge is too.
+            .modifier(ScrolledTopEdge(active: duo.pose == .tabletop, ink: PlayscribeRole.surface))
             .clearsMessages()
             .scrollPosition($position)
             .accessibilityIdentifier("contentsScroll")
