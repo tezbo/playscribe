@@ -388,8 +388,8 @@ struct VideoStartCover: View {
                         Image(systemName: "play.fill")
                             .font(.system(size: 26, weight: .semibold))
                             .frame(width: 64, height: 64)
-                            .background(PlayscribeColor.accent, in: Circle())
-                            .foregroundStyle(PlayscribeColor.onAccent)
+                            .background(PlayscribeRole.action, in: Circle())
+                            .foregroundStyle(PlayscribeRole.onAction)
                     }
                     .accessibilityLabel("Play")
                     .accessibilityIdentifier("videoPlay")
@@ -454,11 +454,11 @@ struct WatchAlong: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 10) {
-                Text("Watch along").font(PlayscribeFont.caption).tracking(1).foregroundStyle(PlayscribeColor.textTertiary)
+                Text("Watch along").font(PlayscribeFont.caption).tracking(1).foregroundStyle(PlayscribeRole.textTertiary)
                     .accessibilityAddTraits(.isHeader)
                 ForEach(Array((release.keyChanges ?? []).enumerated()), id: \.offset) { _, k in
                     HStack(alignment: .firstTextBaseline, spacing: 10) {
-                        Circle().fill(PlayscribeColor.accent).frame(width: 6, height: 6).accessibilityHidden(true)
+                        Circle().fill(PlayscribeRole.action).frame(width: 6, height: 6).accessibilityHidden(true)
                         Text(k).font(PlayscribeFont.subheadline)
                     }
                     .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
@@ -576,8 +576,8 @@ struct TabletopTransport: View {
                     Image(systemName: controller.isPlaying ? "pause.fill" : "play.fill")
                         .font(.system(size: 26, weight: .semibold))
                         .frame(width: 64, height: 64)
-                        .background(PlayscribeColor.accent, in: Circle())
-                        .foregroundStyle(PlayscribeColor.onAccent)
+                        .background(PlayscribeRole.action, in: Circle())
+                        .foregroundStyle(PlayscribeRole.onAction)
                 }
                 .accessibilityLabel(controller.isPlaying ? "Pause" : "Play")
                 .accessibilityIdentifier("videoPlay")
@@ -638,7 +638,7 @@ struct ProgressHairline: View {
     var progress: Double
     var body: some View {
         GeometryReader { g in
-            Rectangle().fill(PlayscribeColor.accent)
+            Rectangle().fill(PlayscribeRole.action)
                 .frame(width: g.size.width * min(1, max(0, progress)), height: 2)
         }
         .frame(height: 2)
@@ -687,7 +687,7 @@ struct VideoUnavailable: View {
         } actions: {
             if let url = URL(string: "https://www.youtube.com/watch?v=\(videoID)") {
                 Button("Open in YouTube") { UIApplication.shared.open(url) }
-                    .buttonStyle(.borderedProminent).foregroundStyle(PlayscribeColor.onAccent)
+                    .buttonStyle(.borderedProminent).foregroundStyle(PlayscribeRole.onAction)
                     .tappableFrame()
             }
             if showsClose { Button("Close", action: onClose).hitTarget() }

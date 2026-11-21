@@ -36,7 +36,7 @@ struct PageView: View {
                             VStack(alignment: .leading, spacing: 16) {
                                 ReleasePage(release: r)
                                 if let g = model.game(gameID) {
-                                    Divider().overlay(PlayscribeColor.ink700)
+                                    Divider().overlay(PlayscribeRole.hairline)
                                     GameBasicsView(game: g).readingMark("mark-about")
                                 }
                             }
@@ -106,7 +106,7 @@ struct PageView: View {
             if let new, ReadingPlace.mark(model.nav.anchors[anchorKey])?.hasPrefix("mark-\(new)-") == true { restore(); return }
             position.scrollTo(edge: .top)
         }
-        .background(Color.ink0)
+        .background(PlayscribeRole.bg)
         .foldAudited()
     }
 
@@ -184,13 +184,13 @@ struct FadeMask: ViewModifier {
     func body(content: Content) -> some View {
         if enabled {
             content
-                .overlay(LinearGradient(stops: [.init(color: Color.ink0, location: 0), .init(color: .clear, location: 0.55)],
+                .overlay(LinearGradient(stops: [.init(color: PlayscribeRole.bg, location: 0), .init(color: .clear, location: 0.55)],
                                         startPoint: .leading, endPoint: .trailing))
-                .overlay(LinearGradient(stops: [.init(color: .clear, location: 0.55), .init(color: Color.ink0, location: 1)],
+                .overlay(LinearGradient(stops: [.init(color: .clear, location: 0.55), .init(color: PlayscribeRole.bg, location: 1)],
                                         startPoint: .top, endPoint: .bottom))
         } else {
             content.overlay(alignment: .bottom) {
-                LinearGradient(colors: [.clear, Color.ink0], startPoint: .top, endPoint: .bottom).frame(height: 60)
+                LinearGradient(colors: [.clear, PlayscribeRole.bg], startPoint: .top, endPoint: .bottom).frame(height: 60)
             }
         }
     }
@@ -214,8 +214,8 @@ struct CoverHeader: View {
     @ViewBuilder private var cover: some View {
         if let asset { Image(asset).resizable() }
         else if let url = game?.coverURL {
-            AsyncImage(url: url) { $0.resizable() } placeholder: { Color.ink1 }
-        } else { Color.ink1 }
+            AsyncImage(url: url) { $0.resizable() } placeholder: { PlayscribeRole.surface }
+        } else { PlayscribeRole.surface }
     }
 }
 
@@ -309,14 +309,14 @@ struct SpoilerLine: View {
             layout {
                 HStack(spacing: 8) {
                     Image(systemName: shown ? "eye" : "eye.slash")
-                    Text(shown ? "Story spoilers shown" : "Story spoilers hidden").foregroundStyle(PlayscribeColor.textSecondary)
+                    Text(shown ? "Story spoilers shown" : "Story spoilers hidden").foregroundStyle(PlayscribeRole.textSecondary)
                         .fixedSize(horizontal: false, vertical: true)
                 }
                 Text(shown ? "Hide" : "Show").fontWeight(.semibold)
                     .frame(minHeight: 44, alignment: .leading)
             }
             .font(PlayscribeFont.subheadline)
-            .foregroundStyle(PlayscribeColor.accent)
+            .foregroundStyle(PlayscribeRole.action)
             .frame(minHeight: 44)
             .contentShape(Rectangle())
         }
@@ -374,7 +374,7 @@ struct GameLinks: View {
                         .onGeometryChange(for: CGFloat.self) { $0.size.width } action: { needed = $0 }
                 )
                 .font(PlayscribeFont.subheadline)
-                .foregroundStyle(PlayscribeColor.accent)
+                .foregroundStyle(PlayscribeRole.action)
         }
     }
 
@@ -474,7 +474,7 @@ struct GameBasicsView: View {
         let videos = Self.trailers(game)
         VStack(alignment: .leading, spacing: 14) {
             if let move = fallback?.move?.line {
-                Text(move).font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.accent)
+                Text(move).font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeRole.action)
             }
             if !genres.isEmpty {
                 Text(genres.joined(separator: ", ")).font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
@@ -486,7 +486,7 @@ struct GameBasicsView: View {
                         // like "Cinematic" is not cut by letter beside a 112 pt picture (Iris, r054 Closed AX5).
                         let layout = typeSize.isAccessibilitySize ? AnyLayout(VStackLayout(alignment: .leading, spacing: 8)) : AnyLayout(HStackLayout(spacing: 12))
                         layout {
-                            AsyncImage(url: URL(string: "https://i.ytimg.com/vi/\(v.youtubeId)/mqdefault.jpg")) { $0.resizable().scaledToFill() } placeholder: { Color.ink1 }
+                            AsyncImage(url: URL(string: "https://i.ytimg.com/vi/\(v.youtubeId)/mqdefault.jpg")) { $0.resizable().scaledToFill() } placeholder: { PlayscribeRole.surface }
                                 .frame(width: 112, height: 63)
                                 .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
                                 .overlay { Image(systemName: "play.fill").foregroundStyle(.white) }
@@ -510,11 +510,11 @@ struct GameBasicsView: View {
                     Text("Details need a connection").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
                     Spacer(minLength: 0)
                     Button { Task { await store.load(igdbID: id) } } label: { Text("Retry").frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()) }
-                        .font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.accent)
+                        .font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeRole.action)
                         .tappableFrame()
                 }
                 .padding(.horizontal, 14)
-                .background(Color.ink2, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                .background(PlayscribeRole.card, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
             }
             // Closed has no Contents panel, so the links sit with the basics.
             if duo.pose == .closed { GameLinks(game: game) }
@@ -753,7 +753,7 @@ struct ContentsView: View {
             .scrollIndicators(.hidden)
         }
         // Book: the page colour, so the art fades into it as on the right page; Tabletop's lower half stays ink1.
-        .background(duo.pose == .book ? Color.ink0 : Color.ink1)
+        .background(duo.pose == .book ? PlayscribeRole.bg : PlayscribeRole.surface)
         .foldAudited()
     }
 }
@@ -789,7 +789,20 @@ struct ContentsHead: View {
         let game = model.game(gameID)
         VStack(alignment: .leading, spacing: 14) {
             HStack(alignment: .top) {
-                GameTitleWithStatus(gameID: gameID, name: model.gameDisplayName(gameID))
+                VStack(alignment: .leading, spacing: 4) {
+                    // r060 day-one (Iris): in Tabletop the install line is the lower half's first line, above the game title,
+                    // plain secondary text; the standing half already carries the eyebrow and headline. Gone on the next visit.
+                    if duo.pose == .tabletop, let note = model.readerRelease(gameID).flatMap(model.dayOneNote) {
+                        Text(note)
+                            .font(PlayscribeFont.subheadline)
+                            // textSecondary, not .secondary (about 5:1): the one action the player needs (Iris on #506).
+                            .foregroundStyle(PlayscribeColor.textSecondary)
+                            .fixedSize(horizontal: false, vertical: true)
+                            .accessibilityIdentifier("dayOneNote")
+                            .accessibilitySortPriority(1)
+                    }
+                    GameTitleWithStatus(gameID: gameID, name: model.gameDisplayName(gameID))
+                }
                 Spacer(minLength: 8)
             }
             // Once per page (Terry): in Tabletop the links are on the Links panel instead.
@@ -908,7 +921,7 @@ struct NotesSearchField: View {
             }
             .padding(.horizontal, 12)
             .frame(minHeight: 44)
-            .background(PlayscribeColor.ink700, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+            .background(PlayscribeRole.chipFill, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
             if !model.noteQuery.isEmpty {
                 Picker("Search in", selection: $model.noteScope) {
                     ForEach(NoteScope.allCases, id: \.self) { Text($0.label).tag($0) }
@@ -979,7 +992,7 @@ struct ReleaseTimeline: View {
         let ps5 = model.ps5Releases(gameID)
         let pc = model.pcOnlyReleases(gameID)
         VStack(alignment: .leading, spacing: 0) {
-            Text("All updates").font(PlayscribeFont.caption).tracking(1).foregroundStyle(PlayscribeColor.textTertiary)
+            Text("All updates").font(PlayscribeFont.caption).tracking(1).foregroundStyle(PlayscribeRole.textTertiary)
                 .padding(.bottom, 4)
             if ps5.isEmpty, let g = model.game(gameID) {
                 Text(g.ps5AvailabilityLine).font(PlayscribeFont.subheadline)
@@ -1033,7 +1046,7 @@ struct TabletopTrailerRow: View {
                             .fixedSize(horizontal: false, vertical: true)
                         Spacer(minLength: 0)
                     }
-                    .foregroundStyle(PlayscribeColor.accent)
+                    .foregroundStyle(PlayscribeRole.action)
                     .padding(.horizontal, 10).frame(maxWidth: .infinity, minHeight: 44).contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
@@ -1096,7 +1109,7 @@ struct TabletopGalleryList: View {
                 .accessibilityHidden(true)
             Text(item.title).font(PlayscribeFont.headline).fixedSize(horizontal: false, vertical: true)
             Spacer(minLength: 0)
-            if selected { Image(systemName: "checkmark.circle.fill").foregroundStyle(PlayscribeColor.accent).accessibilityHidden(true) }
+            if selected { Image(systemName: "checkmark.circle.fill").foregroundStyle(PlayscribeRole.action).accessibilityHidden(true) }
         }
         .padding(.horizontal, 10).padding(.vertical, 2)
         .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading).contentShape(Rectangle())
@@ -1120,7 +1133,7 @@ struct TabletopOutline: View {
                     }
                     .padding(.horizontal, 10)
                     .frame(minHeight: 44)
-                    .background(i == index ? PlayscribeColor.ink700 : .clear, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
+                    .background(i == index ? PlayscribeRole.chipFill : .clear, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
                     .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
@@ -1134,7 +1147,7 @@ struct TabletopOutline: View {
                         Spacer()
                         Image(systemName: fullText ? "chevron.up" : "chevron.down")
                     }
-                    .foregroundStyle(PlayscribeColor.accent)
+                    .foregroundStyle(PlayscribeRole.action)
                     .padding(.horizontal, 10).frame(minHeight: 44).contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
@@ -1162,7 +1175,7 @@ struct TabletopOutline: View {
             Label(title, systemImage: symbol)
                 .font(PlayscribeFont.headline)
                 .frame(maxWidth: .infinity, minHeight: 52)
-                .background(PlayscribeColor.ink700, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                .background(PlayscribeRole.chipFill, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
         }
         .buttonStyle(.plain)
         .disabled(!enabled)
@@ -1207,7 +1220,7 @@ struct ReleaseDetailView: View {
             Task { @MainActor in try? await Task.sleep(for: .milliseconds(300)); position.scrollTo(id: mark, anchor: .top) }
         }
         .clearsMessages()
-        .background(Color.ink0)
+        .background(PlayscribeRole.bg)
         // The patch name is the page's own heading right below the art, so the bar carries no title: at AX5 the system cut it
         // mid-word ("The Grand Autumn Rebalancing, Qu…"). VoiceOver reads the heading; Back keeps the list's name.
         .navigationTitle("")
@@ -1270,7 +1283,7 @@ struct GameTitleWithStatus: View {
             Menu { ActionMenuContent(sections: model.statusMenu(gameID)) } label: {
                 Image(systemName: Self.symbol(e.status))
                     .font(.system(size: 20))
-                    .foregroundStyle(e.status == .owned ? PlayscribeColor.accent : PlayscribeColor.textSecondary)
+                    .foregroundStyle(e.status == .owned ? PlayscribeRole.action : PlayscribeRole.textSecondary)
                     .frame(width: 44, height: 44)
                     .contentShape(Rectangle())
             }
@@ -1333,13 +1346,13 @@ struct LinksSheet: View {
                     .frame(maxWidth: .infinity, minHeight: 52, alignment: .leading)
                     .contentShape(Rectangle())
                 }
-                .foregroundStyle(PlayscribeColor.accent)
+                .foregroundStyle(PlayscribeRole.action)
                 .accessibilityLabel("\(row.title), opens in browser")
                 .tappableFrame()
             }
             Spacer(minLength: 0)
         }
-        .background(Color.ink1)
+        .background(PlayscribeRole.surface)
         // One log line per opened row, so a QA run can confirm the tap reached the system (#493: the simulator showed black).
         .environment(\.openURL, OpenURLAction { url in
             Logger(subsystem: "co.codeconnectors.playscribe", category: "links").info("links open: \(url.host() ?? "?", privacy: .public)")

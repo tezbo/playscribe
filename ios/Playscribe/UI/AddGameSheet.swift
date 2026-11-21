@@ -145,9 +145,9 @@ struct AddGameSheet: View {
                     Button(action: addPicked) {
                         Text("Add \(picked.count) game\(picked.count == 1 ? "" : "s")")
                             .font(PlayscribeFont.headline)
-                            .foregroundStyle(PlayscribeColor.onAccent)
+                            .foregroundStyle(PlayscribeRole.onAction)
                             .frame(maxWidth: .infinity, minHeight: 56)
-                            .background(PlayscribeColor.accent, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                            .background(PlayscribeRole.action, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
                     }
                     .buttonStyle(.plain)
                     .accessibilityIdentifier("addPicked")
@@ -197,7 +197,7 @@ struct AddGameSheet: View {
             }
             .padding(.horizontal, 16)
             .frame(height: 56)
-            .background(Color.ink0)
+            .background(PlayscribeRole.bg)
         }
     }
 
@@ -251,7 +251,7 @@ struct AddGameSheet: View {
                                     .frame(width: 44, height: 44).contentShape(Rectangle())
                             }
                             .buttonStyle(.plain)
-                            .foregroundStyle(PlayscribeColor.accent)
+                            .foregroundStyle(PlayscribeRole.action)
                             .accessibilityLabel("Close")
                             .tappableFrame()
                             Picker("Add as", selection: $status) {
@@ -391,7 +391,7 @@ struct AddRow: View {
                 Spacer(minLength: 8)
                 Image(systemName: added ? "checkmark" : selected ? "checkmark.circle.fill" : "circle")
                     .font(.title3)
-                    .foregroundStyle(added ? .secondary : PlayscribeColor.accent)
+                    .foregroundStyle(added ? .secondary : PlayscribeRole.action)
                     .frame(width: 44, height: 44)
             }
             .frame(minHeight: 64)
@@ -535,9 +535,9 @@ struct OnboardingStage: View {
             Group {
                 // AX: at most four lines, and any ellipsis lands at a word boundary, never mid-word ("Follow a game to g...", Quinn, 6a31718).
                 if typeSize.isAccessibilitySize {
-                    WholeWordText(text: headline, font: PlayscribeFont.title, lines: 4, color: PlayscribeColor.textPrimary)
+                    WholeWordText(text: headline, font: PlayscribeFont.title, lines: 4, color: PlayscribeRole.textPrimary)
                 } else {
-                    Text(headline).font(PlayscribeFont.title).foregroundStyle(PlayscribeColor.textPrimary)
+                    Text(headline).font(PlayscribeFont.title).foregroundStyle(PlayscribeRole.textPrimary)
                 }
             }
             .padding(20)
@@ -582,7 +582,7 @@ struct OnboardingActions: View {
                 } label: {
                     HStack(spacing: 14) {
                         Image(systemName: m.symbol).font(.title3).frame(width: 32)
-                            .foregroundStyle(PlayscribeColor.accent)
+                            .foregroundStyle(PlayscribeRole.action)
                         VStack(alignment: .leading, spacing: 2) {
                             Text(m.title).font(PlayscribeFont.headline)
                             Text(m.detail).font(PlayscribeFont.footnote).foregroundStyle(.secondary)
@@ -609,9 +609,9 @@ struct OnboardingActions: View {
             Button { model.addSheetOpen = true } label: {
                 Text("Add your first game")
                     .font(PlayscribeFont.headline)
-                    .foregroundStyle(PlayscribeColor.onAccent)
+                    .foregroundStyle(PlayscribeRole.onAction)
                     .frame(maxWidth: .infinity, minHeight: 52)
-                    .background(PlayscribeColor.accent, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                    .background(PlayscribeRole.action, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
             }
             .buttonStyle(.plain)
             .tappableFrame()
@@ -692,9 +692,9 @@ struct PopularCover: View {
                                 .font(PlayscribeFont.caption.weight(.semibold))
                                 .dynamicTypeSize(...DynamicTypeSize.xxxLarge)
                                 .lineLimit(1).minimumScaleFactor(0.7)
-                                .foregroundStyle(PlayscribeColor.onAccent)
+                                .foregroundStyle(PlayscribeRole.onAction)
                                 .padding(.horizontal, 8).padding(.vertical, 3)
-                                .background(PlayscribeColor.accent, in: Capsule())
+                                .background(PlayscribeRole.action, in: Capsule())
                                 .padding(.leading, 6).padding(.bottom, 6)
                                 .accessibilityHidden(true)
                         }
@@ -714,7 +714,7 @@ struct PopularCover: View {
                     // A fixed-size glyph in a fixed 44 pt plate: Dynamic Type must not grow it past the plate (Quinn, #431).
                     .font(.system(size: 22, weight: .semibold))
                     .symbolRenderingMode(.palette)
-                    .foregroundStyle(PlayscribeColor.onAccent, PlayscribeColor.accent)
+                    .foregroundStyle(PlayscribeRole.onAction, PlayscribeRole.action)
                     // Iris: a 1.5 pt dark ring keeps the disc legible over any cover art.
                     .background(Circle().fill(Color.black.opacity(0.8)).frame(width: 25, height: 25))
                     // The disc sits 8 pt from the corner; only the glyph moves, so the 44 pt hit frame stays inside the cover.
