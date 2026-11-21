@@ -26,6 +26,8 @@ final class YouTubeController: NSObject, WKScriptMessageHandler {
     var playerShown = false
     /// Fullscreen requests the inline guard refused (R-11), counted for QA.
     var fullscreenRefused = 0
+    /// When playback last paused, to tell a pause caused by the guard's refusal from the person's own.
+    private var pausedAt: Date?
 
     /// Settings key for "Autoplay videos". Off by default (R-11, G-9).
     static let autoplayKey = "autoplayVideos"
@@ -76,15 +78,30 @@ final class YouTubeController: NSObject, WKScriptMessageHandler {
                 let want = self.nativeControls ? 1 : 0
                 if let built = body["controls"] as? Int, built != want { self.run("setControls(\(want))") } else { self.ready = true }
             case "state":
+                if self.isPlaying && state == 2 { self.pausedAt = Date() }
                 self.isPlaying = state == 1
                 if state == 1 { self.started = true }
                 // 1 playing, 3 buffering: the player has the picture, so the stage can show it (Iris, 20 Nov).
                 if state == 1 || state == 3 { self.playerShown = true }
             case "time": self.current = time ?? 0; if let duration, duration > 0 { self.duration = duration }
             case "error": self.failed = true; self.errorCode = body["code"] as? Int
-            case "fullscreenRefused": self.fullscreenRefused += 1
+            case "fullscreenRefused": self.refusedFullscreen()
             default: break
             }
+        }
+    }
+
+    /// R-13 (Mac at 0dcfd411): turning the phone while a video played made WebKit try its own fullscreen; the guard returned the
+    /// video to inline, and leaving WebKit's fullscreen pauses it, so playback stopped. When the video was playing as the guard
+    /// refused (or paused within the moment before), it plays on.
+    private func refusedFullscreen() {
+        fullscreenRefused += 1
+        let wasPlaying = isPlaying || (pausedAt.map { Date().timeIntervalSince($0) < 1.5 } ?? false)
+        guard wasPlaying else { return }
+        Task { @MainActor [weak self] in
+            try? await Task.sleep(for: .milliseconds(600))
+            guard let self, !self.isPlaying else { return }
+            self.run("player.playVideo()")
         }
     }
 
@@ -399,11 +416,18 @@ struct VideoTimeProbe: View {
     var body: some View {
         #if INTERNAL
         if UserDefaults.standard.bool(forKey: "qaVideoTime"), let controller {
-            Color.clear.frame(width: 1, height: 1)
-                .accessibilityElement()
-                .accessibilityIdentifier("qaVideoTime")
-                .accessibilityValue(String(format: "%.1f", controller.current))
-                .allowsHitTesting(false)
+            VStack(spacing: 0) {
+                Color.clear.frame(width: 1, height: 1)
+                    .accessibilityElement()
+                    .accessibilityIdentifier("qaVideoTime")
+                    .accessibilityValue(String(format: "%.1f", controller.current))
+                // Whether it plays, and how many fullscreen attempts the inline guard refused (R-11, R-13).
+                Color.clear.frame(width: 1, height: 1)
+                    .accessibilityElement()
+                    .accessibilityIdentifier("qaVideoState")
+                    .accessibilityValue("playing=\(controller.isPlaying ? 1 : 0) refused=\(controller.fullscreenRefused)")
+            }
+            .allowsHitTesting(false)
         }
         #endif
     }
