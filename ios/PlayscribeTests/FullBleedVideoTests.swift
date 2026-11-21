@@ -30,4 +30,16 @@ struct FullBleedVideoTests {
     @Test func emptyAreaGivesNoFrame() {
         #expect(FullBleedVideo.frame(in: .zero) == .zero)
     }
+
+    @Test func exitSitsInTheMarginWhenThereIsRoom() {
+        // Portrait: a 225 pt video centred in 860 pt leaves far more than 52 pt above it.
+        let portrait = FullBleedVideo.frame(in: CGSize(width: 400, height: 860))
+        #expect(FullBleedVideo.exitInMargin(video: portrait, safeTop: 54))
+        // Landscape: the video fills the height, so there is no margin; the button goes top leading and fades.
+        let landscape = FullBleedVideo.frame(in: CGSize(width: 900, height: 400))
+        #expect(!FullBleedVideo.exitInMargin(video: landscape, safeTop: 0))
+        // Exactly 52 pt counts; 51 does not.
+        #expect(FullBleedVideo.exitInMargin(video: CGRect(x: 0, y: 106, width: 10, height: 10), safeTop: 54))
+        #expect(!FullBleedVideo.exitInMargin(video: CGRect(x: 0, y: 105, width: 10, height: 10), safeTop: 54))
+    }
 }
