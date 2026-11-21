@@ -20,6 +20,7 @@ final class StatusBarTone {
     /// How far the art's bottom edge must come back past the bar's bottom before the bar turns light again (Iris: 8 pt).
     nonisolated static let hysteresis: CGFloat = 8
 
+    private weak var scene: UIWindowScene?
     private var window: ToneWindow?
     private let controller = ToneController()
     private var art: [UUID: CGRect] = [:]
@@ -28,30 +29,50 @@ final class StatusBarTone {
 
     /// The status bar's bottom edge in window coordinates.
     var barBottom: CGFloat {
-        window?.windowScene?.statusBarManager?.statusBarFrame.maxY ?? 0
+        scene?.statusBarManager?.statusBarFrame.maxY ?? 0
     }
 
-    /// Made once per scene, and shown only while the page is light: in dark mode it is hidden, so the app's own window sets the bar
-    /// exactly as before. Its own interface style doesn't matter (G-11 sets one on every window): the controller names an explicit
-    /// style, never `.default`.
+    /// Whether the tone window exists. Never while the page has only been dark (Quinn's gate on #567).
+    var hasWindow: Bool { window != nil }
+    /// The style the tone controller answers with.
+    var style: UIStatusBarStyle { controller.preferredStatusBarStyle }
+    /// Whether the tone window is on screen.
+    var windowShown: Bool { window.map { !$0.isHidden } ?? false }
+
+    /// Remembers the scene. No window is made here: it is made the first time the page is light (`setPageLight`), so a run that
+    /// stays dark never has one and its status bar comes from the app's own window exactly as before (Quinn's gate on #567).
     func attach(to scene: UIWindowScene) {
-        guard window?.windowScene !== scene else { return }
-        let w = ToneWindow(windowScene: scene)
-        w.windowLevel = UIWindow.Level(UIWindow.Level.normal.rawValue + 1)
-        w.backgroundColor = .clear
-        w.rootViewController = controller
-        w.accessibilityElementsHidden = true
-        w.isHidden = !pageLight
-        window = w
+        guard self.scene !== scene else { return }
+        self.scene = scene
+        if window != nil {
+            window?.isHidden = true
+            window = nil
+        }
+        if pageLight { showWindow() }
         recompute()
     }
 
-    /// The app window's scheme changed (or was first read).
+    /// The app window's scheme changed (or was first read). Light shows the tone window, making it the first time; dark hides it.
+    /// Its own interface style doesn't matter (G-11 sets one on every window): the controller names an explicit style, never
+    /// `.default`.
     func setPageLight(_ isLight: Bool) {
         guard pageLight != isLight else { return }
         pageLight = isLight
-        window?.isHidden = !isLight
+        if isLight { showWindow() } else { window?.isHidden = true }
         recompute()
+    }
+
+    private func showWindow() {
+        guard let scene else { return }
+        if window == nil {
+            let w = ToneWindow(windowScene: scene)
+            w.windowLevel = UIWindow.Level(UIWindow.Level.normal.rawValue + 1)
+            w.backgroundColor = .clear
+            w.rootViewController = controller
+            w.accessibilityElementsHidden = true
+            window = w
+        }
+        window?.isHidden = false
     }
 
     /// A full-screen cover (the update player or a trailer) is up: always light over the player.
@@ -68,7 +89,7 @@ final class StatusBarTone {
     }
 
     /// The window's width, for telling wide art from a tile.
-    var width: CGFloat { window?.bounds.width ?? 0 }
+    var width: CGFloat { scene?.coordinateSpace.bounds.width ?? 0 }
 
     /// Art is under the bar when its top edge is above the bar's bottom (a header that starts part way down the bar counts: Mac at
     /// d7656024, Closed portrait: art starting under the clock drew dark glyphs at 3.4:1) and its bottom edge is below the bar's bottom. Going dark needs the edge
