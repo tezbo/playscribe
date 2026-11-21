@@ -240,81 +240,83 @@ struct AddGameSheet: View {
 
     private var list: some View {
         List {
-            Section {
-                if duo.pose == .tabletop {
-                    // Tabletop (0.2.0 gate): the status control sits beside the search field in one row so
-                    // at least three results stay visible in the lower half.
-                    VStack(alignment: .leading, spacing: 4) {
-                        HStack(spacing: 8) {
-                            Button { dismiss() } label: {
-                                Image(systemName: "xmark").font(PlayscribeFont.headline)
-                                    .frame(width: 44, height: 44).contentShape(Rectangle())
+            CardSections {
+                Section {
+                    if duo.pose == .tabletop {
+                        // Tabletop (0.2.0 gate): the status control sits beside the search field in one row so
+                        // at least three results stay visible in the lower half.
+                        VStack(alignment: .leading, spacing: 4) {
+                            HStack(spacing: 8) {
+                                Button { dismiss() } label: {
+                                    Image(systemName: "xmark").font(PlayscribeFont.headline)
+                                        .frame(width: 44, height: 44).contentShape(Rectangle())
+                                }
+                                .buttonStyle(.plain)
+                                .foregroundStyle(PlayscribeRole.action)
+                                .accessibilityLabel("Close")
+                                .tappableFrame()
+                                Picker("Add as", selection: $status) {
+                                    ForEach(OwnershipStatus.allCases) { Text($0.label).tag($0) }
+                                }
+                                .pickerStyle(.menu)
+                                .fixedSize()
+                                .frame(minHeight: 44)
+                                TabletopSearchButton(letter: letter, prompt: "Search PS5 games", hintShown: $hintShown)
                             }
-                            .buttonStyle(.plain)
-                            .foregroundStyle(PlayscribeRole.action)
-                            .accessibilityLabel("Close")
-                            .tappableFrame()
-                            Picker("Add as", selection: $status) {
-                                ForEach(OwnershipStatus.allCases) { Text($0.label).tag($0) }
-                            }
-                            .pickerStyle(.menu)
-                            .fixedSize()
+                            TabletopSearchHint(shown: hintShown)
+                            TabletopLetterStrip(letter: $letter)
+                        }
+                        .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
+                    } else {
+                        statusPicker
+                        // The whole row takes focus, not just the UITextField's own frame: a tap in the row padding did nothing once the
+                        // field lost its tap gesture (86f771c Mac log: taps at x=20 and x=36 outside the field frame never focused it).
+                        // The tap gesture is on a clear view BEHIND the field, not on the field: a tap on the field itself goes to the
+                        // UITextField (caret as before) and only a tap in the padding reaches the background. Hidden from VoiceOver so
+                        // the row stays one "Search" field. Row insets are moved inside so no dead strip is left.
+                        TextField("Search \(PS5Index.shared.count.formatted()) PS5 games", text: $query)
+                            .autocorrectionDisabled()
+                            .submitLabel(.search)
+                            .focused($searchFocused)
                             .frame(minHeight: 44)
-                            TabletopSearchButton(letter: letter, prompt: "Search PS5 games", hintShown: $hintShown)
-                        }
-                        TabletopSearchHint(shown: hintShown)
-                        TabletopLetterStrip(letter: $letter)
+                            .padding(.horizontal, 20)
+                            // 15 pt a side restores the row height the List's default insets gave (main: card 133 pt; with 4 pt it was 112,
+                            // Mac 2198fa7; 14.5 was 1 pt short, Mac 9cebaa9), with the whole row still the tap target.
+                            .padding(.vertical, 15)
+                            .frame(maxWidth: .infinity)
+                            // The row is the field; its border sits 8 pt inside the row so it frames the text, not the cell edge.
+                            .controlBorder(.searchField, in: RoundedRectangle(cornerRadius: 12, style: .continuous).inset(by: 8))
+                            .background {
+                                Color.clear
+                                    .contentShape(Rectangle())
+                                    .onTapGesture { searchFocused = true }
+                                    .accessibilityHidden(true)
+                            }
+                            .keepsKeyboardOnTap()   // a tap in this row's padding while typing must not dismiss the keyboard it just asked for
+                            .listRowInsets(EdgeInsets())
                     }
-                    .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
-                } else {
-                    statusPicker
-                    // The whole row takes focus, not just the UITextField's own frame: a tap in the row padding did nothing once the
-                    // field lost its tap gesture (86f771c Mac log: taps at x=20 and x=36 outside the field frame never focused it).
-                    // The tap gesture is on a clear view BEHIND the field, not on the field: a tap on the field itself goes to the
-                    // UITextField (caret as before) and only a tap in the padding reaches the background. Hidden from VoiceOver so
-                    // the row stays one "Search" field. Row insets are moved inside so no dead strip is left.
-                    TextField("Search \(PS5Index.shared.count.formatted()) PS5 games", text: $query)
-                        .autocorrectionDisabled()
-                        .submitLabel(.search)
-                        .focused($searchFocused)
-                        .frame(minHeight: 44)
-                        .padding(.horizontal, 20)
-                        // 15 pt a side restores the row height the List's default insets gave (main: card 133 pt; with 4 pt it was 112,
-                        // Mac 2198fa7; 14.5 was 1 pt short, Mac 9cebaa9), with the whole row still the tap target.
-                        .padding(.vertical, 15)
-                        .frame(maxWidth: .infinity)
-                        // The row is the field; its border sits 8 pt inside the row so it frames the text, not the cell edge.
-                        .controlBorder(.searchField, in: RoundedRectangle(cornerRadius: 12, style: .continuous).inset(by: 8))
-                        .background {
-                            Color.clear
-                                .contentShape(Rectangle())
-                                .onTapGesture { searchFocused = true }
-                                .accessibilityHidden(true)
-                        }
-                        .keepsKeyboardOnTap()   // a tap in this row's padding while typing must not dismiss the keyboard it just asked for
-                        .listRowInsets(EdgeInsets())
+                    // Offline state 7: rows keep their placeholder covers; say why.
+                    if case .failed(offline: true) = model.checkState {
+                        Label("Covers need a connection", systemImage: "wifi.slash")
+                            .font(PlayscribeFont.footnote).foregroundStyle(.secondary)
+                    }
                 }
-                // Offline state 7: rows keep their placeholder covers; say why.
-                if case .failed(offline: true) = model.checkState {
-                    Label("Covers need a connection", systemImage: "wifi.slash")
-                        .font(PlayscribeFont.footnote).foregroundStyle(.secondary)
+                let rows = results
+                Section(letter != nil && duo.pose == .tabletop ? "Starting with \(letter ?? "")" : debounced.count >= 2 ? "Best matches" : "Popular on PS5") {
+                    if rows.isEmpty {
+                        Text("No PS5 game matches ‘\(debounced)’").foregroundStyle(.secondary)
+                        Button("Add ‘\(debounced)’ yourself") { customName = debounced; custom = true }.hitTarget()
+                    }
+                    ForEach(rows) { g in AddRow(game: g, status: status, selected: picked[g.id] != nil) { tap(g) } }
                 }
-            }
-            let rows = results
-            Section(letter != nil && duo.pose == .tabletop ? "Starting with \(letter ?? "")" : debounced.count >= 2 ? "Best matches" : "Popular on PS5") {
-                if rows.isEmpty {
-                    Text("No PS5 game matches ‘\(debounced)’").foregroundStyle(.secondary)
-                    Button("Add ‘\(debounced)’ yourself") { customName = debounced; custom = true }.hitTarget()
+                Section {
+                    Button { customName = query; custom = true } label: {
+                        Label("Add a game that isn’t listed", systemImage: "plus")
+                    }
+                    .hitTarget()
+                } footer: {
+                    Text("PlayStation account import is planned for a later version. \(Brand.name) never asks for your PlayStation password.")
                 }
-                ForEach(rows) { g in AddRow(game: g, status: status, selected: picked[g.id] != nil) { tap(g) } }
-            }
-            Section {
-                Button { customName = query; custom = true } label: {
-                    Label("Add a game that isn’t listed", systemImage: "plus")
-                }
-                .hitTarget()
-            } footer: {
-                Text("PlayStation account import is planned for a later version. \(Brand.name) never asks for your PlayStation password.")
             }
         }
         // Terry, 8 Nov: the keyboard could not be put away. Scrolling dismisses it, and so does a tap outside the field and rows.
@@ -323,25 +325,27 @@ struct AddGameSheet: View {
 
     private var customForm: some View {
         Form {
-            Section { statusPicker }
-            Section {
-                TextField("Game name", text: $customName).frame(minHeight: 44)
-                    // Inside a Form row: the border sits 8 pt outside the text on each side, so the text does not move.
-                    .controlBorder(.textField, in: RoundedRectangle(cornerRadius: 10, style: .continuous), horizontalOutset: 8)
-                Picker("Platform", selection: $customPlatform) {
-                    ForEach([Platform.ps5, .xboxSeries, .switch2, .pc], id: \.self) { Text($0.label).tag($0) }
+            CardSections {
+                Section { statusPicker }
+                Section {
+                    TextField("Game name", text: $customName).frame(minHeight: 44)
+                        // Inside a Form row: the border sits 8 pt outside the text on each side, so the text does not move.
+                        .controlBorder(.textField, in: RoundedRectangle(cornerRadius: 10, style: .continuous), horizontalOutset: 8)
+                    Picker("Platform", selection: $customPlatform) {
+                        ForEach([Platform.ps5, .xboxSeries, .switch2, .pc], id: \.self) { Text($0.label).tag($0) }
+                    }
+                } footer: {
+                    Text("\(Brand.name) won’t invent patch information for this game. Its journal stays empty until coverage exists.")
                 }
-            } footer: {
-                Text("\(Brand.name) won’t invent patch information for this game. Its journal stays empty until coverage exists.")
-            }
-            Section {
-                Button("Add as \(status.label)") {
-                    let name = customName.trimmingCharacters(in: .whitespaces)
-                    add(CatalogGame(id: "custom-\(Int(Date.now.timeIntervalSince1970))", name: name, platforms: [customPlatform],
-                                    coverage: .none, custom: true))
+                Section {
+                    Button("Add as \(status.label)") {
+                        let name = customName.trimmingCharacters(in: .whitespaces)
+                        add(CatalogGame(id: "custom-\(Int(Date.now.timeIntervalSince1970))", name: name, platforms: [customPlatform],
+                                        coverage: .none, custom: true))
+                    }
+                    .disabled(customName.trimmingCharacters(in: .whitespaces).isEmpty)
+                    Button("Back to list") { custom = false }
                 }
-                .disabled(customName.trimmingCharacters(in: .whitespaces).isEmpty)
-                Button("Back to list") { custom = false }
             }
         }
     }

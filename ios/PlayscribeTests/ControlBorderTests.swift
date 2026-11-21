@@ -98,4 +98,28 @@ struct ControlBorderTests {
             #expect(Contrast.ratio(try pixel(dark, x, y), try pixel(plain, x, y)) < 1.01, "dark unchanged at \(x),\(y)")
         }
     }
+
+    /// Iris on #557 (Mac b2400b3b: white cards on the sheet grey at 1.12:1 under Reduce Transparency): every sheet's Form and
+    /// List wraps its sections in `CardSections`, which outlines each card in the control border in that mode.
+    @Test func sheetsOutlineTheirCards() throws {
+        let ui = URL(fileURLWithPath: #filePath).deletingLastPathComponent().deletingLastPathComponent()
+            .appendingPathComponent("Playscribe/UI")
+        for (file, lists) in [("SettingsView.swift", 1), ("AddGameSheet.swift", 2), ("AddMethods.swift", 2)] {
+            let src = try String(contentsOf: ui.appendingPathComponent(file), encoding: .utf8)
+            let wrapped = src.components(separatedBy: "CardSections {").count - 1
+            #expect(wrapped == lists, "\(file): \(wrapped) of \(lists) lists outline their cards")
+        }
+    }
+
+    /// The outline slices: the first row carries the card's top edge, the last its bottom, and a middle row only its sides
+    /// (its path runs past the row so the clip removes the top and bottom).
+    @Test func cardRowEdges() {
+        let rect = CGRect(x: 0, y: 0, width: 300, height: 44)
+        let only = CardRowEdge(top: true, bottom: true, radius: CardRowBackground.radius).path(in: rect).boundingRect
+        #expect(rect.contains(only), "a one-row card's outline sits inside the row")
+        let middle = CardRowEdge(top: false, bottom: false, radius: CardRowBackground.radius).path(in: rect).boundingRect
+        #expect(middle.minY < 0 && middle.maxY > rect.maxY, "a middle row draws no top or bottom edge")
+        let firstRow = CardRowEdge(top: true, bottom: false, radius: CardRowBackground.radius).path(in: rect).boundingRect
+        #expect(firstRow.minY >= 0 && firstRow.maxY > rect.maxY, "the first row draws the top edge only")
+    }
 }
