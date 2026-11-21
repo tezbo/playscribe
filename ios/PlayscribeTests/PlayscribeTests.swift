@@ -698,6 +698,14 @@ struct AutoplayTests {
         #expect(VideoReflection.band(lowerHalf: -10) == 0)
     }
 
+    @Test("Idle-band variant: 30% of the lower half, at most 140 pt, only while the controls are faded and the switch is on (Iris, 21 Nov)")
+    @MainActor func mirrorIdleBand() {
+        #expect(VideoReflection.band(lowerHalf: 380, tallIdle: true, controlsShown: false) == 114)
+        #expect(VideoReflection.band(lowerHalf: 600, tallIdle: true, controlsShown: false) == 140)
+        #expect(VideoReflection.band(lowerHalf: 380, tallIdle: true, controlsShown: true) == 57)
+        #expect(VideoReflection.band(lowerHalf: 380, tallIdle: false, controlsShown: false) == 57)
+    }
+
     @Test("Tabletop controls fade only while playing, never under VoiceOver or Switch Control (TT-4, spec 5)")
     @MainActor func controlsAutoHide() {
         #expect(TabletopTransport.autoHides(playing: true, voiceOver: false, switchControl: false))

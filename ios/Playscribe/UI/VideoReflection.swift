@@ -22,6 +22,17 @@ enum VideoReflection {
     /// The band for a lower half this tall.
     static func band(lowerHalf: CGFloat) -> CGFloat { max(0, min(height, lowerHalf * maxShare)) }
 
+    /// Iris's idle-band variant (21 Nov), behind a TestFlight switch so Terry can compare on his Duo: while the controls are faded
+    /// the lower half is mostly empty, so the band grows to 30% of it (at most 140 pt) at the same 35% edge, and returns to the
+    /// standard band when they show. Off by default.
+    static let idleKey = "reflectionIdleBand"
+    static let idleHeight: CGFloat = 140
+    static let idleShare: CGFloat = 0.30
+    static func band(lowerHalf: CGFloat, tallIdle: Bool, controlsShown: Bool) -> CGFloat {
+        guard tallIdle, !controlsShown else { return band(lowerHalf: lowerHalf) }
+        return max(0, min(idleHeight, lowerHalf * idleShare))
+    }
+
     /// Strength at the video's base: 35% while the controls are hidden, 20% while they show, so white text over a mirrored white
     /// frame keeps 12:1, and the grey 4.5:1, with no plates (spec 4, contrast worked out).
     static let edgeHidden = 0.35

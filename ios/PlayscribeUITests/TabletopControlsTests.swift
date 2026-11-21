@@ -24,6 +24,9 @@ final class TabletopControlsTests: XCTestCase {
         XCTAssertFalse(pause.exists, "the faded controls are out of reach")
         XCTAssertTrue(app.buttons["Close"].isHittable, "the rail's Close stays")
         let faded = XCTAttachment(screenshot: app.screenshot()); faded.name = "controls-faded"; faded.lifetime = .keepAlways; add(faded)
+        // A faded control is gone, not merely invisible: our Play/Pause id is not there to tap until a reveal (Mac at 5ddf0d74:
+        // a second videoPlay tap at AX5 hit "activation point invalid").
+        XCTAssertFalse(app.buttons["videoPlay"].exists, "no hidden Play to tap while faded")
         reveal.tap()
         XCTAssertTrue(pause.waitForExistence(timeout: 2), "a tap brings the controls back")
         XCTAssertTrue(pause.isHittable, "and only reveals: the video is still playing")

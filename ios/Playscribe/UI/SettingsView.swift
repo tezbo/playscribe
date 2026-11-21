@@ -19,6 +19,7 @@ struct SettingsView: View {
     @AppStorage(YouTubeController.autoplayKey) private var autoplayVideos = false
     @AppStorage(VideoReflection.key) private var reflectionMode = VideoReflection.defaultOn
     @AppStorage(PushRegistrar.teamKey) private var teamAlerts = false
+    @AppStorage(VideoReflection.idleKey) private var tallIdleReflection = false
     @State private var simGame: String = ""
     @State private var simKind: AppModel.SimKind = .major
     @State private var simDelay: Double = 10
@@ -196,6 +197,16 @@ struct SettingsView: View {
                     Text("Team alerts (TestFlight and development builds)")
                 } footer: {
                     Text("Also receive the team’s test notifications from the push relay. Off by default; it never appears in an App Store build.")
+                }
+                // Iris's idle-band variant, for Terry to compare on his Duo (21 Nov). TestFlight and development builds only.
+                Section {
+                    Toggle("Taller reflection while controls are hidden", isOn: $tallIdleReflection)
+                        .frame(minHeight: 52)
+                        .accessibilityIdentifier("tallIdleReflection")
+                } header: {
+                    Text("Video lab (TestFlight and development builds)")
+                } footer: {
+                    Text("In Tabletop, while a video plays and its controls have faded, the reflection grows to about twice its height. It returns to normal when the controls show.")
                 }
 
                 }

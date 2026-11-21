@@ -309,6 +309,7 @@ struct TabletopVideoStage: View {
 
     /// TT-4: shown or faded, owned here so the mirror's strength follows the controls (spec 5, mirror link).
     @State private var controlsShown = true
+    @AppStorage(VideoReflection.idleKey) private var tallIdle = false
 
     var body: some View {
         let mirror = VideoReflection.shows(pose: .tabletop, setting: reflectionMode, reduceMotion: reduceMotion, reduceTransparency: reduceTransparency)
@@ -318,7 +319,7 @@ struct TabletopVideoStage: View {
             if let v = stageVideo {
                 // The reflection starts where the lower half starts, directly under the video on the fold (spec 3 and 4).
                 let top = lowerTop ?? v.maxY
-                let band = VideoReflection.band(lowerHalf: playerHeight - top)
+                let band = VideoReflection.band(lowerHalf: playerHeight - top, tallIdle: tallIdle, controlsShown: controlsShown)
                 ZStack {
                     // Before Play no player is on screen at all: our art, never a black box or YouTube's start screen.
                     VideoSurface(webView: controller.webView)
@@ -336,10 +337,10 @@ struct TabletopVideoStage: View {
                         .blur(radius: VideoReflection.blur, opaque: false)
                         .mask(VideoReflection.fadeMask)
                         .opacity(VideoReflection.edgeOpacity(controlsShown: controlsShown))
-                        .animation(.easeInOut(duration: 0.3), value: controlsShown)
                         .offset(x: v.minX, y: top)
                         .allowsHitTesting(false)
                         .accessibilityHidden(true)
+                        .animation(reduceMotion ? nil : .easeInOut(duration: 0.3), value: controlsShown)
                 }
             }
             ArrangementView {
@@ -491,6 +492,9 @@ struct TabletopTransport: View {
     @Environment(\.accessibilitySwitchControlEnabled) private var switchControl
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @State private var hideTask: Task<Void, Never>?
+    /// True once the fade-out has finished: the controls are then hidden outright, out of the accessibility tree and of reach
+    /// (Mac at 5ddf0d74: under opacity 0 and accessibilityHidden, XCUITest still found Pause).
+    @State private var controlsGone = false
     static let hideAfter: Duration = .seconds(4)
 
     /// Whether the controls may fade now (spec 5): only while playing, and never under VoiceOver or Switch Control.
@@ -502,7 +506,9 @@ struct TabletopTransport: View {
 
     var body: some View {
         HStack(alignment: .top, spacing: 0) {
-            controls
+            Group {
+                if controlsGone { controls.hidden() } else { controls }
+            }
                 .opacity(controlsShown ? 1 : 0)
                 .allowsHitTesting(controlsShown)
                 .accessibilityHidden(!controlsShown)
@@ -598,6 +604,7 @@ struct TabletopTransport: View {
 
     private func show() {
         hideTask?.cancel()
+        controlsGone = false
         guard !controlsShown else { return }
         // Fade in 200 ms; under Reduce Motion an instant change (spec 5).
         withAnimation(reduceMotion ? nil : .easeInOut(duration: 0.2)) { controlsShown = true }
@@ -608,8 +615,10 @@ struct TabletopTransport: View {
         hideTask = Task { @MainActor in
             try? await Task.sleep(for: Self.hideAfter)
             guard !Task.isCancelled, hides else { return }
-            // Fade out 300 ms (spec 5).
-            withAnimation(reduceMotion ? nil : .easeInOut(duration: 0.3)) { controlsShown = false }
+            // Fade out 300 ms (spec 5), then hide outright.
+            withAnimation(reduceMotion ? nil : .easeInOut(duration: 0.3)) { controlsShown = false } completion: {
+                if !controlsShown { controlsGone = true }
+            }
         }
     }
 
