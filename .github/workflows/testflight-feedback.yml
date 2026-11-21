@@ -2,7 +2,9 @@ name: TestFlight feedback
 
 # Turns TestFlight beta feedback (screenshots and crashes) into labelled GitHub issues. Free: a script on a
 # Linux runner with the existing App Store Connect key. Public repo: issues carry no tester email (see
-# ios/tools/asc_feedback.py). Runs every 5 minutes and stays quiet when nothing is new. Missing secrets or API errors are warnings, so a bad day never emails anyone.
+# ios/tools/asc_feedback.py). Runs every 5 minutes and stays quiet when nothing is new. Missing secrets and network
+# errors are warnings. The run goes red only when App Store Connect refuses the key (401 or 403), so a dead key shows.
+
 on:
   schedule:
     - cron: '*/5 * * * *'
@@ -20,7 +22,6 @@ permissions:
 jobs:
   feedback:
     runs-on: ubuntu-latest
-    continue-on-error: true  # a red setup step would email Terry; the script itself always exits 0
     env:
       ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
       ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
