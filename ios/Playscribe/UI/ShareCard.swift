@@ -107,9 +107,9 @@ struct ShareUpdateButton: View {
                     Image(systemName: "square.and.arrow.up")
                         // Fixed 22 pt glyph inside the 44 pt disc: it never scales past the rail icons at AX (Iris).
                         .font(.system(size: 22, weight: .regular))
-                        .foregroundStyle(Color.primary)
+                        .foregroundStyle(PlayscribeRole.textPrimary)
                         .frame(width: 44, height: 44)
-                        .background(Circle().fill(PlayscribeColor.ink800).overlay(Circle().fill(.regularMaterial)).overlay(Circle().strokeBorder(Color.primary.opacity(0.5), lineWidth: 1.5)))
+                        .background(Circle().fill(PlayscribeRole.card).overlay(Circle().fill(.regularMaterial)).overlay(Circle().strokeBorder(PlayscribeRole.textPrimary.opacity(0.5), lineWidth: 1.5)))
                         .contentShape(Rectangle())
                 }
                 .buttonStyle(RailPressStyle())

@@ -102,7 +102,7 @@ struct GalleryChapter: View {
     private func list(items: [GalleryItem], art: [GalleryItem], videos: [GalleryItem], picked: String?) -> some View {
         VStack(alignment: .leading, spacing: 14) {
             if items.isEmpty { GalleryEmpty(gameID: gameID) }
-            if !art.isEmpty { Text("Choose a picture to use as this game’s backdrop.").font(PlayscribeFont.footnote).foregroundStyle(.secondary) }
+            if !art.isEmpty { Text("Choose a picture to use as this game’s backdrop.").font(PlayscribeFont.footnote).foregroundStyle(PlayscribeRole.textSecondary) }
             LazyVGrid(columns: [GridItem(.adaptive(minimum: 150), spacing: 10)], spacing: 10) {
                 ForEach(art) { item in
                     Button { model.selectArtwork(gameID, item.id) } label: {
@@ -210,7 +210,7 @@ struct GalleryEmpty: View {
                 // The stage is view-only and cannot scroll: one sentence, no headline and no grey stand-in rows that look like
                 // buttons, so it fits in three lines at AX5 (Mac, 0a7830d). The controls are on the Links panel; the rail shows an
                 // ellipsis, not the word "More", so the line names what the person sees (Iris, 12 Nov).
-                Text("No pictures or videos here yet.").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                Text("No pictures or videos here yet.").font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
             } else {
                 Text("No pictures or videos here yet").font(PlayscribeFont.headline)
                 if let url = links?.official {
@@ -235,7 +235,7 @@ struct MyBookChapter: View {
         let notes = model.data.notes.filter { $0.gameID == gameID }
         VStack(alignment: .leading, spacing: 14) {
             SectionHeader(title: "Bookmarks").id("mybook-marks")
-            if marks.isEmpty { Text("Bookmark an update or an entry and it appears here.").foregroundStyle(.secondary) }
+            if marks.isEmpty { Text("Bookmark an update or an entry and it appears here.").foregroundStyle(PlayscribeRole.textSecondary) }
             ForEach(marks, id: \.id) { b in
                 let title = b.kind == .release ? model.release(gameID, b.id)?.displayName : model.fixtures.book.first { $0.id == b.id }?.title
                 HStack {
@@ -291,7 +291,7 @@ struct MyBookChapter: View {
                     } else {
                         Text(n.text)
                         HStack {
-                            Text(n.updatedAt.formatted(date: .abbreviated, time: .shortened)).font(PlayscribeFont.caption).foregroundStyle(.secondary)
+                            Text(n.updatedAt.formatted(date: .abbreviated, time: .shortened)).font(PlayscribeFont.caption).foregroundStyle(PlayscribeRole.textSecondary)
                             Spacer()
                             Button { editing = n.id; editText = n.text } label: { Image(systemName: "pencil").hitTarget() }
                                 .accessibilityLabel("Edit note")

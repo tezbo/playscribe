@@ -53,7 +53,7 @@ extension OwnershipStatus {
 /// A small capsule label. Text uses .caption2 so it never drops below 11 pt (G-7).
 struct Tag: View {
     var text: String
-    var tint: Color = .secondary
+    var tint: Color = PlayscribeRole.textSecondary
     var body: some View {
         Text(text)
             .font(PlayscribeFont.caption2.weight(.semibold))

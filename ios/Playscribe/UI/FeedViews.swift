@@ -99,13 +99,13 @@ struct FeedRow: View {
                     if typeSize.isAccessibilitySize {
                         VStack(alignment: .leading, spacing: 2) {
                             Text(model.game(release.gameID)?.name ?? "").fixedSize(horizontal: false, vertical: true)
-                            Text(release.ps5Date.shortDay).foregroundStyle(.secondary).fixedSize()
+                            Text(release.ps5Date.shortDay).foregroundStyle(PlayscribeRole.textSecondary).fixedSize()
                         }
                         .font(PlayscribeFont.caption)
                     } else {
                         HStack(spacing: 8) {
                             Text(model.game(release.gameID)?.name ?? "").fixedSize(horizontal: false, vertical: true)
-                            Text(release.ps5Date.shortDay).foregroundStyle(.secondary)
+                            Text(release.ps5Date.shortDay).foregroundStyle(PlayscribeRole.textSecondary)
                         }
                         .font(PlayscribeFont.caption)
                     }
@@ -225,7 +225,7 @@ struct SearchView: View {
             }
             if ownField {
                 HStack(spacing: 8) {
-                    Image(systemName: "magnifyingglass").foregroundStyle(.secondary).accessibilityHidden(true)
+                    Image(systemName: "magnifyingglass").foregroundStyle(PlayscribeRole.textSecondary).accessibilityHidden(true)
                     TextField("Games, patch notes, characters…", text: $query)
                         .autocorrectionDisabled()
                         .textInputAutocapitalization(.never)
@@ -234,7 +234,7 @@ struct SearchView: View {
                         .accessibilityIdentifier("searchField")
                     if !query.isEmpty {
                         Button { query = "" } label: {
-                            Image(systemName: "xmark.circle.fill").foregroundStyle(.secondary)
+                            Image(systemName: "xmark.circle.fill").foregroundStyle(PlayscribeRole.textSecondary)
                                 .frame(width: 44, height: 44).contentShape(Rectangle())
                         }
                         .buttonStyle(.plain).accessibilityLabel("Clear search").tappableFrame()
@@ -262,7 +262,7 @@ struct SearchView: View {
             if !active {
                 Text(tabletop ? "Typing needs the flat screen. Pick a letter above, or open your Duo flat to type."
                               : "Try “subtitles”, “Shadowstep” or “Coen”. Spoiler-tagged notes are left out of results.")
-                    .font(PlayscribeFont.footnote).foregroundStyle(.secondary)
+                    .font(PlayscribeFont.footnote).foregroundStyle(PlayscribeRole.textSecondary)
                     .fixedSize(horizontal: false, vertical: true)
                     // Iris: the hint card is exactly as wide as the field, ending at its trailing edge
                     // (a list row's own background ran to the screen edge in every pose).
@@ -290,7 +290,7 @@ struct SearchView: View {
                                 CoverView(game: g, cornerRadius: 4).frame(width: 36)
                                 VStack(alignment: .leading) {
                                     Text(g.name.gluingTrailingNumeral).font(PlayscribeFont.subheadline.weight(.semibold))
-                                    Text(library.contains(g.id) ? (model.entry(g.id)?.status.label ?? "") : "Not in your library").font(PlayscribeFont.caption).foregroundStyle(.secondary)
+                                    Text(library.contains(g.id) ? (model.entry(g.id)?.status.label ?? "") : "Not in your library").font(PlayscribeFont.caption).foregroundStyle(PlayscribeRole.textSecondary)
                                 }
                             }
                         }
@@ -312,7 +312,7 @@ struct SearchView: View {
                             VStack(alignment: .leading, spacing: 2) {
                                 HStack(spacing: 6) {
                                     Text(hit.0.displayName).font(PlayscribeFont.subheadline.weight(.semibold))
-                                    Text(model.game(hit.0.gameID)?.name ?? "").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                                    Text(model.game(hit.0.gameID)?.name ?? "").font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
                                 }
                                 Text(hit.1).font(PlayscribeFont.footnote).lineLimit(2)
                             }
@@ -331,7 +331,7 @@ struct SearchView: View {
                                 Text(e.title).font(PlayscribeFont.subheadline.weight(.semibold))
                                 HStack(spacing: 8) {
                                     Text(model.game(e.gameID)?.name ?? "")
-                                    Text(e.section).foregroundStyle(.secondary)
+                                    Text(e.section).foregroundStyle(PlayscribeRole.textSecondary)
                                     if e.spoiler { Tag(text: "Spoiler") }
                                 }
                                 .font(PlayscribeFont.caption)
