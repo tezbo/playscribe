@@ -58,8 +58,9 @@ struct BrightArtScrimTests {
             // Every read of both patches (rows y-1...y+1, x 2...6 and 393...397): three CI failures gave left 59 with the whole
             // row at 64, which needs one read near 0 inside the left patch. This says which pixel, and which row.
             let reads = { (x: Int) in try (y - 1...y + 1).map { yy in try (x - 2...x + 2).map { try grey(cg, $0, min(cg.height - 1, yy)) } } }
+            let leftReads = try reads(4), rightReads = try reads(Int(stage.width) - 5)
             #expect(abs(left - right) <= 2,
-                    "row \(y): left \(left), right \(right) (no side edge); profile \(profile); image \(cg.width)x\(cg.height); left reads \(try reads(4)); right reads \(try reads(Int(stage.width) - 5))")
+                    "row \(y): left \(left), right \(right) (no side edge); profile \(profile); image \(cg.width)x\(cg.height); left reads \(leftReads); right reads \(rightReads)")
         }
     }
 
