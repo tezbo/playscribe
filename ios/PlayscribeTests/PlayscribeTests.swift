@@ -648,35 +648,71 @@ struct AutoplayTests {
         #expect(!VideoReflection.shows(pose: .tabletop, setting: false, reduceMotion: false, reduceTransparency: false))
     }
 
-    @Test("The mirror instance lands flipped, its bottom row at the gap below the video (R-11)")
-    @MainActor func mirrorTransform() {
-        let t = VideoReflection.instanceTransform(videoHeight: 200, gap: 30)
-        // About the replicator's centre (y 100), squashed to a quarter: the bottom row (y 200) lands at 230, the top row (y 0)
-        // at 280, so the whole picture fits in 50 pt and text in it is flattened past reading (Iris on #533).
-        func map(_ y: CGFloat) -> CGFloat { 100 + (y - 100) * t.m22 + t.m42 }
-        #expect(abs(map(200) - 230) < 0.001)
-        #expect(abs(map(0) - 280) < 0.001)
-        #expect(t.m11 == 1)
-        // Unsquashed it is a plain flip.
-        let flat = VideoReflection.instanceTransform(videoHeight: 200, gap: 30, squash: 1)
-        #expect(abs(100 + (0 - 100) * flat.m22 + flat.m42 - 430) < 0.001)
+    @Test("The mirror is the video's bottom strip at 1:1: the replica's last row sits on the strip's edge (R-11, reflection-0.6 spec 4, 8.1)")
+    @MainActor func mirrorStrip() {
+        let f = VideoReflection.replicaFrame(video: CGSize(width: 400, height: 225), band: 57)
+        // Before the flip the replica's bottom row is the strip's bottom row, so after it the video's last row comes first.
+        #expect(f.maxY == 57)
+        // True scale: no squash, the same size as the video.
+        #expect(f.width == 400 && f.height == 225)
+        // Only the bottom 57 rows are inside the strip.
+        // A named CGFloat: inside #expect a literal `57 - 225` is expanded as its own Int expression (CI at d7ff266).
+        let top: CGFloat = 57 - 225
+        #expect(f.minY == top)
     }
 
-    @Test("The audit reports what the replicator draws, not the intent (R-11, Mac at 95d9f3b)")
+    @Test("The fade is quadratic, monotonic, ends at zero, and no stop steps by more than 4/255 at full edge strength (spec 8.2)")
+    @MainActor func mirrorFade() {
+        #expect(VideoReflection.fade(0) == 1)
+        #expect(VideoReflection.fade(1) == 0)
+        #expect(abs(VideoReflection.fade(0.5) - 0.25) < 1e-9)
+        var last = 1.0
+        for i in 1...255 {
+            let v = VideoReflection.fade(Double(i) / 255)
+            #expect(v <= last)
+            // Scaled by the 55% edge, one step of the fade is well under 4/255 (MirrorPixelTests reads the rendered rows).
+            #expect((last - v) * VideoReflection.edgeHidden * 255 < 4)
+            last = v
+        }
+    }
+
+    @Test("The mirror is 55% with the controls faded and 20% with them shown, never more (spec 4, contrast with no plates)")
+    @MainActor func mirrorStrength() {
+        #expect(VideoReflection.edgeOpacity(controlsShown: false) == 0.55)
+        #expect(VideoReflection.edgeOpacity(controlsShown: true) == 0.20)
+        #expect(VideoReflection.blur == 3)
+    }
+
+    @Test("The audit reports what the strip draws, not the intent (R-11, Mac at 95d9f3b)")
     @MainActor func mirrorRendering() {
-        #expect(VideoReflection.rendering(instanceCount: 2, height: 200, mirrorAlpha: 0.3, onScreen: true))
-        #expect(!VideoReflection.rendering(instanceCount: 1, height: 200, mirrorAlpha: 0.3, onScreen: true))
-        #expect(!VideoReflection.rendering(instanceCount: 2, height: 0, mirrorAlpha: 0.3, onScreen: true))
-        #expect(!VideoReflection.rendering(instanceCount: 2, height: 200, mirrorAlpha: 0, onScreen: true))
-        #expect(!VideoReflection.rendering(instanceCount: 2, height: 200, mirrorAlpha: 0.3, onScreen: false))
+        #expect(VideoReflection.rendering(hasReplica: true, band: 57, onScreen: true))
+        #expect(!VideoReflection.rendering(hasReplica: false, band: 57, onScreen: true))
+        #expect(!VideoReflection.rendering(hasReplica: true, band: 0, onScreen: true))
+        #expect(!VideoReflection.rendering(hasReplica: true, band: 57, onScreen: false))
     }
 
-    @Test("The mirror is at most 55% (Iris on #550, a ceiling) and its band at most 15% of the lower half, never over 120 pt (R-11, Iris on #533)")
+    @Test("The band is at most 15% of the lower half, never over 120 pt (R-11, Iris on #533)")
     @MainActor func mirrorBand() {
-        #expect(VideoReflection.opacity <= 0.55)
         #expect(VideoReflection.band(lowerHalf: 380) == 57)
         #expect(VideoReflection.band(lowerHalf: 2000) == 120)
         #expect(VideoReflection.band(lowerHalf: -10) == 0)
+    }
+
+    @Test("Idle-band variant: 30% of the lower half, at most 140 pt, only while the controls are faded and the switch is on (Iris, 21 Nov)")
+    @MainActor func mirrorIdleBand() {
+        #expect(VideoReflection.band(lowerHalf: 380, tallIdle: true, controlsShown: false) == 114)
+        #expect(VideoReflection.band(lowerHalf: 600, tallIdle: true, controlsShown: false) == 140)
+        #expect(VideoReflection.band(lowerHalf: 380, tallIdle: true, controlsShown: true) == 57)
+        #expect(VideoReflection.band(lowerHalf: 380, tallIdle: false, controlsShown: false) == 57)
+    }
+
+    @Test("Tabletop controls fade only while playing, never under VoiceOver or Switch Control (TT-4, spec 5)")
+    @MainActor func controlsAutoHide() {
+        #expect(TabletopTransport.autoHides(playing: true, voiceOver: false, switchControl: false))
+        #expect(!TabletopTransport.autoHides(playing: false, voiceOver: false, switchControl: false))
+        #expect(!TabletopTransport.autoHides(playing: true, voiceOver: true, switchControl: false))
+        #expect(!TabletopTransport.autoHides(playing: true, voiceOver: false, switchControl: true))
+        #expect(TabletopTransport.hideAfter == .seconds(4))
     }
 }
 
@@ -1120,26 +1156,42 @@ struct SearchTextColdLaunchTests {
     }
 }
 
-/// 0.5.5 (r054-tabletop-find-trailers): in Tabletop the empty Gallery's "Find trailers online" is view-only text, so the
-/// Links panel in the lower half carries the same search for every game whose Gallery is empty, and only for those.
+/// 0.6.0 (s-06-videos-in-our-player): "Find trailers online" was a YouTube search and is gone. No Links row, in any pose, sends
+/// a person to a video search; an empty Gallery offers only the official website.
 @MainActor
-struct TabletopFindTrailersTests {
-    @Test func linksPanelCarriesTheTrailerSearchForAnEmptyGallery() {
+struct NoTrailerSearchTests {
+    @Test func linksPanelHasNoTrailerSearch() {
         let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "links-\(UUID().uuidString).json"))
         m.resetDemo()
-        let games = m.fixtures.games
-        let empty = games.filter { m.gallery($0.id).isEmpty }
-        #expect(!empty.isEmpty)
-        for g in games {
-            let row = LinksSheet.rows(m, g.id).first { $0.id == "trailers" }
-            if m.gallery(g.id).isEmpty {
-                #expect(row?.title == "Find trailers online")
-                #expect(row?.url == GalleryEmpty.trailerSearchURL(g.name))
-                #expect(LinksSheet.hasLinks(m, g.id))   // so Tabletop's More menu offers Links
-            } else {
-                #expect(row == nil)
-            }
+        for g in m.fixtures.games {
+            let rows = LinksSheet.rows(m, g.id)
+            #expect(!rows.contains { $0.id == "trailers" }, "\(g.id) has no trailer search row")
+            #expect(!rows.contains { $0.url.absoluteString.contains("search_query") }, "\(g.id) has no video search link")
         }
+    }
+}
+
+/// R-11 (Terry, 20 Nov: every video plays in our own player): a YouTube link opened anywhere plays in our player.
+@MainActor
+struct VideoLinkTests {
+    @Test func youtubeLinksOpenOurPlayer() {
+        let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "vl-\(UUID().uuidString).json"))
+        for href in ["https://www.youtube.com/watch?v=abc", "https://youtu.be/abc", "https://m.youtube.com/shorts/abc",
+                     "https://www.youtube.com/live/abc", "https://www.youtube-nocookie.com/embed/abc"] {
+            m.trailer = nil
+            #expect(m.playVideoLink(URL(string: href)!), "\(href) plays in the app")
+            #expect(m.trailer?.videoID == "abc")
+        }
+        m.trailer = nil
+        #expect(!m.playVideoLink(URL(string: "https://www.playstation.com/en-us/games/")!))
+        #expect(!m.playVideoLink(URL(string: "https://notyoutube.com/watch?v=abc")!))
+        #expect(m.trailer == nil, "other links go to the system as before")
+    }
+
+    @Test("A video its owner blocks from other apps says so and offers Open in YouTube (R-12; Terry 20 Nov)")
+    func blockedEmbedOffersYouTube() {
+        #expect(VideoUnavailable.blocksEmbedding(101) && VideoUnavailable.blocksEmbedding(150))
+        #expect(!VideoUnavailable.blocksEmbedding(2) && !VideoUnavailable.blocksEmbedding(100) && !VideoUnavailable.blocksEmbedding(nil))
     }
 }
 

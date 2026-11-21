@@ -51,7 +51,7 @@ struct EntryCard: View {
             }
         }
         .padding(14)
-        .background(Color.ink2, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .background(PlayscribeRole.card, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
     }
 }
 
@@ -82,6 +82,7 @@ struct GalleryVideoRow: View {
 
 struct GalleryChapter: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.viewOnlyStage) private var viewOnly
     var gameID: String
 
     var body: some View {
@@ -89,6 +90,16 @@ struct GalleryChapter: View {
         let art = items.filter { $0.kind == .artwork }
         let videos = items.filter { $0.kind == .video }
         let picked = model.data.selectedArtwork[gameID]
+        if viewOnly, !items.isEmpty {
+            // Tabletop (Terry's Duo, 21 Nov: the stage was a dead copy of the list below it). The play rows are in the lower
+            // half, so the stage shows the game's art and name (GalleryStage).
+            GalleryStage(gameID: gameID)
+        } else {
+            list(items: items, art: art, videos: videos, picked: picked)
+        }
+    }
+
+    private func list(items: [GalleryItem], art: [GalleryItem], videos: [GalleryItem], picked: String?) -> some View {
         VStack(alignment: .leading, spacing: 14) {
             if items.isEmpty { GalleryEmpty(gameID: gameID) }
             if !art.isEmpty { Text("Choose a picture to use as this game’s backdrop.").font(PlayscribeFont.footnote).foregroundStyle(.secondary) }
@@ -120,6 +131,9 @@ struct GalleryChapter: View {
                         Button { model.playGalleryVideo(v) } label: { GalleryVideoRow(item: v, playable: true) }
                             .buttonStyle(.plain)
                             .accessibilityLabel("\(v.title), video")
+                            // The same id as Tabletop's lower-panel row, so QA finds a Gallery video in every pose (Iris on #554).
+                            // Not on Tabletop's view-only stage, where the lower panel's row carries it.
+                            .accessibilityIdentifier(viewOnly ? "" : "galleryPlay-\(v.id)")
                             .tappableFrame()
                     } else {
                         // Nothing to play: not a button (Iris on #551), so a tap never does nothing.
@@ -131,14 +145,59 @@ struct GalleryChapter: View {
     }
 }
 
-/// A game with no pictures or videos (Terry, 0.2.0 build 5, Fortnite): say so, and point to media elsewhere.
-struct GalleryEmpty: View {
-    /// "Find trailers online": a video search for the game's PS5 trailer. Also Tabletop's Links panel row.
-    static func trailerSearchURL(_ name: String) -> URL? {
-        "https://www.youtube.com/results?search_query=\(name) PS5 trailer"
-            .addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed).flatMap(URL.init(string:))
+/// TT-1, R-10 and R-11: the Gallery on Tabletop's view-only stage (Iris, reflection-0.6 spec section 6; Terry's Duo, 21 Nov: the
+/// stage was a list that looked tappable and wasn't, and the same videos were listed again below). The stage is a picture: the
+/// game's art at 16:9 with its name, never a list. Every video and picture is a row in the lower half (`TabletopGalleryList`).
+struct GalleryStage: View {
+    @Environment(AppModel.self) private var model
+    @Environment(\.duo) private var duo
+    /// The card's top edge in the container's space, where the division is reported.
+    @State private var top: CGFloat = 0
+    @State private var width: CGFloat = 0
+    var gameID: String
+
+    /// Clear of the fold under the card.
+    static let foldGap: CGFloat = 12
+
+    /// The tallest the card may be so it ends above the fold; never under 90 pt.
+    static func maxHeight(top: CGFloat, foldTop: CGFloat?) -> CGFloat {
+        guard let foldTop else { return .infinity }
+        return max(90, foldTop - top - foldGap)
     }
 
+    var body: some View {
+        let game = model.game(gameID)
+        // One card, the name on it (Mac at 7f61fac9: a name under the card was cut by the fold at std and gone at AX5). The card
+        // is 16:9, made smaller when the stage is short, so it always ends above the fold.
+        Color.clear
+            .frame(maxWidth: .infinity)
+            .frame(height: min(width * 9 / 16, Self.maxHeight(top: top, foldTop: duo.division?.minY)))
+            .overlay { ArtView(asset: model.backdrop(gameID, chapter: .gallery, tall: false), game: game) }
+            .overlay(alignment: .bottomLeading) {
+                if let game {
+                    Text(game.name.gluingTrailingNumeral)
+                        .font(PlayscribeFont.title3.weight(.semibold))
+                        .foregroundStyle(.white)
+                        .lineLimit(2)
+                        .minimumScaleFactor(0.6)
+                        .padding(14)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .background(LinearGradient(colors: [.black.opacity(0), .black.opacity(0.75)], startPoint: .top, endPoint: .bottom))
+                }
+            }
+            .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+            .onGeometryChange(for: CGFloat.self) { $0.frame(in: .named(DuoContext.space)).minY } action: { top = $0 }
+            .onGeometryChange(for: CGFloat.self) { $0.size.width } action: { width = $0 }
+            .accessibilityElement(children: .ignore)
+            .accessibilityLabel(game?.name ?? "")
+            .allowsHitTesting(false)
+    }
+}
+
+/// A game with no pictures or videos (Terry, 0.2.0 build 5, Fortnite): say so, and offer the official website when there is one.
+/// No "Find trailers online" (0.6.0, Iris and Nadia): it was a YouTube search, and every video now plays in our own player
+/// (Terry, 20 Nov), so a game with no trailer simply has no trailer row.
+struct GalleryEmpty: View {
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
     var gameID: String
@@ -146,25 +205,19 @@ struct GalleryEmpty: View {
     var body: some View {
         let game = model.game(gameID)
         let links = game?.igdbID.flatMap { GameInfoStore.shared.basics[$0] }?.links
-        let search = game.flatMap { Self.trailerSearchURL($0.name) }
         VStack(alignment: .leading, spacing: 8) {
             if duo.pose == .tabletop {
                 // The stage is view-only and cannot scroll: one sentence, no headline and no grey stand-in rows that look like
                 // buttons, so it fits in three lines at AX5 (Mac, 0a7830d). The controls are on the Links panel; the rail shows an
                 // ellipsis, not the word "More", so the line names what the person sees (Iris, 12 Nov).
-                Text("No trailers yet. Find them in Links, in the menu below.").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                Text("No pictures or videos here yet.").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
             } else {
                 Text("No pictures or videos here yet").font(PlayscribeFont.headline)
-                Text("You can find trailers and screenshots elsewhere.").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
-                FlowLayout(spacing: 24) {
-                    if let url = links?.official {
-                        Link(destination: url) { Label("Official website", systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }.tappableFrame()
-                    }
-                    if let url = search {
-                        Link(destination: url) { Label("Find trailers online", systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }.tappableFrame()
-                    }
+                if let url = links?.official {
+                    Link(destination: url) { Label("Official website", systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }
+                        .tappableFrame()
+                        .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.action)
                 }
-                .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.accent)
             }
         }
         .accessibilityElement(children: .contain)
@@ -208,13 +261,14 @@ struct MyBookChapter: View {
                       axis: .vertical)
                 .lineLimit(3...8)
                 .textFieldStyle(.roundedBorder)
+                .controlBorder(.textField, in: RoundedRectangle(cornerRadius: 5, style: .continuous))
             Button("Save note") {
                 let text = (model.nav.noteDraft[gameID] ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
                 guard !text.isEmpty else { return }
                 model.saveNote(Note(id: "n-\(Int(Date.now.timeIntervalSince1970 * 1000))", gameID: gameID, text: text, updatedAt: .now))
                 model.nav.noteDraft[gameID] = ""
             }
-            .buttonStyle(.borderedProminent).foregroundStyle(PlayscribeColor.onAccent)
+            .buttonStyle(.borderedProminent).foregroundStyle(PlayscribeRole.onAction)
             .disabled((model.nav.noteDraft[gameID] ?? "").trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
             .hitTarget()
 
@@ -222,6 +276,7 @@ struct MyBookChapter: View {
                 VStack(alignment: .leading, spacing: 8) {
                     if editing == n.id {
                         TextField("Edit note", text: $editText, axis: .vertical).textFieldStyle(.roundedBorder)
+                            .controlBorder(.textField, in: RoundedRectangle(cornerRadius: 5, style: .continuous))
                         HStack {
                             Button("Cancel") { editing = nil }.hitTarget()
                             Button("Save") {
@@ -231,7 +286,7 @@ struct MyBookChapter: View {
                                 model.saveNote(copy)
                                 editing = nil
                             }
-                            .buttonStyle(.borderedProminent).foregroundStyle(PlayscribeColor.onAccent).hitTarget()
+                            .buttonStyle(.borderedProminent).foregroundStyle(PlayscribeRole.onAction).hitTarget()
                         }
                     } else {
                         Text(n.text)
@@ -247,7 +302,7 @@ struct MyBookChapter: View {
                     }
                 }
                 .padding(12)
-                .background(Color.ink2, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                .background(PlayscribeRole.card, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
                 .id("note-\(n.id)")
             }
         }

@@ -25,6 +25,8 @@ enum Pose: String {
 }
 
 struct DuoContext: Equatable {
+    /// The named coordinate space of `DuoReader`'s container, the one `division` is in.
+    static let space = "duoContainer"
     var pose: Pose = .closed
     var size: CGSize = .zero
     /// The active fold, in the root container's coordinates.
@@ -146,6 +148,8 @@ struct DuoReader<Content: View>: View {
             content(ctx)
                 .environment(\.duo, ctx)
         }
+        // The space the division is reported in, so a view can measure itself against the fold.
+        .coordinateSpace(.named(DuoContext.space))
         .background {
             GeometryReader { p in
                 Color.clear.onChange(of: p.size, initial: true) { _, new in stableSize = new }

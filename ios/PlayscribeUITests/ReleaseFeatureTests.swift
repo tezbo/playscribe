@@ -192,12 +192,12 @@ final class ReleaseFeatureTests: XCTestCase {
         XCTAssertEqual(app.links.matching(NSPredicate(format: "label CONTAINS ', Official'")).count, 0, "no News headline is exposed as a link")
         let newsTree = XCTAttachment(string: app.debugDescription); newsTree.name = "tabletop-news-hierarchy.txt"; newsTree.lifetime = .keepAlways; add(newsTree)
 
-        // The Gallery empty state (Astro Bot and Ghost of Yotei have no art or videos): "Find trailers online" is plain text.
+        // The Gallery empty state (Astro Bot and Ghost of Yotei have no art or videos): plain text, and no trailer search (0.6.0).
         app.terminate()
         launch("chapter/astro-bot/gallery")
-        let trailers = app.descendants(matching: .any).matching(NSPredicate(format: "label == 'Find trailers online'")).firstMatch
-        XCTAssertTrue(trailers.waitForExistence(timeout: 10), "the Gallery empty state's trailer text is in the tree")
-        XCTAssertEqual(trailers.elementType, .staticText, "it is text in Tabletop, not a link or button")
+        let empty = app.staticTexts["No pictures or videos here yet."]
+        XCTAssertTrue(empty.waitForExistence(timeout: 10), "the Gallery empty state's text is in the tree")
+        XCTAssertFalse(app.descendants(matching: .any).matching(NSPredicate(format: "label CONTAINS 'Find trailers online'")).firstMatch.exists, "no trailer search anywhere")
         XCTAssertEqual(app.links.matching(NSPredicate(format: "label CONTAINS 'Find trailers online' OR label CONTAINS 'Official website'")).count, 0, "no Gallery link has a link trait in Tabletop")
         XCTAssertEqual(app.buttons.matching(NSPredicate(format: "label CONTAINS 'Find trailers online' OR label CONTAINS 'Official website'")).count, 0, "no Gallery link is a button in Tabletop")
         let galleryTree = XCTAttachment(string: app.debugDescription); galleryTree.name = "tabletop-gallery-hierarchy.txt"; galleryTree.lifetime = .keepAlways; add(galleryTree)

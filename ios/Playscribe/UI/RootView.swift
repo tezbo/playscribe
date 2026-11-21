@@ -9,6 +9,16 @@ extension EnvironmentValues {
     }
 }
 
+/// Tabletop: run before any rail button's own action, so a rail tap closes an open lower-half panel and then does what the
+/// button says (Iris, #556 at 894ee2c3, J-20). Nil elsewhere.
+private struct RailPreActionKey: EnvironmentKey { static let defaultValue: (() -> Void)? = nil }
+extension EnvironmentValues {
+    var railPreAction: (() -> Void)? {
+        get { self[RailPreActionKey.self] }
+        set { self[RailPreActionKey.self] = newValue }
+    }
+}
+
 /// Tabletop: a sheet's controls must sit in the lower half (the upper half is view only), so
 /// sheets there are this panel, bottom-aligned under the division, instead of a presented sheet.
 private struct PanelCloseKey: EnvironmentKey { static let defaultValue: (() -> Void)? = nil }
@@ -34,7 +44,7 @@ struct BookPagePanel: View {
                     .environment(\.panelClose, { model.settingsOpen = false })
                     .environment(\.railWidth, 0)
                     .frame(width: max(0, fold.minX), height: duo.size.height)
-                    .background(Color.ink0)
+                    .background(PlayscribeRole.bg)
                     .clipShape(UnevenRoundedRectangle(bottomTrailingRadius: 20, topTrailingRadius: 20))
                     .accessibilityAddTraits(.isModal)
             }
@@ -69,7 +79,7 @@ struct RightPagePanel: View {
                     .environment(\.panelClose, { model.addSheetOpen = false })
                     .environment(\.railWidth, 0)
                     .frame(width: max(0, panelWidth), height: duo.size.height)
-                    .background(Color.ink0)
+                    .background(PlayscribeRole.bg)
                     .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
                     .padding(.trailing, trailingInset)
                     .accessibilityAddTraits(.isModal)
@@ -93,7 +103,10 @@ struct LowerHalfPanel: View {
     var body: some View {
         if open {
             let height = max(0, duo.size.height - fold.maxY)
-            ZStack(alignment: .bottom) {
+            // Beside the rail, never under it (Mac at 86a4b104: Settings rows ran to x 649 under the rail at 619 to 663, so a tap
+            // on the Video lab switch hit the rail's Library button). The rail stays visible and works while a panel is open.
+            let width = max(0, duo.size.width - TabletopRail.width)
+            ZStack(alignment: .bottomLeading) {
                 // The stage above stays view only: a dimmer that takes no touches.
                 Color.black.opacity(0.4).ignoresSafeArea().allowsHitTesting(false)
                 Group {
@@ -105,17 +118,19 @@ struct LowerHalfPanel: View {
                 }
                 .environment(\.panelClose, { model.addSheetOpen = false; model.settingsOpen = false; model.trailer = nil; model.linksSheetOpen = false; model.tagExplainer = nil; model.keepCurrentDetailsOpen = false })
                 .environment(\.railWidth, 0)
-                .frame(width: duo.size.width, height: height)
+                .frame(width: width, height: height)
                 // Solid through the bottom safe area too: the Library's tiles used to show, and take
                 // taps, in the strip under the sheet.
-                .background(Color.ink0.ignoresSafeArea(edges: .bottom))
+                .background(PlayscribeRole.bg.ignoresSafeArea(edges: .bottom))
                 .clipShape(UnevenRoundedRectangle(topLeadingRadius: 20, topTrailingRadius: 20))
+                // Every touch inside the panel's frame is the panel's, never the page's beneath it.
+                .contentShape(Rectangle())
                 .accessibilityAddTraits(.isModal)
             }
             // The panel stops at the bottom safe area, so the Library's chips showed, and took taps,
             // in the strip below it. A solid filler hangs below the panel's bottom edge (outside the
             // clip) to cover it; the panel itself still starts exactly at the fold.
-            .overlay(alignment: .bottom) { Color.ink0.frame(height: 120).offset(y: 120) }
+            .overlay(alignment: .bottomLeading) { PlayscribeRole.bg.frame(width: width, height: 120).offset(y: 120) }
             .transition(.move(edge: .bottom))
             .zIndex(5)
         }
@@ -205,7 +220,7 @@ struct RootView: View {
                 #endif
             }
         }
-        .background(Color.ink0)
+        .background(PlayscribeRole.bg)
         .onAppear {
             // §2: the branded splash plays only on the first launch, never from a notification (L-3).
             // Terry, 2 Nov: every cold launch, not only the first.
@@ -238,6 +253,8 @@ struct RootView: View {
         .fullScreenCover(isPresented: Binding(get: { model.trailer != nil }, set: { if !$0 { model.trailer = nil } })) {
             if let t = model.trailer { TrailerView(videoID: t.videoID, name: t.name, gameID: t.gameID) }
         }
+        // R-11: every link the app opens passes here, sheets and covers included; a YouTube video plays in our player.
+        .environment(\.openURL, OpenURLAction { url in model.playVideoLink(url) ? .handled : .systemAction })
     }
 }
 
@@ -249,7 +266,7 @@ struct TabRoot: View {
         @Bindable var model = model
         TabView(selection: $model.data.nav.tab) {
             Tab("Library", systemImage: "books.vertical", value: AppTab.library) {
-                LibraryRoot(duo: duo).auditActive(model.nav.tab == .library)
+                LibraryRoot(duo: duo).auditActive(model.nav.tab == .library).underLowerPanel(duo)
             }
             .badge(model.totalUnread)
 
@@ -263,6 +280,7 @@ struct TabRoot: View {
                         }
                 }
                 .auditActive(model.nav.tab == .updates)
+                .underLowerPanel(duo)
                 // J-1 (0.5.7 gate): an update the fold moved onto the game's Page comes back as this tab's push once the tab is
                 // showing and the pose change has settled; pushed in the same update as the tab switch, it drew blank.
                 .task(id: model.pendingUpdatesRelease) {
@@ -273,11 +291,11 @@ struct TabRoot: View {
             }
 
             Tab("News", systemImage: "megaphone", value: AppTab.news) {
-                NavigationStack { NewsView().tabletopChrome(duo) }.auditActive(model.nav.tab == .news)
+                NavigationStack { NewsView().tabletopChrome(duo) }.auditActive(model.nav.tab == .news).underLowerPanel(duo)
             }
 
             Tab(value: AppTab.search, role: .search) {
-                NavigationStack { SearchView().tabletopChrome(duo) }.auditActive(model.nav.tab == .search)
+                NavigationStack { SearchView().tabletopChrome(duo) }.auditActive(model.nav.tab == .search).underLowerPanel(duo)
             }
         }
         // J-1: a pushed update only exists where pushing is the layout (one column: Closed, Open both ways). Folding to Book or
@@ -307,6 +325,12 @@ extension View {
     /// Scroll edges fade (Quinn, on #541): under the solid top bar, a 16 pt band from ink to clear, so content fades out instead of
     /// being cut at the bar's edge. A safe-area inset, so the page's rest position starts below it and only scrolled content passes
     /// under; 0 pt in the other poses (the same view, so identity holds).
+    /// While a Tabletop lower-half panel is open, the tab's page under it takes no touches and is hidden from VoiceOver: the
+    /// Library's A to Z strip read out over the rail (x 592 to 636, Mac at c1c1191e), and a tap that misses the panel must never
+    /// act on the page beneath it. Applied inside each tab, so the hiding reaches the tab's hosted content, and never to the
+    /// rail, which stays live (J-20).
+    func underLowerPanel(_ duo: DuoContext) -> some View { modifier(UnderLowerPanel(duo: duo)) }
+
     func tabletopChrome(_ duo: DuoContext) -> some View {
         let solid = duo.pose == .flat && !duo.isLandscape
         return toolbarVisibility(duo.pose == .tabletop ? .hidden : .automatic, for: .navigationBar, .tabBar)
@@ -388,10 +412,15 @@ struct TabletopRail: View {
                         .font(PlayscribeFont.title3)
                         .frame(width: 44, height: 44)
                         .background(Circle().fill(.regularMaterial))
+                        // A Menu has no action of ours to run first: close any open panel as the tap lands.
+                        .simultaneousGesture(TapGesture().onEnded { model.closeLowerPanels() })
                         .tappableFrame()
                 }
                 // Settings has its own cog on the rail, not inside the View menu (Terry, 0.2.0 build 5).
-                RailButton(action: ScreenAction(id: "settings", title: "Settings", systemImage: "gearshape", kind: .button { model.settingsOpen = true }))
+                // The gear toggles: tapped while Settings is open, it closes it (Iris, #556). The pre-action has already closed
+                // every panel, so this reads whether Settings was open before the tap.
+                RailButton(action: ScreenAction(id: "settings", title: "Settings", systemImage: "gearshape",
+                                                kind: .button { [settingsWasOpen = model.settingsOpen] in if !settingsWasOpen { model.settingsOpen = true } }))
                     .accessibilityIdentifier("settingsButton")
                 // Playing / Upcoming is the page's own switch, in the lower half like every other pose; not repeated here (Iris,
                 // 0.5.7 gate: with it the rail needed five actions, scrolled, and cut the fifth at the tab group).
@@ -423,21 +452,24 @@ struct TabletopRail: View {
         }
         .padding(.vertical, 8)
         .frame(maxHeight: .infinity)
+        // A rail tap closes an open lower-half panel first, then does what the button says (Iris, #556; J-20).
+        .environment(\.railPreAction, { model.closeLowerPanels() })
         // The rail's buttons are 44 pt and do not grow with text (0.5.1 spec 3): at AX sizes the icons overlapped.
         .dynamicTypeSize(...DynamicTypeSize.large)
     }
 
     private func tab(_ t: AppTab, _ title: String, _ symbol: String, badge: Int = 0) -> some View {
         Button {
+            model.closeLowerPanels()
             model.nav.tab = t
         } label: {
             Image(systemName: symbol)
                 .font(PlayscribeFont.title3)
                 .symbolVariant(model.nav.tab == t ? .fill : .none)
-                .foregroundStyle(model.nav.tab == t ? PlayscribeColor.accent : Color.primary)
+                .foregroundStyle(model.nav.tab == t ? PlayscribeRole.action : Color.primary)
                 .frame(width: 44, height: 44)
                 // The same selected treatment as the rail's action buttons (RailButton), so the rail reads as one style.
-                .background(Circle().fill(PlayscribeColor.accent.opacity(model.nav.tab == t ? 0.18 : 0)))
+                .background(Circle().fill(PlayscribeRole.action.opacity(model.nav.tab == t ? 0.18 : 0)))
                 .overlay(alignment: .topTrailing) {
                     if badge > 0 {
                         Text("\(badge)").font(PlayscribeFont.caption2.bold()).padding(.horizontal, 4)
@@ -535,7 +567,7 @@ struct LowerMessages: View {
                     .frame(minHeight: 44)
                     // A solid pill: nothing shows through it (Iris, 6589abf: it ghosted over the date pills).
                     // A 24 pt corner: a full capsule on one line, a rounded rectangle on two or more.
-                    .background(RoundedRectangle(cornerRadius: 24, style: .continuous).fill(PlayscribeColor.ink700))
+                    .background(RoundedRectangle(cornerRadius: 24, style: .continuous).fill(PlayscribeRole.chipFill))
                     .adaptiveGlass(in: RoundedRectangle(cornerRadius: 24, style: .continuous), interactive: true)
                 }
                 .buttonStyle(.plain)
@@ -558,7 +590,7 @@ struct LowerMessages: View {
                 }
                 .padding(.horizontal, 16)
                 .frame(minHeight: 44)
-                .background(PlayscribeColor.ink700, in: Capsule())
+                .background(PlayscribeRole.chipFill, in: Capsule())
                 .overlay(Capsule().strokeBorder(PlayscribeColor.vellum300.opacity(0.2)))
                 .shadow(color: .black.opacity(0.5), radius: 12, y: 4)
                 // Clear of the rows' trailing menu buttons.
@@ -597,5 +629,18 @@ struct LowerMessages: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
         .animation(.snappy, value: model.toast)
         .animation(.snappy, value: model.pill?.releaseID)
+    }
+}
+
+private struct UnderLowerPanel: ViewModifier {
+    @Environment(AppModel.self) private var model
+    var duo: DuoContext
+
+    func body(content: Content) -> some View {
+        let covered = duo.pose == .tabletop
+            && (model.addSheetOpen || model.settingsOpen || model.linksSheetOpen || model.tagExplainer != nil || model.keepCurrentDetailsOpen)
+        content
+            .allowsHitTesting(!covered)
+            .accessibilityHidden(covered)
     }
 }

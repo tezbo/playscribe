@@ -31,13 +31,24 @@ struct FrontCoverTests {
         }
     }
 
-    /// A mode that is not built yet falls back down the chain, ending at Still; the default is Key-art motion.
+    /// A mode that is not built yet falls back down the chain; Key-art motion is built and is the default (Nadia, 13 Nov).
     @Test func unbuiltModesFallBack() {
         for mode in CoverMotion.allCases {
             #expect(mode.resolved(reduceMotion: false, autoplay: true).isBuilt)
         }
         #expect(CoverMotion.still.isBuilt)
+        #expect(CoverMotion.keyArt.isBuilt)
+        #expect(!CoverMotion.trailer.isBuilt)
+        #expect(CoverMotion.trailer.resolved(reduceMotion: false, autoplay: true) == .keyArt)
         #expect(CoverMotion.defaultMode == .keyArt)
+    }
+
+    /// Precedence (Nadia, 13 Nov): a fresh install moves, whatever Autoplay says; Reduce Motion always wins with the still (G-9).
+    @Test func defaultMovesAndReduceMotionWins() {
+        #expect(CoverMotion.defaultMode.resolved(reduceMotion: false, autoplay: false) == .keyArt)
+        #expect(CoverMotion.defaultMode.resolved(reduceMotion: false, autoplay: true) == .keyArt)
+        #expect(CoverMotion.defaultMode.resolved(reduceMotion: true, autoplay: true) == .still)
+        #expect(CoverMotion.defaultMode.resolved(reduceMotion: true, autoplay: false) == .still)
     }
 
     /// CM-7: one VoiceOver element, "<Game> cover, update 1.1 on PS5, 22 Oct"; the motion mode is never in it.
@@ -120,6 +131,49 @@ struct FrontCoverTests {
         let std = FrontCoverPage.fadeStops(accessibility: false, plateTop: 0.4)
         #expect(std.map(\.location) == [0, 0.18, 0.45, 0.82, 0.9, 1])
         #expect(std.filter { $0.location >= 0.9 }.allSatisfy { $0.opacity == 1 })
+    }
+
+    /// r060 day-one (Iris on #506): with the "Day-one patch" line above the eyebrow, the standard-size shade follows the plate,
+    /// 88 percent or more from the line's top edge (it measured 2.3:1 on the ramp in Closed landscape), solid from 90 percent down.
+    @Test func dayOneLineShadeStartsAtThePlate() {
+        for top in [0.2, 0.5, 0.7, 0.86, 0.9] {
+            let stops = FrontCoverPage.fadeStops(accessibility: false, plateTop: top, followPlate: true)
+            #expect(zip(stops, stops.dropFirst()).allSatisfy { $0.location <= $1.location }, "ordered at \(top)")
+            #expect(stops.filter { $0.location >= top - 0.0001 }.allSatisfy { $0.opacity >= 0.88 }, "88% from the plate at \(top)")
+            #expect(stops.filter { $0.location >= 0.9 }.allSatisfy { $0.opacity == 1 }, "solid foot at \(top)")
+            #expect(stops.first?.location == 0 && stops.last?.location == 1)
+        }
+        // Iris on #506: eased in over plateRamp points, so no row darkens by more than 4/255 over pure white, in Closed
+        // landscape (short page) and portrait, at the plate positions the cover lays out; the plate stays 88% or more.
+        for (h, tops) in [(300.0, [0.6, 0.7, 0.8]), (420.0, [0.55, 0.7, 0.86]), (678.0, [0.385, 0.5, 0.7, 0.86])] {
+            for top in tops {
+                for ax in [false, true] {
+                    let stops = FrontCoverPage.fadeStops(accessibility: ax, plateTop: top, followPlate: !ax, pageHeight: h)
+                    #expect(zip(stops, stops.dropFirst()).allSatisfy { $0.location <= $1.location }, "ordered \(h) \(top)")
+                    #expect(stops.filter { $0.location >= top - 0.0001 }.allSatisfy { $0.opacity >= 0.88 }, "plate \(h) \(top)")
+                    var last = Self.opacity(stops, at: 0)
+                    var worst = 0.0
+                    for row in 1...Int(h) {
+                        let o = Self.opacity(stops, at: Double(row) / h)
+                        worst = max(worst, abs(o - last) * 255)
+                        last = o
+                    }
+                    #expect(worst <= 4, "step \(worst)/255 at page \(h), plate \(top), ax \(ax)")
+                }
+            }
+        }
+        // Without the line, the standard shade is unchanged.
+        #expect(FrontCoverPage.fadeStops(accessibility: false, plateTop: 0.7, followPlate: false).map(\.location) == [0, 0.18, 0.45, 0.82, 0.9, 1])
+    }
+
+    /// The shade's opacity at a location, interpolated linearly between stops as a LinearGradient draws it.
+    static func opacity(_ stops: [(opacity: Double, location: Double)], at x: Double) -> Double {
+        guard let first = stops.first else { return 0 }
+        if x <= first.location { return first.opacity }
+        for (a, b) in zip(stops, stops.dropFirst()) where x <= b.location {
+            return b.location - a.location < 1e-9 ? b.opacity : a.opacity + (b.opacity - a.opacity) * (x - a.location) / (b.location - a.location)
+        }
+        return stops.last!.opacity
     }
 
     /// Iris (#467): the cover is Closed-only. Any other pose closes it at once, the route's Settings with it, and the deck

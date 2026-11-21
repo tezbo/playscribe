@@ -145,9 +145,9 @@ struct AddGameSheet: View {
                     Button(action: addPicked) {
                         Text("Add \(picked.count) game\(picked.count == 1 ? "" : "s")")
                             .font(PlayscribeFont.headline)
-                            .foregroundStyle(PlayscribeColor.onAccent)
+                            .foregroundStyle(PlayscribeRole.onAction)
                             .frame(maxWidth: .infinity, minHeight: 56)
-                            .background(PlayscribeColor.accent, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                            .background(PlayscribeRole.action, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
                     }
                     .buttonStyle(.plain)
                     .accessibilityIdentifier("addPicked")
@@ -197,7 +197,7 @@ struct AddGameSheet: View {
             }
             .padding(.horizontal, 16)
             .frame(height: 56)
-            .background(Color.ink0)
+            .background(PlayscribeRole.bg)
         }
     }
 
@@ -240,79 +240,83 @@ struct AddGameSheet: View {
 
     private var list: some View {
         List {
-            Section {
-                if duo.pose == .tabletop {
-                    // Tabletop (0.2.0 gate): the status control sits beside the search field in one row so
-                    // at least three results stay visible in the lower half.
-                    VStack(alignment: .leading, spacing: 4) {
-                        HStack(spacing: 8) {
-                            Button { dismiss() } label: {
-                                Image(systemName: "xmark").font(PlayscribeFont.headline)
-                                    .frame(width: 44, height: 44).contentShape(Rectangle())
+            CardSections {
+                Section {
+                    if duo.pose == .tabletop {
+                        // Tabletop (0.2.0 gate): the status control sits beside the search field in one row so
+                        // at least three results stay visible in the lower half.
+                        VStack(alignment: .leading, spacing: 4) {
+                            HStack(spacing: 8) {
+                                Button { dismiss() } label: {
+                                    Image(systemName: "xmark").font(PlayscribeFont.headline)
+                                        .frame(width: 44, height: 44).contentShape(Rectangle())
+                                }
+                                .buttonStyle(.plain)
+                                .foregroundStyle(PlayscribeRole.action)
+                                .accessibilityLabel("Close")
+                                .tappableFrame()
+                                Picker("Add as", selection: $status) {
+                                    ForEach(OwnershipStatus.allCases) { Text($0.label).tag($0) }
+                                }
+                                .pickerStyle(.menu)
+                                .fixedSize()
+                                .frame(minHeight: 44)
+                                TabletopSearchButton(letter: letter, prompt: "Search PS5 games", hintShown: $hintShown)
                             }
-                            .buttonStyle(.plain)
-                            .foregroundStyle(PlayscribeColor.accent)
-                            .accessibilityLabel("Close")
-                            .tappableFrame()
-                            Picker("Add as", selection: $status) {
-                                ForEach(OwnershipStatus.allCases) { Text($0.label).tag($0) }
-                            }
-                            .pickerStyle(.menu)
-                            .fixedSize()
+                            TabletopSearchHint(shown: hintShown)
+                            TabletopLetterStrip(letter: $letter)
+                        }
+                        .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
+                    } else {
+                        statusPicker
+                        // The whole row takes focus, not just the UITextField's own frame: a tap in the row padding did nothing once the
+                        // field lost its tap gesture (86f771c Mac log: taps at x=20 and x=36 outside the field frame never focused it).
+                        // The tap gesture is on a clear view BEHIND the field, not on the field: a tap on the field itself goes to the
+                        // UITextField (caret as before) and only a tap in the padding reaches the background. Hidden from VoiceOver so
+                        // the row stays one "Search" field. Row insets are moved inside so no dead strip is left.
+                        TextField("Search \(PS5Index.shared.count.formatted()) PS5 games", text: $query)
+                            .autocorrectionDisabled()
+                            .submitLabel(.search)
+                            .focused($searchFocused)
                             .frame(minHeight: 44)
-                            TabletopSearchButton(letter: letter, prompt: "Search PS5 games", hintShown: $hintShown)
-                        }
-                        TabletopSearchHint(shown: hintShown)
-                        TabletopLetterStrip(letter: $letter)
+                            .padding(.horizontal, 20)
+                            // 15 pt a side restores the row height the List's default insets gave (main: card 133 pt; with 4 pt it was 112,
+                            // Mac 2198fa7; 14.5 was 1 pt short, Mac 9cebaa9), with the whole row still the tap target.
+                            .padding(.vertical, 15)
+                            .frame(maxWidth: .infinity)
+                            // The row is the field; its border sits 8 pt inside the row so it frames the text, not the cell edge.
+                            .controlBorder(.searchField, in: RoundedRectangle(cornerRadius: 12, style: .continuous).inset(by: 8))
+                            .background {
+                                Color.clear
+                                    .contentShape(Rectangle())
+                                    .onTapGesture { searchFocused = true }
+                                    .accessibilityHidden(true)
+                            }
+                            .keepsKeyboardOnTap()   // a tap in this row's padding while typing must not dismiss the keyboard it just asked for
+                            .listRowInsets(EdgeInsets())
                     }
-                    .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
-                } else {
-                    statusPicker
-                    // The whole row takes focus, not just the UITextField's own frame: a tap in the row padding did nothing once the
-                    // field lost its tap gesture (86f771c Mac log: taps at x=20 and x=36 outside the field frame never focused it).
-                    // The tap gesture is on a clear view BEHIND the field, not on the field: a tap on the field itself goes to the
-                    // UITextField (caret as before) and only a tap in the padding reaches the background. Hidden from VoiceOver so
-                    // the row stays one "Search" field. Row insets are moved inside so no dead strip is left.
-                    TextField("Search \(PS5Index.shared.count.formatted()) PS5 games", text: $query)
-                        .autocorrectionDisabled()
-                        .submitLabel(.search)
-                        .focused($searchFocused)
-                        .frame(minHeight: 44)
-                        .padding(.horizontal, 20)
-                        // 15 pt a side restores the row height the List's default insets gave (main: card 133 pt; with 4 pt it was 112,
-                        // Mac 2198fa7; 14.5 was 1 pt short, Mac 9cebaa9), with the whole row still the tap target.
-                        .padding(.vertical, 15)
-                        .frame(maxWidth: .infinity)
-                        .background {
-                            Color.clear
-                                .contentShape(Rectangle())
-                                .onTapGesture { searchFocused = true }
-                                .accessibilityHidden(true)
-                        }
-                        .keepsKeyboardOnTap()   // a tap in this row's padding while typing must not dismiss the keyboard it just asked for
-                        .listRowInsets(EdgeInsets())
+                    // Offline state 7: rows keep their placeholder covers; say why.
+                    if case .failed(offline: true) = model.checkState {
+                        Label("Covers need a connection", systemImage: "wifi.slash")
+                            .font(PlayscribeFont.footnote).foregroundStyle(.secondary)
+                    }
                 }
-                // Offline state 7: rows keep their placeholder covers; say why.
-                if case .failed(offline: true) = model.checkState {
-                    Label("Covers need a connection", systemImage: "wifi.slash")
-                        .font(PlayscribeFont.footnote).foregroundStyle(.secondary)
+                let rows = results
+                Section(letter != nil && duo.pose == .tabletop ? "Starting with \(letter ?? "")" : debounced.count >= 2 ? "Best matches" : "Popular on PS5") {
+                    if rows.isEmpty {
+                        Text("No PS5 game matches ‘\(debounced)’").foregroundStyle(.secondary)
+                        Button("Add ‘\(debounced)’ yourself") { customName = debounced; custom = true }.hitTarget()
+                    }
+                    ForEach(rows) { g in AddRow(game: g, status: status, selected: picked[g.id] != nil) { tap(g) } }
                 }
-            }
-            let rows = results
-            Section(letter != nil && duo.pose == .tabletop ? "Starting with \(letter ?? "")" : debounced.count >= 2 ? "Best matches" : "Popular on PS5") {
-                if rows.isEmpty {
-                    Text("No PS5 game matches ‘\(debounced)’").foregroundStyle(.secondary)
-                    Button("Add ‘\(debounced)’ yourself") { customName = debounced; custom = true }.hitTarget()
+                Section {
+                    Button { customName = query; custom = true } label: {
+                        Label("Add a game that isn’t listed", systemImage: "plus")
+                    }
+                    .hitTarget()
+                } footer: {
+                    Text("PlayStation account import is planned for a later version. \(Brand.name) never asks for your PlayStation password.")
                 }
-                ForEach(rows) { g in AddRow(game: g, status: status, selected: picked[g.id] != nil) { tap(g) } }
-            }
-            Section {
-                Button { customName = query; custom = true } label: {
-                    Label("Add a game that isn’t listed", systemImage: "plus")
-                }
-                .hitTarget()
-            } footer: {
-                Text("PlayStation account import is planned for a later version. \(Brand.name) never asks for your PlayStation password.")
             }
         }
         // Terry, 8 Nov: the keyboard could not be put away. Scrolling dismisses it, and so does a tap outside the field and rows.
@@ -321,23 +325,27 @@ struct AddGameSheet: View {
 
     private var customForm: some View {
         Form {
-            Section { statusPicker }
-            Section {
-                TextField("Game name", text: $customName).frame(minHeight: 44)
-                Picker("Platform", selection: $customPlatform) {
-                    ForEach([Platform.ps5, .xboxSeries, .switch2, .pc], id: \.self) { Text($0.label).tag($0) }
+            CardSections {
+                Section { statusPicker }
+                Section {
+                    TextField("Game name", text: $customName).frame(minHeight: 44)
+                        // Inside a Form row: the border sits 8 pt outside the text on each side, so the text does not move.
+                        .controlBorder(.textField, in: RoundedRectangle(cornerRadius: 10, style: .continuous), horizontalOutset: 8)
+                    Picker("Platform", selection: $customPlatform) {
+                        ForEach([Platform.ps5, .xboxSeries, .switch2, .pc], id: \.self) { Text($0.label).tag($0) }
+                    }
+                } footer: {
+                    Text("\(Brand.name) won’t invent patch information for this game. Its journal stays empty until coverage exists.")
                 }
-            } footer: {
-                Text("\(Brand.name) won’t invent patch information for this game. Its journal stays empty until coverage exists.")
-            }
-            Section {
-                Button("Add as \(status.label)") {
-                    let name = customName.trimmingCharacters(in: .whitespaces)
-                    add(CatalogGame(id: "custom-\(Int(Date.now.timeIntervalSince1970))", name: name, platforms: [customPlatform],
-                                    coverage: .none, custom: true))
+                Section {
+                    Button("Add as \(status.label)") {
+                        let name = customName.trimmingCharacters(in: .whitespaces)
+                        add(CatalogGame(id: "custom-\(Int(Date.now.timeIntervalSince1970))", name: name, platforms: [customPlatform],
+                                        coverage: .none, custom: true))
+                    }
+                    .disabled(customName.trimmingCharacters(in: .whitespaces).isEmpty)
+                    Button("Back to list") { custom = false }
                 }
-                .disabled(customName.trimmingCharacters(in: .whitespaces).isEmpty)
-                Button("Back to list") { custom = false }
             }
         }
     }
@@ -391,7 +399,7 @@ struct AddRow: View {
                 Spacer(minLength: 8)
                 Image(systemName: added ? "checkmark" : selected ? "checkmark.circle.fill" : "circle")
                     .font(.title3)
-                    .foregroundStyle(added ? .secondary : PlayscribeColor.accent)
+                    .foregroundStyle(added ? .secondary : PlayscribeRole.action)
                     .frame(width: 44, height: 44)
             }
             .frame(minHeight: 64)
@@ -535,9 +543,9 @@ struct OnboardingStage: View {
             Group {
                 // AX: at most four lines, and any ellipsis lands at a word boundary, never mid-word ("Follow a game to g...", Quinn, 6a31718).
                 if typeSize.isAccessibilitySize {
-                    WholeWordText(text: headline, font: PlayscribeFont.title, lines: 4, color: PlayscribeColor.textPrimary)
+                    WholeWordText(text: headline, font: PlayscribeFont.title, lines: 4, color: PlayscribeRole.textPrimary)
                 } else {
-                    Text(headline).font(PlayscribeFont.title).foregroundStyle(PlayscribeColor.textPrimary)
+                    Text(headline).font(PlayscribeFont.title).foregroundStyle(PlayscribeRole.textPrimary)
                 }
             }
             .padding(20)
@@ -582,7 +590,7 @@ struct OnboardingActions: View {
                 } label: {
                     HStack(spacing: 14) {
                         Image(systemName: m.symbol).font(.title3).frame(width: 32)
-                            .foregroundStyle(PlayscribeColor.accent)
+                            .foregroundStyle(PlayscribeRole.action)
                         VStack(alignment: .leading, spacing: 2) {
                             Text(m.title).font(PlayscribeFont.headline)
                             Text(m.detail).font(PlayscribeFont.footnote).foregroundStyle(.secondary)
@@ -609,9 +617,9 @@ struct OnboardingActions: View {
             Button { model.addSheetOpen = true } label: {
                 Text("Add your first game")
                     .font(PlayscribeFont.headline)
-                    .foregroundStyle(PlayscribeColor.onAccent)
+                    .foregroundStyle(PlayscribeRole.onAction)
                     .frame(maxWidth: .infinity, minHeight: 52)
-                    .background(PlayscribeColor.accent, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                    .background(PlayscribeRole.action, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
             }
             .buttonStyle(.plain)
             .tappableFrame()
@@ -692,9 +700,9 @@ struct PopularCover: View {
                                 .font(PlayscribeFont.caption.weight(.semibold))
                                 .dynamicTypeSize(...DynamicTypeSize.xxxLarge)
                                 .lineLimit(1).minimumScaleFactor(0.7)
-                                .foregroundStyle(PlayscribeColor.onAccent)
+                                .foregroundStyle(PlayscribeRole.onAction)
                                 .padding(.horizontal, 8).padding(.vertical, 3)
-                                .background(PlayscribeColor.accent, in: Capsule())
+                                .background(PlayscribeRole.action, in: Capsule())
                                 .padding(.leading, 6).padding(.bottom, 6)
                                 .accessibilityHidden(true)
                         }
@@ -714,7 +722,7 @@ struct PopularCover: View {
                     // A fixed-size glyph in a fixed 44 pt plate: Dynamic Type must not grow it past the plate (Quinn, #431).
                     .font(.system(size: 22, weight: .semibold))
                     .symbolRenderingMode(.palette)
-                    .foregroundStyle(PlayscribeColor.onAccent, PlayscribeColor.accent)
+                    .foregroundStyle(PlayscribeRole.onAction, PlayscribeRole.action)
                     // Iris: a 1.5 pt dark ring keeps the disc legible over any cover art.
                     .background(Circle().fill(Color.black.opacity(0.8)).frame(width: 25, height: 25))
                     // The disc sits 8 pt from the corner; only the glyph moves, so the 44 pt hit frame stays inside the cover.

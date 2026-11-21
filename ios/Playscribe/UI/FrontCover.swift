@@ -6,13 +6,13 @@ import SwiftUI
 // below. LibraryView wraps it after #424 and #455 merge, so until then it shows only in the internal preview
 // (Settings > Front cover, or `-qaRoute cover` / `cover/one`). Nothing here is reachable in a TestFlight or App Store build.
 
-/// The three motion modes (Settings > "Cover motion"). Only Still is built; the others land in their own PRs.
+/// The three motion modes (Settings > "Cover motion"). Still and Key-art motion are built; the Trailer loop lands in its own PR.
 enum CoverMotion: String, CaseIterable, Identifiable {
     case trailer, keyArt, still
     var id: String { rawValue }
 
     static let key = "coverMotion"
-    /// Nadia, 12 Nov: the default is Key-art motion.
+    /// Nadia, 12 Nov (confirmed 13 Nov): the default is Key-art motion; Still and Trailer loop are choices in Settings.
     static let defaultMode: CoverMotion = .keyArt
 
     var label: String {
@@ -24,7 +24,7 @@ enum CoverMotion: String, CaseIterable, Identifiable {
     }
 
     /// Built so far. The Settings row lists only these, and a stored mode that is not built yet shows Still.
-    var isBuilt: Bool { self == .still }
+    var isBuilt: Bool { self != .trailer }
 
     /// The next mode down: a Trailer loop that cannot play shows Key-art motion, and Key-art motion falls back to Still.
     var fallback: CoverMotion {
@@ -98,7 +98,10 @@ struct FrontCoverPage: View {
     @Environment(\.dynamicTypeSize) private var typeSize
     @Environment(\.colorSchemeContrast) private var contrast
     @Environment(\.accessibilityReduceTransparency) private var reduceTransparency
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @Environment(\.qaSolid) private var qaSolid
+    @AppStorage(CoverMotion.key) private var stored: CoverMotion = CoverMotion.defaultMode
+    @AppStorage(YouTubeController.autoplayKey) private var autoplay = false
     var card: DeckCard
     /// Leading room kept clear for the leaves, and trailing room for the rail at accessibility sizes (the plate never
     /// sits under the rail, Iris condition 5).
@@ -108,6 +111,7 @@ struct FrontCoverPage: View {
     var safeArea: EdgeInsets = EdgeInsets()
     @State private var plateTop: CGFloat = 0
     @State private var pageHeight: CGFloat = 0
+    @State private var pageWide = false
 
     var body: some View {
         Button {
@@ -116,8 +120,10 @@ struct FrontCoverPage: View {
         } label: {
             ZStack(alignment: .bottomLeading) {
                 // Iris (#467): at accessibility sizes the plate covers the lower half, so the focal point goes to the top half.
-                ArtView(asset: card.game.keyArtAsset, game: card.game, focus: card.game.coverFocus ?? CoverFocus(x: 0.5, y: 0.5),
-                        focusTargetY: typeSize.isAccessibilitySize ? 0.25 : 0.5)
+                // Key-art motion (s-07) moves only this layer; the shade and the plate below stay still.
+                KeyArtMotionArt(asset: card.game.keyArtAsset, game: card.game, focus: card.game.coverFocus ?? CoverFocus(x: 0.5, y: 0.5),
+                                focusTargetY: typeSize.isAccessibilitySize ? 0.25 : 0.5,
+                                maxFocalY: typeSize.isAccessibilitySize ? 0.5 : 1, moving: moving)
                 if !solid { fade }
                 VStack(alignment: .leading, spacing: 18) {
                     FrontCoverPlate(card: card)
@@ -136,7 +142,10 @@ struct FrontCoverPage: View {
                 .background { if solid { PlayscribeColor.ink950.opacity(0.92) } }
             }
             .coordinateSpace(.named("coverPage"))
-            .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { h in if abs(h - pageHeight) > 0.5 { pageHeight = h } }
+            .onGeometryChange(for: CGSize.self) { $0.size } action: { s in
+                if abs(s.height - pageHeight) > 0.5 { pageHeight = s.height }
+                if (s.width > s.height) != pageWide { pageWide = s.width > s.height }
+            }
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
@@ -144,18 +153,37 @@ struct FrontCoverPage: View {
         // CM-7: one element; the motion mode is never announced.
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(FrontCoverPage.label(card))
-        .accessibilityValue(card.unread ? "New update" : "")
+        .accessibilityValue(card.unread ? card.chipText : "")
         .accessibilityAddTraits(.isButton)
         .accessibilityIdentifier("frontCover")
     }
 
     private var solid: Bool { contrast == .increased || reduceTransparency || qaSolid }
 
+    /// QA (internal builds, launch with `-qaReduceMotion YES`): the cover resolves as under Reduce Motion (CM-1), for CI stills,
+    /// where the simulator's switch can't be set per launch. Read here, not from the environment: the preview is a full-screen
+    /// cover presented from Settings, outside RootView's environment.
+    static var qaReduceMotion: Bool {
+        #if INTERNAL
+        return UserDefaults.standard.bool(forKey: "qaReduceMotion")
+        #else
+        return false
+        #endif
+    }
+
+    /// Key-art motion runs when it is the resolved mode (Reduce Motion forces Still, CM-1) and the art passes the murky check.
+    private var moving: Bool {
+        guard stored.resolved(reduceMotion: reduceMotion || Self.qaReduceMotion, autoplay: autoplay) == .keyArt, let asset = card.game.keyArtAsset else { return false }
+        return !KeyArtQuality.isMurky(asset: asset)
+    }
+
     /// CM-5: the shade is part of the cover, not the art, so the caption meets AA over any art (and, later, any loop
     /// frame). The top darkens a little for the status bar and the rail.
     private var fade: some View {
-        LinearGradient(stops: Self.fadeStops(accessibility: typeSize.isAccessibilitySize,
-                                             plateTop: pageHeight > 0 && plateTop > 0 ? Double(plateTop / pageHeight) : nil)
+        LinearGradient(stops: Self.fadeStops(accessibility: typeSize.isAccessibilitySize || pageWide,
+                                             plateTop: pageHeight > 0 && plateTop > 0 ? Double(plateTop / pageHeight) : nil,
+                                             followPlate: card.unread && card.freshLabel != nil,
+                                             pageHeight: Double(pageHeight))
                         .map { .init(color: PlayscribeColor.ink950.opacity($0.opacity), location: $0.location) },
                        startPoint: .top, endPoint: .bottom)
     }
@@ -164,8 +192,20 @@ struct FrontCoverPage: View {
     /// plate covers the lower half and its eyebrow sat on pale art at about 40 percent, so the shade follows the plate: clear
     /// until just above it, 88 percent black at the eyebrow's top edge (the accent holds 4.5:1 over art up to about 60 percent
     /// luminance there), 92 percent by the title, solid at the foot.
-    static func fadeStops(accessibility: Bool, plateTop: Double?) -> [(opacity: Double, location: Double)] {
-        guard accessibility else {
+    /// A wide page (Closed landscape) takes the same plate-following shade at every size (Quinn, 0e77e33 landscape still): the
+    /// plate fills most of the height, so the signed portrait shade left the NEW UPDATE eyebrow on bright art at 3.1:1 (the
+    /// fix #514 used for bright art: a bottom-weighted scrim reaching up to the eyebrow). Portrait keeps the signed shade.
+    /// `followPlate` (r060 day-one, Iris on #506): the "Day-one patch" line sits above the eyebrow, where the standard shade was
+    /// still ramping (2.3:1 over KCD II's armour in Closed landscape), so the shade follows the plate at standard sizes too,
+    /// 88 percent from the line's top edge, and keeps the signed solid foot from 90 percent down.
+    /// `pageHeight` (points): when known, the shade eases in over `plateRamp` points above the plate (smoothstep, 16 stops)
+    /// instead of 6 percent of the page, which was about 20 pt in Closed landscape and read as a cut across the art (Iris on
+    /// #506). The ramp ends at the plate's top edge, so the plate itself stays 88 percent or more.
+    static let plateRamp: Double = 96
+
+    static func fadeStops(accessibility: Bool, plateTop: Double?, followPlate: Bool = false,
+                          pageHeight: Double = 0) -> [(opacity: Double, location: Double)] {
+        guard accessibility || followPlate else {
             // Solid from 90 percent down (Iris, 19 Nov, on Terry's cover review): a title logo in the key art read as a ghost
             // behind the Playscribe mark, so the foot under the lockup is plain ink.
             return [(0.55, 0), (0, 0.18), (0, 0.45), (0.92, 0.82), (1, 0.9), (1, 1)]
@@ -173,7 +213,19 @@ struct FrontCoverPage: View {
         guard let top = plateTop.map({ min(max($0, 0.2), 0.9) }) else {
             return [(0.55, 0), (0, 0.18), (0, 0.25), (0.92, 0.7), (1, 1)]
         }
-        return [(0.55, 0), (0, min(0.18, top - 0.1)), (0, top - 0.06), (0.88, top), (0.92, min(0.98, top + 0.08)), (1, 1)]
+        var plate: [(opacity: Double, location: Double)]
+        if pageHeight > 0 {
+            let start = max(0.05, top - Self.plateRamp / pageHeight)
+            let ramp = (0...16).map { i -> (opacity: Double, location: Double) in
+                let t = Double(i) / 16
+                return (0.88 * t * t * (3 - 2 * t), start + (top - start) * t)
+            }
+            plate = [(0.55, 0), (0, min(0.18, start))] + ramp + [(0.92, min(0.98, top + 0.08)), (1, 1)]
+        } else {
+            plate = [(0.55, 0), (0, min(0.18, top - 0.1)), (0, top - 0.06), (0.88, top), (0.92, min(0.98, top + 0.08)), (1, 1)]
+        }
+        guard !accessibility else { return plate }
+        return plate.filter { $0.location < 0.9 } + [(1, 0.9), (1, 1)]
     }
 
     /// CM-7: "<Game> cover, update 1.1 on PS5, 22 Oct". A card with no release says when the game came out.
@@ -195,6 +247,15 @@ struct FrontCoverPlate: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
+            // r060 day-one (Iris): an unread day-one patch keeps its "Day-one patch" line above the eyebrow, sentence case (Iris, ux-copy); a plain new update
+            // has only the unread dot (Iris, 19 Nov).
+            if card.unread, let label = card.freshLabel {
+                Text(label)
+                    .font(PlayscribeFont.caption.weight(.semibold))
+                    .tracking(12 * 0.12)
+                    .foregroundStyle(PlayscribeColor.accent)
+                    .accessibilityIdentifier("dayOneEyebrow")
+            }
             // Iris (19 Nov, on #541): the patch name is the most prominent text on an update's cover. A small eyebrow carries the
             // game and the day ("Kingdom Come: Deliverance II, 25 Jun"), with the unread dot before it until the update is
             // opened (#467's NEW UPDATE). The game name is never cut: the eyebrow wraps.

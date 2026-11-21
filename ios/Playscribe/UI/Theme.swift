@@ -74,7 +74,7 @@ struct StatusPill: View {
 
 struct UnreadDot: View {
     var body: some View {
-        Circle().fill(PlayscribeColor.accent).frame(width: 8, height: 8)
+        Circle().fill(PlayscribeRole.newGraphic).frame(width: 8, height: 8)
             .accessibilityLabel("Unread")
     }
 }
@@ -200,8 +200,8 @@ private struct AdaptiveGlass<S: InsettableShape>: ViewModifier {
     func body(content: Content) -> some View {
         if reduceTransparency || contrast == .increased || qaSolid {
             content
-                .background(Color.ink2, in: shape)
-                .overlay(shape.strokeBorder(PlayscribeColor.vellum500, lineWidth: 1))
+                .background(PlayscribeRole.card, in: shape)
+                .controlBorder(.solidGlass, in: shape, keepingDark: PlayscribeColor.vellum500)
         } else {
             content.glassEffect(interactive ? .regular.interactive() : .regular, in: shape)
         }

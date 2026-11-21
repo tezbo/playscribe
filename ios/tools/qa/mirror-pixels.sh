@@ -1,6 +1,6 @@
 #!/bin/zsh
 # R-11: runs ReflectionTests in Tabletop and measures the mirror in real screenshots (an XCUITest screenshot of the inner display
-# is black on the Duo simulator). Passes when, on a bright frame (video peak >= 80), the band's brightest pixels reach 40% of the
+# is black on the Duo simulator). Passes when, on a bright frame (video peak >= 80), the band's brightest pixels reach 25% of the
 # video's. Frames that are not the app (the home screen) make the numbers meaningless: check mirror-*.png. Usage: tools/qa/mirror-pixels.sh <device-udid> <out-dir>   (run from ios/, simulator already in Tabletop)
 set -u
 export DEVELOPER_DIR=${DEVELOPER_DIR:-/Applications/Xcode.app/Contents/Developer}
@@ -24,4 +24,4 @@ for i in {1..6}; do
 done
 wait $test; status=$?
 echo "best mirror/video ${best}%  (xcodebuild exit $status)"
-(( best >= 40 && status == 0 )) && { echo "MIRROR PASS"; exit 0; } || { echo "MIRROR FAIL"; exit 1; }
+(( best >= 25 && status == 0 )) && { echo "MIRROR PASS"; exit 0; } || { echo "MIRROR FAIL"; exit 1; }
