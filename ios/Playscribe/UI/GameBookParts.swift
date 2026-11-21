@@ -650,6 +650,7 @@ struct TrailerView: View {
                     }
                 }
                 .background(Color.black)
+                .overlay(alignment: .bottomLeading) { VideoTimeProbe(controller: controller) }
                 .onChange(of: [duo.pose == .tabletop, controller != nil], initial: true) { controller?.setNativeControls(duo.pose != .tabletop) }
                 .onChange(of: FullBleedVideo.offered(in: duo.pose)) { _, offered in if !offered { fullScreen = false } }
                 .toolbarVisibility(duo.pose == .tabletop || fullScreen ? .hidden : .automatic, for: .navigationBar)

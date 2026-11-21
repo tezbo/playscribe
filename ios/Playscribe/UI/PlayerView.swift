@@ -212,6 +212,7 @@ struct PlayerView: View {
                     }
                 }
                 .background(.black)
+                .overlay(alignment: .bottomLeading) { VideoTimeProbe(controller: controller) }
                 .onChange(of: [duo.pose == .tabletop, controller != nil], initial: true) { controller?.setNativeControls(duo.pose != .tabletop) }
                 // Book and Tabletop have no full screen: leaving Closed or Open ends it, and it doesn't come back on its own.
                 .onChange(of: FullBleedVideo.offered(in: duo.pose)) { _, offered in if !offered { fullScreen = false } }
@@ -388,6 +389,23 @@ struct FullBleedVideo: View {
             Button(action: action) { Label("Full screen", systemImage: "arrow.up.left.and.arrow.down.right") }
                 .accessibilityIdentifier("videoFullScreen")
         }
+    }
+}
+
+/// QA only (internal builds launched with `-qaVideoTime YES`): an invisible element, `qaVideoTime`, whose value is the playback time
+/// in seconds, so a UI test can check that turning or folding keeps the time (R-13, P-2). Absent otherwise, so VoiceOver never meets it.
+struct VideoTimeProbe: View {
+    var controller: YouTubeController?
+    var body: some View {
+        #if INTERNAL
+        if UserDefaults.standard.bool(forKey: "qaVideoTime"), let controller {
+            Color.clear.frame(width: 1, height: 1)
+                .accessibilityElement()
+                .accessibilityIdentifier("qaVideoTime")
+                .accessibilityValue(String(format: "%.1f", controller.current))
+                .allowsHitTesting(false)
+        }
+        #endif
     }
 }
 
