@@ -31,13 +31,24 @@ struct FrontCoverTests {
         }
     }
 
-    /// A mode that is not built yet falls back down the chain, ending at Still; the default is Key-art motion.
+    /// A mode that is not built yet falls back down the chain; Key-art motion is built and is the default (Nadia, 13 Nov).
     @Test func unbuiltModesFallBack() {
         for mode in CoverMotion.allCases {
             #expect(mode.resolved(reduceMotion: false, autoplay: true).isBuilt)
         }
         #expect(CoverMotion.still.isBuilt)
+        #expect(CoverMotion.keyArt.isBuilt)
+        #expect(!CoverMotion.trailer.isBuilt)
+        #expect(CoverMotion.trailer.resolved(reduceMotion: false, autoplay: true) == .keyArt)
         #expect(CoverMotion.defaultMode == .keyArt)
+    }
+
+    /// Precedence (Nadia, 13 Nov): a fresh install moves, whatever Autoplay says; Reduce Motion always wins with the still (G-9).
+    @Test func defaultMovesAndReduceMotionWins() {
+        #expect(CoverMotion.defaultMode.resolved(reduceMotion: false, autoplay: false) == .keyArt)
+        #expect(CoverMotion.defaultMode.resolved(reduceMotion: false, autoplay: true) == .keyArt)
+        #expect(CoverMotion.defaultMode.resolved(reduceMotion: true, autoplay: true) == .still)
+        #expect(CoverMotion.defaultMode.resolved(reduceMotion: true, autoplay: false) == .still)
     }
 
     /// CM-7: one VoiceOver element, "<Game> cover, update 1.1 on PS5, 22 Oct"; the motion mode is never in it.
