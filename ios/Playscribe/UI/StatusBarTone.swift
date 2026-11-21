@@ -60,13 +60,14 @@ final class StatusBarTone {
     /// The window's width, for telling wide art from a tile.
     var width: CGFloat { window?.bounds.width ?? 0 }
 
-    /// Art is under the bar when it reaches the bar's top and its bottom edge is below the bar's bottom. Going dark needs the edge
+    /// Art is under the bar when its top edge is above the bar's bottom (a header that starts part way down the bar counts: Mac at
+    /// d7656024, Closed portrait: art starting under the clock drew dark glyphs at 3.4:1) and its bottom edge is below the bar's bottom. Going dark needs the edge
     /// above the bar's bottom; coming back to light needs it a further 8 pt down, so a scroll resting on the edge never flickers.
     nonisolated static func isLight(current: Bool, barBottom bar: CGFloat, art: [CGRect], coverUp: Bool) -> Bool {
         if coverUp { return true }
         guard bar > 0 else { return false }
         let needed = current ? bar : bar + hysteresis
-        return art.contains { $0.minY <= 1 && $0.maxY > needed }
+        return art.contains { $0.minY < bar && $0.maxY > needed }
     }
 
     private func recompute() {
@@ -122,7 +123,7 @@ private struct StatusBarArt: ViewModifier {
                     let wide = tone.width > 0 && frame.width >= tone.width * 0.6
                     tone.report(id, frame: wide ? frame : nil)
                     let bar = tone.barBottom
-                    let next = wide && frame.minY <= 1 && frame.maxY > bar ? max(0, bar - frame.minY + 24) : 0
+                    let next = wide && frame.minY < bar && frame.maxY > bar ? max(0, bar - frame.minY + 24) : 0
                     if abs(next - scrim) > 0.5 { scrim = next }
                 }
                 .onDisappear { StatusBarTone.shared.report(id, frame: nil) }

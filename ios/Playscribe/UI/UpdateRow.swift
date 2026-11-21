@@ -57,7 +57,7 @@ struct UpdateRowLabel: View {
         let ax = typeSize.isAccessibilitySize
         VStack(alignment: .leading, spacing: 3) {
             HStack(alignment: .firstTextBaseline, spacing: 8) {
-                WholeWordText(text: t.title, font: Self.nameFont, lines: ax ? 3 : 2, color: PlayscribeColor.textPrimary)
+                WholeWordText(text: t.title, font: Self.nameFont, lines: ax ? 3 : 2, color: PlayscribeRole.textPrimary)
                 Spacer(minLength: 0)
                 if unread {
                     Text("New").font(Self.newFont).foregroundStyle(PlayscribeColor.accent)
@@ -65,7 +65,7 @@ struct UpdateRowLabel: View {
                 }
             }
             if let h = t.headline {
-                WholeWordText(text: h, font: PlayscribeFont.subheadline, lines: ax ? 3 : 2, color: PlayscribeColor.textPrimary)
+                WholeWordText(text: h, font: PlayscribeFont.subheadline, lines: ax ? 3 : 2, color: PlayscribeRole.textPrimary)
             }
             ViewThatFits(in: .horizontal) {
                 HStack(alignment: .firstTextBaseline, spacing: 12) {
@@ -78,7 +78,7 @@ struct UpdateRowLabel: View {
                     if let s = t.status { Text(s).fixedSize(horizontal: false, vertical: true) }
                 }
             }
-            .font(PlayscribeFont.caption).foregroundStyle(PlayscribeColor.textSecondary)
+            .font(PlayscribeFont.caption).foregroundStyle(PlayscribeRole.textSecondary)
             // The chips that are not the PS5 line stay with the row (never drop chips): PS4 update, Simulated.
             if release.ps4Label != nil || (release.simulated == true && release.ps5State == .onPS5) {
                 FlowLayout(spacing: 6) {

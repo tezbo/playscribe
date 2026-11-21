@@ -41,7 +41,7 @@ struct GamePageColumn: View {
                         .frame(maxWidth: Self.readingWidth + 40, alignment: .leading)
                         .frame(maxWidth: .infinity)
                 } header: {
-                    PinnedSectionHeader(gameID: gameID, ink: Color.ink0, maxWidth: Self.readingWidth, anchorY: anchorY, pinned: $barPinned)
+                    PinnedSectionHeader(gameID: gameID, ink: PlayscribeRole.bg, maxWidth: Self.readingWidth, anchorY: anchorY, pinned: $barPinned)
                 }
             }
             .padding(.bottom, 24)
@@ -53,9 +53,9 @@ struct GamePageColumn: View {
         // the rows bright again under it (Quinn, Closed AX5 at 722c752, Open landscape at 7cb8b33). Solid ink hangs below the
         // fade, outside the frame, to the screen edge; views laid out after the page (rail, tab bar, pill) still draw over it.
         .overlay(alignment: .bottom) {
-            LinearGradient(colors: [Color.ink0.opacity(0), Color.ink0], startPoint: .top, endPoint: .bottom)
+            LinearGradient(colors: [PlayscribeRole.bg.opacity(0), PlayscribeRole.bg], startPoint: .top, endPoint: .bottom)
                 .frame(height: 24)
-                .overlay(alignment: .bottom) { Color.ink0.frame(height: 120).offset(y: 120) }
+                .overlay(alignment: .bottom) { PlayscribeRole.bg.frame(height: 120).offset(y: 120) }
                 .allowsHitTesting(false)
                 .accessibilityHidden(true)
         }

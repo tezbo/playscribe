@@ -737,10 +737,10 @@ struct ContentsView: View {
                     } header: {
                         if duo.pose == .book {
                             // Pinned, the list fades out under it as in one column (Quinn, #521: "Patch 1.7" was sliced).
-                            PinnedSectionHeader(gameID: gameID, ink: Color.ink0, inset: 0, style: .contents, vertical: 6,
+                            PinnedSectionHeader(gameID: gameID, ink: PlayscribeRole.bg, inset: 0, style: .contents, vertical: 6,
                                                 anchorY: anchorY, gap: 14, pinned: $tocPinned)
                                 .padding(.leading, leading).padding(.trailing, trailing)
-                                .background(Color.ink0)
+                                .background(PlayscribeRole.bg)
                         }
                     }
                 }
@@ -799,7 +799,7 @@ struct ContentsHead: View {
                         Text(note)
                             .font(PlayscribeFont.subheadline)
                             // textSecondary, not .secondary (about 5:1): the one action the player needs (Iris on #506).
-                            .foregroundStyle(PlayscribeColor.textSecondary)
+                            .foregroundStyle(PlayscribeRole.textSecondary)
                             .fixedSize(horizontal: false, vertical: true)
                             .accessibilityIdentifier("dayOneNote")
                             .accessibilitySortPriority(1)

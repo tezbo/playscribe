@@ -12,6 +12,11 @@ struct StatusBarToneTests {
         #expect(StatusBarTone.isLight(current: false, barBottom: bar, art: [CGRect(x: 0, y: 0, width: 400, height: 300)], coverUp: false))
     }
 
+    @Test func lightWhenArtStartsPartWayDownTheBar() {
+        // Closed portrait: the header art starts under the clock, not at the screen's top edge (Mac at d7656024, 3.4:1 dark glyphs).
+        #expect(StatusBarTone.isLight(current: false, barBottom: bar, art: [CGRect(x: 0, y: 23, width: 400, height: 180)], coverUp: false))
+    }
+
     @Test func darkOverThePageWithNoArt() {
         #expect(!StatusBarTone.isLight(current: true, barBottom: bar, art: [], coverUp: false))
         // Art lower on the page, not reaching the bar's top, does not count.
