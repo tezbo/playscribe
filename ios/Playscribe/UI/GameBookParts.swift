@@ -629,7 +629,7 @@ struct TrailerView: View {
                 Group {
                     if let controller {
                         if controller.failed {
-                            VideoUnavailable(videoID: videoID, code: controller.errorCode) { close() }
+                            VideoUnavailable(videoID: videoID, code: controller.errorCode, showsClose: duo.pose == .tabletop) { close() }
                         } else if duo.pose == .tabletop {
                             let game = gameID.flatMap { model.game($0) }
                             TabletopVideoStage(controller: controller,
@@ -662,6 +662,7 @@ struct TrailerView: View {
             VStack(spacing: 0) {
                 Color.black.frame(width: h * 16 / 9, height: h)
                     .overlay { WebSurface(webView: controller.webView) }
+                    .overlay { VideoStartCover(controller: controller, posterAsset: nil, game: gameID.flatMap { model.game($0) }) }
                     .frame(maxWidth: .infinity)
                 Text(name).font(PlayscribeFont.headline).foregroundStyle(.white)
                     .multilineTextAlignment(.center)
@@ -714,6 +715,12 @@ struct ContentsView: View {
                 LazyVStack(alignment: .leading, spacing: 14, pinnedViews: duo.pose == .book ? .sectionHeaders : []) {
                     // Book: the left page opens with the game's art, as the one-column page does.
                     if duo.pose == .book { PageArtBand(gameID: gameID) }
+                    // Tabletop: the video rows come first in the lower panel, above the title and search (Iris order, #511). Inside
+                    // the lazy list's body they were never built at AX5, where the head fills the panel (Mac at c072400: no
+                    // "Play trailer" to reach).
+                    if duo.pose == .tabletop, [.updates, .gallery].contains(model.section(gameID)) {
+                        TabletopTrailerRow(gameID: gameID).padding(.leading, leading).padding(.trailing, trailing)
+                    }
                     // Book: the edge that faces the hinge keeps 24 pt clear of the division band (r054-book-gamepage-hinge-inset).
                     ContentsHead(gameID: gameID).padding(.leading, leading).padding(.trailing, trailing)
                         .background(alignment: .bottom) {
@@ -805,11 +812,6 @@ struct ContentsBody: View {
         let chapter = model.section(gameID)
         let game = model.game(gameID)
             VStack(alignment: .leading, spacing: 14) {
-                // A game with no notes has no outline, so its Play trailer row sits here, first in the lower panel (Iris order:
-                // trailer first, #511). The section bar is pinned above this scroll in Tabletop (R-7).
-                if duo.pose == .tabletop, model.ps5Releases(gameID).isEmpty, model.pcOnlyReleases(gameID).isEmpty {
-                    TabletopTrailerRow(gameID: gameID)
-                }
                 // Tabletop, a game with no notes: search, the A to Z strip and Previous/Next have nothing to act on (Quinn, #426),
                 // so they are not drawn; the list below says why there is nothing (NoUpdatesLine).
                 let tabletopNoNotes = duo.pose == .tabletop && model.ps5Releases(gameID).isEmpty && model.pcOnlyReleases(gameID).isEmpty
@@ -831,11 +833,9 @@ struct ContentsBody: View {
                     }
                     ReleaseTimeline(gameID: gameID)
                     if duo.pose == .tabletop, let game { TabletopGameTail(game: game) }
-                } else if chapter == .gallery, duo.pose == .tabletop {
-                    // The Gallery is on the view-only stage, so its videos' play rows are here (R-11; Mac at 1f3ae6f: with Gallery
-                    // selected the lower half had no row to tap, only the outline's Updates rows carried one).
-                    TabletopTrailerRow(gameID: gameID)
                 }
+                // Tabletop, Gallery: the stage is view only, so its videos' play rows are in the lower panel, first in the list
+                // (ContentsView, R-11; Mac at 1f3ae6f).
             }
     }
 }
@@ -1073,7 +1073,6 @@ struct TabletopOutline: View {
         let sections = model.readerRelease(gameID).map(model.readerSections) ?? []
         let index = min(model.readerIndex[gameID] ?? 0, max(0, sections.count - 1))
         VStack(spacing: 2) {
-            TabletopTrailerRow(gameID: gameID).padding(.bottom, 4)
             ForEach(Array(sections.enumerated()), id: \.element.id) { i, s in
                 Button { model.readerIndex[gameID] = i } label: {
                     HStack {

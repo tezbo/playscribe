@@ -186,6 +186,8 @@ struct PlayerView: View {
     var gameID: String
     var releaseID: String
     @State private var controller: YouTubeController?
+    /// Room for a two-line caption under the video, growing with Dynamic Type.
+    @ScaledMetric(relativeTo: .headline) private var captionRoom: CGFloat = 64
     var body: some View {
         NavigationStack {
             DuoReader { duo in
@@ -193,7 +195,9 @@ struct PlayerView: View {
                 Group {
                     if let release, let video = release.video, let controller {
                         if controller.failed {
-                            VideoUnavailable(videoID: video.youtubeID, code: controller.errorCode) { close() }
+                            // The navigation bar's Close is there outside Tabletop, so the screen adds its own only in Tabletop
+                            // (Quinn, Mac at c072400: Open portrait showed Close twice).
+                            VideoUnavailable(videoID: video.youtubeID, code: controller.errorCode, showsClose: duo.pose == .tabletop) { close() }
                         } else {
                             layout(duo: duo, release: release, video: video, controller: controller)
                         }
@@ -226,7 +230,10 @@ struct PlayerView: View {
     @ViewBuilder
     private func layout(duo: DuoContext, release: Release, video: ReleaseVideo, controller: YouTubeController) -> some View {
         // A web view has no intrinsic size, so a 16:9 box carries the size and the view fills it.
-        let surface = Color.black.aspectRatio(16 / 9, contentMode: .fit).overlay { WebSurface(webView: controller.webView) }
+        // Before Play, our poster and our Play (VideoStartCover), never YouTube's start screen (Mac at c072400).
+        let surface = Color.black.aspectRatio(16 / 9, contentMode: .fit)
+            .overlay { WebSurface(webView: controller.webView) }
+            .overlay { VideoStartCover(controller: controller, posterAsset: video.posterAsset, game: model.game(gameID)) }
         let gameName = model.game(gameID)?.name ?? ""
         switch duo.pose {
         case .tabletop:
@@ -249,12 +256,17 @@ struct PlayerView: View {
                 .overlay(alignment: .topLeading) { MirrorAudit(on: false) }
             }
         case .closed, .flat:
-            // VB-3: full display, the player's own controls.
-            VStack(spacing: 0) {
-                surface.frame(maxWidth: .infinity)
-                VideoCaption(video: video, game: gameName).padding(.horizontal, 16).padding(.top, 12)
+            // VB-3: full display, the player's own controls once playing. The player is 16:9 and as large as the area allows
+            // after a two-line caption, centred, so in Closed landscape it no longer runs to the window's edge (Quinn, c072400).
+            GeometryReader { geo in
+                let h = max(0, min(geo.size.width * 9 / 16, geo.size.height - captionRoom))
+                VStack(spacing: 0) {
+                    surface.frame(width: h * 16 / 9, height: h).frame(maxWidth: .infinity)
+                    VideoCaption(video: video, game: gameName).frame(maxWidth: h * 16 / 9).padding(.horizontal, 16).padding(.top, 12)
+                        .frame(maxWidth: .infinity)
+                }
+                .frame(maxHeight: .infinity, alignment: duo.pose == .closed && !duo.isLandscape ? .top : .center)
             }
-            .frame(maxHeight: .infinity, alignment: duo.pose == .closed ? .top : .center)
             .overlay(alignment: .topLeading) { MirrorAudit(on: false) }
         }
     }
@@ -337,6 +349,40 @@ struct TabletopVideoStage: View {
         .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { playerHeight = $0 }
         // A screen for watching: dark in light and dark mode, so the white text, the grey and the rail's bar all hold (Iris on #552).
         .environment(\.colorScheme, .dark)
+    }
+}
+
+/// VB-3, R-11 (Mac at c072400: outside Tabletop, Closed landscape and Open portrait showed YouTube's own start screen, with its
+/// red button and "Watch on YouTube"): in every pose, until the video plays, the player shows our poster and our Play, never
+/// YouTube's start screen. After Play, YouTube's player shows unobscured with its own controls (YouTube API terms). Play is
+/// disabled until the player is ready; after it is pressed a spinner shows until the video starts.
+struct VideoStartCover: View {
+    var controller: YouTubeController
+    var posterAsset: String?
+    var game: CatalogGame?
+    var body: some View {
+        if !controller.playerShown {
+            ZStack {
+                VideoPoster(asset: posterAsset, game: game)
+                Color.black.opacity(0.25).accessibilityHidden(true)
+                if controller.playRequested {
+                    ProgressView().controlSize(.large).tint(.white).accessibilityLabel("Loading video")
+                } else {
+                    Button(action: controller.playPause) {
+                        Image(systemName: "play.fill")
+                            .font(.system(size: 26, weight: .semibold))
+                            .frame(width: 64, height: 64)
+                            .background(PlayscribeColor.accent, in: Circle())
+                            .foregroundStyle(PlayscribeColor.onAccent)
+                    }
+                    .accessibilityLabel("Play")
+                    .accessibilityIdentifier("videoPlay")
+                    .disabled(!controller.ready)
+                    .opacity(controller.ready ? 1 : 0.5)
+                    .tappableFrame()
+                }
+            }
+        }
     }
 }
 
@@ -460,6 +506,7 @@ struct TabletopTransport: View {
                             .foregroundStyle(PlayscribeColor.onAccent)
                     }
                     .accessibilityLabel(controller.isPlaying ? "Pause" : "Play")
+                    .accessibilityIdentifier("videoPlay")
                     // Until the player is ready a press would do nothing (Quinn on #552).
                     .disabled(!controller.ready)
                     .opacity(controller.ready ? 1 : 0.5)
@@ -523,6 +570,8 @@ struct VideoUnavailable: View {
     var videoID: String
     /// The player's error code, when it gave one.
     var code: Int? = nil
+    /// False where the navigation bar already carries Close (every pose but Tabletop), so Close appears once.
+    var showsClose = true
     var onClose: () -> Void
     static func blocksEmbedding(_ code: Int?) -> Bool { code == 101 || code == 150 }
     var body: some View {
@@ -538,7 +587,7 @@ struct VideoUnavailable: View {
                     .buttonStyle(.borderedProminent).foregroundStyle(PlayscribeColor.onAccent)
                     .tappableFrame()
             }
-            Button("Close", action: onClose).hitTarget()
+            if showsClose { Button("Close", action: onClose).hitTarget() }
         }
     }
 }
