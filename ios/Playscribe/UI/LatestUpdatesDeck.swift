@@ -7,6 +7,10 @@ struct DeckCard: Identifiable, Hashable {
     var release: Release?
     var unread: Bool
     var date: Date?
+    /// The chip on an unread card: "New update", or "Day-one patch" (r060-dayone-patch-alert-app); nil once read.
+    var freshLabel: String? = nil
+    /// The unread chip's words: "Day-one patch" for a day-one patch, else "New update".
+    var chipText: String { freshLabel ?? FreshCopy.newUpdate }
     var id: String { release.map { "u-" + $0.id } ?? "r-" + game.id }
 
     // `unread` is part of equality: SwiftUI skips re-rendering a view whose Equatable inputs compare equal, so a card that
@@ -37,7 +41,7 @@ extension AppModel {
             guard let g = game(c.gameID) else { continue }
             for r in ps5Releases(c.gameID) where r.ps5State == .onPS5 && !qaNoReleases {
                 let unread = isUnread(r)
-                if unread || r.ps5Date > cutoff { cards.append(DeckCard(game: g, release: r, unread: unread, date: r.ps5Date)) }
+                if unread || r.ps5Date > cutoff { cards.append(DeckCard(game: g, release: r, unread: unread, date: r.ps5Date, freshLabel: freshLabel(r))) }
             }
         }
         if cards.isEmpty {
@@ -325,7 +329,7 @@ struct DeckCardView: View {
     private var label: String {
         if let r = card.release {
             let summary = (r.summary?.isEmpty == false) ? ", \(r.summary!)" : ""
-            return "\(card.unread ? "New update, " : "")\(r.ps5Headline ?? r.displayName), \(card.game.name), \(r.versionChip.map { $0 + ", " } ?? "")\(dateText)\(summary)"
+            return "\(card.unread ? card.chipText + ", " : "")\(r.ps5Headline ?? r.displayName), \(card.game.name), \(r.versionChip.map { $0 + ", " } ?? "")\(dateText)\(summary)"
         }
         return "\(card.game.name), released \(dateText), \(DeckCard.noReleaseLine(tracked: model.feedTracksGame(card.game.id)).lowercased())"
     }
@@ -343,7 +347,10 @@ struct CompactDeckCard: View {
     var body: some View {
         // The caller gives a `height` that already holds the whole caption at accessibility sizes (measured by the deck's
         // ruler), so nothing can overflow the card; the art and its scrim are the background.
+        // Full bleed at 75%, held to the card's bottom: the boxed 60% scrim left the byline at 3.2:1 on Two Point Museum's
+        // masonry in Open portrait std (Iris on #514, Mac contrast at 2528ae64). The scrim is clipped by the card's corners.
         AdaptiveCaption(card: card)
+            .brightArtScrim(0.75, fullBleed: true)
             .frame(maxWidth: .infinity, alignment: .bottomLeading)
             .frame(height: height, alignment: .bottomLeading)
             .background {
@@ -466,7 +473,7 @@ struct DeckChips: View {
     private var items: [(text: String, filled: Bool)] {
         var list: [(text: String, filled: Bool)] = []
         if let v = card.release?.versionChip { list.append((v, false)) }
-        if card.unread { list.append(("New update", true)) }
+        if card.unread { list.append((card.chipText, true)) }
         if card.release == nil, let d = card.date { list.append(("Released " + AppModel.tileDay(d), false)) }
         return list
     }
@@ -570,7 +577,7 @@ struct WideDeckCard: View {
 
     private var accessibilityCard: some View {
         VStack(alignment: .leading, spacing: 6) {
-            if card.unread { chip("New update", filled: true) }
+            if card.unread { chip(card.chipText, filled: true) }
             Text(card.game.name.gluingTrailingNumeral).font(PlayscribeFont.title2.bold())
                 .foregroundStyle(PlayscribeColor.textPrimary).fixedSize(horizontal: false, vertical: true)
             headline
@@ -601,7 +608,7 @@ struct WideDeckCard: View {
                 LinearGradient(colors: [PlayscribeColor.ink950.opacity(0.92), PlayscribeColor.ink950.opacity(0.55), .clear],
                                startPoint: .leading, endPoint: .trailing)
                 VStack(alignment: .leading, spacing: 6) {
-                    if card.unread { chip("New update", filled: true) }
+                    if card.unread { chip(card.chipText, filled: true) }
                     Text(card.game.name.gluingTrailingNumeral).font(PlayscribeFont.title2.bold())
                         .foregroundStyle(PlayscribeColor.textPrimary).lineLimit(2).fixedSize(horizontal: false, vertical: true)
                     Text(card.release.map { $0.ps5Headline ?? $0.displayName } ?? "Released " + (card.date.map(AppModel.tileDay) ?? ""))
@@ -658,7 +665,7 @@ struct DeckCardArt: View {
             .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous).strokeBorder(PlayscribeColor.vellum100.opacity(0.6), lineWidth: 1.5))
             .overlay(alignment: .topLeading) {
                 HStack(spacing: 6) {
-                    if card.unread { chip("New update", filled: true) }
+                    if card.unread { chip(card.chipText, filled: true) }
                     if let v = card.release?.versionChip { chip(v, filled: false) }
                     if card.release == nil, let d = card.date { chip("Released " + AppModel.tileDay(d), filled: false) }
                 }
@@ -754,7 +761,7 @@ struct DeckStage: View {
                 // Wraps instead of squeezing "New update" away at accessibility sizes (28c6063 Tabletop AX3).
                 FlowLayout(spacing: 8) {
                     if upcomingLine != nil { Text("Coming soon").foregroundStyle(PlayscribeColor.accent) }
-                    if card.unread { Text("New update").foregroundStyle(PlayscribeColor.accent) }
+                    if card.unread { Text(card.chipText).foregroundStyle(PlayscribeColor.accent) }
                     if let v = card.release?.versionChip { Text(v.keepingVersionsTogether).monospacedDigit().foregroundStyle(PlayscribeColor.textPrimary.opacity(0.9)) }
                 }
                 .font(PlayscribeFont.caption)
@@ -797,11 +804,88 @@ struct DeckStage: View {
             .dynamicTypeSize(...DynamicTypeSize.accessibility3)
             // The caption ends 24 pt above the division, measured in screen space (as in 0.2.0 #174/#176).
             .padding(.bottom, duo.clearance(forBottom: stageBottom))
+            // bug-text-on-bright-art: 75% black behind the block, since the ember eyebrow needs more than white lines (Iris 2b).
+            // Full bleed: the whole stage width, held to the stage's bottom edge, so it has no side, top or bottom edge on the art
+            // (Iris on #514: the boxed scrim showed its right and top edges in Tabletop).
+            .brightArtScrim(0.75, fullBleed: true)
             }
             .background(Color.clear.onGeometryChange(for: CGFloat.self) { $0.frame(in: .global).maxY.rounded() } action: { new in
                 if abs(new - stageBottom) > 0.5 { stageBottom = new }
             })
         .allowsHitTesting(false)
         .accessibilityElement(children: .contain)
+    }
+}
+
+
+/// bug-text-on-bright-art (Iris spec 2b): a fixed black scrim behind a text block over key art, so small text keeps 4.5:1 on
+/// the brightest art. 0% a line and a half above the block, eased, full `strength` from the block's top to 8 pt under its last line, soft
+/// side edges, no box. It belongs to the text, not the art, so it does not move under key-art motion. `strength` is at least
+/// 0.6 behind white lines and 0.75 behind the ember eyebrow ("New update", "Coming soon").
+struct BrightArtScrim: ViewModifier {
+    var strength: Double
+    /// One text line and a half above the block, well under the Tabletop cap of 15% of the stage (about 56 pt).
+    var ramp: CGFloat = 40
+    /// Full strength holds this far under the last line, then eases out over `fade` more, so the bottom is no hard edge either.
+    var tail: CGFloat = 8
+    var fade: CGFloat = 28
+    var feather: CGFloat = 40
+    /// Tabletop stage: the scrim spans the block's full width (the block fills the stage) and holds full strength to its bottom
+    /// edge, with no side feather and no bottom fade; only the top eases in, over `stageRamp`. A box with feathered sides showed
+    /// its right and top edges on bright art (Iris on #514).
+    var fullBleed = false
+    /// Under the Tabletop cap of 15% of the stage (about 56 pt).
+    static let stageRamp: CGFloat = 56
+
+    /// An eased (smoothstep) ramp so there is no visible edge where the scrim starts. More stops for the long stage ramp, so its
+    /// straight segments leave no bands.
+    private func eased(_ top: Double, steps: Int = 5) -> [Gradient.Stop] {
+        (0...steps).map { i in
+            let t = Double(i) / Double(steps)
+            let k = t * t * (3 - 2 * t)
+            return Gradient.Stop(color: .black.opacity(top * k), location: t)
+        }
+    }
+
+    func body(content: Content) -> some View {
+        if fullBleed {
+            content.frame(maxWidth: .infinity, alignment: .leading).background(alignment: .bottom) {
+                VStack(spacing: 0) {
+                    LinearGradient(stops: eased(strength, steps: 16), startPoint: .top, endPoint: .bottom).frame(height: Self.stageRamp)
+                    Color.black.opacity(strength)
+                }
+                .padding(.top, -Self.stageRamp)
+                .allowsHitTesting(false)
+                .accessibilityHidden(true)
+            }
+        } else {
+            boxed(content)
+        }
+    }
+
+    private func boxed(_ content: Content) -> some View {
+        content.background(alignment: .bottom) {
+            VStack(spacing: 0) {
+                LinearGradient(stops: eased(strength), startPoint: .top, endPoint: .bottom).frame(height: ramp)
+                Color.black.opacity(strength)
+                LinearGradient(stops: eased(strength), startPoint: .bottom, endPoint: .top).frame(height: fade)
+            }
+            .mask {
+                HStack(spacing: 0) {
+                    LinearGradient(stops: eased(1), startPoint: .leading, endPoint: .trailing).frame(width: feather)
+                    Color.black
+                    LinearGradient(stops: eased(1), startPoint: .trailing, endPoint: .leading).frame(width: feather)
+                }
+            }
+            .padding(.top, -ramp).padding(.bottom, -(tail + fade)).padding(.horizontal, -feather)
+            .allowsHitTesting(false)
+            .accessibilityHidden(true)
+        }
+    }
+}
+
+extension View {
+    func brightArtScrim(_ strength: Double, fullBleed: Bool = false) -> some View {
+        modifier(BrightArtScrim(strength: strength, fullBleed: fullBleed))
     }
 }

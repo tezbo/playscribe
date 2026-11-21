@@ -44,7 +44,7 @@ struct TabletopSearchButton: View {
             }
             .padding(.horizontal, 12)
             .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
-            .background(PlayscribeColor.ink700, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+            .background(PlayscribeRole.chipFill, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
@@ -79,9 +79,9 @@ struct TabletopLetterStrip: View {
                     let on = letter == l
                     Button { letter = on ? nil : l } label: {
                         Text(l).font(PlayscribeFont.headline)
-                            .foregroundStyle(on ? PlayscribeColor.onAccent : PlayscribeColor.textPrimary)
+                            .foregroundStyle(on ? PlayscribeRole.onAction : PlayscribeRole.textPrimary)
                             .frame(width: chip, height: chip)
-                            .background(Circle().fill(on ? PlayscribeColor.accent : PlayscribeColor.ink700))
+                            .background(Circle().fill(on ? PlayscribeRole.action : PlayscribeRole.chipFill))
                             .contentShape(Rectangle())
                     }
                     .buttonStyle(.plain)

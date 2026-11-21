@@ -65,7 +65,7 @@ struct VerificationExplainer: View {
                 ForEach(Verification.ladder, id: \.self) { v in
                     HStack(spacing: 8) {
                         Image(systemName: v == kind ? "checkmark.circle.fill" : "circle")
-                            .foregroundStyle(v == kind ? PlayscribeColor.accent : .secondary)
+                            .foregroundStyle(v == kind ? PlayscribeRole.action : .secondary)
                         Text(v.tagName).font(PlayscribeFont.subheadline.weight(v == kind ? .semibold : .regular))
                         if v == kind { Text("This one").font(PlayscribeFont.footnote).foregroundStyle(.secondary) }
                     }
