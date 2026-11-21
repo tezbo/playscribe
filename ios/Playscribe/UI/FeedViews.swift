@@ -44,6 +44,8 @@ struct UpdatesView: View {
                 }
                 // The inset is on the list itself: row backgrounds, separators and tap frames all stop at the
                 // rail and the time/Wi-Fi badge; scroll-content margins left them running underneath.
+                // The list's own ground is the page's bg (Iris on #563: the system grouped grey met the cream stage at the fold).
+                .scrollContentBackground(.hidden)
                 .padding(.trailing, railWidth + (duo.pose == .tabletop ? 0 : badgeExtra))
                 .clearsMessages()
             }
@@ -51,6 +53,8 @@ struct UpdatesView: View {
         // G-4, TT-0: in Tabletop the list lives on the flat half; the standing half only titles it.
         .frame(maxHeight: duo.pose == .tabletop ? max(0, duo.size.height - (duo.division?.maxY ?? 0)) : .infinity)
         .frame(maxHeight: .infinity, alignment: .bottom)
+        // The standing half is the stage: on the bg token like every other page, never the window's black (cream in light).
+        .background(PlayscribeRole.bg.ignoresSafeArea())
         .overlay(alignment: .topLeading) {
             if duo.pose == .tabletop {
                 Text("Updates").font(PlayscribeFont.largeTitle).padding(24).allowsHitTesting(false)
@@ -338,6 +342,8 @@ struct SearchView: View {
                 }
             }
         }
+        // The list's own ground is the page's bg (Iris on #563: the system grouped grey met the cream stage at the fold).
+        .scrollContentBackground(.hidden)
         .contentMargins(.trailing, railWidth + (tabletop ? 0 : badgeExtra), for: .scrollContent)
         .clearsMessages()
         // Book: Search lives on the right page, never across the fold (0.2.0 gate: field and hint ran full width).
@@ -345,6 +351,8 @@ struct SearchView: View {
         // G-4, TT-0: in Tabletop the list lives on the flat half; the standing half only titles it.
         .frame(maxHeight: tabletop ? max(0, duo.size.height - (duo.division?.maxY ?? 0)) : .infinity)
         .frame(maxHeight: .infinity, alignment: .bottom)
+        // The standing half is the stage: on the bg token like every other page, never the window's black (cream in light).
+        .background(PlayscribeRole.bg.ignoresSafeArea())
         .overlay(alignment: .topLeading) {
             if tabletop {
                 Text("Search").font(PlayscribeFont.largeTitle).padding(24).allowsHitTesting(false)

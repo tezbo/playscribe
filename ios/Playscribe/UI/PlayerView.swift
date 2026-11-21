@@ -315,7 +315,8 @@ struct TabletopVideoStage: View {
         let mirror = VideoReflection.shows(pose: .tabletop, setting: reflectionMode, reduceMotion: reduceMotion, reduceTransparency: reduceTransparency)
         let live = mirror && controller.started
         ZStack(alignment: .topLeading) {
-            Color.ink0.ignoresSafeArea()
+            // The stage on the bg token; the screen is pinned dark (Iris on #552), so it resolves to the dark bg.
+            PlayscribeRole.bg.ignoresSafeArea()
             if let v = stageVideo {
                 // The reflection starts where the lower half starts, directly under the video on the fold (spec 3 and 4).
                 let top = lowerTop ?? v.maxY

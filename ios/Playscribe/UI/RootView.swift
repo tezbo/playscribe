@@ -247,11 +247,14 @@ struct RootView: View {
             KeepCurrentDetailsSheet().presentationDetents([.medium, .large])
         }
         .fullScreenCover(isPresented: Binding(get: { model.player != nil }, set: { if !$0 { model.player = nil } })) {
-            if let p = model.player { PlayerView(gameID: p.gameID, releaseID: p.releaseID) }
+            // The player is dark in light and dark mode. Its cover is its own presentation, so pinning its scheme here (not
+            // only the environment) gives it a light status bar too: in light mode the clock and Wi-Fi drew dark over the dark
+            // player and all but vanished (Quinn, 9ef14784-light-video-playing).
+            if let p = model.player { PlayerView(gameID: p.gameID, releaseID: p.releaseID).preferredColorScheme(.dark) }
         }
-        // Trailers and Gallery videos: one cover in every pose, Tabletop included (TT-4, P-2).
+        // Trailers and Gallery videos: one cover in every pose, Tabletop included (TT-4, P-2). Dark, status bar included, as above.
         .fullScreenCover(isPresented: Binding(get: { model.trailer != nil }, set: { if !$0 { model.trailer = nil } })) {
-            if let t = model.trailer { TrailerView(videoID: t.videoID, name: t.name, gameID: t.gameID) }
+            if let t = model.trailer { TrailerView(videoID: t.videoID, name: t.name, gameID: t.gameID).preferredColorScheme(.dark) }
         }
         // R-11: every link the app opens passes here, sheets and covers included; a YouTube video plays in our player.
         .environment(\.openURL, OpenURLAction { url in model.playVideoLink(url) ? .handled : .systemAction })
