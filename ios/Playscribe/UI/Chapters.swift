@@ -82,6 +82,7 @@ struct GalleryVideoRow: View {
 
 struct GalleryChapter: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.viewOnlyStage) private var viewOnly
     var gameID: String
 
     var body: some View {
@@ -120,6 +121,9 @@ struct GalleryChapter: View {
                         Button { model.playGalleryVideo(v) } label: { GalleryVideoRow(item: v, playable: true) }
                             .buttonStyle(.plain)
                             .accessibilityLabel("\(v.title), video")
+                            // The same id as Tabletop's lower-panel row, so QA finds a Gallery video in every pose (Iris on #554).
+                            // Not on Tabletop's view-only stage, where the lower panel's row carries it.
+                            .accessibilityIdentifier(viewOnly ? "" : "galleryPlay-\(v.id)")
                             .tappableFrame()
                     } else {
                         // Nothing to play: not a button (Iris on #551), so a tap never does nothing.
