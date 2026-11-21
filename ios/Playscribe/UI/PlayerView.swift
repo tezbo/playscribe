@@ -553,6 +553,9 @@ struct TabletopTransport: View {
                 .accessibilityLabel("Playback position")
                 // Spoken as time, not a percent, and the printed times below are not read a second time.
                 .accessibilityValue("\(PlayerTime.spoken(controller.current)) of \(PlayerTime.spoken(controller.duration))")
+                // The scrubber spans the video's full width, edge to edge with the picture above it (Iris: right edge within
+                // 1 pt of the video's; Mac at 871db346 measured 20 to 593 against a 0 to 613 video).
+                .padding(.horizontal, -20)
                 .tappableFrame()
             HStack {
                 Text(PlayerTime.format(controller.current))
