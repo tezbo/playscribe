@@ -83,7 +83,9 @@ struct GamePageColumn: View {
             model.nav.anchors[anchorKey(old)] = String(Int(liveOffset))
             if !restore(new), barPinned { position.scrollTo(id: "sectionTop", anchor: .top) }
         }
-        .background(Color.ink0)
+        // The page surface role, not the fixed ink: in light mode the Closed game page was dark ink under light-mode text, so its
+        // title read dark on dark (Mac at 3efd63d3, closed-light-gamepage-before). Dark mode is unchanged (bg is ink950 there).
+        .background(PlayscribeRole.bg)
         .foldAudited()
     }
 
