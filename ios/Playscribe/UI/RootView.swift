@@ -247,14 +247,14 @@ struct RootView: View {
             KeepCurrentDetailsSheet().presentationDetents([.medium, .large])
         }
         .fullScreenCover(isPresented: Binding(get: { model.player != nil }, set: { if !$0 { model.player = nil } })) {
-            // The player is dark in light and dark mode, status bar included: in light mode the clock and Wi-Fi drew dark over
-            // the dark player and all but vanished (Quinn, 9ef14784-light-video-playing). See DarkPresentation for why not
-            // preferredColorScheme.
-            if let p = model.player { PlayerView(gameID: p.gameID, releaseID: p.releaseID).background(DarkPresentation()) }
+            // The player is dark in light and dark mode. Its cover is its own presentation, so pinning its scheme here (not
+            // only the environment) gives it a light status bar too: in light mode the clock and Wi-Fi drew dark over the dark
+            // player and all but vanished (Quinn, 9ef14784-light-video-playing).
+            if let p = model.player { PlayerView(gameID: p.gameID, releaseID: p.releaseID).preferredColorScheme(.dark) }
         }
         // Trailers and Gallery videos: one cover in every pose, Tabletop included (TT-4, P-2). Dark, status bar included, as above.
         .fullScreenCover(isPresented: Binding(get: { model.trailer != nil }, set: { if !$0 { model.trailer = nil } })) {
-            if let t = model.trailer { TrailerView(videoID: t.videoID, name: t.name, gameID: t.gameID).background(DarkPresentation()) }
+            if let t = model.trailer { TrailerView(videoID: t.videoID, name: t.name, gameID: t.gameID).preferredColorScheme(.dark) }
         }
         // R-11: every link the app opens passes here, sheets and covers included; a YouTube video plays in our player.
         .environment(\.openURL, OpenURLAction { url in model.playVideoLink(url) ? .handled : .systemAction })
@@ -645,41 +645,5 @@ private struct UnderLowerPanel: ViewModifier {
         content
             .allowsHitTesting(!covered)
             .accessibilityHidden(covered)
-    }
-}
-
-/// Makes the presentation it sits in dark at the UIKit level, so a full-screen cover's status bar draws light content, and
-/// nothing outside that presentation changes. `.preferredColorScheme(.dark)` on the cover did fix the status bar, but in
-/// Closed light it left the page under the cover half dark after Close (UIKit backgrounds dark, SwiftUI text still light;
-/// Mac at 867d42d5, closed-light-update-closed). Here the override is set on the cover's own root controller, which is
-/// dismissed with the cover, so there is nothing to restore (R-11).
-struct DarkPresentation: UIViewControllerRepresentable {
-    func makeUIViewController(context: Context) -> Probe { Probe() }
-    func updateUIViewController(_ controller: Probe, context: Context) { controller.apply() }
-
-    final class Probe: UIViewController {
-        override func loadView() {
-            view = UIView()
-            view.isUserInteractionEnabled = false
-            view.backgroundColor = .clear
-            view.accessibilityElementsHidden = true
-        }
-        override func didMove(toParent parent: UIViewController?) {
-            super.didMove(toParent: parent)
-            apply()
-        }
-        override func viewWillAppear(_ animated: Bool) {
-            super.viewWillAppear(animated)
-            apply()
-        }
-
-        /// The topmost parent is the cover's hosting controller (the presented one), never the window's root.
-        func apply() {
-            var root: UIViewController = self
-            while let p = root.parent { root = p }
-            guard root.presentingViewController != nil, root.overrideUserInterfaceStyle != .dark else { return }
-            root.overrideUserInterfaceStyle = .dark
-            root.setNeedsStatusBarAppearanceUpdate()
-        }
     }
 }
