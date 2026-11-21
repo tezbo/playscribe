@@ -41,7 +41,7 @@ struct GamePageColumn: View {
                         .frame(maxWidth: Self.readingWidth + 40, alignment: .leading)
                         .frame(maxWidth: .infinity)
                 } header: {
-                    PinnedSectionHeader(gameID: gameID, ink: PlayscribeRole.bg, maxWidth: Self.readingWidth, anchorY: anchorY, pinned: $barPinned)
+                    PinnedSectionHeader(gameID: gameID, ink: Color.ink0, maxWidth: Self.readingWidth, anchorY: anchorY, pinned: $barPinned)
                 }
             }
             .padding(.bottom, 24)
@@ -53,9 +53,9 @@ struct GamePageColumn: View {
         // the rows bright again under it (Quinn, Closed AX5 at 722c752, Open landscape at 7cb8b33). Solid ink hangs below the
         // fade, outside the frame, to the screen edge; views laid out after the page (rail, tab bar, pill) still draw over it.
         .overlay(alignment: .bottom) {
-            LinearGradient(colors: [PlayscribeRole.bg.opacity(0), PlayscribeRole.bg], startPoint: .top, endPoint: .bottom)
+            LinearGradient(colors: [Color.ink0.opacity(0), Color.ink0], startPoint: .top, endPoint: .bottom)
                 .frame(height: 24)
-                .overlay(alignment: .bottom) { PlayscribeRole.bg.frame(height: 120).offset(y: 120) }
+                .overlay(alignment: .bottom) { Color.ink0.frame(height: 120).offset(y: 120) }
                 .allowsHitTesting(false)
                 .accessibilityHidden(true)
         }
@@ -83,9 +83,7 @@ struct GamePageColumn: View {
             model.nav.anchors[anchorKey(old)] = String(Int(liveOffset))
             if !restore(new), barPinned { position.scrollTo(id: "sectionTop", anchor: .top) }
         }
-        // The page surface role, not the fixed ink: in light mode the Closed game page was dark ink under light-mode text, so its
-        // title read dark on dark (Mac at 3efd63d3, closed-light-gamepage-before). Dark mode is unchanged (bg is ink950 there).
-        .background(PlayscribeRole.bg)
+        .background(Color.ink0)
         .foldAudited()
     }
 

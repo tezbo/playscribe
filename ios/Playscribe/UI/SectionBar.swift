@@ -73,7 +73,7 @@ struct SectionBar: View {
                 Button { select(s) } label: {
                     Text(s.title)
                         .font(on ? Self.tabFontOn : Self.tabFont)
-                        .foregroundStyle(on ? PlayscribeRole.textPrimary : PlayscribeRole.textSecondary)
+                        .foregroundStyle(on ? PlayscribeColor.textPrimary : PlayscribeColor.textSecondary)
                         .lineLimit(1)
                         .fixedSize()
                         .padding(.horizontal, padding)
@@ -131,7 +131,7 @@ struct SectionBar: View {
                 }
                 Spacer(minLength: 8)
                 Image(systemName: "chevron.down").font(.system(size: 20, weight: .semibold))
-                    .foregroundStyle(PlayscribeRole.textPrimary)
+                    .foregroundStyle(PlayscribeColor.textPrimary)
                     .accessibilityHidden(true)
             }
             .frame(maxWidth: .infinity, minHeight: 76, alignment: .leading)
@@ -146,7 +146,7 @@ struct SectionBar: View {
     private func pickerTitle(_ current: Chapter, cap: DynamicTypeSize) -> some View {
         Text(current.title)
             .font(PlayscribeFont.title2)
-            .foregroundStyle(PlayscribeRole.textPrimary)
+            .foregroundStyle(PlayscribeColor.textPrimary)
             .lineLimit(1)
             .fixedSize()
             .dynamicTypeSize(...cap)
@@ -159,7 +159,7 @@ struct SectionBar: View {
                 Button { select(s) } label: {
                     Text(s.title)
                         .font(on ? PlayscribeFont.subheadline.weight(.semibold) : PlayscribeFont.subheadline)
-                        .foregroundStyle(on ? PlayscribeRole.textPrimary : PlayscribeRole.textSecondary)
+                        .foregroundStyle(on ? PlayscribeColor.textPrimary : PlayscribeColor.textSecondary)
                         .multilineTextAlignment(.leading)
                         .fixedSize(horizontal: false, vertical: true)
                         .padding(.horizontal, 10)
