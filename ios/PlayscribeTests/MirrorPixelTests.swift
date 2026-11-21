@@ -55,8 +55,9 @@ struct MirrorPixelTests {
         #expect(abs(CGFloat(rows.count) - band) <= 1, "the strip is the band tall: \(rows.count) rows for \(band) pt")
         let edge = VideoReflection.edgeOpacity(controlsShown: shown)
         let first = try #require(rows.first)
-        // At least 30/35 of the edge strength (30% of white when hidden) and never above it.
-        #expect(Double(first) >= edge * 30 / 35 * 255, "first row \(first) reaches the edge strength \(edge)")
+        // Hidden: 30% to 55% of white (Iris). Shown: at least 30/35 of the 20% edge, and never above it.
+        let floor = shown ? edge * 30 / 35 : 0.30
+        #expect(Double(first) >= floor * 255, "first row \(first) reaches \(floor) of white (edge \(edge))")
         #expect(Double(first) <= edge * 255 + 1, "first row \(first) stays at or under the edge strength \(edge)")
         #expect(try #require(rows.last) <= 1, "the last row reads 0")
         for i in 1..<rows.count {

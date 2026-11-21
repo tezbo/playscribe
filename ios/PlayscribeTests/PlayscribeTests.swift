@@ -670,15 +670,15 @@ struct AutoplayTests {
         for i in 1...255 {
             let v = VideoReflection.fade(Double(i) / 255)
             #expect(v <= last)
-            // Scaled by the 35% edge, one step of the band is well under 4/255.
+            // Scaled by the 55% edge, one step of the fade is well under 4/255 (MirrorPixelTests reads the rendered rows).
             #expect((last - v) * VideoReflection.edgeHidden * 255 < 4)
             last = v
         }
     }
 
-    @Test("The mirror is 35% with the controls faded and 20% with them shown, never more (spec 4, contrast with no plates)")
+    @Test("The mirror is 55% with the controls faded and 20% with them shown, never more (spec 4, contrast with no plates)")
     @MainActor func mirrorStrength() {
-        #expect(VideoReflection.edgeOpacity(controlsShown: false) == 0.35)
+        #expect(VideoReflection.edgeOpacity(controlsShown: false) == 0.55)
         #expect(VideoReflection.edgeOpacity(controlsShown: true) == 0.20)
         #expect(VideoReflection.blur == 3)
     }

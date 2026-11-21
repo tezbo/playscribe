@@ -47,7 +47,7 @@ final class ReflectionTests: XCTestCase {
     /// display in Tabletop is all black on the Duo simulator (Mac at 0e1f3e5), so the test cannot read them itself. It prints where
     /// the video and the mirror band are and keeps the video playing for 15 s; tools/qa/mirror-pixels.sh, running the test, takes
     /// `simctl io` screenshots meanwhile and fails unless the band's brightest pixels reach 25% of the video's on a bright frame (the
-    /// controls fade after 4 s, and the mirror is then at 35%: Iris, reflection-0.6 spec 8.3).
+    /// controls fade after 4 s, and the mirror is then at 55%: Iris, reflection-0.6 spec 8.3).
     private func measureMirror(_ audit: XCUIElement, pose: String) {
         let g = (audit.value as? String ?? "").split(separator: " ").compactMap { Double($0) }
         guard g.count == 6, g[2] > 0, g[3] > 0, g[5] > 0 else { return XCTFail("mirror geometry missing: \(audit.value ?? "nil") [\(pose)]") }

@@ -23,7 +23,7 @@ enum VideoReflection {
     static func band(lowerHalf: CGFloat) -> CGFloat { max(0, min(height, lowerHalf * maxShare)) }
 
     /// Iris's idle-band variant (21 Nov), behind a TestFlight switch so Terry can compare on his Duo: while the controls are faded
-    /// the lower half is mostly empty, so the band grows to 30% of it (at most 140 pt) at the same 35% edge, and returns to the
+    /// the lower half is mostly empty, so the band grows to 30% of it (at most 140 pt) at the same 55% edge, and returns to the
     /// standard band when they show. Off by default.
     static let idleKey = "reflectionIdleBand"
     static let idleHeight: CGFloat = 140
@@ -33,9 +33,11 @@ enum VideoReflection {
         return max(0, min(idleHeight, lowerHalf * idleShare))
     }
 
-    /// Strength at the video's base: 35% while the controls are hidden, 20% while they show, so white text over a mirrored white
+    /// Strength at the video's base: 55% while the controls are hidden (Iris, 21 Nov: at 35% the Mac stills showed it practically
+    /// invisible on dark footage, and with the controls hidden no text sits over it; 55% is the agreed ceiling), 20% while they
+    /// show, so white text over a mirrored white
     /// frame keeps 12:1, and the grey 4.5:1, with no plates (spec 4, contrast worked out).
-    static let edgeHidden = 0.35
+    static let edgeHidden = 0.55
     static let edgeShown = 0.20
     static func edgeOpacity(controlsShown: Bool) -> Double { controlsShown ? edgeShown : edgeHidden }
 
@@ -47,7 +49,7 @@ enum VideoReflection {
     static func fade(_ t: Double) -> Double { let c = min(1, max(0, t)); return (1 - c) * (1 - c) }
 
     /// The fade as a mask: eleven stops sampled from `fade`, so each step between stops is at most 0.19 of the edge strength
-    /// (under 4/255 at 35%) and the gradient interpolates in between.
+    /// (about 4/255 at 55% in the shortest band) and the gradient interpolates in between.
     static var fadeMask: LinearGradient {
         LinearGradient(stops: (0...10).map { i in
             let t = Double(i) / 10
