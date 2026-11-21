@@ -208,14 +208,22 @@ struct GalleryItem: Codable, Hashable, Identifiable {
 
     /// The YouTube video ID from `href`: youtube.com (or a *.youtube.com host) /watch?v=, /embed/ or /shorts/, or youtu.be/.
     /// Nil for anything else, and then the row is not a button.
-    var youtubeID: String? {
-        guard let href, let c = URLComponents(string: href), let host = c.host?.lowercased() else { return nil }
+    var youtubeID: String? { href.flatMap(YouTubeLink.id(from:)) }
+}
+
+/// R-11 (Terry, 20 Nov: "all videos playing inside our own player from now on"): the video ID in a YouTube link, so any such link
+/// the app is asked to open plays in our player instead of the YouTube app.
+enum YouTubeLink {
+    /// youtube.com (or a *.youtube.com host) /watch?v=, /embed/, /shorts/ or /live/, or youtu.be/. Nil for anything else.
+    nonisolated static func id(from href: String) -> String? {
+        guard let c = URLComponents(string: href), let host = c.host?.lowercased() else { return nil }
         let path = c.path.split(separator: "/").map(String.init)
         if host == "youtu.be" { return path.first.flatMap { $0.isEmpty ? nil : $0 } }
-        guard host == "youtube.com" || host.hasSuffix(".youtube.com") else { return nil }
-        if path.count >= 2, path[0] == "embed" || path[0] == "shorts" { return path[1].isEmpty ? nil : path[1] }
+        guard host == "youtube.com" || host.hasSuffix(".youtube.com") || host == "youtube-nocookie.com" || host.hasSuffix(".youtube-nocookie.com") else { return nil }
+        if path.count >= 2, ["embed", "shorts", "live"].contains(path[0]) { return path[1].isEmpty ? nil : path[1] }
         return c.queryItems?.first { $0.name == "v" }?.value.flatMap { $0.isEmpty ? nil : $0 }
     }
+    nonisolated static func id(from url: URL) -> String? { id(from: url.absoluteString) }
 }
 
 struct CollectionEntry: Codable, Hashable {

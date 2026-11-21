@@ -1120,26 +1120,42 @@ struct SearchTextColdLaunchTests {
     }
 }
 
-/// 0.5.5 (r054-tabletop-find-trailers): in Tabletop the empty Gallery's "Find trailers online" is view-only text, so the
-/// Links panel in the lower half carries the same search for every game whose Gallery is empty, and only for those.
+/// 0.6.0 (s-06-videos-in-our-player): "Find trailers online" was a YouTube search and is gone. No Links row, in any pose, sends
+/// a person to a video search; an empty Gallery offers only the official website.
 @MainActor
-struct TabletopFindTrailersTests {
-    @Test func linksPanelCarriesTheTrailerSearchForAnEmptyGallery() {
+struct NoTrailerSearchTests {
+    @Test func linksPanelHasNoTrailerSearch() {
         let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "links-\(UUID().uuidString).json"))
         m.resetDemo()
-        let games = m.fixtures.games
-        let empty = games.filter { m.gallery($0.id).isEmpty }
-        #expect(!empty.isEmpty)
-        for g in games {
-            let row = LinksSheet.rows(m, g.id).first { $0.id == "trailers" }
-            if m.gallery(g.id).isEmpty {
-                #expect(row?.title == "Find trailers online")
-                #expect(row?.url == GalleryEmpty.trailerSearchURL(g.name))
-                #expect(LinksSheet.hasLinks(m, g.id))   // so Tabletop's More menu offers Links
-            } else {
-                #expect(row == nil)
-            }
+        for g in m.fixtures.games {
+            let rows = LinksSheet.rows(m, g.id)
+            #expect(!rows.contains { $0.id == "trailers" }, "\(g.id) has no trailer search row")
+            #expect(!rows.contains { $0.url.absoluteString.contains("search_query") }, "\(g.id) has no video search link")
         }
+    }
+}
+
+/// R-11 (Terry, 20 Nov: every video plays in our own player): a YouTube link opened anywhere plays in our player.
+@MainActor
+struct VideoLinkTests {
+    @Test func youtubeLinksOpenOurPlayer() {
+        let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "vl-\(UUID().uuidString).json"))
+        for href in ["https://www.youtube.com/watch?v=abc", "https://youtu.be/abc", "https://m.youtube.com/shorts/abc",
+                     "https://www.youtube.com/live/abc", "https://www.youtube-nocookie.com/embed/abc"] {
+            m.trailer = nil
+            #expect(m.playVideoLink(URL(string: href)!), "\(href) plays in the app")
+            #expect(m.trailer?.videoID == "abc")
+        }
+        m.trailer = nil
+        #expect(!m.playVideoLink(URL(string: "https://www.playstation.com/en-us/games/")!))
+        #expect(!m.playVideoLink(URL(string: "https://notyoutube.com/watch?v=abc")!))
+        #expect(m.trailer == nil, "other links go to the system as before")
+    }
+
+    @Test("A video its owner blocks from other apps says so and offers Open in YouTube (R-12; Terry 20 Nov)")
+    func blockedEmbedOffersYouTube() {
+        #expect(VideoUnavailable.blocksEmbedding(101) && VideoUnavailable.blocksEmbedding(150))
+        #expect(!VideoUnavailable.blocksEmbedding(2) && !VideoUnavailable.blocksEmbedding(100) && !VideoUnavailable.blocksEmbedding(nil))
     }
 }
 

@@ -341,6 +341,7 @@ struct LibraryShelf: View {
                     // behind the field, never on the field itself, which would change how the caret is placed.
                     .background { Color.clear.contentShape(Rectangle()).onTapGesture { searchFocused = true }.accessibilityHidden(true) }
                     .background(PlayscribeRole.chipFill, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                    .controlBorder(.searchField, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
                     // Book: one page wide (like the chip row), and reported to the fold audit.
                     .frame(width: duo.pose == .book ? duo.division.map { max(0, $0.minX - 24 - 16) } : nil, alignment: .leading)
                     .tappableFrame()
@@ -1261,6 +1262,7 @@ struct NotificationInviteCard: View {
             Text("Not now").frame(maxWidth: typeSize.isAccessibilitySize ? .infinity : nil)
         }
             .buttonStyle(.bordered).buttonBorderShape(typeSize.isAccessibilitySize ? .roundedRectangle(radius: 14) : .capsule)
+            .controlBorder(.outlinedButton, in: RoundedRectangle(cornerRadius: typeSize.isAccessibilitySize ? 14 : 999, style: .continuous))
             .hitTarget()
             .tappableFrame()
     }

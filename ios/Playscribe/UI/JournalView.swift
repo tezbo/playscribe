@@ -295,6 +295,7 @@ struct ReleaseBody: View {
                     Label(marked ? "Bookmarked" : "Bookmark", systemImage: marked ? "bookmark.fill" : "bookmark")
                 }
                 .buttonStyle(.bordered)
+                .controlBorder(.outlinedButton, in: Capsule())
                 .hitTarget()
                 .tappableFrame()
                 if r.ps5State == .onPS5 {
@@ -303,6 +304,7 @@ struct ReleaseBody: View {
                         Label(unread ? "Mark as read" : "Mark as unread", systemImage: unread ? "envelope.open" : "envelope.badge")
                     }
                     .buttonStyle(.bordered)
+                    .controlBorder(.outlinedButton, in: Capsule())
                     .hitTarget()
                     .tappableFrame()
                 }

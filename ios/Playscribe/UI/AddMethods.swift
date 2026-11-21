@@ -87,37 +87,39 @@ struct AddEntryView: View {
 
     var body: some View {
         List {
-            Section {
-                ForEach(AddMethod.available) { m in
-                    Button { choose(m) } label: {
-                        // Accessibility sizes: the icon sits above the text, so the title takes the row's whole width and
-                        // wraps on whole words ("Scan with camer / a" at AX5).
-                        let ax = typeSize.isAccessibilitySize
-                        let stack = ax ? AnyLayout(VStackLayout(alignment: .leading, spacing: 6)) : AnyLayout(HStackLayout(spacing: 14))
-                        HStack(spacing: 14) {
-                            stack {
-                                Image(systemName: m.symbol).font(.title3).frame(width: ax ? nil : iconColumn, alignment: .leading)
-                                    .foregroundStyle(PlayscribeRole.action)
-                                VStack(alignment: .leading, spacing: 2) {
-                                    Text(m.title).font(PlayscribeFont.headline).fixedSize(horizontal: false, vertical: true)
-                                    Text(m.detail).font(PlayscribeFont.footnote).foregroundStyle(.secondary)
-                                        .fixedSize(horizontal: false, vertical: true)
+            CardSections {
+                Section {
+                    ForEach(AddMethod.available) { m in
+                        Button { choose(m) } label: {
+                            // Accessibility sizes: the icon sits above the text, so the title takes the row's whole width and
+                            // wraps on whole words ("Scan with camer / a" at AX5).
+                            let ax = typeSize.isAccessibilitySize
+                            let stack = ax ? AnyLayout(VStackLayout(alignment: .leading, spacing: 6)) : AnyLayout(HStackLayout(spacing: 14))
+                            HStack(spacing: 14) {
+                                stack {
+                                    Image(systemName: m.symbol).font(.title3).frame(width: ax ? nil : iconColumn, alignment: .leading)
+                                        .foregroundStyle(PlayscribeRole.action)
+                                    VStack(alignment: .leading, spacing: 2) {
+                                        Text(m.title).font(PlayscribeFont.headline).fixedSize(horizontal: false, vertical: true)
+                                        Text(m.detail).font(PlayscribeFont.footnote).foregroundStyle(.secondary)
+                                            .fixedSize(horizontal: false, vertical: true)
+                                    }
                                 }
+                                Spacer(minLength: 0)
+                                Image(systemName: "chevron.forward").font(.footnote).foregroundStyle(.secondary)
                             }
-                            Spacer(minLength: 0)
-                            Image(systemName: "chevron.forward").font(.footnote).foregroundStyle(.secondary)
+                            .frame(minHeight: compact ? 64 : 52)
+                            .contentShape(Rectangle())
                         }
-                        .frame(minHeight: compact ? 64 : 52)
-                        .contentShape(Rectangle())
+                        .buttonStyle(.plain)
+                        .accessibilityLabel("\(m.title), \(m.detail.lowercasedFirst)")
+                        .accessibilityAddTraits(.isButton)
+                        .listRowInsets(compact ? EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16) : nil)
+                        .tappableFrame()
                     }
-                    .buttonStyle(.plain)
-                    .accessibilityLabel("\(m.title), \(m.detail.lowercasedFirst)")
-                    .accessibilityAddTraits(.isButton)
-                    .listRowInsets(compact ? EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16) : nil)
-                    .tappableFrame()
+                } footer: {
+                    if typeSize.isAccessibilitySize { Text(footerText) }
                 }
-            } footer: {
-                if typeSize.isAccessibilitySize { Text(footerText) }
             }
         }
         .contentMargins(.top, compact ? 4 : 0, for: .scrollContent)
@@ -147,28 +149,30 @@ struct AddResultsView: View {
 
     var body: some View {
         List {
-            if matches.isEmpty {
-                Section {
-                    Text("Nothing recognised yet").font(PlayscribeFont.headline)
-                    Button("Try again", action: tryAgain).hitTarget()
-                }
-            }
-            let sure = matches.filter(\.sure)
-            if !sure.isEmpty {
-                Section("Found \(sure.count)") {
-                    ForEach(sure) { m in
-                        if let g = m.best { AddRow(game: g, status: status, selected: picked[g.id] != nil) { toggle(g) } }
+            CardSections {
+                if matches.isEmpty {
+                    Section {
+                        Text("Nothing recognised yet").font(PlayscribeFont.headline)
+                        Button("Try again", action: tryAgain).hitTarget()
                     }
                 }
-            }
-            ForEach(matches.filter { !$0.sure }) { m in
-                Section {
-                    if m.guesses.isEmpty {
-                        Text("No PS5 game matches ‘\(m.title)’").foregroundStyle(.secondary)
+                let sure = matches.filter(\.sure)
+                if !sure.isEmpty {
+                    Section("Found \(sure.count)") {
+                        ForEach(sure) { m in
+                            if let g = m.best { AddRow(game: g, status: status, selected: picked[g.id] != nil) { toggle(g) } }
+                        }
                     }
-                    ForEach(m.guesses) { g in AddRow(game: g, status: status, selected: picked[g.id] != nil) { toggle(g) } }
-                } header: {
-                    Text("Is this it? \(m.title)")
+                }
+                ForEach(matches.filter { !$0.sure }) { m in
+                    Section {
+                        if m.guesses.isEmpty {
+                            Text("No PS5 game matches ‘\(m.title)’").foregroundStyle(.secondary)
+                        }
+                        ForEach(m.guesses) { g in AddRow(game: g, status: status, selected: picked[g.id] != nil) { toggle(g) } }
+                    } header: {
+                        Text("Is this it? \(m.title)")
+                    }
                 }
             }
         }

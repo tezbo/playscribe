@@ -11,9 +11,9 @@ final class GalleryVideoTests: XCTestCase {
         app.launch()
         let pose = ReleaseRowTests.pose(app)
         print("GalleryVideoTests pose: \(pose)")
-        let row = pose.contains("tabletop") ? app.buttons["galleryPlay-v-launch"] : app.buttons["Launch Trailer, video"]
+        let row = app.buttons["galleryPlay-v-launch"]
         XCTAssertTrue(row.waitForExistence(timeout: 15), "a Launch Trailer control in reach [\(pose)]")
-        if !row.isHittable { app.swipeUp() }
+        app.scrollUntilHittable(row)
         XCTAssertTrue(row.isHittable, "the Launch Trailer control can be tapped [\(pose)]")
         row.tap()
         sleep(2)
