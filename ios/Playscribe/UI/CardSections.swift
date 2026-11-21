@@ -2,8 +2,8 @@ import SwiftUI
 
 /// Grouped cards that keep an edge when Reduce Transparency or Increase Contrast is on (s-06-control-border; Iris on #557).
 /// Light under Reduce Transparency drew white cards straight onto the sheet's grey with no outline (1.12:1, Mac b2400b3b), so
-/// in that mode every card gets a 1 pt outline in the control border role (#857A68, 3:1 or better on its ground). Dark keeps
-/// no outline (the role is clear there), so dark is unchanged. Outside that mode the content is returned as it was.
+/// in that mode every card gets a 1 pt outline in the card edge role: #857A68 in light (the control border), #6F6A7C in dark,
+/// where the card was 1.22:1 on the sheet (Iris on #557). Outside that mode the content is returned as it was, in both schemes.
 ///
 /// Wrap a Form's or List's sections: `Form { CardSections { Section { … } … } }`. It reads the sections and rows itself, so
 /// conditional rows and `ForEach` rows are counted, and the first and last row of each card round off its outline.
@@ -46,7 +46,7 @@ struct CardRowBackground: View {
         ZStack {
             Color(uiColor: .secondarySystemGroupedBackground)
             CardRowEdge(top: first, bottom: last, radius: Self.radius)
-                .stroke(PlayscribeRole.controlBorder, lineWidth: 1)
+                .stroke(PlayscribeRole.cardEdge, lineWidth: 1)
                 .clipped()
         }
         .accessibilityHidden(true)

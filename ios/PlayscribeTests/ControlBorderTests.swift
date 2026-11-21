@@ -111,6 +111,21 @@ struct ControlBorderTests {
         }
     }
 
+    /// Iris on #557: the card outline under Reduce Transparency is the control border in light and #6F6A7C in dark, 3:1 or
+    /// better on the dark sheet it bounds (#1C1C1E, luminance 0.012, and black), with luminance at least 0.14.
+    @Test func cardEdgeShowsInBothSchemes() {
+        let light = PlayscribeRole.resolved(PlayscribeRole.cardEdgeSpec, light: true)
+        #expect(Contrast.ratio(light, PlayscribeRole.resolved(PlayscribeRole.controlBorderSpec, light: true)) < 1.01)
+        let dark = PlayscribeRole.resolved(PlayscribeRole.cardEdgeSpec, light: false)
+        #expect(Contrast.luminance(dark) >= 0.14, "dark card edge luminance \(Contrast.luminance(dark))")
+        for ground in [UIColor(hex: 0x1C1C1E), UIColor(hex: 0x000000)] {
+            #expect(Contrast.ratio(dark, ground) >= 3, "dark card edge \(Contrast.ratio(dark, ground)):1")
+        }
+        let src = (try? String(contentsOf: URL(fileURLWithPath: #filePath).deletingLastPathComponent().deletingLastPathComponent()
+            .appendingPathComponent("Playscribe/UI/CardSections.swift"), encoding: .utf8)) ?? ""
+        #expect(src.contains(".stroke(PlayscribeRole.cardEdge,"), "the card style strokes the card edge role")
+    }
+
     /// The outline slices: the first row carries the card's top edge, the last its bottom, and a middle row only its sides
     /// (its path runs past the row so the clip removes the top and bottom).
     @Test func cardRowEdges() {

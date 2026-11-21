@@ -39,10 +39,14 @@ nonisolated enum PlayscribeRole {
     /// dark is unchanged. A control that already had a dark border keeps it with `controlBorder(keepingDark:)`.
     static let controlBorderSpec = Spec(name: "controlBorder", light: 0x857A68, dark: .clear, darkAlpha: 0)
     static let hairlineSpec = Spec(name: "hairline", light: 0xCFC4B0, dark: PlayscribeColor.ink700)
+    /// A grouped card's outline, drawn only under Reduce Transparency or Increase Contrast (`CardSections`; Iris on #557).
+    /// Light is the control border. Dark needs one too: the system card (luminance 0.025) on the sheet (0.012) is 1.22:1, so
+    /// dark uses #6F6A7C (luminance about 0.15, 3:1 or better on both).
+    static let cardEdgeSpec = Spec(name: "cardEdge", light: 0x857A68, dark: Color(uiColor: UIColor(hex: 0x6F6A7C)))
 
     static let all: [Spec] = [bgSpec, surfaceSpec, cardSpec, chipFillSpec, textPrimarySpec, textSecondarySpec, textTertiarySpec,
                               newTextSpec, newGraphicSpec, actionSpec, onActionSpec, linkSpec, selectedChipFillSpec,
-                              selectedChipTextSpec, controlBorderSpec, hairlineSpec]
+                              selectedChipTextSpec, controlBorderSpec, hairlineSpec, cardEdgeSpec]
 
     static let bg = color(bgSpec)
     static let surface = color(surfaceSpec)
@@ -60,6 +64,7 @@ nonisolated enum PlayscribeRole {
     static let selectedChipText = color(selectedChipTextSpec)
     static let controlBorder = color(controlBorderSpec)
     static let hairline = color(hairlineSpec)
+    static let cardEdge = color(cardEdgeSpec)
 
     /// The control border in light, and the colour this control already drew in dark (dark is unchanged by 0.6).
     /// The dark colour's own alpha carries through: `.withAlphaComponent(1)` would turn `.clear` into opaque black (screen diffs
