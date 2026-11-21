@@ -197,7 +197,7 @@ struct PlayerView: View {
                         if controller.failed {
                             // The navigation bar's Close is there outside Tabletop, so the screen adds its own only in Tabletop
                             // (Quinn, Mac at c072400: Open portrait showed Close twice).
-                            VideoUnavailable(videoID: video.youtubeID, code: controller.errorCode, showsClose: duo.pose == .tabletop) { close() }
+                            VideoUnavailable(videoID: video.youtubeID, title: video.label, code: controller.errorCode, showsClose: duo.pose == .tabletop) { close() }
                         } else {
                             layout(duo: duo, release: release, video: video, controller: controller)
                         }
@@ -655,6 +655,8 @@ enum PlayerTime {
 /// handler, which would route a YouTube link back into this player.
 struct VideoUnavailable: View {
     var videoID: String
+    /// The video's name, shown above the reason so the person knows which video this is (Iris on #554).
+    var title: String? = nil
     /// The player's error code, when it gave one.
     var code: Int? = nil
     /// False where the navigation bar already carries Close (every pose but Tabletop), so Close appears once.
@@ -662,13 +664,15 @@ struct VideoUnavailable: View {
     var onClose: () -> Void
     static func blocksEmbedding(_ code: Int?) -> Bool { code == 101 || code == 150 }
     var body: some View {
-        VStack(spacing: 16) {
-            if Self.blocksEmbedding(code) {
-                ContentUnavailableView("This video plays only on YouTube", systemImage: "play.slash",
-                                       description: Text("Its owner doesn’t allow it to play in other apps."))
-            } else {
-                ContentUnavailableView("This video can’t play here", systemImage: "play.slash")
+        // Open in YouTube sits directly under the reason, not at the foot of the screen (Iris on #554).
+        ContentUnavailableView {
+            Label(Self.blocksEmbedding(code) ? "This video plays only on YouTube" : "This video can’t play here", systemImage: "play.slash")
+        } description: {
+            VStack(spacing: 6) {
+                if let title, !title.isEmpty { Text(title).font(PlayscribeFont.headline).foregroundStyle(.primary) }
+                if Self.blocksEmbedding(code) { Text("Its owner doesn’t allow it to play in other apps.") }
             }
+        } actions: {
             if let url = URL(string: "https://www.youtube.com/watch?v=\(videoID)") {
                 Button("Open in YouTube") { UIApplication.shared.open(url) }
                     .buttonStyle(.borderedProminent).foregroundStyle(PlayscribeColor.onAccent)

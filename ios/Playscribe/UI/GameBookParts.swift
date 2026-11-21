@@ -499,6 +499,8 @@ struct GameBasicsView: View {
                     }
                     .buttonStyle(.plain)
                     .accessibilityLabel("Play \(v.name)")
+                    // A stable id for QA in every pose but Tabletop, where the lower panel's playTrailer row stands in (Iris on #554).
+                    .accessibilityIdentifier("trailerPlay-\(v.youtubeId)")
                     .tappableFrame()
                 }
             }
@@ -629,7 +631,7 @@ struct TrailerView: View {
                 Group {
                     if let controller {
                         if controller.failed {
-                            VideoUnavailable(videoID: videoID, code: controller.errorCode, showsClose: duo.pose == .tabletop) { close() }
+                            VideoUnavailable(videoID: videoID, title: name, code: controller.errorCode, showsClose: duo.pose == .tabletop) { close() }
                         } else if duo.pose == .tabletop {
                             let game = gameID.flatMap { model.game($0) }
                             TabletopVideoStage(controller: controller,
