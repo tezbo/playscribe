@@ -242,7 +242,11 @@ test('alert age: a promoted row whose own live date is old keeps no fresh alert 
 
 test('backfill applies a post\'s stated time even when a second post of the same day wrote the assumed row (DDV Season of Scares)', async () => {
   const when = day(2)
-  const first = ago(30), second = new Date(Math.floor(Date.parse(first) / 1000) * 1000 + 36e3).toISOString()
+  // Both posts must fall on one UTC day whatever the clock is. 30 h before "now" plus 36 s crossed UTC midnight when the suite ran
+  // between 05:59:24 and 06:00:00 UTC, so the second post carried a new date and the test failed on the clock (bug-063).
+  // Anchor them at noon UTC of the previous day instead; the stated date (day 2, in the future) is unaffected.
+  const noonYesterday = new Date(Date.UTC(new Date().getUTCFullYear(), new Date().getUTCMonth(), new Date().getUTCDate() - 1, 12, 0, 0))
+  const first = noonYesterday.toISOString(), second = new Date(noonYesterday.getTime() + 36e3).toISOString()
   const { db, deps } = await setup([
     { gid: '1', title: 'Season of Scares Update Patch Notes', date: first, contents: `Our Season of Scares free update arrives on ${monthDay(when)}, 2026. Details below.`, tags: ['patchnotes'] },
     { gid: '2', title: 'Season of Scares Update Patch Notes', date: second, contents: 'Hotfix notes. More details soon.', tags: ['patchnotes'] },
