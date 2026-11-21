@@ -186,6 +186,8 @@ struct PlayerView: View {
     var gameID: String
     var releaseID: String
     @State private var controller: YouTubeController?
+    /// R-13: our own full-bleed mode (Closed and Open). Never the iOS fullscreen player.
+    @State private var fullScreen = false
     /// Room for a two-line caption under the video, growing with Dynamic Type.
     @ScaledMetric(relativeTo: .headline) private var captionRoom: CGFloat = 64
     var body: some View {
@@ -198,6 +200,8 @@ struct PlayerView: View {
                             // The navigation bar's Close is there outside Tabletop, so the screen adds its own only in Tabletop
                             // (Quinn, Mac at c072400: Open portrait showed Close twice).
                             VideoUnavailable(videoID: video.youtubeID, title: video.label, code: controller.errorCode, showsClose: duo.pose == .tabletop) { close() }
+                        } else if fullScreen && FullBleedVideo.offered(in: duo.pose) {
+                            FullBleedVideo(controller: controller, posterAsset: video.posterAsset, game: model.game(gameID)) { fullScreen = false }
                         } else {
                             layout(duo: duo, release: release, video: video, controller: controller)
                         }
@@ -209,10 +213,15 @@ struct PlayerView: View {
                 }
                 .background(.black)
                 .onChange(of: [duo.pose == .tabletop, controller != nil], initial: true) { controller?.setNativeControls(duo.pose != .tabletop) }
-                .toolbarVisibility(duo.pose == .tabletop ? .hidden : .automatic, for: .navigationBar)
+                // Book and Tabletop have no full screen: leaving Closed or Open ends it, and it doesn't come back on its own.
+                .onChange(of: FullBleedVideo.offered(in: duo.pose)) { _, offered in if !offered { fullScreen = false } }
+                .toolbarVisibility(duo.pose == .tabletop || fullScreen ? .hidden : .automatic, for: .navigationBar)
                 .toolbar {
                     ToolbarItem(placement: .cancellationAction) {
                         Button(action: close) { Label("Close", systemImage: "xmark") }
+                    }
+                    if FullBleedVideo.offered(in: duo.pose), controller?.failed == false {
+                        ToolbarItem(placement: .primaryAction) { FullBleedVideo.EnterButton { fullScreen = true } }
                     }
                 }
             }
@@ -274,6 +283,69 @@ struct PlayerView: View {
     private func close() {
         controller?.stop()
         dismiss()
+    }
+}
+
+/// R-13 (Terry on build 16, 21 Nov: "no full screen option when playing videos"): our own full-screen mode. The same web view
+/// moves into a black, full-window frame (playback carries on, P-2), the navigation bar and home indicator hide, and the video
+/// is 16:9 as large as the window allows, centred. YouTube's own controls stay; ours is one Exit full screen button at the top
+/// trailing corner, inside the safe area, and the VoiceOver escape gesture also leaves. Offered in Closed (both orientations) and
+/// Open (flat): in Book a full-bleed video would run across the hinge with YouTube's controls on it, and Tabletop's standing half
+/// is already the video's stage. No mirror here: the reflection stays Tabletop only.
+struct FullBleedVideo: View {
+    var controller: YouTubeController
+    var posterAsset: String?
+    var game: CatalogGame?
+    var onExit: () -> Void
+
+    static func offered(in pose: Pose) -> Bool { pose == .closed || pose == .flat }
+
+    /// The 16:9 frame that fits `size`, centred.
+    static func frame(in size: CGSize) -> CGRect {
+        guard size.width > 0, size.height > 0 else { return .zero }
+        let w = min(size.width, size.height * 16 / 9)
+        let h = w * 9 / 16
+        return CGRect(x: (size.width - w) / 2, y: (size.height - h) / 2, width: w, height: h)
+    }
+
+    var body: some View {
+        GeometryReader { geo in
+            let f = Self.frame(in: geo.size)
+            Color.black
+                .overlay(alignment: .topLeading) {
+                    Color.black
+                        .overlay { WebSurface(webView: controller.webView) }
+                        .overlay { VideoStartCover(controller: controller, posterAsset: posterAsset, game: game) }
+                        .frame(width: f.width, height: f.height)
+                        .offset(x: f.minX, y: f.minY)
+                }
+        }
+        .ignoresSafeArea()
+        .overlay(alignment: .topTrailing) {
+            Button(action: onExit) {
+                Image(systemName: "arrow.down.right.and.arrow.up.left")
+                    .font(.system(size: 17, weight: .semibold))
+                    .foregroundStyle(.white)
+                    .frame(width: 44, height: 44)
+                    .background(.black.opacity(0.6), in: Circle())
+            }
+            .accessibilityLabel("Exit full screen")
+            .accessibilityIdentifier("videoExitFullScreen")
+            .tappableFrame()
+            .padding(12)
+        }
+        .accessibilityAction(.escape, onExit)
+        .persistentSystemOverlays(.hidden)
+        .overlay(alignment: .topLeading) { MirrorAudit(on: false) }
+    }
+
+    /// The navigation bar button that enters full screen.
+    struct EnterButton: View {
+        var action: () -> Void
+        var body: some View {
+            Button(action: action) { Label("Full screen", systemImage: "arrow.up.left.and.arrow.down.right") }
+                .accessibilityIdentifier("videoFullScreen")
+        }
     }
 }
 

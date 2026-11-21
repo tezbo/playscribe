@@ -626,6 +626,8 @@ struct TrailerView: View {
     var name: String
     var gameID: String?
     @State private var controller: YouTubeController?
+    /// R-13: our own full-bleed mode (Closed and Open).
+    @State private var fullScreen = false
     /// Room for a two-line caption under the video, growing with Dynamic Type so a long name at AX5 is never pushed off.
     @ScaledMetric(relativeTo: .headline) private var captionRoom: CGFloat = 64
     var body: some View {
@@ -640,6 +642,8 @@ struct TrailerView: View {
                             TabletopVideoStage(controller: controller,
                                                video: ReleaseVideo(youtubeID: videoID, label: name, duration: nil, posted: "", posterAsset: nil),
                                                game: game, gameName: game?.name ?? "", release: nil, onClose: close)
+                        } else if fullScreen && FullBleedVideo.offered(in: duo.pose) {
+                            FullBleedVideo(controller: controller, posterAsset: nil, game: gameID.flatMap { model.game($0) }) { fullScreen = false }
                         } else {
                             framed(controller)
                         }
@@ -647,10 +651,14 @@ struct TrailerView: View {
                 }
                 .background(Color.black)
                 .onChange(of: [duo.pose == .tabletop, controller != nil], initial: true) { controller?.setNativeControls(duo.pose != .tabletop) }
-                .toolbarVisibility(duo.pose == .tabletop ? .hidden : .automatic, for: .navigationBar)
+                .onChange(of: FullBleedVideo.offered(in: duo.pose)) { _, offered in if !offered { fullScreen = false } }
+                .toolbarVisibility(duo.pose == .tabletop || fullScreen ? .hidden : .automatic, for: .navigationBar)
                 .toolbar {
                     ToolbarItem(placement: .cancellationAction) {
                         Button(action: close) { Label("Close", systemImage: "xmark") }
+                    }
+                    if FullBleedVideo.offered(in: duo.pose), controller?.failed == false {
+                        ToolbarItem(placement: .primaryAction) { FullBleedVideo.EnterButton { fullScreen = true } }
                     }
                 }
             }
