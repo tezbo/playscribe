@@ -40,4 +40,10 @@ struct StatusBarToneTests {
         #expect(StatusBarTone.isLight(current: false, barBottom: bar, art: [], coverUp: true))
         #expect(StatusBarTone.isLight(current: false, barBottom: 0, art: [], coverUp: true))
     }
+
+    @Test func alwaysLightOnADarkPage() {
+        // G-11: the scheme can change at runtime; on a dark page the bar is light whatever is under it.
+        #expect(StatusBarTone.isLight(current: false, barBottom: bar, art: [], coverUp: false, pageLight: false))
+        #expect(StatusBarTone.isLight(current: true, barBottom: bar, art: [art(bottom: bar)], coverUp: false, pageLight: false))
+    }
 }
