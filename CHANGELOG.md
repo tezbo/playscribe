@@ -17,7 +17,7 @@ Playscribe 0.6 is a fresh coat: new colour roles, clearer art, one deck card per
 8. Open Settings, then Video lab. Nothing crashes.
 9. Add a game with Say it: Add a game, Say it, then hold the button and speak a title. Build 16 crashed here. Playscribe stays open and starts listening (allow Speech Recognition and the Microphone if asked).
 10. On a game page, open More, then Check for updates. A message says it is checking, then either how many new updates there are, "No new updates" with the time you checked, or why it couldn’t check (try it in Airplane Mode too).
-11. Closed or Open, play an update video or a trailer, then tap Full screen (top right, beside Close). The video fills the screen and keeps playing from the same point, with YouTube’s controls still there. Tap Exit full screen (above the video in portrait; top left in landscape, where it fades after 4 seconds and a tap brings it back) and the player is as it was. Turning the phone keeps full screen and re-fits the video; folding into Book or Tabletop leaves it, and playback keeps going. Book and Tabletop have no Full screen button.
+11. Closed or Open, play an update video or a trailer and tap Full screen, beside Close. The video fills the screen at 16:9 and keeps playing, with Exit full screen at the top right above it. Turning the phone keeps full screen and re-fits the video; folding into Book or Tabletop leaves it, and playback keeps going. Book and Tabletop have no Full screen button.
 
 Feedback you send through TestFlight, including its comment, may appear in our public issue tracker, so leave out personal details.
 
