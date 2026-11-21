@@ -101,12 +101,12 @@ struct AddEntryView: View {
                                         .foregroundStyle(PlayscribeRole.action)
                                     VStack(alignment: .leading, spacing: 2) {
                                         Text(m.title).font(PlayscribeFont.headline).fixedSize(horizontal: false, vertical: true)
-                                        Text(m.detail).font(PlayscribeFont.footnote).foregroundStyle(.secondary)
+                                        Text(m.detail).font(PlayscribeFont.footnote).foregroundStyle(PlayscribeRole.textSecondary)
                                             .fixedSize(horizontal: false, vertical: true)
                                     }
                                 }
                                 Spacer(minLength: 0)
-                                Image(systemName: "chevron.forward").font(.footnote).foregroundStyle(.secondary)
+                                Image(systemName: "chevron.forward").font(.footnote).foregroundStyle(PlayscribeRole.textSecondary)
                             }
                             .frame(minHeight: compact ? 64 : 52)
                             .contentShape(Rectangle())
@@ -128,7 +128,7 @@ struct AddEntryView: View {
         .safeAreaInset(edge: .bottom, spacing: 0) {
             if !typeSize.isAccessibilitySize {
                 Text(footerText)
-                    .font(PlayscribeFont.footnote).foregroundStyle(.secondary)
+                    .font(PlayscribeFont.footnote).foregroundStyle(PlayscribeRole.textSecondary)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.horizontal, 20).padding(.vertical, compact ? 8 : 12)
                     .frame(minHeight: compact ? 56 : 0)
@@ -167,7 +167,7 @@ struct AddResultsView: View {
                 ForEach(matches.filter { !$0.sure }) { m in
                     Section {
                         if m.guesses.isEmpty {
-                            Text("No PS5 game matches ‘\(m.title)’").foregroundStyle(.secondary)
+                            Text("No PS5 game matches ‘\(m.title)’").foregroundStyle(PlayscribeRole.textSecondary)
                         }
                         ForEach(m.guesses) { g in AddRow(game: g, status: status, selected: picked[g.id] != nil) { toggle(g) } }
                     } header: {

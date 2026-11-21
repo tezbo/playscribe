@@ -67,7 +67,7 @@ struct VerificationExplainer: View {
                         Image(systemName: v == kind ? "checkmark.circle.fill" : "circle")
                             .foregroundStyle(v == kind ? PlayscribeRole.action : .secondary)
                         Text(v.tagName).font(PlayscribeFont.subheadline.weight(v == kind ? .semibold : .regular))
-                        if v == kind { Text("This one").font(PlayscribeFont.footnote).foregroundStyle(.secondary) }
+                        if v == kind { Text("This one").font(PlayscribeFont.footnote).foregroundStyle(PlayscribeRole.textSecondary) }
                     }
                     .accessibilityElement(children: .combine)
                     .accessibilityAddTraits(v == kind ? .isSelected : [])

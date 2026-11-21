@@ -100,14 +100,14 @@ struct LibraryStage: View {
                 if let game {
                     Text(game.name.gluingTrailingNumeral).font(PlayscribeFont.title2.bold()).lineLimit(3)
                     if let c = model.continueItem, c.game.id == game.id {
-                        Text("New on PS5: \(c.release.displayName)").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                        Text("New on PS5: \(c.release.displayName)").font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
                     }
                     if let c = model.continueItem, c.game.id == game.id {
-                        Text("New on PS5: \(c.release.displayName)").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                        Text("New on PS5: \(c.release.displayName)").font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
                     }
                 }
                 if !model.data.collection.isEmpty {
-                    Text("Nothing new in 90 days").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                    Text("Nothing new in 90 days").font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
                 }
             }
             .padding(20)
@@ -305,7 +305,7 @@ struct LibraryShelf: View {
                     // The same field as the notes search; the system rounded border read as a
                     // faded box behind the large title on the dark Library (QA, a258f0c).
                     HStack(spacing: 8) {
-                        Image(systemName: "magnifyingglass").foregroundStyle(.secondary)
+                        Image(systemName: "magnifyingglass").foregroundStyle(PlayscribeRole.textSecondary)
                         TextField("Search your library", text: binding)
                             .submitLabel(.search)
                             .autocorrectionDisabled()
@@ -325,7 +325,7 @@ struct LibraryShelf: View {
                                     }
                                 }
                             } label: {
-                                Image(systemName: "xmark.circle.fill").foregroundStyle(.secondary)
+                                Image(systemName: "xmark.circle.fill").foregroundStyle(PlayscribeRole.textSecondary)
                                     .frame(minWidth: 44, minHeight: 44).contentShape(Rectangle())
                                     .keepsKeyboardInFrame("library-search-clear")
                             }
@@ -427,7 +427,7 @@ struct LibraryShelf: View {
                 } else {
                 if let line = model.feedStatusLine {
                     HStack {
-                        Text(line).font(PlayscribeFont.footnote).foregroundStyle(.secondary)
+                        Text(line).font(PlayscribeFont.footnote).foregroundStyle(PlayscribeRole.textSecondary)
                         if case .failed = model.feedStatus {
                             Button { Task { await model.retryCheck() } } label: { Text("Retry").frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()) }.font(PlayscribeFont.footnote)
                         }
@@ -439,7 +439,7 @@ struct LibraryShelf: View {
                 if model.nav.filter != .all && layout == .list {
                     HStack(spacing: 12) {
                         Label("Showing \(model.nav.filter.label)", systemImage: "line.3.horizontal.decrease")
-                            .font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                            .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
                         Button("Show all") { model.nav.filter = .all }
                             .font(PlayscribeFont.subheadline.weight(.semibold))
                             .frame(minHeight: 44)
@@ -883,7 +883,7 @@ struct GameRow: View {
                         Text(row.game.name.gluingTrailingNumeral).font(PlayscribeFont.headline).lineLimit(stacked ? nil : 2).multilineTextAlignment(.leading)
                         HStack(spacing: 6) {
                             StatusPill(status: row.status)
-                            Text(model.shelfLine(row)).font(PlayscribeFont.footnote).foregroundStyle(.secondary)
+                            Text(model.shelfLine(row)).font(PlayscribeFont.footnote).foregroundStyle(PlayscribeRole.textSecondary)
                         }
                     }
                     if !stacked { Spacer(minLength: 0) }
@@ -1293,7 +1293,7 @@ struct ContinueTile: View {
                     VStack(alignment: .leading, spacing: 2) {
                         Text(fresh ? (model.freshLabel(release) ?? FreshCopy.newUpdate).uppercased() : "CONTINUE").font(PlayscribeFont.caption2).tracking(1).foregroundStyle(PlayscribeRole.action)
                         Text(game.name.gluingTrailingNumeral).font(PlayscribeFont.subheadline.weight(.semibold)).lineLimit(2)
-                        Text(release.displayName).font(PlayscribeFont.caption).foregroundStyle(.secondary)
+                        Text(release.displayName).font(PlayscribeFont.caption).foregroundStyle(PlayscribeRole.textSecondary)
                     }
                     .padding(10)
                 }
