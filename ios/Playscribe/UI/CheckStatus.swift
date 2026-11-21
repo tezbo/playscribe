@@ -50,12 +50,15 @@ extension AppModel {
     }
 
     /// "2 new updates", "No new updates. Checked 21 Nov, 6:51 am", "Couldn’t check. You’re offline" or "Couldn’t check. Try again later".
+    /// "22 Nov, 4:32 am" never splits across lines; the toast breaks after "No new updates." or "Checked" (Iris, AX5).
+    static func boundStamp(_ d: Date) -> String { checkedStamp(d).replacingOccurrences(of: " ", with: "\u{00A0}") }
+
     /// The stamp is when the player checked (`at`), not when the feed was last built: a 4:32 am feed time read as stale
     /// after a 7:15 am check (Mac, a1f48b94).
     static func checkResult(_ state: CheckState, newUpdates: Int, at now: Date) -> String {
         switch state {
         case .checked:
-            newUpdates > 0 ? "\(newUpdates) new update\(newUpdates == 1 ? "" : "s")" : "No new updates. Checked \(checkedStamp(now))"
+            newUpdates > 0 ? "\(newUpdates) new update\(newUpdates == 1 ? "" : "s")" : "No new updates. Checked \(boundStamp(now))"
         case .failed(let offline): offline ? "Couldn’t check. You’re offline" : "Couldn’t check. Try again later"
         case .notChecked: "Couldn’t check. Try again later"
         }

@@ -592,9 +592,11 @@ struct LowerMessages: View {
                     }
                 }
                 .padding(.horizontal, 16)
+                .padding(.vertical, 10)
                 .frame(minHeight: 44)
-                .background(PlayscribeRole.chipFill, in: Capsule())
-                .overlay(Capsule().strokeBorder(PlayscribeColor.vellum300.opacity(0.2)))
+                // 22 pt corners: a capsule on one line, and wrapped text at AX5 stays off the curved ends (Iris).
+                .background(PlayscribeRole.chipFill, in: RoundedRectangle(cornerRadius: 22, style: .continuous))
+                .overlay(RoundedRectangle(cornerRadius: 22, style: .continuous).strokeBorder(PlayscribeColor.vellum300.opacity(0.2)))
                 .shadow(color: .black.opacity(0.5), radius: 12, y: 4)
                 // Clear of the rows' trailing menu buttons.
                 .padding(.trailing, duo.pose == .closed ? 56 : 0)
