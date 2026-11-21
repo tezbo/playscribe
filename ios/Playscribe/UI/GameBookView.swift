@@ -34,7 +34,7 @@ struct GameBookView: View {
                 }
             }
         }
-        .background(Color.ink0)
+        .background(PlayscribeRole.bg)
         .navigationTitle(game?.name ?? "")
         .toolbar(removing: .title)
         .toolbarTitleDisplayMode(.inline)

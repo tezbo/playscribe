@@ -51,7 +51,7 @@ enum LinkedText {
                   let lower = AttributedString.Index(range.lowerBound, within: out),
                   let upper = AttributedString.Index(range.upperBound, within: out) else { continue }
             out[lower..<upper].link = url
-            out[lower..<upper].foregroundColor = PlayscribeColor.accent
+            out[lower..<upper].foregroundColor = PlayscribeRole.action
             out[lower..<upper].underlineStyle = .single
         }
         return out
