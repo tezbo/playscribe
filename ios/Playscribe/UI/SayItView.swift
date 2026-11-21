@@ -61,11 +61,22 @@ final class SpeechCapture {
     }
 
     private func authorized() async -> Bool {
-        let speech = await withCheckedContinuation { (c: CheckedContinuation<Bool, Never>) in
-            SFSpeechRecognizer.requestAuthorization { c.resume(returning: $0 == .authorized) }
-        }
-        guard speech else { return false }
+        guard await Self.speechAuthorized() else { return false }
         return await AVAudioApplication.requestRecordPermission()
+    }
+
+    /// #570 (build 16 crashed on Say it): Speech calls the authorization handler on its own queue. A closure written inside
+    /// this main-actor class is main-actor isolated under Swift 6, so the runtime's isolation check stopped the app the
+    /// moment the handler ran. The request is made from a nonisolated function with a @Sendable handler instead.
+    // RED-FIRST (this commit only): the 0.6.0 build-16 shape, a main-actor closure handed to the request.
+    static func speechAuthorized(
+        request: (@escaping (SFSpeechRecognizerAuthorizationStatus) -> Void) -> Void = { handler in
+            SFSpeechRecognizer.requestAuthorization(handler)
+        }
+    ) async -> Bool {
+        await withCheckedContinuation { (c: CheckedContinuation<Bool, Never>) in
+            request { status in c.resume(returning: status == .authorized) }
+        }
     }
 
     // The audio and recognition callbacks arrive on their own queues, so they are built outside
