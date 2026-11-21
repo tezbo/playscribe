@@ -582,8 +582,8 @@ struct LowerMessages: View {
             }
             if let toast = model.toast {
                 HStack(spacing: 12) {
-                    // Wraps to two lines at large sizes instead of shrinking (Iris, AX3).
-                    Text(toast.text).font(PlayscribeFont.subheadline).lineLimit(2).fixedSize(horizontal: false, vertical: true)
+                    // Wraps instead of shrinking or truncating (Iris, AX3; up to four lines at AX5 for the check result).
+                    Text(toast.text).font(PlayscribeFont.subheadline).lineLimit(4).fixedSize(horizontal: false, vertical: true)
                     if let undo = toast.undo {
                         Button(toast.actionLabel) { undo(); model.toastClear() }
                             .font(PlayscribeFont.subheadline.weight(.semibold))
@@ -592,9 +592,11 @@ struct LowerMessages: View {
                     }
                 }
                 .padding(.horizontal, 16)
+                .padding(.vertical, 10)
                 .frame(minHeight: 44)
-                .background(PlayscribeRole.chipFill, in: Capsule())
-                .overlay(Capsule().strokeBorder(PlayscribeColor.vellum300.opacity(0.2)))
+                // 22 pt corners: a capsule on one line, and wrapped text at AX5 stays off the curved ends (Iris).
+                .background(PlayscribeRole.chipFill, in: RoundedRectangle(cornerRadius: 22, style: .continuous))
+                .overlay(RoundedRectangle(cornerRadius: 22, style: .continuous).strokeBorder(PlayscribeColor.vellum300.opacity(0.2)))
                 .shadow(color: .black.opacity(0.5), radius: 12, y: 4)
                 // Clear of the rows' trailing menu buttons.
                 .padding(.trailing, duo.pose == .closed ? 56 : 0)

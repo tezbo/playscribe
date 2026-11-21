@@ -34,6 +34,36 @@ extension AppModel {
         AccessibilityNotification.Announcement(text).post()
     }
 
+    /// More > Check for updates (Terry, 21 Nov: it gave no feedback). A toast says it is checking, then what happened:
+    /// new PS5 updates for this game ("Up to date" would read as the player's PS5 being current; Iris), no new updates with the Checked time, or why it couldn't check. Toasts are announced.
+    func checkForUpdates(_ gameID: String) async {
+        show(Toast(text: "Checking for updates…", seconds: 30))
+        let before = Set(releases(gameID).filter(\.isPS5Listed).map(\.id))
+        await refreshFeed()
+        await refreshHistories([gameID])
+        let added = releases(gameID).filter { $0.isPS5Listed && !before.contains($0.id) }.count
+        // About 4 s, longer at accessibility sizes (Iris).
+        let seconds: Double = UIApplication.shared.preferredContentSizeCategory.isAccessibilityCategory ? 7 : 4
+        show(Toast(text: Self.checkResult(checkState, newUpdates: added, at: .now), seconds: seconds))
+        // Tabletop's News page is view only, so this is also its retry.
+        await NewsStore.shared.load(gameID: gameID, igdbID: game(gameID)?.igdbID)
+    }
+
+    /// "2 new updates", "No new updates. Checked 21 Nov, 6:51 am", "Couldn’t check. You’re offline" or "Couldn’t check. Try again later".
+    /// "22 Nov, 4:32 am" never splits across lines; the toast breaks after "No new updates." or "Checked" (Iris, AX5).
+    static func boundStamp(_ d: Date) -> String { checkedStamp(d).replacingOccurrences(of: " ", with: "\u{00A0}") }
+
+    /// The stamp is when the player checked (`at`), not when the feed was last built: a 4:32 am feed time read as stale
+    /// after a 7:15 am check (Mac, a1f48b94).
+    static func checkResult(_ state: CheckState, newUpdates: Int, at now: Date) -> String {
+        switch state {
+        case .checked:
+            newUpdates > 0 ? "\(newUpdates) new update\(newUpdates == 1 ? "" : "s")" : "No new updates. Checked \(boundStamp(now))"
+        case .failed(let offline): offline ? "Couldn’t check. You’re offline" : "Couldn’t check. Try again later"
+        case .notChecked: "Couldn’t check. Try again later"
+        }
+    }
+
     var feedIsStale: Bool {
         if case .failed = checkState { return true }
         return false
