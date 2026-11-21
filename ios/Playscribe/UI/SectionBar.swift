@@ -16,6 +16,19 @@ struct SectionBar: View {
     @Environment(\.dynamicTypeSize) private var typeSize
     var gameID: String
     var style: Style = .bar
+    /// On the hero ground (the Book contents header): the fixed on-dark set. Elsewhere the bar sits on bg or surface and
+    /// reads the roles, which keep their 0.5 dark values (Iris, 21 Nov).
+    var onDark = false
+
+    private var text: Color { onDark ? PlayscribeColor.onDarkText : PlayscribeRole.textPrimary }
+    private var textSecondary: Color { onDark ? PlayscribeColor.onDarkTextSecondary : PlayscribeRole.textSecondary }
+    private var underline: Color { onDark ? PlayscribeColor.onDarkAccent : PlayscribeRole.action }
+    private var selectedFill: Color { onDark ? PlayscribeColor.onDarkSelectedFill : PlayscribeRole.chipFill }
+    /// The bar's hairline: ink600 in dark as in 0.5, the hairline role's value in light.
+    private var hairlineColor: Color {
+        onDark ? PlayscribeColor.onDarkHairline
+            : PlayscribeRole.color(.init(name: "sectionHairline", light: PlayscribeRole.hairlineSpec.light, dark: PlayscribeColor.ink600))
+    }
 
     var body: some View {
         let sections = model.chapters(gameID)
@@ -73,13 +86,13 @@ struct SectionBar: View {
                 Button { select(s) } label: {
                     Text(s.title)
                         .font(on ? Self.tabFontOn : Self.tabFont)
-                        .foregroundStyle(on ? PlayscribeColor.textPrimary : PlayscribeColor.textSecondary)
+                        .foregroundStyle(on ? text : textSecondary)
                         .lineLimit(1)
                         .fixedSize()
                         .padding(.horizontal, padding)
                         .frame(minWidth: 44, minHeight: 48)
                         .overlay(alignment: .bottom) {
-                            if on { Rectangle().fill(PlayscribeColor.accent).frame(height: 3).padding(.horizontal, padding) }
+                            if on { Rectangle().fill(underline).frame(height: 3).padding(.horizontal, padding) }
                         }
                         .contentShape(Rectangle())
                 }
@@ -131,7 +144,7 @@ struct SectionBar: View {
                 }
                 Spacer(minLength: 8)
                 Image(systemName: "chevron.down").font(.system(size: 20, weight: .semibold))
-                    .foregroundStyle(PlayscribeColor.textPrimary)
+                    .foregroundStyle(text)
                     .accessibilityHidden(true)
             }
             .frame(maxWidth: .infinity, minHeight: 76, alignment: .leading)
@@ -146,7 +159,7 @@ struct SectionBar: View {
     private func pickerTitle(_ current: Chapter, cap: DynamicTypeSize) -> some View {
         Text(current.title)
             .font(PlayscribeFont.title2)
-            .foregroundStyle(PlayscribeColor.textPrimary)
+            .foregroundStyle(text)
             .lineLimit(1)
             .fixedSize()
             .dynamicTypeSize(...cap)
@@ -159,12 +172,12 @@ struct SectionBar: View {
                 Button { select(s) } label: {
                     Text(s.title)
                         .font(on ? PlayscribeFont.subheadline.weight(.semibold) : PlayscribeFont.subheadline)
-                        .foregroundStyle(on ? PlayscribeColor.textPrimary : PlayscribeColor.textSecondary)
+                        .foregroundStyle(on ? text : textSecondary)
                         .multilineTextAlignment(.leading)
                         .fixedSize(horizontal: false, vertical: true)
                         .padding(.horizontal, 10)
                         .frame(maxWidth: .infinity, minHeight: 48, alignment: .leading)
-                        .background(on ? PlayscribeColor.ink700 : .clear, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
+                        .background(on ? selectedFill : .clear, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
                         .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
@@ -175,7 +188,7 @@ struct SectionBar: View {
     }
 
     private var hairline: some View {
-        Rectangle().fill(PlayscribeColor.ink600).frame(height: 1).accessibilityHidden(true).allowsHitTesting(false)
+        Rectangle().fill(hairlineColor).frame(height: 1).accessibilityHidden(true).allowsHitTesting(false)
     }
 }
 
@@ -185,6 +198,8 @@ struct SectionBar: View {
 struct PinnedSectionHeader: View {
     var gameID: String
     var ink: Color
+    /// True on the hero ground: the bar takes the fixed on-dark set.
+    var onDark = false
     var inset: CGFloat = 20
     var maxWidth: CGFloat = .infinity
     var style: SectionBar.Style = .bar
@@ -201,7 +216,7 @@ struct PinnedSectionHeader: View {
     static let coverAbove: CGFloat = 400
 
     var body: some View {
-        SectionBar(gameID: gameID, style: style)
+        SectionBar(gameID: gameID, style: style, onDark: onDark)
             .frame(maxWidth: maxWidth)
             .padding(.vertical, vertical)
             .padding(.horizontal, inset)
