@@ -26,7 +26,7 @@ struct PhotoAddView: View {
 
     var body: some View {
         VStack(spacing: 16) {
-            Image(systemName: "photo.on.rectangle.angled").font(.system(size: 44)).foregroundStyle(PlayscribeColor.accent)
+            Image(systemName: "photo.on.rectangle.angled").font(.system(size: 44)).foregroundStyle(PlayscribeRole.action)
                 .accessibilityHidden(true)
             Text("Choose a photo with game titles on it.")
                 .font(PlayscribeFont.headline).multilineTextAlignment(.center)
@@ -35,9 +35,9 @@ struct PhotoAddView: View {
             PhotosPicker(selection: $item, matching: .images) {
                 Text(working ? "Reading" : "Choose photo")
                     .font(PlayscribeFont.headline)
-                    .foregroundStyle(PlayscribeColor.onAccent)
+                    .foregroundStyle(PlayscribeRole.onAction)
                     .frame(maxWidth: .infinity, minHeight: 52)
-                    .background(PlayscribeColor.accent, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                    .background(PlayscribeRole.action, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
             }
             .disabled(working)
             .tappableFrame()

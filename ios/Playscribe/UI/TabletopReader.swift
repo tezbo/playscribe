@@ -182,7 +182,7 @@ struct TabletopReaderStage: View {
                         // r060 day-one (Iris): a day-one patch's eyebrow says so on the visit it is new; the game name is in the lower half.
                         let eyebrow = release.flatMap { model.dayOneNote($0) } != nil ? FreshCopy.dayOne : model.gameDisplayName(gameID)
                         if typeSize.isAccessibilitySize {
-                            WholeWordText(text: eyebrow, font: PlayscribeFont.subheadline.weight(.semibold), lines: 1, color: PlayscribeColor.accent)
+                            WholeWordText(text: eyebrow, font: PlayscribeFont.subheadline.weight(.semibold), lines: 1, color: PlayscribeRole.action)
                         } else {
                             Text(eyebrow)
                         }
@@ -193,7 +193,7 @@ struct TabletopReaderStage: View {
                         }
                     }
                     .font(PlayscribeFont.subheadline.weight(.semibold))
-                    .foregroundStyle(PlayscribeColor.accent)
+                    .foregroundStyle(PlayscribeRole.action)
                     // One phrase ("Enshrouded, 5 November") instead of two stops.
                     .accessibilityElement(children: .combine)
                     // The release name for VoiceOver (and J-4). On the overview the title is the name itself, so this element is
@@ -217,7 +217,7 @@ struct TabletopReaderStage: View {
                             .accessibilityIdentifier("readerHeadline")
                     }
                     WholeWordText(text: ReaderBody.stage(section.body), font: PlayscribeFont.body, lines: typeSize.isAccessibilitySize ? 1 : 4,
-                                  color: PlayscribeColor.textPrimary.opacity(0.92))
+                                  color: PlayscribeRole.textPrimary.opacity(0.92))
                         // At accessibility sizes the half-height stage has no room for a body line under a two-line title
                         // and the eyebrow (the eyebrow was clipped at the top, fccccaa). The body is not drawn there; it stays
                         // in the accessibility tree and the full text is one tap away.
@@ -229,6 +229,8 @@ struct TabletopReaderStage: View {
                 // Iris (same rule as #232, every Tabletop stage): the whole block sits on one ink panel, 70%, 12 pt
                 // radius and padding, so the text keeps 4.5:1 over any art, logo or banner. Left on the 16 pt margin,
                 // up to 560 pt wide, its bottom edge 24 pt above the division; it grows upward only.
+                // The plate is dark in both modes, so its text keeps the dark roles (0.6 tokens).
+                .environment(\.colorScheme, .dark)
                 .padding(12)
                 .frame(maxWidth: 560, alignment: .leading)
                 .background(PlayscribeColor.ink950.opacity(0.7), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
@@ -282,7 +284,7 @@ struct TabletopReaderControls: View {
                                 }
                                 .padding(.horizontal, 12)
                                 .frame(minHeight: 44)
-                                .background(i == index ? PlayscribeColor.ink700 : .clear, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
+                                .background(i == index ? PlayscribeRole.chipFill : .clear, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
                                 .contentShape(Rectangle())
                             }
                             .buttonStyle(.plain)
@@ -305,7 +307,7 @@ struct TabletopReaderControls: View {
         .padding(.top, 10)
         .padding(.bottom, 12)
         .padding(.trailing, railWidth)
-        .background(Color.ink1)
+        .background(PlayscribeRole.surface)
     }
 
     private func go(_ i: Int) {
@@ -323,7 +325,7 @@ struct TabletopReaderControls: View {
             Label(title, systemImage: symbol)
                 .font(PlayscribeFont.headline)
                 .frame(maxWidth: .infinity, minHeight: 52)
-                .background(PlayscribeColor.ink700, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                .background(PlayscribeRole.chipFill, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
         }
         .buttonStyle(.plain)
         .accessibilityLabel(title + " section")
@@ -345,18 +347,19 @@ struct StageTrailerTile: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
-            AsyncImage(url: URL(string: "https://i.ytimg.com/vi/\(youtubeID)/mqdefault.jpg")) { $0.resizable().aspectRatio(16 / 9, contentMode: .fit) } placeholder: { Color.ink1 }
+            AsyncImage(url: URL(string: "https://i.ytimg.com/vi/\(youtubeID)/mqdefault.jpg")) { $0.resizable().aspectRatio(16 / 9, contentMode: .fit) } placeholder: { PlayscribeRole.surface }
                 .frame(width: width, height: width * 9 / 16)
-                .background(Color.ink1)
+                .background(PlayscribeRole.surface)
                 .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
                 .overlay {
                     Image(systemName: "play.fill").font(.title2).foregroundStyle(.white)
                         .padding(12).background(PlayscribeColor.ink950.opacity(0.6), in: Circle())
                 }
-            Text("Trailer").font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.textPrimary)
+            Text("Trailer").font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeRole.textPrimary)
                 .fixedSize(horizontal: false, vertical: true)
         }
         .frame(width: width, alignment: .leading)
+        .environment(\.colorScheme, .dark)
         .padding(8)
         .background(PlayscribeColor.ink950.opacity(0.7), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
         .allowsHitTesting(false)

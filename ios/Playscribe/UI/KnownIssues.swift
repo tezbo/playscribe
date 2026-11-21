@@ -89,7 +89,7 @@ struct ForYouCard: View {
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(12)
-            .background(Color.ink2, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+            .background(PlayscribeRole.card, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
             .accessibilityElement(children: .combine)
         }
     }
@@ -103,7 +103,7 @@ struct FollowIssueButton: View {
         if !issue.isAddressed {
             Button(on ? "Following" : "Follow") { model.toggleFollow(issue) }
                 .font(PlayscribeFont.footnote.weight(.semibold))
-                .foregroundStyle(on ? Color.secondary : PlayscribeColor.accent)
+                .foregroundStyle(on ? Color.secondary : PlayscribeRole.action)
                 .frame(minWidth: 44, minHeight: 44)
                 .tappableFrame()
                 .accessibilityLabel(on ? "Following this issue" : "Follow this issue")
@@ -130,7 +130,7 @@ struct FollowingList: View {
                         }
                         Spacer(minLength: 0)
                         Button("Unfollow") { model.toggleFollow(issue) }
-                            .font(PlayscribeFont.footnote.weight(.semibold)).foregroundStyle(PlayscribeColor.accent)
+                            .font(PlayscribeFont.footnote.weight(.semibold)).foregroundStyle(PlayscribeRole.action)
                             .frame(minHeight: 44).tappableFrame()
                     }
                 }

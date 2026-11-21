@@ -51,7 +51,7 @@ struct EntryCard: View {
             }
         }
         .padding(14)
-        .background(Color.ink2, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .background(PlayscribeRole.card, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
     }
 }
 
@@ -164,7 +164,7 @@ struct GalleryEmpty: View {
                         Link(destination: url) { Label("Find trailers online", systemImage: "arrow.up.right.square").frame(minHeight: 44).contentShape(Rectangle()) }.tappableFrame()
                     }
                 }
-                .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.accent)
+                .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.action)
             }
         }
         .accessibilityElement(children: .contain)
@@ -214,7 +214,7 @@ struct MyBookChapter: View {
                 model.saveNote(Note(id: "n-\(Int(Date.now.timeIntervalSince1970 * 1000))", gameID: gameID, text: text, updatedAt: .now))
                 model.nav.noteDraft[gameID] = ""
             }
-            .buttonStyle(.borderedProminent).foregroundStyle(PlayscribeColor.onAccent)
+            .buttonStyle(.borderedProminent).foregroundStyle(PlayscribeRole.onAction)
             .disabled((model.nav.noteDraft[gameID] ?? "").trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
             .hitTarget()
 
@@ -231,7 +231,7 @@ struct MyBookChapter: View {
                                 model.saveNote(copy)
                                 editing = nil
                             }
-                            .buttonStyle(.borderedProminent).foregroundStyle(PlayscribeColor.onAccent).hitTarget()
+                            .buttonStyle(.borderedProminent).foregroundStyle(PlayscribeRole.onAction).hitTarget()
                         }
                     } else {
                         Text(n.text)
@@ -247,7 +247,7 @@ struct MyBookChapter: View {
                     }
                 }
                 .padding(12)
-                .background(Color.ink2, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                .background(PlayscribeRole.card, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
                 .id("note-\(n.id)")
             }
         }

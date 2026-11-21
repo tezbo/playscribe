@@ -96,15 +96,15 @@ struct SayItView: View {
         VStack(spacing: 20) {
             if !explained {
                 VStack(spacing: 12) {
-                    Image(systemName: "mic.fill").font(.system(size: 44)).foregroundStyle(PlayscribeColor.accent)
+                    Image(systemName: "mic.fill").font(.system(size: 44)).foregroundStyle(PlayscribeRole.action)
                         .accessibilityHidden(true)
                     Text("Let Playscribe hear your list").font(PlayscribeFont.headline).multilineTextAlignment(.center)
                     Text("Playscribe turns your voice into game names on your phone. It only listens while you hold the button.")
                         .font(PlayscribeFont.subheadline).foregroundStyle(.secondary).multilineTextAlignment(.center)
                     Button { explained = true } label: {
-                        Text("Continue").font(PlayscribeFont.headline).foregroundStyle(PlayscribeColor.onAccent)
+                        Text("Continue").font(PlayscribeFont.headline).foregroundStyle(PlayscribeRole.onAction)
                             .frame(maxWidth: .infinity, minHeight: 52)
-                            .background(PlayscribeColor.accent, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                            .background(PlayscribeRole.action, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
                     }
                     .buttonStyle(.plain).tappableFrame()
                     .accessibilityHint("Shows the system permission request")
@@ -131,7 +131,7 @@ struct SayItView: View {
                 Text(capture.transcript.isEmpty ? "Hold the button and say a few titles, like Elden Ring and Astro Bot."
                      : capture.transcript)
                     .font(capture.transcript.isEmpty ? PlayscribeFont.subheadline : PlayscribeFont.title3)
-                    .foregroundStyle(capture.transcript.isEmpty ? PlayscribeColor.textSecondary : PlayscribeColor.textPrimary)
+                    .foregroundStyle(capture.transcript.isEmpty ? PlayscribeRole.textSecondary : PlayscribeRole.textPrimary)
                     .multilineTextAlignment(.center)
                     .frame(maxWidth: .infinity, minHeight: 80)
                     .padding(.horizontal, 20)
@@ -141,9 +141,9 @@ struct SayItView: View {
             if explained && !capture.denied && !capture.unavailable {
                 Image(systemName: capture.listening ? "waveform" : "mic.fill")
                     .font(.title)
-                    .foregroundStyle(PlayscribeColor.onAccent)
+                    .foregroundStyle(PlayscribeRole.onAction)
                     .frame(width: 64, height: 64)
-                    .background(Circle().fill(capture.listening ? PlayscribeColor.accentPressed : PlayscribeColor.accent))
+                    .background(Circle().fill(capture.listening ? PlayscribeColor.accentPressed : PlayscribeRole.action))
                     .scaleEffect(capture.listening ? 1.08 : 1)
                     .contentShape(Circle())
                     .onLongPressGesture(minimumDuration: .infinity, maximumDistance: 60, pressing: { pressing in
