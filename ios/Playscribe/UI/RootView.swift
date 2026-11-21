@@ -140,7 +140,6 @@ struct RootView: View {
     @State private var unlatchTask: Task<Void, Never>?
     @State private var frames: [CGRect] = []
     @State private var named: [String: CGRect] = [:]
-    private var lowerPanelOpen: Bool { model.addSheetOpen || model.settingsOpen || model.linksSheetOpen || model.tagExplainer != nil || model.keepCurrentDetailsOpen }
 
     var body: some View {
         DuoReader { duo in
@@ -149,11 +148,6 @@ struct RootView: View {
                 TabRoot(duo: duo)
                     .environment(\.railWidth, duo.pose == .tabletop ? TabletopRail.width : 0)
                     .auditActive(!model.addSheetOpen && !model.settingsOpen && !model.linksSheetOpen && model.tagExplainer == nil && !model.keepCurrentDetailsOpen && model.player == nil)
-                    // While a Tabletop panel is open the page under it takes no touches and is hidden from VoiceOver: the
-                    // Library's A to Z strip read out over the rail (x 592 to 636, Mac at c1c1191e), and a tap that missed the
-                    // panel must never act on the page beneath it.
-                    .allowsHitTesting(!(duo.pose == .tabletop && lowerPanelOpen))
-                    .accessibilityHidden(duo.pose == .tabletop && lowerPanelOpen)
 
                 if duo.pose == .tabletop, let fold = duo.division {
                     TabletopRail(duo: duo)
@@ -262,7 +256,7 @@ struct TabRoot: View {
         @Bindable var model = model
         TabView(selection: $model.data.nav.tab) {
             Tab("Library", systemImage: "books.vertical", value: AppTab.library) {
-                LibraryRoot(duo: duo).auditActive(model.nav.tab == .library)
+                LibraryRoot(duo: duo).auditActive(model.nav.tab == .library).underLowerPanel(duo)
             }
             .badge(model.totalUnread)
 
@@ -276,6 +270,7 @@ struct TabRoot: View {
                         }
                 }
                 .auditActive(model.nav.tab == .updates)
+                .underLowerPanel(duo)
                 // J-1 (0.5.7 gate): an update the fold moved onto the game's Page comes back as this tab's push once the tab is
                 // showing and the pose change has settled; pushed in the same update as the tab switch, it drew blank.
                 .task(id: model.pendingUpdatesRelease) {
@@ -286,11 +281,11 @@ struct TabRoot: View {
             }
 
             Tab("News", systemImage: "megaphone", value: AppTab.news) {
-                NavigationStack { NewsView().tabletopChrome(duo) }.auditActive(model.nav.tab == .news)
+                NavigationStack { NewsView().tabletopChrome(duo) }.auditActive(model.nav.tab == .news).underLowerPanel(duo)
             }
 
             Tab(value: AppTab.search, role: .search) {
-                NavigationStack { SearchView().tabletopChrome(duo) }.auditActive(model.nav.tab == .search)
+                NavigationStack { SearchView().tabletopChrome(duo) }.auditActive(model.nav.tab == .search).underLowerPanel(duo)
             }
         }
         // J-1: a pushed update only exists where pushing is the layout (one column: Closed, Open both ways). Folding to Book or
@@ -320,6 +315,12 @@ extension View {
     /// Scroll edges fade (Quinn, on #541): under the solid top bar, a 16 pt band from ink to clear, so content fades out instead of
     /// being cut at the bar's edge. A safe-area inset, so the page's rest position starts below it and only scrolled content passes
     /// under; 0 pt in the other poses (the same view, so identity holds).
+    /// While a Tabletop lower-half panel is open, the tab's page under it takes no touches and is hidden from VoiceOver: the
+    /// Library's A to Z strip read out over the rail (x 592 to 636, Mac at c1c1191e), and a tap that misses the panel must never
+    /// act on the page beneath it. Applied inside each tab, so the hiding reaches the tab's hosted content, and never to the
+    /// rail, which stays live (J-20).
+    func underLowerPanel(_ duo: DuoContext) -> some View { modifier(UnderLowerPanel(duo: duo)) }
+
     func tabletopChrome(_ duo: DuoContext) -> some View {
         let solid = duo.pose == .flat && !duo.isLandscape
         return toolbarVisibility(duo.pose == .tabletop ? .hidden : .automatic, for: .navigationBar, .tabBar)
@@ -610,5 +611,18 @@ struct LowerMessages: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
         .animation(.snappy, value: model.toast)
         .animation(.snappy, value: model.pill?.releaseID)
+    }
+}
+
+private struct UnderLowerPanel: ViewModifier {
+    @Environment(AppModel.self) private var model
+    var duo: DuoContext
+
+    func body(content: Content) -> some View {
+        let covered = duo.pose == .tabletop
+            && (model.addSheetOpen || model.settingsOpen || model.linksSheetOpen || model.tagExplainer != nil || model.keepCurrentDetailsOpen)
+        content
+            .allowsHitTesting(!covered)
+            .accessibilityHidden(covered)
     }
 }

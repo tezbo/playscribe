@@ -104,6 +104,7 @@ struct SettingsView: View {
                                 .navigationTitle("Own settings")
                                 .toolbar(.visible, for: .navigationBar)
                             }
+                            .accessibilityIdentifier("settingsOwnSettings")
                         }
                     } header: {
                         Text("Notifications")
@@ -328,7 +329,9 @@ struct PanelHeader: View {
                 }
                 .buttonStyle(.plain)
                 .accessibilityLabel("Close")
-                .padding(.trailing, 16)
+                .accessibilityIdentifier("panelClose")
+                // 20 pt, the form rows' own inset, so Close ends where the rows do (x 593 in the sim), well clear of the rail.
+                .padding(.trailing, 20)
             }
         }
         .frame(minHeight: 60)
