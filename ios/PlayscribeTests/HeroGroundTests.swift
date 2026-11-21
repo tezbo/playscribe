@@ -36,6 +36,15 @@ struct HeroGroundTests {
         }
     }
 
+    /// Update rows and the game page's New mark sit on bg: role text, never the fixed 0.5 cream (white titles on cream in light,
+    /// bug-064, Max).
+    @Test func updateRowsUseRoles() throws {
+        let row = try source("UpdateRow.swift")
+        for name in ["PlayscribeColor.textPrimary", "PlayscribeColor.textSecondary", "PlayscribeColor.accent"] {
+            #expect(!row.contains(name), "UpdateRow paints \(name) in both modes")
+        }
+    }
+
     /// The section bar reads the roles on bg and surface, and the on-dark set only on the hero ground (Book contents).
     @Test func sectionBarFollowsItsGround() throws {
         let src = try source("SectionBar.swift")

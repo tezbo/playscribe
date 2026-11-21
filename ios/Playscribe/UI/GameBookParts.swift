@@ -239,7 +239,7 @@ struct ReleasePage: View {
             WholeWordText(text: r.displayName, font: Self.nameFont, lines: 4, color: nil)
                 .accessibilityAddTraits(.isHeader).accessibilityIdentifier("releaseTitle")
             if unread {
-                Text("New").font(PlayscribeFont.caption.weight(.bold)).foregroundStyle(PlayscribeColor.accent)
+                Text("New").font(PlayscribeFont.caption.weight(.bold)).foregroundStyle(PlayscribeRole.newText)
                     .accessibilityIdentifier("releaseNew")
             }
         }
@@ -799,7 +799,7 @@ struct ContentsHead: View {
                         Text(note)
                             .font(PlayscribeFont.subheadline)
                             // textSecondary, not .secondary (about 5:1): the one action the player needs (Iris on #506).
-                            .foregroundStyle(PlayscribeColor.textSecondary)
+                            .foregroundStyle(PlayscribeRole.textSecondary)
                             .fixedSize(horizontal: false, vertical: true)
                             .accessibilityIdentifier("dayOneNote")
                             .accessibilitySortPriority(1)
