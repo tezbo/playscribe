@@ -33,12 +33,22 @@ struct BrightArtScrimTests {
         return (Int(rgba[0]) + Int(rgba[1]) + Int(rgba[2])) / 3
     }
 
+    /// Mean grey of a patch `w` wide centred on x, over rows y-1...y+1 clamped to the image. A gradient is dithered, so one
+    /// pixel can sit a level or two off its neighbour; an edge moves the whole patch (#558 CI: a single-pixel read failed by dither).
+    private func patch(_ cg: CGImage, _ x: Int, _ y: Int, w: Int = 5) throws -> Int {
+        var sum = 0, n = 0
+        for yy in max(0, y - 1)...min(cg.height - 1, y + 1) {
+            for xx in max(0, x - w / 2)...min(cg.width - 1, x + w / 2) { sum += try grey(cg, xx, yy); n += 1 }
+        }
+        return sum / n
+    }
+
     @Test func stageScrimSpansTheFullWidth() throws {
         let cg = try render(fullBleed: true)
         let h = Int(stage.height)
         // Behind the block, in the ramp above it, and at the stage's bottom row: the far right matches the far left.
         for y in [h - 30, h - Int(block.height) - 20, h - 1] {
-            let left = try grey(cg, 2, y), right = try grey(cg, Int(stage.width) - 3, y)
+            let left = try patch(cg, 4, y), right = try patch(cg, Int(stage.width) - 5, y)
             #expect(abs(left - right) <= 2, "row \(y): left \(left), right \(right) (no side edge)")
         }
     }

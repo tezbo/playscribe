@@ -6,7 +6,8 @@ import XCTest
 /// No assertions beyond "the app came up": the stills are for Quinn and Iris to judge against the Mac on the same SHA.
 /// Skipped unless POSE_STILLS_POSE is set (TEST_RUNNER_POSE_STILLS_POSE from xcodebuild), so normal UI test runs don't change.
 ///   POSE_STILLS_POSE    closed, closedLandscape, open, openPortrait, book or tabletop
-///   POSE_STILLS_ROUTES  comma list of -qaRoute values (default: the shots.sh set)
+///   POSE_STILLS_ROUTES  comma list of -qaRoute values (default: the shots.sh set). An entry can carry extra launch arguments
+///                       after a space, e.g. `cover/kcd2 -qaMotionTime 12` or `cover/kcd2 -qaReduceMotion YES`
 ///   POSE_STILLS_SIZES   comma list of std, ax3, ax5 (default std,ax5)
 ///   POSE_STILLS_WAIT    seconds to wait after launch before the shot (default 4; network art loads in that time)
 final class PoseStillsTests: XCTestCase {
@@ -29,16 +30,19 @@ final class PoseStillsTests: XCTestCase {
         let qaPose = ["book", "tabletop"].contains(pose) ? ["-qaPose", pose] : []
         for size in sizes {
             let category = try XCTUnwrap(Self.categories[size], "unknown size \(size)")
-            for route in routes {
+            for entry in routes {
+                let words = entry.split(separator: " ").map(String.init)
+                let route = words[0], extra = Array(words.dropFirst())
                 XCUIDevice.shared.orientation = landscape ? .landscapeLeft : .portrait
                 let app = XCUIApplication()
-                app.launchArguments = ["-qaRoute", route, "-UIPreferredContentSizeCategoryName", category] + qaPose
+                app.launchArguments = ["-qaRoute", route, "-UIPreferredContentSizeCategoryName", category] + qaPose + extra
                 app.launch()
                 XCTAssertTrue(app.wait(for: .runningForeground, timeout: 30), "\(route) \(size): the app did not come up")
                 sleep(wait)
                 let shot = XCUIScreen.main.screenshot()
                 let attachment = XCTAttachment(screenshot: shot)
-                let slug = route.replacingOccurrences(of: "/", with: "_").replacingOccurrences(of: "@", with: "-")
+                let slug = ([route] + extra.map { String($0.drop(while: { $0 == "-" })) }).joined(separator: "_")
+                    .replacingOccurrences(of: "/", with: "_").replacingOccurrences(of: "@", with: "-")
                 attachment.name = "\(slug)-\(pose)-\(size)"
                 attachment.lifetime = .keepAlways
                 add(attachment)
