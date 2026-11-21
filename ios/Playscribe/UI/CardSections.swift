@@ -56,7 +56,7 @@ struct CardRowBackground: View {
 
 /// The outline path for one row: a rounded rectangle inset half a point so the 1 pt stroke sits inside the row, pushed 2 pt
 /// past the row's top or bottom where that edge belongs to a neighbouring row (the overhang is clipped away).
-struct CardRowEdge: Shape {
+nonisolated struct CardRowEdge: Shape {
     var top: Bool
     var bottom: Bool
     var radius: CGFloat
