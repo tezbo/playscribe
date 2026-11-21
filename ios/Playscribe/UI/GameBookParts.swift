@@ -920,6 +920,7 @@ struct NotesSearchField: View {
             .padding(.horizontal, 12)
             .frame(minHeight: 44)
             .background(PlayscribeRole.chipFill, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+            .controlBorder(.searchField, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
             if !model.noteQuery.isEmpty {
                 Picker("Search in", selection: $model.noteScope) {
                     ForEach(NoteScope.allCases, id: \.self) { Text($0.label).tag($0) }

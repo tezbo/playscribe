@@ -45,6 +45,7 @@ struct TabletopSearchButton: View {
             .padding(.horizontal, 12)
             .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
             .background(PlayscribeRole.chipFill, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+            .controlBorder(.tabletopSearch, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)

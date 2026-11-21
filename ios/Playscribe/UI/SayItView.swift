@@ -165,6 +165,7 @@ struct SayItView: View {
                         .frame(maxWidth: .infinity, minHeight: 50)
                 }
                 .buttonStyle(.bordered)
+                .controlBorder(.outlinedButton, in: Capsule())
                 .disabled(capture.transcript.isEmpty)
                 .padding(.horizontal, 16)
                 .tappableFrame()

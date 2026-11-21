@@ -283,6 +283,8 @@ struct AddGameSheet: View {
                         // Mac 2198fa7; 14.5 was 1 pt short, Mac 9cebaa9), with the whole row still the tap target.
                         .padding(.vertical, 15)
                         .frame(maxWidth: .infinity)
+                        // The row is the field; its border sits 8 pt inside the row so it frames the text, not the cell edge.
+                        .controlBorder(.searchField, in: RoundedRectangle(cornerRadius: 12, style: .continuous).inset(by: 8))
                         .background {
                             Color.clear
                                 .contentShape(Rectangle())
@@ -324,6 +326,8 @@ struct AddGameSheet: View {
             Section { statusPicker }
             Section {
                 TextField("Game name", text: $customName).frame(minHeight: 44)
+                    // Inside a Form row: the border sits 8 pt outside the text on each side, so the text does not move.
+                    .controlBorder(.textField, in: RoundedRectangle(cornerRadius: 10, style: .continuous), horizontalOutset: 8)
                 Picker("Platform", selection: $customPlatform) {
                     ForEach([Platform.ps5, .xboxSeries, .switch2, .pc], id: \.self) { Text($0.label).tag($0) }
                 }
