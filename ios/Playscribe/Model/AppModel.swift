@@ -299,6 +299,9 @@ final class AppModel {
     var qaRoute: String?
     /// QA (route `no-notes/<game>`): the deck ignores every release, so a game with a release date shows as a no-release hero.
     var qaNoReleases = false
+    /// QA (route `launch-only/<game>`): every release that is not a launch marker is hidden, so the game's only entry is its Launch
+    /// marker (bug-061: the page must open on it, not blank).
+    var qaLaunchOnly = false
     /// QA (route `no-notes/<game>/untracked`): the feed is treated as not tracking any game, for the untracked line.
     var qaUntracked = false
     /// QA (INTERNAL, `-qaRoute long-text`): a long overview body, to show the Tabletop stage cap and the Full text row.
@@ -496,7 +499,7 @@ final class AppModel {
             // Steam is the source of truth (Terry, 26 Oct): a release only the press reports is not shown.
             // A PS4 patch is the exception (Terry, 6 Nov: PS4 history counts): it has no Steam post, so it shows,
             // tagged Reported, and never alerts or counts as unread.
-            .filter { $0.gameID == gameID && $0.ps5State != .pending && ($0.ps5State != .reported || $0.ps4 == true) && ($0.arrivesAt ?? .distantPast) <= now }
+            .filter { $0.gameID == gameID && $0.ps5State != .pending && ($0.ps5State != .reported || $0.ps4 == true) && ($0.arrivesAt ?? .distantPast) <= now && (!qaLaunchOnly || $0.launch == true) }
             .sorted { Self.newer($0, $1, by: \.latestDate) }
     }
 
@@ -991,6 +994,14 @@ final class AppModel {
             qaNoReleases = true
             qaUntracked = parts.count == 2 && parts[1] == "untracked"
             if url.host() == "no-notes-page" { openGame(parts[0], chapter: .updates); nav.detailReleaseID = nil; linksSheetOpen = false }
+        // QA (INTERNAL, bug-061): "launch-only/<game>[/page]": only that game in the Library, its history cut to the Launch marker.
+        // The game needs a launch marker (dawnwalker has one). Without /page it stays on the Library; with it the game's page opens.
+        case "launch-only" where !parts.isEmpty:
+            resetDemo()
+            data = PersistedState(collection: [])
+            if let g = fixtures.games.first(where: { $0.id == parts[0] }) { addGames([g], status: .owned) }
+            qaLaunchOnly = true
+            if parts.count > 1, parts[1] == "page" { openGame(parts[0], chapter: .updates); nav.detailReleaseID = nil; linksSheetOpen = false }
         case "plus-demo": resetDemo(); PlusStore.shared.qaShowDemoMonth()
         case "pill": holdQAPill()
         // QA (INTERNAL, B-10): "quick/tip" shows the press-and-hold tip; "quick/undo" removes the first game so the
