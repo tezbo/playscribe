@@ -298,13 +298,13 @@ struct AddGameSheet: View {
                     // Offline state 7: rows keep their placeholder covers; say why.
                     if case .failed(offline: true) = model.checkState {
                         Label("Covers need a connection", systemImage: "wifi.slash")
-                            .font(PlayscribeFont.footnote).foregroundStyle(.secondary)
+                            .font(PlayscribeFont.footnote).foregroundStyle(PlayscribeRole.textSecondary)
                     }
                 }
                 let rows = results
                 Section(letter != nil && duo.pose == .tabletop ? "Starting with \(letter ?? "")" : debounced.count >= 2 ? "Best matches" : "Popular on PS5") {
                     if rows.isEmpty {
-                        Text("No PS5 game matches ‘\(debounced)’").foregroundStyle(.secondary)
+                        Text("No PS5 game matches ‘\(debounced)’").foregroundStyle(PlayscribeRole.textSecondary)
                         Button("Add ‘\(debounced)’ yourself") { customName = debounced; custom = true }.hitTarget()
                     }
                     ForEach(rows) { g in AddRow(game: g, status: status, selected: picked[g.id] != nil) { tap(g) } }
@@ -394,7 +394,7 @@ struct AddRow: View {
                 CoverView(game: game, cornerRadius: 4).frame(width: 40)
                 VStack(alignment: .leading, spacing: 2) {
                     Text(game.name.gluingTrailingNumeral).font(PlayscribeFont.subheadline.weight(.semibold)).fixedSize(horizontal: false, vertical: true)
-                    Text(added ? "In library" : subtitle).font(PlayscribeFont.caption).foregroundStyle(.secondary)
+                    Text(added ? "In library" : subtitle).font(PlayscribeFont.caption).foregroundStyle(PlayscribeRole.textSecondary)
                 }
                 Spacer(minLength: 8)
                 Image(systemName: added ? "checkmark" : selected ? "checkmark.circle.fill" : "circle")
@@ -581,7 +581,7 @@ struct OnboardingActions: View {
     private var welcome: some View {
         VStack(alignment: .leading, spacing: 12) {
             Text("Tell Playscribe what you play and it keeps every update in one place.")
-                .font(PlayscribeFont.body).foregroundStyle(.secondary)
+                .font(PlayscribeFont.body).foregroundStyle(PlayscribeRole.textSecondary)
             ForEach(AddMethod.available) { m in
                 Button {
                     model.data.welcomeDone = true
@@ -593,7 +593,7 @@ struct OnboardingActions: View {
                             .foregroundStyle(PlayscribeRole.action)
                         VStack(alignment: .leading, spacing: 2) {
                             Text(m.title).font(PlayscribeFont.headline)
-                            Text(m.detail).font(PlayscribeFont.footnote).foregroundStyle(.secondary)
+                            Text(m.detail).font(PlayscribeFont.footnote).foregroundStyle(PlayscribeRole.textSecondary)
                         }
                         Spacer(minLength: 0)
                     }
@@ -636,7 +636,7 @@ struct OnboardingActions: View {
             }
             .edgeFade(40)
             Text("PlayStation account import is planned for a later version.")
-                .font(PlayscribeFont.footnote).foregroundStyle(.secondary)
+                .font(PlayscribeFont.footnote).foregroundStyle(PlayscribeRole.textSecondary)
             }
         }
     }
@@ -659,7 +659,7 @@ struct OnboardingRightPage: View {
                     }
                 }
                 Text("PlayStation account import is planned for a later version.")
-                    .font(PlayscribeFont.footnote).foregroundStyle(.secondary)
+                    .font(PlayscribeFont.footnote).foregroundStyle(PlayscribeRole.textSecondary)
             }
             .padding(.top, 16).padding(.bottom, 24)
         }

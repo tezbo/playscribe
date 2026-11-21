@@ -100,7 +100,7 @@ struct SayItView: View {
                         .accessibilityHidden(true)
                     Text("Let Playscribe hear your list").font(PlayscribeFont.headline).multilineTextAlignment(.center)
                     Text("Playscribe turns your voice into game names on your phone. It only listens while you hold the button.")
-                        .font(PlayscribeFont.subheadline).foregroundStyle(.secondary).multilineTextAlignment(.center)
+                        .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary).multilineTextAlignment(.center)
                     Button { explained = true } label: {
                         Text("Continue").font(PlayscribeFont.headline).foregroundStyle(PlayscribeRole.onAction)
                             .frame(maxWidth: .infinity, minHeight: 52)
@@ -117,7 +117,7 @@ struct SayItView: View {
                         .font(PlayscribeFont.headline).multilineTextAlignment(.center)
                     if capture.denied {
                         Text("You can turn on the microphone and speech recognition for Playscribe in Settings.")
-                            .font(PlayscribeFont.subheadline).foregroundStyle(.secondary).multilineTextAlignment(.center)
+                            .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary).multilineTextAlignment(.center)
                     }
                     Button("Type it", action: typeInstead).hitTarget()
                     if capture.denied {
