@@ -24,7 +24,7 @@ struct SystemTextStyleTests {
     @Test func genresJoinWithComma() throws {
         let src = try String(contentsOf: URL(fileURLWithPath: #filePath).deletingLastPathComponent().deletingLastPathComponent()
             .appendingPathComponent("Playscribe/UI/GameBookParts.swift"), encoding: .utf8)
-        #expect(!src.contains("genres.joined(separator: \" · \")"))
+        #expect(!src.contains("genres.joined(separator: \" \u{00B7} \")"))  // dot-ok: the banned join, never shown
         #expect(src.contains("genres.joined(separator: \", \")"))
     }
 }
