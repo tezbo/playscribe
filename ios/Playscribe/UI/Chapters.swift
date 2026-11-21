@@ -156,7 +156,7 @@ struct GalleryStage: View {
                 .frame(maxWidth: .infinity).aspectRatio(16 / 9, contentMode: .fit)
                 .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
                 .accessibilityHidden(true)
-            if let game { Text(game.name).font(PlayscribeFont.title3).lineLimit(2) }
+            if let game { Text(game.name.gluingTrailingNumeral).font(PlayscribeFont.title3).lineLimit(2) }
         }
         .allowsHitTesting(false)
     }
