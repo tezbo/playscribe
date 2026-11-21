@@ -12,7 +12,7 @@ struct DeckAndWidgetTests {
         return m
     }
 
-    /// J-1: at most 5 cards (AppModel.deckLimit), at most 2 per game, unread cards first, no card twice.
+    /// J-1: at most 5 cards (AppModel.deckLimit), one per game, unread cards first, no card twice.
     @Test func deckIsCappedSpreadAndUnreadFirst() {
         let deck = demoModel().latestDeck
         #expect(deck.count <= AppModel.deckLimit)
@@ -22,12 +22,38 @@ struct DeckAndWidgetTests {
             perGame[card.game.id, default: 0] += 1
             #expect(ids.insert(card.id).inserted, "card \(card.id) appears once")
         }
-        for (game, n) in perGame { #expect(n <= 2, "\(game) has \(n) cards") }
+        for (game, n) in perGame { #expect(n == 1, "\(game) has \(n) cards") }
         var seenRead = false
         for card in deck {
             if !card.unread { seenRead = true }
             #expect(!(seenRead && card.unread), "an unread card never follows a read one")
         }
+    }
+
+    /// bug-hero-deck-one-per-game, criteria 1 to 3: a game with three recent updates takes one card (its newest unread),
+    /// an unread game sorts before the read games, the deck never passes 5 cards, and no game appears twice.
+    @Test func deckHasOneCardPerGameUnreadGameFirst() throws {
+        let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "one-\(UUID().uuidString).json"))
+        let id = try #require(m.resetToAddGameDemo())
+        let deck = m.latestDeck
+        #expect(Set(deck.map(\.game.id)).count == deck.count, "no game twice")
+        #expect(deck.count <= AppModel.deckLimit)
+        #expect(deck.first?.game.id == id && deck.first?.unread == true, "the unread game leads")
+        #expect(deck.first?.release?.id == "qa-add3-\(id)-3", "its newest update is the card")
+        #expect(deck.filter { $0.game.id == id }.count == 1, "three updates, one card")
+        #expect(deck.dropFirst().allSatisfy { !$0.unread })
+    }
+
+    /// Criterion 5: reading the update moves the game down the order the next time the deck is built; the deck never reorders on its own.
+    @Test func readingAnUpdateMovesItsGameDownTheDeck() throws {
+        let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "read-\(UUID().uuidString).json"))
+        let id = try #require(m.resetToAddGameDemo())
+        let before = m.latestDeck.map(\.id)
+        #expect(m.latestDeck.map(\.id) == before, "stable while nothing is read")
+        m.markRead("qa-add3-\(id)-3")
+        let after = m.latestDeck
+        #expect(after.allSatisfy { !$0.unread }, "no unread card, so no New update chip")
+        #expect(Set(after.map(\.game.id)).count == after.count)
     }
 
     /// The "+N more updates" chip counts exactly the updates the 5-card deck leaves out, never negative (Iris, 2026-11-06; Terry, 0.5.4: 5 cards, 5 dots).

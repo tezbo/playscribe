@@ -981,6 +981,51 @@ final class LatestUpdatesDeckTests: XCTestCase {
         cards.firstMatch.tap()
         XCTAssertTrue(app.descendants(matching: .any)["releaseTitle"].waitForExistence(timeout: 5), "card opens its update")
     }
+
+    /// Iris and Quinn on #512: a swipe from card 1 lands on card 2, a fast flick still moves exactly one card, and the last
+    /// card and its leaf can be reached. Runs in the simulator's pose (CI: Closed portrait; the Mac: Open landscape, Book).
+    func testDeckMovesOneCardPerSwipe() throws {
+        let app = XCUIApplication()
+        app.launchArguments = ["-qaRoute", "fill-library/12"]   // five deck cards; `demo` has two or fewer pages in some poses
+        app.launch()
+        sleep(4)
+        if ReleaseRowTests.pose(app).contains("pose: tabletop") { app.terminate(); throw XCTSkip("Tabletop's upper half is view only") }
+        let pager = app.descendants(matching: .any)["latestDeckPager"]
+        XCTAssertTrue(pager.waitForExistence(timeout: 5), "the deck is on screen")
+        func page() -> (Int, Int) {
+            guard let r = pager.label.range(of: #"page (\d+) of (\d+)"#, options: .regularExpression) else { return (0, 0) }
+            let n = pager.label[r].split(separator: " ").compactMap { Int($0) }
+            return (n[0], n[1])
+        }
+        let (start, count) = page()
+        // The label is read before terminate: reading an element of a terminated app fails the test (Mac fc60406d).
+        let label = pager.label
+        guard count > 2 else { app.terminate(); throw XCTSkip("needs three or more cards: \(label)") }
+        XCTAssertEqual(start, 1)
+        // Drag on the deck container itself, from 80% to 20% of its width. Swiping a deckCard failed in Book ("visible frame is
+        // empty", Mac 6d1d9d18 and f6e57712): the lazy row keeps off-screen cards that still pass isHittable and frame checks.
+        func flick(_ velocity: XCUIGestureVelocity) {
+            let from = pager.coordinate(withNormalizedOffset: CGVector(dx: 0.8, dy: 0.5))
+            let to = pager.coordinate(withNormalizedOffset: CGVector(dx: 0.2, dy: 0.5))
+            from.press(forDuration: 0.05, thenDragTo: to, withVelocity: velocity, thenHoldForDuration: 0)
+            sleep(1)
+        }
+        flick(.slow)
+        XCTAssertEqual(page().0, 2, "a swipe from card 1 lands on card 2")
+        flick(.fast)
+        XCTAssertEqual(page().0, 3, "a fast flick moves exactly one card")
+        var last = page().0
+        for _ in 0..<count {
+            flick(.fast)
+            let now = page().0
+            XCTAssertLessThanOrEqual(now - last, 1, "one card per flick")
+            if now == last { break }
+            last = now
+        }
+        let lastLeaf = app.buttons["Update \(count) of \(count)"]
+        XCTAssertTrue(lastLeaf.exists, "the last leaf is on screen at the deck's end")
+        XCTAssertTrue(lastLeaf.isSelected, "the last leaf is lit at the deck's end")
+    }
 }
 
 extension PlayscribeUITests {

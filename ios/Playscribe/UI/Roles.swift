@@ -35,12 +35,18 @@ nonisolated enum PlayscribeRole {
     static let selectedChipFillSpec = Spec(name: "selectedChipFill", light: 0xE3D2B3, dark: PlayscribeColor.accent, darkAlpha: 0.22)
     static let selectedChipTextSpec = Spec(name: "selectedChipText", light: 0x1B1822, dark: PlayscribeColor.textPrimary)
     // Lines.
-    static let controlBorderSpec = Spec(name: "controlBorder", light: 0x857A68, dark: PlayscribeColor.ink600)
+    /// Fields, search fields and outlined buttons (s-06-control-border). Dark is clear: in 0.5 these controls had no border, and
+    /// dark is unchanged. A control that already had a dark border keeps it with `controlBorder(keepingDark:)`.
+    static let controlBorderSpec = Spec(name: "controlBorder", light: 0x857A68, dark: .clear, darkAlpha: 0)
     static let hairlineSpec = Spec(name: "hairline", light: 0xCFC4B0, dark: PlayscribeColor.ink700)
+    /// A grouped card's outline, drawn only under Reduce Transparency or Increase Contrast (`CardSections`; Iris on #557).
+    /// Light is the control border. Dark needs one too: the system card (luminance 0.025) on the sheet (0.012) is 1.22:1, so
+    /// dark uses #6F6A7C (luminance about 0.15, 3:1 or better on both).
+    static let cardEdgeSpec = Spec(name: "cardEdge", light: 0x857A68, dark: Color(uiColor: UIColor(hex: 0x6F6A7C)))
 
     static let all: [Spec] = [bgSpec, surfaceSpec, cardSpec, chipFillSpec, textPrimarySpec, textSecondarySpec, textTertiarySpec,
                               newTextSpec, newGraphicSpec, actionSpec, onActionSpec, linkSpec, selectedChipFillSpec,
-                              selectedChipTextSpec, controlBorderSpec, hairlineSpec]
+                              selectedChipTextSpec, controlBorderSpec, hairlineSpec, cardEdgeSpec]
 
     static let bg = color(bgSpec)
     static let surface = color(surfaceSpec)
@@ -58,6 +64,16 @@ nonisolated enum PlayscribeRole {
     static let selectedChipText = color(selectedChipTextSpec)
     static let controlBorder = color(controlBorderSpec)
     static let hairline = color(hairlineSpec)
+    static let cardEdge = color(cardEdgeSpec)
+
+    /// The control border in light, and the colour this control already drew in dark (dark is unchanged by 0.6).
+    /// The dark colour's own alpha carries through: `.withAlphaComponent(1)` would turn `.clear` into opaque black (screen diffs
+    /// on 1c086d4 showed a dark outline on every field).
+    static func controlBorder(keepingDark dark: Color) -> Color {
+        var alpha: CGFloat = 0
+        UIColor(dark).getRed(nil, green: nil, blue: nil, alpha: &alpha)
+        return color(Spec(name: controlBorderSpec.name, light: controlBorderSpec.light, dark: dark, darkAlpha: Double(alpha)))
+    }
 
     /// The role as a colour that follows the environment's colour scheme (a view forced dark, such as a cover, gets the dark value).
     static func color(_ spec: Spec) -> Color { Color(uiColor(spec)) }
@@ -70,6 +86,45 @@ nonisolated enum PlayscribeRole {
     static func resolved(_ spec: Spec, light: Bool) -> UIColor {
         if light { return UIColor(hex: spec.light) }
         return UIColor(spec.dark).withAlphaComponent(spec.darkAlpha)
+    }
+}
+
+/// The controls that draw the control border (s-06-control-border; Iris: "fields, outlined buttons and any control boundary use
+/// the control border value, not the hairline"). Each call site names its kind, so the test can list them.
+enum ControlKind: String, CaseIterable {
+    /// A search field drawn by us: magnifier, field, chip fill.
+    case searchField
+    /// A free-text field (notes, a custom game's name).
+    case textField
+    /// Tabletop's read-only search button, which stands in for a field.
+    case tabletopSearch
+    /// A secondary button in the bordered style ("Not now", Bookmark, Mark as read).
+    case outlinedButton
+    /// The solid ink panel that replaces glass under Reduce Transparency or Increase Contrast.
+    case solidGlass
+}
+
+private struct ControlBorder<S: InsettableShape>: ViewModifier {
+    var shape: S
+    var dark: Color
+    var horizontalOutset: CGFloat
+    func body(content: Content) -> some View {
+        content.overlay {
+            shape.strokeBorder(PlayscribeRole.controlBorder(keepingDark: dark), lineWidth: 1)
+                .padding(.horizontal, -horizontalOutset)
+                .allowsHitTesting(false)
+                .accessibilityHidden(true)
+        }
+    }
+}
+
+extension View {
+    /// A 1 pt control border in `shape`: #857A68 in light (3:1 or better on bg and card); in dark, `keepingDark`, which is clear
+    /// unless the control already had a border there.
+    /// `horizontalOutset` draws the border that far outside the frame on each side, for a field whose text must not move.
+    func controlBorder<S: InsettableShape>(_ kind: ControlKind, in shape: S, keepingDark dark: Color = .clear,
+                                           horizontalOutset: CGFloat = 0) -> some View {
+        modifier(ControlBorder(shape: shape, dark: dark, horizontalOutset: horizontalOutset))
     }
 }
 

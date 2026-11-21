@@ -164,6 +164,7 @@ struct KeepCurrentCard: View {
             Text(KeepCurrentCopy.notNow).frame(maxWidth: typeSize.isAccessibilitySize ? .infinity : nil)
         }
         .buttonStyle(.bordered).buttonBorderShape(typeSize.isAccessibilitySize ? .roundedRectangle(radius: 14) : .capsule)
+        .controlBorder(.outlinedButton, in: RoundedRectangle(cornerRadius: typeSize.isAccessibilitySize ? 14 : 999, style: .continuous))
         .accessibilityLabel(KeepCurrentCopy.notNowVoiceOver)
         .accessibilityIdentifier("keepCurrentNotNow")
         .hitTarget()

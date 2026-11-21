@@ -201,7 +201,7 @@ private struct AdaptiveGlass<S: InsettableShape>: ViewModifier {
         if reduceTransparency || contrast == .increased || qaSolid {
             content
                 .background(PlayscribeRole.card, in: shape)
-                .overlay(shape.strokeBorder(PlayscribeColor.vellum500, lineWidth: 1))
+                .controlBorder(.solidGlass, in: shape, keepingDark: PlayscribeColor.vellum500)
         } else {
             content.glassEffect(interactive ? .regular.interactive() : .regular, in: shape)
         }

@@ -239,6 +239,7 @@ struct SearchView: View {
                 .padding(.horizontal, 12)
                 .frame(minHeight: 44)
                 .background(PlayscribeRole.chipFill, in: Capsule())
+                .controlBorder(.searchField, in: Capsule())
                 .listRowBackground(Color.clear)
                 .listRowSeparator(.hidden)
                 .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 4, trailing: 16))
