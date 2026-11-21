@@ -64,11 +64,14 @@ struct WidgetSnapshotTests {
     private func whiteContrast(_ img: UIImage, x: CGFloat, y: CGFloat) throws -> Double {
         let cg = try #require(img.cgImage)
         let px = Int(CGFloat(cg.width) * x), py = Int(CGFloat(cg.height) * y)
-        var rgba = [UInt8](repeating: 0, count: 4)
-        let ctx = try #require(CGContext(data: &rgba, width: 1, height: 1, bitsPerComponent: 8, bytesPerRow: 4,
+        let ctx = try #require(CGContext(data: nil, width: 1, height: 1, bitsPerComponent: 8, bytesPerRow: 4,
                                          space: CGColorSpaceCreateDeviceRGB(),
                                          bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue))
+        // The context owns its buffer: `&array` is only valid for the init call, so a later draw wrote through a dangling
+        // pointer and a read could come back 0 (BrightArtScrimTests on CI: one sample of 15 read 0, row 270 left 59 right 64).
+        ctx.clear(CGRect(x: 0, y: 0, width: 1, height: 1))
         ctx.draw(cg, in: CGRect(x: -px, y: -(cg.height - 1 - py), width: cg.width, height: cg.height))
+        let rgba = Array(UnsafeBufferPointer(start: ctx.data!.assumingMemoryBound(to: UInt8.self), count: 4))
         let l = luminance(CGFloat(rgba[0]) / 255, CGFloat(rgba[1]) / 255, CGFloat(rgba[2]) / 255)
         return 1.05 / (l + 0.05)
     }
