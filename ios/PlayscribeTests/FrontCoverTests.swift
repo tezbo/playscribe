@@ -122,6 +122,20 @@ struct FrontCoverTests {
         #expect(std.filter { $0.location >= 0.9 }.allSatisfy { $0.opacity == 1 })
     }
 
+    /// r060 day-one (Iris on #506): with the "Day-one patch" line above the eyebrow, the standard-size shade follows the plate,
+    /// 88 percent or more from the line's top edge (it measured 2.3:1 on the ramp in Closed landscape), solid from 90 percent down.
+    @Test func dayOneLineShadeStartsAtThePlate() {
+        for top in [0.2, 0.5, 0.7, 0.86, 0.9] {
+            let stops = FrontCoverPage.fadeStops(accessibility: false, plateTop: top, followPlate: true)
+            #expect(zip(stops, stops.dropFirst()).allSatisfy { $0.location <= $1.location }, "ordered at \(top)")
+            #expect(stops.filter { $0.location >= top - 0.0001 }.allSatisfy { $0.opacity >= 0.88 }, "88% from the plate at \(top)")
+            #expect(stops.filter { $0.location >= 0.9 }.allSatisfy { $0.opacity == 1 }, "solid foot at \(top)")
+            #expect(stops.first?.location == 0 && stops.last?.location == 1)
+        }
+        // Without the line, the standard shade is unchanged.
+        #expect(FrontCoverPage.fadeStops(accessibility: false, plateTop: 0.7, followPlate: false).map(\.location) == [0, 0.18, 0.45, 0.82, 0.9, 1])
+    }
+
     /// Iris (#467): the cover is Closed-only. Any other pose closes it at once, the route's Settings with it, and the deck
     /// position stays.
     @Test func coverIsClosedOnly() {

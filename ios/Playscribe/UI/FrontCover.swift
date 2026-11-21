@@ -155,7 +155,8 @@ struct FrontCoverPage: View {
     /// frame). The top darkens a little for the status bar and the rail.
     private var fade: some View {
         LinearGradient(stops: Self.fadeStops(accessibility: typeSize.isAccessibilitySize,
-                                             plateTop: pageHeight > 0 && plateTop > 0 ? Double(plateTop / pageHeight) : nil)
+                                             plateTop: pageHeight > 0 && plateTop > 0 ? Double(plateTop / pageHeight) : nil,
+                                             followPlate: card.unread && card.freshLabel != nil)
                         .map { .init(color: PlayscribeColor.ink950.opacity($0.opacity), location: $0.location) },
                        startPoint: .top, endPoint: .bottom)
     }
@@ -164,8 +165,11 @@ struct FrontCoverPage: View {
     /// plate covers the lower half and its eyebrow sat on pale art at about 40 percent, so the shade follows the plate: clear
     /// until just above it, 88 percent black at the eyebrow's top edge (the accent holds 4.5:1 over art up to about 60 percent
     /// luminance there), 92 percent by the title, solid at the foot.
-    static func fadeStops(accessibility: Bool, plateTop: Double?) -> [(opacity: Double, location: Double)] {
-        guard accessibility else {
+    /// `followPlate` (r060 day-one, Iris on #506): the "Day-one patch" line sits above the eyebrow, where the standard shade was
+    /// still ramping (2.3:1 over KCD II's armour in Closed landscape), so the shade follows the plate at standard sizes too,
+    /// 88 percent from the line's top edge, and keeps the signed solid foot from 90 percent down.
+    static func fadeStops(accessibility: Bool, plateTop: Double?, followPlate: Bool = false) -> [(opacity: Double, location: Double)] {
+        guard accessibility || followPlate else {
             // Solid from 90 percent down (Iris, 19 Nov, on Terry's cover review): a title logo in the key art read as a ghost
             // behind the Playscribe mark, so the foot under the lockup is plain ink.
             return [(0.55, 0), (0, 0.18), (0, 0.45), (0.92, 0.82), (1, 0.9), (1, 1)]
@@ -173,7 +177,10 @@ struct FrontCoverPage: View {
         guard let top = plateTop.map({ min(max($0, 0.2), 0.9) }) else {
             return [(0.55, 0), (0, 0.18), (0, 0.25), (0.92, 0.7), (1, 1)]
         }
-        return [(0.55, 0), (0, min(0.18, top - 0.1)), (0, top - 0.06), (0.88, top), (0.92, min(0.98, top + 0.08)), (1, 1)]
+        let plate: [(opacity: Double, location: Double)] =
+            [(0.55, 0), (0, min(0.18, top - 0.1)), (0, top - 0.06), (0.88, top), (0.92, min(0.98, top + 0.08)), (1, 1)]
+        guard !accessibility else { return plate }
+        return plate.filter { $0.location < 0.9 } + [(1, 0.9), (1, 1)]
     }
 
     /// CM-7: "<Game> cover, update 1.1 on PS5, 22 Oct". A card with no release says when the game came out.

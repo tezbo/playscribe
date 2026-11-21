@@ -786,7 +786,8 @@ struct ContentsHead: View {
                     if duo.pose == .tabletop, let note = model.readerRelease(gameID).flatMap(model.dayOneNote) {
                         Text(note)
                             .font(PlayscribeFont.subheadline)
-                            .foregroundStyle(.secondary)
+                            // textSecondary, not .secondary (about 5:1): the one action the player needs (Iris on #506).
+                            .foregroundStyle(PlayscribeColor.textSecondary)
                             .fixedSize(horizontal: false, vertical: true)
                             .accessibilityIdentifier("dayOneNote")
                             .accessibilitySortPriority(1)
