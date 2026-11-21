@@ -8,7 +8,7 @@ import UIKit
 struct RoleThreadTests {
     @Test func everyRoleResolvesOffTheMainThread() async {
         let resolved: [Int] = await Task.detached(priority: .userInitiated) {
-            #expect(!Thread.isMainThread)
+            #expect(pthread_main_np() == 0, "off the main thread")
             var count = 0
             for spec in PlayscribeRole.all {
                 for style in [UIUserInterfaceStyle.light, .dark] {
