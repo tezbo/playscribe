@@ -3,6 +3,21 @@
 Playscribe follows semantic versioning. Each `## x.y.z` section becomes that build's "What to Test" in TestFlight,
 so write it for testers. Release steps are in docs/release.md.
 
+## 0.6.0 candidate
+
+Playscribe 0.6 is a fresh coat: new colour roles ready for light mode, clearer art, one deck card per game, day-one patches, a moving front cover and every video in our own player. Each line says what to do, then what you should see. Reply with the numbers that failed, or "all good".
+
+1. Add a game with several recent updates. The Library's latest-updates deck shows one card for that game, its newest update, with games you haven't read first.
+2. Swipe the deck, then flick it hard. Each swipe or flick moves exactly one card, the dots light for every card you can see, and the last card and its dot can be reached.
+3. Open a game with bright key art. Titles and labels over the art stay easy to read in the Library, on deck cards and on the Tabletop stage.
+4. When a game has an unread day-one patch, its card shows a Day-one patch chip, the front cover says so, and Tabletop shows the install line. Reading the patch clears all three.
+5. Close and open the front cover. The game's key art moves gently; with Reduce Motion on, it stays still.
+6. Play an update video, a trailer and a Gallery video, Closed and in Tabletop. All play inside Playscribe. In Tabletop the reflection sits under the video. If a video can't play here, you see an Open in YouTube button instead of an error.
+7. In light mode, search fields, text fields and outlined buttons have a visible border. With Reduce Transparency on, the cards in Settings and Add a game have a visible outline in light and dark.
+8. Open Settings, then Video lab. Nothing crashes.
+
+Feedback you send through TestFlight, including its comment, may appear in our public issue tracker, so leave out personal details.
+
 ## 0.5.9
 
 Videos now stay inside Playscribe. In 0.5.8, Play in Tabletop opened your Duo's own fullscreen player, so the reflection could never show. Each line says what to do, then what you should see.
