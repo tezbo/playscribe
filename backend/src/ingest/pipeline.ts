@@ -403,6 +403,8 @@ export interface IngestOpts {
   until?: string
   /** Poll only the hot set (hot.ts), at the shorter hot interval, and skip the shared press sources. */
   hot?: boolean
+  /** Only these games (ids), and no shared press sources or auto repair: a backfill that must touch nothing else (bug-059, 22 Nov). */
+  games?: string[]
   /** Auto-onboarding: how many auto games (store.nextAutoSlice) to poll after the tracked ones, 0 for none. */
   autoSlice?: number
   /** Auto-onboarding: stop the slice once the whole run has taken this long (the job has a 20 min limit). */
@@ -421,9 +423,9 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
     mark = t
   }
   const hot = hotGameIds(deps.db)
-  const tracked = trackedGames(deps.db).filter((g) => !opts.hot || hot.has(g.id))
+  const tracked = trackedGames(deps.db).filter((g) => (!opts.hot || hot.has(g.id)) && (!opts.games || opts.games.includes(g.id)))
   const repairOnly = new Set<string>()
-  if (opts.until && !opts.hot) for (const g of autoRepairGames(deps.db, new Set(tracked.map((t) => t.id)))) (tracked.push(g), repairOnly.add(g.id))
+  if (opts.until && !opts.hot && !opts.games) for (const g of autoRepairGames(deps.db, new Set(tracked.map((t) => t.id)))) (tracked.push(g), repairOnly.add(g.id))
   const games = tracked
   lap('games')
 
@@ -494,7 +496,7 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
   }
 
   lap('auto')
-  for (const s of opts.hot ? [] : registry.shared) {
+  for (const s of opts.hot || opts.games ? [] : registry.shared) {
     if (!due(deps.db, s, !!opts.force)) {
       summary.skipped.push(s.id)
       continue
