@@ -399,7 +399,7 @@ struct FrontCover: View {
         .onChange(of: current) { _, new in model.deckSelection = new }
         .overlay(alignment: .leading) {
             if shown.count > 1 {
-                CoverLeaves(cards: shown, current: current ?? shown.first?.id) { id in
+                CoverLeaves(cards: shown, current: current ?? shown.first?.id, backed: TrailerLoopState.shared.playing) { id in
                     withAnimation(reduceMotion ? .easeInOut(duration: 0.2) : .snappy) { current = id }
                 }
             }
@@ -415,6 +415,9 @@ struct FrontCover: View {
 struct CoverLeaves: View {
     var cards: [DeckCard]
     var current: String?
+    /// Over a trailer loop the footage can be bright (Iris, #584: the marks fell to 2:1), so the column gets a dark capsule
+    /// that keeps every mark at 3:1 or better (WCAG 1.4.11). Still and Key-art motion keep the bare marks over the shade.
+    var backed = false
     var select: (String) -> Void
 
     var body: some View {
@@ -435,6 +438,15 @@ struct CoverLeaves: View {
                 .accessibilityAddTraits(isCurrent ? [.isButton, .isSelected] : .isButton)
             }
         }
+        .background {
+            if backed {
+                Capsule().fill(PlayscribeColor.ink950.opacity(0.72))
+                    .padding(.horizontal, 12).padding(.vertical, 4)
+                    .allowsHitTesting(false)
+                    .transition(.opacity)
+            }
+        }
+        .animation(.easeInOut(duration: 0.4), value: backed)
     }
 }
 
@@ -494,7 +506,7 @@ struct FrontCoverPreviewScreen: View {
                     // UI tests read the loop state here (6a item 1): the cover itself is one element and never says its mode.
                     // Only on -qaRoute launches, so a VoiceOver tester on an internal build never meets it.
                     if AppModel.isQALaunch {
-                    Text("qa-cover-loop: \(TrailerLoopQA.shared.playing ? "playing" : "off")")
+                    Text("qa-cover-loop: \(TrailerLoopState.shared.playing ? "playing" : "off")")
                         .font(.system(size: 1)).opacity(0.01).allowsHitTesting(false)
                         .accessibilityIdentifier("qaCoverLoop")
                     }
@@ -512,13 +524,18 @@ struct FrontCoverPreviewScreen: View {
 /// Settings: the cover's motion mode with the CM-1 footnote. Internal builds only until 0.7 (see the top of this file).
 struct CoverMotionSection: View {
     @Environment(\.duo) private var duo
+    @Environment(AppModel.self) private var model
     @AppStorage(CoverMotion.key) private var stored: CoverMotion = CoverMotion.defaultMode
 
     var body: some View {
         if FrontCoverPreview.available {
             Section {
-                Picker("Cover motion", selection: Binding(get: { stored.isBuilt ? stored : .still }, set: { stored = $0 })) {
-                    ForEach(CoverMotion.allCases.filter(\.isBuilt)) { Text($0.label).tag($0) }
+                // Trailer loop is offered only once a game has a loop to play (Iris, #584); a stored Trailer loop with none
+                // shows as Key-art motion, which is what the cover does then.
+                let loops = TrailerLoopRule.available(in: model.games.values)
+                let modes = CoverMotion.allCases.filter { $0.isBuilt && ($0 != .trailer || loops) }
+                Picker("Cover motion", selection: Binding(get: { modes.contains(stored) ? stored : .keyArt }, set: { stored = $0 })) {
+                    ForEach(modes) { Text($0.label).tag($0) }
                 }
                 .frame(minHeight: 52)
                 .accessibilityIdentifier("coverMotion")

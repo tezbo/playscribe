@@ -54,6 +54,30 @@ struct FrontCoverTests {
         #expect(!TrailerLoopRule.plays(stored: .still, reduceMotion: false, autoplay: true, loop: loop, lowPower: false))
     }
 
+    /// Iris (#584): the loop fills the cover with no band, cropped toward its upper third.
+    @Test func loopFillsTheCoverCroppedTowardTheTop() {
+        let cover = CGSize(width: 466, height: 678)
+        let wide = TrailerLoopRule.frame(video: CGSize(width: 1920, height: 1080), in: cover)
+        #expect(wide.minX <= 0 && wide.maxX >= cover.width && wide.minY <= 0 && wide.maxY >= cover.height)
+        #expect(abs(wide.midX - cover.width / 2) < 0.5)
+        let tall = TrailerLoopRule.frame(video: CGSize(width: 1080, height: 1920), in: CGSize(width: 678, height: 466))
+        #expect(tall.minY <= 0 && tall.maxY >= 466 && tall.minX <= 0 && tall.maxX >= 678)
+        // Upper-third crop: twice as much is cut from the bottom as from the top.
+        #expect(abs((tall.maxY - 466) - 2 * (0 - tall.minY)) < 0.5)
+    }
+
+    /// Iris (#584): Settings offers Trailer loop only when some game has an https loop.
+    @Test func trailerLoopIsOfferedOnlyWhenAGameHasALoop() throws {
+        var game = try JSONDecoder().decode(CatalogGame.self, from: Data(#"{"id":"g","name":"G","platforms":["ps5"],"coverage":"none"}"#.utf8))
+        if UserDefaults.standard.string(forKey: "qaCoverLoop") == nil {
+            #expect(!TrailerLoopRule.available(in: [game]))
+            game.coverLoop = "http://example.com/l.mp4"
+            #expect(!TrailerLoopRule.available(in: [game]))
+        }
+        game.coverLoop = "https://example.com/l.mp4"
+        #expect(TrailerLoopRule.available(in: [game]))
+    }
+
     /// The feed's `coverLoop` decodes, and a game without one has none.
     @Test func coverLoopDecodesFromTheFeed() throws {
         let json = #"{"id":"g","name":"G","platforms":["ps5"],"coverage":"none","coverLoop":"https://example.com/l.mp4"}"#

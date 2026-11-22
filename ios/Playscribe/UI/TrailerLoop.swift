@@ -20,6 +20,24 @@ enum TrailerLoopRule {
 
     /// The loop URL for a game: the feed's `coverLoop`, or, in internal builds only, `-qaCoverLoop <https url>` for the first
     /// game on the cover (QA stills and the network log, before the feed carries one).
+    /// Settings offers Trailer loop only when some game has a loop to play (Iris, #584: an option that does nothing is a
+    /// promise the app cannot keep). Internal QA launches with `-qaCoverLoop` count.
+    static func available(in games: some Sequence<CatalogGame>) -> Bool {
+        #if INTERNAL
+        if UserDefaults.standard.string(forKey: "qaCoverLoop") != nil { return true }
+        #endif
+        return games.contains { $0.coverLoop.flatMap(URL.init(string:))?.scheme?.lowercased() == "https" }
+    }
+
+    /// Where the video sits in the cover: aspect fill, centred across, and placed so the video's upper third lands on the
+    /// cover's upper third (Iris, #584: crop toward the top, where faces and logos sit), never leaving an edge showing.
+    static func frame(video: CGSize, in cover: CGSize) -> CGRect {
+        guard video.width > 0, video.height > 0, cover.width > 0, cover.height > 0 else { return CGRect(origin: .zero, size: cover) }
+        let scale = max(cover.width / video.width, cover.height / video.height)
+        let size = CGSize(width: video.width * scale, height: video.height * scale)
+        return CGRect(x: (cover.width - size.width) / 2, y: (cover.height - size.height) / 3, width: size.width, height: size.height)
+    }
+
     static func url(for game: CatalogGame, lead: Bool) -> URL? {
         #if INTERNAL
         if lead, let qa = UserDefaults.standard.string(forKey: "qaCoverLoop"), let u = URL(string: qa) { return u }
@@ -51,8 +69,9 @@ struct TrailerLoopArt: UIViewRepresentable {
     static func dismantleUIView(_ view: LoopView, coordinator: ()) { view.stop() }
 
     final class LoopView: UIView {
-        override class var layerClass: AnyClass { AVPlayerLayer.self }
-        private var playerLayer: AVPlayerLayer { layer as! AVPlayerLayer }
+        private let playerLayer = AVPlayerLayer()
+        private var sizeObservation: NSKeyValueObservation?
+        private var videoSize: CGSize = .zero
         private var player: AVQueuePlayer?
         private var looper: AVPlayerLooper?
         private var statusObservation: NSKeyValueObservation?
@@ -62,13 +81,24 @@ struct TrailerLoopArt: UIViewRepresentable {
 
         override init(frame: CGRect) {
             super.init(frame: frame)
-            playerLayer.videoGravity = .resizeAspectFill
+            // The layer is placed by TrailerLoopRule.frame (fill, upper-third crop), so it stretches to that frame exactly.
+            playerLayer.videoGravity = .resize
+            layer.addSublayer(playerLayer)
+            clipsToBounds = true
             isUserInteractionEnabled = false
             isAccessibilityElement = false
             accessibilityElementsHidden = true
         }
 
         required init?(coder: NSCoder) { fatalError("init(coder:) is not used") }
+
+        override func layoutSubviews() {
+            super.layoutSubviews()
+            CATransaction.begin()
+            CATransaction.setDisableActions(true)
+            playerLayer.frame = TrailerLoopRule.frame(video: videoSize, in: bounds.size)
+            CATransaction.commit()
+        }
 
         func load(_ url: URL) {
             stop()
@@ -87,6 +117,14 @@ struct TrailerLoopArt: UIViewRepresentable {
             statusObservation = looper?.observe(\.status, options: [.new]) { [weak self] looper, _ in
                 if looper.status == .failed { self?.onReady?(false) }
             }
+            sizeObservation = player.observe(\.currentItem?.presentationSize, options: [.new]) { [weak self] player, _ in
+                let size = player.currentItem?.presentationSize ?? .zero
+                DispatchQueue.main.async {
+                    guard let self, size != .zero, size != self.videoSize else { return }
+                    self.videoSize = size
+                    self.setNeedsLayout()
+                }
+            }
             readyObservation = playerLayer.observe(\.isReadyForDisplay, options: [.new]) { [weak self] layer, _ in
                 self?.onReady?(layer.isReadyForDisplay)
             }
@@ -103,6 +141,7 @@ struct TrailerLoopArt: UIViewRepresentable {
         func stop() {
             statusObservation = nil
             readyObservation = nil
+            sizeObservation = nil
             looper?.disableLooping()
             player?.pause()
             player?.removeAllItems()
@@ -113,11 +152,11 @@ struct TrailerLoopArt: UIViewRepresentable {
     }
 }
 
-/// Internal builds: whether a cover loop shows its frames, for UI tests. The cover is one VoiceOver element (CM-7) and the
-/// motion mode is never announced, so the state is read from a hidden QA marker beside the cover, not from the cover itself.
+/// Whether a cover loop shows its frames now. The page-edge leaves take their dark backing from it (Iris, #584), and UI
+/// tests read it from a hidden QA marker beside the cover: the cover is one VoiceOver element (CM-7) and never says its mode.
 @Observable
-final class TrailerLoopQA {
-    static let shared = TrailerLoopQA()
+final class TrailerLoopState {
+    static let shared = TrailerLoopState()
     var playing = false
 }
 
@@ -134,13 +173,15 @@ struct TrailerLoopCoverArt<KeyArt: View>: View {
         ZStack {
             keyArt()
             TrailerLoopArt(url: url, playing: onScreen && scenePhase == .active, ready: $ready)
+                // Full bleed, under the status bar, as the key art (Iris, #584: an 80 pt black band read as a letterbox).
+                .ignoresSafeArea()
                 .opacity(ready ? 1 : 0)
                 .animation(.easeInOut(duration: 0.4), value: ready)
                 .accessibilityHidden(true)
         }
         .clipped()
         .onAppear { onScreen = true }
-        .onDisappear { onScreen = false; TrailerLoopQA.shared.playing = false }
-        .onChange(of: ready && onScreen, initial: true) { _, now in TrailerLoopQA.shared.playing = now }
+        .onDisappear { onScreen = false; TrailerLoopState.shared.playing = false }
+        .onChange(of: ready && onScreen, initial: true) { _, now in TrailerLoopState.shared.playing = now }
     }
 }
