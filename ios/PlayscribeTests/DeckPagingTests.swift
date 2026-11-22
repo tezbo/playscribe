@@ -47,4 +47,21 @@ struct DeckPagingTests {
         #expect(src.contains(".scrollTargetBehavior(.viewAligned(limitBehavior: .alwaysByOne))"))
         #expect(!src.contains(".scrollTargetBehavior(.viewAligned)\n"))
     }
+
+    @Test func twoCardsOnScreenDrawOneCapsule() {
+        // Iris: the lit leaves join into one amber capsule from the first to the last card on screen.
+        let r = PageEdge.capsule(lit: [1, 2], window: [0, 1, 2, 3])
+        #expect(r == CGRect(x: 44 + 22 - 1.5, y: 13, width: 44 + 3, height: 18))
+    }
+
+    @Test func oneCardOnScreenKeepsTheSingleMark() {
+        let r = PageEdge.capsule(lit: [2], window: [0, 1, 2, 3])
+        #expect(r == CGRect(x: 88 + 22 - 1.5, y: 13, width: 3, height: 18))
+    }
+
+    @Test func capsuleFollowsTheSlidingWindow() {
+        // A long deck shows five leaves; the capsule is placed by slot in the window, not by card index.
+        #expect(PageEdge.capsule(lit: [6, 7], window: [4, 5, 6, 7, 8])?.minX == 2 * 44 + 22 - 1.5)
+        #expect(PageEdge.capsule(lit: [], window: [0, 1]) == nil)
+    }
 }

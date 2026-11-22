@@ -695,6 +695,22 @@ struct PageEdge: View {
     /// Cards fully on screen at once: 2 in Open (two across), else 1.
     var visible: Int = 1
     var select: (String) -> Void
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+
+    /// Slot width of one leaf (its hit area) and the lit mark's size.
+    static let slot: CGFloat = 44
+    static let litWidth: CGFloat = 3
+    static let litHeight: CGFloat = 18
+
+    /// The lit leaves drawn as ONE amber capsule from the first to the last card on screen (Iris, after Terry saw two amber
+    /// notches lit at once in Open and Closed landscape: noise). Positions are slots within the window; the frame is in the
+    /// row's own space: x from the first lit slot's centre to the last's, plus the mark's width. Nil when nothing is lit.
+    static func capsule(lit: Set<Int>, window: [Int]) -> CGRect? {
+        let slots = window.enumerated().filter { lit.contains($0.element) }.map(\.offset)
+        guard let a = slots.min(), let b = slots.max() else { return nil }
+        let x = CGFloat(a) * slot + slot / 2 - litWidth / 2
+        return CGRect(x: x, y: (slot - litHeight) / 2, width: CGFloat(b - a) * slot + litWidth, height: litHeight)
+    }
 
     /// The leaves lit: the leading card and the others fully on screen beside it. At the deck's end the pager cannot lead
     /// with the last card when two show, so lighting only the leading one left the last leaf dark for good (Iris on #512).
@@ -727,6 +743,7 @@ struct PageEdge: View {
 
     var body: some View {
         let lit = Self.lit(cards: cards, current: current, visible: visible)
+        let joined = Self.capsule(lit: lit, window: window.map(\.index))
         HStack(spacing: 0) {
             ForEach(window, id: \.card.id) { item in
                 let isCurrent = lit.contains(item.index)
@@ -735,8 +752,9 @@ struct PageEdge: View {
                     && ((item.index == window.first?.index && item.index > 0) || (item.index == window.last?.index && item.index < cards.count - 1))
                 Button { select(item.card.id) } label: {
                     RoundedRectangle(cornerRadius: 1.5)
-                        .fill(isCurrent ? PlayscribeColor.accent : (item.card.unread ? PlayscribeColor.vellum100 : PlayscribeColor.textSecondary.opacity(0.5)))
-                        .frame(width: trimmed ? 2 : 3, height: isCurrent ? 18 : (trimmed ? 6 : 10))
+                        // Lit leaves are drawn by the one capsule behind the row; each keeps its slot, hit area and label.
+                        .fill(isCurrent ? Color.clear : (item.card.unread ? PlayscribeColor.vellum100 : PlayscribeColor.textSecondary.opacity(0.5)))
+                        .frame(width: trimmed ? 2 : Self.litWidth, height: isCurrent ? Self.litHeight : (trimmed ? 6 : 10))
                         .frame(width: 44, height: 44)
                         .contentShape(Rectangle())
                 }
@@ -749,6 +767,18 @@ struct PageEdge: View {
                     let delta = direction == .increment ? 1 : direction == .decrement ? -1 : 0
                     if delta != 0, let id = Self.step(cards: cards, current: current, visible: visible, by: delta) { select(id) }
                 }
+            }
+        }
+        .background(alignment: .topLeading) {
+            if let joined {
+                Capsule()
+                    .fill(PlayscribeColor.accent)
+                    .frame(width: joined.width, height: joined.height)
+                    .offset(x: joined.minX, y: joined.minY)
+                    .allowsHitTesting(false)
+                    .accessibilityHidden(true)
+                    // The capsule slides with the deck: a short ease, none under Reduce Motion.
+                    .animation(reduceMotion ? nil : .easeOut(duration: 0.2), value: joined)
             }
         }
         .frame(maxWidth: .infinity, alignment: .center)
