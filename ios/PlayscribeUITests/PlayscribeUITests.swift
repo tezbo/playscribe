@@ -1026,6 +1026,55 @@ final class LatestUpdatesDeckTests: XCTestCase {
         XCTAssertTrue(lastLeaf.exists, "the last leaf is on screen at the deck's end")
         XCTAssertTrue(lastLeaf.isSelected, "the last leaf is lit at the deck's end")
     }
+
+    /// J-8, Iris (Mac 198e9f87 and 30c03b0a): at the deck's end the cards sit flush on the pager, none cut at its edge.
+    /// Measures twice: reaching the end by tapping the last leaf, and by flicking. Logs every frame at 2 s and 5 s so the
+    /// cause is read, not guessed. Red on main: Open landscape left card 3.7 pt in, right card 2.7 pt over the edge.
+    func testDeckEndSitsFlush() throws {
+        for path in ["tap", "flick"] {
+            let app = XCUIApplication()
+            app.launchArguments = ["-qaRoute", "fill-library/12"]
+            app.launch()
+            sleep(4)
+            if ReleaseRowTests.pose(app).contains("pose: tabletop") { app.terminate(); throw XCTSkip("Tabletop's upper half is view only") }
+            let pager = app.descendants(matching: .any)["latestDeckPager"]
+            XCTAssertTrue(pager.waitForExistence(timeout: 5), "the deck is on screen")
+            let label = pager.label
+            guard let r = label.range(of: #"of (\d+)"#, options: .regularExpression),
+                  let count = Int(label[r].split(separator: " ").last ?? ""), count > 2 else {
+                app.terminate(); throw XCTSkip("needs three or more cards: \(label)")
+            }
+            if path == "tap" {
+                app.buttons["Update \(count) of \(count)"].tap()
+            } else {
+                for _ in 0..<count {
+                    let from = pager.coordinate(withNormalizedOffset: CGVector(dx: 0.8, dy: 0.5))
+                    let to = pager.coordinate(withNormalizedOffset: CGVector(dx: 0.2, dy: 0.5))
+                    from.press(forDuration: 0.05, thenDragTo: to, withVelocity: .fast, thenHoldForDuration: 0)
+                    sleep(1)
+                }
+            }
+            // The scroll view's own frame: the pager element also holds the page edge row, same width.
+            let edge = pager.frame
+            var trailingGap = CGFloat.nan, leadingGap = CGFloat.nan
+            for wait in [2, 3] {
+                sleep(UInt32(wait))
+                let all = app.buttons.matching(identifier: "deckCard").allElementsBoundByIndex.map(\.frame).sorted { $0.minX < $1.minX }
+                let cards = all.filter { $0.maxX > edge.minX + 1 && $0.minX < edge.maxX - 1 }
+                print("DECKEND \(path) t=\(wait == 2 ? 2 : 5)s pager=\(edge) cards=\(cards) label=\(pager.label)")
+                // The deck's LAST card (by position, not just the last on screen) must end on the pager edge: that is
+                // both "the deck reached its end" and "nothing is cut off". Two across, the left card (the first one
+                // starting inside the pager, de571b0a: the off-screen card was measured) sits on the leading margin.
+                if let last = all.last { trailingGap = last.maxX - edge.maxX }
+                if let first = all.first(where: { $0.minX >= edge.minX - 1 }) { leadingGap = first.minX - edge.minX }
+            }
+            XCTAssertEqual(trailingGap, 0, accuracy: 1, "\(path): the last card's trailing edge is on the pager edge (+ is cut off)")
+            if ReleaseRowTests.pose(app).contains("pose: flat") && app.frame.width > app.frame.height {
+                XCTAssertEqual(leadingGap, 0, accuracy: 1, "\(path): two across, the left card is on the leading margin")
+            }
+            app.terminate()
+        }
+    }
 }
 
 extension PlayscribeUITests {
