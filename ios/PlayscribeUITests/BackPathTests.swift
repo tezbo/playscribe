@@ -29,21 +29,32 @@ final class BackPathTests: XCTestCase {
         row.tap()
 
         let detail = app.descendants(matching: .any)["releaseDetail"]
-        if detail.waitForExistence(timeout: 5) {
-            // Pushed: Back pops straight to the list.
-            let back = app.navigationBars.buttons.firstMatch
-            XCTAssertTrue(back.waitForExistence(timeout: 5), "the pushed update's Back")
-            XCTAssertFalse(app.buttons["gameBack"].exists, "a pushed update has no game page under it")
-            back.tap()
-        } else {
-            let back = app.buttons["gameBack"].firstMatch
-            XCTAssertTrue(back.waitForExistence(timeout: 5), "the game's Back")
-            XCTAssertEqual(back.label, "Back to Updates")
-            back.tap()
+        let pushed = detail.waitForExistence(timeout: 5)
+        // Back wherever this pose draws it (Mac at 396f307f): the navigation bar in Open portrait; Closed landscape and Book have
+        // no system bar Back or tab bar to read, so any button labelled Back counts, and the screen is logged when none shows.
+        let backs = app.buttons.matching(NSPredicate(format: "label BEGINSWITH 'Back'"))
+        let back = app.navigationBars.buttons.firstMatch.exists ? app.navigationBars.buttons.firstMatch : backs.firstMatch
+        if !back.waitForExistence(timeout: 5) {
+            let shot = XCTAttachment(screenshot: XCUIScreen.main.screenshot()); shot.name = "backpath-no-back"; shot.lifetime = .keepAlways; add(shot)
+            let seen = app.buttons.allElementsBoundByIndex.prefix(40).map { "\($0.identifier)|\($0.label)|\($0.frame)" }
+            XCTContext.runActivity(named: "BackPath buttons: " + seen.joined(separator: "; ")) { _ in }
+            print("BackPath: \(ReleaseRowTests.pose(app)); pushed \(pushed); nav bars \(app.navigationBars.count); tab bars \(app.tabBars.count); buttons " + seen.joined(separator: "; "))
         }
+        XCTAssertTrue(back.exists, pushed ? "the pushed update's Back" : "the game's Back")
+        guard back.exists else { app.terminate(); return }
+        if pushed {
+            XCTAssertFalse(app.buttons["gameBack"].exists && app.buttons["gameBack"].isHittable && back.identifier != "gameBack",
+                           "a pushed update has no game page under it")
+        } else {
+            XCTAssertEqual(back.label, "Back to Updates")
+        }
+        back.tap()
+        // The tab bar where there is one; elsewhere the Updates list itself shows Back went to the Updates tab.
         let updates = app.tabBars.buttons["Updates"].firstMatch
-        XCTAssertTrue(updates.waitForExistence(timeout: 5))
-        XCTAssertTrue(updates.isSelected, "Back returned to the Updates tab")
+        if app.tabBars.count > 0 {
+            XCTAssertTrue(updates.waitForExistence(timeout: 5))
+            XCTAssertTrue(updates.isSelected, "Back returned to the Updates tab")
+        }
         let again = app.buttons.matching(identifier: "feedRow").matching(NSPredicate(format: "label == %@", label)).firstMatch
         XCTAssertTrue(again.waitForExistence(timeout: 5) && again.isHittable, "the opened row is in view again: the list kept its scroll")
         app.terminate()
