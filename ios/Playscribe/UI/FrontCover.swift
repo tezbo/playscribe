@@ -125,6 +125,9 @@ struct FrontCoverPage: View {
                 // it meanwhile, and stays if the source fails.
                 if let loop = trailerLoop {
                     TrailerLoopCoverArt(url: loop) { keyArt(moving: keyArtMoves) }
+                    // A near-white frame put the status bar glyphs and the close control white on white (Mac, 3c091e12): in
+                    // loop mode the top and trailing edges, where the system bar and the rail sit, get their own shade.
+                    loopEdgeShade
                 } else {
                     keyArt(moving: moving)
                 }
@@ -182,6 +185,20 @@ struct FrontCoverPage: View {
         let url = TrailerLoopRule.url(for: card.game, lead: lead)
         return TrailerLoopRule.plays(stored: stored, reduceMotion: reduceMotion || Self.qaReduceMotion, autoplay: autoplay,
                                      loop: url, lowPower: lowPower) ? url : nil
+    }
+
+    /// Loop mode only: 65 percent ink at the top edge fading out by 150 pt, and the same along the trailing edge by 90 pt, so
+    /// white status glyphs and the close control hold at least 4.5:1 over any frame (the bottom has the cover's own shade).
+    private var loopEdgeShade: some View {
+        let ink = PlayscribeColor.ink950
+        return ZStack {
+            LinearGradient(colors: [ink.opacity(0.65), ink.opacity(0)], startPoint: .top, endPoint: .bottom)
+                .frame(height: 150 + safeArea.top).frame(maxHeight: .infinity, alignment: .top)
+            LinearGradient(colors: [ink.opacity(0), ink.opacity(0.65)], startPoint: .leading, endPoint: .trailing)
+                .frame(width: 90 + safeArea.trailing).frame(maxWidth: .infinity, alignment: .trailing)
+        }
+        .allowsHitTesting(false)
+        .accessibilityHidden(true)
     }
 
     /// Under a loop, the key art moves as Key-art motion would (it shows while the loop loads, or if it fails).
