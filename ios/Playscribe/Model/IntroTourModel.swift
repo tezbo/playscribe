@@ -10,7 +10,7 @@ extension AppModel {
         !Self.isQALaunch && data.tourDone == nil && data.welcomeDone == nil && data.collection.isEmpty
     }
 
-    /// "Take a 30-second tour", or Settings > Replay tour: back to the Library, then step 1. The empty Library then shows its
+    /// "Take the tour", or Settings > Replay tour: back to the Library, then step 1. The empty Library then shows its
     /// Popular on PS5 row, which is step 1's anchor when there is no game yet.
     func startTour() {
         tourWelcome = false

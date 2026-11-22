@@ -52,7 +52,7 @@ enum TourStep: Int, CaseIterable, Codable {
 enum TourCopy {
     static let welcomeTitle = "Welcome to Playscribe"
     static let welcomeLine = "Every PS5 patch for the games you play, in one place."
-    static let take = "Take a 30-second tour"
+    static let take = "Take the tour"
     static let skip = "Skip"
     static let skipTour = "Skip tour"
     static let replay = "Replay tour"
@@ -64,6 +64,24 @@ enum TourCopy {
 /// Frames of the views a step points at, in global space (a named space does not resolve the same way inside the system tab
 /// view's pages: the Tabletop ring sat 88 pt low at c73186d2). The overlay converts them to its own space. Several views may offer the same step (every Library
 /// tile offers step 1); the overlay picks the first one on screen.
+/// The Library's own area in global space, while the tour shows: in landscape the system tab bar runs down one side, and a wide
+/// AX card must stay clear of it (Iris, #583).
+struct TourLaneKey: PreferenceKey {
+    static let defaultValue: CGRect? = nil
+    static func reduce(value: inout CGRect?, nextValue: () -> CGRect?) { value = value ?? nextValue() }
+}
+
+extension View {
+    /// Reports this view's frame as the tour card's lane, only while the tour or its welcome shows.
+    func tourLane(_ active: Bool) -> some View {
+        background {
+            if active {
+                GeometryReader { g in Color.clear.preference(key: TourLaneKey.self, value: g.frame(in: .global)) }
+            }
+        }
+    }
+}
+
 struct TourAnchorKey: PreferenceKey {
     static let defaultValue: [TourStep: [CGRect]] = [:]
     static func reduce(value: inout [TourStep: [CGRect]], nextValue: () -> [TourStep: [CGRect]]) {
@@ -103,6 +121,8 @@ enum TourLayout {
     static let gap: CGFloat = 12
     /// Room kept for the bottom tab bar in the portrait poses.
     static let tabBarReserve: CGFloat = 96
+    /// The card goes wide at AX sizes when the free width is at least this (landscape, Tabletop, Book's page).
+    static let wideFrom: CGFloat = 520
 
     /// The first candidate on screen: inside the container, the top-most, then the leading-most. In Tabletop only the lower half
     /// counts, since nothing above the fold is tappable or pointed at (G-4).
@@ -124,15 +144,19 @@ enum TourLayout {
     /// (the left page when there is none), 25 pt clear of the hinge. Elsewhere: below the target when it fits, else above it,
     /// else at the top; with no target (the text-only card), above the tab bar.
     static func card(size: CGSize, target: CGRect?, container: CGSize, pose: Pose, division: CGRect?, safeArea: EdgeInsets,
-                     landscape: Bool, railWidth: CGFloat) -> CGRect {
+                     landscape: Bool, railWidth: CGFloat, wide: Bool = false, lane: CGRect? = nil) -> CGRect {
         var minX = margin, maxX = container.width - margin
+        if pose != .tabletop, let lane, lane.width > 2 * margin {
+            minX = max(minX, lane.minX + margin); maxX = min(maxX, lane.maxX - margin)
+        }
         if pose == .tabletop {
             maxX = container.width - railWidth - gap
         } else if pose == .book, let d = division {
             let right = (target?.midX ?? 0) > d.midX
             if right { minX = d.maxX + DuoContext.hingeGap } else { maxX = d.minX - DuoContext.hingeGap }
         }
-        let width = min(maxWidth, max(0, maxX - minX))
+        // AX sizes in landscape (Iris, #583): most of the free width, so the body shows three lines or more before any fade.
+        let width = min(wide ? .infinity : maxWidth, max(0, maxX - minX))
         let height = size.height
         if pose == .tabletop {
             let top = (division?.maxY ?? 0) + gap, bottom = container.height - safeArea.bottom - gap
@@ -170,6 +194,8 @@ struct TourOverlay: View {
     @Environment(\.dynamicTypeSize) private var typeSize
     var duo: DuoContext
     var anchors: [TourStep: [CGRect]]
+    /// The Library's area (global), or nil away from it.
+    var lane: CGRect? = nil
     @State private var cardSize: CGSize = .zero
     @AccessibilityFocusState private var focused: Bool
 
@@ -178,6 +204,13 @@ struct TourOverlay: View {
             || model.keepCurrentDetailsOpen || model.player != nil || model.trailer != nil || model.shareReleaseID != nil
     }
     private var empty: Bool { model.data.collection.isEmpty }
+    /// AX sizes with room for a wide card: Skip tour and Next sit side by side and the body gets the width.
+    private var wide: Bool {
+        let free = duo.pose == .book
+            ? (duo.division.map { $0.minX - TourLayout.margin - DuoContext.hingeGap } ?? duo.size.width / 2)
+            : duo.size.width - 2 * TourLayout.margin - (duo.pose == .tabletop ? TabletopRail.width : 0)
+        return typeSize.isAccessibilitySize && free >= TourLayout.wideFrom
+    }
     private var onRail: Bool { duo.pose == .tabletop || duo.isLandscape }
     @State private var origin: CGPoint = .zero
     @State private var moreAbove = false
@@ -202,7 +235,8 @@ struct TourOverlay: View {
                 }
                 let frame = TourLayout.card(size: cardSize, target: target, container: duo.size, pose: duo.pose,
                                             division: duo.division, safeArea: duo.safeArea, landscape: duo.isLandscape,
-                                            railWidth: TabletopRail.width)
+                                            railWidth: TabletopRail.width, wide: wide,
+                                            lane: lane?.offsetBy(dx: -origin.x, dy: -origin.y))
                 card(step: step)
                     .frame(width: frame.width)
                     .onGeometryChange(for: CGSize.self) { $0.size } action: { cardSize = $0 }
@@ -267,7 +301,7 @@ struct TourOverlay: View {
                                          .init(color: .black, location: moreBelow ? 0.85 : 1),
                                          .init(color: moreBelow ? .clear : .black, location: 1)],
                                  startPoint: .top, endPoint: .bottom))
-            .frame(maxHeight: max(60, maxHeight - (typeSize.isAccessibilitySize ? 140 : 76)))
+            .frame(maxHeight: max(60, maxHeight - (typeSize.isAccessibilitySize ? (wide ? 110 : 180) : 76)))
             .fixedSize(horizontal: false, vertical: !typeSize.isAccessibilitySize)
             buttons(step: step)
         }
@@ -281,7 +315,7 @@ struct TourOverlay: View {
     }
 
     @ViewBuilder private func buttons(step: TourStep?) -> some View {
-        let layout = typeSize.isAccessibilitySize ? AnyLayout(VStackLayout(spacing: 8)) : AnyLayout(HStackLayout(spacing: 8))
+        let layout = typeSize.isAccessibilitySize && !wide ? AnyLayout(VStackLayout(spacing: 8)) : AnyLayout(HStackLayout(spacing: 8))
         layout {
             if let step {
                 secondary(TourCopy.skipTour) { model.endTour() }

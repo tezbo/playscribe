@@ -67,6 +67,17 @@ struct IntroTourTests {
         }
     }
 
+    @Test func axLandscapeCardGoesWideButStaysOffTheSideTabBar() {
+        let size = CGSize(width: 678, height: 466), lane = CGRect(x: 90, y: 0, width: 588, height: 466)
+        let r = TourLayout.card(size: CGSize(width: 0, height: 400), target: nil, container: size, pose: .closed, division: nil,
+                                safeArea: EdgeInsets(), landscape: true, railWidth: 0, wide: true, lane: lane)
+        #expect(r.width >= TourLayout.wideFrom, "\(r)")
+        #expect(r.minX >= lane.minX + 16 && r.maxX <= lane.maxX - 16, "\(r)")
+        let narrow = TourLayout.card(size: CGSize(width: 0, height: 150), target: nil, container: size, pose: .closed, division: nil,
+                                     safeArea: EdgeInsets(), landscape: true, railWidth: 0)
+        #expect(narrow.width == TourLayout.maxWidth)
+    }
+
     @Test func bookCardStaysOnTheTargetsPage() {
         let size = CGSize(width: 951, height: 678), fold = CGRect(x: 455.5, y: 0, width: 40, height: 678)
         let right = CGRect(x: 600, y: 100, width: 200, height: 44)

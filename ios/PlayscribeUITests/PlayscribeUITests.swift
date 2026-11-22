@@ -1791,7 +1791,7 @@ final class IntroTourUITests: XCTestCase {
         app.launch()
         let welcome = app.descendants(matching: .any)["tourWelcome"]
         XCTAssertTrue(welcome.waitForExistence(timeout: 8), "the welcome shows")
-        app.buttons["Take a 30-second tour"].tap()
+        app.buttons["Take the tour"].tap()
         let card = app.descendants(matching: .any)["tourCard"]
         XCTAssertTrue(card.waitForExistence(timeout: 5), "step 1 shows")
         XCTAssertTrue(app.staticTexts["1 of 3"].exists || app.staticTexts.containing(NSPredicate(format: "label CONTAINS 'step 1 of 3'")).count > 0)

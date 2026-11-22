@@ -150,6 +150,7 @@ struct RootView: View {
     @State private var unlatchTask: Task<Void, Never>?
     @State private var frames: [CGRect] = []
     @State private var named: [String: CGRect] = [:]
+    @State private var tourLane: CGRect?
 
     var body: some View {
         DuoReader { duo in
@@ -207,9 +208,10 @@ struct RootView: View {
             .environment(\.qaSolid, BuildChannel.showsInternalTools && UserDefaults.standard.bool(forKey: "qaReduceTransparency"))
             .onPreferenceChange(TappableFrameKey.self) { frames = $0 }
             .onPreferenceChange(NamedFrameKey.self) { named = $0 }
+            .onPreferenceChange(TourLaneKey.self) { tourLane = $0 }
             // 6b: the intro tour's ring and card, over everything but the splash; anchors report only while their step shows.
             .overlayPreferenceValue(TourAnchorKey.self) { anchors in
-                if !splashVisible { TourOverlay(duo: duo, anchors: anchors) }
+                if !splashVisible { TourOverlay(duo: duo, anchors: anchors, lane: tourLane) }
             }
             .overlay {
                 if model.showDebugOverlay { DebugOverlay(frames: frames, duo: duo) }
@@ -280,6 +282,7 @@ struct TabRoot: View {
         TabView(selection: $model.data.nav.tab) {
             Tab("Library", systemImage: "books.vertical", value: AppTab.library) {
                 LibraryRoot(duo: duo).auditActive(model.nav.tab == .library).underLowerPanel(duo)
+                    .tourLane(model.nav.tab == .library && model.nav.gameID == nil && (model.tourWelcome || model.tourStep != nil))
             }
             .badge(model.totalUnread)
 
