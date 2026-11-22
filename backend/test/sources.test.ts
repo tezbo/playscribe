@@ -176,3 +176,22 @@ test('every registry game on a Steam source with no PS5 release is either a PC p
   for (const g of noPs5) assert.equal(registry.games[g]!.steamIsPcPort, true, g)
   for (const g of ['rocket-league', 'the-division-2', 'for-honor', 'the-crew-2']) assert.ok(registry.games[g]!.sources.every((s) => s.patchOnly && s.titleMatch), g)
 })
+
+// bug-059 backfill: scoped to one game (Quinn's condition), nothing else is polled, and no shared press feed is read.
+test('a backfill with games set reads only those games', async () => {
+  const at = new Date(Date.now() - 20 * 3600e3).toISOString()
+  const db = openDb(':memory:')
+  const deps = {
+    db,
+    fetchFn: fakeFetch({
+      'https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid=252950&': steamNews([{ gid: 'r1', title: 'Rocket League S24 Patch Notes v2.76', date: at, contents: 'Fixed a crash.', tags: ['patchnotes'] }]),
+      'https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid=2221490&': steamNews([{ gid: 'd1', title: 'Title Update Y7S3.3', date: at, contents: 'Fixed a crash.', tags: ['patchnotes'] }]),
+    }),
+    igdb: null,
+  }
+  await seedGames(deps)
+  const summary = await runIngest(deps, { force: true, until: '2020-01-01T00:00:00.000Z', games: ['rocket-league'] })
+  assert.deepEqual(releasesOf(db, 'rocket-league'), ['rocket-league@2.76'])
+  assert.deepEqual(releasesOf(db, 'the-division-2'), [], 'a game outside the list is not polled')
+  assert.deepEqual(summary.polled.filter((id) => !id.startsWith('rocket-league')), [], 'only the named game\'s sources were read')
+})
