@@ -8,9 +8,10 @@ export const isTestBuildPost = (title: string) =>
 /**
  * A headline announcing an update that has not shipped ("Palworld's next major update, Feybreak, releases on Dec. 23",
  * "Update 1.2 Coming Tomorrow") is news, not a release: no release and no PS5 row from it. The notes post that follows is the release.
+ * A version number straight after "next update" is the update's own name (No Man's Sky 2018: "NEXT Update 1.52"), so that is a release (bug-059).
  */
 export const isAnnouncementTitle = (title: string) =>
-  /\b(?:next|upcoming)\s+(?:major\s+|big\s+|free\s+)?(?:update|patch|hotfix|season|expansion)\b/i.test(title) ||
+  /\b(?:next|upcoming)\s+(?:major\s+|big\s+|free\s+)?(?:update|patch|hotfix|season|expansion)\b(?!\s*v?\d+(?:\.\d+)+)/i.test(title) ||
   /\b(?:update|patch|hotfix|season|expansion)\b[^|]{0,40}\b(?:is\s+)?(?:coming|arrives?|arriving|releases?|launch(?:es|ing)?|drops?)\s+(?:soon|tomorrow|next\b|this\s+(?:week|month)|(?:on|in)\s+(?:\d|(?:jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\.?\s+\d))/i.test(title)
 
 const PLAYSTATION = /\b(ps5|ps4|playstation)\b/i

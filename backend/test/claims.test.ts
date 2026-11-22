@@ -28,6 +28,15 @@ test('a headline announcing a not-yet-shipped update is not a release (Palworld 
   assert.ok(!isAnnouncementTitle('10.2.2a Backend Bugfix Patch'))
 })
 
+// bug-059: No Man's Sky names its 2018 updates "NEXT Update 1.52". A version number after "next update" makes it a release, not "the next update".
+test('"NEXT Update 1.52" is a release, not an announcement of the next update (No Man\'s Sky 2018)', () => {
+  for (const t of ['NEXT Update 1.52', 'NEXT Update 1.53 Patch Notes', 'No Man\'s Sky NEXT Update 1.57', 'NEXT patch v1.54'])
+    assert.ok(!isAnnouncementTitle(t), t)
+  assert.ok(!isNewsOnlyTitle('NEXT Update 1.52'))
+  assert.ok(isAnnouncementTitle('The next update is coming soon'))
+  assert.ok(isAnnouncementTitle("Palworld's next major update 1.0 releases on Dec. 23"), 'a stated date still makes it an announcement')
+})
+
 test('a post listing platform builds without PlayStation, or rolling out to other platforms later, is PC-scoped', () => {
   assert.ok(pcScopedPost('Hotfix\nWindows: v1.0.6.2132\nMac: v1.0.6.776\n- Fixed a crash'))
   assert.ok(pcScopedPost('We added a new option on PC and are rolling it out soon to other platforms.'))
@@ -392,4 +401,14 @@ test('ingest: a PC-titled post makes no PS5 row, a plain hotfix post still does 
   assert.equal(ps5Of(db, ids[1]!), undefined)
   assert.equal(ps5Of(db, 'dawnwalker@1.0.7')?.verification, 'assumed')
   assert.equal(summary.held?.pcScoped, 2)
+})
+
+test('ingest (bug-059): the four No Man\'s Sky 2018 "NEXT Update 1.xx" posts are releases', async () => {
+  const db = openDb(':memory:')
+  const items = [['1.52', 'a'], ['1.53', 'b'], ['1.54', 'c'], ['1.57', 'd']].map(([v, g], i) => ({ gid: g!, title: `NEXT Update ${v}`, date: ago(40 + i), contents: `NEXT Update ${v}. Fixed a crash.`, tags: ['patchnotes'] }))
+  const deps = { db, fetchFn: fakeFetch({ 'https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid=275850': steamNews(items) }), igdb: null }
+  await seedGames(deps)
+  await runIngest(deps)
+  const ids = (db.prepare("SELECT id FROM releases WHERE game_id = 'no-mans-sky' ORDER BY id").all() as { id: string }[]).map((r) => r.id)
+  assert.equal(ids.length, 4, ids.join(', '))
 })
