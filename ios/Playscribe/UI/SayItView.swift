@@ -53,7 +53,16 @@ final class SpeechCapture {
             try session.setCategory(.record, mode: .measurement, options: .duckOthers)
             try session.setActive(true, options: .notifyOthersOnDeactivation)
             let input = engine.inputNode
-            Self.installTap(on: input, request: request)
+            // The Mac sim aborted 4 of 4 in AURemoteIO::Initialize under the input format (#578, 39a0bd8a). A route with
+            // no live input reports 0 Hz or 0 channels: say Speech is unavailable instead of tapping it.
+            let format = input.inputFormat(forBus: 0)
+            guard format.sampleRate > 0, format.channelCount > 0 else {
+                request.endAudio(); self.request = nil
+                try? session.setActive(false, options: .notifyOthersOnDeactivation)
+                unavailable = true
+                return
+            }
+            Self.installTap(on: input, format: format, request: request)
             engine.prepare()
             try engine.start()
             listening = true
@@ -147,9 +156,10 @@ final class SpeechCapture {
 
     // The audio and recognition callbacks arrive on their own queues, so they are built outside
     // the main actor.
-    nonisolated private static func installTap(on node: AVAudioInputNode, request: SFSpeechAudioBufferRecognitionRequest) {
+    nonisolated private static func installTap(on node: AVAudioInputNode, format: AVAudioFormat,
+                                               request: SFSpeechAudioBufferRecognitionRequest) {
         nonisolated(unsafe) let request = request
-        node.installTap(onBus: 0, bufferSize: 1024, format: node.outputFormat(forBus: 0)) { buffer, _ in
+        node.installTap(onBus: 0, bufferSize: 1024, format: format) { buffer, _ in
             request.append(buffer)
         }
     }
@@ -208,52 +218,12 @@ struct SayItView: View {
 
     var body: some View {
         VStack(spacing: 20) {
-            if !explained {
-                VStack(spacing: 12) {
-                    Image(systemName: "mic.fill").font(.system(size: 44)).foregroundStyle(PlayscribeRole.action)
-                        .accessibilityHidden(true)
-                    Text("Let Playscribe hear your list").font(PlayscribeFont.headline).multilineTextAlignment(.center)
-                    Text("Playscribe turns your voice into game names on your phone. It listens after you tap the microphone and stops when you stop talking.")
-                        .font(PlayscribeFont.subheadline).foregroundStyle(.secondary).multilineTextAlignment(.center)
-                    Button { explained = true } label: {
-                        Text("Continue").font(PlayscribeFont.headline).foregroundStyle(PlayscribeRole.onAction)
-                            .frame(maxWidth: .infinity, minHeight: 52)
-                            .background(PlayscribeRole.action, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
-                    }
-                    .buttonStyle(.plain).tappableFrame()
-                    .accessibilityHint("Shows the system permission request")
-                    Button("Not now", action: typeInstead).hitTarget()
-                }
-                .padding(.horizontal, 16).padding(.top, 24)
-            } else if capture.denied || capture.unavailable {
-                VStack(spacing: 12) {
-                    Text(capture.denied ? "Say it is off" : "Speech isn’t available on this device right now")
-                        .font(PlayscribeFont.headline).multilineTextAlignment(.center)
-                    if capture.denied {
-                        Text("Allow the microphone and speech recognition in Settings to add games by voice.")
-                            .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
-                            .multilineTextAlignment(.center)
-                    }
-                    Button("Type it", action: typeInstead).hitTarget()
-                    if capture.denied {
-                        Button("Open Settings") {
-                            if let url = URL(string: UIApplication.openSettingsURLString) { UIApplication.shared.open(url) }
-                        }.hitTarget()
-                    }
-                }
-                .padding(.top, 24)
-            } else {
-                Text(capture.transcript.isEmpty ? emptyLine : capture.transcript)
-                    .font(capture.transcript.isEmpty ? PlayscribeFont.subheadline : PlayscribeFont.title3)
-                    .foregroundStyle(capture.transcript.isEmpty ? PlayscribeRole.textSecondary : PlayscribeRole.textPrimary)
-                    .multilineTextAlignment(.center)
-                    .frame(maxWidth: .infinity, minHeight: 80)
-                    .padding(.horizontal, 20)
-                    .accessibilityLabel(capture.transcript.isEmpty
-                                        ? (capture.listening ? "Listening" : capture.heardNothing ? emptyLine : "No titles heard yet")
-                                        : capture.transcript)
+            // At AX5 in a short panel (Closed landscape, 466 pt) the words need more height than there is. They scroll
+            // and wrap; nothing is cut to one line (Mac stills at 61bc6dcb). The microphone and Find stay below.
+            ScrollView {
+                words.frame(maxWidth: .infinity)
             }
-            Spacer(minLength: 0)
+            .scrollBounceBehavior(.basedOnSize)
             if explained && !capture.denied && !capture.unavailable {
                 Button {
                     Task { await capture.toggle() }
@@ -307,6 +277,60 @@ struct SayItView: View {
             if let state = model.simulatedSay { explained = true; capture.simulate(state) }
         }
         #endif
+    }
+
+    /// The explainer, the off state, or what was heard: the part that scrolls.
+    @ViewBuilder private var words: some View {
+        if !explained {
+            VStack(spacing: 12) {
+                Image(systemName: "mic.fill").font(.system(size: 44)).foregroundStyle(PlayscribeRole.action)
+                    .accessibilityHidden(true)
+                Text("Let Playscribe hear your list").font(PlayscribeFont.headline).multilineTextAlignment(.center)
+                    .fixedSize(horizontal: false, vertical: true)
+                Text("Playscribe turns your voice into game names on your phone. It listens after you tap the microphone and stops when you stop talking.")
+                    .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary).multilineTextAlignment(.center)
+                    .fixedSize(horizontal: false, vertical: true)
+                Button { explained = true } label: {
+                    Text("Continue").font(PlayscribeFont.headline).foregroundStyle(PlayscribeRole.onAction)
+                        .frame(maxWidth: .infinity, minHeight: 52)
+                        .background(PlayscribeRole.action, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                }
+                .buttonStyle(.plain).tappableFrame()
+                .accessibilityHint("Shows the system permission request")
+                Button("Not now", action: typeInstead).hitTarget()
+            }
+            .padding(.horizontal, 16).padding(.top, 24)
+        } else if capture.denied || capture.unavailable {
+            VStack(spacing: 12) {
+                Text(capture.denied ? "Say it is off" : "Speech isn’t available on this device right now")
+                    .font(PlayscribeFont.headline).multilineTextAlignment(.center)
+                    .fixedSize(horizontal: false, vertical: true)
+                if capture.denied {
+                    Text("Allow the microphone and speech recognition in Settings to add games by voice.")
+                        .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
+                        .multilineTextAlignment(.center)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+                Button("Type it", action: typeInstead).hitTarget()
+                if capture.denied {
+                    Button("Open Settings") {
+                        if let url = URL(string: UIApplication.openSettingsURLString) { UIApplication.shared.open(url) }
+                    }.hitTarget()
+                }
+            }
+            .padding(.top, 24)
+        } else {
+            Text(capture.transcript.isEmpty ? emptyLine : capture.transcript)
+                .font(capture.transcript.isEmpty ? PlayscribeFont.subheadline : PlayscribeFont.title3)
+                .foregroundStyle(capture.transcript.isEmpty ? PlayscribeRole.textSecondary : PlayscribeRole.textPrimary)
+                .multilineTextAlignment(.center)
+                .fixedSize(horizontal: false, vertical: true)
+                .frame(maxWidth: .infinity, minHeight: 80)
+                .padding(.horizontal, 20)
+                .accessibilityLabel(capture.transcript.isEmpty
+                                    ? (capture.listening ? "Listening" : capture.heardNothing ? emptyLine : "No titles heard yet")
+                                    : capture.transcript)
+        }
     }
 
     private var emptyLine: String {
