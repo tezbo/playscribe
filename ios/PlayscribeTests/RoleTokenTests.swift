@@ -40,6 +40,16 @@ struct RoleTokenTests {
         #expect(ratio(PlayscribeRole.controlBorderSpec, PlayscribeRole.cardSpec) >= 3.6)
     }
 
+    /// #583, Iris 22 Nov: the tour ring was tan #CDB68D on cream, about 1.7:1. In light it is the action brown (as Skip tour),
+    /// at least 3:1 as a graphic on every surface it can ring; dark keeps the tan.
+    @Test func tourRingIsVisibleOnLight() {
+        #expect(PlayscribeRole.tourRingSpec.light == PlayscribeRole.actionSpec.light)
+        for surface in [PlayscribeRole.bgSpec, PlayscribeRole.cardSpec, PlayscribeRole.chipFillSpec] {
+            #expect(ratio(PlayscribeRole.tourRingSpec, surface) >= 3, "\(surface.name)")
+        }
+        #expect(Contrast.ratio(dark(PlayscribeRole.tourRingSpec), UIColor(PlayscribeColor.vellum500)) == 1)
+    }
+
     @Test func emberIsNeverTextOnLight() {
         // #FFB04F on the light ground is about 1.7:1; no light role may be it.
         let ember = UIColor(hex: 0xFFB04F)

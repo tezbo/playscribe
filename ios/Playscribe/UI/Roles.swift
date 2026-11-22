@@ -43,10 +43,13 @@ nonisolated enum PlayscribeRole {
     /// Light is the control border. Dark needs one too: the system card (luminance 0.025) on the sheet (0.012) is 1.22:1, so
     /// dark uses #6F6A7C (luminance about 0.15, 3:1 or better on both).
     static let cardEdgeSpec = Spec(name: "cardEdge", light: 0x857A68, dark: Color(uiColor: UIColor(hex: 0x6F6A7C)))
+    /// The intro tour's ring round its target (#583). Light is the action brown, as Skip tour: tan #CDB68D on cream was about
+    /// 1.7:1 (Iris, 22 Nov). Dark keeps the tan ring it has always had.
+    static let tourRingSpec = Spec(name: "tourRing", light: 0xA04E0D, dark: PlayscribeColor.vellum500)
 
     static let all: [Spec] = [bgSpec, surfaceSpec, cardSpec, chipFillSpec, textPrimarySpec, textSecondarySpec, textTertiarySpec,
                               newTextSpec, newGraphicSpec, actionSpec, onActionSpec, linkSpec, selectedChipFillSpec,
-                              selectedChipTextSpec, controlBorderSpec, hairlineSpec, cardEdgeSpec]
+                              selectedChipTextSpec, controlBorderSpec, hairlineSpec, cardEdgeSpec, tourRingSpec]
 
     static let bg = color(bgSpec)
     static let surface = color(surfaceSpec)
@@ -65,6 +68,7 @@ nonisolated enum PlayscribeRole {
     static let controlBorder = color(controlBorderSpec)
     static let hairline = color(hairlineSpec)
     static let cardEdge = color(cardEdgeSpec)
+    static let tourRing = color(tourRingSpec)
 
     /// The control border in light, and the colour this control already drew in dark (dark is unchanged by 0.6).
     /// The dark colour's own alpha carries through: `.withAlphaComponent(1)` would turn `.clear` into opaque black (screen diffs

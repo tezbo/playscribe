@@ -228,7 +228,7 @@ struct TourOverlay: View {
                 }
                 if let target {
                     RoundedRectangle(cornerRadius: 14, style: .continuous)
-                        .strokeBorder(PlayscribeColor.vellum500, lineWidth: 2)
+                        .strokeBorder(PlayscribeRole.tourRing, lineWidth: 2)
                         .frame(width: target.width + 8, height: target.height + 8)
                         .offset(x: target.minX - 4, y: target.minY - 4)
                         .allowsHitTesting(false)
