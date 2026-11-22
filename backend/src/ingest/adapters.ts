@@ -236,8 +236,12 @@ export const parseStatuspage = (sourceId: string, body: string): Post[] => {
   const doc = xml.parse(body) as Record<string, any>
   const posts: Post[] = []
   for (const i of list(doc.rss?.channel?.item)) {
-    const desc = text(i.description).replace(/<var[^>]*>|<\/var>/g, '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim()
-    if (!/\bCompleted\b/.test(desc)) continue
+    const clean = (h: string) => h.replace(/<var[^>]*>|<\/var>/g, '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim()
+    // The item lists its entries newest first. Only the Completed entry says the update is out: the Scheduled one's wording
+    // ("Matchmaking will be disabled…") is about what was planned, so it is not part of the post text.
+    const done = text(i.description).split(/<\/p>/i).find((e) => /<strong>\s*Completed\s*<\/strong>/i.test(e))
+    if (!done) continue
+    const desc = clean(done)
     const ver = text(i.title).match(/\bv(\d+\.\d+(?:\.\d+)?)\b/i)?.[1]
     posts.push({
       sourceId,

@@ -79,7 +79,7 @@ test('Fortnite: Epic\'s status page makes a release when the downtime is Complet
   const item = (title: string, desc: string, pub: string, id: string) => `<item><title>${title}</title><description>${desc}</description><pubDate>${pub}</pubDate><link>https://status.epicgames.com/incidents/${id}</link><guid>https://status.epicgames.com/incidents/${id}</guid></item>`
   const done = (t: string, d: string) => `&lt;p&gt; &lt;small&gt;Nov &lt;var data-var='date'&gt;${d}&lt;/var&gt;, &lt;var data-var='time'&gt;${t}&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Completed&lt;/strong&gt; - The scheduled maintenance has been completed. &lt;/p&gt;`
   const feed = `<?xml version="1.0"?><rss><channel>${[
-    item('Fortnite: Downtime for v43.10 Update', done('10:49', '12') + '&lt;p&gt;&lt;strong&gt;In progress&lt;/strong&gt; - Nov 12, 08:00 UTC&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Scheduled&lt;/strong&gt; - Nov 11, 17:00 UTC. Scheduled downtime begins at 8 AM UTC.&lt;/p&gt;', 'Thu, 12 Nov 2026 10:49:20 +0000', 'a1'),
+    item('Fortnite: Downtime for v43.10 Update', `&lt;p&gt; &lt;small&gt;Nov &lt;var data-var=&apos;date&apos;&gt;12&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;10:49&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Completed&lt;/strong&gt; - The scheduled maintenance has been completed. &lt;/p&gt; &lt;p&gt; &lt;small&gt;Nov &lt;var data-var=&apos;date&apos;&gt;12&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;09:00&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;In progress&lt;/strong&gt; - Scheduled maintenance is currently in progress. We will provide updates as necessary. &lt;/p&gt; &lt;p&gt; &lt;small&gt;Nov &lt;var data-var=&apos;date&apos;&gt;11&lt;/var&gt;, &lt;var data-var=&apos;time&apos;&gt;22:49&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Scheduled&lt;/strong&gt; - ⏰ Scheduled downtime for v43.10 begins at 4 AM ET (9 AM UTC). &lt;br /&gt;&lt;br /&gt;Matchmaking will be disabled 30 minutes prior. &lt;/p&gt;`, 'Thu, 12 Nov 2026 10:49:20 +0000', 'a1'),
     item('Fortnite: Downtime for v43.20 Update', '&lt;p&gt;&lt;strong&gt;Scheduled&lt;/strong&gt; - Scheduled downtime for v43.20 begins at 9 AM UTC.&lt;/p&gt;', 'Tue, 24 Nov 2026 22:49:20 +0000', 'a2'),
     item('EOS Maintenance', done('08:00', '10'), 'Tue, 10 Nov 2026 07:30:12 +0000', 'a3'),
     item('Fortnite Login and Matchmaking Issues', '&lt;p&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - restored.&lt;/p&gt;', 'Wed, 18 Nov 2026 19:19:10 +0000', 'a4'),
@@ -89,7 +89,7 @@ test('Fortnite: Epic\'s status page makes a release when the downtime is Complet
   assert.deepEqual(releasesOf(db, 'fortnite'), ['fortnite@43.10'])
   const f = ps5Of(db, 'fortnite@43.10')!
   assert.deepEqual([f.status, f.verification, f.liveAt?.value.slice(0, 10)], ['live', 'official', '2026-11-12'])
-  assert.equal(f.liveAt?.value, '2026-11-12T10:49:20.000Z', 'dated at the Completed time (the item\'s last entry), not the 08:00 scheduled start')
+  assert.equal(f.liveAt?.value, '2026-11-12T10:49:20.000Z', 'dated at the Completed time (the real v43.10 item), not the 09:00 start or the 22:49 scheduling')
 })
 
 test('the PC number in a studio title is dropped only when the post lists it as PC; no other official RSS name changes', async () => {
