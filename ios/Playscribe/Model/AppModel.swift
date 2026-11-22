@@ -427,7 +427,8 @@ final class AppModel {
             seen.insert(f.id)
         }
         out += fixtures.releases.filter { !seen.contains($0.id) }
-        allReleasesMerged = out
+        // A refresh that brings nothing new must not tell every reader it changed (bug-library-redraw-on-feed-refresh).
+        if out != allReleasesMerged { allReleasesMerged = out }
     }
 
     static var defaultStoreURL: URL {

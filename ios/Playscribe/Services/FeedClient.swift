@@ -79,7 +79,8 @@ extension AppModel {
 
     /// A fetched latest.json, applied: its releases, the Checked time, and any newly On PS5 alert.
     func applyLatest(releases: [Release], updatedAt: Date) {
-        feedReleases = releases
+        // Unchanged releases are not written: the write alone re-runs every view that reads the merged list.
+        if releases != feedReleases { feedReleases = releases }
         feedStatus = .updated(updatedAt)
         notifyNewlyOnPS5()
     }
@@ -127,8 +128,10 @@ extension AppModel {
                                                     pauseAll: data.pauseAll, delay: 1, model: self)
             }
         }
-        data.knownOnPS5 = known
-        data.knownReported = reported
+        // Written only when they change: any write to `data` re-runs every view that reads it, the Library shelf among them,
+        // and a refresh runs this twice (bug-library-redraw-on-feed-refresh: about 16 shelf runs in 20 swipes).
+        if data.knownOnPS5 != known { data.knownOnPS5 = known }
+        if data.knownReported != reported { data.knownReported = reported }
         NotificationService.shared.updateBadge(badgeCount)
     }
 

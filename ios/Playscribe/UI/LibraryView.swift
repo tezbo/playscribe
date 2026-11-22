@@ -428,14 +428,7 @@ struct LibraryShelf: View {
                 if model.libraryTab == .upcoming {
                     UpcomingView()
                 } else {
-                if let line = model.feedStatusLine {
-                    HStack {
-                        Text(line).font(PlayscribeFont.footnote).foregroundStyle(.secondary)
-                        if case .failed = model.feedStatus {
-                            Button { Task { await model.retryCheck() } } label: { Text("Retry").frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()) }.font(PlayscribeFont.footnote)
-                        }
-                    }
-                }
+                FeedStatusLine()
                 // Tabletop: the search button and A to Z strip come after the tiles (see below), so a first view shows games.
                 if duo.pose != .tabletop, !portraitTilesFirst, !heroOnRightPage, !closedWide, !all.isEmpty { searchField(binding: $model.data.nav.query) }
                 // D-7: a narrowed list always says so and offers the way back.
@@ -1460,6 +1453,23 @@ struct ScrolledTopEdge: ViewModifier {
                 }
         } else {
             content
+        }
+    }
+}
+
+/// The Library's quiet status line (E-1, E-2), in a view of its own so only it reads `feedStatus`: every refresh moves that
+/// through Refreshing and back, which re-ran the whole shelf (bug-library-redraw-on-feed-refresh: 8 runs in 20 swipes).
+private struct FeedStatusLine: View {
+    @Environment(AppModel.self) private var model
+
+    var body: some View {
+        if let line = model.feedStatusLine {
+            HStack {
+                Text(line).font(PlayscribeFont.footnote).foregroundStyle(.secondary)
+                if case .failed = model.feedStatus {
+                    Button { Task { await model.retryCheck() } } label: { Text("Retry").frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()) }.font(PlayscribeFont.footnote)
+                }
+            }
         }
     }
 }
