@@ -23,8 +23,11 @@ final class SimilarViewGameTests: XCTestCase {
         page.swipeUp()   // the tiles under the header into view
         sleep(1)
         let below = header.frame.maxY
+        // Frame first: asking a far-off row whether it is hittable throws (Mac, Open portrait: "releaseRow-Launch activation point
+        // invalid"), so only tile-sized buttons just under the header get that question.
         let tile = app.buttons.allElementsBoundByIndex.first {
-            $0.isHittable && $0.frame.minY >= below - 4 && $0.frame.minY < below + 60 && $0.frame.width >= 80 && $0.frame.width <= 140
+            let f = $0.frame
+            return f.minY >= below - 4 && f.minY < below + 60 && f.width >= 80 && f.width <= 140 && $0.isHittable
         }
         guard let tile else { app.terminate(); XCTFail("no tile under You might also like at y \(below)"); return }
         let name = tile.label
@@ -36,6 +39,7 @@ final class SimilarViewGameTests: XCTestCase {
         view.tap()
         let tapped = Date().timeIntervalSince(start)
         let addButton = app.buttons["addToLibrary"]
+        let pageMarker = app.staticTexts.matching(identifier: "qaPageScroll")
         var samples: [String] = []
         var titleAt: Double?, litAt: Double?
         var worst: XCUIScreenshot?
@@ -45,9 +49,10 @@ final class SimilarViewGameTests: XCTestCase {
             let lit = Self.litFraction(shot.image)
             let shown = addButton.exists && addButton.isHittable
             if shown && titleAt == nil { titleAt = t }
-            if lit >= 0.04 && litAt == nil { litAt = t }
-            if lit < 0.04 && worst == nil { worst = shot }
-            samples.append(String(format: "%.2fs lit %.3f title %@", t, lit, shown ? "yes" : "no"))
+            if lit >= 0.10 && litAt == nil { litAt = t }
+            if lit < 0.10 && worst == nil { worst = shot }
+            let pages = pageMarker.allElementsBoundByIndex.map(\.label).joined(separator: " / ")
+            samples.append(String(format: "%.2fs lit %.3f title %@ ", t, lit, shown ? "yes" : "no") + pages)
         }
         for (label, s) in [("view-game-dark-frame", worst), ("view-game-final", XCUIScreen.main.screenshot())] {
             guard let s else { continue }
@@ -55,7 +60,7 @@ final class SimilarViewGameTests: XCTestCase {
         }
         let black = HeroMarksTests.isBlack(XCUIScreen.main.screenshot().image)
         let note = "\(ReleaseRowTests.pose(app)); tile \(name); View game tap took \(String(format: "%.2f", tapped))s; title at \(titleAt.map { String(format: "%.2f", $0) } ?? "never"); lit at \(litAt.map { String(format: "%.2f", $0) } ?? "never"); screenshots black \(black)\n" + samples.joined(separator: "\n")
-        print("SimilarViewGame: \(note)")
+        print("SimilarViewGame: " + note.replacingOccurrences(of: "\n", with: " | "))
         XCTContext.runActivity(named: note) { _ in }
         XCTAssertNotNil(titleAt, "the new game's page shows its title block")
         XCTAssertLessThan(titleAt ?? 99, 1.0, "within a second of View game")
