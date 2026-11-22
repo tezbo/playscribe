@@ -752,8 +752,8 @@ struct PageEdge: View {
                     && ((item.index == window.first?.index && item.index > 0) || (item.index == window.last?.index && item.index < cards.count - 1))
                 Button { select(item.card.id) } label: {
                     RoundedRectangle(cornerRadius: 1.5)
-                        // Lit leaves keep their dim fill; the one amber capsule is drawn over them, so a lagging capsule never leaves a hole.
-                        .fill(item.card.unread ? PlayscribeColor.vellum100 : PlayscribeColor.textSecondary.opacity(0.5))
+                        // Lit leaves are amber under the one amber capsule: a lagging capsule never leaves a hole, and edges never peek dim.
+                        .fill(isCurrent ? PlayscribeColor.accent : item.card.unread ? PlayscribeColor.vellum100 : PlayscribeColor.textSecondary.opacity(0.5))
                         .frame(width: trimmed ? 2 : Self.litWidth, height: isCurrent ? Self.litHeight : (trimmed ? 6 : 10))
                         .frame(width: 44, height: 44)
                         .contentShape(Rectangle())
