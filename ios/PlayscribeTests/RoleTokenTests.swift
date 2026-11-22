@@ -10,7 +10,7 @@ struct RoleTokenTests {
 
     @Test func lightHexValuesAreIrissTable() {
         let expected: [String: UInt32] = [
-            "bg": 0xFBF4E6, "card": 0xF4EEE3, "chipFill": 0xEAE1D0, "textPrimary": 0x1B1822, "textSecondary": 0x5A5260,
+            "bg": 0xFBF4E6, "card": 0xF4EEE3, "chipFill": 0xEAE1D0, "textPrimary": 0x1B1822, "textSecondary": 0x625C58,
             "textTertiary": 0x6B6370, "newText": 0xA04E0D, "newGraphic": 0xB45A12, "action": 0xA04E0D, "onAction": 0xFBF4E6,
             "link": 0xA04E0D, "selectedChipFill": 0xE3D2B3, "selectedChipText": 0x1B1822, "controlBorder": 0x857A68, "hairline": 0xCFC4B0,
         ]
@@ -24,7 +24,10 @@ struct RoleTokenTests {
         let bg = PlayscribeRole.bgSpec, card = PlayscribeRole.cardSpec, chip = PlayscribeRole.chipFillSpec
         #expect(ratio(PlayscribeRole.textPrimarySpec, bg) >= 15.9)
         #expect(ratio(PlayscribeRole.textPrimarySpec, card) >= 15.1)
-        for surface in [bg, card, chip] { #expect(ratio(PlayscribeRole.textSecondarySpec, surface) >= 5.7) }
+        // #594 (Iris): textSecondary is #625C58 in light, 6.0:1 on bg, 5.7:1 on card, 5.07:1 on chipFill (WCAG formula).
+        #expect(ratio(PlayscribeRole.textSecondarySpec, bg) >= 6.0)
+        #expect(ratio(PlayscribeRole.textSecondarySpec, card) >= 5.6)
+        #expect(ratio(PlayscribeRole.textSecondarySpec, chip) >= 5.0)
         for surface in [bg, card] { #expect(ratio(PlayscribeRole.textTertiarySpec, surface) >= 4.9) }
         for surface in [bg, card, chip] { #expect(ratio(PlayscribeRole.newTextSpec, surface) >= 4.5) }
         #expect(ratio(PlayscribeRole.linkSpec, bg) >= 5.3)
