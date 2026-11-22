@@ -223,27 +223,32 @@ struct SayItView: View {
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @State private var capture = SpeechCapture()
     @State private var pulse = false
+    @State private var moreBelow = false
     var find: (String) -> Void
     var typeInstead: () -> Void
     /// The explainer comes before the system prompts, and only while neither is decided.
     @State private var explained = SFSpeechRecognizer.authorizationStatus() != .notDetermined
 
     var body: some View {
-        VStack(spacing: 20) {
+        VStack(spacing: 12) {
             // At AX5 in a short panel (Closed landscape, 466 pt) the words need more height than there is. They scroll
             // and wrap; nothing is cut to one line (Mac stills at 61bc6dcb). The microphone and Find stay below.
             ScrollView {
-                // 16 pt under the header and at the sides (Iris, #578); the bottom inset lets the last line scroll
-                // clear of the fade.
+                // 16 pt under the header and at the sides (Iris, #578).
                 words.frame(maxWidth: .infinity)
-                    .padding(.horizontal, 16).padding(.top, 16).padding(.bottom, 24)
+                    .padding(.horizontal, 16).padding(.top, 16).padding(.bottom, 8)
             }
             .scrollBounceBehavior(.basedOnSize)
-            // The scroll edge fades instead of cutting a line in half (R-7, Iris #578: Closed landscape AX5).
+            .onScrollGeometryChange(for: Bool.self) { g in
+                g.contentOffset.y + g.containerSize.height < g.contentSize.height - 1
+            } action: { _, more in moreBelow = more }
+            // The bottom edge fades only while more words sit below it, so text that fits is never dimmed (Quinn, #578:
+            // the last idle line read as cut in Tabletop AX5) and text that doesn't fit never ends in a hard cut (R-7).
             .mask {
                 VStack(spacing: 0) {
                     Rectangle()
-                    LinearGradient(colors: [.black, .clear], startPoint: .top, endPoint: .bottom).frame(height: 24)
+                    LinearGradient(colors: [.black, .clear], startPoint: .top, endPoint: .bottom)
+                        .frame(height: moreBelow ? 24 : 0)
                 }
             }
             if explained && !capture.denied && !capture.unavailable {
