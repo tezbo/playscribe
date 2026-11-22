@@ -492,9 +492,12 @@ struct FrontCoverPreviewScreen: View {
                         .padding(.trailing, 12).padding(.top, 8)
                     #if INTERNAL
                     // UI tests read the loop state here (6a item 1): the cover itself is one element and never says its mode.
+                    // Only on -qaRoute launches, so a VoiceOver tester on an internal build never meets it.
+                    if AppModel.isQALaunch {
                     Text("qa-cover-loop: \(TrailerLoopQA.shared.playing ? "playing" : "off")")
                         .font(.system(size: 1)).opacity(0.01).allowsHitTesting(false)
                         .accessibilityIdentifier("qaCoverLoop")
+                    }
                     #endif
                 }
             }
