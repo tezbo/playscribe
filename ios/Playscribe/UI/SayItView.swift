@@ -52,9 +52,16 @@ final class SpeechCapture {
             let session = AVAudioSession.sharedInstance()
             try session.setCategory(.record, mode: .measurement, options: .duckOthers)
             try session.setActive(true, options: .notifyOthersOnDeactivation)
+            // The Mac sim aborted in AURemoteIO::Initialize the moment `engine.inputNode` was first touched (#578: 4 of 4 at
+            // 39a0bd8a, again at 1d5491af). Ask the session for a live input first; only then touch the engine's input, and
+            // still refuse a route that reports 0 Hz or 0 channels.
+            guard Self.hasLiveInput(session) else {
+                request.endAudio(); self.request = nil
+                try? session.setActive(false, options: .notifyOthersOnDeactivation)
+                unavailable = true
+                return
+            }
             let input = engine.inputNode
-            // The Mac sim aborted 4 of 4 in AURemoteIO::Initialize under the input format (#578, 39a0bd8a). A route with
-            // no live input reports 0 Hz or 0 channels: say Speech is unavailable instead of tapping it.
             let format = input.inputFormat(forBus: 0)
             guard format.sampleRate > 0, format.channelCount > 0 else {
                 request.endAudio(); self.request = nil
@@ -131,6 +138,11 @@ final class SpeechCapture {
             if listening && Self.autoStops { silence.arm(heard: true) } // every new word restarts the pause timer
         }
         if done { task = nil; stop() }
+    }
+
+    /// A microphone the session can record from right now, judged without touching the engine's input node.
+    nonisolated static func hasLiveInput(_ session: AVAudioSession) -> Bool {
+        session.isInputAvailable && !session.currentRoute.inputs.isEmpty && session.sampleRate > 0
     }
 
     /// The permission step; tests replace it to hold a start at the prompt.

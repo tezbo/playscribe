@@ -103,3 +103,14 @@ struct SayItStartTokenTests {
         for _ in 0..<200 where !done() { try? await Task.sleep(for: .milliseconds(5)) }
     }
 }
+
+/// #578: the Mac sim aborted on the first touch of `engine.inputNode`. The live-input check comes before it in start().
+struct SayItInputGuardTests {
+    @Test func liveInputIsCheckedBeforeTheInputNode() throws {
+        let src = try String(contentsOf: URL(fileURLWithPath: #filePath).deletingLastPathComponent().deletingLastPathComponent()
+            .appendingPathComponent("Playscribe/UI/SayItView.swift"), encoding: .utf8)
+        let check = try #require(src.range(of: "guard Self.hasLiveInput(session)"))
+        let node = try #require(src.range(of: "engine.inputNode\n"))
+        #expect(check.lowerBound < node.lowerBound, "the session is asked for a live input before the engine's input is touched")
+    }
+}
