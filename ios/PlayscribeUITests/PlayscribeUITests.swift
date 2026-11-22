@@ -1561,7 +1561,11 @@ final class Release050Tests: XCTestCase {
         app.buttons["settingsButton"].tap()
         flip()
         XCTAssertTrue(["on", "1"].contains(app.switches["plusCardToggle"].value as? String ?? ""), "on again")
-        XCTAssertTrue(app.descendants(matching: .any)["plusLeavingSoon"].waitForExistence(timeout: 2), "the reminder row returns")
+        // As above: the row under the switch is built only once it scrolls near Tabletop's half-height panel.
+        let back = app.descendants(matching: .any)["plusLeavingSoon"]
+        var again = 0
+        while !back.waitForExistence(timeout: 1) && again < 4 { Self.scrollForm(app); again += 1 }
+        XCTAssertTrue(back.exists, "the reminder row returns")
         app.buttons["Close"].tap()
         XCTAssertTrue(card.waitForExistence(timeout: 3), "the Library card returns with the switch on")
         app.terminate()
@@ -1745,12 +1749,13 @@ final class FinalFixTests: XCTestCase {
         guard ReleaseRowTests.pose(app).contains("pose: tabletop") else { app.terminate(); throw XCTSkip("not Tabletop") }
         let search = app.descendants(matching: .any).matching(identifier: "tabletopSearch").firstMatch
         XCTAssertTrue(search.waitForExistence(timeout: 5), "read-only search button")
-        XCTAssertGreaterThanOrEqual(search.frame.height, 44)
+        // 44 pt, read to a thousandth of a point: frames come back as 43.999999999999886 for a 44 pt control (Mac at 90eb4a0a).
+        XCTAssertGreaterThanOrEqual((search.frame.height * 1000).rounded() / 1000, 44, "44 pt search button, got \(search.frame.height)")
         search.tap()
         XCTAssertTrue(app.descendants(matching: .any).matching(identifier: "tabletopSearchHint").firstMatch.waitForExistence(timeout: 3), "hint shown")
         XCTAssertFalse(app.keyboards.firstMatch.exists, "the keyboard never opens in Tabletop")
         let b = app.descendants(matching: .any).matching(identifier: "letter-B").firstMatch
-        XCTAssertTrue(b.waitForExistence(timeout: 3) && b.frame.height >= 44, "44 pt letter chip")
+        XCTAssertTrue(b.waitForExistence(timeout: 3) && (b.frame.height * 1000).rounded() / 1000 >= 44, "44 pt letter chip, got \(b.frame.height)")
         b.tap()
         sleep(1)
         XCTAssertTrue(app.descendants(matching: .any).matching(identifier: "addRow").firstMatch.waitForExistence(timeout: 3), "results for B")
