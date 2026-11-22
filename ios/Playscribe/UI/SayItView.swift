@@ -256,18 +256,24 @@ struct SayItView: View {
                 .accessibilityHint(capture.listening ? "Stops now. It also stops by itself when you stop talking"
                                    : "Say game titles. It stops by itself when you stop talking")
                 .tappableFrame()
-                Button {
-                    capture.stop()
-                    find(capture.transcript)
-                } label: {
-                    Text("Find these games").font(PlayscribeFont.headline)
-                        .frame(maxWidth: .infinity, minHeight: 50)
+                // Once listening has stopped with titles heard, Find is the one next step: the filled primary (Iris,
+                // #578). While listening it stays outlined; with nothing heard it is disabled.
+                if !capture.listening && !capture.transcript.isEmpty {
+                    Button { find(capture.transcript) } label: { primaryLabel("Find these games") }
+                        .buttonStyle(.plain)
+                        .padding(.horizontal, 16)
+                        .tappableFrame()
+                } else {
+                    Button {
+                        capture.stop()
+                        find(capture.transcript)
+                    } label: { secondaryLabel("Find these games") }
+                    .buttonStyle(.bordered)
+                    .controlBorder(.outlinedButton, in: Capsule())
+                    .disabled(capture.transcript.isEmpty)
+                    .padding(.horizontal, 16)
+                    .tappableFrame()
                 }
-                .buttonStyle(.bordered)
-                .controlBorder(.outlinedButton, in: Capsule())
-                .disabled(capture.transcript.isEmpty)
-                .padding(.horizontal, 16)
-                .tappableFrame()
             }
         }
         .padding(.bottom, 12)
@@ -302,7 +308,7 @@ struct SayItView: View {
             .padding(.horizontal, 16).padding(.top, 24)
         } else if capture.denied || capture.unavailable {
             VStack(spacing: 12) {
-                Text(capture.denied ? "Say it is off" : "Speech isn’t available on this device right now")
+                Text(capture.denied ? "Say it can’t listen yet" : "Speech isn’t available on this device right now")
                     .font(PlayscribeFont.headline).multilineTextAlignment(.center)
                     .fixedSize(horizontal: false, vertical: true)
                 if capture.denied {
@@ -311,14 +317,22 @@ struct SayItView: View {
                         .multilineTextAlignment(.center)
                         .fixedSize(horizontal: false, vertical: true)
                 }
-                Button("Type it", action: typeInstead).hitTarget()
+                // Real buttons, not bare text (Iris, #578): Open Settings leads when it can fix this; Type it is the way on.
                 if capture.denied {
-                    Button("Open Settings") {
+                    Button {
                         if let url = URL(string: UIApplication.openSettingsURLString) { UIApplication.shared.open(url) }
-                    }.hitTarget()
+                    } label: { primaryLabel("Open Settings") }
+                    .buttonStyle(.plain).tappableFrame()
+                    Button(action: typeInstead) { secondaryLabel("Type it") }
+                        .buttonStyle(.bordered)
+                        .controlBorder(.outlinedButton, in: Capsule())
+                        .tappableFrame()
+                } else {
+                    Button(action: typeInstead) { primaryLabel("Type it") }
+                        .buttonStyle(.plain).tappableFrame()
                 }
             }
-            .padding(.top, 24)
+            .padding(.horizontal, 16).padding(.top, 24)
         } else {
             Text(capture.transcript.isEmpty ? emptyLine : capture.transcript)
                 .font(capture.transcript.isEmpty ? PlayscribeFont.subheadline : PlayscribeFont.title3)
@@ -331,6 +345,16 @@ struct SayItView: View {
                                     ? (capture.listening ? "Listening" : capture.heardNothing ? emptyLine : "No titles heard yet")
                                     : capture.transcript)
         }
+    }
+
+    private func primaryLabel(_ title: String) -> some View {
+        Text(title).font(PlayscribeFont.headline).foregroundStyle(PlayscribeRole.onAction)
+            .frame(maxWidth: .infinity, minHeight: 50)
+            .background(PlayscribeRole.action, in: Capsule())
+    }
+
+    private func secondaryLabel(_ title: String) -> some View {
+        Text(title).font(PlayscribeFont.headline).frame(maxWidth: .infinity, minHeight: 50)
     }
 
     private var emptyLine: String {
