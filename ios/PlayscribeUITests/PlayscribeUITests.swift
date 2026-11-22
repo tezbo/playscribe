@@ -719,7 +719,7 @@ final class LibraryLayoutTests: XCTestCase {
             var summary: String { "bar \(bar); first \(firstTile); \(tiles.count) tiles" }
         }
         func pageState() -> PageState {
-            let q = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'tile-' OR label CONTAINS ', last updated' OR label CONTAINS ', released ' OR label CONTAINS ', expected ' OR label CONTAINS 'to be announced' OR label CONTAINS ', new update' OR label CONTAINS 'unconfirmed update' OR label CONTAINS ', not on PS5' OR label CONTAINS 'plays on PS5 as the PS4'"))
+            let q = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'tile-' OR label CONTAINS ', last updated' OR label CONTAINS ', updated this week' OR label CONTAINS ', released ' OR label CONTAINS ', expected ' OR label CONTAINS 'to be announced' OR label CONTAINS ', new update' OR label CONTAINS 'unconfirmed update' OR label CONTAINS ', not on PS5' OR label CONTAINS 'plays on PS5 as the PS4'"))
             let els = q.allElementsBoundByIndex.filter { !$0.frame.isEmpty && $0.frame.width > 20 }
             let first = els.min { ($0.frame.minY, $0.frame.minX) < ($1.frame.minY, $1.frame.minX) }
             let bar = app.scrollBars.firstMatch.exists ? "\(app.scrollBars.firstMatch.value ?? "nil")" : "none"
@@ -787,7 +787,7 @@ final class LibraryLayoutTests: XCTestCase {
         for _ in 0..<16 {
             // The accessibility frame of a tile runs past its cover (the cover image's own
             // bounds), so each tile is taken as its laid-out cover: origin and width, 3:4.
-            let tileQuery = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'tile-' OR label CONTAINS ', last updated' OR label CONTAINS ', released ' OR label CONTAINS ', expected ' OR label CONTAINS 'to be announced' OR label CONTAINS ', new update' OR label CONTAINS 'unconfirmed update' OR label CONTAINS ', not on PS5' OR label CONTAINS 'plays on PS5 as the PS4'"))
+            let tileQuery = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'tile-' OR label CONTAINS ', last updated' OR label CONTAINS ', updated this week' OR label CONTAINS ', released ' OR label CONTAINS ', expected ' OR label CONTAINS 'to be announced' OR label CONTAINS ', new update' OR label CONTAINS 'unconfirmed update' OR label CONTAINS ', not on PS5' OR label CONTAINS 'plays on PS5 as the PS4'"))
             // Quinn: count each tile once by its label (the same visible tiles are scanned again after a drag); the identifier
             // holds the cover width, so it is not unique.
             seenTiles.formUnion(tileQuery.allElementsBoundByIndex.filter { !$0.frame.isEmpty && $0.frame.width > 20 }.map(\.label))

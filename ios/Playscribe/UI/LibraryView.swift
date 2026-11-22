@@ -1123,13 +1123,22 @@ extension AppModel {
             : d.formatted(Date.FormatStyle(locale: Locale(identifier: "en_GB"), timeZone: .gmt).month(.abbreviated).year())
     }
 
+    /// The caption mark in words, so colour is never the only cue (Iris, #597): the amber spark is "new update", the small
+    /// amber dot (newest update read, under 7 days old) is "updated this week, read", and a plain mark is "last updated".
+    static func tileUpdateWords(_ kind: TileDateKind, _ day: String) -> String {
+        switch kind {
+        case .unread: "new update \(day)"
+        case .recent: "updated this week, read, \(day)"
+        default: "last updated \(day)"
+        }
+    }
+
     /// "Elden Ring, last updated Jul 2025, owned".
     func tileAccessibilityLabel(_ row: LibraryRow) -> String {
         let state = tileDate(row)
         let when: String
         switch state.kind {
-        case .unread: when = "new update \(state.text)"
-        case .recent, .older: when = "last updated \(state.text)"
+        case .unread, .recent, .older: when = Self.tileUpdateWords(state.kind, state.text)
         case .notOnPS5: return "\(row.game.name), not on PS5, \(row.status.label.lowercased())"
         case .playsOnPS5: return "\(row.game.name), plays on PS5 as the PS4 version, \(row.status.label.lowercased())"
         case .none:
