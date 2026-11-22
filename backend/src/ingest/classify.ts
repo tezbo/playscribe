@@ -113,6 +113,9 @@ export const ps5LiveStated = (text: string) => {
   if (ps5StatusOf(t) !== 'live') return false
   // Release notes that list the PS5 patch size ("PATCH SIZES: PS5: 12.40 GB") are about a patch that exists on PS5.
   if (/(PS5|PlayStation\s*®?\s*5)\s*®?\s*[:–-]\s*~?\d+(\.\d+)?\s*(GB|MB)\b/i.test(t)) return true
+  // Update notes that list the PS5 build number ("PlayStation 5 (1.200.011) Xbox Series (1.2.0.11) PC (1.2.11)") are for a PS5 build that exists.
+  // (A version's dots end the sentence-scoped checks above, so a promise anywhere in the text rules this out.)
+  if (/(PS5|PlayStation\s*®?\s*5)\s*®?\s*[:–-]?\s*\(?\s*v?\d{1,2}\.\d{3}\.\d{3}\b/i.test(t) && !/\b(coming soon|soon|will be|upcoming|certification|later|next week|expected)\b/i.test(t)) return true
   const live = '(live|out now|now out|available|rolling out|released|is here|has arrived|deployed|deploying)'
   return new RegExp(`(PS5|PlayStation\\s*®?\\s*5)[^.!?\\n]{0,80}\\b${live}|\\b${live}[^.!?\\n]{0,80}(PS5|PlayStation\\s*®?\\s*5)`, 'i').test(t)
 }

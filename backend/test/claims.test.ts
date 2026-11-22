@@ -28,6 +28,15 @@ test('a headline announcing a not-yet-shipped update is not a release (Palworld 
   assert.ok(!isAnnouncementTitle('10.2.2a Backend Bugfix Patch'))
 })
 
+// bug-059: No Man's Sky names its 2018 updates "NEXT Update 1.52". A version number after "next update" makes it a release, not "the next update".
+test('"NEXT Update 1.52" is a release, not an announcement of the next update (No Man\'s Sky 2018)', () => {
+  for (const t of ['NEXT Update 1.52', 'NEXT Update 1.53 Patch Notes', 'No Man\'s Sky NEXT Update 1.57', 'NEXT patch v1.54'])
+    assert.ok(!isAnnouncementTitle(t), t)
+  assert.ok(!isNewsOnlyTitle('NEXT Update 1.52'))
+  assert.ok(isAnnouncementTitle('The next update is coming soon'))
+  assert.ok(isAnnouncementTitle("Palworld's next major update 1.0 releases on Dec. 23"), 'a stated date still makes it an announcement')
+})
+
 test('a post listing platform builds without PlayStation, or rolling out to other platforms later, is PC-scoped', () => {
   assert.ok(pcScopedPost('Hotfix\nWindows: v1.0.6.2132\nMac: v1.0.6.776\n- Fixed a crash'))
   assert.ok(pcScopedPost('We added a new option on PC and are rolling it out soon to other platforms.'))
@@ -242,7 +251,11 @@ test('alert age: a promoted row whose own live date is old keeps no fresh alert 
 
 test('backfill applies a post\'s stated time even when a second post of the same day wrote the assumed row (DDV Season of Scares)', async () => {
   const when = day(2)
-  const first = ago(30), second = new Date(Math.floor(Date.parse(first) / 1000) * 1000 + 36e3).toISOString()
+  // Both posts must fall on one UTC day whatever the clock is. 30 h before "now" plus 36 s crossed UTC midnight when the suite ran
+  // between 05:59:24 and 06:00:00 UTC, so the second post carried a new date and the test failed on the clock (bug-063).
+  // Anchor them at noon UTC of the previous day instead; the stated date (day 2, in the future) is unaffected.
+  const noonYesterday = new Date(Date.UTC(new Date().getUTCFullYear(), new Date().getUTCMonth(), new Date().getUTCDate() - 1, 12, 0, 0))
+  const first = noonYesterday.toISOString(), second = new Date(noonYesterday.getTime() + 36e3).toISOString()
   const { db, deps } = await setup([
     { gid: '1', title: 'Season of Scares Update Patch Notes', date: first, contents: `Our Season of Scares free update arrives on ${monthDay(when)}, 2026. Details below.`, tags: ['patchnotes'] },
     { gid: '2', title: 'Season of Scares Update Patch Notes', date: second, contents: 'Hotfix notes. More details soon.', tags: ['patchnotes'] },
@@ -388,4 +401,27 @@ test('ingest: a PC-titled post makes no PS5 row, a plain hotfix post still does 
   assert.equal(ps5Of(db, ids[1]!), undefined)
   assert.equal(ps5Of(db, 'dawnwalker@1.0.7')?.verification, 'assumed')
   assert.equal(summary.held?.pcScoped, 2)
+})
+
+test('ingest (bug-059): the four No Man\'s Sky 2018 "NEXT Update 1.xx" posts are releases', async () => {
+  const db = openDb(':memory:')
+  const items = [['1.52', 'a'], ['1.53', 'b'], ['1.54', 'c'], ['1.57', 'd']].map(([v, g], i) => ({ gid: g!, title: `NEXT Update ${v}`, date: ago(40 + i), contents: `NEXT Update ${v}. Fixed a crash.`, tags: ['patchnotes'] }))
+  const deps = { db, fetchFn: fakeFetch({ 'https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid=275850': steamNews(items) }), igdb: null }
+  await seedGames(deps)
+  await runIngest(deps)
+  const ids = (db.prepare("SELECT id FROM releases WHERE game_id = 'no-mans-sky' ORDER BY id").all() as { id: string }[]).map((r) => r.id)
+  assert.equal(ids.length, 4, ids.join(', '))
+})
+
+// bug-060: War Robots: Frontiers tags every maintenance notice patchnotes; 62 of them were releases.
+test('a bare "Maintenance - date" title is news even when Steam tagged it patchnotes; real patches that mention maintenance are not', () => {
+  for (const title of ['Maintenance – 11/05/2023', 'Maintenance - 18/05/2023', 'Scheduled maintenance', 'Downtime 12.11', 'Season 3 server maintenance', 'Weekly Maintenance - December 18th - 10:00AM CET', 'Scheduled Server Maintenance 01/12/2020', 'Server Maintenance (10:30 AM CET)', 'Server Maintenance – Aug 27'])
+    assert.ok(isNewsOnlyTitle(title, { patchnotesTag: true }), title)
+  for (const title of ['Maintenance update 1.2', 'Hotfix 0.11.2 Patch Notes (May 18, 2023)', 'Maintenance Update Changelog', 'Maintenance fixes and balance', 'Maintenance with new weapons and maps'])
+    assert.ok(!isNewsOnlyTitle(title, { patchnotesTag: true }), title)
+})
+
+test('"<Month> Update: <what shipped> and What\'s Coming Next" is the release; a pure preview still is not (Leaf Blower Co. December Update)', () => {
+  assert.ok(!isNewsOnlyTitle('\u{1F342} December Update: Lighting Rework, Shredder Boosts and What\u2019s Coming Next', { patchnotesTag: false }))
+  assert.ok(isNewsOnlyTitle("Check out what's coming to Cyberpunk 2077 in the Edgerunners 2 Update!"))
 })

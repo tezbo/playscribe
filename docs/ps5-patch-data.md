@@ -135,6 +135,15 @@ struct NoteItem: Codable {
 
 `registry.json` (next to this spec, and in the repo as `backend/src/sources/registry.json`) holds the shared feeds (PlayStation Blog and the press) and a source list for each game. Each source has `kind` (`rss`, `html`, `steamNews` or `pressIndex`, a press site's paged list of update articles whose matching articles are opened for their facts), `url`, `platforms`, `trust`, `fetch` (`auto` or `manual`) and `ps5Signal`. A `ps5Signal` of `always` means everything in the feed is about PS5, though shared feeds still have to match the game by name. A value of `explicit` means a post counts for PS5 only when its text names "PS5" or "PlayStation 5". The `igdbId` and `ps5TitleIds` fields are filled from the catalogue. Dawnwalker's site blocks automated fetches, so it is `manual`. A game's `aliases` are the other names the press uses ("GTA 5", "Dawnwalker"), and `exclude` lists names that contain it but are other games ("Minecraft Dungeons").
 
+**A game always has a source (Terry, 22 Nov 2026: "Not having a source for patches is NOT acceptable. Ever.").** Every game in `registry.json` has at least one entry in `sources`, or a dated `sourceGap` with the reason and the next step, never neither; the registry test fails otherwise, so a game cannot be added without one. Two more source kinds exist besides `rss`, `html`, `steamNews` and `pressIndex`:
+
+- `bluesky`: an official studio account, read through Bluesky's public API (`app.bsky.feed.getAuthorFeed`), the account's own posts only (no reposts or replies). Used for Ghost of Yotei (Sucker Punch) and Marvel's Wolverine (Insomniac), whose patch posts are not published anywhere else we may read. Only verified or studio-confirmed accounts; fan accounts that say they are unaffiliated (the Fortnite news and status accounts) are never used.
+- `statuspage`: an Atlassian Statuspage history feed. Epic's public status page records every Fortnite update as "Downtime for vNN.NN Update"; the update is live when the entry says Completed, at that time.
+
+A shared account or feed names its game with `mentions`, and `patchOnly` drops what is not a patch post. A source with `ps5Signal: always` that is official and says the update is live makes the PS5 row official without the post naming PS5. Update notes that list a PS5 build number ("PlayStation 5 (1.200.011)") count as a PS5 build that exists (Alan Wake 2); the title's PC number is not used as the update's name.
+
+Current gaps, with the reason in `registry.json`: Gran Turismo 7 (gran-turismo.com is under PlayStation's website terms), Astro Bot (playstation.com support pages), Genshin Impact (no readable official feed found), and 17 older or live-service games with no per-game source registered yet (card feed-game-sources-rest). Press (Reported only) covers them meanwhile.
+
 Press articles are read for facts only: the PS5 version, the download size, whether it is live, and when. Their text is never stored or shown. Requests to a site are spaced by its robots.txt `Crawl-delay`.
 
 ## Note platforms

@@ -728,7 +728,6 @@ struct PageEdge: View {
     /// Cards fully on screen at once: 2 in Open (two across), else 1.
     var visible: Int = 1
     var select: (String) -> Void
-    @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     /// Slot width of one leaf (its hit area) and the lit mark's size.
     static let slot: CGFloat = 44
@@ -785,8 +784,9 @@ struct PageEdge: View {
                     && ((item.index == window.first?.index && item.index > 0) || (item.index == window.last?.index && item.index < cards.count - 1))
                 Button { select(item.card.id) } label: {
                     RoundedRectangle(cornerRadius: 1.5)
-                        // Lit leaves are amber under the one amber capsule: a lagging capsule never leaves a hole, and edges never peek dim.
-                        .fill(isCurrent ? PlayscribeColor.accent : item.card.unread ? PlayscribeColor.vellum100 : PlayscribeColor.textSecondary.opacity(0.5))
+                        // Lit leaves draw nothing: the one amber capsule is the only amber here. Lit leaves drawn amber under a
+                        // capsule that slid in 0.2 s showed as two amber marks side by side mid-swipe (Terry, build 18 on a Duo).
+                        .fill(isCurrent ? Color.clear : item.card.unread ? PlayscribeColor.vellum100 : PlayscribeColor.textSecondary.opacity(0.5))
                         .frame(width: trimmed ? 2 : Self.litWidth, height: isCurrent ? Self.litHeight : (trimmed ? 6 : 10))
                         .frame(width: 44, height: 44)
                         .contentShape(Rectangle())
@@ -810,10 +810,11 @@ struct PageEdge: View {
                     .offset(x: joined.minX, y: joined.minY)
                     .allowsHitTesting(false)
                     .accessibilityHidden(true)
-                    // The capsule slides with the deck: a short ease, none under Reduce Motion.
-                    .animation(reduceMotion ? nil : .easeOut(duration: 0.2), value: joined)
             }
         }
+        // One steady bar (Terry, build 18): the marks move in one step when the deck settles on a card, never slide, so the
+        // bar and the leaves can never be seen apart. This also drops the animation a leaf tap's withAnimation would carry.
+        .transaction { $0.animation = nil }
         .frame(maxWidth: .infinity, alignment: .center)
     }
 }
