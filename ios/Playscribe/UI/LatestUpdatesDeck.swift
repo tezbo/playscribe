@@ -189,7 +189,12 @@ struct LatestUpdatesDeck: View {
     /// One card's width so that `perScreen` cards fit the container (the next one peeking when it is 1.12), 12 pt apart.
     static func cardWidth(in container: CGFloat, perScreen: CGFloat) -> CGFloat {
         let gaps = max(0, perScreen.rounded(.up) - 1) * 12
-        return max(120, ((container - gaps) / perScreen).rounded(.down))
+        let exact = (container - gaps) / perScreen
+        // Whole cards across (Open: two): no rounding, so the cards and gaps fill the pager exactly and the last
+        // page lands flush on both margins. Rounded down, an 835 pt pager left 1 pt of slack and the deck settled
+        // 3.7 pt short of its end, the right card cut at the edge (Mac 198e9f87, Iris).
+        if perScreen == perScreen.rounded() { return max(120, exact) }
+        return max(120, exact.rounded(.down))
     }
 
     /// The art is 38% of the container height, less the page edge, 120 pt at least.

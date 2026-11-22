@@ -64,4 +64,11 @@ struct DeckPagingTests {
         #expect(PageEdge.capsule(lit: [6, 7], window: [4, 5, 6, 7, 8])?.minX == 2 * 44 + 22 - 1.5)
         #expect(PageEdge.capsule(lit: [], window: [0, 1]) == nil)
     }
+
+    @Test(arguments: [835, 834, 836.5, 700] as [CGFloat])
+    func twoAcrossFillThePagerExactly(pager: CGFloat) {
+        // J-8: at the last page both cards sit flush on the margins; two cards and the 12 pt gap are the pager wide.
+        let w = LatestUpdatesDeck.cardWidth(in: pager, perScreen: 2)
+        #expect(abs(2 * w + 12 - pager) < 0.001)
+    }
 }
