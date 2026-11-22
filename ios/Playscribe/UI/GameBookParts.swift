@@ -305,6 +305,9 @@ struct SpoilerLine: View {
         Button {
             model.setSpoilersShown(gameID, !shown)
             model.show(Toast(text: shown ? "Spoilers hidden" : "Spoilers shown"))
+            // Only the person's own flip moves the tour on: watching the stored value also caught the demo route setting it,
+            // which ended step 3 before its card showed (c73186d2, tour/3).
+            model.tourNoticed(spoilersToggled: true)
         } label: {
             // At accessibility sizes the label takes the full width in whole words and the Show button sits under it,
             // on its own 44 pt line, so the label never breaks by letter and the button is never cut by the next row.
@@ -325,6 +328,7 @@ struct SpoilerLine: View {
         }
         .buttonStyle(.plain)
         .tappableFrame()
+        .tourAnchor(.spoiler)
     }
 }
 

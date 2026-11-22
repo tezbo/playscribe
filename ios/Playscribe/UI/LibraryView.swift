@@ -894,6 +894,7 @@ struct GameRow: View {
             }
             .buttonStyle(.plain)
             .tappableFrame()
+            .tourAnchor(.openGame)
             .gameQuickActions(row.game)
             .background((model.highlight == row.id || model.highlightSet.contains(row.id)) ? PlayscribeRole.action.opacity(0.15) : .clear)
             .squeezePop(id: row.id, isNew: model.highlightSet.contains(row.id))
@@ -965,6 +966,10 @@ struct GameTile: View {
     }
 
     var body: some View {
+        tile.tourAnchor(.openGame)
+    }
+
+    private var tile: some View {
         Button { model.openGame(row.id) } label: {
             // Height from the width (3:4), so the grid's row height is the tile's (J-5). A tile
             // sized only by its overlays measured ~50 pt in a flow layout and rows overlapped.
