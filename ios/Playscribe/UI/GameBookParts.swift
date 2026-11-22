@@ -325,6 +325,7 @@ struct SpoilerLine: View {
         }
         .buttonStyle(.plain)
         .tappableFrame()
+        .tourAnchor(.spoiler)
     }
 }
 

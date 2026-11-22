@@ -1782,3 +1782,40 @@ final class FinalFixTests: XCTestCase {
         app.terminate()
     }
 }
+
+/// 6b intro tour: the welcome starts it, every step has Next (Done on the last) and Skip tour, and it ends for good.
+final class IntroTourUITests: XCTestCase {
+    func testWelcomeThenThreeStepsThenDone() throws {
+        let app = XCUIApplication()
+        app.launchArguments = ["-qaRoute", "tour/welcome"]
+        app.launch()
+        let welcome = app.descendants(matching: .any)["tourWelcome"]
+        XCTAssertTrue(welcome.waitForExistence(timeout: 8), "the welcome shows")
+        app.buttons["Take a 30-second tour"].tap()
+        let card = app.descendants(matching: .any)["tourCard"]
+        XCTAssertTrue(card.waitForExistence(timeout: 5), "step 1 shows")
+        XCTAssertTrue(app.staticTexts["1 of 3"].exists || app.staticTexts.containing(NSPredicate(format: "label CONTAINS 'step 1 of 3'")).count > 0)
+        for _ in 0..<2 {
+            XCTAssertTrue(app.buttons["Skip tour"].exists, "Skip tour on every step")
+            app.buttons["Next"].tap()
+            sleep(2)
+        }
+        XCTAssertTrue(app.buttons["Done"].waitForExistence(timeout: 5), "the last step says Done")
+        app.buttons["Done"].tap()
+        sleep(1)
+        XCTAssertFalse(card.exists, "Done ends the tour")
+    }
+
+    func testSkipTourEndsIt() throws {
+        let app = XCUIApplication()
+        app.launchArguments = ["-qaRoute", "tour/1"]
+        app.launch()
+        let card = app.descendants(matching: .any)["tourCard"]
+        XCTAssertTrue(card.waitForExistence(timeout: 8), "step 1 shows")
+        XCTAssertGreaterThanOrEqual(app.buttons["Skip tour"].frame.height, 44)
+        XCTAssertGreaterThanOrEqual(app.buttons["Next"].frame.height, 44)
+        app.buttons["Skip tour"].tap()
+        sleep(1)
+        XCTAssertFalse(card.exists, "Skip tour ends it")
+    }
+}

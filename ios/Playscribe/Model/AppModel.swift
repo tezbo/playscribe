@@ -171,6 +171,8 @@ struct PersistedState: Codable {
     var alertedIssues: Set<String>?
     /// The first-run welcome was used or skipped; the plain empty Library shows after that.
     var welcomeDone: Bool?
+    /// 6b: the intro tour was taken, finished or skipped. It never replays by itself; Settings has "Replay tour".
+    var tourDone: Bool?
 }
 
 struct Toast: Equatable {
@@ -226,6 +228,9 @@ final class AppModel {
     /// QA: route add/keyboard focuses the Add search field so the keyboard is up.
     var addSearchFocus = false
     var settingsOpen = false
+    /// 6b intro tour: the welcome card is up, or the step showing (nil: no tour).
+    var tourWelcome = false
+    var tourStep: TourStep?
     var player: (gameID: String, releaseID: String)?
     /// A game's trailer from its basics, or a Gallery video (no release). The game gives the Tabletop stage its key art.
     var trailer: (videoID: String, name: String, gameID: String?)?
@@ -977,6 +982,19 @@ final class AppModel {
             // R-7: `chapter/<game>/world` opens Companion on its World filter.
             if parts[1] == Chapter.world.rawValue { setCompanionKind(parts[0], .world) }
         case "first-run": resetToFirstRun()
+        // 6b: `tour/<welcome|1|2|3>[/empty]`, the welcome or a step, with the demo Library or an empty one; `tour/3/none` is the
+        // text-only card (no spoiler switch to point at). Step 3 opens the spoiler demo update so the switch is on screen.
+        case "tour":
+            if parts.contains("empty") { resetToFirstRun(); data.welcomeDone = true } else if parts.first != "3" { resetDemo() }
+            tourWelcome = false
+            switch parts.first {
+            case "welcome": tourStep = nil; tourWelcome = true
+            case "2": startTour(); tourStep = .updates
+            case "3":
+                if parts.count > 1 && parts[1] == "none" { resetDemo(); startTour(); tourStep = .spoiler }
+                else { openSpoilerDemo(); tourStep = .spoiler }
+            default: startTour()
+            }
         case "demo": resetDemo()
         case "store-set":
             loadStoreSet(plus: parts.first == "plus")
@@ -1517,6 +1535,9 @@ final class AppModel {
         if data.keepCurrent == true { setKeepCurrent(false) }
         data = PersistedState(collection: [])
         UserDefaults.standard.set(false, forKey: "didOnboard")
+        tourStep = nil
+        // A reset is a first run again: the welcome offers the tour once the Settings sheet has closed (never on QA launches).
+        tourWelcome = !Self.isQALaunch
         toast = nil
         pill = nil
         NotificationService.shared.updateBadge(0)
