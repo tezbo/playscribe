@@ -25,7 +25,7 @@ nonisolated enum PlayscribeRole {
     // Text.
     static let textPrimarySpec = Spec(name: "textPrimary", light: 0x1B1822, dark: PlayscribeColor.textPrimary)
     static let textSecondarySpec = Spec(name: "textSecondary", light: 0x625C58, dark: PlayscribeColor.textSecondary)
-    static let textTertiarySpec = Spec(name: "textTertiary", light: 0x6B6370, dark: PlayscribeColor.textTertiary)
+    static let textTertiarySpec = Spec(name: "textTertiary", light: 0x665E6B, dark: PlayscribeColor.textTertiary)
     // Unread (`new`) and interactive (`action`) share a hue and nothing else.
     static let newTextSpec = Spec(name: "newText", light: 0xA04E0D, dark: PlayscribeColor.accent)
     static let newGraphicSpec = Spec(name: "newGraphic", light: 0xB45A12, dark: PlayscribeColor.accent)

@@ -11,7 +11,7 @@ struct RoleTokenTests {
     @Test func lightHexValuesAreIrissTable() {
         let expected: [String: UInt32] = [
             "bg": 0xFBF4E6, "card": 0xF4EEE3, "chipFill": 0xEAE1D0, "textPrimary": 0x1B1822, "textSecondary": 0x625C58,
-            "textTertiary": 0x6B6370, "newText": 0xA04E0D, "newGraphic": 0xB45A12, "action": 0xA04E0D, "onAction": 0xFBF4E6,
+            "textTertiary": 0x665E6B, "newText": 0xA04E0D, "newGraphic": 0xB45A12, "action": 0xA04E0D, "onAction": 0xFBF4E6,
             "link": 0xA04E0D, "selectedChipFill": 0xE3D2B3, "selectedChipText": 0x1B1822, "controlBorder": 0x857A68, "hairline": 0xCFC4B0,
         ]
         for (name, hex) in expected {
@@ -29,6 +29,8 @@ struct RoleTokenTests {
         #expect(ratio(PlayscribeRole.textSecondarySpec, card) >= 5.6)
         #expect(ratio(PlayscribeRole.textSecondarySpec, chip) >= 5.0)
         for surface in [bg, card] { #expect(ratio(PlayscribeRole.textTertiarySpec, surface) >= 4.9) }
+        // #594 (Iris): tertiary is #665E6B in light so hint text on a chip clears 4.5:1 too (4.79:1 on chipFill).
+        #expect(ratio(PlayscribeRole.textTertiarySpec, chip) >= 4.7)
         for surface in [bg, card, chip] { #expect(ratio(PlayscribeRole.newTextSpec, surface) >= 4.5) }
         #expect(ratio(PlayscribeRole.linkSpec, bg) >= 5.3)
         #expect(ratio(PlayscribeRole.selectedChipTextSpec, PlayscribeRole.selectedChipFillSpec) >= 11.7)
