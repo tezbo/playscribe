@@ -41,7 +41,7 @@ final class LibraryFeedRedrawTests: XCTestCase {
         let pose = ReleaseRowTests.pose(app)
         let whyAfter = why.exists ? why.label : "none"
         let note = "\(pose); pulse \(pulse ? "on" : "off"); body runs \(after - before) (\(before) to \(after))\nbefore \(whyBefore)\nafter \(whyAfter)"
-        print("LibraryFeedRedraw: \(note)")
+        print("LibraryFeedRedraw: " + note.replacingOccurrences(of: "\n", with: " | "))
         XCTContext.runActivity(named: note) { _ in }
         return after - before
     }
