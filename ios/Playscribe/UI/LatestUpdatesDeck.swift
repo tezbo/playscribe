@@ -771,7 +771,7 @@ struct PageEdge: View {
         }
         .overlay(alignment: .topLeading) {
             if let joined {
-                Capsule()
+                RoundedRectangle(cornerRadius: 1.5)
                     .fill(PlayscribeColor.accent)
                     .frame(width: joined.width, height: joined.height)
                     .offset(x: joined.minX, y: joined.minY)
