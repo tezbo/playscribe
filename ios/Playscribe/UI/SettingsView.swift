@@ -192,6 +192,25 @@ struct SettingsView: View {
                         Text("A soft pop when you add games. Never plays while you are listening to something else.")
                     }
 
+                    // 6b: the tour never replays by itself; this is the way back to it.
+                    Section {
+                        Button {
+                            dismiss()
+                            // Once the sheet or panel has gone, so step 1 lands on the Library, not under Settings.
+                            Task { @MainActor in
+                                try? await Task.sleep(for: .milliseconds(400))
+                                model.startTour()
+                            }
+                        } label: {
+                            Text(TourCopy.replay).frame(maxWidth: .infinity, minHeight: 52, alignment: .leading).contentShape(Rectangle())
+                        }
+                        .accessibilityLabel("\(TourCopy.replay), starts the tour again")
+                        .accessibilityIdentifier("replayTour")
+                        .tappableFrame()
+                    } footer: {
+                        Text(TourCopy.replayFooter)
+                    }
+
                     Section {
                         Toggle("Autoplay videos", isOn: $autoplayVideos).frame(minHeight: 52)
                             .accessibilityHint("Videos start as soon as they open. Off when Reduce Motion is on.")

@@ -709,6 +709,8 @@ struct PopularCover: View {
                     }
             }
             .buttonStyle(.plain)
+            // 6b step 1 with an empty Library: the first Popular on PS5 cover (opening it browses, it never adds).
+            .tourAnchor(.openGame)
             // Not `.disabled`: a disabled plain button dims to about 35 percent (Quinn's brightness check, 1ea80f2). A tap on a marked
             // cover simply does nothing.
             // The cover keeps one label and hint before and after the tick (it opens the game either way); the tick says "in your
