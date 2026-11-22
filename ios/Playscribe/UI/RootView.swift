@@ -384,10 +384,7 @@ struct LibraryRoot: View {
                     if id.hasPrefix("release:"), let gameID = model.nav.gameID {
                         ReleaseDetailView(gameID: gameID, releaseID: String(id.dropFirst("release:".count))).tabletopChrome(duo)
                     } else {
-                        // One view per game (Terry, beta 3): opening another game in place ("View game" at the end of a
-                        // page) kept the old page's scroll state, so the new, shorter page opened scrolled past its end,
-                        // blank until scrolled. A new identity gives it its own scroll, from its top or its saved place.
-                        GameBookView(gameID: id).tabletopChrome(duo).auditActive(model.nav.detailReleaseID == nil).id(id)
+                        GameBookView(gameID: id).tabletopChrome(duo).auditActive(model.nav.detailReleaseID == nil)
                     }
                 }
         }
