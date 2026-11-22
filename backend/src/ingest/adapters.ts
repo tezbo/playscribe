@@ -326,7 +326,7 @@ const forGame = (s: SourceDef, posts: Post[]): Post[] =>
     : posts
 
 export const fetchPosts = async (fetchFn: FetchFn, s: SourceDef, opts: PageOpts = {}): Promise<Post[]> => {
-  if (s.kind === 'steamNews') return steam(fetchFn, s, opts.until ? 100 : 20, opts.until)
+  if (s.kind === 'steamNews') return forGame(s, await steam(fetchFn, s, opts.until ? 100 : 20, opts.until))
   if (s.kind === 'pressIndex') return pressIndex(fetchFn, s, opts)
   if (s.kind === 'bluesky') return forGame(s, await bluesky(fetchFn, s, opts.until))
   if (s.kind === 'mojangNotes') return mojangNotes(fetchFn, s)
