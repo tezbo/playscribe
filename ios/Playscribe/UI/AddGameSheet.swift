@@ -46,6 +46,9 @@ struct AddGameSheet: View {
     private var draftKey: String {
         "\(status)|\(query)|\(pickOrder)|\(String(describing: method))|\(matches?.count ?? -1)|\(custom)|\(customName)|\(customPlatform)|\(letter ?? "")"
     }
+    /// Tabletop Type it (gate #597, Mac 3030955b: two rows under the 56 pt header): the header row goes, as in the 0.2.0 design,
+    /// and Back and Close sit in the search row, so the lower half shows three results.
+    private var tabletopTypeIt: Bool { duo.pose == .tabletop && !custom && matches == nil && method == .typeIt }
     private var titleHidden: Bool {
         guard duo.pose == .tabletop, keyboardHeight > 0 else { return false }
         let lowerHalf = duo.size.height - (duo.division?.maxY ?? duo.size.height / 2)
@@ -176,7 +179,7 @@ struct AddGameSheet: View {
     /// title, Back and Close live in this row: 24 pt under the fold band, Close 44 pt at the
     /// trailing edge. Nothing here is above the fold (G-4).
     @ViewBuilder private var tabletopHeader: some View {
-        if duo.pose == .tabletop && !custom {
+        if duo.pose == .tabletop && !custom && !tabletopTypeIt {
             HStack(spacing: 8) {
                 if method != nil {
                     Button { if matches != nil { matches = nil } else { method = nil } } label: {
@@ -247,14 +250,26 @@ struct AddGameSheet: View {
                         // at least three results stay visible in the lower half.
                         VStack(alignment: .leading, spacing: 4) {
                             HStack(spacing: 8) {
-                                Button { dismiss() } label: {
-                                    Image(systemName: "xmark").font(PlayscribeFont.headline)
-                                        .frame(width: 44, height: 44).contentShape(Rectangle())
+                                if tabletopTypeIt {
+                                    Button { method = nil } label: {
+                                        Image(systemName: "chevron.backward").font(PlayscribeFont.headline)
+                                            .frame(width: 44, height: 44).contentShape(Rectangle())
+                                    }
+                                    .buttonStyle(.plain)
+                                    .foregroundStyle(PlayscribeRole.action)
+                                    .accessibilityLabel("Back")
+                                    .accessibilityIdentifier("back")
+                                    .tappableFrame()
+                                } else {
+                                    Button { dismiss() } label: {
+                                        Image(systemName: "xmark").font(PlayscribeFont.headline)
+                                            .frame(width: 44, height: 44).contentShape(Rectangle())
+                                    }
+                                    .buttonStyle(.plain)
+                                    .foregroundStyle(PlayscribeRole.action)
+                                    .accessibilityLabel("Close")
+                                    .tappableFrame()
                                 }
-                                .buttonStyle(.plain)
-                                .foregroundStyle(PlayscribeRole.action)
-                                .accessibilityLabel("Close")
-                                .tappableFrame()
                                 Picker("Add as", selection: $status) {
                                     ForEach(OwnershipStatus.allCases) { Text($0.label).tag($0) }
                                 }
@@ -262,6 +277,17 @@ struct AddGameSheet: View {
                                 .fixedSize()
                                 .frame(minHeight: 44)
                                 TabletopSearchButton(letter: letter, prompt: "Search PS5 games", hintShown: $hintShown)
+                                if tabletopTypeIt {
+                                    Button { dismiss() } label: {
+                                        Image(systemName: "xmark").font(PlayscribeFont.headline)
+                                            .frame(width: 44, height: 44).contentShape(Rectangle())
+                                    }
+                                    .buttonStyle(.plain)
+                                    .foregroundStyle(PlayscribeRole.textPrimary)
+                                    .accessibilityLabel("Close")
+                                    .accessibilityIdentifier("close")
+                                    .tappableFrame()
+                                }
                             }
                             TabletopSearchHint(shown: hintShown)
                             TabletopLetterStrip(letter: $letter)
@@ -319,6 +345,9 @@ struct AddGameSheet: View {
                 }
             }
         }
+        // Tabletop: compact section spacing and a 4 pt top margin, so the third result clears the panel bottom (gate #597).
+        .listSectionSpacing(duo.pose == .tabletop ? .compact : .default)
+        .modifier(TabletopTopMargin(on: duo.pose == .tabletop))
         // Terry, 8 Nov: the keyboard could not be put away. Scrolling dismisses it, and so does a tap outside the field and rows.
         .dismissesKeyboardOnOutsideTap()
     }
@@ -799,5 +828,13 @@ private struct TickPressStyle: ButtonStyle {
             .opacity(configuration.isPressed ? 0.7 : 1)
             .animation(.easeOut(duration: 0.08), value: configuration.isPressed)
             .onChange(of: configuration.isPressed) { _, now in pressing = now }
+    }
+}
+
+/// A 4 pt top content margin in Tabletop only; every other pose keeps the List's own.
+private struct TabletopTopMargin: ViewModifier {
+    let on: Bool
+    func body(content: Content) -> some View {
+        if on { content.contentMargins(.top, 4, for: .scrollContent) } else { content }
     }
 }
