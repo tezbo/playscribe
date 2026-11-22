@@ -33,7 +33,10 @@ final class BackPathTests: XCTestCase {
         // Back wherever this pose draws it (Mac at 396f307f): the navigation bar in Open portrait; Closed landscape and Book have
         // no system bar Back or tab bar to read, so any button labelled Back counts, and the screen is logged when none shows.
         let backs = app.buttons.matching(NSPredicate(format: "label BEGINSWITH 'Back'"))
-        let back = app.navigationBars.buttons.firstMatch.exists ? app.navigationBars.buttons.firstMatch : backs.firstMatch
+        // Closed landscape (Mac at 8c88e0b8): the system Back is a floating "BackButton" with no label, outside any navigation bar.
+        let system = app.buttons["BackButton"].firstMatch
+        let back = app.navigationBars.buttons.firstMatch.exists ? app.navigationBars.buttons.firstMatch
+            : system.waitForExistence(timeout: 3) ? system : backs.firstMatch
         if !back.waitForExistence(timeout: 5) {
             let shot = XCTAttachment(screenshot: XCUIScreen.main.screenshot()); shot.name = "backpath-no-back"; shot.lifetime = .keepAlways; add(shot)
             let seen = app.buttons.allElementsBoundByIndex.prefix(40).map { "\($0.identifier)|\($0.label)|\($0.frame)" }
