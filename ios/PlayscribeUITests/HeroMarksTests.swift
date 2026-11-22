@@ -23,10 +23,31 @@ final class HeroMarksTests: XCTestCase {
         let row = CGRect(x: frames.map(\.minX).min()!, y: frames[0].midY - 10,
                          width: frames.map(\.maxX).max()! - frames.map(\.minX).min()!, height: 20)
 
+        // The measurement must see the marks before it can say anything about them (Mac at 85ab7f8e: 0 runs in every frame of
+        // every pose, so neither red nor green meant anything). A system alert over the app is dismissed; a screenshot that
+        // comes back black (the Mac simulator's inner display in Open) skips, and the motion is measured from a recording.
+        Self.dismissSystemAlerts()
+        let first = XCUIScreen.main.screenshot()
+        let firstImage = first.image
+        if Self.isBlack(firstImage) {
+            app.terminate()
+            throw XCTSkip("the screenshot is black (Open inner display on the Mac simulator): measure from a recording")
+        }
+        let atRest = Self.amberRuns(in: row, of: firstImage)
+        if atRest != 1 {
+            let a = XCTAttachment(screenshot: first)
+            a.name = "marks-not-seen-at-rest"
+            a.lifetime = .keepAlways
+            add(a)
+            XCTFail("measurement invalid: \(atRest) amber runs at rest in \(row) (brightest band pixel \(Self.reddest(in: row, of: firstImage))), so the motion count would mean nothing")
+            return
+        }
+
         var worst = 0, samples = 0
         var log: [String] = []
-        for flick in 0..<6 {
-            let forward = flick < 4
+        let flicks = 12
+        for flick in 0..<flicks {
+            let forward = flick % 6 < 4
             let from = pager.coordinate(withNormalizedOffset: CGVector(dx: forward ? 0.8 : 0.2, dy: 0.3))
             let to = pager.coordinate(withNormalizedOffset: CGVector(dx: forward ? 0.2 : 0.8, dy: 0.3))
             from.press(forDuration: 0.05, thenDragTo: to, withVelocity: .fast, thenHoldForDuration: 0)
@@ -56,20 +77,58 @@ final class HeroMarksTests: XCTestCase {
         XCTAssertEqual(rest, 1, "at rest the marks are one amber bar")
     }
 
-    /// Separate amber runs along the row's middle band, `rect` in points. Amber is the accent (255, 176, 79); a run ends at a
-    /// gap wider than 2 pt.
-    static func amberRuns(in rect: CGRect, of image: UIImage) -> Int {
-        guard let cg = image.cgImage else { return 0 }
+    /// Taps the first button of any SpringBoard alert (notification permission and the like) so it cannot dim the screen.
+    static func dismissSystemAlerts() {
+        let springboard = XCUIApplication(bundleIdentifier: "com.apple.springboard")
+        for _ in 0..<3 {
+            let alert = springboard.alerts.firstMatch
+            guard alert.waitForExistence(timeout: 1) else { return }
+            let allow = alert.buttons["Allow"]
+            (allow.exists ? allow : alert.buttons.element(boundBy: 0)).tap()
+            sleep(1)
+        }
+    }
+
+    /// Whether every sampled pixel of the screenshot is near black.
+    static func isBlack(_ image: UIImage) -> Bool {
+        let size = image.size
+        return reddest(in: CGRect(origin: .zero, size: size), of: image, step: 8).max <= 12
+    }
+
+    /// The pixel with the largest red-minus-blue in `rect` (points), and the brightest channel seen, for the failure message.
+    static func reddest(in rect: CGRect, of image: UIImage, step: Int = 1) -> (rgb: [Int], max: Int) {
+        guard case let (bytes, w, h)? = pixels(in: rect, of: image) else { return ([], 0) }
+        var best = [0, 0, 0], bestScore = Int.min, top = 0
+        for y in stride(from: 0, to: h, by: step) {
+            for x in stride(from: 0, to: w, by: step) {
+                let i = (y * w + x) * 4
+                let r = Int(bytes[i]), g = Int(bytes[i + 1]), b = Int(bytes[i + 2])
+                top = max(top, r, g, b)
+                if r - b > bestScore { bestScore = r - b; best = [r, g, b] }
+            }
+        }
+        return (best, top)
+    }
+
+    static func pixels(in rect: CGRect, of image: UIImage) -> ([UInt8], Int, Int)? {
+        guard let cg = image.cgImage else { return nil }
         let scale = CGFloat(cg.width) / image.size.width
         let px = CGRect(x: rect.minX * scale, y: rect.minY * scale, width: rect.width * scale, height: rect.height * scale)
             .integral.intersection(CGRect(x: 0, y: 0, width: cg.width, height: cg.height))
-        guard px.width > 0, px.height > 0, let crop = cg.cropping(to: px) else { return 0 }
+        guard px.width > 0, px.height > 0, let crop = cg.cropping(to: px) else { return nil }
         let w = crop.width, h = crop.height
         guard let ctx = CGContext(data: nil, width: w, height: h, bitsPerComponent: 8, bytesPerRow: w * 4,
-                                  space: CGColorSpaceCreateDeviceRGB(), bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue) else { return 0 }
+                                  space: CGColorSpaceCreateDeviceRGB(), bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue) else { return nil }
         ctx.clear(CGRect(x: 0, y: 0, width: w, height: h))
         ctx.draw(crop, in: CGRect(x: 0, y: 0, width: w, height: h))
-        let bytes = Array(UnsafeBufferPointer(start: ctx.data!.assumingMemoryBound(to: UInt8.self), count: w * h * 4))
+        return (Array(UnsafeBufferPointer(start: ctx.data!.assumingMemoryBound(to: UInt8.self), count: w * h * 4)), w, h)
+    }
+
+    /// Separate amber runs along the row's middle band, `rect` in points. Amber is the accent (255, 176, 79); a run ends at a
+    /// gap wider than 2 pt.
+    static func amberRuns(in rect: CGRect, of image: UIImage) -> Int {
+        guard case let (bytes, w, h)? = pixels(in: rect, of: image), let cg = image.cgImage else { return 0 }
+        let scale = CGFloat(cg.width) / image.size.width
         func amber(_ x: Int) -> Bool {
             for y in 0..<h {
                 let i = (y * w + x) * 4
