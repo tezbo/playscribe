@@ -213,6 +213,8 @@ struct TourOverlay: View {
     }
     private var onRail: Bool { duo.pose == .tabletop || duo.isLandscape }
     @State private var origin: CGPoint = .zero
+    @State private var textHeight: CGFloat = 0
+    @State private var buttonsHeight: CGFloat = 44
     @State private var moreAbove = false
     @State private var moreBelow = false
 
@@ -268,8 +270,10 @@ struct TourOverlay: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 6) {
                     if let step {
-                        Text(step.counter).font(PlayscribeFont.footnote).foregroundStyle(PlayscribeRole.textSecondary)
-                            .accessibilityHidden(true)
+                        if !wide {
+                            Text(step.counter).font(PlayscribeFont.footnote).foregroundStyle(PlayscribeRole.textSecondary)
+                                .accessibilityHidden(true)
+                        }
                         Text(step.title).font(PlayscribeFont.headline).foregroundStyle(PlayscribeRole.textPrimary)
                             .accessibilityLabel("Tour, step \(step.number) of \(TourStep.allCases.count). \(step.title)")
                             .accessibilityFocused($focused)
@@ -290,8 +294,10 @@ struct TourOverlay: View {
                 }
                 .fixedSize(horizontal: false, vertical: true)
                 .frame(maxWidth: .infinity, alignment: .leading)
+                .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { textHeight = $0 }
             }
             .scrollBounceBehavior(.basedOnSize)
+            .accessibilityIdentifier("tourText")
             // AX5: the text scrolls inside the card and fades at a cut edge so it reads as "more"; the buttons stay put below.
             .onScrollGeometryChange(for: [Bool].self) { g in
                 [g.contentOffset.y > 1, g.contentSize.height - g.contentOffset.y > g.containerSize.height + 1]
@@ -301,9 +307,11 @@ struct TourOverlay: View {
                                          .init(color: .black, location: moreBelow ? 0.85 : 1),
                                          .init(color: moreBelow ? .clear : .black, location: 1)],
                                  startPoint: .top, endPoint: .bottom))
-            .frame(maxHeight: max(60, maxHeight - (typeSize.isAccessibilitySize ? (wide ? 110 : 180) : 76)))
-            .fixedSize(horizontal: false, vertical: !typeSize.isAccessibilitySize)
+            // Exactly the text's height, up to what the card has left after its padding and the measured buttons; only past
+            // that does it scroll (a max-height frame let the scroll view settle shorter than its room: e399276e AX5).
+            .frame(height: min(max(textHeight, 1), max(60, maxHeight - buttonsHeight - 12 - 32)))
             buttons(step: step)
+                .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { buttonsHeight = $0 }
         }
         .padding(16)
         .background(PlayscribeRole.card, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
@@ -317,6 +325,11 @@ struct TourOverlay: View {
     @ViewBuilder private func buttons(step: TourStep?) -> some View {
         let layout = typeSize.isAccessibilitySize && !wide ? AnyLayout(VStackLayout(spacing: 8)) : AnyLayout(HStackLayout(spacing: 8))
         layout {
+            if let step, wide {
+                // Wide AX card: the step count joins the button row, so the text keeps its height for the body.
+                Text(step.counter).font(PlayscribeFont.footnote).foregroundStyle(PlayscribeRole.textSecondary)
+                    .fixedSize().accessibilityHidden(true)
+            }
             if let step {
                 secondary(TourCopy.skipTour) { model.endTour() }
                     .accessibilityHint("Ends the tour. You can replay it in Settings")
