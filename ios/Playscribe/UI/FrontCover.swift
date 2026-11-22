@@ -490,6 +490,12 @@ struct FrontCoverPreviewScreen: View {
                     // A sibling inside the safe area, so the rail clears the status bar and the outer camera (G-6).
                     CoverRailButton(title: "Close preview", symbol: "xmark") { dismiss() }
                         .padding(.trailing, 12).padding(.top, 8)
+                    #if INTERNAL
+                    // UI tests read the loop state here (6a item 1): the cover itself is one element and never says its mode.
+                    Text("qa-cover-loop: \(TrailerLoopQA.shared.playing ? "playing" : "off")")
+                        .font(.system(size: 1)).opacity(0.01).allowsHitTesting(false)
+                        .accessibilityIdentifier("qaCoverLoop")
+                    #endif
                 }
             }
         }

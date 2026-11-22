@@ -113,6 +113,14 @@ struct TrailerLoopArt: UIViewRepresentable {
     }
 }
 
+/// Internal builds: whether a cover loop shows its frames, for UI tests. The cover is one VoiceOver element (CM-7) and the
+/// motion mode is never announced, so the state is read from a hidden QA marker beside the cover, not from the cover itself.
+@Observable
+final class TrailerLoopQA {
+    static let shared = TrailerLoopQA()
+    var playing = false
+}
+
 /// The cover's art layer in Trailer loop mode: the key art (moving as Key-art motion while the loop loads or if it fails),
 /// with the loop over it once its first frame is ready. Pauses with the app, off screen and under Low Power Mode.
 struct TrailerLoopCoverArt<KeyArt: View>: View {
@@ -129,10 +137,10 @@ struct TrailerLoopCoverArt<KeyArt: View>: View {
                 .opacity(ready ? 1 : 0)
                 .animation(.easeInOut(duration: 0.4), value: ready)
                 .accessibilityHidden(true)
-                .accessibilityIdentifier(ready ? "coverLoopPlaying" : "coverLoopLoading")
         }
         .clipped()
         .onAppear { onScreen = true }
-        .onDisappear { onScreen = false }
+        .onDisappear { onScreen = false; TrailerLoopQA.shared.playing = false }
+        .onChange(of: ready && onScreen, initial: true) { _, now in TrailerLoopQA.shared.playing = now }
     }
 }
