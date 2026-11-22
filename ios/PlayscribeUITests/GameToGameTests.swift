@@ -13,7 +13,7 @@ final class GameToGameTests: XCTestCase {
         app.launch()
         sleep(3)
         if ReleaseRowTests.pose(app).contains("tabletop") { app.terminate(); throw XCTSkip("Tabletop's page is the lower panel") }
-        let page = app.descendants(matching: .any)["pageScroll"]
+        let page = app.descendants(matching: .any)["pageScroll"].firstMatch   // several match (Mac at c206578f)
         guard page.waitForExistence(timeout: 5) else { app.terminate(); throw XCTSkip("no one-column page in this pose (Book)") }
         for _ in 0..<10 { page.swipeUp(velocity: .fast) }
         sleep(1)
