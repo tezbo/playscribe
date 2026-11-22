@@ -30,6 +30,8 @@ final class LibraryFeedRedrawTests: XCTestCase {
         XCTAssertTrue(marker.waitForExistence(timeout: 5), "the QA body count marker is present")
         sleep(2)   // launch settles, and with the pulse on, a refresh or two have landed before counting starts
         let before = try count(marker)
+        let why = app.staticTexts["qaLibraryWhy"]
+        let whyBefore = why.exists ? why.label : "none"
         let page = app.scrollViews.firstMatch
         for i in 0..<swipes {
             if i < swipes / 2 { page.swipeUp(velocity: .fast) } else { page.swipeDown(velocity: .fast) }
@@ -37,7 +39,8 @@ final class LibraryFeedRedrawTests: XCTestCase {
         sleep(1)
         let after = try count(marker)
         let pose = ReleaseRowTests.pose(app)
-        let note = "\(pose); pulse \(pulse ? "on" : "off"); body runs \(after - before) (\(before) to \(after))"
+        let whyAfter = why.exists ? why.label : "none"
+        let note = "\(pose); pulse \(pulse ? "on" : "off"); body runs \(after - before) (\(before) to \(after))\nbefore \(whyBefore)\nafter \(whyAfter)"
         print("LibraryFeedRedraw: \(note)")
         XCTContext.runActivity(named: note) { _ in }
         return after - before

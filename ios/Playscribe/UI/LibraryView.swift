@@ -395,6 +395,7 @@ struct LibraryShelf: View {
         #endif
         #if INTERNAL
         let _ = QABodyCount.library += 1
+        let _ = AppModel.isQALaunch ? QABodyCount.attribute(model) : ()
         #endif
         @Bindable var model = model
         let rows = duo.pose == .tabletop && letter != nil
@@ -642,6 +643,8 @@ struct LibraryShelf: View {
                         // bug-library-redraw-on-feed-refresh: how many times this body has run, read by LibraryFeedRedrawTests.
                         Text("qa-library-body: \(QABodyCount.library)").font(.system(size: 1)).opacity(0.01)
                             .accessibilityIdentifier("qaLibraryBody")
+                        Text("qa-library-why: \(QABodyCount.whyLine)").font(.system(size: 1)).opacity(0.01)
+                            .accessibilityIdentifier("qaLibraryWhy")
                     }
                     #endif
                 }
@@ -1479,5 +1482,29 @@ private struct FeedStatusLine: View {
 /// never causes a run.
 @MainActor enum QABodyCount {
     static var library = 0
+    /// The second redraw attempt measures first (Mac at 0105a92a: 55 runs with refreshes, 13 from scrolling alone in Closed):
+    /// which AppModel fields changed between one body run and the next, counted by name. Read through Mirror, which bypasses
+    /// Observation, so measuring adds no dependency. "(no model change)" is a run the model did not cause (environment, state).
+    static var why: [String: Int] = [:]
+    private static var last: [String: Int] = [:]
+    static func attribute(_ model: AppModel) {
+        var now: [String: Int] = [:]
+        func walk(_ value: Any, _ prefix: String, depth: Int) {
+            for c in Mirror(reflecting: value).children {
+                guard let raw = c.label, !raw.contains("observationRegistrar") else { continue }
+                let name = prefix + raw.trimmingCharacters(in: CharacterSet(charactersIn: "_$"))
+                if depth > 0, name.hasSuffix("data") || name.hasSuffix("nav") { walk(c.value, name + ".", depth: depth - 1) }
+                now[name] = String(describing: c.value).hashValue
+            }
+        }
+        walk(model, "", depth: 2)
+        if !last.isEmpty {
+            var changed = now.filter { last[$0.key] != nil && last[$0.key] != $0.value }.map(\.key)
+            if changed.isEmpty { changed = ["(no model change)"] }
+            for k in changed { why[k, default: 0] += 1 }
+        }
+        last = now
+    }
+    static var whyLine: String { why.sorted { $0.value > $1.value }.map { "\($0.key)=\($0.value)" }.joined(separator: " ") }
 }
 #endif
