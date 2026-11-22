@@ -15,9 +15,11 @@ Playscribe 0.6 is a fresh coat: new colour roles, clearer art, one deck card per
 6. Play an update video, a trailer and a Gallery video, Closed and in Tabletop. All play inside Playscribe. In Tabletop the reflection sits under the video. If a video can't play here, you see an Open in YouTube button instead of an error.
 7. Turn on Reduce Transparency in your phone's Settings (Accessibility, then Display & Text Size). In Playscribe, the cards in Settings and Add a game have a visible outline.
 8. Open Settings, then Video lab. Nothing crashes.
-9. Add a game with Say it: Add a game, Say it, then tap the microphone once and speak a title. Build 16 crashed here. Playscribe stays open, listens, and stops by itself when you pause (tap again to stop early). Allow Speech Recognition and the Microphone if asked.
+9. Add a game with Say it: Add a game, Say it, then tap the microphone once and say two titles, like Elden Ring and Astro Bot. You don’t need to hold it. Try it twice: once tap the microphone again to stop, once just pause and it stops by itself. Both times Playscribe stays open and shows the titles it heard. Allow Speech Recognition and the Microphone if asked.
 10. On a game page, open More, then Check for updates. A message says it is checking, then either how many new updates there are, "No new updates" with the time you checked, or why it couldn’t check (try it in Airplane Mode too).
 11. Closed or Open, play an update video or a trailer and tap Full screen, beside Close. The video fills the screen at 16:9 and keeps playing, with Exit full screen at the top right above it. Turning the phone keeps full screen and re-fits the video; folding into Book or Tabletop leaves it, and playback keeps going. Book and Tabletop have no Full screen button.
+12. Open or Closed landscape, look at the marks under the Library’s latest-updates deck while two or more cards are on screen. The lit marks join into one amber bar that slides as you swipe, not separate notches.
+13. Tap the last mark under the deck. The last card lines up flush with the edge of the screen, the same as when you swipe to the end, with no gap or overshoot.
 
 Feedback you send through TestFlight, including its comment, may appear in our public issue tracker, so leave out personal details.
 
