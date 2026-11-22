@@ -72,6 +72,12 @@ jobs:
             "${extra[@]}" \
             CODE_SIGNING_ALLOWED=NO > build.log 2>&1 || status=$?
           grep -E 'error:|\*\* (BUILD|TEST)|Test run with|Test .* failed|Executed|MirrorPixelTests ' build.log || true
+          if [ "${ITER:-1}" -gt 1 ] 2>/dev/null; then
+            # Loop evidence (bug-065): how many test passes and failures the iterations produced, and the xcresult's own count.
+            echo "loop: $(grep -cE 'Test .* passed after' build.log) passes, $(grep -cE 'Test .* failed after' build.log) failures over $ITER iterations"
+            grep -iE 'iteration|repetition' build.log | head -20 || true
+            xcrun xcresulttool get test-results summary --path build/TestResults.xcresult 2>/dev/null | head -40 || true
+          fi
           echo "xcodebuild exited with $status"
           exit "$status"
         env:
