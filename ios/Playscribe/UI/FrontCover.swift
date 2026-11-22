@@ -6,7 +6,7 @@ import SwiftUI
 // below. LibraryView wraps it after #424 and #455 merge, so until then it shows only in the internal preview
 // (Settings > Front cover, or `-qaRoute cover` / `cover/one`). Nothing here is reachable in a TestFlight or App Store build.
 
-/// The three motion modes (Settings > "Cover motion"). Still and Key-art motion are built; the Trailer loop lands in its own PR.
+/// The three motion modes (Settings > "Cover motion"). All three are built; the Trailer loop is in TrailerLoop.swift (6a).
 enum CoverMotion: String, CaseIterable, Identifiable {
     case trailer, keyArt, still
     var id: String { rawValue }
@@ -24,7 +24,7 @@ enum CoverMotion: String, CaseIterable, Identifiable {
     }
 
     /// Built so far. The Settings row lists only these, and a stored mode that is not built yet shows Still.
-    var isBuilt: Bool { self != .trailer }
+    var isBuilt: Bool { true }
 
     /// The next mode down: a Trailer loop that cannot play shows Key-art motion, and Key-art motion falls back to Still.
     var fallback: CoverMotion {
@@ -121,9 +121,13 @@ struct FrontCoverPage: View {
             ZStack(alignment: .bottomLeading) {
                 // Iris (#467): at accessibility sizes the plate covers the lower half, so the focal point goes to the top half.
                 // Key-art motion (s-07) moves only this layer; the shade and the plate below stay still.
-                KeyArtMotionArt(asset: card.game.keyArtAsset, game: card.game, focus: card.game.coverFocus ?? CoverFocus(x: 0.5, y: 0.5),
-                                focusTargetY: typeSize.isAccessibilitySize ? 0.25 : 0.5,
-                                maxFocalY: typeSize.isAccessibilitySize ? 0.5 : 1, moving: moving)
+                // Trailer loop (6a): the official loop over the key art once its first frame is ready; the key art moves under
+                // it meanwhile, and stays if the source fails.
+                if let loop = trailerLoop {
+                    TrailerLoopCoverArt(url: loop) { keyArt(moving: keyArtMoves) }
+                } else {
+                    keyArt(moving: moving)
+                }
                 if !solid { fade }
                 VStack(alignment: .leading, spacing: 18) {
                     FrontCoverPlate(card: card)
@@ -160,6 +164,32 @@ struct FrontCoverPage: View {
 
     private var solid: Bool { contrast == .increased || reduceTransparency || qaSolid }
 
+    /// The lead card (the first in the deck) is the one `-qaCoverLoop` applies to.
+    var lead = false
+    @State private var lowPower = ProcessInfo.processInfo.isLowPowerModeEnabled
+
+    private func keyArt(moving: Bool) -> some View {
+        KeyArtMotionArt(asset: card.game.keyArtAsset, game: card.game, focus: card.game.coverFocus ?? CoverFocus(x: 0.5, y: 0.5),
+                        focusTargetY: typeSize.isAccessibilitySize ? 0.25 : 0.5,
+                        maxFocalY: typeSize.isAccessibilitySize ? 0.5 : 1, moving: moving)
+            .onReceive(NotificationCenter.default.publisher(for: .NSProcessInfoPowerStateDidChange)) { _ in
+                lowPower = ProcessInfo.processInfo.isLowPowerModeEnabled
+            }
+    }
+
+    /// The loop to play, when Trailer loop is the resolved mode and everything it needs holds (TrailerLoopRule).
+    private var trailerLoop: URL? {
+        let url = TrailerLoopRule.url(for: card.game, lead: lead)
+        return TrailerLoopRule.plays(stored: stored, reduceMotion: reduceMotion || Self.qaReduceMotion, autoplay: autoplay,
+                                     loop: url, lowPower: lowPower) ? url : nil
+    }
+
+    /// Under a loop, the key art moves as Key-art motion would (it shows while the loop loads, or if it fails).
+    private var keyArtMoves: Bool {
+        guard let asset = card.game.keyArtAsset else { return false }
+        return !KeyArtQuality.isMurky(asset: asset)
+    }
+
     /// QA (internal builds, launch with `-qaReduceMotion YES`): the cover resolves as under Reduce Motion (CM-1), for CI stills,
     /// where the simulator's switch can't be set per launch. Read here, not from the environment: the preview is a full-screen
     /// cover presented from Settings, outside RootView's environment.
@@ -173,7 +203,9 @@ struct FrontCoverPage: View {
 
     /// Key-art motion runs when it is the resolved mode (Reduce Motion forces Still, CM-1) and the art passes the murky check.
     private var moving: Bool {
-        guard stored.resolved(reduceMotion: reduceMotion || Self.qaReduceMotion, autoplay: autoplay) == .keyArt, let asset = card.game.keyArtAsset else { return false }
+        // A Trailer loop with no loop to play (none in the feed, Low Power, not https) moves as Key-art motion.
+        let mode = stored.resolved(reduceMotion: reduceMotion || Self.qaReduceMotion, autoplay: autoplay)
+        guard mode == .keyArt || mode == .trailer, let asset = card.game.keyArtAsset else { return false }
         return !KeyArtQuality.isMurky(asset: asset)
     }
 
@@ -353,7 +385,7 @@ struct FrontCover: View {
                 LazyHStack(spacing: 0) {
                     ForEach(shown) { card in
                         FrontCoverPage(card: card, leadingInset: shown.count > 1 ? 28 : 0, railInset: railWidth,
-                                       safeArea: g.safeAreaInsets)
+                                       safeArea: g.safeAreaInsets, lead: card.id == shown.first?.id)
                             .frame(width: g.size.width, height: g.size.height)
                             .id(card.id)
                     }

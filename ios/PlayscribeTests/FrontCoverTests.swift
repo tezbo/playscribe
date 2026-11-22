@@ -31,16 +31,37 @@ struct FrontCoverTests {
         }
     }
 
-    /// A mode that is not built yet falls back down the chain; Key-art motion is built and is the default (Nadia, 13 Nov).
-    @Test func unbuiltModesFallBack() {
-        for mode in CoverMotion.allCases {
-            #expect(mode.resolved(reduceMotion: false, autoplay: true).isBuilt)
-        }
-        #expect(CoverMotion.still.isBuilt)
-        #expect(CoverMotion.keyArt.isBuilt)
-        #expect(!CoverMotion.trailer.isBuilt)
-        #expect(CoverMotion.trailer.resolved(reduceMotion: false, autoplay: true) == .keyArt)
+    /// All three modes are built (6a); Key-art motion stays the default (Nadia, 13 Nov), and a chosen Trailer loop resolves to
+    /// itself when Autoplay videos is on.
+    @Test func allModesBuiltAndTrailerResolves() {
+        for mode in CoverMotion.allCases { #expect(mode.isBuilt) }
+        #expect(CoverMotion.trailer.resolved(reduceMotion: false, autoplay: true) == .trailer)
         #expect(CoverMotion.defaultMode == .keyArt)
+    }
+
+    /// 6a: the loop plays only when chosen, Autoplay is on, Reduce Motion is off, the game has an https loop and Low Power is
+    /// off. Every other case shows Key-art motion (card AC 2).
+    @Test func trailerLoopPlaysOnlyWhenEverythingHolds() {
+        let loop = URL(string: "https://example.com/official/trailer.mp4")
+        #expect(TrailerLoopRule.plays(stored: .trailer, reduceMotion: false, autoplay: true, loop: loop, lowPower: false))
+        #expect(!TrailerLoopRule.plays(stored: .trailer, reduceMotion: true, autoplay: true, loop: loop, lowPower: false))
+        #expect(!TrailerLoopRule.plays(stored: .trailer, reduceMotion: false, autoplay: false, loop: loop, lowPower: false))
+        #expect(!TrailerLoopRule.plays(stored: .trailer, reduceMotion: false, autoplay: true, loop: nil, lowPower: false))
+        #expect(!TrailerLoopRule.plays(stored: .trailer, reduceMotion: false, autoplay: true, loop: loop, lowPower: true))
+        #expect(!TrailerLoopRule.plays(stored: .trailer, reduceMotion: false, autoplay: true,
+                                       loop: URL(string: "http://example.com/t.mp4"), lowPower: false))
+        #expect(!TrailerLoopRule.plays(stored: .keyArt, reduceMotion: false, autoplay: true, loop: loop, lowPower: false))
+        #expect(!TrailerLoopRule.plays(stored: .still, reduceMotion: false, autoplay: true, loop: loop, lowPower: false))
+    }
+
+    /// The feed's `coverLoop` decodes, and a game without one has none.
+    @Test func coverLoopDecodesFromTheFeed() throws {
+        let json = #"{"id":"g","name":"G","platforms":["ps5"],"coverage":"none","coverLoop":"https://example.com/l.mp4"}"#
+        let game = try JSONDecoder().decode(CatalogGame.self, from: Data(json.utf8))
+        #expect(game.coverLoop == "https://example.com/l.mp4")
+        #expect(TrailerLoopRule.url(for: game, lead: false)?.absoluteString == "https://example.com/l.mp4")
+        let bare = try JSONDecoder().decode(CatalogGame.self, from: Data(#"{"id":"g","name":"G","platforms":["ps5"],"coverage":"none"}"#.utf8))
+        #expect(bare.coverLoop == nil)
     }
 
     /// Precedence (Nadia, 13 Nov): a fresh install moves, whatever Autoplay says; Reduce Motion always wins with the still (G-9).
