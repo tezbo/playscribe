@@ -420,3 +420,8 @@ test('a bare "Maintenance - date" title is news even when Steam tagged it patchn
   for (const title of ['Maintenance update 1.2', 'Hotfix 0.11.2 Patch Notes (May 18, 2023)', 'Maintenance Update Changelog', 'Maintenance fixes and balance', 'Maintenance with new weapons and maps'])
     assert.ok(!isNewsOnlyTitle(title, { patchnotesTag: true }), title)
 })
+
+test('"<Month> Update: <what shipped> and What\'s Coming Next" is the release; a pure preview still is not (Leaf Blower Co. December Update)', () => {
+  assert.ok(!isNewsOnlyTitle('\u{1F342} December Update: Lighting Rework, Shredder Boosts and What\u2019s Coming Next', { patchnotesTag: false }))
+  assert.ok(isNewsOnlyTitle("Check out what's coming to Cyberpunk 2077 in the Edgerunners 2 Update!"))
+})

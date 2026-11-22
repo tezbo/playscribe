@@ -191,6 +191,8 @@ export const isNewsOnlyTitle = (title: string, opts: { patchnotesTag?: boolean }
   // Maintenance 01/12/2020") is news even when the studio tags it patchnotes (War Robots: Frontiers, Hunt: Showdown tag every one).
   const bareMaintenance = maintenance && !numbered && !namesPatch && !/\bupdate\b/i.test(title) && maintenanceWordsOnly(title)
   if (bareMaintenance || (maintenance && !opts.patchnotesTag && !numbered && (noticeLike || !(namesPatch || /\bupdate\b/i.test(title))))) return true
+  // "December Update: Lighting Rework, Shredder Boosts and What's Coming Next" lists what shipped, then what is next: the release.
+  if (/\bupdate\b[^|:]*:[^|]+\band\s+what['\u2019]?s\s+(?:coming|next)\b/i.test(title)) return false
   if (/\bwhat['\u2019]?s\s+coming\b/i.test(title)) return !isOut
   // "<update> ... is coming": a release when Steam tagged the post as patch notes ("Update 1.4.0 is coming to PS5 today").
   if (/\b(?:update|patch|hotfix|season|expansion)\b(?:(?!\s[-\u2013\u2014]\s)[^|]){0,40}\bis\s+coming\b/i.test(title)) return !opts.patchnotesTag

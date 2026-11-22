@@ -411,6 +411,8 @@ export interface IngestOpts {
   hot?: boolean
   /** Only these games (ids; a derived game is repaired only when named), and no shared press sources: a backfill that must touch nothing else. */
   games?: string[]
+  /** A backfill that only drops and repairs rows that exist: no new release and no new news item is created (bug-060). */
+  noNewReleases?: boolean
   /** Auto-onboarding: how many auto games (store.nextAutoSlice) to poll after the tracked ones, 0 for none. */
   autoSlice?: number
   /** Auto-onboarding: stop the slice once the whole run has taken this long (the job has a 20 min limit). */
@@ -455,7 +457,7 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
       if (store.isSeen(deps.db, s.id, post.postId) && !(opts.until && s.trust === 'official')) continue
         if (post.news) {
           tx(deps.db, () => {
-            if (s.kind === 'steamNews' && s.trust === 'official' && 'steamNews' in newsSources.sources && !repairOnly.has(game.id)) addNewsUnlessPromo(deps, summary, game.id, post)
+            if (s.kind === 'steamNews' && s.trust === 'official' && 'steamNews' in newsSources.sources && !repairOnly.has(game.id) && !opts.noNewReleases) addNewsUnlessPromo(deps, summary, game.id, post)
             // Backfill: an earlier rule made a release from this news-only post (a preview, a stream, an announcement): drop it.
             const old = deps.repairClaims ? (deps.db.prepare('SELECT release_id FROM seen_posts WHERE source_id = ? AND post_id = ?').get(s.id, post.postId) as { release_id: string | null } | undefined)?.release_id : null
             if (old) {
@@ -469,6 +471,8 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
           })
           continue
         }
+        // Repair only: a post that made no release before makes none now.
+        if (opts.noNewReleases && !(deps.db.prepare('SELECT release_id FROM seen_posts WHERE source_id = ? AND post_id = ?').get(s.id, post.postId) as { release_id: string | null } | undefined)?.release_id) continue
         tx(deps.db, () => {
           const before = deps.repairClaims ? (deps.db.prepare('SELECT release_id FROM seen_posts WHERE source_id = ? AND post_id = ?').get(s.id, post.postId) as { release_id: string | null } | undefined)?.release_id : null
           const releaseId = handlePost(deps, game, s, post, summary)

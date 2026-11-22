@@ -1,5 +1,5 @@
 // One poll against the database at DATABASE_PATH.
-//   npm run ingest [-- --hot] [-- --force] [-- --export <dir>] [-- --backfill 2024-01-01] [-- --games no-mans-sky,kcd2 (only those games; no shared feeds)]
+//   npm run ingest [-- --hot] [-- --force] [-- --export <dir>] [-- --backfill 2024-01-01] [-- --repair-only (drop and fix existing rows, add none)] [-- --games no-mans-sky,kcd2 (only those games; no shared feeds)]
 // --hot polls only the hot set (src/hot.ts) every 25 minutes, with no shared press sources.
 // --export writes the static feed (src/export.ts) after polling. --backfill reads every source's
 // history back to that date (Steam's last 100 posts per game, the press update list page by page,
@@ -38,7 +38,7 @@ if (autoSlice > 0 && exportDir && !args.includes('--hot') && !args.includes('--b
   console.log(`auto-onboarding: ${auto.games.length} derived games (${seeded.written} rows written, ${seeded.retired} retired), skipped ${JSON.stringify(auto.skipped)}`)
 }
 const until = args.includes('--backfill') ? new Date(args[args.indexOf('--backfill') + 1]!).toISOString() : undefined
-const summary = await runIngest(deps, { force: args.includes('--force') || !!until, until, hot: args.includes('--hot'), games: args.includes('--games') ? args[args.indexOf('--games') + 1]!.split(',').filter(Boolean) : undefined, autoSlice, autoBudgetMs: Number(process.env.AUTO_BUDGET_MS ?? 9 * 60_000) })
+const summary = await runIngest(deps, { force: args.includes('--force') || !!until, until, hot: args.includes('--hot'), noNewReleases: args.includes('--repair-only'), games: args.includes('--games') ? args[args.indexOf('--games') + 1]!.split(',').filter(Boolean) : undefined, autoSlice, autoBudgetMs: Number(process.env.AUTO_BUDGET_MS ?? 9 * 60_000) })
 console.log(JSON.stringify(summary, null, 2))
 if (!args.includes('--hot')) {
   await fetchPlus(db, fetch, console.log)
