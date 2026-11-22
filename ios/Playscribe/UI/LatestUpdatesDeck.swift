@@ -93,6 +93,8 @@ struct LatestUpdatesDeck: View {
     /// Closed landscape: the pager's own width, so a wide card is exactly that wide and never wider than its container
     /// (AX5: the card ran past the right edge and lost its border and corner).
     @State private var pagerWidth: CGFloat = 0
+    /// The pager rests at its scroll end (the last card flush on the trailing edge).
+    @State private var atEnd = false
 
     /// The page edge (44 pt leaves) and the 8 pt gap above it; the card takes the rest of maxHeight.
     private static let pageEdgeHeight: CGFloat = 52
@@ -201,17 +203,41 @@ struct LatestUpdatesDeck: View {
     private var axArtHeight: CGFloat { max(200, (duo.size.height * 0.4).rounded()) }
 
 
-    private var pageEdge: some View {
+    private var visibleCards: Int { max(1, Int(perScreen.rounded(.down))) }
+
+    /// The card the page edge and the page label count from: at the scroll end it is the first of the last whole screen
+    /// (Open: card 4 of 5; Closed: card 5), whatever id the scroll view last reported.
+    private var shownID: String? {
+        guard let i = cards.firstIndex(where: { $0.id == (current ?? cards.first?.id) }) else { return cards.first?.id }
+        return cards[Self.shownIndex(current: i, count: cards.count, visible: visibleCards, atEnd: atEnd)].id
+    }
+
+    static func shownIndex(current: Int, count: Int, visible: Int, atEnd: Bool) -> Int {
+        atEnd && count > visible ? count - visible : min(current, max(0, count - 1))
+    }
+
+    /// J-8 (Mac de571b0a): a leaf whose card cannot lead the screen (the last one, or the last two in Open) scrolls the
+    /// LAST card to the trailing edge, the scroll end. Asking the pager to lead with an unreachable card overshot the end by
+    /// 16 pt in Open landscape and 2 pt in Closed portrait, the right card cut at the edge.
+    static func tapTarget(index: Int, count: Int, visible: Int) -> (index: Int, trailing: Bool) {
+        index >= count - visible ? (count - 1, true) : (index, false)
+    }
+
+    private func pageEdge(_ proxy: ScrollViewProxy) -> some View {
         // Open shows two cards across: both are lit, so the last leaf lights when the deck reaches its end (Iris on #512).
-        PageEdge(cards: cards, current: current ?? cards.first?.id, visible: max(1, Int(perScreen.rounded(.down)))) { id in
-            withAnimation(reduceMotion ? .easeInOut(duration: 0.2) : .snappy) { current = id }
+        PageEdge(cards: cards, current: shownID, visible: visibleCards) { id in
+            guard let i = cards.firstIndex(where: { $0.id == id }) else { return }
+            let t = Self.tapTarget(index: i, count: cards.count, visible: visibleCards)
+            withAnimation(reduceMotion ? .easeInOut(duration: 0.2) : .snappy) {
+                if t.trailing { proxy.scrollTo(cards[t.index].id, anchor: .trailing) } else { current = id }
+            }
         }
     }
 
     private func deck(cardWidth: CGFloat?, artHeight: CGFloat?, scrollHeight: CGFloat? = nil) -> some View {
         // Closed landscape at accessibility sizes: the pager is as tall as the card's caption, not a fixed height.
         let wideAX = scrollHeight != nil && typeSize.isAccessibilitySize && pagerWidth > 0
-        return VStack(alignment: .leading, spacing: 8) {
+        return ScrollViewReader { proxy in VStack(alignment: .leading, spacing: 8) {
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHStack(alignment: .top, spacing: 12) {
                     ForEach(cards) { card in
@@ -236,13 +262,17 @@ struct LatestUpdatesDeck: View {
             .fixedSize(horizontal: false, vertical: wideAX)
             .onGeometryChange(for: CGFloat.self) { $0.size.width } action: { if scrollHeight != nil, abs($0 - pagerWidth) > 0.5 { pagerWidth = $0 } }
             .scrollPosition(id: $current)
+            .onScrollGeometryChange(for: Bool.self, of: { g in
+                g.contentSize.width > g.containerSize.width + 1
+                    && g.contentOffset.x + g.containerSize.width >= g.contentSize.width + g.contentInsets.trailing - 1
+            }, action: { _, end in atEnd = end })
             .onChange(of: current) { _, new in model.deckSelection = new }
             // One card per flick, however fast (Iris on #512: a 120 pt flick in Open landscape jumped KCD to Phantom Blade).
             .scrollTargetBehavior(.viewAligned(limitBehavior: .alwaysByOne))
             .contentMargins(.trailing, 0, for: .scrollContent)
             // Closed landscape (scrollHeight set): the dots sit inside the hero's bottom edge, centred, so the
             // first screen still shows the chips and the first tile row (Iris, cf6c889).
-            .overlay(alignment: .bottom) { if scrollHeight != nil && cards.count > 1 { pageEdge } }
+            .overlay(alignment: .bottom) { if scrollHeight != nil && cards.count > 1 { pageEdge(proxy) } }
             if scrollHeight == nil && (cards.count > 1 || (compact && moreCount > 0)) {
                 // The dots row: dots centred, the "+N more updates" chip trailing (Iris), a 44 pt control that wraps at AX.
                 // At accessibility sizes the chip takes its own row under the dots, so the dots always read as dots.
@@ -261,20 +291,21 @@ struct LatestUpdatesDeck: View {
                 .accessibilityLabel("\(moreCount) more updates, opens the Updates list")
                 if typeSize.isAccessibilitySize {
                     VStack(alignment: .trailing, spacing: 0) {
-                        if cards.count > 1 { pageEdge.frame(maxWidth: .infinity) }
+                        if cards.count > 1 { pageEdge(proxy).frame(maxWidth: .infinity) }
                         if showChip { chip }
                     }
                 } else {
                     ZStack(alignment: .trailing) {
-                        if cards.count > 1 { pageEdge }
+                        if cards.count > 1 { pageEdge(proxy) }
                         if showChip { chip }
                     }
                 }
             }
         }
+        } // ScrollViewReader
         .accessibilityElement(children: .contain)
         .accessibilityLabel(compact || cards.count > 1
-            ? "Latest updates, page \((cards.firstIndex { $0.id == (current ?? cards.first?.id) } ?? 0) + 1) of \(cards.count)" : "Latest updates")
+            ? "Latest updates, page \((cards.firstIndex { $0.id == shownID } ?? 0) + 1) of \(cards.count)" : "Latest updates")
         .accessibilityIdentifier("latestDeckPager")
     }
 }

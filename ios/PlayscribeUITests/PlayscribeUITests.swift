@@ -1059,17 +1059,17 @@ final class LatestUpdatesDeckTests: XCTestCase {
             var trailingGap = CGFloat.nan, leadingGap = CGFloat.nan
             for wait in [2, 3] {
                 sleep(UInt32(wait))
-                let cards = app.buttons.matching(identifier: "deckCard").allElementsBoundByIndex
-                    .map(\.frame).filter { $0.maxX > edge.minX + 1 && $0.minX < edge.maxX - 1 }.sorted { $0.minX < $1.minX }
+                let all = app.buttons.matching(identifier: "deckCard").allElementsBoundByIndex.map(\.frame).sorted { $0.minX < $1.minX }
+                let cards = all.filter { $0.maxX > edge.minX + 1 && $0.minX < edge.maxX - 1 }
                 print("DECKEND \(path) t=\(wait == 2 ? 2 : 5)s pager=\(edge) cards=\(cards) label=\(pager.label)")
-                if let first = cards.first, let last = cards.last {
-                    leadingGap = first.minX - edge.minX
-                    trailingGap = last.maxX - edge.maxX
-                }
+                // The deck's LAST card (by position, not just the last on screen) must end on the pager edge: that is
+                // both "the deck reached its end" and "nothing is cut off". Two across, the left card (the first one
+                // starting inside the pager, de571b0a: the off-screen card was measured) sits on the leading margin.
+                if let last = all.last { trailingGap = last.maxX - edge.maxX }
+                if let first = all.first(where: { $0.minX >= edge.minX - 1 }) { leadingGap = first.minX - edge.minX }
             }
-            XCTAssertTrue(pager.label.contains("page \(count) of \(count)"), "\(path): the deck reached its end")
             XCTAssertEqual(trailingGap, 0, accuracy: 1, "\(path): the last card's trailing edge is on the pager edge (+ is cut off)")
-            if ReleaseRowTests.pose(app).contains("pose: flat") {
+            if ReleaseRowTests.pose(app).contains("pose: flat") && app.frame.width > app.frame.height {
                 XCTAssertEqual(leadingGap, 0, accuracy: 1, "\(path): two across, the left card is on the leading margin")
             }
             app.terminate()
