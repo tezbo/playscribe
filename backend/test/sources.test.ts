@@ -195,3 +195,23 @@ test('a backfill with games set reads only those games', async () => {
   assert.deepEqual(releasesOf(db, 'the-division-2'), [], 'a game outside the list is not polled')
   assert.deepEqual(summary.polled.filter((id) => !id.startsWith('rocket-league')), [], 'only the named game\'s sources were read')
 })
+
+// The derived registry took Blade Assault's playtest app (1426470) and an unlisted app (4184360) from IGDB; Steam refuses both (403/404), so
+// those two games had no readable source. The hand entries below point at the real store apps and win over the derived rows.
+test('Blade Assault and Peace Walker Master Collection read their real Steam apps, not the refused ones', () => {
+  const blade = registry.games['blade-assault-207392']!.sources[0]!
+  const walker = registry.games['metal-gear-solid-peace-walker-master-collection-version-391792']!.sources[0]!
+  assert.match(blade.url, /\/app\/1367300\//)
+  assert.match(walker.url, /\/app\/2492660\//)
+})
+
+test('a repair-only backfill creates no release from a post it has not made one for', async () => {
+  const at = new Date(Date.now() - 20 * 3600e3).toISOString()
+  const db = openDb(':memory:')
+  const deps = { db, fetchFn: fakeFetch({ 'https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid=252950&': steamNews([{ gid: 'r1', title: 'Rocket League S24 Patch Notes v2.76', date: at, contents: 'Fixed a crash.', tags: ['patchnotes'] }]) }), igdb: null }
+  await seedGames(deps)
+  await runIngest(deps, { force: true, until: '2020-01-01T00:00:00.000Z', games: ['rocket-league'], noNewReleases: true })
+  assert.deepEqual(releasesOf(db, 'rocket-league'), [])
+  await runIngest(deps, { force: true, until: '2020-01-01T00:00:00.000Z', games: ['rocket-league'] })
+  assert.deepEqual(releasesOf(db, 'rocket-league'), ['rocket-league@2.76'], 'without the flag the same post makes its release')
+})
