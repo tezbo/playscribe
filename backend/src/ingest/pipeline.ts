@@ -111,6 +111,12 @@ export const autoRepairGames = (db: DB, tracked: Set<string>) =>
   (db.prepare(`SELECT * FROM games WHERE auto > 0 AND auto <> 2 AND steam_app_id IS NOT NULL
     AND id IN (SELECT r.game_id FROM releases r JOIN platform_releases p ON p.release_id = r.id AND p.platform = 'ps5') ORDER BY id`).all() as Record<string, any>[]).filter((g) => !tracked.has(g.id))
 
+/** Derived (auto) games that a backfill names, whether or not they hold a PS5 row yet. */
+export const namedAutoGames = (db: DB, ids: string[], tracked: Set<string>) =>
+  ids.length
+    ? (db.prepare(`SELECT * FROM games WHERE auto > 0 AND auto <> 2 AND steam_app_id IS NOT NULL AND id IN (${ids.map(() => '?').join(',')}) ORDER BY id`).all(...ids) as Record<string, any>[]).filter((g) => !tracked.has(g.id))
+    : []
+
 export const sourcesFor = (game: Record<string, any>): SourceDef[] => {
   const reg = registry.games[game.id]
   if (reg) return reg.sources
@@ -403,7 +409,7 @@ export interface IngestOpts {
   until?: string
   /** Poll only the hot set (hot.ts), at the shorter hot interval, and skip the shared press sources. */
   hot?: boolean
-  /** Only these games (ids), and no shared press sources or auto repair: a backfill that must touch nothing else (bug-059, 22 Nov). */
+  /** Only these games (ids; a derived game is repaired only when named), and no shared press sources: a backfill that must touch nothing else. */
   games?: string[]
   /** Auto-onboarding: how many auto games (store.nextAutoSlice) to poll after the tracked ones, 0 for none. */
   autoSlice?: number
@@ -425,7 +431,11 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
   const hot = hotGameIds(deps.db)
   const tracked = trackedGames(deps.db).filter((g) => (!opts.hot || hot.has(g.id)) && (!opts.games || opts.games.includes(g.id)))
   const repairOnly = new Set<string>()
-  if (opts.until && !opts.hot && !opts.games) for (const g of autoRepairGames(deps.db, new Set(tracked.map((t) => t.id)))) (tracked.push(g), repairOnly.add(g.id))
+  if (opts.until && !opts.hot) {
+    // A backfill with games named reads a derived game whenever it is named (bug-060: rows of games with no PS5 row were never reached).
+    const repair = opts.games ? namedAutoGames(deps.db, opts.games, new Set(tracked.map((t) => t.id))) : autoRepairGames(deps.db, new Set(tracked.map((t) => t.id)))
+    for (const g of repair) (tracked.push(g), repairOnly.add(g.id))
+  }
   const games = tracked
   lap('games')
 

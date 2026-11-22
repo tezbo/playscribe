@@ -412,3 +412,11 @@ test('ingest (bug-059): the four No Man\'s Sky 2018 "NEXT Update 1.xx" posts are
   const ids = (db.prepare("SELECT id FROM releases WHERE game_id = 'no-mans-sky' ORDER BY id").all() as { id: string }[]).map((r) => r.id)
   assert.equal(ids.length, 4, ids.join(', '))
 })
+
+// bug-060: War Robots: Frontiers tags every maintenance notice patchnotes; 62 of them were releases.
+test('a bare "Maintenance - date" title is news even when Steam tagged it patchnotes; real patches that mention maintenance are not', () => {
+  for (const title of ['Maintenance – 11/05/2023', 'Maintenance - 18/05/2023', 'Scheduled maintenance', 'Downtime 12.11', 'Season 3 server maintenance', 'Weekly Maintenance - December 18th - 10:00AM CET', 'Scheduled Server Maintenance 01/12/2020', 'Server Maintenance (10:30 AM CET)', 'Server Maintenance – Aug 27'])
+    assert.ok(isNewsOnlyTitle(title, { patchnotesTag: true }), title)
+  for (const title of ['Maintenance update 1.2', 'Hotfix 0.11.2 Patch Notes (May 18, 2023)', 'Maintenance Update Changelog', 'Maintenance fixes and balance', 'Maintenance with new weapons and maps'])
+    assert.ok(!isNewsOnlyTitle(title, { patchnotesTag: true }), title)
+})
