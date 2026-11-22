@@ -19,8 +19,31 @@ struct BrightArtScrimTests {
                     .brightArtScrim(0.75, fullBleed: fullBleed)
             }
         let r = ImageRenderer(content: view)
-        r.scale = 1
-        return try #require(r.cgImage)
+        // Drawn straight into a bitmap the test owns, twice; the two must match byte for byte.
+        let a = try Self.draw(r), b = try Self.draw(r)
+        #expect(a.width == Int(stage.width) && a.height == Int(stage.height) && b.width == a.width && b.height == a.height)
+        let n = min(a.width * a.height, b.width * b.height) * 4
+        let pa = UnsafeBufferPointer(start: a.data!.assumingMemoryBound(to: UInt8.self), count: n)
+        let pb = UnsafeBufferPointer(start: b.data!.assumingMemoryBound(to: UInt8.self), count: n)
+        let diff = (0..<n).filter { pa[$0] != pb[$0] }
+        #expect(diff.isEmpty, "two renders differ at \(diff.count) bytes, first at pixel \((diff.first ?? 0) / 4)")
+        return try #require(a.makeImage())
+    }
+
+    /// Root cause of the intermittent CI failure: reads of `ImageRenderer.cgImage` are not repeatable. Run 44986945527
+    /// (and 44989305239): a patch averaged 59 (then 55) while all 15 of its pixels, read again, were 64. Run 44989259183
+    /// copied that image twice and the copies differed at every byte: the first draw of the renderer's image can come back
+    /// empty. So the view is rendered with `render(rasterizationScale:renderer:)` straight into our own context instead.
+    private static func draw(_ r: ImageRenderer<some View>) throws -> CGContext {
+        var out: CGContext?
+        r.render(rasterizationScale: 1) { size, render in
+            guard let ctx = CGContext(data: nil, width: Int(size.width), height: Int(size.height), bitsPerComponent: 8,
+                                      bytesPerRow: Int(size.width) * 4, space: CGColorSpaceCreateDeviceRGB(),
+                                      bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue) else { return }
+            render(ctx)
+            out = ctx
+        }
+        return try #require(out)
     }
 
     /// Grey level 0...255 at a point in points (scale 1), from the top-left.

@@ -6,7 +6,7 @@ import SwiftUI
 // below. LibraryView wraps it after #424 and #455 merge, so until then it shows only in the internal preview
 // (Settings > Front cover, or `-qaRoute cover` / `cover/one`). Nothing here is reachable in a TestFlight or App Store build.
 
-/// The three motion modes (Settings > "Cover motion"). Still and Key-art motion are built; the Trailer loop lands in its own PR.
+/// The three motion modes (Settings > "Cover motion"). All three are built; the Trailer loop is in TrailerLoop.swift (6a).
 enum CoverMotion: String, CaseIterable, Identifiable {
     case trailer, keyArt, still
     var id: String { rawValue }
@@ -24,7 +24,7 @@ enum CoverMotion: String, CaseIterable, Identifiable {
     }
 
     /// Built so far. The Settings row lists only these, and a stored mode that is not built yet shows Still.
-    var isBuilt: Bool { self != .trailer }
+    var isBuilt: Bool { true }
 
     /// The next mode down: a Trailer loop that cannot play shows Key-art motion, and Key-art motion falls back to Still.
     var fallback: CoverMotion {
@@ -121,9 +121,16 @@ struct FrontCoverPage: View {
             ZStack(alignment: .bottomLeading) {
                 // Iris (#467): at accessibility sizes the plate covers the lower half, so the focal point goes to the top half.
                 // Key-art motion (s-07) moves only this layer; the shade and the plate below stay still.
-                KeyArtMotionArt(asset: card.game.keyArtAsset, game: card.game, focus: card.game.coverFocus ?? CoverFocus(x: 0.5, y: 0.5),
-                                focusTargetY: typeSize.isAccessibilitySize ? 0.25 : 0.5,
-                                maxFocalY: typeSize.isAccessibilitySize ? 0.5 : 1, moving: moving)
+                // Trailer loop (6a): the official loop over the key art once its first frame is ready; the key art moves under
+                // it meanwhile, and stays if the source fails.
+                if let loop = trailerLoop {
+                    TrailerLoopCoverArt(url: loop) { keyArt(moving: keyArtMoves) }
+                    // A near-white frame put the status bar glyphs and the close control white on white (Mac, 3c091e12): in
+                    // loop mode the top and trailing edges, where the system bar and the rail sit, get their own shade.
+                    loopEdgeShade
+                } else {
+                    keyArt(moving: moving)
+                }
                 if !solid { fade }
                 VStack(alignment: .leading, spacing: 18) {
                     FrontCoverPlate(card: card)
@@ -160,6 +167,46 @@ struct FrontCoverPage: View {
 
     private var solid: Bool { contrast == .increased || reduceTransparency || qaSolid }
 
+    /// The lead card (the first in the deck) is the one `-qaCoverLoop` applies to.
+    var lead = false
+    @State private var lowPower = ProcessInfo.processInfo.isLowPowerModeEnabled
+
+    private func keyArt(moving: Bool) -> some View {
+        KeyArtMotionArt(asset: card.game.keyArtAsset, game: card.game, focus: card.game.coverFocus ?? CoverFocus(x: 0.5, y: 0.5),
+                        focusTargetY: typeSize.isAccessibilitySize ? 0.25 : 0.5,
+                        maxFocalY: typeSize.isAccessibilitySize ? 0.5 : 1, moving: moving)
+            .onReceive(NotificationCenter.default.publisher(for: .NSProcessInfoPowerStateDidChange)) { _ in
+                lowPower = ProcessInfo.processInfo.isLowPowerModeEnabled
+            }
+    }
+
+    /// The loop to play, when Trailer loop is the resolved mode and everything it needs holds (TrailerLoopRule).
+    private var trailerLoop: URL? {
+        let url = TrailerLoopRule.url(for: card.game, lead: lead)
+        return TrailerLoopRule.plays(stored: stored, reduceMotion: reduceMotion || Self.qaReduceMotion, autoplay: autoplay,
+                                     loop: url, lowPower: lowPower) ? url : nil
+    }
+
+    /// Loop mode only: 65 percent ink at the top edge fading out by 150 pt, and the same along the trailing edge by 90 pt, so
+    /// white status glyphs and the close control hold at least 4.5:1 over any frame (the bottom has the cover's own shade).
+    private var loopEdgeShade: some View {
+        let ink = PlayscribeColor.ink950
+        return ZStack {
+            LinearGradient(colors: [ink.opacity(0.65), ink.opacity(0)], startPoint: .top, endPoint: .bottom)
+                .frame(height: 150 + safeArea.top).frame(maxHeight: .infinity, alignment: .top)
+            LinearGradient(colors: [ink.opacity(0), ink.opacity(0.65)], startPoint: .leading, endPoint: .trailing)
+                .frame(width: 90 + safeArea.trailing).frame(maxWidth: .infinity, alignment: .trailing)
+        }
+        .allowsHitTesting(false)
+        .accessibilityHidden(true)
+    }
+
+    /// Under a loop, the key art moves as Key-art motion would (it shows while the loop loads, or if it fails).
+    private var keyArtMoves: Bool {
+        guard let asset = card.game.keyArtAsset else { return false }
+        return !KeyArtQuality.isMurky(asset: asset)
+    }
+
     /// QA (internal builds, launch with `-qaReduceMotion YES`): the cover resolves as under Reduce Motion (CM-1), for CI stills,
     /// where the simulator's switch can't be set per launch. Read here, not from the environment: the preview is a full-screen
     /// cover presented from Settings, outside RootView's environment.
@@ -173,7 +220,9 @@ struct FrontCoverPage: View {
 
     /// Key-art motion runs when it is the resolved mode (Reduce Motion forces Still, CM-1) and the art passes the murky check.
     private var moving: Bool {
-        guard stored.resolved(reduceMotion: reduceMotion || Self.qaReduceMotion, autoplay: autoplay) == .keyArt, let asset = card.game.keyArtAsset else { return false }
+        // A Trailer loop with no loop to play (none in the feed, Low Power, not https) moves as Key-art motion.
+        let mode = stored.resolved(reduceMotion: reduceMotion || Self.qaReduceMotion, autoplay: autoplay)
+        guard mode == .keyArt || mode == .trailer, let asset = card.game.keyArtAsset else { return false }
         return !KeyArtQuality.isMurky(asset: asset)
     }
 
@@ -353,7 +402,7 @@ struct FrontCover: View {
                 LazyHStack(spacing: 0) {
                     ForEach(shown) { card in
                         FrontCoverPage(card: card, leadingInset: shown.count > 1 ? 28 : 0, railInset: railWidth,
-                                       safeArea: g.safeAreaInsets)
+                                       safeArea: g.safeAreaInsets, lead: card.id == shown.first?.id)
                             .frame(width: g.size.width, height: g.size.height)
                             .id(card.id)
                     }
@@ -367,7 +416,7 @@ struct FrontCover: View {
         .onChange(of: current) { _, new in model.deckSelection = new }
         .overlay(alignment: .leading) {
             if shown.count > 1 {
-                CoverLeaves(cards: shown, current: current ?? shown.first?.id) { id in
+                CoverLeaves(cards: shown, current: current ?? shown.first?.id, backed: TrailerLoopState.shared.playing) { id in
                     withAnimation(reduceMotion ? .easeInOut(duration: 0.2) : .snappy) { current = id }
                 }
             }
@@ -383,6 +432,9 @@ struct FrontCover: View {
 struct CoverLeaves: View {
     var cards: [DeckCard]
     var current: String?
+    /// Over a trailer loop the footage can be bright (Iris, #584: the marks fell to 2:1), so the column gets a dark capsule
+    /// that keeps every mark at 3:1 or better (WCAG 1.4.11). Still and Key-art motion keep the bare marks over the shade.
+    var backed = false
     var select: (String) -> Void
 
     var body: some View {
@@ -403,6 +455,15 @@ struct CoverLeaves: View {
                 .accessibilityAddTraits(isCurrent ? [.isButton, .isSelected] : .isButton)
             }
         }
+        .background {
+            if backed {
+                Capsule().fill(PlayscribeColor.ink950.opacity(0.72))
+                    .padding(.horizontal, 12).padding(.vertical, 4)
+                    .allowsHitTesting(false)
+                    .transition(.opacity)
+            }
+        }
+        .animation(.easeInOut(duration: 0.4), value: backed)
     }
 }
 
@@ -458,6 +519,15 @@ struct FrontCoverPreviewScreen: View {
                     // A sibling inside the safe area, so the rail clears the status bar and the outer camera (G-6).
                     CoverRailButton(title: "Close preview", symbol: "xmark") { dismiss() }
                         .padding(.trailing, 12).padding(.top, 8)
+                    #if INTERNAL
+                    // UI tests read the loop state here (6a item 1): the cover itself is one element and never says its mode.
+                    // Only on -qaRoute launches, so a VoiceOver tester on an internal build never meets it.
+                    if AppModel.isQALaunch {
+                    Text("qa-cover-loop: \(TrailerLoopState.shared.playing ? "playing" : "off")")
+                        .font(.system(size: 1)).opacity(0.01).allowsHitTesting(false)
+                        .accessibilityIdentifier("qaCoverLoop")
+                    }
+                    #endif
                 }
             }
         }
@@ -471,13 +541,18 @@ struct FrontCoverPreviewScreen: View {
 /// Settings: the cover's motion mode with the CM-1 footnote. Internal builds only until 0.7 (see the top of this file).
 struct CoverMotionSection: View {
     @Environment(\.duo) private var duo
+    @Environment(AppModel.self) private var model
     @AppStorage(CoverMotion.key) private var stored: CoverMotion = CoverMotion.defaultMode
 
     var body: some View {
         if FrontCoverPreview.available {
             Section {
-                Picker("Cover motion", selection: Binding(get: { stored.isBuilt ? stored : .still }, set: { stored = $0 })) {
-                    ForEach(CoverMotion.allCases.filter(\.isBuilt)) { Text($0.label).tag($0) }
+                // Trailer loop is offered only once a game has a loop to play (Iris, #584); a stored Trailer loop with none
+                // shows as Key-art motion, which is what the cover does then.
+                let loops = TrailerLoopRule.available(in: model.games.values)
+                let modes = CoverMotion.allCases.filter { $0.isBuilt && ($0 != .trailer || loops) }
+                Picker("Cover motion", selection: Binding(get: { modes.contains(stored) ? stored : .keyArt }, set: { stored = $0 })) {
+                    ForEach(modes) { Text($0.label).tag($0) }
                 }
                 .frame(minHeight: 52)
                 .accessibilityIdentifier("coverMotion")

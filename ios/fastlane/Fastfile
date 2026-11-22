@@ -59,16 +59,24 @@ platform :ios do
     end
     users = Spaceship::ConnectAPI::User.all
     client = Spaceship::ConnectAPI.client.test_flight_request_client
+    # The Actions log is public: never print a tester's address or name, only counts.
+    skipped = 0
     users.each do |u|
       body = { data: { type: 'betaTesters', attributes: { email: u.username, firstName: u.first_name, lastName: u.last_name },
                        relationships: { betaGroups: { data: [{ type: 'betaGroups', id: group.id }] } } } }
       client.post('v1/betaTesters', body)
-    rescue Spaceship::UnexpectedResponse => e
-      UI.message("Tester #{u.username}: #{e.message}") # already in the group
+    rescue Spaceship::UnexpectedResponse
+      skipped += 1 # usually already in the group
     end
+    UI.message("#{skipped} of #{users.size} member(s) not added (usually already in the group)") if skipped.positive?
     UI.success("Internal TestFlight group '#{group.name}' has the team's #{users.size} member(s)")
   rescue StandardError => e
-    UI.important("Couldn't set up internal testers: #{e.class}: #{e.message}")
+    UI.important("Couldn't set up internal testers: #{e.class}: #{scrub_emails(e.message)}")
+  end
+
+  # Apple's error text can quote an address; the public log gets "[email]" instead.
+  def scrub_emails(text)
+    text.to_s.gsub(/[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/, '[email]')
   end
 
   def project_path

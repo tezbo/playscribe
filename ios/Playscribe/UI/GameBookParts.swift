@@ -305,6 +305,9 @@ struct SpoilerLine: View {
         Button {
             model.setSpoilersShown(gameID, !shown)
             model.show(Toast(text: shown ? "Spoilers hidden" : "Spoilers shown"))
+            // Only the person's own flip moves the tour on: watching the stored value also caught the demo route setting it,
+            // which ended step 3 before its card showed (c73186d2, tour/3).
+            model.tourNoticed(spoilersToggled: true)
         } label: {
             // At accessibility sizes the label takes the full width in whole words and the Show button sits under it,
             // on its own 44 pt line, so the label never breaks by letter and the button is never cut by the next row.
@@ -325,6 +328,7 @@ struct SpoilerLine: View {
         }
         .buttonStyle(.plain)
         .tappableFrame()
+        .tourAnchor(.spoiler)
     }
 }
 
@@ -481,6 +485,8 @@ struct GameBasicsView: View {
             }
             if !genres.isEmpty {
                 Text(genres.joined(separator: ", ")).font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                    // Wraps, never a silent cut (Iris: Tabletop AX5 showed only "Role-playing").
+                    .fixedSize(horizontal: false, vertical: true)
             }
             if !videos.isEmpty {
                 ForEach(videos, id: \.youtubeId) { v in
@@ -626,6 +632,8 @@ struct TrailerView: View {
     var name: String
     var gameID: String?
     @State private var controller: YouTubeController?
+    /// R-13: our own full-bleed mode (Closed and Open).
+    @State private var fullScreen = false
     /// Room for a two-line caption under the video, growing with Dynamic Type so a long name at AX5 is never pushed off.
     @ScaledMetric(relativeTo: .headline) private var captionRoom: CGFloat = 64
     var body: some View {
@@ -640,17 +648,24 @@ struct TrailerView: View {
                             TabletopVideoStage(controller: controller,
                                                video: ReleaseVideo(youtubeID: videoID, label: name, duration: nil, posted: "", posterAsset: nil),
                                                game: game, gameName: game?.name ?? "", release: nil, onClose: close)
+                        } else if fullScreen && FullBleedVideo.offered(in: duo.pose) {
+                            FullBleedVideo(controller: controller, posterAsset: nil, game: gameID.flatMap { model.game($0) }) { fullScreen = false }
                         } else {
                             framed(controller)
                         }
                     }
                 }
                 .background(Color.black)
+                .overlay(alignment: .bottomLeading) { VideoTimeProbe(controller: controller) }
                 .onChange(of: [duo.pose == .tabletop, controller != nil], initial: true) { controller?.setNativeControls(duo.pose != .tabletop) }
-                .toolbarVisibility(duo.pose == .tabletop ? .hidden : .automatic, for: .navigationBar)
+                .onChange(of: FullBleedVideo.offered(in: duo.pose)) { _, offered in if !offered { fullScreen = false } }
+                .toolbarVisibility(duo.pose == .tabletop || fullScreen ? .hidden : .automatic, for: .navigationBar)
                 .toolbar {
                     ToolbarItem(placement: .cancellationAction) {
                         Button(action: close) { Label("Close", systemImage: "xmark") }
+                    }
+                    if FullBleedVideo.offered(in: duo.pose), controller?.failed == false {
+                        ToolbarItem(placement: .primaryAction) { FullBleedVideo.EnterButton { fullScreen = true } }
                     }
                 }
             }

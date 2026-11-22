@@ -61,6 +61,9 @@ struct CatalogGame: Codable, Hashable, Identifiable {
     var coverFocus: CoverFocus?
     /// Added by the person: no catalogue record behind it.
     var custom: Bool?
+    /// 6a: the publisher's official trailer mp4 (https), played muted and looping on the Closed front cover in Trailer loop
+    /// mode, from its source only (docs/api.md `coverLoop`). Nil: the cover shows Key-art motion.
+    var coverLoop: String? = nil
 
     /// D-12 tile art, in order of preference (docs/api.md): the studio's square cover, else
     /// official key art to crop, else nil (the portrait cover over a blurred fill).
