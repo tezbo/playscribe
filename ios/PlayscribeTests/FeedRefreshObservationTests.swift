@@ -19,11 +19,15 @@ struct FeedRefreshObservationTests {
 
     /// Whether `read` sees a change while `act` runs.
     private func changes(_ m: AppModel, reading read: @escaping (AppModel) -> Void, during act: () -> Void) -> Bool {
-        var fired = false
-        withObservationTracking { read(m) } onChange: { fired = true }
+        let flag = Flag()
+        withObservationTracking { read(m) } onChange: { flag.fired = true }
         act()
-        return fired
+        return flag.fired
     }
+
+    /// onChange is a Sendable closure, so it sets a flag on a reference rather than a captured var. It runs synchronously on
+    /// the writing (main) thread, inside `act`.
+    private final class Flag: @unchecked Sendable { var fired = false }
 
     @Test func anUnchangedRefreshLeavesDataAlone() {
         let m = model()
