@@ -189,6 +189,9 @@ export const blueskyTitle = (text: string) => {
   const flat = text.replace(/\s+/g, ' ').trim()
   const v = flat.match(/\b(patch|update|hot\s*-?fix)\s*v?(\d+(?:\.\d+){1,3}[a-z]?)\b/i)
   if (v) return `${v[1]!.replace(/[\s-]/g, '').toLowerCase().replace(/^./, (c) => c.toUpperCase())} ${v[2]}`
+  // No version: the kind of post, so the release reads "Update" or "Hotfix" and the studio's words stay in the notes.
+  if (/\bhot\s*-?fix\b/i.test(flat)) return 'Hotfix'
+  if (/\b(update|patch)\b/i.test(flat)) return 'Update'
   const first = flat.split(/(?<=[.!?])\s/)[0]!
   return first.length > 120 ? `${first.slice(0, 117)}...` : first
 }
@@ -253,7 +256,11 @@ const forGame = (s: SourceDef, posts: Post[]): Post[] =>
   s.mentions || s.patchOnly
     ? posts
         .filter((p) => !s.mentions || namesAny(`${p.title}\n${p.body}`, s.mentions))
-        .map((p) => (s.patchOnly && (!looksLikePatch(`${p.title}`) && !looksLikePatch(p.body.slice(0, 200)) || isNewsOnlyTitle(p.title)) ? { ...p, news: true } : p))
+        .map((p) => {
+          const patchPost = looksLikePatch(p.title) || looksLikePatch(p.body.slice(0, 200))
+          const asked = !s.titleMatch || new RegExp(s.titleMatch, 'i').test(p.title)
+          return s.patchOnly && (!patchPost || !asked || isNewsOnlyTitle(p.title)) ? { ...p, news: true } : p
+        })
     : posts
 
 export const fetchPosts = async (fetchFn: FetchFn, s: SourceDef, opts: PageOpts = {}): Promise<Post[]> => {

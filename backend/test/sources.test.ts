@@ -35,6 +35,7 @@ test('Alan Wake 2: Remedy\'s feed gives the update, its own PS5 build, and its d
         body: 'These are the latest update notes for Alan Wake 2 21st October 2026 PlayStation 5 (1.200.011) Xbox Series (1.2.0.11) PC (1.2.11) Improvements and additions [PC] Updated FSR support to FSR 4.1 Fixes Fixed HDR toggle to show as intended with compatible displays.',
       },
       { title: 'Alan Wake Remastered PC update notes (1.33)', link: 'https://www.alanwake.com/news/remastered/', date: '2026-02-26T10:45:39Z', body: 'PC only' },
+      { title: 'The Anniversary Update explained', link: 'https://www.alanwake.com/news/anniversary/', date: '2024-10-21T13:00:30Z', body: 'Alan Wake 2 gets an update.' },
       { title: 'Gameplay Assist: Making Alan Wake 2 More Approachable', link: 'https://www.alanwake.com/news/assist/', date: '2025-02-06T13:55:45Z', body: 'Alan Wake 2 is easier to pick up.' },
     ]),
   })
@@ -43,7 +44,7 @@ test('Alan Wake 2: Remedy\'s feed gives the update, its own PS5 build, and its d
   assert.equal(r.displayName, 'Update', 'the PC number 1.2.11 is not shown as the update name')
   const ps5 = ps5Of(db, 'alan-wake-2@1.2.11')!
   assert.deepEqual([ps5.status, ps5.verification, ps5.version?.value, ps5.liveAt?.value.slice(0, 10)], ['live', 'official', '01.200.011', '2026-10-21'])
-  assert.ok(!releasesOf(db, 'alan-wake-2').some((id) => /1\.33|assist/i.test(id)))
+  assert.ok(!releasesOf(db, 'alan-wake-2').some((id) => /1\.33|assist|2024/i.test(id)), 'feature posts (The Anniversary Update explained) are not releases')
 })
 
 test('Ghost of Yotei and Wolverine: the studios\' own Bluesky posts make PS5 releases; reposts, promo and other games\' posts do not', async () => {
@@ -93,7 +94,9 @@ test('Fortnite: Epic\'s status page makes a release when the downtime is Complet
 test('blueskyTitle names the patch the studio names, else the first sentence', () => {
   assert.equal(blueskyTitle('Patch 2.09 for Ghost of Yōtei is now live. More below.'), 'Patch 2.09')
   assert.equal(blueskyTitle('Hotfix 1.4.2 is out now on PS5'), 'Hotfix 1.4.2')
-  assert.equal(blueskyTitle('We just deployed a new update for Marvel’s Wolverine. It fixes things.'), 'We just deployed a new update for Marvel’s Wolverine.')
+  assert.equal(blueskyTitle('We just deployed a new update for Marvel\u2019s Wolverine. It fixes things.'), 'Update')
+  assert.equal(blueskyTitle('Today, we deployed a hotfix for Marvel\u2019s Wolverine that includes new toggles.'), 'Hotfix')
+  assert.equal(blueskyTitle('Ghost of Y\u014dtei Complete Edition is coming on October 1!'), 'Ghost of Y\u014dtei Complete Edition is coming on October 1!')
 })
 
 // Terry, 22 Nov: "Not having a source for patches is NOT acceptable. Ever." Every registry game has a source, or a written, dated gap

@@ -16,6 +16,8 @@ export interface SourceDef {
   mentions?: string[]
   /** Only posts that read like a patch post become releases; the rest are dropped (an official account's other posts). */
   patchOnly?: boolean
+  /** With patchOnly: a regex the post's title must also match (Remedy's feed has "update notes" posts and feature posts alike). */
+  titleMatch?: string
 }
 
 /** A game with no readable official source, written down on purpose (docs/ps5-patch-data.md, "Sources of record"). */
