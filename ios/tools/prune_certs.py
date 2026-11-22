@@ -1,16 +1,20 @@
 #!/usr/bin/env python3
-"""Keep the account under Apple's certificate cap (Terry approved, 2026-11-06).
+"""Revoke the one Development certificate this CI job created (cap kept since Terry's approval, 2026-11-06).
 
-Automatic signing on a fresh CI runner creates a new "Apple Development: Created via API" certificate on every
-build (the key dies with the runner), and the account stops at about a dozen. This revokes the oldest of those
-CI-created Development certificates, keeping the newest KEEP. Anything else (a person's certificate, any
-Distribution certificate) is never touched. Prints ids and dates only. Needs ASC_KEY_ID, ASC_ISSUER_ID and
-ASC_KEY_P8 or ASC_KEY_P8_BASE64, plus pyjwt, cryptography and requests.
+Automatic signing on a fresh CI runner creates a new "Apple Development: Created via API" certificate on every build
+(the key dies with the runner), and the account stops at about a dozen. Run after the build, this revokes that job's
+own certificate only. Apple gives no creation date, but a certificate expires one year after it is made, so the job's
+start (CERT_SINCE, epoch seconds) finds it. A Mac's or a person's certificate, even one also "Created via API", and
+every Distribution certificate are never touched. Until 22 Nov this revoked the oldest CI-looking certificates, which
+revoked one made 3 minutes before the 18 Nov release build started (likely a Mac's) and probably sent Terry Apple's "has revoked your certificate" email.
+If no certificate or more than one matches the window, it revokes nothing. Prints ids and dates only. Needs
+CERT_SINCE, ASC_KEY_ID, ASC_ISSUER_ID and ASC_KEY_P8 or ASC_KEY_P8_BASE64, plus pyjwt, cryptography and requests.
 """
 import base64, os, re, sys, time
+from datetime import datetime
 import jwt, requests
 
-KEEP = int(os.environ.get("KEEP_CI_CERTS", "5"))
+SLACK = 300  # seconds either side of the job window
 API = "https://api.appstoreconnect.apple.com/v1/certificates"
 
 
@@ -32,17 +36,26 @@ def main():
     h = {"Authorization": "Bearer " + tok}
     r = requests.get(API + "?limit=200", headers=h)
     r.raise_for_status()
-    ci = [c for c in r.json()["data"]
-          if c["attributes"].get("certificateType") == "DEVELOPMENT"
-          and c["attributes"].get("displayName") == "Created via API"
-          and c["attributes"].get("expirationDate")]  # no date: leave it alone
-    ci.sort(key=lambda c: c["attributes"]["expirationDate"])  # oldest first
-    extra = ci[:max(0, len(ci) - KEEP)]
-    print(f"{len(ci)} CI-created development certificates; keeping {min(KEEP, len(ci))}, revoking {len(extra)}")
-    for c in extra:
-        d = requests.delete(f"{API}/{c['id']}", headers=h)
-        print("revoke", c["id"], c["attributes"].get("expirationDate"), d.status_code)
-        d.raise_for_status()
+    since, now = int(os.environ["CERT_SINCE"]), int(time.time())
+    year = 365 * 86400
+
+    def made(c):  # creation time: expiry minus one year (366 days in a leap span, covered by the slack below)
+        return datetime.fromisoformat(c["attributes"]["expirationDate"].replace("Z", "+00:00")).timestamp() - year
+
+    mine = [c for c in r.json()["data"]
+            if c["attributes"].get("certificateType") == "DEVELOPMENT"
+            and c["attributes"].get("displayName") == "Created via API"
+            and c["attributes"].get("expirationDate")
+            and since - SLACK <= made(c) <= now + 86400 + SLACK]
+    print(f"{len(mine)} Development certificate(s) made during this job")
+    if len(mine) != 1:
+        print("not exactly one: revoking nothing")
+        return 0
+    c = mine[0]
+    d = requests.delete(f"{API}/{c['id']}", headers=h)
+    print("revoke", c["id"], c["attributes"].get("expirationDate"), d.status_code)
+    d.raise_for_status()
+    return 0
 
 
 if __name__ == "__main__":
