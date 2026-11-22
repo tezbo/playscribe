@@ -282,7 +282,9 @@ struct LatestUpdatesDeck: View {
                         Text("+\(moreCount) more updates").multilineTextAlignment(.trailing)
                         Image(systemName: "chevron.right").accessibilityHidden(true)
                     }
-                    .font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.accent)
+                    // The action role, not the raw accent: the chip sits on the page, and the light accent on cream was about 2:1
+                    // (#594, Iris). Light is the action brown (as Skip tour); dark keeps the accent.
+                    .font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeRole.action)
                     .frame(minHeight: 44)
                     .contentShape(Rectangle())
                 }
