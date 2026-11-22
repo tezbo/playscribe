@@ -39,3 +39,21 @@ test('static feed: index, per-game files, latest and review, stable across quiet
   assert.equal(read('games/wukong.json').releases[0].platforms[0].verification, 'official')
   assert.equal(read('review.json').items.length, 0)
 })
+
+// copy-untracked-no-updates-yet (Terry's Astro Bot, beta 3): a registry game with no patch source is listed in the index (its page
+// still needs its basics), but the app must not say "No updates yet. Checked…" for it. The index says so with `patchSource: false`;
+// every game with a source leaves the key out.
+test('static feed: a game with no patch source is marked patchSource false in the index', async () => {
+  const db = openDb(':memory:')
+  const deps = { db, fetchFn: fakeFetch({}), igdb: null }
+  await seedGames(deps)
+  const out = mkdtempSync(join(tmpdir(), 'feed-'))
+  exportStatic(db, out)
+  const index = JSON.parse(readFileSync(join(out, 'v1', 'index.json'), 'utf8'))
+  const sourceless = Object.entries(registry.games).filter(([, g]) => g.sources.length === 0).map(([id]) => id)
+  assert.ok(sourceless.includes('astro-bot'), 'astro-bot has no patch source in the registry')
+  for (const g of index.games) {
+    if (sourceless.includes(g.id)) assert.equal(g.patchSource, false, `${g.id} is marked`)
+    else assert.equal('patchSource' in g, false, `${g.id} has a source and carries no key`)
+  }
+})

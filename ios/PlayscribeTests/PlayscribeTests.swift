@@ -318,6 +318,13 @@ struct DatePrecisionTests {
         #expect(ps4Only("2021-03-04").ps5DateLine == ps4Only("2021-03-04").ps5AvailabilityLine)
     }
 
+    @Test("Iris, #597: each caption mark has words, so colour is never the only cue")
+    func tileMarkWords() {
+        #expect(AppModel.tileUpdateWords(.unread, "22 Nov") == "new update 22 Nov")
+        #expect(AppModel.tileUpdateWords(.recent, "22 Nov") == "updated this week, read, 22 Nov")
+        #expect(AppModel.tileUpdateWords(.older, "Jul 2025") == "last updated Jul 2025")
+    }
+
     @Test("D-12: a PS4-only game's tile is a quiet caption, never unread, never TBA, and VoiceOver says what it is")
     func ps4OnlyTile() {
         let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "ps4tile-\(UUID().uuidString).json"))
