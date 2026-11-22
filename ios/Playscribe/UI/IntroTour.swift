@@ -277,15 +277,11 @@ struct TourOverlay: View {
                         Text(step.title).font(PlayscribeFont.headline).foregroundStyle(PlayscribeRole.textPrimary)
                             .accessibilityLabel("Tour, step \(step.number) of \(TourStep.allCases.count). \(step.title)")
                             .accessibilityFocused($focused)
+                        // AX sizes: where the tab lives comes first, under the title, so it reads at rest; the explanation may scroll
+                        // (Iris, 714a782d).
+                        if typeSize.isAccessibilitySize { placeLine(step) }
                         Text(step.body(emptyLibrary: empty)).font(PlayscribeFont.body).foregroundStyle(PlayscribeRole.textPrimary)
-                        if let place = step.place(onRail: onRail) {
-                            // Points by word and picture: the tab's own glyph and label, and where it is in this pose.
-                            Text("\(Text(Image(systemName: TourStep.updatesSymbol)).foregroundStyle(PlayscribeRole.action)) \(place)")
-                                .foregroundStyle(PlayscribeRole.textPrimary)
-                                .font(PlayscribeFont.headline)
-                                .padding(.top, 2)
-                                .accessibilityLabel(place)
-                        }
+                        if !typeSize.isAccessibilitySize { placeLine(step) }
                     } else {
                         Text(TourCopy.welcomeTitle).font(PlayscribeFont.title3).foregroundStyle(PlayscribeRole.textPrimary)
                             .accessibilityFocused($focused)
@@ -322,6 +318,17 @@ struct TourOverlay: View {
         .onAppear { if model.tourWelcome { focused = true } }
     }
 
+    /// Points by word and picture: the tab's own glyph and label, and where it is in this pose.
+    @ViewBuilder private func placeLine(_ step: TourStep) -> some View {
+        if let place = step.place(onRail: onRail) {
+            Text("\(Text(Image(systemName: TourStep.updatesSymbol)).foregroundStyle(PlayscribeRole.action)) \(place)")
+                .foregroundStyle(PlayscribeRole.textPrimary)
+                .font(PlayscribeFont.headline)
+                .padding(.vertical, 2)
+                .accessibilityLabel(place)
+        }
+    }
+
     @ViewBuilder private func buttons(step: TourStep?) -> some View {
         let layout = typeSize.isAccessibilitySize && !wide ? AnyLayout(VStackLayout(spacing: 8)) : AnyLayout(HStackLayout(spacing: 8))
         layout {
@@ -331,7 +338,8 @@ struct TourOverlay: View {
                     .fixedSize().accessibilityHidden(true)
             }
             if let step {
-                secondary(TourCopy.skipTour) { model.endTour() }
+                // AX sizes: "Skip", as on the welcome, so the row keeps one line (Iris, 714a782d); the hint still says it ends the tour.
+                secondary(typeSize.isAccessibilitySize ? TourCopy.skip : TourCopy.skipTour) { model.endTour() }
                     .accessibilityHint("Ends the tour. You can replay it in Settings")
                 primary(step.primary) { model.advanceTour() }
                     .accessibilityHint(step.isLast ? "Finishes the tour" : "Shows the next tip")
