@@ -242,7 +242,6 @@ struct RootView: View {
         }
         .onChange(of: model.nav.gameID) { _, id in if id != nil { model.tourNoticed(openedGame: true) } }
         .onChange(of: model.data.nav.tab) { _, tab in model.tourNoticed(tab: tab) }
-        .onChange(of: model.data.spoilersShown) { model.tourNoticed(spoilersToggled: true) }
         .sheet(isPresented: Binding(get: { model.addSheetOpen && model.livePose != .tabletop && (model.addIsSystemSheet || !model.liveRightPage) }, set: { if !$0 && model.livePose != .tabletop && (model.addIsSystemSheet || !model.liveRightPage) { model.addSheetOpen = false } })) {
             // Full height: a shorter sheet left the Library's first-run strip showing, inert, beneath it.
             AddGameSheet().presentationDetents([.large])

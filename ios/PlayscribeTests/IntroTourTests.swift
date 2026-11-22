@@ -34,6 +34,9 @@ struct IntroTourTests {
         let fold = CGRect(x: 0, y: 374, width: 466, height: 40)
         #expect(TourLayout.target(tiles, container: size, pose: .tabletop, division: fold) == nil)
         #expect(TourLayout.target([CGRect(x: 16, y: 450, width: 44, height: 44)], container: size, pose: .tabletop, division: fold) != nil)
+        // A tile whose labels run past the bottom edge is still pointed at (Open portrait, c73186d2); one barely showing is not.
+        #expect(TourLayout.target([CGRect(x: 16, y: 600, width: 147, height: 243)], container: size, pose: .closed, division: nil) != nil)
+        #expect(TourLayout.target([CGRect(x: 16, y: 660, width: 147, height: 243)], container: size, pose: .closed, division: nil) == nil)
     }
 
     @Test func tabletopCardSitsInTheLowerHalfClearOfTheRail() {
@@ -81,10 +84,10 @@ struct IntroTourTests {
         let size = CGSize(width: 466, height: 678), card = CGSize(width: 0, height: 150)
         let high = TourLayout.card(size: card, target: CGRect(x: 16, y: 120, width: 100, height: 133), container: size, pose: .closed,
                                    division: nil, safeArea: EdgeInsets(top: 59, leading: 0, bottom: 34, trailing: 0), landscape: false, railWidth: 0)
-        #expect(high.minY == 120 + 133 + 12)
+        #expect(high.minY == CGFloat(120 + 133) + TourLayout.gap, "\(high)")
         let low = TourLayout.card(size: card, target: CGRect(x: 16, y: 450, width: 100, height: 133), container: size, pose: .closed,
                                   division: nil, safeArea: EdgeInsets(top: 59, leading: 0, bottom: 34, trailing: 0), landscape: false, railWidth: 0)
-        #expect(low.maxY == 450 - 12)
+        #expect(low.maxY == CGFloat(450) - TourLayout.gap, "\(low)")
         // The text-only card (no target) sits above the tab bar, never under it.
         let none = TourLayout.card(size: card, target: nil, container: size, pose: .closed, division: nil,
                                    safeArea: EdgeInsets(top: 59, leading: 0, bottom: 34, trailing: 0), landscape: false, railWidth: 0)

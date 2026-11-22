@@ -33,7 +33,8 @@ enum TourStep: Int, CaseIterable, Codable {
     }
 
     /// Step 2 also says where its tab lives, since the system tab bar cannot be ringed (Iris, #583): "Updates is in the bottom
-    /// bar." or, in Tabletop, "Updates is on the rail." Other steps point at what they ring.
+    /// bar." in portrait, "Updates is on the rail." in Tabletop and in every landscape pose, where the tabs run down the side
+    /// (Book at c73186d2). Other steps point at what they ring.
     func place(onRail: Bool) -> String? {
         guard self == .updates else { return nil }
         return onRail ? "Updates is on the rail." : "Updates is in the bottom bar."
@@ -60,7 +61,8 @@ enum TourCopy {
 
 // MARK: - Anchors
 
-/// Frames of the views a step points at, in the Duo container's space. Several views may offer the same step (every Library
+/// Frames of the views a step points at, in global space (a named space does not resolve the same way inside the system tab
+/// view's pages: the Tabletop ring sat 88 pt low at c73186d2). The overlay converts them to its own space. Several views may offer the same step (every Library
 /// tile offers step 1); the overlay picks the first one on screen.
 struct TourAnchorKey: PreferenceKey {
     static let defaultValue: [TourStep: [CGRect]] = [:]
@@ -79,7 +81,7 @@ private struct TourAnchorReporter: ViewModifier {
         if let step, model.tourStep == step, active {
             content.background {
                 GeometryReader { g in
-                    Color.clear.preference(key: TourAnchorKey.self, value: [step: [g.frame(in: .named(DuoContext.space))]])
+                    Color.clear.preference(key: TourAnchorKey.self, value: [step: [g.frame(in: .global)]])
                 }
             }
         } else {
@@ -108,7 +110,13 @@ enum TourLayout {
         let bounds = CGRect(origin: .zero, size: container)
         let floor = pose == .tabletop ? (division?.maxY ?? 0) : 0
         return rects
-            .filter { !$0.isEmpty && bounds.insetBy(dx: -1, dy: -1).contains($0) && $0.minY >= floor - 1 }
+            // On screen enough to point at: its top inside the container and at least 44 pt of it showing (a tile row whose
+            // labels run under the tab bar still counts; c73186d2 Open portrait lost the ring to a wholly-inside rule).
+            .filter { r in
+                let shown = r.intersection(bounds)
+                return !r.isEmpty && !shown.isNull && r.minY >= bounds.minY - 1 && shown.height >= min(r.height, 44)
+                    && shown.width >= min(r.width, 44) && r.minY >= floor - 1
+            }
             .min { ($0.minY, $0.minX) < ($1.minY, $1.minX) }
     }
 
@@ -170,7 +178,8 @@ struct TourOverlay: View {
             || model.keepCurrentDetailsOpen || model.player != nil || model.trailer != nil || model.shareReleaseID != nil
     }
     private var empty: Bool { model.data.collection.isEmpty }
-    private var onRail: Bool { duo.pose == .tabletop }
+    private var onRail: Bool { duo.pose == .tabletop || duo.isLandscape }
+    @State private var origin: CGPoint = .zero
     @State private var moreAbove = false
     @State private var moreBelow = false
 
@@ -179,7 +188,8 @@ struct TourOverlay: View {
             if !covered, model.tourWelcome || model.tourStep != nil {
                 let step = model.tourStep
                 let target = step.flatMap { anchors[$0] }.flatMap {
-                    TourLayout.target($0, container: duo.size, pose: duo.pose, division: duo.division)
+                    TourLayout.target($0.map { $0.offsetBy(dx: -origin.x, dy: -origin.y) }, container: duo.size, pose: duo.pose,
+                                      division: duo.division)
                 }
                 if let target {
                     RoundedRectangle(cornerRadius: 14, style: .continuous)
@@ -202,6 +212,7 @@ struct TourOverlay: View {
             }
         }
         .frame(width: duo.size.width, height: duo.size.height, alignment: .topLeading)
+        .onGeometryChange(for: CGPoint.self) { $0.frame(in: .global).origin } action: { origin = $0 }
         .animation(reduceMotion ? .easeInOut(duration: 0.2) : .easeOut(duration: 0.25), value: model.tourStep)
         .animation(.easeInOut(duration: 0.2), value: covered)
         .onChange(of: model.tourStep, initial: true) { _, step in
@@ -214,7 +225,11 @@ struct TourOverlay: View {
     @ViewBuilder private func card(step: TourStep?) -> some View {
         let maxHeight = duo.pose == .tabletop
             ? max(120, duo.size.height - (duo.division?.maxY ?? 0) - duo.safeArea.bottom - 2 * TourLayout.gap)
-            : duo.size.height * 0.5
+            : typeSize.isAccessibilitySize
+                // AX5: the card may take the screen between the safe area and the tab bar, so the body is never cut to a
+                // title (Closed landscape AX5 at c73186d2 showed only "2 of 3" and half a title).
+                ? duo.size.height - duo.safeArea.top - (duo.isLandscape ? duo.safeArea.bottom + TourLayout.margin : TourLayout.tabBarReserve + duo.safeArea.bottom) - 8
+                : duo.size.height * 0.5
         VStack(alignment: .leading, spacing: 12) {
             ScrollView {
                 VStack(alignment: .leading, spacing: 6) {
@@ -248,8 +263,8 @@ struct TourOverlay: View {
                 [g.contentOffset.y > 1, g.contentSize.height - g.contentOffset.y > g.containerSize.height + 1]
             } action: { _, v in moreAbove = v[0]; moreBelow = v[1] }
             .mask(LinearGradient(stops: [.init(color: moreAbove ? .clear : .black, location: 0),
-                                         .init(color: .black, location: moreAbove ? 0.1 : 0),
-                                         .init(color: .black, location: moreBelow ? 0.9 : 1),
+                                         .init(color: .black, location: moreAbove ? 0.15 : 0),
+                                         .init(color: .black, location: moreBelow ? 0.85 : 1),
                                          .init(color: moreBelow ? .clear : .black, location: 1)],
                                  startPoint: .top, endPoint: .bottom))
             .frame(maxHeight: max(60, maxHeight - (typeSize.isAccessibilitySize ? 140 : 76)))
