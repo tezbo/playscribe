@@ -86,6 +86,8 @@ struct ArtView: View {
         }
         .clipped()
         .accessibilityHidden(true)
+        // bug-064: wide art under the status bar turns the bar light (light mode only) and carries a scrim there.
+        .statusBarArt()
         .onAppear {
             guard drift, !reduceMotion else { return }
             withAnimation(.easeInOut(duration: 18).repeatForever(autoreverses: true)) { phase = true }

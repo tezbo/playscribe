@@ -7,6 +7,9 @@ import { extractNotes, isPromoLine, isPromoTitle, platformsFor, ps5PageOf, tagNo
 test('only a post that says the update is out on PS5 counts as official PS5 evidence', () => {
   assert.ok(ps5LiveStated('Patch 1.04 is now live on PC, PS5 and Xbox Series X|S.'))
   assert.ok(ps5LiveStated('The PS5 version of Hotfix 2 is available now.'))
+  // Update notes that list the PS5 build (Remedy, Alan Wake 2): a PS5 build exists. A future or later build does not count.
+  assert.ok(ps5LiveStated('These are the latest update notes 21st October 2026 PlayStation 5 (1.200.011) Xbox Series (1.2.0.11) PC (1.2.11) Fixes'))
+  assert.ok(!ps5LiveStated('PlayStation 5 (1.200.012) is coming soon after certification'))
   assert.ok(ps5LiveStated('Update 3 is rolling out on PlayStation 5 and PC'))
   assert.ok(!ps5LiveStated('Update 3 is live on PC. The PS5 version follows next week.'))
   assert.ok(!ps5LiveStated('Patch 5 is live now and fixes PS5 controller button prompts.'))

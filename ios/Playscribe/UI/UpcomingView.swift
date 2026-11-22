@@ -190,7 +190,7 @@ struct UpcomingView: View {
                 TileCover(game: g).aspectRatio(3 / 4, contentMode: .fit).frame(width: duo.pose == .closed ? 72 : 84)
                 VStack(alignment: .leading, spacing: 6) {
                     WholeWordText(text: g.name.gluingTrailingNumeral, font: PlayscribeFont.subheadline.weight(.semibold), lines: 4)
-                    Text(date).font(PlayscribeFont.caption).foregroundStyle(.secondary).fixedSize(horizontal: false, vertical: true)
+                    Text(date).font(PlayscribeFont.caption).foregroundStyle(PlayscribeRole.textSecondary).fixedSize(horizontal: false, vertical: true)
                     if let move {
                         // Status on its own row, 24 pt clear of the rail; the name and date keep the full column.
                         Text(move).font(PlayscribeFont.caption.weight(.semibold)).foregroundStyle(PlayscribeRole.action).fixedSize(horizontal: false, vertical: true)
@@ -232,7 +232,7 @@ struct UpcomingView: View {
             VStack(alignment: .leading, spacing: 6) {
                 TileCover(game: g).aspectRatio(3 / 4, contentMode: .fit)
                 WholeWordText(text: g.name.gluingTrailingNumeral, font: PlayscribeFont.subheadline.weight(.semibold), lines: 4)
-                Text(date).font(PlayscribeFont.caption).foregroundStyle(.secondary).lineLimit(2).fixedSize(horizontal: false, vertical: true)
+                Text(date).font(PlayscribeFont.caption).foregroundStyle(PlayscribeRole.textSecondary).lineLimit(2).fixedSize(horizontal: false, vertical: true)
                 if let move {
                     Text(move).font(PlayscribeFont.caption.weight(.semibold)).foregroundStyle(PlayscribeRole.action).lineLimit(2)
                 }
@@ -252,7 +252,7 @@ struct UpcomingView: View {
         VStack(alignment: .leading, spacing: 14) {
             if UpcomingStore.shared.failed && more.isEmpty {
                 HStack {
-                    Text("Couldn’t load upcoming games. Check your connection and try again.").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                    Text("Couldn’t load upcoming games. Check your connection and try again.").font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
                     Spacer(minLength: 0)
                     Button { Task { await UpcomingStore.shared.load() } } label: { Text("Retry").frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()) }
                         .font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeRole.action)
@@ -263,7 +263,7 @@ struct UpcomingView: View {
                 VStack(spacing: 8) {
                     Text("Nothing on your watchlist yet").font(PlayscribeFont.headline)
                     Text("Watch a game that isn’t out yet and Playscribe will tell you when its first update lands.")
-                        .font(PlayscribeFont.subheadline).foregroundStyle(.secondary).multilineTextAlignment(.center)
+                        .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary).multilineTextAlignment(.center)
                 }
                 // Book: the empty state stays on the left page, centred there, never across the spine (Quinn, #348).
                 .frame(width: duo.pose == .book ? duo.division.map { max(0, $0.minX - 24 - 16) } : nil)
@@ -292,11 +292,11 @@ struct UpcomingView: View {
             if more.isEmpty && watched.isEmpty && UpcomingStore.shared.loading {
                 HStack(spacing: 10) {
                     ProgressView()
-                    Text("Loading upcoming games").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                    Text("Loading upcoming games").font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
                 }
                 .accessibilityElement(children: .combine)
             } else if more.isEmpty && watched.isEmpty && !UpcomingStore.shared.failed {
-                Text("Nothing upcoming. Announced updates will show here.").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                Text("Nothing upcoming. Announced updates will show here.").font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
             } else if !more.isEmpty {
                 section("Coming to PS5", games: more, watching: false)
             }

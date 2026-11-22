@@ -47,6 +47,14 @@ on:
         description: 'backfill: earliest date to read, e.g. 2024-01-01'
         required: false
         default: '2024-01-01'
+      repair_only:
+        description: 'backfill: only drop or fix rows that already exist; create no release and no news item'
+        type: boolean
+        default: false
+      games:
+        description: 'backfill: only these game ids, comma-separated (e.g. no-mans-sky). Empty = every game.'
+        required: false
+        default: ''
 
 concurrency: feed
 
@@ -132,7 +140,9 @@ jobs:
         working-directory: backend
         env:
           SINCE: ${{ inputs.since }}
-        run: npm run ingest --silent -- --backfill "$SINCE" --export "$GITHUB_WORKSPACE/out"
+          GAMES: ${{ inputs.games }}
+          REPAIR_ONLY: ${{ inputs.repair_only && '1' || '' }}
+        run: npm run ingest --silent -- --backfill "$SINCE" ${GAMES:+--games "$GAMES"} ${REPAIR_ONLY:+--repair-only} --export "$GITHUB_WORKSPACE/out"
       - name: Confirm
         if: inputs.action == 'confirm'
         working-directory: backend

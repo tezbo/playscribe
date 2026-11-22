@@ -161,7 +161,7 @@ struct CaughtUpCard: View {
         VStack(alignment: .leading, spacing: 4) {
             Text("You’re all caught up").font(PlayscribeFont.headline)
             Text(lastUpdate.map { "Last update \($0.dayMonth)" } ?? "Nothing new in 90 days")
-                .font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(16)

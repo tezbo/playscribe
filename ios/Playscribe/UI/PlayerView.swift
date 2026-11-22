@@ -632,7 +632,7 @@ struct VideoCaption: View {
             Text(detail.isEmpty ? " " : detail)
                 .font(PlayscribeFont.subheadline)
                 // Over the mirror the grey is lifted so it keeps 4.5:1 on any frame (Mac, 12 Nov: 4.1 and 3.2 with .secondary).
-                .foregroundStyle(overMirror ? AnyShapeStyle(Color.white.opacity(0.85)) : AnyShapeStyle(.secondary))
+                .foregroundStyle(overMirror ? AnyShapeStyle(Color.white.opacity(0.85)) : AnyShapeStyle(PlayscribeRole.textSecondary))
         }
         .frame(maxWidth: .infinity, alignment: .leading)
     }
@@ -872,7 +872,7 @@ struct VideoUnavailable: View {
             Label(Self.blocksEmbedding(code) ? "This video plays only on YouTube" : "This video can’t play here", systemImage: "play.slash")
         } description: {
             VStack(spacing: 6) {
-                if let title, !title.isEmpty { Text(title).font(PlayscribeFont.headline).foregroundStyle(.primary) }
+                if let title, !title.isEmpty { Text(title).font(PlayscribeFont.headline).foregroundStyle(PlayscribeRole.textPrimary) }
                 if Self.blocksEmbedding(code) { Text("Its owner doesn’t allow it to play in other apps.") }
             }
         } actions: {

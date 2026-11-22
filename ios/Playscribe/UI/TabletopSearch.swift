@@ -38,8 +38,8 @@ struct TabletopSearchButton: View {
     var body: some View {
         Button { hintShown.toggle() } label: {
             HStack(spacing: 8) {
-                Image(systemName: "magnifyingglass").foregroundStyle(.secondary)
-                Text(letter.map { "Starting with \($0)" } ?? prompt).foregroundStyle(.secondary).lineLimit(1)
+                Image(systemName: "magnifyingglass").foregroundStyle(PlayscribeRole.textSecondary)
+                Text(letter.map { "Starting with \($0)" } ?? prompt).foregroundStyle(PlayscribeRole.textSecondary).lineLimit(1)
                 Spacer(minLength: 0)
             }
             .padding(.horizontal, 12)
@@ -61,7 +61,7 @@ struct TabletopSearchHint: View {
     var body: some View {
         if shown {
             Text("Typing needs the flat screen. Pick a letter below, or open your Duo flat to type.")
-                .font(PlayscribeFont.footnote).foregroundStyle(.secondary)
+                .font(PlayscribeFont.footnote).foregroundStyle(PlayscribeRole.textSecondary)
                 .fixedSize(horizontal: false, vertical: true)
                 .accessibilityIdentifier("tabletopSearchHint")
         }

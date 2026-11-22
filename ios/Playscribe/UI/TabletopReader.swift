@@ -280,7 +280,7 @@ struct TabletopReaderControls: View {
                                 HStack {
                                     Text(s.title).font(PlayscribeFont.subheadline.weight(i == index ? .semibold : .regular)).lineLimit(1)
                                     Spacer()
-                                    Text("\(i + 1)").font(PlayscribeFont.caption).foregroundStyle(.secondary)
+                                    Text("\(i + 1)").font(PlayscribeFont.caption).foregroundStyle(PlayscribeRole.textSecondary)
                                 }
                                 .padding(.horizontal, 12)
                                 .frame(minHeight: 44)
