@@ -25,10 +25,6 @@ struct FeedRefreshObservationTests {
         return flag.fired
     }
 
-    /// onChange is a Sendable closure, so it sets a flag on a reference rather than a captured var. It runs synchronously on
-    /// the writing (main) thread, inside `act`.
-    private final class Flag: @unchecked Sendable { var fired = false }
-
     @Test func anUnchangedRefreshLeavesDataAlone() {
         let m = model()
         let releases = m.feedReleases
@@ -60,3 +56,7 @@ struct FeedRefreshObservationTests {
         #expect(m.data.knownOnPS5?.contains(first) == true)
     }
 }
+
+/// onChange is a Sendable closure, so it sets a flag on a reference rather than a captured var. Outside the @MainActor test
+/// type, so the flag is not main-actor isolated. It is set synchronously on the writing (main) thread, inside `act`.
+private final class Flag: @unchecked Sendable { var fired = false }
