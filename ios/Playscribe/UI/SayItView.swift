@@ -233,15 +233,27 @@ struct SayItView: View {
             // At AX5 in a short panel (Closed landscape, 466 pt) the words need more height than there is. They scroll
             // and wrap; nothing is cut to one line (Mac stills at 61bc6dcb). The microphone and Find stay below.
             ScrollView {
+                // 16 pt under the header and at the sides (Iris, #578); the bottom inset lets the last line scroll
+                // clear of the fade.
                 words.frame(maxWidth: .infinity)
+                    .padding(.horizontal, 16).padding(.top, 16).padding(.bottom, 24)
             }
             .scrollBounceBehavior(.basedOnSize)
+            // The scroll edge fades instead of cutting a line in half (R-7, Iris #578: Closed landscape AX5).
+            .mask {
+                VStack(spacing: 0) {
+                    Rectangle()
+                    LinearGradient(colors: [.black, .clear], startPoint: .top, endPoint: .bottom).frame(height: 24)
+                }
+            }
             if explained && !capture.denied && !capture.unavailable {
                 Button {
                     Task { await capture.toggle() }
                 } label: {
+                    // The glyph is capped so it never outgrows its 64 pt circle at AX sizes (Iris, #578: Tabletop AX5).
+                    // The circle is the control; VoiceOver reads its label, not the glyph.
                     Image(systemName: capture.listening ? "stop.fill" : "mic.fill")
-                        .font(.title)
+                        .font(.system(size: 28, weight: .semibold))
                         .foregroundStyle(PlayscribeRole.onAction)
                         .frame(width: 64, height: 64)
                         .background(Circle().fill(capture.listening ? PlayscribeColor.accentPressed : PlayscribeRole.action))
@@ -317,7 +329,7 @@ struct SayItView: View {
                 .accessibilityHint("Shows the system permission request")
                 Button("Not now", action: typeInstead).hitTarget()
             }
-            .padding(.horizontal, 16).padding(.top, 24)
+            .padding(.top, 8)
         } else if capture.denied || capture.unavailable {
             VStack(spacing: 12) {
                 Text(capture.denied ? "Say it can’t listen yet" : "Speech isn’t available on this device right now")
@@ -344,7 +356,7 @@ struct SayItView: View {
                         .buttonStyle(.plain).tappableFrame()
                 }
             }
-            .padding(.horizontal, 16).padding(.top, 24)
+            .padding(.top, 8)
         } else {
             Text(capture.transcript.isEmpty ? emptyLine : capture.transcript)
                 .font(capture.transcript.isEmpty ? PlayscribeFont.subheadline : PlayscribeFont.title3)
@@ -352,7 +364,7 @@ struct SayItView: View {
                 .multilineTextAlignment(.center)
                 .fixedSize(horizontal: false, vertical: true)
                 .frame(maxWidth: .infinity, minHeight: 80)
-                .padding(.horizontal, 20)
+                .padding(.horizontal, 4)
                 .accessibilityLabel(capture.transcript.isEmpty
                                     ? (capture.listening ? "Listening" : capture.heardNothing ? emptyLine : "No titles heard yet")
                                     : capture.transcript)
