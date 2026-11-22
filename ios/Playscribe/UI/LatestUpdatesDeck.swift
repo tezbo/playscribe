@@ -753,7 +753,7 @@ struct PageEdge: View {
                 Button { select(item.card.id) } label: {
                     RoundedRectangle(cornerRadius: 1.5)
                         // Lit leaves keep their dim fill; the one amber capsule is drawn over them, so a lagging capsule never leaves a hole.
-                        .fill((item.card.unread ? PlayscribeColor.vellum100 : PlayscribeColor.textSecondary.opacity(0.5))
+                        .fill(item.card.unread ? PlayscribeColor.vellum100 : PlayscribeColor.textSecondary.opacity(0.5))
                         .frame(width: trimmed ? 2 : Self.litWidth, height: isCurrent ? Self.litHeight : (trimmed ? 6 : 10))
                         .frame(width: 44, height: 44)
                         .contentShape(Rectangle())
