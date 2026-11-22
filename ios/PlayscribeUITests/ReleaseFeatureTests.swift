@@ -195,11 +195,18 @@ final class ReleaseFeatureTests: XCTestCase {
         // The Gallery empty state (Astro Bot and Ghost of Yotei have no art or videos): plain text, and no trailer search (0.6.0).
         app.terminate()
         launch("chapter/astro-bot/gallery")
-        let empty = app.staticTexts["No pictures or videos here yet."]
-        XCTAssertTrue(empty.waitForExistence(timeout: 10), "the Gallery empty state's text is in the tree")
+        // Astro Bot has no pictures or videos, and a section with nothing in it is hidden (GameSections.visible, R-7): the
+        // route lands on What's new and there is no Gallery tab, so the old empty-state text is unreachable (Mac at 90eb4a0a:
+        // tabs What's new, News, My book). Checked instead: no Gallery tab, no trailer search, and nothing above the fold
+        // (the view-only stage) is a link or a button; the Official website link in the lower half is a control by design.
+        let whatsNew = app.buttons["What’s new"].firstMatch
+        XCTAssertTrue(whatsNew.waitForExistence(timeout: 10), "the game page opens")
+        XCTAssertFalse(app.buttons["Gallery"].exists, "an empty Gallery is not offered as a section")
         XCTAssertFalse(app.descendants(matching: .any).matching(NSPredicate(format: "label CONTAINS 'Find trailers online'")).firstMatch.exists, "no trailer search anywhere")
-        XCTAssertEqual(app.links.matching(NSPredicate(format: "label CONTAINS 'Find trailers online' OR label CONTAINS 'Official website'")).count, 0, "no Gallery link has a link trait in Tabletop")
-        XCTAssertEqual(app.buttons.matching(NSPredicate(format: "label CONTAINS 'Find trailers online' OR label CONTAINS 'Official website'")).count, 0, "no Gallery link is a button in Tabletop")
+        let fold = app.frame.midY
+        let raised = (app.links.allElementsBoundByIndex + app.buttons.matching(NSPredicate(format: "label CONTAINS 'Official website'")).allElementsBoundByIndex)
+            .filter { $0.exists && $0.frame.maxY > 0 && $0.frame.minY < fold }
+        XCTAssertTrue(raised.isEmpty, "no link or Official website button above the fold in Tabletop: \(raised.map { "\($0.label) \($0.frame)" })")
         let galleryTree = XCTAttachment(string: app.debugDescription); galleryTree.name = "tabletop-gallery-hierarchy.txt"; galleryTree.lifetime = .keepAlways; add(galleryTree)
     }
 
