@@ -135,7 +135,7 @@ struct WhatsNewList: View {
                 NoNotesPage(game: g)
             } else if !hasNotes {
                 // A game nothing is known about is never a blank page (s-056).
-                Text(GameBasicsView.noDetailsLine).font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                Text(GameBasicsView.noDetailsLine).font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
                     .accessibilityIdentifier("noDetailsLine")
             } else {
                 NotesSearchField(gameID: gameID)

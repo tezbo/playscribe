@@ -485,7 +485,7 @@ struct TabletopRail: View {
             Image(systemName: symbol)
                 .font(PlayscribeFont.title3)
                 .symbolVariant(model.nav.tab == t ? .fill : .none)
-                .foregroundStyle(model.nav.tab == t ? PlayscribeRole.action : Color.primary)
+                .foregroundStyle(model.nav.tab == t ? PlayscribeRole.action : PlayscribeRole.textPrimary)
                 .frame(width: 44, height: 44)
                 // The same selected treatment as the rail's action buttons (RailButton), so the rail reads as one style.
                 .background(Circle().fill(PlayscribeRole.action.opacity(model.nav.tab == t ? 0.18 : 0)))

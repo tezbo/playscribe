@@ -82,7 +82,7 @@ struct UpdateRowLabel: View {
             // The chips that are not the PS5 line stay with the row (never drop chips): PS4 update, Simulated.
             if release.ps4Label != nil || (release.simulated == true && release.ps5State == .onPS5) {
                 FlowLayout(spacing: 6) {
-                    if let l = release.ps4Label { Tag(text: l, tint: .secondary) }
+                    if let l = release.ps4Label { Tag(text: l, tint: PlayscribeRole.textSecondary) }
                     if release.simulated == true, release.ps5State == .onPS5 { Tag(text: "Simulated", tint: .simulated) }
                 }
                 .padding(.top, 2)
