@@ -2,7 +2,8 @@ import SwiftUI
 import Speech
 import AVFoundation
 
-/// Say it: hold the button, say a few titles, release. Recognition runs on the device
+/// Say it: tap the microphone, say a few titles, and it stops by itself when you stop talking (tap again to stop
+/// early). Terry, 22 Nov: hold-to-talk was an odd choice. Recognition runs on the device
 /// (`requiresOnDeviceRecognition`), so nothing is sent anywhere.
 @MainActor @Observable
 final class SpeechCapture {
@@ -10,14 +11,26 @@ final class SpeechCapture {
     var listening = false
     var denied = false
     var unavailable = false
+    /// Between the tap and the microphone opening (permission prompts included), so a second tap stops it.
+    var starting = false
 
+    @ObservationIgnored private lazy var silence = SilenceWatch { [weak self] in self?.stop() }
+    @ObservationIgnored private var longest: Task<Void, Never>?
     private let engine = AVAudioEngine()
     private var request: SFSpeechAudioBufferRecognitionRequest?
     private var task: SFSpeechRecognitionTask?
 
+    /// The microphone button: starts listening, or stops it early.
+    func toggle() async {
+        if listening || starting { starting = false; stop() } else { await start() }
+    }
+
     func start() async {
-        guard !listening else { return }
+        guard !listening, !starting else { return }
+        starting = true
+        defer { starting = false }
         guard await authorized() else { denied = true; return }
+        guard starting else { return } // tapped again while the permission prompts were up
         let recognizer = SFSpeechRecognizer(locale: Locale(identifier: "en-US")) ?? SFSpeechRecognizer()
         guard let recognizer, recognizer.isAvailable, recognizer.supportsOnDeviceRecognition else { unavailable = true; return }
         denied = false; unavailable = false
@@ -35,6 +48,11 @@ final class SpeechCapture {
             try engine.start()
             listening = true
             Haptics.voiceEdge()
+            silence.arm(heard: false)
+            longest = Task { [weak self] in
+                try? await Task.sleep(for: SilenceWatch.longest)
+                if !Task.isCancelled { self?.stop() }
+            }
             task = recognizer.recognitionTask(with: request, resultHandler: Self.handler { [weak self] text, done in
                 Task { @MainActor in self?.apply(text, done: done) }
             })
@@ -45,6 +63,8 @@ final class SpeechCapture {
     }
 
     func stop() {
+        silence.cancel()
+        longest?.cancel(); longest = nil
         guard listening || request != nil else { return }
         engine.stop()
         engine.inputNode.removeTap(onBus: 0)
@@ -56,8 +76,11 @@ final class SpeechCapture {
     }
 
     private func apply(_ text: String?, done: Bool) {
-        if let text, !text.isEmpty { transcript = text }
-        if done { task = nil }
+        if let text, !text.isEmpty, text != transcript {
+            transcript = text
+            if listening { silence.arm(heard: true) } // every new word restarts the pause timer
+        }
+        if done { task = nil; stop() }
     }
 
     private func authorized() async -> Bool {
@@ -95,6 +118,40 @@ final class SpeechCapture {
     }
 }
 
+/// Stops Say it after a pause: 1.8 s after the last new word, or 8 s when nothing has been heard yet, so a slow
+/// start isn't cut off. Every `arm` replaces the pending timer. The sleep is injectable for tests.
+@MainActor
+final class SilenceWatch {
+    static let afterSpeech: Duration = .milliseconds(1800)
+    static let beforeSpeech: Duration = .seconds(8)
+    static let longest: Duration = .seconds(60)
+
+    private let sleep: @Sendable (Duration) async throws -> Void
+    private let fire: @MainActor () -> Void
+    private var pending: Task<Void, Never>?
+
+    init(sleep: @escaping @Sendable (Duration) async throws -> Void = { try await Task.sleep(for: $0) },
+         fire: @escaping @MainActor () -> Void) {
+        self.sleep = sleep
+        self.fire = fire
+    }
+
+    func arm(heard: Bool) {
+        pending?.cancel()
+        let delay = heard ? Self.afterSpeech : Self.beforeSpeech
+        pending = Task { [sleep, fire] in
+            do { try await sleep(delay) } catch { return }
+            guard !Task.isCancelled else { return }
+            fire()
+        }
+    }
+
+    func cancel() {
+        pending?.cancel()
+        pending = nil
+    }
+}
+
 struct SayItView: View {
     @State private var capture = SpeechCapture()
     var find: (String) -> Void
@@ -109,7 +166,7 @@ struct SayItView: View {
                     Image(systemName: "mic.fill").font(.system(size: 44)).foregroundStyle(PlayscribeRole.action)
                         .accessibilityHidden(true)
                     Text("Let Playscribe hear your list").font(PlayscribeFont.headline).multilineTextAlignment(.center)
-                    Text("Playscribe turns your voice into game names on your phone. It only listens while you hold the button.")
+                    Text("Playscribe turns your voice into game names on your phone. It listens after you tap the microphone and stops when you stop talking.")
                         .font(PlayscribeFont.subheadline).foregroundStyle(.secondary).multilineTextAlignment(.center)
                     Button { explained = true } label: {
                         Text("Continue").font(PlayscribeFont.headline).foregroundStyle(PlayscribeRole.onAction)
@@ -138,35 +195,35 @@ struct SayItView: View {
                 }
                 .padding(.top, 24)
             } else {
-                Text(capture.transcript.isEmpty ? "Hold the button and say a few titles, like Elden Ring and Astro Bot."
+                Text(capture.transcript.isEmpty
+                     ? (capture.listening ? "Listening…" : "Tap the microphone and say a few titles, like Elden Ring and Astro Bot.")
                      : capture.transcript)
                     .font(capture.transcript.isEmpty ? PlayscribeFont.subheadline : PlayscribeFont.title3)
                     .foregroundStyle(capture.transcript.isEmpty ? PlayscribeRole.textSecondary : PlayscribeRole.textPrimary)
                     .multilineTextAlignment(.center)
                     .frame(maxWidth: .infinity, minHeight: 80)
                     .padding(.horizontal, 20)
-                    .accessibilityLabel(capture.transcript.isEmpty ? "No titles heard yet" : capture.transcript)
+                    .accessibilityLabel(capture.transcript.isEmpty
+                                        ? (capture.listening ? "Listening" : "No titles heard yet") : capture.transcript)
             }
             Spacer(minLength: 0)
             if explained && !capture.denied && !capture.unavailable {
-                Image(systemName: capture.listening ? "waveform" : "mic.fill")
-                    .font(.title)
-                    .foregroundStyle(PlayscribeRole.onAction)
-                    .frame(width: 64, height: 64)
-                    .background(Circle().fill(capture.listening ? PlayscribeColor.accentPressed : PlayscribeRole.action))
-                    .scaleEffect(capture.listening ? 1.08 : 1)
-                    .contentShape(Circle())
-                    .onLongPressGesture(minimumDuration: .infinity, maximumDistance: 60, pressing: { pressing in
-                        if pressing { Task { await capture.start() } } else { capture.stop() }
-                    }, perform: {})
-                    .accessibilityElement(children: .ignore)
-                    .accessibilityLabel("Hold to talk")
-                    .accessibilityHint("Hold, say game titles, then release")
-                    .accessibilityAddTraits(.isButton)
-                    .accessibilityAction(named: capture.listening ? "Stop" : "Start") {
-                        if capture.listening { capture.stop() } else { Task { await capture.start() } }
-                    }
-                    .tappableFrame()
+                Button {
+                    Task { await capture.toggle() }
+                } label: {
+                    Image(systemName: capture.listening ? "stop.fill" : "mic.fill")
+                        .font(.title)
+                        .foregroundStyle(PlayscribeRole.onAction)
+                        .frame(width: 64, height: 64)
+                        .background(Circle().fill(capture.listening ? PlayscribeColor.accentPressed : PlayscribeRole.action))
+                        .scaleEffect(capture.listening ? 1.08 : 1)
+                        .contentShape(Circle())
+                }
+                .buttonStyle(.plain)
+                .accessibilityLabel(capture.listening ? "Stop listening" : "Start listening")
+                .accessibilityHint(capture.listening ? "Stops now. It also stops by itself when you stop talking"
+                                   : "Say game titles. It stops by itself when you stop talking")
+                .tappableFrame()
                 Button {
                     capture.stop()
                     find(capture.transcript)
