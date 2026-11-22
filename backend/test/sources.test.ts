@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
 import { openDb } from '../src/db.ts'
-import { parseStatuspage, blueskyTitle } from '../src/ingest/adapters.ts'
+import { parseStatuspage, blueskyTitle, parseMojangNotes, parseRiotNews } from '../src/ingest/adapters.ts'
 import { pcNumberIsTitled, runIngest, seedGames } from '../src/ingest/pipeline.ts'
 import { registry } from '../src/registry.ts'
 import * as store from '../src/store.ts'
@@ -132,4 +132,22 @@ test('the games Terry flagged on 22 Nov: four have an official source, the rest 
   for (const id of ['gt7', 'astro-bot', 'genshin-impact']) assert.ok(registry.games[id]!.sourceGap, id)
   for (const g of Object.values(registry.games))
     for (const s of g.sources) assert.ok(!/fortnite-(game|status)\.bsky\.social/.test(s.url), `${s.id}: those accounts say they are unaffiliated with Epic`)
+})
+
+test('Minecraft: Mojang\'s Bedrock patch-notes file makes one dated update per entry, named by its version', () => {
+  const posts = parseMojangNotes('m', [
+    { title: 'Minecraft: Bedrock Edition 26.60 Changelog', version: '26.60', date: '2026-10-27', shortText: 'Brrrr!' },
+    { title: '26.40 Chaos', version: '26.40', date: '2026-08-04T15:46:00.367Z' },
+    { title: 'Broken', date: 'soon' },
+  ], { '26.60': '<p>Added drops</p><p>Fixed a crash</p>' })
+  assert.deepEqual(posts.map((p) => [p.title, p.publishedAt]), [['Update 26.60', '2026-10-27T00:00:00.000Z'], ['Update 26.40', '2026-08-04T15:46:00.367Z']])
+  assert.equal(posts[0]!.body, 'Added drops Fixed a crash')
+})
+
+test('Valorant: the game-updates page lists patch notes with Riot\'s own publish time; other categories are skipped', () => {
+  const item = (title: string, cat: string, url: string) => ({ title, action: { type: 'weblink', payload: { url } }, category: { machineName: cat }, description: { type: 'html', body: 'Replays bookmarks' }, publishedAt: '2026-11-10T14:00:00.000Z', analytics: { contentId: url } })
+  const html = `<html><script id="__NEXT_DATA__" type="application/json">${JSON.stringify({ props: { pageProps: { page: { blades: [{ items: [item('VALORANT Patch Notes 13.10', 'game_updates', '/en-us/news/game-updates/valorant-patch-notes-13-10'), item('Esports news', 'esports', '/en-us/news/esports/x')] }] } } } })}</script></html>`
+  const posts = parseRiotNews('v', 'https://playvalorant.com', html)
+  assert.deepEqual(posts.map((p) => [p.title, p.url, p.publishedAt]), [['VALORANT Patch Notes 13.10', 'https://playvalorant.com/en-us/news/game-updates/valorant-patch-notes-13-10', '2026-11-10T14:00:00.000Z']])
+  assert.deepEqual(parseRiotNews('v', 'https://playvalorant.com', '<html></html>'), [])
 })

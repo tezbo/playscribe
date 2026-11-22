@@ -5,7 +5,7 @@ import type { Platform, Trust } from './types.ts'
 export interface SourceDef {
   id: string
   /** pressIndex: a press site's paged list of update articles; matching articles are opened for their facts. */
-  kind: 'rss' | 'html' | 'steamNews' | 'pressIndex' | 'bluesky' | 'statuspage'
+  kind: 'rss' | 'html' | 'steamNews' | 'pressIndex' | 'bluesky' | 'statuspage' | 'mojangNotes' | 'riotNews'
   url: string
   platforms: Platform[]
   trust: Trust
