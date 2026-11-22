@@ -196,7 +196,12 @@ final class ReleaseFeatureTests: XCTestCase {
         app.terminate()
         launch("chapter/astro-bot/gallery")
         let empty = app.staticTexts["No pictures or videos here yet."]
-        XCTAssertTrue(empty.waitForExistence(timeout: 10), "the Gallery empty state's text is in the tree")
+        if !empty.waitForExistence(timeout: 10) {
+            // Gate #592 failed here with no tree to read (the attachment below comes after this check): keep one before failing.
+            let tree = XCTAttachment(string: app.debugDescription); tree.name = "tabletop-gallery-missing-hierarchy.txt"; tree.lifetime = .keepAlways; add(tree)
+            let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "tabletop-gallery-missing"; shot.lifetime = .keepAlways; add(shot)
+        }
+        XCTAssertTrue(empty.exists, "the Gallery empty state's text is in the tree")
         XCTAssertFalse(app.descendants(matching: .any).matching(NSPredicate(format: "label CONTAINS 'Find trailers online'")).firstMatch.exists, "no trailer search anywhere")
         XCTAssertEqual(app.links.matching(NSPredicate(format: "label CONTAINS 'Find trailers online' OR label CONTAINS 'Official website'")).count, 0, "no Gallery link has a link trait in Tabletop")
         XCTAssertEqual(app.buttons.matching(NSPredicate(format: "label CONTAINS 'Find trailers online' OR label CONTAINS 'Official website'")).count, 0, "no Gallery link is a button in Tabletop")

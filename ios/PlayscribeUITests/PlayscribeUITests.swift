@@ -1539,6 +1539,10 @@ final class Release050Tests: XCTestCase {
         XCTAssertTrue(toggle.exists, "Settings has the PS Plus card switch")
         XCTAssertTrue(["on", "1"].contains(toggle.value as? String ?? ""), "on by default, got \(String(describing: toggle.value))")
         let reminder = app.descendants(matching: .any)["plusLeavingSoon"]
+        // The form builds rows as they scroll in: in Tabletop's half-height panel the reminder row, under the switch, is not in
+        // the tree until it is near the panel (gate #592). Scroll a little at a time, as for the switch.
+        var down = 0
+        while !reminder.exists && down < 4 { Self.scrollForm(app); down += 1 }
         XCTAssertTrue(reminder.exists, "the reminder row shows while the card is on")
         let inner = toggle.switches.firstMatch
         if inner.exists { inner.tap() } else { toggle.coordinate(withNormalizedOffset: CGVector(dx: 0.93, dy: 0.5)).tap() }

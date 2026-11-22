@@ -11,7 +11,12 @@ final class PageBottomFadeTests: XCTestCase {
         let app = XCUIApplication()
         ReleaseRowTests.openBluePrince(app)
         let page = app.scrollViews["pageScroll"]
-        XCTAssertTrue(page.waitForExistence(timeout: 10), "page shown [\(ReleaseRowTests.pose(app))]")
+        // Tabletop's stage and Book's Page are not the one-column page (see above): skip there rather than fail on a page that
+        // pose never has (gate #592, Tabletop). Every other pose must show it.
+        if !page.waitForExistence(timeout: 10), ["pose: tabletop", "pose: book"].contains(where: ReleaseRowTests.pose(app).contains) {
+            throw XCTSkip("no one-column page [\(ReleaseRowTests.pose(app))]")
+        }
+        XCTAssertTrue(page.exists, "page shown [\(ReleaseRowTests.pose(app))]")
         guard page.isHittable else { throw XCTSkip("no one-column page [\(ReleaseRowTests.pose(app))]") }
         sleep(2)
         for step in ["rest", "dragged"] {
