@@ -19,7 +19,7 @@ struct IntroTourTests {
         // V-3 and copy rules: no source names, no ellipsis, no dot separators.
         for s in TourStep.allCases {
             for text in [s.title, s.body(emptyLibrary: true), s.body(emptyLibrary: false)] {
-                #expect(!text.contains("…") && !text.contains("·"))
+                #expect(!text.unicodeScalars.contains { $0.value == 0x2026 || $0.value == 0xB7 })
             }
         }
     }
