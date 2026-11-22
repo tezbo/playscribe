@@ -58,5 +58,5 @@ struct FeedRefreshObservationTests {
 }
 
 /// onChange is a Sendable closure, so it sets a flag on a reference rather than a captured var. Outside the @MainActor test
-/// type, so the flag is not main-actor isolated. It is set synchronously on the writing (main) thread, inside `act`.
-private final class Flag: @unchecked Sendable { var fired = false }
+/// type and marked nonisolated (this target defaults to MainActor), so the Sendable closure can set it. It is set synchronously on the writing (main) thread, inside `act`.
+nonisolated private final class Flag: @unchecked Sendable { var fired = false }
