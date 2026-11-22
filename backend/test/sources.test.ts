@@ -2,7 +2,7 @@ import assert from 'node:assert/strict'
 import { test } from 'node:test'
 import { openDb } from '../src/db.ts'
 import { parseStatuspage, blueskyTitle } from '../src/ingest/adapters.ts'
-import { runIngest, seedGames } from '../src/ingest/pipeline.ts'
+import { pcNumberIsTitled, runIngest, seedGames } from '../src/ingest/pipeline.ts'
 import { registry } from '../src/registry.ts'
 import * as store from '../src/store.ts'
 import { fakeFetch, rss } from './helpers.ts'
@@ -79,7 +79,7 @@ test('Fortnite: Epic\'s status page makes a release when the downtime is Complet
   const item = (title: string, desc: string, pub: string, id: string) => `<item><title>${title}</title><description>${desc}</description><pubDate>${pub}</pubDate><link>https://status.epicgames.com/incidents/${id}</link><guid>https://status.epicgames.com/incidents/${id}</guid></item>`
   const done = (t: string, d: string) => `&lt;p&gt; &lt;small&gt;Nov &lt;var data-var='date'&gt;${d}&lt;/var&gt;, &lt;var data-var='time'&gt;${t}&lt;/var&gt; UTC&lt;/small&gt;&lt;br&gt; &lt;strong&gt;Completed&lt;/strong&gt; - The scheduled maintenance has been completed. &lt;/p&gt;`
   const feed = `<?xml version="1.0"?><rss><channel>${[
-    item('Fortnite: Downtime for v43.10 Update', done('10:49', '12'), 'Thu, 12 Nov 2026 10:49:20 +0000', 'a1'),
+    item('Fortnite: Downtime for v43.10 Update', done('10:49', '12') + '&lt;p&gt;&lt;strong&gt;In progress&lt;/strong&gt; - Nov 12, 08:00 UTC&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Scheduled&lt;/strong&gt; - Nov 11, 17:00 UTC. Scheduled downtime begins at 8 AM UTC.&lt;/p&gt;', 'Thu, 12 Nov 2026 10:49:20 +0000', 'a1'),
     item('Fortnite: Downtime for v43.20 Update', '&lt;p&gt;&lt;strong&gt;Scheduled&lt;/strong&gt; - Scheduled downtime for v43.20 begins at 9 AM UTC.&lt;/p&gt;', 'Tue, 24 Nov 2026 22:49:20 +0000', 'a2'),
     item('EOS Maintenance', done('08:00', '10'), 'Tue, 10 Nov 2026 07:30:12 +0000', 'a3'),
     item('Fortnite Login and Matchmaking Issues', '&lt;p&gt;&lt;strong&gt;Resolved&lt;/strong&gt; - restored.&lt;/p&gt;', 'Wed, 18 Nov 2026 19:19:10 +0000', 'a4'),
@@ -89,6 +89,23 @@ test('Fortnite: Epic\'s status page makes a release when the downtime is Complet
   assert.deepEqual(releasesOf(db, 'fortnite'), ['fortnite@43.10'])
   const f = ps5Of(db, 'fortnite@43.10')!
   assert.deepEqual([f.status, f.verification, f.liveAt?.value.slice(0, 10)], ['live', 'official', '2026-11-12'])
+  assert.equal(f.liveAt?.value, '2026-11-12T10:49:20.000Z', 'dated at the Completed time (the item\'s last entry), not the 08:00 scheduled start')
+})
+
+test('the PC number in a studio title is dropped only when the post lists it as PC; no other official RSS name changes', async () => {
+  assert.ok(pcNumberIsTitled('Update 1.2.11', 'PlayStation 5 (1.200.011) Xbox Series (1.2.0.11) PC (1.2.11)'))
+  assert.ok(!pcNumberIsTitled('Update 1.200.011', 'PlayStation 5 (1.200.011) PC (1.2.11)'), 'a title carrying the PS5 build keeps it')
+  assert.ok(!pcNumberIsTitled('Patch 2.09', 'PS5 (1.200.011) is live. PC (1.2.11)'))
+  assert.ok(!pcNumberIsTitled('Update', 'PS5 (1.200.011) PC (1.2.11)'), 'no number in the name, nothing to drop')
+})
+
+test('a PS5-only official post promising a patch ("will be live soon") does not make the PS5 row official', async () => {
+  const { db } = await ingest({
+    'https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=suckerpunchprod.bsky.social': bsky([{ text: 'Patch 2.10 for Ghost of Yōtei will be live soon. Details to follow.', at: '2026-11-01T17:00:00.000Z' }], 'suckerpunchprod.bsky.social'),
+  })
+  const ids = releasesOf(db, 'yotei')
+  assert.ok(ids.length > 0, 'the post is a release, so the check below ran')
+  for (const id of ids) assert.notEqual(ps5Of(db, id)!.verification, 'official', id)
 })
 
 test('blueskyTitle names the patch the studio names, else the first sentence', () => {

@@ -175,6 +175,12 @@ const recordState = (db: DB, sourceId: string, status: number, error: string | n
     )
     .run(sourceId, now(), status, error, blocked ? 1 : 0, status)
 
+/** The name's last word is the number the post itself lists for PC ("update 1.2.11" with "PC (1.2.11)"): only then is it a PC number to drop. */
+export const pcNumberIsTitled = (name: string, body: string) => {
+  const num = name.match(/\s(v?\d+(?:\.\d+)+)$/i)?.[1]?.replace(/^v/i, '')
+  return !!num && new RegExp(`\\bPC\\s*[:(–-]?\\s*\\(?v?${num.replace(/\./g, '\\.')}(?![\\d.])`, 'i').test(body)
+}
+
 const poll = async (deps: IngestDeps, s: SourceDef, summary: IngestSummary, opts: PageOpts = {}): Promise<Post[] | null> => {
   try {
     // Steam's and Bluesky's public APIs are not websites: robots.txt does not apply to them; the Statuspage feed and others are checked.
@@ -220,7 +226,7 @@ const handlePost = (deps: IngestDeps, game: Record<string, any>, s: SourceDef, p
   if (pcBuildNamed) naming = { ...naming, displayName: naming.displayName.replace(/\s+\S+$/, '') || 'Update' }
   // A studio post that lists its own PlayStation 5 build ("PlayStation 5 (1.200.011) Xbox Series (1.2.0.11) PC (1.2.11)") while its title
   // carries the PC number ("update 1.2.11") is just "Update": the PC number is never shown as a PS5 version; the PS5 row keeps its own.
-  if (!pcBuildNamed && s.kind === 'rss' && s.trust === 'official' && consoleVersionOf(post.body) && naming.displayName !== naming.displayName.replace(/\s+\S+$/, ''))
+  if (!pcBuildNamed && s.kind === 'rss' && s.trust === 'official' && consoleVersionOf(post.body) && pcNumberIsTitled(naming.displayName, post.body))
     naming = { ...naming, displayName: naming.displayName.replace(/\s+\S+$/, '') || 'Update' }
   const notes = extractNotes(post.body, 'Changes', s.kind === 'steamNews' && (!game.ps5_release || post.publishedAt.slice(0, 10) < game.ps5_release))
   const kind = () =>
@@ -362,7 +368,7 @@ const handlePost = (deps: IngestDeps, game: Record<string, any>, s: SourceDef, p
 
   // An official account or status page that is only about PS5 (or ships to every platform at once) and says the update is live
   // ("Patch 2.09 ... is now live", a completed downtime) does not need to name PS5 to make the PS5 row official.
-  const liveHere = s.ps5Signal === 'always' && s.trust === 'official' && !stated && /\b(now live|is live|live now|out now|now out|available now|now available|rolling out|deployed|is out|has been completed|has been released)\b/i.test(text)
+  const liveHere = s.ps5Signal === 'always' && s.trust === 'official' && !stated && !/\b(coming soon|soon|will be|upcoming|certification|later|next week|expected)\b/i.test(text) && ps5StatusOf(text) !== 'announced' && /\b(now live|is live|live now|out now|now out|available now|now available|rolling out|deployed|is out|has been completed|has been released)\b/i.test(text)
   if (ps5LiveStated(text) || liveHere) {
     officialPs5(releaseId, s.ps5Signal !== 'always')
     return releaseId
