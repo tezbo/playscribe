@@ -67,9 +67,7 @@ extension AppModel {
         do {
             let (latest, raw) = try await FeedClient.fetchLatest()
             try? raw.write(to: FeedClient.cacheURL, options: .atomic)
-            feedReleases = latest.releases
-            feedStatus = .updated(latest.updatedAt)
-            notifyNewlyOnPS5()
+            applyLatest(releases: latest.releases, updatedAt: latest.updatedAt)
             await refreshHistories()
             await PlusStore.shared.load()
         } catch let error as URLError where [.notConnectedToInternet, .networkConnectionLost, .timedOut].contains(error.code) {
@@ -78,6 +76,29 @@ extension AppModel {
             feedStatus = .failed(previous)
         }
     }
+
+    /// A fetched latest.json, applied: its releases, the Checked time, and any newly On PS5 alert.
+    func applyLatest(releases: [Release], updatedAt: Date) {
+        feedReleases = releases
+        feedStatus = .updated(updatedAt)
+        notifyNewlyOnPS5()
+    }
+
+    #if INTERNAL
+    /// QA (bug-library-redraw-on-feed-refresh): `-qaFeedPulse <seconds>` runs a feed refresh every so many seconds with the
+    /// feed the app already has, through the same apply path as a real one and with no network: Refreshing, then latest.json
+    /// applied, then the histories' alert pass. A UI test scrolls the Library through these and counts its body runs.
+    func runQAFeedPulse(every seconds: Double) async {
+        while !Task.isCancelled {
+            try? await Task.sleep(for: .seconds(seconds))
+            feedStatus = .refreshing
+            try? await Task.sleep(for: .milliseconds(200))
+            applyLatest(releases: feedReleases, updatedAt: .now)
+            alertAddressedIssues()
+            notifyNewlyOnPS5()
+        }
+    }
+    #endif
 
     private var lastFeedDate: Date? {
         if case .updated(let d) = feedStatus { return d }

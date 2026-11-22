@@ -393,6 +393,9 @@ struct LibraryShelf: View {
         #if DEBUG
         let _ = ProcessInfo.processInfo.arguments.contains("-qaPrintChanges") ? Self._printChanges() : ()
         #endif
+        #if INTERNAL
+        let _ = QABodyCount.library += 1
+        #endif
         @Bindable var model = model
         let rows = duo.pose == .tabletop && letter != nil
             ? model.shownRows().filter { LetterIndex.matches($0.game.name, letter ?? "") } : model.shownRows()
@@ -641,6 +644,13 @@ struct LibraryShelf: View {
                     if let r = model.qaRoute {
                         Text("qa-route-\(r)").font(.system(size: 1)).opacity(0.01).accessibilityIdentifier("qa-route-\(r)")
                     }
+                    #if INTERNAL
+                    if AppModel.isQALaunch {
+                        // bug-library-redraw-on-feed-refresh: how many times this body has run, read by LibraryFeedRedrawTests.
+                        Text("qa-library-body: \(QABodyCount.library)").font(.system(size: 1)).opacity(0.01)
+                            .accessibilityIdentifier("qaLibraryBody")
+                    }
+                    #endif
                 }
                 .allowsHitTesting(false)
             }
@@ -1453,3 +1463,11 @@ struct ScrolledTopEdge: ViewModifier {
         }
     }
 }
+
+#if INTERNAL
+/// QA only: body runs of the Library shelf since launch (bug-library-redraw-on-feed-refresh). Never observed, so counting
+/// never causes a run.
+@MainActor enum QABodyCount {
+    static var library = 0
+}
+#endif

@@ -56,6 +56,12 @@ struct PlayscribeApp: App {
                     WidgetBridge.publish(model)
                     FeedClient.scheduleRefresh()
                 }
+                #if INTERNAL
+                .task {
+                    let pulse = UserDefaults.standard.double(forKey: "qaFeedPulse")
+                    if pulse > 0 { await model.runQAFeedPulse(every: pulse) }
+                }
+                #endif
                 .onOpenURL { model.handle(url: $0) }
                 .onChange(of: phase) { _, p in
                     if p == .active {
