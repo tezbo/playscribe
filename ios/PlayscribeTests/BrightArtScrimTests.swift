@@ -19,29 +19,31 @@ struct BrightArtScrimTests {
                     .brightArtScrim(0.75, fullBleed: fullBleed)
             }
         let r = ImageRenderer(content: view)
-        r.scale = 1
-        return try Self.owned(try #require(r.cgImage))
-    }
-
-    /// The renderer's image, copied once into a bitmap this test owns, so every pixel read draws from plain memory.
-    /// Root cause of the intermittent CI failure (run 44986945527, row 270): the first patch averaged 59 while all 15 of its
-    /// pixels, read again moments later, were 64. One read of the renderer's own image came back near 0 and never again,
-    /// so reads straight from that image are not repeatable. Copied twice, the two copies must match byte for byte.
-    private static func owned(_ cg: CGImage) throws -> CGImage {
-        func copy() throws -> CGContext {
-            let ctx = try #require(CGContext(data: nil, width: cg.width, height: cg.height, bitsPerComponent: 8,
-                                             bytesPerRow: cg.width * 4, space: CGColorSpaceCreateDeviceRGB(),
-                                             bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue))
-            ctx.draw(cg, in: CGRect(x: 0, y: 0, width: cg.width, height: cg.height))
-            return ctx
-        }
-        let a = try copy(), b = try copy()
-        let n = cg.width * cg.height * 4
+        // Drawn straight into a bitmap the test owns, twice; the two must match byte for byte.
+        let a = try Self.draw(r), b = try Self.draw(r)
+        #expect(a.width == Int(stage.width) && a.height == Int(stage.height) && b.width == a.width && b.height == a.height)
+        let n = min(a.width * a.height, b.width * b.height) * 4
         let pa = UnsafeBufferPointer(start: a.data!.assumingMemoryBound(to: UInt8.self), count: n)
         let pb = UnsafeBufferPointer(start: b.data!.assumingMemoryBound(to: UInt8.self), count: n)
         let diff = (0..<n).filter { pa[$0] != pb[$0] }
-        #expect(diff.isEmpty, "two copies of one rendered image differ at \(diff.count) bytes, first at pixel \((diff.first ?? 0) / 4)")
+        #expect(diff.isEmpty, "two renders differ at \(diff.count) bytes, first at pixel \((diff.first ?? 0) / 4)")
         return try #require(a.makeImage())
+    }
+
+    /// Root cause of the intermittent CI failure: reads of `ImageRenderer.cgImage` are not repeatable. Run 44986945527
+    /// (and 44989305239): a patch averaged 59 (then 55) while all 15 of its pixels, read again, were 64. Run 44989259183
+    /// copied that image twice and the copies differed at every byte: the first draw of the renderer's image can come back
+    /// empty. So the view is rendered with `render(rasterizationScale:renderer:)` straight into our own context instead.
+    private static func draw(_ r: ImageRenderer<some View>) throws -> CGContext {
+        var out: CGContext?
+        r.render(rasterizationScale: 1) { size, render in
+            guard let ctx = CGContext(data: nil, width: Int(size.width), height: Int(size.height), bitsPerComponent: 8,
+                                      bytesPerRow: Int(size.width) * 4, space: CGColorSpaceCreateDeviceRGB(),
+                                      bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue) else { return }
+            render(ctx)
+            out = ctx
+        }
+        return try #require(out)
     }
 
     /// Grey level 0...255 at a point in points (scale 1), from the top-left.
