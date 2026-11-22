@@ -539,13 +539,15 @@ struct OnboardingStage: View {
                 ArtView(asset: nil, game: nil)
             }
             LinearGradient(colors: [.clear, .black.opacity(0.7)], startPoint: .center, endPoint: .bottom)
+            // The stage is dark art in both modes, so the headline keeps the light ink: the role turned it dark on dark in light mode
+            // (Mac at c4b07144, first run).
             let headline = welcomeDone ? "Follow a game to get its PS5 patch notes in one place." : "Add your games to see every update"
             Group {
                 // AX: at most four lines, and any ellipsis lands at a word boundary, never mid-word ("Follow a game to g...", Quinn, 6a31718).
                 if typeSize.isAccessibilitySize {
-                    WholeWordText(text: headline, font: PlayscribeFont.title, lines: 4, color: PlayscribeRole.textPrimary)
+                    WholeWordText(text: headline, font: PlayscribeFont.title, lines: 4, color: PlayscribeColor.textPrimary)
                 } else {
-                    Text(headline).font(PlayscribeFont.title).foregroundStyle(PlayscribeRole.textPrimary)
+                    Text(headline).font(PlayscribeFont.title).foregroundStyle(PlayscribeColor.textPrimary)
                 }
             }
             .padding(20)
