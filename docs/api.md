@@ -13,6 +13,8 @@ Every type below is defined in [ps5-patch-data.md](ps5-patch-data.md). The serve
 
 **Front cover focal point (0.7, optional, #467):** a game may carry `coverFocus: { x, y, scale? }`, the point of its landscape key art that the Closed-pose front cover keeps in view: `x` and `y` from 0 (left, top) to 1, and `scale`, an optional zoom of 1 or more beyond filling the cover (absent = 1). The cover is about 466 × 678 pt, so a wide image loses most of its width; absent means the centre. The app places the point at the cover's horizontal centre (and, at large text sizes, in its top half), clamped so the art always covers the cover. The bundled catalogue carries it on the game record under the same name. Set it only for art whose subject or logo sits off centre.
 
+**Front cover trailer loop (0.6.0, optional, s-06-cover-trailer-loop):** a game may carry `coverLoop`, the https URL of the publisher's own official trailer mp4. In Trailer loop cover mode the app plays it muted and looping on the Closed front cover, straight from that URL through the system player: it is never downloaded, re-hosted, trimmed, re-encoded or cached beyond the player's buffer. Absent, not https, under Low Power Mode, with Reduce Motion on or with Autoplay videos off, the cover shows Key-art motion. Only an official source qualifies; a fan upload or a re-encode does not.
+
 A release is **On PS5** only when its `ps5` platform row has `status == "live"` and `verification == "official"`. This rule comes from the app rules in ps5-patch-data.md.
 
 ## Static feed
