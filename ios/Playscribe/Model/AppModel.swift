@@ -949,6 +949,9 @@ final class AppModel {
             addSheetOpen = true
             if parts.first == "scan" { addSheetMethod = .camera; simulatedScan = true }
             if parts.first == "keyboard" { addSheetMethod = .typeIt; addSearchFocus = true }
+            // add/type (gate #592): Type it without focusing the field, as a tap on Type it in the chooser does (Tabletop shows
+            // letters, not the keyboard). Plain "add" opens the chooser.
+            if parts.first == "type" { addSheetMethod = .typeIt }
             if parts.first == "say" { addSheetMethod = .sayIt; simulatedSay = parts.count > 1 ? parts[1] : "idle" }
         case "cover":   // 0.7 front cover preview (duo-closed-cover): a full deck, or cover/one for a lone update
             // cover/<game> (Iris, focal-point check): that game's newest update leads the deck, unread.

@@ -894,6 +894,10 @@ struct DeckStage: View {
                 }
                 .font(PlayscribeFont.subheadline).fixedSize(horizontal: false, vertical: true)
             }
+            // The caption block itself (no padding), so a test can measure that it ends 24 pt above the division (gate #592,
+            // as the legacy stage's caption did). Its texts stay separate elements.
+            .accessibilityElement(children: .contain)
+            .accessibilityIdentifier("stageCaption")
             .padding(20)
             .dynamicTypeSize(...DynamicTypeSize.accessibility3)
             // The caption ends 24 pt above the division, measured in screen space (as in 0.2.0 #174/#176).

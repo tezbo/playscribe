@@ -4,6 +4,7 @@ import type { DB } from './db.ts'
 import { issuesOf } from './issues.ts'
 import { loadPlus } from './plus.ts'
 import { storedPlusMonths, withPlusCovers } from './plusAuto.ts'
+import { registry } from './registry.ts'
 import { gameFromRow, getRelease, listReleases, newsOf, releaseFromRow } from './store.ts'
 
 // Writes the read side of the API as static files, so the app can sync from any static host
@@ -36,7 +37,10 @@ export const exportStatic = (db: DB, outDir: string) => {
     if (retired.has(g.id) || (autoIds.has(g.id) && releases.length === 0)) continue
     const updatedAt = releases.reduce((m, r) => (r.updatedAt > m ? r.updatedAt : m), '')
     if (updatedAt > newest) newest = updatedAt
-    index.push({ ...g, latestReleaseId: releases[0]?.id ?? null, releaseCount: releases.length, updatedAt: updatedAt || null })
+    // A registry game with no patch source (registry `sourceGap`) is listed for its basics, but nothing fetches its patches: the
+    // app must say it doesn't track its updates, not "No updates yet" (copy-untracked-no-updates-yet). Only that case carries the key.
+    const noSource = registry.games[g.id]?.sources.length === 0
+    index.push({ ...g, latestReleaseId: releases[0]?.id ?? null, releaseCount: releases.length, updatedAt: updatedAt || null, ...(noSource ? { patchSource: false } : {}) })
     if (!autoIds.has(g.id)) write(join(root, 'news', `${g.id}.json`), { items: newsOf(db, g.id) })
     write(join(root, 'games', `${g.id}.json`), { game: g, releases, issues: issuesOf(g.id, releases) })
   }
