@@ -255,6 +255,64 @@ export const parseStatuspage = (sourceId: string, body: string): Post[] => {
   return posts
 }
 
+/**
+ * Minecraft's Bedrock patch notes as Mojang publishes them for the game launcher (a public JSON file, newest first). Bedrock is the
+ * edition on PlayStation. The newest few entries are read in full; older ones keep their short text.
+ */
+type MojangEntry = { title: string; version?: string; date: string; contentPath?: string; shortText?: string; body?: string }
+export const parseMojangNotes = (sourceId: string, entries: MojangEntry[], bodies: Record<string, string> = {}): Post[] =>
+  entries
+    .filter((e) => e.title && e.date && !Number.isNaN(new Date(e.date).getTime()))
+    .map((e) => ({
+      sourceId,
+      postId: `mojang-bedrock-${e.version ?? e.title}`,
+      url: 'https://www.minecraft.net/en-us/articles',
+      title: e.version ? `Update ${e.version}` : e.title,
+      publishedAt: new Date(e.date).toISOString(),
+      body: (bodies[e.version ?? e.title] ?? e.body ?? e.shortText ?? e.title).replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim(),
+    }))
+
+const mojangNotes = async (fetchFn: FetchFn, s: SourceDef): Promise<Post[]> => {
+  const base = s.url.replace(/[^/]+$/, '')
+  const d = await getJson<{ entries: MojangEntry[] }>(fetchFn, s.url)
+  const bodies: Record<string, string> = {}
+  for (const e of d.entries.slice(0, 5)) {
+    if (!e.contentPath) continue
+    try {
+      bodies[e.version ?? e.title] = (await getJson<{ body?: string }>(fetchFn, `${base}${e.contentPath}`)).body ?? ''
+    } catch {
+      // the short text stands in
+    }
+  }
+  return parseMojangNotes(s.id, d.entries, bodies)
+}
+
+/**
+ * Riot's own news page for a game (Valorant): the page carries its article list as JSON (Next.js page data). Only the
+ * game-updates category is read; each article is a patch note and is dated when Riot published it.
+ */
+export const parseRiotNews = (sourceId: string, siteOrigin: string, html: string): Post[] => {
+  const raw = html.match(/<script id="__NEXT_DATA__"[^>]*>([\s\S]*?)<\/script>/)?.[1]
+  if (!raw) return []
+  const out: Post[] = []
+  const seen = new Set<string>()
+  const walk = (o: unknown): void => {
+    if (Array.isArray(o)) return o.forEach(walk)
+    if (!o || typeof o !== 'object') return
+    const r = o as Record<string, any>
+    if (typeof r.title === 'string' && r.publishedAt && r.category?.machineName === 'game_updates' && r.action?.payload?.url) {
+      const id = r.analytics?.contentId ?? r.action.payload.url
+      if (seen.has(id)) return
+      seen.add(id)
+      out.push({ sourceId, postId: id, url: new URL(r.action.payload.url, siteOrigin).toString(), title: r.title, publishedAt: new Date(r.publishedAt).toISOString(), body: `${r.title}. ${r.description?.body ?? ''}`.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim() })
+      return
+    }
+    Object.values(r).forEach(walk)
+  }
+  walk(JSON.parse(raw))
+  return out
+}
+
 /** Posts of a source that names its game(s): drop what names none, mark what is not a patch post as news. */
 const forGame = (s: SourceDef, posts: Post[]): Post[] =>
   s.mentions || s.patchOnly
@@ -268,9 +326,11 @@ const forGame = (s: SourceDef, posts: Post[]): Post[] =>
     : posts
 
 export const fetchPosts = async (fetchFn: FetchFn, s: SourceDef, opts: PageOpts = {}): Promise<Post[]> => {
-  if (s.kind === 'steamNews') return steam(fetchFn, s, opts.until ? 100 : 20, opts.until)
+  if (s.kind === 'steamNews') return forGame(s, await steam(fetchFn, s, opts.until ? 100 : 20, opts.until))
   if (s.kind === 'pressIndex') return pressIndex(fetchFn, s, opts)
   if (s.kind === 'bluesky') return forGame(s, await bluesky(fetchFn, s, opts.until))
+  if (s.kind === 'mojangNotes') return mojangNotes(fetchFn, s)
+  if (s.kind === 'riotNews') return forGame(s, parseRiotNews(s.id, new URL(s.url).origin, await getText(fetchFn, s.url, { accept: 'text/html' })))
   if (s.kind === 'statuspage') return forGame(s, parseStatuspage(s.id, await getText(fetchFn, s.url, { accept: 'application/rss+xml, application/xml' })))
   const body = await getText(fetchFn, s.url, { accept: s.kind === 'rss' ? 'application/rss+xml, application/atom+xml, application/xml' : 'text/html' })
   return s.kind === 'rss' ? forGame(s, parseFeed(s.id, body)) : parseLinks(s.id, s.url, body)

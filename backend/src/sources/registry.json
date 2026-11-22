@@ -362,15 +362,24 @@
       ],
       "igdbId": 135400,
       "ps5TitleIds": [],
-      "sources": [],
+      "sources": [
+        {
+          "id": "minecraft-bedrock-notes",
+          "kind": "mojangNotes",
+          "url": "https://launchercontent.mojang.com/v2/bedrockPatchNotes.json",
+          "platforms": [
+            "ps5",
+            "xboxSeries",
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ],
       "links": {
         "official": "https://www.minecraft.net/en-us",
         "patchNotes": "https://www.minecraft.net/en-us/article"
-      },
-      "sourceGap": {
-        "reason": "No per-game source is registered yet, so only the shared press feeds (Reported) cover it. The publisher's own patch-notes channel has not been researched.",
-        "next": "Priya: find the publisher's feed or news page, check its terms, and register it (card feed-game-sources-rest).",
-        "since": "2026-11-22"
       }
     },
     "cyberpunk-2077": {
@@ -500,15 +509,24 @@
       "name": "Rocket League",
       "igdbId": 11198,
       "ps5TitleIds": [],
-      "sources": [],
+      "sources": [
+        {
+          "id": "rocket-league-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/252950/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit",
+          "patchOnly": true,
+          "titleMatch": "patch"
+        }
+      ],
       "links": {
         "official": "https://www.rocketleague.com/en/",
         "patchNotes": "https://www.rocketleague.com/en/news"
-      },
-      "sourceGap": {
-        "reason": "No per-game source is registered yet, so only the shared press feeds (Reported) cover it. The publisher's own patch-notes channel has not been researched.",
-        "next": "Priya: find the publisher's feed or news page, check its terms, and register it (card feed-game-sources-rest).",
-        "since": "2026-11-22"
       }
     },
     "expedition-33": {
@@ -564,8 +582,8 @@
         "patchNotes": "https://genshin.hoyoverse.com/en/news"
       },
       "sourceGap": {
-        "reason": "HoYoverse's official news (genshin.hoyoverse.com/en/news) is a script-rendered page with no documented feed or API, and its terms have not been cleared for automated reading; no official account on a public readable feed was found. Push Square covers updates as Reported.",
-        "next": "Priya: read HoYoverse's terms and look for an official feed; Terry: ask HoYoverse for a feed if the terms bar reading.",
+        "reason": "HoYoverse's official news (genshin.hoyoverse.com/en/news) is a script-rendered page with no documented feed or API, and its terms have not been cleared for automated reading; HoYoLAB's robots.txt disallows /genshin, YouTube's disallows its feed, and the official Bluesky account is empty, so no official channel we may read was found. Push Square covers updates as Reported.",
+        "next": "Terry: ask HoYoverse (support or business contact) for permission to read their update notices or a feed. Priya registers it the day it is granted.",
         "since": "2026-11-22"
       }
     },
@@ -1052,15 +1070,26 @@
       "name": "Valorant",
       "igdbId": 126459,
       "ps5TitleIds": [],
-      "sources": [],
+      "sources": [
+        {
+          "id": "valorant-game-updates",
+          "kind": "riotNews",
+          "url": "https://playvalorant.com/en-us/news/game-updates/",
+          "platforms": [
+            "ps5",
+            "xboxSeries",
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit",
+          "patchOnly": true,
+          "titleMatch": "patch notes"
+        }
+      ],
       "links": {
         "official": "https://playvalorant.com/en-us/",
         "patchNotes": "https://playvalorant.com/en-us/news/game-updates/"
-      },
-      "sourceGap": {
-        "reason": "No per-game source is registered yet, so only the shared press feeds (Reported) cover it. The publisher's own patch-notes channel has not been researched.",
-        "next": "Priya: find the publisher's feed or news page, check its terms, and register it (card feed-game-sources-rest).",
-        "since": "2026-11-22"
       }
     },
     "ff7-rebirth": {
@@ -1901,216 +1930,331 @@
     "assassins-creed-odyssey": {
       "name": "Assassin's Creed Odyssey",
       "igdbId": 103054,
+      "steamIsPcPort": true,
       "ps5TitleIds": [],
-      "sources": [],
+      "sources": [
+        {
+          "id": "assassins-creed-odyssey-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/812140/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ],
       "links": {
         "official": "https://www.ubisoft.com/en-us/game/assassins-creed",
         "patchNotes": "https://www.ubisoft.com/en-us/game/assassins-creed/news"
-      },
-      "sourceGap": {
-        "reason": "No per-game source is registered yet, so only the shared press feeds (Reported) cover it. The publisher's own patch-notes channel has not been researched.",
-        "next": "Priya: find the publisher's feed or news page, check its terms, and register it (card feed-game-sources-rest).",
-        "since": "2026-11-22"
       }
     },
     "assassins-creed-origins": {
       "name": "Assassin's Creed Origins",
       "igdbId": 28540,
+      "steamIsPcPort": true,
       "ps5TitleIds": [],
-      "sources": [],
+      "sources": [
+        {
+          "id": "assassins-creed-origins-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/582160/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ],
       "links": {
         "official": "https://www.ubisoft.com/en-us/game/assassins-creed",
         "patchNotes": "https://www.ubisoft.com/en-us/game/assassins-creed/news"
-      },
-      "sourceGap": {
-        "reason": "No per-game source is registered yet, so only the shared press feeds (Reported) cover it. The publisher's own patch-notes channel has not been researched.",
-        "next": "Priya: find the publisher's feed or news page, check its terms, and register it (card feed-game-sources-rest).",
-        "since": "2026-11-22"
       }
     },
     "assassins-creed-unity": {
       "name": "Assassin's Creed Unity",
       "igdbId": 5606,
+      "steamIsPcPort": true,
       "ps5TitleIds": [],
-      "sources": [],
+      "sources": [
+        {
+          "id": "assassins-creed-unity-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/289650/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ],
       "links": {
         "official": "https://www.ubisoft.com/en-us/game/assassins-creed",
         "patchNotes": "https://www.ubisoft.com/en-us/game/assassins-creed/news"
-      },
-      "sourceGap": {
-        "reason": "No per-game source is registered yet, so only the shared press feeds (Reported) cover it. The publisher's own patch-notes channel has not been researched.",
-        "next": "Priya: find the publisher's feed or news page, check its terms, and register it (card feed-game-sources-rest).",
-        "since": "2026-11-22"
       }
     },
     "assassins-creed-syndicate": {
       "name": "Assassin's Creed Syndicate",
       "igdbId": 8263,
+      "steamIsPcPort": true,
       "ps5TitleIds": [],
-      "sources": [],
+      "sources": [
+        {
+          "id": "assassins-creed-syndicate-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/368500/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ],
       "links": {
         "official": "https://www.ubisoft.com/en-us/game/assassins-creed",
         "patchNotes": "https://www.ubisoft.com/en-us/game/assassins-creed/news"
-      },
-      "sourceGap": {
-        "reason": "No per-game source is registered yet, so only the shared press feeds (Reported) cover it. The publisher's own patch-notes channel has not been researched.",
-        "next": "Priya: find the publisher's feed or news page, check its terms, and register it (card feed-game-sources-rest).",
-        "since": "2026-11-22"
       }
     },
     "far-cry-5": {
       "name": "Far Cry 5",
       "igdbId": 28552,
+      "steamIsPcPort": true,
       "ps5TitleIds": [],
-      "sources": [],
+      "sources": [
+        {
+          "id": "far-cry-5-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/552520/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ],
       "links": {
         "official": "https://www.ubisoft.com/en-us/game/far-cry/far-cry-5"
-      },
-      "sourceGap": {
-        "reason": "No per-game source is registered yet, so only the shared press feeds (Reported) cover it. The publisher's own patch-notes channel has not been researched.",
-        "next": "Priya: find the publisher's feed or news page, check its terms, and register it (card feed-game-sources-rest).",
-        "since": "2026-11-22"
       }
     },
     "far-cry-4": {
       "name": "Far Cry 4",
       "igdbId": 6801,
+      "steamIsPcPort": true,
       "ps5TitleIds": [],
-      "sources": [],
+      "sources": [
+        {
+          "id": "far-cry-4-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/298110/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ],
       "links": {
         "official": "https://www.ubisoft.com/en-us/game/far-cry/far-cry-4"
-      },
-      "sourceGap": {
-        "reason": "No per-game source is registered yet, so only the shared press feeds (Reported) cover it. The publisher's own patch-notes channel has not been researched.",
-        "next": "Priya: find the publisher's feed or news page, check its terms, and register it (card feed-game-sources-rest).",
-        "since": "2026-11-22"
       }
     },
     "far-cry-primal": {
       "name": "Far Cry: Primal",
       "igdbId": 13182,
+      "steamIsPcPort": true,
       "ps5TitleIds": [],
-      "sources": [],
+      "sources": [
+        {
+          "id": "far-cry-primal-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/371660/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ],
       "links": {
         "official": "https://www.ubisoft.com/en-us/game/far-cry/far-cry-primal"
       },
       "aliases": [
         "Far Cry Primal"
-      ],
-      "sourceGap": {
-        "reason": "No per-game source is registered yet, so only the shared press feeds (Reported) cover it. The publisher's own patch-notes channel has not been researched.",
-        "next": "Priya: find the publisher's feed or news page, check its terms, and register it (card feed-game-sources-rest).",
-        "since": "2026-11-22"
-      }
+      ]
     },
     "the-division-2": {
       "name": "Tom Clancy's The Division 2",
       "igdbId": 90099,
       "ps5TitleIds": [],
-      "sources": [],
+      "sources": [
+        {
+          "id": "the-division-2-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/2221490/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit",
+          "patchOnly": true,
+          "titleMatch": "title update"
+        }
+      ],
       "aliases": [
         "The Division 2"
       ],
       "links": {
         "official": "https://www.ubisoft.com/en-us/game/the-division/the-division-2"
-      },
-      "sourceGap": {
-        "reason": "No per-game source is registered yet, so only the shared press feeds (Reported) cover it. The publisher's own patch-notes channel has not been researched.",
-        "next": "Priya: find the publisher's feed or news page, check its terms, and register it (card feed-game-sources-rest).",
-        "since": "2026-11-22"
       }
     },
     "the-division": {
       "name": "Tom Clancy's The Division",
       "igdbId": 2114,
+      "steamIsPcPort": true,
       "ps5TitleIds": [],
-      "sources": [],
+      "sources": [
+        {
+          "id": "the-division-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/365590/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ],
       "aliases": [
         "The Division"
       ],
       "links": {
         "official": "https://www.ubisoft.com/en-us/game/the-division/the-division-1"
-      },
-      "sourceGap": {
-        "reason": "No per-game source is registered yet, so only the shared press feeds (Reported) cover it. The publisher's own patch-notes channel has not been researched.",
-        "next": "Priya: find the publisher's feed or news page, check its terms, and register it (card feed-game-sources-rest).",
-        "since": "2026-11-22"
       }
     },
     "ghost-recon-wildlands": {
       "name": "Tom Clancy's Ghost Recon: Wildlands",
       "igdbId": 11171,
+      "steamIsPcPort": true,
       "ps5TitleIds": [],
-      "sources": [],
+      "sources": [
+        {
+          "id": "ghost-recon-wildlands-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/460930/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ],
       "aliases": [
         "Ghost Recon: Wildlands"
       ],
       "links": {
         "official": "https://www.ubisoft.com/en-us/game/ghost-recon/wildlands"
-      },
-      "sourceGap": {
-        "reason": "No per-game source is registered yet, so only the shared press feeds (Reported) cover it. The publisher's own patch-notes channel has not been researched.",
-        "next": "Priya: find the publisher's feed or news page, check its terms, and register it (card feed-game-sources-rest).",
-        "since": "2026-11-22"
       }
     },
     "ghost-recon-breakpoint": {
       "name": "Tom Clancy's Ghost Recon: Breakpoint",
       "igdbId": 118218,
+      "steamIsPcPort": true,
       "ps5TitleIds": [],
-      "sources": [],
+      "sources": [
+        {
+          "id": "ghost-recon-breakpoint-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/2231380/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ],
       "aliases": [
         "Ghost Recon: Breakpoint"
       ],
       "links": {
         "official": "https://www.ubisoft.com/en-us/game/ghost-recon/breakpoint"
-      },
-      "sourceGap": {
-        "reason": "No per-game source is registered yet, so only the shared press feeds (Reported) cover it. The publisher's own patch-notes channel has not been researched.",
-        "next": "Priya: find the publisher's feed or news page, check its terms, and register it (card feed-game-sources-rest).",
-        "since": "2026-11-22"
       }
     },
     "for-honor": {
       "name": "For Honor",
       "igdbId": 11162,
       "ps5TitleIds": [],
-      "sources": [],
+      "sources": [
+        {
+          "id": "for-honor-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/304390/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit",
+          "patchOnly": true,
+          "titleMatch": "patch"
+        }
+      ],
       "links": {
         "official": "https://www.ubisoft.com/en-us/game/for-honor"
-      },
-      "sourceGap": {
-        "reason": "No per-game source is registered yet, so only the shared press feeds (Reported) cover it. The publisher's own patch-notes channel has not been researched.",
-        "next": "Priya: find the publisher's feed or news page, check its terms, and register it (card feed-game-sources-rest).",
-        "since": "2026-11-22"
       }
     },
     "the-crew-2": {
       "name": "The Crew 2",
       "igdbId": 28856,
       "ps5TitleIds": [],
-      "sources": [],
+      "sources": [
+        {
+          "id": "the-crew-2-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/646910/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit",
+          "patchOnly": true,
+          "titleMatch": "patch notes|season \\d+ patch|update"
+        }
+      ],
       "links": {
         "official": "https://www.ubisoft.com/en-us/game/the-crew/the-crew-2"
-      },
-      "sourceGap": {
-        "reason": "No per-game source is registered yet, so only the shared press feeds (Reported) cover it. The publisher's own patch-notes channel has not been researched.",
-        "next": "Priya: find the publisher's feed or news page, check its terms, and register it (card feed-game-sources-rest).",
-        "since": "2026-11-22"
       }
     },
     "far-cry-new-dawn": {
       "name": "Far Cry New Dawn",
       "igdbId": 113111,
+      "steamIsPcPort": true,
       "ps5TitleIds": [],
-      "sources": [],
+      "sources": [
+        {
+          "id": "far-cry-new-dawn-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/939960/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ],
       "links": {
         "official": "https://www.ubisoft.com/en-us/game/far-cry/new-dawn"
-      },
-      "sourceGap": {
-        "reason": "No per-game source is registered yet, so only the shared press feeds (Reported) cover it. The publisher's own patch-notes channel has not been researched.",
-        "next": "Priya: find the publisher's feed or news page, check its terms, and register it (card feed-game-sources-rest).",
-        "since": "2026-11-22"
       }
     },
     "ninja-gaiden-4": {

@@ -1,11 +1,11 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
 import { openDb } from '../src/db.ts'
-import { parseStatuspage, blueskyTitle } from '../src/ingest/adapters.ts'
+import { parseStatuspage, blueskyTitle, parseMojangNotes, parseRiotNews } from '../src/ingest/adapters.ts'
 import { pcNumberIsTitled, runIngest, seedGames } from '../src/ingest/pipeline.ts'
 import { registry } from '../src/registry.ts'
 import * as store from '../src/store.ts'
-import { fakeFetch, rss } from './helpers.ts'
+import { fakeFetch, rss, steamNews } from './helpers.ts'
 
 // feed-sony-first-party-patch-source: official PS5 sources for games that had none. Each fixture is trimmed from the live source.
 const ps5Of = (db: ReturnType<typeof openDb>, id: string) => store.getRelease(db, id)?.platforms.find((p) => p.platform === 'ps5')
@@ -132,4 +132,47 @@ test('the games Terry flagged on 22 Nov: four have an official source, the rest 
   for (const id of ['gt7', 'astro-bot', 'genshin-impact']) assert.ok(registry.games[id]!.sourceGap, id)
   for (const g of Object.values(registry.games))
     for (const s of g.sources) assert.ok(!/fortnite-(game|status)\.bsky\.social/.test(s.url), `${s.id}: those accounts say they are unaffiliated with Epic`)
+})
+
+test('Minecraft: Mojang\'s Bedrock patch-notes file makes one dated update per entry, named by its version', () => {
+  const posts = parseMojangNotes('m', [
+    { title: 'Minecraft: Bedrock Edition 26.60 Changelog', version: '26.60', date: '2026-10-27', shortText: 'Brrrr!' },
+    { title: '26.40 Chaos', version: '26.40', date: '2026-08-04T15:46:00.367Z' },
+    { title: 'Broken', date: 'soon' },
+  ], { '26.60': '<p>Added drops</p><p>Fixed a crash</p>' })
+  assert.deepEqual(posts.map((p) => [p.title, p.publishedAt]), [['Update 26.60', '2026-10-27T00:00:00.000Z'], ['Update 26.40', '2026-08-04T15:46:00.367Z']])
+  assert.equal(posts[0]!.body, 'Added drops Fixed a crash')
+})
+
+test('Valorant: the game-updates page lists patch notes with Riot\'s own publish time; other categories are skipped', () => {
+  const item = (title: string, cat: string, url: string) => ({ title, action: { type: 'weblink', payload: { url } }, category: { machineName: cat }, description: { type: 'html', body: 'Replays bookmarks' }, publishedAt: '2026-11-10T14:00:00.000Z', analytics: { contentId: url } })
+  const html = `<html><script id="__NEXT_DATA__" type="application/json">${JSON.stringify({ props: { pageProps: { page: { blades: [{ items: [item('VALORANT Patch Notes 13.10', 'game_updates', '/en-us/news/game-updates/valorant-patch-notes-13-10'), item('Esports news', 'esports', '/en-us/news/esports/x')] }] } } } })}</script></html>`
+  const posts = parseRiotNews('v', 'https://playvalorant.com', html)
+  assert.deepEqual(posts.map((p) => [p.title, p.url, p.publishedAt]), [['VALORANT Patch Notes 13.10', 'https://playvalorant.com/en-us/news/game-updates/valorant-patch-notes-13-10', '2026-11-10T14:00:00.000Z']])
+  assert.deepEqual(parseRiotNews('v', 'https://playvalorant.com', '<html></html>'), [])
+})
+
+// Quinn, #601: a Steam patch is taken as out on PS5 unless the game is marked steamIsPcPort, so the older Ubisoft games (no PS5 build
+// of their own, PC installer and launcher updates) are marked, and the live-service ones only make releases from patch-note titles.
+test('Steam posts of the old Ubisoft games make PC rows and no PS5 row; live-service games make PS5 rows from patch posts only', async () => {
+  const at = (n: number) => new Date(Date.now() - n * 3600e3).toISOString()
+  const steam = (app: string, items: Parameters<typeof steamNews>[0]) => [`https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid=${app}&`, steamNews(items)] as const
+  const { db } = await ingest(
+    Object.fromEntries([
+      steam('812140', [{ gid: 'o1', title: 'Installer update', date: at(30), contents: 'The Ubisoft Connect installer was updated for PC.', tags: ['patchnotes'] }, { gid: 'o2', title: "Assassin's Creed Odyssey - 1.3.0 Patch Notes", date: at(20), contents: 'Fixed a crash.', tags: ['patchnotes'] }]),
+      steam('252950', [{ gid: 'r1', title: 'Rocket League S24 Patch Notes v2.76', date: at(30), contents: 'Fixed a crash.', tags: ['patchnotes'] }, { gid: 'r2', title: 'Rocket League Heads to the Streets in Season 24', date: at(20), contents: 'A new season trailer.' }]),
+    ]),
+  )
+  const odyssey = releasesOf(db, 'assassins-creed-odyssey')
+  assert.ok(odyssey.length > 0, 'its patch notes are still releases (PC rows)')
+  for (const id of odyssey) assert.equal(ps5Of(db, id), undefined, `${id}: a PC-only post must not create a PS5 row`)
+  const rl = releasesOf(db, 'rocket-league')
+  assert.deepEqual(rl, ['rocket-league@2.76'], 'only the patch-notes post is a release')
+  assert.equal(ps5Of(db, rl[0]!)!.verification, 'assumed', 'never official from a Steam post')
+})
+
+test('every registry game on a Steam source with no PS5 release is either a PC port or patch-only (nothing assumes PS5 for a game we cannot place on PS5)', () => {
+  const noPs5 = ['assassins-creed-odyssey', 'assassins-creed-origins', 'assassins-creed-unity', 'assassins-creed-syndicate', 'far-cry-5', 'far-cry-4', 'far-cry-primal', 'far-cry-new-dawn', 'the-division', 'ghost-recon-wildlands', 'ghost-recon-breakpoint']
+  for (const g of noPs5) assert.equal(registry.games[g]!.steamIsPcPort, true, g)
+  for (const g of ['rocket-league', 'the-division-2', 'for-honor', 'the-crew-2']) assert.ok(registry.games[g]!.sources.every((s) => s.patchOnly && s.titleMatch), g)
 })
