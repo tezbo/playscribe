@@ -255,8 +255,9 @@ struct LibraryShelf: View {
     private func topCards(_ all: [AppModel.LibraryRow]) -> some View {
         let pageWidth: CGFloat? = duo.pose == .book ? duo.division.map { max(0, $0.minX - 24 - 16) } : nil
         VStack(alignment: .leading, spacing: 14) {
-            if model.showsNotificationCard, let first = all.first {
-                NotificationInviteCard(gameName: first.game.name)
+            if model.showsNotificationCard, !all.isEmpty {
+                // Named only after a game the feed tracks: an alert is never promised for one it doesn't (Astro Bot, beta 3).
+                NotificationInviteCard(gameName: all.first(where: { model.feedTracksGame($0.game.id) })?.game.name)
             }
             // N-9: one ask per screen. Shows only once the alerts card has been answered, on a later Library appearance (Iris).
             // Book and Tabletop place it higher up (keepCurrentAsk); Closed and Open keep it here.
@@ -1195,7 +1196,7 @@ struct SquareCover: View {
 /// notifications were denied); "Not now" or a swipe rests the card for a week.
 struct NotificationInviteCard: View {
     @Environment(AppModel.self) private var model
-    var gameName: String
+    var gameName: String?
     @Environment(\.dynamicTypeSize) private var typeSize
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
@@ -1217,7 +1218,7 @@ struct NotificationInviteCard: View {
                 // At the largest sizes the ask card keeps its title and buttons only; denied keeps one short line.
                 if !typeSize.isAccessibilitySize {
                     Text(denied
-                         ? "Turn notifications on in Settings and \(Brand.name) will tell you when \(gameName) and your other games update on PS5."
+                         ? "Turn notifications on in Settings and \(Brand.name) will tell you when " + (gameName.map { "\($0) and your other games" } ?? "your games") + " update on PS5."
                          : "Get a note the moment any game in your library gets an update on PS5.")
                         .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
                         .fixedSize(horizontal: false, vertical: true)
