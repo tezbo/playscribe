@@ -1,5 +1,5 @@
 {
-  "$comment": "Per-game official source registry. See docs/ps5-patch-data.md. trust=official can set PS5 status; secondary can only mark 'reported'; a Steam patch is taken as out on PS5 too (verification assumed) unless steamIsPcPort is set. fetch=manual means the site blocks automated fetches; do not work around it. playstation-blog is manual on purpose (2026-11-03, Theo): playstation.com's terms bar automated access; re-enable only with written permission (docs/ps5-patch-data.md).",
+  "$comment": "Per-game official source registry. See docs/ps5-patch-data.md. trust=official can set PS5 status; secondary can only mark 'reported'; a Steam patch is taken as out on PS5 too (verification assumed) unless steamIsPcPort is set. fetch=manual means the site blocks automated fetches; do not work around it. playstation-blog is manual on purpose (2026-11-03, Theo): playstation.com's terms bar automated access; re-enable only with written permission (docs/ps5-patch-data.md). A game with no source has a sourceGap (reason, next step, date); the registry test fails for neither (Terry, 22 Nov 2026).",
   "version": 1,
   "shared": [
     {
@@ -277,7 +277,26 @@
       ],
       "igdbId": 1905,
       "ps5TitleIds": [],
-      "sources": [],
+      "sources": [
+        {
+          "id": "fortnite-epic-status",
+          "kind": "statuspage",
+          "url": "https://status.epicgames.com/history.rss",
+          "platforms": [
+            "ps5",
+            "xboxSeries",
+            "switch2",
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "always",
+          "mentions": [
+            "Fortnite"
+          ],
+          "patchOnly": true
+        }
+      ],
       "links": {
         "official": "https://www.fortnite.com/",
         "patchNotes": "https://www.fortnite.com/news"
@@ -347,6 +366,11 @@
       "links": {
         "official": "https://www.minecraft.net/en-us",
         "patchNotes": "https://www.minecraft.net/en-us/article"
+      },
+      "sourceGap": {
+        "reason": "No per-game source is registered yet, so only the shared press feeds (Reported) cover it. The publisher's own patch-notes channel has not been researched.",
+        "next": "Priya: find the publisher's feed or news page, check its terms, and register it (card feed-game-sources-rest).",
+        "since": "2026-11-22"
       }
     },
     "cyberpunk-2077": {
@@ -480,6 +504,11 @@
       "links": {
         "official": "https://www.rocketleague.com/en/",
         "patchNotes": "https://www.rocketleague.com/en/news"
+      },
+      "sourceGap": {
+        "reason": "No per-game source is registered yet, so only the shared press feeds (Reported) cover it. The publisher's own patch-notes channel has not been researched.",
+        "next": "Priya: find the publisher's feed or news page, check its terms, and register it (card feed-game-sources-rest).",
+        "since": "2026-11-22"
       }
     },
     "expedition-33": {
@@ -533,6 +562,11 @@
       "links": {
         "official": "https://genshin.hoyoverse.com/en/",
         "patchNotes": "https://genshin.hoyoverse.com/en/news"
+      },
+      "sourceGap": {
+        "reason": "HoYoverse's official news (genshin.hoyoverse.com/en/news) is a script-rendered page with no documented feed or API, and its terms have not been cleared for automated reading; no official account on a public readable feed was found. Push Square covers updates as Reported.",
+        "next": "Priya: read HoYoverse's terms and look for an official feed; Terry: ask HoYoverse for a feed if the terms bar reading.",
+        "since": "2026-11-22"
       }
     },
     "space-marine-2": {
@@ -909,16 +943,37 @@
       "links": {
         "official": "https://www.playstation.com/en-us/games/gran-turismo-7/",
         "patchNotes": "https://www.gran-turismo.com/gb/gt7/news/"
+      },
+      "sourceGap": {
+        "reason": "Polyphony Digital posts every update as 'Update Notice (1.xx)' on gran-turismo.com/gb/gt7/news/?t=update (server-rendered, robots.txt allows it), but that site's terms are PlayStation's website terms of use, which bar automated access (s.10); the studio's Bluesky account has been silent since 2024. Push Square and PS LifeStyle cover each update as Reported.",
+        "next": "Terry: written permission from Sony to read gran-turismo.com news (the same ask as the PlayStation Blog). Nothing is sent until he says yes.",
+        "since": "2026-11-22"
       }
     },
     "yotei": {
       "name": "Ghost of Yotei",
       "aliases": [
-        "Ghost of Y\u014dtei"
+        "Ghost of Yōtei"
       ],
       "igdbId": 317627,
       "ps5TitleIds": [],
-      "sources": [],
+      "sources": [
+        {
+          "id": "yotei-suckerpunch-bluesky",
+          "kind": "bluesky",
+          "url": "https://bsky.app/profile/suckerpunchprod.bsky.social",
+          "platforms": [
+            "ps5"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "always",
+          "mentions": [
+            "Ghost of Yotei"
+          ],
+          "patchOnly": true
+        }
+      ],
       "links": {
         "official": "https://www.playstation.com/en-us/games/ghost-of-yotei/",
         "patchNotes": "https://www.playstation.com/en-us/games/ghost-of-yotei/"
@@ -932,6 +987,11 @@
       "links": {
         "official": "https://www.playstation.com/en-us/games/astro-bot/",
         "patchNotes": "https://www.playstation.com/en-us/games/astro-bot/"
+      },
+      "sourceGap": {
+        "reason": "Team Asobi has no site or social account of its own that posts patch notes; Sony publishes them on playstation.com support pages, whose terms bar automated access (s.10). PlayStation's verified Bluesky account posts promotion, not patch notes. Push Square covers updates as Reported.",
+        "next": "Terry: written permission from Sony to read playstation.com patch pages, or a Team Asobi account once one posts notes.",
+        "since": "2026-11-22"
       }
     },
     "the-finals": {
@@ -996,6 +1056,11 @@
       "links": {
         "official": "https://playvalorant.com/en-us/",
         "patchNotes": "https://playvalorant.com/en-us/news/game-updates/"
+      },
+      "sourceGap": {
+        "reason": "No per-game source is registered yet, so only the shared press feeds (Reported) cover it. The publisher's own patch-notes channel has not been researched.",
+        "next": "Priya: find the publisher's feed or news page, check its terms, and register it (card feed-game-sources-rest).",
+        "since": "2026-11-22"
       }
     },
     "ff7-rebirth": {
@@ -1082,7 +1147,25 @@
       ],
       "igdbId": 185246,
       "ps5TitleIds": [],
-      "sources": [],
+      "sources": [
+        {
+          "id": "alan-wake-2-news",
+          "kind": "rss",
+          "url": "https://www.alanwake.com/feed/",
+          "platforms": [
+            "ps5",
+            "xboxSeries",
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit",
+          "mentions": [
+            "Alan Wake 2"
+          ],
+          "patchOnly": true
+        }
+      ],
       "links": {
         "official": "https://www.alanwake.com/",
         "patchNotes": "https://www.alanwake.com/news"
@@ -1134,7 +1217,23 @@
       ],
       "igdbId": 168667,
       "ps5TitleIds": [],
-      "sources": [],
+      "sources": [
+        {
+          "id": "wolverine-insomniac-bluesky",
+          "kind": "bluesky",
+          "url": "https://bsky.app/profile/insomniac.games",
+          "platforms": [
+            "ps5"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "always",
+          "mentions": [
+            "Wolverine"
+          ],
+          "patchOnly": true
+        }
+      ],
       "links": {
         "official": "https://www.playstation.com/en-us/games/marvels-wolverine/",
         "patchNotes": "https://www.playstation.com/en-us/games/marvels-wolverine/"
@@ -1806,6 +1905,11 @@
       "links": {
         "official": "https://www.ubisoft.com/en-us/game/assassins-creed",
         "patchNotes": "https://www.ubisoft.com/en-us/game/assassins-creed/news"
+      },
+      "sourceGap": {
+        "reason": "No per-game source is registered yet, so only the shared press feeds (Reported) cover it. The publisher's own patch-notes channel has not been researched.",
+        "next": "Priya: find the publisher's feed or news page, check its terms, and register it (card feed-game-sources-rest).",
+        "since": "2026-11-22"
       }
     },
     "assassins-creed-origins": {
@@ -1816,6 +1920,11 @@
       "links": {
         "official": "https://www.ubisoft.com/en-us/game/assassins-creed",
         "patchNotes": "https://www.ubisoft.com/en-us/game/assassins-creed/news"
+      },
+      "sourceGap": {
+        "reason": "No per-game source is registered yet, so only the shared press feeds (Reported) cover it. The publisher's own patch-notes channel has not been researched.",
+        "next": "Priya: find the publisher's feed or news page, check its terms, and register it (card feed-game-sources-rest).",
+        "since": "2026-11-22"
       }
     },
     "assassins-creed-unity": {
@@ -1826,6 +1935,11 @@
       "links": {
         "official": "https://www.ubisoft.com/en-us/game/assassins-creed",
         "patchNotes": "https://www.ubisoft.com/en-us/game/assassins-creed/news"
+      },
+      "sourceGap": {
+        "reason": "No per-game source is registered yet, so only the shared press feeds (Reported) cover it. The publisher's own patch-notes channel has not been researched.",
+        "next": "Priya: find the publisher's feed or news page, check its terms, and register it (card feed-game-sources-rest).",
+        "since": "2026-11-22"
       }
     },
     "assassins-creed-syndicate": {
@@ -1836,6 +1950,11 @@
       "links": {
         "official": "https://www.ubisoft.com/en-us/game/assassins-creed",
         "patchNotes": "https://www.ubisoft.com/en-us/game/assassins-creed/news"
+      },
+      "sourceGap": {
+        "reason": "No per-game source is registered yet, so only the shared press feeds (Reported) cover it. The publisher's own patch-notes channel has not been researched.",
+        "next": "Priya: find the publisher's feed or news page, check its terms, and register it (card feed-game-sources-rest).",
+        "since": "2026-11-22"
       }
     },
     "far-cry-5": {
@@ -1845,6 +1964,11 @@
       "sources": [],
       "links": {
         "official": "https://www.ubisoft.com/en-us/game/far-cry/far-cry-5"
+      },
+      "sourceGap": {
+        "reason": "No per-game source is registered yet, so only the shared press feeds (Reported) cover it. The publisher's own patch-notes channel has not been researched.",
+        "next": "Priya: find the publisher's feed or news page, check its terms, and register it (card feed-game-sources-rest).",
+        "since": "2026-11-22"
       }
     },
     "far-cry-4": {
@@ -1854,6 +1978,11 @@
       "sources": [],
       "links": {
         "official": "https://www.ubisoft.com/en-us/game/far-cry/far-cry-4"
+      },
+      "sourceGap": {
+        "reason": "No per-game source is registered yet, so only the shared press feeds (Reported) cover it. The publisher's own patch-notes channel has not been researched.",
+        "next": "Priya: find the publisher's feed or news page, check its terms, and register it (card feed-game-sources-rest).",
+        "since": "2026-11-22"
       }
     },
     "far-cry-primal": {
@@ -1866,7 +1995,12 @@
       },
       "aliases": [
         "Far Cry Primal"
-      ]
+      ],
+      "sourceGap": {
+        "reason": "No per-game source is registered yet, so only the shared press feeds (Reported) cover it. The publisher's own patch-notes channel has not been researched.",
+        "next": "Priya: find the publisher's feed or news page, check its terms, and register it (card feed-game-sources-rest).",
+        "since": "2026-11-22"
+      }
     },
     "the-division-2": {
       "name": "Tom Clancy's The Division 2",
@@ -1878,6 +2012,11 @@
       ],
       "links": {
         "official": "https://www.ubisoft.com/en-us/game/the-division/the-division-2"
+      },
+      "sourceGap": {
+        "reason": "No per-game source is registered yet, so only the shared press feeds (Reported) cover it. The publisher's own patch-notes channel has not been researched.",
+        "next": "Priya: find the publisher's feed or news page, check its terms, and register it (card feed-game-sources-rest).",
+        "since": "2026-11-22"
       }
     },
     "the-division": {
@@ -1890,6 +2029,11 @@
       ],
       "links": {
         "official": "https://www.ubisoft.com/en-us/game/the-division/the-division-1"
+      },
+      "sourceGap": {
+        "reason": "No per-game source is registered yet, so only the shared press feeds (Reported) cover it. The publisher's own patch-notes channel has not been researched.",
+        "next": "Priya: find the publisher's feed or news page, check its terms, and register it (card feed-game-sources-rest).",
+        "since": "2026-11-22"
       }
     },
     "ghost-recon-wildlands": {
@@ -1902,6 +2046,11 @@
       ],
       "links": {
         "official": "https://www.ubisoft.com/en-us/game/ghost-recon/wildlands"
+      },
+      "sourceGap": {
+        "reason": "No per-game source is registered yet, so only the shared press feeds (Reported) cover it. The publisher's own patch-notes channel has not been researched.",
+        "next": "Priya: find the publisher's feed or news page, check its terms, and register it (card feed-game-sources-rest).",
+        "since": "2026-11-22"
       }
     },
     "ghost-recon-breakpoint": {
@@ -1914,6 +2063,11 @@
       ],
       "links": {
         "official": "https://www.ubisoft.com/en-us/game/ghost-recon/breakpoint"
+      },
+      "sourceGap": {
+        "reason": "No per-game source is registered yet, so only the shared press feeds (Reported) cover it. The publisher's own patch-notes channel has not been researched.",
+        "next": "Priya: find the publisher's feed or news page, check its terms, and register it (card feed-game-sources-rest).",
+        "since": "2026-11-22"
       }
     },
     "for-honor": {
@@ -1923,6 +2077,11 @@
       "sources": [],
       "links": {
         "official": "https://www.ubisoft.com/en-us/game/for-honor"
+      },
+      "sourceGap": {
+        "reason": "No per-game source is registered yet, so only the shared press feeds (Reported) cover it. The publisher's own patch-notes channel has not been researched.",
+        "next": "Priya: find the publisher's feed or news page, check its terms, and register it (card feed-game-sources-rest).",
+        "since": "2026-11-22"
       }
     },
     "the-crew-2": {
@@ -1932,6 +2091,11 @@
       "sources": [],
       "links": {
         "official": "https://www.ubisoft.com/en-us/game/the-crew/the-crew-2"
+      },
+      "sourceGap": {
+        "reason": "No per-game source is registered yet, so only the shared press feeds (Reported) cover it. The publisher's own patch-notes channel has not been researched.",
+        "next": "Priya: find the publisher's feed or news page, check its terms, and register it (card feed-game-sources-rest).",
+        "since": "2026-11-22"
       }
     },
     "far-cry-new-dawn": {
@@ -1941,6 +2105,11 @@
       "sources": [],
       "links": {
         "official": "https://www.ubisoft.com/en-us/game/far-cry/new-dawn"
+      },
+      "sourceGap": {
+        "reason": "No per-game source is registered yet, so only the shared press feeds (Reported) cover it. The publisher's own patch-notes channel has not been researched.",
+        "next": "Priya: find the publisher's feed or news page, check its terms, and register it (card feed-game-sources-rest).",
+        "since": "2026-11-22"
       }
     },
     "ninja-gaiden-4": {

@@ -177,7 +177,8 @@ const recordState = (db: DB, sourceId: string, status: number, error: string | n
 
 const poll = async (deps: IngestDeps, s: SourceDef, summary: IngestSummary, opts: PageOpts = {}): Promise<Post[] | null> => {
   try {
-    if (s.kind !== 'steamNews' && !(await allowedByRobots(deps.fetchFn, s.url))) {
+    // Steam's and Bluesky's public APIs are not websites: robots.txt does not apply to them; the Statuspage feed and others are checked.
+    if (s.kind !== 'steamNews' && s.kind !== 'bluesky' && !(await allowedByRobots(deps.fetchFn, s.url))) {
       recordState(deps.db, s.id, 0, 'disallowed by robots.txt', true)
       summary.errors.push({ sourceId: s.id, error: 'disallowed by robots.txt; set fetch to manual' })
       return null
@@ -217,6 +218,10 @@ const handlePost = (deps: IngestDeps, game: Record<string, any>, s: SourceDef, p
   // number is a PC build, not a PS5 version, and the date row tells the updates apart. The stored key keeps the number (bug-056).
   const pcBuildNamed = s.kind === 'steamNews' && pcBuildTitle(post.title, post.body)
   if (pcBuildNamed) naming = { ...naming, displayName: naming.displayName.replace(/\s+\S+$/, '') || 'Update' }
+  // A studio post that lists its own PlayStation 5 build ("PlayStation 5 (1.200.011) Xbox Series (1.2.0.11) PC (1.2.11)") while its title
+  // carries the PC number ("update 1.2.11") is just "Update": the PC number is never shown as a PS5 version; the PS5 row keeps its own.
+  if (!pcBuildNamed && s.kind === 'rss' && s.trust === 'official' && consoleVersionOf(post.body) && naming.displayName !== naming.displayName.replace(/\s+\S+$/, ''))
+    naming = { ...naming, displayName: naming.displayName.replace(/\s+\S+$/, '') || 'Update' }
   const notes = extractNotes(post.body, 'Changes', s.kind === 'steamNews' && (!game.ps5_release || post.publishedAt.slice(0, 10) < game.ps5_release))
   const kind = () =>
     classify({ title: post.title, notes, announcedAt: post.publishedAt, previousAnnouncedAt: store.previousAnnouncedAt(db, game.id, post.publishedAt), platformReleaseDate: game.ps5_release })
@@ -355,7 +360,10 @@ const handlePost = (deps: IngestDeps, game: Record<string, any>, s: SourceDef, p
   }
   store.addLinks(db, releaseId, links())
 
-  if (ps5LiveStated(text)) {
+  // An official account or status page that is only about PS5 (or ships to every platform at once) and says the update is live
+  // ("Patch 2.09 ... is now live", a completed downtime) does not need to name PS5 to make the PS5 row official.
+  const liveHere = s.ps5Signal === 'always' && s.trust === 'official' && !stated && /\b(now live|is live|live now|out now|now out|available now|now available|rolling out|deployed|is out|has been completed|has been released)\b/i.test(text)
+  if (ps5LiveStated(text) || liveHere) {
     officialPs5(releaseId, s.ps5Signal !== 'always')
     return releaseId
   }
