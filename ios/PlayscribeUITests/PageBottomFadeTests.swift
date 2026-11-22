@@ -13,7 +13,8 @@ final class PageBottomFadeTests: XCTestCase {
         let page = app.scrollViews["pageScroll"]
         // Tabletop's stage and Book's Page are not the one-column page (see above): skip there rather than fail on a page that
         // pose never has (gate #592, Tabletop). Every other pose must show it.
-        if !page.waitForExistence(timeout: 10), ["pose: tabletop", "pose: book"].contains(where: ReleaseRowTests.pose(app).contains) {
+        let pose = ReleaseRowTests.pose(app)
+        if !page.waitForExistence(timeout: 10), pose.contains("pose: tabletop") || pose.contains("pose: book") {
             throw XCTSkip("no one-column page [\(ReleaseRowTests.pose(app))]")
         }
         XCTAssertTrue(page.exists, "page shown [\(ReleaseRowTests.pose(app))]")
