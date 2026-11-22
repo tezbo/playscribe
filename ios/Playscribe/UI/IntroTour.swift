@@ -32,10 +32,20 @@ enum TourStep: Int, CaseIterable, Codable {
         }
     }
 
-    /// VoiceOver on each new step: "Tour, step 1 of 3. Open a game. Tap any game to read its latest update."
-    func announcement(emptyLibrary: Bool) -> String {
-        "Tour, step \(number) of \(Self.allCases.count). \(title). \(body(emptyLibrary: emptyLibrary))"
+    /// Step 2 also says where its tab lives, since the system tab bar cannot be ringed (Iris, #583): "Updates is in the bottom
+    /// bar." or, in Tabletop, "Updates is on the rail." Other steps point at what they ring.
+    func place(onRail: Bool) -> String? {
+        guard self == .updates else { return nil }
+        return onRail ? "Updates is on the rail." : "Updates is in the bottom bar."
     }
+
+    /// VoiceOver on each new step: "Tour, step 1 of 3. Open a game. Tap any game to read its latest update."
+    func announcement(emptyLibrary: Bool, onRail: Bool = false) -> String {
+        let text = "Tour, step \(number) of \(Self.allCases.count). \(title). \(body(emptyLibrary: emptyLibrary))"
+        return place(onRail: onRail).map { "\(text) \($0)" } ?? text
+    }
+    /// The Updates tab's own glyph, as the tab bar and the rail draw it.
+    static let updatesSymbol = "newspaper"
 }
 
 enum TourCopy {
@@ -117,9 +127,20 @@ enum TourLayout {
         let width = min(maxWidth, max(0, maxX - minX))
         let height = size.height
         if pose == .tabletop {
-            let top = (division?.maxY ?? 0) + gap
-            let y = max(top, container.height - safeArea.bottom - gap - height)
-            return CGRect(x: minX, y: y, width: max(0, maxX - minX), height: height)
+            let top = (division?.maxY ?? 0) + gap, bottom = container.height - safeArea.bottom - gap
+            let w = max(0, maxX - minX)
+            let y = max(top, bottom - height)
+            // Never over its own target (Iris, #583): a tile in the lower half pushes the card below it, else above it.
+            if let t = target, t.minX < maxX, CGRect(x: minX, y: y, width: w, height: height).intersects(t) {
+                if t.maxY + gap + height <= bottom { return CGRect(x: minX, y: t.maxY + gap, width: w, height: height) }
+                if t.minY - gap - height >= top { return CGRect(x: minX, y: t.minY - gap - height, width: w, height: height) }
+                // No room above or below: beside it, on the wider side.
+                let leftRoom = t.minX - gap - minX, rightRoom = maxX - (t.maxX + gap)
+                return rightRoom >= leftRoom
+                    ? CGRect(x: t.maxX + gap, y: y, width: max(0, rightRoom), height: height)
+                    : CGRect(x: minX, y: y, width: max(0, leftRoom), height: height)
+            }
+            return CGRect(x: minX, y: y, width: w, height: height)
         }
         let x = min(max(minX, (target?.midX ?? (minX + maxX) / 2) - width / 2), maxX - width)
         let top = safeArea.top + 8
@@ -149,6 +170,9 @@ struct TourOverlay: View {
             || model.keepCurrentDetailsOpen || model.player != nil || model.trailer != nil || model.shareReleaseID != nil
     }
     private var empty: Bool { model.data.collection.isEmpty }
+    private var onRail: Bool { duo.pose == .tabletop }
+    @State private var moreAbove = false
+    @State private var moreBelow = false
 
     var body: some View {
         ZStack(alignment: .topLeading) {
@@ -182,7 +206,7 @@ struct TourOverlay: View {
         .animation(.easeInOut(duration: 0.2), value: covered)
         .onChange(of: model.tourStep, initial: true) { _, step in
             guard let step else { return }
-            AccessibilityNotification.Announcement(step.announcement(emptyLibrary: empty)).post()
+            AccessibilityNotification.Announcement(step.announcement(emptyLibrary: empty, onRail: onRail)).post()
             focused = true
         }
     }
@@ -201,6 +225,14 @@ struct TourOverlay: View {
                             .accessibilityLabel("Tour, step \(step.number) of \(TourStep.allCases.count). \(step.title)")
                             .accessibilityFocused($focused)
                         Text(step.body(emptyLibrary: empty)).font(PlayscribeFont.body).foregroundStyle(PlayscribeRole.textPrimary)
+                        if let place = step.place(onRail: onRail) {
+                            // Points by word and picture: the tab's own glyph and label, and where it is in this pose.
+                            Text("\(Text(Image(systemName: TourStep.updatesSymbol)).foregroundStyle(PlayscribeRole.action)) \(place)")
+                                .foregroundStyle(PlayscribeRole.textPrimary)
+                                .font(PlayscribeFont.headline)
+                                .padding(.top, 2)
+                                .accessibilityLabel(place)
+                        }
                     } else {
                         Text(TourCopy.welcomeTitle).font(PlayscribeFont.title3).foregroundStyle(PlayscribeRole.textPrimary)
                             .accessibilityFocused($focused)
@@ -211,6 +243,15 @@ struct TourOverlay: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
             }
             .scrollBounceBehavior(.basedOnSize)
+            // AX5: the text scrolls inside the card and fades at a cut edge so it reads as "more"; the buttons stay put below.
+            .onScrollGeometryChange(for: [Bool].self) { g in
+                [g.contentOffset.y > 1, g.contentSize.height - g.contentOffset.y > g.containerSize.height + 1]
+            } action: { _, v in moreAbove = v[0]; moreBelow = v[1] }
+            .mask(LinearGradient(stops: [.init(color: moreAbove ? .clear : .black, location: 0),
+                                         .init(color: .black, location: moreAbove ? 0.1 : 0),
+                                         .init(color: .black, location: moreBelow ? 0.9 : 1),
+                                         .init(color: moreBelow ? .clear : .black, location: 1)],
+                                 startPoint: .top, endPoint: .bottom))
             .frame(maxHeight: max(60, maxHeight - (typeSize.isAccessibilitySize ? 140 : 76)))
             .fixedSize(horizontal: false, vertical: !typeSize.isAccessibilitySize)
             buttons(step: step)

@@ -46,6 +46,24 @@ struct IntroTourTests {
         #expect(card.minX >= 16)
     }
 
+    @Test func stepTwoSaysWhereItsTabIs() {
+        #expect(TourStep.updates.place(onRail: false) == "Updates is in the bottom bar.")
+        #expect(TourStep.updates.place(onRail: true) == "Updates is on the rail.")
+        #expect(TourStep.openGame.place(onRail: false) == nil && TourStep.spoiler.place(onRail: true) == nil)
+        #expect(TourStep.updates.announcement(emptyLibrary: false, onRail: true).hasSuffix("newest first. Updates is on the rail."))
+    }
+
+    @Test func tabletopCardNeverCoversItsTarget() {
+        let size = CGSize(width: 951, height: 678), fold = CGRect(x: 0, y: 374, width: 951, height: 40)
+        for tile in [CGRect(x: 16, y: 430, width: 100, height: 60), CGRect(x: 16, y: 560, width: 100, height: 100),
+                     CGRect(x: 16, y: 420, width: 100, height: 240)] {
+            let card = TourLayout.card(size: CGSize(width: 0, height: 100), target: tile, container: size, pose: .tabletop, division: fold,
+                                       safeArea: EdgeInsets(), landscape: true, railWidth: 56)
+            #expect(!card.intersects(tile))
+            #expect(card.minY >= fold.maxY && card.maxY <= size.height && card.maxX <= size.width - 56)
+        }
+    }
+
     @Test func bookCardStaysOnTheTargetsPage() {
         let size = CGSize(width: 951, height: 678), fold = CGRect(x: 455.5, y: 0, width: 40, height: 678)
         let right = CGRect(x: 600, y: 100, width: 200, height: 44)
