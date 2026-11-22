@@ -150,6 +150,7 @@ struct RootView: View {
     @State private var unlatchTask: Task<Void, Never>?
     @State private var frames: [CGRect] = []
     @State private var named: [String: CGRect] = [:]
+    @State private var tourLane: CGRect?
 
     var body: some View {
         DuoReader { duo in
@@ -207,6 +208,11 @@ struct RootView: View {
             .environment(\.qaSolid, BuildChannel.showsInternalTools && UserDefaults.standard.bool(forKey: "qaReduceTransparency"))
             .onPreferenceChange(TappableFrameKey.self) { frames = $0 }
             .onPreferenceChange(NamedFrameKey.self) { named = $0 }
+            .onPreferenceChange(TourLaneKey.self) { tourLane = $0 }
+            // 6b: the intro tour's ring and card, over everything but the splash; anchors report only while their step shows.
+            .overlayPreferenceValue(TourAnchorKey.self) { anchors in
+                if !splashVisible { TourOverlay(duo: duo, anchors: anchors, lane: tourLane) }
+            }
             .overlay {
                 if model.showDebugOverlay { DebugOverlay(frames: frames, duo: duo) }
                 #if INTERNAL
@@ -232,6 +238,12 @@ struct RootView: View {
         .onChange(of: NotificationService.shared.launchedFromNotification) { _, fromNotification in
             if fromNotification { splashVisible = false }
         }
+        // 6b: a fresh install gets the welcome once the splash has gone; a step advances when the person does what it points at.
+        .onChange(of: splashVisible, initial: true) { _, visible in
+            if !visible && model.offersTourAtLaunch && model.tourStep == nil { model.tourWelcome = true }
+        }
+        .onChange(of: model.nav.gameID) { _, id in if id != nil { model.tourNoticed(openedGame: true) } }
+        .onChange(of: model.data.nav.tab) { _, tab in model.tourNoticed(tab: tab) }
         .sheet(isPresented: Binding(get: { model.addSheetOpen && model.livePose != .tabletop && (model.addIsSystemSheet || !model.liveRightPage) }, set: { if !$0 && model.livePose != .tabletop && (model.addIsSystemSheet || !model.liveRightPage) { model.addSheetOpen = false } })) {
             // Full height: a shorter sheet left the Library's first-run strip showing, inert, beneath it.
             AddGameSheet().presentationDetents([.large])
@@ -270,6 +282,7 @@ struct TabRoot: View {
         TabView(selection: $model.data.nav.tab) {
             Tab("Library", systemImage: "books.vertical", value: AppTab.library) {
                 LibraryRoot(duo: duo).auditActive(model.nav.tab == .library).underLowerPanel(duo)
+                    .tourLane(model.nav.tab == .library && model.nav.gameID == nil && (model.tourWelcome || model.tourStep != nil))
             }
             .badge(model.totalUnread)
 
@@ -487,6 +500,7 @@ struct TabletopRail: View {
         .accessibilityValue(badge > 0 ? "\(badge) unread" : "")
         .accessibilityAddTraits(model.nav.tab == t ? .isSelected : [])
         .tappableFrame()
+        .tourAnchor(t == .updates ? .updates : nil)
     }
 }
 
