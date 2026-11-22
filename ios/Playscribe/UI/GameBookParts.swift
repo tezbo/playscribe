@@ -590,6 +590,8 @@ struct SimilarGamesRow: View {
                             .buttonStyle(.plain)
                             .accessibilityLabel(g.name)
                             .accessibilityHint("View it, or choose how to add it")
+                            // The page's last controls when shown (gate #593: PageEndClearsTabBarTests checks them at the page end).
+                            .accessibilityIdentifier("similarGame")
                             .tappableFrame()
                         }
                     }
@@ -603,6 +605,8 @@ struct SimilarGamesRow: View {
                             .buttonStyle(.plain)
                             .accessibilityLabel(g.name)
                             .accessibilityHint("View it, or choose how to add it")
+                            // The page's last controls when shown (gate #593: PageEndClearsTabBarTests checks them at the page end).
+                            .accessibilityIdentifier("similarGame")
                             .tappableFrame()
                         }
                     }

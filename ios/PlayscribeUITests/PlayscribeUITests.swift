@@ -545,8 +545,10 @@ final class ReleaseRowTests: XCTestCase {
             XCTAssertTrue(title.waitForExistence(timeout: 5), "\(name) opens")
             let shot = XCTAttachment(screenshot: app.screenshot())
             shot.name = "row-\(name) [\(Self.pose(app))]"; shot.lifetime = .keepAlways; add(shot)
-            if app.navigationBars[name].exists {
-                // Pushed (Closed, open portrait): Back returns to the same row, still in view.
+            // Pushed (Closed, open portrait): the update page (releaseDetail) is on screen. Its bar has no title since the
+            // AX5 fix (the patch name is the page's heading), so the bar's title can't tell a push any more (gate #593).
+            if app.descendants(matching: .any)["releaseDetail"].exists {
+                // Pushed: Back returns to the same row, still in view.
                 Self.goBack(app)
                 sleep(1)
                 XCTAssertTrue(row.isHittable, "back to \(name) row, in view")
@@ -579,7 +581,8 @@ final class JourneyTests: XCTestCase {
         while ReleaseRowTests.pose(app).contains("closed") && Date.now < deadline { sleep(2) }
         sleep(2)
         XCTAssertTrue(title.exists, "Patch 1.4 still showing after unfolding [\(audit.exists ? audit.label : "unknown")]")
-        if app.navigationBars["Patch 1.4"].exists { ReleaseRowTests.goBack(app); sleep(1) }
+        // Still pushed: the update page is on screen (its bar has no title since the AX5 fix, gate #593).
+        if app.descendants(matching: .any)["releaseDetail"].exists { ReleaseRowTests.goBack(app); sleep(1) }
         // Open is one column: Back lands on the row, in view. A pushed update leaves no selected fill (s-06, s3.png).
         XCTAssertTrue(row.isHittable, "back to the Patch 1.4 row, in view")
         let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "journey-open-patch-1.4"; shot.lifetime = .keepAlways; add(shot)
@@ -648,8 +651,17 @@ final class ReviewFixUITests: XCTestCase {
         // The identified row, not "any element whose text looks like a version": at 96e0e39 a game card behind the sheet read
         // "01.001.000" (a simulated release's date), matched at once, and the loop never scrolled to the real row.
         let version = app.descendants(matching: .any)["appVersion"]
-        var tries = 0
-        while !version.exists && tries < 8 { Release050Tests.scrollForm(app); tries += 1 }
+        // Until the row is there or the form stops moving: 8 short drags stopped at the Video lab in Closed landscape, where the
+        // form is 458 pt tall and longer than when the cap was set (gate #593). The cap only stops a runaway loop.
+        var tries = 0, still = 0
+        while !version.exists && still < 2 && tries < 40 {
+            let cells = app.collectionViews.firstMatch.cells
+            let before = cells.count > 0 ? cells.element(boundBy: cells.count - 1).frame : .zero
+            Release050Tests.scrollForm(app)
+            let after = cells.count > 0 ? cells.element(boundBy: cells.count - 1).frame : .zero
+            still = abs(after.minY - before.minY) < 1 && cells.count > 0 ? still + 1 : 0
+            tries += 1
+        }
         if !version.exists {
             let tree = XCTAttachment(string: app.debugDescription); tree.name = "settings-hierarchy.txt"; tree.lifetime = .keepAlways; add(tree)
             let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "settings-window"; shot.lifetime = .keepAlways; add(shot)
@@ -1628,8 +1640,16 @@ extension PlayscribeUITests {
         guard ReleaseRowTests.pose(app).contains("pose: tabletop") else { app.terminate(); throw XCTSkip("not Tabletop") }
         let rail = app.buttons["Library"].firstMatch
         XCTAssertTrue(rail.waitForExistence(timeout: 5), "rail")
+        // 0.5.0 guided welcome comes first (gate #592): its ways to add and Skip for now clear the rail too.
+        let skip = app.buttons["Skip for now"].firstMatch
+        XCTAssertTrue(skip.waitForExistence(timeout: 5), "the guided welcome's Skip for now")
+        for b in app.buttons.allElementsBoundByIndex where b.exists && b.isHittable && b.frame.minY >= app.frame.midY - 1 && b.frame.minX < rail.frame.minX {
+            XCTAssertLessThanOrEqual(b.frame.maxX, rail.frame.minX + 1, "welcome \(b.label) \(b.frame) runs under the rail \(rail.frame)")
+        }
+        XCTAssertLessThanOrEqual(skip.frame.maxX, rail.frame.minX + 1, "Skip for now \(skip.frame) runs under the rail \(rail.frame)")
+        skip.tap()
         let add = app.buttons["Add your first game"].firstMatch
-        XCTAssertTrue(add.exists)
+        XCTAssertTrue(add.waitForExistence(timeout: 5), "the empty Library after Skip for now")
         XCTAssertLessThanOrEqual(add.frame.maxX, rail.frame.minX, "Add your first game \(add.frame) runs under the rail \(rail.frame)")
         for cover in app.buttons.matching(NSPredicate(format: "label BEGINSWITH 'Add '")).allElementsBoundByIndex where cover.isHittable && cover.label != "Add game" {
             XCTAssertLessThanOrEqual(cover.frame.maxX, rail.frame.minX + 1, "\(cover.label) \(cover.frame) runs under the rail")
@@ -1668,6 +1688,13 @@ final class FinalFixTests: XCTestCase {
     func testTabletopFirstRunHeadlineClearsTheDivision() throws {
         let app = launch("first-run")
         guard ReleaseRowTests.pose(app).contains("pose: tabletop") else { app.terminate(); throw XCTSkip("not Tabletop") }
+        // The guided welcome's headline first (gate #592), then the empty Library's after Skip for now.
+        let welcome = app.descendants(matching: .any).matching(NSPredicate(format: "label CONTAINS 'Add your games to see every update'")).firstMatch
+        XCTAssertTrue(welcome.waitForExistence(timeout: 5), "the guided welcome's headline")
+        XCTAssertLessThanOrEqual(welcome.frame.maxY, app.frame.midY - 24, "welcome headline \(welcome.frame) is across the division")
+        let skip = app.buttons["Skip for now"].firstMatch
+        XCTAssertTrue(skip.waitForExistence(timeout: 5), "Skip for now")
+        skip.tap()
         let headline = app.descendants(matching: .any).matching(NSPredicate(format: "label CONTAINS 'Follow a game'")).firstMatch
         XCTAssertTrue(headline.waitForExistence(timeout: 5))
         XCTAssertLessThanOrEqual(headline.frame.maxY, app.frame.midY - 24, "headline \(headline.frame) is across the division")
@@ -1676,7 +1703,8 @@ final class FinalFixTests: XCTestCase {
 
     /// Tabletop Add game: the compact header leaves at least three results visible in the lower half.
     func testTabletopAddGameShowsThreeRows() throws {
-        let app = launch("add")
+        // add/type: Type it, as a tap in the chooser opens it ("add" alone is the chooser, gate #592).
+        let app = launch("add/type")
         guard ReleaseRowTests.pose(app).contains("pose: tabletop") else { app.terminate(); throw XCTSkip("not Tabletop") }
         let rows = app.descendants(matching: .any).matching(identifier: "addRow").allElementsBoundByIndex
         let visible = rows.filter { $0.exists && $0.frame.minY >= app.frame.midY - 1 && $0.frame.maxY <= app.frame.maxY + 1 }
@@ -1709,7 +1737,7 @@ final class FinalFixTests: XCTestCase {
 
     /// Tabletop Add game: no keyboard. The search button explains why, and a letter filters the list (Iris ruling).
     func testTabletopSearchUsesLettersNotTheKeyboard() throws {
-        let app = launch("add")
+        let app = launch("add/type")
         guard ReleaseRowTests.pose(app).contains("pose: tabletop") else { app.terminate(); throw XCTSkip("not Tabletop") }
         let search = app.descendants(matching: .any).matching(identifier: "tabletopSearch").firstMatch
         XCTAssertTrue(search.waitForExistence(timeout: 5), "read-only search button")

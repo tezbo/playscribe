@@ -196,6 +196,29 @@ struct TabletopReaderStage: View {
                     .foregroundStyle(PlayscribeRole.action)
                     // One phrase ("Enshrouded, 5 November") instead of two stops.
                     .accessibilityElement(children: .combine)
+                    // Pose parity (gate #592, Card B): the stage says the update's PS5 state, as the update page does in every
+                    // other pose, with the PS5 number only when the PS5 row has one (never a PC number). At accessibility sizes the
+                    // half-height stage has no room for another line (the eyebrow clipped, fccccaa): it is not drawn there, it stays
+                    // in the accessibility tree, as the body does.
+                    if let r = release {
+                        let status = PS5StatusLines(r)
+                        ViewThatFits(in: .horizontal) {
+                            HStack(spacing: 12) {
+                                Text(status.primary).font(PlayscribeFont.subheadline.weight(.semibold))
+                                if let v = status.version { Text(v).font(PlayscribeFont.subheadline).monospacedDigit() }
+                            }
+                            VStack(alignment: .leading, spacing: 2) {
+                                Text(status.primary).font(PlayscribeFont.subheadline.weight(.semibold))
+                                if let v = status.version { Text(v).font(PlayscribeFont.subheadline).monospacedDigit() }
+                            }
+                        }
+                        .foregroundStyle(PlayscribeRole.textPrimary.opacity(0.92))
+                        .frame(height: typeSize.isAccessibilitySize ? 0 : nil)
+                        .clipped()
+                        .accessibilityElement(children: .ignore)
+                        .accessibilityLabel(status.spoken)
+                        .accessibilityIdentifier("ps5Status")
+                    }
                     // The release name for VoiceOver (and J-4). On the overview the title is the name itself, so this element is
                     // the heading and the drawn title is not read twice.
                     let namesRelease = section.title == release?.displayName
