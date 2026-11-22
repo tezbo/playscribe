@@ -219,6 +219,8 @@ final class AppModel {
     var addIsSystemSheet = false
     /// QA (route add/scan): the camera scan shows a fixed feed, since simulators have no camera.
     var simulatedScan = false
+    /// `-qaRoute add/say/<idle|listening|heard|stopped|nothing|denied>`: Say it in that state, no microphone (#578 stills).
+    var simulatedSay: String?
     /// Opens the Add games sheet straight on this method (first-run welcome rows).
     var addSheetMethod: AddMethod?
     /// QA: route add/keyboard focuses the Add search field so the keyboard is up.
@@ -940,6 +942,7 @@ final class AppModel {
             addSheetOpen = true
             if parts.first == "scan" { addSheetMethod = .camera; simulatedScan = true }
             if parts.first == "keyboard" { addSheetMethod = .typeIt; addSearchFocus = true }
+            if parts.first == "say" { addSheetMethod = .sayIt; simulatedSay = parts.count > 1 ? parts[1] : "idle" }
         case "cover":   // 0.7 front cover preview (duo-closed-cover): a full deck, or cover/one for a lone update
             // cover/<game> (Iris, focal-point check): that game's newest update leads the deck, unread.
             if parts.first == "one" { resetToOneUpdateDemo() } else { resetToCoverDemo(leading: parts.first) }
@@ -1193,7 +1196,7 @@ final class AppModel {
             openGame(parts[0], chapter: Chapter(rawValue: parts[1]) ?? .updates)
             nav.detailReleaseID = nil
             linksSheetOpen = false
-        case "close": player = nil; addSheetOpen = false; simulatedScan = false; settingsOpen = false; linksSheetOpen = false; tagExplainer = nil; keepCurrentDetailsOpen = false; addSearchFocus = false
+        case "close": player = nil; addSheetOpen = false; simulatedScan = false; simulatedSay = nil; settingsOpen = false; linksSheetOpen = false; tagExplainer = nil; keepCurrentDetailsOpen = false; addSearchFocus = false
         case "fill-library" where parts.count == 1:
             // QA: a library of N games (the demo set plus popular PS5 games), for layout tests.
             if let n = Int(parts[0]) {

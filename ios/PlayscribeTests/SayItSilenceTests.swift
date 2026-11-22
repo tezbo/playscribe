@@ -69,3 +69,37 @@ struct SayItSilenceTests {
         for _ in 0..<200 where !done() { try? await Task.sleep(for: .milliseconds(5)) }
     }
 }
+
+/// Quinn, #578: tap, tap again to stop while the permission prompt is up, then tap a third time. The first start must
+/// not carry on when its prompt is answered; only the newest start counts.
+@MainActor
+struct SayItStartTokenTests {
+    @Test func aStartStoppedAtThePromptNeverProceeds() async {
+        let capture = SpeechCapture()
+        var answers: [CheckedContinuation<Bool, Never>] = []
+        capture.authorize = { await withCheckedContinuation { answers.append($0) } }
+
+        let first = Task { await capture.toggle() }
+        await settle { answers.count == 1 }
+        #expect(capture.starting)
+        await capture.toggle()                   // stop while the prompt is up
+        #expect(!capture.starting)
+        let third = Task { await capture.toggle() }
+        await settle { answers.count == 2 }
+
+        answers[0].resume(returning: false)      // the first prompt answers late
+        await first.value
+        #expect(!capture.denied, "the retired start did nothing")
+        #expect(capture.starting, "the newest start is still waiting")
+
+        answers[1].resume(returning: false)
+        await third.value
+        #expect(capture.denied, "the newest start acts on its own answer")
+        #expect(!capture.starting)
+        #expect(!capture.listening)
+    }
+
+    private func settle(_ done: () -> Bool) async {
+        for _ in 0..<200 where !done() { try? await Task.sleep(for: .milliseconds(5)) }
+    }
+}

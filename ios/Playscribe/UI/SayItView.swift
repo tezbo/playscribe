@@ -13,6 +13,8 @@ final class SpeechCapture {
     var unavailable = false
     /// Between the tap and the microphone opening (permission prompts included), so a second tap stops it.
     var starting = false
+    /// The last listen ended with no words: "Didn’t catch that" (Iris, #578).
+    var heardNothing = false
 
     @ObservationIgnored private lazy var silence = SilenceWatch { [weak self] in self?.stop() }
     @ObservationIgnored private var longest: Task<Void, Never>?
@@ -22,15 +24,23 @@ final class SpeechCapture {
 
     /// The microphone button: starts listening, or stops it early.
     func toggle() async {
-        if listening || starting { starting = false; stop() } else { await start() }
+        if listening || starting { startToken += 1; starting = false; stop() } else { await start() }
     }
+
+    /// Each start takes a token; a stop tap or a newer start retires it, so a start that was waiting on the permission
+    /// prompts never opens the microphone twice (Quinn, #578: tap, tap to stop, tap again before the prompt answers).
+    @ObservationIgnored private var startToken = 0
 
     func start() async {
         guard !listening, !starting else { return }
+        startToken += 1
+        let token = startToken
         starting = true
-        defer { starting = false }
-        guard await authorized() else { denied = true; return }
-        guard starting else { return } // tapped again while the permission prompts were up
+        defer { if token == startToken { starting = false } }
+        let allowed = await authorize()
+        guard token == startToken, !listening else { return } // stopped, or started again, while the prompts were up
+        guard allowed else { denied = true; return }
+        heardNothing = false
         let recognizer = SFSpeechRecognizer(locale: Locale(identifier: "en-US")) ?? SFSpeechRecognizer()
         guard let recognizer, recognizer.isAvailable, recognizer.supportsOnDeviceRecognition else { unavailable = true; return }
         denied = false; unavailable = false
@@ -48,7 +58,8 @@ final class SpeechCapture {
             try engine.start()
             listening = true
             Haptics.voiceEdge()
-            silence.arm(heard: false)
+            Self.announce("Listening")
+            if Self.autoStops { silence.arm(heard: false) }
             longest = Task { [weak self] in
                 try? await Task.sleep(for: SilenceWatch.longest)
                 if !Task.isCancelled { self?.stop() }
@@ -66,24 +77,57 @@ final class SpeechCapture {
         silence.cancel()
         longest?.cancel(); longest = nil
         guard listening || request != nil else { return }
-        engine.stop()
-        engine.inputNode.removeTap(onBus: 0)
-        request?.endAudio()
-        request = nil
-        if listening { Haptics.voiceEdge() }
+        let wasListening = listening
+        if request != nil {
+            engine.stop()
+            engine.inputNode.removeTap(onBus: 0)
+            request?.endAudio()
+            request = nil
+            try? AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation)
+        }
         listening = false
-        try? AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation)
+        guard wasListening else { return }
+        Haptics.voiceEdge()
+        heardNothing = transcript.isEmpty
+        Self.announce(heardNothing ? "Stopped listening. Didn’t catch that" : "Stopped listening. Heard \(transcript)")
     }
+
+    /// With VoiceOver or Switch Control on there is no pause stop: a slow speaker would lose words (Iris, #578). Tap to
+    /// stop, or the 60 s limit. Titles are announced when listening stops, not while it runs, so VoiceOver's own voice
+    /// never goes into the microphone.
+    static var autoStops: Bool { !(UIAccessibility.isVoiceOverRunning || UIAccessibility.isSwitchControlRunning) }
+
+    private static func announce(_ text: String) {
+        AccessibilityNotification.Announcement(text).post()
+    }
+
+    #if INTERNAL
+    /// `-qaRoute add/say/<state>`: the screen in that state for stills, with no microphone.
+    func simulate(_ state: String) {
+        let heard = "Elden Ring and Astro Bot"
+        switch state {
+        case "listening": listening = true
+        case "heard": listening = true; transcript = heard
+        case "stopped": transcript = heard
+        case "nothing": heardNothing = true
+        case "denied": denied = true
+        default: break
+        }
+    }
+    #endif
 
     private func apply(_ text: String?, done: Bool) {
         if let text, !text.isEmpty, text != transcript {
             transcript = text
-            if listening { silence.arm(heard: true) } // every new word restarts the pause timer
+            if listening && Self.autoStops { silence.arm(heard: true) } // every new word restarts the pause timer
         }
         if done { task = nil; stop() }
     }
 
-    private func authorized() async -> Bool {
+    /// The permission step; tests replace it to hold a start at the prompt.
+    @ObservationIgnored var authorize: @MainActor () async -> Bool = { await SpeechCapture.authorized() }
+
+    private static func authorized() async -> Bool {
         guard await Self.speechAuthorized() else { return false }
         return await AVAudioApplication.requestRecordPermission()
     }
@@ -153,7 +197,10 @@ final class SilenceWatch {
 }
 
 struct SayItView: View {
+    @Environment(AppModel.self) private var model
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @State private var capture = SpeechCapture()
+    @State private var pulse = false
     var find: (String) -> Void
     var typeInstead: () -> Void
     /// The explainer comes before the system prompts, and only while neither is decided.
@@ -183,8 +230,9 @@ struct SayItView: View {
                     Text(capture.denied ? "Say it is off" : "Speech isn’t available on this device right now")
                         .font(PlayscribeFont.headline).multilineTextAlignment(.center)
                     if capture.denied {
-                        Text("You can turn on the microphone and speech recognition for Playscribe in Settings.")
-                            .font(PlayscribeFont.subheadline).foregroundStyle(.secondary).multilineTextAlignment(.center)
+                        Text("Allow the microphone and speech recognition in Settings to add games by voice.")
+                            .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
+                            .multilineTextAlignment(.center)
                     }
                     Button("Type it", action: typeInstead).hitTarget()
                     if capture.denied {
@@ -195,16 +243,15 @@ struct SayItView: View {
                 }
                 .padding(.top, 24)
             } else {
-                Text(capture.transcript.isEmpty
-                     ? (capture.listening ? "Listening…" : "Tap the microphone and say a few titles, like Elden Ring and Astro Bot.")
-                     : capture.transcript)
+                Text(capture.transcript.isEmpty ? emptyLine : capture.transcript)
                     .font(capture.transcript.isEmpty ? PlayscribeFont.subheadline : PlayscribeFont.title3)
                     .foregroundStyle(capture.transcript.isEmpty ? PlayscribeRole.textSecondary : PlayscribeRole.textPrimary)
                     .multilineTextAlignment(.center)
                     .frame(maxWidth: .infinity, minHeight: 80)
                     .padding(.horizontal, 20)
                     .accessibilityLabel(capture.transcript.isEmpty
-                                        ? (capture.listening ? "Listening" : "No titles heard yet") : capture.transcript)
+                                        ? (capture.listening ? "Listening" : capture.heardNothing ? emptyLine : "No titles heard yet")
+                                        : capture.transcript)
             }
             Spacer(minLength: 0)
             if explained && !capture.denied && !capture.unavailable {
@@ -216,8 +263,23 @@ struct SayItView: View {
                         .foregroundStyle(PlayscribeRole.onAction)
                         .frame(width: 64, height: 64)
                         .background(Circle().fill(capture.listening ? PlayscribeColor.accentPressed : PlayscribeRole.action))
-                        .scaleEffect(capture.listening ? 1.08 : 1)
                         .contentShape(Circle())
+                        // Listening is shown by shape too, not colour alone: a ring that breathes, or holds still
+                        // under Reduce Motion (Iris, #578).
+                        .background {
+                            if capture.listening {
+                                Circle().stroke(PlayscribeRole.action, lineWidth: 3)
+                                    .frame(width: 80, height: 80)
+                                    .scaleEffect(reduceMotion ? 1 : (pulse ? 1.12 : 0.94))
+                                    .opacity(reduceMotion ? 1 : (pulse ? 0.45 : 1))
+                                    .animation(reduceMotion ? nil : .easeInOut(duration: 0.9).repeatForever(autoreverses: true),
+                                               value: pulse)
+                                    .onAppear { pulse = true }
+                                    .onDisappear { pulse = false }
+                                    .accessibilityHidden(true)
+                            }
+                        }
+                        .frame(width: 88, height: 88)
                 }
                 .buttonStyle(.plain)
                 .accessibilityLabel(capture.listening ? "Stop listening" : "Start listening")
@@ -240,5 +302,16 @@ struct SayItView: View {
         }
         .padding(.bottom, 12)
         .onDisappear { capture.stop() }
+        #if INTERNAL
+        .onAppear {
+            if let state = model.simulatedSay { explained = true; capture.simulate(state) }
+        }
+        #endif
+    }
+
+    private var emptyLine: String {
+        if capture.listening { return "Listening…" }
+        if capture.heardNothing { return "Didn’t catch that. Tap the microphone to try again." }
+        return "Tap the microphone and say a few titles, like Elden Ring and Astro Bot."
     }
 }
