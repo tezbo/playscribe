@@ -81,8 +81,11 @@ struct CatalogGame: Codable, Hashable, Identifiable {
         return URL(string: "https://images.igdb.com/igdb/image/upload/t_1080p/\(a).jpg")
     }
 
+    /// The IGDB cover: the record's own image id, else the PS5 index's by igdbID. A catalogue record with no bundled cover
+    /// (Astro Bot, Ghost of Yōtei) kept the plate's initial on its Library tile while its page showed the index art (Terry, beta 3).
     var coverURL: URL? {
-        coverImageID.map { URL(string: "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/\($0).jpg")! }
+        (coverImageID ?? igdbID.flatMap { PS5Index.shared.entry(igdb: $0)?.c })
+            .map { URL(string: "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/\($0).jpg")! }
     }
 
     /// The PS5 launched on 12 Nov 2020; no "on PS5" date can be earlier.

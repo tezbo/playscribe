@@ -16,15 +16,15 @@ final class BackPathTests: XCTestCase {
         XCTAssertTrue(rows.firstMatch.waitForExistence(timeout: 10), "an Updates row")
         // A row below the first, so "the same scroll" is a real check.
         app.swipeUp()
-        // A row wholly between the navigation bar and the tab bar (#592, Mac at v0.5.9: the first "hittable" row sat under the
-        // bar at y -88, so the tap landed on the bar and nothing opened).
+        // A row wholly between the bars: isHittable alone took a row scrolled under the nav bar (y -88), whose tap did nothing
+        // (gate #593). The floor is the nav bar's bottom, or the status bar's when there is no nav bar.
         let nav = app.navigationBars.firstMatch
-        let top = nav.exists ? nav.frame.maxY : 0
-        let tabs = app.tabBars.firstMatch
-        let bottom = tabs.exists ? tabs.frame.minY : app.frame.maxY
-        let row = rows.allElementsBoundByIndex.first { $0.isHittable && $0.frame.minY >= top && $0.frame.maxY <= bottom }
-        XCTAssertNotNil(row, "an Updates row fully on screen between \(top) and \(bottom)")
-        guard let row else { app.terminate(); return }
+        let top = nav.exists ? nav.frame.maxY : app.statusBars.firstMatch.frame.maxY
+        let tabBar = app.tabBars.firstMatch
+        let bottom = tabBar.exists ? tabBar.frame.minY : app.frame.maxY
+        let inView = rows.allElementsBoundByIndex.filter { $0.isHittable && $0.frame.minY >= top && $0.frame.maxY <= bottom }
+        XCTAssertFalse(inView.isEmpty, "an Updates row wholly between the bars (top \(top), bottom \(bottom))")
+        let row = inView.first ?? rows.firstMatch
         let label = row.label
         row.tap()
 

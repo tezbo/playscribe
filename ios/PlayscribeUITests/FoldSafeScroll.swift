@@ -31,7 +31,8 @@ extension XCUIApplication {
 @MainActor enum FoldSafeScrollLog { static var logged = false }
 
 /// Quinn (Mac at a5221d12): scrolled to the end, the game page's last rows clear the bottom tab bar, so nothing at the end of a
-/// page sits behind it. The About section's trailer rows are the page's last controls.
+/// page sits behind it. The About section's trailer rows were the page's last controls; "You might also like" now follows them
+/// when it has games (gate #593), so the check is on whichever is last: the similar games' covers, else the last trailer row.
 @MainActor
 final class PageEndClearsTabBarTests: XCTestCase {
     func testLastTrailerRowClearsTheTabBar() throws {
@@ -42,14 +43,18 @@ final class PageEndClearsTabBarTests: XCTestCase {
         guard !pose.contains("tabletop") else { print("PageEndClearsTabBarTests: Tabletop has no About rows; skipped"); return }
         let rows = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'trailerPlay-'"))
         XCTAssertTrue(rows.firstMatch.waitForExistence(timeout: 30), "trailer rows load [\(pose)]")
-        let last = rows.element(boundBy: rows.count - 1)
-        XCTAssertTrue(app.scrollUntilHittable(last), "the last trailer row can be reached [\(pose)]")
+        let lastTrailer = rows.element(boundBy: rows.count - 1)
+        XCTAssertTrue(app.scrollUntilHittable(lastTrailer), "the last trailer row can be reached [\(pose)]")
         for _ in 0..<3 { app.scrollPageUpAvoidingFold() }   // at the end of the page
         let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "page-end [\(pose)]"; shot.lifetime = .keepAlways; add(shot)
+        // The page's last control: one row of covers (they share a line), else the last trailer row.
+        let similar = app.buttons.matching(identifier: "similarGame").firstMatch
+        let last = similar.exists ? similar : lastTrailer
+        let what = similar.exists ? "the You might also like row" : "the last trailer row"
         let bar = app.tabBars.firstMatch
-        if bar.exists, bar.frame.width > bar.frame.height {
-            XCTAssertLessThanOrEqual(last.frame.maxY, bar.frame.minY + 1, "the last row clears the bottom tab bar [\(pose)]: \(last.frame) vs \(bar.frame)")
+        if bar.exists, bar.frame.width > bar.frame.height, bar.frame.minY > app.frame.midY {
+            XCTAssertLessThanOrEqual(last.frame.maxY, bar.frame.minY + 1, "\(what) clears the bottom tab bar [\(pose)]: \(last.frame) vs \(bar.frame)")
         }
-        XCTAssertTrue(last.isHittable, "the last row is still tappable at the end [\(pose)]")
+        XCTAssertTrue(last.isHittable, "\(what) is still tappable at the end [\(pose)]")
     }
 }

@@ -174,6 +174,16 @@ struct SettingsView: View {
                         Text("PS Plus reminders are separate from game notifications.")
                     }
                     Section {
+                        Picker("Appearance", selection: Binding(get: { model.data.appearance ?? .system },
+                                                                set: { model.data.appearance = $0 == .system ? nil : $0 })) {
+                            ForEach(AppAppearance.allCases) { Text($0.title).tag($0) }
+                        }
+                        .frame(minHeight: 52)
+                        .accessibilityIdentifier("appearance")
+                    } footer: {
+                        Text("System follows your phone’s Light and Dark setting. The video player and the cover stay dark.")
+                    }
+                    Section {
                         Toggle("Sounds", isOn: Binding(get: { model.data.soundsOff != true }, set: { model.data.soundsOff = $0 ? nil : true }))
                             .frame(minHeight: 52)
                             .accessibilityHint("Plays a soft pop when games are added")

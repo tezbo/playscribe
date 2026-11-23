@@ -176,9 +176,162 @@ const pressIndex = async (fetchFn: FetchFn, s: SourceDef, opts: PageOpts): Promi
   return [...out.values()]
 }
 
+const fold = (t: string) => t.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase()
+const namesAny = (text: string, names: string[]) => names.some((n) => fold(text).includes(fold(n)))
+
+interface BskyFeed {
+  cursor?: string
+  feed: { post: { uri: string; author: { handle: string }; record: { text?: string; createdAt?: string } }; reason?: unknown }[]
+}
+
+/** The patch name a studio post gives ("Patch 2.09 for ...", "Update 1.72", "hotfix"), else its first sentence. */
+export const blueskyTitle = (text: string) => {
+  const flat = text.replace(/\s+/g, ' ').trim()
+  const v = flat.match(/\b(patch|update|hot\s*-?fix)\s*v?(\d+(?:\.\d+){1,3}[a-z]?)\b/i)
+  if (v) return `${v[1]!.replace(/[\s-]/g, '').toLowerCase().replace(/^./, (c) => c.toUpperCase())} ${v[2]}`
+  // No version: the kind of post, so the release reads "Update" or "Hotfix" and the studio's words stay in the notes.
+  if (/\bhot\s*-?fix\b/i.test(flat)) return 'Hotfix'
+  if (/\b(update|patch)\b/i.test(flat)) return 'Update'
+  const first = flat.split(/(?<=[.!?])\s/)[0]!
+  return first.length > 120 ? `${first.slice(0, 117)}...` : first
+}
+
+/**
+ * A studio's own Bluesky account, read through Bluesky's public API (no sign-in, no scraping): the posts the account itself wrote,
+ * newest first. Reposts and replies are skipped. A backfill pages back until `until`.
+ */
+const bluesky = async (fetchFn: FetchFn, s: SourceDef, until?: string): Promise<Post[]> => {
+  const handle = s.url.match(/bsky\.app\/profile\/([^/?#]+)/)?.[1]
+  if (!handle) throw new Error(`${s.id}: no Bluesky handle in ${s.url}`)
+  const out: Post[] = []
+  let cursor: string | undefined
+  for (let page = 0; page < (until ? 20 : 1); page++) {
+    const d = await getJson<BskyFeed>(
+      fetchFn,
+      `https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=${encodeURIComponent(handle)}&limit=100&filter=posts_no_replies${cursor ? `&cursor=${encodeURIComponent(cursor)}` : ''}`,
+    )
+    for (const f of d.feed) {
+      const text = f.post.record.text?.trim()
+      if (f.reason || !text || !f.post.record.createdAt || f.post.author.handle.toLowerCase() !== handle.toLowerCase()) continue
+      out.push({
+        sourceId: s.id,
+        postId: f.post.uri,
+        url: `https://bsky.app/profile/${handle}/post/${f.post.uri.split('/').pop()}`,
+        title: blueskyTitle(text),
+        publishedAt: new Date(f.post.record.createdAt).toISOString(),
+        body: text,
+      })
+    }
+    cursor = d.cursor
+    if (!cursor || !until || out.length === 0 || out.every((p) => p.publishedAt < until)) break
+  }
+  return out
+}
+
+/**
+ * An Atlassian Statuspage history feed (Epic's public status page). A maintenance item counts once it says "Completed": the update
+ * is then live, at the time of that last entry. Scheduled or in-progress downtime is not a release yet.
+ */
+export const parseStatuspage = (sourceId: string, body: string): Post[] => {
+  const doc = xml.parse(body) as Record<string, any>
+  const posts: Post[] = []
+  for (const i of list(doc.rss?.channel?.item)) {
+    const clean = (h: string) => h.replace(/<var[^>]*>|<\/var>/g, '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim()
+    // The item lists its entries newest first. Only the Completed entry says the update is out: the Scheduled one's wording
+    // ("Matchmaking will be disabled…") is about what was planned, so it is not part of the post text.
+    const done = text(i.description).split(/<\/p>/i).find((e) => /<strong>\s*Completed\s*<\/strong>/i.test(e))
+    if (!done) continue
+    const desc = clean(done)
+    const ver = text(i.title).match(/\bv(\d+\.\d+(?:\.\d+)?)\b/i)?.[1]
+    posts.push({
+      sourceId,
+      postId: text(i.guid) || text(i.link),
+      url: text(i.link),
+      title: ver ? `Update v${ver}` : text(i.title),
+      publishedAt: new Date(text(i.pubDate)).toISOString(),
+      body: `${text(i.title)}. ${desc}`,
+    })
+  }
+  return posts
+}
+
+/**
+ * Minecraft's Bedrock patch notes as Mojang publishes them for the game launcher (a public JSON file, newest first). Bedrock is the
+ * edition on PlayStation. The newest few entries are read in full; older ones keep their short text.
+ */
+type MojangEntry = { title: string; version?: string; date: string; contentPath?: string; shortText?: string; body?: string }
+export const parseMojangNotes = (sourceId: string, entries: MojangEntry[], bodies: Record<string, string> = {}): Post[] =>
+  entries
+    .filter((e) => e.title && e.date && !Number.isNaN(new Date(e.date).getTime()))
+    .map((e) => ({
+      sourceId,
+      postId: `mojang-bedrock-${e.version ?? e.title}`,
+      url: 'https://www.minecraft.net/en-us/articles',
+      title: e.version ? `Update ${e.version}` : e.title,
+      publishedAt: new Date(e.date).toISOString(),
+      body: (bodies[e.version ?? e.title] ?? e.body ?? e.shortText ?? e.title).replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim(),
+    }))
+
+const mojangNotes = async (fetchFn: FetchFn, s: SourceDef): Promise<Post[]> => {
+  const base = s.url.replace(/[^/]+$/, '')
+  const d = await getJson<{ entries: MojangEntry[] }>(fetchFn, s.url)
+  const bodies: Record<string, string> = {}
+  for (const e of d.entries.slice(0, 5)) {
+    if (!e.contentPath) continue
+    try {
+      bodies[e.version ?? e.title] = (await getJson<{ body?: string }>(fetchFn, `${base}${e.contentPath}`)).body ?? ''
+    } catch {
+      // the short text stands in
+    }
+  }
+  return parseMojangNotes(s.id, d.entries, bodies)
+}
+
+/**
+ * Riot's own news page for a game (Valorant): the page carries its article list as JSON (Next.js page data). Only the
+ * game-updates category is read; each article is a patch note and is dated when Riot published it.
+ */
+export const parseRiotNews = (sourceId: string, siteOrigin: string, html: string): Post[] => {
+  const raw = html.match(/<script id="__NEXT_DATA__"[^>]*>([\s\S]*?)<\/script>/)?.[1]
+  if (!raw) return []
+  const out: Post[] = []
+  const seen = new Set<string>()
+  const walk = (o: unknown): void => {
+    if (Array.isArray(o)) return o.forEach(walk)
+    if (!o || typeof o !== 'object') return
+    const r = o as Record<string, any>
+    if (typeof r.title === 'string' && r.publishedAt && r.category?.machineName === 'game_updates' && r.action?.payload?.url) {
+      const id = r.analytics?.contentId ?? r.action.payload.url
+      if (seen.has(id)) return
+      seen.add(id)
+      out.push({ sourceId, postId: id, url: new URL(r.action.payload.url, siteOrigin).toString(), title: r.title, publishedAt: new Date(r.publishedAt).toISOString(), body: `${r.title}. ${r.description?.body ?? ''}`.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim() })
+      return
+    }
+    Object.values(r).forEach(walk)
+  }
+  walk(JSON.parse(raw))
+  return out
+}
+
+/** Posts of a source that names its game(s): drop what names none, mark what is not a patch post as news. */
+const forGame = (s: SourceDef, posts: Post[]): Post[] =>
+  s.mentions || s.patchOnly
+    ? posts
+        .filter((p) => !s.mentions || namesAny(`${p.title}\n${p.body}`, s.mentions))
+        .map((p) => {
+          const patchPost = looksLikePatch(p.title) || looksLikePatch(p.body.slice(0, 200))
+          const asked = !s.titleMatch || new RegExp(s.titleMatch, 'i').test(p.title)
+          return s.patchOnly && (!patchPost || !asked || isNewsOnlyTitle(p.title)) ? { ...p, news: true } : p
+        })
+    : posts
+
 export const fetchPosts = async (fetchFn: FetchFn, s: SourceDef, opts: PageOpts = {}): Promise<Post[]> => {
-  if (s.kind === 'steamNews') return steam(fetchFn, s, opts.until ? 100 : 20, opts.until)
+  if (s.kind === 'steamNews') return forGame(s, await steam(fetchFn, s, opts.until ? 100 : 20, opts.until))
   if (s.kind === 'pressIndex') return pressIndex(fetchFn, s, opts)
+  if (s.kind === 'bluesky') return forGame(s, await bluesky(fetchFn, s, opts.until))
+  if (s.kind === 'mojangNotes') return mojangNotes(fetchFn, s)
+  if (s.kind === 'riotNews') return forGame(s, parseRiotNews(s.id, new URL(s.url).origin, await getText(fetchFn, s.url, { accept: 'text/html' })))
+  if (s.kind === 'statuspage') return forGame(s, parseStatuspage(s.id, await getText(fetchFn, s.url, { accept: 'application/rss+xml, application/xml' })))
   const body = await getText(fetchFn, s.url, { accept: s.kind === 'rss' ? 'application/rss+xml, application/atom+xml, application/xml' : 'text/html' })
-  return s.kind === 'rss' ? parseFeed(s.id, body) : parseLinks(s.id, s.url, body)
+  return s.kind === 'rss' ? forGame(s, parseFeed(s.id, body)) : parseLinks(s.id, s.url, body)
 }

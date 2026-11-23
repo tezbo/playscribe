@@ -104,8 +104,8 @@ struct NoteSearchResults: View {
                 } header: {
                     HStack(spacing: 8) {
                         Text(r.displayName)
-                        Text(model.game(r.gameID)?.name ?? "").foregroundStyle(.secondary)
-                        Text((r.isPS5Listed ? r.ps5Date : r.latestDate).dayMonth).foregroundStyle(.secondary)
+                        Text(model.game(r.gameID)?.name ?? "").foregroundStyle(PlayscribeRole.textSecondary)
+                        Text((r.isPS5Listed ? r.ps5Date : r.latestDate).dayMonth).foregroundStyle(PlayscribeRole.textSecondary)
                         ReleaseTag(release: r)
                     }
                 }
@@ -123,7 +123,7 @@ struct NoteSearchResults: View {
             } label: {
                 VStack(alignment: .leading, spacing: 3) {
                     Text(bolded(h.line)).font(PlayscribeFont.subheadline)
-                    Text(h.section).font(PlayscribeFont.caption).foregroundStyle(.secondary)
+                    Text(h.section).font(PlayscribeFont.caption).foregroundStyle(PlayscribeRole.textSecondary)
                 }
                 .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
                 .contentShape(Rectangle())

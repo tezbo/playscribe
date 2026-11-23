@@ -147,12 +147,15 @@ enum FoldHost {
         let root = Probe(box: box, regions: regions, content: RootView()
             .environment(model)
             .environment(\.harnessSplit, ProcessInfo.processInfo.environment["HARNESS_SPLIT"] == "1")
-            .preferredColorScheme(.dark)
             .font(PlayscribeFont.body)
-            .tint(PlayscribeColor.accent)
-            .foregroundStyle(PlayscribeColor.textPrimary)
+            .tint(PlayscribeRole.action)
+            .foregroundStyle(PlayscribeRole.textPrimary)
             .modifier(HarnessStableMotion()))
         let hc = UIHostingController(rootView: root)
+        // G-11: the app follows the phone now (no Info.plist Dark), so the harness pins its own scheme on the hosting
+        // controller, which AppAppearance.apply (windows only) never touches. Dark by default so main and the PR compare
+        // like for like; HARNESS_APPEARANCE=light renders the light matrix. Same root styles as PlayscribeApp.
+        hc.overrideUserInterfaceStyle = HarnessAppearance.style
         hc.traitOverrides.horizontalSizeClass = pose.compactWidth ? .compact : .regular
         // The hosting window is a small square, so UIKit gave the tab view a compact vertical size class and drew its tab bar
         // as a vertical bar down the trailing edge (CI view tree: VerticalBarPocketView 83 pt wide, content safe area right 172

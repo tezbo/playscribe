@@ -100,14 +100,14 @@ struct LibraryStage: View {
                 if let game {
                     Text(game.name.gluingTrailingNumeral).font(PlayscribeFont.title2.bold()).lineLimit(3)
                     if let c = model.continueItem, c.game.id == game.id {
-                        Text("New on PS5: \(c.release.displayName)").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                        Text("New on PS5: \(c.release.displayName)").font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
                     }
                     if let c = model.continueItem, c.game.id == game.id {
-                        Text("New on PS5: \(c.release.displayName)").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                        Text("New on PS5: \(c.release.displayName)").font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
                     }
                 }
                 if !model.data.collection.isEmpty {
-                    Text("Nothing new in 90 days").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                    Text("Nothing new in 90 days").font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
                 }
             }
             .padding(20)
@@ -255,8 +255,9 @@ struct LibraryShelf: View {
     private func topCards(_ all: [AppModel.LibraryRow]) -> some View {
         let pageWidth: CGFloat? = duo.pose == .book ? duo.division.map { max(0, $0.minX - 24 - 16) } : nil
         VStack(alignment: .leading, spacing: 14) {
-            if model.showsNotificationCard, let first = all.first {
-                NotificationInviteCard(gameName: first.game.name)
+            if model.showsNotificationCard, !all.isEmpty {
+                // Named only after a game the feed tracks: an alert is never promised for one it doesn't (Astro Bot, beta 3).
+                NotificationInviteCard(gameName: all.first(where: { model.feedTracksGame($0.game.id) })?.game.name)
             }
             // N-9: one ask per screen. Shows only once the alerts card has been answered, on a later Library appearance (Iris).
             // Book and Tabletop place it higher up (keepCurrentAsk); Closed and Open keep it here.
@@ -305,7 +306,7 @@ struct LibraryShelf: View {
                     // The same field as the notes search; the system rounded border read as a
                     // faded box behind the large title on the dark Library (QA, a258f0c).
                     HStack(spacing: 8) {
-                        Image(systemName: "magnifyingglass").foregroundStyle(.secondary)
+                        Image(systemName: "magnifyingglass").foregroundStyle(PlayscribeRole.textSecondary)
                         TextField("Search your library", text: binding)
                             .submitLabel(.search)
                             .autocorrectionDisabled()
@@ -325,7 +326,7 @@ struct LibraryShelf: View {
                                     }
                                 }
                             } label: {
-                                Image(systemName: "xmark.circle.fill").foregroundStyle(.secondary)
+                                Image(systemName: "xmark.circle.fill").foregroundStyle(PlayscribeRole.textSecondary)
                                     .frame(minWidth: 44, minHeight: 44).contentShape(Rectangle())
                                     .keepsKeyboardInFrame("library-search-clear")
                             }
@@ -427,7 +428,7 @@ struct LibraryShelf: View {
                 } else {
                 if let line = model.feedStatusLine {
                     HStack {
-                        Text(line).font(PlayscribeFont.footnote).foregroundStyle(.secondary)
+                        Text(line).font(PlayscribeFont.footnote).foregroundStyle(PlayscribeRole.textSecondary)
                         if case .failed = model.feedStatus {
                             Button { Task { await model.retryCheck() } } label: { Text("Retry").frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()) }.font(PlayscribeFont.footnote)
                         }
@@ -439,7 +440,7 @@ struct LibraryShelf: View {
                 if model.nav.filter != .all && layout == .list {
                     HStack(spacing: 12) {
                         Label("Showing \(model.nav.filter.label)", systemImage: "line.3.horizontal.decrease")
-                            .font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                            .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
                         Button("Show all") { model.nav.filter = .all }
                             .font(PlayscribeFont.subheadline.weight(.semibold))
                             .frame(minHeight: 44)
@@ -883,7 +884,7 @@ struct GameRow: View {
                         Text(row.game.name.gluingTrailingNumeral).font(PlayscribeFont.headline).lineLimit(stacked ? nil : 2).multilineTextAlignment(.leading)
                         HStack(spacing: 6) {
                             StatusPill(status: row.status)
-                            Text(model.shelfLine(row)).font(PlayscribeFont.footnote).foregroundStyle(.secondary)
+                            Text(model.shelfLine(row)).font(PlayscribeFont.footnote).foregroundStyle(PlayscribeRole.textSecondary)
                         }
                     }
                     if !stacked { Spacer(minLength: 0) }
@@ -1123,13 +1124,22 @@ extension AppModel {
             : d.formatted(Date.FormatStyle(locale: Locale(identifier: "en_GB"), timeZone: .gmt).month(.abbreviated).year())
     }
 
+    /// The caption mark in words, so colour is never the only cue (Iris, #597): the amber spark is "new update", the small
+    /// amber dot (newest update read, under 7 days old) is "updated this week, read", and a plain mark is "last updated".
+    static func tileUpdateWords(_ kind: TileDateKind, _ day: String) -> String {
+        switch kind {
+        case .unread: "new update \(day)"
+        case .recent: "updated this week, read, \(day)"
+        default: "last updated \(day)"
+        }
+    }
+
     /// "Elden Ring, last updated Jul 2025, owned".
     func tileAccessibilityLabel(_ row: LibraryRow) -> String {
         let state = tileDate(row)
         let when: String
         switch state.kind {
-        case .unread: when = "new update \(state.text)"
-        case .recent, .older: when = "last updated \(state.text)"
+        case .unread, .recent, .older: when = Self.tileUpdateWords(state.kind, state.text)
         case .notOnPS5: return "\(row.game.name), not on PS5, \(row.status.label.lowercased())"
         case .playsOnPS5: return "\(row.game.name), plays on PS5 as the PS4 version, \(row.status.label.lowercased())"
         case .none:
@@ -1195,7 +1205,7 @@ struct SquareCover: View {
 /// notifications were denied); "Not now" or a swipe rests the card for a week.
 struct NotificationInviteCard: View {
     @Environment(AppModel.self) private var model
-    var gameName: String
+    var gameName: String?
     @Environment(\.dynamicTypeSize) private var typeSize
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
@@ -1217,7 +1227,7 @@ struct NotificationInviteCard: View {
                 // At the largest sizes the ask card keeps its title and buttons only; denied keeps one short line.
                 if !typeSize.isAccessibilitySize {
                     Text(denied
-                         ? "Turn notifications on in Settings and \(Brand.name) will tell you when \(gameName) and your other games update on PS5."
+                         ? "Turn notifications on in Settings and \(Brand.name) will tell you when " + (gameName.map { "\($0) and your other games" } ?? "your games") + " update on PS5."
                          : "Get a note the moment any game in your library gets an update on PS5.")
                         .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
                         .fixedSize(horizontal: false, vertical: true)
@@ -1298,7 +1308,7 @@ struct ContinueTile: View {
                     VStack(alignment: .leading, spacing: 2) {
                         Text(fresh ? (model.freshLabel(release) ?? FreshCopy.newUpdate).uppercased() : "CONTINUE").font(PlayscribeFont.caption2).tracking(1).foregroundStyle(PlayscribeRole.action)
                         Text(game.name.gluingTrailingNumeral).font(PlayscribeFont.subheadline.weight(.semibold)).lineLimit(2)
-                        Text(release.displayName).font(PlayscribeFont.caption).foregroundStyle(.secondary)
+                        Text(release.displayName).font(PlayscribeFont.caption).foregroundStyle(PlayscribeRole.textSecondary)
                     }
                     .padding(10)
                 }

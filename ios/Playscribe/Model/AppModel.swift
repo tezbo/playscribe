@@ -140,6 +140,8 @@ struct PersistedState: Codable {
     var quietHours: QuietHours?
     /// nil = on. Off silences the add pop.
     var soundsOff: Bool?
+    /// Settings > Appearance (G-11): nil = System, the default; Light or Dark overrides the phone.
+    var appearance: AppAppearance?
     /// The PS Plus card and its "Leaving soon" reminder (Terry, 2026-11-05): nil = on. Off hides both.
     var plusCardOff: Bool?
     /// The PS Plus "Leaving soon" reminder (0.5.0): nil = on.
@@ -956,6 +958,9 @@ final class AppModel {
             addSheetOpen = true
             if parts.first == "scan" { addSheetMethod = .camera; simulatedScan = true }
             if parts.first == "keyboard" { addSheetMethod = .typeIt; addSearchFocus = true }
+            // add/type (gate #592): Type it without focusing the field, as a tap on Type it in the chooser does (Tabletop shows
+            // letters, not the keyboard). Plain "add" opens the chooser.
+            if parts.first == "type" { addSheetMethod = .typeIt }
             if parts.first == "say" { addSheetMethod = .sayIt; simulatedSay = parts.count > 1 ? parts[1] : "idle" }
         case "cover":   // 0.7 front cover preview (duo-closed-cover): a full deck, or cover/one for a lone update
             // cover/<game> (Iris, focal-point check): that game's newest update leads the deck, unread.
