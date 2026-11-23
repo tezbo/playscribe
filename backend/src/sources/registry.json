@@ -1,5 +1,5 @@
 {
-  "$comment": "Per-game official source registry. See docs/ps5-patch-data.md. trust=official can set PS5 status; secondary can only mark 'reported'; a Steam patch is taken as out on PS5 too (verification assumed) unless steamIsPcPort is set. fetch=manual means the site blocks automated fetches; do not work around it. playstation-blog is manual on purpose (2026-11-03, Theo): playstation.com's terms bar automated access; re-enable only with written permission (docs/ps5-patch-data.md).",
+  "$comment": "Per-game official source registry. See docs/ps5-patch-data.md. trust=official can set PS5 status; secondary can only mark 'reported'; a Steam patch is taken as out on PS5 too (verification assumed) unless steamIsPcPort is set. fetch=manual means the site blocks automated fetches; do not work around it. playstation-blog is manual on purpose (2026-11-03, Theo): playstation.com's terms bar automated access; re-enable only with written permission (docs/ps5-patch-data.md). A game with no source has a sourceGap (reason, next step, date); the registry test fails for neither (Terry, 22 Nov 2026).",
   "version": 1,
   "shared": [
     {
@@ -277,7 +277,26 @@
       ],
       "igdbId": 1905,
       "ps5TitleIds": [],
-      "sources": [],
+      "sources": [
+        {
+          "id": "fortnite-epic-status",
+          "kind": "statuspage",
+          "url": "https://status.epicgames.com/history.rss",
+          "platforms": [
+            "ps5",
+            "xboxSeries",
+            "switch2",
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "always",
+          "mentions": [
+            "Fortnite"
+          ],
+          "patchOnly": true
+        }
+      ],
       "links": {
         "official": "https://www.fortnite.com/",
         "patchNotes": "https://www.fortnite.com/news"
@@ -343,7 +362,21 @@
       ],
       "igdbId": 135400,
       "ps5TitleIds": [],
-      "sources": [],
+      "sources": [
+        {
+          "id": "minecraft-bedrock-notes",
+          "kind": "mojangNotes",
+          "url": "https://launchercontent.mojang.com/v2/bedrockPatchNotes.json",
+          "platforms": [
+            "ps5",
+            "xboxSeries",
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ],
       "links": {
         "official": "https://www.minecraft.net/en-us",
         "patchNotes": "https://www.minecraft.net/en-us/article"
@@ -476,7 +509,21 @@
       "name": "Rocket League",
       "igdbId": 11198,
       "ps5TitleIds": [],
-      "sources": [],
+      "sources": [
+        {
+          "id": "rocket-league-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/252950/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit",
+          "patchOnly": true,
+          "titleMatch": "patch"
+        }
+      ],
       "links": {
         "official": "https://www.rocketleague.com/en/",
         "patchNotes": "https://www.rocketleague.com/en/news"
@@ -533,6 +580,11 @@
       "links": {
         "official": "https://genshin.hoyoverse.com/en/",
         "patchNotes": "https://genshin.hoyoverse.com/en/news"
+      },
+      "sourceGap": {
+        "reason": "HoYoverse's official news (genshin.hoyoverse.com/en/news) is a script-rendered page with no documented feed or API, and its terms have not been cleared for automated reading; HoYoLAB's robots.txt disallows /genshin, YouTube's disallows its feed, and the official Bluesky account is empty, so no official channel we may read was found. Push Square covers updates as Reported.",
+        "next": "Terry: ask HoYoverse (support or business contact) for permission to read their update notices or a feed. Priya registers it the day it is granted.",
+        "since": "2026-11-22"
       }
     },
     "space-marine-2": {
@@ -909,16 +961,37 @@
       "links": {
         "official": "https://www.playstation.com/en-us/games/gran-turismo-7/",
         "patchNotes": "https://www.gran-turismo.com/gb/gt7/news/"
+      },
+      "sourceGap": {
+        "reason": "Polyphony Digital posts every update as 'Update Notice (1.xx)' on gran-turismo.com/gb/gt7/news/?t=update (server-rendered, robots.txt allows it), but that site's terms are PlayStation's website terms of use, which bar automated access (s.10); the studio's Bluesky account has been silent since 2024. Push Square and PS LifeStyle cover each update as Reported.",
+        "next": "Terry: written permission from Sony to read gran-turismo.com news (the same ask as the PlayStation Blog). Nothing is sent until he says yes.",
+        "since": "2026-11-22"
       }
     },
     "yotei": {
       "name": "Ghost of Yotei",
       "aliases": [
-        "Ghost of Y\u014dtei"
+        "Ghost of Yōtei"
       ],
       "igdbId": 317627,
       "ps5TitleIds": [],
-      "sources": [],
+      "sources": [
+        {
+          "id": "yotei-suckerpunch-bluesky",
+          "kind": "bluesky",
+          "url": "https://bsky.app/profile/suckerpunchprod.bsky.social",
+          "platforms": [
+            "ps5"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "always",
+          "mentions": [
+            "Ghost of Yotei"
+          ],
+          "patchOnly": true
+        }
+      ],
       "links": {
         "official": "https://www.playstation.com/en-us/games/ghost-of-yotei/",
         "patchNotes": "https://www.playstation.com/en-us/games/ghost-of-yotei/"
@@ -932,6 +1005,11 @@
       "links": {
         "official": "https://www.playstation.com/en-us/games/astro-bot/",
         "patchNotes": "https://www.playstation.com/en-us/games/astro-bot/"
+      },
+      "sourceGap": {
+        "reason": "Team Asobi has no site or social account of its own that posts patch notes; Sony publishes them on playstation.com support pages, whose terms bar automated access (s.10). PlayStation's verified Bluesky account posts promotion, not patch notes. Push Square covers updates as Reported.",
+        "next": "Terry: written permission from Sony to read playstation.com patch pages, or a Team Asobi account once one posts notes.",
+        "since": "2026-11-22"
       }
     },
     "the-finals": {
@@ -992,7 +1070,23 @@
       "name": "Valorant",
       "igdbId": 126459,
       "ps5TitleIds": [],
-      "sources": [],
+      "sources": [
+        {
+          "id": "valorant-game-updates",
+          "kind": "riotNews",
+          "url": "https://playvalorant.com/en-us/news/game-updates/",
+          "platforms": [
+            "ps5",
+            "xboxSeries",
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit",
+          "patchOnly": true,
+          "titleMatch": "patch notes"
+        }
+      ],
       "links": {
         "official": "https://playvalorant.com/en-us/",
         "patchNotes": "https://playvalorant.com/en-us/news/game-updates/"
@@ -1082,7 +1176,26 @@
       ],
       "igdbId": 185246,
       "ps5TitleIds": [],
-      "sources": [],
+      "sources": [
+        {
+          "id": "alan-wake-2-news",
+          "kind": "rss",
+          "url": "https://www.alanwake.com/feed/",
+          "platforms": [
+            "ps5",
+            "xboxSeries",
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit",
+          "mentions": [
+            "Alan Wake 2"
+          ],
+          "patchOnly": true,
+          "titleMatch": "(update|patch).*notes"
+        }
+      ],
       "links": {
         "official": "https://www.alanwake.com/",
         "patchNotes": "https://www.alanwake.com/news"
@@ -1134,7 +1247,23 @@
       ],
       "igdbId": 168667,
       "ps5TitleIds": [],
-      "sources": [],
+      "sources": [
+        {
+          "id": "wolverine-insomniac-bluesky",
+          "kind": "bluesky",
+          "url": "https://bsky.app/profile/insomniac.games",
+          "platforms": [
+            "ps5"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "always",
+          "mentions": [
+            "Wolverine"
+          ],
+          "patchOnly": true
+        }
+      ],
       "links": {
         "official": "https://www.playstation.com/en-us/games/marvels-wolverine/",
         "patchNotes": "https://www.playstation.com/en-us/games/marvels-wolverine/"
@@ -1801,8 +1930,21 @@
     "assassins-creed-odyssey": {
       "name": "Assassin's Creed Odyssey",
       "igdbId": 103054,
+      "steamIsPcPort": true,
       "ps5TitleIds": [],
-      "sources": [],
+      "sources": [
+        {
+          "id": "assassins-creed-odyssey-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/812140/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ],
       "links": {
         "official": "https://www.ubisoft.com/en-us/game/assassins-creed",
         "patchNotes": "https://www.ubisoft.com/en-us/game/assassins-creed/news"
@@ -1811,8 +1953,21 @@
     "assassins-creed-origins": {
       "name": "Assassin's Creed Origins",
       "igdbId": 28540,
+      "steamIsPcPort": true,
       "ps5TitleIds": [],
-      "sources": [],
+      "sources": [
+        {
+          "id": "assassins-creed-origins-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/582160/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ],
       "links": {
         "official": "https://www.ubisoft.com/en-us/game/assassins-creed",
         "patchNotes": "https://www.ubisoft.com/en-us/game/assassins-creed/news"
@@ -1821,8 +1976,21 @@
     "assassins-creed-unity": {
       "name": "Assassin's Creed Unity",
       "igdbId": 5606,
+      "steamIsPcPort": true,
       "ps5TitleIds": [],
-      "sources": [],
+      "sources": [
+        {
+          "id": "assassins-creed-unity-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/289650/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ],
       "links": {
         "official": "https://www.ubisoft.com/en-us/game/assassins-creed",
         "patchNotes": "https://www.ubisoft.com/en-us/game/assassins-creed/news"
@@ -1831,8 +1999,21 @@
     "assassins-creed-syndicate": {
       "name": "Assassin's Creed Syndicate",
       "igdbId": 8263,
+      "steamIsPcPort": true,
       "ps5TitleIds": [],
-      "sources": [],
+      "sources": [
+        {
+          "id": "assassins-creed-syndicate-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/368500/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ],
       "links": {
         "official": "https://www.ubisoft.com/en-us/game/assassins-creed",
         "patchNotes": "https://www.ubisoft.com/en-us/game/assassins-creed/news"
@@ -1841,8 +2022,21 @@
     "far-cry-5": {
       "name": "Far Cry 5",
       "igdbId": 28552,
+      "steamIsPcPort": true,
       "ps5TitleIds": [],
-      "sources": [],
+      "sources": [
+        {
+          "id": "far-cry-5-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/552520/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ],
       "links": {
         "official": "https://www.ubisoft.com/en-us/game/far-cry/far-cry-5"
       }
@@ -1850,8 +2044,21 @@
     "far-cry-4": {
       "name": "Far Cry 4",
       "igdbId": 6801,
+      "steamIsPcPort": true,
       "ps5TitleIds": [],
-      "sources": [],
+      "sources": [
+        {
+          "id": "far-cry-4-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/298110/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ],
       "links": {
         "official": "https://www.ubisoft.com/en-us/game/far-cry/far-cry-4"
       }
@@ -1859,8 +2066,21 @@
     "far-cry-primal": {
       "name": "Far Cry: Primal",
       "igdbId": 13182,
+      "steamIsPcPort": true,
       "ps5TitleIds": [],
-      "sources": [],
+      "sources": [
+        {
+          "id": "far-cry-primal-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/371660/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ],
       "links": {
         "official": "https://www.ubisoft.com/en-us/game/far-cry/far-cry-primal"
       },
@@ -1872,7 +2092,21 @@
       "name": "Tom Clancy's The Division 2",
       "igdbId": 90099,
       "ps5TitleIds": [],
-      "sources": [],
+      "sources": [
+        {
+          "id": "the-division-2-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/2221490/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit",
+          "patchOnly": true,
+          "titleMatch": "title update"
+        }
+      ],
       "aliases": [
         "The Division 2"
       ],
@@ -1883,8 +2117,21 @@
     "the-division": {
       "name": "Tom Clancy's The Division",
       "igdbId": 2114,
+      "steamIsPcPort": true,
       "ps5TitleIds": [],
-      "sources": [],
+      "sources": [
+        {
+          "id": "the-division-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/365590/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ],
       "aliases": [
         "The Division"
       ],
@@ -1895,8 +2142,21 @@
     "ghost-recon-wildlands": {
       "name": "Tom Clancy's Ghost Recon: Wildlands",
       "igdbId": 11171,
+      "steamIsPcPort": true,
       "ps5TitleIds": [],
-      "sources": [],
+      "sources": [
+        {
+          "id": "ghost-recon-wildlands-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/460930/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ],
       "aliases": [
         "Ghost Recon: Wildlands"
       ],
@@ -1907,8 +2167,21 @@
     "ghost-recon-breakpoint": {
       "name": "Tom Clancy's Ghost Recon: Breakpoint",
       "igdbId": 118218,
+      "steamIsPcPort": true,
       "ps5TitleIds": [],
-      "sources": [],
+      "sources": [
+        {
+          "id": "ghost-recon-breakpoint-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/2231380/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ],
       "aliases": [
         "Ghost Recon: Breakpoint"
       ],
@@ -1920,7 +2193,21 @@
       "name": "For Honor",
       "igdbId": 11162,
       "ps5TitleIds": [],
-      "sources": [],
+      "sources": [
+        {
+          "id": "for-honor-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/304390/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit",
+          "patchOnly": true,
+          "titleMatch": "patch"
+        }
+      ],
       "links": {
         "official": "https://www.ubisoft.com/en-us/game/for-honor"
       }
@@ -1929,7 +2216,21 @@
       "name": "The Crew 2",
       "igdbId": 28856,
       "ps5TitleIds": [],
-      "sources": [],
+      "sources": [
+        {
+          "id": "the-crew-2-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/646910/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit",
+          "patchOnly": true,
+          "titleMatch": "patch notes|season \\d+ patch|update"
+        }
+      ],
       "links": {
         "official": "https://www.ubisoft.com/en-us/game/the-crew/the-crew-2"
       }
@@ -1937,8 +2238,21 @@
     "far-cry-new-dawn": {
       "name": "Far Cry New Dawn",
       "igdbId": 113111,
+      "steamIsPcPort": true,
       "ps5TitleIds": [],
-      "sources": [],
+      "sources": [
+        {
+          "id": "far-cry-new-dawn-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/939960/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ],
       "links": {
         "official": "https://www.ubisoft.com/en-us/game/far-cry/new-dawn"
       }
@@ -1955,6 +2269,42 @@
           "id": "ninja-gaiden-4-steam",
           "kind": "steamNews",
           "url": "https://store.steampowered.com/feeds/news/app/2627260/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ]
+    },
+    "blade-assault-207392": {
+      "name": "Blade Assault",
+      "igdbId": 207392,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "blade-assault-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/1367300/",
+          "platforms": [
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
+          "ps5Signal": "explicit"
+        }
+      ]
+    },
+    "metal-gear-solid-peace-walker-master-collection-version-391792": {
+      "name": "Metal Gear Solid: Peace Walker - Master Collection Version",
+      "igdbId": 391792,
+      "ps5TitleIds": [],
+      "sources": [
+        {
+          "id": "mgs-peace-walker-mc-steam",
+          "kind": "steamNews",
+          "url": "https://store.steampowered.com/feeds/news/app/2492660/",
           "platforms": [
             "pc"
           ],

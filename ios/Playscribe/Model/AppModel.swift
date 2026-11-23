@@ -140,6 +140,8 @@ struct PersistedState: Codable {
     var quietHours: QuietHours?
     /// nil = on. Off silences the add pop.
     var soundsOff: Bool?
+    /// Settings > Appearance (G-11): nil = System, the default; Light or Dark overrides the phone.
+    var appearance: AppAppearance?
     /// The PS Plus card and its "Leaving soon" reminder (Terry, 2026-11-05): nil = on. Off hides both.
     var plusCardOff: Bool?
     /// The PS Plus "Leaving soon" reminder (0.5.0): nil = on.
@@ -871,6 +873,15 @@ final class AppModel {
         }
     }
 
+    /// J-8, J-1: a Latest updates card opens its update. Where pushing is the layout (Closed, Open) the update page is
+    /// pushed over the game's What's new, so Back returns there and then to the Library; side by side the Page shows it in
+    /// place. Before #592 the card only selected the update, which in one column left the game's list on screen (Mac at
+    /// abe2921e and v0.5.9: testCardAndLeafTaps landed on Dawnwalker's What's new, not Update 1.2). Opening it reads it (R-6a).
+    func openFromDeck(_ gameID: String, releaseID: String) {
+        openGame(gameID, chapter: .updates, releaseID: releaseID)
+        if pushesReleases, let g = nav.gameID, release(g, releaseID) != nil { nav.detailReleaseID = releaseID }
+    }
+
     /// D-1 (0.5.6, Card D, Nadia 13 Nov): an Updates-tab row pushes the update page over the list in Closed and Open
     /// portrait, so Back returns to the list in one step, at the same scroll. Side by side and in Tabletop it opens the
     /// game with that update on the Page. Opening it reads it (R-6a).
@@ -948,6 +959,9 @@ final class AppModel {
             addSheetOpen = true
             if parts.first == "scan" { addSheetMethod = .camera; simulatedScan = true }
             if parts.first == "keyboard" { addSheetMethod = .typeIt; addSearchFocus = true }
+            // add/type (gate #592): Type it without focusing the field, as a tap on Type it in the chooser does (Tabletop shows
+            // letters, not the keyboard). Plain "add" opens the chooser.
+            if parts.first == "type" { addSheetMethod = .typeIt }
             if parts.first == "say" { addSheetMethod = .sayIt; simulatedSay = parts.count > 1 ? parts[1] : "idle" }
         case "cover":   // 0.7 front cover preview (duo-closed-cover): a full deck, or cover/one for a lone update
             // cover/<game> (Iris, focal-point check): that game's newest update leads the deck, unread.

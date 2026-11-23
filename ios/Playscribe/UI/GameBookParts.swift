@@ -272,10 +272,10 @@ struct ReleasePage: View {
                     Text("\(minutes) min read").accessibilityLabel("About \(minutes) minute\(minutes == 1 ? "" : "s") to read")
                 }
             }
-            .font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+            .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
             VStack(alignment: .leading, spacing: 2) {
                 Text(status.primary).font(PlayscribeFont.subheadline.weight(.semibold))
-                if let v = status.version { Text(v).font(PlayscribeFont.subheadline).monospacedDigit().foregroundStyle(.secondary) }
+                if let v = status.version { Text(v).font(PlayscribeFont.subheadline).monospacedDigit().foregroundStyle(PlayscribeRole.textSecondary) }
             }
             .accessibilityElement(children: .ignore).accessibilityLabel(status.spoken)
             .accessibilityIdentifier("ps5Status")
@@ -402,7 +402,7 @@ struct GameGenresLine: View {
         let info = game.igdbID.flatMap { GameInfoStore.shared.basics[$0] }
         let genres = info?.genres ?? game.igdbID.flatMap { UpcomingStore.shared.extras[$0] }?.genres ?? []
         if !genres.isEmpty {
-            Text(genres.joined(separator: ", ")).font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+            Text(genres.joined(separator: ", ")).font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
                 .fixedSize(horizontal: false, vertical: true)
         }
     }
@@ -484,7 +484,7 @@ struct GameBasicsView: View {
                 Text(move).font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeRole.action)
             }
             if !genres.isEmpty {
-                Text(genres.joined(separator: ", ")).font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                Text(genres.joined(separator: ", ")).font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
                     // Wraps, never a silent cut (Iris: Tabletop AX5 showed only "Role-playing").
                     .fixedSize(horizontal: false, vertical: true)
             }
@@ -516,7 +516,7 @@ struct GameBasicsView: View {
             // The slot is always reserved: when the details did not load, say so and offer Retry.
             if info == nil, let id = game.igdbID, store.failedShards.contains(id % 100) {
                 HStack {
-                    Text("Details need a connection").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                    Text("Details need a connection").font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
                     Spacer(minLength: 0)
                     Button { Task { await store.load(igdbID: id) } } label: { Text("Retry").frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()) }
                         .font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeRole.action)
@@ -542,7 +542,7 @@ struct GameBasicsView: View {
             // A game with no details is never blank: one line says more is coming.
             if Self.hasNoDetails(info: info, summary: summary, trailers: Self.trailers(game).count),
                !(game.igdbID.map { store.failedShards.contains($0 % 100) } ?? false) {
-                Text(Self.noDetailsLine).font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                Text(Self.noDetailsLine).font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
                     .accessibilityIdentifier("noDetailsLine")
             }
             SimilarGamesRow(game: game)
@@ -590,6 +590,8 @@ struct SimilarGamesRow: View {
                             .buttonStyle(.plain)
                             .accessibilityLabel(g.name)
                             .accessibilityHint("View it, or choose how to add it")
+                            // The page's last controls when shown (gate #593: PageEndClearsTabBarTests checks them at the page end).
+                            .accessibilityIdentifier("similarGame")
                             .tappableFrame()
                         }
                     }
@@ -603,6 +605,8 @@ struct SimilarGamesRow: View {
                             .buttonStyle(.plain)
                             .accessibilityLabel(g.name)
                             .accessibilityHint("View it, or choose how to add it")
+                            // The page's last controls when shown (gate #593: PageEndClearsTabBarTests checks them at the page end).
+                            .accessibilityIdentifier("similarGame")
                             .tappableFrame()
                         }
                     }
@@ -927,13 +931,13 @@ struct NotesSearchField: View {
         } else {
         VStack(alignment: .leading, spacing: 8) {
             HStack(spacing: 8) {
-                Image(systemName: "magnifyingglass").foregroundStyle(.secondary)
+                Image(systemName: "magnifyingglass").foregroundStyle(PlayscribeRole.textSecondary)
                 TextField(prompt, text: $model.noteQuery)
                     .autocorrectionDisabled()
                     .submitLabel(.search)
                     .onSubmit { model.rememberSearch(model.noteQuery) }
                 if !model.noteQuery.isEmpty {
-                    Button { model.noteQuery = "" } label: { Image(systemName: "xmark.circle.fill").foregroundStyle(.secondary) }
+                    Button { model.noteQuery = "" } label: { Image(systemName: "xmark.circle.fill").foregroundStyle(PlayscribeRole.textSecondary) }
                         .accessibilityLabel("Clear search")
                 }
             }
@@ -963,7 +967,7 @@ struct InlineNoteResults: View {
         VStack(alignment: .leading, spacing: 6) {
             if !hits.isEmpty {
                 Text("\(hits.count) result\(hits.count == 1 ? "" : "s")")
-                    .font(PlayscribeFont.caption).foregroundStyle(.secondary)
+                    .font(PlayscribeFont.caption).foregroundStyle(PlayscribeRole.textSecondary)
                     .accessibilityLabel("\(hits.count) results")
             }
             if hits.isEmpty {
@@ -987,7 +991,7 @@ struct InlineNoteResults: View {
                         Text(NoteHit.bolded(h.line, query: model.noteQuery)).font(PlayscribeFont.subheadline).lineLimit(3)
                         HStack(spacing: 6) {
                             Text(h.release.displayName).font(PlayscribeFont.caption)
-                            Text(h.pcOnly ? "PC only" : h.section).font(PlayscribeFont.caption).foregroundStyle(.secondary)
+                            Text(h.pcOnly ? "PC only" : h.section).font(PlayscribeFont.caption).foregroundStyle(PlayscribeRole.textSecondary)
                         }
                     }
                     .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
@@ -1148,7 +1152,7 @@ struct TabletopOutline: View {
                     HStack {
                         Text(s.title).font(PlayscribeFont.subheadline.weight(i == index ? .semibold : .regular)).lineLimit(1)
                         Spacer()
-                        Text("\(i + 1)").font(PlayscribeFont.caption).foregroundStyle(.secondary)
+                        Text("\(i + 1)").font(PlayscribeFont.caption).foregroundStyle(PlayscribeRole.textSecondary)
                     }
                     .padding(.horizontal, 10)
                     .frame(minHeight: 44)
@@ -1261,7 +1265,7 @@ struct GameTitleWithStatus: View {
         VStack(alignment: .leading, spacing: 2) {
             titleRow
             if model.entry(gameID)?.status == .wishlist, let g = model.game(gameID), g.isUpcoming || g.releasePrecision == .tbd {
-                Text("On your watchlist").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                Text("On your watchlist").font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
             }
         }
     }
@@ -1349,7 +1353,7 @@ struct LinksSheet: View {
                 Button { if let panelClose { panelClose() } else { model.linksSheetOpen = false } } label: {
                     Image(systemName: "xmark.circle.fill").font(PlayscribeFont.title3).frame(width: 44, height: 44)
                 }
-                .foregroundStyle(.secondary)
+                .foregroundStyle(PlayscribeRole.textSecondary)
                 .accessibilityLabel("Close links")
                 .tappableFrame()
             }

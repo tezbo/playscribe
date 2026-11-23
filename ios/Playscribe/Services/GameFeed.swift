@@ -5,7 +5,11 @@ import Foundation
 /// never appeared. `index.json` maps catalogue ids to feed ids and says when a game last changed.
 extension FeedClient {
     struct Index: Decodable {
-        struct Game: Decodable, Equatable { var id: String; var igdbId: Int?; var name: String?; var updatedAt: Date? }
+        struct Game: Decodable, Equatable {
+            var id: String; var igdbId: Int?; var name: String?; var updatedAt: Date?
+            /// false: listed for its basics, but the feed has no patch source for it (docs/api.md), so the app does not track it.
+            var patchSource: Bool?
+        }
         var updatedAt: Date
         var games: [Game]
     }
@@ -85,12 +89,16 @@ extension AppModel {
     /// app never claims a game is untracked on a guess.
     func feedTracksGame(_ gameID: String) -> Bool {
         if qaUntracked { return false }
+        let igdb = game(gameID)?.igdbID
+        let entry = feedIndexGames?.first { $0.id == gameID || (igdb != nil && $0.igdbId == igdb) }
+        // A game the feed has no patch source for (Astro Bot) is listed with an empty history: that history is not a check, so
+        // it reads as untracked, never "No updates yet. Checked…" (copy-untracked-no-updates-yet). A served release still wins.
+        if entry?.patchSource == false { return !(gameReleases[gameID] ?? []).isEmpty }
         // Any history the feed has served for this game settles it, whatever a cached index says: a game the feed added today
         // can be missing from an index cached yesterday.
         if gameReleases[gameID] != nil { return true }
-        guard let games = feedIndexGames else { return true }
-        let igdb = game(gameID)?.igdbID
-        return games.contains { $0.id == gameID || (igdb != nil && $0.igdbId == igdb) }
+        guard feedIndexGames != nil else { return true }
+        return entry != nil
     }
 
     /// The name to show for a game: the catalogue's, else the feed index's (a game the app does not know, such as one the

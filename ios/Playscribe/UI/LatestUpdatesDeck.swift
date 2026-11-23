@@ -282,7 +282,9 @@ struct LatestUpdatesDeck: View {
                         Text("+\(moreCount) more updates").multilineTextAlignment(.trailing)
                         Image(systemName: "chevron.right").accessibilityHidden(true)
                     }
-                    .font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.accent)
+                    // The action role, not the raw accent: the chip sits on the page, and the light accent on cream was about 2:1
+                    // (#594, Iris). Light is the action brown (as Skip tour); dark keeps the accent.
+                    .font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeRole.action)
                     .frame(minHeight: 44)
                     .contentShape(Rectangle())
                 }
@@ -328,7 +330,7 @@ struct DeckCardView: View {
     var body: some View {
         let game = card.game
         Button {
-            if let r = card.release { model.openGame(game.id, chapter: .updates, releaseID: r.id) }
+            if let r = card.release { model.openFromDeck(game.id, releaseID: r.id) }
             else { model.openGame(game.id, chapter: .updates) }
         } label: {
             if wide {
@@ -726,7 +728,6 @@ struct PageEdge: View {
     /// Cards fully on screen at once: 2 in Open (two across), else 1.
     var visible: Int = 1
     var select: (String) -> Void
-    @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     /// Slot width of one leaf (its hit area) and the lit mark's size.
     static let slot: CGFloat = 44
@@ -783,8 +784,9 @@ struct PageEdge: View {
                     && ((item.index == window.first?.index && item.index > 0) || (item.index == window.last?.index && item.index < cards.count - 1))
                 Button { select(item.card.id) } label: {
                     RoundedRectangle(cornerRadius: 1.5)
-                        // Lit leaves are amber under the one amber capsule: a lagging capsule never leaves a hole, and edges never peek dim.
-                        .fill(isCurrent ? PlayscribeColor.accent : item.card.unread ? PlayscribeColor.vellum100 : PlayscribeColor.textSecondary.opacity(0.5))
+                        // Lit leaves draw nothing: the one amber capsule is the only amber here. Lit leaves drawn amber under a
+                        // capsule that slid in 0.2 s showed as two amber marks side by side mid-swipe (Terry, build 18 on a Duo).
+                        .fill(isCurrent ? Color.clear : item.card.unread ? PlayscribeColor.vellum100 : PlayscribeColor.textSecondary.opacity(0.5))
                         .frame(width: trimmed ? 2 : Self.litWidth, height: isCurrent ? Self.litHeight : (trimmed ? 6 : 10))
                         .frame(width: 44, height: 44)
                         .contentShape(Rectangle())
@@ -808,10 +810,11 @@ struct PageEdge: View {
                     .offset(x: joined.minX, y: joined.minY)
                     .allowsHitTesting(false)
                     .accessibilityHidden(true)
-                    // The capsule slides with the deck: a short ease, none under Reduce Motion.
-                    .animation(reduceMotion ? nil : .easeOut(duration: 0.2), value: joined)
             }
         }
+        // One steady bar (Terry, build 18): the marks move in one step when the deck settles on a card, never slide, so the
+        // bar and the leaves can never be seen apart. This also drops the animation a leaf tap's withAnimation would carry.
+        .transaction { $0.animation = nil }
         .frame(maxWidth: .infinity, alignment: .center)
     }
 }
@@ -893,6 +896,10 @@ struct DeckStage: View {
                 }
                 .font(PlayscribeFont.subheadline).fixedSize(horizontal: false, vertical: true)
             }
+            // The caption block itself (no padding), so a test can measure that it ends 24 pt above the division (gate #592,
+            // as the legacy stage's caption did). Its texts stay separate elements.
+            .accessibilityElement(children: .contain)
+            .accessibilityIdentifier("stageCaption")
             .padding(20)
             .dynamicTypeSize(...DynamicTypeSize.accessibility3)
             // The caption ends 24 pt above the division, measured in screen space (as in 0.2.0 #174/#176).

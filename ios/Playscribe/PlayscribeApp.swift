@@ -19,20 +19,10 @@ struct PlayscribeApp: App {
         }
     }
 
-    /// 0.6: the app is dark until the system-setting story lands. `-qaAppearance light` (internal builds) forces light so the light
-    /// screens can be shot; it is ignored in a distribution build, like `-qaRoute`.
-    static var colorScheme: ColorScheme {
-        #if INTERNAL
-        if UserDefaults.standard.string(forKey: "qaAppearance") == "light" { return .light }
-        #endif
-        return .dark
-    }
-
     var body: some Scene {
         WindowGroup {
             RootView()
                 .environment(model)
-                .preferredColorScheme(Self.colorScheme)
                 .font(PlayscribeFont.body)
                 .tint(PlayscribeRole.action)
                 .foregroundStyle(PlayscribeRole.textPrimary)
@@ -63,6 +53,9 @@ struct PlayscribeApp: App {
                 }
                 #endif
                 .onOpenURL { model.handle(url: $0) }
+                // G-11: System, Light or Dark (Settings > Appearance), on the windows themselves. preferredColorScheme(nil)
+                // does not hand a window back to the system once it has forced a scheme, so the window style carries it.
+                .onChange(of: AppAppearance.effective(model.data.appearance), initial: true) { _, a in AppAppearance.apply(a) }
                 .onChange(of: phase) { _, p in
                     if p == .active {
                         model.tick()

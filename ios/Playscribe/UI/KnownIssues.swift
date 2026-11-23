@@ -87,7 +87,7 @@ struct ForYouCard: View {
         if !lines.isEmpty {
             VStack(alignment: .leading, spacing: 6) {
                 Text("For you").font(PlayscribeFont.headline).accessibilityAddTraits(.isHeader)
-                ForEach(lines, id: \.self) { Text($0).font(PlayscribeFont.subheadline).foregroundStyle(.secondary) }
+                ForEach(lines, id: \.self) { Text($0).font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary) }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(12)
@@ -105,7 +105,7 @@ struct FollowIssueButton: View {
         if !issue.isAddressed {
             Button(on ? "Following" : "Follow") { model.toggleFollow(issue) }
                 .font(PlayscribeFont.footnote.weight(.semibold))
-                .foregroundStyle(on ? Color.secondary : PlayscribeRole.action)
+                .foregroundStyle(on ? PlayscribeRole.textSecondary : PlayscribeRole.action)
                 .frame(minWidth: 44, minHeight: 44)
                 .tappableFrame()
                 .accessibilityLabel(on ? "Following this issue" : "Follow this issue")
@@ -128,7 +128,7 @@ struct FollowingList: View {
                         VStack(alignment: .leading, spacing: 2) {
                             Text(LinkedText.clean(issue.text)).font(PlayscribeFont.subheadline).lineLimit(3)
                             Text(issue.isAddressed ? "Fixed in \(model.fixedInName(issue, gameID: gameID) ?? "a later update")" : "Not fixed yet")
-                                .font(PlayscribeFont.caption).foregroundStyle(.secondary)
+                                .font(PlayscribeFont.caption).foregroundStyle(PlayscribeRole.textSecondary)
                         }
                         Spacer(minLength: 0)
                         Button("Unfollow") { model.toggleFollow(issue) }

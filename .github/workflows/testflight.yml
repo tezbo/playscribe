@@ -57,13 +57,11 @@ jobs:
         if: steps.ready.outputs.ok
         working-directory: ios
         run: bundle exec ruby fastlane/check_api.rb
-      - name: Keep the account under the certificate cap
+      - name: Note when this job's signing starts
         if: steps.ready.outputs.ok
-        continue-on-error: true
-        run: |
-          python3 -m venv /tmp/certvenv
-          /tmp/certvenv/bin/pip install -q pyjwt cryptography requests
-          /tmp/certvenv/bin/python ios/tools/prune_certs.py
+        # Automatic signing makes one new "Created via API" Development certificate below. Its expiry is its creation
+        # time plus one year, so this timestamp lets the cleanup step find exactly that certificate and no other.
+        run: echo "CERT_SINCE=$(date -u +%s)" >> "$GITHUB_ENV"
       - name: Build and upload
         if: steps.ready.outputs.ok
         working-directory: ios
@@ -74,3 +72,12 @@ jobs:
           # A beta tag (v0.6.0-beta.1) builds marketing version 0.6.0: App Store versions take three numbers only.
           version="${version%%-*}"
           bundle exec fastlane beta marketing_version:"$version"
+      - name: Revoke the Development certificate this job created
+        # After the build, pass or fail. Only this runner's own certificate is revoked: never a Mac's, a person's or a
+        # Distribution one (22 Nov: pruning the oldest "Created via API" certificate revoked one this job never made).
+        if: always() && steps.ready.outputs.ok
+        continue-on-error: true
+        run: |
+          python3 -m venv /tmp/certvenv
+          /tmp/certvenv/bin/pip install -q pyjwt cryptography requests
+          /tmp/certvenv/bin/python ios/tools/prune_certs.py
