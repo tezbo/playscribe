@@ -74,4 +74,42 @@ final class SearchBlankListTests: XCTestCase {
             sleep(1)
         }
     }
+
+    /// r054-library-blank-list-fast-typing: 20 characters typed at speed (a match, then 13 that match nothing), the 13 deleted
+    /// at speed, ten runs: the list is never left blank, "control" shows its one tile, and clearing brings back every tile.
+    @MainActor
+    func testTwentyFastCharactersThenClearRestoresEveryTile() throws {
+        let app = XCUIApplication()
+        app.launchArguments = ["-qaRoute", "demo"]
+        app.launch()
+        let pose = ReleaseRowTests.pose(app)
+        try XCTSkipUnless(pose.contains("pose: closed"), "run in Closed (pose: \(pose))")
+        let field = app.textFields["Search your library"].exists ? app.textFields["Search your library"] : app.textFields.firstMatch
+        XCTAssertTrue(field.waitForExistence(timeout: 10))
+        let tiles = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'tile-'"))
+        XCTAssertTrue(tiles.firstMatch.waitForExistence(timeout: 10), "the Library shows tiles before searching")
+        let all = tiles.count
+        func blank(_ what: String, _ run: Int) {
+            let dump = XCTAttachment(string: app.debugDescription)
+            dump.name = "blank-list-\(what)-run\(run)-tree.txt"
+            dump.lifetime = .keepAlways
+            add(dump)
+            XCTFail("run \(run): \(what) (tree attached)")
+        }
+        for run in 1...10 {
+            field.tap()
+            field.typeText("controlqqqqqqqqqqqqq")   // 20 characters in one burst
+            field.typeText(String(repeating: XCUIKeyboardKey.delete.rawValue, count: 13))
+            sleep(2)
+            guard tiles.firstMatch.exists else { return blank("no tile after 'control' typed fast", run) }
+            XCTAssertEqual(tiles.count, 1, "run \(run): one match for 'control'")
+            let clear = app.buttons["Clear search"]
+            XCTAssertTrue(clear.waitForExistence(timeout: 3), "run \(run): Clear search shows")
+            clear.tap()
+            app.keyboards.buttons.matching(NSPredicate(format: "label IN {'Search','search','Return','return'}")).firstMatch.tap()
+            sleep(1)
+            guard tiles.firstMatch.exists else { return blank("no tile after clearing", run) }
+            XCTAssertEqual(tiles.count, all, "run \(run): clearing brings back every tile")
+        }
+    }
 }
