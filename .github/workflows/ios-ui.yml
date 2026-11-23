@@ -66,6 +66,7 @@ jobs:
           grep -E 'error:|Test Case .* (passed|failed|skipped)|Test Suite .* (passed|failed)|Executed|Testing failed|encountered an error|\*\* TEST' uitests.log | tail -80 | tee -a "$GITHUB_STEP_SUMMARY"
           grep -E 'skipped' uitests.log | grep -vE 'Test Case' | head -20 | tee -a "$GITHUB_STEP_SUMMARY" || true
           [ "${status:-0}" = 0 ] || echo "::error::Feature UI tests failed in Closed; see uitests.log in the artifact"
+          echo "Note: RailSetTests testClosedLandscape* fail here because this simulator cannot rotate its window; they need the Mac's Closed landscape run. Any other failure is real." | tee -a "$GITHUB_STEP_SUMMARY"
           exit "${status:-0}"
       - name: Export test screenshots
         if: always()
