@@ -394,6 +394,10 @@ struct LibraryShelf: View {
         #if DEBUG
         let _ = ProcessInfo.processInfo.arguments.contains("-qaPrintChanges") ? Self._printChanges() : ()
         #endif
+        #if INTERNAL
+        let _ = QABodyCount.library += 1
+        let _ = AppModel.isQALaunch ? QABodyCount.attribute(model) : ()
+        #endif
         @Bindable var model = model
         let rows = duo.pose == .tabletop && letter != nil
             ? model.shownRows().filter { LetterIndex.matches($0.game.name, letter ?? "") } : model.shownRows()
@@ -426,14 +430,7 @@ struct LibraryShelf: View {
                 if model.libraryTab == .upcoming {
                     UpcomingView()
                 } else {
-                if let line = model.feedStatusLine {
-                    HStack {
-                        Text(line).font(PlayscribeFont.footnote).foregroundStyle(PlayscribeRole.textSecondary)
-                        if case .failed = model.feedStatus {
-                            Button { Task { await model.retryCheck() } } label: { Text("Retry").frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()) }.font(PlayscribeFont.footnote)
-                        }
-                    }
-                }
+                FeedStatusLine()
                 // Tabletop: the search button and A to Z strip come after the tiles (see below), so a first view shows games.
                 if duo.pose != .tabletop, !portraitTilesFirst, !heroOnRightPage, !closedWide, !all.isEmpty { searchField(binding: $model.data.nav.query) }
                 // D-7: a narrowed list always says so and offers the way back.
@@ -642,6 +639,15 @@ struct LibraryShelf: View {
                     if let r = model.qaRoute {
                         Text("qa-route-\(r)").font(.system(size: 1)).opacity(0.01).accessibilityIdentifier("qa-route-\(r)")
                     }
+                    #if INTERNAL
+                    if AppModel.isQALaunch {
+                        // bug-library-redraw-on-feed-refresh: how many times this body has run, read by LibraryFeedRedrawTests.
+                        Text("qa-library-body: \(QABodyCount.library)").font(.system(size: 1)).opacity(0.01)
+                            .accessibilityIdentifier("qaLibraryBody")
+                        Text("qa-library-why: \(QABodyCount.whyLine)").font(.system(size: 1)).opacity(0.01)
+                            .accessibilityIdentifier("qaLibraryWhy")
+                    }
+                    #endif
                 }
                 .allowsHitTesting(false)
             }
@@ -1463,3 +1469,52 @@ struct ScrolledTopEdge: ViewModifier {
         }
     }
 }
+
+/// The Library's quiet status line (E-1, E-2), in a view of its own so only it reads `feedStatus`: every refresh moves that
+/// through Refreshing and back, which re-ran the whole shelf (bug-library-redraw-on-feed-refresh: 8 runs in 20 swipes).
+private struct FeedStatusLine: View {
+    @Environment(AppModel.self) private var model
+
+    var body: some View {
+        if let line = model.feedStatusLine {
+            HStack {
+                Text(line).font(PlayscribeFont.footnote).foregroundStyle(PlayscribeRole.textSecondary)
+                if case .failed = model.feedStatus {
+                    Button { Task { await model.retryCheck() } } label: { Text("Retry").frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()) }.font(PlayscribeFont.footnote)
+                }
+            }
+        }
+    }
+}
+
+#if INTERNAL
+/// QA only: body runs of the Library shelf since launch (bug-library-redraw-on-feed-refresh). Never observed, so counting
+/// never causes a run.
+@MainActor enum QABodyCount {
+    static var library = 0
+    /// The second redraw attempt measures first (Mac at 0105a92a: 55 runs with refreshes, 13 from scrolling alone in Closed):
+    /// which AppModel fields changed between one body run and the next, counted by name. Read through Mirror, which bypasses
+    /// Observation, so measuring adds no dependency. "(no model change)" is a run the model did not cause (environment, state).
+    static var why: [String: Int] = [:]
+    private static var last: [String: Int] = [:]
+    static func attribute(_ model: AppModel) {
+        var now: [String: Int] = [:]
+        func walk(_ value: Any, _ prefix: String, depth: Int) {
+            for c in Mirror(reflecting: value).children {
+                guard let raw = c.label, !raw.contains("observationRegistrar") else { continue }
+                let name = prefix + raw.trimmingCharacters(in: CharacterSet(charactersIn: "_$"))
+                if depth > 0, name.hasSuffix("data") || name.hasSuffix("nav") { walk(c.value, name + ".", depth: depth - 1) }
+                now[name] = String(describing: c.value).hashValue
+            }
+        }
+        walk(model, "", depth: 2)
+        if !last.isEmpty {
+            var changed = now.filter { last[$0.key] != nil && last[$0.key] != $0.value }.map(\.key)
+            if changed.isEmpty { changed = ["(no model change)"] }
+            for k in changed { why[k, default: 0] += 1 }
+        }
+        last = now
+    }
+    static var whyLine: String { why.sorted { $0.value > $1.value }.map { "\($0.key)=\($0.value)" }.joined(separator: " ") }
+}
+#endif

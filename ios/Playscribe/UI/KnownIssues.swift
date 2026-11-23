@@ -57,7 +57,9 @@ extension AppModel {
                                                       version: fixedInName(i, gameID: gameID))
             }
         }
-        data.alertedIssues = alerted
+        // Only when it changes: any write to `data` re-runs every view that reads it, the Library shelf among them, and this runs
+        // on every refresh (Mac A/B at 53c2ca70: the apply path alone ran the shelf 32 times in 20 swipes, Closed).
+        if data.alertedIssues != alerted { data.alertedIssues = alerted }
     }
 }
 

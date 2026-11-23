@@ -5,7 +5,7 @@ import Foundation
 /// never appeared. `index.json` maps catalogue ids to feed ids and says when a game last changed.
 extension FeedClient {
     struct Index: Decodable {
-        struct Game: Decodable {
+        struct Game: Decodable, Equatable {
             var id: String; var igdbId: Int?; var name: String?; var updatedAt: Date?
             /// false: listed for its basics, but the feed has no patch source for it (docs/api.md), so the app does not track it.
             var patchSource: Bool?
@@ -61,7 +61,7 @@ extension AppModel {
     func refreshHistories(_ gameIDs: [String]? = nil) async {
         guard let (index, rawIndex) = try? await FeedClient.fetch("index.json", as: FeedClient.Index.self) else { return }
         try? rawIndex.write(to: FeedClient.indexCacheURL, options: .atomic)
-        feedIndexGames = index.games
+        if feedIndexGames != index.games { feedIndexGames = index.games }
         let ids = gameIDs ?? data.collection.map(\.gameID)
         for gameID in ids {
             let igdb = game(gameID)?.igdbID
@@ -134,7 +134,7 @@ extension AppModel {
                 }
             }
         }
-        data.knownOnPS5 = known
+        if data.knownOnPS5 != known { data.knownOnPS5 = known }   // see notifyNewlyOnPS5
     }
 }
 
