@@ -41,7 +41,7 @@ final class SimilarViewGameTests: XCTestCase {
         let addButton = app.buttons["addToLibrary"]
         let pageMarker = app.staticTexts.matching(identifier: "qaPageScroll")
         var samples: [String] = []
-        var titleAt: Double?, litAt: Double?
+        var titleAt: Double?, litAt: Double?, topAt: Double?
         var worst: XCUIScreenshot?
         while Date().timeIntervalSince(start) < 4 {
             let t = Date().timeIntervalSince(start)
@@ -51,7 +51,11 @@ final class SimilarViewGameTests: XCTestCase {
             if shown && titleAt == nil { titleAt = t }
             if lit >= 0.10 && litAt == nil { litAt = t }
             if lit < 0.10 && worst == nil { worst = shot }
-            let pages = pageMarker.allElementsBoundByIndex.map(\.label).joined(separator: " / ")
+            let labels = pageMarker.allElementsBoundByIndex.map(\.label)
+            let pages = labels.joined(separator: " / ")
+            // The new game's page (not Dawnwalker's) at its top: Terry's bug opened it at the old page's offset (Mac at 001b853f,
+            // Closed: offset 1085 of 1705, blank).
+            if topAt == nil, labels.contains(where: { !$0.contains(" dawnwalker ") && Self.offset($0).map { $0 <= 2 } == true }) { topAt = t }
             samples.append(String(format: "%.2fs lit %.3f title %@ ", t, lit, shown ? "yes" : "no") + pages)
         }
         for (label, s) in [("view-game-dark-frame", worst), ("view-game-final", XCUIScreen.main.screenshot())] {
@@ -59,15 +63,22 @@ final class SimilarViewGameTests: XCTestCase {
             let a = XCTAttachment(screenshot: s); a.name = label; a.lifetime = .keepAlways; add(a)
         }
         let black = HeroMarksTests.isBlack(XCUIScreen.main.screenshot().image)
-        let note = "\(ReleaseRowTests.pose(app)); tile \(name); View game tap took \(String(format: "%.2f", tapped))s; title at \(titleAt.map { String(format: "%.2f", $0) } ?? "never"); lit at \(litAt.map { String(format: "%.2f", $0) } ?? "never"); screenshots black \(black)\n" + samples.joined(separator: "\n")
+        let note = "\(ReleaseRowTests.pose(app)); tile \(name); View game tap took \(String(format: "%.2f", tapped))s; title at \(titleAt.map { String(format: "%.2f", $0) } ?? "never"); lit at \(litAt.map { String(format: "%.2f", $0) } ?? "never"); top at \(topAt.map { String(format: "%.2f", $0) } ?? "never"); screenshots black \(black)\n" + samples.joined(separator: "\n")
         print("SimilarViewGame: " + note.replacingOccurrences(of: "\n", with: " | "))
         XCTContext.runActivity(named: note) { _ in }
+        // From the moment the tap returns (XCUITest's tap alone takes about a second on the Mac). Lit pixels are logged only: a
+        // dark page and the Mac's black Open screenshots make them no signal.
+        XCTAssertNotNil(topAt, "the new game's page opens at its top, not at the old page's scroll")
         XCTAssertNotNil(titleAt, "the new game's page shows its title block")
-        XCTAssertLessThan(titleAt ?? 99, 1.0, "within a second of View game")
-        if !black {   // the Mac's Open screenshots come back black; Closed reads pixels
-            XCTAssertLessThan(litAt ?? 99, 1.0, "the page is drawn, not black, within a second")
-        }
+        XCTAssertLessThan((titleAt ?? 99) - tapped, 1.0, "the title block shows within a second of View game")
         app.terminate()
+    }
+
+    /// The offset in a "qa-page: <game> offset N content …" marker.
+    static func offset(_ label: String) -> Int? {
+        let parts = label.split(separator: " ")
+        guard let i = parts.firstIndex(of: "offset"), parts.indices.contains(i + 1) else { return nil }
+        return Int(parts[i + 1])
     }
 
     /// Share of sampled pixels brighter than the page ink (any channel above 60), every 6th pixel.
