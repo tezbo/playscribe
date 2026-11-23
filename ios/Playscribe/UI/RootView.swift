@@ -174,7 +174,7 @@ struct RootView: View {
                 if duo.pose == .book || (duo.pose == .flat && duo.isLandscape) { RightPagePanel(duo: duo) }
 
                 if splashVisible {
-                    SplashView(duo: duo) { splashVisible = false }
+                    SplashView(duo: duo, lit: BrandMark.isLit(totalUnread: model.totalUnread)) { splashVisible = false }
                         .transition(.opacity)
                         .zIndex(10)
                 }

@@ -8,6 +8,8 @@ import SwiftUI
 ///   tabletop → the mark in the upper region, the name in the lower one
 struct SplashView: View {
     var duo: DuoContext
+    /// s-06-brand-swap: the spark glows when there is an unread update, rests dim when caught up.
+    var lit = true
     var onDone: () -> Void
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @State private var opened = false
@@ -61,14 +63,14 @@ struct SplashView: View {
         case .tabletop:
             if let fold = duo.division {
                 VStack(spacing: 0) {
-                    BrandMark(size: size * 1.3).frame(height: fold.minY).scaleEffect(opened ? 1 : 0.9)
+                    BrandMark(size: size * 1.3, lit: lit).frame(height: fold.minY).scaleEffect(opened ? 1 : 0.9)
                     Color.clear.frame(height: fold.height)
                     VStack(spacing: 6) { name }.frame(maxHeight: .infinity)
                 }
             }
         case .closed, .flat:
             VStack(spacing: 16) {
-                BrandMark(size: size).scaleEffect(opened ? 1 : 0.9)
+                BrandMark(size: size, lit: lit).scaleEffect(opened ? 1 : 0.9)
                 name
             }
         }

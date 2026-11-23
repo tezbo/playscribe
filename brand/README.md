@@ -2,7 +2,7 @@
 
 Live board: https://claude.ai/artifact/8mRkcMcHMa3jox19BszVpb
 
-**Mark.** An open book whose spine is the hinge, with a spark rising from it. The spark's long lower point, slit and breather hole make it a pen nib (the scribe). The left page holds patch-note lines. The right page holds a line and a console-style update bar, part filled in ember. In the wordmark the spark dots the i. Below 24 pt use `logo/mark-small.svg`, which drops the nib cut and the page details.
+**Mark.** Warm refresh (Terry picked it 13 Nov 2026): an open book whose spine is the hinge, a ribbon bookmark, and a bolder ember spark above it with a small companion spark. The spark glows ember (with a halo) while an update is unread and rests dim vellum (`logo/mark-rest.svg`, no halo) when caught up; it is static either way, so Reduce Motion needs nothing extra. In the wordmark the spark dots the i. Below 24 pt use `logo/mark-small.svg`; one-colour uses are `mark-mono*.svg`. The app draws the mark natively (`BrandMark` in `ios/Playscribe/UI/Artwork.swift`) from the same 64-unit geometry. `tools/gen.py` still writes the previous mark; don't run its logo step over these files.
 
 **Voice.** Copy always invites the player back: what changed, then "Catch up, then jump back in". Write like a fellow player, not a changelog.
 
@@ -20,8 +20,7 @@ Live board: https://claude.ai/artifact/8mRkcMcHMa3jox19BszVpb
 Checked against Apple's HIG, App icons (updated 8 June 2026) and "Creating your app icon using Icon Composer":
 iOS icons are one 1024x1024 layered design. Appearances are default, dark, clear light, clear dark, tinted light and tinted dark, and the system generates any you don't provide.
 
-- **Icon Composer (preferred).** Drag the `app-icon/layers/` folders into Icon Composer. Folders become groups, back to front: `1-pages`, `2-notes` (lines and update bar), `3-spark`. The layers have no background, as Apple asks. Set the background in Icon Composer to a linear gradient from `#3B2D57` (top) to `#141019` (bottom). For dark, use `#1C1824` to `#08070B`. Keep the default Liquid Glass settings. Save it as `AppIcon.icon` in the Xcode project.
-- **Asset catalog fallback.** `ios/AppIcon.appiconset` has the single-size light, dark (transparent background) and tinted (grayscale) PNGs, as Apple's "Configuring your app icon" asks.
+- **Asset catalog.** `app-icon/flat/AppIcon-default.svg`, `-dark.svg` and `-tinted.svg` (1024) are the Warm refresh sources; their PNG exports are the light, dark and tinted images in `ios/Playscribe/Resources/Assets.xcassets/AppIcon.appiconset`. The earlier Icon Composer layers were for the previous mark and are gone; a layered `AppIcon.icon` can be made from the SVGs later.
 
 ## Splash and closed Library hero
 
