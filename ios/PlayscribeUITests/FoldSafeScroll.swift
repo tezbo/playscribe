@@ -58,3 +58,22 @@ final class PageEndClearsTabBarTests: XCTestCase {
         XCTAssertTrue(last.isHittable, "\(what) is still tappable at the end [\(pose)]")
     }
 }
+
+/// bug-063 (R-7): at the end of a long game page the section bar is pinned, so the list fades out beneath it instead of being
+/// cut at the hairline (bd12ff0c, Open portrait: "Launch Trailer" sliced, no fade). Flings the page like a player would.
+final class PinnedBarFadeTests: XCTestCase {
+    func testBarIsPinnedAtPageEnd() throws {
+        let app = XCUIApplication()
+        app.launchArguments = ["-qaRoute", "gamepage/dawnwalker"]
+        app.launch()
+        let pose = ReleaseRowTests.pose(app)
+        guard !pose.contains("tabletop") else { print("PinnedBarFadeTests: Tabletop has no pinned bar; skipped"); return }
+        let probe = app.staticTexts["qaBarPinned"]
+        XCTAssertTrue(probe.waitForExistence(timeout: 30), "the bar's pinned probe exists [\(pose)]")
+        XCTAssertEqual(probe.label, "rest", "the bar is at rest at the top of the page [\(pose)]")
+        let scroll = app.scrollViews["pageScroll"].firstMatch
+        for _ in 0..<15 { scroll.swipeUp(velocity: .fast) }
+        let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "pinned-end [\(pose)]"; shot.lifetime = .keepAlways; add(shot)
+        XCTAssertEqual(app.staticTexts["qaBarPinned"].label, "pinned", "the bar is pinned, and fades the list, at the page end [\(pose)]")
+    }
+}

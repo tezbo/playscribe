@@ -226,6 +226,13 @@ struct PinnedSectionHeader: View {
             // it (Mac, ad665e9: "Hotfix 1.0.3", "Patch 1.7"). The scroll view clips this at its own top edge.
             .background(ink.padding(.top, pinned ? -Self.coverAbove : 0))
             .modifier(PinnedFade(ink: ink, active: pinned))
+            #if INTERNAL
+            // bug-063: UI tests read whether the bar thinks it is pinned (the fade's switch), so a missing fade is measured.
+            .overlay(alignment: .topLeading) {
+                Text(pinned ? "pinned" : "rest").font(.system(size: 1)).opacity(0.01)
+                    .accessibilityIdentifier("qaBarPinned").allowsHitTesting(false)
+            }
+            #endif
             .onGeometryChange(for: CGFloat.self) { $0.frame(in: .scrollView).minY } action: { headerY = $0; update() }
             .onChange(of: anchorY) { update() }
             .zIndex(1)
