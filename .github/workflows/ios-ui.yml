@@ -21,7 +21,7 @@ concurrency:
 jobs:
   ui:
     runs-on: xcode-27
-    timeout-minutes: 60
+    timeout-minutes: 90
     env:
       XCODE_APP: /Applications/Xcode_27.1.app
     steps:
