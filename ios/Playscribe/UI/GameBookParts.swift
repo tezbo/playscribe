@@ -239,7 +239,7 @@ struct ReleasePage: View {
             WholeWordText(text: r.displayName, font: Self.nameFont, lines: 4, color: nil)
                 .accessibilityAddTraits(.isHeader).accessibilityIdentifier("releaseTitle")
             if unread {
-                Text("New").font(PlayscribeFont.caption.weight(.bold)).foregroundStyle(PlayscribeColor.accent)
+                Text("New").font(PlayscribeFont.caption.weight(.bold)).foregroundStyle(PlayscribeRole.newText)
                     .accessibilityIdentifier("releaseNew")
             }
         }
@@ -272,10 +272,10 @@ struct ReleasePage: View {
                     Text("\(minutes) min read").accessibilityLabel("About \(minutes) minute\(minutes == 1 ? "" : "s") to read")
                 }
             }
-            .font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+            .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
             VStack(alignment: .leading, spacing: 2) {
                 Text(status.primary).font(PlayscribeFont.subheadline.weight(.semibold))
-                if let v = status.version { Text(v).font(PlayscribeFont.subheadline).monospacedDigit().foregroundStyle(.secondary) }
+                if let v = status.version { Text(v).font(PlayscribeFont.subheadline).monospacedDigit().foregroundStyle(PlayscribeRole.textSecondary) }
             }
             .accessibilityElement(children: .ignore).accessibilityLabel(status.spoken)
             .accessibilityIdentifier("ps5Status")
@@ -305,6 +305,9 @@ struct SpoilerLine: View {
         Button {
             model.setSpoilersShown(gameID, !shown)
             model.show(Toast(text: shown ? "Spoilers hidden" : "Spoilers shown"))
+            // Only the person's own flip moves the tour on: watching the stored value also caught the demo route setting it,
+            // which ended step 3 before its card showed (c73186d2, tour/3).
+            model.tourNoticed(spoilersToggled: true)
         } label: {
             // At accessibility sizes the label takes the full width in whole words and the Show button sits under it,
             // on its own 44 pt line, so the label never breaks by letter and the button is never cut by the next row.
@@ -325,6 +328,7 @@ struct SpoilerLine: View {
         }
         .buttonStyle(.plain)
         .tappableFrame()
+        .tourAnchor(.spoiler)
     }
 }
 
@@ -398,7 +402,7 @@ struct GameGenresLine: View {
         let info = game.igdbID.flatMap { GameInfoStore.shared.basics[$0] }
         let genres = info?.genres ?? game.igdbID.flatMap { UpcomingStore.shared.extras[$0] }?.genres ?? []
         if !genres.isEmpty {
-            Text(genres.joined(separator: ", ")).font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+            Text(genres.joined(separator: ", ")).font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
                 .fixedSize(horizontal: false, vertical: true)
         }
     }
@@ -480,7 +484,9 @@ struct GameBasicsView: View {
                 Text(move).font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeRole.action)
             }
             if !genres.isEmpty {
-                Text(genres.joined(separator: ", ")).font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                Text(genres.joined(separator: ", ")).font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
+                    // Wraps, never a silent cut (Iris: Tabletop AX5 showed only "Role-playing").
+                    .fixedSize(horizontal: false, vertical: true)
             }
             if !videos.isEmpty {
                 ForEach(videos, id: \.youtubeId) { v in
@@ -510,7 +516,7 @@ struct GameBasicsView: View {
             // The slot is always reserved: when the details did not load, say so and offer Retry.
             if info == nil, let id = game.igdbID, store.failedShards.contains(id % 100) {
                 HStack {
-                    Text("Details need a connection").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                    Text("Details need a connection").font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
                     Spacer(minLength: 0)
                     Button { Task { await store.load(igdbID: id) } } label: { Text("Retry").frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()) }
                         .font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeRole.action)
@@ -536,7 +542,7 @@ struct GameBasicsView: View {
             // A game with no details is never blank: one line says more is coming.
             if Self.hasNoDetails(info: info, summary: summary, trailers: Self.trailers(game).count),
                !(game.igdbID.map { store.failedShards.contains($0 % 100) } ?? false) {
-                Text(Self.noDetailsLine).font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                Text(Self.noDetailsLine).font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
                     .accessibilityIdentifier("noDetailsLine")
             }
             SimilarGamesRow(game: game)
@@ -584,6 +590,8 @@ struct SimilarGamesRow: View {
                             .buttonStyle(.plain)
                             .accessibilityLabel(g.name)
                             .accessibilityHint("View it, or choose how to add it")
+                            // The page's last controls when shown (gate #593: PageEndClearsTabBarTests checks them at the page end).
+                            .accessibilityIdentifier("similarGame")
                             .tappableFrame()
                         }
                     }
@@ -597,6 +605,8 @@ struct SimilarGamesRow: View {
                             .buttonStyle(.plain)
                             .accessibilityLabel(g.name)
                             .accessibilityHint("View it, or choose how to add it")
+                            // The page's last controls when shown (gate #593: PageEndClearsTabBarTests checks them at the page end).
+                            .accessibilityIdentifier("similarGame")
                             .tappableFrame()
                         }
                     }
@@ -626,6 +636,8 @@ struct TrailerView: View {
     var name: String
     var gameID: String?
     @State private var controller: YouTubeController?
+    /// R-13: our own full-bleed mode (Closed and Open).
+    @State private var fullScreen = false
     /// Room for a two-line caption under the video, growing with Dynamic Type so a long name at AX5 is never pushed off.
     @ScaledMetric(relativeTo: .headline) private var captionRoom: CGFloat = 64
     var body: some View {
@@ -640,17 +652,24 @@ struct TrailerView: View {
                             TabletopVideoStage(controller: controller,
                                                video: ReleaseVideo(youtubeID: videoID, label: name, duration: nil, posted: "", posterAsset: nil),
                                                game: game, gameName: game?.name ?? "", release: nil, onClose: close)
+                        } else if fullScreen && FullBleedVideo.offered(in: duo.pose) {
+                            FullBleedVideo(controller: controller, posterAsset: nil, game: gameID.flatMap { model.game($0) }) { fullScreen = false }
                         } else {
                             framed(controller)
                         }
                     }
                 }
                 .background(Color.black)
+                .overlay(alignment: .bottomLeading) { VideoTimeProbe(controller: controller) }
                 .onChange(of: [duo.pose == .tabletop, controller != nil], initial: true) { controller?.setNativeControls(duo.pose != .tabletop) }
-                .toolbarVisibility(duo.pose == .tabletop ? .hidden : .automatic, for: .navigationBar)
+                .onChange(of: FullBleedVideo.offered(in: duo.pose)) { _, offered in if !offered { fullScreen = false } }
+                .toolbarVisibility(duo.pose == .tabletop || fullScreen ? .hidden : .automatic, for: .navigationBar)
                 .toolbar {
                     ToolbarItem(placement: .cancellationAction) {
                         Button(action: close) { Label("Close", systemImage: "xmark") }
+                    }
+                    if FullBleedVideo.offered(in: duo.pose), controller?.failed == false {
+                        ToolbarItem(placement: .primaryAction) { FullBleedVideo.EnterButton { fullScreen = true } }
                     }
                 }
             }
@@ -711,7 +730,7 @@ struct ContentsView: View {
                 .padding(.leading, leading)
                 .padding(.trailing, trailing)
                 .padding(.top, 6)
-                .background(Color.ink1)
+                .background(PlayscribeRole.surface)
                 .zIndex(1)
             }
             ScrollView {
@@ -737,10 +756,10 @@ struct ContentsView: View {
                     } header: {
                         if duo.pose == .book {
                             // Pinned, the list fades out under it as in one column (Quinn, #521: "Patch 1.7" was sliced).
-                            PinnedSectionHeader(gameID: gameID, ink: Color.ink0, inset: 0, style: .contents, vertical: 6,
+                            PinnedSectionHeader(gameID: gameID, ink: PlayscribeRole.bg, inset: 0, style: .contents, vertical: 6,
                                                 anchorY: anchorY, gap: 14, pinned: $tocPinned)
                                 .padding(.leading, leading).padding(.trailing, trailing)
-                                .background(Color.ink0)
+                                .background(PlayscribeRole.bg)
                         }
                     }
                 }
@@ -748,8 +767,8 @@ struct ContentsView: View {
                 .padding(.bottom, 14)
             }
             // Tabletop only, as the Library shelf (#487): scrolled, the list's top edge cut a Contents row through its glyphs at
-            // AX5 (Iris, 21efef8 still: "Better targeting, look-on…"). The panel is ink1, so the edge is too.
-            .modifier(ScrolledTopEdge(active: duo.pose == .tabletop, ink: Color.ink1))
+            // AX5 (Iris, 21efef8 still: "Better targeting, look-on…"). The panel is the surface role, so the edge is too.
+            .modifier(ScrolledTopEdge(active: duo.pose == .tabletop, ink: PlayscribeRole.surface))
             .clearsMessages()
             .scrollPosition($position)
             .accessibilityIdentifier("contentsScroll")
@@ -799,7 +818,7 @@ struct ContentsHead: View {
                         Text(note)
                             .font(PlayscribeFont.subheadline)
                             // textSecondary, not .secondary (about 5:1): the one action the player needs (Iris on #506).
-                            .foregroundStyle(PlayscribeColor.textSecondary)
+                            .foregroundStyle(PlayscribeRole.textSecondary)
                             .fixedSize(horizontal: false, vertical: true)
                             .accessibilityIdentifier("dayOneNote")
                             .accessibilitySortPriority(1)
@@ -912,13 +931,13 @@ struct NotesSearchField: View {
         } else {
         VStack(alignment: .leading, spacing: 8) {
             HStack(spacing: 8) {
-                Image(systemName: "magnifyingglass").foregroundStyle(.secondary)
+                Image(systemName: "magnifyingglass").foregroundStyle(PlayscribeRole.textSecondary)
                 TextField(prompt, text: $model.noteQuery)
                     .autocorrectionDisabled()
                     .submitLabel(.search)
                     .onSubmit { model.rememberSearch(model.noteQuery) }
                 if !model.noteQuery.isEmpty {
-                    Button { model.noteQuery = "" } label: { Image(systemName: "xmark.circle.fill").foregroundStyle(.secondary) }
+                    Button { model.noteQuery = "" } label: { Image(systemName: "xmark.circle.fill").foregroundStyle(PlayscribeRole.textSecondary) }
                         .accessibilityLabel("Clear search")
                 }
             }
@@ -948,7 +967,7 @@ struct InlineNoteResults: View {
         VStack(alignment: .leading, spacing: 6) {
             if !hits.isEmpty {
                 Text("\(hits.count) result\(hits.count == 1 ? "" : "s")")
-                    .font(PlayscribeFont.caption).foregroundStyle(.secondary)
+                    .font(PlayscribeFont.caption).foregroundStyle(PlayscribeRole.textSecondary)
                     .accessibilityLabel("\(hits.count) results")
             }
             if hits.isEmpty {
@@ -972,7 +991,7 @@ struct InlineNoteResults: View {
                         Text(NoteHit.bolded(h.line, query: model.noteQuery)).font(PlayscribeFont.subheadline).lineLimit(3)
                         HStack(spacing: 6) {
                             Text(h.release.displayName).font(PlayscribeFont.caption)
-                            Text(h.pcOnly ? "PC only" : h.section).font(PlayscribeFont.caption).foregroundStyle(.secondary)
+                            Text(h.pcOnly ? "PC only" : h.section).font(PlayscribeFont.caption).foregroundStyle(PlayscribeRole.textSecondary)
                         }
                     }
                     .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
@@ -1133,7 +1152,7 @@ struct TabletopOutline: View {
                     HStack {
                         Text(s.title).font(PlayscribeFont.subheadline.weight(i == index ? .semibold : .regular)).lineLimit(1)
                         Spacer()
-                        Text("\(i + 1)").font(PlayscribeFont.caption).foregroundStyle(.secondary)
+                        Text("\(i + 1)").font(PlayscribeFont.caption).foregroundStyle(PlayscribeRole.textSecondary)
                     }
                     .padding(.horizontal, 10)
                     .frame(minHeight: 44)
@@ -1246,7 +1265,7 @@ struct GameTitleWithStatus: View {
         VStack(alignment: .leading, spacing: 2) {
             titleRow
             if model.entry(gameID)?.status == .wishlist, let g = model.game(gameID), g.isUpcoming || g.releasePrecision == .tbd {
-                Text("On your watchlist").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                Text("On your watchlist").font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
             }
         }
     }
@@ -1334,7 +1353,7 @@ struct LinksSheet: View {
                 Button { if let panelClose { panelClose() } else { model.linksSheetOpen = false } } label: {
                     Image(systemName: "xmark.circle.fill").font(PlayscribeFont.title3).frame(width: 44, height: 44)
                 }
-                .foregroundStyle(.secondary)
+                .foregroundStyle(PlayscribeRole.textSecondary)
                 .accessibilityLabel("Close links")
                 .tappableFrame()
             }

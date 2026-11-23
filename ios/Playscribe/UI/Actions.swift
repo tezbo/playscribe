@@ -110,14 +110,14 @@ struct RailMenuList: View {
         // The title is pinned outside the scroll area so it can never fill the list (Mac, 4318d26: at AX5 it filled all 300 pt and no
         // row showed). Text is held at AX2 inside: the rows stay whole words and the four choices fit without a drag where they can.
         VStack(alignment: .leading, spacing: 0) {
-            Text(title).font(PlayscribeFont.footnote).foregroundStyle(.secondary).lineLimit(1)
+            Text(title).font(PlayscribeFont.footnote).foregroundStyle(PlayscribeRole.textSecondary).lineLimit(1)
                 .padding(.horizontal, 16).padding(.top, 12).padding(.bottom, 4)
                 .accessibilityAddTraits(.isHeader)
             ScrollView {
                 VStack(alignment: .leading, spacing: 0) {
                     ForEach(sections) { section in
                         if let t = section.title, !t.isEmpty {
-                            Text(t).font(PlayscribeFont.footnote).foregroundStyle(.secondary).fixedSize(horizontal: false, vertical: true)
+                            Text(t).font(PlayscribeFont.footnote).foregroundStyle(PlayscribeRole.textSecondary).fixedSize(horizontal: false, vertical: true)
                                 .padding(.horizontal, 16).padding(.top, 4).padding(.bottom, 2)
                         }
                         ForEach(section.items) { item in
@@ -129,7 +129,7 @@ struct RailMenuList: View {
                                     Spacer(minLength: 8)
                                     if item.checked { Image(systemName: "checkmark").accessibilityHidden(true) }
                                 }
-                                .foregroundStyle(item.destructive ? Color.red : Color.primary)
+                                .foregroundStyle(item.destructive ? Color.red : PlayscribeRole.textPrimary)
                                 .padding(.horizontal, 16).padding(.vertical, 6).frame(minHeight: 44).contentShape(Rectangle())
                             }
                             .buttonStyle(.plain)
@@ -189,7 +189,7 @@ struct RailButton: View {
     private var icon: some View {
         Image(systemName: action.systemImage)
             .font(PlayscribeFont.title3)
-            .foregroundStyle(action.selected ? PlayscribeRole.action : Color.primary)
+            .foregroundStyle(action.selected ? PlayscribeRole.action : PlayscribeRole.textPrimary)
             .frame(width: 44, height: 44)
             // Round buttons like Closed's rail: a material disc, tinted when selected.
             .background(Circle().fill(.regularMaterial))
@@ -306,11 +306,7 @@ extension AppModel {
     func moreMenu(_ gameID: String, sideBySide: Bool, bookmarks: Bool = false) -> [ScreenAction.MenuSection] {
         var items: [ScreenAction.MenuItem] = [
             .init(id: "refresh", title: "Check for updates") { [weak self] in
-                Task {
-                    await self?.refreshFeed(); await self?.refreshHistories([gameID])
-                    // Tabletop's News page is view only, so this is also its retry.
-                    await NewsStore.shared.load(gameID: gameID, igdbID: self?.game(gameID)?.igdbID)
-                }
+                Task { await self?.checkForUpdates(gameID) }
             },
         ]
         if LinksSheet.hasLinks(self, gameID) {

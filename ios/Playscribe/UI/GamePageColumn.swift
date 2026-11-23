@@ -10,6 +10,10 @@ struct GamePageColumn: View {
     @Environment(\.duo) private var duo
     @State private var position = ScrollPosition(idType: String.self)
     @State private var liveOffset: CGFloat = 0
+    #if INTERNAL
+    /// QA (#596, Terry's blank "View game" page): the scroll view's content and visible heights, for the page marker.
+    @State private var qaGeometry: [CGFloat] = [0, 0]
+    #endif
     /// True once the bar has reached the top and is pinned.
     @State private var barPinned = false
     /// Where the zero-height anchor above the Section sits in the scroll view; the header compares itself with it.
@@ -41,7 +45,7 @@ struct GamePageColumn: View {
                         .frame(maxWidth: Self.readingWidth + 40, alignment: .leading)
                         .frame(maxWidth: .infinity)
                 } header: {
-                    PinnedSectionHeader(gameID: gameID, ink: Color.ink0, maxWidth: Self.readingWidth, anchorY: anchorY, pinned: $barPinned)
+                    PinnedSectionHeader(gameID: gameID, ink: PlayscribeRole.bg, maxWidth: Self.readingWidth, anchorY: anchorY, pinned: $barPinned)
                 }
             }
             .padding(.bottom, 24)
@@ -53,9 +57,9 @@ struct GamePageColumn: View {
         // the rows bright again under it (Quinn, Closed AX5 at 722c752, Open landscape at 7cb8b33). Solid ink hangs below the
         // fade, outside the frame, to the screen edge; views laid out after the page (rail, tab bar, pill) still draw over it.
         .overlay(alignment: .bottom) {
-            LinearGradient(colors: [Color.ink0.opacity(0), Color.ink0], startPoint: .top, endPoint: .bottom)
+            LinearGradient(colors: [PlayscribeRole.bg.opacity(0), PlayscribeRole.bg], startPoint: .top, endPoint: .bottom)
                 .frame(height: 24)
-                .overlay(alignment: .bottom) { Color.ink0.frame(height: 120).offset(y: 120) }
+                .overlay(alignment: .bottom) { PlayscribeRole.bg.frame(height: 120).offset(y: 120) }
                 .allowsHitTesting(false)
                 .accessibilityHidden(true)
         }
@@ -72,6 +76,20 @@ struct GamePageColumn: View {
         // D-2, T-5: the reading position is model state, one per section; rotating, unfolding or switching back comes back to it.
         // Persisted only when scrolling settles: writing every frame re-rendered the page (Terry, 0.2.0).
         .onScrollGeometryChange(for: CGFloat.self) { $0.contentOffset.y + $0.contentInsets.top } action: { _, y in liveOffset = y }
+        #if INTERNAL
+        .onScrollGeometryChange(for: [CGFloat].self) { [$0.contentSize.height, $0.visibleRect.height] } action: { _, g in
+            if AppModel.isQALaunch { qaGeometry = g }
+        }
+        .overlay(alignment: .topLeading) {
+            // #596: which game this page shows and where it is scrolled, read by SimilarViewGameTests. A page scrolled past its
+            // content's end draws blank.
+            if AppModel.isQALaunch {
+                Text("qa-page: \(gameID) offset \(Int(liveOffset)) content \(Int(qaGeometry[0])) visible \(Int(qaGeometry[1]))")
+                    .font(.system(size: 1)).opacity(0.01).allowsHitTesting(false)
+                    .accessibilityIdentifier("qaPageScroll")
+            }
+        }
+        #endif
         .onScrollPhaseChange { _, phase in
             if phase == .idle { model.nav.anchors[anchorKey(section)] = String(Int(liveOffset)) }
         }
@@ -83,7 +101,7 @@ struct GamePageColumn: View {
             model.nav.anchors[anchorKey(old)] = String(Int(liveOffset))
             if !restore(new), barPinned { position.scrollTo(id: "sectionTop", anchor: .top) }
         }
-        .background(Color.ink0)
+        .background(PlayscribeRole.bg)
         .foldAudited()
     }
 
@@ -135,7 +153,7 @@ struct WhatsNewList: View {
                 NoNotesPage(game: g)
             } else if !hasNotes {
                 // A game nothing is known about is never a blank page (s-056).
-                Text(GameBasicsView.noDetailsLine).font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                Text(GameBasicsView.noDetailsLine).font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
                     .accessibilityIdentifier("noDetailsLine")
             } else {
                 NotesSearchField(gameID: gameID)
@@ -154,7 +172,7 @@ struct WhatsNewList: View {
                     ReleaseTimeline(gameID: gameID)
                 }
                 if let g = model.game(gameID) {
-                    Divider().overlay(PlayscribeColor.ink700)
+                    Divider().overlay(PlayscribeRole.hairline)
                     GameBasicsView(game: g)
                 }
             }

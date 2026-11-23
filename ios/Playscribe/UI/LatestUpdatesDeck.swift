@@ -93,6 +93,8 @@ struct LatestUpdatesDeck: View {
     /// Closed landscape: the pager's own width, so a wide card is exactly that wide and never wider than its container
     /// (AX5: the card ran past the right edge and lost its border and corner).
     @State private var pagerWidth: CGFloat = 0
+    /// The pager rests at its scroll end (the last card flush on the trailing edge).
+    @State private var atEnd = false
 
     /// The page edge (44 pt leaves) and the 8 pt gap above it; the card takes the rest of maxHeight.
     private static let pageEdgeHeight: CGFloat = 52
@@ -201,17 +203,41 @@ struct LatestUpdatesDeck: View {
     private var axArtHeight: CGFloat { max(200, (duo.size.height * 0.4).rounded()) }
 
 
-    private var pageEdge: some View {
+    private var visibleCards: Int { max(1, Int(perScreen.rounded(.down))) }
+
+    /// The card the page edge and the page label count from: at the scroll end it is the first of the last whole screen
+    /// (Open: card 4 of 5; Closed: card 5), whatever id the scroll view last reported.
+    private var shownID: String? {
+        guard let i = cards.firstIndex(where: { $0.id == (current ?? cards.first?.id) }) else { return cards.first?.id }
+        return cards[Self.shownIndex(current: i, count: cards.count, visible: visibleCards, atEnd: atEnd)].id
+    }
+
+    static func shownIndex(current: Int, count: Int, visible: Int, atEnd: Bool) -> Int {
+        atEnd && count > visible ? count - visible : min(current, max(0, count - 1))
+    }
+
+    /// J-8 (Mac de571b0a): a leaf whose card cannot lead the screen (the last one, or the last two in Open) scrolls the
+    /// LAST card to the trailing edge, the scroll end. Asking the pager to lead with an unreachable card overshot the end by
+    /// 16 pt in Open landscape and 2 pt in Closed portrait, the right card cut at the edge.
+    static func tapTarget(index: Int, count: Int, visible: Int) -> (index: Int, trailing: Bool) {
+        index >= count - visible ? (count - 1, true) : (index, false)
+    }
+
+    private func pageEdge(_ proxy: ScrollViewProxy) -> some View {
         // Open shows two cards across: both are lit, so the last leaf lights when the deck reaches its end (Iris on #512).
-        PageEdge(cards: cards, current: current ?? cards.first?.id, visible: max(1, Int(perScreen.rounded(.down)))) { id in
-            withAnimation(reduceMotion ? .easeInOut(duration: 0.2) : .snappy) { current = id }
+        PageEdge(cards: cards, current: shownID, visible: visibleCards) { id in
+            guard let i = cards.firstIndex(where: { $0.id == id }) else { return }
+            let t = Self.tapTarget(index: i, count: cards.count, visible: visibleCards)
+            withAnimation(reduceMotion ? .easeInOut(duration: 0.2) : .snappy) {
+                if t.trailing { proxy.scrollTo(cards[t.index].id, anchor: .trailing) } else { current = id }
+            }
         }
     }
 
     private func deck(cardWidth: CGFloat?, artHeight: CGFloat?, scrollHeight: CGFloat? = nil) -> some View {
         // Closed landscape at accessibility sizes: the pager is as tall as the card's caption, not a fixed height.
         let wideAX = scrollHeight != nil && typeSize.isAccessibilitySize && pagerWidth > 0
-        return VStack(alignment: .leading, spacing: 8) {
+        return ScrollViewReader { proxy in VStack(alignment: .leading, spacing: 8) {
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHStack(alignment: .top, spacing: 12) {
                     ForEach(cards) { card in
@@ -236,13 +262,17 @@ struct LatestUpdatesDeck: View {
             .fixedSize(horizontal: false, vertical: wideAX)
             .onGeometryChange(for: CGFloat.self) { $0.size.width } action: { if scrollHeight != nil, abs($0 - pagerWidth) > 0.5 { pagerWidth = $0 } }
             .scrollPosition(id: $current)
+            .onScrollGeometryChange(for: Bool.self, of: { g in
+                g.contentSize.width > g.containerSize.width + 1
+                    && g.contentOffset.x + g.containerSize.width >= g.contentSize.width + g.contentInsets.trailing - 1
+            }, action: { _, end in atEnd = end })
             .onChange(of: current) { _, new in model.deckSelection = new }
             // One card per flick, however fast (Iris on #512: a 120 pt flick in Open landscape jumped KCD to Phantom Blade).
             .scrollTargetBehavior(.viewAligned(limitBehavior: .alwaysByOne))
             .contentMargins(.trailing, 0, for: .scrollContent)
             // Closed landscape (scrollHeight set): the dots sit inside the hero's bottom edge, centred, so the
             // first screen still shows the chips and the first tile row (Iris, cf6c889).
-            .overlay(alignment: .bottom) { if scrollHeight != nil && cards.count > 1 { pageEdge } }
+            .overlay(alignment: .bottom) { if scrollHeight != nil && cards.count > 1 { pageEdge(proxy) } }
             if scrollHeight == nil && (cards.count > 1 || (compact && moreCount > 0)) {
                 // The dots row: dots centred, the "+N more updates" chip trailing (Iris), a 44 pt control that wraps at AX.
                 // At accessibility sizes the chip takes its own row under the dots, so the dots always read as dots.
@@ -252,7 +282,9 @@ struct LatestUpdatesDeck: View {
                         Text("+\(moreCount) more updates").multilineTextAlignment(.trailing)
                         Image(systemName: "chevron.right").accessibilityHidden(true)
                     }
-                    .font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.accent)
+                    // The action role, not the raw accent: the chip sits on the page, and the light accent on cream was about 2:1
+                    // (#594, Iris). Light is the action brown (as Skip tour); dark keeps the accent.
+                    .font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeRole.action)
                     .frame(minHeight: 44)
                     .contentShape(Rectangle())
                 }
@@ -261,20 +293,21 @@ struct LatestUpdatesDeck: View {
                 .accessibilityLabel("\(moreCount) more updates, opens the Updates list")
                 if typeSize.isAccessibilitySize {
                     VStack(alignment: .trailing, spacing: 0) {
-                        if cards.count > 1 { pageEdge.frame(maxWidth: .infinity) }
+                        if cards.count > 1 { pageEdge(proxy).frame(maxWidth: .infinity) }
                         if showChip { chip }
                     }
                 } else {
                     ZStack(alignment: .trailing) {
-                        if cards.count > 1 { pageEdge }
+                        if cards.count > 1 { pageEdge(proxy) }
                         if showChip { chip }
                     }
                 }
             }
         }
+        } // ScrollViewReader
         .accessibilityElement(children: .contain)
         .accessibilityLabel(compact || cards.count > 1
-            ? "Latest updates, page \((cards.firstIndex { $0.id == (current ?? cards.first?.id) } ?? 0) + 1) of \(cards.count)" : "Latest updates")
+            ? "Latest updates, page \((cards.firstIndex { $0.id == shownID } ?? 0) + 1) of \(cards.count)" : "Latest updates")
         .accessibilityIdentifier("latestDeckPager")
     }
 }
@@ -297,7 +330,7 @@ struct DeckCardView: View {
     var body: some View {
         let game = card.game
         Button {
-            if let r = card.release { model.openGame(game.id, chapter: .updates, releaseID: r.id) }
+            if let r = card.release { model.openFromDeck(game.id, releaseID: r.id) }
             else { model.openGame(game.id, chapter: .updates) }
         } label: {
             if wide {
@@ -696,6 +729,21 @@ struct PageEdge: View {
     var visible: Int = 1
     var select: (String) -> Void
 
+    /// Slot width of one leaf (its hit area) and the lit mark's size.
+    static let slot: CGFloat = 44
+    static let litWidth: CGFloat = 3
+    static let litHeight: CGFloat = 18
+
+    /// The lit leaves drawn as ONE amber capsule from the first to the last card on screen (Iris, after Terry saw two amber
+    /// notches lit at once in Open and Closed landscape: noise). Positions are slots within the window; the frame is in the
+    /// row's own space: x from the first lit slot's centre to the last's, plus the mark's width. Nil when nothing is lit.
+    static func capsule(lit: Set<Int>, window: [Int]) -> CGRect? {
+        let slots = window.enumerated().filter { lit.contains($0.element) }.map(\.offset)
+        guard let a = slots.min(), let b = slots.max() else { return nil }
+        let x = CGFloat(a) * slot + slot / 2 - litWidth / 2
+        return CGRect(x: x, y: (slot - litHeight) / 2, width: CGFloat(b - a) * slot + litWidth, height: litHeight)
+    }
+
     /// The leaves lit: the leading card and the others fully on screen beside it. At the deck's end the pager cannot lead
     /// with the last card when two show, so lighting only the leading one left the last leaf dark for good (Iris on #512).
     static func lit(cards: [DeckCard], current: String?, visible: Int) -> Set<Int> {
@@ -727,6 +775,7 @@ struct PageEdge: View {
 
     var body: some View {
         let lit = Self.lit(cards: cards, current: current, visible: visible)
+        let joined = Self.capsule(lit: lit, window: window.map(\.index))
         HStack(spacing: 0) {
             ForEach(window, id: \.card.id) { item in
                 let isCurrent = lit.contains(item.index)
@@ -735,8 +784,10 @@ struct PageEdge: View {
                     && ((item.index == window.first?.index && item.index > 0) || (item.index == window.last?.index && item.index < cards.count - 1))
                 Button { select(item.card.id) } label: {
                     RoundedRectangle(cornerRadius: 1.5)
-                        .fill(isCurrent ? PlayscribeColor.accent : (item.card.unread ? PlayscribeColor.vellum100 : PlayscribeColor.textSecondary.opacity(0.5)))
-                        .frame(width: trimmed ? 2 : 3, height: isCurrent ? 18 : (trimmed ? 6 : 10))
+                        // Lit leaves draw nothing: the one amber capsule is the only amber here. Lit leaves drawn amber under a
+                        // capsule that slid in 0.2 s showed as two amber marks side by side mid-swipe (Terry, build 18 on a Duo).
+                        .fill(isCurrent ? Color.clear : item.card.unread ? PlayscribeColor.vellum100 : PlayscribeColor.textSecondary.opacity(0.5))
+                        .frame(width: trimmed ? 2 : Self.litWidth, height: isCurrent ? Self.litHeight : (trimmed ? 6 : 10))
                         .frame(width: 44, height: 44)
                         .contentShape(Rectangle())
                 }
@@ -751,6 +802,19 @@ struct PageEdge: View {
                 }
             }
         }
+        .overlay(alignment: .topLeading) {
+            if let joined {
+                RoundedRectangle(cornerRadius: 1.5)
+                    .fill(PlayscribeColor.accent)
+                    .frame(width: joined.width, height: joined.height)
+                    .offset(x: joined.minX, y: joined.minY)
+                    .allowsHitTesting(false)
+                    .accessibilityHidden(true)
+            }
+        }
+        // One steady bar (Terry, build 18): the marks move in one step when the deck settles on a card, never slide, so the
+        // bar and the leaves can never be seen apart. This also drops the animation a leaf tap's withAnimation would carry.
+        .transaction { $0.animation = nil }
         .frame(maxWidth: .infinity, alignment: .center)
     }
 }
@@ -832,6 +896,10 @@ struct DeckStage: View {
                 }
                 .font(PlayscribeFont.subheadline).fixedSize(horizontal: false, vertical: true)
             }
+            // The caption block itself (no padding), so a test can measure that it ends 24 pt above the division (gate #592,
+            // as the legacy stage's caption did). Its texts stay separate elements.
+            .accessibilityElement(children: .contain)
+            .accessibilityIdentifier("stageCaption")
             .padding(20)
             .dynamicTypeSize(...DynamicTypeSize.accessibility3)
             // The caption ends 24 pt above the division, measured in screen space (as in 0.2.0 #174/#176).

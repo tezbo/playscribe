@@ -140,6 +140,8 @@ struct PersistedState: Codable {
     var quietHours: QuietHours?
     /// nil = on. Off silences the add pop.
     var soundsOff: Bool?
+    /// Settings > Appearance (G-11): nil = System, the default; Light or Dark overrides the phone.
+    var appearance: AppAppearance?
     /// The PS Plus card and its "Leaving soon" reminder (Terry, 2026-11-05): nil = on. Off hides both.
     var plusCardOff: Bool?
     /// The PS Plus "Leaving soon" reminder (0.5.0): nil = on.
@@ -171,6 +173,8 @@ struct PersistedState: Codable {
     var alertedIssues: Set<String>?
     /// The first-run welcome was used or skipped; the plain empty Library shows after that.
     var welcomeDone: Bool?
+    /// 6b: the intro tour was taken, finished or skipped. It never replays by itself; Settings has "Replay tour".
+    var tourDone: Bool?
 }
 
 struct Toast: Equatable {
@@ -219,11 +223,16 @@ final class AppModel {
     var addIsSystemSheet = false
     /// QA (route add/scan): the camera scan shows a fixed feed, since simulators have no camera.
     var simulatedScan = false
+    /// `-qaRoute add/say/<idle|listening|heard|stopped|nothing|denied>`: Say it in that state, no microphone (#578 stills).
+    var simulatedSay: String?
     /// Opens the Add games sheet straight on this method (first-run welcome rows).
     var addSheetMethod: AddMethod?
     /// QA: route add/keyboard focuses the Add search field so the keyboard is up.
     var addSearchFocus = false
     var settingsOpen = false
+    /// 6b intro tour: the welcome card is up, or the step showing (nil: no tour).
+    var tourWelcome = false
+    var tourStep: TourStep?
     var player: (gameID: String, releaseID: String)?
     /// A game's trailer from its basics, or a Gallery video (no release). The game gives the Tabletop stage its key art.
     var trailer: (videoID: String, name: String, gameID: String?)?
@@ -863,6 +872,15 @@ final class AppModel {
         }
     }
 
+    /// J-8, J-1: a Latest updates card opens its update. Where pushing is the layout (Closed, Open) the update page is
+    /// pushed over the game's What's new, so Back returns there and then to the Library; side by side the Page shows it in
+    /// place. Before #592 the card only selected the update, which in one column left the game's list on screen (Mac at
+    /// abe2921e and v0.5.9: testCardAndLeafTaps landed on Dawnwalker's What's new, not Update 1.2). Opening it reads it (R-6a).
+    func openFromDeck(_ gameID: String, releaseID: String) {
+        openGame(gameID, chapter: .updates, releaseID: releaseID)
+        if pushesReleases, let g = nav.gameID, release(g, releaseID) != nil { nav.detailReleaseID = releaseID }
+    }
+
     /// D-1 (0.5.6, Card D, Nadia 13 Nov): an Updates-tab row pushes the update page over the list in Closed and Open
     /// portrait, so Back returns to the list in one step, at the same scroll. Side by side and in Tabletop it opens the
     /// game with that update on the Page. Opening it reads it (R-6a).
@@ -940,6 +958,10 @@ final class AppModel {
             addSheetOpen = true
             if parts.first == "scan" { addSheetMethod = .camera; simulatedScan = true }
             if parts.first == "keyboard" { addSheetMethod = .typeIt; addSearchFocus = true }
+            // add/type (gate #592): Type it without focusing the field, as a tap on Type it in the chooser does (Tabletop shows
+            // letters, not the keyboard). Plain "add" opens the chooser.
+            if parts.first == "type" { addSheetMethod = .typeIt }
+            if parts.first == "say" { addSheetMethod = .sayIt; simulatedSay = parts.count > 1 ? parts[1] : "idle" }
         case "cover":   // 0.7 front cover preview (duo-closed-cover): a full deck, or cover/one for a lone update
             // cover/<game> (Iris, focal-point check): that game's newest update leads the deck, unread.
             if parts.first == "one" { resetToOneUpdateDemo() } else { resetToCoverDemo(leading: parts.first) }
@@ -974,6 +996,19 @@ final class AppModel {
             // R-7: `chapter/<game>/world` opens Companion on its World filter.
             if parts[1] == Chapter.world.rawValue { setCompanionKind(parts[0], .world) }
         case "first-run": resetToFirstRun()
+        // 6b: `tour/<welcome|1|2|3>[/empty]`, the welcome or a step, with the demo Library or an empty one; `tour/3/none` is the
+        // text-only card (no spoiler switch to point at). Step 3 opens the spoiler demo update so the switch is on screen.
+        case "tour":
+            if parts.contains("empty") { resetToFirstRun(); data.welcomeDone = true } else if parts.first != "3" { resetDemo() }
+            tourWelcome = false
+            switch parts.first {
+            case "welcome": tourStep = nil; tourWelcome = true
+            case "2": startTour(); tourStep = .updates
+            case "3":
+                if parts.count > 1 && parts[1] == "none" { resetDemo(); startTour(); tourStep = .spoiler }
+                else { openSpoilerDemo(); tourStep = .spoiler }
+            default: startTour()
+            }
         case "demo": resetDemo()
         case "store-set":
             loadStoreSet(plus: parts.first == "plus")
@@ -1193,7 +1228,7 @@ final class AppModel {
             openGame(parts[0], chapter: Chapter(rawValue: parts[1]) ?? .updates)
             nav.detailReleaseID = nil
             linksSheetOpen = false
-        case "close": player = nil; addSheetOpen = false; simulatedScan = false; settingsOpen = false; linksSheetOpen = false; tagExplainer = nil; keepCurrentDetailsOpen = false; addSearchFocus = false
+        case "close": player = nil; addSheetOpen = false; simulatedScan = false; simulatedSay = nil; settingsOpen = false; linksSheetOpen = false; tagExplainer = nil; keepCurrentDetailsOpen = false; addSearchFocus = false
         case "fill-library" where parts.count == 1:
             // QA: a library of N games (the demo set plus popular PS5 games), for layout tests.
             if let n = Int(parts[0]) {
@@ -1514,6 +1549,9 @@ final class AppModel {
         if data.keepCurrent == true { setKeepCurrent(false) }
         data = PersistedState(collection: [])
         UserDefaults.standard.set(false, forKey: "didOnboard")
+        tourStep = nil
+        // A reset is a first run again: the welcome offers the tour once the Settings sheet has closed (never on QA launches).
+        tourWelcome = !Self.isQALaunch
         toast = nil
         pill = nil
         NotificationService.shared.updateBadge(0)

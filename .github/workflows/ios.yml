@@ -10,6 +10,16 @@ on:
     branches: [main]
     paths: ['ios/**', '.github/workflows/ios.yml']
   workflow_dispatch:
+    # Loop runs for a flaky test (bug-065: name the cause with a looped run, never the threshold). Both empty on a normal run.
+    inputs:
+      only_testing:
+        description: "Run only this (e.g. PlayscribeTests/ControlBorderTests/renderedBorder()); empty runs every unit test"
+        required: false
+        default: ''
+      iterations:
+        description: "Run the tests this many times (xcodebuild -test-iterations); 1 is a normal run"
+        required: false
+        default: '1'
 
 concurrency:
   group: ios-${{ github.ref }}
@@ -26,7 +36,7 @@ jobs:
     # The app targets iOS 27.1 (the Duo APIs need it). macos-latest only has Xcode 26, so this uses
     # GitHub's free Xcode 27 image (public preview, label xcode-27) and pins the stable 27.1.
     runs-on: xcode-27
-    timeout-minutes: 30
+    timeout-minutes: ${{ fromJSON(inputs.iterations || '1') > 1 && 120 || 30 }}
     steps:
       - uses: actions/checkout@v4
       - name: Generate the project (XcodeGen)
@@ -52,16 +62,28 @@ jobs:
       - name: Build and test
         run: |
           status=0
+          extra=()
+          [ -n "$ONLY" ] && extra+=("-only-testing:$ONLY")
+          [ "${ITER:-1}" -gt 1 ] 2>/dev/null && extra+=(-test-iterations "$ITER")
           xcodebuild test \
             -project ios/Playscribe.xcodeproj -scheme "${SCHEME:-Playscribe}" \
             -destination "id=${{ steps.sim.outputs.udid }}" \
             -resultBundlePath build/TestResults.xcresult \
+            "${extra[@]}" \
             CODE_SIGNING_ALLOWED=NO > build.log 2>&1 || status=$?
           grep -E 'error:|\*\* (BUILD|TEST)|Test run with|Test .* failed|Executed|MirrorPixelTests ' build.log || true
+          if [ "${ITER:-1}" -gt 1 ] 2>/dev/null; then
+            # Loop evidence (bug-065): how many test passes and failures the iterations produced, and the xcresult's own count.
+            echo "loop: $(grep -cE 'Test .* passed after' build.log) passes, $(grep -cE 'Test .* failed after' build.log) failures over $ITER iterations"
+            grep -iE 'iteration|repetition' build.log | head -20 || true
+            xcrun xcresulttool get test-results summary --path build/TestResults.xcresult 2>/dev/null | head -40 || true
+          fi
           echo "xcodebuild exited with $status"
           exit "$status"
         env:
           SCHEME: ${{ vars.IOS_SCHEME }}
+          ONLY: ${{ inputs.only_testing }}
+          ITER: ${{ inputs.iterations }}
       # The UI-test compile used to be its own job (ui-build). A second job took a second macOS runner per push, and the runner
       # queue (median wait 1.6 min before #355, 8.1 min after) cost more than the ~1.5 min this step adds. Same command, same
       # failure meaning: a UI test compile error surfaces on the PR and not first at the Mac gate. It runs even when the unit

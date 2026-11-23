@@ -61,6 +61,9 @@ struct CatalogGame: Codable, Hashable, Identifiable {
     var coverFocus: CoverFocus?
     /// Added by the person: no catalogue record behind it.
     var custom: Bool?
+    /// 6a: the publisher's official trailer mp4 (https), played muted and looping on the Closed front cover in Trailer loop
+    /// mode, from its source only (docs/api.md `coverLoop`). Nil: the cover shows Key-art motion.
+    var coverLoop: String? = nil
 
     /// D-12 tile art, in order of preference (docs/api.md): the studio's square cover, else
     /// official key art to crop, else nil (the portrait cover over a blurred fill).
@@ -78,8 +81,11 @@ struct CatalogGame: Codable, Hashable, Identifiable {
         return URL(string: "https://images.igdb.com/igdb/image/upload/t_1080p/\(a).jpg")
     }
 
+    /// The IGDB cover: the record's own image id, else the PS5 index's by igdbID. A catalogue record with no bundled cover
+    /// (Astro Bot, Ghost of Yōtei) kept the plate's initial on its Library tile while its page showed the index art (Terry, beta 3).
     var coverURL: URL? {
-        coverImageID.map { URL(string: "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/\($0).jpg")! }
+        (coverImageID ?? igdbID.flatMap { PS5Index.shared.entry(igdb: $0)?.c })
+            .map { URL(string: "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/\($0).jpg")! }
     }
 
     /// The PS5 launched on 12 Nov 2020; no "on PS5" date can be earlier.

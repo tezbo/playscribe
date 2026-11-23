@@ -174,12 +174,41 @@ struct SettingsView: View {
                         Text("PS Plus reminders are separate from game notifications.")
                     }
                     Section {
+                        Picker("Appearance", selection: Binding(get: { model.data.appearance ?? .system },
+                                                                set: { model.data.appearance = $0 == .system ? nil : $0 })) {
+                            ForEach(AppAppearance.allCases) { Text($0.title).tag($0) }
+                        }
+                        .frame(minHeight: 52)
+                        .accessibilityIdentifier("appearance")
+                    } footer: {
+                        Text("System follows your phone’s Light and Dark setting. The video player and the cover stay dark.")
+                    }
+                    Section {
                         Toggle("Sounds", isOn: Binding(get: { model.data.soundsOff != true }, set: { model.data.soundsOff = $0 ? nil : true }))
                             .frame(minHeight: 52)
                             .accessibilityHint("Plays a soft pop when games are added")
                             .accessibilityIdentifier("sounds")
                     } footer: {
                         Text("A soft pop when you add games. Never plays while you are listening to something else.")
+                    }
+
+                    // 6b: the tour never replays by itself; this is the way back to it.
+                    Section {
+                        Button {
+                            dismiss()
+                            // Once the sheet or panel has gone, so step 1 lands on the Library, not under Settings.
+                            Task { @MainActor in
+                                try? await Task.sleep(for: .milliseconds(400))
+                                model.startTour()
+                            }
+                        } label: {
+                            Text(TourCopy.replay).frame(maxWidth: .infinity, minHeight: 52, alignment: .leading).contentShape(Rectangle())
+                        }
+                        .accessibilityLabel("\(TourCopy.replay), starts the tour again")
+                        .accessibilityIdentifier("replayTour")
+                        .tappableFrame()
+                    } footer: {
+                        Text(TourCopy.replayFooter)
                     }
 
                     Section {

@@ -31,7 +31,7 @@ struct PhotoAddView: View {
             Text("Choose a photo with game titles on it.")
                 .font(PlayscribeFont.headline).multilineTextAlignment(.center)
             Text("The text is read on your device. The photo is never uploaded.")
-                .font(PlayscribeFont.footnote).foregroundStyle(.secondary).multilineTextAlignment(.center)
+                .font(PlayscribeFont.footnote).foregroundStyle(PlayscribeRole.textSecondary).multilineTextAlignment(.center)
             PhotosPicker(selection: $item, matching: .images) {
                 Text(working ? "Reading" : "Choose photo")
                     .font(PlayscribeFont.headline)
@@ -42,7 +42,7 @@ struct PhotoAddView: View {
             .disabled(working)
             .tappableFrame()
             if failed {
-                Text("No game titles found in that photo.").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                Text("No game titles found in that photo.").font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
                 Button("Type it", action: typeInstead).hitTarget()
             }
             Spacer()

@@ -545,8 +545,10 @@ final class ReleaseRowTests: XCTestCase {
             XCTAssertTrue(title.waitForExistence(timeout: 5), "\(name) opens")
             let shot = XCTAttachment(screenshot: app.screenshot())
             shot.name = "row-\(name) [\(Self.pose(app))]"; shot.lifetime = .keepAlways; add(shot)
-            if app.navigationBars[name].exists {
-                // Pushed (Closed, open portrait): Back returns to the same row, still in view.
+            // Pushed (Closed, open portrait): the update page (releaseDetail) is on screen. Its bar has no title since the
+            // AX5 fix (the patch name is the page's heading), so the bar's title can't tell a push any more (gate #593).
+            if app.descendants(matching: .any)["releaseDetail"].exists {
+                // Pushed: Back returns to the same row, still in view.
                 Self.goBack(app)
                 sleep(1)
                 XCTAssertTrue(row.isHittable, "back to \(name) row, in view")
@@ -579,7 +581,8 @@ final class JourneyTests: XCTestCase {
         while ReleaseRowTests.pose(app).contains("closed") && Date.now < deadline { sleep(2) }
         sleep(2)
         XCTAssertTrue(title.exists, "Patch 1.4 still showing after unfolding [\(audit.exists ? audit.label : "unknown")]")
-        if app.navigationBars["Patch 1.4"].exists { ReleaseRowTests.goBack(app); sleep(1) }
+        // Still pushed: the update page is on screen (its bar has no title since the AX5 fix, gate #593).
+        if app.descendants(matching: .any)["releaseDetail"].exists { ReleaseRowTests.goBack(app); sleep(1) }
         // Open is one column: Back lands on the row, in view. A pushed update leaves no selected fill (s-06, s3.png).
         XCTAssertTrue(row.isHittable, "back to the Patch 1.4 row, in view")
         let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "journey-open-patch-1.4"; shot.lifetime = .keepAlways; add(shot)
@@ -648,8 +651,17 @@ final class ReviewFixUITests: XCTestCase {
         // The identified row, not "any element whose text looks like a version": at 96e0e39 a game card behind the sheet read
         // "01.001.000" (a simulated release's date), matched at once, and the loop never scrolled to the real row.
         let version = app.descendants(matching: .any)["appVersion"]
-        var tries = 0
-        while !version.exists && tries < 8 { Release050Tests.scrollForm(app); tries += 1 }
+        // Until the row is there or the form stops moving: 8 short drags stopped at the Video lab in Closed landscape, where the
+        // form is 458 pt tall and longer than when the cap was set (gate #593). The cap only stops a runaway loop.
+        var tries = 0, still = 0
+        while !version.exists && still < 2 && tries < 40 {
+            let cells = app.collectionViews.firstMatch.cells
+            let before = cells.count > 0 ? cells.element(boundBy: cells.count - 1).frame : .zero
+            Release050Tests.scrollForm(app)
+            let after = cells.count > 0 ? cells.element(boundBy: cells.count - 1).frame : .zero
+            still = abs(after.minY - before.minY) < 1 && cells.count > 0 ? still + 1 : 0
+            tries += 1
+        }
         if !version.exists {
             let tree = XCTAttachment(string: app.debugDescription); tree.name = "settings-hierarchy.txt"; tree.lifetime = .keepAlways; add(tree)
             let shot = XCTAttachment(screenshot: app.screenshot()); shot.name = "settings-window"; shot.lifetime = .keepAlways; add(shot)
@@ -707,7 +719,7 @@ final class LibraryLayoutTests: XCTestCase {
             var summary: String { "bar \(bar); first \(firstTile); \(tiles.count) tiles" }
         }
         func pageState() -> PageState {
-            let q = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'tile-' OR label CONTAINS ', last updated' OR label CONTAINS ', released ' OR label CONTAINS ', expected ' OR label CONTAINS 'to be announced' OR label CONTAINS ', new update' OR label CONTAINS 'unconfirmed update' OR label CONTAINS ', not on PS5' OR label CONTAINS 'plays on PS5 as the PS4'"))
+            let q = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'tile-' OR label CONTAINS ', last updated' OR label CONTAINS ', updated this week' OR label CONTAINS ', released ' OR label CONTAINS ', expected ' OR label CONTAINS 'to be announced' OR label CONTAINS ', new update' OR label CONTAINS 'unconfirmed update' OR label CONTAINS ', not on PS5' OR label CONTAINS 'plays on PS5 as the PS4'"))
             let els = q.allElementsBoundByIndex.filter { !$0.frame.isEmpty && $0.frame.width > 20 }
             let first = els.min { ($0.frame.minY, $0.frame.minX) < ($1.frame.minY, $1.frame.minX) }
             let bar = app.scrollBars.firstMatch.exists ? "\(app.scrollBars.firstMatch.value ?? "nil")" : "none"
@@ -775,7 +787,7 @@ final class LibraryLayoutTests: XCTestCase {
         for _ in 0..<16 {
             // The accessibility frame of a tile runs past its cover (the cover image's own
             // bounds), so each tile is taken as its laid-out cover: origin and width, 3:4.
-            let tileQuery = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'tile-' OR label CONTAINS ', last updated' OR label CONTAINS ', released ' OR label CONTAINS ', expected ' OR label CONTAINS 'to be announced' OR label CONTAINS ', new update' OR label CONTAINS 'unconfirmed update' OR label CONTAINS ', not on PS5' OR label CONTAINS 'plays on PS5 as the PS4'"))
+            let tileQuery = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'tile-' OR label CONTAINS ', last updated' OR label CONTAINS ', updated this week' OR label CONTAINS ', released ' OR label CONTAINS ', expected ' OR label CONTAINS 'to be announced' OR label CONTAINS ', new update' OR label CONTAINS 'unconfirmed update' OR label CONTAINS ', not on PS5' OR label CONTAINS 'plays on PS5 as the PS4'"))
             // Quinn: count each tile once by its label (the same visible tiles are scanned again after a drag); the identifier
             // holds the cover width, so it is not unique.
             seenTiles.formUnion(tileQuery.allElementsBoundByIndex.filter { !$0.frame.isEmpty && $0.frame.width > 20 }.map(\.label))
@@ -1025,6 +1037,55 @@ final class LatestUpdatesDeckTests: XCTestCase {
         let lastLeaf = app.buttons["Update \(count) of \(count)"]
         XCTAssertTrue(lastLeaf.exists, "the last leaf is on screen at the deck's end")
         XCTAssertTrue(lastLeaf.isSelected, "the last leaf is lit at the deck's end")
+    }
+
+    /// J-8, Iris (Mac 198e9f87 and 30c03b0a): at the deck's end the cards sit flush on the pager, none cut at its edge.
+    /// Measures twice: reaching the end by tapping the last leaf, and by flicking. Logs every frame at 2 s and 5 s so the
+    /// cause is read, not guessed. Red on main: Open landscape left card 3.7 pt in, right card 2.7 pt over the edge.
+    func testDeckEndSitsFlush() throws {
+        for path in ["tap", "flick"] {
+            let app = XCUIApplication()
+            app.launchArguments = ["-qaRoute", "fill-library/12"]
+            app.launch()
+            sleep(4)
+            if ReleaseRowTests.pose(app).contains("pose: tabletop") { app.terminate(); throw XCTSkip("Tabletop's upper half is view only") }
+            let pager = app.descendants(matching: .any)["latestDeckPager"]
+            XCTAssertTrue(pager.waitForExistence(timeout: 5), "the deck is on screen")
+            let label = pager.label
+            guard let r = label.range(of: #"of (\d+)"#, options: .regularExpression),
+                  let count = Int(label[r].split(separator: " ").last ?? ""), count > 2 else {
+                app.terminate(); throw XCTSkip("needs three or more cards: \(label)")
+            }
+            if path == "tap" {
+                app.buttons["Update \(count) of \(count)"].tap()
+            } else {
+                for _ in 0..<count {
+                    let from = pager.coordinate(withNormalizedOffset: CGVector(dx: 0.8, dy: 0.5))
+                    let to = pager.coordinate(withNormalizedOffset: CGVector(dx: 0.2, dy: 0.5))
+                    from.press(forDuration: 0.05, thenDragTo: to, withVelocity: .fast, thenHoldForDuration: 0)
+                    sleep(1)
+                }
+            }
+            // The scroll view's own frame: the pager element also holds the page edge row, same width.
+            let edge = pager.frame
+            var trailingGap = CGFloat.nan, leadingGap = CGFloat.nan
+            for wait in [2, 3] {
+                sleep(UInt32(wait))
+                let all = app.buttons.matching(identifier: "deckCard").allElementsBoundByIndex.map(\.frame).sorted { $0.minX < $1.minX }
+                let cards = all.filter { $0.maxX > edge.minX + 1 && $0.minX < edge.maxX - 1 }
+                print("DECKEND \(path) t=\(wait == 2 ? 2 : 5)s pager=\(edge) cards=\(cards) label=\(pager.label)")
+                // The deck's LAST card (by position, not just the last on screen) must end on the pager edge: that is
+                // both "the deck reached its end" and "nothing is cut off". Two across, the left card (the first one
+                // starting inside the pager, de571b0a: the off-screen card was measured) sits on the leading margin.
+                if let last = all.last { trailingGap = last.maxX - edge.maxX }
+                if let first = all.first(where: { $0.minX >= edge.minX - 1 }) { leadingGap = first.minX - edge.minX }
+            }
+            XCTAssertEqual(trailingGap, 0, accuracy: 1, "\(path): the last card's trailing edge is on the pager edge (+ is cut off)")
+            if ReleaseRowTests.pose(app).contains("pose: flat") && app.frame.width > app.frame.height {
+                XCTAssertEqual(leadingGap, 0, accuracy: 1, "\(path): two across, the left card is on the leading margin")
+            }
+            app.terminate()
+        }
     }
 }
 
@@ -1478,6 +1539,10 @@ final class Release050Tests: XCTestCase {
         XCTAssertTrue(toggle.exists, "Settings has the PS Plus card switch")
         XCTAssertTrue(["on", "1"].contains(toggle.value as? String ?? ""), "on by default, got \(String(describing: toggle.value))")
         let reminder = app.descendants(matching: .any)["plusLeavingSoon"]
+        // The form builds rows as they scroll in: in Tabletop's half-height panel the reminder row, under the switch, is not in
+        // the tree until it is near the panel (gate #592). Scroll a little at a time, as for the switch.
+        var down = 0
+        while !reminder.exists && down < 4 { Self.scrollForm(app); down += 1 }
         XCTAssertTrue(reminder.exists, "the reminder row shows while the card is on")
         let inner = toggle.switches.firstMatch
         if inner.exists { inner.tap() } else { toggle.coordinate(withNormalizedOffset: CGVector(dx: 0.93, dy: 0.5)).tap() }
@@ -1496,7 +1561,11 @@ final class Release050Tests: XCTestCase {
         app.buttons["settingsButton"].tap()
         flip()
         XCTAssertTrue(["on", "1"].contains(app.switches["plusCardToggle"].value as? String ?? ""), "on again")
-        XCTAssertTrue(app.descendants(matching: .any)["plusLeavingSoon"].waitForExistence(timeout: 2), "the reminder row returns")
+        // As above: the row under the switch is built only once it scrolls near Tabletop's half-height panel.
+        let back = app.descendants(matching: .any)["plusLeavingSoon"]
+        var again = 0
+        while !back.waitForExistence(timeout: 1) && again < 4 { Self.scrollForm(app); again += 1 }
+        XCTAssertTrue(back.exists, "the reminder row returns")
         app.buttons["Close"].tap()
         XCTAssertTrue(card.waitForExistence(timeout: 3), "the Library card returns with the switch on")
         app.terminate()
@@ -1579,8 +1648,16 @@ extension PlayscribeUITests {
         guard ReleaseRowTests.pose(app).contains("pose: tabletop") else { app.terminate(); throw XCTSkip("not Tabletop") }
         let rail = app.buttons["Library"].firstMatch
         XCTAssertTrue(rail.waitForExistence(timeout: 5), "rail")
+        // 0.5.0 guided welcome comes first (gate #592): its ways to add and Skip for now clear the rail too.
+        let skip = app.buttons["Skip for now"].firstMatch
+        XCTAssertTrue(skip.waitForExistence(timeout: 5), "the guided welcome's Skip for now")
+        for b in app.buttons.allElementsBoundByIndex where b.exists && b.isHittable && b.frame.minY >= app.frame.midY - 1 && b.frame.minX < rail.frame.minX {
+            XCTAssertLessThanOrEqual(b.frame.maxX, rail.frame.minX + 1, "welcome \(b.label) \(b.frame) runs under the rail \(rail.frame)")
+        }
+        XCTAssertLessThanOrEqual(skip.frame.maxX, rail.frame.minX + 1, "Skip for now \(skip.frame) runs under the rail \(rail.frame)")
+        skip.tap()
         let add = app.buttons["Add your first game"].firstMatch
-        XCTAssertTrue(add.exists)
+        XCTAssertTrue(add.waitForExistence(timeout: 5), "the empty Library after Skip for now")
         XCTAssertLessThanOrEqual(add.frame.maxX, rail.frame.minX, "Add your first game \(add.frame) runs under the rail \(rail.frame)")
         for cover in app.buttons.matching(NSPredicate(format: "label BEGINSWITH 'Add '")).allElementsBoundByIndex where cover.isHittable && cover.label != "Add game" {
             XCTAssertLessThanOrEqual(cover.frame.maxX, rail.frame.minX + 1, "\(cover.label) \(cover.frame) runs under the rail")
@@ -1619,6 +1696,13 @@ final class FinalFixTests: XCTestCase {
     func testTabletopFirstRunHeadlineClearsTheDivision() throws {
         let app = launch("first-run")
         guard ReleaseRowTests.pose(app).contains("pose: tabletop") else { app.terminate(); throw XCTSkip("not Tabletop") }
+        // The guided welcome's headline first (gate #592), then the empty Library's after Skip for now.
+        let welcome = app.descendants(matching: .any).matching(NSPredicate(format: "label CONTAINS 'Add your games to see every update'")).firstMatch
+        XCTAssertTrue(welcome.waitForExistence(timeout: 5), "the guided welcome's headline")
+        XCTAssertLessThanOrEqual(welcome.frame.maxY, app.frame.midY - 24, "welcome headline \(welcome.frame) is across the division")
+        let skip = app.buttons["Skip for now"].firstMatch
+        XCTAssertTrue(skip.waitForExistence(timeout: 5), "Skip for now")
+        skip.tap()
         let headline = app.descendants(matching: .any).matching(NSPredicate(format: "label CONTAINS 'Follow a game'")).firstMatch
         XCTAssertTrue(headline.waitForExistence(timeout: 5))
         XCTAssertLessThanOrEqual(headline.frame.maxY, app.frame.midY - 24, "headline \(headline.frame) is across the division")
@@ -1627,7 +1711,8 @@ final class FinalFixTests: XCTestCase {
 
     /// Tabletop Add game: the compact header leaves at least three results visible in the lower half.
     func testTabletopAddGameShowsThreeRows() throws {
-        let app = launch("add")
+        // add/type: Type it, as a tap in the chooser opens it ("add" alone is the chooser, gate #592).
+        let app = launch("add/type")
         guard ReleaseRowTests.pose(app).contains("pose: tabletop") else { app.terminate(); throw XCTSkip("not Tabletop") }
         let rows = app.descendants(matching: .any).matching(identifier: "addRow").allElementsBoundByIndex
         let visible = rows.filter { $0.exists && $0.frame.minY >= app.frame.midY - 1 && $0.frame.maxY <= app.frame.maxY + 1 }
@@ -1660,16 +1745,17 @@ final class FinalFixTests: XCTestCase {
 
     /// Tabletop Add game: no keyboard. The search button explains why, and a letter filters the list (Iris ruling).
     func testTabletopSearchUsesLettersNotTheKeyboard() throws {
-        let app = launch("add")
+        let app = launch("add/type")
         guard ReleaseRowTests.pose(app).contains("pose: tabletop") else { app.terminate(); throw XCTSkip("not Tabletop") }
         let search = app.descendants(matching: .any).matching(identifier: "tabletopSearch").firstMatch
         XCTAssertTrue(search.waitForExistence(timeout: 5), "read-only search button")
-        XCTAssertGreaterThanOrEqual(search.frame.height, 44)
+        // 44 pt, read to a thousandth of a point: frames come back as 43.999999999999886 for a 44 pt control (Mac at 90eb4a0a).
+        XCTAssertGreaterThanOrEqual((search.frame.height * 1000).rounded() / 1000, 44, "44 pt search button, got \(search.frame.height)")
         search.tap()
         XCTAssertTrue(app.descendants(matching: .any).matching(identifier: "tabletopSearchHint").firstMatch.waitForExistence(timeout: 3), "hint shown")
         XCTAssertFalse(app.keyboards.firstMatch.exists, "the keyboard never opens in Tabletop")
         let b = app.descendants(matching: .any).matching(identifier: "letter-B").firstMatch
-        XCTAssertTrue(b.waitForExistence(timeout: 3) && b.frame.height >= 44, "44 pt letter chip")
+        XCTAssertTrue(b.waitForExistence(timeout: 3) && (b.frame.height * 1000).rounded() / 1000 >= 44, "44 pt letter chip, got \(b.frame.height)")
         b.tap()
         sleep(1)
         XCTAssertTrue(app.descendants(matching: .any).matching(identifier: "addRow").firstMatch.waitForExistence(timeout: 3), "results for B")
@@ -1731,5 +1817,42 @@ final class FinalFixTests: XCTestCase {
             }
         }
         app.terminate()
+    }
+}
+
+/// 6b intro tour: the welcome starts it, every step has Next (Done on the last) and Skip tour, and it ends for good.
+final class IntroTourUITests: XCTestCase {
+    func testWelcomeThenThreeStepsThenDone() throws {
+        let app = XCUIApplication()
+        app.launchArguments = ["-qaRoute", "tour/welcome"]
+        app.launch()
+        let welcome = app.descendants(matching: .any)["tourWelcome"]
+        XCTAssertTrue(welcome.waitForExistence(timeout: 8), "the welcome shows")
+        app.buttons["Take the tour"].tap()
+        let card = app.descendants(matching: .any)["tourCard"]
+        XCTAssertTrue(card.waitForExistence(timeout: 5), "step 1 shows")
+        XCTAssertTrue(app.staticTexts["1 of 3"].exists || app.staticTexts.containing(NSPredicate(format: "label CONTAINS 'step 1 of 3'")).count > 0)
+        for _ in 0..<2 {
+            XCTAssertTrue(app.buttons["Skip tour"].exists, "Skip tour on every step")
+            app.buttons["Next"].tap()
+            sleep(2)
+        }
+        XCTAssertTrue(app.buttons["Done"].waitForExistence(timeout: 5), "the last step says Done")
+        app.buttons["Done"].tap()
+        sleep(1)
+        XCTAssertFalse(card.exists, "Done ends the tour")
+    }
+
+    func testSkipTourEndsIt() throws {
+        let app = XCUIApplication()
+        app.launchArguments = ["-qaRoute", "tour/1"]
+        app.launch()
+        let card = app.descendants(matching: .any)["tourCard"]
+        XCTAssertTrue(card.waitForExistence(timeout: 8), "step 1 shows")
+        XCTAssertGreaterThanOrEqual(app.buttons["Skip tour"].frame.height, 44)
+        XCTAssertGreaterThanOrEqual(app.buttons["Next"].frame.height, 44)
+        app.buttons["Skip tour"].tap()
+        sleep(1)
+        XCTAssertFalse(card.exists, "Skip tour ends it")
     }
 }

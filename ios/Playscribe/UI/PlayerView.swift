@@ -26,6 +26,8 @@ final class YouTubeController: NSObject, WKScriptMessageHandler {
     var playerShown = false
     /// Fullscreen requests the inline guard refused (R-11), counted for QA.
     var fullscreenRefused = 0
+    /// When playback last paused, to tell a pause caused by the guard's refusal from the person's own.
+    private var pausedAt: Date?
 
     /// Settings key for "Autoplay videos". Off by default (R-11, G-9).
     static let autoplayKey = "autoplayVideos"
@@ -76,15 +78,30 @@ final class YouTubeController: NSObject, WKScriptMessageHandler {
                 let want = self.nativeControls ? 1 : 0
                 if let built = body["controls"] as? Int, built != want { self.run("setControls(\(want))") } else { self.ready = true }
             case "state":
+                if self.isPlaying && state == 2 { self.pausedAt = Date() }
                 self.isPlaying = state == 1
                 if state == 1 { self.started = true }
                 // 1 playing, 3 buffering: the player has the picture, so the stage can show it (Iris, 20 Nov).
                 if state == 1 || state == 3 { self.playerShown = true }
             case "time": self.current = time ?? 0; if let duration, duration > 0 { self.duration = duration }
             case "error": self.failed = true; self.errorCode = body["code"] as? Int
-            case "fullscreenRefused": self.fullscreenRefused += 1
+            case "fullscreenRefused": self.refusedFullscreen()
             default: break
             }
+        }
+    }
+
+    /// R-13 (Mac at 0dcfd411): turning the phone while a video played made WebKit try its own fullscreen; the guard returned the
+    /// video to inline, and leaving WebKit's fullscreen pauses it, so playback stopped. When the video was playing as the guard
+    /// refused (or paused within the moment before), it plays on.
+    private func refusedFullscreen() {
+        fullscreenRefused += 1
+        let wasPlaying = isPlaying || (pausedAt.map { Date().timeIntervalSince($0) < 1.5 } ?? false)
+        guard wasPlaying else { return }
+        Task { @MainActor [weak self] in
+            try? await Task.sleep(for: .milliseconds(600))
+            guard let self, !self.isPlaying else { return }
+            self.run("player.playVideo()")
         }
     }
 
@@ -186,6 +203,8 @@ struct PlayerView: View {
     var gameID: String
     var releaseID: String
     @State private var controller: YouTubeController?
+    /// R-13: our own full-bleed mode (Closed and Open). Never the iOS fullscreen player.
+    @State private var fullScreen = false
     /// Room for a two-line caption under the video, growing with Dynamic Type.
     @ScaledMetric(relativeTo: .headline) private var captionRoom: CGFloat = 64
     var body: some View {
@@ -198,6 +217,8 @@ struct PlayerView: View {
                             // The navigation bar's Close is there outside Tabletop, so the screen adds its own only in Tabletop
                             // (Quinn, Mac at c072400: Open portrait showed Close twice).
                             VideoUnavailable(videoID: video.youtubeID, title: video.label, code: controller.errorCode, showsClose: duo.pose == .tabletop) { close() }
+                        } else if fullScreen && FullBleedVideo.offered(in: duo.pose) {
+                            FullBleedVideo(controller: controller, posterAsset: video.posterAsset, game: model.game(gameID)) { fullScreen = false }
                         } else {
                             layout(duo: duo, release: release, video: video, controller: controller)
                         }
@@ -208,11 +229,17 @@ struct PlayerView: View {
                     }
                 }
                 .background(.black)
+                .overlay(alignment: .bottomLeading) { VideoTimeProbe(controller: controller) }
                 .onChange(of: [duo.pose == .tabletop, controller != nil], initial: true) { controller?.setNativeControls(duo.pose != .tabletop) }
-                .toolbarVisibility(duo.pose == .tabletop ? .hidden : .automatic, for: .navigationBar)
+                // Book and Tabletop have no full screen: leaving Closed or Open ends it, and it doesn't come back on its own.
+                .onChange(of: FullBleedVideo.offered(in: duo.pose)) { _, offered in if !offered { fullScreen = false } }
+                .toolbarVisibility(duo.pose == .tabletop || fullScreen ? .hidden : .automatic, for: .navigationBar)
                 .toolbar {
                     ToolbarItem(placement: .cancellationAction) {
                         Button(action: close) { Label("Close", systemImage: "xmark") }
+                    }
+                    if FullBleedVideo.offered(in: duo.pose), controller?.failed == false {
+                        ToolbarItem(placement: .primaryAction) { FullBleedVideo.EnterButton { fullScreen = true } }
                     }
                 }
             }
@@ -275,6 +302,174 @@ struct PlayerView: View {
         controller?.stop()
         dismiss()
     }
+}
+
+/// R-13 (Terry on build 16, 21 Nov: "no full screen option when playing videos"): our own full-screen mode. The same web view
+/// moves into a black, full-window frame (playback carries on, P-2), the navigation bar and home indicator hide, and the video
+/// is 16:9 as large as the window allows, centred. YouTube's own controls stay; ours is one Exit full screen button, never on
+/// YouTube's top controls (Iris): in the black margin above the video when there are 52 pt, else top leading inside the safe area,
+/// fading after 4 s and back on any tap (always shown under VoiceOver). The VoiceOver escape gesture also leaves. Offered in Closed (both orientations) and
+/// Open (flat): in Book a full-bleed video would run across the hinge with YouTube's controls on it, and Tabletop's standing half
+/// is already the video's stage. No mirror here: the reflection stays Tabletop only.
+struct FullBleedVideo: View {
+    var controller: YouTubeController
+    var posterAsset: String?
+    var game: CatalogGame?
+    var onExit: () -> Void
+
+    static func offered(in pose: Pose) -> Bool { pose == .closed || pose == .flat }
+
+    /// The 16:9 frame that fits `size`, centred, leaving `reserve` above it (and the same below, so it stays centred). The
+    /// reserve is the safe area's top plus room for Exit, so the way out always shows in the black margin, never on YouTube's
+    /// controls and never faded (Iris on dbf1bc12: Closed landscape had no visible Exit; "a full-screen mode with no visible
+    /// way out is a trap").
+    static func frame(in size: CGSize, reserve: CGFloat = 0) -> CGRect {
+        guard size.width > 0, size.height > 0 else { return .zero }
+        let w = min(size.width, max(0, size.height - 2 * reserve) * 16 / 9)
+        let h = w * 9 / 16
+        return CGRect(x: (size.width - w) / 2, y: (size.height - h) / 2, width: w, height: h)
+    }
+
+    @Environment(\.accessibilityVoiceOverEnabled) private var voiceOver
+    /// Where the video fills the height, the Exit button fades after 4 s and any tap brings it back (Iris on R-13).
+    @State private var exitShown = true
+    @State private var fadeTask: Task<Void, Never>?
+    @State private var tapRelay = TapRelay()
+
+    /// Room the Exit button needs above the video to sit in the black margin, off YouTube's own top controls (Iris: 52 pt).
+    static let marginForExit: CGFloat = 52
+
+    /// True when the black margin above the video, inside the safe area, can hold the Exit button.
+    static func exitInMargin(video: CGRect, safeTop: CGFloat) -> Bool { video.minY - safeTop >= marginForExit }
+
+    var body: some View {
+        GeometryReader { geo in
+            let full = CGSize(width: geo.size.width + geo.safeAreaInsets.leading + geo.safeAreaInsets.trailing,
+                              height: geo.size.height + geo.safeAreaInsets.top + geo.safeAreaInsets.bottom)
+            let f = Self.frame(in: full, reserve: geo.safeAreaInsets.top + Self.marginForExit)
+            let inMargin = Self.exitInMargin(video: f, safeTop: geo.safeAreaInsets.top)
+            ZStack(alignment: .topLeading) {
+                Color.black
+                Color.black
+                    .overlay { WebSurface(webView: controller.webView) }
+                    .overlay { VideoStartCover(controller: controller, posterAsset: posterAsset, game: game) }
+                    .frame(width: f.width, height: f.height)
+                    .offset(x: f.minX, y: f.minY)
+                // While Exit is faded, the first tap only brings it back and never reaches YouTube, so leaving full screen
+                // doesn't pause the video first (Mac at 015cae17). Once Exit shows, taps go to YouTube's player again.
+                if !(inMargin || voiceOver || exitShown) {
+                    Color.clear
+                        .contentShape(Rectangle())
+                        .onTapGesture { showExit() }
+                        .accessibilityHidden(true)
+                }
+                exitButton
+                    .opacity(inMargin || voiceOver || exitShown ? 1 : 0)
+                    .allowsHitTesting(inMargin || voiceOver || exitShown)
+                    .animation(.easeInOut(duration: 0.25), value: exitShown)
+                    .padding(.top, geo.safeAreaInsets.top + 4)
+                    .padding(.leading, geo.safeAreaInsets.leading + 12)
+                    .padding(.trailing, geo.safeAreaInsets.trailing + 12)
+                    .frame(width: full.width, alignment: inMargin ? .topTrailing : .topLeading)
+            }
+            .frame(width: full.width, height: full.height)
+            .offset(x: -geo.safeAreaInsets.leading, y: -geo.safeAreaInsets.top)
+            .onChange(of: inMargin, initial: true) { _, m in m ? cancelFade() : showExit() }
+        }
+        .accessibilityAction(.escape, onExit)
+        .persistentSystemOverlays(.hidden)
+        .overlay(alignment: .topLeading) { MirrorAudit(on: false) }
+        .onAppear { tapRelay.attach(to: controller.webView) { showExit() } }
+        .onDisappear { tapRelay.detach(); cancelFade() }
+    }
+
+    private var exitButton: some View {
+        Button(action: onExit) {
+            Image(systemName: "arrow.down.right.and.arrow.up.left")
+                .font(.system(size: 22, weight: .semibold))
+                .foregroundStyle(.white)
+                .frame(width: 44, height: 44)
+                .background(.black.opacity(0.6), in: Circle())
+        }
+        .accessibilityLabel("Exit full screen")
+        .accessibilityIdentifier("videoExitFullScreen")
+        .tappableFrame()
+    }
+
+    private func showExit() {
+        exitShown = true
+        fadeTask?.cancel()
+        fadeTask = Task { @MainActor in
+            try? await Task.sleep(for: .seconds(4))
+            if !Task.isCancelled { exitShown = false }
+        }
+    }
+
+    private func cancelFade() {
+        fadeTask?.cancel()
+        exitShown = true
+    }
+
+    /// The navigation bar button that enters full screen.
+    struct EnterButton: View {
+        var action: () -> Void
+        var body: some View {
+            Button(action: action) { Label("Full screen", systemImage: "arrow.up.left.and.arrow.down.right") }
+                .accessibilityIdentifier("videoFullScreen")
+        }
+    }
+}
+
+/// QA only (internal builds launched with `-qaVideoTime YES`): an invisible element, `qaVideoTime`, whose value is the playback time
+/// in seconds, so a UI test can check that turning or folding keeps the time (R-13, P-2). Absent otherwise, so VoiceOver never meets it.
+struct VideoTimeProbe: View {
+    var controller: YouTubeController?
+    var body: some View {
+        #if INTERNAL
+        if UserDefaults.standard.bool(forKey: "qaVideoTime"), let controller {
+            VStack(spacing: 0) {
+                Color.clear.frame(width: 1, height: 1)
+                    .accessibilityElement()
+                    .accessibilityIdentifier("qaVideoTime")
+                    .accessibilityValue(String(format: "%.1f", controller.current))
+                // Whether it plays, and how many fullscreen attempts the inline guard refused (R-11, R-13).
+                Color.clear.frame(width: 1, height: 1)
+                    .accessibilityElement()
+                    .accessibilityIdentifier("qaVideoState")
+                    .accessibilityValue("playing=\(controller.isPlaying ? 1 : 0) refused=\(controller.fullscreenRefused)")
+            }
+            .allowsHitTesting(false)
+        }
+        #endif
+    }
+}
+
+/// Hears taps on the web view without taking them from YouTube's player (R-13: a tap brings the Exit button back).
+final class TapRelay: NSObject, UIGestureRecognizerDelegate {
+    private var recognizer: UITapGestureRecognizer?
+    private var onTap: (() -> Void)?
+
+    func attach(to view: UIView, onTap: @escaping () -> Void) {
+        detach()
+        self.onTap = onTap
+        let r = UITapGestureRecognizer(target: self, action: #selector(tapped))
+        r.cancelsTouchesInView = false
+        r.delaysTouchesBegan = false
+        r.delaysTouchesEnded = false
+        r.delegate = self
+        view.addGestureRecognizer(r)
+        recognizer = r
+    }
+
+    func detach() {
+        if let r = recognizer { r.view?.removeGestureRecognizer(r) }
+        recognizer = nil
+        onTap = nil
+    }
+
+    @objc private func tapped() { onTap?() }
+
+    func gestureRecognizer(_ g: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith other: UIGestureRecognizer) -> Bool { true }
 }
 
 /// TT-4, R-11: Tabletop video, for update videos and trailers alike. Pre-play and playing are one screen (Iris, 20 Nov): the
@@ -437,7 +632,7 @@ struct VideoCaption: View {
             Text(detail.isEmpty ? " " : detail)
                 .font(PlayscribeFont.subheadline)
                 // Over the mirror the grey is lifted so it keeps 4.5:1 on any frame (Mac, 12 Nov: 4.1 and 3.2 with .secondary).
-                .foregroundStyle(overMirror ? AnyShapeStyle(Color.white.opacity(0.85)) : AnyShapeStyle(.secondary))
+                .foregroundStyle(overMirror ? AnyShapeStyle(Color.white.opacity(0.85)) : AnyShapeStyle(PlayscribeRole.textSecondary))
         }
         .frame(maxWidth: .infinity, alignment: .leading)
     }
@@ -677,7 +872,7 @@ struct VideoUnavailable: View {
             Label(Self.blocksEmbedding(code) ? "This video plays only on YouTube" : "This video can’t play here", systemImage: "play.slash")
         } description: {
             VStack(spacing: 6) {
-                if let title, !title.isEmpty { Text(title).font(PlayscribeFont.headline).foregroundStyle(.primary) }
+                if let title, !title.isEmpty { Text(title).font(PlayscribeFont.headline).foregroundStyle(PlayscribeRole.textPrimary) }
                 if Self.blocksEmbedding(code) { Text("Its owner doesn’t allow it to play in other apps.") }
             }
         } actions: {

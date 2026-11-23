@@ -56,7 +56,7 @@ struct GameBookView: View {
                 Button { model.closeGame() } label: {
                     Image(systemName: "chevron.backward")
                         .font(.system(size: 17, weight: .semibold))
-                        .foregroundStyle(Color.primary)
+                        .foregroundStyle(PlayscribeRole.textPrimary)
                         .frame(width: 44, height: 44)
                         .background(Circle().fill(.regularMaterial))
                         .contentShape(Rectangle())

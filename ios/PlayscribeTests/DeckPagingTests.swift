@@ -47,4 +47,44 @@ struct DeckPagingTests {
         #expect(src.contains(".scrollTargetBehavior(.viewAligned(limitBehavior: .alwaysByOne))"))
         #expect(!src.contains(".scrollTargetBehavior(.viewAligned)\n"))
     }
+
+    @Test func twoCardsOnScreenDrawOneCapsule() {
+        // Iris: the lit leaves join into one amber capsule from the first to the last card on screen.
+        let r = PageEdge.capsule(lit: [1, 2], window: [0, 1, 2, 3])
+        #expect(r == CGRect(x: 44 + 22 - 1.5, y: 13, width: 44 + 3, height: 18))
+    }
+
+    @Test func oneCardOnScreenKeepsTheSingleMark() {
+        let r = PageEdge.capsule(lit: [2], window: [0, 1, 2, 3])
+        #expect(r == CGRect(x: 88 + 22 - 1.5, y: 13, width: 3, height: 18))
+    }
+
+    @Test func capsuleFollowsTheSlidingWindow() {
+        // A long deck shows five leaves; the capsule is placed by slot in the window, not by card index.
+        #expect(PageEdge.capsule(lit: [6, 7], window: [4, 5, 6, 7, 8])?.minX == 2 * 44 + 22 - 1.5)
+        #expect(PageEdge.capsule(lit: [], window: [0, 1]) == nil)
+    }
+
+    private func target(_ i: Int, _ visible: Int) -> [Int] {
+        let t = LatestUpdatesDeck.tapTarget(index: i, count: 5, visible: visible)
+        return [t.index, t.trailing ? 1 : 0]
+    }
+
+    @Test func aLeafThatCannotLeadScrollsTheLastCardToTheTrailingEdge() {
+        // J-8 (Mac de571b0a): tapping leaf 5 asked the pager to lead with card 5, past the scroll end; it overshot 16 pt.
+        // Open, two across: leaves 4 and 5 both land on the end page; Closed, one across: only leaf 5 does.
+        #expect(target(4, 2) == [4, 1])
+        #expect(target(3, 2) == [4, 1])
+        #expect(target(2, 2) == [2, 0])
+        #expect(target(4, 1) == [4, 1])
+        #expect(target(3, 1) == [3, 0])
+    }
+
+    @Test func atTheEndThePageCountsFromTheLastWholeScreen() {
+        // Open at its end shows cards 4 and 5: "page 4 of 5", leaves 4 and 5 lit. Closed at its end: card 5.
+        #expect(LatestUpdatesDeck.shownIndex(current: 4, count: 5, visible: 2, atEnd: true) == 3)
+        #expect(LatestUpdatesDeck.shownIndex(current: 3, count: 5, visible: 1, atEnd: true) == 4)
+        #expect(LatestUpdatesDeck.shownIndex(current: 1, count: 5, visible: 2, atEnd: false) == 1)
+        #expect(LatestUpdatesDeck.shownIndex(current: 0, count: 1, visible: 2, atEnd: true) == 0)
+    }
 }

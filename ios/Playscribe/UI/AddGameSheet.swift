@@ -46,6 +46,9 @@ struct AddGameSheet: View {
     private var draftKey: String {
         "\(status)|\(query)|\(pickOrder)|\(String(describing: method))|\(matches?.count ?? -1)|\(custom)|\(customName)|\(customPlatform)|\(letter ?? "")"
     }
+    /// Tabletop Type it (gate #597, Mac 3030955b: two rows under the 56 pt header): the header row goes, as in the 0.2.0 design,
+    /// and Back and Close sit in the search row, so the lower half shows three results.
+    private var tabletopTypeIt: Bool { duo.pose == .tabletop && !custom && matches == nil && method == .typeIt }
     private var titleHidden: Bool {
         guard duo.pose == .tabletop, keyboardHeight > 0 else { return false }
         let lowerHalf = duo.size.height - (duo.division?.maxY ?? duo.size.height / 2)
@@ -176,7 +179,7 @@ struct AddGameSheet: View {
     /// title, Back and Close live in this row: 24 pt under the fold band, Close 44 pt at the
     /// trailing edge. Nothing here is above the fold (G-4).
     @ViewBuilder private var tabletopHeader: some View {
-        if duo.pose == .tabletop && !custom {
+        if duo.pose == .tabletop && !custom && !tabletopTypeIt {
             HStack(spacing: 8) {
                 if method != nil {
                     Button { if matches != nil { matches = nil } else { method = nil } } label: {
@@ -247,14 +250,26 @@ struct AddGameSheet: View {
                         // at least three results stay visible in the lower half.
                         VStack(alignment: .leading, spacing: 4) {
                             HStack(spacing: 8) {
-                                Button { dismiss() } label: {
-                                    Image(systemName: "xmark").font(PlayscribeFont.headline)
-                                        .frame(width: 44, height: 44).contentShape(Rectangle())
+                                if tabletopTypeIt {
+                                    Button { method = nil } label: {
+                                        Image(systemName: "chevron.backward").font(PlayscribeFont.headline)
+                                            .frame(width: 44, height: 44).contentShape(Rectangle())
+                                    }
+                                    .buttonStyle(.plain)
+                                    .foregroundStyle(PlayscribeRole.action)
+                                    .accessibilityLabel("Back")
+                                    .accessibilityIdentifier("back")
+                                    .tappableFrame()
+                                } else {
+                                    Button { dismiss() } label: {
+                                        Image(systemName: "xmark").font(PlayscribeFont.headline)
+                                            .frame(width: 44, height: 44).contentShape(Rectangle())
+                                    }
+                                    .buttonStyle(.plain)
+                                    .foregroundStyle(PlayscribeRole.action)
+                                    .accessibilityLabel("Close")
+                                    .tappableFrame()
                                 }
-                                .buttonStyle(.plain)
-                                .foregroundStyle(PlayscribeRole.action)
-                                .accessibilityLabel("Close")
-                                .tappableFrame()
                                 Picker("Add as", selection: $status) {
                                     ForEach(OwnershipStatus.allCases) { Text($0.label).tag($0) }
                                 }
@@ -262,6 +277,17 @@ struct AddGameSheet: View {
                                 .fixedSize()
                                 .frame(minHeight: 44)
                                 TabletopSearchButton(letter: letter, prompt: "Search PS5 games", hintShown: $hintShown)
+                                if tabletopTypeIt {
+                                    Button { dismiss() } label: {
+                                        Image(systemName: "xmark").font(PlayscribeFont.headline)
+                                            .frame(width: 44, height: 44).contentShape(Rectangle())
+                                    }
+                                    .buttonStyle(.plain)
+                                    .foregroundStyle(PlayscribeRole.textPrimary)
+                                    .accessibilityLabel("Close")
+                                    .accessibilityIdentifier("close")
+                                    .tappableFrame()
+                                }
                             }
                             TabletopSearchHint(shown: hintShown)
                             TabletopLetterStrip(letter: $letter)
@@ -298,13 +324,13 @@ struct AddGameSheet: View {
                     // Offline state 7: rows keep their placeholder covers; say why.
                     if case .failed(offline: true) = model.checkState {
                         Label("Covers need a connection", systemImage: "wifi.slash")
-                            .font(PlayscribeFont.footnote).foregroundStyle(.secondary)
+                            .font(PlayscribeFont.footnote).foregroundStyle(PlayscribeRole.textSecondary)
                     }
                 }
                 let rows = results
                 Section(letter != nil && duo.pose == .tabletop ? "Starting with \(letter ?? "")" : debounced.count >= 2 ? "Best matches" : "Popular on PS5") {
                     if rows.isEmpty {
-                        Text("No PS5 game matches ‘\(debounced)’").foregroundStyle(.secondary)
+                        Text("No PS5 game matches ‘\(debounced)’").foregroundStyle(PlayscribeRole.textSecondary)
                         Button("Add ‘\(debounced)’ yourself") { customName = debounced; custom = true }.hitTarget()
                     }
                     ForEach(rows) { g in AddRow(game: g, status: status, selected: picked[g.id] != nil) { tap(g) } }
@@ -319,6 +345,9 @@ struct AddGameSheet: View {
                 }
             }
         }
+        // Tabletop: compact section spacing and a 4 pt top margin, so the third result clears the panel bottom (gate #597).
+        .listSectionSpacing(duo.pose == .tabletop ? .compact : .default)
+        .modifier(TabletopTopMargin(on: duo.pose == .tabletop))
         // Terry, 8 Nov: the keyboard could not be put away. Scrolling dismisses it, and so does a tap outside the field and rows.
         .dismissesKeyboardOnOutsideTap()
     }
@@ -394,7 +423,7 @@ struct AddRow: View {
                 CoverView(game: game, cornerRadius: 4).frame(width: 40)
                 VStack(alignment: .leading, spacing: 2) {
                     Text(game.name.gluingTrailingNumeral).font(PlayscribeFont.subheadline.weight(.semibold)).fixedSize(horizontal: false, vertical: true)
-                    Text(added ? "In library" : subtitle).font(PlayscribeFont.caption).foregroundStyle(.secondary)
+                    Text(added ? "In library" : subtitle).font(PlayscribeFont.caption).foregroundStyle(PlayscribeRole.textSecondary)
                 }
                 Spacer(minLength: 8)
                 Image(systemName: added ? "checkmark" : selected ? "checkmark.circle.fill" : "circle")
@@ -539,13 +568,15 @@ struct OnboardingStage: View {
                 ArtView(asset: nil, game: nil)
             }
             LinearGradient(colors: [.clear, .black.opacity(0.7)], startPoint: .center, endPoint: .bottom)
+            // The stage is dark art in both modes, so the headline keeps the light ink: the role turned it dark on dark in light mode
+            // (Mac at c4b07144, first run).
             let headline = welcomeDone ? "Follow a game to get its PS5 patch notes in one place." : "Add your games to see every update"
             Group {
                 // AX: at most four lines, and any ellipsis lands at a word boundary, never mid-word ("Follow a game to g...", Quinn, 6a31718).
                 if typeSize.isAccessibilitySize {
-                    WholeWordText(text: headline, font: PlayscribeFont.title, lines: 4, color: PlayscribeRole.textPrimary)
+                    WholeWordText(text: headline, font: PlayscribeFont.title, lines: 4, color: PlayscribeColor.textPrimary)
                 } else {
-                    Text(headline).font(PlayscribeFont.title).foregroundStyle(PlayscribeRole.textPrimary)
+                    Text(headline).font(PlayscribeFont.title).foregroundStyle(PlayscribeColor.textPrimary)
                 }
             }
             .padding(20)
@@ -581,7 +612,7 @@ struct OnboardingActions: View {
     private var welcome: some View {
         VStack(alignment: .leading, spacing: 12) {
             Text("Tell Playscribe what you play and it keeps every update in one place.")
-                .font(PlayscribeFont.body).foregroundStyle(.secondary)
+                .font(PlayscribeFont.body).foregroundStyle(PlayscribeRole.textSecondary)
             ForEach(AddMethod.available) { m in
                 Button {
                     model.data.welcomeDone = true
@@ -593,7 +624,7 @@ struct OnboardingActions: View {
                             .foregroundStyle(PlayscribeRole.action)
                         VStack(alignment: .leading, spacing: 2) {
                             Text(m.title).font(PlayscribeFont.headline)
-                            Text(m.detail).font(PlayscribeFont.footnote).foregroundStyle(.secondary)
+                            Text(m.detail).font(PlayscribeFont.footnote).foregroundStyle(PlayscribeRole.textSecondary)
                         }
                         Spacer(minLength: 0)
                     }
@@ -636,7 +667,7 @@ struct OnboardingActions: View {
             }
             .edgeFade(40)
             Text("PlayStation account import is planned for a later version.")
-                .font(PlayscribeFont.footnote).foregroundStyle(.secondary)
+                .font(PlayscribeFont.footnote).foregroundStyle(PlayscribeRole.textSecondary)
             }
         }
     }
@@ -659,7 +690,7 @@ struct OnboardingRightPage: View {
                     }
                 }
                 Text("PlayStation account import is planned for a later version.")
-                    .font(PlayscribeFont.footnote).foregroundStyle(.secondary)
+                    .font(PlayscribeFont.footnote).foregroundStyle(PlayscribeRole.textSecondary)
             }
             .padding(.top, 16).padding(.bottom, 24)
         }
@@ -709,6 +740,8 @@ struct PopularCover: View {
                     }
             }
             .buttonStyle(.plain)
+            // 6b step 1 with an empty Library: the first Popular on PS5 cover (opening it browses, it never adds).
+            .tourAnchor(.openGame)
             // Not `.disabled`: a disabled plain button dims to about 35 percent (Quinn's brightness check, 1ea80f2). A tap on a marked
             // cover simply does nothing.
             // The cover keeps one label and hint before and after the tick (it opens the game either way); the tick says "in your
@@ -797,5 +830,13 @@ private struct TickPressStyle: ButtonStyle {
             .opacity(configuration.isPressed ? 0.7 : 1)
             .animation(.easeOut(duration: 0.08), value: configuration.isPressed)
             .onChange(of: configuration.isPressed) { _, now in pressing = now }
+    }
+}
+
+/// A 4 pt top content margin in Tabletop only; every other pose keeps the List's own.
+private struct TabletopTopMargin: ViewModifier {
+    let on: Bool
+    func body(content: Content) -> some View {
+        if on { content.contentMargins(.top, 4, for: .scrollContent) } else { content }
     }
 }
