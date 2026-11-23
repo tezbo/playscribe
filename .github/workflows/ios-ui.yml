@@ -42,23 +42,32 @@ jobs:
           echo "Using ${udid#* }"
           echo "udid=${udid%% *}" >> "$GITHUB_OUTPUT"
           echo "UDID=${udid%% *}" >> "$GITHUB_ENV"
+      - name: Boot the simulator and wait for it
+        # The first UI test run on a cold simulator failed to start ("The test runner failed to initialize for UI testing ...
+        # Timed out waiting for AX loaded notification", run 44860952955), and continue-on-error showed that as green.
+        run: |
+          xcrun simctl boot "$UDID" 2>/dev/null || true
+          xcrun simctl bootstatus "$UDID" -b
       - name: Build for testing
         run: |
           xcodebuild build-for-testing -project ios/Playscribe.xcodeproj -scheme PlayscribeUI \
             -destination "id=$UDID" -derivedDataPath build/dd CODE_SIGNING_ALLOWED=NO > build.log 2>&1 \
             || { grep -E 'error:' build.log | head -20; exit 1; }
+      # ci-ui-tests-hidden-failures: a real failure fails the job (no continue-on-error). Pose tests the Closed simulator cannot
+      # produce skip with a stated reason instead (XCTSkip), so "skipped, the Mac covers it" shows in the summary.
       - name: Feature UI tests (Closed)
         id: uitests
-        continue-on-error: true
         run: |
           xcodebuild test-without-building -project ios/Playscribe.xcodeproj -scheme PlayscribeUI \
             -destination "id=$UDID" -derivedDataPath build/dd \
             -only-testing:PlayscribeUITests/ReleaseFeatureTests \
             -only-testing:PlayscribeUITests/TabletopDayOneTests \
             -only-testing:PlayscribeUITests/RailSetTests \
+            -only-testing:PlayscribeUITests/CIRedProbeTests \
             -resultBundlePath build/UITests.xcresult CODE_SIGNING_ALLOWED=NO > uitests.log 2>&1 || status=$?
-          grep -E 'error:|Test Case .* (passed|failed|skipped)|Executed|\*\* TEST' uitests.log | tail -60 | tee -a "$GITHUB_STEP_SUMMARY"
-          [ "${status:-0}" = 0 ] || echo "::warning::Feature UI tests failed in Closed; see uitests.log in the artifact"
+          grep -E 'error:|Test Case .* (passed|failed|skipped)|Test Suite .* (passed|failed)|Executed|Testing failed|encountered an error|\*\* TEST' uitests.log | tail -80 | tee -a "$GITHUB_STEP_SUMMARY"
+          grep -E 'skipped' uitests.log | grep -vE 'Test Case' | head -20 | tee -a "$GITHUB_STEP_SUMMARY" || true
+          [ "${status:-0}" = 0 ] || echo "::error::Feature UI tests failed in Closed; see uitests.log in the artifact"
           exit "${status:-0}"
       - name: Export test screenshots
         if: always()
