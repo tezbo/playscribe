@@ -258,14 +258,14 @@ struct TabletopReaderStage: View {
                         .accessibilityLabel(section.body)
                         .accessibilityIdentifier("readerBody")
                 }
-                // Iris (same rule as #232, every Tabletop stage): the whole block sits on one ink panel, 70%, 12 pt
+                // Iris (same rule as #232, every Tabletop stage): the whole block sits on one ink panel, the ArtLabel ink (75%; Iris, #619: ember at 70% fell to 4.3:1 on white art), 12 pt
                 // radius and padding, so the text keeps 4.5:1 over any art, logo or banner. Left on the 16 pt margin,
                 // up to 560 pt wide, its bottom edge 24 pt above the division; it grows upward only.
                 // The plate is dark in both modes, so its text keeps the dark roles (0.6 tokens).
                 .environment(\.colorScheme, .dark)
                 .padding(12)
                 .frame(maxWidth: 560, alignment: .leading)
-                .background(PlayscribeColor.ink950.opacity(0.7), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                .artLabel(in: RoundedRectangle(cornerRadius: 12, style: .continuous))
                 .padding(.horizontal, 16)
                 .padding(.bottom, duo.clearance(forBottom: stageBottom))
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
@@ -393,7 +393,7 @@ struct StageTrailerTile: View {
         .frame(width: width, alignment: .leading)
         .environment(\.colorScheme, .dark)
         .padding(8)
-        .background(PlayscribeColor.ink950.opacity(0.7), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+        .artLabel(in: RoundedRectangle(cornerRadius: 12, style: .continuous))
         .allowsHitTesting(false)
         .accessibilityElement(children: .ignore)
         .accessibilityLabel("Trailer")

@@ -52,6 +52,19 @@ struct MaterialLintTests {
         #expect(stray.isEmpty, "Use floatingControl(in:) for a control over content or artLabel(in:) for a label on art: \(stray)")
     }
 
+    /// Ink grounds go through artLabel too: a hand-set `ink950.opacity(x), in:` is a second value of the same role (Iris, #619:
+    /// the Tabletop plates at 70% put ember text at 4.3:1 on white art).
+    @Test func noHandSetInkGround() throws {
+        let ink = try NSRegularExpression(pattern: #"ink950\.opacity\([0-9.]+\),\s*in:"#)
+        var stray: [String] = []
+        for file in try Self.sources() where file.lastPathComponent != Self.home {
+            for (i, line) in try Self.codeLines(file).enumerated() where Self.count(ink, in: line) > 0 {
+                stray.append("\(file.lastPathComponent):\(i + 1)")
+            }
+        }
+        #expect(stray.isEmpty, "Use artLabel(in:) for ink behind text on art: \(stray)")
+    }
+
     /// The allowlist stays honest: if the chapter menu or spoiler cover drops its material, its entry goes too.
     @Test func allowlistIsStillUsed() throws {
         for file in try Self.sources() where Self.allowed[file.lastPathComponent] != nil {

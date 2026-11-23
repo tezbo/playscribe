@@ -362,8 +362,11 @@ struct FrontCoverPlate: View {
         Text(text.keepingVersionsTogether).font(PlayscribeFont.caption.weight(.semibold)).monospacedDigit()
             .foregroundStyle(live ? PlayscribeColor.onAccent : PlayscribeColor.onDarkText)
             .padding(.horizontal, 8).padding(.vertical, 3).frame(minHeight: 24)
-            .background(RoundedRectangle(cornerRadius: 6, style: .continuous)
-                .fill(live ? PlayscribeColor.onDarkAccent : PlayscribeColor.ink950.opacity(0.6)))
+            // Over-art rule (#619): the live chip is the one filled attention state; every other chip is an ArtLabel (75% ink).
+            .background {
+                if live { RoundedRectangle(cornerRadius: 6, style: .continuous).fill(PlayscribeColor.onDarkAccent) }
+                else { Color.clear.artLabel(in: RoundedRectangle(cornerRadius: 6, style: .continuous)) }
+            }
             .overlay(RoundedRectangle(cornerRadius: 6, style: .continuous)
                 .strokeBorder(live ? .clear : PlayscribeColor.vellum100.opacity(0.25), lineWidth: 1))
     }
@@ -468,7 +471,7 @@ struct CoverLeaves: View {
     }
 }
 
-/// A rail button for the cover: 44 pt, on a dark scrim so bright art never hides it (Iris condition 2).
+/// A rail button for the cover: 44 pt glass, solid under Reduce Transparency, so bright art never hides it (Iris condition 2).
 struct CoverRailButton: View {
     var title: String
     var symbol: String
@@ -478,10 +481,10 @@ struct CoverRailButton: View {
         Button(action: action) {
             Image(systemName: symbol)
                 .font(.system(size: 17, weight: .semibold))
-                .foregroundStyle(PlayscribeColor.onDarkText)
+                .foregroundStyle(PlayscribeRole.textPrimary)
                 .frame(width: 44, height: 44)
-                .background(Circle().fill(PlayscribeColor.ink950.opacity(0.6)))
-                .overlay(Circle().strokeBorder(PlayscribeColor.vellum100.opacity(0.18), lineWidth: 1))
+                // A control floating over the cover: the same glass as the rail (over-art rule, #619).
+                .floatingControl(in: Circle())
                 .contentShape(Circle())
         }
         .buttonStyle(.plain)
