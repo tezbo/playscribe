@@ -481,10 +481,12 @@ struct CoverRailButton: View {
         Button(action: action) {
             Image(systemName: symbol)
                 .font(.system(size: 17, weight: .semibold))
-                .foregroundStyle(PlayscribeRole.textPrimary)
+                .foregroundStyle(PlayscribeColor.onDarkText)
                 .frame(width: 44, height: 44)
-                // A control floating over the cover: the same glass as the rail (over-art rule, #619).
+                // A control floating over the cover: the same glass as the rail (over-art rule, #619). The cover is dark in
+                // both modes, so the glass is too, and the glyph keeps the on-dark set (HeroGroundTests).
                 .floatingControl(in: Circle())
+                .environment(\.colorScheme, .dark)
                 .contentShape(Circle())
         }
         .buttonStyle(.plain)
