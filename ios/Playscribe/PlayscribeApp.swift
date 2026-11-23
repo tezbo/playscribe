@@ -51,6 +51,10 @@ struct PlayscribeApp: App {
                     let pulse = UserDefaults.standard.double(forKey: "qaFeedPulse")
                     if pulse > 0 { await model.runQAFeedPulse(every: pulse) }
                 }
+                .task {
+                    let at = UserDefaults.standard.double(forKey: "qaPulseNewAt")
+                    if at > 0 { await model.runQANewRelease(after: at) }
+                }
                 #endif
                 .onOpenURL { model.handle(url: $0) }
                 // G-11: System, Light or Dark (Settings > Appearance), on the windows themselves. preferredColorScheme(nil)
