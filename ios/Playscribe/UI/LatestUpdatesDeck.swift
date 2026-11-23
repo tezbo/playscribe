@@ -345,10 +345,7 @@ struct DeckCardView: View {
             } else {
             VStack(alignment: .leading, spacing: 8) {
                 DeckCardArt(card: card, height: artHeight)
-                ViewThatFits(in: .horizontal) {
-                    HStack(spacing: 6) { DeckChips(card: card) }
-                    VStack(alignment: .leading, spacing: 6) { DeckChips(card: card) }
-                }
+                DeckChipRow(card: card)
                 Text(card.release.map { $0.ps5Headline ?? $0.displayName } ?? game.name.gluingTrailingNumeral)
                     .font(PlayscribeFont.title3).foregroundStyle(PlayscribeColor.textPrimary)
                     .lineLimit(typeSize.isAccessibilitySize ? 3 : 2).fixedSize(horizontal: false, vertical: true)
@@ -485,11 +482,8 @@ struct CompactCaption: View {
     var body: some View {
         VStack(alignment: .leading, spacing: typeSize.isAccessibilitySize ? 2 : 4) {
             // The chips ride with the caption at every size, never on the art, so a version chip can't cover a face (Iris, taste
-            // pass: Castlevania). Both show in every pose: side by side when they fit, else stacked (coordinator, 28c6063 Book AX3).
-            ViewThatFits(in: .horizontal) {
-                HStack(spacing: 6) { DeckChips(card: card) }
-                VStack(alignment: .leading, spacing: 6) { DeckChips(card: card) }
-            }
+            // pass: Castlevania). One 8 pt step above the headline.
+            DeckChipRow(card: card).padding(.bottom, 8 - (typeSize.isAccessibilitySize ? 2 : 4))
             Text(headline)
                 .font(PlayscribeFont.title3).foregroundStyle(PlayscribeColor.textPrimary)
                 // The whole headline, or whole words and an ellipsis (AX rule: at most 4 lines), never scaled down.
@@ -532,6 +526,26 @@ struct AdaptiveCaption: View {
     }
 }
 
+/// A hero card's chips as one row above its headline (Iris, taste pass). Standard sizes: a single line that never wraps, and the
+/// row keeps its 22 pt height when a card has no chip, so cards with and without one match in height. Accessibility sizes keep
+/// the signed rule: side by side when they fit, else stacked, never dropped (coordinator, 28c6063 Book AX3).
+struct DeckChipRow: View {
+    var card: DeckCard
+    @Environment(\.dynamicTypeSize) private var typeSize
+    var body: some View {
+        if typeSize.isAccessibilitySize {
+            ViewThatFits(in: .horizontal) {
+                HStack(spacing: 6) { DeckChips(card: card) }
+                VStack(alignment: .leading, spacing: 6) { DeckChips(card: card) }
+            }
+        } else {
+            HStack(spacing: 6) { DeckChips(card: card) }
+                .fixedSize(horizontal: true, vertical: false)
+                .frame(minHeight: 22, alignment: .leading)
+        }
+    }
+}
+
 /// The version, "New update" and "Released" chips of a hero card.
 struct DeckChips: View {
     var card: DeckCard
@@ -551,7 +565,7 @@ struct DeckChips: View {
     }
 
     private func chip(_ text: String, filled: Bool) -> some View {
-        Text(text.keepingVersionsTogether).font(PlayscribeFont.caption).monospacedDigit()
+        Text(text.keepingVersionsTogether).font(PlayscribeFont.caption).monospacedDigit().lineLimit(1)
             .foregroundStyle(filled ? PlayscribeColor.ink950 : PlayscribeColor.accent)
             .padding(.horizontal, 8).frame(minHeight: 22)
             .background(Capsule().fill(filled ? PlayscribeColor.accent : PlayscribeColor.ink950.opacity(0.75)))
@@ -694,17 +708,20 @@ struct WideDeckCard: View {
 
     /// The unread and version chips, on the caption's ink side, never on the art (Iris, taste pass: a top-trailing version chip
     /// sat on a character's hair).
-    @ViewBuilder private var captionChips: some View {
-        if card.unread || card.release?.versionChip != nil {
-            HStack(spacing: 6) {
-                if card.unread { chip(card.chipText, filled: true) }
-                if let v = card.release?.versionChip { chip(v, filled: false) }
-            }
+    /// The row keeps its 22 pt height without a chip, so every wide card matches in height (Iris).
+    private var captionChips: some View {
+        HStack(spacing: 6) {
+            if card.unread { chip(card.chipText, filled: true) }
+            if let v = card.release?.versionChip { chip(v, filled: false) }
         }
+        .fixedSize(horizontal: true, vertical: false)
+        .frame(minHeight: 22, alignment: .leading)
+        // One 8 pt step above the title (the caption's spacing is 6).
+        .padding(.bottom, 2)
     }
 
     private func chip(_ text: String, filled: Bool) -> some View {
-        Text(text.keepingVersionsTogether).font(PlayscribeFont.caption).monospacedDigit()
+        Text(text.keepingVersionsTogether).font(PlayscribeFont.caption).monospacedDigit().lineLimit(1)
             .foregroundStyle(filled ? PlayscribeColor.ink950 : PlayscribeColor.accent)
             .padding(.horizontal, 8).padding(.vertical, 2).frame(minHeight: 22)
             .background(Capsule().fill(filled ? PlayscribeColor.accent : PlayscribeColor.ink950.opacity(0.75)))
