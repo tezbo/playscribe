@@ -53,8 +53,7 @@ jobs:
           xcodebuild build-for-testing -project ios/Playscribe.xcodeproj -scheme PlayscribeUI \
             -destination "id=$UDID" -derivedDataPath build/dd CODE_SIGNING_ALLOWED=NO > build.log 2>&1 \
             || { grep -E 'error:' build.log | head -20; exit 1; }
-      # ci-ui-tests-hidden-failures: a real failure fails the job (no continue-on-error). Pose tests the Closed simulator cannot
-      # produce skip with a stated reason instead (XCTSkip), so "skipped, the Mac covers it" shows in the summary.
+      # ci-ui-tests-hidden-failures: a real failure fails the job (no continue-on-error), so every failing UI test shows red.
       - name: Feature UI tests (Closed)
         id: uitests
         run: |
@@ -63,7 +62,6 @@ jobs:
             -only-testing:PlayscribeUITests/ReleaseFeatureTests \
             -only-testing:PlayscribeUITests/TabletopDayOneTests \
             -only-testing:PlayscribeUITests/RailSetTests \
-            -only-testing:PlayscribeUITests/CIRedProbeTests \
             -resultBundlePath build/UITests.xcresult CODE_SIGNING_ALLOWED=NO > uitests.log 2>&1 || status=$?
           grep -E 'error:|Test Case .* (passed|failed|skipped)|Test Suite .* (passed|failed)|Executed|Testing failed|encountered an error|\*\* TEST' uitests.log | tail -80 | tee -a "$GITHUB_STEP_SUMMARY"
           grep -E 'skipped' uitests.log | grep -vE 'Test Case' | head -20 | tee -a "$GITHUB_STEP_SUMMARY" || true
