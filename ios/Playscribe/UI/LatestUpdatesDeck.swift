@@ -723,17 +723,14 @@ struct DeckCardArt: View {
 /// 10 pt apart, centred under the deck; the cards on screen are ONE pill, 6 pt tall, spanning exactly their dots (one card: a dot;
 /// two: 22 pt). Unlit dots are textSecondary at 35%, the pill the action colour (amber in dark, action brown in light). No
 /// animation, under Reduce Motion or not: it jumps one step when the deck settles (#587). Fixed sizes, never scaled with
-/// Dynamic Type. Not tappable outside Tabletop (the cards swipe); one VoiceOver element, "Updates 2 and 3 of 5", whose swipe up
-/// or down moves the deck one card. In Tabletop the deck is the view-only stage, so this row is its control there: a tap before
-/// the pill steps back one card, after it forward one.
+/// Dynamic Type. Never tappable, in any pose (the cards swipe; in Tabletop `DeckStepRow` changes the stage card); one VoiceOver
+/// element, "Updates 2 and 3 of 5", whose swipe up or down moves the deck one card.
 struct PageEdge: View {
     var cards: [DeckCard]
     /// The leading card on screen (the scroll position).
     var current: String?
     /// Cards fully on screen at once: 2 in Open (two across), else 1.
     var visible: Int = 1
-    /// Tabletop only: the row takes taps (see above).
-    var interactive = false
     var select: (String) -> Void
 
     static let dot: CGFloat = 6
@@ -765,7 +762,7 @@ struct PageEdge: View {
         return Set(first..<min(cards.count, first + max(1, visible)))
     }
 
-    /// The card that leads after one step (VoiceOver increment or decrement, or a Tabletop tap): exactly one card, clamped so
+    /// The card that leads after one step (VoiceOver increment or decrement, or Tabletop's Previous and Next): exactly one card, clamped so
     /// the last lead still shows the last card. Nil when already at that end.
     static func step(cards: [DeckCard], current: String?, visible: Int, by delta: Int) -> String? {
         guard !cards.isEmpty else { return nil }
@@ -804,21 +801,7 @@ struct PageEdge: View {
         }
         .frame(height: Self.rowHeight)
         .frame(maxWidth: .infinity, alignment: .center)
-        .contentShape(Rectangle())
-        .overlay {
-            if interactive {
-                GeometryReader { g in
-                    Color.clear.contentShape(Rectangle())
-                        .onTapGesture(coordinateSpace: .local) { p in
-                            let rowWidth = CGFloat(win.count) * Self.dot + CGFloat(max(0, win.count - 1)) * Self.gap
-                            let pillMid = (g.size.width - rowWidth) / 2 + (pill?.midX ?? rowWidth / 2)
-                            if let id = Self.step(cards: cards, current: current, visible: visible, by: p.x < pillMid ? -1 : 1) { select(id) }
-                        }
-                }
-                .tappableFrame()
-            }
-        }
-        .allowsHitTesting(interactive)
+        .allowsHitTesting(false)
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(Self.spoken(lit: lit, count: cards.count))
         .accessibilityIdentifier("deckIndicator")
@@ -829,6 +812,38 @@ struct PageEdge: View {
         }
         // One step when the deck settles, never a slide (Terry, build 18; #587).
         .transaction { $0.animation = nil }
+    }
+}
+
+/// Tabletop only: the stage is view only and the page indicator is never tappable, so Previous and Next change the stage card,
+/// at the top of the lower half, in the update page's Previous / Next style (Iris on #616). Disabled at the ends.
+struct DeckStepRow: View {
+    var cards: [DeckCard]
+    var current: String?
+    var select: (String) -> Void
+
+    var body: some View {
+        let back = PageEdge.step(cards: cards, current: current, visible: 1, by: -1)
+        let forward = PageEdge.step(cards: cards, current: current, visible: 1, by: 1)
+        HStack(spacing: 12) {
+            button("Previous", "chevron.backward", target: back)
+            button("Next", "chevron.forward", target: forward)
+        }
+    }
+
+    private func button(_ title: String, _ symbol: String, target: String?) -> some View {
+        Button { if let target { select(target) } } label: {
+            Label(title, systemImage: symbol)
+                .font(PlayscribeFont.headline)
+                .frame(maxWidth: .infinity, minHeight: 52)
+                .background(PlayscribeRole.chipFill, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel(title + " update")
+        .accessibilityIdentifier("deckStep" + title)
+        .disabled(target == nil)
+        .opacity(target == nil ? 0.4 : 1)
+        .tappableFrame()
     }
 }
 
