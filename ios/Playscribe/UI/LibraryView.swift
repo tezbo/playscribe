@@ -609,7 +609,7 @@ struct LibraryShelf: View {
                     if !heroOnRightPage { topCards(all) }
                     if !all.isEmpty { TabletopSearch(letter: $letter, prompt: "Search your library").padding(.top, 4) }
                     let deck = model.latestDeck
-                    if deck.count > 1 { PageEdge(cards: deck, current: model.deckSelection ?? deck.first?.id) { model.deckSelection = $0 } }
+                    if deck.count > 1 { PageEdge(cards: deck, current: model.deckSelection ?? deck.first?.id, interactive: true) { model.deckSelection = $0 } }
                 }
                 }
             }

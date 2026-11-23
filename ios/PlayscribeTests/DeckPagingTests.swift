@@ -48,21 +48,39 @@ struct DeckPagingTests {
         #expect(!src.contains(".scrollTargetBehavior(.viewAligned)\n"))
     }
 
-    @Test func twoCardsOnScreenDrawOneCapsule() {
-        // Iris: the lit leaves join into one amber capsule from the first to the last card on screen.
-        let r = PageEdge.capsule(lit: [1, 2], window: [0, 1, 2, 3])
-        #expect(r == CGRect(x: 44 + 22 - 1.5, y: 13, width: 44 + 3, height: 18))
+    @Test func twoCardsOnScreenDrawOnePillOverTheirDots() {
+        // Iris (beta 4 redesign): 6 pt dots 10 pt apart; two lit cards are one pill, exactly 22 pt wide, over dots 2 and 3.
+        let r = PageEdge.pill(lit: [1, 2], window: [0, 1, 2, 3])
+        #expect(r == CGRect(x: 16, y: 0, width: 22, height: 6))
     }
 
-    @Test func oneCardOnScreenKeepsTheSingleMark() {
-        let r = PageEdge.capsule(lit: [2], window: [0, 1, 2, 3])
-        #expect(r == CGRect(x: 88 + 22 - 1.5, y: 13, width: 3, height: 18))
+    @Test func oneCardOnScreenIsADot() {
+        let r = PageEdge.pill(lit: [2], window: [0, 1, 2, 3])
+        #expect(r == CGRect(x: 32, y: 0, width: 6, height: 6))
     }
 
-    @Test func capsuleFollowsTheSlidingWindow() {
-        // A long deck shows five leaves; the capsule is placed by slot in the window, not by card index.
-        #expect(PageEdge.capsule(lit: [6, 7], window: [4, 5, 6, 7, 8])?.minX == 2 * 44 + 22 - 1.5)
-        #expect(PageEdge.capsule(lit: [], window: [0, 1]) == nil)
+    @Test func pillFollowsTheWindow() {
+        // A long deck shows five dots; the pill is placed by position in the window, not by card index.
+        #expect(PageEdge.pill(lit: [6, 7], window: [4, 5, 6, 7, 8])?.minX == 32)
+        #expect(PageEdge.pill(lit: [], window: [0, 1]) == nil)
+    }
+
+    @Test func indicatorIsOneSpokenElement() {
+        #expect(PageEdge.spoken(lit: [1, 2], count: 5) == "Updates 2 and 3 of 5")
+        #expect(PageEdge.spoken(lit: [0], count: 5) == "Update 1 of 5")
+    }
+
+    /// Fixed sizes: the indicator never scales with Dynamic Type, and never animates (Iris).
+    @Test func indicatorHasFixedSizesAndNoAnimation() throws {
+        #expect(PageEdge.dot == 6 && PageEdge.gap == 10)
+        let src = try String(contentsOf: URL(fileURLWithPath: #filePath).deletingLastPathComponent().deletingLastPathComponent()
+            .appendingPathComponent("Playscribe/UI/LatestUpdatesDeck.swift"), encoding: .utf8)
+        let body = try #require(src.range(of: "struct PageEdge: View {")).upperBound
+        let rest = src[body...]
+        let end = try #require(rest.range(of: "\n}\n")).lowerBound
+        let pageEdge = rest[..<end]
+        #expect(!pageEdge.contains("@ScaledMetric"))
+        #expect(pageEdge.contains(".transaction { $0.animation = nil }"))
     }
 
     private func target(_ i: Int, _ visible: Int) -> [Int] {

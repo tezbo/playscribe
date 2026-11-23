@@ -17,11 +17,12 @@ final class HeroMarksTests: XCTestCase {
         if ReleaseRowTests.pose(app).contains("pose: tabletop") { app.terminate(); throw XCTSkip("Tabletop's deck is the stage, no pager") }
         let pager = app.descendants(matching: .any)["latestDeckPager"]
         XCTAssertTrue(pager.waitForExistence(timeout: 5), "the deck is on screen")
-        let leaves = app.buttons.matching(NSPredicate(format: "label BEGINSWITH 'Update ' AND label CONTAINS ' of '"))
-        guard leaves.count > 2 else { app.terminate(); throw XCTSkip("needs three or more leaves (\(leaves.count))") }
-        let frames = (0..<leaves.count).map { leaves.element(boundBy: $0).frame }
-        let row = CGRect(x: frames.map(\.minX).min()!, y: frames[0].midY - 10,
-                         width: frames.map(\.maxX).max()! - frames.map(\.minX).min()!, height: 20)
+        // The page indicator (Iris, beta 4): one element over the dots row; the band is its middle 20 pt.
+        let indicator = app.descendants(matching: .any)["deckIndicator"]
+        let cardCount = indicator.waitForExistence(timeout: 5) ? Int(indicator.label.split(separator: " ").last ?? "") ?? 0 : 0
+        guard cardCount > 2 else { app.terminate(); throw XCTSkip("needs three or more cards and the indicator (\(cardCount))") }
+        let f = indicator.frame
+        let row = CGRect(x: f.minX, y: f.midY - 10, width: f.width, height: 20)
 
         // The measurement must see the marks before it can say anything about them (Mac at 85ab7f8e: 0 runs in every frame of
         // every pose, so neither red nor green meant anything). A system alert over the app is dismissed; a screenshot that
