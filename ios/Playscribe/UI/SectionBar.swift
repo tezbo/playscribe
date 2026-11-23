@@ -193,7 +193,7 @@ struct SectionBar: View {
 }
 
 /// The bar pinned at the top of a scrolling game page (Card C: the only pinned element; art and title scroll away). Its
-/// background is the page's, full width, and once it is pinned the list fades out over 26 pt beneath it, so no row is cut
+/// background is the page's, full width, and once it is pinned the list fades out beneath it (EdgeFade), so no row is cut
 /// mid-glyph. The bar itself keeps the column's reading width (600 pt at most on the open display).
 struct PinnedSectionHeader: View {
     var gameID: String
@@ -225,7 +225,7 @@ struct PinnedSectionHeader: View {
             // top inset (Open landscape, Book) the bar pins at the inset and rows went on scrolling, sliced, in the strip above
             // it (Mac, ad665e9: "Hotfix 1.0.3", "Patch 1.7"). The scroll view clips this at its own top edge.
             .background(ink.padding(.top, pinned ? -Self.coverAbove : 0))
-            .modifier(PinnedFade(ink: ink, active: pinned))
+            .fadesListBelow(ink: ink, active: pinned)
             #if INTERNAL
             // bug-063: UI tests read whether the bar thinks it is pinned (the fade's switch), so a missing fade is measured.
             .overlay(alignment: .topLeading) {
@@ -244,22 +244,5 @@ struct PinnedSectionHeader: View {
     private func update() {
         let now = headerY - anchorY > gap + 0.5
         if now != pinned { pinned = now }
-    }
-}
-
-/// R-7: the list fades out 26 pt beneath a pinned bar, in the bar's own ink, so no row is sliced at full brightness.
-struct PinnedFade: ViewModifier {
-    var ink: Color
-    var active: Bool
-    func body(content: Content) -> some View {
-        content.overlay(alignment: .bottom) {
-            if active {
-                LinearGradient(colors: [ink, ink.opacity(0)], startPoint: .top, endPoint: .bottom)
-                    .frame(height: 26)
-                    .offset(y: 26)
-                    .allowsHitTesting(false)
-                    .accessibilityHidden(true)
-            }
-        }
     }
 }
