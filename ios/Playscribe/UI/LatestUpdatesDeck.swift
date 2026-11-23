@@ -330,7 +330,7 @@ struct DeckCardView: View {
     var body: some View {
         let game = card.game
         Button {
-            if let r = card.release { model.openGame(game.id, chapter: .updates, releaseID: r.id) }
+            if let r = card.release { model.openFromDeck(game.id, releaseID: r.id) }
             else { model.openGame(game.id, chapter: .updates) }
         } label: {
             if wide {

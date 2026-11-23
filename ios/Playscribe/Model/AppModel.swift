@@ -872,6 +872,15 @@ final class AppModel {
         }
     }
 
+    /// J-8, J-1: a Latest updates card opens its update. Where pushing is the layout (Closed, Open) the update page is
+    /// pushed over the game's What's new, so Back returns there and then to the Library; side by side the Page shows it in
+    /// place. Before #592 the card only selected the update, which in one column left the game's list on screen (Mac at
+    /// abe2921e and v0.5.9: testCardAndLeafTaps landed on Dawnwalker's What's new, not Update 1.2). Opening it reads it (R-6a).
+    func openFromDeck(_ gameID: String, releaseID: String) {
+        openGame(gameID, chapter: .updates, releaseID: releaseID)
+        if pushesReleases, let g = nav.gameID, release(g, releaseID) != nil { nav.detailReleaseID = releaseID }
+    }
+
     /// D-1 (0.5.6, Card D, Nadia 13 Nov): an Updates-tab row pushes the update page over the list in Closed and Open
     /// portrait, so Back returns to the list in one step, at the same scroll. Side by side and in Tabletop it opens the
     /// game with that update on the Page. Opening it reads it (R-6a).
