@@ -345,7 +345,6 @@ struct DeckCardView: View {
             } else {
             VStack(alignment: .leading, spacing: 8) {
                 DeckCardArt(card: card, height: artHeight)
-                DeckChipRow(card: card)
                 Text(card.release.map { $0.ps5Headline ?? $0.displayName } ?? game.name.gluingTrailingNumeral)
                     .font(PlayscribeFont.title3).foregroundStyle(PlayscribeColor.textPrimary)
                     .lineLimit(typeSize.isAccessibilitySize ? 3 : 2).fixedSize(horizontal: false, vertical: true)
@@ -404,6 +403,10 @@ struct CompactDeckCard: View {
                         HeroGroundRise(cardHeight: height, captionHeight: captionHeight)
                     }
                 }
+            }
+            // The same top-left spot on every card, as a glass pill that reads on light and dark art (Terry and Iris, taste pass).
+            .overlay(alignment: .topLeading) {
+                if !typeSize.isAccessibilitySize { HStack(spacing: 6) { DeckChips(card: card) }.padding(12) }
             }
             .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
             .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous).strokeBorder(PlayscribeColor.vellum100.opacity(0.6), lineWidth: 1.5))
@@ -483,9 +486,11 @@ struct CompactCaption: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: typeSize.isAccessibilitySize ? 2 : 4) {
-            // The chips ride with the caption at every size, never on the art, so a version chip can't cover a face (Iris, taste
-            // pass: Castlevania). One 8 pt step above the headline.
-            DeckChipRow(card: card).padding(.bottom, 8 - (typeSize.isAccessibilitySize ? 2 : 4))
+            // Accessibility sizes: the chips join the caption (side by side when they fit, else stacked; coordinator, 28c6063 Book
+            // AX3), so a tall caption never runs under them. Standard sizes: top left on the art, as a glass pill (DeckChips).
+            if typeSize.isAccessibilitySize {
+                DeckChipRow(card: card).padding(.bottom, 6)
+            }
             Text(headline)
                 .font(PlayscribeFont.title3).foregroundStyle(PlayscribeColor.textPrimary)
                 // The whole headline, or whole words and an ellipsis (AX rule: at most 4 lines), never scaled down.
@@ -549,9 +554,8 @@ struct AdaptiveCaption: View {
     }
 }
 
-/// A hero card's chips as one row above its headline (Iris, taste pass). Standard sizes: a single line that never wraps, and the
-/// row keeps its 22 pt height when a card has no chip, so cards with and without one match in height. Accessibility sizes keep
-/// the signed rule: side by side when they fit, else stacked, never dropped (coordinator, 28c6063 Book AX3).
+/// A hero card's chips in its caption, at accessibility sizes: side by side when they fit, else stacked, never dropped
+/// (coordinator, 28c6063 Book AX3). Standard sizes: one line that never wraps.
 struct DeckChipRow: View {
     var card: DeckCard
     @Environment(\.dynamicTypeSize) private var typeSize
@@ -591,7 +595,24 @@ struct DeckChips: View {
         Text(text.keepingVersionsTogether).font(PlayscribeFont.caption).monospacedDigit().lineLimit(1)
             .foregroundStyle(filled ? PlayscribeColor.ink950 : PlayscribeColor.accent)
             .padding(.horizontal, 8).frame(minHeight: 22)
-            .background(Capsule().fill(filled ? PlayscribeColor.accent : PlayscribeColor.ink950.opacity(0.75)))
+            .background { if filled { Capsule().fill(PlayscribeColor.accent) } else { GlassPill() } }
+    }
+}
+
+/// The version chip's ground on key art (Terry and Iris, taste pass): a system material with a dark tint, so the ember text
+/// holds 4.5:1 even over white art (90% ink keeps the pill near 8% luminance over a white blur) while dark art still shows
+/// through. Increase Contrast or Reduce Transparency: a solid ink pill.
+struct GlassPill: View {
+    static let tint = 0.9
+    @Environment(\.colorSchemeContrast) private var contrast
+    @Environment(\.accessibilityReduceTransparency) private var reduceTransparency
+    var body: some View {
+        if contrast == .increased || reduceTransparency {
+            Capsule().fill(PlayscribeColor.ink950)
+        } else {
+            Capsule().fill(.ultraThinMaterial).environment(\.colorScheme, .dark)
+                .overlay(Capsule().fill(PlayscribeColor.ink950.opacity(Self.tint)))
+        }
     }
 }
 
@@ -747,7 +768,7 @@ struct WideDeckCard: View {
         Text(text.keepingVersionsTogether).font(PlayscribeFont.caption).monospacedDigit().lineLimit(1)
             .foregroundStyle(filled ? PlayscribeColor.ink950 : PlayscribeColor.accent)
             .padding(.horizontal, 8).padding(.vertical, 2).frame(minHeight: 22)
-            .background(Capsule().fill(filled ? PlayscribeColor.accent : PlayscribeColor.ink950.opacity(0.75)))
+            .background { if filled { Capsule().fill(PlayscribeColor.accent) } else { GlassPill() } }
     }
 }
 
@@ -776,7 +797,8 @@ struct DeckCardArt: View {
             .modifier(FixedArtHeight(height: height))
             .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
             .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous).strokeBorder(PlayscribeColor.vellum100.opacity(0.6), lineWidth: 1.5))
-            // No chips on the art: they sit with the caption under it (DeckCardView), so none can cover a face (Iris, taste pass).
+            // The same top-left spot on every card, as a glass pill (Terry and Iris, taste pass).
+            .overlay(alignment: .topLeading) { HStack(spacing: 6) { DeckChips(card: card) }.padding(10) }
             .accessibilityHidden(true)
     }
 }
