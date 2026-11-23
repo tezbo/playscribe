@@ -61,6 +61,7 @@ final class PageEndClearsTabBarTests: XCTestCase {
 
 /// bug-063 (R-7): at the end of a long game page the section bar is pinned, so the list fades out beneath it instead of being
 /// cut at the hairline (bd12ff0c, Open portrait: "Launch Trailer" sliced, no fade). Flings the page like a player would.
+@MainActor
 final class PinnedBarFadeTests: XCTestCase {
     func testBarIsPinnedAtPageEnd() throws {
         let app = XCUIApplication()
