@@ -5,7 +5,7 @@ so write it for testers. Release steps are in docs/release.md.
 
 ## 0.6.0 candidate
 
-Playscribe 0.6 is a fresh coat: new colour roles, clearer art, one deck card per game, day-one patches, a moving front cover and every video in our own player. Each line says what to do, then what you should see. Reply with the numbers that failed, or "all good".
+Playscribe 0.6 is a fresh coat: light and dark appearance, clearer art, one deck card per game, day-one patches, a moving front cover and every video in our own player. Each line says what to do, then what you should see. Reply with the numbers that failed, or "all good".
 
 1. Add a game with several recent updates. The Library's latest-updates deck shows one card for that game, its newest update, with games you haven't read first.
 2. Swipe the deck, then flick it hard. Each swipe or flick moves exactly one card, the dots light for every card you can see, and the last card and its dot can be reached.
@@ -20,7 +20,7 @@ Playscribe 0.6 is a fresh coat: new colour roles, clearer art, one deck card per
 11. Closed or Open, play an update video or a trailer and tap Full screen, beside Close. The video fills the screen at 16:9 and keeps playing, with Exit full screen at the top right above it. Turning the phone keeps full screen and re-fits the video; folding into Book or Tabletop leaves it, and playback keeps going. Book and Tabletop have no Full screen button.
 12. Open or Closed landscape, look at the marks under the Library’s latest-updates deck while two or more cards are on screen, then swipe. The lit marks are one amber bar that jumps to each card without sliding, never two bars at once.
 13. Tap the last mark under the deck. The last card lines up flush with the edge of the screen, the same as when you swipe to the end, with no gap or overshoot.
-14. Open Settings, then Appearance, and try System, Light and Dark. The app follows each straight away. In Light, the Library and a game page are easy to read, including the "+N more updates" button under the deck in Open.
+14. Playscribe now follows your phone's appearance. If your phone is set to Light, the app turns light after this update, with no prompt. Open Settings, then Appearance, and try System, Light and Dark. The app follows each straight away. In Light, the Library and a game page are easy to read, including the "+N more updates" button under the deck in Open.
 15. Add Astro Bot. Its Library tile shows its cover, and its page says "We don’t track this game’s updates yet." It never says "No updates yet".
 
 Feedback you send through TestFlight, including its comment, may appear in our public issue tracker, so leave out personal details.
