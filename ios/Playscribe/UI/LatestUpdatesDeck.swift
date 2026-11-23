@@ -451,6 +451,8 @@ struct CompactCaption: View {
     /// Accessibility sizes, when the card is capped by J-5: how many words of the headline to show. Fewer than all of
     /// them ends the headline in "..." after a whole word, never mid-word. nil is the whole headline. Chips never go.
     var words: Int?
+    /// Standard sizes: false drops the summary line, for a card too short to hold it whole with the chip row (AdaptiveCaption).
+    var summary = true
     @Environment(\.dynamicTypeSize) private var typeSize
     private var dateText: String { card.date.map(AppModel.tileDay) ?? "" }
 
@@ -490,9 +492,8 @@ struct CompactCaption: View {
                 .lineLimit(typeSize.isAccessibilitySize ? nil : 3).fixedSize(horizontal: false, vertical: true)
             // One-line summary under the headline: whole words, at most 2 lines, dropped at accessibility sizes (its
             // text stays in the VoiceOver label).
-            if !typeSize.isAccessibilitySize, let summary = card.release?.summary, !summary.isEmpty {
-                Text(Self.wholeWords(summary, limit: 100)).font(PlayscribeFont.subheadline)
-                    .foregroundStyle(PlayscribeColor.textPrimary.opacity(0.85)).lineLimit(2)
+            if summary, !typeSize.isAccessibilitySize, let text = card.release?.summary, !text.isEmpty {
+                SummaryLines(text: text)
             }
             DeckByline(card: card, dateText: dateText)
         }
@@ -502,6 +503,23 @@ struct CompactCaption: View {
         // The hero is a bounded picture caption: its text stops growing at AX3 (the card's VoiceOver label is unchanged).
         // At AX5 a 4-line headline, two chip rows and the byline cannot fit a card that J-5 holds to half the screen.
         .dynamicTypeSize(...DynamicTypeSize.accessibility3)
+    }
+}
+
+/// A hero card's summary in at most two lines, always ending on a whole word: the longest whole-word cut (100, 70 or 45
+/// characters) that wraps into two lines. A lineLimit cut mid-word ("refineme…") once the chip row joined the caption.
+struct SummaryLines: View {
+    var text: String
+    private var twoLines: CGFloat { ceil(UIFont.preferredFont(forTextStyle: .subheadline).lineHeight * 2) + 1 }
+    var body: some View {
+        ViewThatFits(in: .vertical) {
+            ForEach([100, 70, 45], id: \.self) { limit in
+                Text(CompactCaption.wholeWords(text, limit: limit)).font(PlayscribeFont.subheadline)
+                    .foregroundStyle(PlayscribeColor.textPrimary.opacity(0.85))
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+        }
+        .frame(maxHeight: twoLines, alignment: .topLeading)
     }
 }
 
@@ -521,7 +539,12 @@ struct AdaptiveCaption: View {
                 }
             }
         } else {
-            CompactCaption(card: card)
+            // The whole caption when it fits the card; else without the summary line, so nothing is cut (chips, headline and
+            // byline always stay).
+            ViewThatFits(in: .vertical) {
+                CompactCaption(card: card)
+                CompactCaption(card: card, summary: false)
+            }
         }
     }
 }
