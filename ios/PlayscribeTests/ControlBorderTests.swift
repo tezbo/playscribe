@@ -95,10 +95,20 @@ struct ControlBorderTests {
         // The field spans x 20...180, y 20...64; its top edge's border row is y 20, mid-width.
         let light = try render(.light, border: true)
         let edge = try pixel(light, 100, 20), ground = try pixel(light, 100, 5)
-        #expect(Contrast.ratio(edge, ground) >= 3, "light border \(Contrast.ratio(edge, ground)):1 on bg")
+        // bug-065: the failure is intermittent on CI and never reproduced in 50 isolated and 5 full-suite loops, so the message
+        // carries the pixels and the image, to name the cause the next time it fails (the threshold is unchanged).
+        func hex(_ c: UIColor) -> String {
+            var r: CGFloat = 0, g: CGFloat = 0, b: CGFloat = 0, a: CGFloat = 0
+            c.getRed(&r, green: &g, blue: &b, alpha: &a)
+            return String(format: "#%02X%02X%02X", Int((r * 255).rounded()), Int((g * 255).rounded()), Int((b * 255).rounded()))
+        }
+        let centre = try pixel(light, 100, 42)
+        #expect(Contrast.ratio(edge, ground) >= 3,
+                "light border \(Contrast.ratio(edge, ground)):1 on bg: edge \(hex(edge)) ground \(hex(ground)) field \(hex(centre)), image \(light.width)x\(light.height), want edge #857A68")
         let dark = try render(.dark, border: true), plain = try render(.dark, border: false)
         for (x, y) in [(100, 20), (20, 42), (179, 42), (100, 63)] {
-            #expect(Contrast.ratio(try pixel(dark, x, y), try pixel(plain, x, y)) < 1.01, "dark unchanged at \(x),\(y)")
+            let d = try pixel(dark, x, y), p = try pixel(plain, x, y)
+            #expect(Contrast.ratio(d, p) < 1.01, "dark unchanged at \(x),\(y): bordered \(hex(d)) plain \(hex(p)), images \(dark.width)x\(dark.height) and \(plain.width)x\(plain.height)")
         }
     }
 
