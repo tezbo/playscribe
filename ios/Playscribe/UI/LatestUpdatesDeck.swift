@@ -404,7 +404,7 @@ struct CompactDeckCard: View {
                     }
                 }
             }
-            // The same top-left spot on every card, as a glass pill that reads on light and dark art (Terry and Iris, taste pass).
+            // The same top-left spot on every card, on 75% ink, the label-on-art rule (Iris, over-art-materials.md).
             .overlay(alignment: .topLeading) {
                 if !typeSize.isAccessibilitySize { HStack(spacing: 6) { DeckChips(card: card) }.padding(12) }
             }
@@ -487,7 +487,7 @@ struct CompactCaption: View {
     var body: some View {
         VStack(alignment: .leading, spacing: typeSize.isAccessibilitySize ? 2 : 4) {
             // Accessibility sizes: the chips join the caption (side by side when they fit, else stacked; coordinator, 28c6063 Book
-            // AX3), so a tall caption never runs under them. Standard sizes: top left on the art, as a glass pill (DeckChips).
+            // AX3), so a tall caption never runs under them. Standard sizes: top left on the art, on 75% ink (DeckChips).
             if typeSize.isAccessibilitySize {
                 DeckChipRow(card: card).padding(.bottom, 6)
             }
@@ -595,24 +595,7 @@ struct DeckChips: View {
         Text(text.keepingVersionsTogether).font(PlayscribeFont.caption).monospacedDigit().lineLimit(1)
             .foregroundStyle(filled ? PlayscribeColor.ink950 : PlayscribeColor.accent)
             .padding(.horizontal, 8).frame(minHeight: 22)
-            .background { if filled { Capsule().fill(PlayscribeColor.accent) } else { GlassPill() } }
-    }
-}
-
-/// The version chip's ground on key art (Terry and Iris, taste pass): a system material with a dark tint, so the ember text
-/// holds 4.5:1 even over white art (90% ink keeps the pill near 8% luminance over a white blur) while dark art still shows
-/// through. Increase Contrast or Reduce Transparency: a solid ink pill.
-struct GlassPill: View {
-    static let tint = 0.9
-    @Environment(\.colorSchemeContrast) private var contrast
-    @Environment(\.accessibilityReduceTransparency) private var reduceTransparency
-    var body: some View {
-        if contrast == .increased || reduceTransparency {
-            Capsule().fill(PlayscribeColor.ink950)
-        } else {
-            Capsule().fill(.ultraThinMaterial).environment(\.colorScheme, .dark)
-                .overlay(Capsule().fill(PlayscribeColor.ink950.opacity(Self.tint)))
-        }
+            .background(Capsule().fill(filled ? PlayscribeColor.accent : PlayscribeColor.ink950.opacity(0.75)))
     }
 }
 
@@ -768,7 +751,7 @@ struct WideDeckCard: View {
         Text(text.keepingVersionsTogether).font(PlayscribeFont.caption).monospacedDigit().lineLimit(1)
             .foregroundStyle(filled ? PlayscribeColor.ink950 : PlayscribeColor.accent)
             .padding(.horizontal, 8).padding(.vertical, 2).frame(minHeight: 22)
-            .background { if filled { Capsule().fill(PlayscribeColor.accent) } else { GlassPill() } }
+            .background(Capsule().fill(filled ? PlayscribeColor.accent : PlayscribeColor.ink950.opacity(0.75)))
     }
 }
 
@@ -797,7 +780,7 @@ struct DeckCardArt: View {
             .modifier(FixedArtHeight(height: height))
             .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
             .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous).strokeBorder(PlayscribeColor.vellum100.opacity(0.6), lineWidth: 1.5))
-            // The same top-left spot on every card, as a glass pill (Terry and Iris, taste pass).
+            // The same top-left spot on every card, on 75% ink (Iris, over-art-materials.md).
             .overlay(alignment: .topLeading) { HStack(spacing: 6) { DeckChips(card: card) }.padding(10) }
             .accessibilityHidden(true)
     }
