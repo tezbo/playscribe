@@ -385,7 +385,7 @@ struct StageTrailerTile: View {
                 .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
                 .overlay {
                     Image(systemName: "play.fill").font(.title2).foregroundStyle(.white)
-                        .padding(12).background(PlayscribeColor.ink950.opacity(0.6), in: Circle())
+                        .padding(12).artLabel(in: Circle()) // A label on art, not a control: the stage is view-only (over-art rule, role 2).
                 }
             Text("Trailer").font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeRole.textPrimary)
                 .fixedSize(horizontal: false, vertical: true)

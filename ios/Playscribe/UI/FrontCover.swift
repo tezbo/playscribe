@@ -457,7 +457,8 @@ struct CoverLeaves: View {
         }
         .background {
             if backed {
-                Capsule().fill(PlayscribeColor.ink950.opacity(0.72))
+                // The ink label on art (Iris, over-art-materials): 75%, as every label over art.
+                Color.clear.artLabel(in: Capsule())
                     .padding(.horizontal, 12).padding(.vertical, 4)
                     .allowsHitTesting(false)
                     .transition(.opacity)

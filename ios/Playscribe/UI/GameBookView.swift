@@ -58,7 +58,7 @@ struct GameBookView: View {
                         .font(.system(size: 17, weight: .semibold))
                         .foregroundStyle(PlayscribeRole.textPrimary)
                         .frame(width: 44, height: 44)
-                        .background(Circle().fill(.regularMaterial))
+                        .floatingControl(in: Circle())
                         .contentShape(Rectangle())
                 }
                 // Iris (0.5.6 hotfix): "Back to <origin>", the same label on every rail.
