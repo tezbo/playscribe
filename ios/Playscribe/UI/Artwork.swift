@@ -72,6 +72,13 @@ struct ArtView: View {
                             fill(image.resizable(), geo.size)
                         } else if case .failure = phase {
                             defaultHeader(geo.size)
+                        } else if let cover = game?.coverURL {
+                            // While the key art loads (slow on a real connection; Iris on #596: Open portrait showed a flat grey
+                            // band after View game), the cover the reader just tapped, already cached at the tile size, blurred and
+                            // darkened as CoverHeader draws it. Never a blank band.
+                            CachedCoverImage(url: cover, maxPixel: 480)
+                                .frame(width: geo.size.width, height: geo.size.height)
+                                .blur(radius: 30).brightness(-0.35).clipped()
                         }
                     }
                 } else {

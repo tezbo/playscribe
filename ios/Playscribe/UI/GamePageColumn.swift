@@ -10,6 +10,10 @@ struct GamePageColumn: View {
     @Environment(\.duo) private var duo
     @State private var position = ScrollPosition(idType: String.self)
     @State private var liveOffset: CGFloat = 0
+    #if INTERNAL
+    /// QA (#596, Terry's blank "View game" page): the scroll view's content and visible heights, for the page marker.
+    @State private var qaGeometry: [CGFloat] = [0, 0]
+    #endif
     /// True once the bar has reached the top and is pinned.
     @State private var barPinned = false
     /// Where the zero-height anchor above the Section sits in the scroll view; the header compares itself with it.
@@ -62,6 +66,20 @@ struct GamePageColumn: View {
         // D-2, T-5: the reading position is model state, one per section; rotating, unfolding or switching back comes back to it.
         // Persisted only when scrolling settles: writing every frame re-rendered the page (Terry, 0.2.0).
         .onScrollGeometryChange(for: CGFloat.self) { $0.contentOffset.y + $0.contentInsets.top } action: { _, y in liveOffset = y }
+        #if INTERNAL
+        .onScrollGeometryChange(for: [CGFloat].self) { [$0.contentSize.height, $0.visibleRect.height] } action: { _, g in
+            if AppModel.isQALaunch { qaGeometry = g }
+        }
+        .overlay(alignment: .topLeading) {
+            // #596: which game this page shows and where it is scrolled, read by SimilarViewGameTests. A page scrolled past its
+            // content's end draws blank.
+            if AppModel.isQALaunch {
+                Text("qa-page: \(gameID) offset \(Int(liveOffset)) content \(Int(qaGeometry[0])) visible \(Int(qaGeometry[1]))")
+                    .font(.system(size: 1)).opacity(0.01).allowsHitTesting(false)
+                    .accessibilityIdentifier("qaPageScroll")
+            }
+        }
+        #endif
         .onScrollPhaseChange { _, phase in
             if phase == .idle { model.nav.anchors[anchorKey(section)] = String(Int(liveOffset)) }
         }
