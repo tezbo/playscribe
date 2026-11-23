@@ -114,7 +114,8 @@ extension AppModel {
             var releases = feedReleases
             if pulses == 3, let wanted = newFor,
                let id = data.collection.first(where: { $0.gameID == wanted })?.gameID ?? data.collection.first?.gameID {
-                releases.insert(simulatedRelease(gameID: id, kind: .hotfix, arrives: self.clock), at: 0)   // visible at the model clock (releases(_:) hides later ones)
+                releases.insert(simulatedRelease(gameID: id, kind: .hotfix, arrives: .now), at: 0)
+                tick()   // releases(_:) hides anything later than the model clock
             }
             applyLatest(releases: releases, updatedAt: .now)
             alertAddressedIssues()
