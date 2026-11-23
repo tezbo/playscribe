@@ -1123,11 +1123,13 @@ extension AppModel {
         return (.none, "TBA")
     }
 
-    /// "12 Oct" this year, "Jul 2025" before.
+    /// "12 Oct" this year, "Jul 2025" before, joined by a no-break space so a caption never splits a date across lines at large
+    /// sizes ("29 / Oct", "Mar / 2027": r060-tile-dates-ax5). It wraps whole, before any word around it.
     static func tileDay(_ d: Date) -> String {
-        Date.sameUTCYear(d, .now)
+        let day = Date.sameUTCYear(d, .now)
             ? d.dayMonth
             : d.formatted(Date.FormatStyle(locale: Locale(identifier: "en_GB"), timeZone: .gmt).month(.abbreviated).year())
+        return day.replacingOccurrences(of: " ", with: "\u{00A0}")
     }
 
     /// The caption mark in words, so colour is never the only cue (Iris, #597): the amber spark is "new update", the small
