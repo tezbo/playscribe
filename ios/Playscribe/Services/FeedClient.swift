@@ -95,7 +95,12 @@ extension AppModel {
         // status; `-qaPulseOnly apply` runs only the apply path and leaves the status alone.
         let args = ProcessInfo.processInfo.arguments
         let only = args.firstIndex(of: "-qaPulseOnly").flatMap { args.indices.contains($0 + 1) ? args[$0 + 1] : nil }
+        // `-qaPulseNew <gameID>`: the third full pulse brings a new PS5 release for that game, live now, so a clip can show new
+        // feed data reaching the Library once scrolling stops (Quinn, #585). Falls back to the first game in the collection.
+        let newFor = args.firstIndex(of: "-qaPulseNew").flatMap { args.indices.contains($0 + 1) ? args[$0 + 1] : nil }
+        var pulses = 0
         while !Task.isCancelled {
+            pulses += 1
             try? await Task.sleep(for: .seconds(seconds))
             if only != "apply" { feedStatus = .refreshing }
             try? await Task.sleep(for: .milliseconds(200))
@@ -106,7 +111,12 @@ extension AppModel {
                 notifyNewlyOnPS5()
                 continue
             }
-            applyLatest(releases: feedReleases, updatedAt: .now)
+            var releases = feedReleases
+            if pulses == 3, let wanted = newFor,
+               let id = data.collection.first(where: { $0.gameID == wanted })?.gameID ?? data.collection.first?.gameID {
+                releases.insert(simulatedRelease(gameID: id, kind: .hotfix, arrives: clock), at: 0)   // visible at the model clock (releases(_:) hides later ones)
+            }
+            applyLatest(releases: releases, updatedAt: .now)
             alertAddressedIssues()
             notifyNewlyOnPS5()
         }

@@ -1734,10 +1734,17 @@ final class AppModel {
 
     /// Creates a clearly labelled simulated PS5 release and schedules its notification.
     func simulateUpdate(gameID: String, kind: SimKind, delay: TimeInterval) {
+        let release = simulatedRelease(gameID: gameID, kind: kind, arrives: Date.now.addingTimeInterval(delay))
+        data.simulated.insert(release, at: 0)
+        NotificationService.shared.schedule(release: release, game: game(gameID), level: notifyLevel(gameID), pauseAll: data.pauseAll, delay: delay, model: self)
+        show(Toast(text: "Simulated \(kind.label.lowercased()) arrives in \(Int(delay)) s"))
+    }
+
+    /// A clearly labelled simulated PS5 release, live at `arrives` (Simulate update, and the QA feed pulse's new release).
+    func simulatedRelease(gameID: String, kind: SimKind, arrives: Date) -> Release {
         let n = data.simulated.count + 1
         let latest = ps5Releases(gameID).first?.ps5Version
         let version = Self.bumpConsoleVersion(latest, major: kind == .major)
-        let arrives = Date.now.addingTimeInterval(delay)
         let major = kind == .major
         let display = major ? "Update \(n + 1).0 (simulated)" : "Hotfix \(n) (simulated)"
         let release = Release(
@@ -1758,9 +1765,7 @@ final class AppModel {
             keyChanges: major ? ["a new performance mode option", "faster loading between areas"] : ["fixed a crash when loading a save", "fixed missing autosaves"],
             simulated: true, arrivesAt: arrives
         )
-        data.simulated.insert(release, at: 0)
-        NotificationService.shared.schedule(release: release, game: game(gameID), level: notifyLevel(gameID), pauseAll: data.pauseAll, delay: delay, model: self)
-        show(Toast(text: "Simulated \(kind.label.lowercased()) arrives in \(Int(delay)) s"))
+        return release
     }
 
     static func bumpConsoleVersion(_ v: String?, major: Bool) -> String {
