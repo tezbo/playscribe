@@ -35,6 +35,15 @@ struct FeedRefreshObservationTests {
         #expect(!fired, "an unchanged refresh wrote AppModel.data")
     }
 
+    /// Mac A/B at 53c2ca70: the apply path alone ran the shelf 32 times in Closed, every run with no field changed. The issue
+    /// alert pass wrote `alertedIssues` on every refresh, the same set each time.
+    @Test func theIssueAlertPassLeavesDataAloneWhenNothingIsNew() {
+        let m = model()
+        m.alertAddressedIssues()   // the first pass records what is already addressed
+        let fired = changes(m, reading: { _ = $0.data }) { m.alertAddressedIssues() }
+        #expect(!fired, "an issue alert pass with nothing new wrote AppModel.data")
+    }
+
     @Test func anUnchangedRefreshLeavesTheMergedReleasesAlone() {
         let m = model()
         let releases = m.feedReleases
