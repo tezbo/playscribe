@@ -225,6 +225,22 @@ struct RootView: View {
                     .allowsHitTesting(false)
                 #endif
             }
+            // The sheets hang inside the DuoReader, so their content reads the real pose and placement (Open: the Add sheet's
+            // trailing placement, its stage height) instead of DuoContext's Closed default (r054-add-settings-duo-environment, #424).
+            .sheet(isPresented: Binding(get: { model.addSheetOpen && model.livePose != .tabletop && (model.addIsSystemSheet || !model.liveRightPage) }, set: { if !$0 && model.livePose != .tabletop && (model.addIsSystemSheet || !model.liveRightPage) { model.addSheetOpen = false } })) {
+                // Full height: a shorter sheet left the Library's first-run strip showing, inert, beneath it.
+                AddGameSheet().presentationDetents([.large])
+            }
+            .sheet(isPresented: Binding(get: { model.settingsOpen && model.livePose != .tabletop && model.livePose != .book }, set: { if !$0 && model.livePose != .tabletop && model.livePose != .book { model.settingsOpen = false } })) {
+                SettingsView()
+            }
+            .sheet(item: Binding(get: { model.livePose == .tabletop ? nil : model.tagExplainer }, set: { if $0 == nil && model.livePose != .tabletop { model.tagExplainer = nil } })) { kind in
+                VerificationExplainer(kind: kind).presentationDetents([.medium])
+            }
+            // N-9's "What is sent" (Iris, #455): a system sheet, except Tabletop, where the lower-half panel shows it.
+            .sheet(isPresented: Binding(get: { model.keepCurrentDetailsOpen && model.livePose != .tabletop }, set: { if !$0 && model.livePose != .tabletop { model.keepCurrentDetailsOpen = false } })) {
+                KeepCurrentDetailsSheet().presentationDetents([.medium, .large])
+            }
         }
         .background(PlayscribeRole.bg)
         .onAppear {
@@ -244,20 +260,6 @@ struct RootView: View {
         }
         .onChange(of: model.nav.gameID) { _, id in if id != nil { model.tourNoticed(openedGame: true) } }
         .onChange(of: model.data.nav.tab) { _, tab in model.tourNoticed(tab: tab) }
-        .sheet(isPresented: Binding(get: { model.addSheetOpen && model.livePose != .tabletop && (model.addIsSystemSheet || !model.liveRightPage) }, set: { if !$0 && model.livePose != .tabletop && (model.addIsSystemSheet || !model.liveRightPage) { model.addSheetOpen = false } })) {
-            // Full height: a shorter sheet left the Library's first-run strip showing, inert, beneath it.
-            AddGameSheet().presentationDetents([.large])
-        }
-        .sheet(isPresented: Binding(get: { model.settingsOpen && model.livePose != .tabletop && model.livePose != .book }, set: { if !$0 && model.livePose != .tabletop && model.livePose != .book { model.settingsOpen = false } })) {
-            SettingsView()
-        }
-        .sheet(item: Binding(get: { model.livePose == .tabletop ? nil : model.tagExplainer }, set: { if $0 == nil && model.livePose != .tabletop { model.tagExplainer = nil } })) { kind in
-            VerificationExplainer(kind: kind).presentationDetents([.medium])
-        }
-        // N-9's "What is sent" (Iris, #455): a system sheet, except Tabletop, where the lower-half panel shows it.
-        .sheet(isPresented: Binding(get: { model.keepCurrentDetailsOpen && model.livePose != .tabletop }, set: { if !$0 && model.livePose != .tabletop { model.keepCurrentDetailsOpen = false } })) {
-            KeepCurrentDetailsSheet().presentationDetents([.medium, .large])
-        }
         .fullScreenCover(isPresented: Binding(get: { model.player != nil }, set: { if !$0 { model.player = nil } })) {
             // The player is dark in light and dark mode. Its cover is its own presentation, so pinning its scheme here (not
             // only the environment) gives it a light status bar too: in light mode the clock and Wi-Fi drew dark over the dark
