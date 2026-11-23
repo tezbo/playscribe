@@ -19,10 +19,18 @@ final class LibraryFeedRedrawTests: XCTestCase {
         XCTAssertLessThanOrEqual(runs, Self.limit, "LibraryShelf body ran \(runs) times in 20 swipes with no refresh")
     }
 
+    /// Measurement only (no limit): the pulse writing just the feed status, then just the apply path, to split the refresh runs.
+    @MainActor func testMeasureStatusOnlyAgainstApplyOnly() throws {
+        let status = try bodyRuns(during: 20, pulse: true, only: "status")
+        let apply = try bodyRuns(during: 20, pulse: true, only: "apply")
+        print("LibraryFeedRedraw split: status only \(status), apply only \(apply)")
+        XCTContext.runActivity(named: "status only \(status), apply only \(apply)") { _ in }
+    }
+
     @MainActor
-    private func bodyRuns(during swipes: Int, pulse: Bool) throws -> Int {
+    private func bodyRuns(during swipes: Int, pulse: Bool, only: String? = nil) throws -> Int {
         let app = XCUIApplication()
-        app.launchArguments = ["-qaRoute", "fill-library/12"] + (pulse ? ["-qaFeedPulse", "1"] : [])
+        app.launchArguments = ["-qaRoute", "fill-library/12"] + (pulse ? ["-qaFeedPulse", "1"] : []) + (only.map { ["-qaPulseOnly", $0] } ?? [])
         app.launch()
         let tiles = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'tile-'"))
         XCTAssertTrue(tiles.firstMatch.waitForExistence(timeout: 15), "the library shows tiles")
@@ -40,7 +48,7 @@ final class LibraryFeedRedrawTests: XCTestCase {
         let after = try count(marker)
         let pose = ReleaseRowTests.pose(app)
         let whyAfter = why.exists ? why.label : "none"
-        let note = "\(pose); pulse \(pulse ? "on" : "off"); body runs \(after - before) (\(before) to \(after))\nbefore \(whyBefore)\nafter \(whyAfter)"
+        let note = "\(pose); pulse \(pulse ? "on" : "off")\(only.map { " (\($0) only)" } ?? ""); body runs \(after - before) (\(before) to \(after))\nbefore \(whyBefore)\nafter \(whyAfter)"
         print("LibraryFeedRedraw: " + note.replacingOccurrences(of: "\n", with: " | "))
         XCTContext.runActivity(named: note) { _ in }
         return after - before

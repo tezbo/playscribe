@@ -90,10 +90,22 @@ extension AppModel {
     /// feed the app already has, through the same apply path as a real one and with no network: Refreshing, then latest.json
     /// applied, then the histories' alert pass. A UI test scrolls the Library through these and counts its body runs.
     func runQAFeedPulse(every seconds: Double) async {
+        // A/B for the redraw count (Mac at ffb216b1: feedStatus changed between nearly every pair of runs, but it changes twice a
+        // second under the pulse, so that tally cannot say whether it is the cause). `-qaPulseOnly status` writes only the
+        // status; `-qaPulseOnly apply` runs only the apply path and leaves the status alone.
+        let args = ProcessInfo.processInfo.arguments
+        let only = args.firstIndex(of: "-qaPulseOnly").flatMap { args.indices.contains($0 + 1) ? args[$0 + 1] : nil }
         while !Task.isCancelled {
             try? await Task.sleep(for: .seconds(seconds))
-            feedStatus = .refreshing
+            if only != "apply" { feedStatus = .refreshing }
             try? await Task.sleep(for: .milliseconds(200))
+            if only == "status" { feedStatus = .updated(.now); continue }
+            if only == "apply" {   // applyLatest without its status write
+                notifyNewlyOnPS5()
+                alertAddressedIssues()
+                notifyNewlyOnPS5()
+                continue
+            }
             applyLatest(releases: feedReleases, updatedAt: .now)
             alertAddressedIssues()
             notifyNewlyOnPS5()
