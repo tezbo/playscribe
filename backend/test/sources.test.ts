@@ -232,19 +232,46 @@ test('a known console build fills an empty PS5 version as reported, and a post n
   assert.equal(store.applyKnownBuilds(db, { dawnwalker: { '1.2': '01.007.000' } }), 0)
 })
 
+const bandaiFx = (n: string) => readFileSync(new URL(`./fixtures/${n}`, import.meta.url), 'utf8')
+const bandaiRoutes = (art12: string, art11: string) => ({
+  'https://www.bandainamcoent.com/games/dawnwalker': bandaiFx('bandai-dawnwalker-game.html'),
+  'https://www.bandainamcoent.com/news/the-blood-of-dawnwalker-update-1-2': art12,
+  'https://www.bandainamcoent.com/news/the-blood-of-dawnwalker-update-1-1': art11,
+})
+const art11 = () => bandaiFx('bandai-dawnwalker-update-1-2.html').replace(/Update 1\.2/g, 'Update 1.1').replace('2026-11-17', '2026-10-22')
+
 test('Bandai Namco game page: the update article is dated by its own publish time and counts as official on PS5', async () => {
-  const fx = (n: string) => readFileSync(new URL(`./fixtures/${n}`, import.meta.url), 'utf8')
-  const game = fx('bandai-dawnwalker-game.html')
+  const game = bandaiFx('bandai-dawnwalker-game.html')
   assert.deepEqual(bandaiUpdateLinks(game, 'https://www.bandainamcoent.com/games/dawnwalker').map((u) => u.split('/').pop()), ['the-blood-of-dawnwalker-update-1-1', 'the-blood-of-dawnwalker-update-1-2'])
-  const post = parseBandaiArticle('dawnwalker-bandai-news', 'https://www.bandainamcoent.com/news/the-blood-of-dawnwalker-update-1-2', fx('bandai-dawnwalker-update-1-2.html'))!
+  const post = parseBandaiArticle('dawnwalker-bandai-news', 'https://www.bandainamcoent.com/news/the-blood-of-dawnwalker-update-1-2', bandaiFx('bandai-dawnwalker-update-1-2.html'))!
   assert.equal(post.title, 'The Blood of Dawnwalker - Update 1.2')
   assert.equal(post.publishedAt, '2026-11-17T08:00:00.000Z')
   assert.match(post.body, /out now on PC, PlayStation 5/)
+})
+
+test('Bandai post for 1.2 replaces the reported 13 Nov date with the official 17 Nov one; newest stays 1.2 and nothing is pushed again', async () => {
   const db = openDb(':memory:')
-  const deps = { db, fetchFn: fakeFetch({ 'https://www.bandainamcoent.com/games/dawnwalker': game, 'https://www.bandainamcoent.com/news/the-blood-of-dawnwalker-update-1-2': fx('bandai-dawnwalker-update-1-2.html'), 'https://www.bandainamcoent.com/news/the-blood-of-dawnwalker-update-1-1': fx('bandai-dawnwalker-update-1-2.html').replace('Update 1.2', 'Update 1.1').replace('2026-11-17', '2026-10-22') }), igdb: null }
+  const deps = { db, fetchFn: fakeFetch(bandaiRoutes(bandaiFx('bandai-dawnwalker-update-1-2.html'), art11())), igdb: null }
+  await seedGames(deps)
+  // What the feed held before: a press report dated 13 Nov (a "coming next week" article, not the release), already alerted.
+  const { id } = store.upsertRelease(db, { gameId: 'dawnwalker', versionKey: '1.2', displayName: 'Update 1.2', kind: 'major', kindBasis: 'inferred', announcedAt: '2026-11-13T16:30:00.000Z', notes: [], sourceId: 'pushsquare' })
+  store.upsertPlatform(db, id, 'ps5', { status: 'live', verification: 'reported', liveAt: store.field('2026-11-13T16:30:00.000Z', 'reported', 'pushsquare') })
+  db.prepare("UPDATE platform_releases SET pushed_at = '2026-11-17T10:24:19.374Z' WHERE release_id = ?").run(id)
+  await runIngest(deps, { force: true, games: ['dawnwalker'] })
+  const ps5 = ps5Of(db, 'dawnwalker@1.2')!
+  assert.deepEqual([ps5.status, ps5.verification, ps5.liveAt?.verification, ps5.liveAt?.value], ['live', 'official', 'official', '2026-11-17T08:00:00.000Z'])
+  const rel = db.prepare("SELECT version_key, announced_at FROM releases WHERE game_id = 'dawnwalker' ORDER BY announced_at DESC").all() as { version_key: string; announced_at: string }[]
+  assert.equal(rel[0]!.version_key, '1.2', 'newest update is still 1.2')
+  assert.equal(rel[0]!.announced_at, '2026-11-17T08:00:00.000Z')
+  assert.equal(queueNewPs5(db, { maxAgeHours: 72 }).jobs.length, 0, 'already pushed, and the 1.1 post is a month old: nothing is sent')
+})
+
+test('a Bandai post that says PC only makes no PS5 row, and a PC-only hotfix carries no PS5 signal', async () => {
+  const pcOnly = (title: string) => bandaiFx('bandai-dawnwalker-update-1-2.html').replace(/Update 1\.2/g, title).replace(/out now on PC, PlayStation 5, and Xbox Series X\|S/, 'out now on PC only')
+  const db = openDb(':memory:')
+  const deps = { db, fetchFn: fakeFetch(bandaiRoutes(pcOnly('Update 1.2'), pcOnly('Hotfix 1.1.1 (PC only)'))), igdb: null }
   await seedGames(deps)
   await runIngest(deps, { force: true, games: ['dawnwalker'] })
-  const ps5 = ps5Of(db, 'dawnwalker@1.2')
-  assert.deepEqual([ps5?.status, ps5?.verification], ['live', 'official'])
-  assert.equal(queueNewPs5(db, { maxAgeHours: 72 }).jobs.length, 0, 'a week-old and a month-old update send nothing')
+  assert.equal(ps5Of(db, 'dawnwalker@1.2'), undefined, 'PC-only 1.2 has no PS5 row')
+  assert.equal(ps5Of(db, 'dawnwalker@1.1.1'), undefined, 'a PC-only hotfix has no PS5 row')
 })

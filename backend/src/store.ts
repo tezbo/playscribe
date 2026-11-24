@@ -596,3 +596,21 @@ export const applyKnownBuilds = (db: DB, builds: Record<string, Record<string, s
   }
   return n
 }
+
+/**
+ * An official post says when a PS5 update went live. A release dated earlier than every official time it has was dated by a
+ * press report (a "coming next week" article, a leak): the earliest official time replaces that date. A release whose date is
+ * an official time already (a studio post before Steam) is left alone.
+ */
+export const preferOfficialDate = (db: DB, releaseId: string): void => {
+  const r = db.prepare('SELECT announced_at FROM releases WHERE id = ?').get(releaseId) as { announced_at: string } | undefined
+  if (!r) return
+  const times = (db.prepare('SELECT live_at FROM platform_releases WHERE release_id = ? AND live_at IS NOT NULL').all(releaseId) as { live_at: string }[])
+    .map((p) => json<Field<string> | null>(p.live_at, null))
+    .filter((f): f is Field<string> => !!f && f.verification === 'official')
+    .map((f) => f.value)
+    .sort()
+  const first = times[0]
+  if (!first || first <= r.announced_at || times.includes(r.announced_at)) return
+  db.prepare('UPDATE releases SET announced_at = ?, updated_at = ? WHERE id = ?').run(first, now(), releaseId)
+}
