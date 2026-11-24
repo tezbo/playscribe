@@ -15,6 +15,9 @@ struct SettingsView: View {
     @Environment(\.panelClose) private var panelClose
     /// In Tabletop the sheet is the lower-half panel, which is not presented, so it closes itself.
     private func dismiss() { if let panelClose { panelClose() } else { systemDismiss() } }
+    /// Every pose but Closed: the title and Close sit in Settings' own header, not the navigation bar. Open landscape's
+    /// trailing sheet showed no Close at all from the bar (Iris on #611, Mac 955129c8), so it carries its own, as Tabletop does.
+    private var ownHeader: Bool { duo.pose != .closed }
     @Environment(\.duo) private var duo
     @AppStorage(YouTubeController.autoplayKey) private var autoplayVideos = false
     @AppStorage(VideoReflection.key) private var reflectionMode = VideoReflection.defaultOn
@@ -62,7 +65,7 @@ struct SettingsView: View {
             // Tabletop: the title and Close sit in a plain header above the form, not in the navigation bar. With the bar,
             // rows scrolled up under it and a tap meant for a row (Video lab at std, y 527, Mac at c1c1191e) went to the bar
             // and closed Settings. Here the form starts below the header, so no row is ever under it or above the fold (G-4, TT-1).
-            if duo.pose == .tabletop {
+            if ownHeader {
                 PanelHeader(title: "Settings", close: dismiss)
             }
             Form {
@@ -311,13 +314,13 @@ struct SettingsView: View {
             // 24 pt between a footer and the next section's title (Iris, 0.5.1 spec 1).
             .listSectionSpacing(24)
             // Tabletop: the page surface under the rows, the same as the header above, so there is no seam (Iris, #556).
-            .scrollContentBackground(duo.pose == .tabletop ? .hidden : .automatic)
+            .scrollContentBackground(ownHeader ? .hidden : .automatic)
             .navigationTitle("Settings")
             .toolbarTitleDisplayMode(.inline)
-            // Tabletop's root page has its own header (above); pushed pages show the bar again for Back.
-            .toolbar(duo.pose == .tabletop ? .hidden : .automatic, for: .navigationBar)
+            // The root page has its own header (above) outside Closed; pushed pages show the bar again for Back.
+            .toolbar(ownHeader ? .hidden : .automatic, for: .navigationBar)
             .toolbar {
-                if duo.pose != .tabletop {
+                if !ownHeader {
                     ToolbarItem(placement: .cancellationAction) {
                         Button { dismiss() } label: {
                             Label("Close", systemImage: "xmark").labelStyle(.iconOnly)
