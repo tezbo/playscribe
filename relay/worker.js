@@ -448,7 +448,7 @@ export const inQuietHours = (q, at = new Date()) => {
   }
 }
 
-const ALERT = { crash: 'New TestFlight crash report', screenshot: 'New TestFlight feedback' }
+const ALERT = { crash: 'New TestFlight crash report', screenshot: 'New TestFlight feedback', limrun: 'A Limrun simulator is still running' }
 const sendTeamAlert = async (env, kind) => {
   if (!env.APNS_KEY || !env.APNS_KEY_ID || !env.APNS_TEAM_ID) return { sent: 0, skipped: 'push key not set' }
   const jwt = await apnsJwt(env)
@@ -488,6 +488,78 @@ const ascWebhook = async (env, request) => {
   const result = await sendTeamAlert(env, /CRASH/.test(type) ? 'crash' : 'screenshot')
   if (id) await env.KV.put(`w:${id}`, '1', { expirationTtl: 86400 })
   return json({ ok: true, ...result })
+}
+
+
+// ---- Limrun instance webhook (cloud Duo QA): a leak alarm and a minutes ledger. Events are instance.created / ready /
+// terminated only (no credit or balance events exist). Signed with `Limrun-Signature: t=<unix>,v1=<hex>` over "<t>.<raw body>"
+// with the whole signing secret (including its whsec_ prefix) as the UTF-8 key; a five-minute clock window stops replays. ----
+/** An instance with no terminated event after this long is "still running": the cron pushes a Team alert once. */
+export const LIMRUN_LEAK_MS = 20 * 60_000
+const LIMRUN_TTL = 6 * 3600
+
+export const limrunSignatureOk = async (env, request, raw, nowMs = Date.now()) => {
+  if (!env.LIMRUN_WEBHOOK_SECRET) return false
+  const m = /^t=(\d+),v1=([0-9a-f]{64})$/.exec(request.headers.get('limrun-signature') ?? '')
+  if (!m) return false
+  if (Math.abs(nowMs / 1000 - Number(m[1])) > 300) return false
+  const key = await crypto.subtle.importKey('raw', enc.encode(env.LIMRUN_WEBHOOK_SECRET), { name: 'HMAC', hash: 'SHA-256' }, false, ['verify'])
+  return crypto.subtle.verify('HMAC', key, hexToBytes(m[2]), enc.encode(`${m[1]}.${raw}`))
+}
+
+const limrunWebhook = async (env, request) => {
+  const raw = await request.text()
+  if (raw.length > MAX_BODY) return bad('body too large', 413)
+  if (!(await limrunSignatureOk(env, request, raw))) return bad('not allowed', 401)
+  let ev
+  try { ev = JSON.parse(raw) } catch { return bad('bad json') }
+  const type = String(ev?.type ?? '')
+  const iid = String(ev?.instanceId ?? '')
+  if (type === 'webhook.ping') return json({ ok: true, ping: true })
+  if (!/^[a-z]+_[A-Za-z0-9_]+$/.test(iid) || !/^instance\.(created|ready|terminated)$/.test(type)) return json({ ok: true, ignored: true })
+  const at = Date.parse(String(ev.occurredAt ?? '')) || Date.now()
+  const key = `lr:${iid}`
+  if (type === 'instance.created') {
+    await env.KV.put(key, JSON.stringify({ product: String(ev.product ?? ''), at, alerted: false }), { expirationTtl: LIMRUN_TTL })
+  } else if (type === 'instance.terminated') {
+    const rec = await getJson(env.KV, key)
+    if (rec) {
+      // One counter per month and product: minutes of lifetime, the number to compare with the plan's credits.
+      const month = new Date(at).toISOString().slice(0, 7)
+      const ck = `lu:${month}:${rec.product || 'other'}`
+      const cur = (await getJson(env.KV, ck)) ?? { minutes: 0, count: 0 }
+      await env.KV.put(ck, JSON.stringify({ minutes: Math.round((cur.minutes + Math.max(0, (at - rec.at) / 60000)) * 10) / 10, count: cur.count + 1 }))
+      await env.KV.delete(key)
+    }
+  }
+  return json({ ok: true })
+}
+
+/** Cron step: any instance created more than LIMRUN_LEAK_MS ago and not terminated gets one Team alert. Never throws. */
+export async function limrunLeakCheck(env, now = Date.now()) {
+  try {
+    const keys = (await env.KV.list({ prefix: 'lr:', limit: 50 })).keys
+    let late = 0
+    for (const k of keys) {
+      const rec = await getJson(env.KV, k.name)
+      if (!rec || rec.alerted || now - rec.at < LIMRUN_LEAK_MS) continue
+      late++
+      await env.KV.put(k.name, JSON.stringify({ ...rec, alerted: true }), { expirationTtl: LIMRUN_TTL })
+    }
+    if (!late) return { late: 0 }
+    return { late, ...(await sendTeamAlert(env, 'limrun')) }
+  } catch (e) {
+    return { late: 0, error: 'limrun leak check failed' }
+  }
+}
+
+const adminLimrun = async (env, request) => {
+  if (!(await isAdmin(env, request))) return bad('not allowed', 401)
+  const usage = {}
+  for (const k of (await env.KV.list({ prefix: 'lu:', limit: 200 })).keys) usage[k.name.slice(3)] = await getJson(env.KV, k.name)
+  const open = []
+  for (const k of (await env.KV.list({ prefix: 'lr:', limit: 50 })).keys) open.push({ instanceId: k.name.slice(3), ...(await getJson(env.KV, k.name)) })
+  return json({ usage, open })
 }
 
 /** The Feed workflow's repository and file; the dispatch and the "already running" check both name them. */
@@ -530,6 +602,8 @@ export default {
   async scheduled(controller, env, ctx) {
     const result = await dispatchFeed(env, controller.cron)
     console.log(`feed cron ${controller.cron}: ${JSON.stringify(result)}`)
+    const lim = await limrunLeakCheck(env)
+    if (lim.late || lim.error) console.log(`limrun leak check: ${JSON.stringify(lim)}`)
   },
   async fetch(request, env) {
     const { pathname } = new URL(request.url)
@@ -548,6 +622,8 @@ export default {
         return blockedId(env, d.id) ? BLOCKED() : json({ follows: d.follows })
       }
       if (pathname === '/v1/webhooks/asc' && m === 'POST') return await ascWebhook(env, request)
+      if (pathname === '/v1/webhooks/limrun' && m === 'POST') return await limrunWebhook(env, request)
+      if (pathname === '/admin/limrun' && m === 'GET') return await adminLimrun(env, request)
       if (pathname === '/admin/devices' && m === 'GET') return await adminDevices(env, request)
       if (pathname === '/admin/devices/dead' && m === 'POST') return await adminDead(env, request)
       return bad('not found', 404)

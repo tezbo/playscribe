@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
-import worker, { FOLLOWS_TTL_SECONDS, MAX_NEW_PER_DAY, dispatchFeed, FEED_HOT_CRON, FEED_FULL_CRON, parseBlocklist } from '../worker.js'
+import worker, { FOLLOWS_TTL_SECONDS, MAX_NEW_PER_DAY, dispatchFeed, FEED_HOT_CRON, FEED_FULL_CRON, parseBlocklist, limrunLeakCheck, LIMRUN_LEAK_MS } from '../worker.js'
 
 // A KV that counts writes, because the free plan allows 1,000 a day and a relaunch must not spend any.
 const fakeKv = () => {
@@ -542,4 +542,55 @@ test('bug-relay-optin-cleared-token: after a dead push, the app\'s launch puts i
   const writes = env.KV.writes
   await call(env, 'PATCH', '/v1/devices/me', { apnsToken: token('a'), environment: 'production' }, b.deviceKey)
   assert.equal(env.KV.writes, writes)
+})
+
+// ---- Limrun instance webhook ----
+const LIM_SECRET = 'whsec_test'
+const limHook = async (env, ev, { secret = LIM_SECRET, t = Math.floor(Date.now() / 1000), badSig = false } = {}) => {
+  const body = JSON.stringify(ev)
+  const sig = badSig ? '0'.repeat(64) : await hmacHex(secret, `${t}.${body}`)
+  return worker.fetch(new Request('https://relay.test/v1/webhooks/limrun', { method: 'POST', headers: { 'limrun-signature': `t=${t},v1=${sig}` }, body }), env)
+}
+const limEnv = () => ({ KV: fakeKv(), ADMIN_TOKEN: ADMIN, LIMRUN_WEBHOOK_SECRET: LIM_SECRET })
+const iso = (ms) => new Date(ms).toISOString()
+
+test('limrun webhook fails closed: no secret, a bad signature or a stale timestamp is a 401 and writes nothing', async () => {
+  const ev = { id: 'e1', type: 'instance.created', instanceId: 'ios_euna_abc', product: 'ios', occurredAt: iso(Date.now()) }
+  const noSecret = { KV: fakeKv(), ADMIN_TOKEN: ADMIN }
+  assert.equal((await limHook(noSecret, ev)).status, 401)
+  const env = limEnv()
+  assert.equal((await limHook(env, ev, { badSig: true })).status, 401)
+  assert.equal((await limHook(env, ev, { t: Math.floor(Date.now() / 1000) - 400 })).status, 401)
+  assert.equal((await limHook(env, ev, { secret: 'whsec_other' })).status, 401)
+  assert.equal(env.KV.writes, 0)
+})
+
+test('limrun webhook: created then terminated adds the minutes to the month counter and clears the open record', async () => {
+  const env = limEnv(); const t0 = Date.parse('2026-11-24T10:00:00Z')
+  assert.equal((await limHook(env, { id: 'a', type: 'instance.created', instanceId: 'ios_euna_abc', product: 'ios', occurredAt: iso(t0) })).status, 200)
+  assert.ok(env.KV.raw.has('lr:ios_euna_abc'))
+  await limHook(env, { id: 'b', type: 'instance.terminated', instanceId: 'ios_euna_abc', product: 'ios', occurredAt: iso(t0 + 7.5 * 60_000), reason: 'UserRequested' })
+  assert.equal(env.KV.raw.has('lr:ios_euna_abc'), false)
+  const r = await (await call(env, 'GET', '/admin/limrun', undefined, ADMIN)).json()
+  assert.deepEqual(r.usage['2026-11:ios'], { minutes: 7.5, count: 1 })
+  assert.deepEqual(r.open, [])
+  assert.equal((await call(env, 'GET', '/admin/limrun')).status, 401)
+})
+
+test('limrun webhook: ping and unrelated events are accepted and store nothing', async () => {
+  const env = limEnv()
+  assert.equal((await (await limHook(env, { id: 'p', type: 'webhook.ping', organizationId: 'org_x', occurredAt: iso(Date.now()) })).json()).ping, true)
+  assert.equal((await (await limHook(env, { id: 'q', type: 'instance.deleted', instanceId: 'ios_x_1' })).json()).ignored, true)
+  assert.equal(env.KV.writes, 0)
+})
+
+test('limrun leak check: an instance open past 20 minutes alerts once; a young one and an already-alerted one do not', async () => {
+  const env = limEnv(); const now = Date.parse('2026-11-24T11:00:00Z')
+  await env.KV.put('lr:ios_old_1', JSON.stringify({ product: 'ios', at: now - LIMRUN_LEAK_MS - 1000, alerted: false }))
+  await env.KV.put('lr:ios_new_2', JSON.stringify({ product: 'ios', at: now - 60_000, alerted: false }))
+  const first = await limrunLeakCheck(env, now)
+  assert.equal(first.late, 1)
+  assert.equal(JSON.parse(env.KV.raw.get('lr:ios_old_1')).alerted, true)
+  assert.equal(JSON.parse(env.KV.raw.get('lr:ios_new_2')).alerted, false)
+  assert.equal((await limrunLeakCheck(env, now + 60_000)).late, 0)
 })
