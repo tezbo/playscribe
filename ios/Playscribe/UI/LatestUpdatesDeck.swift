@@ -889,6 +889,9 @@ struct PageEdge: View {
         }
         .frame(height: Self.rowHeight)
         .frame(maxWidth: .infinity, alignment: .center)
+        // The VoiceOver element is the whole 44 pt row, not the dots' 22 x 6 bounds: the system audit read the adjustable
+        // element as a hit area too small (#588, Mac 75e96041 Closed).
+        .contentShape(.accessibility, Rectangle())
         .allowsHitTesting(false)
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(Self.spoken(lit: lit, count: cards.count))

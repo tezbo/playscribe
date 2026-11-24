@@ -100,8 +100,14 @@ final class SearchBlankListTests: XCTestCase {
             field.tap()
             field.typeText("controlqqqqqqqqqqqqq")   // 20 characters in one burst
             field.typeText(String(repeating: XCUIKeyboardKey.delete.rawValue, count: 13))
-            sleep(2)
-            guard tiles.firstMatch.exists else { return blank("no tile after 'control' typed fast", run) }
+            // Mac 693cc28e, Closed landscape, run 3: no tile 2 s after the deletes, yet the tree taken at the failure showed
+            // 'control' in the field and its tile drawn. The list was late, not left blank. Measure how late: wait up to 5 s and
+            // record the time, so a slow rebuild is named and a stuck one still fails.
+            let start = Date()
+            let shown = tiles.firstMatch.waitForExistence(timeout: 5)
+            let late = XCTAttachment(string: String(format: "run %d: tile after %.2f s", run, Date().timeIntervalSince(start)))
+            late.name = "fast-typing-run\(run)-time"; late.lifetime = .keepAlways; add(late)
+            guard shown else { return blank("no tile 5 s after 'control' typed fast", run) }
             XCTAssertEqual(tiles.count, 1, "run \(run): one match for 'control'")
             let clear = app.buttons["Clear search"]
             XCTAssertTrue(clear.waitForExistence(timeout: 3), "run \(run): Clear search shows")
