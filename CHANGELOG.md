@@ -16,7 +16,7 @@ Your Duo checks for beta 5
 Also check
 5. Buttons that float over art (the rail, Back, Share, Play) look like glass. Labels on art (version chips, the tile status mark, "1 of 3") are a dark pill. With Reduce Transparency on (your phone’s Settings, Accessibility, Display & Text Size), the floating buttons go solid.
 6. A deck card whose headline already names the version shows no second version chip.
-7. Play an update video, a trailer and a Gallery video, Closed and in Tabletop. All play inside Playscribe, with the reflection under the video in Tabletop. If a video can't play here, you see Open in YouTube. Full screen, Closed or Open, fills the screen and keeps playing.
+7. Play an update video, a trailer and a Gallery video, Closed and in Tabletop. All play inside Playscribe, with the reflection under the video in Tabletop. If a video can’t play here, you see Open in YouTube. Full screen, Closed or Open, fills the screen and keeps playing.
 8. Add Astro Bot. Its tile shows its cover, and its page says "We don’t track this game’s updates yet."
 9. At the largest text size, Library tile dates stay on one line and the Tabletop filter chips sit after the tiles.
 10. On a game page, open More, then Check for updates. A message says what happened, also in Airplane Mode.
