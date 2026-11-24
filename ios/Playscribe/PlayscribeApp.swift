@@ -48,6 +48,13 @@ struct PlayscribeApp: App {
                 }
                 #if INTERNAL
                 .task {
+                    // QA: `-qaOrientation landscape` turns the interface to landscape at launch with requestGeometryUpdate.
+                    // XCUIDevice.orientation rotates the simulated device, which on CI and the Mac never turned the iPhone Duo's
+                    // outer display (RailSetTests and ClosedLandscapeShotTests stayed 466 x 678), so Closed landscape had no
+                    // automated run anywhere. The scene's own request is what an app gets on any iPhone.
+                    if let want = QAOrientation.requested { QAOrientation.apply(want) }
+                }
+                .task {
                     let pulse = UserDefaults.standard.double(forKey: "qaFeedPulse")
                     if pulse > 0 { await model.runQAFeedPulse(every: pulse) }
                 }
