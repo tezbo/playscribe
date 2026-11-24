@@ -791,8 +791,12 @@ struct DeckCardArt: View {
     }
 }
 
-/// The page edge: one leaf per update, unread in ember, the current one tall in vellum.
-/// Each leaf is a 44 pt target labelled "Update n of N".
+/// The hero's page indicator (Iris, after Terry on beta 4: the capsule marks were "terribly ugly"). One 6 pt dot per update,
+/// 10 pt apart, centred under the deck; the cards on screen are ONE pill, 6 pt tall, spanning exactly their dots (one card: a dot;
+/// two: 22 pt). Unlit dots are textSecondary at 35%, the pill the action colour (amber in dark, action brown in light). No
+/// animation, under Reduce Motion or not: it jumps one step when the deck settles (#587). Fixed sizes, never scaled with
+/// Dynamic Type. Never tappable, in any pose (the cards swipe; in Tabletop `DeckStepRow` changes the stage card); one VoiceOver
+/// element, "Updates 2 and 3 of 5", whose swipe up or down moves the deck one card.
 struct PageEdge: View {
     var cards: [DeckCard]
     /// The leading card on screen (the scroll position).
@@ -800,20 +804,32 @@ struct PageEdge: View {
     /// Cards fully on screen at once: 2 in Open (two across), else 1.
     var visible: Int = 1
     var select: (String) -> Void
+    @Environment(\.colorScheme) private var scheme
 
-    /// Slot width of one leaf (its hit area) and the lit mark's size.
-    static let slot: CGFloat = 44
-    static let litWidth: CGFloat = 3
-    static let litHeight: CGFloat = 18
+    static let dot: CGFloat = 6
+    static let gap: CGFloat = 10
+    /// The row's height, so the deck's layout around it is unchanged.
+    static let rowHeight: CGFloat = 44
+    /// Unlit dots in light: #A39B97 on cream (2.5:1), the weight the dark dots carry (Iris on #616). Dark keeps textSecondary at 35%.
+    static let unlitLight = UIColor(hex: 0xA39B97)
 
-    /// The lit leaves drawn as ONE amber capsule from the first to the last card on screen (Iris, after Terry saw two amber
-    /// notches lit at once in Open and Closed landscape: noise). Positions are slots within the window; the frame is in the
-    /// row's own space: x from the first lit slot's centre to the last's, plus the mark's width. Nil when nothing is lit.
-    static func capsule(lit: Set<Int>, window: [Int]) -> CGRect? {
+    /// One page only: every card is on screen at once, so there is nothing to page and no indicator (HIG page controls;
+    /// Iris on #616, Open landscape with 2 updates showed a lone pill).
+    static func hidden(count: Int, visible: Int) -> Bool { count <= max(1, visible) }
+
+    /// The pill over the lit dots, in the dots row's own space (x from the first dot's leading edge). Nil when nothing is lit.
+    static func pill(lit: Set<Int>, window: [Int]) -> CGRect? {
         let slots = window.enumerated().filter { lit.contains($0.element) }.map(\.offset)
         guard let a = slots.min(), let b = slots.max() else { return nil }
-        let x = CGFloat(a) * slot + slot / 2 - litWidth / 2
-        return CGRect(x: x, y: (slot - litHeight) / 2, width: CGFloat(b - a) * slot + litWidth, height: litHeight)
+        return CGRect(x: CGFloat(a) * (dot + gap), y: 0, width: CGFloat(b - a) * (dot + gap) + dot, height: dot)
+    }
+
+    /// "Update 2 of 5", "Updates 2 and 3 of 5".
+    static func spoken(lit: Set<Int>, count: Int) -> String {
+        let n = lit.sorted().map { $0 + 1 }
+        guard let last = n.last else { return "Updates" }
+        if n.count == 1 { return "Update \(last) of \(count)" }
+        return "Updates \(n.dropLast().map(String.init).joined(separator: ", ")) and \(last) of \(count)"
     }
 
     /// The leaves lit: the leading card and the others fully on screen beside it. At the deck's end the pager cannot lead
@@ -825,8 +841,8 @@ struct PageEdge: View {
         return Set(first..<min(cards.count, first + max(1, visible)))
     }
 
-    /// The card that leads after one step (VoiceOver increment or decrement on a leaf): exactly one card, clamped so the last
-    /// lead still shows the last card. Nil when already at that end.
+    /// The card that leads after one step (VoiceOver increment or decrement, or Tabletop's Previous and Next): exactly one card, clamped so
+    /// the last lead still shows the last card. Nil when already at that end.
     static func step(cards: [DeckCard], current: String?, visible: Int, by delta: Int) -> String? {
         guard !cards.isEmpty else { return nil }
         let lastLead = max(0, cards.count - max(1, visible))
@@ -835,8 +851,7 @@ struct PageEdge: View {
         return next == lead ? nil : cards[next].id
     }
 
-    /// At most 5 leaves, in a window that slides with the current card (Iris, 6589abf): the current one
-    /// ember and tall, the outer ones of a longer deck smaller, centred under the deck.
+    /// At most 5 dots, in a window that follows the current card (Iris, 6589abf).
     private var window: [(index: Int, card: DeckCard)] {
         let all = Array(cards.enumerated())
         guard all.count > 5 else { return all.map { ($0.offset, $0.element) } }
@@ -846,48 +861,77 @@ struct PageEdge: View {
     }
 
     var body: some View {
+        if Self.hidden(count: cards.count, visible: visible) {
+            // The row keeps its height, so the deck's layout does not move between two cards and three.
+            Color.clear.frame(height: Self.rowHeight).accessibilityHidden(true)
+        } else {
+            dots
+        }
+    }
+
+    @ViewBuilder private var dots: some View {
         let lit = Self.lit(cards: cards, current: current, visible: visible)
-        let joined = Self.capsule(lit: lit, window: window.map(\.index))
-        HStack(spacing: 0) {
-            ForEach(window, id: \.card.id) { item in
-                let isCurrent = lit.contains(item.index)
-                // The ends of a window that has more cards beyond it are drawn smaller.
-                let trimmed = cards.count > 5 && !isCurrent
-                    && ((item.index == window.first?.index && item.index > 0) || (item.index == window.last?.index && item.index < cards.count - 1))
-                Button { select(item.card.id) } label: {
-                    RoundedRectangle(cornerRadius: 1.5)
-                        // Lit leaves draw nothing: the one amber capsule is the only amber here. Lit leaves drawn amber under a
-                        // capsule that slid in 0.2 s showed as two amber marks side by side mid-swipe (Terry, build 18 on a Duo).
-                        .fill(isCurrent ? Color.clear : item.card.unread ? PlayscribeColor.vellum100 : PlayscribeColor.textSecondary.opacity(0.5))
-                        .frame(width: trimmed ? 2 : Self.litWidth, height: isCurrent ? Self.litHeight : (trimmed ? 6 : 10))
-                        .frame(width: 44, height: 44)
-                        .contentShape(Rectangle())
-                }
-                .buttonStyle(.plain)
-                .tappableFrame()
-                .accessibilityLabel("Update \(item.index + 1) of \(cards.count)")
-                .accessibilityAddTraits(isCurrent ? [.isButton, .isSelected] : .isButton)
-                // VoiceOver swipe up or down on any leaf moves the deck one card (Quinn and Iris on #512).
-                .accessibilityAdjustableAction { direction in
-                    let delta = direction == .increment ? 1 : direction == .decrement ? -1 : 0
-                    if delta != 0, let id = Self.step(cards: cards, current: current, visible: visible, by: delta) { select(id) }
+        let win = window
+        let pill = Self.pill(lit: lit, window: win.map(\.index))
+        ZStack(alignment: .leading) {
+            HStack(spacing: Self.gap) {
+                ForEach(win, id: \.card.id) { item in
+                    Circle()
+                        .fill(lit.contains(item.index) ? Color.clear : scheme == .light ? Color(Self.unlitLight) : PlayscribeRole.textSecondary.opacity(0.35))
+                        .frame(width: Self.dot, height: Self.dot)
                 }
             }
-        }
-        .overlay(alignment: .topLeading) {
-            if let joined {
-                RoundedRectangle(cornerRadius: 1.5)
-                    .fill(PlayscribeColor.accent)
-                    .frame(width: joined.width, height: joined.height)
-                    .offset(x: joined.minX, y: joined.minY)
-                    .allowsHitTesting(false)
-                    .accessibilityHidden(true)
+            if let pill {
+                Capsule().fill(PlayscribeRole.action)
+                    .frame(width: pill.width, height: Self.dot)
+                    .offset(x: pill.minX)
             }
         }
-        // One steady bar (Terry, build 18): the marks move in one step when the deck settles on a card, never slide, so the
-        // bar and the leaves can never be seen apart. This also drops the animation a leaf tap's withAnimation would carry.
-        .transaction { $0.animation = nil }
+        .frame(height: Self.rowHeight)
         .frame(maxWidth: .infinity, alignment: .center)
+        .allowsHitTesting(false)
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(Self.spoken(lit: lit, count: cards.count))
+        .accessibilityIdentifier("deckIndicator")
+        // VoiceOver swipe up or down moves the deck one card (Quinn and Iris on #512).
+        .accessibilityAdjustableAction { direction in
+            let delta = direction == .increment ? 1 : direction == .decrement ? -1 : 0
+            if delta != 0, let id = Self.step(cards: cards, current: current, visible: visible, by: delta) { select(id) }
+        }
+        // One step when the deck settles, never a slide (Terry, build 18; #587).
+        .transaction { $0.animation = nil }
+    }
+}
+
+/// Tabletop only: the stage is view only and the page indicator is never tappable, so Previous and Next change the stage card,
+/// at the top of the lower half, in the update page's Previous / Next style (Iris on #616). Disabled at the ends.
+struct DeckStepRow: View {
+    var cards: [DeckCard]
+    var current: String?
+    var select: (String) -> Void
+
+    var body: some View {
+        let back = PageEdge.step(cards: cards, current: current, visible: 1, by: -1)
+        let forward = PageEdge.step(cards: cards, current: current, visible: 1, by: 1)
+        HStack(spacing: 12) {
+            button("Previous", "chevron.backward", target: back)
+            button("Next", "chevron.forward", target: forward)
+        }
+    }
+
+    private func button(_ title: String, _ symbol: String, target: String?) -> some View {
+        Button { if let target { select(target) } } label: {
+            Label(title, systemImage: symbol)
+                .font(PlayscribeFont.headline)
+                .frame(maxWidth: .infinity, minHeight: 52)
+                .background(PlayscribeRole.chipFill, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel(title + " update")
+        .accessibilityIdentifier("deckStep" + title)
+        .disabled(target == nil)
+        .opacity(target == nil ? 0.4 : 1)
+        .tappableFrame()
     }
 }
 

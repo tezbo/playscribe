@@ -422,6 +422,11 @@ struct LibraryShelf: View {
                     // switch and the chips follow by normal page scroll. Below AX5 it sits under the switch as signed.
                     let cardFirst = duo.pose == .tabletop && typeSize >= .accessibility5
                     if cardFirst && model.libraryTab == .playing { keepCurrentAsk }
+                    // Tabletop: Previous and Next for the stage's card lead the lower half (Iris on #616).
+                    if duo.pose == .tabletop && model.libraryTab == .playing && model.latestDeck.count > 1 {
+                        let deck = model.latestDeck
+                        DeckStepRow(cards: deck, current: model.deckSelection ?? deck.first?.id) { model.deckSelection = $0 }
+                    }
                     LibraryTabPicker()
                         .frame(width: duo.pose == .book ? duo.division.map { max(0, $0.minX - 24 - 16) } : nil, alignment: .leading)
                         .frame(maxWidth: .infinity, alignment: .leading)
