@@ -28,8 +28,10 @@ jobs:
         if: steps.gate.outputs.run == 'yes'
       - name: Shoot
         if: steps.gate.outputs.run == 'yes'
-        env: { RECORD: '${{ inputs.record }}' }
-        run: ios/tools/qa/limrun-duo.sh out library/playing "${{ inputs.steps }}"
+        env:
+          RECORD: ${{ inputs.record }}
+          STEPS: ${{ inputs.steps }}
+        run: ios/tools/qa/limrun-duo.sh out library/playing "$STEPS"
       - uses: actions/upload-artifact@v4
         if: always() && steps.gate.outputs.run == 'yes'
         with: { name: limrun-duo, path: out }

@@ -23,7 +23,7 @@ continuity) # row 8: open game scrolled mid-update, fold 0, 90, 180, 60, 0
 trailer) # row 3: reflection element + 3 taps in the upper half, portrait Tabletop
   launch -qaRoute trailer/dQw4w9WgXcQ/dawnwalker -qaOverlay YES
   fold 90 portrait; snap trailer 1-tabletop-before
-  for y in 120 300 450; do sim-use tap -x 335 -y $y --device "$UDID" >/dev/null 2>&1; sleep 1; done
+  for y in 60 200 330; do sim-use tap -x 335 -y $y --device "$UDID" >/dev/null 2>&1; sleep 1; done
   snap trailer 2-tabletop-after-3-upper-taps ;;
 closedax5) # row 1: Closed outer landscape at AX5
   launch -qaRoute library/playing -qaOrientation landscape -qaOverlay YES -UIPreferredContentSizeCategoryName $AX5
@@ -41,5 +41,5 @@ video) # row 9: hinge sweep recording with frame timing
   sleep 3; for a in 180 170 160 150 140 130 120 110 100 90 80 70 60 70 80 90 100 110 120 130 140 150 160 170 180; do sim-use ios fold $a --device "$UDID" >/dev/null 2>&1; sleep 1.5; done
   sleep 2; kill -INT $rp 2>/dev/null; wait $rp 2>/dev/null
   if command -v ffprobe >/dev/null; then ffprobe -v error -select_streams v -show_entries frame=pts_time -of csv=p=0 "$OUT/$SHA-video-sweep.mp4" \
-    | python3 -c 'import sys;t=[float(x) for x in sys.stdin if x.strip()];g=[(b-a)*1000 for a,b in zip(t,t[1:])];print("frames",len(t),"max gap ms",round(max(g),1) if g else 0,"gaps>100ms",sum(x>100 for x in g))' | tee "$OUT/$SHA-video-frame-gaps.txt"; fi ;;
+    | python3 -c 'import sys;t=[float(x) for x in sys.stdin if x.strip()];g=[(b-a)*1000 for a,b in zip(t,t[1:])];print("frames",len(t),"(frames are emitted only when the screen changes: gaps are NOT hitches; row 9 needs the app frame log) max gap ms",round(max(g),1) if g else 0,"gaps>100ms",sum(x>100 for x in g))' | tee "$OUT/$SHA-video-frame-gaps.txt"; fi ;;
 esac; done

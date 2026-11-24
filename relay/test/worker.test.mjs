@@ -594,3 +594,10 @@ test('limrun leak check: an instance open past 20 minutes alerts once; a young o
   assert.equal(JSON.parse(env.KV.raw.get('lr:ios_new_2')).alerted, false)
   assert.equal((await limrunLeakCheck(env, now + 60_000)).late, 0)
 })
+
+test('limrun webhook: a terminated event with no created event is counted as unmatched, never as minutes', async () => {
+  const env = limEnv()
+  await limHook(env, { id: 'z', type: 'instance.terminated', instanceId: 'ios_euna_zzz', product: 'ios', occurredAt: '2026-11-24T10:00:00Z' })
+  const r = await (await call(env, 'GET', '/admin/limrun', undefined, ADMIN)).json()
+  assert.deepEqual(r.usage['2026-11:unmatched'], { minutes: 0, count: 1 })
+})

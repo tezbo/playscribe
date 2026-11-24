@@ -12,22 +12,26 @@ set -euo pipefail
 OUT=${1:?outdir}; ROUTE=${2:?route}; STEPS=${3:?steps}; shift 3 || true
 : "${LIM_API_KEY:?set LIM_API_KEY}"
 cd "$(dirname "$0")/../.."          # ios/
-LIM="npx -y lim"; mkdir -p "$OUT"
-ID=$($LIM ios create --model iphone-duo --os-version 27 --inactivity-timeout 10m --hard-timeout 30m --json \
+# `lim` is Limrun's official CLI (docs.limrun.com: npm install -g lim; repo limrun-inc/typescript-sdk). Pinned to the version tested
+# on 24 Nov 2026; bump deliberately after checking its release notes.
+LIM_VERSION=0.63.0
+LIM_X="npx -y lim@$LIM_VERSION xcode"
+LIM="npx -y lim@$LIM_VERSION ios"; mkdir -p "$OUT"
+ID=$($LIM create --model iphone-duo --os-version 27 --inactivity-timeout 10m --hard-timeout 30m --json \
   | python3 -c 'import json,sys;print(json.load(sys.stdin)["metadata"]["id"])')
-X=$($LIM xcode create --json | python3 -c 'import json,sys;print(json.load(sys.stdin)["metadata"]["id"])')
-trap '$LIM ios delete "$ID" >/dev/null 2>&1; $LIM xcode delete "$X" >/dev/null 2>&1' EXIT
-$LIM xcode attach-simulator "$ID" --id "$X" >/dev/null
-$LIM xcode build . --id "$X" --scheme Playscribe --xcodegen-spec project.yml --xcode-version 27.1 | tail -2
-[ -n "${RECORD:-}" ] && $LIM ios record start --id "$ID" >/dev/null 2>&1 || true
+X=$($LIM_X create --json | python3 -c 'import json,sys;print(json.load(sys.stdin)["metadata"]["id"])')
+trap '$LIM delete "$ID" >/dev/null 2>&1; $LIM_X delete "$X" >/dev/null 2>&1' EXIT
+$LIM_X attach-simulator "$ID" --id "$X" >/dev/null
+$LIM_X build . --id "$X" --scheme Playscribe --xcodegen-spec project.yml --xcode-version 27.1 | tail -2
+[ -n "${RECORD:-}" ] && $LIM record start --id "$ID" >/dev/null 2>&1 || true
 # NOTE: `lim ios launch-app` (24 Nov) has no launch-argument option, only --env, so -qaRoute and the other
 # -qa flags cannot be passed here and the first-run tour shows. Use duo-poses.yml (sim-use on CI) for routes.
-$LIM ios launch-app co.codeconnectors.playscribe --detach --id "$ID" >/dev/null
+$LIM launch-app co.codeconnectors.playscribe --detach --id "$ID" >/dev/null
 sleep 6; n=0
 for s in $STEPS; do
   n=$((n+1)); ang=${s%%:*}; ori=${s#*:}; [ "$ori" = "$s" ] && ori=portrait
-  $LIM ios fold "$ang" --orientation "$ori" --id "$ID" | tail -1; sleep 4
-  act=$($LIM ios fold --json --id "$ID" | python3 -c 'import json,sys;d=json.load(sys.stdin);print([x["id"] for x in d["displays"] if x["active"]][0])')
-  $LIM ios screenshot "$OUT/$(printf %02d $n)-$ang-$ori-$act.png" --display "$act" --format png --size full --id "$ID" | tail -1
+  $LIM fold "$ang" --orientation "$ori" --id "$ID" | tail -1; sleep 4
+  act=$($LIM fold --json --id "$ID" | python3 -c 'import json,sys;d=json.load(sys.stdin);print([x["id"] for x in d["displays"] if x["active"]][0])')
+  $LIM screenshot "$OUT/$(printf %02d $n)-$ang-$ori-$act.png" --display "$act" --format png --size full --id "$ID" | tail -1
 done
-[ -n "${RECORD:-}" ] && $LIM ios record stop --output "$OUT/run.mp4" --id "$ID" || true
+[ -n "${RECORD:-}" ] && $LIM record stop --output "$OUT/run.mp4" --id "$ID" || true

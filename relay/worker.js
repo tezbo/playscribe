@@ -530,6 +530,11 @@ const limrunWebhook = async (env, request) => {
       const cur = (await getJson(env.KV, ck)) ?? { minutes: 0, count: 0 }
       await env.KV.put(ck, JSON.stringify({ minutes: Math.round((cur.minutes + Math.max(0, (at - rec.at) / 60000)) * 10) / 10, count: cur.count + 1 }))
       await env.KV.delete(key)
+    } else {
+      // A terminated event whose created event was lost (retries are in memory): counted, not guessed at.
+      const ck = `lu:${new Date(at).toISOString().slice(0, 7)}:unmatched`
+      const cur = (await getJson(env.KV, ck)) ?? { minutes: 0, count: 0 }
+      await env.KV.put(ck, JSON.stringify({ minutes: 0, count: cur.count + 1 }))
     }
   }
   return json({ ok: true })
