@@ -75,6 +75,16 @@ struct DeckPagingTests {
         #expect(r >= 2.4 && r < 3, "light unlit dot \(r):1 on bg")
     }
 
+    /// Iris after #616: the cover's side pager is the same dots, view only, one adjustable element; no amber bar, no buttons.
+    @Test func coverUsesTheDots() throws {
+        let src = try String(contentsOf: URL(fileURLWithPath: #filePath).deletingLastPathComponent().deletingLastPathComponent()
+            .appendingPathComponent("Playscribe/UI/FrontCover.swift"), encoding: .utf8)
+        let leaves = String(src[src.range(of: "struct CoverLeaves")!.lowerBound...].prefix(2500))
+        #expect(leaves.contains("PageEdge.dot") && leaves.contains("Circle()"))
+        #expect(!leaves.contains("Button") && !leaves.contains("RoundedRectangle(cornerRadius: 1.5)"))
+        #expect(leaves.contains(".allowsHitTesting(false)") && leaves.contains(".accessibilityAdjustableAction"))
+    }
+
     @Test func indicatorIsOneSpokenElement() {
         #expect(PageEdge.spoken(lit: [1, 2], count: 5) == "Updates 2 and 3 of 5")
         #expect(PageEdge.spoken(lit: [0], count: 5) == "Update 1 of 5")
