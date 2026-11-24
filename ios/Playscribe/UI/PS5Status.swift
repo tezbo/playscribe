@@ -19,7 +19,7 @@ struct PS5StatusLines: Equatable {
             primary = "Out on PS5"
             // A build number the backend read from the PS5 build list (source ps5-builds) is reported, not official: it says so
             // (Iris on #617). VoiceOver reads the same words.
-            let reported = r.ps5?.version?.sourceID == Self.buildListSource
+            let reported = Self.isReportedBuild(r)
             version = r.ps5Version.flatMap { v in
                 let n = v.trimmingCharacters(in: .whitespaces)
                 // A word joiner after each dot: a version number never breaks at its dots (Redesign rule). Stripped for VoiceOver.
@@ -32,5 +32,16 @@ struct PS5StatusLines: Equatable {
         // Not live and not announced: the page still says so in plain words (the list rows show nothing for it).
         case .pending: primary = "Not on PS5 yet"
         }
+    }
+
+    /// True when the PS5 number came from the PS5 build list (reported, not official).
+    static func isReportedBuild(_ r: Release) -> Bool { r.ps5?.version?.sourceID == buildListSource }
+
+    /// The short PS5 number for a chip or a one-line status: the bare number when official, "Reported as <n>" when it came from
+    /// the build list (Iris on #619: the Tabletop plate and the cover chip match the update page line). VoiceOver reads the same
+    /// words. Nil without a PS5 number; never a PC number.
+    static func buildChip(_ r: Release) -> String? {
+        guard let n = r.ps5Version?.trimmingCharacters(in: .whitespaces), !n.isEmpty else { return nil }
+        return isReportedBuild(r) ? "Reported as \(n)" : n
     }
 }
