@@ -90,7 +90,9 @@ final class SearchBlankListTests: XCTestCase {
         app.launchArguments = ["-qaRoute", "demo"]
         app.launch()
         let pose = ReleaseRowTests.pose(app)
-        try XCTSkipUnless(pose.contains("pose: closed"), "run in Closed (pose: \(pose))")
+        // Closed (portrait and landscape) and Open portrait (Quinn on #624: the grid no longer rebuilt per query, proved outside Closed too).
+        let openPortrait = pose.contains("pose: flat") && app.frame.height > app.frame.width
+        try XCTSkipUnless(pose.contains("pose: closed") || openPortrait, "run in Closed or Open portrait (pose: \(pose))")
         let field = app.textFields["Search your library"].exists ? app.textFields["Search your library"] : app.textFields.firstMatch
         XCTAssertTrue(field.waitForExistence(timeout: 10))
         let tiles = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'tile-'"))
