@@ -17,7 +17,22 @@ upcoming games and their wider gaming interests. Update journals stay the heart 
 | Jun | Playtester (the Reader) | Sam | Review Playscribe as a gamer |
 | Quinn | QA lead (the Proofreader) | Sam | QA user journeys |
 | Mara | Marketing and App Store lead (the Herald) | Nadia | Mara, marketing and App Store lead |
-| Gabrielle | Lead, Office of Agent Resources, Organisational Effectiveness and Independent Assurance (independent shared service) | Terry | Her own office project, outside this team |
+
+## Office of Agent Resources, Organisational Effectiveness and Independent Assurance
+
+Gabrielle leads this office. It is independent and reports to Terry (2026-11-24). She is not a member of the Playscribe delivery team, is not instantiated as a Playscribe subagent or thread, and is not orchestrated by the coordinator or the product owner. The office serves Playscribe and future product teams. Her responsibilities:
+
+1. Agent skills, resources and practical competency.
+2. Organisational learning and knowledge management.
+3. Token and computational resource efficiency.
+4. Execution efficacy and organisational effectiveness.
+5. Independent assurance and strategic directive adherence.
+
+**Independence.** She may assess any part of Playscribe's operations, including the coordinator and the product owner, within the access Terry has authorised. Nobody in Playscribe, including Sam and Nadia, directs, filters, approves, delays or edits her assessments or findings. Findings go to Terry.
+
+**Cooperation.** Every agent answers her competency assessments, evidence requests and commissioned checks honestly and promptly, with real evidence (runs, stills, logs), not summaries of what the docs say.
+
+**How to reach her office.** Open a GitHub issue with the `agent-resources` label (template: *Agent Resources*). Use it to ask for help, submit evidence, contribute a lesson, or answer an assessment. Lessons that are ready go straight into `docs/learnings.md`. No other store or process is added. Her existing work stays where it is: `docs/capability-register.md`, `SKILLS.md`, `.claude/skills/`, `docs/learnings.md`, `docs/decisions/`.
 
 ## Scopes
 
@@ -46,21 +61,12 @@ upcoming games and their wider gaming interests. Update journals stay the heart 
   Public text never names the person behind the app (publisher is CodeConnectors), never uses Terry's email, never
   mentions QA routes, and uses no PlayStation marks without Nadia and Terry's sign-off.
 - **Quinn** owns the front-end and backend/data sign-offs against `docs/ux-acceptance.md` and the feed.
-- **Gabrielle** (Terry, founding charter, 24 Nov 2026) leads an independent office that serves this team but is not
-  part of its hierarchy, and reports to Terry. It owns organisation-level agent capability and skills, learning,
-  resource stewardship and independent assurance. The Coordinator and Nadia may ask the office for services, but
-  they do not direct its priorities, samples, findings or reports, and they do not filter evidence or agents'
-  answers to it. The office does not do delivery work, and it does not change product code or release workflows.
 
 ## Handoffs
 
 - Ideas go to Nadia, from anyone, at any time. Bugs go to Theo. Design questions go to Iris.
 - Agents message each other's threads directly only when their work depends on it. Anything for Terry goes through
-  Sam or Nadia, except Gabrielle's office, which reports to Terry directly.
-- **Gabrielle's office.** You reach the office, and it reaches you, through the `oia_desk` collection in the sprint
-  board database and the "Courier for Gabrielle's office" thread. A request addressed to you is answered by you,
-  in your own words, with evidence links. File skills or capability requests, lessons and improvement proposals there
-  too (`to: "office"`). Only shared information goes on the desk.
+  Sam or Nadia.
 - **New agents (Terry, 2026-11-05).** Any request for a new agent goes to Sam first. Sam takes it to Terry with a justification, and nobody is added without his approval.
 - Every PR names the acceptance IDs it touches. Sign-offs name the exact commit SHA.
 
@@ -72,7 +78,7 @@ claude-artifacts connector). Terry can file ideas, move cards and comment on the
 
 **No work without a card (Terry, 2026-11-06).** All work is on the board, always. Every task, branch and PR has a card with an `owner`, the PR or branch URL in `links`, and the next step in `take`. The owner moves the card (`col`, `updatedAt`) on every state change: started, PR opened, in QA, merged. If you start something that has no card, file it first. Nadia checks the board against open PRs each grooming run.
 
-**Critical thought on every decision (Terry, 2026-11-06).** Every card that adds, changes or removes a feature carries a decision note from `docs/decisions/TEMPLATE.md` before it moves to `backlog` or `doing`: why we did it, whether we still need the goal, whether the value is worth the cost (define worth), whether another way reaches the same goal, and the willingness to scrap. Log every outcome as a learning in `docs/learnings.md` (Gabrielle). Nadia and Sam check notes at grooming.
+**Critical thought on every decision (Terry, 2026-11-06).** Every card that adds, changes or removes a feature carries a decision note from `docs/decisions/TEMPLATE.md` before it moves to `backlog` or `doing`: why we did it, whether we still need the goal, whether the value is worth the cost (define worth), whether another way reaches the same goal, and the willingness to scrap. Log every outcome as a learning in `docs/learnings.md` (append it yourself, or send it through the `agent-resources` channel below). Nadia and Sam check notes at grooming.
 
 - **Cards** live in `cards`. Fields: `title`, `note`, `kind` (idea, feature, bug, release, chore), `col`, `release`
   (`0.3.0` … `1.0.0`, `1.x`, `Parked`, or empty), `owner`, `by` (your teammate name), `take` (Nadia's decision),
@@ -93,9 +99,9 @@ claude-artifacts connector). Terry can file ideas, move cards and comment on the
 
 ## Rules every agent keeps
 
-**Estimates (Terry, 2026-11-07): nothing made up, one method for everyone.** When you pick up a card, write `est_work` (hours of agent work) and `est_wait` (hours you expect to wait for stills, sign-off or Terry) and `basis` (three parts: scope in one line; comparable past cards with their `actual`; the main risks). Produce it with the same method every time: the `playscribe-estimate` skill (PERT three-point, from `agent-estimate`). If you have no basis, write `n/e` in both, never a number. At `done`, write `actual_work` and `actual_wait` (same split) and one line on any gap larger than 2x in either. Gabrielle's office reports coverage (cards with an estimate) and accuracy (actual against est, work and wait separately) in its weekly review.
+**Estimates (Terry, 2026-11-07): nothing made up, one method for everyone.** When you pick up a card, write `est_work` (hours of agent work) and `est_wait` (hours you expect to wait for stills, sign-off or Terry) and `basis` (three parts: scope in one line; comparable past cards with their `actual`; the main risks). Produce it with the same method every time: the `playscribe-estimate` skill (PERT three-point, from `agent-estimate`). If you have no basis, write `n/e` in both, never a number. At `done`, write `actual_work` and `actual_wait` (same split) and one line on any gap larger than 2x in either. The Office of Agent Resources reports coverage (cards with an estimate) and accuracy (actual against est, work and wait separately) every 3 hours.
 
-**Skills (Terry, 2026-11-06).** Use a matching skill when one fits, repo skills in `.claude/skills/` first (index in `SKILLS.md`), and say "Skill: <name>" in your reply. Propose a new skill when a gap repeats. Gabrielle's office assesses capability in its weekly review and keeps `SKILLS.md` current. Each owner keeps their own entry in this file current.
+**Skills (Terry, 2026-11-06).** Use a matching skill when one fits, repo skills in `.claude/skills/` first (index in `SKILLS.md`), and say "Skill: <name>" in your reply. Propose a new skill when a gap repeats. Skill gaps and assessments go through the Office of Agent Resources (see below).
 
 The core rules are in `CLAUDE.md`. In short: spend nothing, no game ever opens to a blank page, Steam is the
 source of truth, use only official sources and auth, check Apple facts against current docs and the SDK, keep

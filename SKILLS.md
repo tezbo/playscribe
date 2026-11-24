@@ -54,6 +54,7 @@ Claude Code loads these on its own in any session that checks out the repo, and 
 | Skill | Use it when |
 |---|---|
 | `five-pose-stills` | A UI change needs stills, a shoot list or a layout sign-off across the Duo poses. |
+| `duo-pose-shoot` | You need real hinge stills from the cloud (Closed, Book, Tabletop, Open) without the Mac, or must prove you can run native simulator QA. |
 | `ax3-layout-check` | Adding or changing text-bearing SwiftUI, to avoid AX3 clipping, missing chips, overlap. |
 | `precheck-loop` | About to push or open a PR without Xcode: push, read PRECHECK PASS/FAIL, fix, then PR. |
 | `status-protocol` | A message is just "s", or a step is finished (`Next:` line). |
@@ -71,6 +72,6 @@ Claude Code loads these on its own in any session that checks out the repo, and 
 
 **Plugin skills (superpowers).** Terry installed the superpowers plugin (v7.0.2, user scope on the Mac, 2026-11-09). Its skills are namespaced `superpowers:*`, so no name collides with a repo skill. Where one overlaps a Playscribe skill, the Playscribe skill wins: merges and sign-offs go through `review-merge-handoff` (not `finishing-a-development-branch`), reviews through `playscribe-code-review`, decisions through `decision-review` (not `brainstorming`). `subagent-driven-development` and `dispatching-parallel-agents` only when Terry asks. `systematic-debugging`, `verification-before-completion` and `test-driven-development` are welcome; cite them as "Skill: superpowers:<name>". Decision: `docs/decisions/superpowers-plugin.md`.
 
-**Outside sources.** Candidates come from Anthropic's skills and agent docs and from the VoltAgent awesome-agent-skills list. That list only links to other repos, each with its own licence. Nothing is copied in until its licence is checked; a copied skill keeps its licence file and credit in its folder. Propose a new skill when the same gap shows up twice, to Gabrielle's office (`oia_desk` on the sprint board, `type: "skills-request"`). Per-agent plans: `/mnt/project-files/team/improvement-plans.md`.
+**Outside sources.** Candidates come from Anthropic's skills and agent docs and from the VoltAgent awesome-agent-skills list. That list only links to other repos, each with its own licence. Nothing is copied in until its licence is checked; a copied skill keeps its licence file and credit in its folder. Propose a new skill when the same gap shows up twice, through an `agent-resources` issue (Office of Agent Resources, see `AGENTS.md`). Per-agent plans: `/mnt/project-files/team/improvement-plans.md`.
 
 **Estimating.** Every card gets `est_work`, `est_wait` and `basis` at pick-up, and `actual_work` and `actual_wait` at Done (AGENTS.md, "Estimates"). No basis means `n/e` in both, never a guessed number. The method is the `playscribe-estimate` skill, built on `agent-estimate` (PERT three-point, from the Anthropic Directory; upstream vendored in `.claude/skills/agent-estimate/`, Apache-2.0, credit in `SOURCE.md`). The CLI install is approved (Terry, 2026-11-07, message cmsg_0158fPo4KUquo5U1yUvNer8vT8XLJkrPTdpVzVsqmyJmGH: `pip install agent-estimate`); manual PERT is the fallback.

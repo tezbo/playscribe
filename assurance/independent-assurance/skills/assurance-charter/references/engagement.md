@@ -51,6 +51,12 @@ Behavioural challenges are not sent through the desk (that would announce them);
 with the sponsor's approval. Verified 24 Nov: office write to the desk and read-back at viewer level work across
 projects; team pickup depends on the courier thread.
 
+3. **Team intake on GitHub** (adopted by the sponsor in AGENTS.md, PR #636, 25 Nov 2026): team agents raise
+   requests, evidence and lessons as issues with the `agent-resources` label (template *Agent Resources*). The repo
+   is public, so the office reads these as inputs only and never answers an assessment, finding or challenge there;
+   any restricted reply goes to the office records and to the sponsor. The weekly review triages open
+   `agent-resources` issues together with the desk.
+
 ## B. Instantiating an agent from a role definition (a stand-in)
 
 A subagent (this plugin's `agents/`) or a fresh session primed with a team member's role text is a **new agent**. It
