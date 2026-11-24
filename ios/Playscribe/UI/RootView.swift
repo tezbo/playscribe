@@ -232,7 +232,8 @@ struct RootView: View {
                 AddGameSheet().presentationDetents([.large])
             }
             .sheet(isPresented: Binding(get: { model.settingsOpen && model.livePose != .tabletop && model.livePose != .book }, set: { if !$0 && model.livePose != .tabletop && model.livePose != .book { model.settingsOpen = false } })) {
-                SettingsView()
+                // Full height, as Add: the trailing sheet then stops before the rail (Iris on #611, Open landscape).
+                SettingsView().presentationDetents([.large])
             }
             .sheet(item: Binding(get: { model.livePose == .tabletop ? nil : model.tagExplainer }, set: { if $0 == nil && model.livePose != .tabletop { model.tagExplainer = nil } })) { kind in
                 VerificationExplainer(kind: kind).presentationDetents([.medium])
