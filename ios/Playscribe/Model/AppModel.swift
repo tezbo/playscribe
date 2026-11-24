@@ -1191,7 +1191,7 @@ final class AppModel {
             data.simulated.removeAll { $0.id == release.id }
             data.simulated.insert(release, at: 0)
             openRelease(gameID: gameID, releaseID: release.id)
-        // QA (INTERNAL, 0.5.6 Card B): "ps5-state/<game>/<live|live-version|announced|not-planned|none>" opens a simulated update in
+        // QA (INTERNAL, 0.5.6 Card B): "ps5-state/<game>/<live|live-version|live-reported|announced|not-planned|none>" opens a simulated update in
         // that PS5 state, so every status wording can be shot without the network. live-version carries a PS5 number (01.004.000)
         // and a PC number is on the page's PC row (never shown as PS5's). The name is neutral so no PC number reads as PS5's.
         // "none" (no PS5 row) is `.pending`, which `releases()` hides, so no page opens: that wording is unit-tested only.
@@ -1204,6 +1204,10 @@ final class AppModel {
             switch state {
             case "live": platforms.append(PlatformRelease(platform: .ps5, status: .live, liveAt: liveAt, verification: .official))
             case "live-version": platforms.append(PlatformRelease(platform: .ps5, status: .live, version: text("01.004.000"), liveAt: liveAt, verification: .official))
+            // #623: a PS5 number read from the PS5 build list (reported): "Reported as 01.006.000" on the page, plate and cover.
+            case "live-reported":
+                let build = Field(value: "01.006.000", verification: .reported, sourceID: PS5StatusLines.buildListSource, checkedAt: now)
+                platforms.append(PlatformRelease(platform: .ps5, status: .live, version: build, liveAt: liveAt, verification: .official))
             case "announced": platforms.append(PlatformRelease(platform: .ps5, status: .announced, verification: .official))
             case "not-planned": platforms.append(PlatformRelease(platform: .ps5, status: .notPlanned, verification: .official))
             default: break
@@ -1220,17 +1224,22 @@ final class AppModel {
         // simulated On PS5 update, so the Latest updates hero shows their art with a full caption (headline and two-line summary).
         // For the hero scrim on hard art: 381248 Star Wars: Galactic Racer (near-white art) and 389434 Castlevania: Belmont's Curse
         // (dark art). The art loads from the network, as for any index game. Stays on the Library.
+        // A last part "reported" makes each PS5 number a build-list one ("Reported as …" on the cover chip, #623).
         case "hero-art" where !parts.isEmpty:
+            let reportedBuilds = parts.last == "reported"
+            let ids = reportedBuilds ? Array(parts.dropLast()) : parts
             resetDemo()
             data = PersistedState(collection: [])
             let now = Date.now
-            for (n, part) in parts.enumerated() {
+            for (n, part) in ids.enumerated() {
                 guard let id = Int(part), let e = PS5Index.shared.entry(igdb: id) else { continue }
                 let g = PS5Index.shared.game(e)
                 insertGame(g, status: .owned)
                 let at = now.addingTimeInterval(-Double(n) * 3600)
                 let liveAt = Field(value: at, verification: .official, sourceID: "simulated", checkedAt: now)
-                let version = Field(value: "01.0\(n + 2)0.000", verification: .official, sourceID: "simulated", checkedAt: now)
+                let version = reportedBuilds
+                    ? Field(value: "01.0\(n + 2)0.000", verification: .reported, sourceID: PS5StatusLines.buildListSource, checkedAt: now)
+                    : Field(value: "01.0\(n + 2)0.000", verification: .official, sourceID: "simulated", checkedAt: now)
                 let release = Release(
                     id: "qa-hero-art-\(g.id)", gameID: g.id, displayName: "Patch 1.\(n + 2)", kind: .patch, kindBasis: .studio,
                     announcedAt: at, notes: [], sourceIDs: [],
