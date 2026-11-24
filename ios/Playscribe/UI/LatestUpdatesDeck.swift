@@ -363,12 +363,17 @@ struct DeckCardView: View {
     }
 
     private var dateText: String { card.date.map(AppModel.tileDay) ?? "" }
-    private var label: String {
+    private var label: String { Self.label(card, tracked: model.feedTracksGame(card.game.id)) }
+
+    /// The card's one VoiceOver element. It never reads the type size: at AX3 and above the visible summary is dropped (Iris: by
+    /// design), and this label is where the summary stays (r054-deck-card-voiceover-label-ax3, Iris's condition).
+    static func label(_ card: DeckCard, tracked: Bool) -> String {
+        let dateText = card.date.map(AppModel.tileDay) ?? ""
         if let r = card.release {
             let summary = (r.summary?.isEmpty == false) ? ", \(r.summary!)" : ""
             return "\(card.unread ? card.chipText + ", " : "")\(r.ps5Headline ?? r.displayName), \(card.game.name), \(r.versionChip.map { $0 + ", " } ?? "")\(dateText)\(summary)"
         }
-        return "\(card.game.name), released \(dateText), \(DeckCard.noReleaseLine(tracked: model.feedTracksGame(card.game.id)).lowercased())"
+        return "\(card.game.name), released \(dateText), \(DeckCard.noReleaseLine(tracked: tracked).lowercased())"
     }
 }
 
