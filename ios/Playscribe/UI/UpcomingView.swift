@@ -58,8 +58,16 @@ struct LibraryTabPicker: View {
         .accessibilityIdentifier("libraryTabPicker")
         // Book: exactly the left page wide, so the control never crosses the fold (AX3, 7fe84f4).
         .frame(width: duo.pose == .book ? duo.division.map { max(0, $0.minX - 24 - 16) } : nil, alignment: .leading)
+        // Never wider than LibraryControl.maxWidth, leading: in Open landscape it stretched to about 1750 px (Iris).
+        .frame(maxWidth: LibraryControl.maxWidth, alignment: .leading)
         .tappableFrame()
     }
+}
+
+/// The Library's Playing/Upcoming control and search field stop at this width, leading-aligned, on wide screens (Iris:
+/// both stretched to about 1750 px in Open landscape). Closed portrait (466 pt) and a Book page are narrower already.
+enum LibraryControl {
+    static let maxWidth: CGFloat = 520
 }
 
 struct UpcomingView: View {
