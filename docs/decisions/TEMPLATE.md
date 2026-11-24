@@ -12,7 +12,7 @@ Date / owner / card:
 3. **Value, and is it worth the cost?** Say what "worth" means here (north-star fit, player impact, cost in build, QA, complexity and upkeep). Evidence over opinion; mark guesses as guesses.
 4. **Another way to reach the same goal?** List at least two alternatives, each with one line of pros and cons.
 5. **Decision.** Do it, change it, or scrap it. Scrapping is a valid result; do not be afraid to scrap.
-6. **Learning.** One line for `docs/learnings.md` (Gabrielle logs it), whatever the outcome.
+6. **Learning.** One line for `docs/learnings.md` (append it to the log, or file an `agent-resources` issue), whatever the outcome.
 
 ## Outcomes
 - **Kept:** the goal still stands and this is the best way to reach it. Example: the Latest updates deck stays because it answers "what changed since I looked" in one glance.
