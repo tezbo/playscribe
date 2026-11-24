@@ -49,7 +49,7 @@ jobs:
             || { grep -E 'error:' build.log | head -20; exit 1; }
       - name: Feature UI tests (Closed)
         id: uitests
-        # The five synthetic-fold cases skipped here run in the next step on the inner display, where they measure something
+        # The seven synthetic-fold cases skipped here run in the next step on the inner display, where they measure something
         # (#626, #631). On the outer display they can only fail with "needs the inner display".
         run: |
           xcodebuild test-without-building -project ios/Playscribe.xcodeproj -scheme PlayscribeUI \
@@ -62,6 +62,8 @@ jobs:
             -skip-testing:PlayscribeUITests/RailSetTests/testTabletopStd \
             -skip-testing:PlayscribeUITests/RailSetTests/testTabletopAX5 \
             -skip-testing:PlayscribeUITests/RailSetTests/testTabletopUntrackedAX5 \
+            -skip-testing:PlayscribeUITests/RailSetTests/testMoreListsSwapSidesInBook \
+            -skip-testing:PlayscribeUITests/RailSetTests/testMoreHasNoSwapSidesInTabletop \
             -resultBundlePath build/UITests.xcresult CODE_SIGNING_ALLOWED=NO > uitests.log 2>&1 || status=$?
           grep -E 'error:|Test Case .* (passed|failed|skipped)|Executed|\*\* TEST' uitests.log | tail -60 | tee -a "$GITHUB_STEP_SUMMARY"
           [ "${status:-0}" = 0 ] || echo "::warning::Feature UI tests failed in Closed; see uitests.log in the artifact"
@@ -73,7 +75,6 @@ jobs:
         # The simulator is always folded closed again so the Closed steps below run on the outer display.
         id: innertests
         if: always()
-        continue-on-error: true
         run: |
           fold() { sim-use ios fold "$1" --device "$UDID"; sleep 5; }
           trap 'sim-use ios fold closed --device "$UDID" || true; sim-use ios rotate portrait --device "$UDID" || true; sleep 5' EXIT
@@ -85,7 +86,10 @@ jobs:
             # folds only a booted device, so boot it first, as the Duo QA probe did.
             xcrun simctl boot "$UDID" 2>/dev/null || true; xcrun simctl bootstatus "$UDID" -b > /dev/null
             fold open; sim-use ios rotate "$o" --device "$UDID"; sleep 5
-            xcrun devicectl device info displays --device "$UDID" 2>&1 | grep -E 'LCD|active|currentOrientation' | tee -a inner-uitests.log
+            xcrun devicectl device info displays --device "$UDID" > displays.txt 2>&1
+            grep -E 'LCD|active|currentOrientation' displays.txt | tee -a inner-uitests.log
+            # A failed fold must stop the step, not run the pose cases on the outer display.
+            grep -q 'LCD-1 (active)' displays.txt || { echo "::error::$n: fold open did not make the inner display (LCD-1) active"; cat displays.txt; exit 1; }
             xcodebuild test-without-building -project ios/Playscribe.xcodeproj -scheme PlayscribeUI \
               -destination "id=$UDID" -derivedDataPath build/dd "$@" \
               -resultBundlePath "build/Inner-$n.xcresult" CODE_SIGNING_ALLOWED=NO >> inner-uitests.log 2>&1 || status=$?
