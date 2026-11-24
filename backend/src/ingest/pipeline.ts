@@ -574,6 +574,7 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
   lap('pruneNews')
   for (const r of pruned) deps.log?.(`news hidden (promo, pruned) ${r.gameId}: ${r.title}`)
   deps.log?.(`ingest: news hidden (promo) ${summary.newsHidden ?? 0} new, ${pruned.length} pruned`)
+  store.applyKnownBuilds(deps.db, Object.fromEntries(Object.entries(registry.games).filter(([, g]) => g.ps5Builds).map(([id, g]) => [id, g.ps5Builds!])))
   const promoted = store.promoteAnnounced(deps.db, new Date(), !!opts.until) + store.promoteStated(deps.db, new Date(), !!opts.until)
   lap('promote')
   const settled = store.settleOldAnnouncements(deps.db)

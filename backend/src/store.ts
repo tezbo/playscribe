@@ -574,3 +574,25 @@ export const renameRelease = (db: DB, releaseId: string, displayName: string) =>
   db.prepare('UPDATE releases SET display_name = ?, content_hash = ?, revision = revision + 1, updated_at = ? WHERE id = ?').run(displayName, hashNotes(displayName, json<NoteSection[]>(r.notes, [])), now(), releaseId)
   return true
 }
+
+/**
+ * Console builds the registry names for a game's releases (ps5Builds). Only a PS5 row with no version takes one, as `reported`
+ * from source 'ps5-builds'; a number read from a post, or an earlier one of ours, is never overwritten by a different guess.
+ */
+export const applyKnownBuilds = (db: DB, builds: Record<string, Record<string, string>>): number => {
+  let n = 0
+  for (const [gameId, byKey] of Object.entries(builds)) {
+    for (const [versionKey, build] of Object.entries(byKey)) {
+      const r = db.prepare("SELECT r.id, p.version FROM releases r JOIN platform_releases p ON p.release_id = r.id AND p.platform = 'ps5' WHERE r.game_id = ? AND r.version_key = ?").get(gameId, versionKey) as { id: string; version: string } | undefined
+      if (!r) continue
+      const cur = json<Field<string> | null>(r.version, null)
+      if (cur && cur.sourceId !== 'ps5-builds') continue
+      if (cur?.value === build) continue
+      // The version only: the row's status, verification and times are other facts and stay as they were.
+      db.prepare("UPDATE platform_releases SET version = ? WHERE release_id = ? AND platform = 'ps5'").run(JSON.stringify(field(build, 'reported', 'ps5-builds')), r.id)
+      db.prepare('UPDATE releases SET updated_at = ? WHERE id = ?').run(now(), r.id)
+      n++
+    }
+  }
+  return n
+}
