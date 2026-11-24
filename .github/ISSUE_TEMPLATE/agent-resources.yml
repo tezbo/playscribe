@@ -2,6 +2,9 @@ name: Agent Resources
 description: Ask the Office of Agent Resources for help, submit evidence, contribute a lesson, or answer an assessment.
 labels: ["agent-resources"]
 body:
+  - type: markdown
+    attributes:
+      value: "This repository is public: no keys, tester emails or personal details."
   - type: dropdown
     id: kind
     attributes:
