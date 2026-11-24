@@ -1252,26 +1252,35 @@ struct NotificationInviteCard: View {
 
     private var denied: Bool { NotificationService.shared.authorization == .denied }
 
+    /// The card's body line, shown under the heading and read by VoiceOver as part of it.
+    private var bodyText: String {
+        denied
+            ? "Turn notifications on in Settings and \(Brand.name) will tell you when " + (gameName.map { "\($0) and your other games" } ?? "your games") + " update on PS5."
+            : "Get a note the moment any game in your library gets an update on PS5."
+    }
+
     var body: some View {
         HStack(alignment: .top, spacing: 12) {
             Image(systemName: "bell.badge").font(PlayscribeFont.title2).foregroundStyle(PlayscribeRole.action)
             VStack(alignment: .leading, spacing: 8) {
                 Text(denied ? "Alerts are off" : "Be first to know when a patch drops").font(PlayscribeFont.headline)
                     .fixedSize(horizontal: false, vertical: true)
-                    // The body is dropped from view at AX sizes, never from VoiceOver (Iris).
-                    .accessibilityLabel(denied ? "Alerts are off" : "Be first to know when a patch drops. Get a note the moment any game in your library gets an update on PS5.")
+                    // The body is dropped from view at AX sizes, never from VoiceOver (Iris): the heading reads it, and the body
+                    // text below is hidden from VoiceOver so it is not read twice. On its own, under the card's swipe and "Not now"
+                    // action, the system audit took the 18 pt line for a control too small to hit (#588, Mac 75e96041 Tabletop).
+                    .accessibilityLabel((denied ? "Alerts are off. " : "Be first to know when a patch drops. ") + bodyText)
                     .accessibilityAddTraits(.isHeader)
                 // At the largest sizes the ask card keeps its title and buttons only; denied keeps one short line.
                 if !typeSize.isAccessibilitySize {
-                    Text(denied
-                         ? "Turn notifications on in Settings and \(Brand.name) will tell you when " + (gameName.map { "\($0) and your other games" } ?? "your games") + " update on PS5."
-                         : "Get a note the moment any game in your library gets an update on PS5.")
+                    Text(bodyText)
                         .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
                         .fixedSize(horizontal: false, vertical: true)
+                        .accessibilityHidden(true)
                 } else if denied {
                     Text("Turn notifications on in Settings.")
                         .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
                         .fixedSize(horizontal: false, vertical: true)
+                        .accessibilityHidden(true)
                 }
                 // Accessibility sizes stack the buttons outright: ViewThatFits let a label squeeze to "Turn on al…" (AX3, Closed).
                 if typeSize.isAccessibilitySize {

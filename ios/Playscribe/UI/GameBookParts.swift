@@ -282,6 +282,7 @@ struct ReleasePage: View {
                 if let v = status.version { Text(v).font(PlayscribeFont.subheadline).monospacedDigit().foregroundStyle(PlayscribeRole.textSecondary) }
             }
             .accessibilityElement(children: .ignore).accessibilityLabel(status.spoken)
+            .accessibilityAddTraits(.isStaticText)   // read as text, never audited as a control (d194c511)
             .accessibilityIdentifier("ps5Status")
             }
             .dynamicTypeSize(...(duo.pose == .tabletop ? DynamicTypeSize.accessibility3 : DynamicTypeSize.accessibility5))
