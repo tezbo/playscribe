@@ -35,7 +35,9 @@ trailer) # row 3: reflection element + 3 taps in the upper half, portrait Tablet
 closedax5) # row 1: Closed outer landscape at AX5
   launch -qaRoute library/playing -qaOrientation landscape -qaOverlay YES -UIPreferredContentSizeCategoryName $AX5
   snap closedax5 1-closed-landscape-ax5
-  launch -qaRoute library/playing -UIPreferredContentSizeCategoryName $AX5; snap closedax5 2-closed-portrait-ax5 ;;
+  for i in 1 2 3 4 5 6 7 8; do sim-use swipe --from 339,380 --to 339,60 --duration 0.5 --device "$UDID" >/dev/null 2>&1; done; sleep 2; snap closedax5 1b-closed-landscape-ax5-scrolled-end
+  launch -qaRoute library/playing -UIPreferredContentSizeCategoryName $AX5; snap closedax5 2-closed-portrait-ax5
+  for i in 1 2 3 4 5 6 7 8; do sim-use swipe --from 233,560 --to 233,120 --duration 0.5 --device "$UDID" >/dev/null 2>&1; done; sleep 2; snap closedax5 2b-closed-portrait-ax5-scrolled-end ;;
 schemes) # dark and light for the pose set
   for ap in dark light; do
     launch -qaRoute library/playing -qaAppearance $ap -qaOverlay YES
