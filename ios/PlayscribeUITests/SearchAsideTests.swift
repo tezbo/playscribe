@@ -75,6 +75,13 @@ final class SearchBlankListTests: XCTestCase {
         }
     }
 
+    /// The Library body's run count from its QA probe ("qa-library-body: N"), or 0 where the probe is absent.
+    static func libraryBodyRuns(_ app: XCUIApplication) -> Int {
+        let probe = app.descendants(matching: .any)["qaLibraryBody"]
+        guard probe.exists else { return 0 }
+        return Int(probe.label.split(separator: " ").last ?? "") ?? 0
+    }
+
     /// r054-library-blank-list-fast-typing: 20 characters typed at speed (a match, then 13 that match nothing), the 13 deleted
     /// at speed, ten runs: the list is never left blank, "control" shows its one tile, and clearing brings back every tile.
     @MainActor
@@ -97,23 +104,27 @@ final class SearchBlankListTests: XCTestCase {
             XCTFail("run \(run): \(what) (tree attached)")
         }
         for run in 1...10 {
+            let bodyBefore = Self.libraryBodyRuns(app)
             field.tap()
             field.typeText("controlqqqqqqqqqqqqq")   // 20 characters in one burst
             field.typeText(String(repeating: XCUIKeyboardKey.delete.rawValue, count: 13))
-            // Mac 693cc28e, Closed landscape, run 3: no tile 2 s after the deletes, yet the tree taken at the failure showed
-            // 'control' in the field and its tile drawn. The list was late, not left blank. Measure how late: wait up to 5 s and
-            // record the time, so a slow rebuild is named and a stuck one still fails.
+            // Mac d194c511: the tile took 3.4 to 6.3 s, because every key rewrote the saved state and rebuilt the grid. A player
+            // waiting that long calls search broken, so a late tile fails: it must show within 1 s of the last key. The time and
+            // the Library body runs for the 33 keys are recorded either way, so a slow run names its cost.
             let start = Date()
-            let shown = tiles.firstMatch.waitForExistence(timeout: 5)
-            let late = XCTAttachment(string: String(format: "run %d: tile after %.2f s", run, Date().timeIntervalSince(start)))
+            let shown = tiles.firstMatch.waitForExistence(timeout: 1)
+            let late = XCTAttachment(string: String(format: "run %d: tile after %.2f s, Library body runs %d", run,
+                                                    Date().timeIntervalSince(start), Self.libraryBodyRuns(app) - bodyBefore))
             late.name = "fast-typing-run\(run)-time"; late.lifetime = .keepAlways; add(late)
-            guard shown else { return blank("no tile 5 s after 'control' typed fast", run) }
+            guard shown else { return blank("no tile 1 s after 'control' typed fast", run) }
             XCTAssertEqual(tiles.count, 1, "run \(run): one match for 'control'")
             let clear = app.buttons["Clear search"]
             XCTAssertTrue(clear.waitForExistence(timeout: 3), "run \(run): Clear search shows")
             clear.tap()
             app.keyboards.buttons.matching(NSPredicate(format: "label IN {'Search','search','Return','return'}")).firstMatch.tap()
-            sleep(1)
+            // Every tile within 1 s of clearing (Closed landscape at d194c511 still showed 1 after 1 s).
+            let back = Date()
+            while tiles.count != all && Date().timeIntervalSince(back) < 1 { usleep(100_000) }
             guard tiles.firstMatch.exists else { return blank("no tile after clearing", run) }
             XCTAssertEqual(tiles.count, all, "run \(run): clearing brings back every tile")
         }
