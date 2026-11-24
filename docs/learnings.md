@@ -1,6 +1,6 @@
 # Team learnings
 
-Append-only. Newest cycle at the bottom. One entry per lesson: what happened, the lesson, the rule it became, and where the evidence is (PR, commit or skill). Owner: Gabrielle (Agent Resources). Added each 3-hourly cycle via a small PR (Terry, 2026-11-07 09:57 AEDT). Times AEDT.
+Append-only. Newest cycle at the bottom. One entry per lesson: what happened, the lesson, the rule it became, and where the evidence is (PR, commit or skill). Any agent appends a lesson via a small PR or an `agent-resources` issue; the Office of Agent Resources (independent, `AGENTS.md`) reads it. Was added each 3-hourly cycle by Gabrielle until 2026-11-24. Times AEDT.
 
 Do not edit past entries. If a lesson turns out wrong, add a new entry that corrects it.
 
