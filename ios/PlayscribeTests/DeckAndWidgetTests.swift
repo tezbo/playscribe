@@ -125,4 +125,33 @@ struct DeckAndWidgetTests {
             }
         }
     }
+
+    /// Iris on #622: the rule holds for any word before the number ("Patch 1.0302256" carried a "v1.0302256" chip).
+    @Test func noChipBesideATitleThatNamesTheVersion() {
+        func release(_ name: String) -> Release {
+            Release(id: "g@\(name)", gameID: "g", displayName: name, kind: .patch, kindBasis: .inferred, announcedAt: .now,
+                    notes: [], sourceIDs: [], platforms: [], headline: nil)
+        }
+        for name in ["Patch 1.0302256", "Update 1.2", "Hotfix 2.1.3"] {
+            let r = release(name)
+            #expect(r.versionChip != nil, "\(name) has a version")
+            #expect(r.deckVersionChip == nil, "\(name): \(r.deckVersionChip ?? "")")
+            #expect(r.versionChip(beside: "\(name) is here.") == nil)
+        }
+        let r = release("Patch 1.0302256")
+        #expect(r.versionChip(beside: "Respec with Draught of Mind Rebirth") == "v1.0302256")
+        #expect(r.versionChip(beside: "Patch 1.03") == "v1.0302256", "a different number keeps the chip")
+    }
+
+    /// Iris (taste, #610): the deck shows no "v1.2" chip under a headline that already says "Update 1.2"; a descriptive
+    /// headline keeps its chip.
+    @Test func deckChipNotRepeatedByTheHeadline() {
+        let m = demoModel()
+        for card in m.latestDeck {
+            guard let r = card.release, let v = r.versionChip else { continue }
+            let headline = r.ps5Headline ?? r.displayName
+            let named = headline.split(separator: " ").contains { $0 == v.dropFirst() }
+            #expect(r.deckVersionChip == (named ? nil : v), "\(headline): \(r.deckVersionChip ?? "no chip")")
+        }
+    }
 }
