@@ -42,6 +42,7 @@ final class RailSetTests: XCTestCase {
         // fold 374-414), so More fell under the tab capsule. Say so, instead of reporting rail failures that measure nothing.
         if pose != nil {
             let w = app.windows.firstMatch.frame
+            print("innerWindow \(pose!) \(ax5 ? "AX5" : "std"): \(w)") // CI folds open with sim-use: expect ~951 x 669 (Book) or 669 x 951 (Tabletop)
             guard min(w.width, w.height) >= 600 else {
                 XCTFail("\(pose!): the synthetic fold needs the inner display; this window is \(w), the outer display, so this run measures nothing")
                 app.terminate()

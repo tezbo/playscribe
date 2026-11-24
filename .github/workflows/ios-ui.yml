@@ -60,6 +60,32 @@ jobs:
           grep -E 'error:|Test Case .* (passed|failed|skipped)|Executed|\*\* TEST' uitests.log | tail -60 | tee -a "$GITHUB_STEP_SUMMARY"
           [ "${status:-0}" = 0 ] || echo "::warning::Feature UI tests failed in Closed; see uitests.log in the artifact"
           exit "${status:-0}"
+      - name: Book and Tabletop UI tests (inner display, folded with sim-use)
+        # The synthetic fold (-qaPose) is valid only on the inner display (#626). sim-use sends Device Hub's hinge reports, so the
+        # runner's Duo opens flat (180 degrees, no real division) and -qaPose adds the Book or Tabletop fold. Book reads landscape
+        # (inner 951 x 669); Tabletop reads portrait (669 x 951). Probe runs 45471626931 and 45474143713 (Duo QA thread).
+        # The simulator is always folded closed again so the Closed steps below run on the outer display.
+        id: innertests
+        continue-on-error: true
+        run: |
+          fold() { sim-use ios fold "$1" --device "$UDID"; sleep 5; }
+          trap 'sim-use ios fold closed --device "$UDID" || true; sim-use ios rotate portrait --device "$UDID" || true; sleep 5' EXIT
+          brew install lycorp-jp/tap/sim-use > sim-use.log 2>&1 || { tail -20 sim-use.log; exit 1; }
+          T=PlayscribeUITests/RailSetTests
+          run() { # $1 = name, $2 = orientation, rest = -only-testing args
+            n=$1; o=$2; shift 2
+            fold open; sim-use ios rotate "$o" --device "$UDID"; sleep 5
+            xcrun devicectl device info displays --device "$UDID" 2>&1 | grep -E 'LCD|active|currentOrientation' | tee -a inner-uitests.log
+            xcodebuild test-without-building -project ios/Playscribe.xcodeproj -scheme PlayscribeUI \
+              -destination "id=$UDID" -derivedDataPath build/dd "$@" \
+              -resultBundlePath "build/Inner-$n.xcresult" CODE_SIGNING_ALLOWED=NO >> inner-uitests.log 2>&1 || status=$?
+          }
+          run Book landscape-left -only-testing:$T/testBookStd -only-testing:$T/testBookAX5 -only-testing:$T/testMoreListsSwapSidesInBook
+          run Tabletop portrait -only-testing:$T/testTabletopStd -only-testing:$T/testTabletopAX5 \
+            -only-testing:$T/testTabletopUntrackedAX5 -only-testing:$T/testMoreHasNoSwapSidesInTabletop
+          grep -E 'LCD|active|innerWindow|error:|Test Case .* (passed|failed|skipped)|Executed|\*\* TEST' inner-uitests.log | tail -60 | tee -a "$GITHUB_STEP_SUMMARY"
+          [ "${status:-0}" = 0 ] || echo "::warning::Book/Tabletop UI tests failed on the inner display; see inner-uitests.log in the artifact"
+          exit "${status:-0}"
       - name: Export test screenshots
         if: always()
         run: |
@@ -113,6 +139,9 @@ jobs:
             build/shots-ax3
             build/attachments
             build/UITests.xcresult
+            build/Inner-Book.xcresult
+            build/Inner-Tabletop.xcresult
+            inner-uitests.log
             build/Landscape.xcresult
             build/Harness.xcresult
             harness.log
