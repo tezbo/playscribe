@@ -732,11 +732,18 @@ struct PageEdge: View {
     /// Cards fully on screen at once: 2 in Open (two across), else 1.
     var visible: Int = 1
     var select: (String) -> Void
+    @Environment(\.colorScheme) private var scheme
 
     static let dot: CGFloat = 6
     static let gap: CGFloat = 10
     /// The row's height, so the deck's layout around it is unchanged.
     static let rowHeight: CGFloat = 44
+    /// Unlit dots in light: #A39B97 on cream (2.5:1), the weight the dark dots carry (Iris on #616). Dark keeps textSecondary at 35%.
+    static let unlitLight = UIColor(hex: 0xA39B97)
+
+    /// One page only: every card is on screen at once, so there is nothing to page and no indicator (HIG page controls;
+    /// Iris on #616, Open landscape with 2 updates showed a lone pill).
+    static func hidden(count: Int, visible: Int) -> Bool { count <= max(1, visible) }
 
     /// The pill over the lit dots, in the dots row's own space (x from the first dot's leading edge). Nil when nothing is lit.
     static func pill(lit: Set<Int>, window: [Int]) -> CGRect? {
@@ -782,6 +789,15 @@ struct PageEdge: View {
     }
 
     var body: some View {
+        if Self.hidden(count: cards.count, visible: visible) {
+            // The row keeps its height, so the deck's layout does not move between two cards and three.
+            Color.clear.frame(height: Self.rowHeight).accessibilityHidden(true)
+        } else {
+            dots
+        }
+    }
+
+    private var dots: some View {
         let lit = Self.lit(cards: cards, current: current, visible: visible)
         let win = window
         let pill = Self.pill(lit: lit, window: win.map(\.index))
@@ -789,7 +805,7 @@ struct PageEdge: View {
             HStack(spacing: Self.gap) {
                 ForEach(win, id: \.card.id) { item in
                     Circle()
-                        .fill(lit.contains(item.index) ? Color.clear : PlayscribeRole.textSecondary.opacity(0.35))
+                        .fill(lit.contains(item.index) ? Color.clear : scheme == .light ? Color(Self.unlitLight) : PlayscribeRole.textSecondary.opacity(0.35))
                         .frame(width: Self.dot, height: Self.dot)
                 }
             }

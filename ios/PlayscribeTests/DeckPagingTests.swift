@@ -65,6 +65,16 @@ struct DeckPagingTests {
         #expect(PageEdge.pill(lit: [], window: [0, 1]) == nil)
     }
 
+    /// Iris on #616: no indicator when every card is on screen (one page), in any pose; light unlit dots are #A39B97, 2.5:1 on cream.
+    @Test func onePageHasNoIndicatorAndLightDotsMeasure() {
+        #expect(PageEdge.hidden(count: 1, visible: 1))
+        #expect(PageEdge.hidden(count: 2, visible: 2))
+        #expect(!PageEdge.hidden(count: 2, visible: 1))
+        #expect(!PageEdge.hidden(count: 3, visible: 2))
+        let r = Contrast.ratio(PageEdge.unlitLight, PlayscribeRole.resolved(PlayscribeRole.bgSpec, light: true))
+        #expect(r >= 2.4 && r < 3, "light unlit dot \(r):1 on bg")
+    }
+
     @Test func indicatorIsOneSpokenElement() {
         #expect(PageEdge.spoken(lit: [1, 2], count: 5) == "Updates 2 and 3 of 5")
         #expect(PageEdge.spoken(lit: [0], count: 5) == "Update 1 of 5")
