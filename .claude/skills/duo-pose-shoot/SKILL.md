@@ -25,6 +25,7 @@ A shoot is **evidence of what rendered**. It is not a sign-off. A matrix row is 
 
 ## Read it honestly
 
+- **Harness faults (Iris, run 45489150050, 24 Nov; report to engineering, unfixed when written):** (1) A run can silently stay in landscape: runs 1 and 2 never turned to portrait, so the 60 to 130 degree "portrait" shots were landscape Book and only run 3 reached Tabletop. Read the pose from the `foldAudit` line in `-ui.txt`, never from the file name, and if Tabletop is missing, say so rather than assume it. (2) The manifest's `active_display` column can disagree with the app: a shot marked outer can be black while the app is on the inner display, and pixel sizes may not match the label. (3) `hinge_read` is empty in every row. Trust the image and the tree over the manifest.
 - Report: commit SHA, route, angles reached, the pose line from `-ui.txt`, and one concrete observation per still (or "none found", with the filename).
 - Compare against the acceptance IDs in `docs/ux-acceptance.md`; cite them.
 - Tabletop: check nothing tappable sits above the fold using the frames in `-ui.txt`, not by eye.
@@ -33,4 +34,4 @@ A shoot is **evidence of what rendered**. It is not a sign-off. A matrix row is 
 
 ## Competency check (run it, do not read it)
 
-First proven by Quinn, 24 Nov (run 45481941098, SHA 49b078de, gamepage/dawnwalker). Pass means a posted shoot, in your own thread, that names the SHA and route, links the run or artifact, and gives one observation per pose from the images. A manifest quoted without opening a still does not pass. Record the result in `docs/capability-register.md`.
+First proven by Quinn, 24 Nov (run 45481941098, SHA 49b078de, gamepage/dawnwalker), then Iris (run 45489150050, 1eb4f2cc). Pass means a posted shoot, in your own thread, that names the SHA and route, links the run or artifact, and gives one observation per pose from the images. A manifest quoted without opening a still does not pass. Record the result in `docs/capability-register.md`.
