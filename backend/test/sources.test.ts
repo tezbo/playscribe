@@ -215,3 +215,17 @@ test('a repair-only backfill creates no release from a post it has not made one 
   await runIngest(deps, { force: true, until: '2020-01-01T00:00:00.000Z', games: ['rocket-league'] })
   assert.deepEqual(releasesOf(db, 'rocket-league'), ['rocket-league@2.76'], 'without the flag the same post makes its release')
 })
+
+test('a known console build fills an empty PS5 version as reported, and a post number is never overwritten', async () => {
+  const db = openDb(':memory:')
+  await seedGames({ db, fetchFn: fakeFetch({}), igdb: null })
+  for (const key of ['1.1', '1.2']) {
+    const { id } = store.upsertRelease(db, { gameId: 'dawnwalker', versionKey: key, displayName: `Update ${key}`, kind: 'major', kindBasis: 'inferred', announcedAt: '2026-11-13T16:30:00.000Z', notes: [], sourceId: 'x' })
+    store.upsertPlatform(db, id, 'ps5', { status: 'live', verification: 'reported', version: key === '1.1' ? store.field('01.006.001', 'official', 'studio') : null })
+  }
+  assert.equal(store.applyKnownBuilds(db, { dawnwalker: { '1.1': '01.006.000', '1.2': '01.007.000' } }), 1)
+  assert.equal(ps5Of(db, 'dawnwalker@1.2')?.version?.value, '01.007.000')
+  assert.equal(ps5Of(db, 'dawnwalker@1.2')?.version?.verification, 'reported')
+  assert.equal(ps5Of(db, 'dawnwalker@1.1')?.version?.value, '01.006.001', 'a number from a post stays')
+  assert.equal(store.applyKnownBuilds(db, { dawnwalker: { '1.2': '01.007.000' } }), 0)
+})
