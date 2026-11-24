@@ -1187,6 +1187,32 @@ final class AppModel {
             data.simulated.removeAll { $0.id == release.id }
             data.simulated.insert(release, at: 0)
             openRelease(gameID: gameID, releaseID: release.id)
+        // QA (INTERNAL, #618): "hero-art/<igdbID>[/<igdbID>...]": a Library of only those PS5-index games, each with one unread
+        // simulated On PS5 update, so the Latest updates hero shows their art with a full caption (headline and two-line summary).
+        // For the hero scrim on hard art: 381248 Star Wars: Galactic Racer (near-white art) and 389434 Castlevania: Belmont's Curse
+        // (dark art). The art loads from the network, as for any index game. Stays on the Library.
+        case "hero-art" where !parts.isEmpty:
+            resetDemo()
+            data = PersistedState(collection: [])
+            let now = Date.now
+            for (n, part) in parts.enumerated() {
+                guard let id = Int(part), let e = PS5Index.shared.entry(igdb: id) else { continue }
+                let g = PS5Index.shared.game(e)
+                insertGame(g, status: .owned)
+                let at = now.addingTimeInterval(-Double(n) * 3600)
+                let liveAt = Field(value: at, verification: .official, sourceID: "simulated", checkedAt: now)
+                let version = Field(value: "01.0\(n + 2)0.000", verification: .official, sourceID: "simulated", checkedAt: now)
+                let release = Release(
+                    id: "qa-hero-art-\(g.id)", gameID: g.id, displayName: "Patch 1.\(n + 2)", kind: .patch, kindBasis: .studio,
+                    announcedAt: at, notes: [], sourceIDs: [],
+                    platforms: [PlatformRelease(platform: .ps5, status: .live, version: version, liveAt: liveAt, verification: .official)],
+                    headline: "New modes, balance changes and stability fixes",
+                    summary: "Adds a new weekly challenge, rebalances the late game, and fixes crashes when resuming from rest mode.",
+                    keyChanges: [], simulated: true, arrivesAt: at)
+                data.simulated.removeAll { $0.id == release.id }
+                data.simulated.append(release)
+            }
+            nav.anchors["library"] = nil
         // QA (INTERNAL, 0.5.6): "index-game/<igdbID>" opens a PS5-index game that the catalogue lacks, browsed, as a search hit or
         // an Upcoming tile would: no catalogue details, so its page shows "More about this game soon." (igdb 335660 is My Little Puppy).
         case "index-game" where parts.count == 1:
