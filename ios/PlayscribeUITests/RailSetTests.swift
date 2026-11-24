@@ -35,6 +35,18 @@ final class RailSetTests: XCTestCase {
         // Untracked = not in the library, so no Status (Iris). The game page opens with Add to library (Quinn, #442).
         let route = tracked ? "gamepage/dawnwalker" : "gamepage/alan-wake-2"
         let app = launch(pose: pose, ax5: ax5, route: route)
+        // The synthetic fold (-qaPose, QAPose in Duo.swift) is meant for the inner display, where its fold sits where the real one
+        // does. On the outer display (466 x 678) it is not Book or Tabletop: CI run 45392778518 put a Tabletop fold on the
+        // outer display, which left the lower half ~280 pt for a rail that needs ~400 on the real fold (PoseCatalog 669 x 835,
+        // fold 374-414), so More fell under the tab capsule. Say so, instead of reporting rail failures that measure nothing.
+        if pose != nil {
+            let w = app.windows.firstMatch.frame
+            guard min(w.width, w.height) >= 600 else {
+                XCTFail("\(pose!): the synthetic fold needs the inner display; this window is \(w), the outer display, so this run measures nothing")
+                app.terminate()
+                return
+            }
+        }
         if landscape {
             // Wait for the window itself to turn, not a fixed time: at 8f45d30 the Mac's run measured Closed portrait's toolbar column
             // (38 pt items beside a tab column at x 396.5 in a 466 pt window) as if it were the landscape rail, while a hand check at
