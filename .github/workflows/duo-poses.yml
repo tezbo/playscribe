@@ -1,0 +1,47 @@
+name: Duo poses (real hinge)
+
+# Cloud-native Duo QA (24 Nov 2026). Real fold on the hosted xcode-27 runner via sim-use (vendor HID reports
+# to dtuhidd, no Device Hub). Installs the app, launches a route, folds through the hinge angles, and keeps
+# native screenshots of each display, the display topology and the accessibility outline per step.
+# Evidence only; not a required check. Inputs: route (-qaRoute value).
+on:
+  workflow_dispatch:
+    inputs:
+      route: { description: 'qaRoute to launch', default: 'gamepage/dawnwalker' }
+  push:
+    branches: ['claude/**']
+    paths: ['.github/workflows/duo-poses.yml']
+
+jobs:
+  poses:
+    runs-on: xcode-27
+    timeout-minutes: 45
+    env:
+      ROUTE: ${{ inputs.route || 'gamepage/dawnwalker' }}
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo xcode-select -s /Applications/Xcode_27.1.app && brew install xcodegen && (cd ios && xcodegen generate)
+      - name: Install sim-use
+        run: |
+          brew tap lycorp-jp/tap
+          brew trust lycorp-jp/tap || true
+          brew install lycorp-jp/tap/sim-use
+      - name: Boot the Duo and build the app
+        run: |
+          UDID=$(xcrun simctl list devices available -j | python3 -c "
+          import json,sys
+          d=json.load(sys.stdin)['devices']
+          print(next(x['udid'] for k in d if 'iOS-27-1' in k for x in d[k] if 'Duo' in x['name']))")
+          echo "UDID=$UDID" >> "$GITHUB_ENV"
+          xcrun simctl boot "$UDID" || true
+          xcodebuild build -project ios/Playscribe.xcodeproj -scheme Playscribe -destination "id=$UDID" \
+            -derivedDataPath build/dd CODE_SIGNING_ALLOWED=NO > build.log 2>&1 || { grep error: build.log | head; exit 1; }
+          xcrun simctl install "$UDID" "$(ls -d build/dd/Build/Products/Debug-iphonesimulator/Playscribe.app)"
+      - name: Fold through the poses (3 runs; Quinn's Tabletop sweep)
+        run: |
+          mkdir -p out
+          ios/tools/qa/duo-ci-poses.sh "$UDID" out "$ROUTE" 1 "0 180 130 120:portrait 90 60 180:landscape-left 110:landscape-left 100:landscape-left 90:landscape-left 80:landscape-left 70:landscape-left 90:landscape-right 90:pud" 2>&1 | tee out/poses.log
+          column -t out/manifest.tsv | tee -a "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: duo-poses, path: out }
