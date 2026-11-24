@@ -9,12 +9,13 @@ import XCTest
 final class RailSetTests: XCTestCase {
     private static let ax5 = ["-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityXXXL"]
 
-    private func launch(pose: String?, ax5: Bool, route: String = "gamepage/dawnwalker") -> XCUIApplication {
+    private func launch(pose: String?, ax5: Bool, route: String = "gamepage/dawnwalker", landscape: Bool = false) -> XCUIApplication {
         continueAfterFailure = true
         let app = XCUIApplication()
         var args = ["-qaRoute", route]
         if let pose { args += ["-qaPose", pose] }
         if ax5 { args += Self.ax5 }
+        if landscape { args += ["-qaOrientation", "landscape"] }
         app.launchArguments = args
         app.launch()
         XCTAssertTrue(app.descendants(matching: .any)["foldAudit"].waitForExistence(timeout: 40), "the game page did not load")
@@ -34,7 +35,7 @@ final class RailSetTests: XCTestCase {
     private func check(pose: String?, ax5: Bool, tracked: Bool = true, landscape: Bool = false) {
         // Untracked = not in the library, so no Status (Iris). The game page opens with Add to library (Quinn, #442).
         let route = tracked ? "gamepage/dawnwalker" : "gamepage/alan-wake-2"
-        let app = launch(pose: pose, ax5: ax5, route: route)
+        let app = launch(pose: pose, ax5: ax5, route: route, landscape: landscape)
         // The synthetic fold (-qaPose, QAPose in Duo.swift) is meant for the inner display, where its fold sits where the real one
         // does. On the outer display (466 x 678) it is not Book or Tabletop: CI run 45392778518 put a Tabletop fold on the
         // outer display, which left the lower half ~280 pt for a rail that needs ~400 on the real fold (PoseCatalog 669 x 835,
