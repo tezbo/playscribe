@@ -275,3 +275,27 @@ test('a Bandai post that says PC only makes no PS5 row, and a PC-only hotfix car
   assert.equal(ps5Of(db, 'dawnwalker@1.2'), undefined, 'PC-only 1.2 has no PS5 row')
   assert.equal(ps5Of(db, 'dawnwalker@1.1.1'), undefined, 'a PC-only hotfix has no PS5 row')
 })
+
+test('moving a release date to the official PS5 time sends no alert for an old update that was never pushed, and a lagging console is not a wrong date', async () => {
+  const db = openDb(':memory:')
+  await seedGames({ db, fetchFn: fakeFetch({}), igdb: null })
+  const make = (key: string, announced: string, ps5Live: string, pushed: boolean) => {
+    const { id } = store.upsertRelease(db, { gameId: 'dawnwalker', versionKey: key, displayName: `Update ${key}`, kind: 'major', kindBasis: 'inferred', announcedAt: announced, notes: [], sourceId: 'pushsquare' })
+    store.upsertPlatform(db, id, 'ps5', { status: 'live', verification: 'official', liveAt: store.field(ps5Live, 'official', 'dawnwalker-bandai-news') })
+    if (pushed) db.prepare("UPDATE platform_releases SET pushed_at = '2026-01-01T00:00:00.000Z' WHERE release_id = ?").run(id)
+    return id
+  }
+  const old = make('0.9', '2026-08-01T10:00:00.000Z', '2026-09-05T08:00:00.000Z', false)
+  const lag = make('0.8', '2026-01-31T10:00:00.000Z', '2026-08-12T08:00:00.000Z', true)
+  const before = queueNewPs5(db, { maxAgeHours: 72 }).jobs.length
+  store.preferOfficialDate(db, old)
+  store.preferOfficialDate(db, lag)
+  const date = (id: string) => (db.prepare('SELECT announced_at a FROM releases WHERE id = ?').get(id) as { a: string }).a
+  assert.equal(date(old), '2026-08-01T10:00:00.000Z', 'a five-week gap is a lagging console, not a press error: unchanged')
+  assert.equal(date(lag), '2026-01-31T10:00:00.000Z')
+  const near = make('0.7', '2026-09-01T10:00:00.000Z', '2026-09-05T08:00:00.000Z', false)
+  store.preferOfficialDate(db, near)
+  assert.equal(date(near), '2026-09-05T08:00:00.000Z', 'four days later, backed by no official time: moved')
+  assert.equal(queueNewPs5(db, { maxAgeHours: 72 }).jobs.length, before, 'the move changes no alert: the 72 h and 30-day guards read the PS5 live time')
+  assert.equal(before, 0)
+})
