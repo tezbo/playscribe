@@ -118,6 +118,10 @@
       "name": "The Blood of Dawnwalker",
       "igdbId": 282831,
       "ps5TitleIds": [],
+      "ps5Builds": {
+        "1.1": "01.006.000",
+        "1.2": "01.007.000"
+      },
       "sources": [
         {
           "id": "dawnwalker-news",
@@ -130,6 +134,19 @@
           ],
           "trust": "official",
           "fetch": "manual",
+          "ps5Signal": "explicit"
+        },
+        {
+          "id": "dawnwalker-bandai-news",
+          "kind": "bandaiNews",
+          "url": "https://www.bandainamcoent.com/games/dawnwalker",
+          "platforms": [
+            "ps5",
+            "xboxSeries",
+            "pc"
+          ],
+          "trust": "official",
+          "fetch": "auto",
           "ps5Signal": "explicit"
         },
         {
