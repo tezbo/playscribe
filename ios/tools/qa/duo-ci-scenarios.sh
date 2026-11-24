@@ -14,6 +14,15 @@ fold() {
     echo "fold $1 ${2:-portrait}: active display $d is wrong, retry $try"
   done; }
 did() { sim-use ios fold --json --device "$UDID" 2>/dev/null | python3 -c 'import json,sys;print(json.load(sys.stdin)["data"]["posture"]["activeDisplay"]["id"])' 2>/dev/null || echo 1; }
+# Swipe until two consecutive outlines are identical (page cannot scroll further), up to 20 swipes; logs the final qa offset.
+scroll_end() { # fromX,fromY toX,toY label
+  local prev="" cur i
+  for i in $(seq 1 20); do
+    sim-use swipe --from "$1" --to "$2" --duration 0.5 --device "$UDID" >/dev/null 2>&1; sleep 1
+    cur=$(sim-use ui --device "$UDID" 2>&1 | grep -v 'poseProbe' | md5sum)
+    [ "$cur" = "$prev" ] && break; prev=$cur
+  done
+  echo "scroll end ($3): $i swipes; $(sim-use ui --device "$UDID" 2>&1 | grep -o 'qa-page[^"]*' | head -1)"; }
 snap() { # scenario step
   local d; d=$(did); local n; [ "$d" = 3 ] && n=inner || n=outer
   local f="$OUT/$SHA-$1-$2-$n"
@@ -35,9 +44,9 @@ trailer) # row 3: reflection element + 3 taps in the upper half, portrait Tablet
 closedax5) # row 1: Closed outer landscape at AX5
   launch -qaRoute library/playing -qaOrientation landscape -qaOverlay YES -UIPreferredContentSizeCategoryName $AX5
   snap closedax5 1-closed-landscape-ax5
-  for i in 1 2 3 4 5 6 7 8; do sim-use swipe --from 339,380 --to 339,60 --duration 0.5 --device "$UDID" >/dev/null 2>&1; done; sleep 2; snap closedax5 1b-closed-landscape-ax5-scrolled-end
+  scroll_end 339,380 339,60 landscape; snap closedax5 1b-closed-landscape-ax5-scrolled-end
   launch -qaRoute library/playing -UIPreferredContentSizeCategoryName $AX5; snap closedax5 2-closed-portrait-ax5
-  for i in 1 2 3 4 5 6 7 8; do sim-use swipe --from 233,560 --to 233,120 --duration 0.5 --device "$UDID" >/dev/null 2>&1; done; sleep 2; snap closedax5 2b-closed-portrait-ax5-scrolled-end ;;
+  scroll_end 233,560 233,120 portrait; snap closedax5 2b-closed-portrait-ax5-scrolled-end ;;
 schemes) # dark and light for the pose set
   for ap in dark light; do
     launch -qaRoute library/playing -qaAppearance $ap -qaOverlay YES
