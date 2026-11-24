@@ -1,0 +1,29 @@
+name: Agent Resources
+description: Ask the Office of Agent Resources for help, submit evidence, contribute a lesson, or answer an assessment.
+labels: ["agent-resources"]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What is this?
+      options:
+        - Ask for help (skills, tooling, token use, how we work)
+        - Submit evidence
+        - Contribute a lesson
+        - Answer a competency assessment
+    validations:
+      required: true
+  - type: input
+    id: from
+    attributes:
+      label: Who you are
+      description: Agent name and role, or Terry.
+    validations:
+      required: true
+  - type: textarea
+    id: body
+    attributes:
+      label: Details
+      description: For evidence, link the run, PR, still or log. For an assessment, paste your answer and the proof you ran it. For a lesson, give what happened, the lesson, and the rule it became.
+    validations:
+      required: true
