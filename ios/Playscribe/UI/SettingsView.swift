@@ -19,6 +19,7 @@ struct SettingsView: View {
     /// trailing sheet showed no Close at all from the bar (Iris on #611, Mac 955129c8), so it carries its own, as Tabletop does.
     private var ownHeader: Bool { duo.pose != .closed }
     @Environment(\.duo) private var duo
+    @Environment(\.colorScheme) private var scheme
     @AppStorage(YouTubeController.autoplayKey) private var autoplayVideos = false
     @AppStorage(VideoReflection.key) private var reflectionMode = VideoReflection.defaultOn
     @AppStorage(PushRegistrar.teamKey) private var teamAlerts = false
@@ -69,7 +70,8 @@ struct SettingsView: View {
                 PanelHeader(title: "Settings", close: dismiss)
             }
             Form {
-                CardSections {
+                // Light: the app's cream (bg) behind surface cards, not the system grey and white (Iris, beta 4). Dark is unchanged.
+                CardSections(rowFill: scheme == .light ? PlayscribeRole.surface : nil) {
                     // Tabletop's panel is half a screen: the build version leads, so it is on screen
                     // without scrolling (Terry checks it to verify the build).
                     if duo.pose == .tabletop {
@@ -314,7 +316,7 @@ struct SettingsView: View {
             // 24 pt between a footer and the next section's title (Iris, 0.5.1 spec 1).
             .listSectionSpacing(24)
             // Tabletop: the page surface under the rows, the same as the header above, so there is no seam (Iris, #556).
-            .scrollContentBackground(ownHeader ? .hidden : .automatic)
+            .scrollContentBackground(ownHeader || scheme == .light ? .hidden : .automatic)
             .navigationTitle("Settings")
             .toolbarTitleDisplayMode(.inline)
             // The root page has its own header (above) outside Closed; pushed pages show the bar again for Back.

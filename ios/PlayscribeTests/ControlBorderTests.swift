@@ -138,7 +138,8 @@ struct ControlBorderTests {
             .appendingPathComponent("Playscribe/UI")
         for (file, lists) in [("SettingsView.swift", 1), ("AddGameSheet.swift", 2), ("AddMethods.swift", 2)] {
             let src = try String(contentsOf: ui.appendingPathComponent(file), encoding: .utf8)
-            let wrapped = src.components(separatedBy: "CardSections {").count - 1
+            // `CardSections {` or `CardSections(rowFill: …) {` (Settings sets its own light cards, Iris beta 4).
+            let wrapped = src.components(separatedBy: "CardSections {").count - 1 + src.components(separatedBy: "CardSections(").count - 1
             #expect(wrapped == lists, "\(file): \(wrapped) of \(lists) lists outline their cards")
         }
     }
