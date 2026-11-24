@@ -21,12 +21,12 @@ snap() { # scenario step
   sim-use ui --device "$UDID" > "$f-ui.txt" 2>&1; echo "$f: $(head -1 "$f-ui.txt" | cut -c1-80) | $(grep -o 'pose: [a-z]*[^"]*' "$f-ui.txt" | head -1)"; }
 launch() { xcrun simctl terminate "$UDID" $B >/dev/null 2>&1; fold 0 portrait; xcrun simctl launch "$UDID" $B "$@" >/dev/null; sleep 8; }
 for s in $SCEN; do echo "##### $s"; case $s in
-continuity) # row 8: open game scrolled mid-update, fold 0, 90, 180, 60, 0
+continuity) # row 8: open game scrolled mid-update, fold 0, 90, 180, 120, 0
   launch -qaRoute gamepage/dawnwalker -qaOverlay YES
   sim-use swipe --from 233,520 --to 233,220 --duration 0.6 --device "$UDID" >/dev/null 2>&1; sleep 2
   echo "scroll check: $(sim-use ui --device "$UDID" 2>/dev/null | grep -o "qa-page: [^\"]*" | head -1)"; snap continuity 1-closed-scrolled
   fold 90 landscape-left; snap continuity 2-a90-landscape; fold 180 landscape-left; snap continuity 3-a180
-  fold 60 portrait; snap continuity 4-a60-portrait; fold 0 portrait; snap continuity 5-closed-again ;;
+  fold 120 portrait; snap continuity 4-a120-portrait; fold 0 portrait; snap continuity 5-closed-again ;;
 trailer) # row 3: reflection element + 3 taps in the upper half, portrait Tabletop
   launch -qaRoute trailer/dQw4w9WgXcQ/dawnwalker -qaOverlay YES
   fold 90 portrait; snap trailer 1-tabletop-before
