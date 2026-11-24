@@ -1,0 +1,42 @@
+name: Duo scenarios (real hinge)
+
+# Quinn's cloud runs: open-game fold continuity, trailer Tabletop taps, Closed landscape at AX5, dark and light poses, and a
+# hinge-sweep video with frame gaps. Free hosted runner, sim-use, native stills. Evidence only. Input: scenarios (space list).
+on:
+  workflow_dispatch:
+    inputs:
+      scenarios: { description: 'continuity trailer closedax5 schemes video', default: 'continuity trailer closedax5 schemes video' }
+  push:
+    branches: ['claude/**']
+    paths: ['.github/workflows/duo-scenarios.yml', 'ios/tools/qa/duo-ci-scenarios.sh']
+
+jobs:
+  scenarios:
+    runs-on: xcode-27
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo xcode-select -s /Applications/Xcode_27.1.app && brew install xcodegen ffmpeg && (cd ios && xcodegen generate)
+      - name: Install sim-use
+        run: |
+          brew tap lycorp-jp/tap
+          brew trust lycorp-jp/tap || true
+          brew install lycorp-jp/tap/sim-use
+      - name: Boot the Duo and build the app
+        run: |
+          UDID=$(xcrun simctl list devices available -j | python3 -c "
+          import json,sys
+          d=json.load(sys.stdin)['devices']
+          print(next(x['udid'] for k in d if 'iOS-27-1' in k for x in d[k] if 'Duo' in x['name']))")
+          echo "UDID=$UDID" >> "$GITHUB_ENV"
+          xcrun simctl boot "$UDID" || true
+          xcodebuild build -project ios/Playscribe.xcodeproj -scheme Playscribe -destination "id=$UDID" \
+            -derivedDataPath build/dd CODE_SIGNING_ALLOWED=NO > build.log 2>&1 || { grep error: build.log | head; exit 1; }
+          xcrun simctl install "$UDID" "$(ls -d build/dd/Build/Products/Debug-iphonesimulator/Playscribe.app)"
+      - name: Run the scenarios
+        run: |
+          mkdir -p out
+          ios/tools/qa/duo-ci-scenarios.sh "$UDID" out ${{ inputs.scenarios || 'continuity trailer closedax5 schemes video' }} 2>&1 | tee out/scenarios.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: duo-scenarios, path: out }
