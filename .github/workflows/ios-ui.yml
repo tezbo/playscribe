@@ -49,13 +49,19 @@ jobs:
             || { grep -E 'error:' build.log | head -20; exit 1; }
       - name: Feature UI tests (Closed)
         id: uitests
-        continue-on-error: true
+        # The five synthetic-fold cases skipped here run in the next step on the inner display, where they measure something
+        # (#626, #631). On the outer display they can only fail with "needs the inner display".
         run: |
           xcodebuild test-without-building -project ios/Playscribe.xcodeproj -scheme PlayscribeUI \
             -destination "id=$UDID" -derivedDataPath build/dd \
             -only-testing:PlayscribeUITests/ReleaseFeatureTests \
             -only-testing:PlayscribeUITests/TabletopDayOneTests \
             -only-testing:PlayscribeUITests/RailSetTests \
+            -skip-testing:PlayscribeUITests/RailSetTests/testBookStd \
+            -skip-testing:PlayscribeUITests/RailSetTests/testBookAX5 \
+            -skip-testing:PlayscribeUITests/RailSetTests/testTabletopStd \
+            -skip-testing:PlayscribeUITests/RailSetTests/testTabletopAX5 \
+            -skip-testing:PlayscribeUITests/RailSetTests/testTabletopUntrackedAX5 \
             -resultBundlePath build/UITests.xcresult CODE_SIGNING_ALLOWED=NO > uitests.log 2>&1 || status=$?
           grep -E 'error:|Test Case .* (passed|failed|skipped)|Executed|\*\* TEST' uitests.log | tail -60 | tee -a "$GITHUB_STEP_SUMMARY"
           [ "${status:-0}" = 0 ] || echo "::warning::Feature UI tests failed in Closed; see uitests.log in the artifact"
@@ -66,6 +72,7 @@ jobs:
         # (inner 951 x 669); Tabletop reads portrait (669 x 951). Probe runs 45471626931 and 45474143713 (Duo QA thread).
         # The simulator is always folded closed again so the Closed steps below run on the outer display.
         id: innertests
+        if: always()
         continue-on-error: true
         run: |
           fold() { sim-use ios fold "$1" --device "$UDID"; sleep 5; }
