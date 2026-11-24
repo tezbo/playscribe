@@ -61,6 +61,14 @@ struct ControlBorderTests {
 
     /// Pixels: a field on bg in light shows the border at 3:1 or better; in dark the same field is pixel-identical to one without it.
     @Test func renderedBorder() throws {
+        func alpha(_ cg: CGImage, _ x: Int, _ y: Int) throws -> UInt8 {
+            let ctx = try #require(CGContext(data: nil, width: 1, height: 1, bitsPerComponent: 8, bytesPerRow: 4,
+                                             space: CGColorSpaceCreateDeviceRGB(),
+                                             bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue))
+            ctx.clear(CGRect(x: 0, y: 0, width: 1, height: 1))
+            ctx.draw(cg, in: CGRect(x: -x, y: -(cg.height - 1 - y), width: cg.width, height: cg.height))
+            return ctx.data!.assumingMemoryBound(to: UInt8.self)[3]
+        }
         func render(_ scheme: ColorScheme, border: Bool) throws -> CGImage {
             let field = RoundedRectangle(cornerRadius: 12, style: .continuous)
             let view = ZStack {
@@ -77,9 +85,20 @@ struct ControlBorderTests {
             }
             .frame(width: 200, height: 84)
             .environment(\.colorScheme, scheme)
-            let r = ImageRenderer(content: view)
-            r.scale = 1
-            return try #require(r.cgImage)
+            // bug-065, named by #608's pixels (CI f4fcc368: edge, ground and field all #000000 at 200x84, beside seven "image
+            // provider timed out while waiting for phase 6" lines and a 15 s run): under load the renderer can time out and hand
+            // back a fully transparent image. The view's ground is opaque, so a transparent corner can only be that timeout; render
+            // again (at most three times) rather than read colours from an image that never drew. The 3:1 check is unchanged.
+            for _ in 0..<3 {
+                let r = ImageRenderer(content: view)
+                r.scale = 1
+                let cg = try #require(r.cgImage)
+                if try alpha(cg, 5, 5) > 0 { return cg }
+            }
+            struct BlankRender: Error, CustomStringConvertible {
+                var description: String { "ImageRenderer returned a blank (transparent) image three times; no colours to check" }
+            }
+            throw BlankRender()
         }
         func pixel(_ cg: CGImage, _ x: Int, _ y: Int) throws -> UIColor {
             let ctx = try #require(CGContext(data: nil, width: 1, height: 1, bitsPerComponent: 8, bytesPerRow: 4,
@@ -119,7 +138,8 @@ struct ControlBorderTests {
             .appendingPathComponent("Playscribe/UI")
         for (file, lists) in [("SettingsView.swift", 1), ("AddGameSheet.swift", 2), ("AddMethods.swift", 2)] {
             let src = try String(contentsOf: ui.appendingPathComponent(file), encoding: .utf8)
-            let wrapped = src.components(separatedBy: "CardSections {").count - 1
+            // `CardSections {` or `CardSections(rowFill: …) {` (Settings sets its own light cards, Iris beta 4).
+            let wrapped = src.components(separatedBy: "CardSections {").count - 1 + src.components(separatedBy: "CardSections(").count - 1
             #expect(wrapped == lists, "\(file): \(wrapped) of \(lists) lists outline their cards")
         }
     }

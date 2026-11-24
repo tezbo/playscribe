@@ -83,6 +83,7 @@ struct AddEntryView: View {
     @Environment(\.dynamicTypeSize) private var typeSize
     /// The icon column grows with the text, so a large keyboard glyph never sits over "Search by name".
     @ScaledMetric(relativeTo: .title3) private var iconColumn: CGFloat = 32
+    private var pinsFooter: Bool { compact && !typeSize.isAccessibilitySize }
     private var footerText: String { "PlayStation account import is planned for a later version. \(Brand.name) never asks for your PlayStation password." }
 
     var body: some View {
@@ -118,15 +119,16 @@ struct AddEntryView: View {
                         .tappableFrame()
                     }
                 } footer: {
-                    if typeSize.isAccessibilitySize { Text(footerText) }
+                    if !pinsFooter { Text(footerText) }
                 }
             }
         }
         .contentMargins(.top, compact ? 4 : 0, for: .scrollContent)
-        // Standard sizes pin the note in the sheet's bottom inset so nothing runs into it. At accessibility sizes it
-        // would take over half the screen, so it scrolls with the list instead (Quinn, AX5 Closed).
+        // Tabletop at standard sizes pins the note in the panel's bottom inset so nothing runs into it. Everywhere else it
+        // scrolls as the list's last line: at accessibility sizes it took over half the screen (Quinn, AX5 Closed), and in
+        // Closed landscape the pinned strip covered "Scan with camera" (Iris on #611, Mac 955129c8).
         .safeAreaInset(edge: .bottom, spacing: 0) {
-            if !typeSize.isAccessibilitySize {
+            if pinsFooter {
                 Text(footerText)
                     .font(PlayscribeFont.footnote).foregroundStyle(PlayscribeRole.textSecondary)
                     .frame(maxWidth: .infinity, alignment: .leading)

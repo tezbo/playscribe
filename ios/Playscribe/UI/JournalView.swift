@@ -409,7 +409,7 @@ struct VideoFact: View {
                 HStack(spacing: 10) {
                     ZStack {
                         if let poster = v.posterAsset { Image(poster).resizable().scaledToFill() } else { PlayscribeRole.chipFill }
-                        Image(systemName: "play.fill").font(PlayscribeFont.caption).padding(8).background(.ultraThinMaterial, in: Circle())
+                        Image(systemName: "play.fill").font(PlayscribeFont.caption).padding(8).floatingControl(in: Circle())
                     }
                     .frame(width: 88, height: 50)
                     .clipShape(RoundedRectangle(cornerRadius: 8))

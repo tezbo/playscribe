@@ -35,6 +35,18 @@ final class RailSetTests: XCTestCase {
         // Untracked = not in the library, so no Status (Iris). The game page opens with Add to library (Quinn, #442).
         let route = tracked ? "gamepage/dawnwalker" : "gamepage/alan-wake-2"
         let app = launch(pose: pose, ax5: ax5, route: route)
+        // The synthetic fold (-qaPose, QAPose in Duo.swift) is meant for the inner display, where its fold sits where the real one
+        // does. On the outer display (466 x 678) it is not Book or Tabletop: CI run 45392778518 put a Tabletop fold on the
+        // outer display, which left the lower half ~280 pt for a rail that needs ~400 on the real fold (PoseCatalog 669 x 835,
+        // fold 374-414), so More fell under the tab capsule. Say so, instead of reporting rail failures that measure nothing.
+        if pose != nil {
+            let w = app.windows.firstMatch.frame
+            guard min(w.width, w.height) >= 600 else {
+                XCTFail("\(pose!): the synthetic fold needs the inner display; this window is \(w), the outer display, so this run measures nothing")
+                app.terminate()
+                return
+            }
+        }
         if landscape {
             // Wait for the window itself to turn, not a fixed time: at 8f45d30 the Mac's run measured Closed portrait's toolbar column
             // (38 pt items beside a tab column at x 396.5 in a 466 pt window) as if it were the landscape rail, while a hand check at
@@ -87,7 +99,12 @@ final class RailSetTests: XCTestCase {
             if let capsule = tabs.first?.frame {
                 XCTAssertLessThanOrEqual(valid.last!.maxY, capsule.minY, "\(tag): More runs into the tab capsule")
             } else {
-                XCTFail("\(tag): no tab capsule on the rail")
+                // Diagnostics (CI 45116390238: "no tab capsule" in every Tabletop case): every element labelled Library, of any
+                // type, with its frame, so a harness problem (wrong type or place) can be told from a missing capsule.
+                let any = app.descendants(matching: .any).matching(NSPredicate(format: "label == 'Library'")).allElementsBoundByIndex
+                print("RailSetTests \(tag): window \(window) fold \(fold) rail \(zip(ids, valid).map { "\($0) \($1)" }) "
+                      + "Library elements \(any.map { "\($0.elementType.rawValue) \($0.frame)" })")
+                XCTFail("\(tag): no tab capsule on the rail; Library elements \(any.map { "\($0.elementType.rawValue) \($0.frame)" }) in window \(window)")
             }
         } else if landscape {
             // Closed landscape (Iris, 1c5ebfc walk): a second column immediately leading of the tab column, top to bottom.

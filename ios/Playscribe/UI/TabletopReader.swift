@@ -99,7 +99,7 @@ extension AppModel {
             out.append(ReaderSection(id: "fixes", title: "Fixes", body: body))
         }
         var facts = ["Status: Released",
-                     "PS5 version: " + (r.ps5Version ?? "not published yet")]
+                     "PS5 version: " + (r.ps5Version.map { PS5StatusLines.isReportedBuild(r) ? "reported as \($0)" : $0 } ?? "not published yet")]
         if let size = r.ps5?.sizeBytes {
             facts.append("Download: " + ByteCountFormatter.string(fromByteCount: size.value, countStyle: .decimal) + (size.verification == .reported ? " (reported)" : ""))
         }
@@ -143,6 +143,9 @@ struct TabletopReaderStage: View {
     @Environment(\.dynamicTypeSize) private var typeSize
     /// The stage's bottom edge in screen space; the text ends 24 pt above the division.
     @State private var stageBottom: CGFloat = 0
+    /// The stage's height for the text block, and the plate's fit level (ReaderPlateFit), 0 = the full plate.
+    @State private var stageRoom: CGFloat = 0
+    @State private var plateLevel = 0
     @State private var stageWidth: CGFloat = 0
 
     /// The room right of the text panel (16 pt margin, up to 560 pt, 24 pt gap, 16 pt margin): the tile is 240 pt at most and
@@ -153,6 +156,115 @@ struct TabletopReaderStage: View {
         return room >= 140 ? min(typeSize.isAccessibilitySize ? 160 : 240, room) : 0
     }
     var gameID: String
+
+    /// The stage's text block on its ink plate (see the body): eyebrow, PS5 status, title, the overview's headline and one body
+    /// cut. `titleLines` and `subtitleLines` let the body pick the first version that fits the stage.
+    @ViewBuilder
+    private func readerPlate(_ section: ReaderSection, release: Release?, titleLines: Int, subtitleLines: Int) -> some View {
+        VStack(alignment: .leading, spacing: 14) {
+            // Eyebrow: the game and the date; the release itself is the title below.
+            // At accessibility sizes the name is one line cut on a whole word ("The Blood of…"), never "The Blood of Daw…", and the date keeps its place.
+            HStack(spacing: 8) {
+                // r060 day-one (Iris): a day-one patch's eyebrow says so on the visit it is new; the game name is in the lower half.
+                let eyebrow = release.flatMap { model.dayOneNote($0) } != nil ? FreshCopy.dayOne : model.gameDisplayName(gameID)
+                if typeSize.isAccessibilitySize {
+                    WholeWordText(text: eyebrow, font: PlayscribeFont.subheadline.weight(.semibold), lines: 1, color: PlayscribeRole.action)
+                } else {
+                    Text(eyebrow)
+                }
+                // Near-white at 80%, not the accent's .secondary: that was dim brown on the scrim, 3.6:1 (Quinn, #526).
+                if let r = release {
+                    Text((r.isPS5Listed ? r.ps5Date : r.latestDate).dayMonthOrYear)
+                        .foregroundStyle(PlayscribeColor.textPrimary.opacity(0.8)).fixedSize()
+                }
+            }
+            .font(PlayscribeFont.subheadline.weight(.semibold))
+            .foregroundStyle(PlayscribeRole.action)
+            // One phrase ("Enshrouded, 5 November") instead of two stops.
+            .accessibilityElement(children: .combine)
+            // Pose parity (gate #592, Card B): the stage says the update's PS5 state, as the update page does in every
+            // other pose, with the PS5 number only when the PS5 row has one (never a PC number). Two words apart, never a dot.
+            // At accessibility sizes it is one short line, "Out on PS5  01.004.000", capped at AX3 so the half-height stage
+            // keeps the eyebrow (fccccaa); VoiceOver reads the full wording either way.
+            if let r = release {
+                let status = PS5StatusLines(r)
+                Group {
+                    if typeSize.isAccessibilitySize {
+                        // A reported build is longer ("Reported as 01.006.000", Iris on #619): it drops below the status rather
+                        // than being cut. Each line stays one line.
+                        let chip = status.version != nil ? PS5StatusLines.buildChip(r) : nil
+                        ViewThatFits(in: .horizontal) {
+                            HStack(spacing: 12) {
+                                Text(status.primary).font(PlayscribeFont.subheadline.weight(.semibold))
+                                if let n = chip { Text(n.keepingVersionsTogether).font(PlayscribeFont.subheadline).monospacedDigit() }
+                            }
+                            VStack(alignment: .leading, spacing: 2) {
+                                Text(status.primary).font(PlayscribeFont.subheadline.weight(.semibold))
+                                if let n = chip { Text(n.keepingVersionsTogether).font(PlayscribeFont.subheadline).monospacedDigit() }
+                            }
+                        }
+                        .lineLimit(1)
+                        .dynamicTypeSize(...DynamicTypeSize.accessibility3)
+                    } else {
+                        ViewThatFits(in: .horizontal) {
+                            HStack(spacing: 12) {
+                                Text(status.primary).font(PlayscribeFont.subheadline.weight(.semibold))
+                                if let v = status.version { Text(v).font(PlayscribeFont.subheadline).monospacedDigit() }
+                            }
+                            VStack(alignment: .leading, spacing: 2) {
+                                Text(status.primary).font(PlayscribeFont.subheadline.weight(.semibold))
+                                if let v = status.version { Text(v).font(PlayscribeFont.subheadline).monospacedDigit() }
+                            }
+                        }
+                    }
+                }
+                .foregroundStyle(PlayscribeRole.textPrimary.opacity(0.92))
+                .accessibilityElement(children: .ignore)
+                .accessibilityLabel(status.spoken)
+                // Text, not "Other": the audit treats an untyped element as something to press and flagged this 18 pt line as a too-small
+                // hit area (Tabletop, d194c511). The 1 x 1 release title below passes for the same reason.
+                .accessibilityAddTraits(.isStaticText)
+                .accessibilityIdentifier("ps5Status")
+            }
+            // The release name for VoiceOver (and J-4). On the overview the title is the name itself, so this element is
+            // the heading and the drawn title is not read twice.
+            let namesRelease = section.title == release?.displayName
+            Color.clear.frame(width: 1, height: 1)
+                .accessibilityElement()
+                .accessibilityLabel(release?.displayName ?? "")
+                .accessibilityAddTraits(namesRelease ? [.isStaticText, .isHeader] : .isStaticText)
+                .accessibilityIdentifier("releaseTitle")
+            // Whole words only (G-8): the stage plate ends on a word and "…", never a cut word.
+            WholeWordText(text: ReaderBody.title(section.title), font: PlayscribeFont.title, lines: titleLines, color: nil)
+                // The stage caps the title; VoiceOver reads all of it, as a heading.
+                .accessibilityLabel(section.title)
+                .accessibilityAddTraits(.isHeader)
+                .accessibilityHidden(namesRelease)
+            // The overview's headline, secondary: smaller than the patch name, never larger (Iris, 0.5.6).
+            if let sub = section.subtitle {
+                WholeWordText(text: ReaderBody.title(sub), font: PlayscribeFont.headline, lines: subtitleLines, color: PlayscribeColor.textPrimary.opacity(0.92))
+                    .accessibilityLabel(sub)
+                    .accessibilityIdentifier("readerHeadline")
+            }
+            WholeWordText(text: ReaderBody.stage(section.body), font: PlayscribeFont.body, lines: typeSize.isAccessibilitySize ? 1 : 4,
+                          color: PlayscribeRole.textPrimary.opacity(0.92))
+                // At accessibility sizes the half-height stage has no room for a body line under a two-line title
+                // and the eyebrow (the eyebrow was clipped at the top, fccccaa). The body is not drawn there; it stays
+                // in the accessibility tree and the full text is one tap away.
+                .frame(height: typeSize.isAccessibilitySize ? 0 : nil)
+                .clipped()
+                .accessibilityLabel(section.body)
+                .accessibilityIdentifier("readerBody")
+        }
+        // Iris (same rule as #232, every Tabletop stage): the whole block sits on one ink panel, the ArtLabel ink (75%; Iris, #619: ember at 70% fell to 4.3:1 on white art), 12 pt
+        // radius and padding, so the text keeps 4.5:1 over any art, logo or banner. Left on the 16 pt margin,
+        // up to 560 pt wide, its bottom edge 24 pt above the division; it grows upward only.
+        // The plate is dark in both modes, so its text keeps the dark roles (0.6 tokens).
+        .environment(\.colorScheme, .dark)
+        .padding(12)
+        .frame(maxWidth: 560, alignment: .leading)
+        .artLabel(in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+    }
 
     var body: some View {
         let release = model.readerRelease(gameID)
@@ -174,98 +286,30 @@ struct TabletopReaderStage: View {
             // taller than the upper half (AX5, whole-word text that ignores the proposed height) grew the ZStack, which moved the
             // art's bottom edge, which changed the clearance padding, which grew the block again, with the stage body (and its
             // note parsing) re-run each time (hang at 2dbcd13, Mac sample). The block grows upward and is clipped by the stage.
-            Color.clear.overlay(alignment: .bottomLeading) { if let section = sections[safe: index] {
-                VStack(alignment: .leading, spacing: 14) {
-                    // Eyebrow: the game and the date; the release itself is the title below.
-                    // At accessibility sizes the name is one line cut on a whole word ("The Blood of…"), never "The Blood of Daw…", and the date keeps its place.
-                    HStack(spacing: 8) {
-                        // r060 day-one (Iris): a day-one patch's eyebrow says so on the visit it is new; the game name is in the lower half.
-                        let eyebrow = release.flatMap { model.dayOneNote($0) } != nil ? FreshCopy.dayOne : model.gameDisplayName(gameID)
-                        if typeSize.isAccessibilitySize {
-                            WholeWordText(text: eyebrow, font: PlayscribeFont.subheadline.weight(.semibold), lines: 1, color: PlayscribeRole.action)
-                        } else {
-                            Text(eyebrow)
-                        }
-                        // Near-white at 80%, not the accent's .secondary: that was dim brown on the scrim, 3.6:1 (Quinn, #526).
-                        if let r = release {
-                            Text((r.isPS5Listed ? r.ps5Date : r.latestDate).dayMonthOrYear)
-                                .foregroundStyle(PlayscribeColor.textPrimary.opacity(0.8)).fixedSize()
-                        }
-                    }
-                    .font(PlayscribeFont.subheadline.weight(.semibold))
-                    .foregroundStyle(PlayscribeRole.action)
-                    // One phrase ("Enshrouded, 5 November") instead of two stops.
-                    .accessibilityElement(children: .combine)
-                    // Pose parity (gate #592, Card B): the stage says the update's PS5 state, as the update page does in every
-                    // other pose, with the PS5 number only when the PS5 row has one (never a PC number). Two words apart, never a dot.
-                    // At accessibility sizes it is one short line, "Out on PS5  01.004.000", capped at AX3 so the half-height stage
-                    // keeps the eyebrow (fccccaa); VoiceOver reads the full wording either way.
-                    if let r = release {
-                        let status = PS5StatusLines(r)
-                        Group {
-                            if typeSize.isAccessibilitySize {
-                                HStack(spacing: 12) {
-                                    Text(status.primary).font(PlayscribeFont.subheadline.weight(.semibold))
-                                    if status.version != nil, let n = r.ps5Version { Text(n.keepingVersionsTogether).font(PlayscribeFont.subheadline).monospacedDigit() }
-                                }
-                                .lineLimit(1)
-                                .dynamicTypeSize(...DynamicTypeSize.accessibility3)
-                            } else {
-                                ViewThatFits(in: .horizontal) {
-                                    HStack(spacing: 12) {
-                                        Text(status.primary).font(PlayscribeFont.subheadline.weight(.semibold))
-                                        if let v = status.version { Text(v).font(PlayscribeFont.subheadline).monospacedDigit() }
-                                    }
-                                    VStack(alignment: .leading, spacing: 2) {
-                                        Text(status.primary).font(PlayscribeFont.subheadline.weight(.semibold))
-                                        if let v = status.version { Text(v).font(PlayscribeFont.subheadline).monospacedDigit() }
-                                    }
-                                }
-                            }
-                        }
-                        .foregroundStyle(PlayscribeRole.textPrimary.opacity(0.92))
-                        .accessibilityElement(children: .ignore)
-                        .accessibilityLabel(status.spoken)
-                        .accessibilityIdentifier("ps5Status")
-                    }
-                    // The release name for VoiceOver (and J-4). On the overview the title is the name itself, so this element is
-                    // the heading and the drawn title is not read twice.
-                    let namesRelease = section.title == release?.displayName
-                    Color.clear.frame(width: 1, height: 1)
-                        .accessibilityElement()
-                        .accessibilityLabel(release?.displayName ?? "")
-                        .accessibilityAddTraits(namesRelease ? [.isStaticText, .isHeader] : .isStaticText)
-                        .accessibilityIdentifier("releaseTitle")
-                    // Whole words only (G-8): the stage plate ends on a word and "…", never a cut word.
-                    WholeWordText(text: ReaderBody.title(section.title), font: PlayscribeFont.title, lines: typeSize.isAccessibilitySize ? 2 : 4, color: nil)
-                        // The stage caps the title; VoiceOver reads all of it, as a heading.
-                        .accessibilityLabel(section.title)
-                        .accessibilityAddTraits(.isHeader)
-                        .accessibilityHidden(namesRelease)
-                    // The overview's headline, secondary: smaller than the patch name, never larger (Iris, 0.5.6).
-                    if let sub = section.subtitle {
-                        WholeWordText(text: ReaderBody.title(sub), font: PlayscribeFont.headline, lines: typeSize.isAccessibilitySize ? 1 : 2, color: PlayscribeColor.textPrimary.opacity(0.92))
-                            .accessibilityLabel(sub)
-                            .accessibilityIdentifier("readerHeadline")
-                    }
-                    WholeWordText(text: ReaderBody.stage(section.body), font: PlayscribeFont.body, lines: typeSize.isAccessibilitySize ? 1 : 4,
-                                  color: PlayscribeRole.textPrimary.opacity(0.92))
-                        // At accessibility sizes the half-height stage has no room for a body line under a two-line title
-                        // and the eyebrow (the eyebrow was clipped at the top, fccccaa). The body is not drawn there; it stays
-                        // in the accessibility tree and the full text is one tap away.
-                        .frame(height: typeSize.isAccessibilitySize ? 0 : nil)
-                        .clipped()
-                        .accessibilityLabel(section.body)
-                        .accessibilityIdentifier("readerBody")
+            Color.clear
+                .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { h in
+                    if abs(h - stageRoom) > 0.5 { stageRoom = h; plateLevel = 0 }
                 }
-                // Iris (same rule as #232, every Tabletop stage): the whole block sits on one ink panel, 70%, 12 pt
-                // radius and padding, so the text keeps 4.5:1 over any art, logo or banner. Left on the 16 pt margin,
-                // up to 560 pt wide, its bottom edge 24 pt above the division; it grows upward only.
-                // The plate is dark in both modes, so its text keeps the dark roles (0.6 tokens).
-                .environment(\.colorScheme, .dark)
-                .padding(12)
-                .frame(maxWidth: 560, alignment: .leading)
-                .background(PlayscribeColor.ink950.opacity(0.7), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                .overlay(alignment: .bottomLeading) { if let section = sections[safe: index] {
+                // Iris (#619, tabletop-*-reader-ax5): the plate never clips. A ViewThatFits picked a version that did not fit
+                // (41e69f7b: "Out on PS5 01.006.000" cut at the stage's top), because WholeWordText's line cap is measured only
+                // once it is drawn, so an undrawn candidate measured wrong. So the plate is drawn at its own full height and
+                // measured, and while it is taller than the room above the fold it steps down one level (ReaderPlateFit): title
+                // to one line, then the headline to one line, then the plate's type capped. Nothing is dropped (same content
+                // in every pose). The stage takes no touches, so it cannot scroll. VoiceOver and the full text keep everything.
+                let fit = ReaderPlateFit.levels[min(plateLevel, ReaderPlateFit.levels.count - 1)]
+                readerPlate(section, release: release, titleLines: fit.titleLines ?? (typeSize.isAccessibilitySize ? 2 : 4),
+                            subtitleLines: fit.subtitleLines ?? (typeSize.isAccessibilitySize ? 1 : 2))
+                    .dynamicTypeSize(...fit.typeCap)
+                    .fixedSize(horizontal: false, vertical: true)
+                    // Keyed on the level too, so a step that leaves the height unchanged (a title already on one line) is
+                    // measured again and steps on.
+                    .onGeometryChange(for: ReaderPlateFit.Measure.self) { ReaderPlateFit.Measure(level: plateLevel, height: $0.size.height) } action: { m in
+                        let next = ReaderPlateFit.next(level: m.level, plateHeight: m.height, room: stageRoom - duo.clearance(forBottom: stageBottom))
+                        if next != plateLevel { plateLevel = next }
+                    }
+                    .onChange(of: section.id) { plateLevel = 0 }
+                    .onChange(of: typeSize) { plateLevel = 0 }
                 .padding(.horizontal, 16)
                 .padding(.bottom, duo.clearance(forBottom: stageBottom))
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
@@ -385,7 +429,7 @@ struct StageTrailerTile: View {
                 .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
                 .overlay {
                     Image(systemName: "play.fill").font(.title2).foregroundStyle(.white)
-                        .padding(12).background(PlayscribeColor.ink950.opacity(0.6), in: Circle())
+                        .padding(12).artLabel(in: Circle()) // A label on art, not a control: the stage is view-only (over-art rule, role 2).
                 }
             Text("Trailer").font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeRole.textPrimary)
                 .fixedSize(horizontal: false, vertical: true)
@@ -393,11 +437,40 @@ struct StageTrailerTile: View {
         .frame(width: width, alignment: .leading)
         .environment(\.colorScheme, .dark)
         .padding(8)
-        .background(PlayscribeColor.ink950.opacity(0.7), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+        .artLabel(in: RoundedRectangle(cornerRadius: 12, style: .continuous))
         .allowsHitTesting(false)
         .accessibilityElement(children: .ignore)
         .accessibilityLabel("Trailer")
         .accessibilityAddTraits(.isStaticText)
         .accessibilityIdentifier("stageTrailerTile")
+    }
+}
+
+/// How the Tabletop reader's plate steps down until it fits the room above the fold (Iris, #619). Each level keeps every line of
+/// content (eyebrow, PS5 status, title, the overview's headline): the title is cut first, then the headline, then the plate's
+/// text size is capped. Pure, so the stepping is unit-tested (ReaderPlateFitTests); the heights come from the drawn plate.
+nonisolated enum ReaderPlateFit {
+    nonisolated struct Level: Equatable, Sendable {
+        /// nil: the pose's own cap (title 2 lines at accessibility sizes, else 4; headline 1, else 2).
+        var titleLines: Int?
+        var subtitleLines: Int?
+        var typeCap: DynamicTypeSize
+    }
+
+    nonisolated struct Measure: Equatable, Sendable { var level: Int; var height: CGFloat }
+
+    static let levels: [Level] = [
+        Level(titleLines: nil, subtitleLines: nil, typeCap: .accessibility5),
+        Level(titleLines: 1, subtitleLines: nil, typeCap: .accessibility5),
+        Level(titleLines: 1, subtitleLines: 1, typeCap: .accessibility5),
+        Level(titleLines: 1, subtitleLines: 1, typeCap: .accessibility3),
+        Level(titleLines: 1, subtitleLines: 1, typeCap: .accessibility1),
+    ]
+
+    /// The level to draw next: one step down while the drawn plate is taller than the room (half a point of slack), never past
+    /// the last level, never back up (a new section, text size or stage size starts again at 0). No room measured yet: stay.
+    static func next(level: Int, plateHeight: CGFloat, room: CGFloat) -> Int {
+        guard room > 0, plateHeight > room + 0.5 else { return level }
+        return min(level + 1, levels.count - 1)
     }
 }

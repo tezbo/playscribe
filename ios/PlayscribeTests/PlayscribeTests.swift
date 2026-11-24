@@ -318,6 +318,16 @@ struct DatePrecisionTests {
         #expect(ps4Only("2021-03-04").ps5DateLine == ps4Only("2021-03-04").ps5AvailabilityLine)
     }
 
+    @Test("r060-tile-dates-ax5: a tile date never breaks inside itself")
+    func tileDayHoldsTogether() {
+        let thisYear = Date.now, lastYear = Date.now.addingTimeInterval(-400 * 86400)
+        for d in [thisYear, lastYear] {
+            let text = AppModel.tileDay(d)
+            #expect(!text.contains(" "), "\(text) has a breaking space")
+            #expect(text.contains("\u{00A0}"), "\(text) joins its parts with a no-break space")
+        }
+    }
+
     @Test("Iris, #597: each caption mark has words, so colour is never the only cue")
     func tileMarkWords() {
         #expect(AppModel.tileUpdateWords(.unread, "22 Nov") == "new update 22 Nov")
@@ -1120,7 +1130,7 @@ struct SearchTextColdLaunchTests {
         m.data.collection = Fixtures.shared.seedCollection
         let all = m.shownRows().count
         try #require(all > 1)
-        m.nav.query = "dawn"
+        m.libraryQuery = "dawn"
         #expect(m.shownRows().count < all)   // the typed text is filtering, so the test can tell the difference
         m.nav.gameID = "dawnwalker"
         m.nav.filter = .wishlist
@@ -1128,7 +1138,7 @@ struct SearchTextColdLaunchTests {
         m.saveNow()
 
         let reopened = AppModel(storeURL: u)
-        #expect(reopened.nav.query == "")
+        #expect(reopened.libraryQuery == "")
         #expect(reopened.nav.gameID == "dawnwalker")
         #expect(reopened.nav.filter == .wishlist)
         #expect(reopened.nav.anchors["library"] == "lib-kcd2")
@@ -1152,14 +1162,39 @@ struct SearchTextColdLaunchTests {
         #expect(AppModel(storeURL: u).nav.anchors["library"] == "lib-kcd2")
     }
 
+    @Test("r054: typing and the field's scroll ids leave the saved state alone; a tile anchor or nil is still saved")
+    func typingWritesNothingSaved() throws {
+        let m = AppModel(storeURL: url())
+        m.data.collection = Fixtures.shared.seedCollection
+        m.libraryAnchor = "lib-kcd2"
+        #expect(m.data.nav.anchors["library"] == "lib-kcd2")
+        m.libraryAnchor = nil
+        let enc = JSONEncoder(); enc.outputFormatting = .sortedKeys
+        let before = try enc.encode(m.data)
+        for prefix in ["c", "co", "con", "cont", "contr", "contro", "control"] {
+            m.libraryQuery = prefix
+            m.libraryAnchor = nil
+            m.libraryAnchor = "library-search"
+            #expect(m.libraryAnchor == "library-search")
+        }
+        #expect(try enc.encode(m.data) == before)
+        m.libraryAnchor = "lib-kcd2"
+        #expect(m.data.nav.anchors["library"] == "lib-kcd2")
+        #expect(m.libraryAnchor == "lib-kcd2")
+        // A direct write (QA route, reset) wins over the live field id.
+        m.libraryAnchor = "library-search"
+        m.nav.anchors["library"] = "lib-dawnwalker"
+        #expect(m.libraryAnchor == "lib-dawnwalker")
+    }
+
     @Test("a fold or unfold keeps the typed text: the model is not rebuilt, so the search is untouched")
     func foldKeepsTypedText() {
         let m = AppModel(storeURL: url())
         m.data.collection = Fixtures.shared.seedCollection
-        m.nav.query = "dawn"
+        m.libraryQuery = "dawn"
         m.saveNow()
         m.tick()          // what a pose change drives
-        #expect(m.nav.query == "dawn")
+        #expect(m.libraryQuery == "dawn")
     }
 }
 

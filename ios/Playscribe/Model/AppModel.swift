@@ -84,7 +84,6 @@ struct NavState: Codable, Hashable {
     var expanded: [String: Bool] = [:]
     /// The id of the first visible row per scroll view.
     var anchors: [String: String] = [:]
-    var query: String = ""
     var filter: LibraryFilter = .all
     var sort: LibrarySort = .updated
     var lastGameID: String?
@@ -191,9 +190,40 @@ struct Toast: Equatable {
 /// One application model shared by every presentation: outer, inner, folded, any orientation.
 @Observable
 final class AppModel {
-    var data: PersistedState { didSet { scheduleSave() } }
+    var data: PersistedState {
+        didSet {
+            scheduleSave()
+            // A direct write of the saved Library anchor (QA routes, Back, a reset) wins over a live search anchor.
+            if libraryAnchorLive != nil, oldValue.nav.anchors["library"] != data.nav.anchors["library"] { libraryAnchorLive = nil }
+        }
+    }
 
     // Transient
+    /// The Library search text (r053, r054). Not in `data`: a keystroke there rewrote the saved file and invalidated every view
+    /// that reads `data` (deck, cards, rail, every tile), and the grid was rebuilt per keystroke on top, so a typed name took
+    /// 3 to 6 s to show its tile on the Mac (d194c511). Here only the field and the Library body read it. Memory only, so a cold
+    /// launch starts with an empty search and the full Library (r053) and a fold or unfold, which keeps the model, keeps the text.
+    var libraryQuery = ""
+    /// The Library page's scroll position (`scrollPosition(id:)`). A tile ("lib-<id>") or nil is the saved anchor in `data`, so a
+    /// relaunch or Back lands where it was. The search field and title ids the page scrolls to while typing are held here instead:
+    /// written to `data`, the nil-then-field pair the field's task writes on every key (to bring the field above the keyboard)
+    /// cost two saves and two redraws of every `data` reader per keystroke (r054, d194c511). A cold launch drops them anyway.
+    var libraryAnchor: String? {
+        get {
+            if let live = libraryAnchorLive { return live }
+            return data.nav.anchors["library"]
+        }
+        set {
+            if let id = newValue, !id.hasPrefix("lib-") {
+                if data.nav.anchors["library"] != nil { data.nav.anchors["library"] = nil }
+                if libraryAnchorLive != id { libraryAnchorLive = id }
+            } else {
+                if data.nav.anchors["library"] != newValue { data.nav.anchors["library"] = newValue }
+                if libraryAnchorLive != nil { libraryAnchorLive = nil }
+            }
+        }
+    }
+    private var libraryAnchorLive: String?
     var toast: Toast?
     /// Height the pill and toasts take at the bottom of the screen (0 when none): the Library reserves it as a bottom inset.
     var messageInset: CGFloat = 0
@@ -359,9 +389,8 @@ final class AppModel {
            let decoded = try? JSONCoding.decoder.decode(PersistedState.self, from: raw) {
             data = decoded
             // r053-search-text-persists-relaunch (Nadia, Iris): a cold launch starts with an empty search and the full Library.
-            // The text a person typed last time is not restored; the selected game, scroll position and live filters are. A fold or
-            // unfold keeps the model alive, so the text typed in this launch survives it.
-            data.nav.query = ""
+            // The text a person typed last time is not restored (`libraryQuery` is memory only); the selected game, scroll position
+            // and live filters are. A fold or unfold keeps the model alive, so the text typed in this launch survives it.
             // Quinn (#430): a Library scroll anchor that is not a game tile ("lib-<id>") would scroll an unfiltered relaunch to the
             // search field (the app killed while it was focused). Keep tile anchors only.
             if let a = data.nav.anchors["library"], !a.hasPrefix("lib-") { data.nav.anchors["library"] = nil }
@@ -429,7 +458,8 @@ final class AppModel {
             seen.insert(f.id)
         }
         out += fixtures.releases.filter { !seen.contains($0.id) }
-        allReleasesMerged = out
+        // A refresh that brings nothing new must not tell every reader it changed (bug-library-redraw-on-feed-refresh).
+        if out != allReleasesMerged { allReleasesMerged = out }
     }
 
     static var defaultStoreURL: URL {
@@ -619,7 +649,7 @@ final class AppModel {
     }
 
     func shownRows() -> [LibraryRow] {
-        let q = nav.query.trimmingCharacters(in: .whitespaces).lowercased()
+        let q = libraryQuery.trimmingCharacters(in: .whitespaces).lowercased()
         let rows = libraryRows.filter { r in
             (nav.filter.status == nil || r.status == nav.filter.status) && (q.isEmpty || r.game.name.lowercased().contains(q))
         }
@@ -1161,7 +1191,7 @@ final class AppModel {
             data.simulated.removeAll { $0.id == release.id }
             data.simulated.insert(release, at: 0)
             openRelease(gameID: gameID, releaseID: release.id)
-        // QA (INTERNAL, 0.5.6 Card B): "ps5-state/<game>/<live|live-version|announced|not-planned|none>" opens a simulated update in
+        // QA (INTERNAL, 0.5.6 Card B): "ps5-state/<game>/<live|live-version|live-reported|announced|not-planned|none>" opens a simulated update in
         // that PS5 state, so every status wording can be shot without the network. live-version carries a PS5 number (01.004.000)
         // and a PC number is on the page's PC row (never shown as PS5's). The name is neutral so no PC number reads as PS5's.
         // "none" (no PS5 row) is `.pending`, which `releases()` hides, so no page opens: that wording is unit-tested only.
@@ -1174,6 +1204,10 @@ final class AppModel {
             switch state {
             case "live": platforms.append(PlatformRelease(platform: .ps5, status: .live, liveAt: liveAt, verification: .official))
             case "live-version": platforms.append(PlatformRelease(platform: .ps5, status: .live, version: text("01.004.000"), liveAt: liveAt, verification: .official))
+            // #623: a PS5 number read from the PS5 build list (reported): "Reported as 01.006.000" on the page, plate and cover.
+            case "live-reported":
+                let build = Field(value: "01.006.000", verification: .reported, sourceID: PS5StatusLines.buildListSource, checkedAt: now)
+                platforms.append(PlatformRelease(platform: .ps5, status: .live, version: build, liveAt: liveAt, verification: .official))
             case "announced": platforms.append(PlatformRelease(platform: .ps5, status: .announced, verification: .official))
             case "not-planned": platforms.append(PlatformRelease(platform: .ps5, status: .notPlanned, verification: .official))
             default: break
@@ -1186,6 +1220,37 @@ final class AppModel {
             data.simulated.removeAll { $0.id == release.id }
             data.simulated.insert(release, at: 0)
             openRelease(gameID: gameID, releaseID: release.id)
+        // QA (INTERNAL, #618): "hero-art/<igdbID>[/<igdbID>...]": a Library of only those PS5-index games, each with one unread
+        // simulated On PS5 update, so the Latest updates hero shows their art with a full caption (headline and two-line summary).
+        // For the hero scrim on hard art: 381248 Star Wars: Galactic Racer (near-white art) and 389434 Castlevania: Belmont's Curse
+        // (dark art). The art loads from the network, as for any index game. Stays on the Library.
+        // A last part "reported" makes each PS5 number a build-list one ("Reported as …" on the cover chip, #623).
+        case "hero-art" where !parts.isEmpty:
+            let reportedBuilds = parts.last == "reported"
+            let ids = reportedBuilds ? Array(parts.dropLast()) : parts
+            resetDemo()
+            data = PersistedState(collection: [])
+            let now = Date.now
+            for (n, part) in ids.enumerated() {
+                guard let id = Int(part), let e = PS5Index.shared.entry(igdb: id) else { continue }
+                let g = PS5Index.shared.game(e)
+                insertGame(g, status: .owned)
+                let at = now.addingTimeInterval(-Double(n) * 3600)
+                let liveAt = Field(value: at, verification: .official, sourceID: "simulated", checkedAt: now)
+                let version = reportedBuilds
+                    ? Field(value: "01.0\(n + 2)0.000", verification: .reported, sourceID: PS5StatusLines.buildListSource, checkedAt: now)
+                    : Field(value: "01.0\(n + 2)0.000", verification: .official, sourceID: "simulated", checkedAt: now)
+                let release = Release(
+                    id: "qa-hero-art-\(g.id)", gameID: g.id, displayName: "Patch 1.\(n + 2)", kind: .patch, kindBasis: .studio,
+                    announcedAt: at, notes: [], sourceIDs: [],
+                    platforms: [PlatformRelease(platform: .ps5, status: .live, version: version, liveAt: liveAt, verification: .official)],
+                    headline: "New modes, balance changes and stability fixes",
+                    summary: "Adds a new weekly challenge, rebalances the late game, and fixes crashes when resuming from rest mode.",
+                    keyChanges: [], simulated: true, arrivesAt: at)
+                data.simulated.removeAll { $0.id == release.id }
+                data.simulated.append(release)
+            }
+            nav.anchors["library"] = nil
         // QA (INTERNAL, 0.5.6): "index-game/<igdbID>" opens a PS5-index game that the catalogue lacks, browsed, as a search hit or
         // an Upcoming tile would: no catalogue details, so its page shows "More about this game soon." (igdb 335660 is My Little Puppy).
         case "index-game" where parts.count == 1:
@@ -1733,10 +1798,17 @@ final class AppModel {
 
     /// Creates a clearly labelled simulated PS5 release and schedules its notification.
     func simulateUpdate(gameID: String, kind: SimKind, delay: TimeInterval) {
+        let release = simulatedRelease(gameID: gameID, kind: kind, arrives: Date.now.addingTimeInterval(delay))
+        data.simulated.insert(release, at: 0)
+        NotificationService.shared.schedule(release: release, game: game(gameID), level: notifyLevel(gameID), pauseAll: data.pauseAll, delay: delay, model: self)
+        show(Toast(text: "Simulated \(kind.label.lowercased()) arrives in \(Int(delay)) s"))
+    }
+
+    /// A clearly labelled simulated PS5 release, live at `arrives` (Simulate update, and the QA feed pulse's new release).
+    func simulatedRelease(gameID: String, kind: SimKind, arrives: Date) -> Release {
         let n = data.simulated.count + 1
         let latest = ps5Releases(gameID).first?.ps5Version
         let version = Self.bumpConsoleVersion(latest, major: kind == .major)
-        let arrives = Date.now.addingTimeInterval(delay)
         let major = kind == .major
         let display = major ? "Update \(n + 1).0 (simulated)" : "Hotfix \(n) (simulated)"
         let release = Release(
@@ -1757,9 +1829,7 @@ final class AppModel {
             keyChanges: major ? ["a new performance mode option", "faster loading between areas"] : ["fixed a crash when loading a save", "fixed missing autosaves"],
             simulated: true, arrivesAt: arrives
         )
-        data.simulated.insert(release, at: 0)
-        NotificationService.shared.schedule(release: release, game: game(gameID), level: notifyLevel(gameID), pauseAll: data.pauseAll, delay: delay, model: self)
-        show(Toast(text: "Simulated \(kind.label.lowercased()) arrives in \(Int(delay)) s"))
+        return release
     }
 
     static func bumpConsoleVersion(_ v: String?, major: Bool) -> String {
