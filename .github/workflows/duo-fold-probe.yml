@@ -1,0 +1,40 @@
+name: Duo fold probe
+
+# Probe (24 Nov 2026, cloud-native Duo QA): can sim-use fold the iPhone Duo headlessly on the hosted
+# xcode-27 runner (vendor HID reports to dtuhidd, no Device Hub)? Evidence only; not a required check.
+on:
+  push:
+    branches: ['claude/**']
+    paths: ['.github/workflows/duo-fold-probe.yml']
+
+jobs:
+  probe:
+    runs-on: xcode-27
+    timeout-minutes: 40
+    steps:
+      - run: sudo xcode-select -s /Applications/Xcode_27.1.app && xcodebuild -version | tee -a "$GITHUB_STEP_SUMMARY"
+      - name: Install sim-use
+        run: |
+          brew tap lycorp-jp/tap
+          brew trust lycorp-jp/tap || true
+          brew install lycorp-jp/tap/sim-use
+          sim-use --version | tee -a "$GITHUB_STEP_SUMMARY"
+      - name: Boot Duo and fold it
+        run: |
+          mkdir -p out
+          exec > >(tee out/probe.log) 2>&1
+          UDID=$(xcrun simctl list devices available -j | python3 -c "
+          import json,sys
+          d=json.load(sys.stdin)['devices']
+          print(next(x['udid'] for k in d if 'iOS-27-1' in k for x in d[k] if 'Duo' in x['name']))")
+          echo "UDID=$UDID"
+          xcrun simctl boot "$UDID"; xcrun simctl bootstatus "$UDID" -b
+          sleep 20
+          snap() { echo "--- $1"; xcrun devicectl device info displays --device "$UDID" 2>&1 | head -30; xcrun simctl io "$UDID" screenshot --display=3 "out/$1-d3.png" 2>&1 | tail -1; sim-use screenshot --device "$UDID" -o "out/$1-simuse.png" 2>&1 | tail -2; }
+          snap 0-boot
+          echo "--- posture"; sim-use ios fold --json --device "$UDID" 2>&1 || true
+          for a in open 90 half 120 closed; do echo "=== fold $a"; sim-use ios fold $a --json --device "$UDID" 2>&1 || true; sleep 4; snap "fold-$a"; done
+          echo "=== rotate landscape on closed"; sim-use ios rotate landscape-left --json --device "$UDID" 2>&1 || true; sleep 3; snap rot-closed-land
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: duo-fold-probe, path: out }
