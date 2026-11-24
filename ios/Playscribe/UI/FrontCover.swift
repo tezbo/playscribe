@@ -320,8 +320,17 @@ struct FrontCoverPlate: View {
             Text(Self.headline(card))
                 .font(PlayscribeFont.title).foregroundStyle(PlayscribeColor.onDarkText)
                 .fixedSize(horizontal: false, vertical: true)
-            FlowLayout(spacing: 6) {
-                ForEach(Self.chips(card), id: \.text) { chip($0.text, live: $0.live) }
+            // Iris (#619, closedportrait cover): the FlowLayout reported one row while placing two, so a wrapped "11 changes" sat
+            // on the Playscribe wordmark. A ViewThatFits always reports the height of the version it draws: one row, then the
+            // status and version with the count below, then one chip a row. The chips wrap; none is dropped.
+            let chips = Self.chips(card)
+            ViewThatFits(in: .horizontal) {
+                HStack(spacing: 6) { ForEach(chips, id: \.text) { chip($0.text, live: $0.live) } }
+                VStack(alignment: .leading, spacing: 6) {
+                    HStack(spacing: 6) { ForEach(chips.prefix(2), id: \.text) { chip($0.text, live: $0.live) } }
+                    ForEach(chips.dropFirst(2), id: \.text) { chip($0.text, live: $0.live) }
+                }
+                VStack(alignment: .leading, spacing: 6) { ForEach(chips, id: \.text) { chip($0.text, live: $0.live) } }
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -341,7 +350,7 @@ struct FrontCoverPlate: View {
         return card.date.map { "\(name), \(AppModel.tileDay($0))" } ?? name
     }
 
-    /// "Out on PS5" (accent), the PS5 version chip when there is one, and the change count. The version is always the PS5 one: the deck holds
+    /// "Out on PS5" (ember text), the PS5 version chip when there is one, and the change count. The version is always the PS5 one: the deck holds
     /// only releases live on PS5, and `versionChip` comes from the PS5 release's own name.
     static func chips(_ card: DeckCard) -> [(text: String, live: Bool)] {
         var list: [(text: String, live: Bool)] = []
@@ -360,15 +369,12 @@ struct FrontCoverPlate: View {
 
     private func chip(_ text: String, live: Bool) -> some View {
         Text(text.keepingVersionsTogether).font(PlayscribeFont.caption.weight(.semibold)).monospacedDigit()
-            .foregroundStyle(live ? PlayscribeColor.onAccent : PlayscribeColor.onDarkText)
+            // Over-art rule (#619, Iris): only "New update" is filled. "Out on PS5" is a label like the others, ink with ember text.
+            .foregroundStyle(live ? PlayscribeColor.onDarkAccent : PlayscribeColor.onDarkText)
             .padding(.horizontal, 8).padding(.vertical, 3).frame(minHeight: 24)
-            // Over-art rule (#619): the live chip is the one filled attention state; every other chip is an ArtLabel (75% ink).
-            .background {
-                if live { RoundedRectangle(cornerRadius: 6, style: .continuous).fill(PlayscribeColor.onDarkAccent) }
-                else { Color.clear.artLabel(in: RoundedRectangle(cornerRadius: 6, style: .continuous)) }
-            }
+            .background { Color.clear.artLabel(in: RoundedRectangle(cornerRadius: 6, style: .continuous)) }
             .overlay(RoundedRectangle(cornerRadius: 6, style: .continuous)
-                .strokeBorder(live ? .clear : PlayscribeColor.vellum100.opacity(0.25), lineWidth: 1))
+                .strokeBorder(PlayscribeColor.vellum100.opacity(0.25), lineWidth: 1))
     }
 }
 
