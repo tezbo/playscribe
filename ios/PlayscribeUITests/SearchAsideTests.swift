@@ -45,10 +45,29 @@ final class SearchAsideTests: XCTestCase {
 /// and, when no tile shows, attaches the accessibility tree so the cause (no tile in the tree, or a tile with no frame) is readable.
 final class SearchBlankListTests: XCTestCase {
     @MainActor
-    func testFastControlNeverLeavesTheListBlank() throws {
+    func testFastControlNeverLeavesTheListBlank() throws { try fastControl(landscape: false) }
+
+    /// r054: the same ten runs in Closed landscape, the case left to a hand check on the Duo until -qaOrientation (#627) let a
+    /// test turn the outer display. A window that never turns fails plainly (OrientationGuard) rather than measuring portrait.
+    @MainActor
+    func testFastControlNeverLeavesTheListBlankInClosedLandscape() throws { try fastControl(landscape: true) }
+
+    @MainActor
+    private func fastControl(landscape: Bool) throws {
         let app = XCUIApplication()
-        app.launchArguments = ["-qaRoute", "demo"]
+        app.launchArguments = ["-qaRoute", "demo"] + (landscape ? ["-qaOrientation", "landscape"] : [])
         app.launch()
+        if landscape {
+            defer { XCUIDevice.shared.orientation = .portrait }
+            guard app.require(.landscapeLeft) else { app.terminate(); return }
+            try runFastControl(app, tag: "closed landscape")
+            return
+        }
+        try runFastControl(app, tag: "closed")
+    }
+
+    @MainActor
+    private func runFastControl(_ app: XCUIApplication, tag: String) throws {
         let pose = ReleaseRowTests.pose(app)
         try XCTSkipUnless(pose.contains("pose: closed"), "run in Closed (pose: \(pose))")
         let field = app.textFields["Search your library"].exists ? app.textFields["Search your library"] : app.textFields.firstMatch
@@ -60,14 +79,14 @@ final class SearchBlankListTests: XCTestCase {
             sleep(2)
             if !tiles.firstMatch.exists {
                 let dump = XCTAttachment(string: app.debugDescription)
-                dump.name = "blank-list-run\(run)-tree.txt"
+                dump.name = "blank-list-\(tag.replacingOccurrences(of: " ", with: "-"))-run\(run)-tree.txt"
                 dump.lifetime = .keepAlways
                 add(dump)
                 print("BLANKLIST run \(run)\n\(app.debugDescription)")
-                XCTFail("run \(run): no tile after typing 'control' (tree attached)")
+                XCTFail("\(tag) run \(run): no tile after typing 'control' (tree attached)")
                 return
             }
-            XCTAssertEqual(tiles.count, 1, "run \(run): one match for 'control'")
+            XCTAssertEqual(tiles.count, 1, "\(tag) run \(run): one match for 'control'")
             let clear = app.buttons["Clear search"]
             if clear.waitForExistence(timeout: 3) { clear.tap() }
             app.keyboards.buttons.matching(NSPredicate(format: "label IN {'Search','search','Return','return'}")).firstMatch.tap()
