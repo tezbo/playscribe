@@ -34,6 +34,7 @@ axchips) # bug-closed-landscape-ax5-no-games + r060-filter-pills-grid-ax5: overl
     launch -qaRoute library/playing -qaOrientation landscape -UIPreferredContentSizeCategoryName $c
     snap axchips 1-closed-landscape-$n
     sim-use swipe --from 233,450 --to 233,150 --device "$UDID" >/dev/null 2>&1; sleep 2; snap axchips 2-closed-landscape-$n-scrolled
+    sim-use swipe --from 233,450 --to 233,150 --device "$UDID" >/dev/null 2>&1; sleep 2; snap axchips 2b-closed-landscape-$n-scrolled-more
   done
   launch -qaRoute library/playing -UIPreferredContentSizeCategoryName $AX5; snap axchips 3-closed-portrait-AX5
   sim-use swipe --from 233,560 --to 233,160 --device "$UDID" >/dev/null 2>&1; sleep 2; snap axchips 4-closed-portrait-AX5-scrolled
