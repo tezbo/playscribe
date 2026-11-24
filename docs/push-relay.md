@@ -95,3 +95,12 @@ set `team: true`, which only internal builds do. The push never carries tester t
 `APNS_KEY`, `APNS_KEY_ID`, `APNS_TEAM_ID` from the existing GitHub secrets (nothing is pasted). Blast radius: someone who could
 read Worker secrets could push to this app's devices. The Feed job's own sending is unchanged. Delivery is capped at 20 team
 devices a send (`tm:<id>` index keys) to stay inside the free plan's 50 subrequests per request.
+
+## Limrun instance webhook (cloud Duo QA leak alarm)
+`POST /v1/webhooks/limrun` receives Limrun's `instance.created`, `instance.ready` and `instance.terminated` events (one endpoint per Limrun
+org; there are no credit or balance events). It verifies `Limrun-Signature: t=<unix>,v1=<hex>` (HMAC-SHA256 over `<t>.<raw body>`, whole secret
+including `whsec_` as the key, five-minute window) against the Worker secret `LIMRUN_WEBHOOK_SECRET`, and answers 401 until that secret exists.
+- Open instances are kept in KV as `lr:<id>`; a terminated event adds the lifetime minutes to a per-month, per-product counter `lu:YYYY-MM:<product>` and clears the record.
+- The existing cron (:22 and :52) pushes one fixed Team alert, "A Limrun simulator is still running", for any instance open more than 20 minutes.
+- `GET /admin/limrun` (admin token) lists the month counters and open instances. Minutes are instance lifetime, an approximation of billed minutes; the billed figure is the Limrun usage analytics API.
+- Secret: Limrun shows the signing secret once in Console > Settings > Webhooks. Add it as the repository secret `LIMRUN_WEBHOOK_SECRET`, then run the Relay deploy workflow.
