@@ -143,6 +143,9 @@ struct TabletopReaderStage: View {
     @Environment(\.dynamicTypeSize) private var typeSize
     /// The stage's bottom edge in screen space; the text ends 24 pt above the division.
     @State private var stageBottom: CGFloat = 0
+    /// The stage's height for the text block, and the plate's fit level (ReaderPlateFit), 0 = the full plate.
+    @State private var stageRoom: CGFloat = 0
+    @State private var plateLevel = 0
     @State private var stageWidth: CGFloat = 0
 
     /// The room right of the text panel (16 pt margin, up to 560 pt, 24 pt gap, 16 pt margin): the tile is 240 pt at most and
@@ -271,18 +274,30 @@ struct TabletopReaderStage: View {
             // taller than the upper half (AX5, whole-word text that ignores the proposed height) grew the ZStack, which moved the
             // art's bottom edge, which changed the clearance padding, which grew the block again, with the stage body (and its
             // note parsing) re-run each time (hang at 2dbcd13, Mac sample). The block grows upward and is clipped by the stage.
-            Color.clear.overlay(alignment: .bottomLeading) { if let section = sections[safe: index] {
-                // Iris (#619, tabletop-dark-reader-ax5): at AX5 the full plate was taller than the stage and its eyebrow was clipped
-                // at the top edge. The plate never clips: the first version that fits the stage is drawn. Nothing is dropped
-                // (same content in every pose). The title is cut first, to one line, then the overview's headline goes from two
-                // lines to one (whole-word "…"; Iris, 8236cf01). The stage takes no touches, so it cannot scroll; one title line and one headline line
-                // is the floor. VoiceOver and the full text keep everything.
-                let titleLines = typeSize.isAccessibilitySize ? 2 : 4
-                ViewThatFits(in: .vertical) {
-                    readerPlate(section, release: release, titleLines: titleLines, subtitleLines: 2)
-                    readerPlate(section, release: release, titleLines: 1, subtitleLines: 2)
-                    readerPlate(section, release: release, titleLines: 1, subtitleLines: 1)
+            Color.clear
+                .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { h in
+                    if abs(h - stageRoom) > 0.5 { stageRoom = h; plateLevel = 0 }
                 }
+                .overlay(alignment: .bottomLeading) { if let section = sections[safe: index] {
+                // Iris (#619, tabletop-*-reader-ax5): the plate never clips. A ViewThatFits picked a version that did not fit
+                // (41e69f7b: "Out on PS5 01.006.000" cut at the stage's top), because WholeWordText's line cap is measured only
+                // once it is drawn, so an undrawn candidate measured wrong. So the plate is drawn at its own full height and
+                // measured, and while it is taller than the room above the fold it steps down one level (ReaderPlateFit): title
+                // to one line, then the headline to one line, then the plate's type capped. Nothing is dropped (same content
+                // in every pose). The stage takes no touches, so it cannot scroll. VoiceOver and the full text keep everything.
+                let fit = ReaderPlateFit.levels[min(plateLevel, ReaderPlateFit.levels.count - 1)]
+                readerPlate(section, release: release, titleLines: fit.titleLines ?? (typeSize.isAccessibilitySize ? 2 : 4),
+                            subtitleLines: fit.subtitleLines)
+                    .dynamicTypeSize(...fit.typeCap)
+                    .fixedSize(horizontal: false, vertical: true)
+                    // Keyed on the level too, so a step that leaves the height unchanged (a title already on one line) is
+                    // measured again and steps on.
+                    .onGeometryChange(for: ReaderPlateFit.Measure.self) { ReaderPlateFit.Measure(level: plateLevel, height: $0.size.height) } action: { m in
+                        let next = ReaderPlateFit.next(level: m.level, plateHeight: m.height, room: stageRoom - duo.clearance(forBottom: stageBottom))
+                        if next != plateLevel { plateLevel = next }
+                    }
+                    .onChange(of: section.id) { plateLevel = 0 }
+                    .onChange(of: typeSize) { plateLevel = 0 }
                 .padding(.horizontal, 16)
                 .padding(.bottom, duo.clearance(forBottom: stageBottom))
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
@@ -416,5 +431,34 @@ struct StageTrailerTile: View {
         .accessibilityLabel("Trailer")
         .accessibilityAddTraits(.isStaticText)
         .accessibilityIdentifier("stageTrailerTile")
+    }
+}
+
+/// How the Tabletop reader's plate steps down until it fits the room above the fold (Iris, #619). Each level keeps every line of
+/// content (eyebrow, PS5 status, title, the overview's headline): the title is cut first, then the headline, then the plate's
+/// text size is capped. Pure, so the stepping is unit-tested (ReaderPlateFitTests); the heights come from the drawn plate.
+enum ReaderPlateFit {
+    struct Level: Equatable {
+        /// nil: the pose's own title cap (2 lines at accessibility sizes, else 4).
+        var titleLines: Int?
+        var subtitleLines: Int
+        var typeCap: DynamicTypeSize
+    }
+
+    struct Measure: Equatable { var level: Int; var height: CGFloat }
+
+    static let levels: [Level] = [
+        Level(titleLines: nil, subtitleLines: 2, typeCap: .accessibility5),
+        Level(titleLines: 1, subtitleLines: 2, typeCap: .accessibility5),
+        Level(titleLines: 1, subtitleLines: 1, typeCap: .accessibility5),
+        Level(titleLines: 1, subtitleLines: 1, typeCap: .accessibility3),
+        Level(titleLines: 1, subtitleLines: 1, typeCap: .accessibility1),
+    ]
+
+    /// The level to draw next: one step down while the drawn plate is taller than the room (half a point of slack), never past
+    /// the last level, never back up (a new section, text size or stage size starts again at 0). No room measured yet: stay.
+    static func next(level: Int, plateHeight: CGFloat, room: CGFloat) -> Int {
+        guard room > 0, plateHeight > room + 0.5 else { return level }
+        return min(level + 1, levels.count - 1)
     }
 }
