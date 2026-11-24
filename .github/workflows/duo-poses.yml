@@ -7,7 +7,7 @@ name: Duo poses (real hinge)
 on:
   workflow_dispatch:
     inputs:
-      route: { description: 'qaRoute to launch', default: 'gamepage/dawnwalker' }
+      route: { description: 'qaRoute to launch', default: 'library/playing' }
   push:
     branches: ['claude/**']
     paths: ['.github/workflows/duo-poses.yml']
@@ -17,7 +17,7 @@ jobs:
     runs-on: xcode-27
     timeout-minutes: 45
     env:
-      ROUTE: ${{ inputs.route || 'gamepage/dawnwalker' }}
+      ROUTE: ${{ inputs.route || 'library/playing' }}
     steps:
       - uses: actions/checkout@v4
       - run: sudo xcode-select -s /Applications/Xcode_27.1.app && brew install xcodegen && (cd ios && xcodegen generate)
@@ -37,22 +37,11 @@ jobs:
           xcodebuild build -project ios/Playscribe.xcodeproj -scheme Playscribe -destination "id=$UDID" \
             -derivedDataPath build/dd CODE_SIGNING_ALLOWED=NO > build.log 2>&1 || { grep error: build.log | head; exit 1; }
           xcrun simctl install "$UDID" "$(ls -d build/dd/Build/Products/Debug-iphonesimulator/Playscribe.app)"
-      - name: Fold through the poses
+      - name: Fold through the poses (3 runs; Quinn's Tabletop sweep)
         run: |
-          mkdir -p out; exec > >(tee out/poses.log) 2>&1
-          B=co.codeconnectors.playscribe
-          snap() { # name display(1 outer, 3 inner)
-            xcrun simctl io "$UDID" screenshot --display=$2 "out/$1.png" 2>&1 | tail -1
-            sim-use ui --device "$UDID" > "out/$1.ui.txt" 2>&1 || true
-            xcrun devicectl device info displays --device "$UDID" 2>&1 | grep -E 'LCD|active|currentOrientation' > "out/$1.displays.txt" || true; }
-          xcrun simctl launch "$UDID" $B -qaRoute "$ROUTE" -qaForceDark NO; sleep 8
-          snap 01-closed-outer 1
-          for a in 180 130 90 60; do
-            echo "=== fold $a"; sim-use ios fold $a --json --device "$UDID" 2>&1 | cut -c1-260; sleep 5; snap 02-fold$a-inner 3
-          done
-          echo "=== open landscape/portrait"; sim-use ios fold 180 --device "$UDID" | cut -c1-200; sim-use ios rotate portrait --json --device "$UDID" 2>&1 | cut -c1-260; sleep 4; snap 03-open-portrait-inner 3
-          echo "=== fold closed (state continuity)"; sim-use ios fold closed --json --device "$UDID" 2>&1 | cut -c1-260; sleep 5; snap 04-closed-again-outer 1
-          sim-use ios rotate landscape-left --json --device "$UDID" 2>&1 | cut -c1-300; sleep 4; snap 05-closed-landscape-outer 1
+          mkdir -p out
+          ios/tools/qa/duo-ci-poses.sh "$UDID" out "$ROUTE" 3 "0 180 130 120:portrait 90 60 180:landscape-left 110:landscape-left 100:landscape-left 90:landscape-left 80:landscape-left 70:landscape-left 90:landscape-right 90:pud" 2>&1 | tee out/poses.log
+          column -t out/manifest.tsv | tee -a "$GITHUB_STEP_SUMMARY"
       - uses: actions/upload-artifact@v4
         if: always()
         with: { name: duo-poses, path: out }
