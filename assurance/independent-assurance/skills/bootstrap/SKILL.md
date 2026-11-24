@@ -29,5 +29,6 @@ Steps
 4. Build the roster: map commit `Claude-Session` trailers to sessions, `get_session` each for title, state, model,
    creation date; add threads named in AGENTS.md; mark agents present in one source but not the other. Snapshot.
 5. Snapshot the role definitions: `AGENTS.md`, `SKILLS.md`, `.claude/skills/*/SKILL.md` at the pinned SHA.
-6. Run `/independent-assurance:health` and record the result.
-7. Write `setup/bootstrap-<date>.md`. Do not start the baseline: the sponsor starts it.
+6. Write the plugin manifest: `oia.py plugin-manifest --plugin <plugin root> --ref <plugin commit SHA>`.
+7. Run `/independent-assurance:health --boundaries` and record the result.
+8. Write `setup/bootstrap-<date>.md`. Do not start the baseline: the sponsor starts it.

@@ -23,6 +23,8 @@ Subcommands
   finding   add --id F-... --severity S --title T --evidence E [--criterion C]
             close --id F-... --evidence E       (closure needs verification evidence)
   health                       structure, chain, locks and open findings summary
+  plugin-manifest --plugin DIR [--check]
+                               hash every plugin file into setup/plugin-manifest.json, or compare with it
 
 Exit code 0 = OK, 1 = integrity failure or refused action, 2 = usage error.
 """
@@ -343,6 +345,37 @@ def cmd_health(root, a):
         sys.exit(1)
 
 
+def plugin_hashes(plugin):
+    out = {}
+    for base, dirs, files in os.walk(plugin):
+        dirs[:] = [d for d in dirs if d not in (".git", "__pycache__")]
+        for f in files:
+            full = os.path.join(base, f)
+            out[os.path.relpath(full, plugin)] = sha256_file(full)
+    return dict(sorted(out.items()))
+
+
+def cmd_plugin_manifest(root, a):
+    mp = os.path.join(root, "setup", "plugin-manifest.json")
+    cur = plugin_hashes(a.plugin)
+    if a.check:
+        if not os.path.exists(mp):
+            print(json.dumps({"verdict": "NOT TESTED", "reason": "no plugin-manifest.json"}))
+            sys.exit(1)
+        ref = json.load(open(mp))["files"]
+        changed = sorted(k for k in set(ref) | set(cur) if ref.get(k) != cur.get(k))
+        print(json.dumps({"verdict": "PASS" if not changed else "DRIFT", "changed": changed}, indent=2))
+        if changed:
+            sys.exit(1)
+        return
+    if os.path.exists(mp):
+        os.rename(mp, mp.replace(".json", f"-superseded-{dt.datetime.now(dt.timezone.utc).strftime('%Y%m%dT%H%M%SZ')}.json"))
+    with open(mp, "w") as f:
+        json.dump({"created": now(), "plugin": os.path.abspath(a.plugin), "version_ref": a.ref, "files": cur}, f, indent=2)
+    e = append_ledger(root, "plugin-manifest", f"{len(cur)} files", ref=a.ref, extra={"sha256": sha256_file(mp)})
+    print(json.dumps({"files": len(cur), "ledger_seq": e["seq"]}, indent=2))
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--root")
@@ -379,12 +412,17 @@ def main():
     f.add_argument("--criterion")
     f.add_argument("--evidence")
     sp.add_parser("health")
+    pm = sp.add_parser("plugin-manifest")
+    pm.add_argument("--plugin", required=True)
+    pm.add_argument("--check", action="store_true")
+    pm.add_argument("--ref", help="plugin commit SHA")
     a = ap.parse_args()
     root = resolve_root(a.root)
     if a.cmd != "init" and not os.path.isdir(os.path.join(root, "ledger")):
         sys.exit(f"records not initialised at {root}; run init")
     {"init": cmd_init, "snapshot": cmd_snapshot, "record": cmd_record, "ledger": cmd_ledger,
-     "verify": cmd_verify, "lock": cmd_lock, "finding": cmd_finding, "health": cmd_health}[a.cmd](root, a)
+     "verify": cmd_verify, "lock": cmd_lock, "finding": cmd_finding, "health": cmd_health,
+     "plugin-manifest": cmd_plugin_manifest}[a.cmd](root, a)
     if a.cmd == "verify":
         if cmd_verify(root, a, quiet=True)["problems"]:
             sys.exit(1)

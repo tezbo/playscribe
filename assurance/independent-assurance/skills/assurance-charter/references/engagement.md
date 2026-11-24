@@ -20,8 +20,23 @@ messages (`cross_session_inbound: available` in `get_session`). OIA sends a mess
 Use it for: interviews, practical demonstrations, behavioural challenges (when sealed and authorised), and
 requests for copies of evidence held only in the team project.
 
+**Tested 2026-11-24: refused across projects.** From the OIA project, `send_message` to a team session (both the
+`session_…` and `cse_…` id forms) and a one-shot scheduled task bound to a team session both returned
+`the requested resource was not found`, while `get_session` and `list_events` on the same sessions worked. Read
+access crosses the project boundary; write access into team sessions does not. Until the sponsor provides a route
+(see `independence.md`, "Engagement"), use route A only for sessions inside the OIA project, and for team agents use
+the sponsor-approved courier route below.
+
 Limits: a session that is archived or compacted may not hold the context the question assumes; a reply is the
 agent's statement (assertion) unless it points to artefacts; Terry's own thread posts are not reachable this way.
+
+## A2. Courier route for team agents (while cross-project messages are refused)
+
+A thread in the team project that acts only as OIA's courier: it receives an OIA brief pasted by the sponsor or
+created by the team project's coordinator on the sponsor's instruction, forwards it with `send_message` to the
+named agent, and forwards replies back. It holds no records and draws no conclusions; OIA verifies every reply
+against the agent's own transcript (`list_events`), which OIA can read directly. Its existence is visible to the
+team Coordinator; its content is not directed by the Coordinator. Needs the sponsor's decision.
 
 ## B. Instantiating an agent from a role definition (a stand-in)
 
