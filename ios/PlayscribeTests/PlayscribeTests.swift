@@ -318,6 +318,16 @@ struct DatePrecisionTests {
         #expect(ps4Only("2021-03-04").ps5DateLine == ps4Only("2021-03-04").ps5AvailabilityLine)
     }
 
+    @Test("r060-tile-dates-ax5: a tile date never breaks inside itself")
+    func tileDayHoldsTogether() {
+        let thisYear = Date.now, lastYear = Date.now.addingTimeInterval(-400 * 86400)
+        for d in [thisYear, lastYear] {
+            let text = AppModel.tileDay(d)
+            #expect(!text.contains(" "), "\(text) has a breaking space")
+            #expect(text.contains("\u{00A0}"), "\(text) joins its parts with a no-break space")
+        }
+    }
+
     @Test("Iris, #597: each caption mark has words, so colour is never the only cue")
     func tileMarkWords() {
         #expect(AppModel.tileUpdateWords(.unread, "22 Nov") == "new update 22 Nov")

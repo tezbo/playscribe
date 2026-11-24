@@ -34,6 +34,17 @@ struct PS5StatusCardBTests {
         #expect(s.spoken == "Out on PS5. This update is 01.004.000 on PS5")
     }
 
+    @Test("A build read from the PS5 build list says reported, on screen and to VoiceOver (Iris on #617)")
+    func reportedBuild() {
+        var r = release(ps5: .live, ps5Version: "01.006.000")
+        if let i = r.platforms.firstIndex(where: { $0.platform == .ps5 }) {
+            r.platforms[i].version = Field(value: "01.006.000", verification: .reported, sourceID: PS5StatusLines.buildListSource, checkedAt: day)
+        }
+        let s = PS5StatusLines(r)
+        #expect(s.version?.replacingOccurrences(of: "\u{2060}", with: "") == "Reported as 01.006.000 on PS5")
+        #expect(s.spoken == "Out on PS5. Reported as 01.006.000 on PS5")
+    }
+
     @Test("Live without a PS5 number: one line, a PC number is never shown")
     func liveWithoutVersion() {
         let s = PS5StatusLines(release(ps5: .live, pcVersion: "1.7.3"))

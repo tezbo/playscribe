@@ -11,6 +11,9 @@ struct CardSections<Content: View>: View {
     @Environment(\.accessibilityReduceTransparency) private var reduceTransparency
     @Environment(\.colorSchemeContrast) private var contrast
     @Environment(\.qaSolid) private var qaSolid
+    /// A fill for every row, where the screen sets its own cards (Settings in light: surface cards on the bg cream, Iris). Nil keeps
+    /// the system cell fill.
+    var rowFill: Color? = nil
     @ViewBuilder var content: Content
 
     var body: some View {
@@ -21,6 +24,18 @@ struct CardSections<Content: View>: View {
                         ForEach(Array(rows.enumerated()), id: \.element.id) { i, row in
                             row.listRowBackground(CardRowBackground(first: i == 0, last: i == rows.count - 1))
                         }
+                    }
+                } header: {
+                    section.header
+                } footer: {
+                    section.footer
+                }
+            }
+        } else if let rowFill {
+            ForEach(sections: content) { section in
+                Section {
+                    Group(subviews: section.content) { rows in
+                        ForEach(rows) { row in row.listRowBackground(rowFill) }
                     }
                 } header: {
                     section.header

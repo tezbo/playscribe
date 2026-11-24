@@ -345,6 +345,7 @@ struct LibraryShelf: View {
                     .controlBorder(.searchField, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
                     // Book: one page wide (like the chip row), and reported to the fold audit.
                     .frame(width: duo.pose == .book ? duo.division.map { max(0, $0.minX - 24 - 16) } : nil, alignment: .leading)
+                    .frame(maxWidth: LibraryControl.maxWidth, alignment: .leading)
                     .tappableFrame()
                     .padding(.top, 4)
                     .id("library-search")
@@ -556,7 +557,11 @@ struct LibraryShelf: View {
                     .id(poseKey)
                 }
                 // Tabletop: the filter chips sit directly above the tiles, one row; tiles first wins if they would push it off (Iris, v0.5.3).
-                if duo.pose == .tabletop && all.count >= 2 && layout == .tiles { FilterBar().frame(maxWidth: .infinity, alignment: .leading).id(poseKey) }
+                // At accessibility sizes the chips are a column of four full-width pills, which pushed every tile below the fold: there
+                // they follow the tiles, so a full tile row shows first (Iris on #409, r054-tabletop-chips-below-tiles-ax3).
+                if duo.pose == .tabletop && all.count >= 2 && layout == .tiles && !typeSize.isAccessibilitySize {
+                    FilterBar().frame(maxWidth: .infinity, alignment: .leading).id(poseKey)
+                }
                 if layout == .list {
                     ForEach(rows) { row in GameRow(row: row).id("lib-\(row.id)") }
                 } else if heroOnRightPage {
@@ -582,6 +587,9 @@ struct LibraryShelf: View {
                     // deleting a letter did not bring it back, Mac 677e7eb run 3 of 10): a stuck lazy grid, rebuilt on every query change.
                     .id("\(poseKey)|\(model.data.nav.query)")
                     .namedFrame("libraryGames")
+                }
+                if duo.pose == .tabletop && all.count >= 2 && layout == .tiles && typeSize.isAccessibilitySize {
+                    FilterBar().frame(maxWidth: .infinity, alignment: .leading).id(poseKey)
                 }
                 // One order in every pose (Terry, 19 Nov): the alerts, catch-up and PS Plus cards always follow the tiles,
                 // as Closed, Open portrait and Tabletop already had them (Iris, v0.5.3). Open landscape and Book (no hero) here.
@@ -810,7 +818,8 @@ struct ContinueText: View {
                     .font(PlayscribeFont.caption)
                     .tracking(12 * 0.08)
                     .foregroundStyle(PlayscribeRole.action)
-                if fresh, let v = release.versionChip {
+                // The line below names the update ("Patch 1.2 is here."), so no chip repeats its number.
+                if fresh, let v = release.versionChip(beside: release.displayName) {
                     Text(v.keepingVersionsTogether)
                         .font(PlayscribeFont.caption)
                         .monospacedDigit()
@@ -835,6 +844,20 @@ extension Release {
         guard let token = displayName.split(separator: " ").last, token.first?.isNumber == true else { return nil }
         return "v" + token
     }
+
+    /// The version chip beside a title: none when the title already names that version, whatever its word ("Update 1.2",
+    /// "Patch 1.0302256", "Hotfix 2.1"): the chip said it twice (Iris, taste notes on #610 and #622). A title that doesn't
+    /// carry the number ("Respec with Draught of Mind Rebirth…") keeps the chip.
+    func versionChip(beside title: String) -> String? {
+        guard let v = versionChip else { return nil }
+        let number = v.dropFirst()
+        let words = title.replacingOccurrences(of: "\u{2060}", with: "").split(whereSeparator: { $0 == " " || $0 == "\u{00A0}" })
+        // Outer punctuation only ("1.2." at a sentence end, "(1.2)"); the dots inside the number stay.
+        return words.contains { $0.trimmingCharacters(in: .punctuationCharacters) == number } ? nil : v
+    }
+
+    /// The deck's chip, beside the card's own headline.
+    var deckVersionChip: String? { versionChip(beside: ps5Headline ?? displayName) }
 }
 
 /// The framed key art: continuous 14 pt top corners, a bottom edge that dips 16 pt to the centre
@@ -1104,7 +1127,8 @@ struct StatusCircle: View {
                 .font(.system(size: 11, weight: .bold))
                 .foregroundStyle(.white)
                 .frame(width: 20, height: 20)
-                .adaptiveGlass(in: Circle())
+                // A label on art, not a control: ink, never glass (Iris, over-art-materials).
+                .artLabel(in: Circle())
         }
             // 20 pt so titles on art stay readable; the whole tile remains the 44 pt+ tap target.
     }
@@ -1128,11 +1152,13 @@ extension AppModel {
         return (.none, "TBA")
     }
 
-    /// "12 Oct" this year, "Jul 2025" before.
+    /// "12 Oct" this year, "Jul 2025" before, joined by a no-break space so a caption never splits a date across lines at large
+    /// sizes ("29 / Oct", "Mar / 2027": r060-tile-dates-ax5). It wraps whole, before any word around it.
     static func tileDay(_ d: Date) -> String {
-        Date.sameUTCYear(d, .now)
+        let day = Date.sameUTCYear(d, .now)
             ? d.dayMonth
             : d.formatted(Date.FormatStyle(locale: Locale(identifier: "en_GB"), timeZone: .gmt).month(.abbreviated).year())
+        return day.replacingOccurrences(of: " ", with: "\u{00A0}")
     }
 
     /// The caption mark in words, so colour is never the only cue (Iris, #597): the amber spark is "new update", the small

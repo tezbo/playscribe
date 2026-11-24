@@ -272,6 +272,36 @@ export const parseMojangNotes = (sourceId: string, entries: MojangEntry[], bodie
       body: (bodies[e.version ?? e.title] ?? e.body ?? e.shortText ?? e.title).replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim(),
     }))
 
+/**
+ * Bandai Namco's page for a game they publish (Dawnwalker): its news cards link each "Update x.y" article. The article carries
+ * its own publish time (JSON-LD datePublished) and says which platforms it is out on, so the post is dated and platform-tagged.
+ */
+export const bandaiUpdateLinks = (html: string, pageUrl: string): string[] => {
+  const out = new Set<string>()
+  for (const m of html.matchAll(/href="(\/news\/[a-z0-9-]*-(?:update|patch|hotfix)[a-z0-9-]*)"/gi)) out.add(new URL(m[1]!, pageUrl).toString())
+  return [...out]
+}
+export const parseBandaiArticle = (sourceId: string, url: string, html: string): Post | null => {
+  const title = plain(html.match(/<title>([^<]*)<\/title>/)?.[1] ?? '').replace(/\s*\|.*$/, '').trim()
+  const at = html.match(/"datePublished":"([^"]+)"/)?.[1]
+  const body = plain(html.match(/<bnea-ui-article-body[^>]*>([\s\S]*?)<\/bnea-ui-article-body>/)?.[1] ?? '')
+  if (!title || !at || Number.isNaN(Date.parse(at))) return null
+  return { sourceId, postId: url, url, title, publishedAt: new Date(at).toISOString(), body }
+}
+const bandaiNews = async (fetchFn: FetchFn, s: SourceDef): Promise<Post[]> => {
+  const links = bandaiUpdateLinks(await getText(fetchFn, s.url, { accept: 'text/html' }), s.url).slice(0, 4)
+  const out: Post[] = []
+  for (const url of links) {
+    try {
+      const p = parseBandaiArticle(s.id, url, await getText(fetchFn, url, { accept: 'text/html' }))
+      if (p) out.push(p)
+    } catch {
+      // the next poll tries it again
+    }
+  }
+  return out
+}
+
 const mojangNotes = async (fetchFn: FetchFn, s: SourceDef): Promise<Post[]> => {
   const base = s.url.replace(/[^/]+$/, '')
   const d = await getJson<{ entries: MojangEntry[] }>(fetchFn, s.url)
@@ -330,6 +360,7 @@ export const fetchPosts = async (fetchFn: FetchFn, s: SourceDef, opts: PageOpts 
   if (s.kind === 'pressIndex') return pressIndex(fetchFn, s, opts)
   if (s.kind === 'bluesky') return forGame(s, await bluesky(fetchFn, s, opts.until))
   if (s.kind === 'mojangNotes') return mojangNotes(fetchFn, s)
+  if (s.kind === 'bandaiNews') return forGame(s, await bandaiNews(fetchFn, s))
   if (s.kind === 'riotNews') return forGame(s, parseRiotNews(s.id, new URL(s.url).origin, await getText(fetchFn, s.url, { accept: 'text/html' })))
   if (s.kind === 'statuspage') return forGame(s, parseStatuspage(s.id, await getText(fetchFn, s.url, { accept: 'application/rss+xml, application/xml' })))
   const body = await getText(fetchFn, s.url, { accept: s.kind === 'rss' ? 'application/rss+xml, application/atom+xml, application/xml' : 'text/html' })

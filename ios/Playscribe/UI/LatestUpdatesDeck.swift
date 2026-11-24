@@ -363,12 +363,17 @@ struct DeckCardView: View {
     }
 
     private var dateText: String { card.date.map(AppModel.tileDay) ?? "" }
-    private var label: String {
+    private var label: String { Self.label(card, tracked: model.feedTracksGame(card.game.id)) }
+
+    /// The card's one VoiceOver element. It never reads the type size: at AX3 and above the visible summary is dropped (Iris: by
+    /// design), and this label is where the summary stays (r054-deck-card-voiceover-label-ax3, Iris's condition).
+    static func label(_ card: DeckCard, tracked: Bool) -> String {
+        let dateText = card.date.map(AppModel.tileDay) ?? ""
         if let r = card.release {
             let summary = (r.summary?.isEmpty == false) ? ", \(r.summary!)" : ""
-            return "\(card.unread ? card.chipText + ", " : "")\(r.ps5Headline ?? r.displayName), \(card.game.name), \(r.versionChip.map { $0 + ", " } ?? "")\(dateText)\(summary)"
+            return "\(card.unread ? card.chipText + ", " : "")\(r.ps5Headline ?? r.displayName), \(card.game.name), \(r.deckVersionChip.map { $0 + ", " } ?? "")\(dateText)\(summary)"
         }
-        return "\(card.game.name), released \(dateText), \(DeckCard.noReleaseLine(tracked: model.feedTracksGame(card.game.id)).lowercased())"
+        return "\(card.game.name), released \(dateText), \(DeckCard.noReleaseLine(tracked: tracked).lowercased())"
     }
 }
 
@@ -376,6 +381,7 @@ struct DeckCardView: View {
 struct CompactDeckCard: View {
     var card: DeckCard
     var height: CGFloat
+    @State private var captionHeight: CGFloat = 0
     @Environment(\.colorSchemeContrast) private var contrast
     @Environment(\.accessibilityReduceTransparency) private var reduceTransparency
     @Environment(\.qaSolid) private var qaSolid
@@ -384,10 +390,11 @@ struct CompactDeckCard: View {
     var body: some View {
         // The caller gives a `height` that already holds the whole caption at accessibility sizes (measured by the deck's
         // ruler), so nothing can overflow the card; the art and its scrim are the background.
-        // Full bleed at 75%, held to the card's bottom: the boxed 60% scrim left the byline at 3.2:1 on Two Point Museum's
-        // masonry in Open portrait std (Iris on #514, Mac contrast at 2528ae64). The scrim is clipped by the card's corners.
+        // Light art (Iris, taste pass): no veil over the art and no grey haze. heroGround rises from the bottom only, clear at 55%
+        // of the card's height up, eased to 90% by the caption's top edge and held under it, so the art above stays clean and the
+        // caption sits on ink (white text on 90% ink950 over white art is about 15:1).
         AdaptiveCaption(card: card)
-            .brightArtScrim(0.75, fullBleed: true)
+            .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { captionHeight = $0 }
             .frame(maxWidth: .infinity, alignment: .bottomLeading)
             .frame(height: height, alignment: .bottomLeading)
             .background {
@@ -397,21 +404,51 @@ struct CompactDeckCard: View {
                     if contrast == .increased || reduceTransparency || qaSolid {
                         PlayscribeColor.ink950.opacity(0.92).frame(height: height * 0.45)
                             .frame(maxHeight: .infinity, alignment: .bottom)
-                    } else if typeSize.isAccessibilitySize {
-                        // A tall caption: the fade starts near the top so bright art never sits under the headline.
-                        LinearGradient(colors: [PlayscribeColor.ink950.opacity(0.35), PlayscribeColor.ink950.opacity(0.92)],
-                                       startPoint: .top, endPoint: .bottom)
                     } else {
-                        LinearGradient(colors: [.clear, PlayscribeColor.ink950.opacity(0.9)], startPoint: .center, endPoint: .bottom)
+                        HeroGroundRise(cardHeight: height, captionHeight: captionHeight)
                     }
                 }
             }
+            // The same top-left spot on every card, on 75% ink, the label-on-art rule (Iris, over-art-materials.md).
             .overlay(alignment: .topLeading) {
                 if !typeSize.isAccessibilitySize { HStack(spacing: 6) { DeckChips(card: card) }.padding(12) }
             }
             .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
             .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous).strokeBorder(PlayscribeColor.vellum100.opacity(0.6), lineWidth: 1.5))
             .accessibilityHidden(true)
+    }
+}
+
+/// heroGround rising from a hero card's bottom edge (Iris, taste pass on light art): clear at `reach` of the card's height up,
+/// eased (smoothstep) to `strength` by the caption's top edge, held to the bottom. A caption taller than `reach` still gets at
+/// least `minRamp` of ease above it, so there is never a hard edge.
+struct HeroGroundRise: View {
+    var cardHeight: CGFloat
+    var captionHeight: CGFloat
+    var reach: CGFloat = 0.55
+    var strength: Double = 0.9
+    var minRamp: CGFloat = 40
+
+    /// The ramp (clear to full) and the solid part under it, in points.
+    static func bands(cardHeight: CGFloat, captionHeight: CGFloat, reach: CGFloat, minRamp: CGFloat) -> (ramp: CGFloat, solid: CGFloat) {
+        let solid = min(max(captionHeight, 0), cardHeight)
+        let ramp = min(max(cardHeight * reach - solid, minRamp), max(cardHeight - solid, 0))
+        return (ramp, solid)
+    }
+
+    var body: some View {
+        let b = Self.bands(cardHeight: cardHeight, captionHeight: captionHeight, reach: reach, minRamp: minRamp)
+        VStack(spacing: 0) {
+            LinearGradient(stops: (0...16).map { i in
+                let t = Double(i) / 16
+                return Gradient.Stop(color: PlayscribeColor.heroGround.opacity(strength * t * t * (3 - 2 * t)), location: t)
+            }, startPoint: .top, endPoint: .bottom)
+            .frame(height: b.ramp)
+            PlayscribeColor.heroGround.opacity(strength).frame(height: b.solid)
+        }
+        .frame(maxHeight: .infinity, alignment: .bottom)
+        .allowsHitTesting(false)
+        .accessibilityHidden(true)
     }
 }
 
@@ -422,6 +459,8 @@ struct CompactCaption: View {
     /// Accessibility sizes, when the card is capped by J-5: how many words of the headline to show. Fewer than all of
     /// them ends the headline in "..." after a whole word, never mid-word. nil is the whole headline. Chips never go.
     var words: Int?
+    /// Standard sizes: false drops the summary line, for a card too short to hold it whole with the chip row (AdaptiveCaption).
+    var summary = true
     @Environment(\.dynamicTypeSize) private var typeSize
     private var dateText: String { card.date.map(AppModel.tileDay) ?? "" }
 
@@ -452,12 +491,10 @@ struct CompactCaption: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: typeSize.isAccessibilitySize ? 2 : 4) {
-            // Both chips show at AX in every pose: side by side when they fit, else stacked (coordinator, 28c6063 Book AX3).
+            // Accessibility sizes: the chips join the caption (side by side when they fit, else stacked; coordinator, 28c6063 Book
+            // AX3), so a tall caption never runs under them. Standard sizes: top left on the art, on 75% ink (DeckChips).
             if typeSize.isAccessibilitySize {
-                ViewThatFits(in: .horizontal) {
-                    HStack(spacing: 6) { DeckChips(card: card) }
-                    VStack(alignment: .leading, spacing: 6) { DeckChips(card: card) }
-                }
+                DeckChipRow(card: card).padding(.bottom, 6)
             }
             Text(headline)
                 .font(PlayscribeFont.title3).foregroundStyle(PlayscribeColor.textPrimary)
@@ -465,9 +502,8 @@ struct CompactCaption: View {
                 .lineLimit(typeSize.isAccessibilitySize ? nil : 3).fixedSize(horizontal: false, vertical: true)
             // One-line summary under the headline: whole words, at most 2 lines, dropped at accessibility sizes (its
             // text stays in the VoiceOver label).
-            if !typeSize.isAccessibilitySize, let summary = card.release?.summary, !summary.isEmpty {
-                Text(Self.wholeWords(summary, limit: 100)).font(PlayscribeFont.subheadline)
-                    .foregroundStyle(PlayscribeColor.textPrimary.opacity(0.85)).lineLimit(2)
+            if summary, !typeSize.isAccessibilitySize, let text = card.release?.summary, !text.isEmpty {
+                SummaryLines(text: text)
             }
             DeckByline(card: card, dateText: dateText)
         }
@@ -477,6 +513,23 @@ struct CompactCaption: View {
         // The hero is a bounded picture caption: its text stops growing at AX3 (the card's VoiceOver label is unchanged).
         // At AX5 a 4-line headline, two chip rows and the byline cannot fit a card that J-5 holds to half the screen.
         .dynamicTypeSize(...DynamicTypeSize.accessibility3)
+    }
+}
+
+/// A hero card's summary in at most two lines, always ending on a whole word: the longest whole-word cut (100, 70 or 45
+/// characters) that wraps into two lines. A lineLimit cut mid-word ("refineme…") once the chip row joined the caption.
+struct SummaryLines: View {
+    var text: String
+    private var twoLines: CGFloat { ceil(UIFont.preferredFont(forTextStyle: .subheadline).lineHeight * 2) + 1 }
+    var body: some View {
+        ViewThatFits(in: .vertical) {
+            ForEach([100, 70, 45], id: \.self) { limit in
+                Text(CompactCaption.wholeWords(text, limit: limit)).font(PlayscribeFont.subheadline)
+                    .foregroundStyle(PlayscribeColor.textPrimary.opacity(0.85))
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+        }
+        .frame(maxHeight: twoLines, alignment: .topLeading)
     }
 }
 
@@ -496,7 +549,31 @@ struct AdaptiveCaption: View {
                 }
             }
         } else {
-            CompactCaption(card: card)
+            // The whole caption when it fits the card; else without the summary line, so nothing is cut (chips, headline and
+            // byline always stay).
+            ViewThatFits(in: .vertical) {
+                CompactCaption(card: card)
+                CompactCaption(card: card, summary: false)
+            }
+        }
+    }
+}
+
+/// A hero card's chips in its caption, at accessibility sizes: side by side when they fit, else stacked, never dropped
+/// (coordinator, 28c6063 Book AX3). Standard sizes: one line that never wraps.
+struct DeckChipRow: View {
+    var card: DeckCard
+    @Environment(\.dynamicTypeSize) private var typeSize
+    var body: some View {
+        if typeSize.isAccessibilitySize {
+            ViewThatFits(in: .horizontal) {
+                HStack(spacing: 6) { DeckChips(card: card) }
+                VStack(alignment: .leading, spacing: 6) { DeckChips(card: card) }
+            }
+        } else {
+            HStack(spacing: 6) { DeckChips(card: card) }
+                .fixedSize(horizontal: true, vertical: false)
+                .frame(minHeight: 22, alignment: .leading)
         }
     }
 }
@@ -509,7 +586,7 @@ struct DeckChips: View {
     /// was one subview there, and the chips drew on top of each other ("New update" lost under "v1.1", Book AX3).
     private var items: [(text: String, filled: Bool)] {
         var list: [(text: String, filled: Bool)] = []
-        if let v = card.release?.versionChip { list.append((v, false)) }
+        if let v = card.release?.deckVersionChip { list.append((v, false)) }
         if card.unread { list.append((card.chipText, true)) }
         if card.release == nil, let d = card.date { list.append(("Released " + AppModel.tileDay(d), false)) }
         return list
@@ -520,10 +597,10 @@ struct DeckChips: View {
     }
 
     private func chip(_ text: String, filled: Bool) -> some View {
-        Text(text.keepingVersionsTogether).font(PlayscribeFont.caption).monospacedDigit()
+        Text(text.keepingVersionsTogether).font(PlayscribeFont.caption).monospacedDigit().lineLimit(1)
             .foregroundStyle(filled ? PlayscribeColor.ink950 : PlayscribeColor.accent)
             .padding(.horizontal, 8).frame(minHeight: 22)
-            .background(Capsule().fill(filled ? PlayscribeColor.accent : PlayscribeColor.ink950.opacity(0.75)))
+            .modifier(DeckChipGround(filled: filled))
     }
 }
 
@@ -614,7 +691,7 @@ struct WideDeckCard: View {
 
     private var accessibilityCard: some View {
         VStack(alignment: .leading, spacing: 6) {
-            if card.unread { chip(card.chipText, filled: true) }
+            captionChips
             Text(card.game.name.gluingTrailingNumeral).font(PlayscribeFont.title2.bold())
                 .foregroundStyle(PlayscribeColor.textPrimary).fixedSize(horizontal: false, vertical: true)
             headline
@@ -629,9 +706,6 @@ struct WideDeckCard: View {
                                startPoint: .leading, endPoint: .trailing)
             }
         }
-        .overlay(alignment: .topTrailing) {
-            if let v = card.release?.versionChip { chip(v, filled: false).padding(12) }
-        }
         .dynamicTypeSize(...DynamicTypeSize.accessibility3)
         .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
         .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous).strokeBorder(PlayscribeColor.vellum100.opacity(0.6), lineWidth: 1.5))
@@ -645,7 +719,7 @@ struct WideDeckCard: View {
                 LinearGradient(colors: [PlayscribeColor.ink950.opacity(0.92), PlayscribeColor.ink950.opacity(0.55), .clear],
                                startPoint: .leading, endPoint: .trailing)
                 VStack(alignment: .leading, spacing: 6) {
-                    if card.unread { chip(card.chipText, filled: true) }
+                    captionChips
                     Text(card.game.name.gluingTrailingNumeral).font(PlayscribeFont.title2.bold())
                         .foregroundStyle(PlayscribeColor.textPrimary).lineLimit(2).fixedSize(horizontal: false, vertical: true)
                     Text(card.release.map { $0.ps5Headline ?? $0.displayName } ?? "Released " + (card.date.map(AppModel.tileDay) ?? ""))
@@ -656,9 +730,6 @@ struct WideDeckCard: View {
                 .padding(.horizontal, 16).padding(.vertical, typeSize.isAccessibilitySize ? 22 : 16)
                 .frame(width: g.size.width * 0.55, alignment: .leading)
             }
-            .overlay(alignment: .topTrailing) {
-                if let v = card.release?.versionChip { chip(v, filled: false).padding(12) }
-            }
         }
         .dynamicTypeSize(...DynamicTypeSize.accessibility3)
         .frame(height: cardHeight)
@@ -667,11 +738,25 @@ struct WideDeckCard: View {
         .accessibilityHidden(true)
     }
 
+    /// The unread and version chips, on the caption's ink side, never on the art (Iris, taste pass: a top-trailing version chip
+    /// sat on a character's hair).
+    /// The row keeps its 22 pt height without a chip, so every wide card matches in height (Iris).
+    private var captionChips: some View {
+        HStack(spacing: 6) {
+            if card.unread { chip(card.chipText, filled: true) }
+            if let v = card.release?.deckVersionChip { chip(v, filled: false) }
+        }
+        .fixedSize(horizontal: true, vertical: false)
+        .frame(minHeight: 22, alignment: .leading)
+        // One 8 pt step above the title (the caption's spacing is 6).
+        .padding(.bottom, 2)
+    }
+
     private func chip(_ text: String, filled: Bool) -> some View {
-        Text(text.keepingVersionsTogether).font(PlayscribeFont.caption).monospacedDigit()
+        Text(text.keepingVersionsTogether).font(PlayscribeFont.caption).monospacedDigit().lineLimit(1)
             .foregroundStyle(filled ? PlayscribeColor.ink950 : PlayscribeColor.accent)
             .padding(.horizontal, 8).padding(.vertical, 2).frame(minHeight: 22)
-            .background(Capsule().fill(filled ? PlayscribeColor.accent : PlayscribeColor.ink950.opacity(0.75)))
+            .modifier(DeckChipGround(filled: filled))
     }
 }
 
@@ -700,22 +785,9 @@ struct DeckCardArt: View {
             .modifier(FixedArtHeight(height: height))
             .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
             .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous).strokeBorder(PlayscribeColor.vellum100.opacity(0.6), lineWidth: 1.5))
-            .overlay(alignment: .topLeading) {
-                HStack(spacing: 6) {
-                    if card.unread { chip(card.chipText, filled: true) }
-                    if let v = card.release?.versionChip { chip(v, filled: false) }
-                    if card.release == nil, let d = card.date { chip("Released " + AppModel.tileDay(d), filled: false) }
-                }
-                .padding(10)
-            }
+            // The same top-left spot on every card, on 75% ink (Iris, over-art-materials.md).
+            .overlay(alignment: .topLeading) { HStack(spacing: 6) { DeckChips(card: card) }.padding(10) }
             .accessibilityHidden(true)
-    }
-
-    private func chip(_ text: String, filled: Bool) -> some View {
-        Text(text.keepingVersionsTogether).font(PlayscribeFont.caption).monospacedDigit()
-            .foregroundStyle(filled ? PlayscribeColor.ink950 : PlayscribeColor.accent)
-            .padding(.horizontal, 8).padding(.vertical, 2).frame(minHeight: 22)
-            .background(Capsule().fill(filled ? PlayscribeColor.accent : PlayscribeColor.ink950.opacity(0.75)))
     }
 }
 
@@ -902,7 +974,7 @@ struct DeckStage: View {
                 FlowLayout(spacing: 8) {
                     if upcomingLine != nil { Text("Coming soon").foregroundStyle(PlayscribeColor.accent) }
                     if card.unread { Text(card.chipText).foregroundStyle(PlayscribeColor.accent) }
-                    if let v = card.release?.versionChip { Text(v.keepingVersionsTogether).monospacedDigit().foregroundStyle(PlayscribeColor.textPrimary.opacity(0.9)) }
+                    if let v = card.release?.deckVersionChip { Text(v.keepingVersionsTogether).monospacedDigit().foregroundStyle(PlayscribeColor.textPrimary.opacity(0.9)) }
                 }
                 .font(PlayscribeFont.caption)
                 .shadow(color: .black.opacity(0.6), radius: 3)
@@ -1031,5 +1103,14 @@ struct BrightArtScrim: ViewModifier {
 extension View {
     func brightArtScrim(_ strength: Double, fullBleed: Bool = false) -> some View {
         modifier(BrightArtScrim(strength: strength, fullBleed: fullBleed))
+    }
+}
+
+/// A hero chip's ground: "New update" is the one filled (ember) label, every other chip is the ink label on art (Iris,
+/// over-art-materials).
+struct DeckChipGround: ViewModifier {
+    var filled: Bool
+    func body(content: Content) -> some View {
+        if filled { content.background(Capsule().fill(PlayscribeColor.accent)) } else { content.artLabel(in: Capsule()) }
     }
 }

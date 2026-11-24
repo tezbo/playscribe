@@ -50,22 +50,22 @@ struct GameBookView: View {
         }
         .toolbar {
           if !closedLandscape {
-            // A custom 44 x 44 button (Iris: the 36 pt floor is for system-drawn toolbar buttons only), so no system glass around it:
-            // the glass would size it to about 38. The chevron stays centred, whatever the frame.
+            // A custom 44 x 44 button (Iris: the 36 pt floor is for system-drawn toolbar buttons only). The chevron stays centred,
+            // whatever the frame. Its glass is the toolbar's own shared Liquid Glass (over-art rule, role 1; the system goes solid
+            // under Reduce Transparency): our own glassEffect inside a toolbar item pushed the whole game page down by the bar's
+            // height in every pose (#619 screen diffs at f8fcd58), so the toolbar draws it.
             ToolbarItem(placement: .topBarLeading) {
                 Button { model.closeGame() } label: {
                     Image(systemName: "chevron.backward")
                         .font(.system(size: 17, weight: .semibold))
                         .foregroundStyle(PlayscribeRole.textPrimary)
                         .frame(width: 44, height: 44)
-                        .background(Circle().fill(.regularMaterial))
                         .contentShape(Rectangle())
                 }
                 // Iris (0.5.6 hotfix): "Back to <origin>", the same label on every rail.
                 .accessibilityLabel(model.backTitle)
                 .accessibilityIdentifier("gameBack")
             }
-            .sharedBackgroundVisibility(.hidden)
             // Back, Notifications, Status, More in every pose (Iris, 0.5.6 hotfix); D-10's Swap sides is in More while side by side.
             ActionToolbar(actions: model.gameActions(gameID, sideBySide: sideBySide))
           }
