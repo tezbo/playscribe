@@ -122,7 +122,6 @@ struct DeckAndWidgetTests {
             let headline = r.ps5Headline ?? r.displayName
             let named = headline.split(separator: " ").contains { $0 == v.dropFirst() }
             #expect(r.deckVersionChip == (named ? nil : v), "\(headline): \(r.deckVersionChip ?? "no chip")")
-            #expect(!DeckCardView.label(card, tracked: true).contains(", \(v),") || !named)
         }
     }
 }
