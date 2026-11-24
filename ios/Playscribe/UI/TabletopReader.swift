@@ -437,15 +437,15 @@ struct StageTrailerTile: View {
 /// How the Tabletop reader's plate steps down until it fits the room above the fold (Iris, #619). Each level keeps every line of
 /// content (eyebrow, PS5 status, title, the overview's headline): the title is cut first, then the headline, then the plate's
 /// text size is capped. Pure, so the stepping is unit-tested (ReaderPlateFitTests); the heights come from the drawn plate.
-enum ReaderPlateFit {
-    struct Level: Equatable {
+nonisolated enum ReaderPlateFit {
+    nonisolated struct Level: Equatable, Sendable {
         /// nil: the pose's own title cap (2 lines at accessibility sizes, else 4).
         var titleLines: Int?
         var subtitleLines: Int
         var typeCap: DynamicTypeSize
     }
 
-    struct Measure: Equatable { var level: Int; var height: CGFloat }
+    nonisolated struct Measure: Equatable, Sendable { var level: Int; var height: CGFloat }
 
     static let levels: [Level] = [
         Level(titleLines: nil, subtitleLines: 2, typeCap: .accessibility5),
