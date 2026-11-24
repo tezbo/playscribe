@@ -5,23 +5,21 @@ so write it for testers. Release steps are in docs/release.md.
 
 ## 0.6.0 candidate
 
-Playscribe 0.6 is a fresh coat: new colour roles, clearer art, one deck card per game, day-one patches, a moving front cover and every video in our own player. Each line says what to do, then what you should see. Reply with the numbers that failed, or "all good".
+Playscribe 0.6 is a fresh coat: light and dark appearance, clearer art, one deck card per game, day-one patches, a moving front cover and every video in our own player. Beta 5 adds new deck dots, one look for buttons and labels over art, steadier search and accessibility fixes. Each line says what to do, then what you should see. Reply with the numbers that failed, or "all good".
 
-1. Add a game with several recent updates. The Library's latest-updates deck shows one card for that game, its newest update, with games you haven't read first.
-2. Swipe the deck, then flick it hard. Each swipe or flick moves exactly one card, the dots light for every card you can see, and the last card and its dot can be reached.
-3. Open a game with bright key art. Titles and labels over the art stay easy to read in the Library, on deck cards and on the Tabletop stage.
-4. When a game has an unread day-one patch, its card shows a Day-one patch chip, the front cover says so, and Tabletop shows the install line. Reading the patch clears all three.
-5. Close and open the front cover. The game's key art moves gently; with Reduce Motion on, it stays still.
-6. Play an update video, a trailer and a Gallery video, Closed and in Tabletop. All play inside Playscribe. In Tabletop the reflection sits under the video. If a video can't play here, you see an Open in YouTube button instead of an error.
-7. Turn on Reduce Transparency in your phone's Settings (Accessibility, then Display & Text Size). In Playscribe, the cards in Settings and Add a game have a visible outline.
-8. Open Settings, then Video lab. Nothing crashes.
-9. Add a game with Say it: Add a game, Say it, then tap the microphone once and say two titles, like Elden Ring and Astro Bot. You don’t need to hold it. Try it twice: once tap the microphone again to stop, once just pause and it stops by itself. Both times Playscribe stays open and shows the titles it heard. Allow Speech Recognition and the Microphone if asked.
-10. On a game page, open More, then Check for updates. A message says it is checking, then either how many new updates there are, "No new updates" with the time you checked, or why it couldn’t check (try it in Airplane Mode too).
-11. Closed or Open, play an update video or a trailer and tap Full screen, beside Close. The video fills the screen at 16:9 and keeps playing, with Exit full screen at the top right above it. Turning the phone keeps full screen and re-fits the video; folding into Book or Tabletop leaves it, and playback keeps going. Book and Tabletop have no Full screen button.
-12. Open or Closed landscape, look at the marks under the Library’s latest-updates deck while two or more cards are on screen, then swipe. The lit marks are one amber bar that jumps to each card without sliding, never two bars at once.
-13. Tap the last mark under the deck. The last card lines up flush with the edge of the screen, the same as when you swipe to the end, with no gap or overshoot.
-14. Open Settings, then Appearance, and try System, Light and Dark. The app follows each straight away. In Light, the Library and a game page are easy to read, including the "+N more updates" button under the deck in Open.
-15. Add Astro Bot. Its Library tile shows its cover, and its page says "We don’t track this game’s updates yet." It never says "No updates yet".
+Your Duo checks for beta 5
+1. Library deck: swipe slowly, then flick. The dots under the deck follow every swipe, the current card shows as one pill, and a flick moves exactly one card. You can reach the last card and its dot.
+2. Say it with the real microphone: Add a game, Say it, tap the microphone once and say two titles, like Elden Ring and Astro Bot. Do it twice: once tap the microphone to stop, once just pause. Both times Playscribe stays open and shows both titles. Allow Speech Recognition and the Microphone if asked.
+3. Search in Closed landscape: in the Library, type "control" fast, then delete it all fast. Every tile comes back and the list is never blank. Do it ten times. Then try one search each in Book, Tabletop and Open landscape.
+4. Light mode: Playscribe now follows your phone’s appearance, so if your phone is set to Light the app turns light after this update, with no prompt. Open Settings, then Appearance, and try System, Light and Dark. The app follows each straight away. In Light, Settings is cream, not grey, and the headers on game and update pages are easy to read, including the clock and battery over the art.
+
+Also check
+5. Buttons that float over art (the rail, Back, Share, Play) look like glass. Labels on art (version chips, the tile status mark, "1 of 3") are a dark pill. With Reduce Transparency on (your phone’s Settings, Accessibility, Display & Text Size), the floating buttons go solid.
+6. A deck card whose headline already names the version shows no second version chip.
+7. Play an update video, a trailer and a Gallery video, Closed and in Tabletop. All play inside Playscribe, with the reflection under the video in Tabletop. If a video can’t play here, you see Open in YouTube. Full screen, Closed or Open, fills the screen and keeps playing.
+8. Add Astro Bot. Its tile shows its cover, and its page says "We don’t track this game’s updates yet."
+9. At the largest text size, Library tile dates stay on one line and the Tabletop filter chips sit after the tiles.
+10. On a game page, open More, then Check for updates. A message says what happened, also in Airplane Mode.
 
 Feedback you send through TestFlight, including its comment, may appear in our public issue tracker, so leave out personal details.
 
