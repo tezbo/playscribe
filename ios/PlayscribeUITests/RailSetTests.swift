@@ -87,7 +87,12 @@ final class RailSetTests: XCTestCase {
             if let capsule = tabs.first?.frame {
                 XCTAssertLessThanOrEqual(valid.last!.maxY, capsule.minY, "\(tag): More runs into the tab capsule")
             } else {
-                XCTFail("\(tag): no tab capsule on the rail")
+                // Diagnostics (CI 45116390238: "no tab capsule" in every Tabletop case): every element labelled Library, of any
+                // type, with its frame, so a harness problem (wrong type or place) can be told from a missing capsule.
+                let any = app.descendants(matching: .any).matching(NSPredicate(format: "label == 'Library'")).allElementsBoundByIndex
+                print("RailSetTests \(tag): window \(window) fold \(fold) rail \(zip(ids, valid).map { "\($0) \($1)" }) "
+                      + "Library elements \(any.map { "\($0.elementType.rawValue) \($0.frame)" })")
+                XCTFail("\(tag): no tab capsule on the rail; Library elements \(any.map { "\($0.elementType.rawValue) \($0.frame)" }) in window \(window)")
             }
         } else if landscape {
             // Closed landscape (Iris, 1c5ebfc walk): a second column immediately leading of the tab column, top to bottom.
