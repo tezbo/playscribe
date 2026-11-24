@@ -393,8 +393,8 @@ struct CoverLockup: View {
     }
 }
 
-/// The cover's pages (every deck card, newest first, at most 5) with the leaves on the leading edge. The leaves ARE
-/// the deck's dots: they drive the same selection, so there is no second pager (Iris condition 4). The rail is the
+/// The cover's pages (every deck card, newest first, at most 5) with the dots on the leading edge. The dots ARE
+/// the deck's: they follow the same selection, so there is no second pager (Iris condition 4). The rail is the
 /// caller's overlay (Iris condition 2: every Library control, 44 pt, on a scrim); `railWidth` keeps the plate clear of it.
 struct FrontCover: View {
     @Environment(AppModel.self) private var model
@@ -437,8 +437,10 @@ struct FrontCover: View {
     }
 }
 
-/// The page-edge leaves, stood on the cover's leading edge: one per update, the current one tall in ember, unread
-/// ones in vellum. Each is a 44 pt target labelled "Update n of N".
+/// The cover's page indicator, stood on its leading edge: PageEdge's dots turned upright (Iris, after #616: the cover kept
+/// the old amber bar). 6 pt dots 10 pt apart, the current one in ember, every other one the deck's dark unlit grey (unread is
+/// carried by the "New update" label and VoiceOver; mixed white and grey read as random, Iris on #616). View only, as the deck's: the
+/// pages swipe, and VoiceOver reads one adjustable element ("Update 2 of 5") that steps one page.
 struct CoverLeaves: View {
     var cards: [DeckCard]
     var current: String?
@@ -446,35 +448,38 @@ struct CoverLeaves: View {
     /// that keeps every mark at 3:1 or better (WCAG 1.4.11). Still and Key-art motion keep the bare marks over the shade.
     var backed = false
     var select: (String) -> Void
+    /// The deck's unlit dot in dark (#47434C); the cover is always dark.
+    static let unlit = UIColor(hex: 0x47434C)
 
     var body: some View {
-        VStack(spacing: 0) {
+        let lit = PageEdge.lit(cards: cards, current: current, visible: 1)
+        VStack(spacing: PageEdge.gap) {
             ForEach(Array(cards.enumerated()), id: \.element.id) { index, card in
-                let isCurrent = card.id == current
-                Button { select(card.id) } label: {
-                    RoundedRectangle(cornerRadius: 1.5)
-                        .fill(isCurrent ? PlayscribeColor.onDarkAccent : (card.unread ? PlayscribeColor.vellum100 : PlayscribeColor.onDarkTextSecondary.opacity(0.6)))
-                        .frame(width: 3, height: isCurrent ? 22 : 12)
-                        .shadow(color: .black.opacity(0.6), radius: 2)
-                        .frame(width: 44, height: 44)
-                        .contentShape(Rectangle())
-                }
-                .buttonStyle(.plain)
-                .tappableFrame()
-                .accessibilityLabel("Update \(index + 1) of \(cards.count)")
-                .accessibilityAddTraits(isCurrent ? [.isButton, .isSelected] : .isButton)
+                Circle()
+                    .fill(lit.contains(index) ? PlayscribeColor.onDarkAccent : Color(Self.unlit))
+                    .frame(width: PageEdge.dot, height: PageEdge.dot)
+                    .shadow(color: .black.opacity(0.6), radius: 2)
             }
         }
+        .padding(.vertical, 12)
+        .frame(width: 44)
         .background {
             if backed {
                 // The ink label on art (Iris, over-art-materials): 75%, as every label over art.
                 Color.clear.artLabel(in: Capsule())
-                    .padding(.horizontal, 12).padding(.vertical, 4)
-                    .allowsHitTesting(false)
+                    .padding(.horizontal, 12)
                     .transition(.opacity)
             }
         }
         .animation(.easeInOut(duration: 0.4), value: backed)
+        .allowsHitTesting(false)
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(PageEdge.spoken(lit: lit, count: cards.count))
+        .accessibilityIdentifier("coverIndicator")
+        .accessibilityAdjustableAction { direction in
+            let delta = direction == .increment ? 1 : direction == .decrement ? -1 : 0
+            if delta != 0, let id = PageEdge.step(cards: cards, current: current, visible: 1, by: delta) { select(id) }
+        }
     }
 }
 
