@@ -54,6 +54,7 @@ Claude Code loads these on its own in any session that checks out the repo, and 
 | Skill | Use it when |
 |---|---|
 | `five-pose-stills` | A UI change needs stills, a shoot list or a layout sign-off across the Duo poses. |
+| `duo-pose-shoot` | You need real hinge stills from the cloud (Closed, Book, Tabletop, Open) without the Mac, or must prove you can run native simulator QA. |
 | `ax3-layout-check` | Adding or changing text-bearing SwiftUI, to avoid AX3 clipping, missing chips, overlap. |
 | `precheck-loop` | About to push or open a PR without Xcode: push, read PRECHECK PASS/FAIL, fix, then PR. |
 | `status-protocol` | A message is just "s", or a step is finished (`Next:` line). |
