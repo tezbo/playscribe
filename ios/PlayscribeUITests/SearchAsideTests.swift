@@ -104,10 +104,20 @@ final class SearchBlankListTests: XCTestCase {
     /// r054-library-blank-list-fast-typing: 20 characters typed at speed (a match, then 13 that match nothing), the 13 deleted
     /// at speed, ten runs: the list is never left blank, "control" shows its one tile, and clearing brings back every tile.
     @MainActor
-    func testTwentyFastCharactersThenClearRestoresEveryTile() throws {
+    func testTwentyFastCharactersThenClearRestoresEveryTile() throws { try twentyFast(landscape: false) }
+
+    /// The same in Closed landscape, turned by -qaOrientation (#627): Quinn's failure there was in clearing (d194c511 still
+    /// showed 1 tile after 1 s), which only the Duo hand check covered. A window that never turns fails plainly.
+    @MainActor
+    func testTwentyFastCharactersThenClearRestoresEveryTileInClosedLandscape() throws { try twentyFast(landscape: true) }
+
+    @MainActor
+    private func twentyFast(landscape: Bool) throws {
         let app = XCUIApplication()
-        app.launchArguments = ["-qaRoute", "demo"]
+        app.launchArguments = ["-qaRoute", "demo"] + (landscape ? ["-qaOrientation", "landscape"] : [])
         app.launch()
+        defer { if landscape { XCUIDevice.shared.orientation = .portrait } }
+        if landscape { guard app.require(.landscapeLeft) else { app.terminate(); return } }
         let pose = ReleaseRowTests.pose(app)
         // Closed (portrait and landscape) and Open portrait (Quinn on #624: the grid no longer rebuilt per query, proved outside Closed too).
         let openPortrait = pose.contains("pose: flat") && app.frame.height > app.frame.width
