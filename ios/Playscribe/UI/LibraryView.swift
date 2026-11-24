@@ -1107,7 +1107,8 @@ struct StatusCircle: View {
                 .font(.system(size: 11, weight: .bold))
                 .foregroundStyle(.white)
                 .frame(width: 20, height: 20)
-                .adaptiveGlass(in: Circle())
+                // A label on art, not a control: ink, never glass (Iris, over-art-materials).
+                .artLabel(in: Circle())
         }
             // 20 pt so titles on art stay readable; the whole tile remains the 44 pt+ tap target.
     }

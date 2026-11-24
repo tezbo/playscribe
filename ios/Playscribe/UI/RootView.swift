@@ -436,7 +436,7 @@ struct TabletopRail: View {
                         .labelStyle(.iconOnly)
                         .font(PlayscribeFont.title3)
                         .frame(width: 44, height: 44)
-                        .background(Circle().fill(.regularMaterial))
+                        .floatingControl(in: Circle())
                         // A Menu has no action of ours to run first: close any open panel as the tap lands.
                         .simultaneousGesture(TapGesture().onEnded { model.closeLowerPanels() })
                         .tappableFrame()
@@ -472,7 +472,7 @@ struct TabletopRail: View {
                 tab(.search, "Search", "magnifyingglass")
             }
             .padding(.vertical, 4)
-            .background(Capsule().fill(.regularMaterial))
+            .floatingControl(in: Capsule())
             .accessibilitySortPriority(2)   // VoiceOver: tabs first, then actions
         }
         .padding(.vertical, 8)
@@ -594,7 +594,7 @@ struct LowerMessages: View {
                     // A solid pill: nothing shows through it (Iris, 6589abf: it ghosted over the date pills).
                     // A 24 pt corner: a full capsule on one line, a rounded rectangle on two or more.
                     .background(RoundedRectangle(cornerRadius: 24, style: .continuous).fill(PlayscribeRole.chipFill))
-                    .adaptiveGlass(in: RoundedRectangle(cornerRadius: 24, style: .continuous), interactive: true)
+                    .floatingControl(in: RoundedRectangle(cornerRadius: 24, style: .continuous))
                 }
                 .buttonStyle(.plain)
                 .tappableFrame()

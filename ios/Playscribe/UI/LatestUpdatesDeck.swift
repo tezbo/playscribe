@@ -600,7 +600,7 @@ struct DeckChips: View {
         Text(text.keepingVersionsTogether).font(PlayscribeFont.caption).monospacedDigit().lineLimit(1)
             .foregroundStyle(filled ? PlayscribeColor.ink950 : PlayscribeColor.accent)
             .padding(.horizontal, 8).frame(minHeight: 22)
-            .background(Capsule().fill(filled ? PlayscribeColor.accent : PlayscribeColor.ink950.opacity(0.75)))
+            .modifier(DeckChipGround(filled: filled))
     }
 }
 
@@ -756,7 +756,7 @@ struct WideDeckCard: View {
         Text(text.keepingVersionsTogether).font(PlayscribeFont.caption).monospacedDigit().lineLimit(1)
             .foregroundStyle(filled ? PlayscribeColor.ink950 : PlayscribeColor.accent)
             .padding(.horizontal, 8).padding(.vertical, 2).frame(minHeight: 22)
-            .background(Capsule().fill(filled ? PlayscribeColor.accent : PlayscribeColor.ink950.opacity(0.75)))
+            .modifier(DeckChipGround(filled: filled))
     }
 }
 
@@ -1059,5 +1059,14 @@ struct BrightArtScrim: ViewModifier {
 extension View {
     func brightArtScrim(_ strength: Double, fullBleed: Bool = false) -> some View {
         modifier(BrightArtScrim(strength: strength, fullBleed: fullBleed))
+    }
+}
+
+/// A hero chip's ground: "New update" is the one filled (ember) label, every other chip is the ink label on art (Iris,
+/// over-art-materials).
+struct DeckChipGround: ViewModifier {
+    var filled: Bool
+    func body(content: Content) -> some View {
+        if filled { content.background(Capsule().fill(PlayscribeColor.accent)) } else { content.artLabel(in: Capsule()) }
     }
 }

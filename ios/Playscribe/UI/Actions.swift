@@ -191,9 +191,9 @@ struct RailButton: View {
             .font(PlayscribeFont.title3)
             .foregroundStyle(action.selected ? PlayscribeRole.action : PlayscribeRole.textPrimary)
             .frame(width: 44, height: 44)
-            // Round buttons like Closed's rail: a material disc, tinted when selected.
-            .background(Circle().fill(.regularMaterial))
+            // Round buttons like Closed's rail: a glass disc (floating control), tinted when selected.
             .background(Circle().fill(PlayscribeRole.action.opacity(action.selected ? 0.18 : 0)))
+            .floatingControl(in: Circle())
             .contentShape(Rectangle())
     }
 }

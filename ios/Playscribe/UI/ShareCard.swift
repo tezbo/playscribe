@@ -109,7 +109,7 @@ struct ShareUpdateButton: View {
                         .font(.system(size: 22, weight: .regular))
                         .foregroundStyle(PlayscribeRole.textPrimary)
                         .frame(width: 44, height: 44)
-                        .background(Circle().fill(PlayscribeRole.card).overlay(Circle().fill(.regularMaterial)).overlay(Circle().strokeBorder(PlayscribeRole.textPrimary.opacity(0.5), lineWidth: 1.5)))
+                        .floatingControl(in: Circle())
                         .contentShape(Rectangle())
                 }
                 .buttonStyle(RailPressStyle())
