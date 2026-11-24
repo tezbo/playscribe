@@ -830,6 +830,14 @@ extension Release {
         guard let token = displayName.split(separator: " ").last, token.first?.isNumber == true else { return nil }
         return "v" + token
     }
+
+    /// The deck's chip: none when the card's own headline already names the version ("Update 1.2" over a "v1.2" chip said
+    /// it twice; Iris, taste note on #610). A PS5 headline that doesn't carry the number keeps the chip.
+    var deckVersionChip: String? {
+        guard let v = versionChip else { return nil }
+        let headline = ps5Headline ?? displayName
+        return headline.split(separator: " ").contains { $0 == v.dropFirst() } ? nil : v
+    }
 }
 
 /// The framed key art: continuous 14 pt top corners, a bottom edge that dips 16 pt to the centre

@@ -366,7 +366,7 @@ struct DeckCardView: View {
     private var label: String {
         if let r = card.release {
             let summary = (r.summary?.isEmpty == false) ? ", \(r.summary!)" : ""
-            return "\(card.unread ? card.chipText + ", " : "")\(r.ps5Headline ?? r.displayName), \(card.game.name), \(r.versionChip.map { $0 + ", " } ?? "")\(dateText)\(summary)"
+            return "\(card.unread ? card.chipText + ", " : "")\(r.ps5Headline ?? r.displayName), \(card.game.name), \(r.deckVersionChip.map { $0 + ", " } ?? "")\(dateText)\(summary)"
         }
         return "\(card.game.name), released \(dateText), \(DeckCard.noReleaseLine(tracked: model.feedTracksGame(card.game.id)).lowercased())"
     }
@@ -509,7 +509,7 @@ struct DeckChips: View {
     /// was one subview there, and the chips drew on top of each other ("New update" lost under "v1.1", Book AX3).
     private var items: [(text: String, filled: Bool)] {
         var list: [(text: String, filled: Bool)] = []
-        if let v = card.release?.versionChip { list.append((v, false)) }
+        if let v = card.release?.deckVersionChip { list.append((v, false)) }
         if card.unread { list.append((card.chipText, true)) }
         if card.release == nil, let d = card.date { list.append(("Released " + AppModel.tileDay(d), false)) }
         return list
@@ -630,7 +630,7 @@ struct WideDeckCard: View {
             }
         }
         .overlay(alignment: .topTrailing) {
-            if let v = card.release?.versionChip { chip(v, filled: false).padding(12) }
+            if let v = card.release?.deckVersionChip { chip(v, filled: false).padding(12) }
         }
         .dynamicTypeSize(...DynamicTypeSize.accessibility3)
         .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
@@ -657,7 +657,7 @@ struct WideDeckCard: View {
                 .frame(width: g.size.width * 0.55, alignment: .leading)
             }
             .overlay(alignment: .topTrailing) {
-                if let v = card.release?.versionChip { chip(v, filled: false).padding(12) }
+                if let v = card.release?.deckVersionChip { chip(v, filled: false).padding(12) }
             }
         }
         .dynamicTypeSize(...DynamicTypeSize.accessibility3)
@@ -703,7 +703,7 @@ struct DeckCardArt: View {
             .overlay(alignment: .topLeading) {
                 HStack(spacing: 6) {
                     if card.unread { chip(card.chipText, filled: true) }
-                    if let v = card.release?.versionChip { chip(v, filled: false) }
+                    if let v = card.release?.deckVersionChip { chip(v, filled: false) }
                     if card.release == nil, let d = card.date { chip("Released " + AppModel.tileDay(d), filled: false) }
                 }
                 .padding(10)
@@ -858,7 +858,7 @@ struct DeckStage: View {
                 FlowLayout(spacing: 8) {
                     if upcomingLine != nil { Text("Coming soon").foregroundStyle(PlayscribeColor.accent) }
                     if card.unread { Text(card.chipText).foregroundStyle(PlayscribeColor.accent) }
-                    if let v = card.release?.versionChip { Text(v.keepingVersionsTogether).monospacedDigit().foregroundStyle(PlayscribeColor.textPrimary.opacity(0.9)) }
+                    if let v = card.release?.deckVersionChip { Text(v.keepingVersionsTogether).monospacedDigit().foregroundStyle(PlayscribeColor.textPrimary.opacity(0.9)) }
                 }
                 .font(PlayscribeFont.caption)
                 .shadow(color: .black.opacity(0.6), radius: 3)

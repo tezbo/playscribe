@@ -112,4 +112,17 @@ struct DeckAndWidgetTests {
             }
         }
     }
+
+    /// Iris (taste, #610): the deck shows no "v1.2" chip under a headline that already says "Update 1.2"; a descriptive
+    /// headline keeps its chip.
+    @Test func deckChipNotRepeatedByTheHeadline() {
+        let m = demoModel()
+        for card in m.latestDeck {
+            guard let r = card.release, let v = r.versionChip else { continue }
+            let headline = r.ps5Headline ?? r.displayName
+            let named = headline.split(separator: " ").contains { $0 == v.dropFirst() }
+            #expect(r.deckVersionChip == (named ? nil : v), "\(headline): \(r.deckVersionChip ?? "no chip")")
+            #expect(!DeckCardView.label(card, tracked: true).contains(", \(v),") || !named)
+        }
+    }
 }
