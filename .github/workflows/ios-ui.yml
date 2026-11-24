@@ -52,6 +52,9 @@ jobs:
         # The seven synthetic-fold cases skipped here run in the next step on the inner display, where they measure something
         # (#626, #631). On the outer display they can only fail with "needs the inner display".
         run: |
+          # Run 45495696959: on a cold simulator the UI test runner never started ("Timed out waiting for AX loaded
+          # notification"), so no test ran. Boot it and wait until it is fully up before xcodebuild attaches.
+          xcrun simctl boot "$UDID" 2>/dev/null || true; xcrun simctl bootstatus "$UDID" -b > /dev/null
           xcodebuild test-without-building -project ios/Playscribe.xcodeproj -scheme PlayscribeUI \
             -destination "id=$UDID" -derivedDataPath build/dd \
             -only-testing:PlayscribeUITests/ReleaseFeatureTests \
@@ -65,7 +68,7 @@ jobs:
             -skip-testing:PlayscribeUITests/RailSetTests/testMoreListsSwapSidesInBook \
             -skip-testing:PlayscribeUITests/RailSetTests/testMoreHasNoSwapSidesInTabletop \
             -resultBundlePath build/UITests.xcresult CODE_SIGNING_ALLOWED=NO > uitests.log 2>&1 || status=$?
-          grep -E 'error:|Test Case .* (passed|failed|skipped)|Executed|\*\* TEST' uitests.log | tail -60 | tee -a "$GITHUB_STEP_SUMMARY"
+          grep -E 'error:|encountered an error|Test Case .* (passed|failed|skipped)|Executed|\*\* TEST' uitests.log | tail -60 | tee -a "$GITHUB_STEP_SUMMARY"
           [ "${status:-0}" = 0 ] || echo "::warning::Feature UI tests failed in Closed; see uitests.log in the artifact"
           exit "${status:-0}"
       - name: Book and Tabletop UI tests (inner display, folded with sim-use)
@@ -97,7 +100,7 @@ jobs:
           run Book landscape-left -only-testing:$T/testBookStd -only-testing:$T/testBookAX5 -only-testing:$T/testMoreListsSwapSidesInBook
           run Tabletop portrait -only-testing:$T/testTabletopStd -only-testing:$T/testTabletopAX5 \
             -only-testing:$T/testTabletopUntrackedAX5 -only-testing:$T/testMoreHasNoSwapSidesInTabletop
-          grep -E 'LCD|active|innerWindow|error:|Test Case .* (passed|failed|skipped)|Executed|\*\* TEST' inner-uitests.log | tail -60 | tee -a "$GITHUB_STEP_SUMMARY"
+          grep -E 'LCD|active|innerWindow|error:|encountered an error|Test Case .* (passed|failed|skipped)|Executed|\*\* TEST' inner-uitests.log | tail -60 | tee -a "$GITHUB_STEP_SUMMARY"
           [ "${status:-0}" = 0 ] || echo "::warning::Book/Tabletop UI tests failed on the inner display; see inner-uitests.log in the artifact"
           exit "${status:-0}"
       - name: Export test screenshots
