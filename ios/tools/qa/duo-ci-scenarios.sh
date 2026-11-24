@@ -6,7 +6,13 @@ set -uo pipefail
 UDID=$1; OUT=$2; shift 2; SCEN=${*:-continuity trailer closedax5 schemes video}
 SHA=$(git rev-parse --short HEAD 2>/dev/null || echo nosha); B=co.codeconnectors.playscribe; mkdir -p "$OUT"
 AX5=UICTContentSizeCategoryAccessibilityXXXL
-fold() { sim-use ios fold "$1" --device "$UDID" >/dev/null 2>&1; sim-use ios rotate "${2:-portrait}" --device "$UDID" >/dev/null 2>&1; sleep 5; }
+# Rotate first, fold second, then check the active display matches the angle (inner for any open angle, outer for 0); redo once if not.
+fold() {
+  for try in 1 2; do
+    sim-use ios rotate "${2:-portrait}" --device "$UDID" >/dev/null 2>&1; sim-use ios fold "$1" --device "$UDID" >/dev/null 2>&1; sleep 5
+    local d; d=$(did); { [ "$1" = 0 ] && [ "$d" = 1 ]; } || { [ "$1" != 0 ] && [ "$d" = 3 ]; } && return 0
+    echo "fold $1 ${2:-portrait}: active display $d is wrong, retry $try"
+  done; }
 did() { sim-use ios fold --json --device "$UDID" 2>/dev/null | python3 -c 'import json,sys;print(json.load(sys.stdin)["data"]["posture"]["activeDisplay"]["id"])' 2>/dev/null || echo 1; }
 snap() { # scenario step
   local d; d=$(did); local n; [ "$d" = 3 ] && n=inner || n=outer
@@ -17,7 +23,8 @@ launch() { xcrun simctl terminate "$UDID" $B >/dev/null 2>&1; fold 0 portrait; x
 for s in $SCEN; do echo "##### $s"; case $s in
 continuity) # row 8: open game scrolled mid-update, fold 0, 90, 180, 60, 0
   launch -qaRoute gamepage/dawnwalker -qaOverlay YES
-  sim-use swipe --from 233,520 --to 233,220 --device "$UDID" >/dev/null 2>&1; sleep 2; snap continuity 1-closed-scrolled
+  sim-use swipe --from 233,520 --to 233,220 --duration 0.6 --device "$UDID" >/dev/null 2>&1; sleep 2
+  echo "scroll check: $(sim-use ui --device "$UDID" 2>/dev/null | grep -o "qa-page: [^\"]*" | head -1)"; snap continuity 1-closed-scrolled
   fold 90 landscape-left; snap continuity 2-a90-landscape; fold 180 landscape-left; snap continuity 3-a180
   fold 60 portrait; snap continuity 4-a60-portrait; fold 0 portrait; snap continuity 5-closed-again ;;
 trailer) # row 3: reflection element + 3 taps in the upper half, portrait Tabletop
