@@ -1,10 +1,12 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
 import { openDb } from '../src/db.ts'
-import { parseStatuspage, blueskyTitle, parseMojangNotes, parseRiotNews } from '../src/ingest/adapters.ts'
+import { readFileSync } from 'node:fs'
+import { bandaiUpdateLinks, parseBandaiArticle, parseStatuspage, blueskyTitle, parseMojangNotes, parseRiotNews } from '../src/ingest/adapters.ts'
 import { pcNumberIsTitled, runIngest, seedGames } from '../src/ingest/pipeline.ts'
 import { registry } from '../src/registry.ts'
 import * as store from '../src/store.ts'
+import { queueNewPs5 } from '../src/push/notify.ts'
 import { fakeFetch, rss, steamNews } from './helpers.ts'
 
 // feed-sony-first-party-patch-source: official PS5 sources for games that had none. Each fixture is trimmed from the live source.
@@ -228,4 +230,21 @@ test('a known console build fills an empty PS5 version as reported, and a post n
   assert.equal(ps5Of(db, 'dawnwalker@1.2')?.version?.verification, 'reported')
   assert.equal(ps5Of(db, 'dawnwalker@1.1')?.version?.value, '01.006.001', 'a number from a post stays')
   assert.equal(store.applyKnownBuilds(db, { dawnwalker: { '1.2': '01.007.000' } }), 0)
+})
+
+test('Bandai Namco game page: the update article is dated by its own publish time and counts as official on PS5', async () => {
+  const fx = (n: string) => readFileSync(new URL(`./fixtures/${n}`, import.meta.url), 'utf8')
+  const game = fx('bandai-dawnwalker-game.html')
+  assert.deepEqual(bandaiUpdateLinks(game, 'https://www.bandainamcoent.com/games/dawnwalker').map((u) => u.split('/').pop()), ['the-blood-of-dawnwalker-update-1-1', 'the-blood-of-dawnwalker-update-1-2'])
+  const post = parseBandaiArticle('dawnwalker-bandai-news', 'https://www.bandainamcoent.com/news/the-blood-of-dawnwalker-update-1-2', fx('bandai-dawnwalker-update-1-2.html'))!
+  assert.equal(post.title, 'The Blood of Dawnwalker - Update 1.2')
+  assert.equal(post.publishedAt, '2026-11-17T08:00:00.000Z')
+  assert.match(post.body, /out now on PC, PlayStation 5/)
+  const db = openDb(':memory:')
+  const deps = { db, fetchFn: fakeFetch({ 'https://www.bandainamcoent.com/games/dawnwalker': game, 'https://www.bandainamcoent.com/news/the-blood-of-dawnwalker-update-1-2': fx('bandai-dawnwalker-update-1-2.html'), 'https://www.bandainamcoent.com/news/the-blood-of-dawnwalker-update-1-1': fx('bandai-dawnwalker-update-1-2.html').replace('Update 1.2', 'Update 1.1').replace('2026-11-17', '2026-10-22') }), igdb: null }
+  await seedGames(deps)
+  await runIngest(deps, { force: true, games: ['dawnwalker'] })
+  const ps5 = ps5Of(db, 'dawnwalker@1.2')
+  assert.deepEqual([ps5?.status, ps5?.verification], ['live', 'official'])
+  assert.equal(queueNewPs5(db, { maxAgeHours: 72 }).jobs.length, 0, 'a week-old and a month-old update send nothing')
 })
