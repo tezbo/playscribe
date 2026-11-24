@@ -596,3 +596,22 @@ export const applyKnownBuilds = (db: DB, builds: Record<string, Record<string, s
   }
   return n
 }
+
+/**
+ * An official post says when a PS5 update went live. A release dated earlier than every official time it has was dated by a
+ * press report (a "coming next week" article, a leak): the earliest official time replaces that date. A release whose date is
+ * an official time already (a studio post before Steam) is left alone.
+ */
+export const preferOfficialDate = (db: DB, releaseId: string): void => {
+  const r = db.prepare('SELECT announced_at FROM releases WHERE id = ?').get(releaseId) as { announced_at: string } | undefined
+  if (!r) return
+  const rows = (db.prepare('SELECT platform, live_at FROM platform_releases WHERE release_id = ? AND live_at IS NOT NULL').all(releaseId) as { platform: string; live_at: string }[])
+    .map((p) => ({ platform: p.platform, f: json<Field<string> | null>(p.live_at, null) }))
+    .filter((x): x is { platform: string; f: Field<string> } => !!x.f && x.f.verification === 'official')
+  // Backed: some official time (PS5 or PC post) is this date. Only a date no official row backs came from a press report.
+  if (rows.some((x) => x.f.value === r.announced_at)) return
+  const first = rows.filter((x) => x.platform === 'ps5').map((x) => x.f.value).sort()[0]
+  // A press report is a few days off at most; a PS5 time months after the date is a console that lagged, not a wrong date.
+  if (!first || first <= r.announced_at || Date.parse(first) - Date.parse(r.announced_at) > 14 * 86400e3) return
+  db.prepare('UPDATE releases SET announced_at = ?, updated_at = ? WHERE id = ?').run(first, now(), releaseId)
+}

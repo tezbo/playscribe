@@ -1,10 +1,12 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
 import { openDb } from '../src/db.ts'
-import { parseStatuspage, blueskyTitle, parseMojangNotes, parseRiotNews } from '../src/ingest/adapters.ts'
+import { readFileSync } from 'node:fs'
+import { bandaiUpdateLinks, parseBandaiArticle, parseStatuspage, blueskyTitle, parseMojangNotes, parseRiotNews } from '../src/ingest/adapters.ts'
 import { pcNumberIsTitled, runIngest, seedGames } from '../src/ingest/pipeline.ts'
 import { registry } from '../src/registry.ts'
 import * as store from '../src/store.ts'
+import { queueNewPs5 } from '../src/push/notify.ts'
 import { fakeFetch, rss, steamNews } from './helpers.ts'
 
 // feed-sony-first-party-patch-source: official PS5 sources for games that had none. Each fixture is trimmed from the live source.
@@ -228,4 +230,72 @@ test('a known console build fills an empty PS5 version as reported, and a post n
   assert.equal(ps5Of(db, 'dawnwalker@1.2')?.version?.verification, 'reported')
   assert.equal(ps5Of(db, 'dawnwalker@1.1')?.version?.value, '01.006.001', 'a number from a post stays')
   assert.equal(store.applyKnownBuilds(db, { dawnwalker: { '1.2': '01.007.000' } }), 0)
+})
+
+const bandaiFx = (n: string) => readFileSync(new URL(`./fixtures/${n}`, import.meta.url), 'utf8')
+const bandaiRoutes = (art12: string, art11: string) => ({
+  'https://www.bandainamcoent.com/games/dawnwalker': bandaiFx('bandai-dawnwalker-game.html'),
+  'https://www.bandainamcoent.com/news/the-blood-of-dawnwalker-update-1-2': art12,
+  'https://www.bandainamcoent.com/news/the-blood-of-dawnwalker-update-1-1': art11,
+})
+const art11 = () => bandaiFx('bandai-dawnwalker-update-1-2.html').replace(/Update 1\.2/g, 'Update 1.1').replace('2026-11-17', '2026-10-22')
+
+test('Bandai Namco game page: the update article is dated by its own publish time and counts as official on PS5', async () => {
+  const game = bandaiFx('bandai-dawnwalker-game.html')
+  assert.deepEqual(bandaiUpdateLinks(game, 'https://www.bandainamcoent.com/games/dawnwalker').map((u) => u.split('/').pop()), ['the-blood-of-dawnwalker-update-1-1', 'the-blood-of-dawnwalker-update-1-2'])
+  const post = parseBandaiArticle('dawnwalker-bandai-news', 'https://www.bandainamcoent.com/news/the-blood-of-dawnwalker-update-1-2', bandaiFx('bandai-dawnwalker-update-1-2.html'))!
+  assert.equal(post.title, 'The Blood of Dawnwalker - Update 1.2')
+  assert.equal(post.publishedAt, '2026-11-17T08:00:00.000Z')
+  assert.match(post.body, /out now on PC, PlayStation 5/)
+})
+
+test('Bandai post for 1.2 replaces the reported 13 Nov date with the official 17 Nov one; newest stays 1.2 and nothing is pushed again', async () => {
+  const db = openDb(':memory:')
+  const deps = { db, fetchFn: fakeFetch(bandaiRoutes(bandaiFx('bandai-dawnwalker-update-1-2.html'), art11())), igdb: null }
+  await seedGames(deps)
+  // What the feed held before: a press report dated 13 Nov (a "coming next week" article, not the release), already alerted.
+  const { id } = store.upsertRelease(db, { gameId: 'dawnwalker', versionKey: '1.2', displayName: 'Update 1.2', kind: 'major', kindBasis: 'inferred', announcedAt: '2026-11-13T16:30:00.000Z', notes: [], sourceId: 'pushsquare' })
+  store.upsertPlatform(db, id, 'ps5', { status: 'live', verification: 'reported', liveAt: store.field('2026-11-13T16:30:00.000Z', 'reported', 'pushsquare') })
+  db.prepare("UPDATE platform_releases SET pushed_at = '2026-11-17T10:24:19.374Z' WHERE release_id = ?").run(id)
+  await runIngest(deps, { force: true, games: ['dawnwalker'] })
+  const ps5 = ps5Of(db, 'dawnwalker@1.2')!
+  assert.deepEqual([ps5.status, ps5.verification, ps5.liveAt?.verification, ps5.liveAt?.value], ['live', 'official', 'official', '2026-11-17T08:00:00.000Z'])
+  const rel = db.prepare("SELECT version_key, announced_at FROM releases WHERE game_id = 'dawnwalker' ORDER BY announced_at DESC").all() as { version_key: string; announced_at: string }[]
+  assert.equal(rel[0]!.version_key, '1.2', 'newest update is still 1.2')
+  assert.equal(rel[0]!.announced_at, '2026-11-17T08:00:00.000Z')
+  assert.equal(queueNewPs5(db, { maxAgeHours: 72 }).jobs.length, 0, 'already pushed, and the 1.1 post is a month old: nothing is sent')
+})
+
+test('a Bandai post that says PC only makes no PS5 row, and a PC-only hotfix carries no PS5 signal', async () => {
+  const pcOnly = (title: string) => bandaiFx('bandai-dawnwalker-update-1-2.html').replace(/Update 1\.2/g, title).replace(/out now on PC, PlayStation 5, and Xbox Series X\|S/, 'out now on PC only')
+  const db = openDb(':memory:')
+  const deps = { db, fetchFn: fakeFetch(bandaiRoutes(pcOnly('Update 1.2'), pcOnly('Hotfix 1.1.1 (PC only)'))), igdb: null }
+  await seedGames(deps)
+  await runIngest(deps, { force: true, games: ['dawnwalker'] })
+  assert.equal(ps5Of(db, 'dawnwalker@1.2'), undefined, 'PC-only 1.2 has no PS5 row')
+  assert.equal(ps5Of(db, 'dawnwalker@1.1.1'), undefined, 'a PC-only hotfix has no PS5 row')
+})
+
+test('moving a release date to the official PS5 time sends no alert for an old update that was never pushed, and a lagging console is not a wrong date', async () => {
+  const db = openDb(':memory:')
+  await seedGames({ db, fetchFn: fakeFetch({}), igdb: null })
+  const make = (key: string, announced: string, ps5Live: string, pushed: boolean) => {
+    const { id } = store.upsertRelease(db, { gameId: 'dawnwalker', versionKey: key, displayName: `Update ${key}`, kind: 'major', kindBasis: 'inferred', announcedAt: announced, notes: [], sourceId: 'pushsquare' })
+    store.upsertPlatform(db, id, 'ps5', { status: 'live', verification: 'official', liveAt: store.field(ps5Live, 'official', 'dawnwalker-bandai-news') })
+    if (pushed) db.prepare("UPDATE platform_releases SET pushed_at = '2026-01-01T00:00:00.000Z' WHERE release_id = ?").run(id)
+    return id
+  }
+  const old = make('0.9', '2026-08-01T10:00:00.000Z', '2026-09-05T08:00:00.000Z', false)
+  const lag = make('0.8', '2026-01-31T10:00:00.000Z', '2026-08-12T08:00:00.000Z', true)
+  const before = queueNewPs5(db, { maxAgeHours: 72 }).jobs.length
+  store.preferOfficialDate(db, old)
+  store.preferOfficialDate(db, lag)
+  const date = (id: string) => (db.prepare('SELECT announced_at a FROM releases WHERE id = ?').get(id) as { a: string }).a
+  assert.equal(date(old), '2026-08-01T10:00:00.000Z', 'a five-week gap is a lagging console, not a press error: unchanged')
+  assert.equal(date(lag), '2026-01-31T10:00:00.000Z')
+  const near = make('0.7', '2026-09-01T10:00:00.000Z', '2026-09-05T08:00:00.000Z', false)
+  store.preferOfficialDate(db, near)
+  assert.equal(date(near), '2026-09-05T08:00:00.000Z', 'four days later, backed by no official time: moved')
+  assert.equal(queueNewPs5(db, { maxAgeHours: 72 }).jobs.length, before, 'the move changes no alert: the 72 h and 30-day guards read the PS5 live time')
+  assert.equal(before, 0)
 })

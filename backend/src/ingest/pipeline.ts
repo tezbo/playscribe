@@ -310,6 +310,7 @@ const handlePost = (deps: IngestDeps, game: Record<string, any>, s: SourceDef, p
     if (deps.repairClaims) store.repairOwnLiveAt(db, releaseId, s.id, post.publishedAt, input.liveAt, input.status)
     store.upsertPlatform(db, releaseId, 'ps5', input)
     if (stated) return
+    store.preferOfficialDate(db, releaseId)
     db.prepare(`UPDATE review_items SET resolved_at = ?, resolution = 'autoConfirmed' WHERE release_id = ? AND platform = 'ps5' AND resolved_at IS NULL`).run(now(), releaseId)
   }
   // A studio's own post that names PS5 is that update's PS5 page; a Steam post may link to one.
