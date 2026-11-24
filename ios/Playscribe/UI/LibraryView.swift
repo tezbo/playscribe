@@ -345,6 +345,7 @@ struct LibraryShelf: View {
                     .controlBorder(.searchField, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
                     // Book: one page wide (like the chip row), and reported to the fold audit.
                     .frame(width: duo.pose == .book ? duo.division.map { max(0, $0.minX - 24 - 16) } : nil, alignment: .leading)
+                    .frame(maxWidth: LibraryControl.maxWidth, alignment: .leading)
                     .tappableFrame()
                     .padding(.top, 4)
                     .id("library-search")
