@@ -428,7 +428,8 @@ struct FrontCover: View {
 }
 
 /// The cover's page indicator, stood on its leading edge: PageEdge's dots turned upright (Iris, after #616: the cover kept
-/// the old amber bar). 6 pt dots 10 pt apart, the current one in ember, unread ones in vellum. View only, as the deck's: the
+/// the old amber bar). 6 pt dots 10 pt apart, the current one in ember, every other one the deck's dark unlit grey (unread is
+/// carried by the "New update" label and VoiceOver; mixed white and grey read as random, Iris on #616). View only, as the deck's: the
 /// pages swipe, and VoiceOver reads one adjustable element ("Update 2 of 5") that steps one page.
 struct CoverLeaves: View {
     var cards: [DeckCard]
@@ -437,14 +438,15 @@ struct CoverLeaves: View {
     /// that keeps every mark at 3:1 or better (WCAG 1.4.11). Still and Key-art motion keep the bare marks over the shade.
     var backed = false
     var select: (String) -> Void
+    /// The deck's unlit dot in dark (#47434C); the cover is always dark.
+    static let unlit = UIColor(hex: 0x47434C)
 
     var body: some View {
         let lit = PageEdge.lit(cards: cards, current: current, visible: 1)
         VStack(spacing: PageEdge.gap) {
             ForEach(Array(cards.enumerated()), id: \.element.id) { index, card in
                 Circle()
-                    .fill(lit.contains(index) ? PlayscribeColor.onDarkAccent
-                          : (card.unread ? PlayscribeColor.vellum100 : PlayscribeColor.onDarkTextSecondary.opacity(0.6)))
+                    .fill(lit.contains(index) ? PlayscribeColor.onDarkAccent : Color(Self.unlit))
                     .frame(width: PageEdge.dot, height: PageEdge.dot)
                     .shadow(color: .black.opacity(0.6), radius: 2)
             }

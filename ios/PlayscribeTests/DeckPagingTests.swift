@@ -84,6 +84,8 @@ struct DeckPagingTests {
         #expect(leaves.contains("PageEdge.dot") && leaves.contains("Circle()"))
         #expect(!leaves.contains("Button") && !leaves.contains("RoundedRectangle(cornerRadius: 1.5)"))
         #expect(leaves.contains(".allowsHitTesting(false)") && leaves.contains(".accessibilityAdjustableAction"))
+        #expect(!leaves.contains("unread"), "every unlit dot is one grey; unread does not change a dot")
+        #expect(Contrast.ratio(CoverLeaves.unlit, UIColor(hex: 0x47434C)) < 1.01)
     }
 
     @Test func indicatorIsOneSpokenElement() {
