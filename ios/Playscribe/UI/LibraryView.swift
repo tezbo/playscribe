@@ -397,7 +397,9 @@ struct LibraryShelf: View {
         #endif
         #if INTERNAL
         let _ = QABodyCount.library += 1
-        let _ = AppModel.isQALaunch ? QABodyCount.attribute(model) : ()
+        // Only when a test asks (-qaBodyWhy): the walk describes the whole model, feed included, on every run. Left on for every QA
+        // launch it was 61% of the main thread while typing in r054 (Time Profiler, 13ada7a8), the 1.2 to 2.6 s tile delay.
+        let _ = QABodyCount.whyEnabled ? QABodyCount.attribute(model) : ()
         #endif
         @Bindable var model = model
         let rows = duo.pose == .tabletop && letter != nil
@@ -1543,6 +1545,7 @@ private struct FeedStatusLine: View {
     /// which AppModel fields changed between one body run and the next, counted by name. Read through Mirror, which bypasses
     /// Observation, so measuring adds no dependency. "(no model change)" is a run the model did not cause (environment, state).
     static var why: [String: Int] = [:]
+    static let whyEnabled = AppModel.isQALaunch && UserDefaults.standard.bool(forKey: "qaBodyWhy")
     private static var last: [String: Int] = [:]
     static func attribute(_ model: AppModel) {
         var now: [String: Int] = [:]

@@ -45,12 +45,24 @@ struct PlusCard: View {
 
     /// The catalogue game behind a lineup name: the tracked game when `gameId` is set, else an exact
     /// title match (see `matchKey`) in the bundled PS5 index. nil draws the name plate, never a near miss.
+    /// The bundled index's exact match for a lineup name, looked up once per name: the index is fixed for a launch, and the
+    /// search scans all of it, which ran for every cover on every Library redraw (2.5 s of main thread while typing a search,
+    /// r054 Time Profiler at 13ada7a8).
+    private static var indexHits: [String: CatalogGame?] = [:]
+    private static func indexHit(_ name: String, want: String) -> CatalogGame? {
+        if let cached = indexHits[name] { return cached }
+        var found: CatalogGame?
+        for query in [name, romanVariant(name)] {
+            if let hit = PS5Index.shared.search(query, limit: 10).first(where: { matchKey($0.name) == want }) { found = hit; break }
+        }
+        indexHits[name] = .some(found)
+        return found
+    }
+
     static func resolve(_ g: PlusMonth.Game, tracked: (String) -> CatalogGame?) -> CatalogGame? {
         if let id = g.gameId, let t = tracked(id) { return t }
         let want = matchKey(g.name)
-        for query in [g.name, romanVariant(g.name)] {
-            if let hit = PS5Index.shared.search(query, limit: 10).first(where: { matchKey($0.name) == want }) { return hit }
-        }
+        if let hit = indexHit(g.name, want: want) { return hit }
         // Not in the bundled index: a feed-supplied IGDB cover makes a cover-only game (never a wrong one).
         if let cover = g.coverId, !cover.isEmpty {
             return CatalogGame(id: "plus-\(want)", name: g.name, platforms: [.ps5], coverImageID: cover, coverage: .none)
