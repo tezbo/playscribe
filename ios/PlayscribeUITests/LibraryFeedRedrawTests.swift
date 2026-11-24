@@ -30,7 +30,7 @@ final class LibraryFeedRedrawTests: XCTestCase {
     @MainActor
     private func bodyRuns(during swipes: Int, pulse: Bool, only: String? = nil) throws -> Int {
         let app = XCUIApplication()
-        app.launchArguments = ["-qaRoute", "fill-library/12"] + (pulse ? ["-qaFeedPulse", "1"] : []) + (only.map { ["-qaPulseOnly", $0] } ?? [])
+        app.launchArguments = ["-qaRoute", "fill-library/12", "-qaBodyWhy", "YES"] + (pulse ? ["-qaFeedPulse", "1"] : []) + (only.map { ["-qaPulseOnly", $0] } ?? [])
         app.launch()
         let tiles = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'tile-'"))
         XCTAssertTrue(tiles.firstMatch.waitForExistence(timeout: 15), "the library shows tiles")

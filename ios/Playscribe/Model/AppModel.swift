@@ -84,7 +84,6 @@ struct NavState: Codable, Hashable {
     var expanded: [String: Bool] = [:]
     /// The id of the first visible row per scroll view.
     var anchors: [String: String] = [:]
-    var query: String = ""
     var filter: LibraryFilter = .all
     var sort: LibrarySort = .updated
     var lastGameID: String?
@@ -191,9 +190,40 @@ struct Toast: Equatable {
 /// One application model shared by every presentation: outer, inner, folded, any orientation.
 @Observable
 final class AppModel {
-    var data: PersistedState { didSet { scheduleSave() } }
+    var data: PersistedState {
+        didSet {
+            scheduleSave()
+            // A direct write of the saved Library anchor (QA routes, Back, a reset) wins over a live search anchor.
+            if libraryAnchorLive != nil, oldValue.nav.anchors["library"] != data.nav.anchors["library"] { libraryAnchorLive = nil }
+        }
+    }
 
     // Transient
+    /// The Library search text (r053, r054). Not in `data`: a keystroke there rewrote the saved file and invalidated every view
+    /// that reads `data` (deck, cards, rail, every tile), and the grid was rebuilt per keystroke on top, so a typed name took
+    /// 3 to 6 s to show its tile on the Mac (d194c511). Here only the field and the Library body read it. Memory only, so a cold
+    /// launch starts with an empty search and the full Library (r053) and a fold or unfold, which keeps the model, keeps the text.
+    var libraryQuery = ""
+    /// The Library page's scroll position (`scrollPosition(id:)`). A tile ("lib-<id>") or nil is the saved anchor in `data`, so a
+    /// relaunch or Back lands where it was. The search field and title ids the page scrolls to while typing are held here instead:
+    /// written to `data`, the nil-then-field pair the field's task writes on every key (to bring the field above the keyboard)
+    /// cost two saves and two redraws of every `data` reader per keystroke (r054, d194c511). A cold launch drops them anyway.
+    var libraryAnchor: String? {
+        get {
+            if let live = libraryAnchorLive { return live }
+            return data.nav.anchors["library"]
+        }
+        set {
+            if let id = newValue, !id.hasPrefix("lib-") {
+                if data.nav.anchors["library"] != nil { data.nav.anchors["library"] = nil }
+                if libraryAnchorLive != id { libraryAnchorLive = id }
+            } else {
+                if data.nav.anchors["library"] != newValue { data.nav.anchors["library"] = newValue }
+                if libraryAnchorLive != nil { libraryAnchorLive = nil }
+            }
+        }
+    }
+    private var libraryAnchorLive: String?
     var toast: Toast?
     /// Height the pill and toasts take at the bottom of the screen (0 when none): the Library reserves it as a bottom inset.
     var messageInset: CGFloat = 0
@@ -359,9 +389,8 @@ final class AppModel {
            let decoded = try? JSONCoding.decoder.decode(PersistedState.self, from: raw) {
             data = decoded
             // r053-search-text-persists-relaunch (Nadia, Iris): a cold launch starts with an empty search and the full Library.
-            // The text a person typed last time is not restored; the selected game, scroll position and live filters are. A fold or
-            // unfold keeps the model alive, so the text typed in this launch survives it.
-            data.nav.query = ""
+            // The text a person typed last time is not restored (`libraryQuery` is memory only); the selected game, scroll position
+            // and live filters are. A fold or unfold keeps the model alive, so the text typed in this launch survives it.
             // Quinn (#430): a Library scroll anchor that is not a game tile ("lib-<id>") would scroll an unfiltered relaunch to the
             // search field (the app killed while it was focused). Keep tile anchors only.
             if let a = data.nav.anchors["library"], !a.hasPrefix("lib-") { data.nav.anchors["library"] = nil }
@@ -620,7 +649,7 @@ final class AppModel {
     }
 
     func shownRows() -> [LibraryRow] {
-        let q = nav.query.trimmingCharacters(in: .whitespaces).lowercased()
+        let q = libraryQuery.trimmingCharacters(in: .whitespaces).lowercased()
         let rows = libraryRows.filter { r in
             (nav.filter.status == nil || r.status == nav.filter.status) && (q.isEmpty || r.game.name.lowercased().contains(q))
         }
