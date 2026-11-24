@@ -155,9 +155,9 @@ struct TabletopReaderStage: View {
     var gameID: String
 
     /// The stage's text block on its ink plate (see the body): eyebrow, PS5 status, title, the overview's headline and one body
-    /// cut. `subtitle` and `titleLines` let the body pick the first version that fits the stage.
+    /// cut. `titleLines` and `subtitleLines` let the body pick the first version that fits the stage.
     @ViewBuilder
-    private func readerPlate(_ section: ReaderSection, release: Release?, subtitle: Bool, titleLines: Int) -> some View {
+    private func readerPlate(_ section: ReaderSection, release: Release?, titleLines: Int, subtitleLines: Int) -> some View {
         VStack(alignment: .leading, spacing: 14) {
             // Eyebrow: the game and the date; the release itself is the title below.
             // At accessibility sizes the name is one line cut on a whole word ("The Blood of…"), never "The Blood of Daw…", and the date keeps its place.
@@ -226,8 +226,8 @@ struct TabletopReaderStage: View {
                 .accessibilityAddTraits(.isHeader)
                 .accessibilityHidden(namesRelease)
             // The overview's headline, secondary: smaller than the patch name, never larger (Iris, 0.5.6).
-            if subtitle, let sub = section.subtitle {
-                WholeWordText(text: ReaderBody.title(sub), font: PlayscribeFont.headline, lines: typeSize.isAccessibilitySize ? 1 : 2, color: PlayscribeColor.textPrimary.opacity(0.92))
+            if let sub = section.subtitle {
+                WholeWordText(text: ReaderBody.title(sub), font: PlayscribeFont.headline, lines: subtitleLines, color: PlayscribeColor.textPrimary.opacity(0.92))
                     .accessibilityLabel(sub)
                     .accessibilityIdentifier("readerHeadline")
             }
@@ -273,12 +273,15 @@ struct TabletopReaderStage: View {
             // note parsing) re-run each time (hang at 2dbcd13, Mac sample). The block grows upward and is clipped by the stage.
             Color.clear.overlay(alignment: .bottomLeading) { if let section = sections[safe: index] {
                 // Iris (#619, tabletop-dark-reader-ax5): at AX5 the full plate was taller than the stage and its eyebrow was clipped
-                // at the top edge. The plate never clips: the first version that fits the stage is drawn, dropping the overview's
-                // headline first, then the title to one line. VoiceOver and the full text keep everything.
+                // at the top edge. The plate never clips: the first version that fits the stage is drawn. Nothing is dropped
+                // (same content in every pose). The title is cut first, to one line, then the overview's headline goes from two
+                // lines to one (whole-word "…"; Iris, 8236cf01). The stage takes no touches, so it cannot scroll; one title line and one headline line
+                // is the floor. VoiceOver and the full text keep everything.
+                let titleLines = typeSize.isAccessibilitySize ? 2 : 4
                 ViewThatFits(in: .vertical) {
-                    readerPlate(section, release: release, subtitle: true, titleLines: typeSize.isAccessibilitySize ? 2 : 4)
-                    readerPlate(section, release: release, subtitle: false, titleLines: typeSize.isAccessibilitySize ? 2 : 4)
-                    readerPlate(section, release: release, subtitle: false, titleLines: 1)
+                    readerPlate(section, release: release, titleLines: titleLines, subtitleLines: 2)
+                    readerPlate(section, release: release, titleLines: 1, subtitleLines: 2)
+                    readerPlate(section, release: release, titleLines: 1, subtitleLines: 1)
                 }
                 .padding(.horizontal, 16)
                 .padding(.bottom, duo.clearance(forBottom: stageBottom))
