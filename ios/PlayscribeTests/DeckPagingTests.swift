@@ -79,7 +79,8 @@ struct DeckPagingTests {
     @Test func coverUsesTheDots() throws {
         let src = try String(contentsOf: URL(fileURLWithPath: #filePath).deletingLastPathComponent().deletingLastPathComponent()
             .appendingPathComponent("Playscribe/UI/FrontCover.swift"), encoding: .utf8)
-        let leaves = String(src[src.range(of: "struct CoverLeaves")!.lowerBound...].prefix(2500))
+        let tail = src[src.range(of: "struct CoverLeaves")!.upperBound...]
+        let leaves = String(tail[..<(tail.range(of: "\nstruct ")?.lowerBound ?? tail.endIndex)])   // this struct only, not the rail after it
         #expect(leaves.contains("PageEdge.dot") && leaves.contains("Circle()"))
         #expect(!leaves.contains("Button") && !leaves.contains("RoundedRectangle(cornerRadius: 1.5)"))
         #expect(leaves.contains(".allowsHitTesting(false)") && leaves.contains(".accessibilityAdjustableAction"))
