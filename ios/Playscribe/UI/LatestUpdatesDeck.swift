@@ -797,7 +797,7 @@ struct PageEdge: View {
         }
     }
 
-    private var dots: some View {
+    @ViewBuilder private var dots: some View {
         let lit = Self.lit(cards: cards, current: current, visible: visible)
         let win = window
         let pill = Self.pill(lit: lit, window: win.map(\.index))
