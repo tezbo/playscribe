@@ -79,6 +79,19 @@ struct DeckAndWidgetTests {
         if m.latestDeckOverflow == 0 { #expect(m.latestDeck.count <= AppModel.deckLimit) }
     }
 
+    /// r054-deck-card-voiceover-label-ax3: the visible summary is dropped at AX3 and above, so the card's VoiceOver label must carry
+    /// it in full. The label is built without the type size, so it holds at every size.
+    @Test func deckCardLabelCarriesTheSummaryAtEverySize() throws {
+        let m = demoModel()
+        let withSummary = m.latestDeck.filter { $0.release?.summary?.isEmpty == false }
+        try #require(!withSummary.isEmpty, "the demo deck has a card with a summary")
+        for card in withSummary {
+            let label = DeckCardView.label(card, tracked: m.feedTracksGame(card.game.id))
+            #expect(label.hasSuffix(card.release!.summary!), "\(card.game.name): \(label)")
+            #expect(label.contains(card.game.name))
+        }
+    }
+
     /// The card's summary line never ends mid-word (Iris, 2026-11-06).
     @Test func deckSummaryCutsAtWholeWords() {
         let long = "Fixes a crash on load and improves frame pacing in the big city district when many characters appear at once during night"

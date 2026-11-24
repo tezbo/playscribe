@@ -345,6 +345,7 @@ struct LibraryShelf: View {
                     .controlBorder(.searchField, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
                     // Book: one page wide (like the chip row), and reported to the fold audit.
                     .frame(width: duo.pose == .book ? duo.division.map { max(0, $0.minX - 24 - 16) } : nil, alignment: .leading)
+                    .frame(maxWidth: LibraryControl.maxWidth, alignment: .leading)
                     .tappableFrame()
                     .padding(.top, 4)
                     .id("library-search")
@@ -551,7 +552,11 @@ struct LibraryShelf: View {
                     .id(poseKey)
                 }
                 // Tabletop: the filter chips sit directly above the tiles, one row; tiles first wins if they would push it off (Iris, v0.5.3).
-                if duo.pose == .tabletop && all.count >= 2 && layout == .tiles { FilterBar().frame(maxWidth: .infinity, alignment: .leading).id(poseKey) }
+                // At accessibility sizes the chips are a column of four full-width pills, which pushed every tile below the fold: there
+                // they follow the tiles, so a full tile row shows first (Iris on #409, r054-tabletop-chips-below-tiles-ax3).
+                if duo.pose == .tabletop && all.count >= 2 && layout == .tiles && !typeSize.isAccessibilitySize {
+                    FilterBar().frame(maxWidth: .infinity, alignment: .leading).id(poseKey)
+                }
                 if layout == .list {
                     ForEach(rows) { row in GameRow(row: row).id("lib-\(row.id)") }
                 } else if heroOnRightPage {
@@ -577,6 +582,9 @@ struct LibraryShelf: View {
                     // deleting a letter did not bring it back, Mac 677e7eb run 3 of 10): a stuck lazy grid, rebuilt on every query change.
                     .id("\(poseKey)|\(model.data.nav.query)")
                     .namedFrame("libraryGames")
+                }
+                if duo.pose == .tabletop && all.count >= 2 && layout == .tiles && typeSize.isAccessibilitySize {
+                    FilterBar().frame(maxWidth: .infinity, alignment: .leading).id(poseKey)
                 }
                 // One order in every pose (Terry, 19 Nov): the alerts, catch-up and PS Plus cards always follow the tiles,
                 // as Closed, Open portrait and Tabletop already had them (Iris, v0.5.3). Open landscape and Book (no hero) here.
@@ -1138,11 +1146,13 @@ extension AppModel {
         return (.none, "TBA")
     }
 
-    /// "12 Oct" this year, "Jul 2025" before.
+    /// "12 Oct" this year, "Jul 2025" before, joined by a no-break space so a caption never splits a date across lines at large
+    /// sizes ("29 / Oct", "Mar / 2027": r060-tile-dates-ax5). It wraps whole, before any word around it.
     static func tileDay(_ d: Date) -> String {
-        Date.sameUTCYear(d, .now)
+        let day = Date.sameUTCYear(d, .now)
             ? d.dayMonth
             : d.formatted(Date.FormatStyle(locale: Locale(identifier: "en_GB"), timeZone: .gmt).month(.abbreviated).year())
+        return day.replacingOccurrences(of: " ", with: "\u{00A0}")
     }
 
     /// The caption mark in words, so colour is never the only cue (Iris, #597): the amber spark is "new update", the small

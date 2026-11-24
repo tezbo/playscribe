@@ -8,16 +8,23 @@ struct PS5StatusLines: Equatable {
     var version: String?
 
     /// Both lines in one VoiceOver element.
+    /// The backend's source id for a build number read from the PS5 build list (backend/src/store.ts).
+    static let buildListSource = "ps5-builds"
+
     var spoken: String { [primary, version].compactMap { $0 }.joined(separator: ". ").replacingOccurrences(of: "\u{2060}", with: "") }
 
     init(_ r: Release) {
         switch r.ps5State {
         case .onPS5:
             primary = "Out on PS5"
+            // A build number the backend read from the PS5 build list (source ps5-builds) is reported, not official: it says so
+            // (Iris on #617). VoiceOver reads the same words.
+            let reported = r.ps5?.version?.sourceID == Self.buildListSource
             version = r.ps5Version.flatMap { v in
                 let n = v.trimmingCharacters(in: .whitespaces)
                 // A word joiner after each dot: a version number never breaks at its dots (Redesign rule). Stripped for VoiceOver.
-                return n.isEmpty ? nil : "This update is \(n.replacingOccurrences(of: ".", with: ".\u{2060}")) on PS5"
+                let shown = n.replacingOccurrences(of: ".", with: ".\u{2060}")
+                return n.isEmpty ? nil : reported ? "Reported as \(shown) on PS5" : "This update is \(shown) on PS5"
             }
         case .announced: primary = "Announced for PS5"
         case .reported: primary = "Reported on PS5"

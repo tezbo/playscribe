@@ -182,10 +182,14 @@ struct PageArtBand: View {
 }
 
 /// Two gradients, no hard edge: left to right from ink to clear at 55%, bottom clear at 55% to ink.
+/// Dark only. In light the art shows at full strength with a clean edge: faded into cream it read washed out (Iris on #617).
 struct FadeMask: ViewModifier {
     var enabled = true
+    @Environment(\.colorScheme) private var scheme
     func body(content: Content) -> some View {
-        if enabled {
+        if scheme == .light {
+            content
+        } else if enabled {
             content
                 .overlay(LinearGradient(stops: [.init(color: PlayscribeRole.bg, location: 0), .init(color: .clear, location: 0.55)],
                                         startPoint: .leading, endPoint: .trailing))
