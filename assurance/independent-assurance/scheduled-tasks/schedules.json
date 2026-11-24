@@ -1,0 +1,39 @@
+{
+  "time_zone": "Australia/Sydney",
+  "notes": "Fresh session per run, in the OIA project's cloud environment, push notification to the sponsor on finish. Days and times never overlap; every run also takes the OIA lock. Runs read evidence and write only to /mnt/project-files/oia/.",
+  "tasks": [
+    {
+      "name": "OIA weekly assurance review",
+      "cron": "CRON_TZ=Australia/Sydney 43 18 * * 1",
+      "enabled_at_setup": true,
+      "command": "/independent-assurance:audit weekly",
+      "guard": "No baseline report yet: run health only and stop.",
+      "budget": "One session; at most 15 sampled items per area."
+    },
+    {
+      "name": "OIA monthly maturity assessment",
+      "cron": "CRON_TZ=Australia/Sydney 17 19 3 * *",
+      "enabled_at_setup": true,
+      "command": "/independent-assurance:maturity",
+      "guard": "No baseline yet: stop. Weekly lock held: stop and report the clash.",
+      "budget": "One session; reuse weekly snapshots."
+    },
+    {
+      "name": "OIA corrective action verification",
+      "cron": "CRON_TZ=Australia/Sydney 29 18 * * 4",
+      "enabled_at_setup": true,
+      "command": "/independent-assurance:follow-up",
+      "guard": "Nothing due: ledger entry only, no report.",
+      "budget": "One session; only findings whose due or sustainment date has passed."
+    },
+    {
+      "name": "OIA behavioural challenge (design only)",
+      "cron": "CRON_TZ=Australia/Sydney 11 19 17 * *",
+      "enabled_at_setup": false,
+      "command": "/independent-assurance:challenge design",
+      "guard": "Design and seal only. Launch needs the sponsor's approval of that specific challenge.",
+      "budget": "One session; one challenge a month.",
+      "activation": "Sponsor enables after the baseline report."
+    }
+  ]
+}
