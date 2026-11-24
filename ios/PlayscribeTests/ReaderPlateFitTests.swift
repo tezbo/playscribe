@@ -35,8 +35,9 @@ struct ReaderPlateFitTests {
     /// is cut before the headline, and the type cap only ever tightens.
     @Test func levelsKeepEveryLineAndCutTheTitleFirst() {
         let levels = ReaderPlateFit.levels
-        #expect(levels.first == .init(titleLines: nil, subtitleLines: 2, typeCap: .accessibility5))
-        for l in levels { #expect((l.titleLines ?? 1) >= 1); #expect(l.subtitleLines >= 1) }
+        // Level 0 is the plate as it was before the fit (the pose's own caps), so a plate that fits never changes.
+        #expect(levels.first == .init(titleLines: nil, subtitleLines: nil, typeCap: .accessibility5))
+        for l in levels { #expect((l.titleLines ?? 1) >= 1); #expect((l.subtitleLines ?? 1) >= 1) }
         let firstTitleCut = levels.firstIndex { $0.titleLines == 1 }!
         let firstHeadlineCut = levels.firstIndex { $0.subtitleLines == 1 }!
         #expect(firstTitleCut < firstHeadlineCut)

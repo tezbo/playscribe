@@ -287,7 +287,7 @@ struct TabletopReaderStage: View {
                 // in every pose). The stage takes no touches, so it cannot scroll. VoiceOver and the full text keep everything.
                 let fit = ReaderPlateFit.levels[min(plateLevel, ReaderPlateFit.levels.count - 1)]
                 readerPlate(section, release: release, titleLines: fit.titleLines ?? (typeSize.isAccessibilitySize ? 2 : 4),
-                            subtitleLines: fit.subtitleLines)
+                            subtitleLines: fit.subtitleLines ?? (typeSize.isAccessibilitySize ? 1 : 2))
                     .dynamicTypeSize(...fit.typeCap)
                     .fixedSize(horizontal: false, vertical: true)
                     // Keyed on the level too, so a step that leaves the height unchanged (a title already on one line) is
@@ -439,17 +439,17 @@ struct StageTrailerTile: View {
 /// text size is capped. Pure, so the stepping is unit-tested (ReaderPlateFitTests); the heights come from the drawn plate.
 nonisolated enum ReaderPlateFit {
     nonisolated struct Level: Equatable, Sendable {
-        /// nil: the pose's own title cap (2 lines at accessibility sizes, else 4).
+        /// nil: the pose's own cap (title 2 lines at accessibility sizes, else 4; headline 1, else 2).
         var titleLines: Int?
-        var subtitleLines: Int
+        var subtitleLines: Int?
         var typeCap: DynamicTypeSize
     }
 
     nonisolated struct Measure: Equatable, Sendable { var level: Int; var height: CGFloat }
 
     static let levels: [Level] = [
-        Level(titleLines: nil, subtitleLines: 2, typeCap: .accessibility5),
-        Level(titleLines: 1, subtitleLines: 2, typeCap: .accessibility5),
+        Level(titleLines: nil, subtitleLines: nil, typeCap: .accessibility5),
+        Level(titleLines: 1, subtitleLines: nil, typeCap: .accessibility5),
         Level(titleLines: 1, subtitleLines: 1, typeCap: .accessibility5),
         Level(titleLines: 1, subtitleLines: 1, typeCap: .accessibility3),
         Level(titleLines: 1, subtitleLines: 1, typeCap: .accessibility1),
