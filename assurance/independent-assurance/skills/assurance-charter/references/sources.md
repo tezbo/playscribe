@@ -24,5 +24,5 @@ platform. See `independence.md`.
 
 ## Secrets
 
-Transcripts can contain secrets pasted by people (an API key was found in a team transcript on 2026-11-24). Redact
+Transcripts can contain secrets pasted by people. Redact
 before snapshot and raise a finding with the location (session id, event uuid or message id), never the value.

@@ -24,6 +24,12 @@ For each leader (Coordinator, Product Owner, engineering lead, design lead, QA l
 5. **Candour**: did reports to the sponsor disclose failures, limits and unsupported items, or round them up?
 6. **Accountability for others**: did they detect and correct non-compliance in their area before the sponsor did?
 
+7. **Minimum effective intervention** (Coordinator, Product Owner): did each assignment get the smallest suitable
+   set of agents, context and verification for its complexity and risk? Look for duplicated investigation,
+   multidisciplinary participation without a purpose, coordination substituting for work, scope growth without
+   value, and missing acceptance criteria or stopping conditions. Credit proportionate governance that differs by
+   risk.
+
 Rate each area: Accountable / Partly / Not accountable / Not assessable, with evidence refs. Raise findings for
 "Not accountable". A leader cannot be rated Accountable on a directive whose critical requirement is unmet.
 Output: `20-working-papers/<engagement>/leadership.md`.

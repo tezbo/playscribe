@@ -1,12 +1,12 @@
 ---
 name: baseline
 description: >
-  Run the first full independent baseline assessment of the team before any improvement. Use for
+  Run the initial integrated engagement (directives, autonomous testing, multidisciplinary competency, execution efficacy and resource efficiency together) to set the baseline before any improvement. Use for
   "/independent-assurance:baseline", "establish the baseline", "baseline assurance review".
 argument-hint: "[period-start YYYY-MM-DD] [period-end YYYY-MM-DD]"
 disable-model-invocation: true
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
 ---
 
 # /independent-assurance:baseline
@@ -25,10 +25,15 @@ Load `assurance-charter` first. Run only after bootstrap is HEALTHY and the spon
 Steps
 1. `oia.py lock acquire --name baseline --ttl-min 480`.
 2. Plan: write `20-working-papers/BL-<date>/plan.md` (areas, questions, samples, seeds, demonstrations).
-3. `evidence-collection` for the period.
-4. Areas: `directive-compliance`, `cloud-ios-testing-assurance`, `multidisciplinary-qa`,
-   `leadership-accountability`, `agent-competency` (historical evidence for every agent; demonstrations only for
-   gaps), Agent Resources (with `independent-second-marker`), `organisational-maturity`.
-5. `root-cause-analysis` for each critical and major finding; propose CAs (`corrective-actions`).
-6. `evidence-integrity`, then `sponsor-reporting`.
+3. `evidence` for the period.
+4. One evidence collection feeds every area (no separate audits): `directive-compliance` (the sponsor's directives
+   retrieved in full), `cloud-ios-testing-assurance`, `multidisciplinary-qa`, `leadership-accountability` (incl.
+   minimum effective intervention), `capability-and-competency` (check what was already demonstrated before asking;
+   demonstrations only for gaps, through the courier route), `resource-efficiency` (telemetry baseline, sampled
+   execution efficacy, context overhead), Agent Resources with `independent-second-marker`, and
+   `organisational-maturity` (critical gates first).
+4a. At least one bounded behavioural challenge through ordinary team operations (`behavioural-challenge`), launched
+   only with the sponsor's approval of that specific challenge.
+5. `findings-and-actions` for each critical and major finding; propose CAs (`findings-and-actions`).
+6. `evidence`, then `sponsor-reporting`.
 7. Release the lock. Do not share findings with the team until the sponsor has the report.

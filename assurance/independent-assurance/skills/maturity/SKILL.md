@@ -1,11 +1,12 @@
 ---
 name: maturity
 description: >
-  Run the monthly comprehensive organisational maturity assessment. Use for "/independent-assurance:maturity",
+  Run a deep maturity and performance assessment, monthly only where justified or when the sponsor asks (the weekly review covers routine monitoring). Use for "/independent-assurance:maturity",
   "monthly maturity assessment", "how mature is the team now".
 argument-hint: "[YYYY-MM]"
+disable-model-invocation: true
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
 ---
 
 # /independent-assurance:maturity

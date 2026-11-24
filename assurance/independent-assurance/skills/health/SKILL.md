@@ -5,8 +5,9 @@ description: >
   scheduled tasks and access boundaries. Use for "/independent-assurance:health", "is the assurance office
   healthy", "check the assurance setup".
 argument-hint: "[--boundaries]"
+disable-model-invocation: true
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
 ---
 
 # /independent-assurance:health

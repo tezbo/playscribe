@@ -11,7 +11,7 @@ description: |
   Repeated failure needs an evidence-based causal analysis.
   </commentary>
   </example>
-model: inherit
+model: sonnet
 color: green
 tools: ["Read", "Grep", "Glob", "Bash"]
 ---

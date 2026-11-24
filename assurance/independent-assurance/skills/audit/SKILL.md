@@ -1,11 +1,12 @@
 ---
 name: audit
 description: >
-  Run a targeted or periodic assurance audit (for example the weekly assurance review). Use for
+  Run the combined weekly organisational review, or a targeted audit (resource efficiency, execution efficacy, context, a directive, a release). Use for
   "/independent-assurance:audit", "weekly assurance review", "audit the last week", "audit <topic>".
 argument-hint: "weekly | <topic> [since YYYY-MM-DD]"
+disable-model-invocation: true
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
 ---
 
 # /independent-assurance:audit
@@ -24,9 +25,12 @@ Load `assurance-charter` first.
 Guard: if no baseline report exists in `80-reports/`, do not assess: run `health`, tell the sponsor the baseline is
 pending, and stop.
 
-Weekly areas: recent development activity (commits, PRs, releases); directive adherence (changed or due
-requirements only); testing evidence (`cloud-ios-testing-assurance`, sampled); leadership accountability (events in
-the week); agent participation (which agents acted, idled, or were absent; roster changes); emerging capability gaps;
-status of open corrective actions (claims only; verification is `follow-up`).
+Weekly = one combined, incremental organisational review (one run, one evidence pass, delta since the last run):
+verified outcomes and development activity; directive adherence (changed or due requirements only); testing evidence
+(sampled, `cloud-ios-testing-assurance`); leadership and orchestration events; agent participation and roster
+changes; capability and competency changes; resource consumption and trends (`resource-efficiency`, measured where
+available); corrective actions due (`follow-up` steps, `findings-and-actions`); the office's own overhead. The first
+weekly run of each month goes deeper only where the evidence warrants it (anomalies, significant change, a failed
+gate); otherwise it notes that no deep review was needed.
 
 Steps: lock (`--name weekly`), collect, assess, findings, integrity, report, release lock.

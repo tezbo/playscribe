@@ -15,17 +15,21 @@ Load `assurance-charter` first.
 - Addressed to Terry only, from Gabrielle (Office of Independent Assurance). Not sent via the Coordinator or PO.
 - Lead with the conclusion and the critical findings. Critical findings each get their own line, never folded into
   a score.
-- Every claim traceable (`evidence-integrity` traceability sample done). Distinguish historical evidence from
+- Every claim traceable (`evidence` traceability sample done). Distinguish historical evidence from
   assessment-generated evidence.
 - State limitations of the engagement: unreachable sources, unsupported checks, procedural-only controls, and the
   conflict of interest on Agent Resources with the second marker's result.
 - Short: the message to Terry is under 200 words; the full report is a file.
 
-## Structure of the report file (`80-reports/<engagement>-v<n>.md`)
-1. Conclusion (three sentences). 2. Critical findings. 3. Findings table (id, severity, title, owner, evidence).
-4. Scores (if any) with caps applied and lowest dimension shown. 5. Corrective action status. 6. Limitations and
-independence statement. 7. Evidence index (snapshot ids, ledger range). 8. Integrity: `oia.py verify` verdict and
-ledger head hash (anchor).
+## Combined organisational report (`80-reports/<engagement>-v<n>.md`)
+1. Conclusion (three sentences). 2. Failed critical gates and critical findings. 3. Verified outcomes.
+4. Capability and competency changes. 5. Material findings (evidence, root cause, severity, owner, corrective action,
+acceptance criteria). 6. Resource consumption and trends, avoidable overhead (each number labelled measured,
+estimate with method and confidence, proxy or unavailable). 7. Quality and efficacy outcomes. 8. Organisational
+learning. 9. Corrective actions and their verified effects. 10. The office's own overhead (sessions, tokens where
+measured, scheduled runs, reports). 11. Decisions required, each with a recommended default. 12. Limitations and
+independence. 13. Evidence index and integrity (`oia.py verify` verdict, ledger head hash).
+Times in Melbourne local time. Keep working papers out of the report; link them.
 
 ## Delivery
 1. `oia.py record --area report` (never overwrite an issued report).

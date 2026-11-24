@@ -11,7 +11,7 @@ description: |
   Independent specialist view on design and CX participation.
   </commentary>
   </example>
-model: inherit
+model: sonnet
 color: magenta
 tools: ["Read", "Grep", "Glob", "WebFetch"]
 ---

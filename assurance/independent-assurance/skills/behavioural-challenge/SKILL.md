@@ -30,8 +30,14 @@ Deliver the assignment the way the sponsor normally would (the sponsor posts it,
 intake agent with the sponsor's approval quoted). Do not reveal it is a challenge until assessment ends.
 
 ## Observe and assess
-Collect the response from transcripts, board, PRs and CI (`evidence-collection`). Rate each principle: Applied
+Collect the response from transcripts, board, PRs and CI (`evidence`). Rate each principle: Applied
 unprompted / Applied after reminder / Not applied / Not applicable, with evidence. Count reminders from anyone.
+
+## Isolated regression challenge (only with the sponsor's explicit authorisation)
+To test whether quality controls catch a known defect: put the defect on an isolated, clearly named branch that no
+release, TestFlight or deployment workflow builds from, run the existing checks there, record what they caught, and
+delete nothing from main or release branches. Never introduce a defect into production, release branches or
+anything that triggers a deployment.
 
 ## Close
 Tell the team it was a challenge and share the results (after the report to the sponsor). Never leave a challenge

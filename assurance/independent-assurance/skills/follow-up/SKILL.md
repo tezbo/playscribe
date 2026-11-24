@@ -4,13 +4,14 @@ description: >
   Independently verify corrective actions and whether improvements are sustained. Use for
   "/independent-assurance:follow-up", "verify the corrective actions", "check if findings were fixed".
 argument-hint: "[finding id …]"
+disable-model-invocation: true
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
 ---
 
 # /independent-assurance:follow-up
 
-Load `assurance-charter` and `corrective-actions`.
+Load `assurance-charter` and `findings-and-actions`.
 
 | Contract | |
 |---|---|

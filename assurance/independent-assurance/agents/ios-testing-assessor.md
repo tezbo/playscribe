@@ -11,7 +11,7 @@ description: |
   Specialist corroboration of a technical testing judgement.
   </commentary>
   </example>
-model: inherit
+model: sonnet
 color: cyan
 tools: ["Read", "Grep", "Glob", "Bash", "WebFetch"]
 ---

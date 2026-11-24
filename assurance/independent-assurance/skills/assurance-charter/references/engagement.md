@@ -30,13 +30,26 @@ the sponsor-approved courier route below.
 Limits: a session that is archived or compacted may not hold the context the question assumes; a reply is the
 agent's statement (assertion) unless it points to artefacts; Terry's own thread posts are not reachable this way.
 
-## A2. Courier route for team agents (while cross-project messages are refused)
+## A2. The office interface (chosen by the sponsor, 24 Nov 2026)
 
-A thread in the team project that acts only as OIA's courier: it receives an OIA brief pasted by the sponsor or
-created by the team project's coordinator on the sponsor's instruction, forwards it with `send_message` to the
-named agent, and forwards replies back. It holds no records and draws no conclusions; OIA verifies every reply
-against the agent's own transcript (`list_events`), which OIA can read directly. Its existence is visible to the
-team Coordinator; its content is not directed by the Coordinator. Needs the sponsor's decision.
+Two parts, both on infrastructure the team already uses:
+
+1. **Desk**: the `oia_desk` collection in the team sprint board's database (board URL in the registry). Each
+   document: `id` (`req-YYYYMMDD-nn`), `from`, `to`, `type` (capability-request, skills-request,
+   competency-assignment, evidence-request, lesson, improvement-proposal, corrective-action, engagement),
+   `title`, `body`, `status` (open, accepted, answered, closed), `response`, `links`, `createdAt`, `updatedAt`,
+   `shared: true`. Readable and writable by any session on the sponsor's account, in either project. **Only shared
+   information goes on the desk**: never findings in draft, individual assessments, challenge designs or sponsor
+   communications. Team agents may file requests to the office here too.
+2. **Courier thread** in the team project (opened by the team coordinator on the sponsor's instruction). It checks
+   the desk on a light schedule, forwards each open request addressed to a team agent with `send_message`, and
+   writes the agent's reply into `response`. It holds no records, draws no conclusions and takes no direction from
+   the Coordinator on content. Its own transcript and the target agent's transcript are read by the office directly
+   (`list_events`) to confirm delivery and that the reply is the agent's own.
+
+Behavioural challenges are not sent through the desk (that would announce them); they go through ordinary intake
+with the sponsor's approval. Verified 24 Nov: office write to the desk and read-back at viewer level work across
+projects; team pickup depends on the courier thread.
 
 ## B. Instantiating an agent from a role definition (a stand-in)
 

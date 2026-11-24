@@ -6,7 +6,7 @@ description: >
 argument-hint: "design | launch CH-<id> | assess CH-<id>"
 disable-model-invocation: true
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
 ---
 
 # /independent-assurance:challenge

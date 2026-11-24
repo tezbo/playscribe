@@ -18,7 +18,7 @@ Load `assurance-charter` first.
    from `AGENTS.md` with their dated attribution ("Terry, 2026-11-06"). Snapshot the register when it changes.
 2. **Define the test for each requirement** before looking at evidence: what artefact would show compliance, what
    would show breach, and what period applies. Write it in the working paper.
-3. **Collect evidence** with `evidence-collection`. Prefer system-of-record artefacts: CI runs, commits, transcript
+3. **Collect evidence** with `evidence`. Prefer system-of-record artefacts: CI runs, commits, transcript
    events, board rows. Treat status posts as assertions.
 4. **Rate each requirement**: COMPLIANT (evidence level 1 to 2), PARTIAL (some instances, gaps cited), NON-COMPLIANT
    (counter-evidence cited), NOT YET DUE (deadline not reached), NOT ASSESSABLE (evidence unreachable: say which and

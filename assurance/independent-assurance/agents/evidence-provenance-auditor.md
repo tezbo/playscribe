@@ -11,7 +11,7 @@ description: |
   Critical claims need a second, independent trace before reporting.
   </commentary>
   </example>
-model: inherit
+model: sonnet
 color: yellow
 tools: ["Read", "Grep", "Glob", "Bash"]
 ---

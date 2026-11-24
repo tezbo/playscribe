@@ -11,7 +11,7 @@ description: |
   Conflict of interest requires independent corroboration.
   </commentary>
   </example>
-model: inherit
+model: sonnet
 color: red
 tools: ["Read", "Grep", "Glob"]
 ---

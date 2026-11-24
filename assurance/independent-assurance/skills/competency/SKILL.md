@@ -4,13 +4,14 @@ description: >
   Assess one agent's practical competency, optionally with a live demonstration. Use for
   "/independent-assurance:competency <agent>", "assess <agent>'s competency".
 argument-hint: "<agent name> [competency …] [--demo]"
+disable-model-invocation: true
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
 ---
 
 # /independent-assurance:competency
 
-Load `assurance-charter` and `agent-competency`.
+Load `assurance-charter` and `capability-and-competency`.
 
 | Contract | |
 |---|---|
