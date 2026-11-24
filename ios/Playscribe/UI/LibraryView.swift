@@ -237,6 +237,13 @@ struct LibraryShelf: View {
     /// Closed landscape (container wider than tall): the compact first screen.
     private var closedWide: Bool { duo.pose == .closed && duo.isLandscape }
 
+    /// The one exception to one order in every pose (docs/ux-acceptance.md B-12, Nadia 24 Nov): at accessibility sizes in Closed
+    /// (portrait and landscape) and Tabletop the filter chips follow the tiles, so a game is on the first screen. Nothing else moves.
+    static func chipsFollowTiles(pose: Pose, accessibilitySize: Bool) -> Bool {
+        accessibilitySize && (pose == .closed || pose == .tabletop)
+    }
+    private var chipsAfterTiles: Bool { Self.chipsFollowTiles(pose: duo.pose, accessibilitySize: typeSize.isAccessibilitySize) }
+
     /// Book with any recent update: the hero carousel takes the right page's top; the left page keeps the controls, chips and grid.
     private var heroOnRightPage: Bool {
         // No recent update: the caught-up card takes the hero's place, so the two pages flow the same way (Iris, 41f0310).
@@ -544,7 +551,7 @@ struct LibraryShelf: View {
                     }
                     .stepsAside(closedSearchCollapse)
                 }
-                if !heroOnRightPage && duo.pose != .tabletop && !(closedWide && typeSize.isAccessibilitySize) && all.count >= 2 && layout == .tiles {
+                if !heroOnRightPage && duo.pose != .tabletop && !chipsAfterTiles && all.count >= 2 && layout == .tiles {
                     // TT-0: in the book pose the chip row stays on the left page.
                     // TT-0: in the book pose the chip row is exactly the left page wide, clipped, so its
                     // accessibility frame never reaches the fold either.
@@ -591,10 +598,11 @@ struct LibraryShelf: View {
                     .id(poseKey)
                     .namedFrame("libraryGames")
                 }
-                // Closed landscape at accessibility sizes takes the Tabletop rule: in 466 pt of height the four pills above the tiles
-                // filled the first screen and no game showed until a scroll (bug-closed-landscape-ax5-no-games, cloud run db9f478).
-                // Switch and search, then the tiles, then the chips; no chip is dropped, and the deck keeps its place after them.
-                if (duo.pose == .tabletop || closedWide) && all.count >= 2 && layout == .tiles && typeSize.isAccessibilitySize {
+                // Closed at accessibility sizes takes the Tabletop rule (B-12): in Closed landscape the four pills above the tiles
+                // filled the first screen and no game showed until a scroll (bug-closed-landscape-ax5-no-games, cloud run db9f478),
+                // and in Closed portrait at AX5 the deck and the pills did the same (Quinn on #635). The tiles, then the chips; no
+                // chip is dropped, and nothing else moves.
+                if chipsAfterTiles && all.count >= 2 && layout == .tiles {
                     FilterBar().frame(maxWidth: .infinity, alignment: .leading).id(poseKey)
                 }
                 // One order in every pose (Terry, 19 Nov): the alerts, catch-up and PS Plus cards always follow the tiles,
@@ -757,6 +765,11 @@ struct FilterBar: View {
     }
 
     var body: some View {
+        // Its frame is reported (audit builds only) so the harness can hold the Library's block order to B-12.
+        bar.namedFrame("libraryChips")
+    }
+
+    @ViewBuilder private var bar: some View {
         let rows = model.libraryRows
         if typeSize.isAccessibilitySize {
             // Accessibility sizes (r060-filter-pills-grid-ax5, Iris): two pills a row, so all four show in half the height, each
