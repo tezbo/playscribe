@@ -99,7 +99,7 @@ extension AppModel {
             out.append(ReaderSection(id: "fixes", title: "Fixes", body: body))
         }
         var facts = ["Status: Released",
-                     "PS5 version: " + (r.ps5Version ?? "not published yet")]
+                     "PS5 version: " + (r.ps5Version.map { PS5StatusLines.isReportedBuild(r) ? "reported as \($0)" : $0 } ?? "not published yet")]
         if let size = r.ps5?.sizeBytes {
             facts.append("Download: " + ByteCountFormatter.string(fromByteCount: size.value, countStyle: .decimal) + (size.verification == .reported ? " (reported)" : ""))
         }
@@ -190,9 +190,18 @@ struct TabletopReaderStage: View {
                 let status = PS5StatusLines(r)
                 Group {
                     if typeSize.isAccessibilitySize {
-                        HStack(spacing: 12) {
-                            Text(status.primary).font(PlayscribeFont.subheadline.weight(.semibold))
-                            if status.version != nil, let n = r.ps5Version { Text(n.keepingVersionsTogether).font(PlayscribeFont.subheadline).monospacedDigit() }
+                        // A reported build is longer ("Reported as 01.006.000", Iris on #619): it drops below the status rather
+                        // than being cut. Each line stays one line.
+                        let chip = status.version != nil ? PS5StatusLines.buildChip(r) : nil
+                        ViewThatFits(in: .horizontal) {
+                            HStack(spacing: 12) {
+                                Text(status.primary).font(PlayscribeFont.subheadline.weight(.semibold))
+                                if let n = chip { Text(n.keepingVersionsTogether).font(PlayscribeFont.subheadline).monospacedDigit() }
+                            }
+                            VStack(alignment: .leading, spacing: 2) {
+                                Text(status.primary).font(PlayscribeFont.subheadline.weight(.semibold))
+                                if let n = chip { Text(n.keepingVersionsTogether).font(PlayscribeFont.subheadline).monospacedDigit() }
+                            }
                         }
                         .lineLimit(1)
                         .dynamicTypeSize(...DynamicTypeSize.accessibility3)

@@ -357,7 +357,8 @@ struct FrontCoverPlate: View {
         if let r = card.release {
             // "Out on PS5", then the PS5 version as its own chip, only when the PS5 row has one (Card B, no dot separators).
             list.append(("Out on PS5", true))
-            if let v = r.ps5Version { list.append((v, false)) }
+            // A build-list number says "Reported as 01.006.000" (Iris on #619); an official one stays bare.
+            if let v = PS5StatusLines.buildChip(r) { list.append((v, false)) }
             // The day is in the eyebrow (Iris, 19 Nov).
             let n = r.noteCount
             if n > 0 { list.append((n == 1 ? "1 change" : "\(n) changes", false)) }
