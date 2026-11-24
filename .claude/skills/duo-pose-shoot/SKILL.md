@@ -12,7 +12,8 @@ A shoot is **evidence of what rendered**. It is not a sign-off. A matrix row is 
 ## Before you start
 
 1. The workflow is `.github/workflows/duo-poses.yml` ("Duo poses (real hinge)") with `ios/tools/qa/duo-ci-poses.sh`. At 24 Nov it lives on engineering's branch `claude/project-thread-2cqf9d`, not main. If `git ls-tree origin/main .github/workflows/duo-poses.yml` shows nothing, say so and ask engineering to merge it. Do not fake a shoot.
-2. Pick the route. Default `library/playing`. Others: `gamepage/dawnwalker`, `two-update`, `many-updates`, `release/<game>/<release>`; any `-qaRoute` in `CLAUDE.md` except one that opens Settings.
+2. `duo-poses.yml` takes only `route`. AX5, appearance and recording inputs exist only in the separate "Duo scenarios (real hinge)" workflow (scenarios continuity, trailer, closedax5, schemes, video). Treat those as unverified until its run on #634 lands, then update this skill.
+3. Pick the route. Default `library/playing`. Others: `gamepage/dawnwalker`, `two-update`, `many-updates`, `release/<game>/<release>`; any `-qaRoute` in `CLAUDE.md` except one that opens Settings.
 
 ## Shoot
 
@@ -32,4 +33,4 @@ A shoot is **evidence of what rendered**. It is not a sign-off. A matrix row is 
 
 ## Competency check (run it, do not read it)
 
-Pass means a posted shoot, in your own thread, that names the SHA and route, links the run or artifact, and gives one observation per pose from the images. A manifest quoted without opening a still does not pass. Record the result in `docs/capability-register.md`.
+First proven by Quinn, 24 Nov (run 45481941098, SHA 49b078de, gamepage/dawnwalker). Pass means a posted shoot, in your own thread, that names the SHA and route, links the run or artifact, and gives one observation per pose from the images. A manifest quoted without opening a still does not pass. Record the result in `docs/capability-register.md`.

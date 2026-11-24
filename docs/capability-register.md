@@ -32,7 +32,7 @@ Columns: **A** launch the app on a Duo simulator; **B** set a pose or hinge angl
 |---|---|---|---|---|---|---|---|
 | Theo, senior iOS engineer | n/e | n/e | DOCUMENTED | DOCUMENTED | n/e | DOCUMENTED | Cloud thread, no Xcode (`ax3-layout-check`). Owns the workflows that produce stills but has not been shown requesting and reading them. Gap: has not run a pose-stills request end to end by evidence in this audit. |
 | Max, iOS engineer | n/e | n/e | DOCUMENTED | DOCUMENTED | n/e | DOCUMENTED | Cloud thread, no Xcode. Builds against harness and `precheck-loop`. Same gap as Theo. |
-| Quinn, QA lead | n/e | n/e | n/e | n/e | PROVEN | n/e | Signs from stills (sampled stage-copy contrast at 4.8:1 from a rendered still, #493 thread, 13 Nov). Does not shoot; depends on Ollie's stills. Gap: cannot get a still she asks for without the Mac. |
+| Quinn, QA lead | PROVEN | PROVEN | PROVEN | PROVEN | PROVEN | n/e | 24 Nov: dispatched "Duo poses (real hinge)" herself (run 45481941098, SHA 49b078de, route gamepage/dawnwalker), opened a still and tree for every pose and posted the pose lines and observations in her thread. Copy: `/mnt/project-files/qa/cloud-duo-qa/sim-use-poses-quinn-gamepage-49b078de/`. Before that: signs from stills (stage-copy contrast 4.8:1, #493 thread, 13 Nov). Gap: no repeatable UI test run (F). The workflow sets the poses; she chose the route, not the angles. |
 | Iris, design manager | n/e | n/e | n/e | n/e | PROVEN, with a gap | n/e | Reviews and signs stills and screen-diff images, but told Terry on 13 Nov she used no design skill on the release header. Has never launched or folded the app. Gap: judges images handed to her; cannot look for herself. |
 | Ollie, Mac tester | PROVEN | PROVEN | PROVEN | DOCUMENTED | n/e | PROVEN | The only agent with a real simulator (stills at 1abc7fc, 91be6aa, c375d0f in project files). Single point of failure: one Mac, serial. |
 | Nadia, product owner | n/e | n/e | n/e | n/e | n/e | n/e | Writes acceptance criteria and cards. No evidence she has looked at rendered output herself. Gap: cannot interrogate the evidence on her own. |
@@ -46,8 +46,8 @@ the initiative has to close. The cloud routes above are already built, so the fi
 | # | Gap | Owner | Action | Status | Due (AEDT) |
 |---|---|---|---|---|---|
 | G1 | Only Ollie can shoot real stills | Engineering (Build cloud-native iPhone Duo QA) | Prove sim-use or Limrun on a cloud runner; hand over a procedure | NOT TESTED | set by engineering |
-| G2 | Nobody outside the Mac has run the CI stills routes by evidence | Agent Resources | Ask Quinn and Iris each to request one harness still and post it; record in the table | Open | after this PR merges |
-| G3 | No team skill for simulator testing | Agent Resources | Write `duo-sim-qa` from engineering's proven procedure, not before | Waiting on G1 | after G1 |
+| G2 | Nobody outside the Mac has run the CI stills routes by evidence | Agent Resources | Quinn done 24 Nov (see audit table). Iris next, then Theo, Nadia, Jun | Quinn closed; Iris open | after Iris posts |
+| G3 | No team skill for simulator testing | Agent Resources | `duo-pose-shoot` written from engineering's proven procedure (PR #630) | Written; proven by Quinn's run | AX5, appearance and recording inputs to fold in once the scenarios run lands |
 | G4 | Design review without design skill | Agent Resources, Iris | Iris names `design:design-critique` and `design:ux-copy` in each design reply | Asked 13 Nov; use not verified | next design reply |
 | G5 | Nadia and Jun cannot see rendered output | Agent Resources, Nadia | Give each the same request-a-still exercise; Jun reads TestFlight builds on device | Open | after G2 |
 | G6 | Xcode MCP approval and first `BuildProject` | Terry's Mac, Ollie | Not a cloud matter; leave until the cloud route is chosen | Parked | n/a |
