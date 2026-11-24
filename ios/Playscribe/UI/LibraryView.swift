@@ -805,7 +805,8 @@ struct ContinueText: View {
                     .font(PlayscribeFont.caption)
                     .tracking(12 * 0.08)
                     .foregroundStyle(PlayscribeRole.action)
-                if fresh, let v = release.versionChip {
+                // The line below names the update ("Patch 1.2 is here."), so no chip repeats its number.
+                if fresh, let v = release.versionChip(beside: release.displayName) {
                     Text(v.keepingVersionsTogether)
                         .font(PlayscribeFont.caption)
                         .monospacedDigit()
@@ -831,13 +832,19 @@ extension Release {
         return "v" + token
     }
 
-    /// The deck's chip: none when the card's own headline already names the version ("Update 1.2" over a "v1.2" chip said
-    /// it twice; Iris, taste note on #610). A PS5 headline that doesn't carry the number keeps the chip.
-    var deckVersionChip: String? {
+    /// The version chip beside a title: none when the title already names that version, whatever its word ("Update 1.2",
+    /// "Patch 1.0302256", "Hotfix 2.1"): the chip said it twice (Iris, taste notes on #610 and #622). A title that doesn't
+    /// carry the number ("Respec with Draught of Mind Rebirth…") keeps the chip.
+    func versionChip(beside title: String) -> String? {
         guard let v = versionChip else { return nil }
-        let headline = ps5Headline ?? displayName
-        return headline.split(separator: " ").contains { $0 == v.dropFirst() } ? nil : v
+        let number = v.dropFirst()
+        let words = title.replacingOccurrences(of: "\u{2060}", with: "").split(whereSeparator: { $0 == " " || $0 == "\u{00A0}" })
+        // Outer punctuation only ("1.2." at a sentence end, "(1.2)"); the dots inside the number stay.
+        return words.contains { $0.trimmingCharacters(in: .punctuationCharacters) == number } ? nil : v
     }
+
+    /// The deck's chip, beside the card's own headline.
+    var deckVersionChip: String? { versionChip(beside: ps5Headline ?? displayName) }
 }
 
 /// The framed key art: continuous 14 pt top corners, a bottom edge that dips 16 pt to the centre
