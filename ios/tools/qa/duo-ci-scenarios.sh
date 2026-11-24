@@ -23,6 +23,8 @@ scroll_end() { # fromX,fromY toX,toY label
     [ "$cur" = "$prev" ] && break; prev=$cur
   done
   echo "scroll end ($3): $i swipes; $(sim-use ui --device "$UDID" 2>&1 | grep -o 'qa-page[^"]*' | head -1)"; }
+# qa-page offset and the first three visible rows (id and label) after each step, for position-loss checks (row 8).
+state() { echo "state $1: $(sim-use ui --device "$UDID" 2>/dev/null | grep -o 'qa-page: [^"]*' | head -1) | first rows: $(sim-use ui --device "$UDID" 2>/dev/null | grep -E '^ +@[0-9]+ +(Button|Cell|StaticText|Heading) ' | grep -vE 'qa-|poseProbe|foldAudit|libraryDuo' | head -3 | cut -c1-90 | tr '\n' ';')"; }
 snap() { # scenario step
   local d; d=$(did); local n; [ "$d" = 3 ] && n=inner || n=outer
   local f="$OUT/$SHA-$1-$2-$n"
@@ -47,6 +49,25 @@ closedax5) # row 1: Closed outer landscape at AX5
   scroll_end 339,380 339,60 landscape; snap closedax5 1b-closed-landscape-ax5-scrolled-end
   launch -qaRoute library/playing -UIPreferredContentSizeCategoryName $AX5; snap closedax5 2-closed-portrait-ax5
   scroll_end 233,560 233,120 portrait; snap closedax5 2b-closed-portrait-ax5-scrolled-end ;;
+continuity3) # row 8 repeat x3: scrolled Closed, fold flat, fold closed; position logged each step
+  for run in 1 2 3; do
+    launch -qaRoute gamepage/dawnwalker -qaOverlay YES
+    sim-use swipe --from 233,520 --to 233,220 --duration 0.6 --device "$UDID" >/dev/null 2>&1; sleep 2; state "run$run closed-scrolled"
+    fold 180 portrait; state "run$run flat"; snap continuity3 run$run-flat
+    fold 0 portrait; state "run$run closed-again"; snap continuity3 run$run-closed-again
+  done ;;
+portraitfold) # row 8 variant: Closed portrait scrolled, open 180 portrait, close 0 portrait; no Tabletop step, no landscape
+  launch -qaRoute gamepage/dawnwalker -qaOverlay YES
+  sim-use swipe --from 233,520 --to 233,220 --duration 0.6 --device "$UDID" >/dev/null 2>&1; sleep 2; state closed-scrolled; snap portraitfold 1-closed-scrolled
+  fold 180 portrait; state open-180-portrait; snap portraitfold 2-open-180-portrait
+  fold 0 portrait; state closed-again; snap portraitfold 3-closed-again ;;
+ax5landscape) # row 1 repeat: alternate swipe origin, then try to reach "Turn on alerts" by label; trees before and after
+  launch -qaRoute library/playing -qaOrientation landscape -qaOverlay YES -UIPreferredContentSizeCategoryName $AX5
+  snap ax5landscape 1-before
+  for i in 1 2 3 4 5 6; do sim-use swipe --from 300,380 --to 300,100 --duration 0.5 --device "$UDID" >/dev/null 2>&1; done; sleep 2
+  snap ax5landscape 2-after-6-swipes
+  echo "tap by label: $(sim-use tap --label "Turn on alerts" --device "$UDID" 2>&1 | head -3)"; sleep 2
+  snap ax5landscape 3-after-label-tap ;;
 schemes) # dark and light for the pose set
   for ap in dark light; do
     launch -qaRoute library/playing -qaAppearance $ap -qaOverlay YES
