@@ -463,6 +463,8 @@ struct CoverLeaves: View {
         }
         .padding(.vertical, 12)
         .frame(width: 44)
+        // The VoiceOver element is the 44 pt column, not the dots' bounds (the deck indicator's #588 audit finding).
+        .contentShape(.accessibility, Rectangle())
         .background {
             if backed {
                 // The ink label on art (Iris, over-art-materials): 75%, as every label over art.

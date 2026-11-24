@@ -221,6 +221,9 @@ struct TabletopReaderStage: View {
                 .foregroundStyle(PlayscribeRole.textPrimary.opacity(0.92))
                 .accessibilityElement(children: .ignore)
                 .accessibilityLabel(status.spoken)
+                // Text, not "Other": the audit treats an untyped element as something to press and flagged this 18 pt line as a too-small
+                // hit area (Tabletop, d194c511). The 1 x 1 release title below passes for the same reason.
+                .accessibilityAddTraits(.isStaticText)
                 .accessibilityIdentifier("ps5Status")
             }
             // The release name for VoiceOver (and J-4). On the overview the title is the name itself, so this element is
