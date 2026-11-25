@@ -80,6 +80,8 @@ plusend) # bug-psplus-card-missing-cover-empty-grid + r060-psplus-compact-ax3: t
   # Each step logs the element type of every PS Plus title in the outline: each must be a Button (never a bare text element).
   # Rotation is set again after each fold (a fold can reset it), and the page is swiped until the last PS Plus title is in the
   # outline, then twice more to the end (an unchanged outline after one swipe is not the end: run 45541589244 stopped early).
+  # Swipes start clear of the tiles, rail and the bottom edge (run 45546236061: Tabletop from y 900 and Open landscape AX5 from
+  # the middle of the page never scrolled).
   pose() { sim-use ios fold "$1" --device "$UDID" >/dev/null 2>&1; sleep 4; sim-use ios rotate "$2" --device "$UDID" >/dev/null 2>&1; sleep 4; }
   to_plus() { # fromX,fromY toX,toY label
     local i k
@@ -94,9 +96,9 @@ plusend) # bug-psplus-card-missing-cover-empty-grid + r060-psplus-compact-ax3: t
     launch -qaRoute library/playing -qaOrientation landscape -UIPreferredContentSizeCategoryName $c
     to_plus 400,400 400,80 closed-landscape; plus $n-2-closed-landscape
     launch -qaRoute library/playing -UIPreferredContentSizeCategoryName $c
-    pose 180 landscape-left; to_plus 475,600 475,120 open-landscape; plus $n-3-open-landscape
+    pose 180 landscape-left; to_plus 200,560 200,140 open-landscape; plus $n-3-open-landscape
     pose 90 landscape-left; to_plus 700,600 700,120 book; plus $n-4-book
-    pose 90 portrait; to_plus 500,900 500,560 tabletop; plus $n-5-tabletop
+    pose 90 portrait; to_plus 450,800 450,520 tabletop; plus $n-5-tabletop
     pose 180 portrait; to_plus 500,850 500,150 open-portrait; plus $n-6-open-portrait
   done ;;
 schemes) # dark and light for the pose set
