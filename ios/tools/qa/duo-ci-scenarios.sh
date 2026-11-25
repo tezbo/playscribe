@@ -8,10 +8,12 @@ SHA=$(git rev-parse --short HEAD 2>/dev/null || echo nosha); B=co.codeconnectors
 AX5=UICTContentSizeCategoryAccessibilityXXXL
 # Rotate first, fold second, then check the active display matches the angle (inner for any open angle, outer for 0); redo once if not.
 fold() {
-  for try in 1 2; do
+  for try in 1 2 3; do
     sim-use ios rotate "${2:-portrait}" --device "$UDID" >/dev/null 2>&1; sim-use ios fold "$1" --device "$UDID" >/dev/null 2>&1; sleep 5
-    local d; d=$(did); { [ "$1" = 0 ] && [ "$d" = 1 ]; } || { [ "$1" != 0 ] && [ "$d" = 3 ]; } && return 0
-    echo "fold $1 ${2:-portrait}: active display $d is wrong, retry $try"
+    local d o; read -r d o <<<"$(sim-use ios fold --json --device "$UDID" 2>/dev/null | python3 -c 'import json,sys;a=json.load(sys.stdin)["data"]["posture"]["activeDisplay"];print(a["id"],a["orientation"])' 2>/dev/null || echo "1 ?")"
+    # inner display must also report the requested orientation (portrait above 0 deg is Tabletop below 140, landscape is Book)
+    { [ "$1" = 0 ] && [ "$d" = 1 ]; } || { [ "$1" != 0 ] && [ "$d" = 3 ] && [ "$o" = "${2:-portrait}" ]; } && return 0
+    echo "fold $1 ${2:-portrait}: display $d orientation $o is wrong, retry $try"
   done; }
 did() { sim-use ios fold --json --device "$UDID" 2>/dev/null | python3 -c 'import json,sys;print(json.load(sys.stdin)["data"]["posture"]["activeDisplay"]["id"])' 2>/dev/null || echo 1; }
 # Swipe until two consecutive outlines are identical (page cannot scroll further), up to 20 swipes; logs the final qa offset.
@@ -91,6 +93,14 @@ else: print("down")' "${H:-466}")
     else sim-use swipe --from 300,300 --to 300,150 --duration 0.5 --device "$UDID" >/dev/null 2>&1; fi; sleep 1
   done
   snap alertscard 2-alerts-card; echo "$ui" | grep -E "Turn on alerts|Not now" ;;
+tt) # Tabletop/Open shots with an assertion: TT_ROUTE, TT_STEPS ("angle:orientation ..."), TT_AX5 (yes|no); pose line and tree per step
+  extra=(); [ "${TT_AX5:-no}" = yes ] && extra=(-UIPreferredContentSizeCategoryName $AX5)
+  launch -qaRoute "${TT_ROUTE:-library/playing}" -qaOverlay YES "${extra[@]}"
+  for st in ${TT_STEPS:-90:portrait}; do
+    a=${st%%:*}; o=${st#*:}; fold "$a" "$o"
+    snap tt "a$a-$o-$([ "${TT_AX5:-no}" = yes ] && echo ax5 || echo std)-first"
+    if [ "$o" = portrait ]; then scroll_end 300,900 300,520 "a$a-$o"; else scroll_end 300,560 300,200 "a$a-$o"; fi; snap tt "a$a-$o-$([ "${TT_AX5:-no}" = yes ] && echo ax5 || echo std)-end"
+  done ;;
 schemes) # dark and light for the pose set
   for ap in dark light; do
     launch -qaRoute library/playing -qaAppearance $ap -qaOverlay YES

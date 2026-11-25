@@ -6,6 +6,9 @@ on:
   workflow_dispatch:
     inputs:
       scenarios: { description: 'continuity trailer closedax5 schemes video', default: 'continuity trailer closedax5 schemes video' }
+      tt_route: { description: 'tt scenario: -qaRoute', default: 'library/playing' }
+      tt_steps: { description: 'tt scenario: angle:orientation list', default: '90:portrait' }
+      tt_ax5: { description: 'tt scenario: yes for AX5', default: 'no' }
       app_ref: { description: 'Optional branch whose app source is built; the scripts stay from the dispatched ref', default: '' }
   push:
     branches: ['claude/**']
@@ -45,6 +48,9 @@ jobs:
           xcrun simctl install "$UDID" "$(ls -d build/dd/Build/Products/Debug-iphonesimulator/Playscribe.app)"
       - name: Run the scenarios
         env:
+          TT_ROUTE: ${{ inputs.tt_route }}
+          TT_STEPS: ${{ inputs.tt_steps }}
+          TT_AX5: ${{ inputs.tt_ax5 }}
           SCENARIOS: ${{ inputs.scenarios || 'continuity trailer closedax5 schemes video' }}
         run: |
           mkdir -p out
