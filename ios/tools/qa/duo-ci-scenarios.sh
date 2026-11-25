@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Quinn's five cloud runs on a booted, app-installed iPhone Duo (hosted runner or Mac). Needs sim-use.
-#   ios/tools/qa/duo-ci-scenarios.sh UDID OUTDIR [scenario ...]    (default: all)   scenarios: continuity trailer closedax5 schemes video
+#   ios/tools/qa/duo-ci-scenarios.sh UDID OUTDIR [scenario ...]    (default: all)   scenarios: continuity trailer closedax5 schemes video deckwide
 # Every step saves <sha>-<scenario>-<step>-<display>-shot.png and -ui.txt (outline with frames, ids and the pose line).
 set -uo pipefail
 UDID=$1; OUT=$2; shift 2; SCEN=${*:-continuity trailer closedax5 schemes video}
@@ -68,6 +68,14 @@ ax5landscape) # row 1 repeat: alternate swipe origin, then try to reach "Turn on
   snap ax5landscape 2-after-6-swipes
   echo "tap by label: $(sim-use tap --label "Turn on alerts" --device "$UDID" 2>&1 | head -3)"; sleep 2
   snap ax5landscape 3-after-label-tap ;;
+deckwide) # bug-deck-card-closed-landscape-ax5-dots-order: the deck card in Closed landscape std/AX3/AX5 and Closed portrait AX5
+  for ax in std:UICTContentSizeCategoryL AX3:UICTContentSizeCategoryAccessibilityL AX5:$AX5; do n=${ax%%:*}; c=${ax#*:}
+    launch -qaRoute library/playing -qaOrientation landscape -UIPreferredContentSizeCategoryName $c
+    snap deckwide 1-closed-landscape-$n
+    for k in 1 2 3 4 5 6 7 8; do sim-use swipe --from 233,300 --to 233,100 --device "$UDID" >/dev/null 2>&1; sleep 1
+      [ $((k % 2)) = 0 ] && snap deckwide 2-closed-landscape-$n-swipe$k; done
+  done
+  launch -qaRoute library/playing -UIPreferredContentSizeCategoryName $AX5; snap deckwide 3-closed-portrait-AX5 ;;
 schemes) # dark and light for the pose set
   for ap in dark light; do
     launch -qaRoute library/playing -qaAppearance $ap -qaOverlay YES
