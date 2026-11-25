@@ -14,8 +14,8 @@ import UIKit
 /// landscape); what this test forbids is a block that appears, vanishes or moves when only the text size changes.
 @MainActor
 struct LibraryOrderParityTests {
-    static let blocks = ["libraryChips", "libraryGames", "latestDeck", "libraryCards"]
-    static let poses = ["closed", "closedLandscape", "open", "openPortrait", "book", "tabletop"]
+    nonisolated static let blocks = ["libraryChips", "libraryGames", "latestDeck", "libraryCards"]
+    nonisolated static let poses = ["closed", "closedLandscape", "open", "openPortrait", "book", "tabletop"]
 
     private func order(_ r: Rendered) -> [String] {
         Self.blocks.compactMap { name in r.named[name].map { (name, $0) } }
