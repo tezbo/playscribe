@@ -1776,6 +1776,10 @@ final class AppModel {
     func applyQALaunch(route: String?, overlay: Bool) {
         guard BuildChannel.showsInternalTools else { return }
         if overlay { showDebugOverlay = true; FoldAuditSwitch.enabled = true }
+        // `-qaDemo YES`: start from the demo Library whatever an earlier launch saved, so a test that needs a game tracked (or
+        // not) never depends on the test before it. A retried first-run test (empty Library) left Book and Tabletop RailSetTests
+        // with no Status on the rail (ui run 45623755710, bug-ui-runner-terminate-flake).
+        if UserDefaults.standard.bool(forKey: "qaDemo") { resetDemo() }
         if let route, let url = URL(string: "playscribe://\(route)") { handle(url: url) }
     }
 
