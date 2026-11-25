@@ -395,6 +395,15 @@ struct FullBleedVideo: View {
                 }
                 FullScreenBands(controller: controller, title: title, picture: f, screen: full, safe: safe,
                                 division: division.map(toScreen), onExit: leave)
+                #if INTERNAL
+                // QA: what the frame math saw, for the cloud fullscreen scenario (the picture measured 522 x 294 in Closed
+                // landscape at dd0f09d where 672 x 378 was expected).
+                Color.clear.frame(width: 1, height: 1)
+                    .accessibilityElement()
+                    .accessibilityIdentifier("qaFullScreen")
+                    .accessibilityValue("geo=\(Int(geo.size.width))x\(Int(geo.size.height)) safe=\(Int(safe.top)),\(Int(safe.leading)),\(Int(safe.bottom)),\(Int(safe.trailing)) full=\(Int(full.width))x\(Int(full.height)) picture=\(Int(f.minX)),\(Int(f.minY)),\(Int(f.width))x\(Int(f.height)) occlusions=\(occlusions.count)")
+                    .offset(x: 2, y: 2)
+                #endif
             }
             .frame(width: full.width, height: full.height)
             .offset(x: -safe.leading, y: -safe.top)
@@ -936,6 +945,8 @@ struct FullScreenBands: View {
     @State private var shown = true
     @State private var scrubbing = false
     @State private var hideTask: Task<Void, Never>?
+    /// QA: band taps seen, for the cloud fullscreen scenario.
+    @State private var wakes = 0
     static let hideAfter: Duration = .seconds(3)
     /// Nothing within this of the division (Iris).
     static let foldClearance: CGFloat = 8
@@ -1006,6 +1017,15 @@ struct FullScreenBands: View {
         .frame(width: screen.width, height: screen.height, alignment: .topLeading)
         .foregroundStyle(.white)
         .dynamicTypeSize(...DynamicTypeSize.xxxLarge)
+        #if INTERNAL
+        .overlay(alignment: .topLeading) {
+            Color.clear.frame(width: 1, height: 1)
+                .accessibilityElement()
+                .accessibilityIdentifier("qaBands")
+                .accessibilityValue("shown=\(shown ? 1 : 0) wakes=\(wakes)")
+                .offset(x: 4, y: 2)
+        }
+        #endif
         .onChange(of: hides, initial: true) { _, on in on ? schedule() : show() }
         .onDisappear { hideTask?.cancel() }
     }
@@ -1042,6 +1062,7 @@ struct FullScreenBands: View {
     }
 
     private func wake() {
+        wakes += 1
         show()
         if hides { schedule() }
     }
