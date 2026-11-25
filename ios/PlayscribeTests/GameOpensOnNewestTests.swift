@@ -9,10 +9,15 @@ import Testing
 struct GameOpensOnNewestTests {
     private func url() -> URL { URL.temporaryDirectory.appending(path: "opens-newest-\(UUID().uuidString).json") }
     private let game = "dawnwalker"
+    private func seeded(_ u: URL) -> AppModel {
+        let m = AppModel(storeURL: u)
+        if m.data.collection.isEmpty { m.data = PersistedState(collection: Fixtures.shared.seedCollection) }
+        return m
+    }
 
     @Test func openingAfterRelaunchLandsOnTheNewestUpdate() throws {
         let u = url()
-        let first = AppModel(storeURL: u)
+        let first = seeded(u)
         first.openGame(game)
         first.nav.chapter = .gallery
         first.closeGame()
@@ -24,7 +29,7 @@ struct GameOpensOnNewestTests {
 
     @Test func relaunchOnAnOpenGameResumesOnTheUpdatesSection() throws {
         let u = url()
-        let first = AppModel(storeURL: u)
+        let first = seeded(u)
         first.openGame(game)
         first.nav.chapter = .gallery
         first.saveNow()
@@ -33,7 +38,7 @@ struct GameOpensOnNewestTests {
     }
 
     @Test func reopeningInTheSameLaunchLandsOnTheNewestUpdate() {
-        let m = AppModel(storeURL: url())
+        let m = seeded(url())
         m.openGame(game)
         m.nav.chapter = .gallery
         m.closeGame()
@@ -42,7 +47,7 @@ struct GameOpensOnNewestTests {
     }
 
     @Test func backFromASecondGameReturnsToTheSectionItWasLeftOn() throws {
-        let m = AppModel(storeURL: url())
+        let m = seeded(url())
         let other = try #require(m.data.collection.map(\.gameID).first { $0 != game })
         m.openGame(game)
         m.nav.chapter = .gallery

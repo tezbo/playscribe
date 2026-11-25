@@ -400,6 +400,9 @@ final class AppModel {
             // Quinn (#430): a Library scroll anchor that is not a game tile ("lib-<id>") would scroll an unfiltered relaunch to the
             // search field (the app killed while it was focused). Keep tile anchors only.
             if let a = data.nav.anchors["library"], !a.hasPrefix("lib-") { data.nav.anchors["library"] = nil }
+            // bug-072: a cold launch never resumes on a section from an earlier session; an open game shows its newest update.
+            data.nav.chapter = .updates
+            data.nav.chapters = nil
         } else {
             // A real first launch starts empty, on onboarding: demo games never appear in a
             // player's library. QA launches (-qaRoute, other than first-run) still seed the demo set;
@@ -781,9 +784,10 @@ final class AppModel {
         if !sameGame { n.detailReleaseID = nil }
         n.gameID = gameID
         n.lastGameID = gameID
-        // D-13: each game reopens on the chapter last opened in it.
-        // R-7 (0.5.6): World is part of Companion; a saved or routed World opens Companion.
-        n.chapter = GameSections.canonical(chapter ?? (sameGame ? n.chapter : (n.chapters?[gameID] ?? .updates)))
+        // bug-072 (Terry, 25 Nov): opening a game afresh lands on its newest update (R-1), never on the section it was left on in an
+        // earlier visit. `chapters` only serves Back within a visit (closeGame); it is no longer a way in.
+        // R-7 (0.5.6): World is part of Companion; a routed World opens Companion.
+        n.chapter = GameSections.canonical(chapter ?? (sameGame ? n.chapter : .updates))
         if let releaseID {
             n.selected = (n.selected ?? [:]).merging([gameID: releaseID]) { $1 }
             n.expanded["rel:\(releaseID)"] = true
