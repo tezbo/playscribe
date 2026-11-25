@@ -422,9 +422,15 @@ struct LibraryShelf: View {
                 // Book: the control stays on the left page; it never crosses the fold (Iris, hero-wide-layouts).
                 if closedWide {
                     // Closed landscape: the control and the search field share one row, 44 pt each (Iris, cf6c889).
-                    HStack(spacing: 12) {
-                        LibraryTabPicker().frame(width: 220, height: 44)
+                    // At accessibility sizes the switch is two chips (LibraryTabPicker) and takes its own row, search under it.
+                    if LibraryTabPicker.usesChips(typeSize) {
+                        LibraryTabPicker().frame(maxWidth: .infinity, alignment: .leading)
                         if model.libraryTab == .playing && !all.isEmpty { searchField(binding: $model.libraryQuery) }
+                    } else {
+                        HStack(spacing: 12) {
+                            LibraryTabPicker().frame(width: 220, height: 44)
+                            if model.libraryTab == .playing && !all.isEmpty { searchField(binding: $model.libraryQuery) }
+                        }
                     }
                 } else if !heroOnRightPage {
                     // Tabletop at AX5 (Iris, #455 at 0877dfc and a8859d3): the compact card keeps the lower half to itself, first; the
