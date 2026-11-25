@@ -131,12 +131,13 @@ schemes) # dark and light for the pose set
   done ;;
 fullscreen) # bug-071: full-screen video Fit with our controls in the bands; the WebView frame in each -ui.txt is the picture.
   # Our controls hide 3 s after the last touch while playing, so each pose is shot within 1 s of entering, then hidden.
-  frames() { echo "frames $1: $(sim-use ui --device "$UDID" 2>/dev/null | grep -E 'WebView|Show player controls|mirrorAudit|videoExitFullScreen|videoPlayPause|videoScrubber|videoBack10|videoForward10' | cut -c1-140 | tr '\n' ';')"; }
+  frames() { echo "frames $1: $(sim-use ui --device "$UDID" 2>/dev/null | grep -E 'qaVideoTime|qaVideoState|WebView|Show player controls|mirrorAudit|videoExitFullScreen|videoPlayPause|videoScrubber|videoBack10|videoForward10' | cut -c1-140 | tr '\n' ';')"; }
   tapl() { echo "tap $1: $(sim-use tap --label "$1" --device "$UDID" 2>&1 | head -1)"; sleep "${2:-4}"; }
   enter() { tapl "Full screen" 1; snap fullscreen "$1-entered"; frames "$1"; }
-  launch -qaRoute trailer/dQw4w9WgXcQ/dawnwalker -qaOverlay YES
-  tapl Play 8; snap fullscreen 1-closed-portrait-inline
+  launch -qaRoute trailer/dQw4w9WgXcQ/dawnwalker -qaOverlay YES -qaVideoTime YES
+  tapl Play 8; snap fullscreen 1-closed-portrait-inline; frames 1
   enter 2-closed-portrait
+  sleep 3; frames 2b-still-playing
   sleep 5; snap fullscreen 3-controls-hidden; frames 3
   echo "band tap: $(sim-use tap -x 339 -y 12 --device "$UDID" 2>&1 | head -1)"; sleep 1; snap fullscreen 4-band-tap-shows; frames 4
   tapl "Exit full screen" 4; snap fullscreen 5-exited

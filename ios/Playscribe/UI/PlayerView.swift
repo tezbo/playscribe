@@ -131,7 +131,10 @@ final class YouTubeController: NSObject, WKScriptMessageHandler {
         ready = false   // the player is rebuilt; its onReady sets this again
         // Paused, the rebuilt player would show YouTube's thumbnail: our art returns until it buffers or plays (Iris on #552).
         if !isPlaying { playerShown = false }
-        run("setControls(\(on ? 1 : 0))")
+        // bug-071 (cloud run 45716362816 at b6104b0): asking the live player for its time during the full-screen switch, while
+        // the scene turned, rebuilt it at 3:33 of 3:34 with a black picture. The time and play state we already hold (updated
+        // every 0.5 s) are passed in instead.
+        run("setControls(\(on ? 1 : 0),\(current.isFinite ? current : 0),\(isPlaying || playRequested ? "true" : "false"))")
     }
     private func run(_ js: String) { webView.evaluateJavaScript(js) }
 
@@ -168,11 +171,12 @@ final class YouTubeController: NSObject, WKScriptMessageHandler {
                     onStateChange:function(e){post({event:'state',state:e.data})},
                     onError:function(e){post({event:'error',code:e.data})}}});
         }
-        function setControls(c){
+        function setControls(c,t,play){
           if(c===controls){return}
           controls=c;
           if(!player||!player.getCurrentTime){return}
-          var t=player.getCurrentTime(), play=player.getPlayerState()===1;
+          if(typeof t!=='number'){t=player.getCurrentTime()}
+          if(typeof play!=='boolean'){play=player.getPlayerState()===1}
           player.destroy();
           var d=document.createElement('div');d.id='p';document.body.appendChild(d);
           build(t,play);
@@ -402,7 +406,12 @@ struct FullBleedVideo: View {
         .onAppear {
             if division == nil, VideoOrientation.isPortrait {
                 turned = true
-                VideoOrientation.request(.landscape)
+                // Turn only once the player has rebuilt with our controls (at most 3 s), so the rebuild and WebKit's response to
+                // the turn never overlap (cloud run 45716362816).
+                Task { @MainActor in
+                    for _ in 0..<30 where !controller.ready { try? await Task.sleep(for: .milliseconds(100)) }
+                    VideoOrientation.request(.landscape)
+                }
             }
         }
     }
