@@ -129,6 +129,11 @@ schemes) # dark and light for the pose set
     snap schemes $ap-1-closed; fold 180 landscape-left; snap schemes $ap-2-flat-landscape
     fold 90 landscape-left; snap schemes $ap-3-book; fold 90 portrait; snap schemes $ap-4-tabletop; fold 180 portrait; snap schemes $ap-5-flat-portrait
   done ;;
+newest) # bug-072: Gallery, relaunch with the saved state: the game shows What's new, Closed portrait and Open portrait
+  launch -qaRoute gamepage/dawnwalker/gallery; snap newest 1-closed-gallery
+  sleep 2; xcrun simctl terminate "$UDID" $B >/dev/null 2>&1; xcrun simctl launch "$UDID" $B >/dev/null; sleep 8
+  snap newest 2-closed-after-relaunch
+  fold 180 portrait; sleep 3; snap newest 3-open-portrait-after-relaunch ;;
 video) # row 9: hinge sweep recording with frame timing
   launch -qaRoute library/playing; fold 180 landscape-left
   sim-use record-video --device "$UDID" --fps 60 --output "$OUT/$SHA-video-sweep.mp4" >/dev/null 2>&1 & rp=$!
