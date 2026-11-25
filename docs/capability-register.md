@@ -65,3 +65,54 @@ Results are appended to the audit table as PROVEN with the artifact link. A fail
 ## Not decided here
 
 Tool choice (sim-use, Limrun, agent-device, Appium) belongs to engineering and waits on real runs. No spend without Terry.
+
+## Capability portfolio (Terry, 25 Nov 2026: discovery, evaluation and enablement)
+
+Skills, MCP servers, plugins and observability are one portfolio. Each item has one disposition and one owner. Nothing
+here is installed globally or paid for without Terry. Lifecycle: discover a gap, inspect the source, benchmark with and
+without, evaluate quality, tokens, time and reliability together, adopt only for the agents that need it, review or retire.
+
+**How a skill is benchmarked.** Skill Creator (`anthropic-skills:skill-creator`, already in every cloud session) runs the
+same representative tasks with and without the skill, grades each against written assertions, and reports pass rate,
+tokens and time with the spread (`scripts/aggregate_benchmark.py`). Seeded-defect review tasks are the default for
+review skills: real Playscribe files with known defects injected, so grading is objective. Sample size is proportionate:
+three tasks, one run each, on the model the team actually uses, before anything bigger.
+
+### Benchmarks run
+
+| Date | Skill | Tasks | With skill | Without | Reading |
+|---|---|---|---|---|---|
+| 25 Nov 2026 | `swiftui-pro` 2.0.0 (vendored 12 Nov) | 3 seeded-defect reviews (GameBookView, SplashView, a new settings view), 13 defects: deprecated API, pose from `UIScreen`, Reduce Motion, GCD timers, `@ObservedObject` ownership, tap-gesture buttons, Dynamic Type. Sonnet, 1 run each | 13/13 found; 83.2k ± 3.9k tokens; 36.7 s | 13/13 found; 68.7k ± 4.9k tokens; 34.5 s | No measured quality gain on these defects; about 14.5k more tokens (+21%) per review. Ceiling effect: the defects were well known, so the test could not show a gain. Next: three harder Duo cases (resizability, reserved regions, toolbar in Tabletop) before any change to how it is used |
+
+Observed, n = 1 per arm: treat as a first reading, not a verdict.
+
+### Dispositions
+
+ADOPT: use now, scoped. BENCHMARK: worth a measured trial first. ALREADY AVAILABLE: we have it; use it, don't add a
+second. MONITOR: no current gap or blocked; recheck at the weekly review. REJECT: not worth its cost.
+
+| Candidate | Disposition | Who it serves | Rationale | Owner |
+|---|---|---|---|---|
+| Skill Creator (Anthropic) | ALREADY AVAILABLE, ADOPT as the benchmark method | Gabrielle's office | In every cloud session; first benchmark run 25 Nov. No install needed | Gabrielle |
+| Resource observability via `get_session` usage | ADOPT | Gabrielle, coordinator | Measured per-session tokens, cache and model already readable from the cloud; baseline taken 25 Nov (kept in the office's records, not here). Weekly deltas give the rate | Gabrielle |
+| Claude Code OpenTelemetry | MONITOR | Gabrielle | Needs env settings on the team environments and a collector endpoint, which is a permission and possibly a cost decision for Terry. `get_session` covers per-session totals today; OTel would add per-tool and per-skill detail | Gabrielle, Terry to approve |
+| Cowork usage analytics | MONITOR | Gabrielle | Documented for Team and Enterprise plans; the team runs as cloud Claude Code sessions, which `get_session` already covers | Gabrielle |
+| GitHub MCP | ALREADY AVAILABLE | All | Every session has `mcp__github__*`, scoped to this repo. Adding the self-hosted server would duplicate it | n/a |
+| Knowledge-work plugins (product, marketing, design, engineering, data, productivity) | ALREADY AVAILABLE | Nadia, Mara, Iris, Theo, Max, Gabrielle | Installed in the cloud sessions. Gap is use, not supply (see G4) | Gabrielle |
+| Cowork plugin management | ALREADY AVAILABLE | Gabrielle | Used to build the office plugin (#633) | Gabrielle |
+| Data analysis plugin | ALREADY AVAILABLE | Gabrielle | Use for benchmark and usage statistics | Gabrielle |
+| SwiftUI Pro | ALREADY AVAILABLE, BENCHMARK further | Theo, Max | Vendored, pinned 2.0.0, read through. Costs tokens only when invoked; first benchmark shows no gain on common defects. Keep on demand, don't mandate | Gabrielle with Theo |
+| swift-testing-pro, swiftui-accessibility-auditor | ALREADY AVAILABLE, BENCHMARK | Quinn, Theo, Max | Vendored; no benchmark yet | Gabrielle |
+| Apple Xcode 27 agent skills and MCP | MONITOR | Theo, Max, Ollie | Ships with Xcode on the Mac; MCP needs a person's approval (`docs/xcode-mcp.md`). Check whether the skill text can be vendored for cloud agents without the Mac | Ollie, then Gabrielle |
+| iPhone Duo Skills (hechen) | BENCHMARK, after source inspection | Theo, Max, Iris | Third party, not yet inspected. Overlaps `swiftui-pro` resizability and our own `five-pose-stills`, `duo-pose-shoot` | Gabrielle |
+| Swift Agent Skills directory | MONITOR | Gabrielle | A directory for discovery, not a capability | Gabrielle |
+| Sosumi | BENCHMARK | Theo, Max, Iris | Apple's docs pages need JavaScript, so plain fetches often fail. Hosted, read-only, no credentials; queries leave the org. Trial: repeat three past Apple-doc look-ups with and without | Gabrielle |
+| Limrun MCP | BENCHMARK (engineering owns the trial) | Quinn, Jun, Iris, Nadia | Already a G1 candidate. Paid; key exposure finding open. No spend without Terry | Engineering |
+| Context7 | REJECT for now | Priya | The iOS app has no package dependencies; backend use is light. Recheck if dependencies grow | Gabrielle |
+| Figma MCP | REJECT for now | Iris | Figma is not our design source; the repo has no Figma references | Gabrielle |
+| Playwright | ALREADY AVAILABLE | Priya, Quinn | Chromium and Playwright are preinstalled in cloud containers; a scripted check is cheaper than a browser MCP | Priya |
+| App Store Connect CLI skills | MONITOR | Mara, Ollie | Release runs through fastlane and works. Consider read-only analytics later; never write access to the pipeline without Terry | Gabrielle |
+| Deferred MCP tool loading (tool search) | ALREADY AVAILABLE | All | On in cloud sessions: tools load only when searched | n/a |
+| Selective skill invocation | ALREADY AVAILABLE | All | Only skill descriptions are always loaded (about 1k tokens for the 15 repo skills); bodies load on use | n/a |
+| Hooks for deterministic checks | BENCHMARK | Coordinator, engineers | No repo hooks today. Candidates: block pushes that skip precheck, flag a PC version string in UI text | Gabrielle |
+| Bespoke Playscribe skills (spoiler class, artwork provenance, lore check) | BENCHMARK when Ezra has a task | Ezra | Specific to Playscribe; a generic plugin would not know V-3 or the spoiler rules | Gabrielle with Ezra |
