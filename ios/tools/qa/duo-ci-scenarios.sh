@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Quinn's five cloud runs on a booted, app-installed iPhone Duo (hosted runner or Mac). Needs sim-use.
-#   ios/tools/qa/duo-ci-scenarios.sh UDID OUTDIR [scenario ...]    (default: all)   scenarios: continuity trailer closedax5 schemes video axchips deckwide
+#   ios/tools/qa/duo-ci-scenarios.sh UDID OUTDIR [scenario ...]    (default: all)   scenarios: continuity trailer closedax5 schemes video axchips deckwide fullscreen
 # Every step saves <sha>-<scenario>-<step>-<display>-shot.png and -ui.txt (outline with frames, ids and the pose line).
 set -uo pipefail
 UDID=$1; OUT=$2; shift 2; SCEN=${*:-continuity trailer closedax5 schemes video}
@@ -129,6 +129,20 @@ schemes) # dark and light for the pose set
     snap schemes $ap-1-closed; fold 180 landscape-left; snap schemes $ap-2-flat-landscape
     fold 90 landscape-left; snap schemes $ap-3-book; fold 90 portrait; snap schemes $ap-4-tabletop; fold 180 portrait; snap schemes $ap-5-flat-portrait
   done ;;
+fullscreen) # bug-071: full-screen video Fit with our controls in the bands; the WebView frame in each -ui.txt is the picture
+  frames() { echo "frames $1: $(sim-use ui --device "$UDID" 2>/dev/null | grep -E 'WebView|videoExitFullScreen|videoPlayPause|videoScrubber|videoBack10|videoForward10|Exit full screen' | cut -c1-140 | tr '\n' ';')"; }
+  tapl() { echo "tap $1: $(sim-use tap --label "$1" --device "$UDID" 2>&1 | head -1)"; sleep "${2:-4}"; }
+  launch -qaRoute trailer/dQw4w9WgXcQ/dawnwalker -qaOverlay YES
+  tapl Play 8; snap fullscreen 1-closed-portrait-inline
+  tapl "Full screen" 5; snap fullscreen 2-closed-portrait-entered; frames 2
+  sleep 5; snap fullscreen 3-controls-hidden; frames 3
+  sim-use tap -x 30 -y 15 --device "$UDID" >/dev/null 2>&1; sleep 1; snap fullscreen 4-band-tap-shows; frames 4
+  tapl "Exit full screen" 4; snap fullscreen 5-exited
+  fold 0 landscape-left; tapl "Full screen" 5; snap fullscreen 6-closed-landscape; frames 6
+  tapl "Exit full screen" 3
+  fold 180 landscape-left; tapl "Full screen" 5; snap fullscreen 7-flat-landscape; frames 7
+  fold 90 landscape-left; sleep 2; snap fullscreen 8-book; frames 8
+  fold 90 portrait; sleep 2; snap fullscreen 9-tabletop-ends-it ;;
 video) # row 9: hinge sweep recording with frame timing
   launch -qaRoute library/playing; fold 180 landscape-left
   sim-use record-video --device "$UDID" --fps 60 --output "$OUT/$SHA-video-sweep.mp4" >/dev/null 2>&1 & rp=$!
