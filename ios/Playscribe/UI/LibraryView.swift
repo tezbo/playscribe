@@ -1336,12 +1336,8 @@ struct NotificationInviteCard: View {
         }
         .padding(16)
         .background(PlayscribeRole.card, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
-        // Simultaneous, so a vertical drag that starts on the card still scrolls the page: as an exclusive gesture it held the
-        // scroll, and at AX5 in Closed landscape, where the card fills the lower screen, the page could not reach its end
-        // (cloud run a0f1e86, #635). Only a mainly sideways swipe dismisses it.
-        .simultaneousGesture(DragGesture(minimumDistance: 30).onEnded { v in
-            if abs(v.translation.width) > 60 && abs(v.translation.width) > 2 * abs(v.translation.height) { snooze() }
-        })
+        // A sideways swipe dismisses it; a vertical drag that starts on the card scrolls the page (SideSwipe, #635).
+        .gesture(SideSwipe { snooze() })
         .accessibilityAction(named: "Not now") { snooze() }
         .transition(reduceMotion ? .opacity : .opacity.combined(with: .move(edge: .leading)))
     }
