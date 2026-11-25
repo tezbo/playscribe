@@ -218,7 +218,8 @@ struct PlayerView: View {
                             // (Quinn, Mac at c072400: Open portrait showed Close twice).
                             VideoUnavailable(videoID: video.youtubeID, title: video.label, code: controller.errorCode, showsClose: duo.pose == .tabletop) { close() }
                         } else if fullScreen && FullBleedVideo.offered(in: duo.pose) {
-                            FullBleedVideo(controller: controller, posterAsset: video.posterAsset, game: model.game(gameID)) { fullScreen = false }
+                            FullBleedVideo(controller: controller, posterAsset: video.posterAsset, game: model.game(gameID),
+                                           division: duo.division, occlusions: duo.occlusions) { fullScreen = false }
                         } else {
                             layout(duo: duo, release: release, video: video, controller: controller)
                         }
@@ -231,7 +232,7 @@ struct PlayerView: View {
                 .background(.black)
                 .overlay(alignment: .bottomLeading) { VideoTimeProbe(controller: controller) }
                 .onChange(of: [duo.pose == .tabletop, controller != nil], initial: true) { controller?.setNativeControls(duo.pose != .tabletop) }
-                // Book and Tabletop have no full screen: leaving Closed or Open ends it, and it doesn't come back on its own.
+                // Tabletop has no full screen: folding into it ends it, and it doesn't come back on its own.
                 .onChange(of: FullBleedVideo.offered(in: duo.pose)) { _, offered in if !offered { fullScreen = false } }
                 .toolbarVisibility(duo.pose == .tabletop || fullScreen ? .hidden : .automatic, for: .navigationBar)
                 .toolbar {
@@ -304,87 +305,118 @@ struct PlayerView: View {
     }
 }
 
-/// R-13 (Terry on build 16, 21 Nov: "no full screen option when playing videos"): our own full-screen mode. The same web view
-/// moves into a black, full-window frame (playback carries on, P-2), the navigation bar and home indicator hide, and the video
-/// is 16:9 as large as the window allows, centred. YouTube's own controls stay; ours is one Exit full screen button, never on
-/// YouTube's top controls (Iris): in the black margin above the video when there are 52 pt, else top leading inside the safe area,
-/// fading after 4 s and back on any tap (always shown under VoiceOver). The VoiceOver escape gesture also leaves. Offered in Closed (both orientations) and
-/// Open (flat): in Book a full-bleed video would run across the hinge with YouTube's controls on it, and Tabletop's standing half
-/// is already the video's stage. No mirror here: the reflection stays Tabletop only.
+/// R-13 (Terry on build 16, 21 Nov: "no full screen option when playing videos"), bug-071 (Terry on beta 5: "aren't truly full
+/// screen"): our own full-screen mode. The same web view moves into a black frame the size of the whole screen, safe area
+/// ignored (playback carries on, P-2); the navigation bar, status bar and home indicator hide. The picture is 16:9 Fit, as large
+/// as the screen allows, centred: Iris's spec on the bug-071 card. YouTube's Required Minimum Functionality says "You must not
+/// display overlays, frames, or other visual elements in front of any part of a YouTube embedded player", so nothing of ours
+/// is ever drawn over the picture (Nadia's policy_decision on the card): Fill (cropping) is dropped, and every control sits in
+/// the black letterbox bands, which are kept at least `minBand` tall so a 44 pt target fits (Closed landscape's natural band is
+/// 42 pt, so there the picture is 3 pt shorter than the screen allows). Offered in Closed and Open (both orientations: from
+/// portrait it asks the scene for landscape, as YouTube and Netflix do, and Exit turns back) and in Book, where the picture runs
+/// across the fold and a guard band over the division takes the taps there (CLAUDE.md: nothing tappable intersects a
+/// division). Tabletop keeps its own player. The VoiceOver escape gesture also leaves. No mirror here: Tabletop only.
 struct FullBleedVideo: View {
     var controller: YouTubeController
     var posterAsset: String?
     var game: CatalogGame?
+    /// Book: the active fold, in DuoReader's (safe-area) coordinates.
+    var division: CGRect? = nil
+    /// Active occlusions (camera housing), in DuoReader's coordinates. The picture never runs under one.
+    var occlusions: [CGRect] = []
     var onExit: () -> Void
 
-    static func offered(in pose: Pose) -> Bool { pose == .closed || pose == .flat }
+    static func offered(in pose: Pose) -> Bool { pose != .tabletop }
 
-    /// The 16:9 frame that fits `size`, centred, leaving `reserve` above it (and the same below, so it stays centred). The
-    /// reserve is the safe area's top plus room for Exit, so the way out always shows in the black margin, never on YouTube's
-    /// controls and never faded (Iris on dbf1bc12: Closed landscape had no visible Exit; "a full-screen mode with no visible
-    /// way out is a trap").
-    static func frame(in size: CGSize, reserve: CGFloat = 0) -> CGRect {
+    /// The least height of a letterbox band, so a 44 pt control fits in it (policy_decision 3).
+    static let minBand: CGFloat = 44
+
+    /// Fit: the 16:9 frame as large as `size` allows, centred, with at least `band` above and below it, at least `sides` in from
+    /// the leading and trailing edges (the safe area's, Iris's specBands), with `safeTop` added to the bands so Exit stays in
+    /// the safe area, and clear of every
+    /// rect in `avoiding` (screen coordinates): an occlusion over the picture widens the band on its side, kept symmetric.
+    static func fit(in size: CGSize, band: CGFloat = minBand, safeTop: CGFloat = 0, sides: CGFloat = 0,
+                    avoiding occlusions: [CGRect] = []) -> CGRect {
         guard size.width > 0, size.height > 0 else { return .zero }
-        let w = min(size.width, max(0, size.height - 2 * reserve) * 16 / 9)
-        let h = w * 9 / 16
-        return CGRect(x: (size.width - w) / 2, y: (size.height - h) / 2, width: w, height: h)
+        // The top band holds Exit inside the safe area, so it is at least the safe top plus a control.
+        var vBand = band + safeTop, hBand = sides
+        func frame() -> CGRect {
+            let w = max(0, min(size.width - 2 * hBand, (size.height - 2 * vBand) * 16 / 9))
+            let h = w * 9 / 16
+            return CGRect(x: (size.width - w) / 2, y: (size.height - h) / 2, width: w, height: h)
+        }
+        for o in occlusions where frame().intersects(o) {
+            if o.width >= o.height {
+                vBand = max(vBand, o.midY < size.height / 2 ? o.maxY : size.height - o.minY)
+            } else {
+                hBand = max(hBand, o.midX < size.width / 2 ? o.maxX : size.width - o.minX)
+            }
+        }
+        return frame()
     }
 
-    @Environment(\.accessibilityVoiceOverEnabled) private var voiceOver
-    /// Where the video fills the height, the Exit button fades after 4 s and any tap brings it back (Iris on R-13).
-    @State private var exitShown = true
-    @State private var fadeTask: Task<Void, Never>?
-    @State private var tapRelay = TapRelay()
+    /// Exit's 44 pt frame: top leading, inside the safe area, in the band above the picture and never on it.
+    static func exitFrame(picture: CGRect, safe: EdgeInsets) -> CGRect {
+        // Vertically centred in the safe part of the band (Iris: controls centred in each band).
+        let y = max(safe.top, safe.top + (picture.minY - safe.top - 44) / 2)
+        return CGRect(x: safe.leading + 12, y: min(y, picture.minY - 44), width: 44, height: 44)
+    }
 
-    /// Room the Exit button needs above the video to sit in the black margin, off YouTube's own top controls (Iris: 52 pt).
-    static let marginForExit: CGFloat = 52
-
-    /// True when the black margin above the video, inside the safe area, can hold the Exit button.
-    static func exitInMargin(video: CGRect, safeTop: CGFloat) -> Bool { video.minY - safeTop >= marginForExit }
+    /// True when the scene was turned to landscape on entry, so Exit turns it back.
+    @State private var turned = false
 
     var body: some View {
         GeometryReader { geo in
-            let full = CGSize(width: geo.size.width + geo.safeAreaInsets.leading + geo.safeAreaInsets.trailing,
-                              height: geo.size.height + geo.safeAreaInsets.top + geo.safeAreaInsets.bottom)
-            let f = Self.frame(in: full, reserve: geo.safeAreaInsets.top + Self.marginForExit)
-            let inMargin = Self.exitInMargin(video: f, safeTop: geo.safeAreaInsets.top)
+            let safe = geo.safeAreaInsets
+            let full = CGSize(width: geo.size.width + safe.leading + safe.trailing, height: geo.size.height + safe.top + safe.bottom)
+            let toScreen = { (r: CGRect) in r.offsetBy(dx: safe.leading, dy: safe.top) }
+            let f = Self.fit(in: full, safeTop: safe.top, sides: max(safe.leading, safe.trailing), avoiding: occlusions.map(toScreen))
+            let exit = Self.exitFrame(picture: f, safe: safe)
             ZStack(alignment: .topLeading) {
                 Color.black
                 Color.black
                     .overlay { WebSurface(webView: controller.webView) }
+                    // Before playback only: our poster stands in for YouTube's start screen until Play.
                     .overlay { VideoStartCover(controller: controller, posterAsset: posterAsset, game: game) }
                     .frame(width: f.width, height: f.height)
                     .offset(x: f.minX, y: f.minY)
-                // While Exit is faded, the first tap only brings it back and never reaches YouTube, so leaving full screen
-                // doesn't pause the video first (Mac at 015cae17). Once Exit shows, taps go to YouTube's player again.
-                if !(inMargin || voiceOver || exitShown) {
+                    .accessibilityIdentifier("videoFullScreenPicture")
+                if let division {
+                    // Not visual: clear, so the picture shows across the fold, but it takes every tap there so nothing on the
+                    // division is tappable (Nadia's take on the card).
+                    let d = toScreen(division)
                     Color.clear
                         .contentShape(Rectangle())
-                        .onTapGesture { showExit() }
+                        .onTapGesture {}
+                        .frame(width: d.width, height: d.height)
+                        .offset(x: d.minX, y: d.minY)
                         .accessibilityHidden(true)
                 }
                 exitButton
-                    .opacity(inMargin || voiceOver || exitShown ? 1 : 0)
-                    .allowsHitTesting(inMargin || voiceOver || exitShown)
-                    .animation(.easeInOut(duration: 0.25), value: exitShown)
-                    .padding(.top, geo.safeAreaInsets.top + 4)
-                    .padding(.leading, geo.safeAreaInsets.leading + 12)
-                    .padding(.trailing, geo.safeAreaInsets.trailing + 12)
-                    .frame(width: full.width, alignment: inMargin ? .topTrailing : .topLeading)
+                    .offset(x: exit.minX, y: exit.minY)
             }
             .frame(width: full.width, height: full.height)
-            .offset(x: -geo.safeAreaInsets.leading, y: -geo.safeAreaInsets.top)
-            .onChange(of: inMargin, initial: true) { _, m in m ? cancelFade() : showExit() }
+            .offset(x: -safe.leading, y: -safe.top)
         }
-        .accessibilityAction(.escape, onExit)
+        .accessibilityAction(.escape, leave)
         .persistentSystemOverlays(.hidden)
+        .statusBarHidden()
         .overlay(alignment: .topLeading) { MirrorAudit(on: false) }
-        .onAppear { tapRelay.attach(to: controller.webView) { showExit() } }
-        .onDisappear { tapRelay.detach(); cancelFade() }
+        .onAppear {
+            if division == nil, VideoOrientation.isPortrait {
+                turned = true
+                VideoOrientation.request(.landscape)
+            }
+        }
+    }
+
+    private func leave() {
+        if turned { VideoOrientation.request(.portrait) }
+        onExit()
     }
 
     private var exitButton: some View {
-        Button(action: onExit) {
+        Button(action: leave) {
             Image(systemName: "arrow.down.right.and.arrow.up.left")
                 .font(.system(size: 22, weight: .semibold))
                 .foregroundStyle(.white)
@@ -395,21 +427,6 @@ struct FullBleedVideo: View {
         .accessibilityIdentifier("videoExitFullScreen")
         .tappableFrame()
     }
-
-    private func showExit() {
-        exitShown = true
-        fadeTask?.cancel()
-        fadeTask = Task { @MainActor in
-            try? await Task.sleep(for: .seconds(4))
-            if !Task.isCancelled { exitShown = false }
-        }
-    }
-
-    private func cancelFade() {
-        fadeTask?.cancel()
-        exitShown = true
-    }
-
     /// The navigation bar button that enters full screen.
     struct EnterButton: View {
         var action: () -> Void
@@ -883,5 +900,21 @@ struct VideoUnavailable: View {
             }
             if showsClose { Button("Close", action: onClose).hitTarget() }
         }
+    }
+}
+
+/// bug-071: full screen from portrait asks the scene for landscape, as YouTube and Netflix do, and Exit turns it back. A request
+/// only: the scene's supported orientations still decide, so a later turn of the phone follows the device as before.
+@MainActor
+enum VideoOrientation {
+    private static var scene: UIWindowScene? {
+        UIApplication.shared.connectedScenes.compactMap { $0 as? UIWindowScene }.first { $0.activationState == .foregroundActive }
+    }
+
+    static var isPortrait: Bool { scene?.effectiveGeometry.interfaceOrientation.isPortrait ?? false }
+
+    static func request(_ mask: UIInterfaceOrientationMask) {
+        guard let scene else { return }
+        scene.requestGeometryUpdate(.iOS(interfaceOrientations: mask)) { error in NSLog("videoOrientation: \(error)") }
     }
 }

@@ -1,55 +1,78 @@
 import CoreGraphics
+import SwiftUI
 import Testing
 @testable import Playscribe
 
-/// R-13: our own full-screen video. Offered in Closed and Open only, and the video is 16:9, as large as the window allows, centred.
+/// R-13, bug-071: our own full-screen video. Fit only, as large as the whole screen allows with a black band of at least 44 pt
+/// above and below for our controls (YouTube RMF: nothing of ours in front of the player), centred. Offered everywhere but
+/// Tabletop.
 struct FullBleedVideoTests {
-    @Test func offeredInClosedAndOpenOnly() {
+    @Test func offeredEverywhereButTabletop() {
         #expect(FullBleedVideo.offered(in: .closed))
         #expect(FullBleedVideo.offered(in: .flat))
-        #expect(!FullBleedVideo.offered(in: .book), "Book: a full-bleed video would cross the hinge")
+        #expect(FullBleedVideo.offered(in: .book), "bug-071 spec: Book uses the whole inner screen across the fold")
         #expect(!FullBleedVideo.offered(in: .tabletop), "Tabletop: the standing half is already the stage, and the mirror stays there")
     }
 
-    @Test func landscapeFillsTheHeight() {
-        // Closed landscape, wider than 16:9: full height, pillarboxed.
-        let f = FullBleedVideo.frame(in: CGSize(width: 900, height: 400))
-        #expect(f.height == 400)
-        #expect(abs(f.width - 400 * 16 / 9) < 0.01)
-        #expect(abs(f.midX - 450) < 0.01)
+    /// The card's poses: Closed landscape 678 x 466 has a natural 42 pt band, so the picture shrinks just enough to leave 44
+    /// (672 x 378); Open flat landscape and Book (951 x 669) keep the full width with 67 pt bands.
+    @Test(arguments: [(CGSize(width: 678, height: 466), CGSize(width: 672, height: 378), CGFloat(44)),
+                      (CGSize(width: 951, height: 669), CGSize(width: 951, height: 534.9), CGFloat(67))])
+    func fitMatchesTheSpec(screen: CGSize, picture: CGSize, band: CGFloat) {
+        let f = FullBleedVideo.fit(in: screen)
+        #expect(abs(f.width - picture.width) < 1, "\(f)")
+        #expect(abs(f.height - picture.height) < 1, "\(f)")
+        #expect(abs(f.minY - band) < 1, "top band \(f.minY)")
+        #expect(abs((screen.height - f.maxY) - band) < 1, "bottom band")
+        #expect(f.minY >= FullBleedVideo.minBand - 0.01 && screen.height - f.maxY >= FullBleedVideo.minBand - 0.01)
+        #expect(abs(f.width / f.height - 16 / 9) < 0.001)
+        #expect(abs(f.midX - screen.width / 2) < 0.01 && abs(f.midY - screen.height / 2) < 0.01)
+    }
+
+    @Test func fitTouchesTwoOppositeEdgesWhenTheBandsAreRoomy() {
+        // Open flat landscape: the picture runs edge to edge across the width (AC 1).
+        let f = FullBleedVideo.fit(in: CGSize(width: 951, height: 669))
+        #expect(f.minX == 0 && f.maxX == 951)
     }
 
     @Test func portraitFillsTheWidth() {
-        // Closed or Open portrait: full width, letterboxed and centred.
-        let f = FullBleedVideo.frame(in: CGSize(width: 400, height: 860))
-        #expect(f.width == 400)
-        #expect(abs(f.height - 225) < 0.01)
-        #expect(abs(f.midY - 430) < 0.01)
+        // Portrait (rotation lock): full width, the bands are the large remainders.
+        let f = FullBleedVideo.fit(in: CGSize(width: 466, height: 678))
+        #expect(f.width == 466)
+        #expect(abs(f.midY - 339) < 0.01)
+    }
+
+    @Test func safeSidesKeepThePictureIn() {
+        let f = FullBleedVideo.fit(in: CGSize(width: 951, height: 669), sides: 40)
+        #expect(f.minX >= 40 - 0.01 && f.maxX <= 911 + 0.01)
+    }
+
+    @Test func occlusionOverThePictureWidensItsBand() {
+        // A camera housing at the top centre, 60 pt deep: the picture moves clear of it and stays centred.
+        let housing = CGRect(x: 300, y: 0, width: 80, height: 60)
+        let f = FullBleedVideo.fit(in: CGSize(width: 678, height: 466), avoiding: [housing])
+        #expect(!f.intersects(housing))
+        #expect(f.minY >= 60 - 0.01 && 466 - f.maxY >= 60 - 0.01)
+        // A side housing in landscape narrows the picture instead.
+        let side = CGRect(x: 0, y: 150, width: 30, height: 120)
+        let g = FullBleedVideo.fit(in: CGSize(width: 951, height: 669), avoiding: [side])
+        #expect(!g.intersects(side) && g.minX >= 30 - 0.01)
     }
 
     @Test func emptyAreaGivesNoFrame() {
-        #expect(FullBleedVideo.frame(in: .zero) == .zero)
+        #expect(FullBleedVideo.fit(in: .zero) == .zero)
     }
 
-    @Test func exitSitsInTheMarginWhenThereIsRoom() {
-        // Portrait: a 225 pt video centred in 860 pt leaves far more than 52 pt above it.
-        let portrait = FullBleedVideo.frame(in: CGSize(width: 400, height: 860), reserve: 54 + FullBleedVideo.marginForExit)
-        #expect(FullBleedVideo.exitInMargin(video: portrait, safeTop: 54))
-        // Exactly 52 pt counts; 51 does not.
-        #expect(FullBleedVideo.exitInMargin(video: CGRect(x: 0, y: 106, width: 10, height: 10), safeTop: 54))
-        #expect(!FullBleedVideo.exitInMargin(video: CGRect(x: 0, y: 105, width: 10, height: 10), safeTop: 54))
-    }
-
-    @Test(arguments: [CGSize(width: 678, height: 466), CGSize(width: 466, height: 678), CGSize(width: 951, height: 669),
-                      CGSize(width: 669, height: 951), CGSize(width: 900, height: 400)])
-    func exitAlwaysHasItsMargin(window: CGSize) {
-        // Iris on dbf1bc12: Closed landscape (678 x 466) left Exit faded with no visible way out. With the reserve, every
-        // window the poses give keeps 52 pt above the video, so Exit shows in the margin and never fades.
-        for safeTop in [CGFloat(0), 24, 54] {
-            let f = FullBleedVideo.frame(in: window, reserve: safeTop + FullBleedVideo.marginForExit)
-            #expect(FullBleedVideo.exitInMargin(video: f, safeTop: safeTop), "\(window) safe top \(safeTop)")
-            #expect(abs(f.width / f.height - 16 / 9) < 0.001)
-            #expect(abs(f.midY - window.height / 2) < 0.01)
-        }
+    /// Exit is in the band above the picture, inside the safe area, in every pose's real insets.
+    @Test(arguments: [(CGSize(width: 678, height: 466), EdgeInsets()),
+                      (CGSize(width: 678, height: 466), EdgeInsets(top: 0, leading: 47, bottom: 21, trailing: 47)),
+                      (CGSize(width: 466, height: 678), EdgeInsets(top: 54, leading: 0, bottom: 34, trailing: 0)),
+                      (CGSize(width: 951, height: 669), EdgeInsets(top: 24, leading: 0, bottom: 20, trailing: 0))])
+    func exitSitsInTheTopBandNeverOnThePicture(screen: CGSize, safe: EdgeInsets) {
+        let f = FullBleedVideo.fit(in: screen, safeTop: safe.top, sides: max(safe.leading, safe.trailing))
+        let exit = FullBleedVideo.exitFrame(picture: f, safe: safe)
+        #expect(exit.maxY <= f.minY + 0.01, "Exit \(exit) is on the picture \(f)")
+        #expect(exit.minY >= safe.top - 0.01 && exit.minX >= safe.leading)
+        #expect(exit.width == 44 && exit.height == 44)
     }
 }

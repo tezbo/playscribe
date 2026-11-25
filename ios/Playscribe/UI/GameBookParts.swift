@@ -658,7 +658,8 @@ struct TrailerView: View {
                                                video: ReleaseVideo(youtubeID: videoID, label: name, duration: nil, posted: "", posterAsset: nil),
                                                game: game, gameName: game?.name ?? "", release: nil, onClose: close)
                         } else if fullScreen && FullBleedVideo.offered(in: duo.pose) {
-                            FullBleedVideo(controller: controller, posterAsset: nil, game: gameID.flatMap { model.game($0) }) { fullScreen = false }
+                            FullBleedVideo(controller: controller, posterAsset: nil, game: gameID.flatMap { model.game($0) },
+                                           division: duo.division, occlusions: duo.occlusions) { fullScreen = false }
                         } else {
                             framed(controller)
                         }
