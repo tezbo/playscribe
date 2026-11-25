@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Quinn's five cloud runs on a booted, app-installed iPhone Duo (hosted runner or Mac). Needs sim-use.
-#   ios/tools/qa/duo-ci-scenarios.sh UDID OUTDIR [scenario ...]    (default: all)   scenarios: continuity trailer closedax5 schemes video axchips deckwide switchax
+#   ios/tools/qa/duo-ci-scenarios.sh UDID OUTDIR [scenario ...]    (default: all)   scenarios: continuity trailer closedax5 schemes video axchips deckwide switchax switchtt
 # Every step saves <sha>-<scenario>-<step>-<display>-shot.png and -ui.txt (outline with frames, ids and the pose line).
 set -uo pipefail
 UDID=$1; OUT=$2; shift 2; SCEN=${*:-continuity trailer closedax5 schemes video}
@@ -105,6 +105,12 @@ switchax) # bug-playing-upcoming-switch-ax5-small: switch + filter chips, each s
   # A real tap on the chip (Closed portrait AX5): Playing, then Upcoming by label.
   launch -qaRoute library/playing -UIPreferredContentSizeCategoryName $AX5
   echo "tap Upcoming: $(sim-use tap --label "Upcoming" --device "$UDID" 2>&1 | head -2)"; sleep 2; snap switchax 5-closed-portrait-AX5-tapped-upcoming ;;
+switchtt) # bug-playing-upcoming-switch-ax5-small: Tabletop AX5 only; a portrait launch first so the fold lands on the inner display in portrait
+  launch -qaRoute library/playing -UIPreferredContentSizeCategoryName $AX5
+  for t in playing upcoming; do
+    launch -qaRoute library/$t -UIPreferredContentSizeCategoryName $AX5; fold 90 portrait; snap switchtt 4-tabletop-AX5-$t
+    sim-use swipe --from 335,880 --to 335,620 --device "$UDID" >/dev/null 2>&1; sleep 2; snap switchtt 4b-tabletop-AX5-$t-scrolled
+  done ;;
 schemes) # dark and light for the pose set
   for ap in dark light; do
     launch -qaRoute library/playing -qaAppearance $ap -qaOverlay YES
