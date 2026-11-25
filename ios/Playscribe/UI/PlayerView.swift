@@ -337,15 +337,14 @@ struct FullBleedVideo: View {
     /// The least height of a letterbox band, so a 44 pt control fits in it (policy_decision 3).
     static let minBand: CGFloat = 44
 
-    /// Fit: the 16:9 frame as large as `size` allows, centred, with at least `band` above and below it, at least `sides` in from
-    /// the leading and trailing edges (the safe area's, Iris's specBands), with `safeTop` added to the bands so Exit stays in
-    /// the safe area, and clear of every
-    /// rect in `avoiding` (screen coordinates): an occlusion over the picture widens the band on its side, kept symmetric.
-    static func fit(in size: CGSize, band: CGFloat = minBand, safeTop: CGFloat = 0, sides: CGFloat = 0,
-                    avoiding occlusions: [CGRect] = []) -> CGRect {
+    /// Fit: the 16:9 frame as large as `size` (the whole screen) allows, centred, with at least `band` above and below it, and
+    /// clear of every rect in `avoiding` (screen coordinates): an occlusion over the picture widens the band on its side, kept
+    /// symmetric. The safe area is not taken off: the status bar and home indicator are hidden, and the camera housing is an
+    /// occlusion, measured (spec 1). Cloud run 45706235978 at 4977b7c: taking Closed landscape's 84 pt safe leading inset off
+    /// both sides left a 508 x 286 picture.
+    static func fit(in size: CGSize, band: CGFloat = minBand, avoiding occlusions: [CGRect] = []) -> CGRect {
         guard size.width > 0, size.height > 0 else { return .zero }
-        // The top band holds Exit inside the safe area, so it is at least the safe top plus a control.
-        var vBand = band + safeTop, hBand = sides
+        var vBand = band, hBand: CGFloat = 0
         func frame() -> CGRect {
             let w = max(0, min(size.width - 2 * hBand, (size.height - 2 * vBand) * 16 / 9))
             let h = w * 9 / 16
@@ -369,7 +368,7 @@ struct FullBleedVideo: View {
             let safe = geo.safeAreaInsets
             let full = CGSize(width: geo.size.width + safe.leading + safe.trailing, height: geo.size.height + safe.top + safe.bottom)
             let toScreen = { (r: CGRect) in r.offsetBy(dx: safe.leading, dy: safe.top) }
-            let f = Self.fit(in: full, safeTop: safe.top, sides: max(safe.leading, safe.trailing), avoiding: occlusions.map(toScreen))
+            let f = Self.fit(in: full, avoiding: occlusions.map(toScreen))
             ZStack(alignment: .topLeading) {
                 Color.black
                 Color.black
@@ -942,8 +941,10 @@ struct FullScreenBands: View {
 
     static func layout(picture: CGRect, screen: CGSize, safe: EdgeInsets, division: CGRect?) -> Layout {
         let left = safe.leading + 12, right = screen.width - safe.trailing - 12
-        let topY = max(safe.top, safe.top + (picture.minY - safe.top - 44) / 2)
-        let bottomY = picture.maxY + max(0, (screen.height - picture.maxY - 44) / 2)
+        // Vertically centred in a band; in a deep band (portrait under rotation lock) at the edge nearest the picture (Iris).
+        let topBand = picture.minY, bottomBand = screen.height - picture.maxY
+        let topY = topBand > 2 * 44 + 16 ? picture.minY - 44 - 8 : (topBand - 44) / 2
+        let bottomY = bottomBand > 2 * 44 + 16 ? picture.maxY + 8 : picture.maxY + (bottomBand - 44) / 2
         if let d = division {
             let leadEnd = d.minX - foldClearance, trailStart = d.maxX + foldClearance
             return Layout(top: CGRect(x: left, y: topY, width: max(0, leadEnd - left), height: 44),

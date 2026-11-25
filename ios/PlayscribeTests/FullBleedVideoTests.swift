@@ -42,11 +42,6 @@ struct FullBleedVideoTests {
         #expect(abs(f.midY - 339) < 0.01)
     }
 
-    @Test func safeSidesKeepThePictureIn() {
-        let f = FullBleedVideo.fit(in: CGSize(width: 951, height: 669), sides: 40)
-        #expect(f.minX >= 40 - 0.01 && f.maxX <= 911 + 0.01)
-    }
-
     @Test func occlusionOverThePictureWidensItsBand() {
         // A camera housing at the top centre, 60 pt deep: the picture moves clear of it and stays centred.
         let housing = CGRect(x: 300, y: 0, width: 80, height: 60)
@@ -63,17 +58,18 @@ struct FullBleedVideoTests {
         #expect(FullBleedVideo.fit(in: .zero) == .zero)
     }
 
-    /// specBands: every control row is in a band, off the picture, inside the safe area, in every pose's real insets.
+    /// specBands: every control row is in a band, off the picture, inside the safe leading and trailing insets (Closed
+    /// landscape measured 84 pt on the camera side, run 45706235978).
     @Test(arguments: [(CGSize(width: 678, height: 466), EdgeInsets()),
-                      (CGSize(width: 678, height: 466), EdgeInsets(top: 0, leading: 47, bottom: 21, trailing: 47)),
+                      (CGSize(width: 678, height: 466), EdgeInsets(top: 0, leading: 84, bottom: 21, trailing: 0)),
                       (CGSize(width: 466, height: 678), EdgeInsets(top: 54, leading: 0, bottom: 34, trailing: 0)),
                       (CGSize(width: 951, height: 669), EdgeInsets(top: 24, leading: 0, bottom: 20, trailing: 0))])
     func controlRowsSitInTheBandsNeverOnThePicture(screen: CGSize, safe: EdgeInsets) {
-        let f = FullBleedVideo.fit(in: screen, safeTop: safe.top, sides: max(safe.leading, safe.trailing))
+        let f = FullBleedVideo.fit(in: screen)
         let l = FullScreenBands.layout(picture: f, screen: screen, safe: safe, division: nil)
         #expect(l.top.maxY <= f.minY + 0.01, "top row \(l.top) is on the picture \(f)")
         #expect(l.transport.minY >= f.maxY - 0.01 && l.transport.maxY <= screen.height + 0.01, "bottom row \(l.transport)")
-        #expect(l.top.minY >= safe.top - 0.01 && l.top.minX >= safe.leading && l.top.maxX <= screen.width - safe.trailing)
+        #expect(l.top.minY >= 0 && l.top.minX >= safe.leading && l.top.maxX <= screen.width - safe.trailing)
         #expect(l.top.height == 44 && l.transport.height == 44 && l.timeline == nil)
     }
 
