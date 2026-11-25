@@ -14,7 +14,8 @@ fold() {
     # inner display must also report the requested orientation (portrait above 0 deg is Tabletop below 140, landscape is Book)
     { [ "$1" = 0 ] && [ "$d" = 1 ]; } || { [ "$1" != 0 ] && [ "$d" = 3 ] && [ "$o" = "${2:-portrait}" ]; } && return 0
     echo "fold $1 ${2:-portrait}: display $d orientation $o is wrong, retry $try"
-  done; }
+  done
+  echo "FOLD FAILED: $1 ${2:-portrait} could not be produced after 3 tries; no shot of this pose is valid" >&2; exit 1; }
 did() { sim-use ios fold --json --device "$UDID" 2>/dev/null | python3 -c 'import json,sys;print(json.load(sys.stdin)["data"]["posture"]["activeDisplay"]["id"])' 2>/dev/null || echo 1; }
 # Swipe until two consecutive outlines are identical (page cannot scroll further), up to 20 swipes; logs the final qa offset.
 scroll_end() { # fromX,fromY toX,toY label
@@ -95,7 +96,7 @@ else: print("down")' "${H:-466}")
   snap alertscard 2-alerts-card; echo "$ui" | grep -E "Turn on alerts|Not now" ;;
 tt) # Tabletop/Open shots with an assertion: TT_ROUTE, TT_STEPS ("angle:orientation ..."), TT_AX5 (yes|no); pose line and tree per step
   extra=(); [ "${TT_AX5:-no}" = yes ] && extra=(-UIPreferredContentSizeCategoryName $AX5)
-  launch -qaRoute "${TT_ROUTE:-library/playing}" -qaOverlay YES "${extra[@]}"
+  launch -qaRoute "${TT_ROUTE:-library/playing}" -qaOverlay YES ${extra[@]+"${extra[@]}"}
   for st in ${TT_STEPS:-90:portrait}; do
     a=${st%%:*}; o=${st#*:}; fold "$a" "$o"
     snap tt "a$a-$o-$([ "${TT_AX5:-no}" = yes ] && echo ax5 || echo std)-first"
