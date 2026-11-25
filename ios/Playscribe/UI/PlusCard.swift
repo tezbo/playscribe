@@ -247,13 +247,16 @@ struct PlusCover: View {
         Group {
             if let game { TileCover(game: game) }
             else {
-                RoundedRectangle(cornerRadius: 10, style: .continuous).fill(PlayscribeRole.surface)
+                // The standard no-art tile: the cover plate's tinted gradient (CoverView), so it reads as a cover on the card in
+                // light and dark, never as loose text (the surface fill all but vanished on the light card, plusend stills).
+                RoundedRectangle(cornerRadius: 10, style: .continuous)
+                    .fill(LinearGradient(colors: ["#1b1d24", "#0b0d12"].map(Color.init(hex:)), startPoint: .topLeading, endPoint: .bottomTrailing))
                     // Never cut mid-title (Iris, AX3): a fixed 13 pt, wrapped in full, so it also stays above 12 pt.
                     // A word wider than the plate scales down (never below 11 pt) before it would break; the plate is
                     // a fixed 72 pt tall in the compact row, so the text is also capped at four lines.
                     .overlay(Text(name).font(.system(size: 13, weight: .semibold)).multilineTextAlignment(.center)
                         .lineLimit(wide ? 4 : nil).minimumScaleFactor(wide ? 0.85 : 1)
-                        .fixedSize(horizontal: false, vertical: !wide).padding(wide ? 5 : 8).foregroundStyle(PlayscribeRole.textPrimary))
+                        .fixedSize(horizontal: false, vertical: !wide).padding(wide ? 5 : 8).foregroundStyle(.white.opacity(0.92)))
                     .overlay(RoundedRectangle(cornerRadius: 10, style: .continuous).strokeBorder(.white.opacity(0.1), lineWidth: 1))
             }
         }
