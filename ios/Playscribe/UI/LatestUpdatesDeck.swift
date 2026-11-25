@@ -272,8 +272,10 @@ struct LatestUpdatesDeck: View {
             .contentMargins(.trailing, 0, for: .scrollContent)
             // Closed landscape (scrollHeight set): the dots sit inside the hero's bottom edge, centred, so the
             // first screen still shows the chips and the first tile row (Iris, cf6c889).
-            .overlay(alignment: .bottom) { if scrollHeight != nil && cards.count > 1 { pageEdge(proxy) } }
-            if scrollHeight == nil && (cards.count > 1 || (compact && moreCount > 0)) {
+            // At accessibility sizes the caption fills the card, and the dots drew over its text (Closed landscape AX5,
+            // bug-deck-card-closed-landscape-ax5-dots-order): there they sit in their own row under the card, as in Closed portrait.
+            .overlay(alignment: .bottom) { if scrollHeight != nil && !typeSize.isAccessibilitySize && cards.count > 1 { pageEdge(proxy) } }
+            if (scrollHeight == nil || typeSize.isAccessibilitySize) && (cards.count > 1 || (compact && moreCount > 0)) {
                 // The dots row: dots centred, the "+N more updates" chip trailing (Iris), a 44 pt control that wraps at AX.
                 // At accessibility sizes the chip takes its own row under the dots, so the dots always read as dots.
                 let showChip = compact && moreCount > 0
@@ -586,8 +588,9 @@ struct DeckChips: View {
     /// was one subview there, and the chips drew on top of each other ("New update" lost under "v1.1", Book AX3).
     private var items: [(text: String, filled: Bool)] {
         var list: [(text: String, filled: Bool)] = []
-        if let v = card.release?.deckVersionChip { list.append((v, false)) }
+        // "New update" leads, then the version, as on the wide card: one order in every pose (Iris, #641).
         if card.unread { list.append((card.chipText, true)) }
+        if let v = card.release?.deckVersionChip { list.append((v, false)) }
         if card.release == nil, let d = card.date { list.append(("Released " + AppModel.tileDay(d), false)) }
         return list
     }
@@ -651,7 +654,7 @@ struct DeckByline: View {
 }
 
 /// Closed landscape hero: art left to right with a dark fade from the leading edge; the caption
-/// (New update chip, game name, one-line summary) on the leading 55%, the version chip trailing.
+/// (New update chip, the patch name, then the game name) on the leading 55%.
 struct WideDeckCard: View {
     var card: DeckCard
     var height: CGFloat
@@ -671,18 +674,33 @@ struct WideDeckCard: View {
         if typeSize.isAccessibilitySize && width > 0 { accessibilityCard } else { standardCard }
     }
 
+    /// The caption's two lines (bug-deck-card-closed-landscape-ax5-dots-order, Nadia): the patch name leads, as in every other
+    /// deck card and on the update page, with the game name under it. A card with no release leads with the game name (the
+    /// shared deck headline) and says when it was released.
+    static func lines(_ card: DeckCard) -> (headline: String, sub: String) {
+        let headline = CompactCaption.headline(card)
+        if card.release != nil { return (headline, card.game.name.gluingTrailingNumeral) }
+        return (headline, "Released " + (card.date.map(AppModel.tileDay) ?? ""))
+    }
+
+    /// The sub-line with the update's date after it, as the Closed portrait byline has it (Iris, #641): every pose shows it.
+    private func dated(_ sub: String) -> Text {
+        guard card.release != nil, let d = card.date else { return Text(sub).foregroundStyle(PlayscribeColor.textPrimary.opacity(0.9)) }
+        return Text("\(Text(sub).foregroundStyle(PlayscribeColor.textPrimary.opacity(0.9)))  \(Text(AppModel.tileDay(d)).foregroundStyle(PlayscribeColor.textSecondary))")
+    }
+
     /// Accessibility sizes: the card is as tall as its caption (at least the base height), so nothing is cut. J-5's half-container
     /// bound is not held here, only in Closed landscape: showing the whole caption wins (Iris, never drop chips or cut lines).
     /// The headline at the AX3 cap, at most three lines: the whole text when it fits, else whole words and "…", never a cut word.
-    private var headline: some View {
-        let full = card.release.map { $0.ps5Headline ?? $0.displayName } ?? "Released " + (card.date.map(AppModel.tileDay) ?? "")
+    private var subline: some View {
+        let full = Self.lines(card).sub
         let words = full.split(separator: " ", omittingEmptySubsequences: true).map(String.init)
         let ax3 = UITraitCollection(preferredContentSizeCategory: .accessibilityExtraLarge)
         let maxH = ceil(UIFont.preferredFont(forTextStyle: .subheadline, compatibleWith: ax3).lineHeight * 3)
         let variants = [full] + (words.count > 1 ? Array(stride(from: words.count - 1, through: 1, by: -1)).map { words.prefix($0).joined(separator: " ") + "\u{2026}" } : [])
         return ViewThatFits(in: .vertical) {
             ForEach(variants, id: \.self) { v in
-                Text(v).font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textPrimary.opacity(0.9))
+                dated(v).font(PlayscribeFont.subheadline)
                     .fixedSize(horizontal: false, vertical: true)
             }
         }
@@ -692,9 +710,9 @@ struct WideDeckCard: View {
     private var accessibilityCard: some View {
         VStack(alignment: .leading, spacing: 6) {
             captionChips
-            Text(card.game.name.gluingTrailingNumeral).font(PlayscribeFont.title2.bold())
+            Text(Self.lines(card).headline).font(PlayscribeFont.title2.bold())
                 .foregroundStyle(PlayscribeColor.textPrimary).fixedSize(horizontal: false, vertical: true)
-            headline
+            subline
         }
         .padding(.horizontal, 16).padding(.vertical, 16)
         .frame(width: width * 0.8, alignment: .leading)
@@ -716,19 +734,21 @@ struct WideDeckCard: View {
         GeometryReader { g in
             ZStack(alignment: .leading) {
                 ArtView(asset: card.game.keyArtAsset, game: card.game)
-                LinearGradient(colors: [PlayscribeColor.ink950.opacity(0.92), PlayscribeColor.ink950.opacity(0.55), .clear],
+                LinearGradient(colors: [PlayscribeColor.ink950.opacity(0.92), PlayscribeColor.ink950.opacity(0.7), .clear],
                                startPoint: .leading, endPoint: .trailing)
                 VStack(alignment: .leading, spacing: 6) {
                     captionChips
-                    Text(card.game.name.gluingTrailingNumeral).font(PlayscribeFont.title2.bold())
-                        .foregroundStyle(PlayscribeColor.textPrimary).lineLimit(2).fixedSize(horizontal: false, vertical: true)
-                    Text(card.release.map { $0.ps5Headline ?? $0.displayName } ?? "Released " + (card.date.map(AppModel.tileDay) ?? ""))
-                        .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textPrimary.opacity(0.9))
-                        // Two lines, never an ellipsis mid-sentence (Iris, hero-wide-layouts).
-                        .lineLimit(2).fixedSize(horizontal: false, vertical: true)
+                    let lines = Self.lines(card)
+                    // The patch name leads (two lines, whole words), the game name and date under it.
+                    WholeWordText(text: lines.headline, font: PlayscribeFont.title2.bold(), lines: 2, color: PlayscribeColor.textPrimary)
+                    dated(lines.sub)
+                        .font(PlayscribeFont.subheadline)
+                        .lineLimit(1).fixedSize(horizontal: false, vertical: true)
                 }
                 .padding(.horizontal, 16).padding(.vertical, typeSize.isAccessibilitySize ? 22 : 16)
-                .frame(width: g.size.width * 0.55, alignment: .leading)
+                // The caption uses 80% of the card, as at accessibility sizes: at 55% the patch name stopped at "a new…" with
+                // half the card empty (Iris, #641).
+                .frame(width: g.size.width * 0.8, alignment: .leading)
             }
         }
         .dynamicTypeSize(...DynamicTypeSize.accessibility3)
