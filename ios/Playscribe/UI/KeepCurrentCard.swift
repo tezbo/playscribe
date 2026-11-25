@@ -102,9 +102,8 @@ struct KeepCurrentCard: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(14)
         .background(PlayscribeRole.card, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
-        .gesture(DragGesture(minimumDistance: 30).onEnded { v in
-            if abs(v.translation.width) > 60 { answer(false) }
-        })
+        // A sideways swipe dismisses it; a vertical drag that starts on the card scrolls the page (SideSwipe, #635).
+        .gesture(SideSwipe { answer(false) })
         .accessibilityAction(named: KeepCurrentCopy.notNow) { answer(false) }
         .accessibilityAction(named: KeepCurrentCopy.whatIsSent) { model.keepCurrentDetailsOpen = true }
         .accessibilityIdentifier("keepCurrentCard")

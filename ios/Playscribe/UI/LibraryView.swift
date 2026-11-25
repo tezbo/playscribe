@@ -237,6 +237,13 @@ struct LibraryShelf: View {
     /// Closed landscape (container wider than tall): the compact first screen.
     private var closedWide: Bool { duo.pose == .closed && duo.isLandscape }
 
+    /// The one exception to one order in every pose (docs/ux-acceptance.md B-12, Nadia 24 Nov): at accessibility sizes in Closed
+    /// (portrait and landscape) and Tabletop the filter chips follow the tiles, so a game is on the first screen. Nothing else moves.
+    static func chipsFollowTiles(pose: Pose, accessibilitySize: Bool) -> Bool {
+        accessibilitySize && (pose == .closed || pose == .tabletop)
+    }
+    private var chipsAfterTiles: Bool { Self.chipsFollowTiles(pose: duo.pose, accessibilitySize: typeSize.isAccessibilitySize) }
+
     /// Book with any recent update: the hero carousel takes the right page's top; the left page keeps the controls, chips and grid.
     private var heroOnRightPage: Bool {
         // No recent update: the caught-up card takes the hero's place, so the two pages flow the same way (Iris, 41f0310).
@@ -544,7 +551,7 @@ struct LibraryShelf: View {
                     }
                     .stepsAside(closedSearchCollapse)
                 }
-                if !heroOnRightPage && duo.pose != .tabletop && all.count >= 2 && layout == .tiles {
+                if !heroOnRightPage && duo.pose != .tabletop && !chipsAfterTiles && all.count >= 2 && layout == .tiles {
                     // TT-0: in the book pose the chip row stays on the left page.
                     // TT-0: in the book pose the chip row is exactly the left page wide, clipped, so its
                     // accessibility frame never reaches the fold either.
@@ -591,7 +598,11 @@ struct LibraryShelf: View {
                     .id(poseKey)
                     .namedFrame("libraryGames")
                 }
-                if duo.pose == .tabletop && all.count >= 2 && layout == .tiles && typeSize.isAccessibilitySize {
+                // Closed at accessibility sizes takes the Tabletop rule (B-12): in Closed landscape the four pills above the tiles
+                // filled the first screen and no game showed until a scroll (bug-closed-landscape-ax5-no-games, cloud run db9f478),
+                // and in Closed portrait at AX5 the deck and the pills did the same (Quinn on #635). The tiles, then the chips; no
+                // chip is dropped, and nothing else moves.
+                if chipsAfterTiles && all.count >= 2 && layout == .tiles {
                     FilterBar().frame(maxWidth: .infinity, alignment: .leading).id(poseKey)
                 }
                 // One order in every pose (Terry, 19 Nov): the alerts, catch-up and PS Plus cards always follow the tiles,
@@ -732,15 +743,17 @@ struct FilterBar: View {
     @Environment(AppModel.self) private var model
     @Environment(\.dynamicTypeSize) private var typeSize
 
-    private func chip(_ f: LibraryFilter, rows: [AppModel.LibraryRow]) -> some View {
+    /// `oneLine`: the 2 by 2 grid's pill, kept on one unbroken line so the grid is offered only where every label fits whole.
+    private func chip(_ f: LibraryFilter, rows: [AppModel.LibraryRow], oneLine: Bool = false) -> some View {
         let n = f.status.map { s in rows.filter { $0.status == s }.count } ?? rows.count
         let on = model.nav.filter == f
+        let wraps = typeSize.isAccessibilitySize && !oneLine
         return Button { model.nav.filter = f } label: {
             Text("\(f.label) \(n)")
                 .font(PlayscribeFont.subheadline.weight(on ? .semibold : .regular))
-                // Never cut mid-glyph: one unbroken line in the scrolling row, two at accessibility sizes.
-                .lineLimit(typeSize.isAccessibilitySize ? 2 : 1)
-                .fixedSize(horizontal: !typeSize.isAccessibilitySize, vertical: true)
+                // Never cut mid-glyph: one unbroken line in the scrolling row and the 2 by 2 grid, two in the one-column list.
+                .lineLimit(wraps ? 2 : 1)
+                .fixedSize(horizontal: !wraps, vertical: true)
                 .padding(.horizontal, 10)
                 .padding(.vertical, typeSize.isAccessibilitySize ? 6 : 0)
                 .frame(maxWidth: typeSize.isAccessibilitySize ? .infinity : nil, minHeight: 44)
@@ -752,12 +765,30 @@ struct FilterBar: View {
     }
 
     var body: some View {
+        // Its frame is reported (audit builds only) so the harness can hold the Library's block order to B-12.
+        bar.namedFrame("libraryChips")
+    }
+
+    @ViewBuilder private var bar: some View {
         let rows = model.libraryRows
         if typeSize.isAccessibilitySize {
-            // Accessibility sizes: one chip per row at the full column width, so "Watching 1" stays on one line
-            // inside its pill and tap frame (Closed AX3, 382 pt); a row grows if it must wrap.
-            LazyVGrid(columns: [GridItem(.flexible())], spacing: 8) {
-                ForEach(LibraryFilter.allCases) { f in chip(f, rows: rows) }
+            // Accessibility sizes (r060-filter-pills-grid-ax5, Iris): two pills a row, so all four show in half the height, each
+            // label whole on one line. Where two would not fit side by side (a narrow column at AX5), one chip per row at the
+            // full width, as before: "Watching 1" stays inside its pill and tap frame (Closed AX3, 382 pt) and a row grows if it
+            // must wrap. Never a horizontal scroller here: it would hide a choice.
+            let filters = LibraryFilter.allCases
+            ViewThatFits(in: .horizontal) {
+                Grid(horizontalSpacing: 8, verticalSpacing: 8) {
+                    ForEach(Array(stride(from: 0, to: filters.count, by: 2)), id: \.self) { i in
+                        GridRow {
+                            chip(filters[i], rows: rows, oneLine: true)
+                            if i + 1 < filters.count { chip(filters[i + 1], rows: rows, oneLine: true) }
+                        }
+                    }
+                }
+                LazyVGrid(columns: [GridItem(.flexible())], spacing: 8) {
+                    ForEach(filters) { f in chip(f, rows: rows) }
+                }
             }
         } else {
             ScrollView(.horizontal, showsIndicators: false) {
@@ -1305,9 +1336,8 @@ struct NotificationInviteCard: View {
         }
         .padding(16)
         .background(PlayscribeRole.card, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
-        .gesture(DragGesture(minimumDistance: 30).onEnded { v in
-            if abs(v.translation.width) > 60 { snooze() }
-        })
+        // A sideways swipe dismisses it; a vertical drag that starts on the card scrolls the page (SideSwipe, #635).
+        .gesture(SideSwipe { snooze() })
         .accessibilityAction(named: "Not now") { snooze() }
         .transition(reduceMotion ? .opacity : .opacity.combined(with: .move(edge: .leading)))
     }
