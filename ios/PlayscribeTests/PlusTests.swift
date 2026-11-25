@@ -117,10 +117,41 @@ struct PlusCoverTests {
         #expect(PlusCard.coverLimit(accessibility: false) == 3)
     }
 
-    @Test func accessibilitySizesShowTwoCoversInBookAndWrapThreeElsewhere() {
+    /// r060-psplus-compact-ax3: accessibility sizes use the compact row in every pose (three covers when they fit, else two
+    /// and "+N"); standard sizes keep the wide card everywhere but Book.
+    @Test func accessibilitySizesUseTheCompactRowInEveryPose() {
+        for pose in [Pose.closed, .flat, .book, .tabletop] {
+            #expect(PlusCard.usesCompactRow(pose: pose, accessibility: true), "\(pose)")
+            #expect(PlusCard.usesCompactRow(pose: pose, accessibility: false) == (pose == .book), "\(pose)")
+        }
         #expect(PlusCard.coverLimit(accessibility: true) == 2)
-        #expect(PlusCard.accessibilityCoversPerRow == 2)
         #expect(PlusCard.maxCovers == 3)
+    }
+
+    /// bug-psplus-card-missing-cover-empty-grid: a lineup entry with no coverId and no index match (Tomb Raider IV-VI
+    /// Remastered in v1/plus.json, by design under #285) still opens a page, so its cover is a Button, never a bare label.
+    @Test func aPlusEntryWithNoCoverIdStillOpensItsPage() throws {
+        let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "plus-\(UUID().uuidString).json"))
+        let json = #"{"version":1,"months":[{"month":"2026-11","from":"2026-11-04","until":"2026-12-01","games":[{"name":"Dead Island 2","coverId":"co2t5k"},{"name":"Zzzz Tomb Raider IV-VI Remastered 9999"},{"name":"Monster Train 2","coverId":"co8x1a"}]}]}"#
+        let file = try JSONDecoder().decode(PlusFile.self, from: Data(json.utf8))
+        let noArt = try #require(file.months.first?.games[1])
+        #expect(noArt.coverId == nil)
+        #expect(PlusCard.resolve(noArt, tracked: { m.game($0) }) == nil, "draws the no-art plate")
+        let game = PlusCard.pageGame(noArt, tracked: { m.game($0) })
+        #expect(game.name == noArt.name)
+        #expect(game.coverImageID == nil, "no stand-in art (#285)")
+        let before = m.data.collection.count
+        m.browseGame(game)                       // what the Plus cover calls
+        #expect(m.nav.gameID == game.id)
+        #expect(m.game(game.id)?.name == noArt.name)
+        #expect(m.data.collection.count == before, "browsed, not added")
+        // Every entry opens a page, with art or without.
+        for g in file.months[0].games { #expect(!PlusCard.pageGame(g, tracked: { m.game($0) }).id.isEmpty) }
+    }
+
+    @Test func aTitleWithArtOpensTheSameGameItsCoverShows() {
+        let g = PlusMonth.Game(name: "Alan Wake 2", gameId: nil)
+        #expect(PlusCard.pageGame(g, tracked: { _ in nil }).igdbID == 185246)
     }
 }
 

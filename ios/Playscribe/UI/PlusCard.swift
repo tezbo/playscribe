@@ -10,12 +10,11 @@ struct PlusCard: View {
     @Environment(\.duo) private var duo
 
     static let maxCovers = 3
-    /// Book's compact row shows two at accessibility sizes so a plate name stays readable; "+N" counts the rest.
-    /// Every other pose shows all three at accessibility sizes too, wrapped two to a row (Iris, #442: a lone
-    /// "Stray" text row under two covers read as a stray).
+    /// The compact row's fewest covers at accessibility sizes, when three do not fit its width (Book's column); "+N" counts the rest.
     static func coverLimit(accessibility: Bool) -> Int { accessibility ? 2 : maxCovers }
-    /// Covers to a row at accessibility sizes in the wide card; the third wraps under.
-    static let accessibilityCoversPerRow = 2
+    /// r060-psplus-compact-ax3: at accessibility sizes every pose uses the compact row, as Book always does. The wide card's
+    /// two-to-a-row grid left a lone cover under two and the right of a Closed landscape card empty (#635 stills, AX3 and AX5).
+    static func usesCompactRow(pose: Pose, accessibility: Bool) -> Bool { pose == .book || accessibility }
     /// No wider than a Library tile, whatever the pose (Iris, #242).
     static let maxCoverWidth: CGFloat = 140
 
@@ -70,28 +69,30 @@ struct PlusCard: View {
         return nil
     }
 
+    /// The game a lineup title opens: its catalogue game, or for a title with no match and no feed cover (Tomb Raider 4-6
+    /// Remastered: #285, exact product only) a browsed game of that name, so every title can be opened, never a bare label
+    /// (bug-psplus-card-missing-cover-empty-grid).
+    static func pageGame(_ g: PlusMonth.Game, tracked: (String) -> CatalogGame?) -> CatalogGame {
+        resolve(g, tracked: tracked) ?? CatalogGame(id: "plus-\(matchKey(g.name))", name: g.name, platforms: [.ps5], coverage: .none)
+    }
+
     var body: some View {
         if let (month, lastChance) = PlusLogic.visibleMonth(PlusStore.shared.months, cardOff: model.data.plusCardOff) {
             let claimBy = PlusLogic.claimByText(month)
             let limit = Self.maxCovers
             let shown = Array(month.games.prefix(limit))
-            if duo.pose == .book {
+            if Self.usesCompactRow(pose: duo.pose, accessibility: typeSize.isAccessibilitySize) {
                 compact(month.games, lastChance: lastChance, claimBy: claimBy)
             } else {
             VStack(alignment: .leading, spacing: 10) {
                 // Wide cards put the heading beside the covers; narrow ones stack it above (Iris, #242).
                 // Tries covers at 140, 120 then 100 pt beside the heading, so Open portrait, Tabletop and Closed
-                // landscape get a short card; Book's one-page column stacks. Accessibility sizes always stack: beside
-                // the covers the heading was squeezed to a word a line (Mac QA, AX3).
-                if typeSize.isAccessibilitySize {
+                // landscape get a short card. Accessibility sizes use the compact row instead (r060-psplus-compact-ax3).
+                ViewThatFits(in: .horizontal) {
+                    sideBySide(shown, lastChance: lastChance, claimBy: claimBy, width: Self.maxCoverWidth)
+                    sideBySide(shown, lastChance: lastChance, claimBy: claimBy, width: 120)
+                    sideBySide(shown, lastChance: lastChance, claimBy: claimBy, width: 100)
                     stacked(shown, lastChance: lastChance, claimBy: claimBy)
-                } else {
-                    ViewThatFits(in: .horizontal) {
-                        sideBySide(shown, lastChance: lastChance, claimBy: claimBy, width: Self.maxCoverWidth)
-                        sideBySide(shown, lastChance: lastChance, claimBy: claimBy, width: 120)
-                        sideBySide(shown, lastChance: lastChance, claimBy: claimBy, width: 100)
-                        stacked(shown, lastChance: lastChance, claimBy: claimBy)
-                    }
                 }
                 // Games past the covers (rule): the ones you track get their own tappable row; the rest are one
                 // "Plus A, B and C" line. Never a bare "and X" (Quinn).
@@ -114,10 +115,9 @@ struct PlusCard: View {
     /// Book (Terry, 6139fbb too crowded; Iris spec): one short card, at most 140 pt tall, so no module takes a quarter of a
     /// page. Badge and "title, claim by date" share a row; up to three 72 pt covers follow, then a "+N" chip for the rest.
     private func compact(_ games: [PlusMonth.Game], lastChance: Bool, claimBy: String) -> some View {
-        // AX sizes: two covers and the rest in the chip, so the card stays short while the text wraps (Mac QA, AX3).
-        let limit = Self.coverLimit(accessibility: typeSize.isAccessibilitySize)
-        let shown = Array(games.prefix(limit))
-        let rest = Array(games.dropFirst(limit))
+        // All three covers when they fit the width (every wide pose); at AX sizes a narrow column (Book) drops to two and the
+        // rest go in the chip, so the card stays short while the text wraps (Mac QA, AX3).
+        let fewest = Self.coverLimit(accessibility: typeSize.isAccessibilitySize)
         return VStack(alignment: .leading, spacing: 4) {
             PlusBadge(height: 20).accessibilityHidden(true)
             Text("\(lastChance ? "Last chance" : "This month"), claim by \(claimBy)")
@@ -127,20 +127,10 @@ struct PlusCard: View {
                 .accessibilityLabel(lastChance ? "PS Plus, last chance, claim by \(claimBy)" : "PS Plus, this month, claim by \(claimBy)")
                 .accessibilityAddTraits(.isHeader)
             Spacer().frame(height: 2)
-            HStack(spacing: 8) {
-                ForEach(Array(shown.enumerated()), id: \.offset) { _, g in
-                    // A title with no cover draws a wider plate (96 × 72) so its words wrap whole; art stays 3:4 (54 × 72).
-                    let plate = Self.resolve(g) { model.game($0) } == nil
-                    cover(g, plate: plate).frame(width: plate ? 96 : 54, height: 72)
-                }
-                if !rest.isEmpty {
-                    Text("+\(rest.count)")
-                        .font(PlayscribeFont.subheadline.weight(.semibold))
-                        .foregroundStyle(PlayscribeRole.textSecondary)
-                        .frame(minWidth: 44, minHeight: 44)
-                        .background(PlayscribeRole.surface, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
-                        .accessibilityElement()
-                        .accessibilityLabel("And \(rest.count) more: " + rest.map(\.name).joined(separator: ", "))
+            ViewThatFits(in: .horizontal) {
+                compactRow(Array(games.prefix(Self.maxCovers)), rest: Array(games.dropFirst(Self.maxCovers)))
+                if fewest < Self.maxCovers {
+                    compactRow(Array(games.prefix(fewest)), rest: Array(games.dropFirst(fewest)))
                 }
             }
         }
@@ -151,18 +141,30 @@ struct PlusCard: View {
         .accessibilityIdentifier("plusCard")
     }
 
+    private func compactRow(_ shown: [PlusMonth.Game], rest: [PlusMonth.Game]) -> some View {
+        HStack(spacing: 8) {
+            ForEach(Array(shown.enumerated()), id: \.offset) { _, g in
+                // A title with no cover draws a wider plate (96 × 72) so its words wrap whole; art stays 3:4 (54 × 72).
+                let plate = Self.resolve(g) { model.game($0) } == nil
+                cover(g, plate: plate).frame(width: plate ? 96 : 54, height: 72)
+            }
+            if !rest.isEmpty {
+                Text("+\(rest.count)")
+                    .font(PlayscribeFont.subheadline.weight(.semibold))
+                    .foregroundStyle(PlayscribeRole.textSecondary)
+                    .frame(minWidth: 44, minHeight: 44)
+                    .background(PlayscribeRole.surface, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
+                    .accessibilityElement()
+                    .accessibilityLabel("And \(rest.count) more: " + rest.map(\.name).joined(separator: ", "))
+            }
+        }
+        .fixedSize(horizontal: true, vertical: false)
+    }
+
     private func stacked(_ shown: [PlusMonth.Game], lastChance: Bool, claimBy: String) -> some View {
         VStack(alignment: .leading, spacing: 10) {
             header(lastChance: lastChance, claimBy: claimBy)
-            if typeSize.isAccessibilitySize {
-                // Two covers to a row and the third under them, each row sized by its own count and capped at a
-                // Library tile, so the lone cover is no wider than the pair above it.
-                ForEach(Array(stride(from: 0, to: shown.count, by: Self.accessibilityCoversPerRow)), id: \.self) { i in
-                    coverRow(Array(shown[i..<min(i + Self.accessibilityCoversPerRow, shown.count)]), fixedWidth: nil)
-                }
-            } else {
-                coverRow(shown, fixedWidth: nil)
-            }
+            coverRow(shown, fixedWidth: nil)
         }
     }
 
@@ -218,18 +220,16 @@ struct PlusCard: View {
         }
     }
 
-    @ViewBuilder private func cover(_ g: PlusMonth.Game, plate: Bool = false) -> some View {
-        let game = Self.resolve(g) { model.game($0) }
-        let art = PlusCover(name: g.name, game: game, wide: plate)
-        if let game {
-            Button { model.browseGame(game) } label: { art }
-                .buttonStyle(.plain)
-                .tappableFrame()
-                .accessibilityLabel(g.name)
-                .accessibilityHint("Opens the game")
-        } else {
-            art.accessibilityElement().accessibilityLabel(g.name)
+    /// Every cover is a Button: with art, or the name plate when the title has none (never a bare label).
+    private func cover(_ g: PlusMonth.Game, plate: Bool = false) -> some View {
+        let tracked: (String) -> CatalogGame? = { model.game($0) }
+        return Button { model.browseGame(Self.pageGame(g, tracked: tracked)) } label: {
+            PlusCover(name: g.name, game: Self.resolve(g, tracked: tracked), wide: plate)
         }
+        .buttonStyle(.plain)
+        .tappableFrame()
+        .accessibilityLabel(g.name)
+        .accessibilityHint("Opens the game")
     }
 }
 

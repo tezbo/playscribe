@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Quinn's five cloud runs on a booted, app-installed iPhone Duo (hosted runner or Mac). Needs sim-use.
-#   ios/tools/qa/duo-ci-scenarios.sh UDID OUTDIR [scenario ...]    (default: all)   scenarios: continuity trailer closedax5 schemes video deckwide
+#   ios/tools/qa/duo-ci-scenarios.sh UDID OUTDIR [scenario ...]    (default: all)   scenarios: continuity trailer closedax5 schemes video deckwide plusend
 # Every step saves <sha>-<scenario>-<step>-<display>-shot.png and -ui.txt (outline with frames, ids and the pose line).
 set -uo pipefail
 UDID=$1; OUT=$2; shift 2; SCEN=${*:-continuity trailer closedax5 schemes video}
@@ -76,6 +76,20 @@ deckwide) # bug-deck-card-closed-landscape-ax5-dots-order: the deck card in Clos
       [ $((k % 2)) = 0 ] && snap deckwide 2-closed-landscape-$n-swipe$k; done
   done
   launch -qaRoute library/playing -UIPreferredContentSizeCategoryName $AX5; snap deckwide 3-closed-portrait-AX5 ;;
+plusend) # bug-psplus-card-missing-cover-empty-grid + r060-psplus-compact-ax3: the end of the Library (PS Plus card) in every pose, std and AX5.
+  # Each step logs the element type of every PS Plus title in the outline: each must be a Button (never a bare text element).
+  plus() { snap plusend "$1"; echo "plus titles $1: $(grep -E 'Tomb Raider|Dead Island|Monster Train' "$OUT/$SHA-plusend-$1-$( [ "$(did)" = 3 ] && echo inner || echo outer)-ui.txt" | sed -E 's/^ *@[0-9]+ +//' | cut -c1-70 | tr '\n' ';')"; }
+  for ax in std:UICTContentSizeCategoryL AX5:$AX5; do n=${ax%%:*}; c=${ax#*:}
+    launch -qaRoute library/playing -UIPreferredContentSizeCategoryName $c
+    scroll_end 233,560 233,120 closed-portrait; plus $n-1-closed-portrait
+    launch -qaRoute library/playing -qaOrientation landscape -UIPreferredContentSizeCategoryName $c
+    scroll_end 339,380 339,60 closed-landscape; plus $n-2-closed-landscape
+    launch -qaRoute library/playing -UIPreferredContentSizeCategoryName $c
+    fold 180 landscape-left; scroll_end 475,560 475,120 open-landscape; plus $n-3-open-landscape
+    fold 90 landscape-left; scroll_end 700,560 700,120 book; plus $n-4-book
+    fold 90 portrait; scroll_end 334,880 334,560 tabletop; plus $n-5-tabletop
+    fold 180 portrait; scroll_end 334,850 334,150 open-portrait; plus $n-6-open-portrait
+  done ;;
 schemes) # dark and light for the pose set
   for ap in dark light; do
     launch -qaRoute library/playing -qaAppearance $ap -qaOverlay YES
