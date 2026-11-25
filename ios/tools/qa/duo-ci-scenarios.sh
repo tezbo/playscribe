@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Quinn's five cloud runs on a booted, app-installed iPhone Duo (hosted runner or Mac). Needs sim-use.
-#   ios/tools/qa/duo-ci-scenarios.sh UDID OUTDIR [scenario ...]    (default: all)   scenarios: continuity trailer closedax5 schemes video axchips deckwide
+#   ios/tools/qa/duo-ci-scenarios.sh UDID OUTDIR [scenario ...]    (default: all)   scenarios: continuity trailer closedax5 schemes video axchips deckwide lane
 # Every step saves <sha>-<scenario>-<step>-<display>-shot.png and -ui.txt (outline with frames, ids and the pose line).
 set -uo pipefail
 UDID=$1; OUT=$2; shift 2; SCEN=${*:-continuity trailer closedax5 schemes video}
@@ -100,6 +100,17 @@ tt) # Tabletop/Open shots with an assertion: TT_ROUTE, TT_STEPS ("angle:orientat
     a=${st%%:*}; o=${st#*:}; fold "$a" "$o"
     snap tt "a$a-$o-$([ "${TT_AX5:-no}" = yes ] && echo ax5 || echo std)-first"
     if [ "$o" = portrait ]; then scroll_end 300,900 300,520 "a$a-$o"; else scroll_end 300,560 300,200 "a$a-$o"; fi; snap tt "a$a-$o-$([ "${TT_AX5:-no}" = yes ] && echo ax5 || echo std)-end"
+  done ;;
+lane) # AX/VoiceOver lane (0.6.0): LANE_ROUTES (space list of -qaRoute values), each at AX5 in Closed portrait, Closed landscape and Tabletop;
+  # first screen then scrolled to the end, so a baseline on main and the PR share one matrix. LANE_AX (AX5|std) picks the text size.
+  size=$AX5; [ "${LANE_AX:-AX5}" = std ] && size=UICTContentSizeCategoryL
+  for r in ${LANE_ROUTES:-library/playing}; do n=$(echo "$r" | tr '/' '_')
+    launch -qaRoute "$r" -UIPreferredContentSizeCategoryName $size; snap lane "$n-1-closed-portrait"
+    scroll_end 233,560 233,120 portrait; snap lane "$n-1b-closed-portrait-end"
+    launch -qaRoute "$r" -qaOrientation landscape -UIPreferredContentSizeCategoryName $size; snap lane "$n-2-closed-landscape"
+    scroll_end 339,380 339,60 landscape; snap lane "$n-2b-closed-landscape-end"
+    launch -qaRoute "$r" -UIPreferredContentSizeCategoryName $size; fold 90 portrait; snap lane "$n-3-tabletop"
+    scroll_end 300,900 300,520 tabletop; snap lane "$n-3b-tabletop-end"
   done ;;
 axchips) # bug-closed-landscape-ax5-no-games + r060-filter-pills-grid-ax5: overlay off, first screen then scrolled (chips in view)
   for ax in AX3:UICTContentSizeCategoryAccessibilityL AX5:$AX5; do n=${ax%%:*}; c=${ax#*:}
