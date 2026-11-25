@@ -55,11 +55,16 @@ final class GameToGameTests: XCTestCase {
             if way == "Back button" {
                 back.tap()
             } else {
+                // A steady drag at a set speed with a short hold at the end, not press-then-fling: on slow runners (25 Nov, #645 and
+                // #646 heads) the fling left the page where it was while the same build passed on main (run 45583465960).
                 let w = app.windows.firstMatch
                 w.coordinate(withNormalizedOffset: CGVector(dx: 0.005, dy: 0.5))
-                    .press(forDuration: 0.05, thenDragTo: w.coordinate(withNormalizedOffset: CGVector(dx: 0.85, dy: 0.5)))
+                    .press(forDuration: 0.1, thenDragTo: w.coordinate(withNormalizedOffset: CGVector(dx: 0.85, dy: 0.5)),
+                           withVelocity: 800, thenHoldForDuration: 0.2)
             }
-            sleep(2)
+            // Wait for the pop to finish rather than a fixed 2 s.
+            let gone = XCTNSPredicateExpectation(predicate: NSPredicate(format: "exists == false"), object: app.buttons["addToLibrary"])
+            _ = XCTWaiter().wait(for: [gone], timeout: 10)
             XCTAssertFalse(app.buttons["addToLibrary"].exists, "\(way): still on the second game")
             XCTAssertTrue(back.waitForExistence(timeout: 5), "\(way): left the games altogether (\(pose))")
             XCTAssertEqual(back.label, "Back to Library", "\(way): not back on Dawnwalker (\(pose))")
