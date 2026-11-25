@@ -9,7 +9,8 @@ import XCTest
 final class PlusCardPoseTests: XCTestCase {
     private static let titles = ["QA Game One", "QA Game Two"]
 
-    private func check(pose: String?, ax5: Bool, landscape: Bool) {
+    /// `inner`: the Duo folded open (Tabletop, Open); otherwise the outer display, Closed, turned to landscape with the device.
+    private func check(pose: String?, ax5: Bool, landscape: Bool, inner: Bool = true) {
         continueAfterFailure = true
         let app = XCUIApplication()
         var args = ["-qaRoute", "plus-demo"]
@@ -17,11 +18,18 @@ final class PlusCardPoseTests: XCTestCase {
         if ax5 { args += ["-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityXXXL"] }
         app.launchArguments = args
         app.launch()
-        let tag = "\(pose ?? "open")\(landscape ? " landscape" : "") \(ax5 ? "AX5" : "std")"
+        let tag = "\(pose ?? (inner ? "open" : "closed"))\(landscape ? " landscape" : "") \(ax5 ? "AX5" : "std")"
+        if !inner && landscape {
+            XCUIDevice.shared.orientation = .landscapeLeft
+            let deadline = Date().addingTimeInterval(15)
+            while app.windows.firstMatch.frame.width <= app.windows.firstMatch.frame.height && Date() < deadline { sleep(1) }
+            sleep(2)
+        }
+        defer { if !inner && landscape { XCUIDevice.shared.orientation = .portrait } }
         let window = app.windows.firstMatch.frame
         print("plusWindow \(tag): \(window)")
-        guard min(window.width, window.height) >= 600, (window.width > window.height) == landscape else {
-            XCTFail("\(tag): needs the inner display in \(landscape ? "landscape" : "portrait"); the window is \(window), so this run measures nothing")
+        guard (min(window.width, window.height) >= 600) == inner, (window.width > window.height) == landscape else {
+            XCTFail("\(tag): needs the \(inner ? "inner" : "outer") display in \(landscape ? "landscape" : "portrait"); the window is \(window), so this run measures nothing")
             app.terminate()
             return
         }
@@ -46,6 +54,17 @@ final class PlusCardPoseTests: XCTestCase {
             XCTAssertTrue(b.exists, "\(tag): \(t) is not a Button in the card")
             XCTAssertTrue(b.isHittable, "\(tag): \(t) is not tappable")
             XCTAssertTrue(window.contains(b.frame), "\(tag): \(t) is cut by the window, \(b.frame)")
+        }
+        // Iris (#646): every cover, art or no-art tile, takes the same 3:4 frame, no wider than a Library tile (140 pt).
+        let frames = Self.titles.map { button($0).frame }
+        print("plusFrames \(tag): \(frames)")
+        if let first = frames.first {
+            for f in frames {
+                XCTAssertEqual(f.width, first.width, accuracy: 1, "\(tag): covers differ in width, \(frames)")
+                XCTAssertEqual(f.height, first.height, accuracy: 1, "\(tag): covers differ in height, \(frames)")
+            }
+            XCTAssertLessThanOrEqual(first.width, 141, "\(tag): wider than a Library tile")
+            XCTAssertEqual(first.height / max(first.width, 1), 4.0 / 3.0, accuracy: 0.05, "\(tag): not 3:4, \(first)")
         }
         if pose == "tabletop" {
             let probe = app.descendants(matching: .any)["poseProbe"]
@@ -77,4 +96,7 @@ final class PlusCardPoseTests: XCTestCase {
     func testTabletopAX5() { check(pose: "tabletop", ax5: true, landscape: false) }
     /// The runner's Duo folded to 180 in landscape-left with no -qaPose: Open landscape.
     func testOpenLandscapeAX5() { check(pose: nil, ax5: true, landscape: true) }
+    /// Closed (outer display), where sim-use's swipes stopped short of the card at AX5 (run 45557597743).
+    func testClosedPortraitAX5() { check(pose: nil, ax5: true, landscape: false, inner: false) }
+    func testClosedLandscapeAX5() { check(pose: nil, ax5: true, landscape: true, inner: false) }
 }

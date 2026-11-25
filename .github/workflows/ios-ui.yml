@@ -61,6 +61,8 @@ jobs:
             -only-testing:PlayscribeUITests/TabletopDayOneTests \
             -only-testing:PlayscribeUITests/RailSetTests \
             -only-testing:PlayscribeUITests/GameToGameTests/testBackAndEdgeSwipeReturnToTheGameItWasOpenedFrom \
+            -only-testing:PlayscribeUITests/PlusCardPoseTests/testClosedPortraitAX5 \
+            -only-testing:PlayscribeUITests/PlusCardPoseTests/testClosedLandscapeAX5 \
             -skip-testing:PlayscribeUITests/RailSetTests/testBookStd \
             -skip-testing:PlayscribeUITests/RailSetTests/testBookAX5 \
             -skip-testing:PlayscribeUITests/RailSetTests/testTabletopStd \
@@ -69,7 +71,7 @@ jobs:
             -skip-testing:PlayscribeUITests/RailSetTests/testMoreListsSwapSidesInBook \
             -skip-testing:PlayscribeUITests/RailSetTests/testMoreHasNoSwapSidesInTabletop \
             -resultBundlePath build/UITests.xcresult CODE_SIGNING_ALLOWED=NO > uitests.log 2>&1 || status=$?
-          grep -E 'error:|encountered an error|Test Case .* (passed|failed|skipped)|Executed|\*\* TEST' uitests.log | tail -80 | tee -a "$GITHUB_STEP_SUMMARY"
+          grep -E 'plusWindow|plusTitle|plusFrames|error:|encountered an error|Test Case .* (passed|failed|skipped)|Executed|\*\* TEST' uitests.log | tail -80 | tee -a "$GITHUB_STEP_SUMMARY"
           [ "${status:-0}" = 0 ] || echo "::warning::Feature UI tests failed in Closed; see uitests.log in the artifact"
           exit "${status:-0}"
       - name: Book, Tabletop and unfold UI tests (inner display, folded with sim-use)
@@ -123,7 +125,7 @@ jobs:
           }
           unfold_after_launch 110 testBackSurvivesUnfoldToBook
           unfold_after_launch 180 testBackSurvivesUnfoldToOpenLandscape
-          grep -E 'LCD|active|innerWindow|plusWindow|plusTitle|plusPose|plusSwipes|unfold|error:|encountered an error|Test Case .* (passed|failed|skipped)|Executed|\*\* TEST' inner-uitests.log | tail -80 | tee -a "$GITHUB_STEP_SUMMARY"
+          grep -E 'LCD|active|innerWindow|plusWindow|plusTitle|plusPose|plusSwipes|plusFrames|unfold|error:|encountered an error|Test Case .* (passed|failed|skipped)|Executed|\*\* TEST' inner-uitests.log | tail -80 | tee -a "$GITHUB_STEP_SUMMARY"
           [ "${status:-0}" = 0 ] || echo "::warning::Book/Tabletop UI tests failed on the inner display; see inner-uitests.log in the artifact"
           exit "${status:-0}"
       - name: Export test screenshots
