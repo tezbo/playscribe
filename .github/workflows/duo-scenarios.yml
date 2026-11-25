@@ -6,6 +6,10 @@ on:
   workflow_dispatch:
     inputs:
       scenarios: { description: 'continuity trailer closedax5 schemes video', default: 'continuity trailer closedax5 schemes video' }
+      tt_route: { description: 'tt scenario: -qaRoute', default: 'library/playing' }
+      tt_steps: { description: 'tt scenario: angle:orientation list', default: '90:portrait' }
+      tt_ax5: { description: 'tt scenario: yes for AX5', default: 'no' }
+      app_ref: { description: 'Optional branch whose app source is built; the scripts stay from the dispatched ref', default: '' }
   push:
     branches: ['claude/**']
     paths: ['.github/workflows/duo-scenarios.yml', 'ios/tools/qa/duo-ci-scenarios.sh']
@@ -16,6 +20,15 @@ jobs:
     timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
+      - name: Build the app from another branch, keeping this ref's scripts
+        env:
+          APP_REF: ${{ inputs.app_ref }}
+        run: |
+          if [ -n "$APP_REF" ]; then
+            cp ios/tools/qa/duo-ci-scenarios.sh /tmp/duo-ci-scenarios.sh
+            git fetch --depth=1 origin "refs/heads/$APP_REF" && git checkout -q FETCH_HEAD
+            cp /tmp/duo-ci-scenarios.sh ios/tools/qa/duo-ci-scenarios.sh
+          fi
       - run: sudo xcode-select -s /Applications/Xcode_27.1.app && brew install xcodegen ffmpeg && (cd ios && xcodegen generate)
       - name: Install sim-use
         run: |
@@ -35,6 +48,9 @@ jobs:
           xcrun simctl install "$UDID" "$(ls -d build/dd/Build/Products/Debug-iphonesimulator/Playscribe.app)"
       - name: Run the scenarios
         env:
+          TT_ROUTE: ${{ inputs.tt_route }}
+          TT_STEPS: ${{ inputs.tt_steps }}
+          TT_AX5: ${{ inputs.tt_ax5 }}
           SCENARIOS: ${{ inputs.scenarios || 'continuity trailer closedax5 schemes video' }}
         run: |
           mkdir -p out
