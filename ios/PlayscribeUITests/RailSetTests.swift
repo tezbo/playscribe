@@ -12,7 +12,8 @@ final class RailSetTests: XCTestCase {
     private func launch(pose: String?, ax5: Bool, route: String = "gamepage/dawnwalker", landscape: Bool = false) -> XCUIApplication {
         continueAfterFailure = true
         let app = XCUIApplication()
-        var args = ["-qaRoute", route]
+        // Tracked (dawnwalker) and untracked (alan-wake-2) come from the demo Library, never from what the last test saved.
+        var args = ["-qaRoute", route, "-qaDemo", "YES"]
         if let pose { args += ["-qaPose", pose] }
         if ax5 { args += Self.ax5 }
         if landscape { args += ["-qaOrientation", "landscape"] }
