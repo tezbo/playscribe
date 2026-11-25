@@ -42,9 +42,15 @@ final class ReleaseFeatureTests: XCTestCase {
     func testSwitchChipsCarryTheSelectedTraitAtAX5() throws {
         app.launchArguments = ["-qaRoute", "library/upcoming", "-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityXXXL"]
         app.launch()
-        let playing = app.buttons["libraryTab-playing"], upcoming = app.buttons["libraryTab-upcoming"]
-        XCTAssertTrue(upcoming.waitForExistence(timeout: 20), "the Upcoming chip (AX5 swaps the segmented control for chips)")
-        XCTAssertTrue(app.descendants(matching: .any)["libraryTabPicker"].exists, "the switch keeps its container id")
+        let any = app.descendants(matching: .any)
+        let playing = any["libraryTab-playing"], upcoming = any["libraryTab-upcoming"]
+        if !upcoming.waitForExistence(timeout: 20) {
+            // What the tree did show, so a miss says why (the segmented control would be one element labelled Library).
+            let seen = app.debugDescription.split(separator: "\n").filter { $0.contains("Playing") || $0.contains("Upcoming") || $0.contains("libraryTab") || $0.contains("Segmented") }
+            XCTFail("the Upcoming chip (AX5 swaps the segmented control for chips); tree: \(seen.prefix(8).joined(separator: " | "))")
+            return
+        }
+        XCTAssertTrue(any["libraryTabPicker"].exists, "the switch keeps its container id")
         XCTAssertTrue(upcoming.isSelected, "Upcoming is selected on the upcoming route")
         XCTAssertFalse(playing.isSelected, "only one chip is selected")
         playing.tap()
