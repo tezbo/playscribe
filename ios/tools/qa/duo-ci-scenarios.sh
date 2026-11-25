@@ -70,6 +70,27 @@ ax5landscape) # row 1 repeat: alternate swipe origin, then try to reach "Turn on
   snap ax5landscape 3-after-label-tap
   for i in 1 2 3 4 5 6; do sim-use swipe --from 300,100 --to 300,380 --duration 0.5 --device "$UDID" >/dev/null 2>&1; done; sleep 2
   snap ax5landscape 4-scrolled-back-up-to-alerts-card ;;
+alertscard) # row 1: Closed landscape AX5, scroll by element until "Turn on alerts" and "Not now" are whole on screen, then shoot
+  launch -qaRoute library/playing -qaOrientation landscape -qaOverlay YES -UIPreferredContentSizeCategoryName $AX5
+  snap alertscard 1-before
+  H=$(sim-use ui --device "$UDID" 2>/dev/null | head -1 | sed -E 's/.* ([0-9]+)x([0-9]+) .*/\2/')
+  for i in $(seq 1 25); do
+    ui=$(sim-use ui --device "$UDID" 2>/dev/null)
+    verdict=$(echo "$ui" | python3 -c '
+import re,sys
+H=int(sys.argv[1]); t=sys.stdin.read(); r={}
+for n in ("Turn on alerts","Not now"):
+    m=re.search(r"Button  \""+n+r"\".*?\((-?\d+),(-?\d+) (\d+)x(\d+)\)",t)
+    r[n]=(int(m.group(2)),int(m.group(2))+int(m.group(4))) if m else None
+if all(r.values()) and all(a>=0 and b<=H for a,b in r.values()): print("whole")
+elif any(v and v[0]<0 for v in r.values()): print("up")
+else: print("down")' "${H:-466}")
+    echo "alertscard step $i: $verdict (window ${H:-466})"
+    [ "$verdict" = whole ] && break
+    if [ "$verdict" = up ]; then sim-use swipe --from 300,100 --to 300,300 --duration 0.5 --device "$UDID" >/dev/null 2>&1
+    else sim-use swipe --from 300,300 --to 300,150 --duration 0.5 --device "$UDID" >/dev/null 2>&1; fi; sleep 1
+  done
+  snap alertscard 2-alerts-card; echo "$ui" | grep -E "Turn on alerts|Not now" ;;
 schemes) # dark and light for the pose set
   for ap in dark light; do
     launch -qaRoute library/playing -qaAppearance $ap -qaOverlay YES

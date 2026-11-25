@@ -6,6 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       scenarios: { description: 'continuity trailer closedax5 schemes video', default: 'continuity trailer closedax5 schemes video' }
+      app_ref: { description: 'Optional branch whose app source is built; the scripts stay from the dispatched ref', default: '' }
   push:
     branches: ['claude/**']
     paths: ['.github/workflows/duo-scenarios.yml', 'ios/tools/qa/duo-ci-scenarios.sh']
@@ -16,6 +17,15 @@ jobs:
     timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
+      - name: Build the app from another branch, keeping this ref's scripts
+        env:
+          APP_REF: ${{ inputs.app_ref }}
+        run: |
+          if [ -n "$APP_REF" ]; then
+            cp ios/tools/qa/duo-ci-scenarios.sh /tmp/duo-ci-scenarios.sh
+            git fetch --depth=1 origin "refs/heads/$APP_REF" && git checkout -q FETCH_HEAD
+            cp /tmp/duo-ci-scenarios.sh ios/tools/qa/duo-ci-scenarios.sh
+          fi
       - run: sudo xcode-select -s /Applications/Xcode_27.1.app && brew install xcodegen ffmpeg && (cd ios && xcodegen generate)
       - name: Install sim-use
         run: |
