@@ -18,8 +18,11 @@ final class GameOpensOnNewestUITests: XCTestCase {
 
         app.launchArguments = []
         app.launch()
+        // The relaunch may resume on the game page or on the Library; either way the game, opened again, shows What's new.
+        let tile = app.buttons.matching(NSPredicate(format: "label BEGINSWITH %@", "The Blood of Dawnwalker")).firstMatch
+        if !app.descendants(matching: .any)["sectionBar"].waitForExistence(timeout: 8), tile.waitForExistence(timeout: 15) { tile.tap() }
         let bar2 = app.descendants(matching: .any)["sectionBar"]
-        XCTAssertTrue(bar2.waitForExistence(timeout: 20), "the relaunch did not resume on the game page")
+        XCTAssertTrue(bar2.waitForExistence(timeout: 20), "the game page did not open")
         let news = bar2.buttons["What’s new"]
         XCTAssertTrue(news.waitForExistence(timeout: 5), "the What's new tab is missing")
         XCTAssertTrue(news.isSelected, "the game reopened on the section it was left on")

@@ -129,11 +129,14 @@ schemes) # dark and light for the pose set
     snap schemes $ap-1-closed; fold 180 landscape-left; snap schemes $ap-2-flat-landscape
     fold 90 landscape-left; snap schemes $ap-3-book; fold 90 portrait; snap schemes $ap-4-tabletop; fold 180 portrait; snap schemes $ap-5-flat-portrait
   done ;;
-newest) # bug-072: Gallery, relaunch with the saved state: the game shows What's new, Closed portrait and Open portrait
-  launch -qaRoute gamepage/dawnwalker/gallery; snap newest 1-closed-gallery
+newest) # bug-072: Dawnwalker left on Gallery, relaunch, open it from its Library tile: What's new, Closed portrait and Open portrait
+  tapTile() { local f; f=$(sim-use ui --device "$UDID" 2>/dev/null | grep '#tile-110' | head -1 | grep -o '([0-9.,]* [0-9.x]*)' | tr -d '()'); local x y w h; x=${f%%,*}; y=${f#*,}; y=${y%% *}; w=${f#* }; w=${w%x*}; h=${f##*x}
+    sim-use tap -x $((${x%.*} + ${w%.*} / 2)) -y $((${y%.*} + ${h%.*} / 2)) --device "$UDID" >/dev/null 2>&1; sleep 3; }
+  launch -qaRoute gamepage/dawnwalker/gallery; snap newest 1-closed-left-on-gallery
   sleep 2; xcrun simctl terminate "$UDID" $B >/dev/null 2>&1; xcrun simctl launch "$UDID" $B >/dev/null; sleep 8
-  snap newest 2-closed-after-relaunch
-  fold 180 portrait; sleep 3; snap newest 3-open-portrait-after-relaunch ;;
+  snap newest 2-closed-relaunched-library; tapTile; snap newest 3-closed-game-opened
+  xcrun simctl terminate "$UDID" $B >/dev/null 2>&1; xcrun simctl launch "$UDID" $B >/dev/null; sleep 8
+  fold 180 portrait; sleep 3; snap newest 4-open-portrait-library; tapTile; snap newest 5-open-portrait-game-opened ;;
 video) # row 9: hinge sweep recording with frame timing
   launch -qaRoute library/playing; fold 180 landscape-left
   sim-use record-video --device "$UDID" --fps 60 --output "$OUT/$SHA-video-sweep.mp4" >/dev/null 2>&1 & rp=$!
