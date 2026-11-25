@@ -37,7 +37,11 @@ final class PlusCardPoseTests: XCTestCase {
         let card = app.descendants(matching: .any)["plusCard"]
         XCTAssertTrue(card.waitForExistence(timeout: 40), "\(tag): the PS Plus card is not in the Library")
         func button(_ t: String) -> XCUIElement { card.buttons[t] }
-        func reached() -> Bool { Self.titles.allSatisfy { button($0).exists && button($0).isHittable } }
+        // Whole, not just hittable: Open landscape AX5 stopped with the covers half under the window edge (ui run 45572488568).
+        func reached() -> Bool {
+            let w = app.windows.firstMatch.frame
+            return Self.titles.allSatisfy { button($0).exists && button($0).isHittable && w.contains(button($0).frame) }
+        }
         // Swipe the lowest scroll view (Tabletop's lower half; the one page elsewhere) until both titles are tappable.
         var swipes = 0
         while !reached() && swipes < 15 {
