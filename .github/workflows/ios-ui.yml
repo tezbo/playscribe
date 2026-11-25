@@ -42,6 +42,24 @@ jobs:
           echo "Using ${udid#* }"
           echo "udid=${udid%% *}" >> "$GITHUB_OUTPUT"
           echo "UDID=${udid%% *}" >> "$GITHUB_ENV"
+      - name: Runner load log; only the Duo simulator booted
+        # bug-ui-runner-terminate-flake (run 45645592774): at both lifecycle failures the host's load average was 263 to 373, the
+        # app was already gone ("Failed to terminate ...:0" with no Playscribe process left), and mds_stores sat in disk wait.
+        # Any other simulator the image booted is shut down (no sudo). The background log records load, process states, the
+        # busiest processes and those in disk wait every 30 s across every step, so the next run shows when the load starts.
+        run: |
+          mkdir -p build/diag
+          xcrun simctl list devices booted > build/diag/booted-at-start.txt 2>&1 || true
+          for d in $(xcrun simctl list devices booted -j | python3 -c "import json,sys; print(' '.join(x['udid'] for v in json.load(sys.stdin)['devices'].values() for x in v))"); do
+            [ "$d" = "$UDID" ] || xcrun simctl shutdown "$d" || true
+          done
+          nohup bash -c 'while true; do
+              echo "== $(date -u +%T) $(uptime | sed "s/.*load averages*: //") states: $(ps -Ao stat= | cut -c1 | sort | uniq -c | tr -s " \n" " ")"
+              ps -Ao pcpu=,stat=,ucomm= -r | head -6 | sed "s/^/  cpu /"
+              ps -Ao stat=,ucomm= | grep -E "^ *[UD]" | sort | uniq -c | sort -rn | head -5 | sed "s/^/  wait /"
+              sleep 30
+            done' > build/diag/load.log 2>&1 &
+          echo "load logger started"
       - name: Build for testing
         run: |
           xcodebuild build-for-testing -project ios/Playscribe.xcodeproj -scheme PlayscribeUI \
