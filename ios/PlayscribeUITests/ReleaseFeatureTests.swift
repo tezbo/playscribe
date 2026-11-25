@@ -40,7 +40,7 @@ final class ReleaseFeatureTests: XCTestCase {
     /// J-11 at AX5 (bug-playing-upcoming-switch-ax5-small): the switch is two chips under the same id, the chosen one carries
     /// the selected trait, and a tap moves it.
     func testSwitchChipsCarryTheSelectedTraitAtAX5() throws {
-        app.launchArguments = ["-qaRoute", "library/playing", "-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityXXXL"]
+        app.launchArguments = ["-qaRoute", "fill-library/12", "-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityXXXL"]
         app.launch()
         let any = app.descendants(matching: .any)
         let playing = any["libraryTab-playing"], upcoming = any["libraryTab-upcoming"]
