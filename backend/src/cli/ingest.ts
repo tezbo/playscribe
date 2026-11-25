@@ -18,7 +18,7 @@ import { appendFileSync, writeFileSync } from 'node:fs'
 import { Igdb } from '../ingest/igdb.ts'
 import { runIngest, seedGames } from '../ingest/pipeline.ts'
 import { deriveAutoRegistry, seedAutoGames } from '../ingest/autoRegistry.ts'
-import { fetchPlus, resolvePlusCovers } from '../plusAuto.ts'
+import { fetchPlus, plusMissingCovers, resolvePlusCovers } from '../plusAuto.ts'
 import { loadPlus } from '../plus.ts'
 import { Apns } from '../push/apns.ts'
 import { pushNewPs5, queueNewPs5 } from '../push/notify.ts'
@@ -43,6 +43,7 @@ console.log(JSON.stringify(summary, null, 2))
 if (!args.includes('--hot')) {
   await fetchPlus(db, fetch, console.log)
   await resolvePlusCovers(db, igdb, console.log, loadPlus().months)
+  for (const m of plusMissingCovers(db, loadPlus().months)) console.log(`::warning title=PS Plus entry without cover art::${m}`)
 }
 const { keyId, teamId, key, topic } = config.apns
 const apns = process.env.PUSH_ENABLED === '1' && keyId && teamId && key ? new Apns({ keyId, teamId, key, topic }) : null
