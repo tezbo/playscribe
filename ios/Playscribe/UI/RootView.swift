@@ -375,12 +375,22 @@ struct LibraryRoot: View {
 
     var body: some View {
         NavigationStack(path: Binding(
-            get: { (model.nav.gameID.map { [$0] } ?? []) + (model.nav.gameID != nil ? model.nav.detailReleaseID.map { ["release:" + $0] } ?? [] : []) },
+            // bug-070: the games opened from inside a game sit under the open one, so the edge swipe and Back both return to them.
+            get: { (model.nav.gameID.map { (model.nav.gameTrail ?? []) + [$0] } ?? [])
+                + (model.nav.gameID != nil ? model.nav.detailReleaseID.map { ["release:" + $0] } ?? [] : []) },
             set: { path in
-                // A swipe back from the game leaves it the way the Back button does (D-1: to where it was opened from).
-                if path.isEmpty, model.nav.gameID != nil { model.closeGame(); return }
-                model.nav.gameID = path.first
-                model.nav.detailReleaseID = path.count > 1 ? String(path[1].dropFirst("release:".count)) : nil
+                let games = path.filter { !$0.hasPrefix("release:") }
+                let current = (model.nav.gameTrail ?? []) + (model.nav.gameID.map { [$0] } ?? [])
+                // A swipe back from a game leaves it the way the Back button does (D-1: to where it was opened from; bug-070:
+                // the previous game first).
+                // Popped to the root (a Library tab re-tap): leave every game.
+                if games.isEmpty, model.nav.gameID != nil { model.nav.gameTrail = nil; model.closeGame(); return }
+                if games.count == current.count - 1, path.last?.hasPrefix("release:") != true, games == Array(current.prefix(games.count)) {
+                    model.closeGame(); return
+                }
+                model.nav.gameID = games.last
+                model.nav.gameTrail = games.count > 1 ? Array(games.dropLast()) : nil
+                model.nav.detailReleaseID = path.last.flatMap { $0.hasPrefix("release:") ? String($0.dropFirst("release:".count)) : nil }
             }
         )) {
             LibraryView()
