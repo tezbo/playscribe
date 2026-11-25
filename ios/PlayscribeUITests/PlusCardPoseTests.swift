@@ -16,6 +16,7 @@ final class PlusCardPoseTests: XCTestCase {
         var args = ["-qaRoute", "plus-demo"]
         if let pose { args += ["-qaPose", pose] }
         if ax5 { args += ["-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityXXXL"] }
+        if !inner && landscape { args += ["-qaOrientation", "landscape"] }
         app.launchArguments = args
         app.launch()
         let tag = "\(pose ?? (inner ? "open" : "closed"))\(landscape ? " landscape" : "") \(ax5 ? "AX5" : "std")"
