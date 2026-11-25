@@ -77,14 +77,23 @@ struct LibraryTabPicker: View {
 
     /// Side by side, each half the width, when both labels fit whole on one line; else stacked full width. Never cut.
     private var chips: some View {
+        // The id and the container sit on each branch, inside ViewThatFits: on the ViewThatFits itself they never reached the
+        // tree (cloud run 45548323603: "the switch keeps its id" failed; the tree showed a bare Group "Library").
         ViewThatFits(in: .horizontal) {
             HStack(spacing: 8) { ForEach(LibraryTab.allCases) { chip($0, oneLine: true) } }
+                .modifier(SwitchContainer())
             VStack(spacing: 8) { ForEach(LibraryTab.allCases) { chip($0, oneLine: false) } }
+                .modifier(SwitchContainer())
         }
-        // The container keeps the switch's id (UI tests and the tree find it as before); each chip has its own.
-        .accessibilityElement(children: .contain)
-        .accessibilityLabel("Library")
-        .accessibilityIdentifier("libraryTabPicker")
+    }
+
+    private struct SwitchContainer: ViewModifier {
+        func body(content: Content) -> some View {
+            content
+                .accessibilityElement(children: .contain)
+                .accessibilityLabel("Library")
+                .accessibilityIdentifier("libraryTabPicker")
+        }
     }
 
     /// The filter-chip look (FilterBar): selection is the fill, the weight and the selected trait, never colour alone.
