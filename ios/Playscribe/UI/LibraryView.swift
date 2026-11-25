@@ -763,7 +763,7 @@ struct FilterBar: View {
                 .padding(.horizontal, 10)
                 .padding(.vertical, typeSize.isAccessibilitySize ? 6 : 0)
                 .frame(maxWidth: typeSize.isAccessibilitySize ? .infinity : nil, minHeight: 44)
-                .background(on ? PlayscribeRole.selectedChipFill : PlayscribeRole.chipFill, in: Capsule())
+                .modifier(SelectableChipGround(on: on))
         }
         .buttonStyle(.plain)
         .accessibilityAddTraits(on ? .isSelected : [])
@@ -1604,3 +1604,14 @@ private struct FeedStatusLine: View {
     static var whyLine: String { why.sorted { $0.value > $1.value }.map { "\($0.key)=\($0.value)" }.joined(separator: " ") }
 }
 #endif
+
+/// The ground of a single-select chip, shared by the Library's filter chips and its Playing/Upcoming chips: the fill, plus a
+/// 1.5 pt action-colour outline on the selected one, so selection never rests on a 1.14:1 fill difference (Iris, #645).
+struct SelectableChipGround: ViewModifier {
+    var on: Bool
+    func body(content: Content) -> some View {
+        content
+            .background(on ? PlayscribeRole.selectedChipFill : PlayscribeRole.chipFill, in: Capsule())
+            .overlay { if on { Capsule().strokeBorder(PlayscribeRole.action, lineWidth: 1.5) } }
+    }
+}

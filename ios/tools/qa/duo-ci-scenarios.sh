@@ -90,10 +90,14 @@ deckwide) # bug-deck-card-closed-landscape-ax5-dots-order: the deck card in Clos
       [ $((k % 2)) = 0 ] && snap deckwide 2-closed-landscape-$n-swipe$k; done
   done
   launch -qaRoute library/playing -UIPreferredContentSizeCategoryName $AX5; snap deckwide 3-closed-portrait-AX5 ;;
-switchax) # bug-playing-upcoming-switch-ax5-small: the Playing/Upcoming switch, each state, Closed portrait std + AX5, Closed landscape AX5, Tabletop AX5
+switchax) # bug-playing-upcoming-switch-ax5-small: switch + filter chips, each state, light and dark; Closed landscape AX5; Tabletop AX5
+  for ap in light dark; do for t in playing upcoming; do
+    launch -qaRoute library/$t -qaAppearance $ap -UIPreferredContentSizeCategoryName UICTContentSizeCategoryL; snap switchax 1-closed-portrait-std-$ap-$t
+    launch -qaRoute library/$t -qaAppearance $ap -UIPreferredContentSizeCategoryName $AX5; snap switchax 2-closed-portrait-AX5-$ap-$t
+    if [ $t = playing ]; then for k in 1 2 3; do sim-use swipe --from 233,560 --to 233,160 --device "$UDID" >/dev/null 2>&1; sleep 1; done
+      sleep 1; snap switchax 2b-closed-portrait-AX5-$ap-chips; fi
+  done; done
   for t in playing upcoming; do
-    launch -qaRoute library/$t -UIPreferredContentSizeCategoryName UICTContentSizeCategoryL; snap switchax 1-closed-portrait-std-$t
-    launch -qaRoute library/$t -UIPreferredContentSizeCategoryName $AX5; snap switchax 2-closed-portrait-AX5-$t
     launch -qaRoute library/$t -qaOrientation landscape -UIPreferredContentSizeCategoryName $AX5; snap switchax 3-closed-landscape-AX5-$t
     launch -qaRoute library/$t -UIPreferredContentSizeCategoryName $AX5; fold 90 portrait; snap switchax 4-tabletop-AX5-$t
     sim-use swipe --from 335,880 --to 335,620 --device "$UDID" >/dev/null 2>&1; sleep 2; snap switchax 4b-tabletop-AX5-$t-scrolled

@@ -65,9 +65,9 @@ struct LibraryTabPicker: View {
                 }
                 .pickerStyle(.segmented)
                 .frame(minHeight: 44)
+                .accessibilityIdentifier("libraryTabPicker")
             }
         }
-        .accessibilityIdentifier("libraryTabPicker")
         // Book: exactly the left page wide, so the control never crosses the fold (AX3, 7fe84f4).
         .frame(width: duo.pose == .book ? duo.division.map { max(0, $0.minX - 24 - 16) } : nil, alignment: .leading)
         // Never wider than LibraryControl.maxWidth, leading: in Open landscape it stretched to about 1750 px (Iris).
@@ -81,8 +81,10 @@ struct LibraryTabPicker: View {
             HStack(spacing: 8) { ForEach(LibraryTab.allCases) { chip($0, oneLine: true) } }
             VStack(spacing: 8) { ForEach(LibraryTab.allCases) { chip($0, oneLine: false) } }
         }
+        // The container keeps the switch's id (UI tests and the tree find it as before); each chip has its own.
         .accessibilityElement(children: .contain)
         .accessibilityLabel("Library")
+        .accessibilityIdentifier("libraryTabPicker")
     }
 
     /// The filter-chip look (FilterBar): selection is the fill, the weight and the selected trait, never colour alone.
@@ -95,10 +97,11 @@ struct LibraryTabPicker: View {
                 .fixedSize(horizontal: oneLine, vertical: true)
                 .padding(.horizontal, 10).padding(.vertical, 6)
                 .frame(maxWidth: .infinity, minHeight: 44)
-                .background(on ? PlayscribeRole.selectedChipFill : PlayscribeRole.chipFill, in: Capsule())
+                .modifier(SelectableChipGround(on: on))
         }
         .buttonStyle(.plain)
         .accessibilityAddTraits(on ? .isSelected : [])
+        .accessibilityIdentifier("libraryTab-\(tab.rawValue)")
     }
 }
 

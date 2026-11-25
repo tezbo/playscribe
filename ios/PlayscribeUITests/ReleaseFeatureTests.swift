@@ -37,6 +37,23 @@ final class ReleaseFeatureTests: XCTestCase {
         return true
     }
 
+    /// J-11 at AX5 (bug-playing-upcoming-switch-ax5-small): the switch is two chips under the same id, the chosen one carries
+    /// the selected trait, and a tap moves it. Closed only: in Tabletop at AX5 the switch follows the keep-current card by scroll.
+    func testSwitchChipsCarryTheSelectedTraitAtAX5() throws {
+        app.launchArguments = ["-qaRoute", "library/upcoming", "-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityXXXL"]
+        app.launch()
+        XCTAssertTrue(app.descendants(matching: .any)["libraryTabPicker"].waitForExistence(timeout: 15), "the switch keeps its id")
+        try XCTSkipIf(inTabletop, "Tabletop at AX5 puts the switch after the keep-current card; the cloud stills cover it")
+        let playing = app.buttons["libraryTab-playing"], upcoming = app.buttons["libraryTab-upcoming"]
+        XCTAssertTrue(upcoming.waitForExistence(timeout: 5), "the Upcoming chip")
+        XCTAssertTrue(upcoming.isSelected, "Upcoming is selected on the upcoming route")
+        XCTAssertFalse(playing.isSelected, "only one chip is selected")
+        playing.tap()
+        let moved = expectation(for: NSPredicate(format: "isSelected == true"), evaluatedWith: playing)
+        wait(for: [moved], timeout: 5)
+        XCTAssertFalse(upcoming.isSelected, "the selection moved to Playing")
+    }
+
     private func button(_ prefix: String) -> XCUIElement {
         app.buttons.matching(NSPredicate(format: "label BEGINSWITH %@", prefix)).firstMatch
     }
