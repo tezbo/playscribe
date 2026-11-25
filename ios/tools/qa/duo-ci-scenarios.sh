@@ -67,7 +67,9 @@ ax5landscape) # row 1 repeat: alternate swipe origin, then try to reach "Turn on
   for i in 1 2 3 4 5 6; do sim-use swipe --from 300,380 --to 300,100 --duration 0.5 --device "$UDID" >/dev/null 2>&1; done; sleep 2
   snap ax5landscape 2-after-6-swipes
   echo "tap by label: $(sim-use tap --label "Turn on alerts" --device "$UDID" 2>&1 | head -3)"; sleep 2
-  snap ax5landscape 3-after-label-tap ;;
+  snap ax5landscape 3-after-label-tap
+  for i in 1 2 3 4 5 6; do sim-use swipe --from 300,100 --to 300,380 --duration 0.5 --device "$UDID" >/dev/null 2>&1; done; sleep 2
+  snap ax5landscape 4-scrolled-back-up-to-alerts-card ;;
 schemes) # dark and light for the pose set
   for ap in dark light; do
     launch -qaRoute library/playing -qaAppearance $ap -qaOverlay YES
