@@ -219,6 +219,7 @@ struct PlayerView: View {
                             VideoUnavailable(videoID: video.youtubeID, title: video.label, code: controller.errorCode, showsClose: duo.pose == .tabletop) { close() }
                         } else if fullScreen && FullBleedVideo.offered(in: duo.pose) {
                             FullBleedVideo(controller: controller, posterAsset: video.posterAsset, game: model.game(gameID),
+                                           title: [video.label, model.game(gameID)?.name ?? ""].filter { !$0.isEmpty }.joined(separator: ", "),
                                            division: duo.division, occlusions: duo.occlusions) { fullScreen = false }
                         } else {
                             layout(duo: duo, release: release, video: video, controller: controller)
@@ -231,7 +232,10 @@ struct PlayerView: View {
                 }
                 .background(.black)
                 .overlay(alignment: .bottomLeading) { VideoTimeProbe(controller: controller) }
-                .onChange(of: [duo.pose == .tabletop, controller != nil], initial: true) { controller?.setNativeControls(duo.pose != .tabletop) }
+                .onChange(of: [duo.pose == .tabletop, controller != nil, fullScreen], initial: true) {
+                    // bug-071: in full screen our band controls drive the player, so YouTube's are off (controls=0).
+                    controller?.setNativeControls(duo.pose != .tabletop && !fullScreen)
+                }
                 // Tabletop has no full screen: folding into it ends it, and it doesn't come back on its own.
                 .onChange(of: FullBleedVideo.offered(in: duo.pose)) { _, offered in if !offered { fullScreen = false } }
                 .toolbarVisibility(duo.pose == .tabletop || fullScreen ? .hidden : .automatic, for: .navigationBar)
@@ -320,6 +324,8 @@ struct FullBleedVideo: View {
     var controller: YouTubeController
     var posterAsset: String?
     var game: CatalogGame?
+    /// The top band's title, e.g. "Update 1.2 trailer, The Blood of Dawnwalker".
+    var title: String = ""
     /// Book: the active fold, in DuoReader's (safe-area) coordinates.
     var division: CGRect? = nil
     /// Active occlusions (camera housing), in DuoReader's coordinates. The picture never runs under one.
@@ -355,13 +361,6 @@ struct FullBleedVideo: View {
         return frame()
     }
 
-    /// Exit's 44 pt frame: top leading, inside the safe area, in the band above the picture and never on it.
-    static func exitFrame(picture: CGRect, safe: EdgeInsets) -> CGRect {
-        // Vertically centred in the safe part of the band (Iris: controls centred in each band).
-        let y = max(safe.top, safe.top + (picture.minY - safe.top - 44) / 2)
-        return CGRect(x: safe.leading + 12, y: min(y, picture.minY - 44), width: 44, height: 44)
-    }
-
     /// True when the scene was turned to landscape on entry, so Exit turns it back.
     @State private var turned = false
 
@@ -371,7 +370,6 @@ struct FullBleedVideo: View {
             let full = CGSize(width: geo.size.width + safe.leading + safe.trailing, height: geo.size.height + safe.top + safe.bottom)
             let toScreen = { (r: CGRect) in r.offsetBy(dx: safe.leading, dy: safe.top) }
             let f = Self.fit(in: full, safeTop: safe.top, sides: max(safe.leading, safe.trailing), avoiding: occlusions.map(toScreen))
-            let exit = Self.exitFrame(picture: f, safe: safe)
             ZStack(alignment: .topLeading) {
                 Color.black
                 Color.black
@@ -392,8 +390,8 @@ struct FullBleedVideo: View {
                         .offset(x: d.minX, y: d.minY)
                         .accessibilityHidden(true)
                 }
-                exitButton
-                    .offset(x: exit.minX, y: exit.minY)
+                FullScreenBands(controller: controller, title: title, picture: f, screen: full, safe: safe,
+                                division: division.map(toScreen), onExit: leave)
             }
             .frame(width: full.width, height: full.height)
             .offset(x: -safe.leading, y: -safe.top)
@@ -415,18 +413,6 @@ struct FullBleedVideo: View {
         onExit()
     }
 
-    private var exitButton: some View {
-        Button(action: leave) {
-            Image(systemName: "arrow.down.right.and.arrow.up.left")
-                .font(.system(size: 22, weight: .semibold))
-                .foregroundStyle(.white)
-                .frame(width: 44, height: 44)
-                .background(.black.opacity(0.6), in: Circle())
-        }
-        .accessibilityLabel("Exit full screen")
-        .accessibilityIdentifier("videoExitFullScreen")
-        .tappableFrame()
-    }
     /// The navigation bar button that enters full screen.
     struct EnterButton: View {
         var action: () -> Void
@@ -916,5 +902,201 @@ enum VideoOrientation {
     static func request(_ mask: UIInterfaceOrientationMask) {
         guard let scene else { return }
         scene.requestGeometryUpdate(.iOS(interfaceOrientations: mask)) { error in NSLog("videoOrientation: \(error)") }
+    }
+}
+
+/// bug-071, Iris's specBands: our controls in full screen. They live only in the black letterbox bands, never in front of the
+/// player (YouTube RMF), as plain white glyphs with no glass. Top band: Exit full screen and the title. Bottom band: back 10,
+/// play/pause, forward 10, elapsed, the scrubber and remaining. In Book the transport is on the leading page and the scrubber on
+/// the trailing one, nothing within 8 pt of the division. They fade together (opacity, 0.25 s) 3 s after the last touch while
+/// playing, and show again on a tap in a band; a tap on the picture is YouTube's (policy_touches on the card), so it never
+/// shows ours. While hidden, the first band tap only shows them. VoiceOver and Switch Control keep them shown.
+struct FullScreenBands: View {
+    @Bindable var controller: YouTubeController
+    var title: String
+    /// The picture, the screen and the safe insets, in screen coordinates.
+    var picture: CGRect
+    var screen: CGSize
+    var safe: EdgeInsets
+    /// Book: the division in screen coordinates.
+    var division: CGRect?
+    var onExit: () -> Void
+
+    @Environment(\.accessibilityVoiceOverEnabled) private var voiceOver
+    @Environment(\.accessibilitySwitchControlEnabled) private var switchControl
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @State private var shown = true
+    @State private var scrubbing = false
+    @State private var hideTask: Task<Void, Never>?
+    static let hideAfter: Duration = .seconds(3)
+    /// Nothing within this of the division (Iris).
+    static let foldClearance: CGFloat = 8
+
+    /// The rows the controls sit in, in screen coordinates. Without a division: one top row and one bottom row across the safe
+    /// width. With one: the top row and the transport end before the division, and the timeline starts after it.
+    struct Layout: Equatable {
+        var top: CGRect
+        var transport: CGRect
+        var timeline: CGRect?
+    }
+
+    static func layout(picture: CGRect, screen: CGSize, safe: EdgeInsets, division: CGRect?) -> Layout {
+        let left = safe.leading + 12, right = screen.width - safe.trailing - 12
+        let topY = max(safe.top, safe.top + (picture.minY - safe.top - 44) / 2)
+        let bottomY = picture.maxY + max(0, (screen.height - picture.maxY - 44) / 2)
+        if let d = division {
+            let leadEnd = d.minX - foldClearance, trailStart = d.maxX + foldClearance
+            return Layout(top: CGRect(x: left, y: topY, width: max(0, leadEnd - left), height: 44),
+                          transport: CGRect(x: left, y: bottomY, width: max(0, leadEnd - left), height: 44),
+                          timeline: CGRect(x: trailStart, y: bottomY, width: max(0, right - trailStart), height: 44))
+        }
+        return Layout(top: CGRect(x: left, y: topY, width: max(0, right - left), height: 44),
+                      transport: CGRect(x: left, y: bottomY, width: max(0, right - left), height: 44), timeline: nil)
+    }
+
+    private var hides: Bool { controller.isPlaying && !scrubbing && !voiceOver && !switchControl }
+
+    var body: some View {
+        let l = Self.layout(picture: picture, screen: screen, safe: safe, division: division)
+        ZStack(alignment: .topLeading) {
+            // The bands themselves take taps (to show the controls), never the picture.
+            bandCatcher(CGRect(x: 0, y: 0, width: screen.width, height: picture.minY))
+            bandCatcher(CGRect(x: 0, y: picture.maxY, width: screen.width, height: screen.height - picture.maxY))
+            Group {
+                HStack(spacing: 12) {
+                    glyph("chevron.down", "Exit full screen", id: "videoExitFullScreen", action: onExit)
+                    Text(title)
+                        .font(PlayscribeFont.caption)
+                        .foregroundStyle(.white.opacity(0.7))
+                        .lineLimit(1)
+                        .truncationMode(.tail)
+                        .accessibilityAddTraits(.isHeader)
+                    Spacer(minLength: 0)
+                }
+                .frame(width: l.top.width, height: 44)
+                .offset(x: l.top.minX, y: l.top.minY)
+                HStack(spacing: 4) {
+                    glyph("gobackward.10", "Back 10 seconds", id: "videoBack10") { controller.skip(-10) }
+                    glyph(controller.isPlaying ? "pause.fill" : "play.fill", controller.isPlaying ? "Pause" : "Play",
+                          id: "videoPlayPause", action: controller.playPause)
+                        .disabled(!controller.ready)
+                    glyph("goforward.10", "Forward 10 seconds", id: "videoForward10") { controller.skip(10) }
+                    if l.timeline == nil { timeline } else { Spacer(minLength: 0) }
+                }
+                .frame(width: l.transport.width, height: 44)
+                .offset(x: l.transport.minX, y: l.transport.minY)
+                if let t = l.timeline {
+                    timeline.frame(width: t.width, height: 44).offset(x: t.minX, y: t.minY)
+                }
+            }
+            .opacity(shown ? 1 : 0)
+            .allowsHitTesting(shown)
+            .accessibilityHidden(!shown)
+        }
+        .frame(width: screen.width, height: screen.height, alignment: .topLeading)
+        .foregroundStyle(.white)
+        .dynamicTypeSize(...DynamicTypeSize.xxxLarge)
+        .onChange(of: hides, initial: true) { _, on in on ? schedule() : show() }
+        .onDisappear { hideTask?.cancel() }
+    }
+
+    private var timeline: some View {
+        HStack(spacing: 8) {
+            Text(PlayerTime.format(controller.current))
+            BandScrubber(controller: controller, scrubbing: $scrubbing)
+            Text("-" + PlayerTime.format(max(0, controller.duration - controller.current)))
+        }
+        .font(PlayscribeFont.footnote.monospacedDigit())
+        .foregroundStyle(.white.opacity(0.85))
+        .lineLimit(1)
+        .fixedSize(horizontal: false, vertical: true)
+    }
+
+    private func bandCatcher(_ r: CGRect) -> some View {
+        Color.clear
+            .contentShape(Rectangle())
+            .onTapGesture { wake() }
+            .frame(width: r.width, height: max(0, r.height))
+            .offset(x: r.minX, y: r.minY)
+            .accessibilityHidden(true)
+    }
+
+    private func glyph(_ symbol: String, _ label: String, id: String, action: @escaping () -> Void) -> some View {
+        Button { action(); wake() } label: {
+            Image(systemName: symbol).font(.system(size: 20, weight: .semibold)).frame(width: 44, height: 44).contentShape(Rectangle())
+        }
+        .accessibilityLabel(label)
+        .accessibilityIdentifier(id)
+        .accessibilityShowsLargeContentViewer { Label(label, systemImage: symbol) }
+        .tappableFrame()
+    }
+
+    private func wake() {
+        show()
+        if hides { schedule() }
+    }
+
+    private func show() {
+        hideTask?.cancel()
+        guard !shown else { return }
+        withAnimation(reduceMotion ? nil : .easeInOut(duration: 0.25)) { shown = true }
+    }
+
+    private func schedule() {
+        hideTask?.cancel()
+        hideTask = Task { @MainActor in
+            try? await Task.sleep(for: Self.hideAfter)
+            guard !Task.isCancelled, hides else { return }
+            withAnimation(reduceMotion ? nil : .easeInOut(duration: 0.25)) { shown = false }
+        }
+    }
+}
+
+/// specBands scrubber: a 4 pt track (white 30%) with white fill and a 12 pt thumb that grows to 20 pt while dragging, in a
+/// 44 pt hit area. VoiceOver: adjustable in 10 s steps, read as time.
+struct BandScrubber: View {
+    @Bindable var controller: YouTubeController
+    @Binding var scrubbing: Bool
+    @State private var dragTime: Double?
+
+    var body: some View {
+        GeometryReader { geo in
+            let d = max(1, controller.duration)
+            let t = dragTime ?? controller.current
+            let x = geo.size.width * CGFloat(min(1, max(0, t / d)))
+            ZStack(alignment: .leading) {
+                Capsule().fill(.white.opacity(0.3)).frame(height: 4)
+                Capsule().fill(.white).frame(width: x, height: 4)
+                Circle().fill(.white)
+                    .frame(width: scrubbing ? 20 : 12, height: scrubbing ? 20 : 12)
+                    .offset(x: x - (scrubbing ? 10 : 6))
+                    .animation(.easeOut(duration: 0.15), value: scrubbing)
+            }
+            .frame(maxHeight: .infinity)
+            .contentShape(Rectangle())
+            .gesture(DragGesture(minimumDistance: 0)
+                .onChanged { g in
+                    scrubbing = true
+                    dragTime = Double(min(1, max(0, g.location.x / max(1, geo.size.width)))) * d
+                }
+                .onEnded { _ in
+                    if let dragTime { controller.seek(to: dragTime) }
+                    dragTime = nil
+                    scrubbing = false
+                })
+        }
+        .frame(height: 44)
+        .accessibilityElement()
+        .accessibilityLabel("Playback position")
+        .accessibilityValue("\(PlayerTime.spoken(controller.current)) of \(PlayerTime.spoken(controller.duration))")
+        .accessibilityAdjustableAction { dir in
+            switch dir {
+            case .increment: controller.skip(10)
+            case .decrement: controller.skip(-10)
+            @unknown default: break
+            }
+        }
+        .accessibilityIdentifier("videoScrubber")
+        .tappableFrame()
     }
 }

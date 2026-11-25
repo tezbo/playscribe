@@ -63,16 +63,31 @@ struct FullBleedVideoTests {
         #expect(FullBleedVideo.fit(in: .zero) == .zero)
     }
 
-    /// Exit is in the band above the picture, inside the safe area, in every pose's real insets.
+    /// specBands: every control row is in a band, off the picture, inside the safe area, in every pose's real insets.
     @Test(arguments: [(CGSize(width: 678, height: 466), EdgeInsets()),
                       (CGSize(width: 678, height: 466), EdgeInsets(top: 0, leading: 47, bottom: 21, trailing: 47)),
                       (CGSize(width: 466, height: 678), EdgeInsets(top: 54, leading: 0, bottom: 34, trailing: 0)),
                       (CGSize(width: 951, height: 669), EdgeInsets(top: 24, leading: 0, bottom: 20, trailing: 0))])
-    func exitSitsInTheTopBandNeverOnThePicture(screen: CGSize, safe: EdgeInsets) {
+    func controlRowsSitInTheBandsNeverOnThePicture(screen: CGSize, safe: EdgeInsets) {
         let f = FullBleedVideo.fit(in: screen, safeTop: safe.top, sides: max(safe.leading, safe.trailing))
-        let exit = FullBleedVideo.exitFrame(picture: f, safe: safe)
-        #expect(exit.maxY <= f.minY + 0.01, "Exit \(exit) is on the picture \(f)")
-        #expect(exit.minY >= safe.top - 0.01 && exit.minX >= safe.leading)
-        #expect(exit.width == 44 && exit.height == 44)
+        let l = FullScreenBands.layout(picture: f, screen: screen, safe: safe, division: nil)
+        #expect(l.top.maxY <= f.minY + 0.01, "top row \(l.top) is on the picture \(f)")
+        #expect(l.transport.minY >= f.maxY - 0.01 && l.transport.maxY <= screen.height + 0.01, "bottom row \(l.transport)")
+        #expect(l.top.minY >= safe.top - 0.01 && l.top.minX >= safe.leading && l.top.maxX <= screen.width - safe.trailing)
+        #expect(l.top.height == 44 && l.transport.height == 44 && l.timeline == nil)
+    }
+
+    /// Book: transport and title on the leading page, the timeline on the trailing page, nothing within 8 pt of the division,
+    /// and the guard (the division itself) is all that covers the fold.
+    @Test func bookSplitsTheRowsAroundTheFold() {
+        let screen = CGSize(width: 951, height: 669), fold = CGRect(x: 455, y: 0, width: 40, height: 669)
+        let f = FullBleedVideo.fit(in: screen)
+        let l = FullScreenBands.layout(picture: f, screen: screen, safe: EdgeInsets(), division: fold)
+        let clear = fold.insetBy(dx: -FullScreenBands.foldClearance, dy: 0)
+        for r in [l.top, l.transport, l.timeline ?? .null] {
+            #expect(!r.isNull && !r.intersects(clear), "\(r) is within 8 pt of the fold")
+            #expect(!r.intersects(f), "\(r) is on the picture")
+        }
+        #expect(l.transport.maxX <= fold.minX && (l.timeline?.minX ?? 0) >= fold.maxX)
     }
 }
