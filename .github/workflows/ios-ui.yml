@@ -54,6 +54,7 @@ jobs:
         run: |
           # Run 45495696959: on a cold simulator the UI test runner never started ("Timed out waiting for AX loaded
           # notification"), so no test ran. Boot it and wait until it is fully up before xcodebuild attaches.
+          python3 ios/tools/qa/ui_lifecycle_retry.py --self-test
           xcrun simctl boot "$UDID" 2>/dev/null || true; xcrun simctl bootstatus "$UDID" -b > /dev/null
           xcodebuild test-without-building -project ios/Playscribe.xcodeproj -scheme PlayscribeUI \
             -destination "id=$UDID" -derivedDataPath build/dd \
@@ -70,6 +71,27 @@ jobs:
             -skip-testing:PlayscribeUITests/RailSetTests/testMoreHasNoSwapSidesInTabletop \
             -resultBundlePath build/UITests.xcresult CODE_SIGNING_ALLOWED=NO > uitests.log 2>&1 || status=$?
           grep -E 'error:|encountered an error|Test Case .* (passed|failed|skipped)|Executed|\*\* TEST' uitests.log | tail -60 | tee -a "$GITHUB_STEP_SUMMARY"
+          # bug-ui-runner-terminate-flake: when every failure is a runner app-lifecycle error (XCTest could not launch, stop or
+          # snapshot the app; never an assertion), capture why, then run exactly those tests once more on a rebooted simulator.
+          # The step's result is the retry's. Any assertion failure gets no retry (ios/tools/qa/ui_lifecycle_retry.py).
+          if [ "${status:-0}" != 0 ] && [ -d build/UITests.xcresult ]; then
+            mkdir -p build/diag/closed; ios/tools/qa/ui-lifecycle-diag.sh "$UDID" build/diag/closed || true
+            xcrun xcresulttool get test-results tests --path build/UITests.xcresult > build/diag/closed/tests.json 2>/dev/null || true
+            if retry=$(python3 ios/tools/qa/ui_lifecycle_retry.py < build/diag/closed/tests.json); then
+              echo "### Runner lifecycle errors only; retrying once on a rebooted simulator: $retry" | tee -a "$GITHUB_STEP_SUMMARY"
+              xcrun simctl shutdown "$UDID" 2>/dev/null || true
+              xcrun simctl boot "$UDID" 2>/dev/null || true; xcrun simctl bootstatus "$UDID" -b > /dev/null
+              status=0
+              # $retry is a space-separated list of -only-testing arguments.
+              xcodebuild test-without-building -project ios/Playscribe.xcodeproj -scheme PlayscribeUI \
+                -destination "id=$UDID" -derivedDataPath build/dd $retry \
+                -resultBundlePath build/UITests-retry.xcresult CODE_SIGNING_ALLOWED=NO > uitests-retry.log 2>&1 || status=$?
+              grep -E 'error:|encountered an error|Test Case .* (passed|failed|skipped)|Executed|\*\* TEST' uitests-retry.log | tee -a "$GITHUB_STEP_SUMMARY"
+              [ "$status" = 0 ] || ios/tools/qa/ui-lifecycle-diag.sh "$UDID" build/diag/closed-retry || true
+            else
+              echo "### No retry: a failure is not a runner lifecycle error" | tee -a "$GITHUB_STEP_SUMMARY"
+            fi
+          fi
           [ "${status:-0}" = 0 ] || echo "::warning::Feature UI tests failed in Closed; see uitests.log in the artifact"
           exit "${status:-0}"
       - name: Book, Tabletop and unfold UI tests (inner display, folded with sim-use)
@@ -176,6 +198,9 @@ jobs:
             build/shots-ax3
             build/attachments
             build/UITests.xcresult
+            build/UITests-retry.xcresult
+            uitests-retry.log
+            build/diag
             build/Inner-Book.xcresult
             build/Inner-Tabletop.xcresult
             build/Unfold-110.xcresult
