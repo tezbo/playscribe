@@ -84,6 +84,9 @@ struct NavState: Codable, Hashable {
     /// bug-070 (Terry, 25 Nov): the games opened before this one from inside a game page ("View game" under the recommendations),
     /// oldest first. Back and the edge swipe return to the last of them before leaving for returnTab / the Library. nil: none.
     var gameTrail: [String]?
+    /// bug-072: the section each trail game was left on, by trail position, so Back returns to it though a game opened afresh
+    /// lands on its newest update. Entries past the trail's length are stale and ignored.
+    var trailChapters: [Chapter]?
     var chapter: Chapter = .updates {
         didSet { if let g = gameID { chapters = (chapters ?? [:]).merging([g: chapter]) { $1 } } }
     }
@@ -776,7 +779,9 @@ final class AppModel {
         // bug-070: a game opened from inside another game's page stacks on it, so Back returns to that game. From another tab the
         // Library's open game is not where the reader came from, so the trail starts afresh.
         if n.tab == .library, let current = n.gameID, !sameGame {
-            n.gameTrail = (n.gameTrail ?? []) + [current]
+            let trail = n.gameTrail ?? []
+            n.trailChapters = Array((n.trailChapters ?? []).prefix(trail.count)) + [n.chapter]
+            n.gameTrail = trail + [current]
         } else if n.tab != .library {
             n.gameTrail = nil
         }
@@ -863,7 +868,7 @@ final class AppModel {
             nav.gameID = previous
             nav.gameTrail = trail.isEmpty ? nil : trail
             nav.lastGameID = previous
-            nav.chapter = GameSections.canonical(nav.chapters?[previous] ?? .updates)
+            nav.chapter = GameSections.canonical(nav.trailChapters.flatMap { $0.indices.contains(trail.count) ? $0[trail.count] : nil } ?? nav.chapters?[previous] ?? .updates)
             return
         }
         let back = nav.returnTab
