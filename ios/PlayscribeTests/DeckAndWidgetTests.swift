@@ -154,4 +154,22 @@ struct DeckAndWidgetTests {
             #expect(r.deckVersionChip == (named ? nil : v), "\(headline): \(r.deckVersionChip ?? "no chip")")
         }
     }
+
+    /// bug-deck-card-closed-landscape-ax5-dots-order (Nadia): every deck card leads with the patch name, the game name under it.
+    /// Closed landscape's wide card led with the game name at every size. The compact, stacked and stage cards share
+    /// CompactCaption.headline; the wide card's lines are held here too.
+    @Test func deckHeadlineIsThePatchName() throws {
+        let m = demoModel()
+        let deck = m.latestDeck
+        try #require(!deck.isEmpty)
+        for card in deck {
+            guard let r = card.release else { continue }
+            let patch = r.ps5Headline ?? r.displayName
+            #expect(CompactCaption.headline(card) == patch, "\(card.game.name): compact headline")
+            let wide = WideDeckCard.lines(card)
+            #expect(wide.headline == patch, "\(card.game.name): wide card leads with \(wide.headline)")
+            #expect(wide.sub == card.game.name.gluingTrailingNumeral, "\(card.game.name): the game name under the patch name")
+            #expect(wide.headline != wide.sub)
+        }
+    }
 }
