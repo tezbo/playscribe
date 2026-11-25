@@ -77,7 +77,13 @@ struct NotifyPref: Codable, Hashable {
 /// place so every pose change rebuilds views from the same values (P-1).
 struct NavState: Codable, Hashable {
     var tab: AppTab = .library
-    var gameID: String?
+    var gameID: String? {
+        // No game open, no games behind it (every path that clears the game also ends its trail).
+        didSet { if gameID == nil { gameTrail = nil } }
+    }
+    /// bug-070 (Terry, 25 Nov): the games opened before this one from inside a game page ("View game" under the recommendations),
+    /// oldest first. Back and the edge swipe return to the last of them before leaving for returnTab / the Library. nil: none.
+    var gameTrail: [String]?
     var chapter: Chapter = .updates {
         didSet { if let g = gameID { chapters = (chapters ?? [:]).merging([g: chapter]) { $1 } } }
     }
@@ -764,6 +770,13 @@ final class AppModel {
         // D-1 (0.5.6, Card D): Back from the game goes to where it was opened from. Sections are siblings, so switching one
         // never adds history; a second game opened from inside the Library keeps the Library as its way back.
         if n.tab != .library { n.returnTab = n.tab } else if n.gameID == nil { n.returnTab = nil }
+        // bug-070: a game opened from inside another game's page stacks on it, so Back returns to that game. From another tab the
+        // Library's open game is not where the reader came from, so the trail starts afresh.
+        if n.tab == .library, let current = n.gameID, !sameGame {
+            n.gameTrail = (n.gameTrail ?? []) + [current]
+        } else if n.tab != .library {
+            n.gameTrail = nil
+        }
         n.tab = .library
         if !sameGame { n.detailReleaseID = nil }
         n.gameID = gameID
@@ -840,6 +853,15 @@ final class AppModel {
 
     /// Back from the game page (rail, toolbar, swipe): leaves the game for where it was opened from (D-1, Card D).
     func closeGame() {
+        // bug-070: back to the game this one was opened from, on the chapter it was left on, before leaving the games.
+        if var trail = nav.gameTrail, let previous = trail.popLast() {
+            nav.detailReleaseID = nil
+            nav.gameID = previous
+            nav.gameTrail = trail.isEmpty ? nil : trail
+            nav.lastGameID = previous
+            nav.chapter = GameSections.canonical(nav.chapters?[previous] ?? .updates)
+            return
+        }
         let back = nav.returnTab
         nav.gameID = nil
         nav.detailReleaseID = nil
@@ -923,7 +945,10 @@ final class AppModel {
 
     /// The Back control's label: the screen it returns to, "Back to Updates" or "Back to Library" (Iris, 0.5.6 rail set; HIG:
     /// the previous screen's title). Glyph only on the rail, with this as its label, in every pose.
-    var backTitle: String { "Back to \((nav.returnTab ?? .library).title)" }
+    var backTitle: String {
+        if let previous = nav.gameTrail?.last { return "Back to \(game(previous)?.name ?? "previous game")" }
+        return "Back to \((nav.returnTab ?? .library).title)"
+    }
 
     /// J-1, R-7 (0.5.6): the one-column poses (Closed, Open both ways) push an update as its own page; Book and Tabletop show it
     /// in place on the Page.
@@ -956,6 +981,7 @@ final class AppModel {
     private func openPushed(_ gameID: String, _ releaseID: String) {
         nav.tab = .library
         nav.returnTab = nil
+        nav.gameTrail = nil
         openGame(gameID, chapter: .updates, releaseID: releaseID)
         nav.returnTab = nil
         if pushesReleases { nav.detailReleaseID = releaseID }

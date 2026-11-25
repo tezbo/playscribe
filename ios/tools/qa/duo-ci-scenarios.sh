@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Quinn's five cloud runs on a booted, app-installed iPhone Duo (hosted runner or Mac). Needs sim-use.
-#   ios/tools/qa/duo-ci-scenarios.sh UDID OUTDIR [scenario ...]    (default: all)   scenarios: continuity trailer closedax5 schemes video
+#   ios/tools/qa/duo-ci-scenarios.sh UDID OUTDIR [scenario ...]    (default: all)   scenarios: continuity trailer closedax5 schemes video axchips deckwide
 # Every step saves <sha>-<scenario>-<step>-<display>-shot.png and -ui.txt (outline with frames, ids and the pose line).
 set -uo pipefail
 UDID=$1; OUT=$2; shift 2; SCEN=${*:-continuity trailer closedax5 schemes video}
@@ -101,6 +101,28 @@ tt) # Tabletop/Open shots with an assertion: TT_ROUTE, TT_STEPS ("angle:orientat
     snap tt "a$a-$o-$([ "${TT_AX5:-no}" = yes ] && echo ax5 || echo std)-first"
     if [ "$o" = portrait ]; then scroll_end 300,900 300,520 "a$a-$o"; else scroll_end 300,560 300,200 "a$a-$o"; fi; snap tt "a$a-$o-$([ "${TT_AX5:-no}" = yes ] && echo ax5 || echo std)-end"
   done ;;
+axchips) # bug-closed-landscape-ax5-no-games + r060-filter-pills-grid-ax5: overlay off, first screen then scrolled (chips in view)
+  for ax in AX3:UICTContentSizeCategoryAccessibilityL AX5:$AX5; do n=${ax%%:*}; c=${ax#*:}
+    launch -qaRoute library/playing -qaOrientation landscape -UIPreferredContentSizeCategoryName $c
+    snap axchips 1-closed-landscape-$n
+    sim-use swipe --from 233,450 --to 233,150 --device "$UDID" >/dev/null 2>&1; sleep 2; snap axchips 2-closed-landscape-$n-scrolled
+    sim-use swipe --from 233,450 --to 233,150 --device "$UDID" >/dev/null 2>&1; sleep 2; snap axchips 2b-closed-landscape-$n-scrolled-more
+    for k in $(seq 1 16); do sim-use swipe --from 233,450 --to 233,100 --device "$UDID" >/dev/null 2>&1; sleep 1
+      [ $((k % 3)) = 0 ] && snap axchips 2c-closed-landscape-$n-swipe$k; done
+    sleep 1; snap axchips 2c-closed-landscape-$n-end
+  done
+  launch -qaRoute library/playing -UIPreferredContentSizeCategoryName $AX5; snap axchips 3-closed-portrait-AX5
+  sim-use swipe --from 233,560 --to 233,160 --device "$UDID" >/dev/null 2>&1; sleep 2; snap axchips 4-closed-portrait-AX5-scrolled
+  launch -qaRoute library/playing -UIPreferredContentSizeCategoryName $AX5; fold 90 portrait; snap axchips 5-tabletop-AX5
+  sim-use swipe --from 335,880 --to 335,560 --device "$UDID" >/dev/null 2>&1; sleep 2; snap axchips 6-tabletop-AX5-scrolled ;;
+deckwide) # bug-deck-card-closed-landscape-ax5-dots-order: the deck card in Closed landscape std/AX3/AX5 and Closed portrait AX5
+  for ax in std:UICTContentSizeCategoryL AX3:UICTContentSizeCategoryAccessibilityL AX5:$AX5; do n=${ax%%:*}; c=${ax#*:}
+    launch -qaRoute library/playing -qaOrientation landscape -UIPreferredContentSizeCategoryName $c
+    snap deckwide 1-closed-landscape-$n
+    for k in 1 2 3 4 5 6 7 8; do sim-use swipe --from 233,300 --to 233,100 --device "$UDID" >/dev/null 2>&1; sleep 1
+      [ $((k % 2)) = 0 ] && snap deckwide 2-closed-landscape-$n-swipe$k; done
+  done
+  launch -qaRoute library/playing -UIPreferredContentSizeCategoryName $AX5; snap deckwide 3-closed-portrait-AX5 ;;
 schemes) # dark and light for the pose set
   for ap in dark light; do
     launch -qaRoute library/playing -qaAppearance $ap -qaOverlay YES

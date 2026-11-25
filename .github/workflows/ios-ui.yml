@@ -49,16 +49,79 @@ jobs:
             || { grep -E 'error:' build.log | head -20; exit 1; }
       - name: Feature UI tests (Closed)
         id: uitests
-        continue-on-error: true
+        # The seven synthetic-fold cases skipped here run in the next step on the inner display, where they measure something
+        # (#626, #631). On the outer display they can only fail with "needs the inner display".
         run: |
+          # Run 45495696959: on a cold simulator the UI test runner never started ("Timed out waiting for AX loaded
+          # notification"), so no test ran. Boot it and wait until it is fully up before xcodebuild attaches.
+          xcrun simctl boot "$UDID" 2>/dev/null || true; xcrun simctl bootstatus "$UDID" -b > /dev/null
           xcodebuild test-without-building -project ios/Playscribe.xcodeproj -scheme PlayscribeUI \
             -destination "id=$UDID" -derivedDataPath build/dd \
             -only-testing:PlayscribeUITests/ReleaseFeatureTests \
             -only-testing:PlayscribeUITests/TabletopDayOneTests \
             -only-testing:PlayscribeUITests/RailSetTests \
+            -only-testing:PlayscribeUITests/GameToGameTests/testBackAndEdgeSwipeReturnToTheGameItWasOpenedFrom \
+            -skip-testing:PlayscribeUITests/RailSetTests/testBookStd \
+            -skip-testing:PlayscribeUITests/RailSetTests/testBookAX5 \
+            -skip-testing:PlayscribeUITests/RailSetTests/testTabletopStd \
+            -skip-testing:PlayscribeUITests/RailSetTests/testTabletopAX5 \
+            -skip-testing:PlayscribeUITests/RailSetTests/testTabletopUntrackedAX5 \
+            -skip-testing:PlayscribeUITests/RailSetTests/testMoreListsSwapSidesInBook \
+            -skip-testing:PlayscribeUITests/RailSetTests/testMoreHasNoSwapSidesInTabletop \
             -resultBundlePath build/UITests.xcresult CODE_SIGNING_ALLOWED=NO > uitests.log 2>&1 || status=$?
-          grep -E 'error:|Test Case .* (passed|failed|skipped)|Executed|\*\* TEST' uitests.log | tail -60 | tee -a "$GITHUB_STEP_SUMMARY"
+          grep -E 'error:|encountered an error|Test Case .* (passed|failed|skipped)|Executed|\*\* TEST' uitests.log | tail -60 | tee -a "$GITHUB_STEP_SUMMARY"
           [ "${status:-0}" = 0 ] || echo "::warning::Feature UI tests failed in Closed; see uitests.log in the artifact"
+          exit "${status:-0}"
+      - name: Book, Tabletop and unfold UI tests (inner display, folded with sim-use)
+        # The synthetic fold (-qaPose) is valid only on the inner display (#626). sim-use sends Device Hub's hinge reports, so the
+        # runner's Duo opens flat (180 degrees, no real division) and -qaPose adds the Book or Tabletop fold. Book reads landscape
+        # (inner 951 x 669); Tabletop reads portrait (669 x 951). Probe runs 45471626931 and 45474143713 (Duo QA thread).
+        # The simulator is always folded closed again so the Closed steps below run on the outer display.
+        id: innertests
+        if: always()
+        run: |
+          fold() { sim-use ios fold "$1" --device "$UDID"; sleep 5; }
+          trap 'sim-use ios fold closed --device "$UDID" || true; sim-use ios rotate portrait --device "$UDID" || true; sleep 5' EXIT
+          brew install lycorp-jp/tap/sim-use > sim-use.log 2>&1 || { tail -20 sim-use.log; exit 1; }
+          T=PlayscribeUITests/RailSetTests
+          run() { # $1 = name, $2 = orientation, rest = -only-testing args
+            n=$1; o=$2; shift 2
+            # The Closed step's xcodebuild leaves the simulator shut down (run 45478233147: sim-use "is not booted"), and sim-use
+            # folds only a booted device, so boot it first, as the Duo QA probe did.
+            xcrun simctl boot "$UDID" 2>/dev/null || true; xcrun simctl bootstatus "$UDID" -b > /dev/null
+            fold open; sim-use ios rotate "$o" --device "$UDID"; sleep 5
+            xcrun devicectl device info displays --device "$UDID" > displays.txt 2>&1
+            grep -E 'LCD|active|currentOrientation' displays.txt | tee -a inner-uitests.log
+            # A failed fold must stop the step, not run the pose cases on the outer display.
+            grep -q 'LCD-1 (active)' displays.txt || { echo "::error::$n: fold open did not make the inner display (LCD-1) active"; cat displays.txt; exit 1; }
+            xcodebuild test-without-building -project ios/Playscribe.xcodeproj -scheme PlayscribeUI \
+              -destination "id=$UDID" -derivedDataPath build/dd "$@" \
+              -resultBundlePath "build/Inner-$n.xcresult" CODE_SIGNING_ALLOWED=NO >> inner-uitests.log 2>&1 || status=$?
+          }
+          run Book landscape-left -only-testing:$T/testBookStd -only-testing:$T/testBookAX5 -only-testing:$T/testMoreListsSwapSidesInBook
+          run Tabletop portrait -only-testing:$T/testTabletopStd -only-testing:$T/testTabletopAX5 \
+            -only-testing:$T/testTabletopUntrackedAX5 -only-testing:$T/testMoreHasNoSwapSidesInTabletop
+          # bug-landscape-rail-back-empty: launch on the outer display, then unfold once the app is running. A background job
+          # waits for the app's process, gives the game page 10 s, then folds to the angle and turns landscape-left.
+          unfold_after_launch() { # $1 = hinge angle, $2 = test
+            xcrun simctl boot "$UDID" 2>/dev/null || true; xcrun simctl bootstatus "$UDID" -b > /dev/null
+            fold closed; sim-use ios rotate portrait --device "$UDID"; sleep 5
+            ( for i in $(seq 1 180); do
+                xcrun simctl spawn "$UDID" launchctl list 2>/dev/null | grep -q 'UIKitApplication:co.codeconnectors.playscribe\[' && break
+                sleep 1
+              done
+              sleep 10
+              echo "unfold: hinge $1, landscape-left" >> inner-uitests.log
+              sim-use ios fold "$1" --device "$UDID"; sim-use ios rotate landscape-left --device "$UDID" ) &
+            xcodebuild test-without-building -project ios/Playscribe.xcodeproj -scheme PlayscribeUI \
+              -destination "id=$UDID" -derivedDataPath build/dd -only-testing:PlayscribeUITests/UnfoldBackTests/$2 \
+              -resultBundlePath "build/Unfold-$1.xcresult" CODE_SIGNING_ALLOWED=NO >> inner-uitests.log 2>&1 || status=$?
+            wait
+          }
+          unfold_after_launch 110 testBackSurvivesUnfoldToBook
+          unfold_after_launch 180 testBackSurvivesUnfoldToOpenLandscape
+          grep -E 'LCD|active|innerWindow|unfold|error:|encountered an error|Test Case .* (passed|failed|skipped)|Executed|\*\* TEST' inner-uitests.log | tail -60 | tee -a "$GITHUB_STEP_SUMMARY"
+          [ "${status:-0}" = 0 ] || echo "::warning::Book/Tabletop UI tests failed on the inner display; see inner-uitests.log in the artifact"
           exit "${status:-0}"
       - name: Export test screenshots
         if: always()
@@ -113,6 +176,11 @@ jobs:
             build/shots-ax3
             build/attachments
             build/UITests.xcresult
+            build/Inner-Book.xcresult
+            build/Inner-Tabletop.xcresult
+            build/Unfold-110.xcresult
+            build/Unfold-180.xcresult
+            inner-uitests.log
             build/Landscape.xcresult
             build/Harness.xcresult
             harness.log

@@ -80,6 +80,7 @@ Decision: the native launch screen is a plain background colour matching the Lib
 - **B-10** Quick actions: a long press on a game (Library tile or row, Upcoming, Search result) opens the status menu (Owned, Wishlist, Watching with a tick on the current one, Remove in red); outside the library it offers the ways to add. VoiceOver gets the same choices as custom actions ("Set to…", "Remove…"). Search result rows also have a trailing swipe Remove (no full swipe). A status change gives a light haptic. The tip "Press and hold a game to change or remove it" shows twice, then never. Tabletop: nothing above the fold is interactive.
 - **B-11** The Wishlist status circle on a tile is a solid #F5C84B disc with an ink glyph; Owned and Watching keep the translucent circle with a white glyph.
 - **B-9** A filter with no matches shows "No <filter> games" and a "Show all" button.
+- **B-12** Pose parity (Library): every pose shows the same blocks in one order. One accessibility exception (Nadia, 24 Nov 2026): at AX1 and up in Closed (portrait and landscape) and Tabletop, the filter chips follow the tiles, so a game is on the first screen (Tabletop: 015fb347, #610, cited by Nadia as 28c6063; Closed: #635). Nothing else moves and no chip is dropped. At AX sizes the chips sit two to a row where both whole labels fit, otherwise one to a row; never a sideways scroller (r060). Test: `LibraryOrderParityTests` (same blocks at every size, only the chips may move, and only there).
 
 ## 4. Add a game
 
