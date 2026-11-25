@@ -40,7 +40,7 @@ final class ReleaseFeatureTests: XCTestCase {
     /// J-11 at AX5 (bug-playing-upcoming-switch-ax5-small): the switch is two chips under the same id, the chosen one carries
     /// the selected trait, and a tap moves it.
     func testSwitchChipsCarryTheSelectedTraitAtAX5() throws {
-        app.launchArguments = ["-qaRoute", "library/upcoming", "-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityXXXL"]
+        app.launchArguments = ["-qaRoute", "library/playing", "-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityXXXL"]
         app.launch()
         let any = app.descendants(matching: .any)
         let playing = any["libraryTab-playing"], upcoming = any["libraryTab-upcoming"]
@@ -51,12 +51,12 @@ final class ReleaseFeatureTests: XCTestCase {
             return
         }
         XCTAssertTrue(any["libraryTabPicker"].exists, "the switch keeps its container id")
-        XCTAssertTrue(upcoming.isSelected, "Upcoming is selected on the upcoming route")
-        XCTAssertFalse(playing.isSelected, "only one chip is selected")
-        playing.tap()
-        let moved = expectation(for: NSPredicate(format: "isSelected == true"), evaluatedWith: playing)
+        XCTAssertTrue(playing.isSelected, "Playing is selected on the playing route")
+        XCTAssertFalse(upcoming.isSelected, "only one chip is selected")
+        upcoming.tap()
+        let moved = expectation(for: NSPredicate(format: "isSelected == true"), evaluatedWith: upcoming)
         wait(for: [moved], timeout: 5)
-        XCTAssertFalse(upcoming.isSelected, "the selection moved to Playing")
+        XCTAssertFalse(playing.isSelected, "the selection moved to Upcoming")
     }
 
     private func button(_ prefix: String) -> XCUIElement {
