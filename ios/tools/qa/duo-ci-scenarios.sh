@@ -130,10 +130,10 @@ schemes) # dark and light for the pose set
     fold 90 landscape-left; snap schemes $ap-3-book; fold 90 portrait; snap schemes $ap-4-tabletop; fold 180 portrait; snap schemes $ap-5-flat-portrait
   done ;;
 newest) # bug-072: Dawnwalker left on Gallery, relaunch, open it from its Library tile: What's new, Closed portrait and Open portrait
-  tapTile() { local f; f=$(sim-use ui --device "$UDID" 2>/dev/null | grep '#tile-110' | head -1 | grep -o '([0-9.,]* [0-9.x]*)' | tr -d '()'); local x y w h; x=${f%%,*}; y=${f#*,}; y=${y%% *}; w=${f#* }; w=${w%x*}; h=${f##*x}
+  tapTile() { local f; f=$(sim-use ui --device "$UDID" 2>/dev/null | grep 'The Blood of Dawnwalker, last' | head -1 | grep -o '([0-9.,]* [0-9.x]*)' | tr -d '()'); local x y w h; x=${f%%,*}; y=${f#*,}; y=${y%% *}; w=${f#* }; w=${w%x*}; h=${f##*x}
     sim-use tap -x $((${x%.*} + ${w%.*} / 2)) -y $((${y%.*} + ${h%.*} / 2)) --device "$UDID" >/dev/null 2>&1; sleep 3; }
   launch -qaRoute gamepage/dawnwalker/gallery; snap newest 1-closed-left-on-gallery
-  sleep 2; xcrun simctl terminate "$UDID" $B >/dev/null 2>&1; xcrun simctl launch "$UDID" $B >/dev/null; sleep 8
+  sleep 2; xcrun simctl terminate "$UDID" $B >/dev/null 2>&1; xcrun simctl launch "$UDID" $B >/dev/null; sleep 14
   snap newest 2-closed-relaunched-library; tapTile; snap newest 3-closed-game-opened
   xcrun simctl terminate "$UDID" $B >/dev/null 2>&1; xcrun simctl launch "$UDID" $B >/dev/null; sleep 8
   fold 180 portrait; sleep 3; snap newest 4-open-portrait-library; tapTile; snap newest 5-open-portrait-game-opened ;;
