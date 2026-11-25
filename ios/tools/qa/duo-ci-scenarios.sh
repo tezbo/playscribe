@@ -6,8 +6,25 @@ set -uo pipefail
 UDID=$1; OUT=$2; shift 2; SCEN=${*:-continuity trailer closedax5 schemes video}
 SHA=$(git rev-parse --short HEAD 2>/dev/null || echo nosha); B=co.codeconnectors.playscribe; mkdir -p "$OUT"
 AX5=UICTContentSizeCategoryAccessibilityXXXL
-fold() { sim-use ios fold "$1" --device "$UDID" >/dev/null 2>&1; sim-use ios rotate "${2:-portrait}" --device "$UDID" >/dev/null 2>&1; sleep 5; }
+# Rotate first, fold second, then check the active display matches the angle (inner for any open angle, outer for 0); redo once if not.
+fold() {
+  for try in 1 2; do
+    sim-use ios rotate "${2:-portrait}" --device "$UDID" >/dev/null 2>&1; sim-use ios fold "$1" --device "$UDID" >/dev/null 2>&1; sleep 5
+    local d; d=$(did); { [ "$1" = 0 ] && [ "$d" = 1 ]; } || { [ "$1" != 0 ] && [ "$d" = 3 ]; } && return 0
+    echo "fold $1 ${2:-portrait}: active display $d is wrong, retry $try"
+  done; }
 did() { sim-use ios fold --json --device "$UDID" 2>/dev/null | python3 -c 'import json,sys;print(json.load(sys.stdin)["data"]["posture"]["activeDisplay"]["id"])' 2>/dev/null || echo 1; }
+# Swipe until two consecutive outlines are identical (page cannot scroll further), up to 20 swipes; logs the final qa offset.
+scroll_end() { # fromX,fromY toX,toY label
+  local prev="" cur i
+  for i in $(seq 1 20); do
+    sim-use swipe --from "$1" --to "$2" --duration 0.5 --device "$UDID" >/dev/null 2>&1; sleep 1
+    cur=$(sim-use ui --device "$UDID" 2>&1 | grep -v 'poseProbe' | md5sum)
+    [ "$cur" = "$prev" ] && break; prev=$cur
+  done
+  echo "scroll end ($3): $i swipes; $(sim-use ui --device "$UDID" 2>&1 | grep -o 'qa-page[^"]*' | head -1)"; }
+# qa-page offset and the first three visible rows (id and label) after each step, for position-loss checks (row 8).
+state() { echo "state $1: $(sim-use ui --device "$UDID" 2>/dev/null | grep -o 'qa-page: [^"]*' | head -1) | first rows: $(sim-use ui --device "$UDID" 2>/dev/null | grep -E '^ +@[0-9]+ +(Button|Cell|StaticText|Heading) ' | grep -vE 'qa-|poseProbe|foldAudit|libraryDuo' | head -3 | cut -c1-90 | tr '\n' ';')"; }
 snap() { # scenario step
   local d; d=$(did); local n; [ "$d" = 3 ] && n=inner || n=outer
   local f="$OUT/$SHA-$1-$2-$n"
@@ -15,11 +32,12 @@ snap() { # scenario step
   sim-use ui --device "$UDID" > "$f-ui.txt" 2>&1; echo "$f: $(head -1 "$f-ui.txt" | cut -c1-80) | $(grep -o 'pose: [a-z]*[^"]*' "$f-ui.txt" | head -1)"; }
 launch() { xcrun simctl terminate "$UDID" $B >/dev/null 2>&1; fold 0 portrait; xcrun simctl launch "$UDID" $B "$@" >/dev/null; sleep 8; }
 for s in $SCEN; do echo "##### $s"; case $s in
-continuity) # row 8: open game scrolled mid-update, fold 0, 90, 180, 60, 0
+continuity) # row 8: open game scrolled mid-update, fold 0, 90, 180, 120, 0
   launch -qaRoute gamepage/dawnwalker -qaOverlay YES
-  sim-use swipe --from 233,520 --to 233,220 --device "$UDID" >/dev/null 2>&1; sleep 2; snap continuity 1-closed-scrolled
+  sim-use swipe --from 233,520 --to 233,220 --duration 0.6 --device "$UDID" >/dev/null 2>&1; sleep 2
+  echo "scroll check: $(sim-use ui --device "$UDID" 2>/dev/null | grep -o "qa-page: [^\"]*" | head -1)"; snap continuity 1-closed-scrolled
   fold 90 landscape-left; snap continuity 2-a90-landscape; fold 180 landscape-left; snap continuity 3-a180
-  fold 60 portrait; snap continuity 4-a60-portrait; fold 0 portrait; snap continuity 5-closed-again ;;
+  fold 120 portrait; snap continuity 4-a120-portrait; fold 0 portrait; snap continuity 5-closed-again ;;
 trailer) # row 3: reflection element + 3 taps in the upper half, portrait Tabletop
   launch -qaRoute trailer/dQw4w9WgXcQ/dawnwalker -qaOverlay YES
   fold 90 portrait; snap trailer 1-tabletop-before
@@ -28,7 +46,28 @@ trailer) # row 3: reflection element + 3 taps in the upper half, portrait Tablet
 closedax5) # row 1: Closed outer landscape at AX5
   launch -qaRoute library/playing -qaOrientation landscape -qaOverlay YES -UIPreferredContentSizeCategoryName $AX5
   snap closedax5 1-closed-landscape-ax5
-  launch -qaRoute library/playing -UIPreferredContentSizeCategoryName $AX5; snap closedax5 2-closed-portrait-ax5 ;;
+  scroll_end 339,380 339,60 landscape; snap closedax5 1b-closed-landscape-ax5-scrolled-end
+  launch -qaRoute library/playing -UIPreferredContentSizeCategoryName $AX5; snap closedax5 2-closed-portrait-ax5
+  scroll_end 233,560 233,120 portrait; snap closedax5 2b-closed-portrait-ax5-scrolled-end ;;
+continuity3) # row 8 repeat x3: scrolled Closed, fold flat, fold closed; position logged each step
+  for run in 1 2 3; do
+    launch -qaRoute gamepage/dawnwalker -qaOverlay YES
+    sim-use swipe --from 233,520 --to 233,220 --duration 0.6 --device "$UDID" >/dev/null 2>&1; sleep 2; state "run$run closed-scrolled"
+    fold 180 portrait; state "run$run flat"; snap continuity3 run$run-flat
+    fold 0 portrait; state "run$run closed-again"; snap continuity3 run$run-closed-again
+  done ;;
+portraitfold) # row 8 variant: Closed portrait scrolled, open 180 portrait, close 0 portrait; no Tabletop step, no landscape
+  launch -qaRoute gamepage/dawnwalker -qaOverlay YES
+  sim-use swipe --from 233,520 --to 233,220 --duration 0.6 --device "$UDID" >/dev/null 2>&1; sleep 2; state closed-scrolled; snap portraitfold 1-closed-scrolled
+  fold 180 portrait; state open-180-portrait; snap portraitfold 2-open-180-portrait
+  fold 0 portrait; state closed-again; snap portraitfold 3-closed-again ;;
+ax5landscape) # row 1 repeat: alternate swipe origin, then try to reach "Turn on alerts" by label; trees before and after
+  launch -qaRoute library/playing -qaOrientation landscape -qaOverlay YES -UIPreferredContentSizeCategoryName $AX5
+  snap ax5landscape 1-before
+  for i in 1 2 3 4 5 6; do sim-use swipe --from 300,380 --to 300,100 --duration 0.5 --device "$UDID" >/dev/null 2>&1; done; sleep 2
+  snap ax5landscape 2-after-6-swipes
+  echo "tap by label: $(sim-use tap --label "Turn on alerts" --device "$UDID" 2>&1 | head -3)"; sleep 2
+  snap ax5landscape 3-after-label-tap ;;
 axchips) # bug-closed-landscape-ax5-no-games + r060-filter-pills-grid-ax5: overlay off, first screen then scrolled (chips in view)
   for ax in AX3:UICTContentSizeCategoryAccessibilityL AX5:$AX5; do n=${ax%%:*}; c=${ax#*:}
     launch -qaRoute library/playing -qaOrientation landscape -UIPreferredContentSizeCategoryName $c

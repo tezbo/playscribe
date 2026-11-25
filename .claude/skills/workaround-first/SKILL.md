@@ -9,7 +9,7 @@ A limit is never the answer; the route around it is. Before naming a limit, chec
 
 1. **Can the repo, a file or a workflow carry it?** A skill in `.claude/skills/`, a line in `AGENTS.md`/`SKILLS.md`/`CLAUDE.md`, a GitHub Action, a script in `ios/tools/`, a doc in the shared folder.
 2. **Can another thread or tool do it?** The Mac tester for simulator work, Theo's pipeline, another connector or MCP tool, a subagent, a scheduled `send_later`.
-3. **Can we build the missing piece ourselves?** A small script, workflow, headless check or skill, then propose it (Gabrielle, or a PR).
+3. **Can we build the missing piece ourselves?** A small script, workflow, headless check or skill, then propose it (an `agent-resources` issue, or a PR).
 
 Then reply with: the route you are taking (or proposing), your recommendation, and only the part that truly needs Terry (irreversible or money, with his plain yes). Never "can't" without an alternative; never park on Terry what the team can decide.
 
