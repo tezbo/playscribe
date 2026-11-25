@@ -588,8 +588,9 @@ struct DeckChips: View {
     /// was one subview there, and the chips drew on top of each other ("New update" lost under "v1.1", Book AX3).
     private var items: [(text: String, filled: Bool)] {
         var list: [(text: String, filled: Bool)] = []
-        if let v = card.release?.deckVersionChip { list.append((v, false)) }
+        // "New update" leads, then the version, as on the wide card: one order in every pose (Iris, #641).
         if card.unread { list.append((card.chipText, true)) }
+        if let v = card.release?.deckVersionChip { list.append((v, false)) }
         if card.release == nil, let d = card.date { list.append(("Released " + AppModel.tileDay(d), false)) }
         return list
     }
@@ -682,6 +683,12 @@ struct WideDeckCard: View {
         return (headline, "Released " + (card.date.map(AppModel.tileDay) ?? ""))
     }
 
+    /// The sub-line with the update's date after it, as the Closed portrait byline has it (Iris, #641): every pose shows it.
+    private func dated(_ sub: String) -> Text {
+        guard card.release != nil, let d = card.date else { return Text(sub).foregroundStyle(PlayscribeColor.textPrimary.opacity(0.9)) }
+        return Text("\(Text(sub).foregroundStyle(PlayscribeColor.textPrimary.opacity(0.9)))  \(Text(AppModel.tileDay(d)).foregroundStyle(PlayscribeColor.textSecondary))")
+    }
+
     /// Accessibility sizes: the card is as tall as its caption (at least the base height), so nothing is cut. J-5's half-container
     /// bound is not held here, only in Closed landscape: showing the whole caption wins (Iris, never drop chips or cut lines).
     /// The headline at the AX3 cap, at most three lines: the whole text when it fits, else whole words and "…", never a cut word.
@@ -693,7 +700,7 @@ struct WideDeckCard: View {
         let variants = [full] + (words.count > 1 ? Array(stride(from: words.count - 1, through: 1, by: -1)).map { words.prefix($0).joined(separator: " ") + "\u{2026}" } : [])
         return ViewThatFits(in: .vertical) {
             ForEach(variants, id: \.self) { v in
-                Text(v).font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textPrimary.opacity(0.9))
+                dated(v).font(PlayscribeFont.subheadline)
                     .fixedSize(horizontal: false, vertical: true)
             }
         }
@@ -727,19 +734,21 @@ struct WideDeckCard: View {
         GeometryReader { g in
             ZStack(alignment: .leading) {
                 ArtView(asset: card.game.keyArtAsset, game: card.game)
-                LinearGradient(colors: [PlayscribeColor.ink950.opacity(0.92), PlayscribeColor.ink950.opacity(0.55), .clear],
+                LinearGradient(colors: [PlayscribeColor.ink950.opacity(0.92), PlayscribeColor.ink950.opacity(0.7), .clear],
                                startPoint: .leading, endPoint: .trailing)
                 VStack(alignment: .leading, spacing: 6) {
                     captionChips
                     let lines = Self.lines(card)
-                    // The patch name leads (two lines, whole words), the game name under it.
+                    // The patch name leads (two lines, whole words), the game name and date under it.
                     WholeWordText(text: lines.headline, font: PlayscribeFont.title2.bold(), lines: 2, color: PlayscribeColor.textPrimary)
-                    Text(lines.sub)
-                        .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textPrimary.opacity(0.9))
+                    dated(lines.sub)
+                        .font(PlayscribeFont.subheadline)
                         .lineLimit(1).fixedSize(horizontal: false, vertical: true)
                 }
                 .padding(.horizontal, 16).padding(.vertical, typeSize.isAccessibilitySize ? 22 : 16)
-                .frame(width: g.size.width * 0.55, alignment: .leading)
+                // The caption uses 80% of the card, as at accessibility sizes: at 55% the patch name stopped at "a new…" with
+                // half the card empty (Iris, #641).
+                .frame(width: g.size.width * 0.8, alignment: .leading)
             }
         }
         .dynamicTypeSize(...DynamicTypeSize.accessibility3)
