@@ -114,18 +114,16 @@ struct PlusCoverTests {
     }
 
     @Test func atMostThreeCoversShow() {
-        #expect(PlusCard.coverLimit(accessibility: false) == 3)
+        #expect(PlusCard.maxCovers == 3)
     }
 
-    /// r060-psplus-compact-ax3: accessibility sizes use the compact row in every pose (three covers when they fit, else two
-    /// and "+N"); standard sizes keep the wide card everywhere but Book.
-    @Test func accessibilitySizesUseTheCompactRowInEveryPose() {
+    /// r060-psplus-compact-ax3 as amended by Iris on #646: Book's compact row at standard sizes only; at accessibility sizes every
+    /// pose, Book included, uses one form (heading, then three covers sharing the card width).
+    @Test func accessibilitySizesUseOneFormInEveryPose() {
         for pose in [Pose.closed, .flat, .book, .tabletop] {
-            #expect(PlusCard.usesCompactRow(pose: pose, accessibility: true), "\(pose)")
+            #expect(!PlusCard.usesCompactRow(pose: pose, accessibility: true), "\(pose)")
             #expect(PlusCard.usesCompactRow(pose: pose, accessibility: false) == (pose == .book), "\(pose)")
         }
-        #expect(PlusCard.coverLimit(accessibility: true) == 2)
-        #expect(PlusCard.maxCovers == 3)
     }
 
     /// bug-psplus-card-missing-cover-empty-grid: a lineup entry with no coverId and no index match (Tomb Raider IV-VI

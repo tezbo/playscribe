@@ -69,7 +69,7 @@ jobs:
             -skip-testing:PlayscribeUITests/RailSetTests/testMoreListsSwapSidesInBook \
             -skip-testing:PlayscribeUITests/RailSetTests/testMoreHasNoSwapSidesInTabletop \
             -resultBundlePath build/UITests.xcresult CODE_SIGNING_ALLOWED=NO > uitests.log 2>&1 || status=$?
-          grep -E 'error:|encountered an error|Test Case .* (passed|failed|skipped)|Executed|\*\* TEST' uitests.log | tail -60 | tee -a "$GITHUB_STEP_SUMMARY"
+          grep -E 'error:|encountered an error|Test Case .* (passed|failed|skipped)|Executed|\*\* TEST' uitests.log | tail -80 | tee -a "$GITHUB_STEP_SUMMARY"
           [ "${status:-0}" = 0 ] || echo "::warning::Feature UI tests failed in Closed; see uitests.log in the artifact"
           exit "${status:-0}"
       - name: Book, Tabletop and unfold UI tests (inner display, folded with sim-use)
@@ -98,9 +98,12 @@ jobs:
               -destination "id=$UDID" -derivedDataPath build/dd "$@" \
               -resultBundlePath "build/Inner-$n.xcresult" CODE_SIGNING_ALLOWED=NO >> inner-uitests.log 2>&1 || status=$?
           }
-          run Book landscape-left -only-testing:$T/testBookStd -only-testing:$T/testBookAX5 -only-testing:$T/testMoreListsSwapSidesInBook
+          P=PlayscribeUITests/PlusCardPoseTests   # #646: PS Plus titles are Buttons where sim-use's swipes never reached the card
+          run Book landscape-left -only-testing:$T/testBookStd -only-testing:$T/testBookAX5 -only-testing:$T/testMoreListsSwapSidesInBook \
+            -only-testing:$P/testOpenLandscapeAX5
           run Tabletop portrait -only-testing:$T/testTabletopStd -only-testing:$T/testTabletopAX5 \
-            -only-testing:$T/testTabletopUntrackedAX5 -only-testing:$T/testMoreHasNoSwapSidesInTabletop
+            -only-testing:$T/testTabletopUntrackedAX5 -only-testing:$T/testMoreHasNoSwapSidesInTabletop \
+            -only-testing:$P/testTabletopStd -only-testing:$P/testTabletopAX5
           # bug-landscape-rail-back-empty: launch on the outer display, then unfold once the app is running. A background job
           # waits for the app's process, gives the game page 10 s, then folds to the angle and turns landscape-left.
           unfold_after_launch() { # $1 = hinge angle, $2 = test
@@ -120,7 +123,7 @@ jobs:
           }
           unfold_after_launch 110 testBackSurvivesUnfoldToBook
           unfold_after_launch 180 testBackSurvivesUnfoldToOpenLandscape
-          grep -E 'LCD|active|innerWindow|unfold|error:|encountered an error|Test Case .* (passed|failed|skipped)|Executed|\*\* TEST' inner-uitests.log | tail -60 | tee -a "$GITHUB_STEP_SUMMARY"
+          grep -E 'LCD|active|innerWindow|plusWindow|plusTitle|plusPose|plusSwipes|unfold|error:|encountered an error|Test Case .* (passed|failed|skipped)|Executed|\*\* TEST' inner-uitests.log | tail -80 | tee -a "$GITHUB_STEP_SUMMARY"
           [ "${status:-0}" = 0 ] || echo "::warning::Book/Tabletop UI tests failed on the inner display; see inner-uitests.log in the artifact"
           exit "${status:-0}"
       - name: Export test screenshots
@@ -128,6 +131,7 @@ jobs:
         run: |
           mkdir -p build/attachments
           [ -d build/UITests.xcresult ] && xcrun xcresulttool export attachments --path build/UITests.xcresult --output-path build/attachments || true
+          for x in build/Inner-*.xcresult; do [ -d "$x" ] && xcrun xcresulttool export attachments --path "$x" --output-path "build/attachments/$(basename "$x" .xcresult)" || true; done
       - name: Screenshots of every new surface (Closed)
         if: always()
         run: ios/tools/qa/ci-shots.sh "$UDID" build/shots "$(ls -d build/dd/Build/Products/Debug-iphonesimulator/Playscribe.app | head -1)"

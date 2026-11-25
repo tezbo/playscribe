@@ -10,11 +10,10 @@ struct PlusCard: View {
     @Environment(\.duo) private var duo
 
     static let maxCovers = 3
-    /// The compact row's fewest covers at accessibility sizes, when three do not fit its width (Book's column); "+N" counts the rest.
-    static func coverLimit(accessibility: Bool) -> Int { accessibility ? 2 : maxCovers }
-    /// r060-psplus-compact-ax3: at accessibility sizes every pose uses the compact row, as Book always does. The wide card's
+    /// Book's compact row at standard sizes (Terry, Iris). At accessibility sizes every pose uses one form instead (r060, Iris on
+    /// #646): the compact heading, then one row of three covers that share the card width, capped at a Library tile. The old
     /// two-to-a-row grid left a lone cover under two and the right of a Closed landscape card empty (#635 stills, AX3 and AX5).
-    static func usesCompactRow(pose: Pose, accessibility: Bool) -> Bool { pose == .book || accessibility }
+    static func usesCompactRow(pose: Pose, accessibility: Bool) -> Bool { pose == .book && !accessibility }
     /// No wider than a Library tile, whatever the pose (Iris, #242).
     static let maxCoverWidth: CGFloat = 140
 
@@ -85,14 +84,23 @@ struct PlusCard: View {
                 compact(month.games, lastChance: lastChance, claimBy: claimBy)
             } else {
             VStack(alignment: .leading, spacing: 10) {
+                if typeSize.isAccessibilitySize {
+                    // One form at accessibility sizes (Iris, #646): heading, then the three covers sharing the card width.
+                    VStack(alignment: .leading, spacing: 4) {
+                        PlusBadge(height: 20).accessibilityHidden(true)
+                        compactHeading(lastChance: lastChance, claimBy: claimBy)
+                    }
+                    coverRow(shown, fixedWidth: nil)
+                } else {
                 // Wide cards put the heading beside the covers; narrow ones stack it above (Iris, #242).
                 // Tries covers at 140, 120 then 100 pt beside the heading, so Open portrait, Tabletop and Closed
-                // landscape get a short card. Accessibility sizes use the compact row instead (r060-psplus-compact-ax3).
+                // landscape get a short card.
                 ViewThatFits(in: .horizontal) {
                     sideBySide(shown, lastChance: lastChance, claimBy: claimBy, width: Self.maxCoverWidth)
                     sideBySide(shown, lastChance: lastChance, claimBy: claimBy, width: 120)
                     sideBySide(shown, lastChance: lastChance, claimBy: claimBy, width: 100)
                     stacked(shown, lastChance: lastChance, claimBy: claimBy)
+                }
                 }
                 // Games past the covers (rule): the ones you track get their own tappable row; the rest are one
                 // "Plus A, B and C" line. Never a bare "and X" (Quinn).
@@ -115,30 +123,28 @@ struct PlusCard: View {
     /// Book (Terry, 6139fbb too crowded; Iris spec): one short card, at most 140 pt tall, so no module takes a quarter of a
     /// page. Badge and "title, claim by date" share a row; up to three 72 pt covers follow, then a "+N" chip for the rest.
     private func compact(_ games: [PlusMonth.Game], lastChance: Bool, claimBy: String) -> some View {
-        // All three covers when they fit the width (every wide pose); at AX sizes a narrow column (Book) drops to two and the
-        // rest go in the chip, so the card stays short while the text wraps (Mac QA, AX3).
-        let fewest = Self.coverLimit(accessibility: typeSize.isAccessibilitySize)
+        // Standard sizes only (accessibility sizes use the shared-width row): up to three covers, then "+N".
+        let limit = Self.maxCovers
         return VStack(alignment: .leading, spacing: 4) {
             PlusBadge(height: 20).accessibilityHidden(true)
-            Text("\(lastChance ? "Last chance" : "This month"), claim by \(claimBy)")
-                .font(PlayscribeFont.subheadline.weight(.semibold))
-                .foregroundStyle(lastChance ? PlayscribeColor.ember500 : PlayscribeRole.textPrimary)
-                .fixedSize(horizontal: false, vertical: true)
-                .accessibilityLabel(lastChance ? "PS Plus, last chance, claim by \(claimBy)" : "PS Plus, this month, claim by \(claimBy)")
-                .accessibilityAddTraits(.isHeader)
+            compactHeading(lastChance: lastChance, claimBy: claimBy)
             Spacer().frame(height: 2)
-            ViewThatFits(in: .horizontal) {
-                compactRow(Array(games.prefix(Self.maxCovers)), rest: Array(games.dropFirst(Self.maxCovers)))
-                if fewest < Self.maxCovers {
-                    compactRow(Array(games.prefix(fewest)), rest: Array(games.dropFirst(fewest)))
-                }
-            }
+            compactRow(Array(games.prefix(limit)), rest: Array(games.dropFirst(limit)))
         }
         .padding(8)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(PlayscribeRole.card, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
         .accessibilityElement(children: .contain)
         .accessibilityIdentifier("plusCard")
+    }
+
+    private func compactHeading(lastChance: Bool, claimBy: String) -> some View {
+        Text("\(lastChance ? "Last chance" : "This month"), claim by \(claimBy)")
+            .font(PlayscribeFont.subheadline.weight(.semibold))
+            .foregroundStyle(lastChance ? PlayscribeColor.ember500 : PlayscribeRole.textPrimary)
+            .fixedSize(horizontal: false, vertical: true)
+            .accessibilityLabel(lastChance ? "PS Plus, last chance, claim by \(claimBy)" : "PS Plus, this month, claim by \(claimBy)")
+            .accessibilityAddTraits(.isHeader)
     }
 
     private func compactRow(_ shown: [PlusMonth.Game], rest: [PlusMonth.Game]) -> some View {
@@ -158,7 +164,6 @@ struct PlusCard: View {
                     .accessibilityLabel("And \(rest.count) more: " + rest.map(\.name).joined(separator: ", "))
             }
         }
-        .fixedSize(horizontal: true, vertical: false)
     }
 
     private func stacked(_ shown: [PlusMonth.Game], lastChance: Bool, claimBy: String) -> some View {
