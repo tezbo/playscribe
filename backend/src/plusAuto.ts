@@ -128,3 +128,13 @@ export const withPlusCovers = (db: DB, months: PlusMonth[]): PlusMonth[] => {
   const covers = new Map((db.prepare('SELECT name, cover_id FROM plus_covers WHERE cover_id IS NOT NULL').all() as { name: string; cover_id: string }[]).map((r) => [r.name, r.cover_id]))
   return months.map((m) => ({ ...m, games: m.games.map((g) => (g.coverId || !covers.has(g.name) ? g : { ...g, coverId: covers.get(g.name)! })) }))
 }
+
+/**
+ * Lineup games that still have no cover once the lookups are applied: the app shows a name plate for them. A bundle IGDB lists
+ * only as separate games ("Tomb Raider 4-6 Remastered") stays here on purpose (#285: exact product only, no stand-in art).
+ */
+export const plusMissingCovers = (db: DB, manual: PlusMonth[] = []): string[] => {
+  const out: string[] = []
+  for (const m of withPlusCovers(db, [...storedPlusMonths(db), ...manual])) for (const g of m.games) if (!g.coverId) out.push(`${m.month} ${g.name}`)
+  return out
+}
