@@ -50,17 +50,18 @@ struct GameBookView: View {
         }
         .toolbar {
           if !closedLandscape {
-            // A custom 44 x 44 button (Iris: the 36 pt floor is for system-drawn toolbar buttons only). The chevron stays centred,
-            // whatever the frame. Its glass is the toolbar's own shared Liquid Glass (over-art rule, role 1; the system goes solid
-            // under Reduce Transparency): our own glassEffect inside a toolbar item pushed the whole game page down by the bar's
-            // height in every pose (#619 screen diffs at f8fcd58), so the toolbar draws it.
+            // A system-drawn toolbar button, as the rail's others (Iris: the 36 pt floor applies). Its glass is the toolbar's own
+            // shared Liquid Glass (over-art rule, role 1; the system goes solid under Reduce Transparency): our own glassEffect
+            // inside a toolbar item pushed the whole game page down by the bar's height in every pose (#619 screen diffs at
+            // f8fcd58), so the toolbar draws it.
             ToolbarItem(placement: .topBarLeading) {
+                // A Label, like every ActionToolbar item: when the Duo opens to Book or Open landscape the bar becomes the trailing
+                // rail and is rebuilt, and a custom-view item came back as an empty glass disc with no gameBack in the tree (28 of 28
+                // Book dumps, run 45489150050) while the Label items beside it survived (bug-landscape-rail-back-empty).
                 Button { model.closeGame() } label: {
-                    Image(systemName: "chevron.backward")
-                        .font(.system(size: 17, weight: .semibold))
+                    Label(model.backTitle, systemImage: "chevron.backward")
+                        .labelStyle(.iconOnly)
                         .foregroundStyle(PlayscribeRole.textPrimary)
-                        .frame(width: 44, height: 44)
-                        .contentShape(Rectangle())
                 }
                 // Iris (0.5.6 hotfix): "Back to <origin>", the same label on every rail.
                 .accessibilityLabel(model.backTitle)

@@ -81,3 +81,14 @@ test('a bundle IGDB lists only as separate games gets no cover: a cover must mat
   assert.equal(await resolvePlusCovers(db, igdb), 0)
   assert.equal(withPlusCovers(db, [month])[0]!.games[0]!.coverId, undefined)
 })
+
+test('plusMissingCovers lists every lineup game left without art, so the Feed job can flag it', async () => {
+  const { openDb } = await import('../src/db.ts')
+  const { plusMissingCovers } = await import('../src/plusAuto.ts')
+  const db = openDb(':memory:')
+  const month = { month: '2026-11', from: '2026-11-04', until: '2026-12-01', games: [{ name: 'Tomb Raider 4-6 Remastered' }, { name: 'Has One', coverId: 'abcd1' }] }
+  db.prepare('INSERT INTO plus_months (month, data, fetched_at) VALUES (?, ?, ?)').run(month.month, JSON.stringify(month), new Date().toISOString())
+  assert.deepEqual(plusMissingCovers(db), ['2026-11 Tomb Raider 4-6 Remastered'])
+  db.prepare('INSERT INTO plus_covers (name, cover_id, checked_at) VALUES (?, ?, ?)').run('Tomb Raider 4-6 Remastered', 'co1abc', new Date().toISOString())
+  assert.deepEqual(plusMissingCovers(db), [])
+})
