@@ -138,7 +138,7 @@ heroswipe) # r054-closed-ax5-hero-headline-4-lines: every hero card in Closed po
   for ax in AX5:$AX5 std:UICTContentSizeCategoryL; do n=${ax%%:*}; c=${ax#*:}
     launch -qaRoute ${HERO_ROUTE:-many-updates} -qaOrientation portrait -UIPreferredContentSizeCategoryName $c
     snap heroswipe 0-closed-portrait-$n
-    for k in 1 2 3 4 5; do sim-use swipe --from 420,350 --to 50,350 --duration 0.4 --device "$UDID" >/dev/null 2>&1; sleep 2; snap heroswipe $k-closed-portrait-$n; done
+    for k in 1 2 3 4 5; do sim-use swipe --from 340,280 --to 40,280 --duration 0.5 --device "$UDID" >/dev/null 2>&1; sleep 2; snap heroswipe $k-closed-portrait-$n; done
   done ;;
 schemes) # dark and light for the pose set
   for ap in dark light; do
