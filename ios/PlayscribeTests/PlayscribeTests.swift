@@ -418,7 +418,7 @@ struct GameBookStateTests {
         #expect(!again.isUnread(other))
     }
 
-    @Test("D-13: each game reopens on its last chapter, after a relaunch")
+    @Test("bug-072, R-1: a game reopens on its newest update, not its last section, after a relaunch")
     func chapterPerGame() {
         let url = URL.temporaryDirectory.appending(path: "d13-\(UUID().uuidString).json")
         let m = AppModel(storeURL: url)
@@ -429,10 +429,10 @@ struct GameBookStateTests {
         m.saveNow()
         let again = AppModel(storeURL: url)
         again.openGame("dawnwalker")
-        #expect(again.nav.chapter == .companion)
+        #expect(again.nav.chapter == .updates)
     }
 
-    @Test("D-13, R-7 (0.5.6): a World chapter saved by 0.5.5 reopens as Companion")
+    @Test("bug-072, R-7: a World chapter saved by 0.5.5 no longer reopens a game on a section")
     func savedWorldReopensAsCompanion() {
         let url = URL.temporaryDirectory.appending(path: "d13w-\(UUID().uuidString).json")
         let m = AppModel(storeURL: url)
@@ -442,8 +442,8 @@ struct GameBookStateTests {
         m.saveNow()
         let again = AppModel(storeURL: url)
         again.openGame("dawnwalker")
-        #expect(again.nav.chapter == .companion)
-        #expect(again.section("dawnwalker") == .companion)
+        #expect(again.nav.chapter == .updates)
+        #expect(again.section("dawnwalker") == .updates)
     }
 
     @Test("D-4: with nothing selected the Page shows the newest PS5 release")

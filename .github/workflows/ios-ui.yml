@@ -37,6 +37,7 @@ jobs:
             closed: >-
               -only-testing:PlayscribeUITests/ReleaseFeatureTests
               -only-testing:PlayscribeUITests/TabletopDayOneTests
+              -only-testing:PlayscribeUITests/GameOpensOnNewestUITests
           # Closed rail, game-to-game and PS Plus card tests (about 8 min), then real Closed landscape and the harness stills.
           # The seven synthetic-fold rail cases run in the inner part, where they measure something (#626, #631); on the
           # outer display they can only fail with "needs the inner display".
