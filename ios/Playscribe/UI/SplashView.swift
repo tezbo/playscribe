@@ -57,29 +57,29 @@ struct SplashView: View {
                 HStack(spacing: 0) {
                     HStack(spacing: 12) {
                         SplashWord(text: split.0)
-                        MarkPageView(side: .left, height: size * 1.4).rotation3DEffect(.degrees(opened ? 0 : 60), axis: (0, 1, 0), anchor: .trailing)
+                        MarkPageView(side: .left, height: size * 1.4, onLight: scheme == .light).rotation3DEffect(.degrees(opened ? 0 : 60), axis: (0, 1, 0), anchor: .trailing)
                     }
                     .frame(width: fold.minX, alignment: .trailing)
                     Color.clear.frame(width: fold.width)
                     HStack(spacing: 12) {
-                        MarkPageView(side: .right, height: size * 1.4).rotation3DEffect(.degrees(opened ? 0 : -60), axis: (0, 1, 0), anchor: .leading)
+                        MarkPageView(side: .right, height: size * 1.4, onLight: scheme == .light).rotation3DEffect(.degrees(opened ? 0 : -60), axis: (0, 1, 0), anchor: .leading)
                         SplashWord(text: split.1)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                 }
             }
-        case .tabletop:
+        case .tabletop where duo.division != nil:
             if let fold = duo.division {
                 VStack(spacing: 0) {
-                    BrandMark(size: size * 1.3, lit: true).frame(height: fold.minY).scaleEffect(opened ? 1 : 0.9)
+                    BrandMark(size: size * 1.3, lit: true, onLight: scheme == .light).frame(height: fold.minY).scaleEffect(opened ? 1 : 0.9)
                     Color.clear.frame(height: fold.height)
                     VStack(spacing: 6) { name }.frame(maxHeight: .infinity)
                 }
             }
-        case .closed, .flat, .book:
-            // Book falls back to the stacked layout until the division is known.
+        case .closed, .flat, .book, .tabletop:
+            // Book and Tabletop fall back to the stacked layout until the division is known.
             VStack(spacing: 16) {
-                BrandMark(size: size, lit: true).scaleEffect(opened ? 1 : 0.9)
+                BrandMark(size: size, lit: true, onLight: scheme == .light).scaleEffect(opened ? 1 : 0.9)
                 name
             }
         }

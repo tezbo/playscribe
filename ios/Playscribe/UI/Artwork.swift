@@ -203,10 +203,12 @@ nonisolated struct MarkRibbon: Shape {
 struct MarkPageView: View {
     var side: MarkPage.Side
     var height: CGFloat
+    /// mark-on-light.svg: darker pages, so the cream ones do not vanish on vellum.
+    var onLight = false
     var body: some View {
         MarkPage(side: side)
-            .fill(LinearGradient(colors: side == .left ? [Color(hex: "#EBDDC1"), Color(hex: "#CDB68D")]
-                                                       : [Color(hex: "#FBF4E6"), Color(hex: "#EBDDC1")],
+            .fill(LinearGradient(colors: side == .left ? [Color(hex: onLight ? "#E6D8BC" : "#EBDDC1"), Color(hex: "#CDB68D")]
+                                                       : [Color(hex: onLight ? "#EFE3C8" : "#FBF4E6"), Color(hex: onLight ? "#DCCBA5" : "#EBDDC1")],
                                  startPoint: side == .left ? .topLeading : .topTrailing,
                                  endPoint: side == .left ? .bottomTrailing : .bottomLeading))
             .overlay { if side == .left { lines([(31.6, 14.6), (36.6, 14.6), (41.6, 10.2)], x: 12.4) } else { lines([(31.6, 14.6), (36.6, 11)], x: 37) } }
@@ -233,6 +235,8 @@ struct MarkPageView: View {
 struct BrandMark: View {
     var size: CGFloat = 28
     var lit = true
+    /// On a vellum ground (the light-mode splash): the mark-on-light.svg page tones.
+    var onLight = false
 
     static let restInk = Color(hex: "#A8916A")
     /// Lit while any game in the library has an unread update; at rest when caught up.
@@ -250,8 +254,8 @@ struct BrandMark: View {
                     .offset(x: 17 * u, y: -2.5 * u)
             }
             HStack(spacing: 1.6 * u) {
-                MarkPageView(side: .left, height: MarkGrid.pageBox.height * u)
-                MarkPageView(side: .right, height: MarkGrid.pageBox.height * u)
+                MarkPageView(side: .left, height: MarkGrid.pageBox.height * u, onLight: onLight)
+                MarkPageView(side: .right, height: MarkGrid.pageBox.height * u, onLight: onLight)
             }
             .offset(x: 7.6 * u, y: MarkGrid.pageTop * u)
             MarkRibbon().fill(lit ? AnyShapeStyle(Self.emberSpark) : AnyShapeStyle(Self.restInk))
