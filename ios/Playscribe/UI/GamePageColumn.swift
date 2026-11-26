@@ -48,21 +48,11 @@ struct GamePageColumn: View {
                     PinnedSectionHeader(gameID: gameID, ink: PlayscribeRole.bg, maxWidth: Self.readingWidth, anchorY: anchorY, pinned: $barPinned)
                 }
             }
-            .padding(.bottom, 24)
+            EdgeFadeClearance()
         }
-        // The list fades out over its last 24 pt where the scroll view ends above the floating tab bar, instead of cutting a row
-        // at full brightness (Quinn, #526 at feaff25, Open portrait). The page ends 24 pt lower, so its last row rests clear.
-        // An overlay in the page's ink, not a mask, so nothing that extends past the scroll view's frame is clipped.
-        // The scroll view draws its rows on into the bottom safe area, below its own frame, so the fade alone left a dim band with
-        // the rows bright again under it (Quinn, Closed AX5 at 722c752, Open landscape at 7cb8b33). Solid ink hangs below the
-        // fade, outside the frame, to the screen edge; views laid out after the page (rail, tab bar, pill) still draw over it.
-        .overlay(alignment: .bottom) {
-            LinearGradient(colors: [PlayscribeRole.bg.opacity(0), PlayscribeRole.bg], startPoint: .top, endPoint: .bottom)
-                .frame(height: 24)
-                .overlay(alignment: .bottom) { PlayscribeRole.bg.frame(height: 120).offset(y: 120) }
-                .allowsHitTesting(false)
-                .accessibilityHidden(true)
-        }
+        // The list fades out at the page's bottom edge instead of cutting a row at full brightness where the scroll view ends above
+        // the floating tab bar (Quinn, #526 at feaff25, Open portrait); the page ends one fade lower, so its last row rests clear.
+        .fadesAtBottomEdge()
         .clearsMessages()
         .scrollIndicators(.hidden)
         .scrollPosition($position)
