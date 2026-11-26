@@ -341,27 +341,32 @@ struct FullBleedVideo: View {
     /// The least height of a letterbox band, so a 44 pt control fits in it (policy_decision 3).
     static let minBand: CGFloat = 44
 
-    /// Fit: the 16:9 frame as large as `size` (the whole screen) allows, centred, with at least `band` above and below it, and
-    /// clear of every rect in `avoiding` (screen coordinates): an occlusion over the picture widens the band on its side, kept
-    /// symmetric. The safe area is not taken off: the status bar and home indicator are hidden, and the camera housing is an
-    /// occlusion, measured (spec 1). Cloud run 45706235978 at 4977b7c: taking Closed landscape's 84 pt safe leading inset off
-    /// both sides left a 508 x 286 picture.
+    /// Fit: the 16:9 frame as large as `size` (the whole screen) allows, with at least `band` above and below it, and clear of
+    /// every rect in `avoiding` (screen coordinates). An occlusion over the picture pushes back only the side it sits on (spec 1,
+    /// "that side only"): either the nearest top or bottom edge, or the nearest leading or trailing edge, whichever leaves the
+    /// larger picture. The picture is centred in what remains. The safe area is not taken off: the status bar and home indicator
+    /// are hidden, and the camera housing is an occlusion, measured. Cloud run 45730726202: widening both bands for Closed
+    /// landscape's 84 x 82 corner housing left 536 x 302; pushing only the top edge leaves 604 x 340.
     static func fit(in size: CGSize, band: CGFloat = minBand, avoiding occlusions: [CGRect] = []) -> CGRect {
         guard size.width > 0, size.height > 0 else { return .zero }
-        var vBand = band, hBand: CGFloat = 0
-        func frame() -> CGRect {
-            let w = max(0, min(size.width - 2 * hBand, (size.height - 2 * vBand) * 16 / 9))
-            let h = w * 9 / 16
-            return CGRect(x: (size.width - w) / 2, y: (size.height - h) / 2, width: w, height: h)
+        struct Insets { var top, bottom, left, right: CGFloat }
+        func frame(_ i: Insets) -> CGRect {
+            let rw = max(0, size.width - i.left - i.right), rh = max(0, size.height - i.top - i.bottom)
+            let w = min(rw, rh * 16 / 9), h = w * 9 / 16
+            return CGRect(x: i.left + (rw - w) / 2, y: i.top + (rh - h) / 2, width: w, height: h)
         }
-        for o in occlusions where frame().intersects(o) {
-            if o.width >= o.height {
-                vBand = max(vBand, o.midY < size.height / 2 ? o.maxY : size.height - o.minY)
-            } else {
-                hBand = max(hBand, o.midX < size.width / 2 ? o.maxX : size.width - o.minX)
-            }
+        var insets = Insets(top: band, bottom: band, left: 0, right: 0)
+        for _ in 0..<(occlusions.count * 2) {
+            let f = frame(insets)
+            guard let o = occlusions.first(where: { f.intersects($0) }) else { break }
+            var vertical = insets, horizontal = insets
+            if o.midY < size.height / 2 { vertical.top = max(vertical.top, o.maxY) }
+            else { vertical.bottom = max(vertical.bottom, size.height - o.minY) }
+            if o.midX < size.width / 2 { horizontal.left = max(horizontal.left, o.maxX) }
+            else { horizontal.right = max(horizontal.right, size.width - o.minX) }
+            insets = frame(vertical).width >= frame(horizontal).width ? vertical : horizontal
         }
-        return frame()
+        return frame(insets)
     }
 
     /// True when the scene was turned to landscape on entry, so Exit turns it back.

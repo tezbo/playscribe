@@ -42,16 +42,33 @@ struct FullBleedVideoTests {
         #expect(abs(f.midY - 339) < 0.01)
     }
 
-    @Test func occlusionOverThePictureWidensItsBand() {
-        // A camera housing at the top centre, 60 pt deep: the picture moves clear of it and stays centred.
+    @Test func occlusionOverThePictureWidensOnlyItsOwnBand() {
+        // A camera housing at the top centre, 60 pt deep: only the top band widens (spec 1, "that side only").
         let housing = CGRect(x: 300, y: 0, width: 80, height: 60)
         let f = FullBleedVideo.fit(in: CGSize(width: 678, height: 466), avoiding: [housing])
         #expect(!f.intersects(housing))
-        #expect(f.minY >= 60 - 0.01 && 466 - f.maxY >= 60 - 0.01)
+        #expect(abs(f.minY - 60) < 0.01 && abs((466 - f.maxY) - 44) < 0.01, "\(f)")
         // A side housing in landscape narrows the picture instead.
         let side = CGRect(x: 0, y: 150, width: 30, height: 120)
         let g = FullBleedVideo.fit(in: CGSize(width: 951, height: 669), avoiding: [side])
         #expect(!g.intersects(side) && g.minX >= 30 - 0.01)
+    }
+
+    /// The housings measured on the Duo simulator (cloud run 45730726202, screen coordinates): the picture keeps the full
+    /// width less the 16:9 fit, sits under the housing, and the opposite band stays at 44 pt.
+    @Test(arguments: [(CGSize(width: 678, height: 466), [CGRect(x: 29, y: 29, width: 37, height: 37), CGRect(x: 0, y: 0, width: 84, height: 82)],
+                       CGRect(x: 37.1, y: 82, width: 604.4, height: 340)),
+                      (CGSize(width: 678, height: 466), [CGRect(x: 611, y: 399, width: 37, height: 37), CGRect(x: 594, y: 384, width: 84, height: 82)],
+                       CGRect(x: 36.8, y: 44, width: 604.4, height: 340)),
+                      (CGSize(width: 951, height: 669), [CGRect(x: 867, y: 0, width: 84, height: 124)],
+                       CGRect(x: 30.2, y: 124, width: 890.7, height: 501))])
+    func measuredHousingsPushOnlyTheirSide(screen: CGSize, housings: [CGRect], expected: CGRect) {
+        let f = FullBleedVideo.fit(in: screen, avoiding: housings)
+        for h in housings { #expect(!f.intersects(h), "\(f) is under \(h)") }
+        #expect(abs(f.width - expected.width) < 1 && abs(f.height - expected.height) < 1, "\(f)")
+        #expect(abs(f.minY - expected.minY) < 1, "\(f)")
+        #expect(abs(f.midX - screen.width / 2) < 0.5)
+        #expect(f.minY >= FullBleedVideo.minBand - 0.01 && screen.height - f.maxY >= FullBleedVideo.minBand - 0.01)
     }
 
     @Test func emptyAreaGivesNoFrame() {

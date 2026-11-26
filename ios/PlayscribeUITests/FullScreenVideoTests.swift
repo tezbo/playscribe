@@ -32,7 +32,7 @@ final class FullScreenVideoTests: XCTestCase {
         // While playing the controls fade after 3 s; a tap in the top band is ours and shows them again.
         sleep(5)
         print("qaBands after 5 s: \(bands.value ?? "-") time \(any["qaVideoTime"].value ?? "-")")
-        app.windows.firstMatch.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0)).withOffset(CGVector(dx: 0, dy: 8)).tap()
+        app.windows.firstMatch.coordinate(withNormalizedOffset: CGVector(dx: 0.75, dy: 0)).withOffset(CGVector(dx: 0, dy: 30)).tap()
         sleep(1)
         let after = (bands.value as? String) ?? ""
         print("qaBands after band tap: \(after)")
