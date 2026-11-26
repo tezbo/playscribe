@@ -121,10 +121,10 @@ brand) # s-06-brand-swap (#614): Home Screen icon light and dark (tinted cannot 
   xcrun simctl terminate "$UDID" $B >/dev/null 2>&1; fold 0 portrait; xcrun simctl launch "$UDID" $B -qaRoute library/playing >/dev/null; quick 6-splash-closed
   xcrun simctl terminate "$UDID" $B >/dev/null 2>&1; fold 90 landscape-left; xcrun simctl launch "$UDID" $B -qaRoute library/playing >/dev/null; quick 7-splash-book
   xcrun simctl terminate "$UDID" $B >/dev/null 2>&1; fold 90 portrait; xcrun simctl launch "$UDID" $B -qaRoute library/playing >/dev/null; quick 8-splash-tabletop ;;
-edgefade) # #613 (bug-063, bug-library-tabbar-edge-fade): game page and Library mid-scroll and at the end, std and AX5, Closed portrait and Open portrait (fold 180); ui.txt carries qaBarPinned
+edgefade) # #613 (bug-063, bug-library-tabbar-edge-fade): game page and Library mid-scroll and at the end, std and AX5, Closed portrait and Open portrait (fold 180; swipes start above the bottom tab bar, y 780); ui.txt carries qaBarPinned
   for sz in std AX5; do size=UICTContentSizeCategoryL; [ $sz = AX5 ] && size=$AX5
     for pose in closed open; do
-      if [ $pose = closed ]; then F=0; X=233; Y1=560; Y2=200; else F=180; X=300; Y1=900; Y2=400; fi
+      if [ $pose = closed ]; then F=0; X=233; Y1=560; Y2=200; else F=180; X=300; Y1=780; Y2=300; fi
       for r in gamepage/dawnwalker library/playing; do n=$(echo "$r" | tr '/' '_')
         xcrun simctl terminate "$UDID" $B >/dev/null 2>&1; fold $F portrait; xcrun simctl launch "$UDID" $B -qaRoute "$r" -UIPreferredContentSizeCategoryName $size >/dev/null; sleep 8
         sim-use swipe --from $X,$Y1 --to $X,$Y2 --duration 0.5 --device "$UDID" >/dev/null 2>&1; sleep 2; snap edgefade "$sz-$pose-$n-1-mid"
