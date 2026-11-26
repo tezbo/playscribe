@@ -21,6 +21,11 @@ final class FullScreenVideoTests: XCTestCase {
 
         let exit = any["videoExitFullScreen"]
         XCTAssertTrue(exit.waitForExistence(timeout: 5), "the band controls were not shown on entering full screen")
+        // The app turns its own scene to landscape; XCUITest still computes hit points for a portrait device and gets none
+        // (run 45743580991: Exit frame (inf, inf, 0, 0), hit point {-1, -1}). Turn the simulated device to match the scene
+        // (interface landscape-right is device landscape-left).
+        XCUIDevice.shared.orientation = .landscapeLeft
+        sleep(1)
         let probe = any["qaFullScreen"], bands = any["qaBands"]
         print("qaFullScreen entered: \(probe.value ?? "-")")
         print("videoExitFullScreen frame: \(exit.frame) window: \(app.windows.firstMatch.frame)")
@@ -39,6 +44,7 @@ final class FullScreenVideoTests: XCTestCase {
         XCTAssertFalse(after.contains("wakes=0"), "a tap in the top band did not reach our controls: \(after)")
         XCTAssertTrue(exit.waitForExistence(timeout: 3), "Exit full screen is not shown after a band tap")
 
+        print("videoExitFullScreen frame before Exit: \(exit.frame) hittable \(exit.isHittable)")
         exit.tap()
         XCTAssertTrue(enter.waitForExistence(timeout: 10), "Exit full screen did not leave full screen")
         app.terminate()
