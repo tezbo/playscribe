@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Quinn's five cloud runs on a booted, app-installed iPhone Duo (hosted runner or Mac). Needs sim-use.
-#   ios/tools/qa/duo-ci-scenarios.sh UDID OUTDIR [scenario ...]    (default: all)   scenarios: continuity trailer closedax5 schemes video axchips deckwide plusend switchax switchtt heroswipe herolong lane
+#   ios/tools/qa/duo-ci-scenarios.sh UDID OUTDIR [scenario ...]    (default: all)   scenarios: continuity trailer closedax5 schemes video axchips deckwide plusend switchax switchtt rails heroswipe herolong lane
 # Every step saves <sha>-<scenario>-<step>-<display>-shot.png and -ui.txt (outline with frames, ids and the pose line).
 set -uo pipefail
 UDID=$1; OUT=$2; shift 2; SCEN=${*:-continuity trailer closedax5 schemes video}
@@ -33,6 +33,19 @@ snap() { # scenario step
   xcrun simctl io "$UDID" screenshot --display=$d "$f-shot.png" >/dev/null 2>&1
   sim-use ui --device "$UDID" > "$f-ui.txt" 2>&1; echo "$f: $(head -1 "$f-ui.txt" | cut -c1-80) | $(grep -o 'pose: [a-z]*[^"]*' "$f-ui.txt" | head -1)"; }
 launch() { xcrun simctl terminate "$UDID" $B >/dev/null 2>&1; fold 0 portrait; xcrun simctl launch "$UDID" $B "$@" >/dev/null; sleep 8; }
+# R-7 rails (Terry 26 Nov): shoot a sideways rail at rest, then swiped sideways. $1 = step name, $2 = egrep on the outline line that names the rail's first
+# element (its #id or label); the rail's frame comes from that line, "(x,y WxH)". Left-swipe starts near the right edge of the element's row.
+rail() {
+  local f; f=$(sim-use ui --device "$UDID" 2>/dev/null | grep -E "$2" | head -1)
+  local box; box=$(echo "$f" | grep -o '([0-9.]*,[0-9.]* [0-9.]*x[0-9.]*)' | tail -1 | tr -d '()x,' )
+  echo "rail $1: element line: $f"
+  snap rails "$1-rest"
+  local x y w h; read -r x y w h <<<"$(echo "$f" | grep -o '([0-9.]*,[0-9.]* [0-9.]*x[0-9.]*)' | tail -1 | tr -d '()' | tr ',x' '  ')"
+  [ -n "${x:-}" ] || { echo "rail $1: element not found"; return; }
+  local cy; cy=$(python3 -c "print(int($y+$h/2))")
+  sim-use swipe --from 330,$cy --to 40,$cy --duration 0.5 --device "$UDID" >/dev/null 2>&1; sleep 2
+  snap rails "$1-scrolled"
+}
 for s in $SCEN; do echo "##### $s"; case $s in
 continuity) # row 8: open game scrolled mid-update, fold 0, 90, 180, 120, 0
   launch -qaRoute gamepage/dawnwalker -qaOverlay YES
@@ -163,6 +176,11 @@ switchax) # bug-playing-upcoming-switch-ax5-small: switch + filter chips, each s
   # A real tap on the chip (Closed portrait AX5): Playing, then Upcoming by label.
   launch -qaRoute library/playing -UIPreferredContentSizeCategoryName $AX5
   echo "tap Upcoming: $(sim-use tap --label "Upcoming" --device "$UDID" 2>&1 | head -2)"; sleep 2; snap switchax 5-closed-portrait-AX5-tapped-upcoming ;;
+rails) # R-7: the four sideways rails, at rest (trailing fade only) and scrolled (leading fade too)
+  launch -qaRoute gamepage/dawnwalker; scroll_end 233,560 233,160 similar; rail 1-youmightalsolike '#similarGame'
+  launch -qaRoute fill-library/12 -UIPreferredContentSizeCategoryName UICTContentSizeCategoryL; rail 2-library-chips 'Button +"All '
+  launch -qaRoute add; rail 3-add-popular '#popularAdd'
+  launch -qaRoute library/playing; fold 120 portrait; sleep 3; rail 4-tabletop-letters '#letter-A' ;;
 switchtt) # bug-playing-upcoming-switch-ax5-small: real Tabletop at AX5. Tries portrait-first then fold, and fold-then-portrait, at hinge angles 90 120 60 130 until the app reports "pose: tabletop"
   for t in playing upcoming; do
     launch -qaRoute library/$t -UIPreferredContentSizeCategoryName $AX5; got=no
