@@ -5,21 +5,18 @@ so write it for testers. Release steps are in docs/release.md.
 
 ## 0.6.0 candidate
 
-Playscribe 0.6 is a fresh coat: light and dark appearance, clearer art, one deck card per game, day-one patches, a moving front cover and every video in our own player. Beta 5 adds new deck dots, one look for buttons and labels over art, steadier search and accessibility fixes. Each line says what to do, then what you should see. Reply with the numbers that failed, or "all good".
+Playscribe 0.6 is a fresh coat: light and dark appearance, clearer art, one deck card per game, day-one patches, a moving front cover and every video in our own player. Beta 6 fixes what you found on beta 5 and what our own Duo testing caught: bigger full-screen video, games opening on their newest update, Back in landscape, the PS Plus card and the largest text sizes. Each line says what to do, then what you should see. Reply with the numbers that failed, or "all good".
 
-Your Duo checks for beta 5
-1. Library deck: swipe slowly, then flick. The dots under the deck follow every swipe, the current card shows as one pill, and a flick moves exactly one card. You can reach the last card and its dot.
-2. Say it with the real microphone: Add a game, Say it, tap the microphone once and say two titles, like Elden Ring and Astro Bot. Do it twice: once tap the microphone to stop, once just pause. Both times Playscribe stays open and shows both titles. Allow Speech Recognition and the Microphone if asked.
-3. Search in Closed landscape: in the Library, type "control" fast, then delete it all fast. Every tile comes back and the list is never blank. Do it ten times. Then try one search each in Book, Tabletop and Open landscape.
-4. Light mode: Playscribe now follows your phone’s appearance, so if your phone is set to Light the app turns light after this update, with no prompt. Open Settings, then Appearance, and try System, Light and Dark. The app follows each straight away. In Light, Settings is cream, not grey, and the headers on game and update pages are easy to read, including the clock and battery over the art.
+Your Duo checks for beta 6
+1. Full-screen video: play an update video or a trailer and tap full screen, Closed, Open and in Book. The picture is as big as the screen allows, with our controls (Exit, play, skip 10 seconds and the timeline) in the black bands, never on the picture. In portrait, full screen asks you to turn the phone. Exit and the video keeps playing.
+2. Open Control Resonant (or any game you’ve read before), go to its Gallery, close Playscribe fully and open it again. Open the same game: it shows its newest update, not the Gallery. Back from a game you just left still returns you to where you were.
+3. Open a game, then unfold to Book and to Open landscape. The Back button at the top of the rail shows its arrow, and VoiceOver reads it.
+4. Scroll to the PS Plus card at the end of the Library. Every game in it opens its page, including one without a cover, and the covers fill the row.
 
-Also check
-5. Buttons that float over art (the rail, Back, Share, Play) look like glass. Labels on art (version chips, the tile status mark, "1 of 3") are a dark pill. With Reduce Transparency on (your phone’s Settings, Accessibility, Display & Text Size), the floating buttons go solid.
-6. A deck card whose headline already names the version shows no second version chip.
-7. Play an update video, a trailer and a Gallery video, Closed and in Tabletop. All play inside Playscribe, with the reflection under the video in Tabletop. If a video can’t play here, you see Open in YouTube. Full screen, Closed or Open, fills the screen and keeps playing.
-8. Add Astro Bot. Its tile shows its cover, and its page says "We don’t track this game’s updates yet."
-9. At the largest text size, Library tile dates stay on one line and the Tabletop filter chips sit after the tiles.
-10. On a game page, open More, then Check for updates. A message says what happened, also in Airplane Mode.
+Also check, at the largest text size (Settings, Accessibility, Display & Text Size, Larger Text)
+5. Closed landscape: the Library shows games first, with the filter chips after them, and Playing and Upcoming are two large chips you can read.
+6. The deck card leads with the patch name, with its dots under the card, not on the text.
+7. The Status menu on a game shows a tick next to the current choice.
 
 Feedback you send through TestFlight, including its comment, may appear in our public issue tracker, so leave out personal details.
 
