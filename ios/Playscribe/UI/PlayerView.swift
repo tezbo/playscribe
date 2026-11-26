@@ -433,6 +433,7 @@ struct FullBleedVideo: View {
         .persistentSystemOverlays(.hidden)
         .statusBarHidden()
         .overlay(alignment: .topLeading) { MirrorAudit(on: false) }
+        .onDisappear(perform: turnBack)
         .onAppear {
             if division == nil, VideoOrientation.isPortrait {
                 turned = true
@@ -447,8 +448,15 @@ struct FullBleedVideo: View {
     }
 
     private func leave() {
-        if turned { VideoOrientation.request(.portrait) }
+        turnBack()
         onExit()
+    }
+
+    /// Full screen can also end without Exit (folding to Tabletop, closing the video): the scene still goes back to portrait.
+    private func turnBack() {
+        guard turned else { return }
+        turned = false
+        VideoOrientation.request(.portrait)
     }
 
     /// The navigation bar button that enters full screen.
