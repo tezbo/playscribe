@@ -155,8 +155,20 @@ jobs:
         id: innertests
         if: matrix.part == 'inner'
         run: |
-          fold() { sim-use ios fold "$1" --device "$UDID"; sleep 5; }
-          trap 'sim-use ios fold closed --device "$UDID" || true; sim-use ios rotate portrait --device "$UDID" || true; sleep 5' EXIT
+          # sim-use gives the display 6 s to switch and exits non-zero when it does not; on a loaded runner (boot load 300+ on 3 cores)
+          # that ended the step before any test ran (#658 and #660 inner, 26 Nov: "non-primary display did not become active within
+          # 6 s"). Send the hinge again, up to 3 times, and log each retry in the run summary.
+          fold() {
+            local try
+            for try in 1 2 3; do
+              if sim-use ios fold "$1" --device "$UDID"; then sleep 5; return 0; fi
+              echo "### fold $1: attempt $try failed, retrying" | tee -a "$GITHUB_STEP_SUMMARY"
+              sleep 5
+            done
+            echo "### fold $1: gave up after 3 attempts" | tee -a "$GITHUB_STEP_SUMMARY"
+            return 1
+          }
+          trap 'fold closed || true; sim-use ios rotate portrait --device "$UDID" || true; sleep 5' EXIT
           brew install lycorp-jp/tap/sim-use > sim-use.log 2>&1 || { tail -20 sim-use.log; exit 1; }
           T=PlayscribeUITests/RailSetTests
           run() { # $1 = name, $2 = orientation, rest = -only-testing args
@@ -195,7 +207,7 @@ jobs:
               done
               sleep 10
               echo "unfold: hinge $1, landscape-left" >> inner-uitests.log
-              sim-use ios fold "$1" --device "$UDID"; sim-use ios rotate landscape-left --device "$UDID" ) &
+              fold "$1"; sim-use ios rotate landscape-left --device "$UDID" ) &
             xcodebuild test-without-building -project ios/Playscribe.xcodeproj -scheme PlayscribeUI \
               -destination "id=$UDID" -derivedDataPath build/dd $DIAG -only-testing:PlayscribeUITests/UnfoldBackTests/$2 \
               -resultBundlePath "build/Unfold-$1.xcresult" CODE_SIGNING_ALLOWED=NO >> inner-uitests.log 2>&1 || status=$?
