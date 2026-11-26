@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Quinn's five cloud runs on a booted, app-installed iPhone Duo (hosted runner or Mac). Needs sim-use.
-#   ios/tools/qa/duo-ci-scenarios.sh UDID OUTDIR [scenario ...]    (default: all)   scenarios: continuity trailer closedax5 schemes video axchips deckwide plusend switchax switchtt heroswipe herolong removemenu lane
+#   ios/tools/qa/duo-ci-scenarios.sh UDID OUTDIR [scenario ...]    (default: all)   scenarios: continuity trailer closedax5 schemes video axchips deckwide plusend switchax switchtt heroswipe herolong removemenu brand lane
 # Every step saves <sha>-<scenario>-<step>-<display>-shot.png and -ui.txt (outline with frames, ids and the pose line).
 set -uo pipefail
 UDID=$1; OUT=$2; shift 2; SCEN=${*:-continuity trailer closedax5 schemes video}
@@ -110,6 +110,17 @@ removemenu) # s-06-remove-row-ax5-wrap + r060-version-chip-spoken: the game's st
   sim-use swipe --from 200,500 --to 200,200 --device "$UDID" >/dev/null 2>&1; sleep 2; snap removemenu 1b-closed-portrait-AX5-scrolled-to-remove
   launch -qaRoute gamepage/dawnwalker -qaOrientation landscape -UIPreferredContentSizeCategoryName $AX5; tapRail status; snap removemenu 2-closed-landscape-AX5
   launch -qaRoute gamepage/dawnwalker -qaOrientation portrait -UIPreferredContentSizeCategoryName $AX5; fold 90 portrait; tapRail status; snap removemenu 3-tabletop-AX5 ;;
+brand) # s-06-brand-swap (#614): Home Screen icon light and dark (tinted cannot be set here), Settings footer, caught-up and new-update marks, splash in Closed, Book and Tabletop
+  quick() { local d; d=$(did); local n; [ "$d" = 3 ] && n=inner || n=outer; for i in 1 2 3 4; do xcrun simctl io "$UDID" screenshot --display=$d "$OUT/$SHA-brand-$1-$i-$n-shot.png" >/dev/null 2>&1; done; }
+  for ap in light dark; do xcrun simctl ui "$UDID" appearance $ap >/dev/null 2>&1; xcrun simctl terminate "$UDID" $B >/dev/null 2>&1; fold 0 portrait; sleep 3; snap brand 1-home-icon-$ap; done
+  xcrun simctl ui "$UDID" appearance light >/dev/null 2>&1
+  launch -qaRoute settings; snap brand 2-settings-top
+  for k in 1 2 3 4 5; do sim-use swipe --from 233,520 --to 233,160 --device "$UDID" >/dev/null 2>&1; sleep 1; done; snap brand 3-settings-footer
+  launch -qaRoute caught-up; snap brand 4-library-caught-up
+  launch -qaRoute two-update; snap brand 5-library-new-update
+  xcrun simctl terminate "$UDID" $B >/dev/null 2>&1; fold 0 portrait; xcrun simctl launch "$UDID" $B -qaRoute library/playing >/dev/null; quick 6-splash-closed
+  xcrun simctl terminate "$UDID" $B >/dev/null 2>&1; fold 90 landscape-left; xcrun simctl launch "$UDID" $B -qaRoute library/playing >/dev/null; quick 7-splash-book
+  xcrun simctl terminate "$UDID" $B >/dev/null 2>&1; fold 90 portrait; xcrun simctl launch "$UDID" $B -qaRoute library/playing >/dev/null; quick 8-splash-tabletop ;;
 lane) # AX/VoiceOver lane (0.6.0): LANE_ROUTES (space list of -qaRoute values), each at AX5 in Closed portrait, Closed landscape and Tabletop;
   # first screen then scrolled to the end, so a baseline on main and the PR share one matrix. LANE_AX (AX5|std) picks the text size.
   size=$AX5; [ "${LANE_AX:-AX5}" = std ] && size=UICTContentSizeCategoryL
