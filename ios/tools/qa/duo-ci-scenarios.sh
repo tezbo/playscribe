@@ -138,14 +138,16 @@ switchax) # bug-playing-upcoming-switch-ax5-small: switch + filter chips, each s
   # A real tap on the chip (Closed portrait AX5): Playing, then Upcoming by label.
   launch -qaRoute library/playing -UIPreferredContentSizeCategoryName $AX5
   echo "tap Upcoming: $(sim-use tap --label "Upcoming" --device "$UDID" 2>&1 | head -2)"; sleep 2; snap switchax 5-closed-portrait-AX5-tapped-upcoming ;;
-switchtt) # bug-playing-upcoming-switch-ax5-small: Tabletop AX5 only; re-rotate to portrait until the app reports "pose: tabletop"
+switchtt) # bug-playing-upcoming-switch-ax5-small: real Tabletop at AX5. Tries portrait-first then fold, and fold-then-portrait, at hinge angles 90 120 60 130 until the app reports "pose: tabletop"
   for t in playing upcoming; do
-    launch -qaRoute library/$t -UIPreferredContentSizeCategoryName $AX5; fold 90 portrait
-    for try in 1 2 3 4; do
-      sim-use ui --device "$UDID" 2>/dev/null | grep -q "pose: tabletop" && break
-      echo "switchtt $t: not tabletop yet (try $try), rotating portrait again"
-      sim-use ios rotate portrait --device "$UDID" >/dev/null 2>&1; sleep 4
-    done
+    launch -qaRoute library/$t -UIPreferredContentSizeCategoryName $AX5; got=no
+    for ord in rotate-first fold-first; do for ang in 90 120 60 130; do
+      if [ $ord = rotate-first ]; then sim-use ios rotate portrait --device "$UDID" >/dev/null 2>&1; sleep 3; sim-use ios fold $ang --device "$UDID" >/dev/null 2>&1; sleep 5
+      else sim-use ios fold $ang --device "$UDID" >/dev/null 2>&1; sleep 4; sim-use ios rotate portrait --device "$UDID" >/dev/null 2>&1; sleep 4; fi
+      pl=$(sim-use ui --device "$UDID" 2>/dev/null | grep -o "pose: [a-z]*" | head -1); echo "switchtt $t $ord $ang: $pl"
+      [ "$pl" = "pose: tabletop" ] && { got=yes; break 2; }
+    done; done
+    echo "switchtt $t: tabletop reached: $got"
     snap switchtt 4-tabletop-AX5-$t
     sim-use swipe --from 335,880 --to 335,620 --device "$UDID" >/dev/null 2>&1; sleep 2; snap switchtt 4b-tabletop-AX5-$t-scrolled
   done ;;
