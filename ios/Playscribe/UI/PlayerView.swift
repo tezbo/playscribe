@@ -196,22 +196,35 @@ final class YouTubeController: NSObject, WKScriptMessageHandler {
 
 struct WebSurface: UIViewRepresentable {
     var webView: WKWebView
-    /// Hides YouTube's iframe elements from VoiceOver. SwiftUI's accessibilityHidden does not reach a web view's
-    /// out-of-process elements: at 34cd99b XCUITest still found YouTube's "Show player controls" (3,44 12x12) at the
-    /// full-screen picture's corner. One web view serves inline and full screen, so both surfaces set the same value.
+    /// Full screen: YouTube's iframe elements are kept from VoiceOver; the SwiftUI picture element speaks for the video.
+    /// Neither SwiftUI's accessibilityHidden, the web view's accessibilityElementsHidden (66564e9) nor aria-hidden on the
+    /// page (c93e9d8) stopped XCUITest reaching YouTube's "Show player controls" (3,44 12x12) through the WebView's
+    /// remote elements. A container that is itself the accessibility element ends the walk there, above the web view.
     var hidesWebContent = false
-    /// At 66564e9 accessibilityElementsHidden alone still left that button in XCUITest's tree, so the host page also marks
-    /// its body aria-hidden, which WebKit applies to the whole iframe subtree.
-    func makeUIView(context: Context) -> WKWebView {
-        apply(to: webView)
-        return webView
+    var takesWebView = true
+    final class Container: UIView {}
+    func makeUIView(context: Context) -> Container {
+        let container = Container()
+        container.backgroundColor = .clear
+        update(container)
+        return container
     }
-    func updateUIView(_ uiView: WKWebView, context: Context) { apply(to: uiView) }
-    private func apply(to view: WKWebView) {
-        view.accessibilityElementsHidden = hidesWebContent
-        view.evaluateJavaScript(hidesWebContent
-            ? "document.body&&document.body.setAttribute('aria-hidden','true')"
-            : "document.body&&document.body.removeAttribute('aria-hidden')")
+    func updateUIView(_ container: Container, context: Context) { update(container) }
+    static func dismantleUIView(_ container: Container, coordinator: ()) {
+        // As VideoSurface: only if it is still here, since the next surface may already have taken it.
+        for v in container.subviews where v is WKWebView { v.removeFromSuperview() }
+    }
+    private func update(_ container: Container) {
+        container.isAccessibilityElement = hidesWebContent
+        container.accessibilityElementsHidden = hidesWebContent
+        // One web view serves inline and full screen. The full-screen surface always takes it; the inline one takes it
+        // back only when full screen is not showing, so it never pulls the web view out from under full screen.
+        if takesWebView, webView.superview !== container {
+            webView.removeFromSuperview()
+            webView.frame = container.bounds
+            webView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            container.addSubview(webView)
+        }
     }
 }
 
@@ -287,7 +300,7 @@ struct PlayerView: View {
         // A web view has no intrinsic size, so a 16:9 box carries the size and the view fills it.
         // Before Play, our poster and our Play (VideoStartCover), never YouTube's start screen (Mac at c072400).
         let surface = Color.black.aspectRatio(16 / 9, contentMode: .fit)
-            .overlay { WebSurface(webView: controller.webView, hidesWebContent: fullScreen) }
+            .overlay { WebSurface(webView: controller.webView, hidesWebContent: fullScreen, takesWebView: !fullScreen) }
             .overlay { VideoStartCover(controller: controller, posterAsset: video.posterAsset, game: model.game(gameID)) }
         let gameName = model.game(gameID)?.name ?? ""
         switch duo.pose {
