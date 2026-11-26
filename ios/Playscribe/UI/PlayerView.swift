@@ -1042,13 +1042,15 @@ struct FullScreenBands: View {
                 .offset(x: l.top.minX, y: l.top.minY)
                 HStack(spacing: 4) {
                     glyph("gobackward.10", "Back 10 seconds", id: "videoBack10") { controller.skip(-10) }
-                    if ended {
-                        glyph("arrow.counterclockwise", "Replay", id: "videoPlayPause") { controller.seek(to: 0); controller.playPause() }
-                    } else {
-                        glyph(controller.isPlaying ? "pause.fill" : "play.fill", controller.isPlaying ? "Pause" : "Play",
-                              id: "videoPlayPause", action: controller.playPause)
+                    Group {
+                        if ended {
+                            glyph("arrow.counterclockwise", "Replay", id: "videoPlayPause") { controller.seek(to: 0); controller.playPause() }
+                        } else {
+                            glyph(controller.isPlaying ? "pause.fill" : "play.fill", controller.isPlaying ? "Pause" : "Play",
+                                  id: "videoPlayPause", action: controller.playPause)
+                        }
                     }
-                        .disabled(!controller.ready)
+                    .disabled(!controller.ready)
                     glyph("goforward.10", "Forward 10 seconds", id: "videoForward10") { controller.skip(10) }
                     if l.timeline == nil { timeline } else { Spacer(minLength: 0) }
                 }
