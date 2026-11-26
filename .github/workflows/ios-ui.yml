@@ -106,9 +106,18 @@ jobs:
           echo "### Booted: load $(sysctl -n vm.loadavg) on $(sysctl -n hw.ncpu) cores" | tee -a "$GITHUB_STEP_SUMMARY"
       - name: Build for testing
         run: |
-          xcodebuild build-for-testing -project ios/Playscribe.xcodeproj -scheme PlayscribeUI \
-            -destination "id=$UDID" -derivedDataPath build/dd CODE_SIGNING_ALLOWED=NO > build.log 2>&1 \
-            || { grep -E 'error:' build.log | head -20; exit 1; }
+          # Runner flake card (Quinn): a build that fails without any "error:" line (the runner, not our code) gets one retry.
+          # A real compile error fails at once, and so does a second failure.
+          build() {
+            xcodebuild build-for-testing -project ios/Playscribe.xcodeproj -scheme PlayscribeUI \
+              -destination "id=$UDID" -derivedDataPath build/dd CODE_SIGNING_ALLOWED=NO > build.log 2>&1
+          }
+          if build; then exit 0; fi
+          if grep -qE 'error:' build.log; then grep -E 'error:' build.log | head -20; exit 1; fi
+          echo "::warning::Build for testing failed with no compile error; retrying once. Last lines:"
+          tail -30 build.log
+          cp build.log build-attempt1.log
+          build || { grep -E 'error:' build.log | head -20; tail -30 build.log; exit 1; }
       - name: Feature UI tests (Closed)
         id: uitests
         if: matrix.part != 'inner'
