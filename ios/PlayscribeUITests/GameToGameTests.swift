@@ -1,4 +1,8 @@
 import XCTest
+import os
+
+// bug-edge-swipe-test-flake: measurement only.
+private let edgeLog = Logger(subsystem: "co.codeconnectors.playscribe", category: "swipeback")
 
 /// Terry on beta 3 (real Duo, 22 Nov): "View game" from "You might also like" lagged, then showed a black screen; the page
 /// appeared only once he scrolled. No game opens blank. "View game" sits at the end of a game page, so the reader is scrolled
@@ -51,7 +55,9 @@ final class GameToGameTests: XCTestCase {
             // Astro's Playroom: a PS5-index game, opened browsed exactly as View game opens it.
             app.open(URL(string: "playscribe://index-game/134597")!)
             XCTAssertTrue(app.buttons["addToLibrary"].waitForExistence(timeout: 10), "\(way): the second game did not open")
+            edgeLog.notice("edgeswipe test: \(way) second game exists")
             XCTAssertEqual(back.label, "Back to The Blood of Dawnwalker", "\(way): Back should name the game it returns to")
+            edgeLog.notice("edgeswipe test: \(way) begins, page open")
             if way == "Back button" {
                 back.tap()
             } else {
@@ -62,9 +68,11 @@ final class GameToGameTests: XCTestCase {
                     .press(forDuration: 0.1, thenDragTo: w.coordinate(withNormalizedOffset: CGVector(dx: 0.85, dy: 0.5)),
                            withVelocity: 800, thenHoldForDuration: 0.2)
             }
+            edgeLog.notice("edgeswipe test: \(way) gesture sent")
             // Wait for the pop to finish rather than a fixed 2 s.
             let gone = XCTNSPredicateExpectation(predicate: NSPredicate(format: "exists == false"), object: app.buttons["addToLibrary"])
             _ = XCTWaiter().wait(for: [gone], timeout: 10)
+            edgeLog.notice("edgeswipe test: \(way) wait over, second game exists=\(app.buttons["addToLibrary"].exists)")
             XCTAssertFalse(app.buttons["addToLibrary"].exists, "\(way): still on the second game")
             XCTAssertTrue(back.waitForExistence(timeout: 5), "\(way): left the games altogether (\(pose))")
             XCTAssertEqual(back.label, "Back to Library", "\(way): not back on Dawnwalker (\(pose))")

@@ -1,5 +1,9 @@
 import SwiftUI
 import UIKit
+import os
+
+// bug-edge-swipe-test-flake: measurement only, removed once the cause is fixed.
+private let swipeLog = Logger(subsystem: "co.codeconnectors.playscribe", category: "swipeback")
 
 /// Keeps the edge-swipe back gesture on a screen that hides the system back button (r053-tap-opens-tick-adds, Iris).
 /// UIKit turns the gesture off when the back button is hidden; this gives it a delegate that lets it begin whenever there
@@ -14,6 +18,7 @@ private struct SwipeBackEnabler: UIViewControllerRepresentable {
 
         override func viewDidAppear(_ animated: Bool) {
             super.viewDidAppear(animated)
+            swipeLog.notice("edgeswipe app: viewDidAppear nav=\(self.navigationController != nil) count=\(self.navigationController?.viewControllers.count ?? -1)")
             guard let nav = navigationController, let gesture = nav.interactivePopGestureRecognizer else { return }
             if configured !== nav {
                 previousDelegate = gesture.delegate
@@ -31,7 +36,9 @@ private struct SwipeBackEnabler: UIViewControllerRepresentable {
         }
 
         func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
-            (navigationController?.viewControllers.count ?? 0) > 1
+            let r = (navigationController?.viewControllers.count ?? 0) > 1
+            swipeLog.notice("edgeswipe app: shouldBegin=\(r) count=\(self.navigationController?.viewControllers.count ?? -1)")
+            return r
         }
     }
 }
