@@ -6,13 +6,13 @@ import SwiftUI
 // below. LibraryView wraps it after #424 and #455 merge, so until then it shows only in the internal preview
 // (Settings > Front cover, or `-qaRoute cover` / `cover/one`). Nothing here is reachable in a TestFlight or App Store build.
 
-/// The three motion modes (Settings > "Cover motion"). Only Still is built; the others land in their own PRs.
+/// The three motion modes (Settings > "Cover motion"). All three are built; the Trailer loop is in TrailerLoop.swift (6a).
 enum CoverMotion: String, CaseIterable, Identifiable {
     case trailer, keyArt, still
     var id: String { rawValue }
 
     static let key = "coverMotion"
-    /// Nadia, 12 Nov: the default is Key-art motion.
+    /// Nadia, 12 Nov (confirmed 13 Nov): the default is Key-art motion; Still and Trailer loop are choices in Settings.
     static let defaultMode: CoverMotion = .keyArt
 
     var label: String {
@@ -24,7 +24,7 @@ enum CoverMotion: String, CaseIterable, Identifiable {
     }
 
     /// Built so far. The Settings row lists only these, and a stored mode that is not built yet shows Still.
-    var isBuilt: Bool { self == .still }
+    var isBuilt: Bool { true }
 
     /// The next mode down: a Trailer loop that cannot play shows Key-art motion, and Key-art motion falls back to Still.
     var fallback: CoverMotion {
@@ -98,7 +98,10 @@ struct FrontCoverPage: View {
     @Environment(\.dynamicTypeSize) private var typeSize
     @Environment(\.colorSchemeContrast) private var contrast
     @Environment(\.accessibilityReduceTransparency) private var reduceTransparency
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @Environment(\.qaSolid) private var qaSolid
+    @AppStorage(CoverMotion.key) private var stored: CoverMotion = CoverMotion.defaultMode
+    @AppStorage(YouTubeController.autoplayKey) private var autoplay = false
     var card: DeckCard
     /// Leading room kept clear for the leaves, and trailing room for the rail at accessibility sizes (the plate never
     /// sits under the rail, Iris condition 5).
@@ -108,6 +111,7 @@ struct FrontCoverPage: View {
     var safeArea: EdgeInsets = EdgeInsets()
     @State private var plateTop: CGFloat = 0
     @State private var pageHeight: CGFloat = 0
+    @State private var pageWide = false
 
     var body: some View {
         Button {
@@ -116,8 +120,17 @@ struct FrontCoverPage: View {
         } label: {
             ZStack(alignment: .bottomLeading) {
                 // Iris (#467): at accessibility sizes the plate covers the lower half, so the focal point goes to the top half.
-                ArtView(asset: card.game.keyArtAsset, game: card.game, focus: card.game.coverFocus ?? CoverFocus(x: 0.5, y: 0.5),
-                        focusTargetY: typeSize.isAccessibilitySize ? 0.25 : 0.5)
+                // Key-art motion (s-07) moves only this layer; the shade and the plate below stay still.
+                // Trailer loop (6a): the official loop over the key art once its first frame is ready; the key art moves under
+                // it meanwhile, and stays if the source fails.
+                if let loop = trailerLoop {
+                    TrailerLoopCoverArt(url: loop) { keyArt(moving: keyArtMoves) }
+                    // A near-white frame put the status bar glyphs and the close control white on white (Mac, 3c091e12): in
+                    // loop mode the top and trailing edges, where the system bar and the rail sit, get their own shade.
+                    loopEdgeShade
+                } else {
+                    keyArt(moving: moving)
+                }
                 if !solid { fade }
                 VStack(alignment: .leading, spacing: 18) {
                     FrontCoverPlate(card: card)
@@ -136,7 +149,10 @@ struct FrontCoverPage: View {
                 .background { if solid { PlayscribeColor.ink950.opacity(0.92) } }
             }
             .coordinateSpace(.named("coverPage"))
-            .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { h in if abs(h - pageHeight) > 0.5 { pageHeight = h } }
+            .onGeometryChange(for: CGSize.self) { $0.size } action: { s in
+                if abs(s.height - pageHeight) > 0.5 { pageHeight = s.height }
+                if (s.width > s.height) != pageWide { pageWide = s.width > s.height }
+            }
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
@@ -144,34 +160,121 @@ struct FrontCoverPage: View {
         // CM-7: one element; the motion mode is never announced.
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(FrontCoverPage.label(card))
-        .accessibilityValue(card.unread ? "New update" : "")
+        .accessibilityValue(card.unread ? card.chipText : "")
         .accessibilityAddTraits(.isButton)
         .accessibilityIdentifier("frontCover")
     }
 
     private var solid: Bool { contrast == .increased || reduceTransparency || qaSolid }
 
+    /// The lead card (the first in the deck) is the one `-qaCoverLoop` applies to.
+    var lead = false
+    @State private var lowPower = ProcessInfo.processInfo.isLowPowerModeEnabled
+
+    private func keyArt(moving: Bool) -> some View {
+        KeyArtMotionArt(asset: card.game.keyArtAsset, game: card.game, focus: card.game.coverFocus ?? CoverFocus(x: 0.5, y: 0.5),
+                        focusTargetY: typeSize.isAccessibilitySize ? 0.25 : 0.5,
+                        maxFocalY: typeSize.isAccessibilitySize ? 0.5 : 1, moving: moving)
+            .onReceive(NotificationCenter.default.publisher(for: .NSProcessInfoPowerStateDidChange)) { _ in
+                lowPower = ProcessInfo.processInfo.isLowPowerModeEnabled
+            }
+    }
+
+    /// The loop to play, when Trailer loop is the resolved mode and everything it needs holds (TrailerLoopRule).
+    private var trailerLoop: URL? {
+        let url = TrailerLoopRule.url(for: card.game, lead: lead)
+        return TrailerLoopRule.plays(stored: stored, reduceMotion: reduceMotion || Self.qaReduceMotion, autoplay: autoplay,
+                                     loop: url, lowPower: lowPower) ? url : nil
+    }
+
+    /// Loop mode only: 65 percent ink at the top edge fading out by 150 pt, and the same along the trailing edge by 90 pt, so
+    /// white status glyphs and the close control hold at least 4.5:1 over any frame (the bottom has the cover's own shade).
+    private var loopEdgeShade: some View {
+        let ink = PlayscribeColor.ink950
+        return ZStack {
+            LinearGradient(colors: [ink.opacity(0.65), ink.opacity(0)], startPoint: .top, endPoint: .bottom)
+                .frame(height: 150 + safeArea.top).frame(maxHeight: .infinity, alignment: .top)
+            LinearGradient(colors: [ink.opacity(0), ink.opacity(0.65)], startPoint: .leading, endPoint: .trailing)
+                .frame(width: 90 + safeArea.trailing).frame(maxWidth: .infinity, alignment: .trailing)
+        }
+        .allowsHitTesting(false)
+        .accessibilityHidden(true)
+    }
+
+    /// Under a loop, the key art moves as Key-art motion would (it shows while the loop loads, or if it fails).
+    private var keyArtMoves: Bool {
+        guard let asset = card.game.keyArtAsset else { return false }
+        return !KeyArtQuality.isMurky(asset: asset)
+    }
+
+    /// QA (internal builds, launch with `-qaReduceMotion YES`): the cover resolves as under Reduce Motion (CM-1), for CI stills,
+    /// where the simulator's switch can't be set per launch. Read here, not from the environment: the preview is a full-screen
+    /// cover presented from Settings, outside RootView's environment.
+    static var qaReduceMotion: Bool {
+        #if INTERNAL
+        return UserDefaults.standard.bool(forKey: "qaReduceMotion")
+        #else
+        return false
+        #endif
+    }
+
+    /// Key-art motion runs when it is the resolved mode (Reduce Motion forces Still, CM-1) and the art passes the murky check.
+    private var moving: Bool {
+        // A Trailer loop with no loop to play (none in the feed, Low Power, not https) moves as Key-art motion.
+        let mode = stored.resolved(reduceMotion: reduceMotion || Self.qaReduceMotion, autoplay: autoplay)
+        guard mode == .keyArt || mode == .trailer, let asset = card.game.keyArtAsset else { return false }
+        return !KeyArtQuality.isMurky(asset: asset)
+    }
+
     /// CM-5: the shade is part of the cover, not the art, so the caption meets AA over any art (and, later, any loop
     /// frame). The top darkens a little for the status bar and the rail.
     private var fade: some View {
-        LinearGradient(stops: Self.fadeStops(accessibility: typeSize.isAccessibilitySize,
-                                             plateTop: pageHeight > 0 && plateTop > 0 ? Double(plateTop / pageHeight) : nil)
+        LinearGradient(stops: Self.fadeStops(accessibility: typeSize.isAccessibilitySize || pageWide,
+                                             plateTop: pageHeight > 0 && plateTop > 0 ? Double(plateTop / pageHeight) : nil,
+                                             followPlate: card.unread && card.freshLabel != nil,
+                                             pageHeight: Double(pageHeight))
                         .map { .init(color: PlayscribeColor.ink950.opacity($0.opacity), location: $0.location) },
                        startPoint: .top, endPoint: .bottom)
     }
 
-    /// The shade's stops, as (opacity, location). Standard sizes: unchanged (signed). Accessibility sizes (Iris, 0a4230d): the
+    /// The shade's stops, as (opacity, location). Standard sizes: the signed shade, solid under the lockup. Accessibility sizes (Iris, 0a4230d): the
     /// plate covers the lower half and its eyebrow sat on pale art at about 40 percent, so the shade follows the plate: clear
     /// until just above it, 88 percent black at the eyebrow's top edge (the accent holds 4.5:1 over art up to about 60 percent
     /// luminance there), 92 percent by the title, solid at the foot.
-    static func fadeStops(accessibility: Bool, plateTop: Double?) -> [(opacity: Double, location: Double)] {
-        guard accessibility else {
-            return [(0.55, 0), (0, 0.18), (0, 0.45), (0.92, 0.85), (1, 1)]
+    /// A wide page (Closed landscape) takes the same plate-following shade at every size (Quinn, 0e77e33 landscape still): the
+    /// plate fills most of the height, so the signed portrait shade left the NEW UPDATE eyebrow on bright art at 3.1:1 (the
+    /// fix #514 used for bright art: a bottom-weighted scrim reaching up to the eyebrow). Portrait keeps the signed shade.
+    /// `followPlate` (r060 day-one, Iris on #506): the "Day-one patch" line sits above the eyebrow, where the standard shade was
+    /// still ramping (2.3:1 over KCD II's armour in Closed landscape), so the shade follows the plate at standard sizes too,
+    /// 88 percent from the line's top edge, and keeps the signed solid foot from 90 percent down.
+    /// `pageHeight` (points): when known, the shade eases in over `plateRamp` points above the plate (smoothstep, 16 stops)
+    /// instead of 6 percent of the page, which was about 20 pt in Closed landscape and read as a cut across the art (Iris on
+    /// #506). The ramp ends at the plate's top edge, so the plate itself stays 88 percent or more.
+    static let plateRamp: Double = 96
+
+    static func fadeStops(accessibility: Bool, plateTop: Double?, followPlate: Bool = false,
+                          pageHeight: Double = 0) -> [(opacity: Double, location: Double)] {
+        guard accessibility || followPlate else {
+            // Solid from 90 percent down (Iris, 19 Nov, on Terry's cover review): a title logo in the key art read as a ghost
+            // behind the Playscribe mark, so the foot under the lockup is plain ink.
+            return [(0.55, 0), (0, 0.18), (0, 0.45), (0.92, 0.82), (1, 0.9), (1, 1)]
         }
         guard let top = plateTop.map({ min(max($0, 0.2), 0.9) }) else {
             return [(0.55, 0), (0, 0.18), (0, 0.25), (0.92, 0.7), (1, 1)]
         }
-        return [(0.55, 0), (0, min(0.18, top - 0.1)), (0, top - 0.06), (0.88, top), (0.92, min(0.98, top + 0.08)), (1, 1)]
+        var plate: [(opacity: Double, location: Double)]
+        if pageHeight > 0 {
+            let start = max(0.05, top - Self.plateRamp / pageHeight)
+            let ramp = (0...16).map { i -> (opacity: Double, location: Double) in
+                let t = Double(i) / 16
+                return (0.88 * t * t * (3 - 2 * t), start + (top - start) * t)
+            }
+            plate = [(0.55, 0), (0, min(0.18, start))] + ramp + [(0.92, min(0.98, top + 0.08)), (1, 1)]
+        } else {
+            plate = [(0.55, 0), (0, min(0.18, top - 0.1)), (0, top - 0.06), (0.88, top), (0.92, min(0.98, top + 0.08)), (1, 1)]
+        }
+        guard !accessibility else { return plate }
+        return plate.filter { $0.location < 0.9 } + [(1, 0.9), (1, 1)]
     }
 
     /// CM-7: "<Game> cover, update 1.1 on PS5, 22 Oct". A card with no release says when the game came out.
@@ -193,34 +296,70 @@ struct FrontCoverPlate: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            // Iris (#467): NEW UPDATE until the person opens that update; read pages show no eyebrow. CONTINUE (partly
-            // read, a resume point) waits for a resume-point model; the app only records read or unread today.
-            if card.unread {
-                Text("NEW UPDATE")
+            // r060 day-one (Iris): an unread day-one patch keeps its "Day-one patch" line above the eyebrow, sentence case (Iris, ux-copy); a plain new update
+            // has only the unread dot (Iris, 19 Nov).
+            if card.unread, let label = card.freshLabel {
+                Text(label)
                     .font(PlayscribeFont.caption.weight(.semibold))
                     .tracking(12 * 0.12)
-                    .foregroundStyle(PlayscribeColor.accent)
+                    .foregroundStyle(PlayscribeColor.onDarkAccent)
+                    .accessibilityIdentifier("dayOneEyebrow")
             }
-            // Iris (#467): the game name is never cut on a cover. It takes the lines it needs (four at most for real names
-            // at the AX3 cap) and pushes the plate up; the art gives way, never the name.
-            Text(card.game.name)
-                .font(PlayscribeFont.title).foregroundStyle(PlayscribeColor.textPrimary)
+            // Iris (19 Nov, on #541): the patch name is the most prominent text on an update's cover. A small eyebrow carries the
+            // game and the day ("Kingdom Come: Deliverance II, 25 Jun"), with the unread dot before it until the update is
+            // opened (#467's NEW UPDATE). The game name is never cut: the eyebrow wraps.
+            if let eyebrow = Self.eyebrow(card) {
+                HStack(alignment: .firstTextBaseline, spacing: 6) {
+                    if card.unread { UnreadDot() }
+                    Text(eyebrow)
+                        .font(PlayscribeFont.subheadline.weight(.semibold))
+                        .foregroundStyle(PlayscribeColor.onDarkText.opacity(0.85))
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+            }
+            Text(Self.headline(card))
+                .font(PlayscribeFont.title).foregroundStyle(PlayscribeColor.onDarkText)
                 .fixedSize(horizontal: false, vertical: true)
-            FlowLayout(spacing: 6) {
-                ForEach(Self.chips(card), id: \.text) { chip($0.text, live: $0.live) }
+            // Iris (#619, closedportrait cover): the FlowLayout reported one row while placing two, so a wrapped "11 changes" sat
+            // on the Playscribe wordmark. A ViewThatFits always reports the height of the version it draws: one row, then the
+            // status and version with the count below, then one chip a row. The chips wrap; none is dropped.
+            let chips = Self.chips(card)
+            ViewThatFits(in: .horizontal) {
+                HStack(spacing: 6) { ForEach(chips, id: \.text) { chip($0.text, live: $0.live) } }
+                VStack(alignment: .leading, spacing: 6) {
+                    HStack(spacing: 6) { ForEach(chips.prefix(2), id: \.text) { chip($0.text, live: $0.live) } }
+                    ForEach(chips.dropFirst(2), id: \.text) { chip($0.text, live: $0.live) }
+                }
+                VStack(alignment: .leading, spacing: 6) { ForEach(chips, id: \.text) { chip($0.text, live: $0.live) } }
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .dynamicTypeSize(...DynamicTypeSize.accessibility3)
     }
 
-    /// "v1.1 · On PS5" (accent), the UTC day, and the change count. The version is always the PS5 one: the deck holds
+    /// The largest line: the patch name ("Patch 1.5.6"); a card with no release shows the game's name.
+    static func headline(_ card: DeckCard) -> String {
+        card.release?.displayName ?? card.game.name.gluingTrailingNumeral
+    }
+
+    /// Above the patch name: the game and the UTC day, comma separated (no dot separators). Nil for a card with no release,
+    /// whose headline is already the game.
+    static func eyebrow(_ card: DeckCard) -> String? {
+        guard card.release != nil else { return nil }
+        let name = card.game.name.gluingTrailingNumeral
+        return card.date.map { "\(name), \(AppModel.tileDay($0))" } ?? name
+    }
+
+    /// "Out on PS5" (ember text), the PS5 version chip when there is one, and the change count. The version is always the PS5 one: the deck holds
     /// only releases live on PS5, and `versionChip` comes from the PS5 release's own name.
     static func chips(_ card: DeckCard) -> [(text: String, live: Bool)] {
         var list: [(text: String, live: Bool)] = []
         if let r = card.release {
-            list.append(((r.versionChip.map { $0 + " · " } ?? "") + "On PS5", true))
-            if let d = card.date { list.append((AppModel.tileDay(d), false)) }
+            // "Out on PS5", then the PS5 version as its own chip, only when the PS5 row has one (Card B, no dot separators).
+            list.append(("Out on PS5", true))
+            // A build-list number says "Reported as 01.006.000" (Iris on #619); an official one stays bare.
+            if let v = PS5StatusLines.buildChip(r) { list.append((v, false)) }
+            // The day is in the eyebrow (Iris, 19 Nov).
             let n = r.noteCount
             if n > 0 { list.append((n == 1 ? "1 change" : "\(n) changes", false)) }
         } else if let d = card.date {
@@ -230,13 +369,13 @@ struct FrontCoverPlate: View {
     }
 
     private func chip(_ text: String, live: Bool) -> some View {
-        Text(text).font(PlayscribeFont.caption.weight(.semibold)).monospacedDigit()
-            .foregroundStyle(live ? PlayscribeColor.onAccent : PlayscribeColor.textPrimary)
+        Text(text.keepingVersionsTogether).font(PlayscribeFont.caption.weight(.semibold)).monospacedDigit()
+            // Over-art rule (#619, Iris): only "New update" is filled. "Out on PS5" is a label like the others, ink with ember text.
+            .foregroundStyle(live ? PlayscribeColor.onDarkAccent : PlayscribeColor.onDarkText)
             .padding(.horizontal, 8).padding(.vertical, 3).frame(minHeight: 24)
-            .background(RoundedRectangle(cornerRadius: 6, style: .continuous)
-                .fill(live ? PlayscribeColor.accent : PlayscribeColor.ink950.opacity(0.6)))
+            .background { Color.clear.artLabel(in: RoundedRectangle(cornerRadius: 6, style: .continuous)) }
             .overlay(RoundedRectangle(cornerRadius: 6, style: .continuous)
-                .strokeBorder(live ? .clear : PlayscribeColor.vellum100.opacity(0.25), lineWidth: 1))
+                .strokeBorder(PlayscribeColor.vellum100.opacity(0.25), lineWidth: 1))
     }
 }
 
@@ -247,15 +386,15 @@ struct CoverLockup: View {
     var body: some View {
         HStack(spacing: 6) {
             BrandMark(size: glyph)
-            Text(Brand.name).font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.textPrimary)
+            Text(Brand.name).font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.onDarkText)
         }
         .accessibilityElement(children: .combine)
         .accessibilityLabel(Brand.name)
     }
 }
 
-/// The cover's pages (every deck card, newest first, at most 5) with the leaves on the leading edge. The leaves ARE
-/// the deck's dots: they drive the same selection, so there is no second pager (Iris condition 4). The rail is the
+/// The cover's pages (every deck card, newest first, at most 5) with the dots on the leading edge. The dots ARE
+/// the deck's: they follow the same selection, so there is no second pager (Iris condition 4). The rail is the
 /// caller's overlay (Iris condition 2: every Library control, 44 pt, on a scrim); `railWidth` keeps the plate clear of it.
 struct FrontCover: View {
     @Environment(AppModel.self) private var model
@@ -273,7 +412,7 @@ struct FrontCover: View {
                 LazyHStack(spacing: 0) {
                     ForEach(shown) { card in
                         FrontCoverPage(card: card, leadingInset: shown.count > 1 ? 28 : 0, railInset: railWidth,
-                                       safeArea: g.safeAreaInsets)
+                                       safeArea: g.safeAreaInsets, lead: card.id == shown.first?.id)
                             .frame(width: g.size.width, height: g.size.height)
                             .id(card.id)
                     }
@@ -287,7 +426,7 @@ struct FrontCover: View {
         .onChange(of: current) { _, new in model.deckSelection = new }
         .overlay(alignment: .leading) {
             if shown.count > 1 {
-                CoverLeaves(cards: shown, current: current ?? shown.first?.id) { id in
+                CoverLeaves(cards: shown, current: current ?? shown.first?.id, backed: TrailerLoopState.shared.playing) { id in
                     withAnimation(reduceMotion ? .easeInOut(duration: 0.2) : .snappy) { current = id }
                 }
             }
@@ -298,35 +437,55 @@ struct FrontCover: View {
     }
 }
 
-/// The page-edge leaves, stood on the cover's leading edge: one per update, the current one tall in ember, unread
-/// ones in vellum. Each is a 44 pt target labelled "Update n of N".
+/// The cover's page indicator, stood on its leading edge: PageEdge's dots turned upright (Iris, after #616: the cover kept
+/// the old amber bar). 6 pt dots 10 pt apart, the current one in ember, every other one the deck's dark unlit grey (unread is
+/// carried by the "New update" label and VoiceOver; mixed white and grey read as random, Iris on #616). View only, as the deck's: the
+/// pages swipe, and VoiceOver reads one adjustable element ("Update 2 of 5") that steps one page.
 struct CoverLeaves: View {
     var cards: [DeckCard]
     var current: String?
+    /// Over a trailer loop the footage can be bright (Iris, #584: the marks fell to 2:1), so the column gets a dark capsule
+    /// that keeps every mark at 3:1 or better (WCAG 1.4.11). Still and Key-art motion keep the bare marks over the shade.
+    var backed = false
     var select: (String) -> Void
+    /// The deck's unlit dot in dark (#47434C); the cover is always dark.
+    static let unlit = UIColor(hex: 0x47434C)
 
     var body: some View {
-        VStack(spacing: 0) {
+        let lit = PageEdge.lit(cards: cards, current: current, visible: 1)
+        VStack(spacing: PageEdge.gap) {
             ForEach(Array(cards.enumerated()), id: \.element.id) { index, card in
-                let isCurrent = card.id == current
-                Button { select(card.id) } label: {
-                    RoundedRectangle(cornerRadius: 1.5)
-                        .fill(isCurrent ? PlayscribeColor.accent : (card.unread ? PlayscribeColor.vellum100 : PlayscribeColor.textSecondary.opacity(0.6)))
-                        .frame(width: 3, height: isCurrent ? 22 : 12)
-                        .shadow(color: .black.opacity(0.6), radius: 2)
-                        .frame(width: 44, height: 44)
-                        .contentShape(Rectangle())
-                }
-                .buttonStyle(.plain)
-                .tappableFrame()
-                .accessibilityLabel("Update \(index + 1) of \(cards.count)")
-                .accessibilityAddTraits(isCurrent ? [.isButton, .isSelected] : .isButton)
+                Circle()
+                    .fill(lit.contains(index) ? PlayscribeColor.onDarkAccent : Color(Self.unlit))
+                    .frame(width: PageEdge.dot, height: PageEdge.dot)
+                    .shadow(color: .black.opacity(0.6), radius: 2)
             }
+        }
+        .padding(.vertical, 12)
+        .frame(width: 44)
+        // The VoiceOver element is the 44 pt column, not the dots' bounds (the deck indicator's #588 audit finding).
+        .contentShape(.accessibility, Rectangle())
+        .background {
+            if backed {
+                // The ink label on art (Iris, over-art-materials): 75%, as every label over art.
+                Color.clear.artLabel(in: Capsule())
+                    .padding(.horizontal, 12)
+                    .transition(.opacity)
+            }
+        }
+        .animation(.easeInOut(duration: 0.4), value: backed)
+        .allowsHitTesting(false)
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(PageEdge.spoken(lit: lit, count: cards.count))
+        .accessibilityIdentifier("coverIndicator")
+        .accessibilityAdjustableAction { direction in
+            let delta = direction == .increment ? 1 : direction == .decrement ? -1 : 0
+            if delta != 0, let id = PageEdge.step(cards: cards, current: current, visible: 1, by: delta) { select(id) }
         }
     }
 }
 
-/// A rail button for the cover: 44 pt, on a dark scrim so bright art never hides it (Iris condition 2).
+/// A rail button for the cover: 44 pt glass, solid under Reduce Transparency, so bright art never hides it (Iris condition 2).
 struct CoverRailButton: View {
     var title: String
     var symbol: String
@@ -336,10 +495,12 @@ struct CoverRailButton: View {
         Button(action: action) {
             Image(systemName: symbol)
                 .font(.system(size: 17, weight: .semibold))
-                .foregroundStyle(PlayscribeColor.textPrimary)
+                .foregroundStyle(PlayscribeColor.onDarkText)
                 .frame(width: 44, height: 44)
-                .background(Circle().fill(PlayscribeColor.ink950.opacity(0.6)))
-                .overlay(Circle().strokeBorder(PlayscribeColor.vellum100.opacity(0.18), lineWidth: 1))
+                // A control floating over the cover: the same glass as the rail (over-art rule, #619). The cover is dark in
+                // both modes, so the glass is too, and the glyph keeps the on-dark set (HeroGroundTests).
+                .floatingControl(in: Circle())
+                .environment(\.colorScheme, .dark)
                 .contentShape(Circle())
         }
         .buttonStyle(.plain)
@@ -359,7 +520,7 @@ struct FrontCoverPreviewScreen: View {
             if FrontCoverPreview.shows(pose: duo.pose) {
                 content
             } else {
-                Color.ink0.ignoresSafeArea()
+                PlayscribeColor.heroGround.ignoresSafeArea()
                     .onAppear { FrontCoverPreview.shared.closeForPose(model) }
             }
         }
@@ -369,7 +530,7 @@ struct FrontCoverPreviewScreen: View {
         VStack(spacing: 0) {
             if model.latestDeck.isEmpty {
                 Text("No updates in the deck. Try -qaRoute cover with a demo library.")
-                    .font(PlayscribeFont.body).foregroundStyle(PlayscribeColor.textSecondary)
+                    .font(PlayscribeFont.body).foregroundStyle(PlayscribeColor.onDarkTextSecondary)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
             } else {
                 ZStack(alignment: .topTrailing) {
@@ -378,10 +539,19 @@ struct FrontCoverPreviewScreen: View {
                     // A sibling inside the safe area, so the rail clears the status bar and the outer camera (G-6).
                     CoverRailButton(title: "Close preview", symbol: "xmark") { dismiss() }
                         .padding(.trailing, 12).padding(.top, 8)
+                    #if INTERNAL
+                    // UI tests read the loop state here (6a item 1): the cover itself is one element and never says its mode.
+                    // Only on -qaRoute launches, so a VoiceOver tester on an internal build never meets it.
+                    if AppModel.isQALaunch {
+                    Text("qa-cover-loop: \(TrailerLoopState.shared.playing ? "playing" : "off")")
+                        .font(.system(size: 1)).opacity(0.01).allowsHitTesting(false)
+                        .accessibilityIdentifier("qaCoverLoop")
+                    }
+                    #endif
                 }
             }
         }
-        .background(Color.ink0)
+        .background(PlayscribeColor.heroGround)
         // Iris (#467): white text on the shade in both modes, so the status bar is light content over the cover whatever
         // the system appearance. The Library wrap does the same while the cover is on screen.
         .preferredColorScheme(.dark)
@@ -391,13 +561,18 @@ struct FrontCoverPreviewScreen: View {
 /// Settings: the cover's motion mode with the CM-1 footnote. Internal builds only until 0.7 (see the top of this file).
 struct CoverMotionSection: View {
     @Environment(\.duo) private var duo
+    @Environment(AppModel.self) private var model
     @AppStorage(CoverMotion.key) private var stored: CoverMotion = CoverMotion.defaultMode
 
     var body: some View {
         if FrontCoverPreview.available {
             Section {
-                Picker("Cover motion", selection: Binding(get: { stored.isBuilt ? stored : .still }, set: { stored = $0 })) {
-                    ForEach(CoverMotion.allCases.filter(\.isBuilt)) { Text($0.label).tag($0) }
+                // Trailer loop is offered only once a game has a loop to play (Iris, #584); a stored Trailer loop with none
+                // shows as Key-art motion, which is what the cover does then.
+                let loops = TrailerLoopRule.available(in: model.games.values)
+                let modes = CoverMotion.allCases.filter { $0.isBuilt && ($0 != .trailer || loops) }
+                Picker("Cover motion", selection: Binding(get: { modes.contains(stored) ? stored : .keyArt }, set: { stored = $0 })) {
+                    ForEach(modes) { Text($0.label).tag($0) }
                 }
                 .frame(minHeight: 52)
                 .accessibilityIdentifier("coverMotion")

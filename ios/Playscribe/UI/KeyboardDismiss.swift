@@ -1,0 +1,140 @@
+import SwiftUI
+import UIKit
+
+/// A tap anywhere but a text field, a control or a list row puts the keyboard away (Terry, 8 Nov).
+///
+/// This is a UIKit recognizer on the window, not a SwiftUI tap gesture: a tap on the typed text is taken by the UITextField
+/// itself and never reaches SwiftUI, so a SwiftUI handler could not tell "tap inside the field" from "tap outside" and
+/// dropped focus on both (cc04658 Mac hand check 1). The recognizer does not cancel or delay any touch.
+extension Notification.Name {
+    /// Posted when a tap outside the fields put the keyboard away: the person's own action, not a sheet being rebuilt.
+    static let keyboardPutAwayByTap = Notification.Name("playscribe.keyboardPutAwayByTap")
+}
+
+final class KeepsKeyboardMarkerView: UIView {}
+
+private struct KeepsKeyboardMarker: UIViewRepresentable {
+    func makeUIView(context: Context) -> UIView { let v = KeepsKeyboardMarkerView(); v.isUserInteractionEnabled = false; return v }
+    func updateUIView(_ uiView: UIView, context: Context) {}
+}
+
+private final class KeyboardDismissView: UIView, UIGestureRecognizerDelegate {
+    private weak var attachedTo: UIWindow?
+    private lazy var tap: UITapGestureRecognizer = {
+        let r = UITapGestureRecognizer(target: self, action: #selector(tapped))
+        r.cancelsTouchesInView = false
+        r.delaysTouchesBegan = false
+        r.delaysTouchesEnded = false
+        r.delegate = self
+        return r
+    }()
+
+    override func didMoveToWindow() {
+        super.didMoveToWindow()
+        attachedTo?.removeGestureRecognizer(tap)
+        attachedTo = window
+        window?.addGestureRecognizer(tap)
+    }
+
+    /// The text input that was first responder when the touch began. A tap that itself gives a field focus (the padding of the search
+    /// row, right after the keyboard was put away) must not be undone by this recognizer: it resigns only the responder that was
+    /// already there when the touch began, one run-loop turn after the tap ends (9d41ce0 Mac hand check: a padding tap just after a
+    /// title tap showed nothing once).
+    private weak var responderAtTouch: UIView?
+
+    @objc private func tapped() {
+        let before = responderAtTouch
+        DispatchQueue.main.async {
+            guard let before, before.isFirstResponder else { return }
+            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+            NotificationCenter.default.post(name: .keyboardPutAwayByTap, object: nil)
+        }
+    }
+
+    func gestureRecognizer(_ g: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        responderAtTouch = KeyboardState.firstResponderInput
+        // A control that works on the text itself (the search field's clear button) keeps the keyboard: decided here, at touch
+        // start, from its registered window frame.
+        if KeyboardState.keepRegionContains(touch.location(in: nil)) { return false }
+        var v = touch.view
+        while let x = v {
+            // Fields keep the caret and the keyboard.
+            if x is UITextField || x is UITextView { return false }
+            // Controls do their own job, except the navigation bar's title: in Open portrait it is a UIControl and a tap on the
+            // sheet title must still put the keyboard away (6a0a4b4 Mac hand check a). Matched by class name, verified only on the Mac's
+            // iPhone Duo simulator (iOS 27.1 target, 934ff71 gate); a non-name test is a 0.5.4 card.
+            if x is UIControl, !String(describing: type(of: x)).contains("Title") { return false }
+            // Only rows that mark themselves keep the keyboard (a pick in Add); section headers are cells too in a SwiftUI List
+            // and a tap on one must dismiss (6a0a4b4 hand check b).
+            if x is UICollectionViewCell || x is UITableViewCell, Self.containsMarker(x) { return false }
+            v = x.superview
+        }
+        return true
+    }
+
+    private static func containsMarker(_ v: UIView) -> Bool { v is KeepsKeyboardMarkerView || v.subviews.contains(where: containsMarker) }
+
+    func gestureRecognizer(_ g: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith other: UIGestureRecognizer) -> Bool { true }
+}
+
+private struct KeyboardDismissAnchor: UIViewRepresentable {
+    func makeUIView(context: Context) -> UIView { let v = KeyboardDismissView(); v.isUserInteractionEnabled = false; return v }
+    func updateUIView(_ uiView: UIView, context: Context) {}
+}
+
+extension View {
+    /// Marks a list row whose tap must leave the keyboard up (a pick in Add).
+    func keepsKeyboardOnTap() -> some View { background(KeepsKeyboardMarker()) }
+
+    /// Marks this control's own frame (window coordinates, kept current through layout, rotation and fold) as a tap that leaves the
+    /// keyboard up, for SwiftUI buttons the window recognizer cannot tell apart. The frame is dropped when the control goes away.
+    func keepsKeyboardInFrame(_ id: String) -> some View { modifier(KeepsKeyboardFrame(id: id)) }
+
+    /// Scrolling dismisses the keyboard, and so does a tap outside fields, controls and list rows.
+    func dismissesKeyboardOnOutsideTap() -> some View {
+        scrollDismissesKeyboard(.interactively).background(KeyboardDismissAnchor())
+    }
+}
+
+enum KeyboardState {
+    /// Window-coordinate frames of controls whose tap must leave the keyboard up (the Library search clear button, a SwiftUI button
+    /// and not a UIControl, so the window recognizer cannot tell it from an outside tap). Decided at touch START, so no timing.
+    nonisolated(unsafe) private static var keepRegions: [String: CGRect] = [:]
+    static func setKeepRegion(_ id: String, _ frame: CGRect) { keepRegions[id] = frame }
+    static func removeKeepRegion(_ id: String) { keepRegions[id] = nil }
+    static func keepRegionContains(_ p: CGPoint) -> Bool { keepRegions.values.contains { $0.contains(p) } }
+
+    /// The text field or text view that is first responder now, if any.
+    static var firstResponderInput: UIView? {
+        func find(_ v: UIView) -> UIView? {
+            if (v is UITextField || v is UITextView) && v.isFirstResponder { return v }
+            for s in v.subviews { if let f = find(s) { return f } }
+            return nil
+        }
+        for scene in UIApplication.shared.connectedScenes {
+            for w in (scene as? UIWindowScene)?.windows ?? [] { if let f = find(w) { return f } }
+        }
+        return nil
+    }
+
+    /// True when a text field or text view really is first responder in some window (not just SwiftUI's FocusState).
+    static var fieldIsFirstResponder: Bool {
+        func find(_ v: UIView) -> Bool { ((v is UITextField || v is UITextView) && v.isFirstResponder) || v.subviews.contains(where: find) }
+        return UIApplication.shared.connectedScenes.compactMap { ($0 as? UIWindowScene)?.windows }.flatMap { $0 }.contains(where: find)
+    }
+}
+
+private struct KeepsKeyboardFrame: ViewModifier {
+    let id: String
+    func body(content: Content) -> some View {
+        content
+            .background {
+                GeometryReader { g in
+                    Color.clear
+                        .onAppear { KeyboardState.setKeepRegion(id, g.frame(in: .global)) }
+                        .onChange(of: g.frame(in: .global)) { _, f in KeyboardState.setKeepRegion(id, f) }
+                        .onDisappear { KeyboardState.removeKeepRegion(id) }
+                }
+            }
+    }
+}

@@ -5,13 +5,28 @@ import type { Platform, Trust } from './types.ts'
 export interface SourceDef {
   id: string
   /** pressIndex: a press site's paged list of update articles; matching articles are opened for their facts. */
-  kind: 'rss' | 'html' | 'steamNews' | 'pressIndex'
+  kind: 'rss' | 'html' | 'steamNews' | 'pressIndex' | 'bluesky' | 'statuspage' | 'mojangNotes' | 'riotNews' | 'bandaiNews'
   url: string
   platforms: Platform[]
   trust: Trust
   fetch: 'auto' | 'manual'
   /** always: every item is about PS5 (shared feeds still match the game by name). explicit: the post must name PS5. */
   ps5Signal: 'always' | 'explicit'
+  /** A feed shared by several games or products: a post counts only if its text names one of these (case and accents ignored). */
+  mentions?: string[]
+  /** Only posts that read like a patch post become releases; the rest are dropped (an official account's other posts). */
+  patchOnly?: boolean
+  /** With patchOnly: a regex the post's title must also match (Remedy's feed has "update notes" posts and feature posts alike). */
+  titleMatch?: string
+}
+
+/** A game with no readable official source, written down on purpose (docs/ps5-patch-data.md, "Sources of record"). */
+export interface SourceGap {
+  /** Why there is none: the terms, the block, or the absence. */
+  reason: string
+  /** The next step to close it, and who owns it. */
+  next: string
+  since: string
 }
 
 export interface RegistryGame {
@@ -24,9 +39,13 @@ export interface RegistryGame {
   ps5TitleIds: string[]
   /** The Steam version is a separate PC port with its own patches, so a Steam patch says nothing about PS5. */
   steamIsPcPort?: boolean
+  /** Console builds known for a release, by its stored version key ("1.2": "01.007.000"). Filled as `reported` only where the PS5 row has no version yet; an official number from a post replaces it. */
+  ps5Builds?: Record<string, string>
   /** Official site and patch-notes page for games with no Steam page or readable official feed; overrides IGDB's. */
   links?: { official?: string; patchNotes?: string }
   sources: SourceDef[]
+  /** Set only when `sources` is empty: the reason and next step. A registry game with neither fails the registry test. */
+  sourceGap?: SourceGap
 }
 
 export interface Registry {

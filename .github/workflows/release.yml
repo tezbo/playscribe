@@ -14,7 +14,10 @@ name: Release to TestFlight
 #     TestFlight build of the same tag is left out, so a failed upload can be re-run;
 #   - CHANGELOG.md at that SHA has a `## X.Y.Z` section with no "candidate" in its heading;
 #   - tag vX.Y.Z does not exist, or already points at exactly this SHA (re-running a failed build).
-# Then the tag job waits for Terry's Approve (environment "testflight", required reviewer tezbo), tags with the
+# Beta: with `beta` N the tag is vX.Y.Z-beta.N and the build is marketing version X.Y.Z with the next build number,
+# so Terry can test a candidate on his device before the real vX.Y.Z (which stays free). The CHANGELOG section may
+# still say "candidate", and the GitHub release is marked pre-release. Every other guard, and Terry's go, still apply.
+# Then the tag job tags with the
 # workflow token (which fires no push event, so this workflow calls testflight.yml itself), and after a successful
 # upload creates the GitHub release with the CHANGELOG section as notes.
 on:
@@ -33,6 +36,10 @@ on:
         description: 'true runs every guard and stops before tagging; set false for the real release'
         type: boolean
         default: true
+      beta:
+        description: 'Internal beta number, e.g. 1 tags v0.6.0-beta.1 and builds marketing version 0.6.0 (a pre-release); empty for the real release'
+        required: false
+        default: ''
       notes_only:
         description: 'true only creates the GitHub release for a tag that already exists at sha (no tag, no build)'
         type: boolean
@@ -62,6 +69,7 @@ jobs:
           APPROVAL: ${{ inputs.approval }}
           DRY_RUN: ${{ inputs.dry_run }}
           NOTES_ONLY: ${{ inputs.notes_only }}
+          BETA: ${{ inputs.beta }}
         run: |
           set -euo pipefail
           refuse() { echo "::error::refused: $*"; echo "Refused: $*" >> "$GITHUB_STEP_SUMMARY"; exit 1; }
@@ -70,7 +78,8 @@ jobs:
           [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] || refuse "version must look like 0.5.4"
           [[ "$SHA" =~ ^[0-9a-f]{40}$ ]] || refuse "sha must be 40 lowercase hex characters"
           [ "${#APPROVAL}" -ge 10 ] || refuse "approval reference must be at least 10 characters"
-          tag="v$VERSION"
+          [ -z "$BETA" ] || [[ "$BETA" =~ ^[1-9][0-9]*$ ]] || refuse "beta must be a whole number from 1, or empty"
+          tag="v$VERSION"; [ -z "$BETA" ] || tag="v$VERSION-beta.$BETA"
 
           # On main: compare SHA...main is "identical" (main is the SHA) or "ahead" (main descends from it).
           rel=$(gh api "repos/$REPO/compare/$SHA...main" --jq .status) || refuse "cannot compare $SHA with main"
@@ -99,7 +108,9 @@ jobs:
           gh api "repos/$REPO/contents/CHANGELOG.md?ref=$SHA" --jq .content | base64 -d > CHANGELOG.md
           heading=$(grep -E "^## ${VERSION//./\\.}( |$)" CHANGELOG.md | head -1 || true)
           [ -n "$heading" ] || refuse "CHANGELOG.md at $SHA has no '## $VERSION' section"
-          case "$heading" in *candidate*) refuse "the '## $VERSION' heading still says candidate";; esac
+          if [ -z "$BETA" ]; then
+            case "$heading" in *candidate*) refuse "the '## $VERSION' heading still says candidate";; esac
+          fi
 
           # The tag: new, or already exactly this SHA.
           existing=$(gh api "repos/$REPO/git/matching-refs/tags/$tag" --jq ".[] | select(.ref == \"refs/tags/$tag\") | .object.sha")
@@ -121,8 +132,8 @@ jobs:
           echo "tag=$tag" >> "$GITHUB_OUTPUT"
           echo "existing=$existing" >> "$GITHUB_OUTPUT"
 
-  # Waits here for Terry's Approve when the "testflight" environment has him as a required reviewer
-  # (Settings > Environments). Nothing is tagged or built before that tap.
+  # Runs as soon as the guards pass: the "testflight" environment has no required reviewer, so there is no Approve
+  # to wait for. Terry's go is the `approval` input, given before the run is started.
   tag:
     needs: check
     if: needs.check.outputs.tag != '' && !inputs.notes_only
@@ -170,6 +181,7 @@ jobs:
           set -euo pipefail
           if gh release view "$TAG" --repo "$REPO" > /dev/null 2>&1; then echo "Release $TAG already exists"; exit 0; fi
           gh api "repos/$REPO/contents/CHANGELOG.md?ref=$SHA" --jq .content | base64 -d > CHANGELOG.md
-          version="${TAG#v}"
+          version="${TAG#v}"; version="${version%%-*}"
           awk -v h="## $version" 'index($0, h) == 1 && (length($0) == length(h) || substr($0, length(h) + 1, 1) == " ") {on=1; next} on && /^## / {exit} on {print}' CHANGELOG.md > notes.md
-          gh release create "$TAG" --repo "$REPO" --verify-tag --title "$TAG" --notes-file notes.md
+          pre=(); case "$TAG" in *-beta.*) pre=(--prerelease);; esac
+          gh release create "$TAG" --repo "$REPO" --verify-tag --title "$TAG" --notes-file notes.md "${pre[@]}"

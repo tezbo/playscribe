@@ -10,12 +10,10 @@ struct PlusCard: View {
     @Environment(\.duo) private var duo
 
     static let maxCovers = 3
-    /// Book's compact row shows two at accessibility sizes so a plate name stays readable; "+N" counts the rest.
-    /// Every other pose shows all three at accessibility sizes too, wrapped two to a row (Iris, #442: a lone
-    /// "Stray" text row under two covers read as a stray).
-    static func coverLimit(accessibility: Bool) -> Int { accessibility ? 2 : maxCovers }
-    /// Covers to a row at accessibility sizes in the wide card; the third wraps under.
-    static let accessibilityCoversPerRow = 2
+    /// Book's compact row at standard sizes (Terry, Iris). At accessibility sizes every pose uses one form instead (r060, Iris on
+    /// #646): the compact heading, then one row of three covers that share the card width, capped at a Library tile. The old
+    /// two-to-a-row grid left a lone cover under two and the right of a Closed landscape card empty (#635 stills, AX3 and AX5).
+    static func usesCompactRow(pose: Pose, accessibility: Bool) -> Bool { pose == .book && !accessibility }
     /// No wider than a Library tile, whatever the pose (Iris, #242).
     static let maxCoverWidth: CGFloat = 140
 
@@ -45,12 +43,24 @@ struct PlusCard: View {
 
     /// The catalogue game behind a lineup name: the tracked game when `gameId` is set, else an exact
     /// title match (see `matchKey`) in the bundled PS5 index. nil draws the name plate, never a near miss.
+    /// The bundled index's exact match for a lineup name, looked up once per name: the index is fixed for a launch, and the
+    /// search scans all of it, which ran for every cover on every Library redraw (2.5 s of main thread while typing a search,
+    /// r054 Time Profiler at 13ada7a8).
+    private static var indexHits: [String: CatalogGame?] = [:]
+    private static func indexHit(_ name: String, want: String) -> CatalogGame? {
+        if let cached = indexHits[name] { return cached }
+        var found: CatalogGame?
+        for query in [name, romanVariant(name)] {
+            if let hit = PS5Index.shared.search(query, limit: 10).first(where: { matchKey($0.name) == want }) { found = hit; break }
+        }
+        indexHits[name] = .some(found)
+        return found
+    }
+
     static func resolve(_ g: PlusMonth.Game, tracked: (String) -> CatalogGame?) -> CatalogGame? {
         if let id = g.gameId, let t = tracked(id) { return t }
         let want = matchKey(g.name)
-        for query in [g.name, romanVariant(g.name)] {
-            if let hit = PS5Index.shared.search(query, limit: 10).first(where: { matchKey($0.name) == want }) { return hit }
-        }
+        if let hit = indexHit(g.name, want: want) { return hit }
         // Not in the bundled index: a feed-supplied IGDB cover makes a cover-only game (never a wrong one).
         if let cover = g.coverId, !cover.isEmpty {
             return CatalogGame(id: "plus-\(want)", name: g.name, platforms: [.ps5], coverImageID: cover, coverage: .none)
@@ -58,41 +68,52 @@ struct PlusCard: View {
         return nil
     }
 
+    /// The game a lineup title opens: its catalogue game, or for a title with no match and no feed cover (Tomb Raider 4-6
+    /// Remastered: #285, exact product only) a browsed game of that name, so every title can be opened, never a bare label
+    /// (bug-psplus-card-missing-cover-empty-grid).
+    static func pageGame(_ g: PlusMonth.Game, tracked: (String) -> CatalogGame?) -> CatalogGame {
+        resolve(g, tracked: tracked) ?? CatalogGame(id: "plus-\(matchKey(g.name))", name: g.name, platforms: [.ps5], coverage: .none)
+    }
+
     var body: some View {
         if let (month, lastChance) = PlusLogic.visibleMonth(PlusStore.shared.months, cardOff: model.data.plusCardOff) {
             let claimBy = PlusLogic.claimByText(month)
             let limit = Self.maxCovers
             let shown = Array(month.games.prefix(limit))
-            if duo.pose == .book {
+            if Self.usesCompactRow(pose: duo.pose, accessibility: typeSize.isAccessibilitySize) {
                 compact(month.games, lastChance: lastChance, claimBy: claimBy)
             } else {
             VStack(alignment: .leading, spacing: 10) {
+                if typeSize.isAccessibilitySize {
+                    // One form at accessibility sizes (Iris, #646): heading, then the three covers sharing the card width.
+                    VStack(alignment: .leading, spacing: 4) {
+                        PlusBadge(height: 20).accessibilityHidden(true)
+                        compactHeading(lastChance: lastChance, claimBy: claimBy)
+                    }
+                    coverRow(shown, fixedWidth: nil)
+                } else {
                 // Wide cards put the heading beside the covers; narrow ones stack it above (Iris, #242).
                 // Tries covers at 140, 120 then 100 pt beside the heading, so Open portrait, Tabletop and Closed
-                // landscape get a short card; Book's one-page column stacks. Accessibility sizes always stack: beside
-                // the covers the heading was squeezed to a word a line (Mac QA, AX3).
-                if typeSize.isAccessibilitySize {
+                // landscape get a short card.
+                ViewThatFits(in: .horizontal) {
+                    sideBySide(shown, lastChance: lastChance, claimBy: claimBy, width: Self.maxCoverWidth)
+                    sideBySide(shown, lastChance: lastChance, claimBy: claimBy, width: 120)
+                    sideBySide(shown, lastChance: lastChance, claimBy: claimBy, width: 100)
                     stacked(shown, lastChance: lastChance, claimBy: claimBy)
-                } else {
-                    ViewThatFits(in: .horizontal) {
-                        sideBySide(shown, lastChance: lastChance, claimBy: claimBy, width: Self.maxCoverWidth)
-                        sideBySide(shown, lastChance: lastChance, claimBy: claimBy, width: 120)
-                        sideBySide(shown, lastChance: lastChance, claimBy: claimBy, width: 100)
-                        stacked(shown, lastChance: lastChance, claimBy: claimBy)
-                    }
+                }
                 }
                 // Games past the covers (rule): the ones you track get their own tappable row; the rest are one
                 // "Plus A, B and C" line. Never a bare "and X" (Quinn).
                 let extra = Array(month.games.dropFirst(limit))
                 ForEach(Array(extra.filter { opensPage($0) }.enumerated()), id: \.offset) { _, g in nameRow(g) }
                 if let line = Self.plusLine(extra.filter { !opensPage($0) }.map(\.name)) {
-                    Text(line).font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textSecondary)
+                    Text(line).font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
                         .fixedSize(horizontal: false, vertical: true)
                 }
             }
             .padding(14)
             .frame(maxWidth: .infinity, alignment: .leading)
-            .background(Color.ink2, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+            .background(PlayscribeRole.card, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
             .accessibilityElement(children: .contain)
             .accessibilityIdentifier("plusCard")
             }
@@ -102,55 +123,53 @@ struct PlusCard: View {
     /// Book (Terry, 6139fbb too crowded; Iris spec): one short card, at most 140 pt tall, so no module takes a quarter of a
     /// page. Badge and "title, claim by date" share a row; up to three 72 pt covers follow, then a "+N" chip for the rest.
     private func compact(_ games: [PlusMonth.Game], lastChance: Bool, claimBy: String) -> some View {
-        // AX sizes: two covers and the rest in the chip, so the card stays short while the text wraps (Mac QA, AX3).
-        let limit = Self.coverLimit(accessibility: typeSize.isAccessibilitySize)
-        let shown = Array(games.prefix(limit))
-        let rest = Array(games.dropFirst(limit))
+        // Standard sizes only (accessibility sizes use the shared-width row): up to three covers, then "+N".
+        let limit = Self.maxCovers
         return VStack(alignment: .leading, spacing: 4) {
             PlusBadge(height: 20).accessibilityHidden(true)
-            Text("\(lastChance ? "Last chance" : "This month"), claim by \(claimBy)")
-                .font(PlayscribeFont.subheadline.weight(.semibold))
-                .foregroundStyle(lastChance ? PlayscribeColor.ember500 : PlayscribeColor.textPrimary)
-                .fixedSize(horizontal: false, vertical: true)
-                .accessibilityLabel(lastChance ? "PS Plus, last chance, claim by \(claimBy)" : "PS Plus, this month, claim by \(claimBy)")
-                .accessibilityAddTraits(.isHeader)
+            compactHeading(lastChance: lastChance, claimBy: claimBy)
             Spacer().frame(height: 2)
-            HStack(spacing: 8) {
-                ForEach(Array(shown.enumerated()), id: \.offset) { _, g in
-                    // A title with no cover draws a wider plate (96 × 72) so its words wrap whole; art stays 3:4 (54 × 72).
-                    let plate = Self.resolve(g) { model.game($0) } == nil
-                    cover(g, plate: plate).frame(width: plate ? 96 : 54, height: 72)
-                }
-                if !rest.isEmpty {
-                    Text("+\(rest.count)")
-                        .font(PlayscribeFont.subheadline.weight(.semibold))
-                        .foregroundStyle(PlayscribeColor.textSecondary)
-                        .frame(minWidth: 44, minHeight: 44)
-                        .background(Color.ink1, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
-                        .accessibilityElement()
-                        .accessibilityLabel("And \(rest.count) more: " + rest.map(\.name).joined(separator: ", "))
-                }
-            }
+            compactRow(Array(games.prefix(limit)), rest: Array(games.dropFirst(limit)))
         }
         .padding(8)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .background(Color.ink2, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+        .background(PlayscribeRole.card, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
         .accessibilityElement(children: .contain)
         .accessibilityIdentifier("plusCard")
+    }
+
+    private func compactHeading(lastChance: Bool, claimBy: String) -> some View {
+        Text("\(lastChance ? "Last chance" : "This month"), claim by \(claimBy)")
+            .font(PlayscribeFont.subheadline.weight(.semibold))
+            .foregroundStyle(lastChance ? PlayscribeColor.ember500 : PlayscribeRole.textPrimary)
+            .fixedSize(horizontal: false, vertical: true)
+            .accessibilityLabel(lastChance ? "PS Plus, last chance, claim by \(claimBy)" : "PS Plus, this month, claim by \(claimBy)")
+            .accessibilityAddTraits(.isHeader)
+    }
+
+    private func compactRow(_ shown: [PlusMonth.Game], rest: [PlusMonth.Game]) -> some View {
+        HStack(spacing: 8) {
+            ForEach(Array(shown.enumerated()), id: \.offset) { _, g in
+                // A title with no cover draws a wider plate (96 × 72) so its words wrap whole; art stays 3:4 (54 × 72).
+                let plate = Self.resolve(g) { model.game($0) } == nil
+                cover(g, plate: plate).frame(width: plate ? 96 : 54, height: 72)
+            }
+            if !rest.isEmpty {
+                Text("+\(rest.count)")
+                    .font(PlayscribeFont.subheadline.weight(.semibold))
+                    .foregroundStyle(PlayscribeRole.textSecondary)
+                    .frame(minWidth: 44, minHeight: 44)
+                    .background(PlayscribeRole.surface, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
+                    .accessibilityElement()
+                    .accessibilityLabel("And \(rest.count) more: " + rest.map(\.name).joined(separator: ", "))
+            }
+        }
     }
 
     private func stacked(_ shown: [PlusMonth.Game], lastChance: Bool, claimBy: String) -> some View {
         VStack(alignment: .leading, spacing: 10) {
             header(lastChance: lastChance, claimBy: claimBy)
-            if typeSize.isAccessibilitySize {
-                // Two covers to a row and the third under them, each row sized by its own count and capped at a
-                // Library tile, so the lone cover is no wider than the pair above it.
-                ForEach(Array(stride(from: 0, to: shown.count, by: Self.accessibilityCoversPerRow)), id: \.self) { i in
-                    coverRow(Array(shown[i..<min(i + Self.accessibilityCoversPerRow, shown.count)]), fixedWidth: nil)
-                }
-            } else {
-                coverRow(shown, fixedWidth: nil)
-            }
+            coverRow(shown, fixedWidth: nil)
         }
     }
 
@@ -169,7 +188,7 @@ struct PlusCard: View {
             Text(lastChance ? "Last chance" : "This month").font(PlayscribeFont.title3)
                 .accessibilityLabel(lastChance ? "PS Plus, last chance" : "PS Plus, this month")
                 .accessibilityAddTraits(.isHeader)
-            Text("Claim by \(claimBy)").font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textSecondary)
+            Text("Claim by \(claimBy)").font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
         }
     }
 
@@ -190,9 +209,9 @@ struct PlusCard: View {
         if let game = Self.resolve(g, tracked: { model.game($0) }) {
             Button { model.browseGame(game) } label: {
                 HStack(spacing: 8) {
-                    Text(lead + g.name).fixedSize(horizontal: false, vertical: true)
+                    Text(lead + g.name.gluingTrailingNumeral).fixedSize(horizontal: false, vertical: true)
                     Spacer(minLength: 8)
-                    Image(systemName: "chevron.right").foregroundStyle(PlayscribeColor.textSecondary).accessibilityHidden(true)
+                    Image(systemName: "chevron.right").foregroundStyle(PlayscribeRole.textSecondary).accessibilityHidden(true)
                 }
                 .font(PlayscribeFont.subheadline)
                 .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading).contentShape(Rectangle())
@@ -201,23 +220,21 @@ struct PlusCard: View {
             .tappableFrame()
             .accessibilityHint("Opens the game")
         } else {
-            Text(lead + g.name).font(PlayscribeFont.subheadline).fixedSize(horizontal: false, vertical: true)
+            Text(lead + g.name.gluingTrailingNumeral).font(PlayscribeFont.subheadline).fixedSize(horizontal: false, vertical: true)
                 .frame(maxWidth: .infinity, minHeight: 28, alignment: .leading)
         }
     }
 
-    @ViewBuilder private func cover(_ g: PlusMonth.Game, plate: Bool = false) -> some View {
-        let game = Self.resolve(g) { model.game($0) }
-        let art = PlusCover(name: g.name, game: game, wide: plate)
-        if let game {
-            Button { model.browseGame(game) } label: { art }
-                .buttonStyle(.plain)
-                .tappableFrame()
-                .accessibilityLabel(g.name)
-                .accessibilityHint("Opens the game")
-        } else {
-            art.accessibilityElement().accessibilityLabel(g.name)
+    /// Every cover is a Button: with art, or the name plate when the title has none (never a bare label).
+    private func cover(_ g: PlusMonth.Game, plate: Bool = false) -> some View {
+        let tracked: (String) -> CatalogGame? = { model.game($0) }
+        return Button { model.browseGame(Self.pageGame(g, tracked: tracked)) } label: {
+            PlusCover(name: g.name, game: Self.resolve(g, tracked: tracked), wide: plate)
         }
+        .buttonStyle(.plain)
+        .tappableFrame()
+        .accessibilityLabel(g.name)
+        .accessibilityHint("Opens the game")
     }
 }
 
@@ -235,13 +252,16 @@ struct PlusCover: View {
         Group {
             if let game { TileCover(game: game) }
             else {
-                RoundedRectangle(cornerRadius: 10, style: .continuous).fill(Color.ink1)
+                // The standard no-art tile: the cover plate's tinted gradient (CoverView), so it reads as a cover on the card in
+                // light and dark, never as loose text (the surface fill all but vanished on the light card, plusend stills).
+                RoundedRectangle(cornerRadius: 10, style: .continuous)
+                    .fill(LinearGradient(colors: ["#1b1d24", "#0b0d12"].map(Color.init(hex:)), startPoint: .topLeading, endPoint: .bottomTrailing))
                     // Never cut mid-title (Iris, AX3): a fixed 13 pt, wrapped in full, so it also stays above 12 pt.
                     // A word wider than the plate scales down (never below 11 pt) before it would break; the plate is
                     // a fixed 72 pt tall in the compact row, so the text is also capped at four lines.
                     .overlay(Text(name).font(.system(size: 13, weight: .semibold)).multilineTextAlignment(.center)
                         .lineLimit(wide ? 4 : nil).minimumScaleFactor(wide ? 0.85 : 1)
-                        .fixedSize(horizontal: false, vertical: !wide).padding(wide ? 5 : 8).foregroundStyle(PlayscribeColor.textPrimary))
+                        .fixedSize(horizontal: false, vertical: !wide).padding(wide ? 5 : 8).foregroundStyle(.white.opacity(0.92)))
                     .overlay(RoundedRectangle(cornerRadius: 10, style: .continuous).strokeBorder(.white.opacity(0.1), lineWidth: 1))
             }
         }
@@ -267,7 +287,7 @@ struct PlusBadge: View {
     }
     private var label: some View {
         Text("PlayStation Plus").font(.system(size: 13, weight: .semibold))
-            .foregroundStyle(PlayscribeColor.textPrimary).fixedSize(horizontal: false, vertical: true)
+            .foregroundStyle(PlayscribeRole.textPrimary).fixedSize(horizontal: false, vertical: true)
     }
 }
 

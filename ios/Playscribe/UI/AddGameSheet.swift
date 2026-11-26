@@ -1,6 +1,20 @@
 import os
 import SwiftUI
 
+/// The Add UI's state, carried across a form switch while Add stays open (AppModel.addDraft).
+struct AddDraft {
+    var status: OwnershipStatus
+    var query: String
+    var picked: [String: CatalogGame]
+    var pickOrder: [String]
+    var method: AddMethod?
+    var matches: [AddMatch]?
+    var custom: Bool
+    var customName: String
+    var customPlatform: Platform
+    var letter: String?
+}
+
 /// Add a game (A-1 to A-9). Manual add only: PlayStation account import is a later milestone and
 /// nothing here asks for credentials.
 struct AddGameSheet: View {
@@ -29,6 +43,12 @@ struct AddGameSheet: View {
     /// keyboard leaves under 200 pt, hide the title and keep Done and search only).
     @State private var keyboardHeight: CGFloat = 0
     @FocusState private var searchFocused: Bool
+    private var draftKey: String {
+        "\(status)|\(query)|\(pickOrder)|\(String(describing: method))|\(matches?.count ?? -1)|\(custom)|\(customName)|\(customPlatform)|\(letter ?? "")"
+    }
+    /// Tabletop Type it (gate #597, Mac 3030955b: two rows under the 56 pt header): the header row goes, as in the 0.2.0 design,
+    /// and Back and Close sit in the search row, so the lower half shows three results.
+    private var tabletopTypeIt: Bool { duo.pose == .tabletop && !custom && matches == nil && method == .typeIt }
     private var titleHidden: Bool {
         guard duo.pose == .tabletop, keyboardHeight > 0 else { return false }
         let lowerHalf = duo.size.height - (duo.division?.maxY ?? duo.size.height / 2)
@@ -51,8 +71,23 @@ struct AddGameSheet: View {
                     }
                 } else { AddEntryView { method = $0 } }
             }
+            // Kept as it changes (not on disappear): the new form can appear before the old one is gone.
+            .onChange(of: draftKey) { _, _ in
+                guard model.addSheetOpen else { return }
+                model.addDraft = AddDraft(status: status, query: query, picked: picked, pickOrder: pickOrder, method: method,
+                                          matches: matches, custom: custom, customName: customName, customPlatform: customPlatform, letter: letter)
+            }
             .onAppear {
+                if let d = model.addDraft {
+                    status = d.status; query = d.query; debounced = d.query; picked = d.picked; pickOrder = d.pickOrder
+                    method = d.method; matches = d.matches; custom = d.custom; customName = d.customName
+                    customPlatform = d.customPlatform; letter = d.letter
+                    // Not consumed: a fold can build two or three sheets in a row (Mac log, 2be7e23: onAppear at 12.88 s and again at
+                    // 14.02 s), and the one that stays must still find the draft. It is dropped when Add opens or closes.
+                }
                 if let m = model.addSheetMethod { method = m; model.addSheetMethod = nil }
+                // A rebuilt sheet (form switch, pose settling) gives the keyboard back if the person had it up.
+                if model.addKeyboardWanted && method == .typeIt { model.addSearchFocus = true }
                 if model.addSearchFocus {
                     model.addSearchFocus = false
                     // The field appears only after the method switch above, and in Open portrait the sheet is still settling at 600 ms
@@ -60,7 +95,11 @@ struct AddGameSheet: View {
                     Task {
                         for _ in 0..<10 {
                             try? await Task.sleep(for: .milliseconds(500))
-                            if searchFocused { break }
+                            // SwiftUI can say "focused" while the field never became first responder (sheet still settling, hand check
+                            // 1de7e9e: cold launch, no caret until a tap). Trust UIKit: if the keyboard isn't really up, toggle and ask again.
+                            if searchFocused && KeyboardState.fieldIsFirstResponder { break }
+                            searchFocused = false
+                            try? await Task.sleep(for: .milliseconds(60))
                             searchFocused = true
                         }
                     }
@@ -72,6 +111,17 @@ struct AddGameSheet: View {
                 keyboardHeight = end.minY >= UIScreen.main.bounds.height ? 0 : end.height
             }
             .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillHideNotification)) { _ in keyboardHeight = 0 }
+            .onChange(of: searchFocused) { _, f in
+                // Wanted is set when the field takes focus. It is NOT cleared when focus is lost: a sheet that is rebuilt or
+                // re-presented loses focus on the way out, sometimes well before onDisappear (the launch re-presentation at
+                // about 6 s, ccf69f3 timeline: focus false while the sheet is still sliding away), and that must not count as the person putting the keyboard away. Only what the person does clears it.
+                if f && model.addSheetOpen { model.addKeyboardWanted = true }
+            }
+            .onReceive(NotificationCenter.default.publisher(for: .keyboardPutAwayByTap)) { _ in model.addKeyboardWanted = false }
+            .onScrollPhaseChange { _, phase in if phase == .interacting { model.addKeyboardWanted = false } }
+            .onSubmit(of: .text) { model.addKeyboardWanted = false }
+            // Leaving Type it for Say it, a photo or the camera is the person moving on; the keyboard is not wanted back.
+            .onChange(of: method) { _, m in if m != .typeIt { model.addKeyboardWanted = false } }
             .toolbarTitleDisplayMode(.inline)
             // Tabletop (0.2.0 gate): the empty nav bar cost about 100 pt of the lower half, so the
             // bar is hidden and Close sits in the search row instead; three rows then fit.
@@ -98,9 +148,9 @@ struct AddGameSheet: View {
                     Button(action: addPicked) {
                         Text("Add \(picked.count) game\(picked.count == 1 ? "" : "s")")
                             .font(PlayscribeFont.headline)
-                            .foregroundStyle(PlayscribeColor.onAccent)
+                            .foregroundStyle(PlayscribeRole.onAction)
                             .frame(maxWidth: .infinity, minHeight: 56)
-                            .background(PlayscribeColor.accent, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                            .background(PlayscribeRole.action, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
                     }
                     .buttonStyle(.plain)
                     .accessibilityIdentifier("addPicked")
@@ -129,7 +179,7 @@ struct AddGameSheet: View {
     /// title, Back and Close live in this row: 24 pt under the fold band, Close 44 pt at the
     /// trailing edge. Nothing here is above the fold (G-4).
     @ViewBuilder private var tabletopHeader: some View {
-        if duo.pose == .tabletop && !custom {
+        if duo.pose == .tabletop && !custom && !tabletopTypeIt {
             HStack(spacing: 8) {
                 if method != nil {
                     Button { if matches != nil { matches = nil } else { method = nil } } label: {
@@ -150,7 +200,7 @@ struct AddGameSheet: View {
             }
             .padding(.horizontal, 16)
             .frame(height: 56)
-            .background(Color.ink0)
+            .background(PlayscribeRole.bg)
         }
     }
 
@@ -193,89 +243,140 @@ struct AddGameSheet: View {
 
     private var list: some View {
         List {
-            Section {
-                if duo.pose == .tabletop {
-                    // Tabletop (0.2.0 gate): the status control sits beside the search field in one row so
-                    // at least three results stay visible in the lower half.
-                    VStack(alignment: .leading, spacing: 4) {
-                        HStack(spacing: 8) {
-                            Button { dismiss() } label: {
-                                Image(systemName: "xmark").font(PlayscribeFont.headline)
-                                    .frame(width: 44, height: 44).contentShape(Rectangle())
+            CardSections {
+                Section {
+                    if duo.pose == .tabletop {
+                        // Tabletop (0.2.0 gate): the status control sits beside the search field in one row so
+                        // at least three results stay visible in the lower half.
+                        VStack(alignment: .leading, spacing: 4) {
+                            HStack(spacing: 8) {
+                                if tabletopTypeIt {
+                                    Button { method = nil } label: {
+                                        Image(systemName: "chevron.backward").font(PlayscribeFont.headline)
+                                            .frame(width: 44, height: 44).contentShape(Rectangle())
+                                    }
+                                    .buttonStyle(.plain)
+                                    .foregroundStyle(PlayscribeRole.action)
+                                    .accessibilityLabel("Back")
+                                    .accessibilityIdentifier("back")
+                                    .tappableFrame()
+                                } else {
+                                    Button { dismiss() } label: {
+                                        Image(systemName: "xmark").font(PlayscribeFont.headline)
+                                            .frame(width: 44, height: 44).contentShape(Rectangle())
+                                    }
+                                    .buttonStyle(.plain)
+                                    .foregroundStyle(PlayscribeRole.action)
+                                    .accessibilityLabel("Close")
+                                    .tappableFrame()
+                                }
+                                Picker("Add as", selection: $status) {
+                                    ForEach(OwnershipStatus.allCases) { Text($0.label).tag($0) }
+                                }
+                                .pickerStyle(.menu)
+                                .fixedSize()
+                                .frame(minHeight: 44)
+                                TabletopSearchButton(letter: letter, prompt: "Search PS5 games", hintShown: $hintShown)
+                                if tabletopTypeIt {
+                                    Button { dismiss() } label: {
+                                        Image(systemName: "xmark").font(PlayscribeFont.headline)
+                                            .frame(width: 44, height: 44).contentShape(Rectangle())
+                                    }
+                                    .buttonStyle(.plain)
+                                    .foregroundStyle(PlayscribeRole.textPrimary)
+                                    .accessibilityLabel("Close")
+                                    .accessibilityIdentifier("close")
+                                    .tappableFrame()
+                                }
                             }
-                            .buttonStyle(.plain)
-                            .foregroundStyle(PlayscribeColor.accent)
-                            .accessibilityLabel("Close")
-                            .tappableFrame()
-                            Picker("Add as", selection: $status) {
-                                ForEach(OwnershipStatus.allCases) { Text($0.label).tag($0) }
-                            }
-                            .pickerStyle(.menu)
-                            .fixedSize()
-                            .frame(minHeight: 44)
-                            TabletopSearchButton(letter: letter, prompt: "Search PS5 games", hintShown: $hintShown)
+                            TabletopSearchHint(shown: hintShown)
+                            TabletopLetterStrip(letter: $letter)
                         }
-                        TabletopSearchHint(shown: hintShown)
-                        TabletopLetterStrip(letter: $letter)
+                        .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
+                    } else {
+                        statusPicker
+                        // The whole row takes focus, not just the UITextField's own frame: a tap in the row padding did nothing once the
+                        // field lost its tap gesture (86f771c Mac log: taps at x=20 and x=36 outside the field frame never focused it).
+                        // The tap gesture is on a clear view BEHIND the field, not on the field: a tap on the field itself goes to the
+                        // UITextField (caret as before) and only a tap in the padding reaches the background. Hidden from VoiceOver so
+                        // the row stays one "Search" field. Row insets are moved inside so no dead strip is left.
+                        TextField("Search \(PS5Index.shared.count.formatted()) PS5 games", text: $query)
+                            .autocorrectionDisabled()
+                            .textInputAutocapitalization(.never)
+                            .accessibilityIdentifier("addSearchField")
+                            .submitLabel(.search)
+                            .focused($searchFocused)
+                            .frame(minHeight: 44)
+                            .padding(.horizontal, 20)
+                            // 15 pt a side restores the row height the List's default insets gave (main: card 133 pt; with 4 pt it was 112,
+                            // Mac 2198fa7; 14.5 was 1 pt short, Mac 9cebaa9), with the whole row still the tap target.
+                            .padding(.vertical, 15)
+                            .frame(maxWidth: .infinity)
+                            // The row is the field; its border sits 8 pt inside the row so it frames the text, not the cell edge.
+                            .controlBorder(.searchField, in: RoundedRectangle(cornerRadius: 12, style: .continuous).inset(by: 8))
+                            .background {
+                                Color.clear
+                                    .contentShape(Rectangle())
+                                    .onTapGesture { searchFocused = true }
+                                    .accessibilityHidden(true)
+                            }
+                            .keepsKeyboardOnTap()   // a tap in this row's padding while typing must not dismiss the keyboard it just asked for
+                            .listRowInsets(EdgeInsets())
                     }
-                    .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
-                } else {
-                    statusPicker
-                    TextField("Search \(PS5Index.shared.count.formatted()) PS5 games", text: $query)
-                        .autocorrectionDisabled()
-                        .textInputAutocapitalization(.never)
-                        .accessibilityIdentifier("addSearchField")
-                        .submitLabel(.search)
-                        .focused($searchFocused)
-                        .frame(minHeight: 44)
-                        // The whole 44 pt row asks for focus, not only the glyphs: a tap in the row's padding did nothing.
-                        .contentShape(Rectangle())
-                        .onTapGesture { searchFocused = true }
+                    // Offline state 7: rows keep their placeholder covers; say why.
+                    if case .failed(offline: true) = model.checkState {
+                        Label("Covers need a connection", systemImage: "wifi.slash")
+                            .font(PlayscribeFont.footnote).foregroundStyle(PlayscribeRole.textSecondary)
+                    }
                 }
-                // Offline state 7: rows keep their placeholder covers; say why.
-                if case .failed(offline: true) = model.checkState {
-                    Label("Covers need a connection", systemImage: "wifi.slash")
-                        .font(PlayscribeFont.footnote).foregroundStyle(.secondary)
+                let rows = results
+                Section(letter != nil && duo.pose == .tabletop ? "Starting with \(letter ?? "")" : debounced.count >= 2 ? "Best matches" : "Popular on PS5") {
+                    if rows.isEmpty {
+                        Text("No PS5 game matches ‘\(debounced)’").foregroundStyle(PlayscribeRole.textSecondary)
+                        Button("Add ‘\(debounced)’ yourself") { customName = debounced; custom = true }.hitTarget()
+                    }
+                    ForEach(rows) { g in AddRow(game: g, status: status, selected: picked[g.id] != nil) { tap(g) } }
                 }
-            }
-            let rows = results
-            Section(letter != nil && duo.pose == .tabletop ? "Starting with \(letter ?? "")" : debounced.count >= 2 ? "Best matches" : "Popular on PS5") {
-                if rows.isEmpty {
-                    Text("No PS5 game matches '\(debounced)'").foregroundStyle(.secondary)
-                    Button("Add '\(debounced)' yourself") { customName = debounced; custom = true }.hitTarget()
+                Section {
+                    Button { customName = query; custom = true } label: {
+                        Label("Add a game that isn’t listed", systemImage: "plus")
+                    }
+                    .hitTarget()
+                } footer: {
+                    Text("PlayStation account import is planned for a later version. \(Brand.name) never asks for your PlayStation password.")
                 }
-                ForEach(rows) { g in AddRow(game: g, status: status, selected: picked[g.id] != nil) { tap(g) } }
-            }
-            Section {
-                Button { customName = query; custom = true } label: {
-                    Label("Add a game that isn't listed", systemImage: "plus")
-                }
-                .hitTarget()
-            } footer: {
-                Text("PlayStation account import is planned for a later version. \(Brand.name) never asks for your PlayStation password.")
             }
         }
+        // Tabletop: compact section spacing and a 4 pt top margin, so the third result clears the panel bottom (gate #597).
+        .listSectionSpacing(duo.pose == .tabletop ? .compact : .default)
+        .modifier(TabletopTopMargin(on: duo.pose == .tabletop))
+        // Terry, 8 Nov: the keyboard could not be put away. Scrolling dismisses it, and so does a tap outside the field and rows.
+        .dismissesKeyboardOnOutsideTap()
     }
 
     private var customForm: some View {
         Form {
-            Section { statusPicker }
-            Section {
-                TextField("Game name", text: $customName).frame(minHeight: 44)
-                Picker("Platform", selection: $customPlatform) {
-                    ForEach([Platform.ps5, .xboxSeries, .switch2, .pc], id: \.self) { Text($0.label).tag($0) }
+            CardSections {
+                Section { statusPicker }
+                Section {
+                    TextField("Game name", text: $customName).frame(minHeight: 44)
+                        // Inside a Form row: the border sits 8 pt outside the text on each side, so the text does not move.
+                        .controlBorder(.textField, in: RoundedRectangle(cornerRadius: 10, style: .continuous), horizontalOutset: 8)
+                    Picker("Platform", selection: $customPlatform) {
+                        ForEach([Platform.ps5, .xboxSeries, .switch2, .pc], id: \.self) { Text($0.label).tag($0) }
+                    }
+                } footer: {
+                    Text("\(Brand.name) won’t invent patch information for this game. Its journal stays empty until coverage exists.")
                 }
-            } footer: {
-                Text("\(Brand.name) won't invent patch information for this game. Its journal stays empty until coverage exists.")
-            }
-            Section {
-                Button("Add as \(status.label)") {
-                    let name = customName.trimmingCharacters(in: .whitespaces)
-                    add(CatalogGame(id: "custom-\(Int(Date.now.timeIntervalSince1970))", name: name, platforms: [customPlatform],
-                                    coverage: .none, custom: true))
+                Section {
+                    Button("Add as \(status.label)") {
+                        let name = customName.trimmingCharacters(in: .whitespaces)
+                        add(CatalogGame(id: "custom-\(Int(Date.now.timeIntervalSince1970))", name: name, platforms: [customPlatform],
+                                        coverage: .none, custom: true))
+                    }
+                    .disabled(customName.trimmingCharacters(in: .whitespaces).isEmpty)
+                    Button("Back to list") { custom = false }
                 }
-                .disabled(customName.trimmingCharacters(in: .whitespaces).isEmpty)
-                Button("Back to list") { custom = false }
             }
         }
     }
@@ -323,18 +424,19 @@ struct AddRow: View {
                 // One mark per row: the circle on the right becomes a tick (no badge on the cover).
                 CoverView(game: game, cornerRadius: 4).frame(width: 40)
                 VStack(alignment: .leading, spacing: 2) {
-                    Text(game.name).font(PlayscribeFont.subheadline.weight(.semibold)).fixedSize(horizontal: false, vertical: true)
-                    Text(added ? "In library" : subtitle).font(PlayscribeFont.caption).foregroundStyle(.secondary)
+                    Text(game.name.gluingTrailingNumeral).font(PlayscribeFont.subheadline.weight(.semibold)).fixedSize(horizontal: false, vertical: true)
+                    Text(added ? "In library" : subtitle).font(PlayscribeFont.caption).foregroundStyle(PlayscribeRole.textSecondary)
                 }
                 Spacer(minLength: 8)
                 Image(systemName: added ? "checkmark" : selected ? "checkmark.circle.fill" : "circle")
                     .font(.title3)
-                    .foregroundStyle(added ? .secondary : PlayscribeColor.accent)
+                    .foregroundStyle(added ? .secondary : PlayscribeRole.action)
                     .frame(width: 44, height: 44)
             }
             .frame(minHeight: 64)
             .contentShape(Rectangle())
         }
+        .keepsKeyboardOnTap()
         .buttonStyle(.plain)
         .disabled(added)
         .accessibilityElement(children: .ignore)
@@ -390,7 +492,7 @@ struct OnboardingView: View {
     var body: some View {
         if duo.pose == .tabletop {
             ArrangementView {
-                OnboardingStage().allowsHitTesting(false)
+                OnboardingStage().allowsHitTesting(false).accessibilitySortPriority(2)   // view only, still read first
             } secondary: {
                 // The trailing rail sits over the lower half: keep the actions clear of it (0.2.0 gate).
                 ScrollView { OnboardingActions().padding(16) }
@@ -404,8 +506,11 @@ struct OnboardingView: View {
             HStack(alignment: .top, spacing: 0) {
                 ScrollView {
                     VStack(alignment: .leading, spacing: 20) {
+                        // VoiceOver reads the headline first, then the cover strip and actions (r054-first-run-voiceover-order).
                         OnboardingStage().frame(height: (duo.pose == .closed ? 220 : 280) + (typeSize.isAccessibilitySize ? 120 : 0))   // four AX headline lines fit
+                            .accessibilitySortPriority(2)
                         OnboardingActions(pageWidth: pageWidth, bookLeft: pageWidth != nil).padding(.horizontal, 16)
+                            .accessibilitySortPriority(1)
                     }
                     .padding(.bottom, 24)
                 }
@@ -468,6 +573,8 @@ struct OnboardingStage: View {
                 ArtView(asset: nil, game: nil)
             }
             LinearGradient(colors: [.clear, .black.opacity(0.7)], startPoint: .center, endPoint: .bottom)
+            // The stage is dark art in both modes, so the headline keeps the light ink: the role turned it dark on dark in light mode
+            // (Mac at c4b07144, first run).
             let headline = welcomeDone ? "Follow a game to get its PS5 patch notes in one place." : "Add your games to see every update"
             Group {
                 // AX: at most four lines, and any ellipsis lands at a word boundary, never mid-word ("Follow a game to g...", Quinn, 6a31718).
@@ -510,7 +617,7 @@ struct OnboardingActions: View {
     private var welcome: some View {
         VStack(alignment: .leading, spacing: 12) {
             Text("Tell Playscribe what you play and it keeps every update in one place.")
-                .font(PlayscribeFont.body).foregroundStyle(.secondary)
+                .font(PlayscribeFont.body).foregroundStyle(PlayscribeRole.textSecondary)
             ForEach(AddMethod.available) { m in
                 Button {
                     model.data.welcomeDone = true
@@ -519,10 +626,10 @@ struct OnboardingActions: View {
                 } label: {
                     HStack(spacing: 14) {
                         Image(systemName: m.symbol).font(.title3).frame(width: 32)
-                            .foregroundStyle(PlayscribeColor.accent)
+                            .foregroundStyle(PlayscribeRole.action)
                         VStack(alignment: .leading, spacing: 2) {
                             Text(m.title).font(PlayscribeFont.headline)
-                            Text(m.detail).font(PlayscribeFont.footnote).foregroundStyle(.secondary)
+                            Text(m.detail).font(PlayscribeFont.footnote).foregroundStyle(PlayscribeRole.textSecondary)
                         }
                         Spacer(minLength: 0)
                     }
@@ -546,9 +653,9 @@ struct OnboardingActions: View {
             Button { model.addSheetOpen = true } label: {
                 Text("Add your first game")
                     .font(PlayscribeFont.headline)
-                    .foregroundStyle(PlayscribeColor.onAccent)
+                    .foregroundStyle(PlayscribeRole.onAction)
                     .frame(maxWidth: .infinity, minHeight: 52)
-                    .background(PlayscribeColor.accent, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                    .background(PlayscribeRole.action, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
             }
             .buttonStyle(.plain)
             .tappableFrame()
@@ -565,7 +672,7 @@ struct OnboardingActions: View {
             }
             .edgeFade(40)
             Text("PlayStation account import is planned for a later version.")
-                .font(PlayscribeFont.footnote).foregroundStyle(.secondary)
+                .font(PlayscribeFont.footnote).foregroundStyle(PlayscribeRole.textSecondary)
             }
         }
     }
@@ -588,7 +695,7 @@ struct OnboardingRightPage: View {
                     }
                 }
                 Text("PlayStation account import is planned for a later version.")
-                    .font(PlayscribeFont.footnote).foregroundStyle(.secondary)
+                    .font(PlayscribeFont.footnote).foregroundStyle(PlayscribeRole.textSecondary)
             }
             .padding(.top, 16).padding(.bottom, 24)
         }
@@ -629,15 +736,17 @@ struct PopularCover: View {
                                 .font(PlayscribeFont.caption.weight(.semibold))
                                 .dynamicTypeSize(...DynamicTypeSize.xxxLarge)
                                 .lineLimit(1).minimumScaleFactor(0.7)
-                                .foregroundStyle(PlayscribeColor.onAccent)
+                                .foregroundStyle(PlayscribeRole.onAction)
                                 .padding(.horizontal, 8).padding(.vertical, 3)
-                                .background(PlayscribeColor.accent, in: Capsule())
+                                .background(PlayscribeRole.action, in: Capsule())
                                 .padding(.leading, 6).padding(.bottom, 6)
                                 .accessibilityHidden(true)
                         }
                     }
             }
             .buttonStyle(.plain)
+            // 6b step 1 with an empty Library: the first Popular on PS5 cover (opening it browses, it never adds).
+            .tourAnchor(.openGame)
             // Not `.disabled`: a disabled plain button dims to about 35 percent (Quinn's brightness check, 1ea80f2). A tap on a marked
             // cover simply does nothing.
             // The cover keeps one label and hint before and after the tick (it opens the game either way); the tick says "in your
@@ -651,7 +760,7 @@ struct PopularCover: View {
                     // A fixed-size glyph in a fixed 44 pt plate: Dynamic Type must not grow it past the plate (Quinn, #431).
                     .font(.system(size: 22, weight: .semibold))
                     .symbolRenderingMode(.palette)
-                    .foregroundStyle(PlayscribeColor.onAccent, PlayscribeColor.accent)
+                    .foregroundStyle(PlayscribeRole.onAction, PlayscribeRole.action)
                     // Iris: a 1.5 pt dark ring keeps the disc legible over any cover art.
                     .background(Circle().fill(Color.black.opacity(0.8)).frame(width: 25, height: 25))
                     // The disc sits 8 pt from the corner; only the glyph moves, so the 44 pt hit frame stays inside the cover.
@@ -710,7 +819,7 @@ struct PopularCover: View {
             model.addGame(game, status: .owned)           // an upcoming game goes in as Wishlist; the pop plays here only
             if model.entry(game.id) == nil {               // rolled back: say so, restore the tick
                 phase = .idle
-                model.show(Toast(text: "Couldn't add \(game.name)"))
+                model.show(Toast(text: "Couldn’t add \(game.name.gluingTrailingNumeral)"))
             }
         }
     }
@@ -726,5 +835,13 @@ private struct TickPressStyle: ButtonStyle {
             .opacity(configuration.isPressed ? 0.7 : 1)
             .animation(.easeOut(duration: 0.08), value: configuration.isPressed)
             .onChange(of: configuration.isPressed) { _, now in pressing = now }
+    }
+}
+
+/// A 4 pt top content margin in Tabletop only; every other pose keeps the List's own.
+private struct TabletopTopMargin: ViewModifier {
+    let on: Bool
+    func body(content: Content) -> some View {
+        if on { content.contentMargins(.top, 4, for: .scrollContent) } else { content }
     }
 }

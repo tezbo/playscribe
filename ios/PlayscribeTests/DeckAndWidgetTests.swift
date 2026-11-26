@@ -12,7 +12,22 @@ struct DeckAndWidgetTests {
         return m
     }
 
-    /// J-1: at most 5 cards (AppModel.deckLimit), at most 2 per game, unread cards first, no card twice.
+    /// bug-061: a launch marker (Dawnwalker "Launch", headline "Available on PC, PlayStation 5 and Xbox Series X|S") stays in
+    /// the history but is never a "New update" deck card and never counts as unread (badge, Continue), though On PS5 and never opened.
+    @Test func launchEntryIsNeverADeckCard() throws {
+        let m = demoModel()
+        let launch = try #require(m.fixtures.releases.first { $0.id == "dawnwalker@1.0" })
+        #expect(launch.launch == true)
+        let game = try #require(m.game(launch.gameID))
+        if !m.data.collection.contains(where: { $0.gameID == game.id }) { m.addGame(game, status: .owned) }
+        m.data.read[launch.id] = nil
+        #expect(m.releases(game.id).contains { $0.id == launch.id }, "the Launch entry stays in the Updates history")
+        #expect(!m.isUnread(m.releases(game.id).first { $0.id == launch.id }!), "a launch marker is never unread: no badge, Continue or dot")
+        #expect(m.continueItem?.release.id != launch.id)
+        #expect(!m.latestDeck.contains { $0.release?.id == launch.id }, "no deck card for a launch marker")
+    }
+
+    /// J-1: at most 5 cards (AppModel.deckLimit), one per game, unread cards first, no card twice.
     @Test func deckIsCappedSpreadAndUnreadFirst() {
         let deck = demoModel().latestDeck
         #expect(deck.count <= AppModel.deckLimit)
@@ -22,12 +37,38 @@ struct DeckAndWidgetTests {
             perGame[card.game.id, default: 0] += 1
             #expect(ids.insert(card.id).inserted, "card \(card.id) appears once")
         }
-        for (game, n) in perGame { #expect(n <= 2, "\(game) has \(n) cards") }
+        for (game, n) in perGame { #expect(n == 1, "\(game) has \(n) cards") }
         var seenRead = false
         for card in deck {
             if !card.unread { seenRead = true }
             #expect(!(seenRead && card.unread), "an unread card never follows a read one")
         }
+    }
+
+    /// bug-hero-deck-one-per-game, criteria 1 to 3: a game with three recent updates takes one card (its newest unread),
+    /// an unread game sorts before the read games, the deck never passes 5 cards, and no game appears twice.
+    @Test func deckHasOneCardPerGameUnreadGameFirst() throws {
+        let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "one-\(UUID().uuidString).json"))
+        let id = try #require(m.resetToAddGameDemo())
+        let deck = m.latestDeck
+        #expect(Set(deck.map(\.game.id)).count == deck.count, "no game twice")
+        #expect(deck.count <= AppModel.deckLimit)
+        #expect(deck.first?.game.id == id && deck.first?.unread == true, "the unread game leads")
+        #expect(deck.first?.release?.id == "qa-add3-\(id)-3", "its newest update is the card")
+        #expect(deck.filter { $0.game.id == id }.count == 1, "three updates, one card")
+        #expect(deck.dropFirst().allSatisfy { !$0.unread })
+    }
+
+    /// Criterion 5: reading the update moves the game down the order the next time the deck is built; the deck never reorders on its own.
+    @Test func readingAnUpdateMovesItsGameDownTheDeck() throws {
+        let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "read-\(UUID().uuidString).json"))
+        let id = try #require(m.resetToAddGameDemo())
+        let before = m.latestDeck.map(\.id)
+        #expect(m.latestDeck.map(\.id) == before, "stable while nothing is read")
+        m.markRead("qa-add3-\(id)-3")
+        let after = m.latestDeck
+        #expect(after.allSatisfy { !$0.unread }, "no unread card, so no New update chip")
+        #expect(Set(after.map(\.game.id)).count == after.count)
     }
 
     /// The "+N more updates" chip counts exactly the updates the 5-card deck leaves out, never negative (Iris, 2026-11-06; Terry, 0.5.4: 5 cards, 5 dots).
@@ -36,6 +77,32 @@ struct DeckAndWidgetTests {
         #expect(m.latestDeck.count <= AppModel.deckLimit)
         #expect(m.latestDeckOverflow >= 0)
         if m.latestDeckOverflow == 0 { #expect(m.latestDeck.count <= AppModel.deckLimit) }
+    }
+
+    /// r054-deck-card-voiceover-label-ax3: the visible summary is dropped at AX3 and above, so the card's VoiceOver label must carry
+    /// it in full. The label is built without the type size, so it holds at every size.
+    @Test func deckCardLabelCarriesTheSummaryAtEverySize() throws {
+        let m = demoModel()
+        let withSummary = m.latestDeck.filter { $0.release?.summary?.isEmpty == false }
+        try #require(!withSummary.isEmpty, "the demo deck has a card with a summary")
+        for card in withSummary {
+            let label = DeckCardView.label(card, tracked: m.feedTracksGame(card.game.id))
+            #expect(label.hasSuffix(card.release!.summary!), "\(card.game.name): \(label)")
+            #expect(label.contains(card.game.name))
+        }
+    }
+
+    /// r060-version-chip-spoken: the card's VoiceOver label speaks the version ("version 1 point 1"), never the raw chip ("v1.1").
+    @Test func deckCardLabelSpeaksTheVersion() throws {
+        let m = demoModel()
+        let withChip = m.latestDeck.filter { $0.release?.deckVersionChip != nil }
+        try #require(!withChip.isEmpty, "the demo deck has a card with a version chip")
+        for card in withChip {
+            let chip = card.release!.deckVersionChip!
+            let label = DeckCardView.label(card, tracked: m.feedTracksGame(card.game.id))
+            #expect(label.contains(chip.spokenVersion), "\(card.game.name): \(label)")
+            #expect(!label.contains(chip + ", "), "the raw chip is not read: \(label)")
+        }
     }
 
     /// The card's summary line never ends mid-word (Iris, 2026-11-06).
@@ -69,6 +136,53 @@ struct DeckAndWidgetTests {
                 #expect(chip.hasPrefix("v"))
                 #expect(r.displayName.hasSuffix(String(chip.dropFirst())))
             }
+        }
+    }
+
+    /// Iris on #622: the rule holds for any word before the number ("Patch 1.0302256" carried a "v1.0302256" chip).
+    @Test func noChipBesideATitleThatNamesTheVersion() {
+        func release(_ name: String) -> Release {
+            Release(id: "g@\(name)", gameID: "g", displayName: name, kind: .patch, kindBasis: .inferred, announcedAt: .now,
+                    notes: [], sourceIDs: [], platforms: [], headline: nil)
+        }
+        for name in ["Patch 1.0302256", "Update 1.2", "Hotfix 2.1.3"] {
+            let r = release(name)
+            #expect(r.versionChip != nil, "\(name) has a version")
+            #expect(r.deckVersionChip == nil, "\(name): \(r.deckVersionChip ?? "")")
+            #expect(r.versionChip(beside: "\(name) is here.") == nil)
+        }
+        let r = release("Patch 1.0302256")
+        #expect(r.versionChip(beside: "Respec with Draught of Mind Rebirth") == "v1.0302256")
+        #expect(r.versionChip(beside: "Patch 1.03") == "v1.0302256", "a different number keeps the chip")
+    }
+
+    /// Iris (taste, #610): the deck shows no "v1.2" chip under a headline that already says "Update 1.2"; a descriptive
+    /// headline keeps its chip.
+    @Test func deckChipNotRepeatedByTheHeadline() {
+        let m = demoModel()
+        for card in m.latestDeck {
+            guard let r = card.release, let v = r.versionChip else { continue }
+            let headline = r.ps5Headline ?? r.displayName
+            let named = headline.split(separator: " ").contains { $0 == v.dropFirst() }
+            #expect(r.deckVersionChip == (named ? nil : v), "\(headline): \(r.deckVersionChip ?? "no chip")")
+        }
+    }
+
+    /// bug-deck-card-closed-landscape-ax5-dots-order (Nadia): every deck card leads with the patch name, the game name under it.
+    /// Closed landscape's wide card led with the game name at every size. The compact, stacked and stage cards share
+    /// CompactCaption.headline; the wide card's lines are held here too.
+    @Test func deckHeadlineIsThePatchName() throws {
+        let m = demoModel()
+        let deck = m.latestDeck
+        try #require(!deck.isEmpty)
+        for card in deck {
+            guard let r = card.release else { continue }
+            let patch = r.ps5Headline ?? r.displayName
+            #expect(CompactCaption.headline(card) == patch, "\(card.game.name): compact headline")
+            let wide = WideDeckCard.lines(card)
+            #expect(wide.headline == patch, "\(card.game.name): wide card leads with \(wide.headline)")
+            #expect(wide.sub == card.game.name.gluingTrailingNumeral, "\(card.game.name): the game name under the patch name")
+            #expect(wide.headline != wide.sub)
         }
     }
 }

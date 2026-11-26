@@ -78,7 +78,7 @@ struct NoteSearchResults: View {
             if hits.isEmpty {
                 let name = gameID.flatMap { model.game($0)?.name } ?? "your games"
                 VStack(alignment: .leading, spacing: 10) {
-                    Text(scope == .thisGame ? "No mention of '\(query)' in \(name)'s PS5 notes" : "No mention of '\(query)' in your games' PS5 notes")
+                    Text(scope == .thisGame ? "No mention of ‘\(query)’ in \(name)’s PS5 notes" : "No mention of ‘\(query)’ in your games’ PS5 notes")
                         .font(PlayscribeFont.headline)
                     if scope == .thisGame {
                         Button("Search all my games", action: onSwitchScope).hitTarget()
@@ -91,7 +91,7 @@ struct NoteSearchResults: View {
             }
         }
         .scrollContentBackground(.hidden)
-        .background(Color.ink0)
+        .background(PlayscribeRole.bg)
     }
 
     @ViewBuilder private func group(_ hits: [NoteHit]) -> some View {
@@ -104,8 +104,8 @@ struct NoteSearchResults: View {
                 } header: {
                     HStack(spacing: 8) {
                         Text(r.displayName)
-                        Text(model.game(r.gameID)?.name ?? "").foregroundStyle(.secondary)
-                        Text((r.isPS5Listed ? r.ps5Date : r.latestDate).dayMonth).foregroundStyle(.secondary)
+                        Text(model.game(r.gameID)?.name ?? "").foregroundStyle(PlayscribeRole.textSecondary)
+                        Text((r.isPS5Listed ? r.ps5Date : r.latestDate).dayMonth).foregroundStyle(PlayscribeRole.textSecondary)
                         ReleaseTag(release: r)
                     }
                 }
@@ -123,7 +123,7 @@ struct NoteSearchResults: View {
             } label: {
                 VStack(alignment: .leading, spacing: 3) {
                     Text(bolded(h.line)).font(PlayscribeFont.subheadline)
-                    Text(h.section).font(PlayscribeFont.caption).foregroundStyle(.secondary)
+                    Text(h.section).font(PlayscribeFont.caption).foregroundStyle(PlayscribeRole.textSecondary)
                 }
                 .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
                 .contentShape(Rectangle())
@@ -142,7 +142,7 @@ extension NoteHit {
         var a = AttributedString(line)
         if let r = a.range(of: query, options: [.caseInsensitive, .diacriticInsensitive]) {
             a[r].font = PlayscribeFont.subheadline.bold()
-            a[r].foregroundColor = PlayscribeColor.accent
+            a[r].foregroundColor = PlayscribeRole.action
         }
         return a
     }

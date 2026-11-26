@@ -57,7 +57,9 @@ extension AppModel {
                                                       version: fixedInName(i, gameID: gameID))
             }
         }
-        data.alertedIssues = alerted
+        // Only when it changes: any write to `data` re-runs every view that reads it, the Library shelf among them, and this runs
+        // on every refresh (Mac A/B at 53c2ca70: the apply path alone ran the shelf 32 times in 20 swipes, Closed).
+        if data.alertedIssues != alerted { data.alertedIssues = alerted }
     }
 }
 
@@ -85,11 +87,11 @@ struct ForYouCard: View {
         if !lines.isEmpty {
             VStack(alignment: .leading, spacing: 6) {
                 Text("For you").font(PlayscribeFont.headline).accessibilityAddTraits(.isHeader)
-                ForEach(lines, id: \.self) { Text($0).font(PlayscribeFont.subheadline).foregroundStyle(.secondary) }
+                ForEach(lines, id: \.self) { Text($0).font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary) }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(12)
-            .background(Color.ink2, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+            .background(PlayscribeRole.card, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
             .accessibilityElement(children: .combine)
         }
     }
@@ -103,7 +105,7 @@ struct FollowIssueButton: View {
         if !issue.isAddressed {
             Button(on ? "Following" : "Follow") { model.toggleFollow(issue) }
                 .font(PlayscribeFont.footnote.weight(.semibold))
-                .foregroundStyle(on ? Color.secondary : PlayscribeColor.accent)
+                .foregroundStyle(on ? PlayscribeRole.textSecondary : PlayscribeRole.action)
                 .frame(minWidth: 44, minHeight: 44)
                 .tappableFrame()
                 .accessibilityLabel(on ? "Following this issue" : "Follow this issue")
@@ -126,11 +128,11 @@ struct FollowingList: View {
                         VStack(alignment: .leading, spacing: 2) {
                             Text(LinkedText.clean(issue.text)).font(PlayscribeFont.subheadline).lineLimit(3)
                             Text(issue.isAddressed ? "Fixed in \(model.fixedInName(issue, gameID: gameID) ?? "a later update")" : "Not fixed yet")
-                                .font(PlayscribeFont.caption).foregroundStyle(.secondary)
+                                .font(PlayscribeFont.caption).foregroundStyle(PlayscribeRole.textSecondary)
                         }
                         Spacer(minLength: 0)
                         Button("Unfollow") { model.toggleFollow(issue) }
-                            .font(PlayscribeFont.footnote.weight(.semibold)).foregroundStyle(PlayscribeColor.accent)
+                            .font(PlayscribeFont.footnote.weight(.semibold)).foregroundStyle(PlayscribeRole.action)
                             .frame(minHeight: 44).tappableFrame()
                     }
                 }

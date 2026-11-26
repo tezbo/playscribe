@@ -18,6 +18,9 @@ struct Rendered {
     var viewSize = CGSize.zero
     var appliedInsets = UIEdgeInsets.zero
     var inheritedInsets = UIEdgeInsets.zero
+    /// The live preference box and injected regions, so `FoldHost.rotate` can move this render to another pose.
+    var box: FoldHost.Box?
+    var regions: FoldHost.Regions?
 
     /// Nil when the root view has the pose's window size and safe area; otherwise the numbers, for the failure message.
     var geometryProblem: String? {
@@ -110,12 +113,16 @@ struct Rendered {
 @MainActor
 enum FoldHost {
     final class Box { var frames: [CGRect] = []; var named: [String: CGRect] = [:] }
+    /// The injected fold and occlusions, observable so `rotate` can move the app to another pose without rebuilding it.
+    @Observable final class Regions { var value: InjectedRegions?; init(_ v: InjectedRegions?) { value = v } }
 
     struct Probe<Content: View>: View {
         var box: Box
+        var regions: Regions
         var content: Content
         var body: some View {
             content
+                .environment(\.injectedRegions, regions.value)
                 .onPreferenceChange(TappableFrameKey.self) { box.frames = $0 }
                 .onPreferenceChange(NamedFrameKey.self) { box.named = $0 }
         }
@@ -136,16 +143,19 @@ enum FoldHost {
         NSTimeZone.default = TimeZone(identifier: "Australia/Sydney") ?? .current
         FoldAuditSwitch.enabled = true
         let box = Box()
-        let root = Probe(box: box, content: RootView()
+        let regions = Regions(pose.regions)
+        let root = Probe(box: box, regions: regions, content: RootView()
             .environment(model)
-            .environment(\.injectedRegions, pose.regions)
             .environment(\.harnessSplit, ProcessInfo.processInfo.environment["HARNESS_SPLIT"] == "1")
-            .preferredColorScheme(.dark)
             .font(PlayscribeFont.body)
-            .tint(PlayscribeColor.accent)
-            .foregroundStyle(PlayscribeColor.textPrimary)
+            .tint(PlayscribeRole.action)
+            .foregroundStyle(PlayscribeRole.textPrimary)
             .modifier(HarnessStableMotion()))
         let hc = UIHostingController(rootView: root)
+        // G-11: the app follows the phone now (no Info.plist Dark), so the harness pins its own scheme on the hosting
+        // controller, which AppAppearance.apply (windows only) never touches. Dark by default so main and the PR compare
+        // like for like; HARNESS_APPEARANCE=light renders the light matrix. Same root styles as PlayscribeApp.
+        hc.overrideUserInterfaceStyle = HarnessAppearance.style
         hc.traitOverrides.horizontalSizeClass = pose.compactWidth ? .compact : .regular
         // The hosting window is a small square, so UIKit gave the tab view a compact vertical size class and drew its tab bar
         // as a vertical bar down the trailing edge (CI view tree: VerticalBarPocketView 83 pt wide, content safe area right 172
@@ -201,6 +211,8 @@ enum FoldHost {
         func rel(_ r: CGRect) -> CGRect { r.offsetBy(dx: -origin.x, dy: -origin.y) }
         var r = Rendered(pose: pose, livePose: model.livePose, frames: box.frames.map(rel),
                          named: box.named.mapValues(rel), window: window, controller: hc)
+        r.box = box
+        r.regions = regions
         r.settled = same >= 3
         r.passes = passes
         r.viewSize = hc.view.bounds.size
@@ -240,6 +252,51 @@ enum FoldHost {
     }
 
     /// Tear down so the next pose starts clean.
+    /// Turns a rendered pose into another in place, as rotating the device does (the app keeps its state and views), then waits
+    /// for the layout to settle. Closed to Closed landscape is the path the Mac's RailSetTests take: launch, then rotate.
+    static func rotate(_ r: Rendered, to pose: HarnessPose, type: UIContentSizeCategory = .large,
+                       settle: Duration = .milliseconds(1500)) async -> Rendered {
+        guard let box = r.box, let regions = r.regions else { return r }
+        let hc = r.controller
+        hc.traitOverrides.horizontalSizeClass = pose.compactWidth ? .compact : .regular
+        hc.traitOverrides.verticalSizeClass = pose.windowSize.height > 500 ? .regular : .compact
+        regions.value = pose.regions
+        hc.view.frame = CGRect(origin: .zero, size: pose.windowSize)
+        r.window.layoutIfNeeded()
+        hc.view.layoutIfNeeded()
+        let inherited = hc.view.safeAreaInsets
+        let had = hc.additionalSafeAreaInsets
+        var t = pose.safeArea
+        if pose.tabBarSuppliesTrailingInset { t.right = 0 }
+        // What the window gives on its own is the current inset less what was added for the old pose.
+        hc.additionalSafeAreaInsets = UIEdgeInsets(top: t.top - (inherited.top - had.top), left: t.left - (inherited.left - had.left),
+                                                   bottom: t.bottom - (inherited.bottom - had.bottom), right: t.right - (inherited.right - had.right))
+        let start = ContinuousClock.now
+        var same = 0, passes = 0
+        var last: [CGRect] = [], lastNamed: [String: CGRect] = [:]
+        while true {
+            r.window.layoutIfNeeded()
+            try? await Task.sleep(for: .milliseconds(150))
+            passes += 1
+            same = (box.frames == last && box.named == lastNamed) ? same + 1 : 0
+            last = box.frames; lastNamed = box.named
+            let elapsed = ContinuousClock.now - start
+            if elapsed >= settle && same >= 3 { break }
+            if elapsed >= .seconds(8) { break }
+        }
+        let origin = CGPoint(x: pose.safeArea.left, y: pose.safeArea.top)
+        func rel(_ f: CGRect) -> CGRect { f.offsetBy(dx: -origin.x, dy: -origin.y) }
+        var out = r
+        out.pose = pose
+        out.frames = box.frames.map(rel)
+        out.named = box.named.mapValues(rel)
+        out.settled = same >= 3
+        out.passes = passes
+        out.viewSize = hc.view.bounds.size
+        out.appliedInsets = hc.view.safeAreaInsets
+        return out
+    }
+
     static func dispose(_ r: Rendered) {
         r.window.isHidden = true
         r.window.rootViewController = nil

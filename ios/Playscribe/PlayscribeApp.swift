@@ -23,10 +23,9 @@ struct PlayscribeApp: App {
         WindowGroup {
             RootView()
                 .environment(model)
-                .preferredColorScheme(.dark)
                 .font(PlayscribeFont.body)
-                .tint(PlayscribeColor.accent)
-                .foregroundStyle(PlayscribeColor.textPrimary)
+                .tint(PlayscribeRole.action)
+                .foregroundStyle(PlayscribeRole.textPrimary)
                 .onAppear {
                     NotificationService.shared.attach(model)
                     // Terry, 2 Nov: a cold launch starts fresh on the splash and the Library.
@@ -47,7 +46,27 @@ struct PlayscribeApp: App {
                     WidgetBridge.publish(model)
                     FeedClient.scheduleRefresh()
                 }
+                #if INTERNAL
+                .task {
+                    // QA: `-qaOrientation landscape` turns the interface to landscape at launch with requestGeometryUpdate.
+                    // XCUIDevice.orientation rotates the simulated device, which on CI and the Mac never turned the iPhone Duo's
+                    // outer display (RailSetTests and ClosedLandscapeShotTests stayed 466 x 678), so Closed landscape had no
+                    // automated run anywhere. The scene's own request is what an app gets on any iPhone.
+                    if let want = QAOrientation.requested { QAOrientation.apply(want) }
+                }
+                .task {
+                    let pulse = UserDefaults.standard.double(forKey: "qaFeedPulse")
+                    if pulse > 0 { await model.runQAFeedPulse(every: pulse) }
+                }
+                .task {
+                    let at = UserDefaults.standard.double(forKey: "qaPulseNewAt")
+                    if at > 0 { await model.runQANewRelease(after: at) }
+                }
+                #endif
                 .onOpenURL { model.handle(url: $0) }
+                // G-11: System, Light or Dark (Settings > Appearance), on the windows themselves. preferredColorScheme(nil)
+                // does not hand a window back to the system once it has forced a scheme, so the window style carries it.
+                .onChange(of: AppAppearance.effective(model.data.appearance), initial: true) { _, a in AppAppearance.apply(a) }
                 .onChange(of: phase) { _, p in
                     if p == .active {
                         model.tick()

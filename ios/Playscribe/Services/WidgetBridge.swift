@@ -9,7 +9,7 @@ enum WidgetBridge {
         var rows = cards.prefix(WidgetLayout.largeRowLimit).compactMap { c -> WidgetSnapshot.Row? in
             guard let r = c.release else { return nil }
             return .init(gameID: c.game.id, game: c.game.name, releaseID: r.id, update: r.displayName,
-                         date: r.ps5Date, unread: c.unread, chip: r.versionChip)
+                         date: r.ps5Date, unread: c.unread, chip: r.versionChip(beside: r.displayName))
         }
         // Cover thumbnails: each row's bundled official art, scaled down. No art, no thumbnail.
         // Stale thumbnails from earlier publishes are removed so the container stays small.

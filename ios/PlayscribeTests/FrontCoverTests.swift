@@ -31,13 +31,69 @@ struct FrontCoverTests {
         }
     }
 
-    /// A mode that is not built yet falls back down the chain, ending at Still; the default is Key-art motion.
-    @Test func unbuiltModesFallBack() {
-        for mode in CoverMotion.allCases {
-            #expect(mode.resolved(reduceMotion: false, autoplay: true).isBuilt)
-        }
-        #expect(CoverMotion.still.isBuilt)
+    /// All three modes are built (6a); Key-art motion stays the default (Nadia, 13 Nov), and a chosen Trailer loop resolves to
+    /// itself when Autoplay videos is on.
+    @Test func allModesBuiltAndTrailerResolves() {
+        for mode in CoverMotion.allCases { #expect(mode.isBuilt) }
+        #expect(CoverMotion.trailer.resolved(reduceMotion: false, autoplay: true) == .trailer)
         #expect(CoverMotion.defaultMode == .keyArt)
+    }
+
+    /// 6a: the loop plays only when chosen, Autoplay is on, Reduce Motion is off, the game has an https loop and Low Power is
+    /// off. Every other case shows Key-art motion (card AC 2).
+    @Test func trailerLoopPlaysOnlyWhenEverythingHolds() {
+        let loop = URL(string: "https://example.com/official/trailer.mp4")
+        #expect(TrailerLoopRule.plays(stored: .trailer, reduceMotion: false, autoplay: true, loop: loop, lowPower: false))
+        #expect(!TrailerLoopRule.plays(stored: .trailer, reduceMotion: true, autoplay: true, loop: loop, lowPower: false))
+        #expect(!TrailerLoopRule.plays(stored: .trailer, reduceMotion: false, autoplay: false, loop: loop, lowPower: false))
+        #expect(!TrailerLoopRule.plays(stored: .trailer, reduceMotion: false, autoplay: true, loop: nil, lowPower: false))
+        #expect(!TrailerLoopRule.plays(stored: .trailer, reduceMotion: false, autoplay: true, loop: loop, lowPower: true))
+        #expect(!TrailerLoopRule.plays(stored: .trailer, reduceMotion: false, autoplay: true,
+                                       loop: URL(string: "http://example.com/t.mp4"), lowPower: false))
+        #expect(!TrailerLoopRule.plays(stored: .keyArt, reduceMotion: false, autoplay: true, loop: loop, lowPower: false))
+        #expect(!TrailerLoopRule.plays(stored: .still, reduceMotion: false, autoplay: true, loop: loop, lowPower: false))
+    }
+
+    /// Iris (#584): the loop fills the cover with no band, cropped toward its upper third.
+    @Test func loopFillsTheCoverCroppedTowardTheTop() {
+        let cover = CGSize(width: 466, height: 678)
+        let wide = TrailerLoopRule.frame(video: CGSize(width: 1920, height: 1080), in: cover)
+        #expect(wide.minX <= 0 && wide.maxX >= cover.width && wide.minY <= 0 && wide.maxY >= cover.height)
+        #expect(abs(wide.midX - cover.width / 2) < 0.5)
+        let tall = TrailerLoopRule.frame(video: CGSize(width: 1080, height: 1920), in: CGSize(width: 678, height: 466))
+        #expect(tall.minY <= 0 && tall.maxY >= 466 && tall.minX <= 0 && tall.maxX >= 678)
+        // Upper-third crop: twice as much is cut from the bottom as from the top.
+        #expect(abs((tall.maxY - 466) - 2 * (0 - tall.minY)) < 0.5)
+    }
+
+    /// Iris (#584): Settings offers Trailer loop only when some game has an https loop.
+    @Test func trailerLoopIsOfferedOnlyWhenAGameHasALoop() throws {
+        var game = try JSONDecoder().decode(CatalogGame.self, from: Data(#"{"id":"g","name":"G","platforms":["ps5"],"coverage":"none"}"#.utf8))
+        if UserDefaults.standard.string(forKey: "qaCoverLoop") == nil {
+            #expect(!TrailerLoopRule.available(in: [game]))
+            game.coverLoop = "http://example.com/l.mp4"
+            #expect(!TrailerLoopRule.available(in: [game]))
+        }
+        game.coverLoop = "https://example.com/l.mp4"
+        #expect(TrailerLoopRule.available(in: [game]))
+    }
+
+    /// The feed's `coverLoop` decodes, and a game without one has none.
+    @Test func coverLoopDecodesFromTheFeed() throws {
+        let json = #"{"id":"g","name":"G","platforms":["ps5"],"coverage":"none","coverLoop":"https://example.com/l.mp4"}"#
+        let game = try JSONDecoder().decode(CatalogGame.self, from: Data(json.utf8))
+        #expect(game.coverLoop == "https://example.com/l.mp4")
+        #expect(TrailerLoopRule.url(for: game, lead: false)?.absoluteString == "https://example.com/l.mp4")
+        let bare = try JSONDecoder().decode(CatalogGame.self, from: Data(#"{"id":"g","name":"G","platforms":["ps5"],"coverage":"none"}"#.utf8))
+        #expect(bare.coverLoop == nil)
+    }
+
+    /// Precedence (Nadia, 13 Nov): a fresh install moves, whatever Autoplay says; Reduce Motion always wins with the still (G-9).
+    @Test func defaultMovesAndReduceMotionWins() {
+        #expect(CoverMotion.defaultMode.resolved(reduceMotion: false, autoplay: false) == .keyArt)
+        #expect(CoverMotion.defaultMode.resolved(reduceMotion: false, autoplay: true) == .keyArt)
+        #expect(CoverMotion.defaultMode.resolved(reduceMotion: true, autoplay: true) == .still)
+        #expect(CoverMotion.defaultMode.resolved(reduceMotion: true, autoplay: false) == .still)
     }
 
     /// CM-7: one VoiceOver element, "<Game> cover, update 1.1 on PS5, 22 Oct"; the motion mode is never in it.
@@ -116,8 +172,53 @@ struct FrontCoverTests {
             #expect(atPlate.allSatisfy { $0.opacity >= 0.88 })
             #expect(stops.first?.location == 0 && stops.last?.location == 1)
         }
-        // Standard sizes keep the signed shade.
-        #expect(FrontCoverPage.fadeStops(accessibility: false, plateTop: 0.4).map(\.location) == [0, 0.18, 0.45, 0.85, 1])
+        // Standard sizes keep the signed shade, solid from 90 percent down so no logo in the art ghosts behind the mark.
+        let std = FrontCoverPage.fadeStops(accessibility: false, plateTop: 0.4)
+        #expect(std.map(\.location) == [0, 0.18, 0.45, 0.82, 0.9, 1])
+        #expect(std.filter { $0.location >= 0.9 }.allSatisfy { $0.opacity == 1 })
+    }
+
+    /// r060 day-one (Iris on #506): with the "Day-one patch" line above the eyebrow, the standard-size shade follows the plate,
+    /// 88 percent or more from the line's top edge (it measured 2.3:1 on the ramp in Closed landscape), solid from 90 percent down.
+    @Test func dayOneLineShadeStartsAtThePlate() {
+        for top in [0.2, 0.5, 0.7, 0.86, 0.9] {
+            let stops = FrontCoverPage.fadeStops(accessibility: false, plateTop: top, followPlate: true)
+            #expect(zip(stops, stops.dropFirst()).allSatisfy { $0.location <= $1.location }, "ordered at \(top)")
+            #expect(stops.filter { $0.location >= top - 0.0001 }.allSatisfy { $0.opacity >= 0.88 }, "88% from the plate at \(top)")
+            #expect(stops.filter { $0.location >= 0.9 }.allSatisfy { $0.opacity == 1 }, "solid foot at \(top)")
+            #expect(stops.first?.location == 0 && stops.last?.location == 1)
+        }
+        // Iris on #506: eased in over plateRamp points, so no row darkens by more than 4/255 over pure white, in Closed
+        // landscape (short page) and portrait, at the plate positions the cover lays out; the plate stays 88% or more.
+        for (h, tops) in [(300.0, [0.6, 0.7, 0.8]), (420.0, [0.55, 0.7, 0.86]), (678.0, [0.385, 0.5, 0.7, 0.86])] {
+            for top in tops {
+                for ax in [false, true] {
+                    let stops = FrontCoverPage.fadeStops(accessibility: ax, plateTop: top, followPlate: !ax, pageHeight: h)
+                    #expect(zip(stops, stops.dropFirst()).allSatisfy { $0.location <= $1.location }, "ordered \(h) \(top)")
+                    #expect(stops.filter { $0.location >= top - 0.0001 }.allSatisfy { $0.opacity >= 0.88 }, "plate \(h) \(top)")
+                    var last = Self.opacity(stops, at: 0)
+                    var worst = 0.0
+                    for row in 1...Int(h) {
+                        let o = Self.opacity(stops, at: Double(row) / h)
+                        worst = max(worst, abs(o - last) * 255)
+                        last = o
+                    }
+                    #expect(worst <= 4, "step \(worst)/255 at page \(h), plate \(top), ax \(ax)")
+                }
+            }
+        }
+        // Without the line, the standard shade is unchanged.
+        #expect(FrontCoverPage.fadeStops(accessibility: false, plateTop: 0.7, followPlate: false).map(\.location) == [0, 0.18, 0.45, 0.82, 0.9, 1])
+    }
+
+    /// The shade's opacity at a location, interpolated linearly between stops as a LinearGradient draws it.
+    static func opacity(_ stops: [(opacity: Double, location: Double)], at x: Double) -> Double {
+        guard let first = stops.first else { return 0 }
+        if x <= first.location { return first.opacity }
+        for (a, b) in zip(stops, stops.dropFirst()) where x <= b.location {
+            return b.location - a.location < 1e-9 ? b.opacity : a.opacity + (b.opacity - a.opacity) * (x - a.location) / (b.location - a.location)
+        }
+        return stops.last!.opacity
     }
 
     /// Iris (#467): the cover is Closed-only. Any other pose closes it at once, the route's Settings with it, and the deck
@@ -149,10 +250,47 @@ struct FrontCoverTests {
             let chips = FrontCoverPlate.chips(card)
             guard let r = card.release else { continue }
             #expect(chips.first?.live == true)
-            #expect(chips.first?.text.hasSuffix("On PS5") == true)
-            if let v = r.versionChip { #expect(chips.first?.text.hasPrefix(v) == true) }
+            #expect(chips.first?.text == "Out on PS5")
+            if let v = r.ps5Version { #expect(chips.contains { $0.text == v }) }
+            #expect(chips.allSatisfy { !$0.text.contains("·") }) // dot-ok: asserts the dot is absent
             #expect(chips.filter { $0.live }.count == 1)
             if r.noteCount > 1 { #expect(chips.contains { $0.text == "\(r.noteCount) changes" }) }
         }
+    }
+
+    /// Iris (19 Nov): the patch name is the largest line; the game and the day sit above it in one comma-separated eyebrow,
+    /// and the day is no longer a chip.
+    @Test func patchNameLeadsWithGameAndDayAbove() {
+        for card in demoModel().latestDeck {
+            guard let r = card.release else { continue }
+            #expect(FrontCoverPlate.headline(card) == r.displayName)
+            let eyebrow = FrontCoverPlate.eyebrow(card) ?? ""
+            #expect(eyebrow.hasPrefix(card.game.name.gluingTrailingNumeral))
+            if let d = card.date {
+                #expect(eyebrow.hasSuffix(", \(AppModel.tileDay(d))"))
+                #expect(!FrontCoverPlate.chips(card).contains { $0.text == AppModel.tileDay(d) })
+            }
+            #expect(!eyebrow.contains("·")) // dot-ok: asserts the dot is absent
+        }
+    }
+
+    /// cover/<game> (Mac at cf4a8c0 and 09eeddb): the feed's sweep leaves the lead unread; opening it reads it, so the cover's unread dot and the deck's unread
+    /// state clear, as in the real app. The QA route only picks the starting state.
+    @Test func coverRouteHonoursAReadUpdate() throws {
+        let m = demoModel()
+        m.handle(url: URL(string: "playscribe://cover/kcd2")!)
+        let lead = try #require(m.latestDeck.first)
+        let r = try #require(lead.release)
+        #expect(lead.game.id == "kcd2")
+        // The first feed refresh after a reset marks every update older than 72 hours read in the store (FeedClient). The route's
+        // fresh update must survive that (Mac at 09eeddb: KCD lost its lead and its dot).
+        for id in m.latestDeck.compactMap(\.release?.id) { m.data.read[id] = .now }
+        #expect(m.isUnread(r))
+        #expect(m.latestDeck.first?.release?.id == r.id && m.latestDeck.first?.unread == true)
+        m.openGame("kcd2", chapter: .updates, releaseID: r.id)
+        m.markRead(r.id)
+        #expect(!m.isUnread(r))
+        // Read, it leaves the unread state (and leaves the deck when it is older than 90 days).
+        #expect(m.latestDeck.first { $0.release?.id == r.id }?.unread != true)
     }
 }

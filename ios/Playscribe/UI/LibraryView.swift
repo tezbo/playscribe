@@ -39,14 +39,16 @@ struct LibraryView: View {
                 LibraryShelf()
             }
         }
-        .background(Color.ink0)
+        .background(PlayscribeRole.bg)
         .task {
             // Quick actions tip, twice only; after the launch splash has gone.
             try? await Task.sleep(for: .seconds(1.5))
             model.showPressTipIfNeeded()
         }
-        .navigationTitle("Library")
-        .toolbarTitleDisplayMode(.large)
+        // Everywhere but Tabletop (no bar) "Library" is the first row of the page, not a navigation-bar large title: the bar's
+        // large-title state did not survive Back from a game and left it over the tiles (bug-library-back-scroll-jump, Iris fallback B).
+        .navigationTitle(duo.pose == .tabletop ? "Library" : "")
+        .toolbarTitleDisplayMode(.inline)
         .toolbar {
             // Add trails, Settings leads: the system collapsed a second trailing item away in Closed and
             // Open (0.5.0 Mac stills, TB-1), so the cog sits in its own region and is always drawn.
@@ -96,16 +98,16 @@ struct LibraryStage: View {
             LinearGradient(colors: [.clear, .black.opacity(0.75)], startPoint: .center, endPoint: .bottom)
             VStack(alignment: .leading, spacing: 8) {
                 if let game {
-                    Text(game.name).font(PlayscribeFont.title2.bold()).lineLimit(3)
+                    Text(game.name.gluingTrailingNumeral).font(PlayscribeFont.title2.bold()).lineLimit(3)
                     if let c = model.continueItem, c.game.id == game.id {
-                        Text("New on PS5: \(c.release.displayName)").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                        Text("New on PS5: \(c.release.displayName)").font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
                     }
                     if let c = model.continueItem, c.game.id == game.id {
-                        Text("New on PS5: \(c.release.displayName)").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                        Text("New on PS5: \(c.release.displayName)").font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
                     }
                 }
                 if !model.data.collection.isEmpty {
-                    Text("Nothing new in 90 days").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                    Text("Nothing new in 90 days").font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
                 }
             }
             .padding(20)
@@ -235,6 +237,13 @@ struct LibraryShelf: View {
     /// Closed landscape (container wider than tall): the compact first screen.
     private var closedWide: Bool { duo.pose == .closed && duo.isLandscape }
 
+    /// The one exception to one order in every pose (docs/ux-acceptance.md B-12, Nadia 24 Nov): at accessibility sizes in Closed
+    /// (portrait and landscape) and Tabletop the filter chips follow the tiles, so a game is on the first screen. Nothing else moves.
+    static func chipsFollowTiles(pose: Pose, accessibilitySize: Bool) -> Bool {
+        accessibilitySize && (pose == .closed || pose == .tabletop)
+    }
+    private var chipsAfterTiles: Bool { Self.chipsFollowTiles(pose: duo.pose, accessibilitySize: typeSize.isAccessibilitySize) }
+
     /// Book with any recent update: the hero carousel takes the right page's top; the left page keeps the controls, chips and grid.
     private var heroOnRightPage: Bool {
         // No recent update: the caught-up card takes the hero's place, so the two pages flow the same way (Iris, 41f0310).
@@ -248,13 +257,14 @@ struct LibraryShelf: View {
         ((duo.pose == .flat && !duo.isLandscape) || duo.pose == .closed) && model.libraryTab != .upcoming
     }
 
-    /// Catch-up, PS Plus and notification cards. In Book they are one page wide and never cross the fold (G-4).
+    /// Catch-up, PS Plus and notification cards, after the tiles in every pose. In Book they are one page wide and never cross the fold (G-4).
     @ViewBuilder
     private func topCards(_ all: [AppModel.LibraryRow]) -> some View {
         let pageWidth: CGFloat? = duo.pose == .book ? duo.division.map { max(0, $0.minX - 24 - 16) } : nil
         VStack(alignment: .leading, spacing: 14) {
-            if model.showsNotificationCard, let first = all.first {
-                NotificationInviteCard(gameName: first.game.name)
+            if model.showsNotificationCard, !all.isEmpty {
+                // Named only after a game the feed tracks: an alert is never promised for one it doesn't (Astro Bot, beta 3).
+                NotificationInviteCard(gameName: all.first(where: { model.feedTracksGame($0.game.id) })?.game.name)
             }
             // N-9: one ask per screen. Shows only once the alerts card has been answered, on a later Library appearance (Iris).
             // Book and Tabletop place it higher up (keepCurrentAsk); Closed and Open keep it here.
@@ -265,6 +275,25 @@ struct LibraryShelf: View {
         // Never wider than the column it sits in (Iris: the card ran past the left page's search field in Book).
         .frame(maxWidth: pageWidth, alignment: .leading)
         .frame(maxWidth: .infinity, alignment: .leading)
+        .namedFrame("libraryCards")
+    }
+
+    @FocusState private var searchFocused: Bool
+    @State private var searchWasFocused = false
+    /// Whether a finger is on the page. A reference the view never observes: as plain @State, its two flips per swipe (down, up) re-ran this
+    /// whole body twice a swipe, 40 runs in 20 swipes (Mac profile of #513, bug-056). Only the Task closures below read it.
+    private final class ScrollFlags { var interacting = false }
+    @State private var scrollFlags = ScrollFlags()
+    /// Where the page is scrolled to is `model.nav.anchors["library"]`, as on main: the scroll position is bound to the model so Back from a game
+    /// lands where it was (a local holder drifted 8 to 118 pt on Back, Mac 45983f0). `setAnchor` is the code's own move.
+    private func setAnchor(_ id: String?) { model.libraryAnchor = id }
+    private var scrollID: String? { model.libraryAnchor }
+
+    /// Closed portrait, field focused or holding text: the deck steps aside like News and the cards, so the matches get the room and
+    /// the card is not squeezed by the keyboard's safe area (its title clipped under the badge, Mac 0027a78 Closed). Open portrait keeps
+    /// its hero (Quinn and Iris). It returns when the field is empty and unfocused.
+    private var closedSearchCollapse: Bool {
+        duo.pose == .closed && (searchFocused || !model.libraryQuery.trimmingCharacters(in: .whitespaces).isEmpty)
     }
 
     /// N-9 in Book and Tabletop (Iris, #455 at f55062a). Book: at the top of the left page above the search field, one page
@@ -284,68 +313,153 @@ struct LibraryShelf: View {
                     // The same field as the notes search; the system rounded border read as a
                     // faded box behind the large title on the dark Library (QA, a258f0c).
                     HStack(spacing: 8) {
-                        Image(systemName: "magnifyingglass").foregroundStyle(.secondary)
+                        Image(systemName: "magnifyingglass").foregroundStyle(PlayscribeRole.textSecondary)
                         TextField("Search your library", text: binding)
                             .submitLabel(.search)
                             .autocorrectionDisabled()
                             .textInputAutocapitalization(.never)
                             .accessibilityIdentifier("librarySearchField")
+                            .focused($searchFocused)
+                        // The standard clear control, shown only with text: the way back to News and the cards, which stay
+                        // hidden while the field has text. A button of its own, so the row's tap target is untouched.
+                        if !binding.wrappedValue.isEmpty {
+                            Button {
+                                binding.wrappedValue = ""
+                                // Cleared with the keyboard away: the deck and News return above, so the page goes to the "Library" title row, once.
+                                // Focused, the field stays pinned and nothing scrolls to the top.
+                                if !searchFocused, portraitTilesFirst {
+                                    Task { @MainActor in
+                                        try? await Task.sleep(for: .milliseconds(60))
+                                        if !searchFocused { setAnchor("library-title") }
+                                    }
+                                }
+                            } label: {
+                                Image(systemName: "xmark.circle.fill").foregroundStyle(PlayscribeRole.textSecondary)
+                                    .frame(minWidth: 44, minHeight: 44).contentShape(Rectangle())
+                                    .keepsKeyboardInFrame("library-search-clear")
+                            }
+                            .buttonStyle(.plain)
+                            .accessibilityLabel("Clear search")
+                            .padding(.trailing, -12)
+                        }
                     }
                     .padding(.horizontal, 12)
                     .padding(.vertical, typeSize.isAccessibilitySize ? 12 : 0)
                     .frame(minHeight: 44)
-                    .background(PlayscribeColor.ink700, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                    // A tap in the padding or on the magnifier focuses the field (as Add's row does): a gesture on a clear layer
+                    // behind the field, never on the field itself, which would change how the caret is placed.
+                    .background { Color.clear.contentShape(Rectangle()).onTapGesture { searchFocused = true }.accessibilityHidden(true) }
+                    .background(PlayscribeRole.chipFill, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                    .controlBorder(.searchField, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
                     // Book: one page wide (like the chip row), and reported to the fold audit.
                     .frame(width: duo.pose == .book ? duo.division.map { max(0, $0.minX - 24 - 16) } : nil, alignment: .leading)
+                    .frame(maxWidth: LibraryControl.maxWidth, alignment: .leading)
                     .tappableFrame()
                     .padding(.top, 4)
+                    .id("library-search")
+                    // The keyboard covers a field that sits low on the page (Open portrait: below the cards, half hidden at the
+                    // keyboard's top edge, Mac 018b515). Bring it into view once the keyboard is up: to the top where results follow it,
+                    // to the bottom edge where it is the last block (tiles-first portrait).
+                    // One task per (focus, text), and it runs only while the field is focused: a new key cancels the previous run. Once
+                    // the layout for this text is in, the field is aligned to the bottom again (the result count moves it). nil first, so the
+                    // same id scrolls again.
+                    .task(id: "\(searchFocused)|\(binding.wrappedValue)") {
+                        // Tiles-first portrait only: the other poses were signed with the single scroll on focus below.
+                        guard searchFocused, portraitTilesFirst, duo.pose != .tabletop else { return }
+                        try? await Task.sleep(for: .milliseconds(60))
+                        if Task.isCancelled { return }
+                        setAnchor(nil)
+                        try? await Task.sleep(for: .milliseconds(30))
+                        // Never leave the position nil while the field is focused: a cancel after the nil write (the next key) still
+                        // writes the id, and the next run starts again. Blur writes its own state, so it is not overridden here.
+                        if searchFocused { setAnchor("library-search") }
+                    }
+                    .onChange(of: searchFocused) { _, f in
+                        // On blur the position id is dropped, so the flip of the anchor back to .top cannot re-align the page
+                        // to the field and jump it to the top as the keyboard goes.
+                        if !f, scrollID == "library-search" { setAnchor(nil) }
+                        if f { searchWasFocused = true }
+                        // Blur with no text: the deck returns, so the page goes to its top, never left at the old bottom position.
+                        // (With text the matches stay where they are.) Once per blur; a later focus makes it stale, so it checks.
+                        if !f, searchWasFocused, portraitTilesFirst, binding.wrappedValue.trimmingCharacters(in: .whitespaces).isEmpty {
+                            searchWasFocused = false
+                            Task { @MainActor in
+                                try? await Task.sleep(for: .milliseconds(60))
+                                // A drag-down dismissal may still have the finger on the page: no scroll then.
+                                if !searchFocused, !scrollFlags.interacting { setAnchor("library-title") }
+                            }
+                        }
+                        guard f, duo.pose != .tabletop else { return }
+                        Task { @MainActor in
+                            try? await Task.sleep(for: .milliseconds(350))
+                            guard searchFocused else { return }
+                            setAnchor("library-search")
+                        }
+                    }
     }
 
     var body: some View {
+        // QA only (debug builds, launch with `-qaPrintChanges`): says which input made this body run, for the scroll-lag count (bug-056).
+        #if DEBUG
+        let _ = ProcessInfo.processInfo.arguments.contains("-qaPrintChanges") ? Self._printChanges() : ()
+        #endif
+        #if INTERNAL
+        let _ = QABodyCount.library += 1
+        // Only when a test asks (-qaBodyWhy): the walk describes the whole model, feed included, on every run. Left on for every QA
+        // launch it was 61% of the main thread while typing in r054 (Time Profiler, 13ada7a8), the 1.2 to 2.6 s tile delay.
+        let _ = QABodyCount.whyEnabled ? QABodyCount.attribute(model) : ()
+        #endif
         @Bindable var model = model
         let rows = duo.pose == .tabletop && letter != nil
             ? model.shownRows().filter { LetterIndex.matches($0.game.name, letter ?? "") } : model.shownRows()
         let all = model.libraryRows
         ScrollView {
             VStack(alignment: .leading, spacing: 14) {
+                if duo.pose != .tabletop && !heroOnRightPage {
+                    Text("Library").font(PlayscribeFont.largeTitle).accessibilityAddTraits(.isHeader)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .id("library-title")
+                }
                 // Book: the control stays on the left page; it never crosses the fold (Iris, hero-wide-layouts).
                 if closedWide {
                     // Closed landscape: the control and the search field share one row, 44 pt each (Iris, cf6c889).
-                    HStack(spacing: 12) {
-                        LibraryTabPicker().frame(width: 220, height: 44)
-                        if model.libraryTab == .playing && !all.isEmpty { searchField(binding: $model.data.nav.query) }
+                    // At accessibility sizes the switch is two chips (LibraryTabPicker) and takes its own row, search under it.
+                    if LibraryTabPicker.usesChips(typeSize) {
+                        LibraryTabPicker().frame(maxWidth: .infinity, alignment: .leading)
+                        if model.libraryTab == .playing && !all.isEmpty { searchField(binding: $model.libraryQuery) }
+                    } else {
+                        HStack(spacing: 12) {
+                            LibraryTabPicker().frame(width: 220, height: 44)
+                            if model.libraryTab == .playing && !all.isEmpty { searchField(binding: $model.libraryQuery) }
+                        }
                     }
                 } else if !heroOnRightPage {
                     // Tabletop at AX5 (Iris, #455 at 0877dfc and a8859d3): the compact card keeps the lower half to itself, first; the
                     // switch and the chips follow by normal page scroll. Below AX5 it sits under the switch as signed.
                     let cardFirst = duo.pose == .tabletop && typeSize >= .accessibility5
                     if cardFirst && model.libraryTab == .playing { keepCurrentAsk }
+                    // Tabletop: Previous and Next for the stage's card lead the lower half (Iris on #616).
+                    if duo.pose == .tabletop && model.libraryTab == .playing && model.latestDeck.count > 1 {
+                        let deck = model.latestDeck
+                        DeckStepRow(cards: deck, current: model.deckSelection ?? deck.first?.id) { model.deckSelection = $0 }
+                    }
                     LibraryTabPicker()
                         .frame(width: duo.pose == .book ? duo.division.map { max(0, $0.minX - 24 - 16) } : nil, alignment: .leading)
                         .frame(maxWidth: .infinity, alignment: .leading)
+                        .id("library-top")
                     if !cardFirst && model.libraryTab == .playing { keepCurrentAsk }
                 }
                 if model.libraryTab == .upcoming {
                     UpcomingView()
                 } else {
-                if let line = model.feedStatusLine {
-                    HStack {
-                        Text(line).font(PlayscribeFont.footnote).foregroundStyle(.secondary)
-                        if case .failed = model.feedStatus {
-                            Button { Task { await model.retryCheck() } } label: { Text("Retry").frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()) }.font(PlayscribeFont.footnote)
-                        }
-                    }
-                }
-                // Book: these cards stay on the left page; with a hero they sit in the left column below.
-                if !heroOnRightPage && duo.pose != .book && duo.pose != .tabletop && !portraitTilesFirst { topCards(all) }
+                FeedStatusLine()
                 // Tabletop: the search button and A to Z strip come after the tiles (see below), so a first view shows games.
-                if duo.pose != .tabletop, !portraitTilesFirst, !heroOnRightPage, !closedWide, !all.isEmpty { searchField(binding: $model.data.nav.query) }
-                if !heroOnRightPage && duo.pose == .book { topCards(all) }
+                if duo.pose != .tabletop, !portraitTilesFirst, !heroOnRightPage, !closedWide, !all.isEmpty { searchField(binding: $model.libraryQuery) }
                 // D-7: a narrowed list always says so and offers the way back.
                 if model.nav.filter != .all && layout == .list {
                     HStack(spacing: 12) {
                         Label("Showing \(model.nav.filter.label)", systemImage: "line.3.horizontal.decrease")
-                            .font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                            .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
                         Button("Show all") { model.nav.filter = .all }
                             .font(PlayscribeFont.subheadline.weight(.semibold))
                             .frame(minHeight: 44)
@@ -355,7 +469,7 @@ struct LibraryShelf: View {
                 if rows.isEmpty {
                     VStack(spacing: 12) {
                         Text("No \(model.nav.filter == .all ? "" : model.nav.filter.label.lowercased() + " ")games").font(PlayscribeFont.headline)
-                        Button("Show all") { model.nav.filter = .all; model.nav.query = "" }.hitTarget()
+                        Button("Show all") { model.nav.filter = .all; model.libraryQuery = "" }.hitTarget()
                     }
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 40)
@@ -382,16 +496,20 @@ struct LibraryShelf: View {
                     }()
                     HStack(alignment: .top, spacing: 0) {
                         VStack(alignment: .leading, spacing: 14) {
+                            // Book with a hero: the title heads the left page, one page wide, never across the fold.
+                            Text("Library").font(PlayscribeFont.largeTitle).accessibilityAddTraits(.isHeader)
+                                .frame(maxWidth: .infinity, alignment: .leading)
                             LibraryTabPicker()
                             // N-9 above the search field (Iris, #455); the other cards stay below it.
                             keepCurrentAsk
-                            // Controls first, the offer second (Iris, Book compact card).
-                            if !all.isEmpty { searchField(binding: $model.data.nav.query) }
-                            topCards(all)
+                            if !all.isEmpty { searchField(binding: $model.libraryQuery) }
                             if all.count >= 2 && layout == .tiles {
                                 FilterBar().frame(maxWidth: .infinity, alignment: .leading).clipped().contentShape(Rectangle())
                             }
-                            if layout == .tiles { pageGrid(Array(rows.prefix(leftCount)), fit: left) }
+                            if layout == .tiles { pageGrid(Array(rows.prefix(leftCount)), fit: left).namedFrame("libraryGames") }
+                            // One order in every pose (Terry, 19 Nov: PS Plus moved above or below other sections between poses):
+                            // the alerts, catch-up and PS Plus cards always follow the games. Here, under the left page's tiles.
+                            topCards(all)
                         }
                         .frame(width: leftWidth, alignment: .topLeading)
                         VStack(alignment: .leading, spacing: 14) {
@@ -426,16 +544,21 @@ struct LibraryShelf: View {
                                       moreCount: model.latestDeckOverflow)
                         .id(poseKey)
                 } else if duo.pose != .tabletop && !heroOnRightPage && !closedWide {
+                    // Closed, field focused or holding text: the deck stays MOUNTED but takes no room, no taps and no VoiceOver. Removing it
+                    // changed the tree under the focused field and dropped the keyboard after the third key (Mac dd82a22, 3 of 3).
                     let deck = model.latestDeck
-                    if !deck.isEmpty {
-                        LatestUpdatesDeck(cards: deck)
-                            .frame(maxWidth: duo.pose == .book ? max(0, (duo.division?.minX ?? 0) - 24) : .infinity, alignment: .leading)
-                    } else if !model.data.collection.isEmpty {
-                        CaughtUpCard()
-                            .frame(maxWidth: duo.pose == .book ? max(0, (duo.division?.minX ?? 0) - 24) : .infinity, alignment: .leading)
+                    Group {
+                        if !deck.isEmpty {
+                            LatestUpdatesDeck(cards: deck)
+                                .frame(maxWidth: duo.pose == .book ? max(0, (duo.division?.minX ?? 0) - 24) : .infinity, alignment: .leading)
+                        } else if !model.data.collection.isEmpty {
+                            CaughtUpCard()
+                                .frame(maxWidth: duo.pose == .book ? max(0, (duo.division?.minX ?? 0) - 24) : .infinity, alignment: .leading)
+                        }
                     }
+                    .stepsAside(closedSearchCollapse)
                 }
-                if !heroOnRightPage && duo.pose != .tabletop && all.count >= 2 && layout == .tiles {
+                if !heroOnRightPage && duo.pose != .tabletop && !chipsAfterTiles && all.count >= 2 && layout == .tiles {
                     // TT-0: in the book pose the chip row stays on the left page.
                     // TT-0: in the book pose the chip row is exactly the left page wide, clipped, so its
                     // accessibility frame never reaches the fold either.
@@ -450,7 +573,11 @@ struct LibraryShelf: View {
                     .id(poseKey)
                 }
                 // Tabletop: the filter chips sit directly above the tiles, one row; tiles first wins if they would push it off (Iris, v0.5.3).
-                if duo.pose == .tabletop && all.count >= 2 && layout == .tiles { FilterBar().frame(maxWidth: .infinity, alignment: .leading).id(poseKey) }
+                // At accessibility sizes the chips are a column of four full-width pills, which pushed every tile below the fold: there
+                // they follow the tiles, so a full tile row shows first (Iris on #409, r054-tabletop-chips-below-tiles-ax3).
+                if duo.pose == .tabletop && all.count >= 2 && layout == .tiles && !typeSize.isAccessibilitySize {
+                    FilterBar().frame(maxWidth: .infinity, alignment: .leading).id(poseKey)
+                }
                 if layout == .list {
                     ForEach(rows) { row in GameRow(row: row).id("lib-\(row.id)") }
                 } else if heroOnRightPage {
@@ -459,6 +586,7 @@ struct LibraryShelf: View {
                     FlowLayout(spacing: 10) {
                         ForEach(rows) { row in GameTile(row: row, size: tileSize).id("lib-\(row.id)") }
                     }
+                    .namedFrame("libraryGames")
                 } else {
                     LazyVGrid(columns: columns, alignment: .leading, spacing: 10) {
                         ForEach(cells(rows), id: \.id) { cell in
@@ -471,8 +599,22 @@ struct LibraryShelf: View {
                     }
                     // A pose or fold change rebuilds the grid: lazily cached cells kept their old frames
                     // (0.2.0 gate: Book showed the open-pose grid across the fold).
+                    // The search text is not part of the identity (r054, d194c511): rebuilding every tile on every key made a typed name
+                    // take 3 to 6 s to show its tile. The blank grid that rebuild covered (Mac 677e7eb run 3) was the page anchored to a
+                    // tile the search had just filtered out; the anchor is now dropped when that happens (see onChange of the query).
                     .id(poseKey)
+                    .namedFrame("libraryGames")
                 }
+                // Closed at accessibility sizes takes the Tabletop rule (B-12): in Closed landscape the four pills above the tiles
+                // filled the first screen and no game showed until a scroll (bug-closed-landscape-ax5-no-games, cloud run db9f478),
+                // and in Closed portrait at AX5 the deck and the pills did the same (Quinn on #635). The tiles, then the chips; no
+                // chip is dropped, and nothing else moves.
+                if chipsAfterTiles && all.count >= 2 && layout == .tiles {
+                    FilterBar().frame(maxWidth: .infinity, alignment: .leading).id(poseKey)
+                }
+                // One order in every pose (Terry, 19 Nov): the alerts, catch-up and PS Plus cards always follow the tiles,
+                // as Closed, Open portrait and Tabletop already had them (Iris, v0.5.3). Open landscape and Book (no hero) here.
+                if !portraitTilesFirst && duo.pose != .tabletop && !heroOnRightPage { topCards(all) }
                 // Open and Closed portrait (Iris, v0.5.3): the PS Plus cards and search come after the tiles.
                 if portraitTilesFirst && closedWide {
                     // Closed landscape (Iris, v0.5.3): switch and search, chips, tiles, then the deck, the PS Plus card.
@@ -483,8 +625,17 @@ struct LibraryShelf: View {
                     }
                     topCards(all)
                 } else if portraitTilesFirst {
-                    topCards(all)
-                    if !all.isEmpty { searchField(binding: $model.data.nav.query) }
+                    // While the field is focused or has text, News and the alerts / PS Plus cards step aside (not in the tree, so
+                    // hidden from VoiceOver too, and no animation to reduce): deck, chips, tiles, then the field, so the matching
+                    // tiles sit right above it and the keyboard. They return only when the field is empty AND unfocused, so
+                    // dismissing the keyboard with text in it keeps the matches on screen (Quinn and Iris, 9d7cd15 stills).
+                    // Mounted but taking no room (not removed): the tree under the focused field must not change while typing.
+                    // News is its own tab now (#443), so only the cards step aside.
+                    VStack(alignment: .leading, spacing: 14) {
+                        topCards(all)
+                    }
+                    .stepsAside(searchFocused || !model.libraryQuery.trimmingCharacters(in: .whitespaces).isEmpty)
+                    if !all.isEmpty { searchField(binding: $model.libraryQuery) }
                 }
                 // Tabletop lower half (Iris, v0.5.3): switch, filter chips, tiles, then the alerts card, PS Plus, search and
                 // A to Z and the page edge. Order only; nothing else moves in any pose.
@@ -501,10 +652,22 @@ struct LibraryShelf: View {
             .padding(.vertical, 12)
             .padding(.trailing, railWidth)
         }
-        .scrollPosition(id: Binding(get: { model.nav.anchors["library"] }, set: { model.nav.anchors["library"] = $0 }), anchor: .top)
+        // Terry, 8 Nov: no way to put the keyboard away. Scrolling dismisses it, and so does a tap outside the field.
+        .dismissesKeyboardOnOutsideTap()
+        .onScrollPhaseChange { _, phase in scrollFlags.interacting = (phase == .interacting) }
+        // Focused search: the field must always show above the keyboard. Where it is the last block (tiles-first portrait) it is
+        // aligned to the bottom of the visible area, with as many tiles above it as fit; elsewhere it sits above the results, top.
+        .scrollPosition(id: Binding(get: { model.libraryAnchor }, set: { model.libraryAnchor = $0 }),
+                        anchor: searchFocused && portraitTilesFirst ? .bottom : .top)
+        // A page anchored to a tile the search just filtered out has no position to hold, and the lazy grid was left blank
+        // (Mac 677e7eb run 3): drop that anchor, once, when it goes. A tile still shown keeps it.
+        .onChange(of: model.libraryQuery) {
+            guard let a = model.libraryAnchor, a.hasPrefix("lib-") else { return }
+            if !model.shownRows().contains(where: { "lib-\($0.id)" == a }) { model.libraryAnchor = nil }
+        }
         // Tabletop only (Quinn, a8859d3): scrolled, the lower half's top edge cut a headline through its glyphs. The same edge as
         // the "What is sent" sheet. Not in other poses: a soft-edge mask there hid the Open portrait title (see below).
-        .modifier(ScrolledTopEdge(active: duo.pose == .tabletop, ink: Color.ink0))
+        .modifier(ScrolledTopEdge(active: duo.pose == .tabletop, ink: PlayscribeRole.bg))
         // The pill and toasts sit at the bottom edge; the page ends above them (0.5.1 spec 2, Iris). Shared by every page.
         // No soft-edge mask: it made the Open portrait large "Library" title vanish (354d15c, 9914a80), see MessageClearance.
         .clearsMessages()
@@ -516,6 +679,15 @@ struct LibraryShelf: View {
                     if let r = model.qaRoute {
                         Text("qa-route-\(r)").font(.system(size: 1)).opacity(0.01).accessibilityIdentifier("qa-route-\(r)")
                     }
+                    #if INTERNAL
+                    if AppModel.isQALaunch {
+                        // bug-library-redraw-on-feed-refresh: how many times this body has run, read by LibraryFeedRedrawTests.
+                        Text("qa-library-body: \(QABodyCount.library)").font(.system(size: 1)).opacity(0.01)
+                            .accessibilityIdentifier("qaLibraryBody")
+                        Text("qa-library-why: \(QABodyCount.whyLine)").font(.system(size: 1)).opacity(0.01)
+                            .accessibilityIdentifier("qaLibraryWhy")
+                    }
+                    #endif
                 }
                 .allowsHitTesting(false)
             }
@@ -578,19 +750,21 @@ struct FilterBar: View {
     @Environment(AppModel.self) private var model
     @Environment(\.dynamicTypeSize) private var typeSize
 
-    private func chip(_ f: LibraryFilter, rows: [AppModel.LibraryRow]) -> some View {
+    /// `oneLine`: the 2 by 2 grid's pill, kept on one unbroken line so the grid is offered only where every label fits whole.
+    private func chip(_ f: LibraryFilter, rows: [AppModel.LibraryRow], oneLine: Bool = false) -> some View {
         let n = f.status.map { s in rows.filter { $0.status == s }.count } ?? rows.count
         let on = model.nav.filter == f
+        let wraps = typeSize.isAccessibilitySize && !oneLine
         return Button { model.nav.filter = f } label: {
             Text("\(f.label) \(n)")
                 .font(PlayscribeFont.subheadline.weight(on ? .semibold : .regular))
-                // Never cut mid-glyph: one unbroken line in the scrolling row, two at accessibility sizes.
-                .lineLimit(typeSize.isAccessibilitySize ? 2 : 1)
-                .fixedSize(horizontal: !typeSize.isAccessibilitySize, vertical: true)
+                // Never cut mid-glyph: one unbroken line in the scrolling row and the 2 by 2 grid, two in the one-column list.
+                .lineLimit(wraps ? 2 : 1)
+                .fixedSize(horizontal: !wraps, vertical: true)
                 .padding(.horizontal, 10)
                 .padding(.vertical, typeSize.isAccessibilitySize ? 6 : 0)
                 .frame(maxWidth: typeSize.isAccessibilitySize ? .infinity : nil, minHeight: 44)
-                .background(on ? PlayscribeColor.accent.opacity(0.22) : Color.ink3, in: Capsule())
+                .modifier(SelectableChipGround(on: on))
         }
         .buttonStyle(.plain)
         .accessibilityAddTraits(on ? .isSelected : [])
@@ -598,12 +772,30 @@ struct FilterBar: View {
     }
 
     var body: some View {
+        // Its frame is reported (audit builds only) so the harness can hold the Library's block order to B-12.
+        bar.namedFrame("libraryChips")
+    }
+
+    @ViewBuilder private var bar: some View {
         let rows = model.libraryRows
         if typeSize.isAccessibilitySize {
-            // Accessibility sizes: one chip per row at the full column width, so "Watching 1" stays on one line
-            // inside its pill and tap frame (Closed AX3, 382 pt); a row grows if it must wrap.
-            LazyVGrid(columns: [GridItem(.flexible())], spacing: 8) {
-                ForEach(LibraryFilter.allCases) { f in chip(f, rows: rows) }
+            // Accessibility sizes (r060-filter-pills-grid-ax5, Iris): two pills a row, so all four show in half the height, each
+            // label whole on one line. Where two would not fit side by side (a narrow column at AX5), one chip per row at the
+            // full width, as before: "Watching 1" stays inside its pill and tap frame (Closed AX3, 382 pt) and a row grows if it
+            // must wrap. Never a horizontal scroller here: it would hide a choice.
+            let filters = LibraryFilter.allCases
+            ViewThatFits(in: .horizontal) {
+                Grid(horizontalSpacing: 8, verticalSpacing: 8) {
+                    ForEach(Array(stride(from: 0, to: filters.count, by: 2)), id: \.self) { i in
+                        GridRow {
+                            chip(filters[i], rows: rows, oneLine: true)
+                            if i + 1 < filters.count { chip(filters[i + 1], rows: rows, oneLine: true) }
+                        }
+                    }
+                }
+                LazyVGrid(columns: [GridItem(.flexible())], spacing: 8) {
+                    ForEach(filters) { f in chip(f, rows: rows) }
+                }
             }
         } else {
             ScrollView(.horizontal, showsIndicators: false) {
@@ -645,7 +837,7 @@ struct ContinueRow: View {
         Button { model.openGame(game.id, chapter: .updates, releaseID: release.id) } label: {
             VStack(alignment: .leading, spacing: 10) {
                 HeroFrame(asset: game.keyArtAsset, game: game)
-                ContinueText(game: game, release: release, fresh: fresh)
+                ContinueText(game: game, release: release, fresh: fresh, freshText: model.freshLabel(release) ?? FreshCopy.newUpdate)
             }
             // Iris: the caption's last line sat 2 pt from the hero frame's bottom edge.
             .padding(.bottom, 8)
@@ -655,7 +847,7 @@ struct ContinueRow: View {
         .frame(minHeight: 44)
         .tappableFrame()
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel(fresh ? "New update, \(release.displayName), \(game.name)" : "Continue, \(release.displayName), \(game.name)")
+        .accessibilityLabel(fresh ? "\(model.freshLabel(release) ?? FreshCopy.newUpdate), \(release.displayName), \(game.name)" : "Continue, \(release.displayName), \(game.name)")
         .accessibilityAddTraits(.isButton)
     }
 }
@@ -664,27 +856,30 @@ struct ContinueText: View {
     var game: CatalogGame
     var release: Release
     var fresh: Bool
+    /// "New update", or "Day-one patch" (r060-dayone-patch-alert-app).
+    var freshText: String = FreshCopy.newUpdate
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
             HStack(spacing: 8) {
-                Text(fresh ? "NEW UPDATE" : "CONTINUE")
+                Text(fresh ? freshText.uppercased() : "CONTINUE")
                     .font(PlayscribeFont.caption)
                     .tracking(12 * 0.08)
-                    .foregroundStyle(PlayscribeColor.accent)
-                if fresh, let v = release.versionChip {
-                    Text(v)
+                    .foregroundStyle(PlayscribeRole.action)
+                // The line below names the update ("Patch 1.2 is here."), so no chip repeats its number.
+                if fresh, let v = release.versionChip(beside: release.displayName) {
+                    Text(v.keepingVersionsTogether)
                         .font(PlayscribeFont.caption)
                         .monospacedDigit()
-                        .foregroundStyle(PlayscribeColor.accent)
+                        .foregroundStyle(PlayscribeRole.action)
                         .padding(.horizontal, 8)
                         .frame(height: 19)
-                        .overlay(Capsule().strokeBorder(PlayscribeColor.accent.opacity(0.7), lineWidth: 1))
+                        .overlay(Capsule().strokeBorder(PlayscribeRole.action.opacity(0.7), lineWidth: 1))
                 }
             }
-            Text(game.name).font(PlayscribeFont.title2).foregroundStyle(PlayscribeColor.textPrimary)
+            Text(game.name.gluingTrailingNumeral).font(PlayscribeFont.title2).foregroundStyle(PlayscribeRole.textPrimary)
                 .lineLimit(2).fixedSize(horizontal: false, vertical: true)
             Text(fresh ? "\(release.displayName) is here. Catch up, then jump back in." : release.displayName)
-                .font(PlayscribeFont.body).foregroundStyle(PlayscribeColor.textSecondary)
+                .font(PlayscribeFont.body).foregroundStyle(PlayscribeRole.textSecondary)
         }
         .padding(.horizontal, 4)
     }
@@ -696,6 +891,20 @@ extension Release {
         guard let token = displayName.split(separator: " ").last, token.first?.isNumber == true else { return nil }
         return "v" + token
     }
+
+    /// The version chip beside a title: none when the title already names that version, whatever its word ("Update 1.2",
+    /// "Patch 1.0302256", "Hotfix 2.1"): the chip said it twice (Iris, taste notes on #610 and #622). A title that doesn't
+    /// carry the number ("Respec with Draught of Mind Rebirth…") keeps the chip.
+    func versionChip(beside title: String) -> String? {
+        guard let v = versionChip else { return nil }
+        let number = v.dropFirst()
+        let words = title.replacingOccurrences(of: "\u{2060}", with: "").split(whereSeparator: { $0 == " " || $0 == "\u{00A0}" })
+        // Outer punctuation only ("1.2." at a sentence end, "(1.2)"); the dots inside the number stay.
+        return words.contains { $0.trimmingCharacters(in: .punctuationCharacters) == number } ? nil : v
+    }
+
+    /// The deck's chip, beside the card's own headline.
+    var deckVersionChip: String? { versionChip(beside: ps5Headline ?? displayName) }
 }
 
 /// The framed key art: continuous 14 pt top corners, a bottom edge that dips 16 pt to the centre
@@ -753,10 +962,10 @@ struct GameRow: View {
                 layout {
                     CoverView(game: row.game, cornerRadius: 6).frame(width: 44)
                     VStack(alignment: .leading, spacing: 4) {
-                        Text(row.game.name).font(PlayscribeFont.headline).lineLimit(stacked ? nil : 2).multilineTextAlignment(.leading)
+                        Text(row.game.name.gluingTrailingNumeral).font(PlayscribeFont.headline).lineLimit(stacked ? nil : 2).multilineTextAlignment(.leading)
                         HStack(spacing: 6) {
                             StatusPill(status: row.status)
-                            Text(model.shelfLine(row)).font(PlayscribeFont.footnote).foregroundStyle(.secondary)
+                            Text(model.shelfLine(row)).font(PlayscribeFont.footnote).foregroundStyle(PlayscribeRole.textSecondary)
                         }
                     }
                     if !stacked { Spacer(minLength: 0) }
@@ -767,8 +976,9 @@ struct GameRow: View {
             }
             .buttonStyle(.plain)
             .tappableFrame()
+            .tourAnchor(.openGame)
             .gameQuickActions(row.game)
-            .background((model.highlight == row.id || model.highlightSet.contains(row.id)) ? PlayscribeColor.accent.opacity(0.15) : .clear)
+            .background((model.highlight == row.id || model.highlightSet.contains(row.id)) ? PlayscribeRole.action.opacity(0.15) : .clear)
             .squeezePop(id: row.id, isNew: model.highlightSet.contains(row.id))
             GameMenuButton(gameID: row.id)
         }
@@ -792,8 +1002,8 @@ struct UnreadBadge: View {
             .monospacedDigit()
             .padding(.horizontal, 6)
             .frame(minWidth: 20, minHeight: 20)
-            .background(PlayscribeColor.accent, in: Capsule())
-            .foregroundStyle(PlayscribeColor.onAccent)
+            .background(PlayscribeRole.action, in: Capsule())
+            .foregroundStyle(PlayscribeRole.onAction)
             .accessibilityLabel("\(count) unread")
     }
 }
@@ -838,12 +1048,16 @@ struct GameTile: View {
     }
 
     var body: some View {
+        tile.tourAnchor(.openGame)
+    }
+
+    private var tile: some View {
         Button { model.openGame(row.id) } label: {
             // Height from the width (3:4), so the grid's row height is the tile's (J-5). A tile
             // sized only by its overlays measured ~50 pt in a flow layout and rows overlapped.
             VStack(alignment: .leading, spacing: 4) {
                 tileFrame(TileCover(game: row.game))
-                    .background((model.highlight == row.id || model.highlightSet.contains(row.id)) ? PlayscribeColor.accent.opacity(0.3) : .clear,
+                    .background((model.highlight == row.id || model.highlightSet.contains(row.id)) ? PlayscribeRole.action.opacity(0.3) : .clear,
                                 in: RoundedRectangle(cornerRadius: 12, style: .continuous))
                 // Nothing sits on the art: art lettering can be anywhere (a pill hid the MINECRAFT logo, Quinn 38a4d59). The status
                 // mark sits above the date or status phrase, in a slot of one fixed height so the dates in a row share a baseline
@@ -883,7 +1097,7 @@ struct TileCaption: View {
 
     var body: some View {
         let state = model.tileDate(row)
-        let ink = state.kind == .unread ? PlayscribeColor.accent : PlayscribeColor.textSecondary
+        let ink = state.kind == .unread ? PlayscribeRole.action : PlayscribeRole.textSecondary
         VStack(alignment: .leading, spacing: 1) {
             HStack(spacing: 4) {
                 Image(systemName: StatusCircle.symbol(row.status)).font(.system(size: glyph, weight: .bold))
@@ -891,7 +1105,7 @@ struct TileCaption: View {
                 // The spark and the dot are the non-colour cues, so at AX they scale with the mark (the spark to about the bookmark's
                 // height), on the same centre line; at standard sizes they stay 9 and 6 pt.
                 case .unread: SparkShape().fill(ink).frame(width: typeSize.isAccessibilitySize ? glyph * 1.2 : 9, height: typeSize.isAccessibilitySize ? glyph * 1.2 : 9)
-                case .recent: Circle().fill(PlayscribeColor.accent).frame(width: typeSize.isAccessibilitySize ? glyph * 0.6 : 6, height: typeSize.isAccessibilitySize ? glyph * 0.6 : 6)
+                case .recent: Circle().fill(PlayscribeRole.action).frame(width: typeSize.isAccessibilitySize ? glyph * 0.6 : 6, height: typeSize.isAccessibilitySize ? glyph * 0.6 : 6)
                 default: EmptyView()
                 }
             }
@@ -920,20 +1134,20 @@ struct TileCaption: View {
 struct TileCover: View {
     var game: CatalogGame
     var body: some View {
-        Color.ink1
+        PlayscribeRole.surface
             .overlay {
                 if game.coverAsset != nil || game.coverURL != nil {
-                    CoverView(game: game, cornerRadius: 0)
+                    CoverView(game: game, cornerRadius: 0, maxPixel: 480)
                 } else if let art = game.keyArtAsset {
                     Image(art).resizable().scaledToFill()
                         .overlay(alignment: .top) {
-                            Text(game.name).font(PlayscribeFont.title3)
+                            Text(game.name.gluingTrailingNumeral).font(PlayscribeFont.title3)
                                 .multilineTextAlignment(.center).lineLimit(3).padding(8)
                                 .frame(maxWidth: .infinity)
                                 .background(LinearGradient(colors: [.black.opacity(0.7), .clear], startPoint: .top, endPoint: .bottom))
                         }
                 } else {
-                    CoverView(game: game, cornerRadius: 0)
+                    CoverView(game: game, cornerRadius: 0, maxPixel: 480)
                 }
             }
             .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
@@ -951,7 +1165,7 @@ struct StatusCircle: View {
         if status == .wishlist {
             Image(systemName: Self.symbol(status))
                 .font(.system(size: 12, weight: .semibold))
-                .foregroundStyle(Color.ink0)
+                .foregroundStyle(PlayscribeColor.ink950)
                 .offset(y: 0.5)
                 .frame(width: 20, height: 20)
                 .background(Circle().fill(Color.wishlist))
@@ -960,7 +1174,8 @@ struct StatusCircle: View {
                 .font(.system(size: 11, weight: .bold))
                 .foregroundStyle(.white)
                 .frame(width: 20, height: 20)
-                .adaptiveGlass(in: Circle())
+                // A label on art, not a control: ink, never glass (Iris, over-art-materials).
+                .artLabel(in: Circle())
         }
             // 20 pt so titles on art stay readable; the whole tile remains the 44 pt+ tap target.
     }
@@ -984,11 +1199,23 @@ extension AppModel {
         return (.none, "TBA")
     }
 
-    /// "12 Oct" this year, "Jul 2025" before.
+    /// "12 Oct" this year, "Jul 2025" before, joined by a no-break space so a caption never splits a date across lines at large
+    /// sizes ("29 / Oct", "Mar / 2027": r060-tile-dates-ax5). It wraps whole, before any word around it.
     static func tileDay(_ d: Date) -> String {
-        Date.sameUTCYear(d, .now)
+        let day = Date.sameUTCYear(d, .now)
             ? d.dayMonth
             : d.formatted(Date.FormatStyle(locale: Locale(identifier: "en_GB"), timeZone: .gmt).month(.abbreviated).year())
+        return day.replacingOccurrences(of: " ", with: "\u{00A0}")
+    }
+
+    /// The caption mark in words, so colour is never the only cue (Iris, #597): the amber spark is "new update", the small
+    /// amber dot (newest update read, under 7 days old) is "updated this week, read", and a plain mark is "last updated".
+    static func tileUpdateWords(_ kind: TileDateKind, _ day: String) -> String {
+        switch kind {
+        case .unread: "new update \(day)"
+        case .recent: "updated this week, read, \(day)"
+        default: "last updated \(day)"
+        }
     }
 
     /// "Elden Ring, last updated Jul 2025, owned".
@@ -996,8 +1223,7 @@ extension AppModel {
         let state = tileDate(row)
         let when: String
         switch state.kind {
-        case .unread: when = "new update \(state.text)"
-        case .recent, .older: when = "last updated \(state.text)"
+        case .unread, .recent, .older: when = Self.tileUpdateWords(state.kind, state.text)
         case .notOnPS5: return "\(row.game.name), not on PS5, \(row.status.label.lowercased())"
         case .playsOnPS5: return "\(row.game.name), plays on PS5 as the PS4 version, \(row.status.label.lowercased())"
         case .none:
@@ -1063,7 +1289,7 @@ struct SquareCover: View {
 /// notifications were denied); "Not now" or a swipe rests the card for a week.
 struct NotificationInviteCard: View {
     @Environment(AppModel.self) private var model
-    var gameName: String
+    var gameName: String?
     @Environment(\.dynamicTypeSize) private var typeSize
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
@@ -1073,26 +1299,39 @@ struct NotificationInviteCard: View {
 
     private var denied: Bool { NotificationService.shared.authorization == .denied }
 
+    /// The card's body line, shown under the heading and read by VoiceOver as part of it.
+    private var bodyText: String {
+        denied
+            ? "Turn notifications on in Settings and \(Brand.name) will tell you when " + (gameName.map { "\($0) and your other games" } ?? "your games") + " update on PS5."
+            : "Get a note the moment any game in your library gets an update on PS5."
+    }
+
     var body: some View {
         HStack(alignment: .top, spacing: 12) {
-            Image(systemName: "bell.badge").font(PlayscribeFont.title2).foregroundStyle(PlayscribeColor.accent)
+            Image(systemName: "bell.badge").font(PlayscribeFont.title2).foregroundStyle(PlayscribeRole.action)
             VStack(alignment: .leading, spacing: 8) {
-                Text(denied ? "Alerts are off" : "Be first to know when a patch drops").font(PlayscribeFont.headline)
-                    .fixedSize(horizontal: false, vertical: true)
-                    // The body is dropped from view at AX sizes, never from VoiceOver (Iris).
-                    .accessibilityLabel(denied ? "Alerts are off" : "Be first to know when a patch drops. Get a note the moment any game in your library gets an update on PS5.")
+                // r060-alerts-headline-cap: at most 4 lines at accessibility sizes, whole words then "…" (the label below says it all).
+                Group {
+                    let headline = denied ? "Alerts are off" : "Be first to know when a patch drops"
+                    if typeSize.isAccessibilitySize { WholeWordText(text: headline, font: PlayscribeFont.headline, lines: 4, color: nil) }
+                    else { Text(headline).font(PlayscribeFont.headline).fixedSize(horizontal: false, vertical: true) }
+                }
+                    // The body is dropped from view at AX sizes, never from VoiceOver (Iris): the heading reads it, and the body
+                    // text below is hidden from VoiceOver so it is not read twice. On its own, under the card's swipe and "Not now"
+                    // action, the system audit took the 18 pt line for a control too small to hit (#588, Mac 75e96041 Tabletop).
+                    .accessibilityLabel((denied ? "Alerts are off. " : "Be first to know when a patch drops. ") + bodyText)
                     .accessibilityAddTraits(.isHeader)
                 // At the largest sizes the ask card keeps its title and buttons only; denied keeps one short line.
                 if !typeSize.isAccessibilitySize {
-                    Text(denied
-                         ? "Turn notifications on in Settings and \(Brand.name) will tell you when \(gameName) and your other games update on PS5."
-                         : "Get a note the moment any game in your library gets an update on PS5.")
-                        .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textSecondary)
+                    Text(bodyText)
+                        .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
                         .fixedSize(horizontal: false, vertical: true)
+                        .accessibilityHidden(true)
                 } else if denied {
                     Text("Turn notifications on in Settings.")
-                        .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textSecondary)
+                        .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
                         .fixedSize(horizontal: false, vertical: true)
+                        .accessibilityHidden(true)
                 }
                 // Accessibility sizes stack the buttons outright: ViewThatFits let a label squeeze to "Turn on al…" (AX3, Closed).
                 if typeSize.isAccessibilitySize {
@@ -1107,10 +1346,9 @@ struct NotificationInviteCard: View {
             Spacer(minLength: 0)
         }
         .padding(16)
-        .background(Color.ink2, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
-        .gesture(DragGesture(minimumDistance: 30).onEnded { v in
-            if abs(v.translation.width) > 60 { snooze() }
-        })
+        .background(PlayscribeRole.card, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+        // A sideways swipe dismisses it; a vertical drag that starts on the card scrolls the page (SideSwipe, #635).
+        .gesture(SideSwipe { snooze() })
         .accessibilityAction(named: "Not now") { snooze() }
         .transition(reduceMotion ? .opacity : .opacity.combined(with: .move(edge: .leading)))
     }
@@ -1128,13 +1366,14 @@ struct NotificationInviteCard: View {
             Text(denied ? "Open Settings" : "Turn on alerts").frame(maxWidth: typeSize.isAccessibilitySize ? .infinity : nil)
         }
         .buttonStyle(.borderedProminent).buttonBorderShape(typeSize.isAccessibilitySize ? .roundedRectangle(radius: 14) : .capsule)
-        .foregroundStyle(PlayscribeColor.onAccent)
+        .foregroundStyle(PlayscribeRole.onAction)
         .hitTarget()
         .tappableFrame()
         Button { snooze() } label: {
             Text("Not now").frame(maxWidth: typeSize.isAccessibilitySize ? .infinity : nil)
         }
             .buttonStyle(.bordered).buttonBorderShape(typeSize.isAccessibilitySize ? .roundedRectangle(radius: 14) : .capsule)
+            .controlBorder(.outlinedButton, in: RoundedRectangle(cornerRadius: typeSize.isAccessibilitySize ? 14 : 999, style: .continuous))
             .hitTarget()
             .tappableFrame()
     }
@@ -1163,9 +1402,9 @@ struct ContinueTile: View {
                 }
                 .overlay(alignment: .bottomLeading) {
                     VStack(alignment: .leading, spacing: 2) {
-                        Text(fresh ? "NEW UPDATE" : "CONTINUE").font(PlayscribeFont.caption2).tracking(1).foregroundStyle(PlayscribeColor.accent)
-                        Text(game.name).font(PlayscribeFont.subheadline.weight(.semibold)).lineLimit(2)
-                        Text(release.displayName).font(PlayscribeFont.caption).foregroundStyle(.secondary)
+                        Text(fresh ? (model.freshLabel(release) ?? FreshCopy.newUpdate).uppercased() : "CONTINUE").font(PlayscribeFont.caption2).tracking(1).foregroundStyle(PlayscribeRole.action)
+                        Text(game.name.gluingTrailingNumeral).font(PlayscribeFont.subheadline.weight(.semibold)).lineLimit(2)
+                        Text(release.displayName).font(PlayscribeFont.caption).foregroundStyle(PlayscribeRole.textSecondary)
                     }
                     .padding(10)
                 }
@@ -1179,7 +1418,7 @@ struct ContinueTile: View {
         .clipped()
         .accessibilityElement(children: .ignore)
         .accessibilityIdentifier("continueHero")
-        .accessibilityLabel(fresh ? "New update, \(release.displayName), \(game.name)" : "Continue, \(release.displayName), \(game.name)")
+        .accessibilityLabel(fresh ? "\(model.freshLabel(release) ?? FreshCopy.newUpdate), \(release.displayName), \(game.name)" : "Continue, \(release.displayName), \(game.name)")
         .accessibilityAddTraits(.isButton)
         .tappableFrame()
     }
@@ -1230,7 +1469,7 @@ private struct SqueezePop: ViewModifier {
             .overlay {
                 if !reduceMotion {
                     RoundedRectangle(cornerRadius: 12, style: .continuous)
-                        .strokeBorder(PlayscribeColor.accent, lineWidth: 3)
+                        .strokeBorder(PlayscribeRole.action, lineWidth: 3)
                         .opacity(ring ? 1 : 0)
                         .allowsHitTesting(false)
                         .accessibilityHidden(true)
@@ -1263,6 +1502,23 @@ extension View {
     func squeezePop(id: String, isNew: Bool) -> some View { modifier(SqueezePop(id: id, isNew: isNew)) }
 }
 
+
+extension View {
+    /// Out of the layout but still in the tree: zero height, no taps, hidden from VoiceOver, and the stack spacing it would add is
+    /// taken back. Used where removing a view would change the tree under the focused search field and drop the keyboard.
+    func stepsAside(_ aside: Bool) -> some View {
+        // Aside, the children are dropped from the accessibility tree outright and the wrapper is hidden too: hiding alone left two deck
+        // cards in the tree (Mac 7561ac3, SearchAsideTests). Shown, .contain only groups the children and exposes nothing new.
+        self.accessibilityElement(children: aside ? .ignore : .contain)
+            .frame(height: aside ? 0 : nil, alignment: .top)
+            .clipped()
+            .opacity(aside ? 0 : 1)
+            .allowsHitTesting(!aside)
+            .accessibilityHidden(aside)
+            .padding(.bottom, aside ? -14 : 0)
+    }
+}
+
 /// A scroll view's top edge once it is scrolled: a hairline, an opaque band one text line tall, then a fade over one line, so a
 /// line the edge cuts is wholly covered and the next reads through the fade. Each part capped at 15% of the visible height, so
 /// at least four lines read clear at AX5. Same treatment as the "What is sent" sheet (N-9).
@@ -1288,7 +1544,7 @@ struct ScrolledTopEdge: ViewModifier {
                 .overlay(alignment: .top) {
                     if scrolled {
                         VStack(spacing: 0) {
-                            Rectangle().fill(PlayscribeColor.textSecondary.opacity(0.25)).frame(height: 0.5).background(ink)
+                            Rectangle().fill(PlayscribeRole.textSecondary.opacity(0.25)).frame(height: 0.5).background(ink)
                             ink.frame(height: heights.band)
                             LinearGradient(stops: [.init(color: ink, location: 0), .init(color: ink.opacity(0.85), location: 0.35),
                                                    .init(color: ink.opacity(0), location: 1)], startPoint: .top, endPoint: .bottom)
@@ -1301,5 +1557,66 @@ struct ScrolledTopEdge: ViewModifier {
         } else {
             content
         }
+    }
+}
+
+/// The Library's quiet status line (E-1, E-2), in a view of its own so only it reads `feedStatus`: every refresh moves that
+/// through Refreshing and back, which re-ran the whole shelf (bug-library-redraw-on-feed-refresh: 8 runs in 20 swipes).
+private struct FeedStatusLine: View {
+    @Environment(AppModel.self) private var model
+
+    var body: some View {
+        if let line = model.feedStatusLine {
+            HStack {
+                Text(line).font(PlayscribeFont.footnote).foregroundStyle(PlayscribeRole.textSecondary)
+                if case .failed = model.feedStatus {
+                    Button { Task { await model.retryCheck() } } label: { Text("Retry").frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()) }.font(PlayscribeFont.footnote)
+                }
+            }
+        }
+    }
+}
+
+#if INTERNAL
+/// QA only: body runs of the Library shelf since launch (bug-library-redraw-on-feed-refresh). Never observed, so counting
+/// never causes a run.
+@MainActor enum QABodyCount {
+    static var library = 0
+    /// The second redraw attempt measures first (Mac at 0105a92a: 55 runs with refreshes, 13 from scrolling alone in Closed):
+    /// which AppModel fields changed between one body run and the next, counted by name. Read through Mirror, which bypasses
+    /// Observation, so measuring adds no dependency. "(no model change)" is a run the model did not cause (environment, state).
+    static var why: [String: Int] = [:]
+    static let whyEnabled = AppModel.isQALaunch && UserDefaults.standard.bool(forKey: "qaBodyWhy")
+    private static var last: [String: Int] = [:]
+    static func attribute(_ model: AppModel) {
+        var now: [String: Int] = [:]
+        func walk(_ value: Any, _ prefix: String, depth: Int) {
+            for c in Mirror(reflecting: value).children {
+                guard let raw = c.label, !raw.contains("observationRegistrar") else { continue }
+                let name = prefix + raw.trimmingCharacters(in: CharacterSet(charactersIn: "_$"))
+                if depth > 0, name.hasSuffix("data") || name.hasSuffix("nav") { walk(c.value, name + ".", depth: depth - 1) }
+                now[name] = String(describing: c.value).hashValue
+            }
+        }
+        walk(model, "", depth: 2)
+        if !last.isEmpty {
+            var changed = now.filter { last[$0.key] != nil && last[$0.key] != $0.value }.map(\.key)
+            if changed.isEmpty { changed = ["(no model change)"] }
+            for k in changed { why[k, default: 0] += 1 }
+        }
+        last = now
+    }
+    static var whyLine: String { why.sorted { $0.value > $1.value }.map { "\($0.key)=\($0.value)" }.joined(separator: " ") }
+}
+#endif
+
+/// The ground of a single-select chip, shared by the Library's filter chips and its Playing/Upcoming chips: the fill, plus a
+/// 1.5 pt action-colour outline on the selected one, so selection never rests on a 1.14:1 fill difference (Iris, #645).
+struct SelectableChipGround: ViewModifier {
+    var on: Bool
+    func body(content: Content) -> some View {
+        content
+            .background(on ? PlayscribeRole.selectedChipFill : PlayscribeRole.chipFill, in: Capsule())
+            .overlay { if on { Capsule().strokeBorder(PlayscribeRole.action, lineWidth: 1.5) } }
     }
 }

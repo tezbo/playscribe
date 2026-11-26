@@ -25,6 +25,19 @@ export const studioKindOf = (title: string): ReleaseKind | null => {
   return null
 }
 
+/**
+ * A Steam post whose own "BUILD NUMBER: 12.1.247768" or "CHANGELOG - BUILD: 12.1.247768" line repeats the number its title is made of
+ * names a PC build, not an update a PS5 player knows by that number (bug-056). Returns that number, else null. Only an exact match
+ * with the title's version counts: "Version:" lines and differing build lines leave the studio's title alone.
+ */
+export const pcBuildTitle = (title: string, body: string): boolean => {
+  const v = (title.match(VERSION) ?? title.match(BARE_VERSION))?.[1]
+  if (!v || !/^\d+(?:\.\d+){2,3}$/.test(v)) return false
+  const re = /\bbuild(?:\s*(?:number|no\.?|id))?\s*[:#]\s*v?(\d+(?:\.\d+){2,3})\b/gi
+  for (const m of body.matchAll(re)) if (m[1] === v) return true
+  return false
+}
+
 const LABEL: Record<ReleaseKind, string> = { dayOne: 'Day one patch', hotfix: 'Hotfix', patch: 'Patch', major: 'Update', silent: 'Update' }
 
 export const nameRelease = (title: string, publishedAt: string): Naming => {
@@ -100,6 +113,9 @@ export const ps5LiveStated = (text: string) => {
   if (ps5StatusOf(t) !== 'live') return false
   // Release notes that list the PS5 patch size ("PATCH SIZES: PS5: 12.40 GB") are about a patch that exists on PS5.
   if (/(PS5|PlayStation\s*®?\s*5)\s*®?\s*[:–-]\s*~?\d+(\.\d+)?\s*(GB|MB)\b/i.test(t)) return true
+  // Update notes that list the PS5 build number ("PlayStation 5 (1.200.011) Xbox Series (1.2.0.11) PC (1.2.11)") are for a PS5 build that exists.
+  // (A version's dots end the sentence-scoped checks above, so a promise anywhere in the text rules this out.)
+  if (/(PS5|PlayStation\s*®?\s*5)\s*®?\s*[:–-]?\s*\(?\s*v?\d{1,2}\.\d{3}\.\d{3}\b/i.test(t) && !/\b(coming soon|soon|will be|upcoming|certification|later|next week|expected)\b/i.test(t)) return true
   const live = '(live|out now|now out|available|rolling out|released|is here|has arrived|deployed|deploying)'
   return new RegExp(`(PS5|PlayStation\\s*®?\\s*5)[^.!?\\n]{0,80}\\b${live}|\\b${live}[^.!?\\n]{0,80}(PS5|PlayStation\\s*®?\\s*5)`, 'i').test(t)
 }

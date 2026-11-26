@@ -78,24 +78,24 @@ struct NewsChapter: View {
             if list.isEmpty {
                 if store.failed.contains(gameID) {
                     HStack {
-                        Text("Couldn't load news. Check your connection and try again.").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                        Text("Couldn’t load news. Check your connection and try again.").font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
                         Spacer(minLength: 0)
                         Button { Task { await store.load(gameID: gameID, igdbID: model.game(gameID)?.igdbID) } } label: { Text("Retry").frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()) }
-                            .font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.accent)
+                            .font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeRole.action)
                             .tappableFrame(when: duo.pose != .tabletop)
                             .accessibilityHidden(duo.pose == .tabletop)  // view only on the standing half
                     }
                 } else if !store.loaded.contains(gameID) {
                     HStack(spacing: 10) {
                         ProgressView()
-                        Text("Loading news").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                        Text("Loading news").font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
                     }
                     .frame(minHeight: 44)
                     .accessibilityElement(children: .combine)
                 } else {
                     VStack(alignment: .leading, spacing: 4) {
                         Text("No news yet").font(PlayscribeFont.headline)
-                        Text("Headlines about this game will appear here.").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                        Text("Headlines about this game will appear here.").font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
                     }
                     .padding(.vertical, 20)
                 }
@@ -107,7 +107,7 @@ struct NewsChapter: View {
                         if let d = item.date { Text(d.shortDay) }
                         Tag(text: item.tagText)
                     }
-                    .font(PlayscribeFont.caption).foregroundStyle(.secondary)
+                    .font(PlayscribeFont.caption).foregroundStyle(PlayscribeRole.textSecondary)
                 }
                 .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
                 .contentShape(Rectangle())
@@ -171,23 +171,23 @@ struct NewsView: View {
                 ContentUnavailableView {
                     Label("News for your games will appear here", systemImage: "newspaper")
                 } actions: {
-                    Button("Add a game") { model.nav.tab = .library }.buttonStyle(.borderedProminent).foregroundStyle(PlayscribeColor.onAccent)
+                    Button("Add a game") { model.nav.tab = .library }.buttonStyle(.borderedProminent).foregroundStyle(PlayscribeRole.onAction)
                 }
             } else if list.isEmpty {
                 // Never a blank page: loading, then the empty copy, or Retry when nothing could be fetched.
                 VStack(spacing: 12) {
                     if stillLoading {
                         ProgressView()
-                        Text("Loading news").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                        Text("Loading news").font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
                     } else if ids.contains(where: { store.failed.contains($0) }) {
-                        Text("Couldn't load news. Check your connection and try again.").font(PlayscribeFont.subheadline).foregroundStyle(.secondary).multilineTextAlignment(.center)
+                        Text("Couldn’t load news. Check your connection and try again.").font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary).multilineTextAlignment(.center)
                         Button { Task { await load() } } label: { Text("Retry").frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()) }
-                            .font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.accent)
+                            .font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeRole.action)
                             .tappableFrame(when: duo.pose != .tabletop)
                             .accessibilityHidden(duo.pose == .tabletop)
                     } else {
                         Text("No news yet").font(PlayscribeFont.headline)
-                        Text("Headlines about your games will appear here.").font(PlayscribeFont.subheadline).foregroundStyle(.secondary).multilineTextAlignment(.center)
+                        Text("Headlines about your games will appear here.").font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary).multilineTextAlignment(.center)
                     }
                 }
                 .padding(24)
@@ -203,7 +203,7 @@ struct NewsView: View {
                         ForEach(Array(list.enumerated()), id: \.element.item.id) { i, post in
                             NewsRow(gameID: post.game, item: post.item)
                                 .padding(12)
-                                .background(PlayscribeColor.ink700.opacity(0.5), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                                .background(PlayscribeRole.chipFill.opacity(0.5), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
                             if i.isMultiple(of: 2) { Color.clear.frame(height: 1).accessibilityHidden(true) }
                         }
                     }
@@ -215,6 +215,8 @@ struct NewsView: View {
                 List {
                     ForEach(list, id: \.item.id) { post in NewsRow(gameID: post.game, item: post.item) }
                 }
+                // The list's own ground is the page's bg (Iris on #563: the system grouped grey met the cream stage at the fold).
+                .scrollContentBackground(.hidden)
                 .padding(.trailing, railWidth + (duo.pose == .tabletop ? 0 : badgeExtra))
                 .clearsMessages()
                 .refreshable { await load(force: true) }
@@ -223,6 +225,8 @@ struct NewsView: View {
         // Tabletop: the list lives on the flat half; the standing half only titles it (G-4, TT-0).
         .frame(maxHeight: duo.pose == .tabletop ? max(0, duo.size.height - (duo.division?.maxY ?? 0)) : .infinity)
         .frame(maxHeight: .infinity, alignment: .bottom)
+        // The standing half is the stage: on the bg token like every other page, never the window's black (cream in light).
+        .background(PlayscribeRole.bg.ignoresSafeArea())
         .overlay(alignment: .topLeading) {
             if duo.pose == .tabletop {
                 Text("News").font(PlayscribeFont.largeTitle).padding(24).allowsHitTesting(false)
@@ -256,13 +260,13 @@ struct NewsRow: View {
                 VStack(alignment: .leading, spacing: 4) {
                     // Whole words then "…", never a cut word (G-8; Iris): 4 lines at accessibility sizes.
                     WholeWordText(text: item.title, font: PlayscribeFont.subheadline.weight(.semibold), lines: typeSize.isAccessibilitySize ? 4 : 3)
-                    Text(game).font(PlayscribeFont.caption).foregroundStyle(.secondary).fixedSize(horizontal: false, vertical: true)
+                    Text(game).font(PlayscribeFont.caption).foregroundStyle(PlayscribeRole.textSecondary).fixedSize(horizontal: false, vertical: true)
                     // Chips wrap, never drop, at accessibility sizes.
                     ViewThatFits(in: .horizontal) {
                         HStack(spacing: 8) { meta }
                         VStack(alignment: .leading, spacing: 4) { meta }
                     }
-                    .font(PlayscribeFont.caption).foregroundStyle(.secondary)
+                    .font(PlayscribeFont.caption).foregroundStyle(PlayscribeRole.textSecondary)
                 }
                 Spacer(minLength: 0)
             }

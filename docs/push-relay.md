@@ -37,14 +37,18 @@ phone ──POST /v1/devices──▶ relay (KV)          Feed job (GitHub Actio
 
   **Block list (r070-relay-block-list).** The repository secret `RELAY_BLOCKLIST` holds device ids and addresses to refuse, separated by whitespace or commas; `relay/deploy.sh` binds it to the Worker as the `BLOCKLIST` secret, so the list is never in a repo file or on the feed branch. A blocked address gets 403 `{ "error": "blocked" }` on every `/v1` route; a blocked device id gets 403 on everything except `DELETE /v1/devices/me` (so the device can still be forgotten) and is left out of `GET /admin/devices`, so the Feed job sends it nothing. To block or unblock: edit the secret in the repository settings, then run the Relay deploy workflow by hand. An empty or missing secret blocks nobody. An address match is exact (no CIDR ranges; IPv6 is compared lower-cased as Cloudflare sends it), so a range needs one line per address. Paste an IPv6 address exactly as `cf-connecting-ip` spells it (compressed, lower case); a single IPv6 address is a weak block because phones rotate inside their /64, so for an IPv6 abuser list the device id instead. An id block on its own is weak: ids are relay-made, so a device that reinstalls or clears its token registers again under a new id; the address block is the real stop, and the id block is for cutting off one known record's pushes. The list is read once per Worker instance, so a change takes effect after the deploy run.
 - The relay stores follows as sent (`gameId` or `igdbId`); the Feed job resolves them and counts follows for games it does
-  not track. A dead token (410, or 400 `BadDeviceToken` / `DeviceTokenNotForTopic`) is dropped for the run and noted in
-  `dead_tokens` (device id and the token's sha256, never the token). Before the scrub, "Report dead tokens to the relay"
-  (`scripts/relay-dead.ts`) sends those notes to `POST /admin/devices/dead` (admin token, at most 6 a request, the free plan's
+  not track. **Alerts go out after Publish, never before (12 Nov 2026).** The poll claims each release (`pushed_at`, so a release alerts once) and writes
+  the prepared alerts to a file in the runner's temp directory (`PUSH_QUEUE`, outside the published `out/` folder), sending nothing. Publish then puts the feed
+  and the claim on the feed branch in one commit, and only then the step "Send pushes" (`scripts/push-send.ts`) reads the file and sends. A run that fails
+  before or at Publish loses its claim with the rest of the run and sends nothing, so the release is claimed and alerted on the next run that publishes;
+  until 12 Nov the push went out during the poll, a failed Publish threw the claim away, and the same alert repeated every run (The Rogue Prince of Persia 3 times,
+  Tanuki Pon's Summer 5) for a release the feed never held. If Send pushes itself fails, that run's alerts are lost and never repeated. A dead token
+  (410, or 400 `BadDeviceToken` / `DeviceTokenNotForTopic`) comes back from the send as the device id and the token's sha256 (never the token) and
+  "Send pushes" reports it to `POST /admin/devices/dead` (admin token, at most 6 a request, the free plan's
   50 KV operations). The relay acts only while the record still holds that token, so a device that has registered a new one
   since the run loaded is untouched. A push-only record is removed with its token, key and team entries; if the app is still
   installed, its next request gets 401 and it registers again. A follow-list record that lost its token takes it back on the app's next launch: the app PATCHes `{ apnsToken, environment }` with its key before registering, so it is the same record (bug-relay-optin-cleared-token). A follow-list opt-in (`hourly`) keeps helping: it becomes the
-  ids-only record `POST /v1/follows` makes, with the 90-day expiry. The step is never fatal and the notes are scrubbed with
-  the devices; a report that did not arrive is made again the next time a push to that token fails (r071).
+  ids-only record `POST /v1/follows` makes, with the 90-day expiry. The step is never fatal; a report that did not arrive is made again the next time a push to that token fails (r071). Local runs (no `PUSH_QUEUE`) still claim and send in one go.
 
 ## Follow list without alerts (0.5.4)
 `POST /v1/follows` (docs/api.md "Follow list without alerts") stores a record with no token: ids and a key only, `hourly: true`.
@@ -91,3 +95,12 @@ set `team: true`, which only internal builds do. The push never carries tester t
 `APNS_KEY`, `APNS_KEY_ID`, `APNS_TEAM_ID` from the existing GitHub secrets (nothing is pasted). Blast radius: someone who could
 read Worker secrets could push to this app's devices. The Feed job's own sending is unchanged. Delivery is capped at 20 team
 devices a send (`tm:<id>` index keys) to stay inside the free plan's 50 subrequests per request.
+
+## Limrun instance webhook (cloud Duo QA leak alarm)
+`POST /v1/webhooks/limrun` receives Limrun's `instance.created`, `instance.ready` and `instance.terminated` events (one endpoint per Limrun
+org; there are no credit or balance events). It verifies `Limrun-Signature: t=<unix>,v1=<hex>` (HMAC-SHA256 over `<t>.<raw body>`, whole secret
+including `whsec_` as the key, five-minute window) against the Worker secret `LIMRUN_WEBHOOK_SECRET`, and answers 401 until that secret exists.
+- Open instances are kept in KV as `lr:<id>`; a terminated event adds the lifetime minutes to a per-month, per-product counter `lu:YYYY-MM:<product>` and clears the record.
+- The existing cron (:22 and :52) pushes one fixed Team alert, "A Limrun simulator is still running", for any instance open more than 20 minutes.
+- `GET /admin/limrun` (admin token) lists the month counters and open instances. Minutes are instance lifetime, an approximation of billed minutes; the billed figure is the Limrun usage analytics API.
+- Secret: Limrun shows the signing secret once in Console > Settings > Webhooks. Add it as the repository secret `LIMRUN_WEBHOOK_SECRET`, then run the Relay deploy workflow.

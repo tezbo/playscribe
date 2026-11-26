@@ -38,13 +38,14 @@ struct TabletopSearchButton: View {
     var body: some View {
         Button { hintShown.toggle() } label: {
             HStack(spacing: 8) {
-                Image(systemName: "magnifyingglass").foregroundStyle(.secondary)
-                Text(letter.map { "Starting with \($0)" } ?? prompt).foregroundStyle(.secondary).lineLimit(1)
+                Image(systemName: "magnifyingglass").foregroundStyle(PlayscribeRole.textSecondary)
+                Text(letter.map { "Starting with \($0)" } ?? prompt).foregroundStyle(PlayscribeRole.textSecondary).lineLimit(1)
                 Spacer(minLength: 0)
             }
             .padding(.horizontal, 12)
             .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
-            .background(PlayscribeColor.ink700, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+            .background(PlayscribeRole.chipFill, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+            .controlBorder(.tabletopSearch, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
@@ -60,7 +61,7 @@ struct TabletopSearchHint: View {
     var body: some View {
         if shown {
             Text("Typing needs the flat screen. Pick a letter below, or open your Duo flat to type.")
-                .font(PlayscribeFont.footnote).foregroundStyle(.secondary)
+                .font(PlayscribeFont.footnote).foregroundStyle(PlayscribeRole.textSecondary)
                 .fixedSize(horizontal: false, vertical: true)
                 .accessibilityIdentifier("tabletopSearchHint")
         }
@@ -79,9 +80,9 @@ struct TabletopLetterStrip: View {
                     let on = letter == l
                     Button { letter = on ? nil : l } label: {
                         Text(l).font(PlayscribeFont.headline)
-                            .foregroundStyle(on ? PlayscribeColor.onAccent : PlayscribeColor.textPrimary)
+                            .foregroundStyle(on ? PlayscribeRole.onAction : PlayscribeRole.textPrimary)
                             .frame(width: chip, height: chip)
-                            .background(Circle().fill(on ? PlayscribeColor.accent : PlayscribeColor.ink700))
+                            .background(Circle().fill(on ? PlayscribeRole.action : PlayscribeRole.chipFill))
                             .contentShape(Rectangle())
                     }
                     .buttonStyle(.plain)
@@ -92,5 +93,7 @@ struct TabletopLetterStrip: View {
                 }
             }
         }
+        // R-7: the strip fades at its edges instead of cutting a chip hard at the right (Quinn, #526 Tabletop std).
+        .edgeFade(24)
     }
 }

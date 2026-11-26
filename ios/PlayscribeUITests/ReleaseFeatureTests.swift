@@ -26,17 +26,37 @@ final class ReleaseFeatureTests: XCTestCase {
         return audit.exists ? audit.label : "unknown"
     }
 
-    /// The Playing / Upcoming switch: a rail button in Tabletop, else a segmented Picker whose segments are not
-    /// reliably exposed (the gate found none by label in any pose), so the picker itself is tapped at its half.
+    /// The Playing / Upcoming switch: the page's segmented Picker in every pose (Tabletop too since the 0.5.7 gate, Iris), whose
+    /// segments are not reliably exposed (the gate found none by label in any pose), so the picker itself is tapped at its half.
     private func switchTo(_ label: String) -> Bool {
-        let rail = app.descendants(matching: .any)[label == "Upcoming" ? "upcomingRail" : "playingRail"]
-        if rail.waitForExistence(timeout: 10) { rail.tap(); return true }
         let seg = app.descendants(matching: .any).matching(NSPredicate(format: "label == %@", label)).firstMatch
         if seg.exists { seg.tap(); return true }
         let picker = app.descendants(matching: .any)["libraryTabPicker"]
         guard picker.waitForExistence(timeout: 10) else { return false }
         picker.coordinate(withNormalizedOffset: CGVector(dx: label == "Upcoming" ? 0.75 : 0.25, dy: 0.5)).tap()
         return true
+    }
+
+    /// J-11 at AX5 (bug-playing-upcoming-switch-ax5-small): the switch is two chips under the same id, the chosen one carries
+    /// the selected trait, and a tap moves it.
+    func testSwitchChipsCarryTheSelectedTraitAtAX5() throws {
+        app.launchArguments = ["-qaRoute", "fill-library/12", "-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityXXXL"]
+        app.launch()
+        let any = app.descendants(matching: .any)
+        let playing = any["libraryTab-playing"], upcoming = any["libraryTab-upcoming"]
+        if !upcoming.waitForExistence(timeout: 20) {
+            // What the tree did show, so a miss says why (the segmented control would be one element labelled Library).
+            let seen = app.debugDescription.split(separator: "\n").filter { $0.contains("Playing") || $0.contains("Upcoming") || $0.contains("libraryTab") || $0.contains("Segmented") }
+            XCTFail("the Upcoming chip (AX5 swaps the segmented control for chips); tree: \(seen.prefix(8).joined(separator: " | "))")
+            return
+        }
+        XCTAssertTrue(any["libraryTabPicker"].exists, "the switch keeps its container id")
+        XCTAssertTrue(playing.isSelected, "Playing is selected on the playing route")
+        XCTAssertFalse(upcoming.isSelected, "only one chip is selected")
+        upcoming.tap()
+        let moved = expectation(for: NSPredicate(format: "isSelected == true"), evaluatedWith: upcoming)
+        wait(for: [moved], timeout: 5)
+        XCTAssertFalse(playing.isSelected, "the selection moved to Upcoming")
     }
 
     private func button(_ prefix: String) -> XCUIElement {
@@ -132,12 +152,12 @@ final class ReleaseFeatureTests: XCTestCase {
     func testNewsChapterIsNeverBlank() throws {
         launch("chapter/dawnwalker/news")
         let states = ["No news yet", "Loading news", "Official", "Reported"]
-        let failed = app.staticTexts.matching(NSPredicate(format: "label BEGINSWITH \"Couldn't load news\"")).firstMatch
+        let failed = app.staticTexts.matching(NSPredicate(format: "label BEGINSWITH \"Couldn’t load news\"")).firstMatch
         func shown() -> Bool {
             // Tabletop (Iris): the stage is read only, never hidden from VoiceOver. A headline row is one combined text element
             // ("<title>, <date>, Official"), so look for the tag in any element's label.
             if inTabletop {
-                let row = app.descendants(matching: .any).matching(NSPredicate(format: "label CONTAINS ', Official' OR label CONTAINS ', Reported' OR label BEGINSWITH 'No news yet' OR label BEGINSWITH 'Loading news' OR label BEGINSWITH \"Couldn't load news\"")).firstMatch
+                let row = app.descendants(matching: .any).matching(NSPredicate(format: "label CONTAINS ', Official' OR label CONTAINS ', Reported' OR label BEGINSWITH 'No news yet' OR label BEGINSWITH 'Loading news' OR label BEGINSWITH \"Couldn’t load news\"")).firstMatch
                 return row.waitForExistence(timeout: 5)
             }
             return states.contains { app.staticTexts[$0].waitForExistence(timeout: 3) } || failed.exists
@@ -194,14 +214,21 @@ final class ReleaseFeatureTests: XCTestCase {
         XCTAssertEqual(app.links.matching(NSPredicate(format: "label CONTAINS ', Official'")).count, 0, "no News headline is exposed as a link")
         let newsTree = XCTAttachment(string: app.debugDescription); newsTree.name = "tabletop-news-hierarchy.txt"; newsTree.lifetime = .keepAlways; add(newsTree)
 
-        // The Gallery empty state (Astro Bot and Ghost of Yotei have no art or videos): "Find trailers online" is plain text.
+        // The Gallery empty state (Astro Bot and Ghost of Yotei have no art or videos): plain text, and no trailer search (0.6.0).
         app.terminate()
         launch("chapter/astro-bot/gallery")
-        let trailers = app.descendants(matching: .any).matching(NSPredicate(format: "label == 'Find trailers online'")).firstMatch
-        XCTAssertTrue(trailers.waitForExistence(timeout: 10), "the Gallery empty state's trailer text is in the tree")
-        XCTAssertEqual(trailers.elementType, .staticText, "it is text in Tabletop, not a link or button")
-        XCTAssertEqual(app.links.matching(NSPredicate(format: "label CONTAINS 'Find trailers online' OR label CONTAINS 'Official website'")).count, 0, "no Gallery link has a link trait in Tabletop")
-        XCTAssertEqual(app.buttons.matching(NSPredicate(format: "label CONTAINS 'Find trailers online' OR label CONTAINS 'Official website'")).count, 0, "no Gallery link is a button in Tabletop")
+        // Astro Bot has no pictures or videos, and a section with nothing in it is hidden (GameSections.visible, R-7): the
+        // route lands on What's new and there is no Gallery tab, so the old empty-state text is unreachable (Mac at 90eb4a0a:
+        // tabs What's new, News, My book). Checked instead: no Gallery tab, no trailer search, and nothing above the fold
+        // (the view-only stage) is a link or a button; the Official website link in the lower half is a control by design.
+        let whatsNew = app.buttons["What’s new"].firstMatch
+        XCTAssertTrue(whatsNew.waitForExistence(timeout: 10), "the game page opens")
+        XCTAssertFalse(app.buttons["Gallery"].exists, "an empty Gallery is not offered as a section")
+        XCTAssertFalse(app.descendants(matching: .any).matching(NSPredicate(format: "label CONTAINS 'Find trailers online'")).firstMatch.exists, "no trailer search anywhere")
+        let fold = app.frame.midY
+        let raised = (app.links.allElementsBoundByIndex + app.buttons.matching(NSPredicate(format: "label CONTAINS 'Official website'")).allElementsBoundByIndex)
+            .filter { $0.exists && $0.frame.maxY > 0 && $0.frame.minY < fold }
+        XCTAssertTrue(raised.isEmpty, "no link or Official website button above the fold in Tabletop: \(raised.map { "\($0.label) \($0.frame)" })")
         let galleryTree = XCTAttachment(string: app.debugDescription); galleryTree.name = "tabletop-gallery-hierarchy.txt"; galleryTree.lifetime = .keepAlways; add(galleryTree)
     }
 
@@ -221,8 +248,14 @@ final class ReleaseFeatureTests: XCTestCase {
     /// Share card: the button is reachable and offers the card.
     func testShareUpdateButton() throws {
         launch("release/dawnwalker/dawnwalker@1.1")
+        // Tabletop (0.5.6 hotfix, Iris): Share is behind More on the rail; the stage above the fold has nothing tappable.
+        if inTabletop {
+            let more = app.descendants(matching: .any)["rail.more"]
+            XCTAssertTrue(more.waitForExistence(timeout: 10), "More is on the rail")
+            more.tap()
+        }
         let share = app.buttons["Share update"]
-        XCTAssertTrue(share.waitForExistence(timeout: 10), "Share update is offered (Tabletop: on the lower rail)")
+        XCTAssertTrue(share.waitForExistence(timeout: 10), "Share update is offered (Tabletop: behind More)")
         if inTabletop { XCTAssertGreaterThanOrEqual(share.frame.minY, app.frame.midY - 1, "Tabletop: Share sits in the lower half") }
         XCTAssertGreaterThanOrEqual(share.frame.height, 44, "44 pt target")
         assertFrames("release")
@@ -292,7 +325,7 @@ final class ReleaseFeatureTests: XCTestCase {
         scan.tap()
         let explainer = app.staticTexts["Let Playscribe see your games"]
         let denied = app.staticTexts["Scan with camera is off"]
-        let unsupported = app.staticTexts["This device can't scan titles."]
+        let unsupported = app.staticTexts["This device can’t scan titles."]
         XCTAssertTrue(explainer.waitForExistence(timeout: 5) || denied.exists || unsupported.exists || app.buttons["Find these games"].exists)
         if explainer.exists { XCTAssertTrue(app.buttons["Continue"].exists && app.buttons["Not now"].exists) }
         if denied.exists || unsupported.exists { XCTAssertTrue(app.buttons["Type it"].exists, "Type it is always offered first") }
@@ -323,6 +356,144 @@ final class ReleaseFeatureTests: XCTestCase {
         assertFrames("add-bar")
     }
 
+    /// A-1, v0.5.3 (Terry, 8 Nov; cc04658 Mac hand check 1): a tap inside the typed text keeps the keyboard and moves the caret; typing
+    /// goes on; a tap on a bare area puts the keyboard away.
+    func testAddSearchKeepsFocusOnTextTapAndDismissesOnOutsideTap() throws {
+        launch("add/keyboard")
+        if inTabletop { throw XCTSkip("Tabletop has no keyboard") }
+        let search = app.textFields.matching(NSPredicate(format: "placeholderValue BEGINSWITH 'Search'")).firstMatch
+        XCTAssertTrue(search.waitForExistence(timeout: 10))
+        func focused() -> Bool { (search.value(forKey: "hasKeyboardFocus") as? Bool) == true }
+        func waitFocus(_ want: Bool) -> Bool {
+            let end = Date.now.addingTimeInterval(4)
+            while focused() != want && Date.now < end { usleep(200_000) }
+            return focused() == want
+        }
+        if !waitFocus(true) { search.tap() }
+        XCTAssertTrue(waitFocus(true), "the add search has keyboard focus")
+        search.typeText("elden")
+        // Tap at the leading edge of the typed text, then type again: focus must hold and the caret must have moved to the start.
+        // Not mid-word: the 6ef2f42 A/B showed a plain TextField in the same sheet, with none of our code, also leaves the caret at
+        // the end after a tap 20 pt into "elden" (likely iOS snapping a single tap to a word boundary). The start is a boundary either way.
+        search.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 0.5)).withOffset(CGVector(dx: 2, dy: 0)).tap()
+        usleep(600_000)
+        XCTAssertTrue(focused(), "a tap inside the typed text keeps the keyboard")
+        XCTAssertTrue(app.keyboards.firstMatch.exists, "the keyboard is still up after a tap in the text")
+        search.typeText("x")
+        let value = (search.value as? String) ?? ""
+        XCTAssertTrue(value.lowercased().contains("x") && value.count == 6, "typing continues after the tap, got '\(value)'")
+        XCTAssertEqual(value.lowercased(), "xelden", "the caret moved to the start of the text")
+        // A tap on a bare area (the sheet title bar) puts the keyboard away.
+        app.navigationBars.firstMatch.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
+        if !waitFocus(false) {
+            // 69d27ce Mac run, Open portrait: the sheet's bar centre did not dismiss. Fall back to a bare list area, the section header.
+            let header = app.staticTexts.matching(NSPredicate(format: "label CONTAINS[c] 'Best matches' OR label CONTAINS[c] 'Popular on PS5'")).firstMatch
+            if header.exists { header.tap() }
+        }
+        XCTAssertTrue(waitFocus(false), "a tap outside the field dismisses the keyboard")
+    }
+
+    /// A-1, v0.5.3 (Quinn, 9d41ce0 hand check): a tap on the field's row padding right after the keyboard was put away must bring it
+    /// back, every time. Ten rounds of title tap, then padding tap; the focus state is read from UIKit each time.
+    func testAddSearchPaddingTapAfterDismissAlwaysFocuses() throws {
+        launch("add/keyboard")
+        if inTabletop { throw XCTSkip("Tabletop has no keyboard") }
+        let search = app.textFields.matching(NSPredicate(format: "placeholderValue BEGINSWITH 'Search'")).firstMatch
+        XCTAssertTrue(search.waitForExistence(timeout: 10))
+        func focused() -> Bool { (search.value(forKey: "hasKeyboardFocus") as? Bool) == true }
+        func wait(_ want: Bool, _ secs: Double = 3) -> Bool {
+            let end = Date.now.addingTimeInterval(secs)
+            while focused() != want && Date.now < end { usleep(100_000) }
+            return focused() == want
+        }
+        if !wait(true, 5) { search.tap() }
+        XCTAssertTrue(wait(true, 5), "the add search starts focused")
+        // VoiceOver: the row is one "Search" field, not a field plus a second tappable element.
+        // Only the Add sheet's own field: the Library's "Search your library" field sits behind the sheet in the same window and is
+        // in the element tree too (36d340c Mac run counted 2 on bbcbbe2 as well, so it is not a duplicate in the Add row).
+        let addFields = app.textFields.matching(NSPredicate(format: "placeholderValue CONTAINS 'PS5 games'"))
+        XCTAssertEqual(addFields.count, 1, "one Add search field; Search fields in the tree: \(app.textFields.allElementsBoundByIndex.map { $0.placeholderValue ?? "?" })")
+        // Scoped to the field's own row: the tab bar's Search tab (b880cc8 Mac run) is also a "Search" button, elsewhere on screen.
+        let overlapping = app.buttons.matching(NSPredicate(format: "label BEGINSWITH 'Search'")).allElementsBoundByIndex
+            .filter { $0.frame.intersects(search.frame) }
+        XCTAssertEqual(overlapping.count, 0, "no second Search element over the field: \(overlapping.map(\.label))")
+        var misses: [Int] = []
+        var log: [String] = []
+        // Row geometry for the 60.7 pt question (Quinn): the field, its list cell, and the controls around it.
+        let cell = app.cells.containing(.textField, identifier: nil).firstMatch
+        log.append("geometry: field=\(search.frame) cell=\(cell.exists ? "\(cell.frame)" : "none") segmented=\(app.segmentedControls.firstMatch.exists ? "\(app.segmentedControls.firstMatch.frame)" : "none") window=\(app.windows.firstMatch.frame)")
+        let geo = XCTAttachment(screenshot: app.screenshot()); geo.name = "add-search-row-geometry"; geo.lifetime = .keepAlways; add(geo)
+        func shot(_ name: String) {
+            let a = XCTAttachment(screenshot: app.screenshot()); a.name = name; a.lifetime = .keepAlways; add(a)
+        }
+        func state(_ tag: String) -> String {
+            "\(tag): focus=\(focused()) keyboard=\(app.keyboards.firstMatch.exists) fieldFrame=\(search.frame)"
+        }
+        for round in 1...10 {
+            let before = state("r\(round) start")
+            let bar = app.navigationBars.firstMatch
+            let titlePoint = bar.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5))
+            titlePoint.tap()
+            let titleDismissed = wait(false)
+            let afterTitle = state("r\(round) after title tap (bar \(bar.frame), dismissed=\(titleDismissed))")
+            if !titleDismissed { shot("r\(round)-title-did-not-dismiss"); log += [before, afterTitle]; misses.append(round); continue }
+            // Padding: just outside the field's leading edge, inside the row.
+            let f = search.frame
+            // Rounds cycle through the four sides of the row padding: leading, trailing, above and below the field (the row has
+            // 4 pt of vertical padding; the horizontal strips are kept inside the window).
+            let windowMaxX = app.windows.firstMatch.frame.maxX
+            let side = ["leading", "trailing", "above", "below"][(round - 1) % 4]
+            let paddingX: CGFloat, paddingY: CGFloat
+            switch side {
+            case "leading": (paddingX, paddingY) = (f.minX - 8, f.midY)
+            case "trailing": (paddingX, paddingY) = (min(f.maxX + 8, windowMaxX - 2), f.midY)
+            case "above": (paddingX, paddingY) = (f.midX, f.minY - 2)
+            default: (paddingX, paddingY) = (f.midX, f.maxY + 2)
+            }
+            app.windows.firstMatch.coordinate(withNormalizedOffset: .zero).withOffset(CGVector(dx: paddingX, dy: paddingY)).tap()
+            let refocused = wait(true)
+            let afterPadding = state("r\(round) after \(side) padding tap at (\(paddingX), \(paddingY)), insideFieldFrame=\(f.contains(CGPoint(x: paddingX, y: paddingY))), refocused=\(refocused)")
+            log += [before, afterTitle, afterPadding]
+            if !refocused {
+                shot("r\(round)-padding-did-not-focus")
+                misses.append(round)
+                // Recover so each round is measured on its own: a tap inside the field.
+                search.tap(); _ = wait(true)
+            }
+        }
+        print("PADDINGTAP LOG\n" + log.joined(separator: "\n"))
+        let logAttachment = XCTAttachment(string: log.joined(separator: "\n")); logAttachment.name = "padding-tap-log"; logAttachment.lifetime = .keepAlways; add(logAttachment)
+        XCTAssertTrue(misses.isEmpty, "title tap then padding tap failed in rounds \(misses); see the padding-tap-log attachment")
+    }
+
+    /// A-1, v0.5.3 (Mac, 8c59c39 hand run): on a cold launch of add/keyboard the keyboard is up in the first frame and about 5 s later
+    /// it is down with no caret. Sample focus and keyboard every 500 ms for 10 s and fail if focus is lost after it was gained, with the
+    /// whole timeline attached, so the moment of the drop can be matched to the launch pose settling.
+    func testAddSearchHoldsFocusThroughLaunchSettling() throws {
+        launch("add/keyboard")
+        if inTabletop { throw XCTSkip("Tabletop has no keyboard") }
+        let search = app.textFields.matching(NSPredicate(format: "placeholderValue CONTAINS 'PS5 games'")).firstMatch
+        XCTAssertTrue(search.waitForExistence(timeout: 10))
+        let start = Date()
+        var timeline: [String] = []
+        var gainedAt: Double?
+        var lostAt: Double?
+        while Date().timeIntervalSince(start) < 10 {
+            let t = Date().timeIntervalSince(start)
+            let f = (search.value(forKey: "hasKeyboardFocus") as? Bool) == true
+            let k = app.keyboards.firstMatch.exists
+            timeline.append(String(format: "%.1fs focus=%@ keyboard=%@ field=%@", t, "\(f)", "\(k)", "\(search.frame)"))
+            if f && gainedAt == nil { gainedAt = t }
+            if !f && gainedAt != nil && lostAt == nil { lostAt = t }
+            usleep(500_000)
+        }
+        let a = XCTAttachment(string: timeline.joined(separator: "\n")); a.name = "launch-focus-timeline"; a.lifetime = .keepAlways; add(a)
+        print("LAUNCHFOCUS TIMELINE\n" + timeline.joined(separator: "\n"))
+        XCTAssertNotNil(gainedAt, "the search took focus at launch")
+        XCTAssertNil(lostAt, "focus was lost at \(lostAt ?? 0) s after the launch route gained it; see the launch-focus-timeline attachment")
+        XCTAssertTrue((search.value(forKey: "hasKeyboardFocus") as? Bool) == true && app.keyboards.firstMatch.exists, "still focused with the keyboard up after 10 s")
+    }
+
     // MARK: - Accessibility (G-7, G-10)
 
     /// The new screens pass the system audit for hit regions and element descriptions.
@@ -339,7 +510,7 @@ final class ReleaseFeatureTests: XCTestCase {
     }
 
     /// Every 0.5.0 surface keeps the frame rules in the current pose: no frame crosses a division,
-    /// and in Tabletop nothing tappable sits above the fold. Upcoming is reached from the rail.
+    /// and in Tabletop nothing tappable sits above the fold. Upcoming is reached from the page's switch.
     func testNewSurfacesKeepFrameRules() throws {
         let routes = ["demo", "chapter/dawnwalker/news", "updates", "news", "release/dawnwalker/dawnwalker@1.1",
                       "add", "settings", "first-run"]
@@ -350,9 +521,10 @@ final class ReleaseFeatureTests: XCTestCase {
             assertFrames(route)
             if route == "demo" {
                 if pose().contains("pose: tabletop") {
-                    let rail = app.descendants(matching: .any)["upcomingRail"]
-                    XCTAssertTrue(rail.waitForExistence(timeout: 10), "Upcoming rail button")
-                    XCTAssertGreaterThanOrEqual(rail.frame.minY, app.frame.midY - 1, "Upcoming rail button is on the flat half")
+                    let picker = app.descendants(matching: .any)["libraryTabPicker"]
+                    XCTAssertTrue(picker.waitForExistence(timeout: 10), "the Playing / Upcoming switch")
+                    XCTAssertGreaterThanOrEqual(picker.frame.minY, app.frame.midY - 1, "the Playing / Upcoming switch is on the flat half")
+                    XCTAssertFalse(app.descendants(matching: .any)["upcomingRail"].exists, "no Upcoming button on the rail (Iris, 0.5.7)")
                 }
                 XCTAssertTrue(switchTo("Upcoming"), "Upcoming control")
                 sleep(1)

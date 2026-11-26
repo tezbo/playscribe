@@ -102,6 +102,9 @@ final class PlusStore {
     func qaShowDemoMonth() {
         let f = DateFormatter(); f.calendar = Calendar(identifier: .gregorian); f.dateFormat = "yyyy-MM-dd"
         let day: (Int) -> String = { f.string(from: Calendar.current.date(byAdding: .day, value: $0, to: .now)!) }
+        // Held against the feed, as setQA is: without it the live plus.json replaced the demo month once it loaded, so a UI test
+        // looking for these titles found the real lineup instead (#646, ui run 45563445836).
+        qaOverride = true
         months = [PlusMonth(month: "qa", from: day(-1), until: day(20), games: [.init(name: "QA Game One", gameId: nil), .init(name: "QA Game Two", gameId: nil)])]
     }
     #endif

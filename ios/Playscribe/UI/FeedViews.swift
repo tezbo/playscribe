@@ -16,7 +16,7 @@ struct UpdatesView: View {
                 ContentUnavailableView {
                     Label("Updates for your games will appear here", systemImage: "book.closed")
                 } actions: {
-                    Button("Add a game") { model.nav.tab = .library }.buttonStyle(.borderedProminent).foregroundStyle(PlayscribeColor.onAccent)
+                    Button("Add a game") { model.nav.tab = .library }.buttonStyle(.borderedProminent).foregroundStyle(PlayscribeRole.onAction)
                 }
             } else if duo.pose == .book, let fold = duo.division {
                 // TT-0: in the book pose the rows are cards on either page, never across the fold.
@@ -28,7 +28,7 @@ struct UpdatesView: View {
                         ForEach(Array(items.enumerated()), id: \.element.id) { i, r in
                             FeedRow(release: r)
                                 .padding(12)
-                                .background(PlayscribeColor.ink700.opacity(0.5), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                                .background(PlayscribeRole.chipFill.opacity(0.5), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
                             if i.isMultiple(of: 2) { Color.clear.frame(height: 1).accessibilityHidden(true) }
                         }
                     }
@@ -44,6 +44,8 @@ struct UpdatesView: View {
                 }
                 // The inset is on the list itself: row backgrounds, separators and tap frames all stop at the
                 // rail and the time/Wi-Fi badge; scroll-content margins left them running underneath.
+                // The list's own ground is the page's bg (Iris on #563: the system grouped grey met the cream stage at the fold).
+                .scrollContentBackground(.hidden)
                 .padding(.trailing, railWidth + (duo.pose == .tabletop ? 0 : badgeExtra))
                 .clearsMessages()
             }
@@ -51,6 +53,8 @@ struct UpdatesView: View {
         // G-4, TT-0: in Tabletop the list lives on the flat half; the standing half only titles it.
         .frame(maxHeight: duo.pose == .tabletop ? max(0, duo.size.height - (duo.division?.maxY ?? 0)) : .infinity)
         .frame(maxHeight: .infinity, alignment: .bottom)
+        // The standing half is the stage: on the bg token like every other page, never the window's black (cream in light).
+        .background(PlayscribeRole.bg.ignoresSafeArea())
         .overlay(alignment: .topLeading) {
             if duo.pose == .tabletop {
                 Text("Updates").font(PlayscribeFont.largeTitle).padding(24).allowsHitTesting(false)
@@ -69,7 +73,7 @@ struct FeedRow: View {
 
     var body: some View {
         let unread = model.isUnread(release)
-        Button { model.openGame(release.gameID, chapter: .updates, releaseID: release.id) } label: {
+        Button { model.openFromUpdates(release) } label: {
             // At accessibility sizes the thumbnail sits above the text so the column gets the row's full width: a game
             // name never breaks inside a word and a date stays whole (Iris, AX5).
             let rowLayout = typeSize.isAccessibilitySize ? AnyLayout(VStackLayout(alignment: .leading, spacing: 8)) : AnyLayout(HStackLayout(spacing: 28))
@@ -95,13 +99,13 @@ struct FeedRow: View {
                     if typeSize.isAccessibilitySize {
                         VStack(alignment: .leading, spacing: 2) {
                             Text(model.game(release.gameID)?.name ?? "").fixedSize(horizontal: false, vertical: true)
-                            Text(release.ps5Date.shortDay).foregroundStyle(.secondary).fixedSize()
+                            Text(release.ps5Date.shortDay).foregroundStyle(PlayscribeRole.textSecondary).fixedSize()
                         }
                         .font(PlayscribeFont.caption)
                     } else {
                         HStack(spacing: 8) {
                             Text(model.game(release.gameID)?.name ?? "").fixedSize(horizontal: false, vertical: true)
-                            Text(release.ps5Date.shortDay).foregroundStyle(.secondary)
+                            Text(release.ps5Date.shortDay).foregroundStyle(PlayscribeRole.textSecondary)
                         }
                         .font(PlayscribeFont.caption)
                     }
@@ -120,6 +124,7 @@ struct FeedRow: View {
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
+        .accessibilityIdentifier("feedRow")
         .tappableFrame()
         .readToggleActions(release, swipe: true)
     }
@@ -149,7 +154,7 @@ private struct ReadToggleActions: ViewModifier {
             let swipeItem = Button(action: toggle) {
                 Label(unread ? "Read" : "Unread", systemImage: unread ? "envelope.open" : "envelope.badge")
             }
-            .tint(PlayscribeColor.accent)
+            .tint(PlayscribeRole.action)
             let base = content
                 .contextMenu { menuItem }
                 .accessibilityAction(named: unread ? "Mark as read" : "Mark as unread", toggle)
@@ -220,7 +225,7 @@ struct SearchView: View {
             }
             if ownField {
                 HStack(spacing: 8) {
-                    Image(systemName: "magnifyingglass").foregroundStyle(.secondary).accessibilityHidden(true)
+                    Image(systemName: "magnifyingglass").foregroundStyle(PlayscribeRole.textSecondary).accessibilityHidden(true)
                     TextField("Games, patch notes, characters…", text: $query)
                         .autocorrectionDisabled()
                         .textInputAutocapitalization(.never)
@@ -229,7 +234,7 @@ struct SearchView: View {
                         .accessibilityIdentifier("searchField")
                     if !query.isEmpty {
                         Button { query = "" } label: {
-                            Image(systemName: "xmark.circle.fill").foregroundStyle(.secondary)
+                            Image(systemName: "xmark.circle.fill").foregroundStyle(PlayscribeRole.textSecondary)
                                 .frame(width: 44, height: 44).contentShape(Rectangle())
                         }
                         .buttonStyle(.plain).accessibilityLabel("Clear search").tappableFrame()
@@ -237,7 +242,8 @@ struct SearchView: View {
                 }
                 .padding(.horizontal, 12)
                 .frame(minHeight: 44)
-                .background(PlayscribeColor.ink700, in: Capsule())
+                .background(PlayscribeRole.chipFill, in: Capsule())
+                .controlBorder(.searchField, in: Capsule())
                 .listRowBackground(Color.clear)
                 .listRowSeparator(.hidden)
                 .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 4, trailing: 16))
@@ -256,13 +262,13 @@ struct SearchView: View {
             if !active {
                 Text(tabletop ? "Typing needs the flat screen. Pick a letter above, or open your Duo flat to type."
                               : "Try “subtitles”, “Shadowstep” or “Coen”. Spoiler-tagged notes are left out of results.")
-                    .font(PlayscribeFont.footnote).foregroundStyle(.secondary)
+                    .font(PlayscribeFont.footnote).foregroundStyle(PlayscribeRole.textSecondary)
                     .fixedSize(horizontal: false, vertical: true)
                     // Iris: the hint card is exactly as wide as the field, ending at its trailing edge
                     // (a list row's own background ran to the screen edge in every pose).
                     .padding(12)
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .background(PlayscribeColor.ink700, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                    .background(PlayscribeRole.chipFill, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
                     .listRowBackground(Color.clear)
                     .listRowSeparator(.hidden)
                     .listRowInsets(EdgeInsets(top: 8, leading: tabletop ? 0 : 16, bottom: 8, trailing: tabletop ? 0 : 16))
@@ -271,7 +277,7 @@ struct SearchView: View {
                 ContentUnavailableView.search(text: tabletop ? (letter ?? "") : query)
                     .padding(12)
                     .frame(maxWidth: .infinity)
-                    .background(PlayscribeColor.ink700, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                    .background(PlayscribeRole.chipFill, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
                     .listRowBackground(Color.clear)
                     .listRowSeparator(.hidden)
                     .listRowInsets(EdgeInsets(top: 8, leading: tabletop ? 0 : 16, bottom: 8, trailing: tabletop ? 0 : 16))
@@ -283,8 +289,8 @@ struct SearchView: View {
                             HStack(spacing: 12) {
                                 CoverView(game: g, cornerRadius: 4).frame(width: 36)
                                 VStack(alignment: .leading) {
-                                    Text(g.name).font(PlayscribeFont.subheadline.weight(.semibold))
-                                    Text(library.contains(g.id) ? (model.entry(g.id)?.status.label ?? "") : "Not in your library").font(PlayscribeFont.caption).foregroundStyle(.secondary)
+                                    Text(g.name.gluingTrailingNumeral).font(PlayscribeFont.subheadline.weight(.semibold))
+                                    Text(library.contains(g.id) ? (model.entry(g.id)?.status.label ?? "") : "Not in your library").font(PlayscribeFont.caption).foregroundStyle(PlayscribeRole.textSecondary)
                                 }
                             }
                         }
@@ -306,7 +312,7 @@ struct SearchView: View {
                             VStack(alignment: .leading, spacing: 2) {
                                 HStack(spacing: 6) {
                                     Text(hit.0.displayName).font(PlayscribeFont.subheadline.weight(.semibold))
-                                    Text(model.game(hit.0.gameID)?.name ?? "").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                                    Text(model.game(hit.0.gameID)?.name ?? "").font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
                                 }
                                 Text(hit.1).font(PlayscribeFont.footnote).lineLimit(2)
                             }
@@ -319,15 +325,13 @@ struct SearchView: View {
                 Section("In game books") {
                     ForEach(entryHits) { e in
                         Button {
-                            let ch: Chapter = e.chapter == .world ? .world : .companion
-                            model.openGame(e.gameID, chapter: ch)
-                            model.nav.anchors[AppModel.bookKey(e.gameID, ch)] = "entry-\(e.id)"
+                            model.openEntry(e)
                         } label: {
                             VStack(alignment: .leading, spacing: 2) {
                                 Text(e.title).font(PlayscribeFont.subheadline.weight(.semibold))
                                 HStack(spacing: 8) {
                                     Text(model.game(e.gameID)?.name ?? "")
-                                    Text(e.section).foregroundStyle(.secondary)
+                                    Text(e.section).foregroundStyle(PlayscribeRole.textSecondary)
                                     if e.spoiler { Tag(text: "Spoiler") }
                                 }
                                 .font(PlayscribeFont.caption)
@@ -338,6 +342,8 @@ struct SearchView: View {
                 }
             }
         }
+        // The list's own ground is the page's bg (Iris on #563: the system grouped grey met the cream stage at the fold).
+        .scrollContentBackground(.hidden)
         .contentMargins(.trailing, railWidth + (tabletop ? 0 : badgeExtra), for: .scrollContent)
         .clearsMessages()
         // Book: Search lives on the right page, never across the fold (0.2.0 gate: field and hint ran full width).
@@ -345,6 +351,8 @@ struct SearchView: View {
         // G-4, TT-0: in Tabletop the list lives on the flat half; the standing half only titles it.
         .frame(maxHeight: tabletop ? max(0, duo.size.height - (duo.division?.maxY ?? 0)) : .infinity)
         .frame(maxHeight: .infinity, alignment: .bottom)
+        // The standing half is the stage: on the bg token like every other page, never the window's black (cream in light).
+        .background(PlayscribeRole.bg.ignoresSafeArea())
         .overlay(alignment: .topLeading) {
             if tabletop {
                 Text("Search").font(PlayscribeFont.largeTitle).padding(24).allowsHitTesting(false)

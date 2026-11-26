@@ -53,7 +53,7 @@ extension OwnershipStatus {
 /// A small capsule label. Text uses .caption2 so it never drops below 11 pt (G-7).
 struct Tag: View {
     var text: String
-    var tint: Color = .secondary
+    var tint: Color = PlayscribeRole.textSecondary
     var body: some View {
         Text(text)
             .font(PlayscribeFont.caption2.weight(.semibold))
@@ -74,7 +74,7 @@ struct StatusPill: View {
 
 struct UnreadDot: View {
     var body: some View {
-        Circle().fill(PlayscribeColor.accent).frame(width: 8, height: 8)
+        Circle().fill(PlayscribeRole.newGraphic).frame(width: 8, height: 8)
             .accessibilityLabel("Unread")
     }
 }
@@ -93,8 +93,12 @@ extension Date {
     private static let utc: Calendar = { var c = Calendar(identifier: .gregorian); c.timeZone = .gmt; return c }()
     /// Patch and release dates are facts about the patch, not the reader: the UTC calendar day, whatever the device's zone
     /// (Nadia, 7 Nov 2026; docs/decisions/release-date-timezone.md). The same patch reads the same on every phone, shared card and runner.
-    var shortDay: String { formatted(Date.FormatStyle(locale: Self.dayFirst, timeZone: .gmt).day().month(.abbreviated).year()) }
-    var dayMonth: String { formatted(Date.FormatStyle(locale: Self.dayFirst, timeZone: .gmt).day().month(.abbreviated)) }
+    /// Building a Date.FormatStyle and formatting with it costs far more than a tile can spare while scrolling (Upcoming formats
+    /// two dates per tile on every redraw), and the result depends only on the date, so it is remembered (scroll lag, 13 Nov).
+    var shortDay: String { DayLabelMemo.shared.label(self, short: true) }
+    var dayMonth: String { DayLabelMemo.shared.label(self, short: false) }
+    fileprivate var shortDayUncached: String { formatted(Date.FormatStyle(locale: Self.dayFirst, timeZone: .gmt).day().month(.abbreviated).year()) }
+    fileprivate var dayMonthUncached: String { formatted(Date.FormatStyle(locale: Self.dayFirst, timeZone: .gmt).day().month(.abbreviated)) }
     /// "16 Oct" this year, "16 Oct 2025" before (years counted in UTC too).
     var dayMonthOrYear: String { Self.utc.isDate(self, equalTo: .now, toGranularity: .year) ? dayMonth : shortDay }
     /// A moment on this device ("Checked 7 Nov, 11:20"): the device's own zone, not the patch rule above.
@@ -114,6 +118,25 @@ extension Date {
     }
 }
 
+/// Remembers the printed day for each date (UTC day, en_GB), so the same date is formatted once.
+final class DayLabelMemo: @unchecked Sendable {
+    static let shared = DayLabelMemo()
+    private let lock = NSLock()
+    private var short: [Date: String] = [:]
+    private var medium: [Date: String] = [:]
+
+    func label(_ d: Date, short isShort: Bool) -> String {
+        lock.lock(); let hit = isShort ? short[d] : medium[d]; lock.unlock()
+        if let hit { return hit }
+        let text = isShort ? d.shortDayUncached : d.dayMonthUncached
+        lock.lock()
+        if short.count + medium.count > 2000 { short.removeAll(); medium.removeAll() }
+        if isShort { short[d] = text } else { medium[d] = text }
+        lock.unlock()
+        return text
+    }
+}
+
 extension String {
     /// "Deliverance II" with a no-break space before a trailing Roman numeral, so the numeral never wraps onto a line of its own
     /// (Open portrait showed "II ✓" alone under "Deliverance"; r060-nbsp-roman-numerals). Only a numeral up to XX after at least one
@@ -126,6 +149,29 @@ extension String {
         return String(self[..<space]) + "\u{00A0}" + last
     }
 
+    private static let isoDayCalendar = Calendar(identifier: .gregorian)
+
+    /// A version number ("01.004.000", "v1.1") with a word joiner after each dot, so it drops to the next line whole and never breaks
+    /// at a dot ("01.002." then "000"). Only digit.digit runs change; every other string is returned unchanged. Display only.
+    var keepingVersionsTogether: String {
+        var out = ""
+        var prev: Character?
+        let chars = Array(self)
+        for (i, c) in chars.enumerated() {
+            out.append(c)
+            if c == ".", let p = prev, p.isNumber, i + 1 < chars.count, chars[i + 1].isNumber { out.append("\u{2060}") }
+            prev = c
+        }
+        return out
+    }
+
+    /// A version chip as VoiceOver should say it ("v1.012" → "version 1 point 012"), so it is never read as a number or a date.
+    var spokenVersion: String {
+        var t = self.replacingOccurrences(of: "\u{2060}", with: "")
+        if let f = t.first, f == "v" || f == "V", t.dropFirst().first?.isNumber == true { t.removeFirst() }
+        return "version " + t.replacingOccurrences(of: ".", with: " point ")
+    }
+
     /// ISO day ("2026-09-03") to a Date at noon UTC.
     var isoDay: Date? {
         var c = DateComponents()
@@ -133,7 +179,8 @@ extension String {
         guard p.count == 3 else { return nil }
         c.year = p[0]; c.month = p[1]; c.day = p[2]; c.hour = 12
         c.timeZone = .gmt
-        return Calendar(identifier: .gregorian).date(from: c)
+        // One shared calendar: a new one per call was the cost when a list sorted or labelled many games.
+        return Self.isoDayCalendar.date(from: c)
     }
 }
 
@@ -160,8 +207,8 @@ private struct AdaptiveGlass<S: InsettableShape>: ViewModifier {
     func body(content: Content) -> some View {
         if reduceTransparency || contrast == .increased || qaSolid {
             content
-                .background(Color.ink2, in: shape)
-                .overlay(shape.strokeBorder(PlayscribeColor.vellum500, lineWidth: 1))
+                .background(PlayscribeRole.card, in: shape)
+                .controlBorder(.solidGlass, in: shape, keepingDark: PlayscribeColor.vellum500)
         } else {
             content.glassEffect(interactive ? .regular.interactive() : .regular, in: shape)
         }
@@ -171,5 +218,32 @@ private struct AdaptiveGlass<S: InsettableShape>: ViewModifier {
 extension View {
     func adaptiveGlass<S: InsettableShape>(in shape: S, interactive: Bool = false) -> some View {
         modifier(AdaptiveGlass(shape: shape, interactive: interactive))
+    }
+
+    /// One rule for anything over art (Iris, design/taste-fixes/over-art-materials.md), role 1: a control that floats over
+    /// content (rail, Back, Share, the View menu, action discs, the play button) is Liquid Glass, solid ink with a 1 pt border
+    /// under Reduce Transparency or Increase Contrast. The only way a control gets a material (MaterialLintTests).
+    func floatingControl<S: InsettableShape>(in shape: S) -> some View {
+        adaptiveGlass(in: shape, interactive: true)
+    }
+
+    /// Role 2: a label that sits on art (version chip, tile status circle, date pills, the cover's "1 of 3" pill) is ink950 at
+    /// 75%, the hero scrim's ink: ember on it over pure white art is 5.2:1, and 75% is the floor (60% falls to 2.9:1). Solid ink
+    /// under Reduce Transparency or Increase Contrast. Never glass: glass reads as tappable, and a label is not.
+    func artLabel<S: Shape>(in shape: S) -> some View {
+        modifier(ArtLabel(shape: shape))
+    }
+}
+
+/// See `artLabel(in:)`.
+struct ArtLabel<S: Shape>: ViewModifier {
+    static var opacity: Double { 0.75 }
+    var shape: S
+    @Environment(\.accessibilityReduceTransparency) private var reduceTransparency
+    @Environment(\.colorSchemeContrast) private var contrast
+    @Environment(\.qaSolid) private var qaSolid
+    func body(content: Content) -> some View {
+        let solid = reduceTransparency || contrast == .increased || qaSolid
+        content.background(shape.fill(PlayscribeColor.ink950.opacity(solid ? 1 : Self.opacity)))
     }
 }

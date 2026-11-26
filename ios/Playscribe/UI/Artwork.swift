@@ -5,6 +5,8 @@ import SwiftUI
 struct CoverView: View {
     var game: CatalogGame
     var cornerRadius: CGFloat = 8
+    /// Longest side, in pixels, the cover is decoded at. Tiles pass a small one; 800 keeps the full 528 x 748 cover.
+    var maxPixel: Int = 800
 
     var body: some View {
         ZStack {
@@ -12,9 +14,7 @@ struct CoverView: View {
             if let asset = game.coverAsset {
                 Image(asset).resizable().scaledToFill()
             } else if let url = game.coverURL {
-                AsyncImage(url: url, transaction: Transaction(animation: .easeOut(duration: 0.2))) { phase in
-                    if let image = phase.image { image.resizable().scaledToFill() }
-                }
+                CachedCoverImage(url: url, maxPixel: maxPixel)
             }
         }
         .aspectRatio(3 / 4, contentMode: .fit)
@@ -72,6 +72,13 @@ struct ArtView: View {
                             fill(image.resizable(), geo.size)
                         } else if case .failure = phase {
                             defaultHeader(geo.size)
+                        } else if let cover = game?.coverURL {
+                            // While the key art loads (slow on a real connection; Iris on #596: Open portrait showed a flat grey
+                            // band after View game), the cover the reader just tapped, already cached at the tile size, blurred and
+                            // darkened as CoverHeader draws it. Never a blank band.
+                            CachedCoverImage(url: cover, maxPixel: 480)
+                                .frame(width: geo.size.width, height: geo.size.height)
+                                .blur(radius: 30).brightness(-0.35).clipped()
                         }
                     }
                 } else {
@@ -86,6 +93,8 @@ struct ArtView: View {
         }
         .clipped()
         .accessibilityHidden(true)
+        // bug-064: wide art under the status bar turns the bar light (light mode only) and carries a scrim there.
+        .statusBarArt()
         .onAppear {
             guard drift, !reduceMotion else { return }
             withAnimation(.easeInOut(duration: 18).repeatForever(autoreverses: true)) { phase = true }

@@ -48,18 +48,76 @@ extension AppModel {
 struct LibraryTabPicker: View {
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
+    @Environment(\.dynamicTypeSize) private var typeSize
+
+    /// Accessibility sizes swap the segmented control for two single-select chips: the system control keeps near-standard
+    /// text at AX5 while everything round it is huge (bug-playing-upcoming-switch-ax5-small, Nadia).
+    static func usesChips(_ size: DynamicTypeSize) -> Bool { size.isAccessibilitySize }
+
     var body: some View {
         @Bindable var model = model
-        Picker("Library", selection: $model.libraryTab) {
-            ForEach(LibraryTab.allCases) { Text($0.label).tag($0) }
+        Group {
+            if Self.usesChips(typeSize) {
+                chips
+            } else {
+                Picker("Library", selection: $model.libraryTab) {
+                    ForEach(LibraryTab.allCases) { Text($0.label).tag($0) }
+                }
+                .pickerStyle(.segmented)
+                .frame(minHeight: 44)
+                .accessibilityIdentifier("libraryTabPicker")
+            }
         }
-        .pickerStyle(.segmented)
-        .frame(minHeight: 44)
-        .accessibilityIdentifier("libraryTabPicker")
         // Book: exactly the left page wide, so the control never crosses the fold (AX3, 7fe84f4).
         .frame(width: duo.pose == .book ? duo.division.map { max(0, $0.minX - 24 - 16) } : nil, alignment: .leading)
+        // Never wider than LibraryControl.maxWidth, leading: in Open landscape it stretched to about 1750 px (Iris).
+        .frame(maxWidth: LibraryControl.maxWidth, alignment: .leading)
         .tappableFrame()
     }
+
+    /// Side by side, each half the width, when both labels fit whole on one line; else stacked full width. Never cut.
+    private var chips: some View {
+        // The id and the container sit on each branch, inside ViewThatFits: on the ViewThatFits itself they never reached the
+        // tree (cloud run 45548323603: "the switch keeps its id" failed; the tree showed a bare Group "Library").
+        ViewThatFits(in: .horizontal) {
+            HStack(spacing: 8) { ForEach(LibraryTab.allCases) { chip($0, oneLine: true) } }
+                .modifier(SwitchContainer())
+            VStack(spacing: 8) { ForEach(LibraryTab.allCases) { chip($0, oneLine: false) } }
+                .modifier(SwitchContainer())
+        }
+    }
+
+    private struct SwitchContainer: ViewModifier {
+        func body(content: Content) -> some View {
+            content
+                .accessibilityElement(children: .contain)
+                .accessibilityLabel("Library")
+                .accessibilityIdentifier("libraryTabPicker")
+        }
+    }
+
+    /// The filter-chip look (FilterBar): selection is the fill, the weight and the selected trait, never colour alone.
+    private func chip(_ tab: LibraryTab, oneLine: Bool) -> some View {
+        let on = model.libraryTab == tab
+        return Button { model.libraryTab = tab } label: {
+            Text(tab.label)
+                .font(PlayscribeFont.subheadline.weight(on ? .semibold : .regular))
+                .lineLimit(oneLine ? 1 : 2)
+                .fixedSize(horizontal: oneLine, vertical: true)
+                .padding(.horizontal, 10).padding(.vertical, 6)
+                .frame(maxWidth: .infinity, minHeight: 44)
+                .modifier(SelectableChipGround(on: on))
+        }
+        .buttonStyle(.plain)
+        .accessibilityAddTraits(on ? .isSelected : [])
+        .accessibilityIdentifier("libraryTab-\(tab.rawValue)")
+    }
+}
+
+/// The Library's Playing/Upcoming control and search field stop at this width, leading-aligned, on wide screens (Iris:
+/// both stretched to about 1750 px in Open landscape). Closed portrait (466 pt) and a Book page are narrower already.
+enum LibraryControl {
+    static let maxWidth: CGFloat = 520
 }
 
 struct UpcomingView: View {
@@ -180,7 +238,8 @@ struct UpcomingView: View {
 
     /// AX row: cover 84 pt (72 in Closed, where the page is narrowest) (3:4) beside the text; name on whole words up to 4 lines, date on its own line, status on its own row.
     private func row(_ g: CatalogGame, watching: Bool) -> some View {
-        Button {
+        let date = dateLine(g), move = moveLine(g)
+        return Button {
             model.browseGame(g)
         } label: {
             // Closed is the narrowest page: the cover sits above the text there so the name and date get the whole column.
@@ -188,11 +247,11 @@ struct UpcomingView: View {
             layout {
                 TileCover(game: g).aspectRatio(3 / 4, contentMode: .fit).frame(width: duo.pose == .closed ? 72 : 84)
                 VStack(alignment: .leading, spacing: 6) {
-                    WholeWordText(text: g.name, font: PlayscribeFont.subheadline.weight(.semibold), lines: 4)
-                    Text(dateLine(g)).font(PlayscribeFont.caption).foregroundStyle(.secondary).fixedSize(horizontal: false, vertical: true)
-                    if let move = moveLine(g) {
+                    WholeWordText(text: g.name.gluingTrailingNumeral, font: PlayscribeFont.subheadline.weight(.semibold), lines: 4)
+                    Text(date).font(PlayscribeFont.caption).foregroundStyle(PlayscribeRole.textSecondary).fixedSize(horizontal: false, vertical: true)
+                    if let move {
                         // Status on its own row, 24 pt clear of the rail; the name and date keep the full column.
-                        Text(move).font(PlayscribeFont.caption.weight(.semibold)).foregroundStyle(PlayscribeColor.accent).fixedSize(horizontal: false, vertical: true)
+                        Text(move).font(PlayscribeFont.caption.weight(.semibold)).foregroundStyle(PlayscribeRole.action).fixedSize(horizontal: false, vertical: true)
                             .padding(.trailing, 24)
                     }
                 }
@@ -202,7 +261,7 @@ struct UpcomingView: View {
         }
         .buttonStyle(.plain)
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel("\(g.name), \(dateLine(g))\(moveLine(g).map { ", " + $0 } ?? "")\(watching ? ", on your watchlist" : "")")
+        .accessibilityLabel("\(g.name), \(date)\(move.map { ", " + $0 } ?? "")\(watching ? ", on your watchlist" : "")")
         .accessibilityAddTraits(.isButton)
         .tappableFrame()
         .gameQuickActions(g)
@@ -223,22 +282,23 @@ struct UpcomingView: View {
     }
 
     private func tile(_ g: CatalogGame, watching: Bool) -> some View {
-        Button {
+        let date = dateLine(g), move = moveLine(g)
+        return Button {
             // Opening a game never changes its status; watching is the game page's own control.
             model.browseGame(g)
         } label: {
             VStack(alignment: .leading, spacing: 6) {
                 TileCover(game: g).aspectRatio(3 / 4, contentMode: .fit)
-                WholeWordText(text: g.name, font: PlayscribeFont.subheadline.weight(.semibold), lines: 4)
-                Text(dateLine(g)).font(PlayscribeFont.caption).foregroundStyle(.secondary).lineLimit(2).fixedSize(horizontal: false, vertical: true)
-                if let move = moveLine(g) {
-                    Text(move).font(PlayscribeFont.caption.weight(.semibold)).foregroundStyle(PlayscribeColor.accent).lineLimit(2)
+                WholeWordText(text: g.name.gluingTrailingNumeral, font: PlayscribeFont.subheadline.weight(.semibold), lines: 4)
+                Text(date).font(PlayscribeFont.caption).foregroundStyle(PlayscribeRole.textSecondary).lineLimit(2).fixedSize(horizontal: false, vertical: true)
+                if let move {
+                    Text(move).font(PlayscribeFont.caption.weight(.semibold)).foregroundStyle(PlayscribeRole.action).lineLimit(2)
                 }
             }
         }
         .buttonStyle(.plain)
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel("\(g.name), \(dateLine(g))\(moveLine(g).map { ", " + $0 } ?? "")\(watching ? ", on your watchlist" : "")")
+        .accessibilityLabel("\(g.name), \(date)\(move.map { ", " + $0 } ?? "")\(watching ? ", on your watchlist" : "")")
         .accessibilityAddTraits(.isButton)
         .tappableFrame()
         .gameQuickActions(g)
@@ -250,18 +310,18 @@ struct UpcomingView: View {
         VStack(alignment: .leading, spacing: 14) {
             if UpcomingStore.shared.failed && more.isEmpty {
                 HStack {
-                    Text("Couldn't load upcoming games. Check your connection and try again.").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                    Text("Couldn’t load upcoming games. Check your connection and try again.").font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
                     Spacer(minLength: 0)
                     Button { Task { await UpcomingStore.shared.load() } } label: { Text("Retry").frame(minWidth: 44, minHeight: 44).contentShape(Rectangle()) }
-                        .font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.accent)
+                        .font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeRole.action)
                         .tappableFrame()
                 }
             }
             if watched.isEmpty {
                 VStack(spacing: 8) {
                     Text("Nothing on your watchlist yet").font(PlayscribeFont.headline)
-                    Text("Watch a game that isn't out yet and Playscribe will tell you when its first update lands.")
-                        .font(PlayscribeFont.subheadline).foregroundStyle(.secondary).multilineTextAlignment(.center)
+                    Text("Watch a game that isn’t out yet and Playscribe will tell you when its first update lands.")
+                        .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary).multilineTextAlignment(.center)
                 }
                 // Book: the empty state stays on the left page, centred there, never across the spine (Quinn, #348).
                 .frame(width: duo.pose == .book ? duo.division.map { max(0, $0.minX - 24 - 16) } : nil)
@@ -290,11 +350,11 @@ struct UpcomingView: View {
             if more.isEmpty && watched.isEmpty && UpcomingStore.shared.loading {
                 HStack(spacing: 10) {
                     ProgressView()
-                    Text("Loading upcoming games").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                    Text("Loading upcoming games").font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
                 }
                 .accessibilityElement(children: .combine)
             } else if more.isEmpty && watched.isEmpty && !UpcomingStore.shared.failed {
-                Text("Nothing upcoming. Announced updates will show here.").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                Text("Nothing upcoming. Announced updates will show here.").font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
             } else if !more.isEmpty {
                 section("Coming to PS5", games: more, watching: false)
             }

@@ -1,4 +1,5 @@
 import Foundation
+import QuartzCore
 import Testing
 import SwiftUI
 import UserNotifications
@@ -9,6 +10,33 @@ struct ModelTests {
     func freshModel() -> AppModel {
         let url = URL.temporaryDirectory.appending(path: "state-\(UUID().uuidString).json")
         return AppModel(storeURL: url)
+    }
+
+    @Test("Gallery videos play in the app's own player, never hand off to YouTube (R-11; Terry 19 Nov: the Dawnwalker ones all open in YouTube)")
+    func galleryVideosPlayInApp() {
+        let m = freshModel()
+        let videos = m.gallery("dawnwalker").filter { $0.kind == .video }
+        #expect(videos.count >= 5)
+        for v in videos {
+            m.trailer = nil
+            m.playGalleryVideo(v)
+            let id = v.href.flatMap { URLComponents(string: $0)?.queryItems?.first { $0.name == "v" }?.value }
+            #expect(id != nil, "\(v.title) has a YouTube watch link")
+            #expect(m.trailer?.videoID == id, "\(v.title) opens the in-app player")
+            #expect(m.trailer?.name == v.title)
+        }
+    }
+
+    @Test("A Gallery link gives a YouTube ID only for YouTube hosts (Quinn on #551)")
+    func galleryYouTubeID() {
+        func id(_ href: String) -> String? { GalleryItem(id: "x", gameID: "g", kind: .video, asset: "", title: "", alt: "", href: href).youtubeID }
+        #expect(id("https://www.youtube.com/watch?v=abc") == "abc")
+        #expect(id("https://m.youtube.com/watch?v=abc") == "abc")
+        #expect(id("https://youtu.be/abc") == "abc")
+        #expect(id("https://www.youtube.com/embed/abc") == "abc")
+        #expect(id("https://www.youtube.com/shorts/abc") == "abc")
+        #expect(id("https://notyoutube.com/watch?v=abc") == nil)
+        #expect(id("https://www.youtube.com/watch") == nil)
     }
 
     @Test("Fixtures decode and every release follows the PS5 spec")
@@ -290,6 +318,23 @@ struct DatePrecisionTests {
         #expect(ps4Only("2021-03-04").ps5DateLine == ps4Only("2021-03-04").ps5AvailabilityLine)
     }
 
+    @Test("r060-tile-dates-ax5: a tile date never breaks inside itself")
+    func tileDayHoldsTogether() {
+        let thisYear = Date.now, lastYear = Date.now.addingTimeInterval(-400 * 86400)
+        for d in [thisYear, lastYear] {
+            let text = AppModel.tileDay(d)
+            #expect(!text.contains(" "), "\(text) has a breaking space")
+            #expect(text.contains("\u{00A0}"), "\(text) joins its parts with a no-break space")
+        }
+    }
+
+    @Test("Iris, #597: each caption mark has words, so colour is never the only cue")
+    func tileMarkWords() {
+        #expect(AppModel.tileUpdateWords(.unread, "22 Nov") == "new update 22 Nov")
+        #expect(AppModel.tileUpdateWords(.recent, "22 Nov") == "updated this week, read, 22 Nov")
+        #expect(AppModel.tileUpdateWords(.older, "Jul 2025") == "last updated Jul 2025")
+    }
+
     @Test("D-12: a PS4-only game's tile is a quiet caption, never unread, never TBA, and VoiceOver says what it is")
     func ps4OnlyTile() {
         let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "ps4tile-\(UUID().uuidString).json"))
@@ -311,10 +356,10 @@ struct DatePrecisionTests {
         func g(_ o: String?, _ on: String? = nil, _ p: DatePrecision? = .tbd) -> CatalogGame {
             CatalogGame(id: "t", name: "T", platforms: [.ps5], releaseDate: nil, releasePrecision: p, playableSince: nil, releasedElsewhere: o, releasedElsewhereOn: on, coverage: .none)
         }
-        #expect(g("2012-10-16", "PC").ps5DateLine == "Not on PS5 · PC, 2012")
-        #expect(g("2012-10-16", "PC").ps5AvailabilityLine == "Not on PS5 · PC, 2012")
-        #expect(g("2012-10-19", "PC (Microsoft Windows)").ps5AvailabilityLine == "Not on PS5 · PC, 2012")
-        #expect(g("2012-10-16").ps5AvailabilityLine == "Not on PS5 · 2012")
+        #expect(g("2012-10-16", "PC").ps5DateLine == "Not on PS5 (PC, 2012)")
+        #expect(g("2012-10-16", "PC").ps5AvailabilityLine == "Not on PS5 (PC, 2012)")
+        #expect(g("2012-10-19", "PC (Microsoft Windows)").ps5AvailabilityLine == "Not on PS5 (PC, 2012)")
+        #expect(g("2012-10-16").ps5AvailabilityLine == "Not on PS5 (2012)")
         #expect(g("2012-10-16").ps5ShortLine == "Not on PS5")
         // Truly no release anywhere, or a release still to come, stays TBA.
         #expect(g(nil).ps5AvailabilityLine == "Release date TBA")
@@ -373,18 +418,32 @@ struct GameBookStateTests {
         #expect(!again.isUnread(other))
     }
 
-    @Test("D-13: each game reopens on its last chapter, after a relaunch")
+    @Test("bug-072, R-1: a game reopens on its newest update, not its last section, after a relaunch")
     func chapterPerGame() {
         let url = URL.temporaryDirectory.appending(path: "d13-\(UUID().uuidString).json")
         let m = AppModel(storeURL: url)
         m.openGame("dawnwalker")
-        m.nav.chapter = .world
+        m.nav.chapter = .companion
         m.openGame("kcd2")
         #expect(m.nav.chapter == .updates)
         m.saveNow()
         let again = AppModel(storeURL: url)
         again.openGame("dawnwalker")
-        #expect(again.nav.chapter == .world)
+        #expect(again.nav.chapter == .updates)
+    }
+
+    @Test("bug-072, R-7: a World chapter saved by 0.5.5 no longer reopens a game on a section")
+    func savedWorldReopensAsCompanion() {
+        let url = URL.temporaryDirectory.appending(path: "d13w-\(UUID().uuidString).json")
+        let m = AppModel(storeURL: url)
+        m.openGame("dawnwalker")
+        m.nav.chapter = .world
+        m.openGame("kcd2")
+        m.saveNow()
+        let again = AppModel(storeURL: url)
+        again.openGame("dawnwalker")
+        #expect(again.nav.chapter == .updates)
+        #expect(again.section("dawnwalker") == .updates)
     }
 
     @Test("D-4: with nothing selected the Page shows the newest PS5 release")
@@ -584,34 +643,93 @@ struct ReaderPositionTests {
 struct AutoplayTests {
     @Test("Player page autoplays only when asked (R-11)")
     func html() {
-        #expect(YouTubeController.html("abc", captions: true).contains("autoplay:0"))
+        // The player is built by build(start, play) (rebuilt in place on a Tabletop switch, #552); the first build plays only
+        // when autoplay is asked for, and play sets both the embed's autoplay and the explicit playVideo().
+        let off = YouTubeController.html("abc", captions: true)
+        #expect(off.contains("build(0,false)") && !off.contains("build(0,true)"))
         let on = YouTubeController.html("abc", captions: true, autoplay: true)
-        #expect(on.contains("autoplay:1") && on.contains("player.playVideo();"))
+        #expect(on.contains("build(0,true)"))
+        #expect(on.contains("autoplay:play?1:0") && on.contains("if(play){player.playVideo()}"))
     }
 
-    @Test("Reflection is on by default and accessibility settings win (R-11, G-9)")
-    @MainActor func reflectionDefault() {
+    @Test("Reflection is on by default, in Tabletop only, and accessibility settings win (R-11, G-9; Terry 14 Nov)")
+    @MainActor func reflectionOnlyInTabletop() {
         #expect(VideoReflection.defaultOn)
-        #expect(VideoReflection.mode(setting: VideoReflection.defaultOn, reduceMotion: false, reduceTransparency: false) == .live)
-        // Reduce Motion keeps the mirror on the still, never live frames (G-9, Iris 12 Nov).
-        #expect(VideoReflection.mode(setting: true, reduceMotion: true, reduceTransparency: false) == .still)
-        #expect(VideoReflection.mode(setting: true, reduceMotion: false, reduceTransparency: true) == .off)
-        #expect(VideoReflection.mode(setting: false, reduceMotion: false, reduceTransparency: false) == .off)
+        #expect(VideoReflection.shows(pose: .tabletop, setting: VideoReflection.defaultOn, reduceMotion: false, reduceTransparency: false))
+        for pose in [Pose.closed, .flat, .book] {
+            #expect(!VideoReflection.shows(pose: pose, setting: true, reduceMotion: false, reduceTransparency: false))
+        }
+        // A live mirror moves, so Reduce Motion turns it off; there is no still mirror any more (G-9).
+        #expect(!VideoReflection.shows(pose: .tabletop, setting: true, reduceMotion: true, reduceTransparency: false))
+        #expect(!VideoReflection.shows(pose: .tabletop, setting: true, reduceMotion: false, reduceTransparency: true))
+        #expect(!VideoReflection.shows(pose: .tabletop, setting: false, reduceMotion: false, reduceTransparency: false))
     }
 
-    private func solid(_ color: UIColor) -> UIImage {
-        UIGraphicsImageRenderer(size: CGSize(width: 32, height: 18)).image { ctx in color.setFill(); ctx.fill(CGRect(x: 0, y: 0, width: 32, height: 18)) }
+    @Test("The mirror is the video's bottom strip at 1:1: the replica's last row sits on the strip's edge (R-11, reflection-0.6 spec 4, 8.1)")
+    @MainActor func mirrorStrip() {
+        let f = VideoReflection.replicaFrame(video: CGSize(width: 400, height: 225), band: 57)
+        // Before the flip the replica's bottom row is the strip's bottom row, so after it the video's last row comes first.
+        #expect(f.maxY == 57)
+        // True scale: no squash, the same size as the video.
+        #expect(f.width == 400 && f.height == 225)
+        // Only the bottom 57 rows are inside the strip.
+        // A named CGFloat: inside #expect a literal `57 - 225` is expanded as its own Int expression (CI at d7ff266).
+        let top: CGFloat = 57 - 225
+        #expect(f.minY == top)
     }
 
-    @Test("A black live frame never replaces the still (R-11; Terry 12 Nov, reflections don't work)")
-    @MainActor func blackFrameKeepsTheStill() {
-        let black = solid(.black), poster = solid(UIColor(red: 0.6, green: 0.4, blue: 0.2, alpha: 1)), frame = solid(.gray)
-        #expect(VideoReflection.isBlank(black))
-        #expect(!VideoReflection.isBlank(poster))
-        #expect(VideoReflection.pick(live: black, still: poster) === poster)
-        #expect(VideoReflection.pick(live: nil, still: poster) === poster)
-        #expect(VideoReflection.pick(live: frame, still: poster) === frame)
-        #expect(VideoReflection.thumbnailURL("abc")?.host == "i.ytimg.com")
+    @Test("The fade is quadratic, monotonic, ends at zero, and no stop steps by more than 4/255 at full edge strength (spec 8.2)")
+    @MainActor func mirrorFade() {
+        #expect(VideoReflection.fade(0) == 1)
+        #expect(VideoReflection.fade(1) == 0)
+        #expect(abs(VideoReflection.fade(0.5) - 0.25) < 1e-9)
+        var last = 1.0
+        for i in 1...255 {
+            let v = VideoReflection.fade(Double(i) / 255)
+            #expect(v <= last)
+            // Scaled by the 55% edge, one step of the fade is well under 4/255 (MirrorPixelTests reads the rendered rows).
+            #expect((last - v) * VideoReflection.edgeHidden * 255 < 4)
+            last = v
+        }
+    }
+
+    @Test("The mirror is 55% with the controls faded and 20% with them shown, never more (spec 4, contrast with no plates)")
+    @MainActor func mirrorStrength() {
+        #expect(VideoReflection.edgeOpacity(controlsShown: false) == 0.55)
+        #expect(VideoReflection.edgeOpacity(controlsShown: true) == 0.20)
+        #expect(VideoReflection.blur == 3)
+    }
+
+    @Test("The audit reports what the strip draws, not the intent (R-11, Mac at 95d9f3b)")
+    @MainActor func mirrorRendering() {
+        #expect(VideoReflection.rendering(hasReplica: true, band: 57, onScreen: true))
+        #expect(!VideoReflection.rendering(hasReplica: false, band: 57, onScreen: true))
+        #expect(!VideoReflection.rendering(hasReplica: true, band: 0, onScreen: true))
+        #expect(!VideoReflection.rendering(hasReplica: true, band: 57, onScreen: false))
+    }
+
+    @Test("The band is at most 15% of the lower half, never over 120 pt (R-11, Iris on #533)")
+    @MainActor func mirrorBand() {
+        #expect(VideoReflection.band(lowerHalf: 380) == 57)
+        #expect(VideoReflection.band(lowerHalf: 2000) == 120)
+        #expect(VideoReflection.band(lowerHalf: -10) == 0)
+    }
+
+    @Test("Idle-band variant: 30% of the lower half, at most 140 pt, only while the controls are faded and the switch is on (Iris, 21 Nov)")
+    @MainActor func mirrorIdleBand() {
+        #expect(VideoReflection.band(lowerHalf: 380, tallIdle: true, controlsShown: false) == 114)
+        #expect(VideoReflection.band(lowerHalf: 600, tallIdle: true, controlsShown: false) == 140)
+        #expect(VideoReflection.band(lowerHalf: 380, tallIdle: true, controlsShown: true) == 57)
+        #expect(VideoReflection.band(lowerHalf: 380, tallIdle: false, controlsShown: false) == 57)
+    }
+
+    @Test("Tabletop controls fade only while playing, never under VoiceOver or Switch Control (TT-4, spec 5)")
+    @MainActor func controlsAutoHide() {
+        #expect(TabletopTransport.autoHides(playing: true, voiceOver: false, switchControl: false))
+        #expect(!TabletopTransport.autoHides(playing: false, voiceOver: false, switchControl: false))
+        #expect(!TabletopTransport.autoHides(playing: true, voiceOver: true, switchControl: false))
+        #expect(!TabletopTransport.autoHides(playing: true, voiceOver: false, switchControl: true))
+        #expect(TabletopTransport.hideAfter == .seconds(4))
     }
 }
 
@@ -931,6 +1049,24 @@ struct QAPoseTests {
 }
 
 
+@Suite("Version glue")
+struct VersionGlueTests {
+    @Test("a version never breaks at its dots (G-14)")
+    func keepsVersionWhole() {
+        #expect("01.004.000".keepingVersionsTogether == "01.\u{2060}004.\u{2060}000")
+        #expect("v1.1".keepingVersionsTogether == "v1.\u{2060}1")
+        #expect("Hades II".keepingVersionsTogether == "Hades II")
+        #expect("Fixed. Next".keepingVersionsTogether == "Fixed. Next", "a full stop between words is left alone")
+    }
+
+    @Test("a version chip is spoken as a version, not a number or date (r060-version-chip-spoken)")
+    func spokenVersion() {
+        #expect("v1.012".spokenVersion == "version 1 point 012")
+        #expect("1.1".spokenVersion == "version 1 point 1")
+        #expect("01.\u{2060}004.\u{2060}000".spokenVersion == "version 01 point 004 point 000")
+    }
+}
+
 @Suite("Roman numeral glue")
 struct RomanNumeralGlueTests {
     @Test("a trailing numeral is tied to the word before it (r060-nbsp-roman-numerals)")
@@ -1001,7 +1137,7 @@ struct SearchTextColdLaunchTests {
         m.data.collection = Fixtures.shared.seedCollection
         let all = m.shownRows().count
         try #require(all > 1)
-        m.nav.query = "dawn"
+        m.libraryQuery = "dawn"
         #expect(m.shownRows().count < all)   // the typed text is filtering, so the test can tell the difference
         m.nav.gameID = "dawnwalker"
         m.nav.filter = .wishlist
@@ -1009,7 +1145,7 @@ struct SearchTextColdLaunchTests {
         m.saveNow()
 
         let reopened = AppModel(storeURL: u)
-        #expect(reopened.nav.query == "")
+        #expect(reopened.libraryQuery == "")
         #expect(reopened.nav.gameID == "dawnwalker")
         #expect(reopened.nav.filter == .wishlist)
         #expect(reopened.nav.anchors["library"] == "lib-kcd2")
@@ -1033,37 +1169,78 @@ struct SearchTextColdLaunchTests {
         #expect(AppModel(storeURL: u).nav.anchors["library"] == "lib-kcd2")
     }
 
+    @Test("r054: typing and the field's scroll ids leave the saved state alone; a tile anchor or nil is still saved")
+    func typingWritesNothingSaved() throws {
+        let m = AppModel(storeURL: url())
+        m.data.collection = Fixtures.shared.seedCollection
+        m.libraryAnchor = "lib-kcd2"
+        #expect(m.data.nav.anchors["library"] == "lib-kcd2")
+        m.libraryAnchor = nil
+        let enc = JSONEncoder(); enc.outputFormatting = .sortedKeys
+        let before = try enc.encode(m.data)
+        for prefix in ["c", "co", "con", "cont", "contr", "contro", "control"] {
+            m.libraryQuery = prefix
+            m.libraryAnchor = nil
+            m.libraryAnchor = "library-search"
+            #expect(m.libraryAnchor == "library-search")
+        }
+        #expect(try enc.encode(m.data) == before)
+        m.libraryAnchor = "lib-kcd2"
+        #expect(m.data.nav.anchors["library"] == "lib-kcd2")
+        #expect(m.libraryAnchor == "lib-kcd2")
+        // A direct write (QA route, reset) wins over the live field id.
+        m.libraryAnchor = "library-search"
+        m.nav.anchors["library"] = "lib-dawnwalker"
+        #expect(m.libraryAnchor == "lib-dawnwalker")
+    }
+
     @Test("a fold or unfold keeps the typed text: the model is not rebuilt, so the search is untouched")
     func foldKeepsTypedText() {
         let m = AppModel(storeURL: url())
         m.data.collection = Fixtures.shared.seedCollection
-        m.nav.query = "dawn"
+        m.libraryQuery = "dawn"
         m.saveNow()
         m.tick()          // what a pose change drives
-        #expect(m.nav.query == "dawn")
+        #expect(m.libraryQuery == "dawn")
     }
 }
 
-/// 0.5.5 (r054-tabletop-find-trailers): in Tabletop the empty Gallery's "Find trailers online" is view-only text, so the
-/// Links panel in the lower half carries the same search for every game whose Gallery is empty, and only for those.
+/// 0.6.0 (s-06-videos-in-our-player): "Find trailers online" was a YouTube search and is gone. No Links row, in any pose, sends
+/// a person to a video search; an empty Gallery offers only the official website.
 @MainActor
-struct TabletopFindTrailersTests {
-    @Test func linksPanelCarriesTheTrailerSearchForAnEmptyGallery() {
+struct NoTrailerSearchTests {
+    @Test func linksPanelHasNoTrailerSearch() {
         let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "links-\(UUID().uuidString).json"))
         m.resetDemo()
-        let games = m.fixtures.games
-        let empty = games.filter { m.gallery($0.id).isEmpty }
-        #expect(!empty.isEmpty)
-        for g in games {
-            let row = LinksSheet.rows(m, g.id).first { $0.id == "trailers" }
-            if m.gallery(g.id).isEmpty {
-                #expect(row?.title == "Find trailers online")
-                #expect(row?.url == GalleryEmpty.trailerSearchURL(g.name))
-                #expect(LinksSheet.hasLinks(m, g.id))   // so Tabletop's More menu offers Links
-            } else {
-                #expect(row == nil)
-            }
+        for g in m.fixtures.games {
+            let rows = LinksSheet.rows(m, g.id)
+            #expect(!rows.contains { $0.id == "trailers" }, "\(g.id) has no trailer search row")
+            #expect(!rows.contains { $0.url.absoluteString.contains("search_query") }, "\(g.id) has no video search link")
         }
+    }
+}
+
+/// R-11 (Terry, 20 Nov: every video plays in our own player): a YouTube link opened anywhere plays in our player.
+@MainActor
+struct VideoLinkTests {
+    @Test func youtubeLinksOpenOurPlayer() {
+        let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "vl-\(UUID().uuidString).json"))
+        for href in ["https://www.youtube.com/watch?v=abc", "https://youtu.be/abc", "https://m.youtube.com/shorts/abc",
+                     "https://www.youtube.com/live/abc", "https://www.youtube-nocookie.com/embed/abc"] {
+            m.trailer = nil
+            #expect(m.playVideoLink(URL(string: href)!), "\(href) plays in the app")
+            #expect(m.trailer?.videoID == "abc")
+        }
+        m.trailer = nil
+        #expect(!m.playVideoLink(URL(string: "https://www.playstation.com/en-us/games/")!))
+        #expect(!m.playVideoLink(URL(string: "https://notyoutube.com/watch?v=abc")!))
+        #expect(m.trailer == nil, "other links go to the system as before")
+    }
+
+    @Test("A video its owner blocks from other apps says so and offers Open in YouTube (R-12; Terry 20 Nov)")
+    func blockedEmbedOffersYouTube() {
+        #expect(VideoUnavailable.blocksEmbedding(101) && VideoUnavailable.blocksEmbedding(150))
+        #expect(!VideoUnavailable.blocksEmbedding(2) && !VideoUnavailable.blocksEmbedding(100) && !VideoUnavailable.blocksEmbedding(nil))
     }
 }
 
@@ -1082,5 +1259,31 @@ struct OpenMarksReadTests {
         #expect(m.isUnread(r), "Mark as unread (R-6a)")
         // The cover's NEW UPDATE eyebrow and the deck's "New update" chip read isUnread, so they come back with it.
         #expect(m.unreadCount(r.gameID) >= 1)
+    }
+}
+
+/// TT-2 (Iris, 0.5.6): the Tabletop stage leads with the patch name in the largest type, not the headline.
+struct ReaderStageTitleTests {
+    @MainActor
+    private func overview(name: String, headline: String?) -> ReaderSection? {
+        let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "rt-\(UUID().uuidString).json"))
+        let r = Release(id: "r", gameID: "g", displayName: name, kind: .major, kindBasis: .studio, announcedAt: Date(timeIntervalSince1970: 1_745_020_800),
+                        notes: [], sourceIDs: [], platforms: [], headline: headline)
+        return m.readerSections(r).first { $0.id == "overview" }
+    }
+
+    @Test("TT-2: the overview's title is the patch name, with or without a headline")
+    @MainActor func overviewLeadsWithThePatchName() {
+        #expect(overview(name: "Update 1.1", headline: "Photo mode and a new hunt")?.title == "Update 1.1")
+        #expect(overview(name: "Update 1.1", headline: nil)?.title == "Update 1.1")
+        #expect(overview(name: " ", headline: "Photo mode and a new hunt")?.title == "Photo mode and a new hunt")
+    }
+
+    @Test("TT-2: the headline is the overview's secondary line, dropped when it repeats the title")
+    @MainActor func headlineIsSecondary() {
+        #expect(overview(name: "Update 1.1", headline: "Photo mode and a new hunt")?.subtitle == "Photo mode and a new hunt")
+        #expect(overview(name: "Update 1.1", headline: nil)?.subtitle == nil)
+        #expect(overview(name: " ", headline: "Photo mode and a new hunt")?.subtitle == nil)
+        #expect(overview(name: "Update 1.1", headline: "Update 1.1")?.subtitle == nil)
     }
 }

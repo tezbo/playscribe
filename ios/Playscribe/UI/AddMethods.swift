@@ -83,54 +83,58 @@ struct AddEntryView: View {
     @Environment(\.dynamicTypeSize) private var typeSize
     /// The icon column grows with the text, so a large keyboard glyph never sits over "Search by name".
     @ScaledMetric(relativeTo: .title3) private var iconColumn: CGFloat = 32
+    private var pinsFooter: Bool { compact && !typeSize.isAccessibilitySize }
     private var footerText: String { "PlayStation account import is planned for a later version. \(Brand.name) never asks for your PlayStation password." }
 
     var body: some View {
         List {
-            Section {
-                ForEach(AddMethod.available) { m in
-                    Button { choose(m) } label: {
-                        // Accessibility sizes: the icon sits above the text, so the title takes the row's whole width and
-                        // wraps on whole words ("Scan with camer / a" at AX5).
-                        let ax = typeSize.isAccessibilitySize
-                        let stack = ax ? AnyLayout(VStackLayout(alignment: .leading, spacing: 6)) : AnyLayout(HStackLayout(spacing: 14))
-                        HStack(spacing: 14) {
-                            stack {
-                                Image(systemName: m.symbol).font(.title3).frame(width: ax ? nil : iconColumn, alignment: .leading)
-                                    .foregroundStyle(PlayscribeColor.accent)
-                                VStack(alignment: .leading, spacing: 2) {
-                                    Text(m.title).font(PlayscribeFont.headline).fixedSize(horizontal: false, vertical: true)
-                                    Text(m.detail).font(PlayscribeFont.footnote).foregroundStyle(.secondary)
-                                        .fixedSize(horizontal: false, vertical: true)
+            CardSections {
+                Section {
+                    ForEach(AddMethod.available) { m in
+                        Button { choose(m) } label: {
+                            // Accessibility sizes: the icon sits above the text, so the title takes the row's whole width and
+                            // wraps on whole words ("Scan with camer / a" at AX5).
+                            let ax = typeSize.isAccessibilitySize
+                            let stack = ax ? AnyLayout(VStackLayout(alignment: .leading, spacing: 6)) : AnyLayout(HStackLayout(spacing: 14))
+                            HStack(spacing: 14) {
+                                stack {
+                                    Image(systemName: m.symbol).font(.title3).frame(width: ax ? nil : iconColumn, alignment: .leading)
+                                        .foregroundStyle(PlayscribeRole.action)
+                                    VStack(alignment: .leading, spacing: 2) {
+                                        Text(m.title).font(PlayscribeFont.headline).fixedSize(horizontal: false, vertical: true)
+                                        Text(m.detail).font(PlayscribeFont.footnote).foregroundStyle(PlayscribeRole.textSecondary)
+                                            .fixedSize(horizontal: false, vertical: true)
+                                    }
                                 }
+                                Spacer(minLength: 0)
+                                Image(systemName: "chevron.forward").font(.footnote).foregroundStyle(PlayscribeRole.textSecondary)
                             }
-                            Spacer(minLength: 0)
-                            Image(systemName: "chevron.forward").font(.footnote).foregroundStyle(.secondary)
+                            .frame(minHeight: compact ? 64 : 52)
+                            .contentShape(Rectangle())
                         }
-                        .frame(minHeight: compact ? 64 : 52)
-                        .contentShape(Rectangle())
+                        .buttonStyle(.plain)
+                        .accessibilityLabel("\(m.title), \(m.detail.lowercasedFirst)")
+                        .accessibilityAddTraits(.isButton)
+                        .listRowInsets(compact ? EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16) : nil)
+                        .tappableFrame()
                     }
-                    .buttonStyle(.plain)
-                    .accessibilityLabel("\(m.title), \(m.detail.lowercasedFirst)")
-                    .accessibilityAddTraits(.isButton)
-                    .listRowInsets(compact ? EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16) : nil)
-                    .tappableFrame()
+                } footer: {
+                    if !pinsFooter { Text(footerText) }
                 }
-            } footer: {
-                if typeSize.isAccessibilitySize { Text(footerText) }
             }
         }
         .contentMargins(.top, compact ? 4 : 0, for: .scrollContent)
-        // Standard sizes pin the note in the sheet's bottom inset so nothing runs into it. At accessibility sizes it
-        // would take over half the screen, so it scrolls with the list instead (Quinn, AX5 Closed).
+        // Tabletop at standard sizes pins the note in the panel's bottom inset so nothing runs into it. Everywhere else it
+        // scrolls as the list's last line: at accessibility sizes it took over half the screen (Quinn, AX5 Closed), and in
+        // Closed landscape the pinned strip covered "Scan with camera" (Iris on #611, Mac 955129c8).
         .safeAreaInset(edge: .bottom, spacing: 0) {
-            if !typeSize.isAccessibilitySize {
+            if pinsFooter {
                 Text(footerText)
-                    .font(PlayscribeFont.footnote).foregroundStyle(.secondary)
+                    .font(PlayscribeFont.footnote).foregroundStyle(PlayscribeRole.textSecondary)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.horizontal, 20).padding(.vertical, compact ? 8 : 12)
                     .frame(minHeight: compact ? 56 : 0)
-                    .background(Color.ink0)
+                    .background(PlayscribeRole.bg)
             }
         }
     }
@@ -147,28 +151,30 @@ struct AddResultsView: View {
 
     var body: some View {
         List {
-            if matches.isEmpty {
-                Section {
-                    Text("Nothing recognised yet").font(PlayscribeFont.headline)
-                    Button("Try again", action: tryAgain).hitTarget()
-                }
-            }
-            let sure = matches.filter(\.sure)
-            if !sure.isEmpty {
-                Section("Found \(sure.count)") {
-                    ForEach(sure) { m in
-                        if let g = m.best { AddRow(game: g, status: status, selected: picked[g.id] != nil) { toggle(g) } }
+            CardSections {
+                if matches.isEmpty {
+                    Section {
+                        Text("Nothing recognised yet").font(PlayscribeFont.headline)
+                        Button("Try again", action: tryAgain).hitTarget()
                     }
                 }
-            }
-            ForEach(matches.filter { !$0.sure }) { m in
-                Section {
-                    if m.guesses.isEmpty {
-                        Text("No PS5 game matches '\(m.title)'").foregroundStyle(.secondary)
+                let sure = matches.filter(\.sure)
+                if !sure.isEmpty {
+                    Section("Found \(sure.count)") {
+                        ForEach(sure) { m in
+                            if let g = m.best { AddRow(game: g, status: status, selected: picked[g.id] != nil) { toggle(g) } }
+                        }
                     }
-                    ForEach(m.guesses) { g in AddRow(game: g, status: status, selected: picked[g.id] != nil) { toggle(g) } }
-                } header: {
-                    Text("Is this it? \(m.title)")
+                }
+                ForEach(matches.filter { !$0.sure }) { m in
+                    Section {
+                        if m.guesses.isEmpty {
+                            Text("No PS5 game matches ‘\(m.title)’").foregroundStyle(PlayscribeRole.textSecondary)
+                        }
+                        ForEach(m.guesses) { g in AddRow(game: g, status: status, selected: picked[g.id] != nil) { toggle(g) } }
+                    } header: {
+                        Text("Is this it? \(m.title)")
+                    }
                 }
             }
         }

@@ -87,7 +87,7 @@ struct FeedContractTests {
         #expect(LinkHost.label("All patch notes", URL(string: "https://www.remedygames.com/news")!) == "All patch notes on Remedy")
         #expect(LinkHost.label("All patch notes", URL(string: "https://deepsilver.com/x")!) == "All patch notes on Deep Silver")
         #expect(LinkHost.label("All patch notes", URL(string: "https://www.gamesci.cn/x")!) == "All patch notes on Game Science")
-        #expect(LinkHost.label("All patch notes", URL(string: "https://www.example.co.uk/a")!) == "All patch notes on the developer's site")
+        #expect(LinkHost.label("All patch notes", URL(string: "https://www.example.co.uk/a")!) == "All patch notes on the developer’s site")
         #expect(LinkHost.label("Read", URL(string: "mailto:x")!) == "Read")
     }
 
@@ -165,6 +165,19 @@ struct FeedContractTests {
         // A history the feed has served wins over a stale index that does not list the game yet.
         m.gameReleases["local-other"] = []
         #expect(m.feedTracksGame("local-other"))
+    }
+
+    /// copy-untracked-no-updates-yet (Terry's Astro Bot, beta 3): the index lists a game with no patch source for its basics, and
+    /// serves it an empty history, but nothing fetches its patches. `patchSource: false` makes it untracked, whatever the empty
+    /// history says, so its page never reads "No updates yet. Checked…". A served release still wins.
+    @Test("feedTracksGame: a game the index marks patchSource false is untracked")
+    func noPatchSourceIsUntracked() throws {
+        let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "nosource-\(UUID().uuidString).json"))
+        let idx = try decoder.decode(FeedClient.Index.self, from: Data(#"{ "updatedAt": "2026-11-22T00:00:00.000Z", "games": [ { "id": "astro-bot", "igdbId": 303811, "patchSource": false }, { "id": "ninja-gaiden-4", "igdbId": 329130 } ] }"#.utf8))
+        m.feedIndexGames = idx.games
+        m.gameReleases["astro-bot"] = []
+        #expect(!m.feedTracksGame("astro-bot"))
+        #expect(m.feedTracksGame("ninja-gaiden-4"))
     }
 }
 

@@ -12,7 +12,8 @@ final class ClosedLandscapeShotTests: XCTestCase {
         let suffix = ax3 ? "-ax5" : ""
         for screen in screens {
             let app = XCUIApplication()
-            app.launchArguments = ["-qaRoute", screen.route]
+            // -qaOrientation: XCUIDevice alone never turned the Duo's outer display (CI 45392778518, Mac at 3f15bcc7).
+            app.launchArguments = ["-qaRoute", screen.route, "-qaOrientation", "landscape"]
                 + (ax3 ? ["-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityXXXL"] : [])
             XCUIDevice.shared.orientation = .landscapeLeft
             app.launch()

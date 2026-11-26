@@ -14,9 +14,9 @@ struct CatchUpCard: View {
             VStack(alignment: .leading, spacing: 10) {
                 Text("Since you last opened").font(PlayscribeFont.title3)
                     .accessibilityAddTraits(.isHeader)
-                Text(summary).font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textSecondary)
+                Text(summary).font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
                 if let line = Self.digestLine(items.map(\.release)) {
-                    Text(line).font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textSecondary)
+                    Text(line).font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
                 }
                 if let top = items.lazy.compactMap({ $0.release.digest?.topNew }).first(where: { !$0.isEmpty }) {
                     VStack(alignment: .leading, spacing: 2) {
@@ -28,13 +28,13 @@ struct CatchUpCard: View {
                         HStack(spacing: 12) {
                             CoverView(game: item.game, cornerRadius: 6).frame(width: 40)
                             VStack(alignment: .leading, spacing: 2) {
-                                Text(item.game.name).font(PlayscribeFont.headline).lineLimit(typeSize.isAccessibilitySize ? 3 : 1)
+                                Text(item.game.name.gluingTrailingNumeral).font(PlayscribeFont.headline).lineLimit(typeSize.isAccessibilitySize ? 3 : 1)
                                 HStack(spacing: 8) {
                                     Text(item.release.displayName)
                                     if let l = item.release.ps4Label { Text(l).fontWeight(.semibold) }
-                                    if let v = item.release.ps5Version { Text(v).monospacedDigit() }
+                                    if let v = item.release.ps5Version { Text(v.keepingVersionsTogether).monospacedDigit() }
                                 }
-                                .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeColor.textSecondary)
+                                .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
                             }
                             Spacer(minLength: 0)
                         }
@@ -49,13 +49,13 @@ struct CatchUpCard: View {
                 }
                 Button("Mark all read") { model.markCatchUpRead() }
                     .font(PlayscribeFont.subheadline.weight(.semibold))
-                    .foregroundStyle(PlayscribeColor.accent)
+                    .foregroundStyle(PlayscribeRole.action)
                     .frame(minHeight: 44)
                     .tappableFrame()
             }
             .padding(14)
             .frame(maxWidth: .infinity, alignment: .leading)
-            .background(Color.ink2, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+            .background(PlayscribeRole.card, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
             .accessibilityElement(children: .contain)
             .accessibilityLabel(summary)
         }

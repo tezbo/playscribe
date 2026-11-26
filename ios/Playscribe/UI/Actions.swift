@@ -17,6 +17,8 @@ struct ScreenAction: Identifiable {
         var title: String
         var checked = false
         var destructive = false
+        /// What VoiceOver reads when it differs from the visible title ("Remove from library" reads with the game's name).
+        var spoken: String?
         var action: () -> Void
     }
 
@@ -38,13 +40,26 @@ extension Array where Element == ScreenAction.MenuSection {
 
 struct ActionMenuContent: View {
     var sections: [ScreenAction.MenuSection]
+    /// A confirmation dialog drops button icons, so the tick is drawn in the title there and also set as the selected trait.
+    var inDialog = false
+    /// A system menu drops its item icons at accessibility sizes, so the checkmark Label showed no tick for the current choice
+    /// (bug-status-menu-ax5-no-check, Closed portrait AX5). There the tick is drawn in the text, as in a dialog; the spoken label stays
+    /// the plain title and the selected trait says which is current.
+    @Environment(\.dynamicTypeSize) private var typeSize
+    /// A system menu's content is built outside this view's environment (the AX5 still showed no tick with the environment alone),
+    /// so the app's own content size category is read as well, as quickMenu does.
+    private var accessibilityText: Bool { typeSize.isAccessibilitySize || UIApplication.shared.preferredContentSizeCategory.isAccessibilityCategory }
     var body: some View {
         ForEach(sections) { section in
             Section(section.title ?? "") {
                 ForEach(section.items) { item in
                     Button(role: item.destructive ? .destructive : nil, action: item.action) {
-                        if item.checked { Label(item.title, systemImage: "checkmark") } else { Text(item.title) }
+                        if item.checked && (inDialog || accessibilityText) { Text("\u{2713} \(item.title)") }
+                        else if item.checked { Label(item.title, systemImage: "checkmark") } else { Text(item.title) }
                     }
+                    // A system dialog drops the selected trait (Mac, 3bb7345c), so in the dialog the label says it; menus keep the trait.
+                    .accessibilityLabel(item.checked && inDialog ? "\(item.title), selected" : (item.spoken ?? item.title))
+                    .accessibilityAddTraits(item.checked ? .isSelected : [])
                 }
             }
         }
@@ -83,32 +98,112 @@ struct RailPressStyle: ButtonStyle {
     }
 }
 
+/// The rail menus' choices, in a popover that never outgrows the lower half: the list scrolls inside a capped height with a bottom
+/// fade while more lies below. A system confirmation dialog grew past the window at AX5 and clipped "Off" and "Remove" (Mac, dc3bc407).
+struct RailMenuList: View {
+    var title: String
+    var sections: [ScreenAction.MenuSection]
+    var done: () -> Void
+    @State private var contentHeight: CGFloat = 0
+    @State private var moreBelow = false
+    private let cap: CGFloat = 340
+
+    static func keepTail(_ t: String) -> String {
+        guard let i = t.lastIndex(of: " ") else { return t }
+        return t.replacingCharacters(in: i...i, with: "\u{00A0}")
+    }
+
+    var body: some View {
+        // The title is pinned outside the scroll area so it can never fill the list (Mac, 4318d26: at AX5 it filled all 300 pt and no
+        // row showed). Text is held at AX2 inside: the rows stay whole words and the four choices fit without a drag where they can.
+        VStack(alignment: .leading, spacing: 0) {
+            if !title.isEmpty {
+                Text(title).font(PlayscribeFont.footnote).foregroundStyle(PlayscribeRole.textSecondary).lineLimit(1)
+                    .padding(.horizontal, 16).padding(.top, 12).padding(.bottom, 4)
+                    .accessibilityAddTraits(.isHeader)
+            }
+            ScrollView {
+                VStack(alignment: .leading, spacing: 0) {
+                    ForEach(sections) { section in
+                        if let t = section.title, !t.isEmpty {
+                            Text(t).font(PlayscribeFont.footnote).foregroundStyle(PlayscribeRole.textSecondary).fixedSize(horizontal: false, vertical: true)
+                                .padding(.horizontal, 16).padding(.top, 4).padding(.bottom, 2)
+                        }
+                        ForEach(section.items) { item in
+                            Button(role: item.destructive ? .destructive : nil) { done(); item.action() } label: {
+                                HStack(alignment: .firstTextBaseline, spacing: 8) {
+                                    // The last two words stay together ("Deliverance II" does not split across lines), except the destructive row, which wraps on plain whole words ("Remove from / library", Iris s-06 option 1); the spoken label stays the plain title.
+                                    Text(item.destructive ? item.title : RailMenuList.keepTail(item.title)).multilineTextAlignment(.leading).fixedSize(horizontal: false, vertical: true)
+                                        .accessibilityLabel(item.spoken ?? item.title)
+                                    Spacer(minLength: 8)
+                                    if item.checked { Image(systemName: "checkmark").accessibilityHidden(true) }
+                                }
+                                .foregroundStyle(item.destructive ? Color.red : PlayscribeRole.textPrimary)
+                                .padding(.horizontal, 16).padding(.vertical, 6).frame(minHeight: 44).contentShape(Rectangle())
+                            }
+                            .buttonStyle(.plain)
+                            .accessibilityAddTraits(item.checked ? .isSelected : [])
+                            .accessibilityIdentifier("railMenuRow")
+                        }
+                    }
+                }
+                .padding(.bottom, 8)
+                .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { contentHeight = $0 }
+            }
+            .frame(height: contentHeight > 0 ? min(contentHeight, cap) : 120)
+            .scrollBounceBehavior(.basedOnSize)
+            .onScrollGeometryChange(for: Bool.self) { g in
+                g.contentSize.height - g.contentOffset.y > g.containerSize.height + 1
+            } action: { _, more in moreBelow = more }
+            .mask(LinearGradient(stops: [.init(color: .black, location: moreBelow ? 0.88 : 1), .init(color: moreBelow ? .clear : .black, location: 1)],
+                                 startPoint: .top, endPoint: .bottom))
+            .accessibilityIdentifier("railMenuList")
+        }
+        .frame(width: 320)
+        .dynamicTypeSize(...DynamicTypeSize.accessibility2)
+    }
+}
+
 /// A rail button: icon with the title as its accessibility label, 44 pt hit target.
 struct RailButton: View {
     var action: ScreenAction
+    /// A rail menu is a plain labelled Button that presents a dialog with the same choices. A SwiftUI Menu always exposed a second,
+    /// unlabelled button to XCUITest and VoiceOver (Mac frame dumps at f78ee25, 40c142a and cc89583, and no accessibility modifier
+    /// removed it), so there is one element here by construction (bug-rail-menu-unlabelled-buttons).
+    @State private var choosing = false
+    @Environment(\.railPreAction) private var preAction
     var body: some View {
         Group {
             switch action.kind {
             case .button(let run):
-                Button(action: run) { icon }
+                Button { preAction?(); run() } label: { icon }
                     .buttonStyle(RailPressStyle())
             case .menu(let sections):
-                Menu { ActionMenuContent(sections: sections) } label: { icon }
+                Button { preAction?(); choosing = true } label: { icon }
+                    .buttonStyle(RailPressStyle())
+                    .popover(isPresented: $choosing) {
+                        // The status menu's one header is its section line ("In your library as…"), so the pinned title would repeat it.
+                        RailMenuList(title: action.id == "status" ? "" : action.title, sections: sections) { choosing = false }
+                            .presentationCompactAdaptation(.popover)
+                    }
                     .id(sections.tickKey)
             }
         }
         .accessibilityLabel(action.title)
+        // The game's Back keeps the id every pose's back button has (gameBack).
+        .accessibilityIdentifier(action.id == "back" ? "gameBack" : "rail.\(action.id)")
+        .accessibilityShowsLargeContentViewer { Label(action.title, systemImage: action.systemImage) }
         .tappableFrame()
     }
 
     private var icon: some View {
         Image(systemName: action.systemImage)
             .font(PlayscribeFont.title3)
-            .foregroundStyle(action.selected ? PlayscribeColor.accent : Color.primary)
+            .foregroundStyle(action.selected ? PlayscribeRole.action : PlayscribeRole.textPrimary)
             .frame(width: 44, height: 44)
-            // Round buttons like Closed's rail: a material disc, tinted when selected.
-            .background(Circle().fill(.regularMaterial))
-            .background(Circle().fill(PlayscribeColor.accent.opacity(action.selected ? 0.18 : 0)))
+            // Round buttons like Closed's rail: a glass disc (floating control), tinted when selected.
+            .background(Circle().fill(PlayscribeRole.action.opacity(action.selected ? 0.18 : 0)))
+            .floatingControl(in: Circle())
             .contentShape(Rectangle())
     }
 }
@@ -146,7 +241,7 @@ extension AppModel {
             .init(title: "Status", items: OwnershipStatus.allCases.map { s in
                 .init(id: s.rawValue, title: s.label, checked: s == current) { [weak self] in self?.setStatus(gameID, s) }
             }),
-            .init(items: [.init(id: "remove", title: "Remove \(name)", destructive: true) { [weak self] in self?.removeGame(gameID) }]),
+            .init(items: [.init(id: "remove", title: "Remove from library", destructive: true, spoken: "Remove \(name) from library") { [weak self] in self?.removeGame(gameID) }]),
         ]
     }
 
@@ -173,24 +268,71 @@ extension AppModel {
 
     /// D-6: the rail holds only actions that visibly do something: Notifications and Status.
     /// Spoilers live inline on the Page; Mark read lives in the Contents next to the unread rows.
-    func gameActions(_ gameID: String) -> [ScreenAction] {
+    /// The Companion entries the page shows now (the World / Tips filter applied), in the page's order.
+    func companionEntries(_ gameID: String) -> [BookEntry] {
+        let kind = companionKind(gameID)
+        return fixtures.book.filter { $0.gameID == gameID && (kind == nil || $0.chapter == kind) }
+            .sorted { ($0.chapter == .world ? 0 : 1) < ($1.chapter == .world ? 0 : 1) }
+    }
+
+    /// Tabletop, Companion: bookmarking an entry from the lower half, since the stage above is view only (G-4, design on #521).
+    /// One item per entry the stage shows, ticked when bookmarked; nil with no entries. Since the 0.5.6 rail set it is a section
+    /// of More, so the rail keeps its four buttons and never scrolls.
+    func companionBookmarkAction(_ gameID: String) -> ScreenAction? {
+        let entries = companionEntries(gameID)
+        guard !entries.isEmpty else { return nil }
+        let items = entries.map { e in
+            let marked = isBookmarked(kind: .entry, id: e.id)
+            return ScreenAction.MenuItem(id: e.id, title: e.title, checked: marked,
+                                         spoken: marked ? "Remove bookmark: \(e.title)" : "Bookmark \(e.title)") { [weak self] in
+                self?.toggleBookmark(kind: .entry, id: e.id, gameID: gameID)
+            }
+        }
+        return ScreenAction(id: "bookmarks", title: "Bookmarks", systemImage: "bookmark",
+                            kind: .menu([ScreenAction.MenuSection(title: "Bookmark an entry", items: items)]))
+    }
+
+    func gameActions(_ gameID: String, sideBySide: Bool = false, bookmarks: Bool = false) -> [ScreenAction] {
         let name = game(gameID)?.name ?? "this game"
         let level = notifyLevel(gameID)
         var out = [ScreenAction(id: "notify", title: "Notifications", systemImage: level == .off ? "bell.slash" : "bell",
                                 kind: .menu(notifyMenu(gameID, header: "Notify me about \(name)")), priority: .high)]
         if let status = entry(gameID)?.status {
             var menu = statusMenu(gameID)
-            if !menu.isEmpty { menu[0].title = "\(name) is in your library as…" }
+            if !menu.isEmpty { menu[0].title = "In your library as…" }
             out.append(ScreenAction(id: "status", title: "Status: \(status.label)", systemImage: status.symbol, kind: .menu(menu), priority: .high))
         }
-        // A way to ask for an update check from the game itself (Terry): the same refresh as the Library's pull.
-        out.append(ScreenAction(id: "refresh", title: "Check for updates", systemImage: "arrow.clockwise",
-                                kind: .button { [weak self] in Task {
-                                    await self?.refreshFeed(); await self?.refreshHistories([gameID])
-                                    // Tabletop's News page is view only, so this is also its retry.
-                                    await NewsStore.shared.load(gameID: gameID, igdbID: self?.game(gameID)?.igdbID)
-                                } }))
+        // 0.5.6 hotfix (Iris): Check for updates, Links, Share and (side by side only) Swap sides live behind More, so the rail is
+        // the same four buttons in every pose and never scrolls (Terry, 14 Nov: icons changed between poses and were half hidden).
+        out.append(ScreenAction(id: "more", title: "More", systemImage: "ellipsis", kind: .menu(moreMenu(gameID, sideBySide: sideBySide, bookmarks: bookmarks)), priority: .high))
         return out
+    }
+}
+
+extension AppModel {
+    /// Behind More, in Iris's order: Check for updates, Links, Share, then Swap sides while Contents and Page are side by side.
+    /// `sideBySide` comes from the view that shows the pages (D-10), not from a stored pose: the stored one is not observed,
+    /// so a menu built during launch settling kept Swap sides in Closed (Mac, 909fe8b).
+    func moreMenu(_ gameID: String, sideBySide: Bool, bookmarks: Bool = false) -> [ScreenAction.MenuSection] {
+        var items: [ScreenAction.MenuItem] = [
+            .init(id: "refresh", title: "Check for updates") { [weak self] in
+                Task { await self?.checkForUpdates(gameID) }
+            },
+        ]
+        if LinksSheet.hasLinks(self, gameID) {
+            items.append(.init(id: "links", title: "Links") { [weak self] in self?.linksSheetOpen = true })
+        }
+        if let r = readerRelease(gameID), r.isPS5Listed {
+            items.append(.init(id: "share", title: "Share", spoken: "Share update") { [weak self] in self?.shareReleaseID = r.id })
+        }
+        if sideBySide {
+            items.append(.init(id: "swap", title: "Swap sides") { [weak self] in self?.swapSidesRequest += 1 })
+        }
+        // Tabletop, Companion: the stage's cards carry no bookmark glyph, so bookmarking is a section here, in the lower half.
+        if bookmarks, section(gameID) == .companion, let a = companionBookmarkAction(gameID), case .menu(let sections) = a.kind {
+            return [.init(items: items)] + sections
+        }
+        return [.init(items: items)]
     }
 }
 
@@ -204,9 +346,11 @@ struct ActionToolbar: ToolbarContent {
                 case .button(let run):
                     Button(action: run) { Label(a.title, systemImage: a.systemImage) }
                         .accessibilityShowsLargeContentViewer()
+                        .accessibilityIdentifier("rail.\(a.id)")
                 case .menu(let sections):
                     Menu { ActionMenuContent(sections: sections) } label: { Label(a.title, systemImage: a.systemImage) }
                         .accessibilityShowsLargeContentViewer()
+                        .accessibilityIdentifier("rail.\(a.id)")
                 }
             }
             .visibilityPriority(a.priority)

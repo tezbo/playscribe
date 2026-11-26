@@ -26,23 +26,23 @@ struct PhotoAddView: View {
 
     var body: some View {
         VStack(spacing: 16) {
-            Image(systemName: "photo.on.rectangle.angled").font(.system(size: 44)).foregroundStyle(PlayscribeColor.accent)
+            Image(systemName: "photo.on.rectangle.angled").font(.system(size: 44)).foregroundStyle(PlayscribeRole.action)
                 .accessibilityHidden(true)
             Text("Choose a photo with game titles on it.")
                 .font(PlayscribeFont.headline).multilineTextAlignment(.center)
             Text("The text is read on your device. The photo is never uploaded.")
-                .font(PlayscribeFont.footnote).foregroundStyle(.secondary).multilineTextAlignment(.center)
+                .font(PlayscribeFont.footnote).foregroundStyle(PlayscribeRole.textSecondary).multilineTextAlignment(.center)
             PhotosPicker(selection: $item, matching: .images) {
                 Text(working ? "Reading" : "Choose photo")
                     .font(PlayscribeFont.headline)
-                    .foregroundStyle(PlayscribeColor.onAccent)
+                    .foregroundStyle(PlayscribeRole.onAction)
                     .frame(maxWidth: .infinity, minHeight: 52)
-                    .background(PlayscribeColor.accent, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                    .background(PlayscribeRole.action, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
             }
             .disabled(working)
             .tappableFrame()
             if failed {
-                Text("No game titles found in that photo.").font(PlayscribeFont.subheadline).foregroundStyle(.secondary)
+                Text("No game titles found in that photo.").font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
                 Button("Type it", action: typeInstead).hitTarget()
             }
             Spacer()

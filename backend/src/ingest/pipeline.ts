@@ -7,8 +7,8 @@ import * as store from '../store.ts'
 import type { PlatformStatus, Post } from '../types.ts'
 import newsSources from '../sources/news-sources.json' with { type: 'json' }
 import { fetchPosts, looksLikePatch, type PageOpts } from './adapters.ts'
-import { isAnnouncementTitle, isTestBuildPost, pcScopedPost, statedLiveTime } from './claims.ts'
-import { classify, consoleVersionOf, nameRelease, ps5LiveStated, ps5StatusOf, sizeBytesOf } from './classify.ts'
+import { isAnnouncementTitle, isTestBuildPost, pcScopedPost, pcTitledPost, statedLiveTime } from './claims.ts'
+import { classify, consoleVersionOf, pcBuildTitle, nameRelease, ps5LiveStated, ps5StatusOf, sizeBytesOf } from './classify.ts'
 import { IGDB_REV, type Igdb } from './igdb.ts'
 import { extractNotes, mentionsPs4, mentionsPs5, ps5PageOf, isPromoTitle } from './notes.ts'
 
@@ -111,6 +111,12 @@ export const autoRepairGames = (db: DB, tracked: Set<string>) =>
   (db.prepare(`SELECT * FROM games WHERE auto > 0 AND auto <> 2 AND steam_app_id IS NOT NULL
     AND id IN (SELECT r.game_id FROM releases r JOIN platform_releases p ON p.release_id = r.id AND p.platform = 'ps5') ORDER BY id`).all() as Record<string, any>[]).filter((g) => !tracked.has(g.id))
 
+/** Derived (auto) games that a backfill names, whether or not they hold a PS5 row yet. */
+export const namedAutoGames = (db: DB, ids: string[], tracked: Set<string>) =>
+  ids.length
+    ? (db.prepare(`SELECT * FROM games WHERE auto > 0 AND auto <> 2 AND steam_app_id IS NOT NULL AND id IN (${ids.map(() => '?').join(',')}) ORDER BY id`).all(...ids) as Record<string, any>[]).filter((g) => !tracked.has(g.id))
+    : []
+
 export const sourcesFor = (game: Record<string, any>): SourceDef[] => {
   const reg = registry.games[game.id]
   if (reg) return reg.sources
@@ -175,9 +181,16 @@ const recordState = (db: DB, sourceId: string, status: number, error: string | n
     )
     .run(sourceId, now(), status, error, blocked ? 1 : 0, status)
 
+/** The name's last word is the number the post itself lists for PC ("update 1.2.11" with "PC (1.2.11)"): only then is it a PC number to drop. */
+export const pcNumberIsTitled = (name: string, body: string) => {
+  const num = name.match(/\s(v?\d+(?:\.\d+)+)$/i)?.[1]?.replace(/^v/i, '')
+  return !!num && new RegExp(`\\bPC\\s*[:(–-]?\\s*\\(?v?${num.replace(/\./g, '\\.')}(?![\\d.])`, 'i').test(body)
+}
+
 const poll = async (deps: IngestDeps, s: SourceDef, summary: IngestSummary, opts: PageOpts = {}): Promise<Post[] | null> => {
   try {
-    if (s.kind !== 'steamNews' && !(await allowedByRobots(deps.fetchFn, s.url))) {
+    // Steam's and Bluesky's public APIs are not websites: robots.txt does not apply to them; the Statuspage feed and others are checked.
+    if (s.kind !== 'steamNews' && s.kind !== 'bluesky' && !(await allowedByRobots(deps.fetchFn, s.url))) {
       recordState(deps.db, s.id, 0, 'disallowed by robots.txt', true)
       summary.errors.push({ sourceId: s.id, error: 'disallowed by robots.txt; set fetch to manual' })
       return null
@@ -213,6 +226,14 @@ const handlePost = (deps: IngestDeps, game: Record<string, any>, s: SourceDef, p
   }
 
   let naming = nameRelease(post.title, post.publishedAt)
+  // A title that is only the PC build number ("Update - 12.1.247768", with "BUILD: 12.1.247768" in the post) is just "Update": the
+  // number is a PC build, not a PS5 version, and the date row tells the updates apart. The stored key keeps the number (bug-056).
+  const pcBuildNamed = s.kind === 'steamNews' && pcBuildTitle(post.title, post.body)
+  if (pcBuildNamed) naming = { ...naming, displayName: naming.displayName.replace(/\s+\S+$/, '') || 'Update' }
+  // A studio post that lists its own PlayStation 5 build ("PlayStation 5 (1.200.011) Xbox Series (1.2.0.11) PC (1.2.11)") while its title
+  // carries the PC number ("update 1.2.11") is just "Update": the PC number is never shown as a PS5 version; the PS5 row keeps its own.
+  if (!pcBuildNamed && s.kind === 'rss' && s.trust === 'official' && consoleVersionOf(post.body) && pcNumberIsTitled(naming.displayName, post.body))
+    naming = { ...naming, displayName: naming.displayName.replace(/\s+\S+$/, '') || 'Update' }
   const notes = extractNotes(post.body, 'Changes', s.kind === 'steamNews' && (!game.ps5_release || post.publishedAt.slice(0, 10) < game.ps5_release))
   const kind = () =>
     classify({ title: post.title, notes, announcedAt: post.publishedAt, previousAnnouncedAt: store.previousAnnouncedAt(db, game.id, post.publishedAt), platformReleaseDate: game.ps5_release })
@@ -289,6 +310,7 @@ const handlePost = (deps: IngestDeps, game: Record<string, any>, s: SourceDef, p
     if (deps.repairClaims) store.repairOwnLiveAt(db, releaseId, s.id, post.publishedAt, input.liveAt, input.status)
     store.upsertPlatform(db, releaseId, 'ps5', input)
     if (stated) return
+    store.preferOfficialDate(db, releaseId)
     db.prepare(`UPDATE review_items SET resolved_at = ?, resolution = 'autoConfirmed' WHERE release_id = ? AND platform = 'ps5' AND resolved_at IS NULL`).run(now(), releaseId)
   }
   // A studio's own post that names PS5 is that update's PS5 page; a Steam post may link to one.
@@ -323,12 +345,13 @@ const handlePost = (deps: IngestDeps, game: Record<string, any>, s: SourceDef, p
   // A studio or Steam post spelling a version another way ("1.4.0" for "1.4") joins the release already stored.
   const versionKey = store.equivalentRelease(db, game.id, naming.versionKey, post.publishedAt)?.version_key ?? naming.versionKey
   const releaseId = track(store.upsertRelease(db, { gameId: game.id, versionKey, displayName: naming.displayName, kind: k.kind, kindBasis: k.kindBasis, announcedAt: post.publishedAt, notes, sourceId: s.id }))
+  if (deps.repairClaims && pcBuildNamed && store.renameRelease(db, releaseId, naming.displayName)) deps.log?.(`backfill: renamed ${releaseId} to "${naming.displayName}", a PC build number`)
 
   if (pcOnly) {
     store.upsertPlatform(db, releaseId, 'pc', { status: 'live', verification: 'official', liveAt: store.field(post.publishedAt, 'official', s.id) })
     store.addLinks(db, releaseId, links())
     // A test build, or a post listing other platforms' builds without PlayStation, says nothing about PS5.
-    if (testBuild || (pcScopedPost(text) && !ps5LiveStated(text))) {
+    if (testBuild || ((pcScopedPost(text) || pcTitledPost(post.title)) && !ps5LiveStated(text))) {
       held(testBuild ? 'testBuild' : 'pcScoped')
       if (deps.repairClaims) store.dropOwnPs5Row(db, releaseId, s.id, post.publishedAt)
       return releaseId
@@ -350,7 +373,10 @@ const handlePost = (deps: IngestDeps, game: Record<string, any>, s: SourceDef, p
   }
   store.addLinks(db, releaseId, links())
 
-  if (ps5LiveStated(text)) {
+  // An official account or status page that is only about PS5 (or ships to every platform at once) and says the update is live
+  // ("Patch 2.09 ... is now live", a completed downtime) does not need to name PS5 to make the PS5 row official.
+  const liveHere = s.ps5Signal === 'always' && s.trust === 'official' && !stated && !/\b(coming soon|soon|will be|upcoming|certification|later|next week|expected)\b/i.test(text) && ps5StatusOf(text) !== 'announced' && /\b(now live|is live|live now|out now|now out|available now|now available|rolling out|deployed|is out|has been completed|has been released)\b/i.test(text)
+  if (ps5LiveStated(text) || liveHere) {
     officialPs5(releaseId, s.ps5Signal !== 'always')
     return releaseId
   }
@@ -384,6 +410,10 @@ export interface IngestOpts {
   until?: string
   /** Poll only the hot set (hot.ts), at the shorter hot interval, and skip the shared press sources. */
   hot?: boolean
+  /** Only these games (ids; a derived game is repaired only when named), and no shared press sources: a backfill that must touch nothing else. */
+  games?: string[]
+  /** A backfill that only drops and repairs rows that exist: no new release and no new news item is created (bug-060). */
+  noNewReleases?: boolean
   /** Auto-onboarding: how many auto games (store.nextAutoSlice) to poll after the tracked ones, 0 for none. */
   autoSlice?: number
   /** Auto-onboarding: stop the slice once the whole run has taken this long (the job has a 20 min limit). */
@@ -402,9 +432,13 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
     mark = t
   }
   const hot = hotGameIds(deps.db)
-  const tracked = trackedGames(deps.db).filter((g) => !opts.hot || hot.has(g.id))
+  const tracked = trackedGames(deps.db).filter((g) => (!opts.hot || hot.has(g.id)) && (!opts.games || opts.games.includes(g.id)))
   const repairOnly = new Set<string>()
-  if (opts.until && !opts.hot) for (const g of autoRepairGames(deps.db, new Set(tracked.map((t) => t.id)))) (tracked.push(g), repairOnly.add(g.id))
+  if (opts.until && !opts.hot) {
+    // A backfill with games named reads a derived game whenever it is named (bug-060: rows of games with no PS5 row were never reached).
+    const repair = opts.games ? namedAutoGames(deps.db, opts.games, new Set(tracked.map((t) => t.id))) : autoRepairGames(deps.db, new Set(tracked.map((t) => t.id)))
+    for (const g of repair) (tracked.push(g), repairOnly.add(g.id))
+  }
   const games = tracked
   lap('games')
 
@@ -424,11 +458,22 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
       if (store.isSeen(deps.db, s.id, post.postId) && !(opts.until && s.trust === 'official')) continue
         if (post.news) {
           tx(deps.db, () => {
-            if (s.kind === 'steamNews' && s.trust === 'official' && 'steamNews' in newsSources.sources && !repairOnly.has(game.id)) addNewsUnlessPromo(deps, summary, game.id, post)
+            if (s.kind === 'steamNews' && s.trust === 'official' && 'steamNews' in newsSources.sources && !repairOnly.has(game.id) && !opts.noNewReleases) addNewsUnlessPromo(deps, summary, game.id, post)
+            // Backfill: an earlier rule made a release from this news-only post (a preview, a stream, an announcement): drop it.
+            const old = deps.repairClaims ? (deps.db.prepare('SELECT release_id FROM seen_posts WHERE source_id = ? AND post_id = ?').get(s.id, post.postId) as { release_id: string | null } | undefined)?.release_id : null
+            if (old) {
+              const dropped = store.dropAnnouncementRelease(deps.db, old, s.id, post.publishedAt)
+              deps.log?.(dropped ? `backfill: dropped ${old}, news not a release` : `backfill: kept ${old} (other posts feed it), removed only its PS5 row`)
+              const b = (summary.backfill ??= { dropped: 0, kept: 0 })
+              if (dropped) b.dropped++
+              else b.kept++
+            }
             store.markSeen(deps.db, s.id, post.postId, null)
           })
           continue
         }
+        // Repair only: a post that made no release before makes none now.
+        if (opts.noNewReleases && !(deps.db.prepare('SELECT release_id FROM seen_posts WHERE source_id = ? AND post_id = ?').get(s.id, post.postId) as { release_id: string | null } | undefined)?.release_id) continue
         tx(deps.db, () => {
           const before = deps.repairClaims ? (deps.db.prepare('SELECT release_id FROM seen_posts WHERE source_id = ? AND post_id = ?').get(s.id, post.postId) as { release_id: string | null } | undefined)?.release_id : null
           const releaseId = handlePost(deps, game, s, post, summary)
@@ -466,7 +511,7 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
   }
 
   lap('auto')
-  for (const s of opts.hot ? [] : registry.shared) {
+  for (const s of opts.hot || opts.games ? [] : registry.shared) {
     if (!due(deps.db, s, !!opts.force)) {
       summary.skipped.push(s.id)
       continue
@@ -530,6 +575,7 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
   lap('pruneNews')
   for (const r of pruned) deps.log?.(`news hidden (promo, pruned) ${r.gameId}: ${r.title}`)
   deps.log?.(`ingest: news hidden (promo) ${summary.newsHidden ?? 0} new, ${pruned.length} pruned`)
+  store.applyKnownBuilds(deps.db, Object.fromEntries(Object.entries(registry.games).filter(([, g]) => g.ps5Builds).map(([id, g]) => [id, g.ps5Builds!])))
   const promoted = store.promoteAnnounced(deps.db, new Date(), !!opts.until) + store.promoteStated(deps.db, new Date(), !!opts.until)
   lap('promote')
   const settled = store.settleOldAnnouncements(deps.db)

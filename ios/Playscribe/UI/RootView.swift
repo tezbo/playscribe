@@ -9,6 +9,16 @@ extension EnvironmentValues {
     }
 }
 
+/// Tabletop: run before any rail button's own action, so a rail tap closes an open lower-half panel and then does what the
+/// button says (Iris, #556 at 894ee2c3, J-20). Nil elsewhere.
+private struct RailPreActionKey: EnvironmentKey { static let defaultValue: (() -> Void)? = nil }
+extension EnvironmentValues {
+    var railPreAction: (() -> Void)? {
+        get { self[RailPreActionKey.self] }
+        set { self[RailPreActionKey.self] = newValue }
+    }
+}
+
 /// Tabletop: a sheet's controls must sit in the lower half (the upper half is view only), so
 /// sheets there are this panel, bottom-aligned under the division, instead of a presented sheet.
 private struct PanelCloseKey: EnvironmentKey { static let defaultValue: (() -> Void)? = nil }
@@ -34,7 +44,7 @@ struct BookPagePanel: View {
                     .environment(\.panelClose, { model.settingsOpen = false })
                     .environment(\.railWidth, 0)
                     .frame(width: max(0, fold.minX), height: duo.size.height)
-                    .background(Color.ink0)
+                    .background(PlayscribeRole.bg)
                     .clipShape(UnevenRoundedRectangle(bottomTrailingRadius: 20, topTrailingRadius: 20))
                     .accessibilityAddTraits(.isModal)
             }
@@ -69,7 +79,7 @@ struct RightPagePanel: View {
                     .environment(\.panelClose, { model.addSheetOpen = false })
                     .environment(\.railWidth, 0)
                     .frame(width: max(0, panelWidth), height: duo.size.height)
-                    .background(Color.ink0)
+                    .background(PlayscribeRole.bg)
                     .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
                     .padding(.trailing, trailingInset)
                     .accessibilityAddTraits(.isModal)
@@ -88,35 +98,39 @@ struct LowerHalfPanel: View {
     var duo: DuoContext
     var fold: CGRect
 
-    private var open: Bool { model.addSheetOpen || model.settingsOpen || model.trailer != nil || model.linksSheetOpen || model.tagExplainer != nil || model.keepCurrentDetailsOpen }
+    private var open: Bool { model.addSheetOpen || model.settingsOpen || model.linksSheetOpen || model.tagExplainer != nil || model.keepCurrentDetailsOpen }
 
     var body: some View {
         if open {
             let height = max(0, duo.size.height - fold.maxY)
-            ZStack(alignment: .bottom) {
+            // Beside the rail, never under it (Mac at 86a4b104: Settings rows ran to x 649 under the rail at 619 to 663, so a tap
+            // on the Video lab switch hit the rail's Library button). The rail stays visible and works while a panel is open.
+            let width = max(0, duo.size.width - TabletopRail.width)
+            ZStack(alignment: .bottomLeading) {
                 // The stage above stays view only: a dimmer that takes no touches.
                 Color.black.opacity(0.4).ignoresSafeArea().allowsHitTesting(false)
                 Group {
                     if model.addSheetOpen { AddGameSheet() }
                     else if model.settingsOpen { SettingsView() }
-                    else if let t = model.trailer { TrailerView(videoID: t.videoID, name: t.name) }
                     else if model.linksSheetOpen, let id = model.nav.gameID { LinksSheet(gameID: id) }
                     else if let k = model.tagExplainer { VerificationExplainer(kind: k) }
                     else if model.keepCurrentDetailsOpen { KeepCurrentDetailsSheet() }
                 }
                 .environment(\.panelClose, { model.addSheetOpen = false; model.settingsOpen = false; model.trailer = nil; model.linksSheetOpen = false; model.tagExplainer = nil; model.keepCurrentDetailsOpen = false })
                 .environment(\.railWidth, 0)
-                .frame(width: duo.size.width, height: height)
+                .frame(width: width, height: height)
                 // Solid through the bottom safe area too: the Library's tiles used to show, and take
                 // taps, in the strip under the sheet.
-                .background(Color.ink0.ignoresSafeArea(edges: .bottom))
+                .background(PlayscribeRole.bg.ignoresSafeArea(edges: .bottom))
                 .clipShape(UnevenRoundedRectangle(topLeadingRadius: 20, topTrailingRadius: 20))
+                // Every touch inside the panel's frame is the panel's, never the page's beneath it.
+                .contentShape(Rectangle())
                 .accessibilityAddTraits(.isModal)
             }
             // The panel stops at the bottom safe area, so the Library's chips showed, and took taps,
             // in the strip below it. A solid filler hangs below the panel's bottom edge (outside the
             // clip) to cover it; the panel itself still starts exactly at the fold.
-            .overlay(alignment: .bottom) { Color.ink0.frame(height: 120).offset(y: 120) }
+            .overlay(alignment: .bottomLeading) { PlayscribeRole.bg.frame(width: width, height: 120).offset(y: 120) }
             .transition(.move(edge: .bottom))
             .zIndex(5)
         }
@@ -136,6 +150,7 @@ struct RootView: View {
     @State private var unlatchTask: Task<Void, Never>?
     @State private var frames: [CGRect] = []
     @State private var named: [String: CGRect] = [:]
+    @State private var tourLane: CGRect?
 
     var body: some View {
         DuoReader { duo in
@@ -165,6 +180,13 @@ struct RootView: View {
                 }
             }
             .animation(poseAnimation, value: duo.pose)
+            // More > Share (0.5.6 hotfix): half height, so in Tabletop the sheet stays in the lower half.
+            .sheet(isPresented: Binding(get: { model.shareReleaseID != nil }, set: { if !$0 { model.shareReleaseID = nil } })) {
+                if let gameID = model.nav.gameID, let id = model.shareReleaseID, let r = model.release(gameID, id) {
+                    ShareActivitySheet(items: ([model.shareCardImage(for: r), model.shareText(r)] as [Any?]).compactMap { $0 })
+                        .presentationDetents([.medium])
+                }
+            }
             // The sheet keeps its form while the launch pose settles, but a real change still switches it: folding into Book
             // at once, Open landscape once it has held for 10 s (the launch settling showed it for about 5 s).
             .onChange(of: duo.pose == .book) { _, book in
@@ -175,12 +197,22 @@ struct RootView: View {
                 guard wide else { return }
                 unlatchTask = Task { @MainActor in
                     try? await Task.sleep(for: .seconds(10))
+                    // Not while the person has the keyboard up: moving the form rebuilds the sheet and drops the field's focus
+                    // (probe log bc6bd42: the yield at 25.35 s was the focus loss; wanted was true). Wait until they put it away.
+                    while !Task.isCancelled && model.addSheetOpen && model.addKeyboardWanted {
+                        try? await Task.sleep(for: .seconds(1))
+                    }
                     if !Task.isCancelled && model.addSheetOpen { model.addIsSystemSheet = false }
                 }
             }
             .environment(\.qaSolid, BuildChannel.showsInternalTools && UserDefaults.standard.bool(forKey: "qaReduceTransparency"))
             .onPreferenceChange(TappableFrameKey.self) { frames = $0 }
             .onPreferenceChange(NamedFrameKey.self) { named = $0 }
+            .onPreferenceChange(TourLaneKey.self) { tourLane = $0 }
+            // 6b: the intro tour's ring and card, over everything but the splash; anchors report only while their step shows.
+            .overlayPreferenceValue(TourAnchorKey.self) { anchors in
+                if !splashVisible { TourOverlay(duo: duo, anchors: anchors, lane: tourLane) }
+            }
             .overlay {
                 if model.showDebugOverlay { DebugOverlay(frames: frames, duo: duo) }
                 #if INTERNAL
@@ -193,8 +225,25 @@ struct RootView: View {
                     .allowsHitTesting(false)
                 #endif
             }
+            // The sheets hang inside the DuoReader, so their content reads the real pose and placement (Open: the Add sheet's
+            // trailing placement, its stage height) instead of DuoContext's Closed default (r054-add-settings-duo-environment, #424).
+            .sheet(isPresented: Binding(get: { model.addSheetOpen && model.livePose != .tabletop && (model.addIsSystemSheet || !model.liveRightPage) }, set: { if !$0 && model.livePose != .tabletop && (model.addIsSystemSheet || !model.liveRightPage) { model.addSheetOpen = false } })) {
+                // Full height: a shorter sheet left the Library's first-run strip showing, inert, beneath it.
+                AddGameSheet().presentationDetents([.large])
+            }
+            .sheet(isPresented: Binding(get: { model.settingsOpen && model.livePose != .tabletop && model.livePose != .book }, set: { if !$0 && model.livePose != .tabletop && model.livePose != .book { model.settingsOpen = false } })) {
+                // Full height, as Add: the trailing sheet then stops before the rail (Iris on #611, Open landscape).
+                SettingsView().presentationDetents([.large])
+            }
+            .sheet(item: Binding(get: { model.livePose == .tabletop ? nil : model.tagExplainer }, set: { if $0 == nil && model.livePose != .tabletop { model.tagExplainer = nil } })) { kind in
+                VerificationExplainer(kind: kind).presentationDetents([.medium])
+            }
+            // N-9's "What is sent" (Iris, #455): a system sheet, except Tabletop, where the lower-half panel shows it.
+            .sheet(isPresented: Binding(get: { model.keepCurrentDetailsOpen && model.livePose != .tabletop }, set: { if !$0 && model.livePose != .tabletop { model.keepCurrentDetailsOpen = false } })) {
+                KeepCurrentDetailsSheet().presentationDetents([.medium, .large])
+            }
         }
-        .background(Color.ink0)
+        .background(PlayscribeRole.bg)
         .onAppear {
             // §2: the branded splash plays only on the first launch, never from a notification (L-3).
             // Terry, 2 Nov: every cold launch, not only the first.
@@ -206,26 +255,27 @@ struct RootView: View {
         .onChange(of: NotificationService.shared.launchedFromNotification) { _, fromNotification in
             if fromNotification { splashVisible = false }
         }
-        .sheet(isPresented: Binding(get: { model.addSheetOpen && model.livePose != .tabletop && (model.addIsSystemSheet || !model.liveRightPage) }, set: { if !$0 && model.livePose != .tabletop && (model.addIsSystemSheet || !model.liveRightPage) { model.addSheetOpen = false } })) {
-            // Full height: a shorter sheet left the Library's first-run strip showing, inert, beneath it.
-            AddGameSheet().presentationDetents([.large])
+        // 6b: a fresh install gets the welcome once the splash has gone; a step advances when the person does what it points at.
+        .onChange(of: splashVisible, initial: true) { _, visible in
+            if !visible && model.offersTourAtLaunch && model.tourStep == nil { model.tourWelcome = true }
         }
-        .sheet(isPresented: Binding(get: { model.settingsOpen && model.livePose != .tabletop && model.livePose != .book }, set: { if !$0 && model.livePose != .tabletop && model.livePose != .book { model.settingsOpen = false } })) {
-            SettingsView()
-        }
-        .sheet(item: Binding(get: { model.livePose == .tabletop ? nil : model.tagExplainer }, set: { if $0 == nil && model.livePose != .tabletop { model.tagExplainer = nil } })) { kind in
-            VerificationExplainer(kind: kind).presentationDetents([.medium])
-        }
-        // N-9's "What is sent" (Iris, #455): a system sheet, except Tabletop, where the lower-half panel shows it.
-        .sheet(isPresented: Binding(get: { model.keepCurrentDetailsOpen && model.livePose != .tabletop }, set: { if !$0 && model.livePose != .tabletop { model.keepCurrentDetailsOpen = false } })) {
-            KeepCurrentDetailsSheet().presentationDetents([.medium, .large])
-        }
+        .onChange(of: model.nav.gameID) { _, id in if id != nil { model.tourNoticed(openedGame: true) } }
+        .onChange(of: model.data.nav.tab) { _, tab in model.tourNoticed(tab: tab) }
         .fullScreenCover(isPresented: Binding(get: { model.player != nil }, set: { if !$0 { model.player = nil } })) {
-            if let p = model.player { PlayerView(gameID: p.gameID, releaseID: p.releaseID) }
+            // The player is dark in light and dark mode. Its cover is its own presentation, so pinning its scheme here (not
+            // only the environment) gives it a light status bar too: in light mode the clock and Wi-Fi drew dark over the dark
+            // player and all but vanished (Quinn, 9ef14784-light-video-playing).
+            if let p = model.player { PlayerView(gameID: p.gameID, releaseID: p.releaseID).preferredColorScheme(.dark) }
         }
-        .fullScreenCover(isPresented: Binding(get: { model.trailer != nil && model.livePose != .tabletop }, set: { if !$0 && model.livePose != .tabletop { model.trailer = nil } })) {
-            if let t = model.trailer { TrailerView(videoID: t.videoID, name: t.name) }
+        // Trailers and Gallery videos: one cover in every pose, Tabletop included (TT-4, P-2). Dark, status bar included, as above.
+        .fullScreenCover(isPresented: Binding(get: { model.trailer != nil }, set: { if !$0 { model.trailer = nil } })) {
+            if let t = model.trailer { TrailerView(videoID: t.videoID, name: t.name, gameID: t.gameID).preferredColorScheme(.dark) }
         }
+        // bug-064: in light mode the status bar is light over art and the player, dark over the cream page (StatusBarTone).
+        .background(StatusBarToneAnchor().frame(width: 0, height: 0).accessibilityHidden(true))
+        .onChange(of: model.player != nil || model.trailer != nil, initial: true) { _, up in StatusBarTone.shared.setCover(up) }
+        // R-11: every link the app opens passes here, sheets and covers included; a YouTube video plays in our player.
+        .environment(\.openURL, OpenURLAction { url in model.playVideoLink(url) ? .handled : .systemAction })
     }
 }
 
@@ -237,33 +287,83 @@ struct TabRoot: View {
         @Bindable var model = model
         TabView(selection: $model.data.nav.tab) {
             Tab("Library", systemImage: "books.vertical", value: AppTab.library) {
-                LibraryRoot(duo: duo).auditActive(model.nav.tab == .library)
+                LibraryRoot(duo: duo).auditActive(model.nav.tab == .library).underLowerPanel(duo)
+                    .tourLane(model.nav.tab == .library && model.nav.gameID == nil && (model.tourWelcome || model.tourStep != nil))
             }
             .badge(model.totalUnread)
 
             Tab("Updates", systemImage: "newspaper", value: AppTab.updates) {
-                NavigationStack { UpdatesView().tabletopChrome(duo) }.auditActive(model.nav.tab == .updates)
+                // D-1 (0.5.6, Card D): an update pushed from a row; Back pops to the list at the same scroll.
+                NavigationStack(path: Binding(get: { model.nav.updatesRelease.map { [$0] } ?? [] },
+                                              set: { model.nav.updatesRelease = $0.last })) {
+                    UpdatesView().tabletopChrome(duo)
+                        .navigationDestination(for: ReleaseRef.self) { ref in
+                            ReleaseDetailView(gameID: ref.gameID, releaseID: ref.releaseID).tabletopChrome(duo)
+                        }
+                }
+                .auditActive(model.nav.tab == .updates)
+                .underLowerPanel(duo)
+                // J-1 (0.5.7 gate): an update the fold moved onto the game's Page comes back as this tab's push once the tab is
+                // showing and the pose change has settled; pushed in the same update as the tab switch, it drew blank.
+                .task(id: model.pendingUpdatesRelease) {
+                    guard model.pendingUpdatesRelease != nil else { return }
+                    try? await Task.sleep(for: .milliseconds(500))
+                    model.applyPendingUpdatesPush()
+                }
             }
 
             Tab("News", systemImage: "megaphone", value: AppTab.news) {
-                NavigationStack { NewsView().tabletopChrome(duo) }.auditActive(model.nav.tab == .news)
+                NavigationStack { NewsView().tabletopChrome(duo) }.auditActive(model.nav.tab == .news).underLowerPanel(duo)
             }
 
             Tab(value: AppTab.search, role: .search) {
-                NavigationStack { SearchView().tabletopChrome(duo) }.auditActive(model.nav.tab == .search)
+                NavigationStack { SearchView().tabletopChrome(duo) }.auditActive(model.nav.tab == .search).underLowerPanel(duo)
             }
         }
-        .onChange(of: model.data.nav.tab) { old, new in if new == .search && old != .search { model.searchReturnTab = old } }
+        // J-1: a pushed update only exists where pushing is the layout (one column: Closed, Open both ways). Folding to Book or
+        // Tabletop moves it onto the game's Page; unfolding back to one column pushes it again (AppModel). Here, once for both
+        // stacks, not in the game book, which is hidden under the push.
+        .onChange(of: duo.oneColumn, initial: true) { _, one in
+            if one { model.enterOneColumn() } else { model.leaveOneColumn() }
+        }
+        .onChange(of: model.data.nav.tab) { old, new in
+            if new == .search && old != .search { model.searchReturnTab = old }
+            // D-1: leaving the Library by its tab drops the open game's way back, so a later Back goes to the Library.
+            if new != .library { model.nav.returnTab = nil }
+        }
     }
 }
+
+enum TopBarFade { static let height: CGFloat = 16 }
 
 extension View {
     /// Tabletop: the system's horizontal bars would put controls in the upper half, so they are
     /// hidden and the lower rail carries them instead (G-4).
     /// Apply to each screen inside a navigation stack: bar visibility is read from the visible
     /// screen, not from the stack or the TabView.
+    /// Open portrait (Iris, 19 Nov, on Terry's "scrolling behind another menu"): the top bar (Back, Notifications, Status, More
+    /// on a game) and the bottom tab bar are solid bg, so nothing scrolls under either bar. The other poses keep the system's.
+    /// One modifier chain in every pose, so a pose change never swaps the screen's identity (and its scroll and focus state).
+    /// Scroll edges fade (Quinn, on #541): under the solid top bar, a 16 pt band from bg to clear, so content fades out instead of
+    /// being cut at the bar's edge. A safe-area inset, so the page's rest position starts below it and only scrolled content passes
+    /// under; 0 pt in the other poses (the same view, so identity holds).
+    /// While a Tabletop lower-half panel is open, the tab's page under it takes no touches and is hidden from VoiceOver: the
+    /// Library's A to Z strip read out over the rail (x 592 to 636, Mac at c1c1191e), and a tap that misses the panel must never
+    /// act on the page beneath it. Applied inside each tab, so the hiding reaches the tab's hosted content, and never to the
+    /// rail, which stays live (J-20).
+    func underLowerPanel(_ duo: DuoContext) -> some View { modifier(UnderLowerPanel(duo: duo)) }
+
     func tabletopChrome(_ duo: DuoContext) -> some View {
-        toolbarVisibility(duo.pose == .tabletop ? .hidden : .automatic, for: .navigationBar, .tabBar)
+        let solid = duo.pose == .flat && !duo.isLandscape
+        return toolbarVisibility(duo.pose == .tabletop ? .hidden : .automatic, for: .navigationBar, .tabBar)
+            .toolbarBackground(PlayscribeRole.bg, for: .navigationBar, .tabBar)
+            .toolbarBackgroundVisibility(solid ? .visible : .automatic, for: .navigationBar, .tabBar)
+            .safeAreaInset(edge: .top, spacing: 0) {
+                LinearGradient(colors: [PlayscribeRole.bg, PlayscribeRole.bg.opacity(0)], startPoint: .top, endPoint: .bottom)
+                    .frame(height: solid ? TopBarFade.height : 0)
+                    .allowsHitTesting(false)
+                    .accessibilityHidden(true)
+            }
     }
 }
 
@@ -275,10 +375,22 @@ struct LibraryRoot: View {
 
     var body: some View {
         NavigationStack(path: Binding(
-            get: { (model.nav.gameID.map { [$0] } ?? []) + (model.nav.gameID != nil ? model.nav.detailReleaseID.map { ["release:" + $0] } ?? [] : []) },
+            // bug-070: the games opened from inside a game sit under the open one, so the edge swipe and Back both return to them.
+            get: { (model.nav.gameID.map { (model.nav.gameTrail ?? []) + [$0] } ?? [])
+                + (model.nav.gameID != nil ? model.nav.detailReleaseID.map { ["release:" + $0] } ?? [] : []) },
             set: { path in
-                model.nav.gameID = path.first
-                model.nav.detailReleaseID = path.count > 1 ? String(path[1].dropFirst("release:".count)) : nil
+                let games = path.filter { !$0.hasPrefix("release:") }
+                let current = (model.nav.gameTrail ?? []) + (model.nav.gameID.map { [$0] } ?? [])
+                // A swipe back from a game leaves it the way the Back button does (D-1: to where it was opened from; bug-070:
+                // the previous game first).
+                // Popped to the root (a Library tab re-tap): leave every game.
+                if games.isEmpty, model.nav.gameID != nil { model.nav.gameTrail = nil; model.closeGame(); return }
+                if games.count == current.count - 1, path.last?.hasPrefix("release:") != true, games == Array(current.prefix(games.count)) {
+                    model.closeGame(); return
+                }
+                model.nav.gameID = games.last
+                model.nav.gameTrail = games.count > 1 ? Array(games.dropLast()) : nil
+                model.nav.detailReleaseID = path.last.flatMap { $0.hasPrefix("release:") ? String($0.dropFirst("release:".count)) : nil }
             }
         )) {
             LibraryView()
@@ -288,15 +400,12 @@ struct LibraryRoot: View {
                     if id.hasPrefix("release:"), let gameID = model.nav.gameID {
                         ReleaseDetailView(gameID: gameID, releaseID: String(id.dropFirst("release:".count))).tabletopChrome(duo)
                     } else {
-                        GameBookView(gameID: id).tabletopChrome(duo).auditActive(model.nav.detailReleaseID == nil)
+                        // One view per game (Terry, beta 3): opening another game in place ("View game" at the end of a
+                        // page) kept the old page's scroll state, so the new, shorter page opened scrolled past its end,
+                        // blank until scrolled. A new identity gives it its own scroll, from its top or its saved place.
+                        GameBookView(gameID: id).tabletopChrome(duo).auditActive(model.nav.detailReleaseID == nil).id(id)
                     }
                 }
-        }
-        // J-1: a pushed release only exists where pushing is the layout (Closed, open portrait).
-        // Unfolding to side by side or Tabletop pops it; the Page already shows it, because the
-        // push selected it. Here, not in the game book, which is hidden under the push.
-        .onChange(of: duo.pose != .closed && (duo.isLandscape || duo.pose == .tabletop), initial: true) { _, onPage in
-            if onPage { model.nav.detailReleaseID = nil }
         }
     }
 }
@@ -316,16 +425,13 @@ struct TabletopRail: View {
             ScrollView {
               VStack(spacing: 6) {
             if let id = model.nav.gameID, model.nav.tab == .library {
-                // The same name and id as the other poses' back button ("Library, back", gameBack); a bare "Library" read as the tab.
-                RailButton(action: ScreenAction(id: "back", title: "Library, back", systemImage: "chevron.backward",
+                // Iris (0.5.6 hotfix): Back, Notifications, Status, More, the same set and order as every other pose's bar, and
+                // few enough to fit the lower half on any fold without scrolling. Share and Check for updates are behind More, and
+                // so is Companion's Bookmarks (its stage cards carry no glyph in Tabletop). Back keeps the other poses' id.
+                RailButton(action: ScreenAction(id: "back", title: model.backTitle, systemImage: "chevron.backward",
                                                 kind: .button { model.closeGame() }))
                     .accessibilityIdentifier("gameBack")
-                // Only five buttons fit the lower half (297a799): Check for updates and Links go in a More menu.
-                ForEach(model.gameActions(id).filter { $0.id != "refresh" }) { RailButton(action: $0) }
-                // Share the open update as a card (lower rail, 44 pt target; TT-0).
-                if let r = model.readerRelease(id), r.isPS5Listed { ShareUpdateButton(release: r) }
-                RailButton(action: ScreenAction(id: "more", title: "More", systemImage: "ellipsis", kind: .menu(moreItems(id))))
-                    .accessibilityHint("Check for updates, Links")
+                ForEach(model.gameActions(id, bookmarks: true)) { RailButton(action: $0) }
             } else if model.nav.tab == .search {
                 // Search is a dead end without this: Back to where it was opened from (Terry, 0.2.0 build 5).
                 RailButton(action: ScreenAction(id: "back", title: "Back", systemImage: "chevron.backward",
@@ -340,38 +446,34 @@ struct TabletopRail: View {
                         .labelStyle(.iconOnly)
                         .font(PlayscribeFont.title3)
                         .frame(width: 44, height: 44)
-                        .background(Circle().fill(.regularMaterial))
+                        .floatingControl(in: Circle())
+                        // A Menu has no action of ours to run first: close any open panel as the tap lands.
+                        .simultaneousGesture(TapGesture().onEnded { model.closeLowerPanels() })
                         .tappableFrame()
                 }
                 // Settings has its own cog on the rail, not inside the View menu (Terry, 0.2.0 build 5).
-                RailButton(action: ScreenAction(id: "settings", title: "Settings", systemImage: "gearshape", kind: .button { model.settingsOpen = true }))
+                // The gear toggles: tapped while Settings is open, it closes it (Iris, #556). The pre-action has already closed
+                // every panel, so this reads whether Settings was open before the tap.
+                RailButton(action: ScreenAction(id: "settings", title: "Settings", systemImage: "gearshape",
+                                                kind: .button { [settingsWasOpen = model.settingsOpen] in if !settingsWasOpen { model.settingsOpen = true } }))
                     .accessibilityIdentifier("settingsButton")
-                // 0.5.0: Playing and Upcoming on the rail (Tabletop's lower half), not above the fold.
-                if !model.data.collection.isEmpty {
-                    RailButton(action: ScreenAction(id: "playing", title: "Playing",
-                                                    systemImage: model.libraryTab == .playing ? "gamecontroller.fill" : "gamecontroller",
-                                                    kind: .button { model.libraryTab = .playing }, selected: model.libraryTab == .playing))
-                        .accessibilityAddTraits(model.libraryTab == .playing ? .isSelected : [])
-                        .accessibilityIdentifier("playingRail")
-                    RailButton(action: ScreenAction(id: "upcoming", title: "Upcoming",
-                                                    systemImage: model.libraryTab == .upcoming ? "calendar.badge.clock" : "calendar",
-                                                    kind: .button { model.libraryTab = .upcoming }, selected: model.libraryTab == .upcoming))
-                        .accessibilityAddTraits(model.libraryTab == .upcoming ? .isSelected : [])
-                        .accessibilityIdentifier("upcomingRail")
-                }
+                // Playing / Upcoming is the page's own switch, in the lower half like every other pose; not repeated here (Iris,
+                // 0.5.7 gate: with it the rail needed five actions, scrolled, and cut the fifth at the tab group).
             }
               }
             }
             .scrollBounceBehavior(.basedOnSize)
             .scrollIndicators(.hidden)
             // When the lower half is short the controls scroll: fade the edge so a cut-off button reads as "more",
-            // and leave room so the last one scrolls clear of the tab capsule.
+            // and leave room so the last one (More) rests fully clear of the tab capsule and of the edge fade at the end of the scroll
+            // (Iris, bug-tabletop-rail-more-hidden: 8 pt left More under the fade on KCD II).
             .contentMargins(.bottom, 8, for: .scrollContent)
             .onScrollGeometryChange(for: Bool.self) { g in
                 g.contentSize.height - g.contentOffset.y > g.containerSize.height + 1
             } action: { _, more in moreBelow = more }
             .mask(LinearGradient(stops: [.init(color: .black, location: moreBelow ? 0.9 : 1), .init(color: moreBelow ? .clear : .black, location: 1)],
                                  startPoint: .top, endPoint: .bottom))
+            .namedFrame("tabletopRailActions")
             // Iris: the same floating capsule as Closed's tab bar, no full-height strip or hairline.
             VStack(spacing: 0) {
                 tab(.library, "Library", "books.vertical", badge: model.totalUnread)
@@ -380,41 +482,29 @@ struct TabletopRail: View {
                 tab(.search, "Search", "magnifyingglass")
             }
             .padding(.vertical, 4)
-            .background(Capsule().fill(.regularMaterial))
+            .floatingControl(in: Capsule())
             .accessibilitySortPriority(2)   // VoiceOver: tabs first, then actions
         }
         .padding(.vertical, 8)
         .frame(maxHeight: .infinity)
+        // A rail tap closes an open lower-half panel first, then does what the button says (Iris, #556; J-20).
+        .environment(\.railPreAction, { model.closeLowerPanels() })
         // The rail's buttons are 44 pt and do not grow with text (0.5.1 spec 3): at AX sizes the icons overlapped.
         .dynamicTypeSize(...DynamicTypeSize.large)
     }
 
-    private func moreItems(_ id: String) -> [ScreenAction.MenuSection] {
-        var items: [ScreenAction.MenuItem] = [
-            .init(id: "refresh", title: "Check for updates") {
-                Task {
-                    await model.refreshFeed(); await model.refreshHistories([id])
-                    await NewsStore.shared.load(gameID: id, igdbID: model.game(id)?.igdbID)
-                }
-            },
-        ]
-        if LinksSheet.hasLinks(model, id) {
-            items.append(.init(id: "links", title: "Links") { model.linksSheetOpen = true })
-        }
-        return [.init(items: items)]
-    }
-
     private func tab(_ t: AppTab, _ title: String, _ symbol: String, badge: Int = 0) -> some View {
         Button {
+            model.closeLowerPanels()
             model.nav.tab = t
         } label: {
             Image(systemName: symbol)
                 .font(PlayscribeFont.title3)
                 .symbolVariant(model.nav.tab == t ? .fill : .none)
-                .foregroundStyle(model.nav.tab == t ? PlayscribeColor.accent : Color.primary)
+                .foregroundStyle(model.nav.tab == t ? PlayscribeRole.action : PlayscribeRole.textPrimary)
                 .frame(width: 44, height: 44)
                 // The same selected treatment as the rail's action buttons (RailButton), so the rail reads as one style.
-                .background(Circle().fill(PlayscribeColor.accent.opacity(model.nav.tab == t ? 0.18 : 0)))
+                .background(Circle().fill(PlayscribeRole.action.opacity(model.nav.tab == t ? 0.18 : 0)))
                 .overlay(alignment: .topTrailing) {
                     if badge > 0 {
                         Text("\(badge)").font(PlayscribeFont.caption2.bold()).padding(.horizontal, 4)
@@ -429,6 +519,7 @@ struct TabletopRail: View {
         .accessibilityValue(badge > 0 ? "\(badge) unread" : "")
         .accessibilityAddTraits(model.nav.tab == t ? .isSelected : [])
         .tappableFrame()
+        .tourAnchor(t == .updates ? .updates : nil)
     }
 }
 
@@ -497,7 +588,7 @@ struct LowerMessages: View {
                 } label: {
                     HStack(spacing: 8) {
                         UnreadDot()
-                        Text("New on PS5: \(game.name) \(r.displayName)")
+                        Text("New on PS5: \(game.name.gluingTrailingNumeral) \(r.displayName)")
                             .font(PlayscribeFont.subheadline.weight(.semibold))
                             // Never cut: up to three lines at the capped size (Iris, 0.5.1 spec 2).
                             .lineLimit(3)
@@ -512,8 +603,8 @@ struct LowerMessages: View {
                     .frame(minHeight: 44)
                     // A solid pill: nothing shows through it (Iris, 6589abf: it ghosted over the date pills).
                     // A 24 pt corner: a full capsule on one line, a rounded rectangle on two or more.
-                    .background(RoundedRectangle(cornerRadius: 24, style: .continuous).fill(PlayscribeColor.ink700))
-                    .adaptiveGlass(in: RoundedRectangle(cornerRadius: 24, style: .continuous), interactive: true)
+                    .background(RoundedRectangle(cornerRadius: 24, style: .continuous).fill(PlayscribeRole.chipFill))
+                    .floatingControl(in: RoundedRectangle(cornerRadius: 24, style: .continuous))
                 }
                 .buttonStyle(.plain)
                 .tappableFrame()
@@ -524,8 +615,8 @@ struct LowerMessages: View {
             }
             if let toast = model.toast {
                 HStack(spacing: 12) {
-                    // Wraps to two lines at large sizes instead of shrinking (Iris, AX3).
-                    Text(toast.text).font(PlayscribeFont.subheadline).lineLimit(2).fixedSize(horizontal: false, vertical: true)
+                    // Wraps instead of shrinking or truncating (Iris, AX3; up to four lines at AX5 for the check result).
+                    Text(toast.text).font(PlayscribeFont.subheadline).lineLimit(4).fixedSize(horizontal: false, vertical: true)
                     if let undo = toast.undo {
                         Button(toast.actionLabel) { undo(); model.toastClear() }
                             .font(PlayscribeFont.subheadline.weight(.semibold))
@@ -534,9 +625,11 @@ struct LowerMessages: View {
                     }
                 }
                 .padding(.horizontal, 16)
+                .padding(.vertical, 10)
                 .frame(minHeight: 44)
-                .background(PlayscribeColor.ink700, in: Capsule())
-                .overlay(Capsule().strokeBorder(PlayscribeColor.vellum300.opacity(0.2)))
+                // 22 pt corners: a capsule on one line, and wrapped text at AX5 stays off the curved ends (Iris).
+                .background(PlayscribeRole.chipFill, in: RoundedRectangle(cornerRadius: 22, style: .continuous))
+                .overlay(RoundedRectangle(cornerRadius: 22, style: .continuous).strokeBorder(PlayscribeColor.vellum300.opacity(0.2)))
                 .shadow(color: .black.opacity(0.5), radius: 12, y: 4)
                 // Clear of the rows' trailing menu buttons.
                 .padding(.trailing, duo.pose == .closed ? 56 : 0)
@@ -574,5 +667,18 @@ struct LowerMessages: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
         .animation(.snappy, value: model.toast)
         .animation(.snappy, value: model.pill?.releaseID)
+    }
+}
+
+private struct UnderLowerPanel: ViewModifier {
+    @Environment(AppModel.self) private var model
+    var duo: DuoContext
+
+    func body(content: Content) -> some View {
+        let covered = duo.pose == .tabletop
+            && (model.addSheetOpen || model.settingsOpen || model.linksSheetOpen || model.tagExplainer != nil || model.keepCurrentDetailsOpen)
+        content
+            .allowsHitTesting(!covered)
+            .accessibilityHidden(covered)
     }
 }
