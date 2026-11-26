@@ -137,7 +137,14 @@ struct LatestUpdatesDeck: View {
     private var compactArt: CGFloat { grownArt(max(96, maxHeight - Self.pageEdgeHeight)) }
 
     /// J-5: the deck is at most half the container's height (the harness allows 12 pt more; 4 pt here for rounding).
-    private var axCap: CGFloat { (duo.size.height * 0.5).rounded(.down) + 4 }
+    /// r054-closed-ax5-hero-headline-4-lines (Iris): at accessibility sizes in Closed portrait the deck may grow to the tallest caption in it
+    /// (chips, a headline of up to 4 whole-word lines, byline) and no further than the visible container, dots row included, so one card never
+    /// runs past a screen; a headline that still needs more ends on a whole-word ellipsis. J-5's half stays at standard sizes and in every
+    /// other pose (ux-acceptance J-5, Closed portrait AX exception).
+    private var axCap: CGFloat {
+        if typeSize.isAccessibilitySize && duo.pose == .closed && !duo.isLandscape { return duo.size.height.rounded(.down) }
+        return (duo.size.height * 0.5).rounded(.down) + 4
+    }
 
     /// Accessibility sizes: every card's caption laid out invisibly at the card's width, so the tallest sets the card's
     /// height from a real measurement, not from what a scroll view offers (the headline was clipped off the top).
@@ -498,10 +505,14 @@ struct CompactCaption: View {
             if typeSize.isAccessibilitySize {
                 DeckChipRow(card: card).padding(.bottom, 6)
             }
-            Text(headline)
-                .font(PlayscribeFont.title3).foregroundStyle(PlayscribeColor.textPrimary)
-                // The whole headline, or whole words and an ellipsis (AX rule: at most 4 lines), never scaled down.
-                .lineLimit(typeSize.isAccessibilitySize ? nil : 3).fixedSize(horizontal: false, vertical: true)
+            // The whole headline, or whole words and an ellipsis (AX rule: at most 4 lines), never scaled down.
+            if typeSize.isAccessibilitySize {
+                WholeWordText(text: headline, font: PlayscribeFont.title3, lines: 4, color: PlayscribeColor.textPrimary)
+            } else {
+                Text(headline)
+                    .font(PlayscribeFont.title3).foregroundStyle(PlayscribeColor.textPrimary)
+                    .lineLimit(3).fixedSize(horizontal: false, vertical: true)
+            }
             // One-line summary under the headline: whole words, at most 2 lines, dropped at accessibility sizes (its
             // text stays in the VoiceOver label).
             if summary, !typeSize.isAccessibilitySize, let text = card.release?.summary, !text.isEmpty {
