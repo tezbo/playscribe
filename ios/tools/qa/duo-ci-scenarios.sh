@@ -134,6 +134,12 @@ deckwide) # bug-deck-card-closed-landscape-ax5-dots-order: the deck card in Clos
       [ $((k % 2)) = 0 ] && snap deckwide 2-closed-landscape-$n-swipe$k; done
   done
   launch -qaRoute library/playing -UIPreferredContentSizeCategoryName $AX5; snap deckwide 3-closed-portrait-AX5 ;;
+heroswipe) # r054-closed-ax5-hero-headline-4-lines: every hero card in Closed portrait, AX5 then std (J-5d); horizontal swipes on the deck
+  for ax in AX5:$AX5 std:UICTContentSizeCategoryL; do n=${ax%%:*}; c=${ax#*:}
+    launch -qaRoute ${HERO_ROUTE:-many-updates} -qaOrientation portrait -UIPreferredContentSizeCategoryName $c
+    snap heroswipe 0-closed-portrait-$n
+    for k in 1 2 3 4 5; do sim-use swipe --from 420,350 --to 50,350 --duration 0.4 --device "$UDID" >/dev/null 2>&1; sleep 2; snap heroswipe $k-closed-portrait-$n; done
+  done ;;
 schemes) # dark and light for the pose set
   for ap in dark light; do
     launch -qaRoute library/playing -qaAppearance $ap -qaOverlay YES
