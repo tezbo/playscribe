@@ -62,7 +62,7 @@ struct SplashView: View {
                     .frame(width: fold.minX, alignment: .trailing)
                     Color.clear.frame(width: fold.width)
                     HStack(spacing: 12) {
-                        MarkPageView(side: .right, height: size * 1.4, onLight: scheme == .light).rotation3DEffect(.degrees(opened ? 0 : -60), axis: (0, 1, 0), anchor: .leading)
+                        MarkPageView(side: .right, height: size * 1.4, onLight: scheme == .light).overlay(alignment: .topLeading) { MarkRightPageLit(height: size * 1.4) }.rotation3DEffect(.degrees(opened ? 0 : -60), axis: (0, 1, 0), anchor: .leading)
                         SplashWord(text: split.1)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)

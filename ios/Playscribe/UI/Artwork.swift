@@ -229,6 +229,36 @@ struct MarkPageView: View {
     }
 }
 
+/// The lit mark's spark, halo and ribbon, drawn in the trailing page's own box so the splash in Book can split the mark across
+/// the hinge (Iris, #614): the spark and halo sit over the page's inner top corner, the ribbon hangs from its inner bottom edge,
+/// and nothing falls in the hinge gap, so the halo is cut at the page's inner edge.
+struct MarkRightPageLit: View {
+    var height: CGFloat
+    var body: some View {
+        let k = height / MarkGrid.pageBox.height
+        ZStack(alignment: .topLeading) {
+            Circle()
+                .fill(RadialGradient(colors: [Color(hex: "#FFB04F").opacity(0.55), Color(hex: "#FFB04F").opacity(0)],
+                                     center: .center, startRadius: 0, endRadius: 15 * k))
+                .frame(width: 30 * k, height: 30 * k)
+                .offset(x: (10.5 - 15) * k, y: (-6.9 - 15) * k)
+            SparkShape().fill(BrandMark.emberSpark)
+                .frame(width: 19 * k, height: 19 * k)
+                .offset(x: (10.5 - 9.5) * k, y: (-6.9 - 9.5) * k)
+            SparkShape().fill(BrandMark.emberSpark)
+                .frame(width: 7.2 * k, height: 7.2 * k)
+                .offset(x: (24 - 3.6) * k, y: (-11.4 - 3.6) * k)
+            MarkRibbon().fill(BrandMark.emberSpark)
+                .frame(width: 64 * k, height: 64 * k)
+                .offset(x: (-32.8) * k, y: (-19.4) * k)
+        }
+        .frame(width: height * MarkGrid.pageBox.width / MarkGrid.pageBox.height, height: height, alignment: .topLeading)
+        // Nothing left of the page's inner edge, and the halo above is free to rise.
+        .mask(alignment: .topLeading) { Rectangle().frame(width: 10_000, height: 10_000).offset(y: -5_000) }
+        .allowsHitTesting(false)
+    }
+}
+
 /// The mark's two states (README, Behaviour): `lit`, the spark and ribbon glow ember with a halo, when there is an unread
 /// update; at rest (mark-rest.svg) they are dim vellum #A8916A with no halo, when caught up. Static either way, so Reduce
 /// Motion has nothing to stop: no flicker.
