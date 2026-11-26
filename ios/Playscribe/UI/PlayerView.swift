@@ -196,8 +196,17 @@ final class YouTubeController: NSObject, WKScriptMessageHandler {
 
 struct WebSurface: UIViewRepresentable {
     var webView: WKWebView
-    func makeUIView(context: Context) -> WKWebView { webView }
-    func updateUIView(_ uiView: WKWebView, context: Context) {}
+    /// Hides YouTube's iframe elements from VoiceOver. SwiftUI's accessibilityHidden does not reach a web view's
+    /// out-of-process elements: at 34cd99b XCUITest still found YouTube's "Show player controls" (3,44 12x12) at the
+    /// full-screen picture's corner. One web view serves inline and full screen, so both surfaces set the same value.
+    var hidesWebContent = false
+    func makeUIView(context: Context) -> WKWebView {
+        webView.accessibilityElementsHidden = hidesWebContent
+        return webView
+    }
+    func updateUIView(_ uiView: WKWebView, context: Context) {
+        uiView.accessibilityElementsHidden = hidesWebContent
+    }
 }
 
 /// The update video (VB-1..VB-3, TT-4). The YouTube player is the system player here: YouTube's
@@ -272,7 +281,7 @@ struct PlayerView: View {
         // A web view has no intrinsic size, so a 16:9 box carries the size and the view fills it.
         // Before Play, our poster and our Play (VideoStartCover), never YouTube's start screen (Mac at c072400).
         let surface = Color.black.aspectRatio(16 / 9, contentMode: .fit)
-            .overlay { WebSurface(webView: controller.webView) }
+            .overlay { WebSurface(webView: controller.webView, hidesWebContent: fullScreen) }
             .overlay { VideoStartCover(controller: controller, posterAsset: video.posterAsset, game: model.game(gameID)) }
         let gameName = model.game(gameID)?.name ?? ""
         switch duo.pose {
@@ -390,7 +399,7 @@ struct FullBleedVideo: View {
                 Color.black
                     // YouTube's own iframe buttons (rewind, channel, thumbnails) are off and cannot be tapped here, so VoiceOver
                     // gets one element for the picture instead (Iris, #655). Our band controls carry every action.
-                    .overlay { WebSurface(webView: controller.webView).accessibilityHidden(true) }
+                    .overlay { WebSurface(webView: controller.webView, hidesWebContent: true).accessibilityHidden(true) }
                     // The picture as one VoiceOver element; it takes no touches (taps on the picture stay YouTube's).
                     .overlay {
                         Color.clear
