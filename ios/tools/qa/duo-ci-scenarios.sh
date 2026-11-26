@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Quinn's five cloud runs on a booted, app-installed iPhone Duo (hosted runner or Mac). Needs sim-use.
-#   ios/tools/qa/duo-ci-scenarios.sh UDID OUTDIR [scenario ...]    (default: all)   scenarios: continuity trailer closedax5 schemes video axchips deckwide lane
+#   ios/tools/qa/duo-ci-scenarios.sh UDID OUTDIR [scenario ...]    (default: all)   scenarios: continuity trailer closedax5 schemes video axchips deckwide plusend heroswipe lane
 # Every step saves <sha>-<scenario>-<step>-<display>-shot.png and -ui.txt (outline with frames, ids and the pose line).
 set -uo pipefail
 UDID=$1; OUT=$2; shift 2; SCEN=${*:-continuity trailer closedax5 schemes video}
@@ -140,12 +140,45 @@ heroswipe) # r054-closed-ax5-hero-headline-4-lines: every hero card in Closed po
     snap heroswipe 0-closed-portrait-$n
     for k in 1 2 3 4 5; do sim-use swipe --from 340,280 --to 40,280 --duration 0.5 --device "$UDID" >/dev/null 2>&1; sleep 2; snap heroswipe $k-closed-portrait-$n; done
   done ;;
+plusend) # bug-psplus-card-missing-cover-empty-grid + r060-psplus-compact-ax3: the end of the Library (PS Plus card) in every pose, std and AX5.
+  # Each step logs the element type of every PS Plus title in the outline: each must be a Button (never a bare text element).
+  # Rotation is set again after each fold (a fold can reset it), and the page is swiped until the last PS Plus title is in the
+  # outline, then twice more to the end (an unchanged outline after one swipe is not the end: run 45541589244 stopped early).
+  # Swipes start clear of the tiles, rail and the bottom edge (run 45546236061: Tabletop from y 900 and Open landscape AX5 from
+  # the middle of the page never scrolled).
+  pose() { sim-use ios fold "$1" --device "$UDID" >/dev/null 2>&1; sleep 4; sim-use ios rotate "$2" --device "$UDID" >/dev/null 2>&1; sleep 4; }
+  to_plus() { # fromX,fromY toX,toY label
+    local i k
+    for i in $(seq 1 25); do
+      sim-use ui --device "$UDID" 2>/dev/null | grep -q 'Monster Train 2' && { for k in 1 2; do sim-use swipe --from "$1" --to "$2" --duration 0.3 --device "$UDID" >/dev/null 2>&1; sleep 1; done; break; }
+      sim-use swipe --from "$1" --to "$2" --duration 0.3 --device "$UDID" >/dev/null 2>&1; sleep 1
+    done; echo "to plus ($3): $i swipes; $(sim-use ui --device "$UDID" 2>/dev/null | head -1)"; }
+  plus() { snap plusend "$1"; echo "plus titles $1: $(grep -E 'Tomb Raider|Dead Island|Monster Train' "$OUT/$SHA-plusend-$1-$( [ "$(did)" = 3 ] && echo inner || echo outer)-ui.txt" | sed -E 's/^ *@[0-9]+ +//' | cut -c1-70 | tr '\n' ';')"; }
+  for ax in std:UICTContentSizeCategoryL AX5:$AX5; do n=${ax%%:*}; c=${ax#*:}
+    launch -qaRoute library/playing -UIPreferredContentSizeCategoryName $c; pose 0 portrait
+    to_plus 300,600 300,150 closed-portrait; plus $n-1-closed-portrait
+    launch -qaRoute library/playing -qaOrientation landscape -UIPreferredContentSizeCategoryName $c
+    to_plus 400,400 400,80 closed-landscape; plus $n-2-closed-landscape
+    launch -qaRoute library/playing -UIPreferredContentSizeCategoryName $c
+    pose 180 landscape-left; to_plus 200,560 200,140 open-landscape; plus $n-3-open-landscape
+    pose 90 landscape-left; to_plus 700,600 700,120 book; plus $n-4-book
+    pose 90 portrait; to_plus 450,800 450,520 tabletop; plus $n-5-tabletop
+    pose 180 portrait; to_plus 500,850 500,150 open-portrait; plus $n-6-open-portrait
+  done ;;
 schemes) # dark and light for the pose set
   for ap in dark light; do
     launch -qaRoute library/playing -qaAppearance $ap -qaOverlay YES
     snap schemes $ap-1-closed; fold 180 landscape-left; snap schemes $ap-2-flat-landscape
     fold 90 landscape-left; snap schemes $ap-3-book; fold 90 portrait; snap schemes $ap-4-tabletop; fold 180 portrait; snap schemes $ap-5-flat-portrait
   done ;;
+newest) # bug-072: Dawnwalker left on Gallery, relaunch, open it from its Library tile: What's new, Closed portrait and Open portrait
+  tapTile() { local f; f=$(sim-use ui --device "$UDID" 2>/dev/null | grep 'The Blood of Dawnwalker, last' | head -1 | grep -o '([0-9.,]* [0-9.x]*)' | tr -d '()'); local x y w h; x=${f%%,*}; y=${f#*,}; y=${y%% *}; w=${f#* }; w=${w%x*}; h=${f##*x}
+    sim-use tap -x $((${x%.*} + ${w%.*} / 2)) -y $((${y%.*} + ${h%.*} / 2)) --device "$UDID" >/dev/null 2>&1; sleep 3; }
+  launch -qaRoute gamepage/dawnwalker/gallery; snap newest 1-closed-left-on-gallery
+  sleep 2; xcrun simctl terminate "$UDID" $B >/dev/null 2>&1; xcrun simctl launch "$UDID" $B >/dev/null; sleep 14
+  snap newest 2-closed-relaunched-library; tapTile; snap newest 3-closed-game-opened
+  xcrun simctl terminate "$UDID" $B >/dev/null 2>&1; xcrun simctl launch "$UDID" $B >/dev/null; sleep 8
+  fold 180 portrait; sleep 3; snap newest 4-open-portrait-library; tapTile; snap newest 5-open-portrait-game-opened ;;
 video) # row 9: hinge sweep recording with frame timing
   launch -qaRoute library/playing; fold 180 landscape-left
   sim-use record-video --device "$UDID" --fps 60 --output "$OUT/$SHA-video-sweep.mp4" >/dev/null 2>&1 & rp=$!
