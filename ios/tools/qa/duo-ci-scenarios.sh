@@ -126,7 +126,7 @@ edgefade) # #613 (bug-063, bug-library-tabbar-edge-fade): game page and Library 
     for pose in closed open; do
       if [ $pose = closed ]; then F=0; X=233; Y1=560; Y2=200; else F=180; X=300; Y1=780; Y2=300; fi
       for r in gamepage/dawnwalker library/playing; do n=$(echo "$r" | tr '/' '_')
-        xcrun simctl terminate "$UDID" $B >/dev/null 2>&1; fold $F portrait; xcrun simctl launch "$UDID" $B -qaRoute "$r" -UIPreferredContentSizeCategoryName $size >/dev/null; sleep 8
+        xcrun simctl terminate "$UDID" $B >/dev/null 2>&1; fold $F portrait; xcrun simctl launch "$UDID" $B -qaRoute "$r" -qaOrientation portrait -UIPreferredContentSizeCategoryName $size >/dev/null; sleep 8
         sim-use swipe --from $X,$Y1 --to $X,$Y2 --duration 0.5 --device "$UDID" >/dev/null 2>&1; sleep 2; snap edgefade "$sz-$pose-$n-1-mid"
         scroll_end $X,$Y1 $X,$Y2 $pose; snap edgefade "$sz-$pose-$n-2-end"
       done
