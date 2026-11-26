@@ -176,6 +176,8 @@ fullscreen) # bug-071: full-screen video Fit with our controls in the bands; the
   fold 90 landscape-left; sleep 2; snap fullscreen 8-book-shown; frames 8
   fold 90 portrait; sleep 2; snap fullscreen 9-tabletop-ends-it ;;
 blocked) # R-12: a video YouTube refuses (IFrame error 150) shows Open in YouTube in every pose, never a full-screen button
+  # A turn left over from an earlier scenario can keep the Closed scene in landscape (c46af75): rotate away and back first.
+  fold 0 landscape-left; sleep 2; fold 0 portrait; sleep 2
   launch -qaRoute video-blocked/dawnwalker/dawnwalker@1.1 -qaOverlay YES; sleep 6; snap blocked 1-closed-portrait
   fold 0 landscape-left; sleep 3; snap blocked 2-closed-landscape
   fold 180 landscape-left; sleep 3; snap blocked 3-flat-landscape
