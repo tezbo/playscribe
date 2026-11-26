@@ -240,7 +240,9 @@ struct ReleasePage: View {
         let unread = model.isUnread(r)
         // Whole words always; the name never shrinks below the headline (22 pt).
         VStack(alignment: .leading, spacing: 6) {
-            WholeWordText(text: r.displayName, font: Self.nameFont, lines: 4, color: nil)
+            // r054-release-title-cap-std: at most 6 lines at standard sizes, 4 at accessibility sizes (a 40 pt title is tall); whole words
+            // and "…", the full title stays in the VoiceOver label (WholeWordText keeps it).
+            WholeWordText(text: r.displayName, font: Self.nameFont, lines: typeSize.isAccessibilitySize ? 4 : 6, color: nil)
                 .accessibilityAddTraits(.isHeader).accessibilityIdentifier("releaseTitle")
             if unread {
                 Text("New").font(PlayscribeFont.caption.weight(.bold)).foregroundStyle(PlayscribeRole.newText)
@@ -279,7 +281,7 @@ struct ReleasePage: View {
             .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
             VStack(alignment: .leading, spacing: 2) {
                 Text(status.primary).font(PlayscribeFont.subheadline.weight(.semibold))
-                if let v = status.version { Text(v).font(PlayscribeFont.subheadline).monospacedDigit().foregroundStyle(PlayscribeRole.textSecondary) }
+                if let v = status.version { Text(v.keepingVersionsTogether).font(PlayscribeFont.subheadline).monospacedDigit().lineLimit(1).minimumScaleFactor(typeSize.isAccessibilitySize ? 0.6 : 1).foregroundStyle(PlayscribeRole.textSecondary) }
             }
             .accessibilityElement(children: .ignore).accessibilityLabel(status.spoken)
             .accessibilityAddTraits(.isStaticText)   // read as text, never audited as a control (d194c511)

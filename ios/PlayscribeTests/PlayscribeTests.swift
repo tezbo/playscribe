@@ -418,7 +418,7 @@ struct GameBookStateTests {
         #expect(!again.isUnread(other))
     }
 
-    @Test("D-13: each game reopens on its last chapter, after a relaunch")
+    @Test("bug-072, R-1: a game reopens on its newest update, not its last section, after a relaunch")
     func chapterPerGame() {
         let url = URL.temporaryDirectory.appending(path: "d13-\(UUID().uuidString).json")
         let m = AppModel(storeURL: url)
@@ -429,10 +429,10 @@ struct GameBookStateTests {
         m.saveNow()
         let again = AppModel(storeURL: url)
         again.openGame("dawnwalker")
-        #expect(again.nav.chapter == .companion)
+        #expect(again.nav.chapter == .updates)
     }
 
-    @Test("D-13, R-7 (0.5.6): a World chapter saved by 0.5.5 reopens as Companion")
+    @Test("bug-072, R-7: a World chapter saved by 0.5.5 no longer reopens a game on a section")
     func savedWorldReopensAsCompanion() {
         let url = URL.temporaryDirectory.appending(path: "d13w-\(UUID().uuidString).json")
         let m = AppModel(storeURL: url)
@@ -442,8 +442,8 @@ struct GameBookStateTests {
         m.saveNow()
         let again = AppModel(storeURL: url)
         again.openGame("dawnwalker")
-        #expect(again.nav.chapter == .companion)
-        #expect(again.section("dawnwalker") == .companion)
+        #expect(again.nav.chapter == .updates)
+        #expect(again.section("dawnwalker") == .updates)
     }
 
     @Test("D-4: with nothing selected the Page shows the newest PS5 release")
@@ -1057,6 +1057,13 @@ struct VersionGlueTests {
         #expect("v1.1".keepingVersionsTogether == "v1.\u{2060}1")
         #expect("Hades II".keepingVersionsTogether == "Hades II")
         #expect("Fixed. Next".keepingVersionsTogether == "Fixed. Next", "a full stop between words is left alone")
+    }
+
+    @Test("a version chip is spoken as a version, not a number or date (r060-version-chip-spoken)")
+    func spokenVersion() {
+        #expect("v1.012".spokenVersion == "version 1 point 012")
+        #expect("1.1".spokenVersion == "version 1 point 1")
+        #expect("01.\u{2060}004.\u{2060}000".spokenVersion == "version 01 point 004 point 000")
     }
 }
 

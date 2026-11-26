@@ -237,6 +237,13 @@ struct LibraryShelf: View {
     /// Closed landscape (container wider than tall): the compact first screen.
     private var closedWide: Bool { duo.pose == .closed && duo.isLandscape }
 
+    /// The one exception to one order in every pose (docs/ux-acceptance.md B-12, Nadia 24 Nov): at accessibility sizes in Closed
+    /// (portrait and landscape) and Tabletop the filter chips follow the tiles, so a game is on the first screen. Nothing else moves.
+    static func chipsFollowTiles(pose: Pose, accessibilitySize: Bool) -> Bool {
+        accessibilitySize && (pose == .closed || pose == .tabletop)
+    }
+    private var chipsAfterTiles: Bool { Self.chipsFollowTiles(pose: duo.pose, accessibilitySize: typeSize.isAccessibilitySize) }
+
     /// Book with any recent update: the hero carousel takes the right page's top; the left page keeps the controls, chips and grid.
     private var heroOnRightPage: Bool {
         // No recent update: the caught-up card takes the hero's place, so the two pages flow the same way (Iris, 41f0310).
@@ -415,9 +422,15 @@ struct LibraryShelf: View {
                 // Book: the control stays on the left page; it never crosses the fold (Iris, hero-wide-layouts).
                 if closedWide {
                     // Closed landscape: the control and the search field share one row, 44 pt each (Iris, cf6c889).
-                    HStack(spacing: 12) {
-                        LibraryTabPicker().frame(width: 220, height: 44)
+                    // At accessibility sizes the switch is two chips (LibraryTabPicker) and takes its own row, search under it.
+                    if LibraryTabPicker.usesChips(typeSize) {
+                        LibraryTabPicker().frame(maxWidth: .infinity, alignment: .leading)
                         if model.libraryTab == .playing && !all.isEmpty { searchField(binding: $model.libraryQuery) }
+                    } else {
+                        HStack(spacing: 12) {
+                            LibraryTabPicker().frame(width: 220, height: 44)
+                            if model.libraryTab == .playing && !all.isEmpty { searchField(binding: $model.libraryQuery) }
+                        }
                     }
                 } else if !heroOnRightPage {
                     // Tabletop at AX5 (Iris, #455 at 0877dfc and a8859d3): the compact card keeps the lower half to itself, first; the
@@ -544,7 +557,7 @@ struct LibraryShelf: View {
                     }
                     .stepsAside(closedSearchCollapse)
                 }
-                if !heroOnRightPage && duo.pose != .tabletop && all.count >= 2 && layout == .tiles {
+                if !heroOnRightPage && duo.pose != .tabletop && !chipsAfterTiles && all.count >= 2 && layout == .tiles {
                     // TT-0: in the book pose the chip row stays on the left page.
                     // TT-0: in the book pose the chip row is exactly the left page wide, clipped, so its
                     // accessibility frame never reaches the fold either.
@@ -591,7 +604,11 @@ struct LibraryShelf: View {
                     .id(poseKey)
                     .namedFrame("libraryGames")
                 }
-                if duo.pose == .tabletop && all.count >= 2 && layout == .tiles && typeSize.isAccessibilitySize {
+                // Closed at accessibility sizes takes the Tabletop rule (B-12): in Closed landscape the four pills above the tiles
+                // filled the first screen and no game showed until a scroll (bug-closed-landscape-ax5-no-games, cloud run db9f478),
+                // and in Closed portrait at AX5 the deck and the pills did the same (Quinn on #635). The tiles, then the chips; no
+                // chip is dropped, and nothing else moves.
+                if chipsAfterTiles && all.count >= 2 && layout == .tiles {
                     FilterBar().frame(maxWidth: .infinity, alignment: .leading).id(poseKey)
                 }
                 // One order in every pose (Terry, 19 Nov): the alerts, catch-up and PS Plus cards always follow the tiles,
@@ -732,19 +749,21 @@ struct FilterBar: View {
     @Environment(AppModel.self) private var model
     @Environment(\.dynamicTypeSize) private var typeSize
 
-    private func chip(_ f: LibraryFilter, rows: [AppModel.LibraryRow]) -> some View {
+    /// `oneLine`: the 2 by 2 grid's pill, kept on one unbroken line so the grid is offered only where every label fits whole.
+    private func chip(_ f: LibraryFilter, rows: [AppModel.LibraryRow], oneLine: Bool = false) -> some View {
         let n = f.status.map { s in rows.filter { $0.status == s }.count } ?? rows.count
         let on = model.nav.filter == f
+        let wraps = typeSize.isAccessibilitySize && !oneLine
         return Button { model.nav.filter = f } label: {
             Text("\(f.label) \(n)")
                 .font(PlayscribeFont.subheadline.weight(on ? .semibold : .regular))
-                // Never cut mid-glyph: one unbroken line in the scrolling row, two at accessibility sizes.
-                .lineLimit(typeSize.isAccessibilitySize ? 2 : 1)
-                .fixedSize(horizontal: !typeSize.isAccessibilitySize, vertical: true)
+                // Never cut mid-glyph: one unbroken line in the scrolling row and the 2 by 2 grid, two in the one-column list.
+                .lineLimit(wraps ? 2 : 1)
+                .fixedSize(horizontal: !wraps, vertical: true)
                 .padding(.horizontal, 10)
                 .padding(.vertical, typeSize.isAccessibilitySize ? 6 : 0)
                 .frame(maxWidth: typeSize.isAccessibilitySize ? .infinity : nil, minHeight: 44)
-                .background(on ? PlayscribeRole.selectedChipFill : PlayscribeRole.chipFill, in: Capsule())
+                .modifier(SelectableChipGround(on: on))
         }
         .buttonStyle(.plain)
         .accessibilityAddTraits(on ? .isSelected : [])
@@ -752,12 +771,30 @@ struct FilterBar: View {
     }
 
     var body: some View {
+        // Its frame is reported (audit builds only) so the harness can hold the Library's block order to B-12.
+        bar.namedFrame("libraryChips")
+    }
+
+    @ViewBuilder private var bar: some View {
         let rows = model.libraryRows
         if typeSize.isAccessibilitySize {
-            // Accessibility sizes: one chip per row at the full column width, so "Watching 1" stays on one line
-            // inside its pill and tap frame (Closed AX3, 382 pt); a row grows if it must wrap.
-            LazyVGrid(columns: [GridItem(.flexible())], spacing: 8) {
-                ForEach(LibraryFilter.allCases) { f in chip(f, rows: rows) }
+            // Accessibility sizes (r060-filter-pills-grid-ax5, Iris): two pills a row, so all four show in half the height, each
+            // label whole on one line. Where two would not fit side by side (a narrow column at AX5), one chip per row at the
+            // full width, as before: "Watching 1" stays inside its pill and tap frame (Closed AX3, 382 pt) and a row grows if it
+            // must wrap. Never a horizontal scroller here: it would hide a choice.
+            let filters = LibraryFilter.allCases
+            ViewThatFits(in: .horizontal) {
+                Grid(horizontalSpacing: 8, verticalSpacing: 8) {
+                    ForEach(Array(stride(from: 0, to: filters.count, by: 2)), id: \.self) { i in
+                        GridRow {
+                            chip(filters[i], rows: rows, oneLine: true)
+                            if i + 1 < filters.count { chip(filters[i + 1], rows: rows, oneLine: true) }
+                        }
+                    }
+                }
+                LazyVGrid(columns: [GridItem(.flexible())], spacing: 8) {
+                    ForEach(filters) { f in chip(f, rows: rows) }
+                }
             }
         } else {
             ScrollView(.horizontal, showsIndicators: false) {
@@ -1272,8 +1309,12 @@ struct NotificationInviteCard: View {
         HStack(alignment: .top, spacing: 12) {
             Image(systemName: "bell.badge").font(PlayscribeFont.title2).foregroundStyle(PlayscribeRole.action)
             VStack(alignment: .leading, spacing: 8) {
-                Text(denied ? "Alerts are off" : "Be first to know when a patch drops").font(PlayscribeFont.headline)
-                    .fixedSize(horizontal: false, vertical: true)
+                // r060-alerts-headline-cap: at most 4 lines at accessibility sizes, whole words then "…" (the label below says it all).
+                Group {
+                    let headline = denied ? "Alerts are off" : "Be first to know when a patch drops"
+                    if typeSize.isAccessibilitySize { WholeWordText(text: headline, font: PlayscribeFont.headline, lines: 4, color: nil) }
+                    else { Text(headline).font(PlayscribeFont.headline).fixedSize(horizontal: false, vertical: true) }
+                }
                     // The body is dropped from view at AX sizes, never from VoiceOver (Iris): the heading reads it, and the body
                     // text below is hidden from VoiceOver so it is not read twice. On its own, under the card's swipe and "Not now"
                     // action, the system audit took the 18 pt line for a control too small to hit (#588, Mac 75e96041 Tabletop).
@@ -1305,9 +1346,8 @@ struct NotificationInviteCard: View {
         }
         .padding(16)
         .background(PlayscribeRole.card, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
-        .gesture(DragGesture(minimumDistance: 30).onEnded { v in
-            if abs(v.translation.width) > 60 { snooze() }
-        })
+        // A sideways swipe dismisses it; a vertical drag that starts on the card scrolls the page (SideSwipe, #635).
+        .gesture(SideSwipe { snooze() })
         .accessibilityAction(named: "Not now") { snooze() }
         .transition(reduceMotion ? .opacity : .opacity.combined(with: .move(edge: .leading)))
     }
@@ -1568,3 +1608,14 @@ private struct FeedStatusLine: View {
     static var whyLine: String { why.sorted { $0.value > $1.value }.map { "\($0.key)=\($0.value)" }.joined(separator: " ") }
 }
 #endif
+
+/// The ground of a single-select chip, shared by the Library's filter chips and its Playing/Upcoming chips: the fill, plus a
+/// 1.5 pt action-colour outline on the selected one, so selection never rests on a 1.14:1 fill difference (Iris, #645).
+struct SelectableChipGround: ViewModifier {
+    var on: Bool
+    func body(content: Content) -> some View {
+        content
+            .background(on ? PlayscribeRole.selectedChipFill : PlayscribeRole.chipFill, in: Capsule())
+            .overlay { if on { Capsule().strokeBorder(PlayscribeRole.action, lineWidth: 1.5) } }
+    }
+}

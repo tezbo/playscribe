@@ -490,7 +490,7 @@ struct OnboardingView: View {
     var body: some View {
         if duo.pose == .tabletop {
             ArrangementView {
-                OnboardingStage().allowsHitTesting(false)
+                OnboardingStage().allowsHitTesting(false).accessibilitySortPriority(2)   // view only, still read first
             } secondary: {
                 // The trailing rail sits over the lower half: keep the actions clear of it (0.2.0 gate).
                 ScrollView { OnboardingActions().padding(16) }
@@ -504,8 +504,11 @@ struct OnboardingView: View {
             HStack(alignment: .top, spacing: 0) {
                 ScrollView {
                     VStack(alignment: .leading, spacing: 20) {
+                        // VoiceOver reads the headline first, then the cover strip and actions (r054-first-run-voiceover-order).
                         OnboardingStage().frame(height: (duo.pose == .closed ? 220 : 280) + (typeSize.isAccessibilitySize ? 120 : 0))   // four AX headline lines fit
+                            .accessibilitySortPriority(2)
                         OnboardingActions(pageWidth: pageWidth, bookLeft: pageWidth != nil).padding(.horizontal, 16)
+                            .accessibilitySortPriority(1)
                     }
                     .padding(.bottom, 24)
                 }

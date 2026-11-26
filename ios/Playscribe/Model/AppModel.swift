@@ -77,7 +77,16 @@ struct NotifyPref: Codable, Hashable {
 /// place so every pose change rebuilds views from the same values (P-1).
 struct NavState: Codable, Hashable {
     var tab: AppTab = .library
-    var gameID: String?
+    var gameID: String? {
+        // No game open, no games behind it (every path that clears the game also ends its trail).
+        didSet { if gameID == nil { gameTrail = nil } }
+    }
+    /// bug-070 (Terry, 25 Nov): the games opened before this one from inside a game page ("View game" under the recommendations),
+    /// oldest first. Back and the edge swipe return to the last of them before leaving for returnTab / the Library. nil: none.
+    var gameTrail: [String]?
+    /// bug-072: the section each trail game was left on, by trail position, so Back returns to it though a game opened afresh
+    /// lands on its newest update. Entries past the trail's length are stale and ignored.
+    var trailChapters: [Chapter]?
     var chapter: Chapter = .updates {
         didSet { if let g = gameID { chapters = (chapters ?? [:]).merging([g: chapter]) { $1 } } }
     }
@@ -394,6 +403,9 @@ final class AppModel {
             // Quinn (#430): a Library scroll anchor that is not a game tile ("lib-<id>") would scroll an unfiltered relaunch to the
             // search field (the app killed while it was focused). Keep tile anchors only.
             if let a = data.nav.anchors["library"], !a.hasPrefix("lib-") { data.nav.anchors["library"] = nil }
+            // bug-072: a cold launch never resumes on a section from an earlier session; an open game shows its newest update.
+            data.nav.chapter = .updates
+            data.nav.chapters = nil
         } else {
             // A real first launch starts empty, on onboarding: demo games never appear in a
             // player's library. QA launches (-qaRoute, other than first-run) still seed the demo set;
@@ -764,13 +776,23 @@ final class AppModel {
         // D-1 (0.5.6, Card D): Back from the game goes to where it was opened from. Sections are siblings, so switching one
         // never adds history; a second game opened from inside the Library keeps the Library as its way back.
         if n.tab != .library { n.returnTab = n.tab } else if n.gameID == nil { n.returnTab = nil }
+        // bug-070: a game opened from inside another game's page stacks on it, so Back returns to that game. From another tab the
+        // Library's open game is not where the reader came from, so the trail starts afresh.
+        if n.tab == .library, let current = n.gameID, !sameGame {
+            let trail = n.gameTrail ?? []
+            n.trailChapters = Array((n.trailChapters ?? []).prefix(trail.count)) + [n.chapter]
+            n.gameTrail = trail + [current]
+        } else if n.tab != .library {
+            n.gameTrail = nil
+        }
         n.tab = .library
         if !sameGame { n.detailReleaseID = nil }
         n.gameID = gameID
         n.lastGameID = gameID
-        // D-13: each game reopens on the chapter last opened in it.
-        // R-7 (0.5.6): World is part of Companion; a saved or routed World opens Companion.
-        n.chapter = GameSections.canonical(chapter ?? (sameGame ? n.chapter : (n.chapters?[gameID] ?? .updates)))
+        // bug-072 (Terry, 25 Nov): opening a game afresh lands on its newest update (R-1), never on the section it was left on in an
+        // earlier visit. `chapters` only serves Back within a visit (closeGame); it is no longer a way in.
+        // R-7 (0.5.6): World is part of Companion; a routed World opens Companion.
+        n.chapter = GameSections.canonical(chapter ?? (sameGame ? n.chapter : .updates))
         if let releaseID {
             n.selected = (n.selected ?? [:]).merging([gameID: releaseID]) { $1 }
             n.expanded["rel:\(releaseID)"] = true
@@ -840,6 +862,15 @@ final class AppModel {
 
     /// Back from the game page (rail, toolbar, swipe): leaves the game for where it was opened from (D-1, Card D).
     func closeGame() {
+        // bug-070: back to the game this one was opened from, on the chapter it was left on, before leaving the games.
+        if var trail = nav.gameTrail, let previous = trail.popLast() {
+            nav.detailReleaseID = nil
+            nav.gameID = previous
+            nav.gameTrail = trail.isEmpty ? nil : trail
+            nav.lastGameID = previous
+            nav.chapter = GameSections.canonical(nav.trailChapters.flatMap { $0.indices.contains(trail.count) ? $0[trail.count] : nil } ?? nav.chapters?[previous] ?? .updates)
+            return
+        }
         let back = nav.returnTab
         nav.gameID = nil
         nav.detailReleaseID = nil
@@ -923,7 +954,10 @@ final class AppModel {
 
     /// The Back control's label: the screen it returns to, "Back to Updates" or "Back to Library" (Iris, 0.5.6 rail set; HIG:
     /// the previous screen's title). Glyph only on the rail, with this as its label, in every pose.
-    var backTitle: String { "Back to \((nav.returnTab ?? .library).title)" }
+    var backTitle: String {
+        if let previous = nav.gameTrail?.last { return "Back to \(game(previous)?.name ?? "previous game")" }
+        return "Back to \((nav.returnTab ?? .library).title)"
+    }
 
     /// J-1, R-7 (0.5.6): the one-column poses (Closed, Open both ways) push an update as its own page; Book and Tabletop show it
     /// in place on the Page.
@@ -956,6 +990,7 @@ final class AppModel {
     private func openPushed(_ gameID: String, _ releaseID: String) {
         nav.tab = .library
         nav.returnTab = nil
+        nav.gameTrail = nil
         openGame(gameID, chapter: .updates, releaseID: releaseID)
         nav.returnTab = nil
         if pushesReleases { nav.detailReleaseID = releaseID }
@@ -1173,6 +1208,29 @@ final class AppModel {
             tick()
             qaFreshCache = nil
             if parts.count == 2 { openGame(gameID, chapter: .updates, releaseID: release.id) }
+        // QA (INTERNAL, r054-closed-ax5-hero-headline-4-lines, J-5d): "long-hero/<game>" stays on the Library with an unread, live and
+        // official PS5 update whose headline is the longest real one (Dawnwalker's "Respec with Draught of Mind Rebirth, a new Story
+        // mode and larger subtitles"), so it leads the Latest updates hero and the 4-line cap can be shot at rest, no swipes.
+        case "long-hero" where parts.count == 1:
+            let gameID = parts[0]
+            resetToTwoUpdateDemo()
+            if !data.collection.contains(where: { $0.gameID == gameID }), let game = fixtures.games.first(where: { $0.id == gameID }) {
+                addGames([game], status: .owned)
+            }
+            let now = Date.now
+            let release = Release(
+                id: "qa-long-hero-\(gameID)", gameID: gameID, displayName: "Update 1.4", kind: .patch, kindBasis: .studio,
+                announcedAt: now, notes: [], sourceIDs: [],
+                platforms: [PlatformRelease(platform: .ps5, status: .live,
+                                            version: Field(value: "1.004", verification: .official, sourceID: "simulated", checkedAt: now),
+                                            liveAt: Field(value: now, verification: .official, sourceID: "simulated", checkedAt: now),
+                                            bundles: [], verification: .official)],
+                headline: "Respec with Draught of Mind Rebirth, a new Story mode and larger subtitles",
+                summary: "QA fixture. Not a real release.", keyChanges: [], simulated: true, arrivesAt: now)
+            data.simulated.removeAll { $0.id == release.id }
+            data.simulated.insert(release, at: 0)
+            tick()
+            qaFreshCache = nil
         // QA (INTERNAL): a PS5 update with a very long invented title, to exercise the share-button guard on the release page
         // (r054: a title past 4 lines at AX drops the button to its own row).
         case "long-title" where parts.count == 1:
@@ -1750,6 +1808,10 @@ final class AppModel {
     func applyQALaunch(route: String?, overlay: Bool) {
         guard BuildChannel.showsInternalTools else { return }
         if overlay { showDebugOverlay = true; FoldAuditSwitch.enabled = true }
+        // `-qaDemo YES`: start from the demo Library whatever an earlier launch saved, so a test that needs a game tracked (or
+        // not) never depends on the test before it. A retried first-run test (empty Library) left Book and Tabletop RailSetTests
+        // with no Status on the rail (ui run 45623755710, bug-ui-runner-terminate-flake).
+        if UserDefaults.standard.bool(forKey: "qaDemo") { resetDemo() }
         if let route, let url = URL(string: "playscribe://\(route)") { handle(url: url) }
     }
 

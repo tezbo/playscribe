@@ -92,6 +92,19 @@ struct DeckAndWidgetTests {
         }
     }
 
+    /// r060-version-chip-spoken: the card's VoiceOver label speaks the version ("version 1 point 1"), never the raw chip ("v1.1").
+    @Test func deckCardLabelSpeaksTheVersion() throws {
+        let m = demoModel()
+        let withChip = m.latestDeck.filter { $0.release?.deckVersionChip != nil }
+        try #require(!withChip.isEmpty, "the demo deck has a card with a version chip")
+        for card in withChip {
+            let chip = card.release!.deckVersionChip!
+            let label = DeckCardView.label(card, tracked: m.feedTracksGame(card.game.id))
+            #expect(label.contains(chip.spokenVersion), "\(card.game.name): \(label)")
+            #expect(!label.contains(chip + ", "), "the raw chip is not read: \(label)")
+        }
+    }
+
     /// The card's summary line never ends mid-word (Iris, 2026-11-06).
     @Test func deckSummaryCutsAtWholeWords() {
         let long = "Fixes a crash on load and improves frame pacing in the big city district when many characters appear at once during night"
@@ -152,6 +165,24 @@ struct DeckAndWidgetTests {
             let headline = r.ps5Headline ?? r.displayName
             let named = headline.split(separator: " ").contains { $0 == v.dropFirst() }
             #expect(r.deckVersionChip == (named ? nil : v), "\(headline): \(r.deckVersionChip ?? "no chip")")
+        }
+    }
+
+    /// bug-deck-card-closed-landscape-ax5-dots-order (Nadia): every deck card leads with the patch name, the game name under it.
+    /// Closed landscape's wide card led with the game name at every size. The compact, stacked and stage cards share
+    /// CompactCaption.headline; the wide card's lines are held here too.
+    @Test func deckHeadlineIsThePatchName() throws {
+        let m = demoModel()
+        let deck = m.latestDeck
+        try #require(!deck.isEmpty)
+        for card in deck {
+            guard let r = card.release else { continue }
+            let patch = r.ps5Headline ?? r.displayName
+            #expect(CompactCaption.headline(card) == patch, "\(card.game.name): compact headline")
+            let wide = WideDeckCard.lines(card)
+            #expect(wide.headline == patch, "\(card.game.name): wide card leads with \(wide.headline)")
+            #expect(wide.sub == card.game.name.gluingTrailingNumeral, "\(card.game.name): the game name under the patch name")
+            #expect(wide.headline != wide.sub)
         }
     }
 }

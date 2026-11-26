@@ -40,3 +40,35 @@ extension View {
     /// Use together with `.navigationBarBackButtonHidden(true)`.
     func keepsSwipeBack() -> some View { background(SwipeBackEnabler().frame(width: 0, height: 0).accessibilityHidden(true)) }
 }
+
+/// A sideways swipe that never holds a vertical scroll (N-1, N-9: "Not now or a swipe"). It is a UIKit pan that only begins when
+/// the finger moves mainly sideways, so the page's own pan takes every vertical drag that starts on the card. A SwiftUI
+/// DragGesture on scroll content, exclusive or simultaneous, held the page still once the card sat under the finger: at AX3
+/// and AX5 in Closed landscape the alerts card's buttons could not be scrolled into view (cloud runs a0f1e86 and fbdf2a7, #635).
+struct SideSwipe: UIGestureRecognizerRepresentable {
+    var action: () -> Void
+
+    func makeCoordinator(converter: CoordinateSpaceConverter) -> Coordinator { Coordinator() }
+
+    func makeUIGestureRecognizer(context: Context) -> UIPanGestureRecognizer {
+        let pan = UIPanGestureRecognizer()
+        pan.delegate = context.coordinator
+        return pan
+    }
+
+    func handleUIGestureRecognizerAction(_ recognizer: UIPanGestureRecognizer, context: Context) {
+        guard recognizer.state == .ended else { return }
+        if Self.dismisses(recognizer.translation(in: nil)) { action() }
+    }
+
+    /// Far enough, and mainly sideways.
+    static func dismisses(_ t: CGPoint) -> Bool { abs(t.x) > 60 && abs(t.x) > 2 * abs(t.y) }
+
+    @MainActor final class Coordinator: NSObject, UIGestureRecognizerDelegate {
+        func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+            guard let pan = gestureRecognizer as? UIPanGestureRecognizer else { return false }
+            let v = pan.velocity(in: nil)
+            return abs(v.x) > 2 * abs(v.y)
+        }
+    }
+}

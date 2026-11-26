@@ -9,12 +9,14 @@ import XCTest
 final class RailSetTests: XCTestCase {
     private static let ax5 = ["-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityXXXL"]
 
-    private func launch(pose: String?, ax5: Bool, route: String = "gamepage/dawnwalker") -> XCUIApplication {
+    private func launch(pose: String?, ax5: Bool, route: String = "gamepage/dawnwalker", landscape: Bool = false) -> XCUIApplication {
         continueAfterFailure = true
         let app = XCUIApplication()
-        var args = ["-qaRoute", route]
+        // Tracked (dawnwalker) and untracked (alan-wake-2) come from the demo Library, never from what the last test saved.
+        var args = ["-qaRoute", route, "-qaDemo", "YES"]
         if let pose { args += ["-qaPose", pose] }
         if ax5 { args += Self.ax5 }
+        if landscape { args += ["-qaOrientation", "landscape"] }
         app.launchArguments = args
         app.launch()
         XCTAssertTrue(app.descendants(matching: .any)["foldAudit"].waitForExistence(timeout: 40), "the game page did not load")
@@ -34,19 +36,12 @@ final class RailSetTests: XCTestCase {
     private func check(pose: String?, ax5: Bool, tracked: Bool = true, landscape: Bool = false) {
         // Untracked = not in the library, so no Status (Iris). The game page opens with Add to library (Quinn, #442).
         let route = tracked ? "gamepage/dawnwalker" : "gamepage/alan-wake-2"
-        let app = launch(pose: pose, ax5: ax5, route: route)
+        let app = launch(pose: pose, ax5: ax5, route: route, landscape: landscape)
         // The synthetic fold (-qaPose, QAPose in Duo.swift) is meant for the inner display, where its fold sits where the real one
         // does. On the outer display (466 x 678) it is not Book or Tabletop: CI run 45392778518 put a Tabletop fold on the
         // outer display, which left the lower half ~280 pt for a rail that needs ~400 on the real fold (PoseCatalog 669 x 835,
         // fold 374-414), so More fell under the tab capsule. Say so, instead of reporting rail failures that measure nothing.
-        if pose != nil {
-            let w = app.windows.firstMatch.frame
-            guard min(w.width, w.height) >= 600 else {
-                XCTFail("\(pose!): the synthetic fold needs the inner display; this window is \(w), the outer display, so this run measures nothing")
-                app.terminate()
-                return
-            }
-        }
+        guard onInnerDisplay(app, pose: pose, tag: ax5 ? "AX5" : "std") else { return }
         if landscape {
             // Wait for the window itself to turn, not a fixed time: at 8f45d30 the Mac's run measured Closed portrait's toolbar column
             // (38 pt items beside a tab column at x 396.5 in a 466 pt window) as if it were the landscape rail, while a hand check at
@@ -144,10 +139,25 @@ final class RailSetTests: XCTestCase {
     func testClosedLandscapeUntrackedAX5() { check(pose: nil, ax5: true, tracked: false, landscape: true) }
     func testClosedUntracked() { check(pose: nil, ax5: false, tracked: false) }
 
+    /// A -qaPose case measures only on the inner display. Fails (never skips) and terminates the app when the window is the outer
+    /// display. CI folds open with sim-use first: expect ~951 x 669 (Book, landscape) or 669 x 951 (Tabletop, portrait).
+    private func onInnerDisplay(_ app: XCUIApplication, pose: String?, tag: String) -> Bool {
+        guard let pose else { return true }
+        let w = app.windows.firstMatch.frame
+        print("innerWindow \(pose) \(tag): \(w)")
+        guard min(w.width, w.height) >= 600 else {
+            XCTFail("\(pose): the synthetic fold needs the inner display; this window is \(w), the outer display, so this run measures nothing")
+            app.terminate()
+            return false
+        }
+        return true
+    }
+
     /// D-10 survives behind More while the pages are side by side, and is listed nowhere else (Iris). One pose per test, so the
     /// Mac runs each in its matching simulator pose (-qaPose switches the app, not the simulator's fold: Mac, 729eaa5).
     private func moreLists(swapSides expected: Bool, pose: String?) {
         let app = launch(pose: pose, ax5: false)
+        guard onInnerDisplay(app, pose: pose, tag: "more") else { return }
         let more = app.descendants(matching: .any)["rail.more"]
         XCTAssertTrue(more.waitForExistence(timeout: 5), "no More in \(pose ?? "closed")")
         more.tap()
