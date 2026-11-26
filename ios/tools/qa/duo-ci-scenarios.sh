@@ -179,7 +179,7 @@ switchax) # bug-playing-upcoming-switch-ax5-small: switch + filter chips, each s
 rails) # R-7: the four sideways rails, at rest (trailing fade only) and scrolled (leading fade too)
   launch -qaRoute gamepage/dawnwalker; scroll_end 233,560 233,160 similar; rail 1-youmightalsolike '#similarGame'
   launch -qaRoute fill-library/12 -UIPreferredContentSizeCategoryName UICTContentSizeCategoryL; rail 2-library-chips 'Button +"All '
-  launch -qaRoute first-run; rail 3-firstrun-popular '#popularAdd'   # the empty Library's Popular on PS5 row (sized to the tiles that fit, so it should fade nowhere)
+  launch -qaRoute first-run; sim-use tap --label "Skip for now" --device "$UDID" >/dev/null 2>&1; sleep 3; rail 3-firstrun-popular '#popularAdd'   # the empty Library's Popular on PS5 row (sized to the tiles that fit, so it should fade nowhere)
   launch -qaRoute fill-library/12; fold 120 portrait; sleep 3; rail 4-tabletop-chips 'Button +"All '
   sim-use tap --label "Search" --device "$UDID" >/dev/null 2>&1; sleep 3; rail 5-tabletop-letters '#letter-A' ;;
 switchtt) # bug-playing-upcoming-switch-ax5-small: real Tabletop at AX5. Tries portrait-first then fold, and fold-then-portrait, at hinge angles 90 120 60 130 until the app reports "pose: tabletop"
