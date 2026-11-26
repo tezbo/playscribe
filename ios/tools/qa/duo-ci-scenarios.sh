@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Quinn's five cloud runs on a booted, app-installed iPhone Duo (hosted runner or Mac). Needs sim-use.
-#   ios/tools/qa/duo-ci-scenarios.sh UDID OUTDIR [scenario ...]    (default: all)   scenarios: continuity trailer closedax5 schemes video axchips deckwide fullscreen
+#   ios/tools/qa/duo-ci-scenarios.sh UDID OUTDIR [scenario ...]    (default: all)   scenarios: continuity trailer closedax5 schemes video axchips deckwide fullscreen fsxctest
 # Every step saves <sha>-<scenario>-<step>-<display>-shot.png and -ui.txt (outline with frames, ids and the pose line).
 set -uo pipefail
 UDID=$1; OUT=$2; shift 2; SCEN=${*:-continuity trailer closedax5 schemes video}
@@ -148,6 +148,11 @@ fullscreen) # bug-071: full-screen video Fit with our controls in the bands; the
   fold 180 landscape-left; enter 7-flat-landscape
   fold 90 landscape-left; sleep 1; snap fullscreen 8-book; frames 8
   fold 90 portrait; sleep 2; snap fullscreen 9-tabletop-ends-it ;;
+fsxctest) # bug-071: XCUITest taps (sim-use taps did not reach the bands after the turn): enter, band tap, Exit, in Closed
+  fold 0 portrait
+  xcodebuild test -project ios/Playscribe.xcodeproj -scheme PlayscribeUI -destination "id=$UDID" -derivedDataPath build/dd-ui \
+    -only-testing:PlayscribeUITests/FullScreenVideoTests -resultBundlePath "$OUT/fsxctest.xcresult" CODE_SIGNING_ALLOWED=NO > "$OUT/fsxctest.log" 2>&1
+  echo "fsxctest exit $?"; grep -E 'qaFullScreen|qaBands|videoExitFullScreen frame|error:|Test Case|\*\* TEST' "$OUT/fsxctest.log" | cut -c1-400 ;;
 video) # row 9: hinge sweep recording with frame timing
   launch -qaRoute library/playing; fold 180 landscape-left
   sim-use record-video --device "$UDID" --fps 60 --output "$OUT/$SHA-video-sweep.mp4" >/dev/null 2>&1 & rp=$!
