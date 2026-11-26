@@ -3,6 +3,9 @@ name: Edge swipe loop
 # bug-edge-swipe-test-flake: run one UI test many times, optionally with CPU burners to copy the load of a slow runner
 # (boot load was 261 to 533 on 3 cores when GameToGameTests' edge swipe failed). Reports pass or fail per iteration.
 on:
+  # A change to this workflow runs it on its own PR (both burner counts below), so it proves itself before it merges.
+  pull_request:
+    paths: ['.github/workflows/edge-swipe-loop.yml', 'ios/PlayscribeUITests/GameToGameTests.swift']
   workflow_dispatch:
     inputs:
       test:
@@ -21,7 +24,12 @@ concurrency:
 
 jobs:
   loop:
+    name: loop (burners ${{ matrix.burners }})
     runs-on: xcode-27
+    strategy:
+      fail-fast: false
+      matrix:
+        burners: [0, 6]
     timeout-minutes: 75
     env:
       XCODE_APP: /Applications/Xcode_27.1.app
@@ -48,9 +56,9 @@ jobs:
             || { grep -E 'error:' build.log | head -20; exit 1; }
       - name: Loop the test
         env:
-          TEST: ${{ inputs.test }}
-          ITER: ${{ inputs.iterations }}
-          BURNERS: ${{ inputs.burners }}
+          TEST: ${{ inputs.test || 'GameToGameTests/testBackAndEdgeSwipeReturnToTheGameItWasOpenedFrom' }}
+          ITER: ${{ inputs.iterations || '10' }}
+          BURNERS: ${{ github.event_name == 'workflow_dispatch' && inputs.burners || matrix.burners }}
         run: |
           for i in $(seq 1 "$BURNERS"); do nohup bash -c 'while :; do :; done' >/dev/null 2>&1 & done
           sleep 5
@@ -64,7 +72,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: edge-swipe-loop
+          name: edge-swipe-loop-${{ matrix.burners }}
           path: |
             loop.log
             build.log
