@@ -44,14 +44,23 @@ final class FullScreenVideoTests: XCTestCase {
         XCTAssertFalse(after.contains("wakes=0"), "a tap in the top band did not reach our controls: \(after)")
         XCTAssertTrue(exit.waitForExistence(timeout: 3), "Exit full screen is not shown after a band tap")
 
-        // The controls fade 3 s after the last touch while playing, faster than XCUITest can query and then tap the element
-        // (run 45748630556: frame (96, 0, 44, 44), gone by the tap). So tap where Exit sits: the first tap shows the controls,
-        // the second is Exit.
-        let at = exit.frame
-        print("videoExitFullScreen frame: \(at)")
-        XCTAssertTrue(at.minX >= 92 && at.maxY <= 44, "Exit is not in the top band clear of the camera housing: \(at)")
+        // The controls fade 3 s after the last touch while playing, often before XCUITest can read Exit's frame (runs 45748630556
+        // and 45751314856). So Exit's point comes from the measured geometry in qaFullScreen: the top row starts 12 pt inside
+        // the safe leading inset and is centred in the top band. The first tap shows the controls, the second is Exit.
+        let geometry = (probe.value as? String) ?? ""
+        func numbers(after key: String) -> [CGFloat] {
+            guard let r = geometry.range(of: key + "=") else { return [] }
+            let field = geometry[r.upperBound...].prefix { $0 != " " }
+            return field.split(whereSeparator: { $0 == "," || $0 == "x" }).compactMap { Double($0).map { CGFloat($0) } }
+        }
+        let pic = numbers(after: "pic"), safe = numbers(after: "safe")
+        XCTAssertEqual(pic.count, 4, "qaFullScreen has no picture frame: \(geometry)")
+        XCTAssertEqual(safe.count, 4, "qaFullScreen has no safe insets: \(geometry)")
+        guard pic.count == 4, safe.count == 4 else { return }
+        let exitPoint = CGVector(dx: safe[1] + 12 + 22, dy: (pic[1] - 44) / 2 + 22)
+        XCTAssertGreaterThanOrEqual(exitPoint.dx - 22, 92, "Exit would sit in the camera housing")
         sleep(4)
-        let point = app.windows.firstMatch.coordinate(withNormalizedOffset: .zero).withOffset(CGVector(dx: at.midX, dy: at.midY))
+        let point = app.windows.firstMatch.coordinate(withNormalizedOffset: .zero).withOffset(exitPoint)
         point.tap()
         point.tap()
         XCTAssertTrue(enter.waitForExistence(timeout: 10), "Exit full screen did not leave full screen")
