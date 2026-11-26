@@ -1303,8 +1303,12 @@ struct NotificationInviteCard: View {
         HStack(alignment: .top, spacing: 12) {
             Image(systemName: "bell.badge").font(PlayscribeFont.title2).foregroundStyle(PlayscribeRole.action)
             VStack(alignment: .leading, spacing: 8) {
-                Text(denied ? "Alerts are off" : "Be first to know when a patch drops").font(PlayscribeFont.headline)
-                    .fixedSize(horizontal: false, vertical: true)
+                // r060-alerts-headline-cap: at most 4 lines at accessibility sizes, whole words then "…" (the label below says it all).
+                Group {
+                    let headline = denied ? "Alerts are off" : "Be first to know when a patch drops"
+                    if typeSize.isAccessibilitySize { WholeWordText(text: headline, font: PlayscribeFont.headline, lines: 4, color: nil) }
+                    else { Text(headline).font(PlayscribeFont.headline).fixedSize(horizontal: false, vertical: true) }
+                }
                     // The body is dropped from view at AX sizes, never from VoiceOver (Iris): the heading reads it, and the body
                     // text below is hidden from VoiceOver so it is not read twice. On its own, under the card's swipe and "Not now"
                     // action, the system audit took the 18 pt line for a control too small to hit (#588, Mac 75e96041 Tabletop).

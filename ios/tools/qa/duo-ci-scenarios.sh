@@ -105,12 +105,12 @@ lane) # AX/VoiceOver lane (0.6.0): LANE_ROUTES (space list of -qaRoute values), 
   # first screen then scrolled to the end, so a baseline on main and the PR share one matrix. LANE_AX (AX5|std) picks the text size.
   size=$AX5; [ "${LANE_AX:-AX5}" = std ] && size=UICTContentSizeCategoryL
   for r in ${LANE_ROUTES:-library/playing}; do n=$(echo "$r" | tr '/' '_')
-    launch -qaRoute "$r" -UIPreferredContentSizeCategoryName $size; snap lane "$n-1-closed-portrait"
-    scroll_end 233,560 233,120 portrait; snap lane "$n-1b-closed-portrait-end"
+    launch -qaRoute "$r" -qaOrientation portrait -UIPreferredContentSizeCategoryName $size; snap lane "$n-1-closed-portrait"
+    [ "${LANE_SCROLL:-no}" = yes ] && { scroll_end 233,560 233,120 portrait; snap lane "$n-1b-closed-portrait-end"; }
     launch -qaRoute "$r" -qaOrientation landscape -UIPreferredContentSizeCategoryName $size; snap lane "$n-2-closed-landscape"
-    scroll_end 339,380 339,60 landscape; snap lane "$n-2b-closed-landscape-end"
-    launch -qaRoute "$r" -UIPreferredContentSizeCategoryName $size; fold 90 portrait; snap lane "$n-3-tabletop"
-    scroll_end 300,900 300,520 tabletop; snap lane "$n-3b-tabletop-end"
+    [ "${LANE_SCROLL:-no}" = yes ] && { scroll_end 339,380 339,60 landscape; snap lane "$n-2b-closed-landscape-end"; }
+    launch -qaRoute "$r" -qaOrientation portrait -UIPreferredContentSizeCategoryName $size; fold 90 portrait; snap lane "$n-3-tabletop"
+    [ "${LANE_SCROLL:-no}" = yes ] && { scroll_end 300,900 300,520 tabletop; snap lane "$n-3b-tabletop-end"; }
   done ;;
 axchips) # bug-closed-landscape-ax5-no-games + r060-filter-pills-grid-ax5: overlay off, first screen then scrolled (chips in view)
   for ax in AX3:UICTContentSizeCategoryAccessibilityL AX5:$AX5; do n=${ax%%:*}; c=${ax#*:}
