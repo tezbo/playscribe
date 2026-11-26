@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Quinn's five cloud runs on a booted, app-installed iPhone Duo (hosted runner or Mac). Needs sim-use.
-#   ios/tools/qa/duo-ci-scenarios.sh UDID OUTDIR [scenario ...]    (default: all)   scenarios: continuity trailer closedax5 schemes video axchips deckwide plusend switchax switchtt heroswipe herolong removemenu brand lane
+#   ios/tools/qa/duo-ci-scenarios.sh UDID OUTDIR [scenario ...]    (default: all)   scenarios: continuity trailer closedax5 schemes video axchips deckwide plusend switchax switchtt heroswipe herolong removemenu brand edgefade lane
 # Every step saves <sha>-<scenario>-<step>-<display>-shot.png and -ui.txt (outline with frames, ids and the pose line).
 set -uo pipefail
 UDID=$1; OUT=$2; shift 2; SCEN=${*:-continuity trailer closedax5 schemes video}
@@ -121,6 +121,17 @@ brand) # s-06-brand-swap (#614): Home Screen icon light and dark (tinted cannot 
   xcrun simctl terminate "$UDID" $B >/dev/null 2>&1; fold 0 portrait; xcrun simctl launch "$UDID" $B -qaRoute library/playing >/dev/null; quick 6-splash-closed
   xcrun simctl terminate "$UDID" $B >/dev/null 2>&1; fold 90 landscape-left; xcrun simctl launch "$UDID" $B -qaRoute library/playing >/dev/null; quick 7-splash-book
   xcrun simctl terminate "$UDID" $B >/dev/null 2>&1; fold 90 portrait; xcrun simctl launch "$UDID" $B -qaRoute library/playing >/dev/null; quick 8-splash-tabletop ;;
+edgefade) # #613 (bug-063, bug-library-tabbar-edge-fade): game page and Library mid-scroll and at the end, std and AX5, Closed portrait and Open portrait (fold 180); ui.txt carries qaBarPinned
+  for sz in std AX5; do size=UICTContentSizeCategoryL; [ $sz = AX5 ] && size=$AX5
+    for pose in closed open; do
+      if [ $pose = closed ]; then F=0; X=233; Y1=560; Y2=200; else F=180; X=300; Y1=900; Y2=400; fi
+      for r in gamepage/dawnwalker library/playing; do n=$(echo "$r" | tr '/' '_')
+        xcrun simctl terminate "$UDID" $B >/dev/null 2>&1; fold $F portrait; xcrun simctl launch "$UDID" $B -qaRoute "$r" -UIPreferredContentSizeCategoryName $size >/dev/null; sleep 8
+        sim-use swipe --from $X,$Y1 --to $X,$Y2 --duration 0.5 --device "$UDID" >/dev/null 2>&1; sleep 2; snap edgefade "$sz-$pose-$n-1-mid"
+        scroll_end $X,$Y1 $X,$Y2 $pose; snap edgefade "$sz-$pose-$n-2-end"
+      done
+    done
+  done ;;
 lane) # AX/VoiceOver lane (0.6.0): LANE_ROUTES (space list of -qaRoute values), each at AX5 in Closed portrait, Closed landscape and Tabletop;
   # first screen then scrolled to the end, so a baseline on main and the PR share one matrix. LANE_AX (AX5|std) picks the text size.
   size=$AX5; [ "${LANE_AX:-AX5}" = std ] && size=UICTContentSizeCategoryL
