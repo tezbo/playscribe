@@ -97,21 +97,13 @@ jobs:
               sleep 30
             done' > build/diag/load.log 2>&1 &
           echo "load logger started"
-      - name: Boot the simulator and let it settle
-        # bug-ui-runner-terminate-flake: the load average was already 112 before the build. Right after boot the simulator
-        # spends a minute or more on lock-screen posters, diagnosticd and Metal shader compiles. Wait (at most 3 min) until the
-        # 1-minute load is under twice the cores, and log how long that took, so tests start on a calmer runner.
+      - name: Boot the simulator
+        # A settle wait (until the load fell under twice the cores, at most 3 min) was tried on this PR's first run
+        # (45721991166): the load stayed at 338 to 388 on 3 cores in all three parts and never settled, so it only cost 3 min
+        # each. The load is the runner image's, not the boot's. The load at boot is logged instead.
         run: |
           xcrun simctl boot "$UDID" 2>/dev/null || true; xcrun simctl bootstatus "$UDID" -b > /dev/null
-          cores=$(sysctl -n hw.ncpu); start=$(date +%s)
-          while :; do
-            load=$(sysctl -n vm.loadavg | awk '{print $2}')
-            waited=$(( $(date +%s) - start ))
-            python3 -c "import sys; sys.exit(0 if float('$load') < 2 * $cores else 1)" && break
-            [ "$waited" -ge 180 ] && { echo "::notice::still loaded after 3 min (load $load, $cores cores); going on"; break; }
-            sleep 10
-          done
-          echo "### Settled in ${waited}s: load $load on $cores cores" | tee -a "$GITHUB_STEP_SUMMARY"
+          echo "### Booted: load $(sysctl -n vm.loadavg) on $(sysctl -n hw.ncpu) cores" | tee -a "$GITHUB_STEP_SUMMARY"
       - name: Build for testing
         run: |
           xcodebuild build-for-testing -project ios/Playscribe.xcodeproj -scheme PlayscribeUI \
