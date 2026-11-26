@@ -165,6 +165,13 @@ extension String {
         return out
     }
 
+    /// A version chip as VoiceOver should say it ("v1.012" → "version 1 point 012"), so it is never read as a number or a date.
+    var spokenVersion: String {
+        var t = self.replacingOccurrences(of: "\u{2060}", with: "")
+        if let f = t.first, f == "v" || f == "V", t.dropFirst().first?.isNumber == true { t.removeFirst() }
+        return "version " + t.replacingOccurrences(of: ".", with: " point ")
+    }
+
     /// ISO day ("2026-09-03") to a Date at noon UTC.
     var isoDay: Date? {
         var c = DateComponents()
@@ -211,5 +218,32 @@ private struct AdaptiveGlass<S: InsettableShape>: ViewModifier {
 extension View {
     func adaptiveGlass<S: InsettableShape>(in shape: S, interactive: Bool = false) -> some View {
         modifier(AdaptiveGlass(shape: shape, interactive: interactive))
+    }
+
+    /// One rule for anything over art (Iris, design/taste-fixes/over-art-materials.md), role 1: a control that floats over
+    /// content (rail, Back, Share, the View menu, action discs, the play button) is Liquid Glass, solid ink with a 1 pt border
+    /// under Reduce Transparency or Increase Contrast. The only way a control gets a material (MaterialLintTests).
+    func floatingControl<S: InsettableShape>(in shape: S) -> some View {
+        adaptiveGlass(in: shape, interactive: true)
+    }
+
+    /// Role 2: a label that sits on art (version chip, tile status circle, date pills, the cover's "1 of 3" pill) is ink950 at
+    /// 75%, the hero scrim's ink: ember on it over pure white art is 5.2:1, and 75% is the floor (60% falls to 2.9:1). Solid ink
+    /// under Reduce Transparency or Increase Contrast. Never glass: glass reads as tappable, and a label is not.
+    func artLabel<S: Shape>(in shape: S) -> some View {
+        modifier(ArtLabel(shape: shape))
+    }
+}
+
+/// See `artLabel(in:)`.
+struct ArtLabel<S: Shape>: ViewModifier {
+    static var opacity: Double { 0.75 }
+    var shape: S
+    @Environment(\.accessibilityReduceTransparency) private var reduceTransparency
+    @Environment(\.colorSchemeContrast) private var contrast
+    @Environment(\.qaSolid) private var qaSolid
+    func body(content: Content) -> some View {
+        let solid = reduceTransparency || contrast == .increased || qaSolid
+        content.background(shape.fill(PlayscribeColor.ink950.opacity(solid ? 1 : Self.opacity)))
     }
 }

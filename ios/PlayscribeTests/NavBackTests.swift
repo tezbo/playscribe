@@ -38,6 +38,53 @@ struct NavBackTests {
         #expect(m.nav.returnTab == nil)
     }
 
+    /// bug-070 (Terry, 25 Nov): "View game" under the recommendations at the end of a game page opened the other game, and Back
+    /// (button and swipe) went to the Library instead of the game he was on.
+    @Test func aGameOpenedFromAnotherGameBacksToThatGameThenTheLibrary() throws {
+        let m = model()
+        m.openGame("dawnwalker")
+        let other = try #require(m.game("kcd2"))
+        m.browseGame(other)
+        #expect(m.nav.gameID == "kcd2")
+        #expect(m.backTitle == "Back to The Blood of Dawnwalker")
+        m.closeGame()
+        #expect(m.nav.gameID == "dawnwalker")
+        #expect(m.nav.tab == .library)
+        #expect(m.backTitle == "Back to Library")
+        m.closeGame()
+        #expect(m.nav.gameID == nil)
+    }
+
+    @Test func aGameChainFromTheUpdatesTabBacksThroughEachGameThenToUpdates() {
+        let m = model()
+        m.nav.tab = .updates
+        m.openGame("dawnwalker")
+        m.nav.chapter = .news
+        m.openGame("kcd2")
+        m.openGame("dawnwalker")   // back to the first through a recommendation: still a step of its own
+        m.closeGame()
+        #expect(m.nav.gameID == "kcd2")
+        m.closeGame()
+        #expect(m.nav.gameID == "dawnwalker")
+        #expect(m.nav.chapter == .news, "the game reopens on the section it was left on")
+        #expect(m.backTitle == "Back to Updates")
+        m.closeGame()
+        #expect(m.nav.tab == .updates)
+        #expect(m.nav.gameID == nil)
+    }
+
+    @Test func anotherTabOpeningAGameStartsAFreshTrail() {
+        let m = model()
+        m.openGame("dawnwalker")
+        m.openGame("kcd2")
+        m.nav.tab = .search
+        m.openGame("dawnwalker")
+        #expect(m.backTitle == "Back to Search")
+        m.closeGame()
+        #expect(m.nav.tab == .search, "the Library's earlier games are not where this visit came from")
+        #expect(m.nav.gameID == nil)
+    }
+
     @Test func fromTheLibraryBackIsTheLibrary() {
         let m = model()
         m.openGame("kcd2")

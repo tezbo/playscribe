@@ -25,7 +25,7 @@ Terry's standing rule: every decision gets critical thought, the way the "Also n
 1. Copy `docs/decisions/TEMPLATE.md` to `docs/decisions/<card-id>.md` (max 15 lines). Link it in the card's `links`.
 2. Product (Nadia) and design (Iris) both weigh in where the change touches the product or the screens. Cite names and times.
 3. Stress-test the pick in two lines: "What would make this fail?" (pre-mortem) and "What is the best case for the option we rejected?" (steelman).
-4. Record the decision on the card and tell Gabrielle the one-line learning, with the link. She appends it to `docs/learnings.md` each cycle. A scrapped idea is logged the same as a kept one.
+4. Record the decision on the card and append the one-line learning, with the link, to `docs/learnings.md` (small PR), or file it as an `agent-resources` issue. A scrapped idea is logged the same as a kept one.
 
 ## Coordinator checklist (keep in project memory, apply to every decision)
 1. Name the goal and who asked.
@@ -34,7 +34,7 @@ Terry's standing rule: every decision gets critical thought, the way the "Also n
 4. Two alternatives, including a smaller version and doing nothing.
 5. Pick one; scrapping is allowed.
 6. Product and design weighed in, with names.
-7. Note filed in `docs/decisions/`, card linked, learning sent to Gabrielle.
+7. Note filed in `docs/decisions/`, card linked, learning logged.
 Do not start the work, or let a thread start it, before steps 1 to 5 have an answer.
 
 ## Do not

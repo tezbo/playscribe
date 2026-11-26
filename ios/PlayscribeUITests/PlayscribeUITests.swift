@@ -982,10 +982,11 @@ final class LatestUpdatesDeckTests: XCTestCase {
         app.launch()
         sleep(4)
         if ReleaseRowTests.pose(app).contains("pose: tabletop") { app.terminate(); throw XCTSkip("Tabletop's upper half is view only") }
-        let leaves = app.buttons.matching(NSPredicate(format: "label BEGINSWITH 'Update ' AND label CONTAINS ' of '"))
-        if leaves.count > 1 {
-            XCTAssertGreaterThanOrEqual(leaves.element(boundBy: 1).frame.height, 44, "leaf is a 44 pt target")
-            leaves.element(boundBy: 1).tap()
+        // The page indicator (Iris, beta 4) is one VoiceOver element and not a button outside Tabletop: the cards swipe.
+        let indicator = app.descendants(matching: .any)["deckIndicator"]
+        if indicator.exists {
+            XCTAssertTrue(indicator.label.hasPrefix("Update"), "one spoken element: \(indicator.label)")
+            XCTAssertEqual(indicator.elementType == .button, false, "the indicator is not a button outside Tabletop")
         }
         // The deck cards by identifier: the old label query could land on a Library tile, which opens the game, not an update.
         let cards = app.buttons.matching(identifier: "deckCard")
@@ -1034,16 +1035,17 @@ final class LatestUpdatesDeckTests: XCTestCase {
             if now == last { break }
             last = now
         }
-        let lastLeaf = app.buttons["Update \(count) of \(count)"]
-        XCTAssertTrue(lastLeaf.exists, "the last leaf is on screen at the deck's end")
-        XCTAssertTrue(lastLeaf.isSelected, "the last leaf is lit at the deck's end")
+        let indicator = app.descendants(matching: .any)["deckIndicator"]
+        XCTAssertTrue(indicator.exists, "the page indicator is on screen at the deck's end")
+        XCTAssertTrue(indicator.label.hasSuffix("\(count) of \(count)"), "the last dot is lit at the deck's end: \(indicator.label)")
     }
 
     /// J-8, Iris (Mac 198e9f87 and 30c03b0a): at the deck's end the cards sit flush on the pager, none cut at its edge.
     /// Measures twice: reaching the end by tapping the last leaf, and by flicking. Logs every frame at 2 s and 5 s so the
     /// cause is read, not guessed. Red on main: Open landscape left card 3.7 pt in, right card 2.7 pt over the edge.
     func testDeckEndSitsFlush() throws {
-        for path in ["tap", "flick"] {
+        // Reached by flicking: the page indicator is no longer a row of tappable leaves (Iris, beta 4 redesign).
+        for path in ["flick"] {
             let app = XCUIApplication()
             app.launchArguments = ["-qaRoute", "fill-library/12"]
             app.launch()
@@ -1056,15 +1058,11 @@ final class LatestUpdatesDeckTests: XCTestCase {
                   let count = Int(label[r].split(separator: " ").last ?? ""), count > 2 else {
                 app.terminate(); throw XCTSkip("needs three or more cards: \(label)")
             }
-            if path == "tap" {
-                app.buttons["Update \(count) of \(count)"].tap()
-            } else {
-                for _ in 0..<count {
-                    let from = pager.coordinate(withNormalizedOffset: CGVector(dx: 0.8, dy: 0.5))
-                    let to = pager.coordinate(withNormalizedOffset: CGVector(dx: 0.2, dy: 0.5))
-                    from.press(forDuration: 0.05, thenDragTo: to, withVelocity: .fast, thenHoldForDuration: 0)
-                    sleep(1)
-                }
+            for _ in 0..<count {
+                let from = pager.coordinate(withNormalizedOffset: CGVector(dx: 0.8, dy: 0.5))
+                let to = pager.coordinate(withNormalizedOffset: CGVector(dx: 0.2, dy: 0.5))
+                from.press(forDuration: 0.05, thenDragTo: to, withVelocity: .fast, thenHoldForDuration: 0)
+                sleep(1)
             }
             // The scroll view's own frame: the pager element also holds the page edge row, same width.
             let edge = pager.frame

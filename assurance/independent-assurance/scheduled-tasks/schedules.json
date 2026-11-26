@@ -1,0 +1,24 @@
+{
+  "time_zone": "Australia/Melbourne",
+  "notes": "Consolidated under the founding charter (24 Nov 2026): one combined incremental weekly review replaces the separate weekly, monthly and follow-up runs. Fresh thread per run in the office project, push notification on finish. Every run takes the office lock and stops early when nothing changed.",
+  "tasks": [
+    {
+      "name": "Office weekly organisational review",
+      "cron": "CRON_TZ=Australia/Melbourne 43 18 * * 1",
+      "enabled_at_setup": true,
+      "command": "/independent-assurance:audit weekly",
+      "covers": "outcomes, directives, testing, leadership and orchestration, capability and competency, resource trends, corrective actions due, desk requests, office overhead; deeper on the first run of a month only when warranted",
+      "guard": "No baseline report yet: health and desk triage only.",
+      "budget": "One session; delta since the last run; at most 15 sampled items per area."
+    },
+    {
+      "name": "Office behavioural challenge design",
+      "cron": "CRON_TZ=Australia/Melbourne 11 19 17 * *",
+      "enabled_at_setup": false,
+      "command": "/independent-assurance:challenge design",
+      "guard": "Design and seal only. Launch needs the sponsor's approval of that specific challenge.",
+      "budget": "One session; one challenge a month.",
+      "activation": "Sponsor switches it on after the baseline (only the sponsor can, in the browser)."
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+name: Duo scenarios (real hinge)
+
+# Quinn's cloud runs: open-game fold continuity, trailer Tabletop taps, Closed landscape at AX5, dark and light poses, and a
+# hinge-sweep video with frame gaps. Free hosted runner, sim-use, native stills. Evidence only. Input: scenarios (space list).
+on:
+  workflow_dispatch:
+    inputs:
+      scenarios: { description: 'continuity trailer closedax5 schemes video', default: 'continuity trailer closedax5 schemes video' }
+      tt_route: { description: 'tt scenario: -qaRoute', default: 'library/playing' }
+      tt_steps: { description: 'tt scenario: angle:orientation list', default: '90:portrait' }
+      tt_ax5: { description: 'tt scenario: yes for AX5', default: 'no' }
+      lane_routes: { description: 'lane scenario: -qaRoute values, space separated', default: 'library/playing' }
+      lane_scroll: { description: 'lane scenario: yes to also shoot scrolled to the end', default: 'no' }
+      lane_ax: { description: 'lane scenario: AX5 or std', default: 'AX5' }
+      app_ref: { description: 'Optional branch whose app source is built; the scripts stay from the dispatched ref', default: '' }
+  push:
+    branches: ['claude/**']
+    paths: ['.github/workflows/duo-scenarios.yml', 'ios/tools/qa/duo-ci-scenarios.sh']
+
+jobs:
+  scenarios:
+    runs-on: xcode-27
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build the app from another branch, keeping this ref's scripts
+        env:
+          APP_REF: ${{ inputs.app_ref }}
+        run: |
+          if [ -n "$APP_REF" ]; then
+            cp ios/tools/qa/duo-ci-scenarios.sh /tmp/duo-ci-scenarios.sh
+            git fetch --depth=1 origin "refs/heads/$APP_REF" && git checkout -q FETCH_HEAD
+            cp /tmp/duo-ci-scenarios.sh ios/tools/qa/duo-ci-scenarios.sh
+          fi
+      - run: sudo xcode-select -s /Applications/Xcode_27.1.app && brew install xcodegen ffmpeg && (cd ios && xcodegen generate)
+      - name: Install sim-use
+        run: |
+          brew tap lycorp-jp/tap
+          brew trust lycorp-jp/tap || true
+          brew install lycorp-jp/tap/sim-use
+      - name: Boot the Duo and build the app
+        run: |
+          UDID=$(xcrun simctl list devices available -j | python3 -c "
+          import json,sys
+          d=json.load(sys.stdin)['devices']
+          print(next(x['udid'] for k in d if 'iOS-27-1' in k for x in d[k] if 'Duo' in x['name']))")
+          echo "UDID=$UDID" >> "$GITHUB_ENV"
+          xcrun simctl boot "$UDID" || true
+          xcodebuild build -project ios/Playscribe.xcodeproj -scheme Playscribe -destination "id=$UDID" \
+            -derivedDataPath build/dd CODE_SIGNING_ALLOWED=NO > build.log 2>&1 || { grep error: build.log | head; exit 1; }
+          xcrun simctl install "$UDID" "$(ls -d build/dd/Build/Products/Debug-iphonesimulator/Playscribe.app)"
+      - name: Run the scenarios
+        env:
+          TT_ROUTE: ${{ inputs.tt_route }}
+          TT_STEPS: ${{ inputs.tt_steps }}
+          TT_AX5: ${{ inputs.tt_ax5 }}
+          LANE_ROUTES: ${{ inputs.lane_routes }}
+          LANE_AX: ${{ inputs.lane_ax }}
+          LANE_SCROLL: ${{ inputs.lane_scroll }}
+          SCENARIOS: ${{ inputs.scenarios || 'continuity trailer closedax5 schemes video' }}
+        run: |
+          mkdir -p out
+          ios/tools/qa/duo-ci-scenarios.sh "$UDID" out $SCENARIOS 2>&1 | tee out/scenarios.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: duo-scenarios, path: out }

@@ -77,14 +77,22 @@ struct NotifyPref: Codable, Hashable {
 /// place so every pose change rebuilds views from the same values (P-1).
 struct NavState: Codable, Hashable {
     var tab: AppTab = .library
-    var gameID: String?
+    var gameID: String? {
+        // No game open, no games behind it (every path that clears the game also ends its trail).
+        didSet { if gameID == nil { gameTrail = nil } }
+    }
+    /// bug-070 (Terry, 25 Nov): the games opened before this one from inside a game page ("View game" under the recommendations),
+    /// oldest first. Back and the edge swipe return to the last of them before leaving for returnTab / the Library. nil: none.
+    var gameTrail: [String]?
+    /// bug-072: the section each trail game was left on, by trail position, so Back returns to it though a game opened afresh
+    /// lands on its newest update. Entries past the trail's length are stale and ignored.
+    var trailChapters: [Chapter]?
     var chapter: Chapter = .updates {
         didSet { if let g = gameID { chapters = (chapters ?? [:]).merging([g: chapter]) { $1 } } }
     }
     var expanded: [String: Bool] = [:]
     /// The id of the first visible row per scroll view.
     var anchors: [String: String] = [:]
-    var query: String = ""
     var filter: LibraryFilter = .all
     var sort: LibrarySort = .updated
     var lastGameID: String?
@@ -191,9 +199,40 @@ struct Toast: Equatable {
 /// One application model shared by every presentation: outer, inner, folded, any orientation.
 @Observable
 final class AppModel {
-    var data: PersistedState { didSet { scheduleSave() } }
+    var data: PersistedState {
+        didSet {
+            scheduleSave()
+            // A direct write of the saved Library anchor (QA routes, Back, a reset) wins over a live search anchor.
+            if libraryAnchorLive != nil, oldValue.nav.anchors["library"] != data.nav.anchors["library"] { libraryAnchorLive = nil }
+        }
+    }
 
     // Transient
+    /// The Library search text (r053, r054). Not in `data`: a keystroke there rewrote the saved file and invalidated every view
+    /// that reads `data` (deck, cards, rail, every tile), and the grid was rebuilt per keystroke on top, so a typed name took
+    /// 3 to 6 s to show its tile on the Mac (d194c511). Here only the field and the Library body read it. Memory only, so a cold
+    /// launch starts with an empty search and the full Library (r053) and a fold or unfold, which keeps the model, keeps the text.
+    var libraryQuery = ""
+    /// The Library page's scroll position (`scrollPosition(id:)`). A tile ("lib-<id>") or nil is the saved anchor in `data`, so a
+    /// relaunch or Back lands where it was. The search field and title ids the page scrolls to while typing are held here instead:
+    /// written to `data`, the nil-then-field pair the field's task writes on every key (to bring the field above the keyboard)
+    /// cost two saves and two redraws of every `data` reader per keystroke (r054, d194c511). A cold launch drops them anyway.
+    var libraryAnchor: String? {
+        get {
+            if let live = libraryAnchorLive { return live }
+            return data.nav.anchors["library"]
+        }
+        set {
+            if let id = newValue, !id.hasPrefix("lib-") {
+                if data.nav.anchors["library"] != nil { data.nav.anchors["library"] = nil }
+                if libraryAnchorLive != id { libraryAnchorLive = id }
+            } else {
+                if data.nav.anchors["library"] != newValue { data.nav.anchors["library"] = newValue }
+                if libraryAnchorLive != nil { libraryAnchorLive = nil }
+            }
+        }
+    }
+    private var libraryAnchorLive: String?
     var toast: Toast?
     /// Height the pill and toasts take at the bottom of the screen (0 when none): the Library reserves it as a bottom inset.
     var messageInset: CGFloat = 0
@@ -359,12 +398,14 @@ final class AppModel {
            let decoded = try? JSONCoding.decoder.decode(PersistedState.self, from: raw) {
             data = decoded
             // r053-search-text-persists-relaunch (Nadia, Iris): a cold launch starts with an empty search and the full Library.
-            // The text a person typed last time is not restored; the selected game, scroll position and live filters are. A fold or
-            // unfold keeps the model alive, so the text typed in this launch survives it.
-            data.nav.query = ""
+            // The text a person typed last time is not restored (`libraryQuery` is memory only); the selected game, scroll position
+            // and live filters are. A fold or unfold keeps the model alive, so the text typed in this launch survives it.
             // Quinn (#430): a Library scroll anchor that is not a game tile ("lib-<id>") would scroll an unfiltered relaunch to the
             // search field (the app killed while it was focused). Keep tile anchors only.
             if let a = data.nav.anchors["library"], !a.hasPrefix("lib-") { data.nav.anchors["library"] = nil }
+            // bug-072: a cold launch never resumes on a section from an earlier session; an open game shows its newest update.
+            data.nav.chapter = .updates
+            data.nav.chapters = nil
         } else {
             // A real first launch starts empty, on onboarding: demo games never appear in a
             // player's library. QA launches (-qaRoute, other than first-run) still seed the demo set;
@@ -620,7 +661,7 @@ final class AppModel {
     }
 
     func shownRows() -> [LibraryRow] {
-        let q = nav.query.trimmingCharacters(in: .whitespaces).lowercased()
+        let q = libraryQuery.trimmingCharacters(in: .whitespaces).lowercased()
         let rows = libraryRows.filter { r in
             (nav.filter.status == nil || r.status == nav.filter.status) && (q.isEmpty || r.game.name.lowercased().contains(q))
         }
@@ -735,13 +776,23 @@ final class AppModel {
         // D-1 (0.5.6, Card D): Back from the game goes to where it was opened from. Sections are siblings, so switching one
         // never adds history; a second game opened from inside the Library keeps the Library as its way back.
         if n.tab != .library { n.returnTab = n.tab } else if n.gameID == nil { n.returnTab = nil }
+        // bug-070: a game opened from inside another game's page stacks on it, so Back returns to that game. From another tab the
+        // Library's open game is not where the reader came from, so the trail starts afresh.
+        if n.tab == .library, let current = n.gameID, !sameGame {
+            let trail = n.gameTrail ?? []
+            n.trailChapters = Array((n.trailChapters ?? []).prefix(trail.count)) + [n.chapter]
+            n.gameTrail = trail + [current]
+        } else if n.tab != .library {
+            n.gameTrail = nil
+        }
         n.tab = .library
         if !sameGame { n.detailReleaseID = nil }
         n.gameID = gameID
         n.lastGameID = gameID
-        // D-13: each game reopens on the chapter last opened in it.
-        // R-7 (0.5.6): World is part of Companion; a saved or routed World opens Companion.
-        n.chapter = GameSections.canonical(chapter ?? (sameGame ? n.chapter : (n.chapters?[gameID] ?? .updates)))
+        // bug-072 (Terry, 25 Nov): opening a game afresh lands on its newest update (R-1), never on the section it was left on in an
+        // earlier visit. `chapters` only serves Back within a visit (closeGame); it is no longer a way in.
+        // R-7 (0.5.6): World is part of Companion; a routed World opens Companion.
+        n.chapter = GameSections.canonical(chapter ?? (sameGame ? n.chapter : .updates))
         if let releaseID {
             n.selected = (n.selected ?? [:]).merging([gameID: releaseID]) { $1 }
             n.expanded["rel:\(releaseID)"] = true
@@ -811,6 +862,15 @@ final class AppModel {
 
     /// Back from the game page (rail, toolbar, swipe): leaves the game for where it was opened from (D-1, Card D).
     func closeGame() {
+        // bug-070: back to the game this one was opened from, on the chapter it was left on, before leaving the games.
+        if var trail = nav.gameTrail, let previous = trail.popLast() {
+            nav.detailReleaseID = nil
+            nav.gameID = previous
+            nav.gameTrail = trail.isEmpty ? nil : trail
+            nav.lastGameID = previous
+            nav.chapter = GameSections.canonical(nav.trailChapters.flatMap { $0.indices.contains(trail.count) ? $0[trail.count] : nil } ?? nav.chapters?[previous] ?? .updates)
+            return
+        }
         let back = nav.returnTab
         nav.gameID = nil
         nav.detailReleaseID = nil
@@ -894,7 +954,10 @@ final class AppModel {
 
     /// The Back control's label: the screen it returns to, "Back to Updates" or "Back to Library" (Iris, 0.5.6 rail set; HIG:
     /// the previous screen's title). Glyph only on the rail, with this as its label, in every pose.
-    var backTitle: String { "Back to \((nav.returnTab ?? .library).title)" }
+    var backTitle: String {
+        if let previous = nav.gameTrail?.last { return "Back to \(game(previous)?.name ?? "previous game")" }
+        return "Back to \((nav.returnTab ?? .library).title)"
+    }
 
     /// J-1, R-7 (0.5.6): the one-column poses (Closed, Open both ways) push an update as its own page; Book and Tabletop show it
     /// in place on the Page.
@@ -927,6 +990,7 @@ final class AppModel {
     private func openPushed(_ gameID: String, _ releaseID: String) {
         nav.tab = .library
         nav.returnTab = nil
+        nav.gameTrail = nil
         openGame(gameID, chapter: .updates, releaseID: releaseID)
         nav.returnTab = nil
         if pushesReleases { nav.detailReleaseID = releaseID }
@@ -1144,6 +1208,29 @@ final class AppModel {
             tick()
             qaFreshCache = nil
             if parts.count == 2 { openGame(gameID, chapter: .updates, releaseID: release.id) }
+        // QA (INTERNAL, r054-closed-ax5-hero-headline-4-lines, J-5d): "long-hero/<game>" stays on the Library with an unread, live and
+        // official PS5 update whose headline is the longest real one (Dawnwalker's "Respec with Draught of Mind Rebirth, a new Story
+        // mode and larger subtitles"), so it leads the Latest updates hero and the 4-line cap can be shot at rest, no swipes.
+        case "long-hero" where parts.count == 1:
+            let gameID = parts[0]
+            resetToTwoUpdateDemo()
+            if !data.collection.contains(where: { $0.gameID == gameID }), let game = fixtures.games.first(where: { $0.id == gameID }) {
+                addGames([game], status: .owned)
+            }
+            let now = Date.now
+            let release = Release(
+                id: "qa-long-hero-\(gameID)", gameID: gameID, displayName: "Update 1.4", kind: .patch, kindBasis: .studio,
+                announcedAt: now, notes: [], sourceIDs: [],
+                platforms: [PlatformRelease(platform: .ps5, status: .live,
+                                            version: Field(value: "1.004", verification: .official, sourceID: "simulated", checkedAt: now),
+                                            liveAt: Field(value: now, verification: .official, sourceID: "simulated", checkedAt: now),
+                                            bundles: [], verification: .official)],
+                headline: "Respec with Draught of Mind Rebirth, a new Story mode and larger subtitles",
+                summary: "QA fixture. Not a real release.", keyChanges: [], simulated: true, arrivesAt: now)
+            data.simulated.removeAll { $0.id == release.id }
+            data.simulated.insert(release, at: 0)
+            tick()
+            qaFreshCache = nil
         // QA (INTERNAL): a PS5 update with a very long invented title, to exercise the share-button guard on the release page
         // (r054: a title past 4 lines at AX drops the button to its own row).
         case "long-title" where parts.count == 1:
@@ -1162,7 +1249,7 @@ final class AppModel {
             data.simulated.removeAll { $0.id == release.id }
             data.simulated.insert(release, at: 0)
             openRelease(gameID: gameID, releaseID: release.id)
-        // QA (INTERNAL, 0.5.6 Card B): "ps5-state/<game>/<live|live-version|announced|not-planned|none>" opens a simulated update in
+        // QA (INTERNAL, 0.5.6 Card B): "ps5-state/<game>/<live|live-version|live-reported|announced|not-planned|none>" opens a simulated update in
         // that PS5 state, so every status wording can be shot without the network. live-version carries a PS5 number (01.004.000)
         // and a PC number is on the page's PC row (never shown as PS5's). The name is neutral so no PC number reads as PS5's.
         // "none" (no PS5 row) is `.pending`, which `releases()` hides, so no page opens: that wording is unit-tested only.
@@ -1175,6 +1262,10 @@ final class AppModel {
             switch state {
             case "live": platforms.append(PlatformRelease(platform: .ps5, status: .live, liveAt: liveAt, verification: .official))
             case "live-version": platforms.append(PlatformRelease(platform: .ps5, status: .live, version: text("01.004.000"), liveAt: liveAt, verification: .official))
+            // #623: a PS5 number read from the PS5 build list (reported): "Reported as 01.006.000" on the page, plate and cover.
+            case "live-reported":
+                let build = Field(value: "01.006.000", verification: .reported, sourceID: PS5StatusLines.buildListSource, checkedAt: now)
+                platforms.append(PlatformRelease(platform: .ps5, status: .live, version: build, liveAt: liveAt, verification: .official))
             case "announced": platforms.append(PlatformRelease(platform: .ps5, status: .announced, verification: .official))
             case "not-planned": platforms.append(PlatformRelease(platform: .ps5, status: .notPlanned, verification: .official))
             default: break
@@ -1187,6 +1278,37 @@ final class AppModel {
             data.simulated.removeAll { $0.id == release.id }
             data.simulated.insert(release, at: 0)
             openRelease(gameID: gameID, releaseID: release.id)
+        // QA (INTERNAL, #618): "hero-art/<igdbID>[/<igdbID>...]": a Library of only those PS5-index games, each with one unread
+        // simulated On PS5 update, so the Latest updates hero shows their art with a full caption (headline and two-line summary).
+        // For the hero scrim on hard art: 381248 Star Wars: Galactic Racer (near-white art) and 389434 Castlevania: Belmont's Curse
+        // (dark art). The art loads from the network, as for any index game. Stays on the Library.
+        // A last part "reported" makes each PS5 number a build-list one ("Reported as …" on the cover chip, #623).
+        case "hero-art" where !parts.isEmpty:
+            let reportedBuilds = parts.last == "reported"
+            let ids = reportedBuilds ? Array(parts.dropLast()) : parts
+            resetDemo()
+            data = PersistedState(collection: [])
+            let now = Date.now
+            for (n, part) in ids.enumerated() {
+                guard let id = Int(part), let e = PS5Index.shared.entry(igdb: id) else { continue }
+                let g = PS5Index.shared.game(e)
+                insertGame(g, status: .owned)
+                let at = now.addingTimeInterval(-Double(n) * 3600)
+                let liveAt = Field(value: at, verification: .official, sourceID: "simulated", checkedAt: now)
+                let version = reportedBuilds
+                    ? Field(value: "01.0\(n + 2)0.000", verification: .reported, sourceID: PS5StatusLines.buildListSource, checkedAt: now)
+                    : Field(value: "01.0\(n + 2)0.000", verification: .official, sourceID: "simulated", checkedAt: now)
+                let release = Release(
+                    id: "qa-hero-art-\(g.id)", gameID: g.id, displayName: "Patch 1.\(n + 2)", kind: .patch, kindBasis: .studio,
+                    announcedAt: at, notes: [], sourceIDs: [],
+                    platforms: [PlatformRelease(platform: .ps5, status: .live, version: version, liveAt: liveAt, verification: .official)],
+                    headline: "New modes, balance changes and stability fixes",
+                    summary: "Adds a new weekly challenge, rebalances the late game, and fixes crashes when resuming from rest mode.",
+                    keyChanges: [], simulated: true, arrivesAt: at)
+                data.simulated.removeAll { $0.id == release.id }
+                data.simulated.append(release)
+            }
+            nav.anchors["library"] = nil
         // QA (INTERNAL, 0.5.6): "index-game/<igdbID>" opens a PS5-index game that the catalogue lacks, browsed, as a search hit or
         // an Upcoming tile would: no catalogue details, so its page shows "More about this game soon." (igdb 335660 is My Little Puppy).
         case "index-game" where parts.count == 1:
@@ -1686,6 +1808,10 @@ final class AppModel {
     func applyQALaunch(route: String?, overlay: Bool) {
         guard BuildChannel.showsInternalTools else { return }
         if overlay { showDebugOverlay = true; FoldAuditSwitch.enabled = true }
+        // `-qaDemo YES`: start from the demo Library whatever an earlier launch saved, so a test that needs a game tracked (or
+        // not) never depends on the test before it. A retried first-run test (empty Library) left Book and Tabletop RailSetTests
+        // with no Status on the rail (ui run 45623755710, bug-ui-runner-terminate-flake).
+        if UserDefaults.standard.bool(forKey: "qaDemo") { resetDemo() }
         if let route, let url = URL(string: "playscribe://\(route)") { handle(url: url) }
     }
 

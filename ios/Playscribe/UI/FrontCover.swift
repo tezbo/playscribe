@@ -320,8 +320,17 @@ struct FrontCoverPlate: View {
             Text(Self.headline(card))
                 .font(PlayscribeFont.title).foregroundStyle(PlayscribeColor.onDarkText)
                 .fixedSize(horizontal: false, vertical: true)
-            FlowLayout(spacing: 6) {
-                ForEach(Self.chips(card), id: \.text) { chip($0.text, live: $0.live) }
+            // Iris (#619, closedportrait cover): the FlowLayout reported one row while placing two, so a wrapped "11 changes" sat
+            // on the Playscribe wordmark. A ViewThatFits always reports the height of the version it draws: one row, then the
+            // status and version with the count below, then one chip a row. The chips wrap; none is dropped.
+            let chips = Self.chips(card)
+            ViewThatFits(in: .horizontal) {
+                HStack(spacing: 6) { ForEach(chips, id: \.text) { chip($0.text, live: $0.live) } }
+                VStack(alignment: .leading, spacing: 6) {
+                    HStack(spacing: 6) { ForEach(chips.prefix(2), id: \.text) { chip($0.text, live: $0.live) } }
+                    ForEach(chips.dropFirst(2), id: \.text) { chip($0.text, live: $0.live) }
+                }
+                VStack(alignment: .leading, spacing: 6) { ForEach(chips, id: \.text) { chip($0.text, live: $0.live) } }
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -341,14 +350,15 @@ struct FrontCoverPlate: View {
         return card.date.map { "\(name), \(AppModel.tileDay($0))" } ?? name
     }
 
-    /// "Out on PS5" (accent), the PS5 version chip when there is one, and the change count. The version is always the PS5 one: the deck holds
+    /// "Out on PS5" (ember text), the PS5 version chip when there is one, and the change count. The version is always the PS5 one: the deck holds
     /// only releases live on PS5, and `versionChip` comes from the PS5 release's own name.
     static func chips(_ card: DeckCard) -> [(text: String, live: Bool)] {
         var list: [(text: String, live: Bool)] = []
         if let r = card.release {
             // "Out on PS5", then the PS5 version as its own chip, only when the PS5 row has one (Card B, no dot separators).
             list.append(("Out on PS5", true))
-            if let v = r.ps5Version { list.append((v, false)) }
+            // A build-list number says "Reported as 01.006.000" (Iris on #619); an official one stays bare.
+            if let v = PS5StatusLines.buildChip(r) { list.append((v, false)) }
             // The day is in the eyebrow (Iris, 19 Nov).
             let n = r.noteCount
             if n > 0 { list.append((n == 1 ? "1 change" : "\(n) changes", false)) }
@@ -360,12 +370,12 @@ struct FrontCoverPlate: View {
 
     private func chip(_ text: String, live: Bool) -> some View {
         Text(text.keepingVersionsTogether).font(PlayscribeFont.caption.weight(.semibold)).monospacedDigit()
-            .foregroundStyle(live ? PlayscribeColor.onAccent : PlayscribeColor.onDarkText)
+            // Over-art rule (#619, Iris): only "New update" is filled. "Out on PS5" is a label like the others, ink with ember text.
+            .foregroundStyle(live ? PlayscribeColor.onDarkAccent : PlayscribeColor.onDarkText)
             .padding(.horizontal, 8).padding(.vertical, 3).frame(minHeight: 24)
-            .background(RoundedRectangle(cornerRadius: 6, style: .continuous)
-                .fill(live ? PlayscribeColor.onDarkAccent : PlayscribeColor.ink950.opacity(0.6)))
+            .background { Color.clear.artLabel(in: RoundedRectangle(cornerRadius: 6, style: .continuous)) }
             .overlay(RoundedRectangle(cornerRadius: 6, style: .continuous)
-                .strokeBorder(live ? .clear : PlayscribeColor.vellum100.opacity(0.25), lineWidth: 1))
+                .strokeBorder(PlayscribeColor.vellum100.opacity(0.25), lineWidth: 1))
     }
 }
 
@@ -383,8 +393,8 @@ struct CoverLockup: View {
     }
 }
 
-/// The cover's pages (every deck card, newest first, at most 5) with the leaves on the leading edge. The leaves ARE
-/// the deck's dots: they drive the same selection, so there is no second pager (Iris condition 4). The rail is the
+/// The cover's pages (every deck card, newest first, at most 5) with the dots on the leading edge. The dots ARE
+/// the deck's: they follow the same selection, so there is no second pager (Iris condition 4). The rail is the
 /// caller's overlay (Iris condition 2: every Library control, 44 pt, on a scrim); `railWidth` keeps the plate clear of it.
 struct FrontCover: View {
     @Environment(AppModel.self) private var model
@@ -427,8 +437,10 @@ struct FrontCover: View {
     }
 }
 
-/// The page-edge leaves, stood on the cover's leading edge: one per update, the current one tall in ember, unread
-/// ones in vellum. Each is a 44 pt target labelled "Update n of N".
+/// The cover's page indicator, stood on its leading edge: PageEdge's dots turned upright (Iris, after #616: the cover kept
+/// the old amber bar). 6 pt dots 10 pt apart, the current one in ember, every other one the deck's dark unlit grey (unread is
+/// carried by the "New update" label and VoiceOver; mixed white and grey read as random, Iris on #616). View only, as the deck's: the
+/// pages swipe, and VoiceOver reads one adjustable element ("Update 2 of 5") that steps one page.
 struct CoverLeaves: View {
     var cards: [DeckCard]
     var current: String?
@@ -436,38 +448,44 @@ struct CoverLeaves: View {
     /// that keeps every mark at 3:1 or better (WCAG 1.4.11). Still and Key-art motion keep the bare marks over the shade.
     var backed = false
     var select: (String) -> Void
+    /// The deck's unlit dot in dark (#47434C); the cover is always dark.
+    static let unlit = UIColor(hex: 0x47434C)
 
     var body: some View {
-        VStack(spacing: 0) {
+        let lit = PageEdge.lit(cards: cards, current: current, visible: 1)
+        VStack(spacing: PageEdge.gap) {
             ForEach(Array(cards.enumerated()), id: \.element.id) { index, card in
-                let isCurrent = card.id == current
-                Button { select(card.id) } label: {
-                    RoundedRectangle(cornerRadius: 1.5)
-                        .fill(isCurrent ? PlayscribeColor.onDarkAccent : (card.unread ? PlayscribeColor.vellum100 : PlayscribeColor.onDarkTextSecondary.opacity(0.6)))
-                        .frame(width: 3, height: isCurrent ? 22 : 12)
-                        .shadow(color: .black.opacity(0.6), radius: 2)
-                        .frame(width: 44, height: 44)
-                        .contentShape(Rectangle())
-                }
-                .buttonStyle(.plain)
-                .tappableFrame()
-                .accessibilityLabel("Update \(index + 1) of \(cards.count)")
-                .accessibilityAddTraits(isCurrent ? [.isButton, .isSelected] : .isButton)
+                Circle()
+                    .fill(lit.contains(index) ? PlayscribeColor.onDarkAccent : Color(Self.unlit))
+                    .frame(width: PageEdge.dot, height: PageEdge.dot)
+                    .shadow(color: .black.opacity(0.6), radius: 2)
             }
         }
+        .padding(.vertical, 12)
+        .frame(width: 44)
+        // The VoiceOver element is the 44 pt column, not the dots' bounds (the deck indicator's #588 audit finding).
+        .contentShape(.accessibility, Rectangle())
         .background {
             if backed {
-                Capsule().fill(PlayscribeColor.ink950.opacity(0.72))
-                    .padding(.horizontal, 12).padding(.vertical, 4)
-                    .allowsHitTesting(false)
+                // The ink label on art (Iris, over-art-materials): 75%, as every label over art.
+                Color.clear.artLabel(in: Capsule())
+                    .padding(.horizontal, 12)
                     .transition(.opacity)
             }
         }
         .animation(.easeInOut(duration: 0.4), value: backed)
+        .allowsHitTesting(false)
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(PageEdge.spoken(lit: lit, count: cards.count))
+        .accessibilityIdentifier("coverIndicator")
+        .accessibilityAdjustableAction { direction in
+            let delta = direction == .increment ? 1 : direction == .decrement ? -1 : 0
+            if delta != 0, let id = PageEdge.step(cards: cards, current: current, visible: 1, by: delta) { select(id) }
+        }
     }
 }
 
-/// A rail button for the cover: 44 pt, on a dark scrim so bright art never hides it (Iris condition 2).
+/// A rail button for the cover: 44 pt glass, solid under Reduce Transparency, so bright art never hides it (Iris condition 2).
 struct CoverRailButton: View {
     var title: String
     var symbol: String
@@ -479,8 +497,10 @@ struct CoverRailButton: View {
                 .font(.system(size: 17, weight: .semibold))
                 .foregroundStyle(PlayscribeColor.onDarkText)
                 .frame(width: 44, height: 44)
-                .background(Circle().fill(PlayscribeColor.ink950.opacity(0.6)))
-                .overlay(Circle().strokeBorder(PlayscribeColor.vellum100.opacity(0.18), lineWidth: 1))
+                // A control floating over the cover: the same glass as the rail (over-art rule, #619). The cover is dark in
+                // both modes, so the glass is too, and the glyph keeps the on-dark set (HeroGroundTests).
+                .floatingControl(in: Circle())
+                .environment(\.colorScheme, .dark)
                 .contentShape(Circle())
         }
         .buttonStyle(.plain)

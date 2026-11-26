@@ -173,7 +173,8 @@ struct FoldHarnessTests {
         let size: UIContentSizeCategory = sizeIndex == 0 ? .accessibilityExtraLarge : .accessibilityExtraExtraExtraLarge
         let r = try #require(await HarnessRules.timedRender(p, type: size))
         defer { FoldHost.dispose(r) }
-        HarnessRules.checkDeck(r, maxFraction: 0.5)
+        // J-5d: in Closed portrait at AX the deck may take the tallest caption's height, up to the visible container (Iris, r054).
+        HarnessRules.checkDeck(r, maxFraction: id == "closed" ? 1.0 : 0.5)
     }
 
     /// Every pose at AX3 and AX5: it must render within the time budget (a layout loop or hang fails here, naming pose and size),
