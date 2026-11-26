@@ -9,6 +9,9 @@ on:
       tt_route: { description: 'tt scenario: -qaRoute', default: 'library/playing' }
       tt_steps: { description: 'tt scenario: angle:orientation list', default: '90:portrait' }
       tt_ax5: { description: 'tt scenario: yes for AX5', default: 'no' }
+      lane_routes: { description: 'lane scenario: -qaRoute values, space separated', default: 'library/playing' }
+      lane_scroll: { description: 'lane scenario: yes to also shoot scrolled to the end', default: 'no' }
+      lane_ax: { description: 'lane scenario: AX5 or std', default: 'AX5' }
       app_ref: { description: 'Optional branch whose app source is built; the scripts stay from the dispatched ref', default: '' }
   push:
     branches: ['claude/**']
@@ -53,6 +56,9 @@ jobs:
           TT_ROUTE: ${{ inputs.tt_route }}
           TT_STEPS: ${{ inputs.tt_steps }}
           TT_AX5: ${{ inputs.tt_ax5 }}
+          LANE_ROUTES: ${{ inputs.lane_routes }}
+          LANE_AX: ${{ inputs.lane_ax }}
+          LANE_SCROLL: ${{ inputs.lane_scroll }}
           SCENARIOS: ${{ inputs.scenarios || 'continuity trailer closedax5 schemes video' }}
         run: |
           mkdir -p out

@@ -422,9 +422,15 @@ struct LibraryShelf: View {
                 // Book: the control stays on the left page; it never crosses the fold (Iris, hero-wide-layouts).
                 if closedWide {
                     // Closed landscape: the control and the search field share one row, 44 pt each (Iris, cf6c889).
-                    HStack(spacing: 12) {
-                        LibraryTabPicker().frame(width: 220, height: 44)
+                    // At accessibility sizes the switch is two chips (LibraryTabPicker) and takes its own row, search under it.
+                    if LibraryTabPicker.usesChips(typeSize) {
+                        LibraryTabPicker().frame(maxWidth: .infinity, alignment: .leading)
                         if model.libraryTab == .playing && !all.isEmpty { searchField(binding: $model.libraryQuery) }
+                    } else {
+                        HStack(spacing: 12) {
+                            LibraryTabPicker().frame(width: 220, height: 44)
+                            if model.libraryTab == .playing && !all.isEmpty { searchField(binding: $model.libraryQuery) }
+                        }
                     }
                 } else if !heroOnRightPage {
                     // Tabletop at AX5 (Iris, #455 at 0877dfc and a8859d3): the compact card keeps the lower half to itself, first; the
@@ -757,7 +763,7 @@ struct FilterBar: View {
                 .padding(.horizontal, 10)
                 .padding(.vertical, typeSize.isAccessibilitySize ? 6 : 0)
                 .frame(maxWidth: typeSize.isAccessibilitySize ? .infinity : nil, minHeight: 44)
-                .background(on ? PlayscribeRole.selectedChipFill : PlayscribeRole.chipFill, in: Capsule())
+                .modifier(SelectableChipGround(on: on))
         }
         .buttonStyle(.plain)
         .accessibilityAddTraits(on ? .isSelected : [])
@@ -803,15 +809,39 @@ struct FilterBar: View {
 }
 
 extension View {
-    /// R-7: a scrolling chip row fades at its edges instead of clipping hard.
-    func edgeFade(_ width: CGFloat = 24) -> some View {
-        mask {
-            HStack(spacing: 0) {
-                LinearGradient(colors: [.clear, .black], startPoint: .leading, endPoint: .trailing).frame(width: 8)
-                Rectangle()
-                LinearGradient(colors: [.black, .clear], startPoint: .leading, endPoint: .trailing).frame(width: width)
+    /// R-7: a scrolling row fades only an edge that has more content beyond it (Terry, 26 Nov: the left edge of "You might
+    /// also like" was dimmed at rest, which reads as a cut-off tile). At rest only the trailing edge fades; the leading edge
+    /// fades once the row is scrolled; a row that fits fades nowhere. Apply to the horizontal ScrollView itself.
+    func edgeFade(_ width: CGFloat = 24) -> some View { modifier(RailEdgeFade(width: width)) }
+}
+
+/// Which edges of a horizontal scroll view have more content beyond them.
+struct RailEdges: Equatable {
+    var leading = false
+    var trailing = false
+
+    static func of(offset: CGFloat, viewport: CGFloat, content: CGFloat, inset: CGFloat = 0) -> RailEdges {
+        RailEdges(leading: offset > 1, trailing: offset + viewport < content - 1 + inset)
+    }
+}
+
+private struct RailEdgeFade: ViewModifier {
+    var width: CGFloat
+    @State private var edges = RailEdges()
+
+    func body(content: Content) -> some View {
+        content
+            .onScrollGeometryChange(for: RailEdges.self) { g in
+                .of(offset: g.contentOffset.x + g.contentInsets.leading, viewport: g.containerSize.width,
+                    content: g.contentSize.width, inset: g.contentInsets.leading)
+            } action: { _, new in edges = new }
+            .mask {
+                HStack(spacing: 0) {
+                    if edges.leading { LinearGradient(colors: [.clear, .black], startPoint: .leading, endPoint: .trailing).frame(width: 8) }
+                    Rectangle()
+                    if edges.trailing { LinearGradient(colors: [.black, .clear], startPoint: .leading, endPoint: .trailing).frame(width: width) }
+                }
             }
-        }
     }
 }
 
@@ -1303,8 +1333,12 @@ struct NotificationInviteCard: View {
         HStack(alignment: .top, spacing: 12) {
             Image(systemName: "bell.badge").font(PlayscribeFont.title2).foregroundStyle(PlayscribeRole.action)
             VStack(alignment: .leading, spacing: 8) {
-                Text(denied ? "Alerts are off" : "Be first to know when a patch drops").font(PlayscribeFont.headline)
-                    .fixedSize(horizontal: false, vertical: true)
+                // r060-alerts-headline-cap: at most 4 lines at accessibility sizes, whole words then "…" (the label below says it all).
+                Group {
+                    let headline = denied ? "Alerts are off" : "Be first to know when a patch drops"
+                    if typeSize.isAccessibilitySize { WholeWordText(text: headline, font: PlayscribeFont.headline, lines: 4, color: nil) }
+                    else { Text(headline).font(PlayscribeFont.headline).fixedSize(horizontal: false, vertical: true) }
+                }
                     // The body is dropped from view at AX sizes, never from VoiceOver (Iris): the heading reads it, and the body
                     // text below is hidden from VoiceOver so it is not read twice. On its own, under the card's swipe and "Not now"
                     // action, the system audit took the 18 pt line for a control too small to hit (#588, Mac 75e96041 Tabletop).
@@ -1598,3 +1632,14 @@ private struct FeedStatusLine: View {
     static var whyLine: String { why.sorted { $0.value > $1.value }.map { "\($0.key)=\($0.value)" }.joined(separator: " ") }
 }
 #endif
+
+/// The ground of a single-select chip, shared by the Library's filter chips and its Playing/Upcoming chips: the fill, plus a
+/// 1.5 pt action-colour outline on the selected one, so selection never rests on a 1.14:1 fill difference (Iris, #645).
+struct SelectableChipGround: ViewModifier {
+    var on: Bool
+    func body(content: Content) -> some View {
+        content
+            .background(on ? PlayscribeRole.selectedChipFill : PlayscribeRole.chipFill, in: Capsule())
+            .overlay { if on { Capsule().strokeBorder(PlayscribeRole.action, lineWidth: 1.5) } }
+    }
+}

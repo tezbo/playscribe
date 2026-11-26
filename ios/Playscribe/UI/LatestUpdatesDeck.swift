@@ -137,7 +137,14 @@ struct LatestUpdatesDeck: View {
     private var compactArt: CGFloat { grownArt(max(96, maxHeight - Self.pageEdgeHeight)) }
 
     /// J-5: the deck is at most half the container's height (the harness allows 12 pt more; 4 pt here for rounding).
-    private var axCap: CGFloat { (duo.size.height * 0.5).rounded(.down) + 4 }
+    /// r054-closed-ax5-hero-headline-4-lines (Iris): at accessibility sizes in Closed portrait the deck may grow to the tallest caption in it
+    /// (chips, a headline of up to 4 whole-word lines, byline) and no further than the visible container, dots row included, so one card never
+    /// runs past a screen; a headline that still needs more ends on a whole-word ellipsis. J-5's half stays at standard sizes and in every
+    /// other pose (ux-acceptance J-5, Closed portrait AX exception).
+    private var axCap: CGFloat {
+        if typeSize.isAccessibilitySize && duo.pose == .closed && !duo.isLandscape { return duo.size.height.rounded(.down) }
+        return (duo.size.height * 0.5).rounded(.down) + 4
+    }
 
     /// Accessibility sizes: every card's caption laid out invisibly at the card's width, so the tallest sets the card's
     /// height from a real measurement, not from what a scroll view offers (the headline was clipped off the top).
@@ -373,7 +380,7 @@ struct DeckCardView: View {
         let dateText = card.date.map(AppModel.tileDay) ?? ""
         if let r = card.release {
             let summary = (r.summary?.isEmpty == false) ? ", \(r.summary!)" : ""
-            return "\(card.unread ? card.chipText + ", " : "")\(r.ps5Headline ?? r.displayName), \(card.game.name), \(r.deckVersionChip.map { $0 + ", " } ?? "")\(dateText)\(summary)"
+            return "\(card.unread ? card.chipText + ", " : "")\(r.ps5Headline ?? r.displayName), \(card.game.name), \(r.deckVersionChip.map { $0.spokenVersion + ", " } ?? "")\(dateText)\(summary)"
         }
         return "\(card.game.name), released \(dateText), \(DeckCard.noReleaseLine(tracked: tracked).lowercased())"
     }
@@ -498,10 +505,14 @@ struct CompactCaption: View {
             if typeSize.isAccessibilitySize {
                 DeckChipRow(card: card).padding(.bottom, 6)
             }
-            Text(headline)
-                .font(PlayscribeFont.title3).foregroundStyle(PlayscribeColor.textPrimary)
-                // The whole headline, or whole words and an ellipsis (AX rule: at most 4 lines), never scaled down.
-                .lineLimit(typeSize.isAccessibilitySize ? nil : 3).fixedSize(horizontal: false, vertical: true)
+            // The whole headline, or whole words and an ellipsis (AX rule: at most 4 lines), never scaled down.
+            if typeSize.isAccessibilitySize {
+                WholeWordText(text: headline, font: PlayscribeFont.title3, lines: 4, color: PlayscribeColor.textPrimary)
+            } else {
+                Text(headline)
+                    .font(PlayscribeFont.title3).foregroundStyle(PlayscribeColor.textPrimary)
+                    .lineLimit(3).fixedSize(horizontal: false, vertical: true)
+            }
             // One-line summary under the headline: whole words, at most 2 lines, dropped at accessibility sizes (its
             // text stays in the VoiceOver label).
             if summary, !typeSize.isAccessibilitySize, let text = card.release?.summary, !text.isEmpty {
@@ -601,6 +612,7 @@ struct DeckChips: View {
 
     private func chip(_ text: String, filled: Bool) -> some View {
         Text(text.keepingVersionsTogether).font(PlayscribeFont.caption).monospacedDigit().lineLimit(1)
+            .accessibilityLabel(text == card.release?.deckVersionChip ? text.spokenVersion : text)
             .foregroundStyle(filled ? PlayscribeColor.ink950 : PlayscribeColor.accent)
             .padding(.horizontal, 8).frame(minHeight: 22)
             .modifier(DeckChipGround(filled: filled))
@@ -774,6 +786,7 @@ struct WideDeckCard: View {
 
     private func chip(_ text: String, filled: Bool) -> some View {
         Text(text.keepingVersionsTogether).font(PlayscribeFont.caption).monospacedDigit().lineLimit(1)
+            .accessibilityLabel(text == card.release?.deckVersionChip ? text.spokenVersion : text)
             .foregroundStyle(filled ? PlayscribeColor.ink950 : PlayscribeColor.accent)
             .padding(.horizontal, 8).padding(.vertical, 2).frame(minHeight: 22)
             .modifier(DeckChipGround(filled: filled))
@@ -997,7 +1010,7 @@ struct DeckStage: View {
                 FlowLayout(spacing: 8) {
                     if upcomingLine != nil { Text("Coming soon").foregroundStyle(PlayscribeColor.accent) }
                     if card.unread { Text(card.chipText).foregroundStyle(PlayscribeColor.accent) }
-                    if let v = card.release?.deckVersionChip { Text(v.keepingVersionsTogether).monospacedDigit().foregroundStyle(PlayscribeColor.textPrimary.opacity(0.9)) }
+                    if let v = card.release?.deckVersionChip { Text(v.keepingVersionsTogether).monospacedDigit().accessibilityLabel(v.spokenVersion).foregroundStyle(PlayscribeColor.textPrimary.opacity(0.9)) }
                 }
                 .font(PlayscribeFont.caption)
                 .shadow(color: .black.opacity(0.6), radius: 3)

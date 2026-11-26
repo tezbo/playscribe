@@ -1209,6 +1209,29 @@ final class AppModel {
             tick()
             qaFreshCache = nil
             if parts.count == 2 { openGame(gameID, chapter: .updates, releaseID: release.id) }
+        // QA (INTERNAL, r054-closed-ax5-hero-headline-4-lines, J-5d): "long-hero/<game>" stays on the Library with an unread, live and
+        // official PS5 update whose headline is the longest real one (Dawnwalker's "Respec with Draught of Mind Rebirth, a new Story
+        // mode and larger subtitles"), so it leads the Latest updates hero and the 4-line cap can be shot at rest, no swipes.
+        case "long-hero" where parts.count == 1:
+            let gameID = parts[0]
+            resetToTwoUpdateDemo()
+            if !data.collection.contains(where: { $0.gameID == gameID }), let game = fixtures.games.first(where: { $0.id == gameID }) {
+                addGames([game], status: .owned)
+            }
+            let now = Date.now
+            let release = Release(
+                id: "qa-long-hero-\(gameID)", gameID: gameID, displayName: "Update 1.4", kind: .patch, kindBasis: .studio,
+                announcedAt: now, notes: [], sourceIDs: [],
+                platforms: [PlatformRelease(platform: .ps5, status: .live,
+                                            version: Field(value: "1.004", verification: .official, sourceID: "simulated", checkedAt: now),
+                                            liveAt: Field(value: now, verification: .official, sourceID: "simulated", checkedAt: now),
+                                            bundles: [], verification: .official)],
+                headline: "Respec with Draught of Mind Rebirth, a new Story mode and larger subtitles",
+                summary: "QA fixture. Not a real release.", keyChanges: [], simulated: true, arrivesAt: now)
+            data.simulated.removeAll { $0.id == release.id }
+            data.simulated.insert(release, at: 0)
+            tick()
+            qaFreshCache = nil
         // QA (INTERNAL): a PS5 update with a very long invented title, to exercise the share-button guard on the release page
         // (r054: a title past 4 lines at AX drops the button to its own row).
         case "long-title" where parts.count == 1:
