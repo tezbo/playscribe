@@ -92,6 +92,19 @@ struct DeckAndWidgetTests {
         }
     }
 
+    /// r060-version-chip-spoken: the card's VoiceOver label speaks the version ("version 1 point 1"), never the raw chip ("v1.1").
+    @Test func deckCardLabelSpeaksTheVersion() throws {
+        let m = demoModel()
+        let withChip = m.latestDeck.filter { $0.release?.deckVersionChip != nil }
+        try #require(!withChip.isEmpty, "the demo deck has a card with a version chip")
+        for card in withChip {
+            let chip = card.release!.deckVersionChip!
+            let label = DeckCardView.label(card, tracked: m.feedTracksGame(card.game.id))
+            #expect(label.contains(chip.spokenVersion), "\(card.game.name): \(label)")
+            #expect(!label.contains(chip + ", "), "the raw chip is not read: \(label)")
+        }
+    }
+
     /// The card's summary line never ends mid-word (Iris, 2026-11-06).
     @Test func deckSummaryCutsAtWholeWords() {
         let long = "Fixes a crash on load and improves frame pacing in the big city district when many characters appear at once during night"

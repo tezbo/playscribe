@@ -1058,6 +1058,13 @@ struct VersionGlueTests {
         #expect("Hades II".keepingVersionsTogether == "Hades II")
         #expect("Fixed. Next".keepingVersionsTogether == "Fixed. Next", "a full stop between words is left alone")
     }
+
+    @Test("a version chip is spoken as a version, not a number or date (r060-version-chip-spoken)")
+    func spokenVersion() {
+        #expect("v1.012".spokenVersion == "version 1 point 012")
+        #expect("1.1".spokenVersion == "version 1 point 1")
+        #expect("01.\u{2060}004.\u{2060}000".spokenVersion == "version 01 point 004 point 000")
+    }
 }
 
 @Suite("Roman numeral glue")
