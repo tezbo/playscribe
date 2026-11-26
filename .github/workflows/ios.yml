@@ -13,7 +13,7 @@ on:
     # Loop runs for a flaky test (bug-065: name the cause with a looped run, never the threshold). Both empty on a normal run.
     inputs:
       only_testing:
-        description: "Run only this (e.g. PlayscribeTests/ControlBorderTests/renderedBorder()); empty runs every unit test"
+        description: "Run only this (e.g. PlayscribeTests/ControlBorderTests/renderedBorder(), or PlayscribeUITests/<Class> on the PlayscribeUI scheme); empty runs every unit test"
         required: false
         default: ''
       iterations:
@@ -65,8 +65,11 @@ jobs:
           extra=()
           [ -n "$ONLY" ] && extra+=("-only-testing:$ONLY")
           [ "${ITER:-1}" -gt 1 ] 2>/dev/null && extra+=(-test-iterations "$ITER")
+          # A dispatched UI test (bug-063 red-first probe) needs the scheme that holds PlayscribeUITests.
+          scheme="${SCHEME:-Playscribe}"
+          case "$ONLY" in PlayscribeUITests/*) scheme=PlayscribeUI ;; esac
           xcodebuild test \
-            -project ios/Playscribe.xcodeproj -scheme "${SCHEME:-Playscribe}" \
+            -project ios/Playscribe.xcodeproj -scheme "$scheme" \
             -destination "id=${{ steps.sim.outputs.udid }}" \
             -resultBundlePath build/TestResults.xcresult \
             "${extra[@]}" \

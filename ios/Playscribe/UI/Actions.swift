@@ -42,12 +42,19 @@ struct ActionMenuContent: View {
     var sections: [ScreenAction.MenuSection]
     /// A confirmation dialog drops button icons, so the tick is drawn in the title there and also set as the selected trait.
     var inDialog = false
+    /// A system menu drops its item icons at accessibility sizes, so the checkmark Label showed no tick for the current choice
+    /// (bug-status-menu-ax5-no-check, Closed portrait AX5). There the tick is drawn in the text, as in a dialog; the spoken label stays
+    /// the plain title and the selected trait says which is current.
+    @Environment(\.dynamicTypeSize) private var typeSize
+    /// A system menu's content is built outside this view's environment (the AX5 still showed no tick with the environment alone),
+    /// so the app's own content size category is read as well, as quickMenu does.
+    private var accessibilityText: Bool { typeSize.isAccessibilitySize || UIApplication.shared.preferredContentSizeCategory.isAccessibilityCategory }
     var body: some View {
         ForEach(sections) { section in
             Section(section.title ?? "") {
                 ForEach(section.items) { item in
                     Button(role: item.destructive ? .destructive : nil, action: item.action) {
-                        if item.checked && inDialog { Text("\u{2713} \(item.title)") }
+                        if item.checked && (inDialog || accessibilityText) { Text("\u{2713} \(item.title)") }
                         else if item.checked { Label(item.title, systemImage: "checkmark") } else { Text(item.title) }
                     }
                     // A system dialog drops the selected trait (Mac, 3bb7345c), so in the dialog the label says it; menus keep the trait.
@@ -110,9 +117,11 @@ struct RailMenuList: View {
         // The title is pinned outside the scroll area so it can never fill the list (Mac, 4318d26: at AX5 it filled all 300 pt and no
         // row showed). Text is held at AX2 inside: the rows stay whole words and the four choices fit without a drag where they can.
         VStack(alignment: .leading, spacing: 0) {
-            Text(title).font(PlayscribeFont.footnote).foregroundStyle(PlayscribeRole.textSecondary).lineLimit(1)
-                .padding(.horizontal, 16).padding(.top, 12).padding(.bottom, 4)
-                .accessibilityAddTraits(.isHeader)
+            if !title.isEmpty {
+                Text(title).font(PlayscribeFont.footnote).foregroundStyle(PlayscribeRole.textSecondary).lineLimit(1)
+                    .padding(.horizontal, 16).padding(.top, 12).padding(.bottom, 4)
+                    .accessibilityAddTraits(.isHeader)
+            }
             ScrollView {
                 VStack(alignment: .leading, spacing: 0) {
                     ForEach(sections) { section in
@@ -122,9 +131,9 @@ struct RailMenuList: View {
                         }
                         ForEach(section.items) { item in
                             Button(role: item.destructive ? .destructive : nil) { done(); item.action() } label: {
-                                HStack(spacing: 8) {
-                                    // The last two words stay together ("Deliverance II" does not split across lines); the spoken label stays the plain title.
-                                    Text(RailMenuList.keepTail(item.title)).multilineTextAlignment(.leading).fixedSize(horizontal: false, vertical: true)
+                                HStack(alignment: .firstTextBaseline, spacing: 8) {
+                                    // The last two words stay together ("Deliverance II" does not split across lines), except the destructive row, which wraps on plain whole words ("Remove from / library", Iris s-06 option 1); the spoken label stays the plain title.
+                                    Text(item.destructive ? item.title : RailMenuList.keepTail(item.title)).multilineTextAlignment(.leading).fixedSize(horizontal: false, vertical: true)
                                         .accessibilityLabel(item.spoken ?? item.title)
                                     Spacer(minLength: 8)
                                     if item.checked { Image(systemName: "checkmark").accessibilityHidden(true) }
@@ -173,7 +182,8 @@ struct RailButton: View {
                 Button { preAction?(); choosing = true } label: { icon }
                     .buttonStyle(RailPressStyle())
                     .popover(isPresented: $choosing) {
-                        RailMenuList(title: action.title, sections: sections) { choosing = false }
+                        // The status menu's one header is its section line ("In your library as…"), so the pinned title would repeat it.
+                        RailMenuList(title: action.id == "status" ? "" : action.title, sections: sections) { choosing = false }
                             .presentationCompactAdaptation(.popover)
                     }
                     .id(sections.tickKey)
@@ -191,9 +201,9 @@ struct RailButton: View {
             .font(PlayscribeFont.title3)
             .foregroundStyle(action.selected ? PlayscribeRole.action : PlayscribeRole.textPrimary)
             .frame(width: 44, height: 44)
-            // Round buttons like Closed's rail: a material disc, tinted when selected.
-            .background(Circle().fill(.regularMaterial))
+            // Round buttons like Closed's rail: a glass disc (floating control), tinted when selected.
             .background(Circle().fill(PlayscribeRole.action.opacity(action.selected ? 0.18 : 0)))
+            .floatingControl(in: Circle())
             .contentShape(Rectangle())
     }
 }
@@ -289,7 +299,7 @@ extension AppModel {
                                 kind: .menu(notifyMenu(gameID, header: "Notify me about \(name)")), priority: .high)]
         if let status = entry(gameID)?.status {
             var menu = statusMenu(gameID)
-            if !menu.isEmpty { menu[0].title = "\(name) is in your library as…" }
+            if !menu.isEmpty { menu[0].title = "In your library as…" }
             out.append(ScreenAction(id: "status", title: "Status: \(status.label)", systemImage: status.symbol, kind: .menu(menu), priority: .high))
         }
         // 0.5.6 hotfix (Iris): Check for updates, Links, Share and (side by side only) Swap sides live behind More, so the rail is

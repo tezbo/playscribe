@@ -5,7 +5,7 @@ import type { Platform, Trust } from './types.ts'
 export interface SourceDef {
   id: string
   /** pressIndex: a press site's paged list of update articles; matching articles are opened for their facts. */
-  kind: 'rss' | 'html' | 'steamNews' | 'pressIndex' | 'bluesky' | 'statuspage' | 'mojangNotes' | 'riotNews'
+  kind: 'rss' | 'html' | 'steamNews' | 'pressIndex' | 'bluesky' | 'statuspage' | 'mojangNotes' | 'riotNews' | 'bandaiNews'
   url: string
   platforms: Platform[]
   trust: Trust
@@ -39,6 +39,8 @@ export interface RegistryGame {
   ps5TitleIds: string[]
   /** The Steam version is a separate PC port with its own patches, so a Steam patch says nothing about PS5. */
   steamIsPcPort?: boolean
+  /** Console builds known for a release, by its stored version key ("1.2": "01.007.000"). Filled as `reported` only where the PS5 row has no version yet; an official number from a post replaces it. */
+  ps5Builds?: Record<string, string>
   /** Official site and patch-notes page for games with no Steam page or readable official feed; overrides IGDB's. */
   links?: { official?: string; patchNotes?: string }
   sources: SourceDef[]

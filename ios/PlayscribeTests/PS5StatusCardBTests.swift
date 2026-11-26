@@ -34,6 +34,17 @@ struct PS5StatusCardBTests {
         #expect(s.spoken == "Out on PS5. This update is 01.004.000 on PS5")
     }
 
+    @Test("A build read from the PS5 build list says reported, on screen and to VoiceOver (Iris on #617)")
+    func reportedBuild() {
+        var r = release(ps5: .live, ps5Version: "01.006.000")
+        if let i = r.platforms.firstIndex(where: { $0.platform == .ps5 }) {
+            r.platforms[i].version = Field(value: "01.006.000", verification: .reported, sourceID: PS5StatusLines.buildListSource, checkedAt: day)
+        }
+        let s = PS5StatusLines(r)
+        #expect(s.version?.replacingOccurrences(of: "\u{2060}", with: "") == "Reported as 01.006.000 on PS5")
+        #expect(s.spoken == "Out on PS5. Reported as 01.006.000 on PS5")
+    }
+
     @Test("Live without a PS5 number: one line, a PC number is never shown")
     func liveWithoutVersion() {
         let s = PS5StatusLines(release(ps5: .live, pcVersion: "1.7.3"))
@@ -76,6 +87,22 @@ struct PS5StatusCardBTests {
         #expect(without.first?.text == "Out on PS5")
         #expect(!without.contains { $0.text.contains("1.1") })
         #expect((with + without).allSatisfy { !$0.text.contains("·") }) // dot-ok: asserts the dot is absent
+    }
+
+    @Test("A build-list number reads \"Reported as\" on the cover chip and the one-line status; an official one stays bare (Iris on #619)")
+    func reportedBuildChip() {
+        let game = CatalogGame(id: "g", name: "G", platforms: [.ps5], coverage: .none)
+        var r = release(name: "Update 1.6", ps5: .live, ps5Version: "01.006.000")
+        #expect(PS5StatusLines.buildChip(r) == "01.006.000")
+        if let i = r.platforms.firstIndex(where: { $0.platform == .ps5 }) {
+            r.platforms[i].version = Field(value: "01.006.000", verification: .reported, sourceID: PS5StatusLines.buildListSource, checkedAt: day)
+        }
+        #expect(PS5StatusLines.buildChip(r) == "Reported as 01.006.000")
+        let chips = FrontCoverPlate.chips(DeckCard(game: game, release: r, unread: true, date: day)).map(\.text)
+        #expect(chips.first == "Out on PS5") // the release status is official, so it stays
+        #expect(chips.contains("Reported as 01.006.000"))
+        #expect(!chips.contains("01.006.000"))
+        #expect(PS5StatusLines.buildChip(release(ps5: .live, pcVersion: "1.6")) == nil) // never a PC number
     }
 
     @Test("A game with no details gets one line, never blank")

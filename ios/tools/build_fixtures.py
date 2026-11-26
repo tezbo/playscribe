@@ -175,7 +175,7 @@ catalog = [
     {"id": "dawnwalker", "name": "The Blood of Dawnwalker", "developer": "Rebel Wolves", "publisher": "Bandai Namco Entertainment",
      "platforms": ["ps5", "pc", "xboxSeries"], "releaseDate": "2026-09-03", "igdbID": igdb("dawnwalker"),
      "coverAsset": "dw-cover", "heroAsset": "dw-gameart-16x9", "featureAsset": "dw-wall-1736593755", "tones": ["#b2300f", "#1a0906"], "coverage": "full",
-     "chapterArt": {"updates": ["dw-update-1-1-16x9", "dw-update-1-1-2x3"], "companion": ["dw-kv-16x9", "dw-kv-9x16"],
+     "chapterArt": {"companion": ["dw-kv-16x9", "dw-kv-9x16"],
                     "world": ["dw-wall-1736593755", "dw-wall-1736593755"], "default": ["dw-gameart-16x9", "dw-gameart-9x16"]}},
     {"id": "kcd2", "name": "Kingdom Come: Deliverance II", "developer": "Warhorse Studios", "publisher": "Deep Silver",
      "platforms": ["ps5", "pc", "xboxSeries"], "releaseDate": "2025-02-04", "igdbID": igdb("kcd2"),

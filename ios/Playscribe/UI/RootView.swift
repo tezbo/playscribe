@@ -225,6 +225,23 @@ struct RootView: View {
                     .allowsHitTesting(false)
                 #endif
             }
+            // The sheets hang inside the DuoReader, so their content reads the real pose and placement (Open: the Add sheet's
+            // trailing placement, its stage height) instead of DuoContext's Closed default (r054-add-settings-duo-environment, #424).
+            .sheet(isPresented: Binding(get: { model.addSheetOpen && model.livePose != .tabletop && (model.addIsSystemSheet || !model.liveRightPage) }, set: { if !$0 && model.livePose != .tabletop && (model.addIsSystemSheet || !model.liveRightPage) { model.addSheetOpen = false } })) {
+                // Full height: a shorter sheet left the Library's first-run strip showing, inert, beneath it.
+                AddGameSheet().presentationDetents([.large])
+            }
+            .sheet(isPresented: Binding(get: { model.settingsOpen && model.livePose != .tabletop && model.livePose != .book }, set: { if !$0 && model.livePose != .tabletop && model.livePose != .book { model.settingsOpen = false } })) {
+                // Full height, as Add: the trailing sheet then stops before the rail (Iris on #611, Open landscape).
+                SettingsView().presentationDetents([.large])
+            }
+            .sheet(item: Binding(get: { model.livePose == .tabletop ? nil : model.tagExplainer }, set: { if $0 == nil && model.livePose != .tabletop { model.tagExplainer = nil } })) { kind in
+                VerificationExplainer(kind: kind).presentationDetents([.medium])
+            }
+            // N-9's "What is sent" (Iris, #455): a system sheet, except Tabletop, where the lower-half panel shows it.
+            .sheet(isPresented: Binding(get: { model.keepCurrentDetailsOpen && model.livePose != .tabletop }, set: { if !$0 && model.livePose != .tabletop { model.keepCurrentDetailsOpen = false } })) {
+                KeepCurrentDetailsSheet().presentationDetents([.medium, .large])
+            }
         }
         .background(PlayscribeRole.bg)
         .onAppear {
@@ -244,20 +261,6 @@ struct RootView: View {
         }
         .onChange(of: model.nav.gameID) { _, id in if id != nil { model.tourNoticed(openedGame: true) } }
         .onChange(of: model.data.nav.tab) { _, tab in model.tourNoticed(tab: tab) }
-        .sheet(isPresented: Binding(get: { model.addSheetOpen && model.livePose != .tabletop && (model.addIsSystemSheet || !model.liveRightPage) }, set: { if !$0 && model.livePose != .tabletop && (model.addIsSystemSheet || !model.liveRightPage) { model.addSheetOpen = false } })) {
-            // Full height: a shorter sheet left the Library's first-run strip showing, inert, beneath it.
-            AddGameSheet().presentationDetents([.large])
-        }
-        .sheet(isPresented: Binding(get: { model.settingsOpen && model.livePose != .tabletop && model.livePose != .book }, set: { if !$0 && model.livePose != .tabletop && model.livePose != .book { model.settingsOpen = false } })) {
-            SettingsView()
-        }
-        .sheet(item: Binding(get: { model.livePose == .tabletop ? nil : model.tagExplainer }, set: { if $0 == nil && model.livePose != .tabletop { model.tagExplainer = nil } })) { kind in
-            VerificationExplainer(kind: kind).presentationDetents([.medium])
-        }
-        // N-9's "What is sent" (Iris, #455): a system sheet, except Tabletop, where the lower-half panel shows it.
-        .sheet(isPresented: Binding(get: { model.keepCurrentDetailsOpen && model.livePose != .tabletop }, set: { if !$0 && model.livePose != .tabletop { model.keepCurrentDetailsOpen = false } })) {
-            KeepCurrentDetailsSheet().presentationDetents([.medium, .large])
-        }
         .fullScreenCover(isPresented: Binding(get: { model.player != nil }, set: { if !$0 { model.player = nil } })) {
             // The player is dark in light and dark mode. Its cover is its own presentation, so pinning its scheme here (not
             // only the environment) gives it a light status bar too: in light mode the clock and Wi-Fi drew dark over the dark
@@ -372,12 +375,22 @@ struct LibraryRoot: View {
 
     var body: some View {
         NavigationStack(path: Binding(
-            get: { (model.nav.gameID.map { [$0] } ?? []) + (model.nav.gameID != nil ? model.nav.detailReleaseID.map { ["release:" + $0] } ?? [] : []) },
+            // bug-070: the games opened from inside a game sit under the open one, so the edge swipe and Back both return to them.
+            get: { (model.nav.gameID.map { (model.nav.gameTrail ?? []) + [$0] } ?? [])
+                + (model.nav.gameID != nil ? model.nav.detailReleaseID.map { ["release:" + $0] } ?? [] : []) },
             set: { path in
-                // A swipe back from the game leaves it the way the Back button does (D-1: to where it was opened from).
-                if path.isEmpty, model.nav.gameID != nil { model.closeGame(); return }
-                model.nav.gameID = path.first
-                model.nav.detailReleaseID = path.count > 1 ? String(path[1].dropFirst("release:".count)) : nil
+                let games = path.filter { !$0.hasPrefix("release:") }
+                let current = (model.nav.gameTrail ?? []) + (model.nav.gameID.map { [$0] } ?? [])
+                // A swipe back from a game leaves it the way the Back button does (D-1: to where it was opened from; bug-070:
+                // the previous game first).
+                // Popped to the root (a Library tab re-tap): leave every game.
+                if games.isEmpty, model.nav.gameID != nil { model.nav.gameTrail = nil; model.closeGame(); return }
+                if games.count == current.count - 1, path.last?.hasPrefix("release:") != true, games == Array(current.prefix(games.count)) {
+                    model.closeGame(); return
+                }
+                model.nav.gameID = games.last
+                model.nav.gameTrail = games.count > 1 ? Array(games.dropLast()) : nil
+                model.nav.detailReleaseID = path.last.flatMap { $0.hasPrefix("release:") ? String($0.dropFirst("release:".count)) : nil }
             }
         )) {
             LibraryView()
@@ -433,7 +446,7 @@ struct TabletopRail: View {
                         .labelStyle(.iconOnly)
                         .font(PlayscribeFont.title3)
                         .frame(width: 44, height: 44)
-                        .background(Circle().fill(.regularMaterial))
+                        .floatingControl(in: Circle())
                         // A Menu has no action of ours to run first: close any open panel as the tap lands.
                         .simultaneousGesture(TapGesture().onEnded { model.closeLowerPanels() })
                         .tappableFrame()
@@ -469,7 +482,7 @@ struct TabletopRail: View {
                 tab(.search, "Search", "magnifyingglass")
             }
             .padding(.vertical, 4)
-            .background(Capsule().fill(.regularMaterial))
+            .floatingControl(in: Capsule())
             .accessibilitySortPriority(2)   // VoiceOver: tabs first, then actions
         }
         .padding(.vertical, 8)
@@ -591,7 +604,7 @@ struct LowerMessages: View {
                     // A solid pill: nothing shows through it (Iris, 6589abf: it ghosted over the date pills).
                     // A 24 pt corner: a full capsule on one line, a rounded rectangle on two or more.
                     .background(RoundedRectangle(cornerRadius: 24, style: .continuous).fill(PlayscribeRole.chipFill))
-                    .adaptiveGlass(in: RoundedRectangle(cornerRadius: 24, style: .continuous), interactive: true)
+                    .floatingControl(in: RoundedRectangle(cornerRadius: 24, style: .continuous))
                 }
                 .buttonStyle(.plain)
                 .tappableFrame()

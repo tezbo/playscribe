@@ -1,5 +1,6 @@
 import Foundation
 import Testing
+import UIKit
 @testable import Playscribe
 
 /// Iris and Quinn on #512 (Open landscape std): a fast flick skipped a card, and with two cards across the fifth leaf never lit.
@@ -48,21 +49,62 @@ struct DeckPagingTests {
         #expect(!src.contains(".scrollTargetBehavior(.viewAligned)\n"))
     }
 
-    @Test func twoCardsOnScreenDrawOneCapsule() {
-        // Iris: the lit leaves join into one amber capsule from the first to the last card on screen.
-        let r = PageEdge.capsule(lit: [1, 2], window: [0, 1, 2, 3])
-        #expect(r == CGRect(x: 44 + 22 - 1.5, y: 13, width: 44 + 3, height: 18))
+    @Test func twoCardsOnScreenDrawOnePillOverTheirDots() {
+        // Iris (beta 4 redesign): 6 pt dots 10 pt apart; two lit cards are one pill, exactly 22 pt wide, over dots 2 and 3.
+        let r = PageEdge.pill(lit: [1, 2], window: [0, 1, 2, 3])
+        #expect(r == CGRect(x: 16, y: 0, width: 22, height: 6))
     }
 
-    @Test func oneCardOnScreenKeepsTheSingleMark() {
-        let r = PageEdge.capsule(lit: [2], window: [0, 1, 2, 3])
-        #expect(r == CGRect(x: 88 + 22 - 1.5, y: 13, width: 3, height: 18))
+    @Test func oneCardOnScreenIsADot() {
+        let r = PageEdge.pill(lit: [2], window: [0, 1, 2, 3])
+        #expect(r == CGRect(x: 32, y: 0, width: 6, height: 6))
     }
 
-    @Test func capsuleFollowsTheSlidingWindow() {
-        // A long deck shows five leaves; the capsule is placed by slot in the window, not by card index.
-        #expect(PageEdge.capsule(lit: [6, 7], window: [4, 5, 6, 7, 8])?.minX == 2 * 44 + 22 - 1.5)
-        #expect(PageEdge.capsule(lit: [], window: [0, 1]) == nil)
+    @Test func pillFollowsTheWindow() {
+        // A long deck shows five dots; the pill is placed by position in the window, not by card index.
+        #expect(PageEdge.pill(lit: [6, 7], window: [4, 5, 6, 7, 8])?.minX == 32)
+        #expect(PageEdge.pill(lit: [], window: [0, 1]) == nil)
+    }
+
+    /// Iris on #616: no indicator when every card is on screen (one page), in any pose; light unlit dots are #A39B97, 2.5:1 on cream.
+    @Test func onePageHasNoIndicatorAndLightDotsMeasure() {
+        #expect(PageEdge.hidden(count: 1, visible: 1))
+        #expect(PageEdge.hidden(count: 2, visible: 2))
+        #expect(!PageEdge.hidden(count: 2, visible: 1))
+        #expect(!PageEdge.hidden(count: 3, visible: 2))
+        let r = Contrast.ratio(PageEdge.unlitLight, PlayscribeRole.resolved(PlayscribeRole.bgSpec, light: true))
+        #expect(r >= 2.4 && r < 3, "light unlit dot \(r):1 on bg")
+    }
+
+    /// Iris after #616: the cover's side pager is the same dots, view only, one adjustable element; no amber bar, no buttons.
+    @Test func coverUsesTheDots() throws {
+        let src = try String(contentsOf: URL(fileURLWithPath: #filePath).deletingLastPathComponent().deletingLastPathComponent()
+            .appendingPathComponent("Playscribe/UI/FrontCover.swift"), encoding: .utf8)
+        let tail = src[src.range(of: "struct CoverLeaves")!.upperBound...]
+        let leaves = String(tail[..<(tail.range(of: "\nstruct ")?.lowerBound ?? tail.endIndex)])   // this struct only, not the rail after it
+        #expect(leaves.contains("PageEdge.dot") && leaves.contains("Circle()"))
+        #expect(!leaves.contains("Button") && !leaves.contains("RoundedRectangle(cornerRadius: 1.5)"))
+        #expect(leaves.contains(".allowsHitTesting(false)") && leaves.contains(".accessibilityAdjustableAction"))
+        #expect(!leaves.contains("unread"), "every unlit dot is one grey; unread does not change a dot")
+        #expect(Contrast.ratio(CoverLeaves.unlit, UIColor(hex: 0x47434C)) < 1.01)
+    }
+
+    @Test func indicatorIsOneSpokenElement() {
+        #expect(PageEdge.spoken(lit: [1, 2], count: 5) == "Updates 2 and 3 of 5")
+        #expect(PageEdge.spoken(lit: [0], count: 5) == "Update 1 of 5")
+    }
+
+    /// Fixed sizes: the indicator never scales with Dynamic Type, and never animates (Iris).
+    @Test func indicatorHasFixedSizesAndNoAnimation() throws {
+        #expect(PageEdge.dot == 6 && PageEdge.gap == 10)
+        let src = try String(contentsOf: URL(fileURLWithPath: #filePath).deletingLastPathComponent().deletingLastPathComponent()
+            .appendingPathComponent("Playscribe/UI/LatestUpdatesDeck.swift"), encoding: .utf8)
+        let body = try #require(src.range(of: "struct PageEdge: View {")).upperBound
+        let rest = src[body...]
+        let end = try #require(rest.range(of: "\n}\n")).lowerBound
+        let pageEdge = rest[..<end]
+        #expect(!pageEdge.contains("@ScaledMetric"))
+        #expect(pageEdge.contains(".transaction { $0.animation = nil }"))
     }
 
     private func target(_ i: Int, _ visible: Int) -> [Int] {
