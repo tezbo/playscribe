@@ -139,6 +139,7 @@ herolong) # r054-closed-ax5-hero-headline-4-lines: the longest Dawnwalker headli
     launch -qaRoute long-hero/dawnwalker -qaOrientation portrait -UIPreferredContentSizeCategoryName $c; snap herolong 1-closed-portrait-$n
     [ "$n" = AX5 ] || continue
     launch -qaRoute long-hero/dawnwalker -qaOrientation landscape -UIPreferredContentSizeCategoryName $c; snap herolong 2-closed-landscape-$n
+    for k in 1 2 3 4; do sim-use swipe --from 339,380 --to 339,150 --duration 0.5 --device "$UDID" >/dev/null 2>&1; sleep 2; snap herolong 2$k-closed-landscape-$n-scrolled$k; done
     launch -qaRoute long-hero/dawnwalker -qaOrientation portrait -UIPreferredContentSizeCategoryName $c; fold 90 portrait; snap herolong 3-tabletop-$n
   done ;;
 heroswipe) # r054-closed-ax5-hero-headline-4-lines: every hero card in Closed portrait, AX5 then std (J-5d); horizontal swipes on the deck
