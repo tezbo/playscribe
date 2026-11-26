@@ -196,36 +196,8 @@ final class YouTubeController: NSObject, WKScriptMessageHandler {
 
 struct WebSurface: UIViewRepresentable {
     var webView: WKWebView
-    /// Full screen: YouTube's iframe elements are kept from VoiceOver; the SwiftUI picture element speaks for the video.
-    /// Neither SwiftUI's accessibilityHidden, the web view's accessibilityElementsHidden (66564e9) nor aria-hidden on the
-    /// page (c93e9d8) stopped XCUITest reaching YouTube's "Show player controls" (3,44 12x12) through the WebView's
-    /// remote elements. A container that is itself the accessibility element ends the walk there, above the web view.
-    var hidesWebContent = false
-    var takesWebView = true
-    final class Container: UIView {}
-    func makeUIView(context: Context) -> Container {
-        let container = Container()
-        container.backgroundColor = .clear
-        update(container)
-        return container
-    }
-    func updateUIView(_ container: Container, context: Context) { update(container) }
-    static func dismantleUIView(_ container: Container, coordinator: ()) {
-        // As VideoSurface: only if it is still here, since the next surface may already have taken it.
-        for v in container.subviews where v is WKWebView { v.removeFromSuperview() }
-    }
-    private func update(_ container: Container) {
-        container.isAccessibilityElement = hidesWebContent
-        container.accessibilityElementsHidden = hidesWebContent
-        // One web view serves inline and full screen. The full-screen surface always takes it; the inline one takes it
-        // back only when full screen is not showing, so it never pulls the web view out from under full screen.
-        if takesWebView, webView.superview !== container {
-            webView.removeFromSuperview()
-            webView.frame = container.bounds
-            webView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-            container.addSubview(webView)
-        }
-    }
+    func makeUIView(context: Context) -> WKWebView { webView }
+    func updateUIView(_ uiView: WKWebView, context: Context) {}
 }
 
 /// The update video (VB-1..VB-3, TT-4). The YouTube player is the system player here: YouTube's
@@ -300,7 +272,7 @@ struct PlayerView: View {
         // A web view has no intrinsic size, so a 16:9 box carries the size and the view fills it.
         // Before Play, our poster and our Play (VideoStartCover), never YouTube's start screen (Mac at c072400).
         let surface = Color.black.aspectRatio(16 / 9, contentMode: .fit)
-            .overlay { WebSurface(webView: controller.webView, hidesWebContent: fullScreen, takesWebView: !fullScreen) }
+            .overlay { WebSurface(webView: controller.webView) }
             .overlay { VideoStartCover(controller: controller, posterAsset: video.posterAsset, game: model.game(gameID)) }
         let gameName = model.game(gameID)?.name ?? ""
         switch duo.pose {
@@ -418,7 +390,7 @@ struct FullBleedVideo: View {
                 Color.black
                     // YouTube's own iframe buttons (rewind, channel, thumbnails) are off and cannot be tapped here, so VoiceOver
                     // gets one element for the picture instead (Iris, #655). Our band controls carry every action.
-                    .overlay { WebSurface(webView: controller.webView, hidesWebContent: true).accessibilityHidden(true) }
+                    .overlay { WebSurface(webView: controller.webView).accessibilityHidden(true) }
                     // The picture as one VoiceOver element; it takes no touches (taps on the picture stay YouTube's).
                     .overlay {
                         Color.clear

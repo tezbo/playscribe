@@ -697,7 +697,7 @@ struct TrailerView: View {
             let h = max(0, min(geo.size.width * 9 / 16, geo.size.height - captionRoom))
             VStack(spacing: 0) {
                 Color.black.frame(width: h * 16 / 9, height: h)
-                    .overlay { WebSurface(webView: controller.webView, hidesWebContent: fullScreen, takesWebView: !fullScreen) }
+                    .overlay { WebSurface(webView: controller.webView) }
                     .overlay { VideoStartCover(controller: controller, posterAsset: nil, game: gameID.flatMap { model.game($0) }) }
                     .frame(maxWidth: .infinity)
                 Text(name).font(PlayscribeFont.headline).foregroundStyle(.white)

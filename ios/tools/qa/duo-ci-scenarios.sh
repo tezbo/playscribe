@@ -3,7 +3,7 @@
 #   ios/tools/qa/duo-ci-scenarios.sh UDID OUTDIR [scenario ...]    (default: all)   scenarios: continuity trailer closedax5 schemes video axchips deckwide plusend fullscreen blocked fsxctest
 # Every step saves <sha>-<scenario>-<step>-<display>-shot.png and -ui.txt (outline with frames, ids and the pose line).
 set -uo pipefail
-UDID=$1; OUT=$2; shift 2; SCEN=${*:-continuity trailer closedax5 schemes video}
+UDID=$1; OUT=$2; shift 2; FAILED=""; SCEN=${*:-continuity trailer closedax5 schemes video}
 SHA=$(git rev-parse --short HEAD 2>/dev/null || echo nosha); B=co.codeconnectors.playscribe; mkdir -p "$OUT"
 AX5=UICTContentSizeCategoryAccessibilityXXXL
 # Rotate first, fold second, then check the active display matches the angle (inner for any open angle, outer for 0); redo once if not.
@@ -174,7 +174,9 @@ fullscreen) # bug-071: full-screen video Fit with our controls in the bands; the
   tapl Play 8; fold 0 landscape-left; enter 6-closed-landscape-shown; tapl "Exit full screen" 3
   fold 180 landscape-left; enter 7-flat-landscape-shown
   fold 90 landscape-left; sleep 2; snap fullscreen 8-book-shown; frames 8
-  fold 90 portrait; sleep 2; snap fullscreen 9-tabletop-ends-it ;;
+  fold 90 portrait; sleep 2; snap fullscreen 9-tabletop-ends-it
+  # Every full-screen tree (those with our qaFullScreen probe) must keep YouTube's buttons from VoiceOver; fails the job.
+  "$(dirname "$0")/check-no-youtube-buttons.sh" $(grep -l qaFullScreen "$OUT/$SHA"-fullscreen-*-ui.txt) || FAILED="$FAILED fullscreen-youtube-buttons" ;;
 blocked) # R-12: a video YouTube refuses (IFrame error 150) shows Open in YouTube in every pose, never a full-screen button
   # A turn left over from an earlier scenario can keep the Closed scene in landscape (c46af75): rotate away and back first.
   fold 0 landscape-left; sleep 2; fold 0 portrait; sleep 2
@@ -204,3 +206,4 @@ video) # row 9: hinge sweep recording with frame timing
   if command -v ffprobe >/dev/null; then ffprobe -v error -select_streams v -show_entries frame=pts_time -of csv=p=0 "$OUT/$SHA-video-sweep.mp4" \
     | python3 -c 'import sys;t=[float(x) for x in sys.stdin if x.strip()];g=[(b-a)*1000 for a,b in zip(t,t[1:])];print("frames",len(t),"(frames are emitted only when the screen changes: gaps are NOT hitches; row 9 needs the app frame log) max gap ms",round(max(g),1) if g else 0,"gaps>100ms",sum(x>100 for x in g))' | tee "$OUT/$SHA-video-frame-gaps.txt"; fi ;;
 esac; done
+[ -z "${FAILED:-}" ] || { echo "FAILED:$FAILED"; exit 1; }
