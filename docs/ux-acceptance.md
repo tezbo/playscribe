@@ -99,7 +99,7 @@ Decision: the native launch screen is a plain background colour matching the Lib
 
 ## 5. Read an update (game book)
 
-- **R-1** Opening a game shows the Updates chapter. The newest **On PS5** release is expanded and scrolled to the top. Older releases are collapsed.
+- **R-1** Opening a game shows the Updates chapter. The newest **On PS5** release is expanded and scrolled to the top. Older releases are collapsed. This holds on every opening, from a tile, the hero, a search hit or a link, and after a relaunch: a game never reopens on the section it was left on in an earlier visit (bug-072, `GameOpensOnNewestTests`). Back within a visit still returns to the section the reader was on (bug-070).
 - **R-2** Release header: display name ("Update 1.1"), kind label (Day-one patch / Hotfix / Patch / Major update / Silent update), the PS5 live date, and the PS5 version string exactly as the console shows it ("01.004.000"), or nothing if unknown.
 - **R-3** Facts *(v1.4: shown as one line under the key changes, see GR-3; this list is the expanded view)*:
   - **Status:** "Live on PS5", "Announced for PS5" or "Reported on PS5"
@@ -419,7 +419,7 @@ Open becomes Book, and Open portrait becomes Tabletop, with nothing moving excep
   - spoilers shown, per game (R-5);
   - notes-search scope (GR-4);
   - captions on or off for video;
-  - the chapter last opened, per game;
+  - ~~the chapter last opened, per game~~ (removed, bug-072: opening a game always lands on its newest update, R-1; the section is kept only so Back within a visit returns to it, bug-070);
   - expanded or collapsed facts (GR-3);
   - notification levels (N-10).
 

@@ -19,11 +19,49 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  # Terry, 26 Nov AEDT: keep UI tests on GitHub and make the runs more efficient. One job ran every step in series for about
+  # 68 min (run 45704231060: Closed 33 min, inner 14, shots and landscape 13). Three runners now share it, each with its own
+  # simulator, so the wall time is the longest part, not the sum, and each runner carries a third of the load that made
+  # XCTest lose the app (bug-ui-runner-terminate-flake). Each part builds for itself (about 2 min), so no products pass
+  # between jobs.
   ui:
+    name: ui (${{ matrix.part }})
     runs-on: xcode-27
-    timeout-minutes: 90
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          # Closed feature tests (about 12 min), then the Closed screenshots.
+          - part: features
+            closed: >-
+              -only-testing:PlayscribeUITests/ReleaseFeatureTests
+              -only-testing:PlayscribeUITests/TabletopDayOneTests
+              -only-testing:PlayscribeUITests/GameOpensOnNewestUITests
+          # Closed rail, game-to-game and PS Plus card tests (about 8 min), then real Closed landscape and the harness stills.
+          # The seven synthetic-fold rail cases run in the inner part, where they measure something (#626, #631); on the
+          # outer display they can only fail with "needs the inner display".
+          - part: rails
+            closed: >-
+              -only-testing:PlayscribeUITests/RailSetTests
+              -only-testing:PlayscribeUITests/GameToGameTests/testBackAndEdgeSwipeReturnToTheGameItWasOpenedFrom
+              -only-testing:PlayscribeUITests/PlusCardPoseTests/testClosedPortraitAX5
+              -only-testing:PlayscribeUITests/PlusCardPoseTests/testClosedLandscapeAX5
+              -skip-testing:PlayscribeUITests/RailSetTests/testBookStd
+              -skip-testing:PlayscribeUITests/RailSetTests/testBookAX5
+              -skip-testing:PlayscribeUITests/RailSetTests/testTabletopStd
+              -skip-testing:PlayscribeUITests/RailSetTests/testTabletopAX5
+              -skip-testing:PlayscribeUITests/RailSetTests/testTabletopUntrackedAX5
+              -skip-testing:PlayscribeUITests/RailSetTests/testMoreListsSwapSidesInBook
+              -skip-testing:PlayscribeUITests/RailSetTests/testMoreHasNoSwapSidesInTabletop
+          # Book, Tabletop and unfold on the inner display (about 14 min).
+          - part: inner
+            closed: ''
     env:
       XCODE_APP: /Applications/Xcode_27.1.app
+      # Run 45704231060: a failed test's diagnostics (a spindump and a screen recording) were taken while the runner was
+      # already overloaded. Our own diagnostics (ios/tools/qa/ui-lifecycle-diag.sh) still run on a failure.
+      DIAG: -collect-test-diagnostics never
     steps:
       - uses: actions/checkout@v4
       - run: brew install xcodegen && (cd ios && xcodegen generate)
@@ -42,6 +80,31 @@ jobs:
           echo "Using ${udid#* }"
           echo "udid=${udid%% *}" >> "$GITHUB_OUTPUT"
           echo "UDID=${udid%% *}" >> "$GITHUB_ENV"
+      - name: Runner load log; only the Duo simulator booted
+        # bug-ui-runner-terminate-flake (run 45645592774): at both lifecycle failures the host's load average was 263 to 373, the
+        # app was already gone ("Failed to terminate ...:0" with no Playscribe process left), and mds_stores sat in disk wait.
+        # Any other simulator the image booted is shut down (no sudo). The background log records load, process states, the
+        # busiest processes and those in disk wait every 30 s across every step, so the next run shows when the load starts.
+        run: |
+          mkdir -p build/diag
+          xcrun simctl list devices booted > build/diag/booted-at-start.txt 2>&1 || true
+          for d in $(xcrun simctl list devices booted -j | python3 -c "import json,sys; print(' '.join(x['udid'] for v in json.load(sys.stdin)['devices'].values() for x in v))"); do
+            [ "$d" = "$UDID" ] || xcrun simctl shutdown "$d" || true
+          done
+          nohup bash -c 'while true; do
+              echo "== $(date -u +%T) $(uptime | sed "s/.*load averages*: //") states: $(ps -Ao stat= | cut -c1 | sort | uniq -c | tr -s " \n" " ")"
+              ps -Ao pcpu=,stat=,ucomm= -r | head -6 | sed "s/^/  cpu /"
+              ps -Ao stat=,ucomm= | grep -E "^ *[UD]" | sort | uniq -c | sort -rn | head -5 | sed "s/^/  wait /"
+              sleep 30
+            done' > build/diag/load.log 2>&1 &
+          echo "load logger started"
+      - name: Boot the simulator
+        # A settle wait (until the load fell under twice the cores, at most 3 min) was tried on this PR's first run
+        # (45721991166): the load stayed at 338 to 388 on 3 cores in all three parts and never settled, so it only cost 3 min
+        # each. The load is the runner image's, not the boot's. The load at boot is logged instead.
+        run: |
+          xcrun simctl boot "$UDID" 2>/dev/null || true; xcrun simctl bootstatus "$UDID" -b > /dev/null
+          echo "### Booted: load $(sysctl -n vm.loadavg) on $(sysctl -n hw.ncpu) cores" | tee -a "$GITHUB_STEP_SUMMARY"
       - name: Build for testing
         run: |
           xcodebuild build-for-testing -project ios/Playscribe.xcodeproj -scheme PlayscribeUI \
@@ -49,36 +112,48 @@ jobs:
             || { grep -E 'error:' build.log | head -20; exit 1; }
       - name: Feature UI tests (Closed)
         id: uitests
-        # The seven synthetic-fold cases skipped here run in the next step on the inner display, where they measure something
-        # (#626, #631). On the outer display they can only fail with "needs the inner display".
+        if: matrix.part != 'inner'
+        env:
+          CLOSED: ${{ matrix.closed }}
         run: |
           # Run 45495696959: on a cold simulator the UI test runner never started ("Timed out waiting for AX loaded
           # notification"), so no test ran. Boot it and wait until it is fully up before xcodebuild attaches.
+          python3 ios/tools/qa/ui_lifecycle_retry.py --self-test
           xcrun simctl boot "$UDID" 2>/dev/null || true; xcrun simctl bootstatus "$UDID" -b > /dev/null
           xcodebuild test-without-building -project ios/Playscribe.xcodeproj -scheme PlayscribeUI \
-            -destination "id=$UDID" -derivedDataPath build/dd \
-            -only-testing:PlayscribeUITests/ReleaseFeatureTests \
-            -only-testing:PlayscribeUITests/TabletopDayOneTests \
-            -only-testing:PlayscribeUITests/RailSetTests \
-            -only-testing:PlayscribeUITests/GameToGameTests/testBackAndEdgeSwipeReturnToTheGameItWasOpenedFrom \
-            -skip-testing:PlayscribeUITests/RailSetTests/testBookStd \
-            -skip-testing:PlayscribeUITests/RailSetTests/testBookAX5 \
-            -skip-testing:PlayscribeUITests/RailSetTests/testTabletopStd \
-            -skip-testing:PlayscribeUITests/RailSetTests/testTabletopAX5 \
-            -skip-testing:PlayscribeUITests/RailSetTests/testTabletopUntrackedAX5 \
-            -skip-testing:PlayscribeUITests/RailSetTests/testMoreListsSwapSidesInBook \
-            -skip-testing:PlayscribeUITests/RailSetTests/testMoreHasNoSwapSidesInTabletop \
+            -destination "id=$UDID" -derivedDataPath build/dd $DIAG $CLOSED \
             -resultBundlePath build/UITests.xcresult CODE_SIGNING_ALLOWED=NO > uitests.log 2>&1 || status=$?
-          grep -E 'error:|encountered an error|Test Case .* (passed|failed|skipped)|Executed|\*\* TEST' uitests.log | tail -60 | tee -a "$GITHUB_STEP_SUMMARY"
+          grep -E 'plusWindow|plusTitle|plusFrames|error:|encountered an error|Test Case .* (passed|failed|skipped)|Executed|\*\* TEST' uitests.log | tail -80 | tee -a "$GITHUB_STEP_SUMMARY"
+          # bug-ui-runner-terminate-flake: when every failure is a runner app-lifecycle error (XCTest could not launch, stop or
+          # snapshot the app; never an assertion), capture why, then run exactly those tests once more on a rebooted simulator.
+          # The step's result is the retry's. Any assertion failure gets no retry (ios/tools/qa/ui_lifecycle_retry.py).
+          if [ "${status:-0}" != 0 ] && [ -d build/UITests.xcresult ]; then
+            mkdir -p build/diag/closed; ios/tools/qa/ui-lifecycle-diag.sh "$UDID" build/diag/closed || true
+            xcrun xcresulttool get test-results tests --path build/UITests.xcresult > build/diag/closed/tests.json 2>/dev/null || true
+            if retry=$(python3 ios/tools/qa/ui_lifecycle_retry.py < build/diag/closed/tests.json); then
+              echo "### Runner lifecycle errors only; retrying once on a rebooted simulator: $retry" | tee -a "$GITHUB_STEP_SUMMARY"
+              xcrun simctl shutdown "$UDID" 2>/dev/null || true
+              xcrun simctl boot "$UDID" 2>/dev/null || true; xcrun simctl bootstatus "$UDID" -b > /dev/null
+              status=0
+              # $retry is a space-separated list of -only-testing arguments.
+              xcodebuild test-without-building -project ios/Playscribe.xcodeproj -scheme PlayscribeUI \
+                -destination "id=$UDID" -derivedDataPath build/dd $DIAG $retry \
+                -resultBundlePath build/UITests-retry.xcresult CODE_SIGNING_ALLOWED=NO > uitests-retry.log 2>&1 || status=$?
+              grep -E 'error:|encountered an error|Test Case .* (passed|failed|skipped)|Executed|\*\* TEST' uitests-retry.log | tee -a "$GITHUB_STEP_SUMMARY"
+              [ "$status" = 0 ] || ios/tools/qa/ui-lifecycle-diag.sh "$UDID" build/diag/closed-retry || true
+            else
+              echo "### No retry: a failure is not a runner lifecycle error" | tee -a "$GITHUB_STEP_SUMMARY"
+            fi
+          fi
           [ "${status:-0}" = 0 ] || echo "::warning::Feature UI tests failed in Closed; see uitests.log in the artifact"
           exit "${status:-0}"
       - name: Book, Tabletop and unfold UI tests (inner display, folded with sim-use)
         # The synthetic fold (-qaPose) is valid only on the inner display (#626). sim-use sends Device Hub's hinge reports, so the
         # runner's Duo opens flat (180 degrees, no real division) and -qaPose adds the Book or Tabletop fold. Book reads landscape
         # (inner 951 x 669); Tabletop reads portrait (669 x 951). Probe runs 45471626931 and 45474143713 (Duo QA thread).
-        # The simulator is always folded closed again so the Closed steps below run on the outer display.
+        # The simulator is always folded closed again afterwards.
         id: innertests
-        if: always()
+        if: matrix.part == 'inner'
         run: |
           fold() { sim-use ios fold "$1" --device "$UDID"; sleep 5; }
           trap 'sim-use ios fold closed --device "$UDID" || true; sim-use ios rotate portrait --device "$UDID" || true; sleep 5' EXIT
@@ -95,12 +170,15 @@ jobs:
             # A failed fold must stop the step, not run the pose cases on the outer display.
             grep -q 'LCD-1 (active)' displays.txt || { echo "::error::$n: fold open did not make the inner display (LCD-1) active"; cat displays.txt; exit 1; }
             xcodebuild test-without-building -project ios/Playscribe.xcodeproj -scheme PlayscribeUI \
-              -destination "id=$UDID" -derivedDataPath build/dd "$@" \
+              -destination "id=$UDID" -derivedDataPath build/dd $DIAG "$@" \
               -resultBundlePath "build/Inner-$n.xcresult" CODE_SIGNING_ALLOWED=NO >> inner-uitests.log 2>&1 || status=$?
           }
-          run Book landscape-left -only-testing:$T/testBookStd -only-testing:$T/testBookAX5 -only-testing:$T/testMoreListsSwapSidesInBook
+          P=PlayscribeUITests/PlusCardPoseTests   # #646: PS Plus titles are Buttons where sim-use's swipes never reached the card
+          run Book landscape-left -only-testing:$T/testBookStd -only-testing:$T/testBookAX5 -only-testing:$T/testMoreListsSwapSidesInBook \
+            -only-testing:$P/testOpenLandscapeAX5
           run Tabletop portrait -only-testing:$T/testTabletopStd -only-testing:$T/testTabletopAX5 \
-            -only-testing:$T/testTabletopUntrackedAX5 -only-testing:$T/testMoreHasNoSwapSidesInTabletop
+            -only-testing:$T/testTabletopUntrackedAX5 -only-testing:$T/testMoreHasNoSwapSidesInTabletop \
+            -only-testing:$P/testTabletopStd -only-testing:$P/testTabletopAX5
           # bug-landscape-rail-back-empty: launch on the outer display, then unfold once the app is running. A background job
           # waits for the app's process, gives the game page 10 s, then folds to the angle and turns landscape-left.
           unfold_after_launch() { # $1 = hinge angle, $2 = test
@@ -114,13 +192,13 @@ jobs:
               echo "unfold: hinge $1, landscape-left" >> inner-uitests.log
               sim-use ios fold "$1" --device "$UDID"; sim-use ios rotate landscape-left --device "$UDID" ) &
             xcodebuild test-without-building -project ios/Playscribe.xcodeproj -scheme PlayscribeUI \
-              -destination "id=$UDID" -derivedDataPath build/dd -only-testing:PlayscribeUITests/UnfoldBackTests/$2 \
+              -destination "id=$UDID" -derivedDataPath build/dd $DIAG -only-testing:PlayscribeUITests/UnfoldBackTests/$2 \
               -resultBundlePath "build/Unfold-$1.xcresult" CODE_SIGNING_ALLOWED=NO >> inner-uitests.log 2>&1 || status=$?
             wait
           }
           unfold_after_launch 110 testBackSurvivesUnfoldToBook
           unfold_after_launch 180 testBackSurvivesUnfoldToOpenLandscape
-          grep -E 'LCD|active|innerWindow|unfold|error:|encountered an error|Test Case .* (passed|failed|skipped)|Executed|\*\* TEST' inner-uitests.log | tail -60 | tee -a "$GITHUB_STEP_SUMMARY"
+          grep -E 'LCD|active|innerWindow|plusWindow|plusTitle|plusPose|plusSwipes|plusFrames|unfold|error:|encountered an error|Test Case .* (passed|failed|skipped)|Executed|\*\* TEST' inner-uitests.log | tail -80 | tee -a "$GITHUB_STEP_SUMMARY"
           [ "${status:-0}" = 0 ] || echo "::warning::Book/Tabletop UI tests failed on the inner display; see inner-uitests.log in the artifact"
           exit "${status:-0}"
       - name: Export test screenshots
@@ -128,20 +206,21 @@ jobs:
         run: |
           mkdir -p build/attachments
           [ -d build/UITests.xcresult ] && xcrun xcresulttool export attachments --path build/UITests.xcresult --output-path build/attachments || true
+          for x in build/Inner-*.xcresult; do [ -d "$x" ] && xcrun xcresulttool export attachments --path "$x" --output-path "build/attachments/$(basename "$x" .xcresult)" || true; done
       - name: Screenshots of every new surface (Closed)
-        if: always()
+        if: always() && matrix.part == 'features'
         run: ios/tools/qa/ci-shots.sh "$UDID" build/shots "$(ls -d build/dd/Build/Products/Debug-iphonesimulator/Playscribe.app | head -1)"
       - name: Closed portrait and landscape, standard and AX5 (risk 2 step A)
-        if: always()
+        if: always() && matrix.part == 'features'
         run: ios/tools/qa/ci-closed-ax3.sh "$UDID" build/shots-ax3 "$(ls -d build/dd/Build/Products/Debug-iphonesimulator/Playscribe.app | head -1)"
       - name: Real Closed landscape probe (XCUIDevice orientation; informational)
-        if: always()
+        if: always() && matrix.part == 'rails'
         id: landscape
         continue-on-error: true
         run: |
           rm -rf build/Landscape.xcresult
           xcodebuild test-without-building -project ios/Playscribe.xcodeproj -scheme PlayscribeUI \
-            -destination "id=$UDID" -derivedDataPath build/dd \
+            -destination "id=$UDID" -derivedDataPath build/dd $DIAG \
             -only-testing:PlayscribeUITests/ClosedLandscapeShotTests \
             -only-testing:PlayscribeUITests/ClosedPortraitAX3ShotTests \
             -resultBundlePath build/Landscape.xcresult CODE_SIGNING_ALLOWED=NO > landscape.log 2>&1 || status=$?
@@ -154,7 +233,7 @@ jobs:
           fi
           exit "${status:-0}"
       - name: Harness Closed landscape stills (not a sign-off)
-        if: always()
+        if: always() && matrix.part == 'rails'
         run: |
           rm -rf build/Harness.xcresult
           mkdir -p build/shots-ax3/harness
@@ -170,12 +249,15 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: ui-evidence-closed
+          name: ui-evidence-${{ matrix.part }}
           path: |
             build/shots
             build/shots-ax3
             build/attachments
             build/UITests.xcresult
+            build/UITests-retry.xcresult
+            uitests-retry.log
+            build/diag
             build/Inner-Book.xcresult
             build/Inner-Tabletop.xcresult
             build/Unfold-110.xcresult

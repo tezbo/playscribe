@@ -95,7 +95,7 @@ second. MONITOR: no current gap or blocked; recheck at the weekly review. REJECT
 |---|---|---|---|---|
 | Skill Creator (Anthropic) | ALREADY AVAILABLE, ADOPT as the benchmark method | Gabrielle's office | In every cloud session; first benchmark run 25 Nov. No install needed | Gabrielle |
 | Resource observability via `get_session` usage | ADOPT | Gabrielle, coordinator | Measured per-session tokens, cache and model already readable from the cloud; baseline taken 25 Nov (kept in the office's records, not here). Weekly deltas give the rate | Gabrielle |
-| Claude Code OpenTelemetry | MONITOR | Gabrielle | Needs env settings on the team environments and a collector endpoint, which is a permission and possibly a cost decision for Terry. `get_session` covers per-session totals today; OTel would add per-tool and per-skill detail | Gabrielle, Terry to approve |
+| Claude Code OpenTelemetry | MONITOR (Terry, 25 Nov: deferred) | Gabrielle | Needs env settings on the team environments and a collector endpoint, which is a permission and possibly a cost decision. `get_session` covers per-session totals today; OTel would add per-tool and per-skill detail. Revisit only if the weekly deltas show a need | Gabrielle |
 | Cowork usage analytics | MONITOR | Gabrielle | Documented for Team and Enterprise plans; the team runs as cloud Claude Code sessions, which `get_session` already covers | Gabrielle |
 | GitHub MCP | ALREADY AVAILABLE | All | Every session has `mcp__github__*`, scoped to this repo. Adding the self-hosted server would duplicate it | n/a |
 | Knowledge-work plugins (product, marketing, design, engineering, data, productivity) | ALREADY AVAILABLE | Nadia, Mara, Iris, Theo, Max, Gabrielle | Installed in the cloud sessions. Gap is use, not supply (see G4) | Gabrielle |
@@ -116,3 +116,10 @@ second. MONITOR: no current gap or blocked; recheck at the weekly review. REJECT
 | Selective skill invocation | ALREADY AVAILABLE | All | Only skill descriptions are always loaded (about 1k tokens for the 15 repo skills); bodies load on use | n/a |
 | Hooks for deterministic checks | BENCHMARK | Coordinator, engineers | No repo hooks today. Candidates: block pushes that skip precheck, flag a PC version string in UI text | Gabrielle |
 | Bespoke Playscribe skills (spoiler class, artwork provenance, lore check) | BENCHMARK when Ezra has a task | Ezra | Specific to Playscribe; a generic plugin would not know V-3 or the spoiler rules | Gabrielle with Ezra |
+
+### Decisions
+
+| Date | Decision | By | Follow-through |
+|---|---|---|---|
+| 25 Nov 2026 | Defer Claude Code OpenTelemetry; revisit only if the weekly usage deltas show a need | Terry, on the office's recommendation | Weekly review checks the deltas |
+| 25 Nov 2026 | Model allocation: Max runs on Sonnet by default, with Opus used per task when the work justifies it (the team's rule is Sonnet by default, Opus restricted) | Terry, on the office's recommendation | Sent to Max through the office desk (req-20261125-01); weekly review confirms the switch |

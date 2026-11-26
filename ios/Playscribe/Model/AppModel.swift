@@ -84,6 +84,9 @@ struct NavState: Codable, Hashable {
     /// bug-070 (Terry, 25 Nov): the games opened before this one from inside a game page ("View game" under the recommendations),
     /// oldest first. Back and the edge swipe return to the last of them before leaving for returnTab / the Library. nil: none.
     var gameTrail: [String]?
+    /// bug-072: the section each trail game was left on, by trail position, so Back returns to it though a game opened afresh
+    /// lands on its newest update. Entries past the trail's length are stale and ignored.
+    var trailChapters: [Chapter]?
     var chapter: Chapter = .updates {
         didSet { if let g = gameID { chapters = (chapters ?? [:]).merging([g: chapter]) { $1 } } }
     }
@@ -400,6 +403,9 @@ final class AppModel {
             // Quinn (#430): a Library scroll anchor that is not a game tile ("lib-<id>") would scroll an unfiltered relaunch to the
             // search field (the app killed while it was focused). Keep tile anchors only.
             if let a = data.nav.anchors["library"], !a.hasPrefix("lib-") { data.nav.anchors["library"] = nil }
+            // bug-072: a cold launch never resumes on a section from an earlier session; an open game shows its newest update.
+            data.nav.chapter = .updates
+            data.nav.chapters = nil
         } else {
             // A real first launch starts empty, on onboarding: demo games never appear in a
             // player's library. QA launches (-qaRoute, other than first-run) still seed the demo set;
@@ -773,7 +779,9 @@ final class AppModel {
         // bug-070: a game opened from inside another game's page stacks on it, so Back returns to that game. From another tab the
         // Library's open game is not where the reader came from, so the trail starts afresh.
         if n.tab == .library, let current = n.gameID, !sameGame {
-            n.gameTrail = (n.gameTrail ?? []) + [current]
+            let trail = n.gameTrail ?? []
+            n.trailChapters = Array((n.trailChapters ?? []).prefix(trail.count)) + [n.chapter]
+            n.gameTrail = trail + [current]
         } else if n.tab != .library {
             n.gameTrail = nil
         }
@@ -781,9 +789,10 @@ final class AppModel {
         if !sameGame { n.detailReleaseID = nil }
         n.gameID = gameID
         n.lastGameID = gameID
-        // D-13: each game reopens on the chapter last opened in it.
-        // R-7 (0.5.6): World is part of Companion; a saved or routed World opens Companion.
-        n.chapter = GameSections.canonical(chapter ?? (sameGame ? n.chapter : (n.chapters?[gameID] ?? .updates)))
+        // bug-072 (Terry, 25 Nov): opening a game afresh lands on its newest update (R-1), never on the section it was left on in an
+        // earlier visit. `chapters` only serves Back within a visit (closeGame); it is no longer a way in.
+        // R-7 (0.5.6): World is part of Companion; a routed World opens Companion.
+        n.chapter = GameSections.canonical(chapter ?? (sameGame ? n.chapter : .updates))
         if let releaseID {
             n.selected = (n.selected ?? [:]).merging([gameID: releaseID]) { $1 }
             n.expanded["rel:\(releaseID)"] = true
@@ -859,7 +868,7 @@ final class AppModel {
             nav.gameID = previous
             nav.gameTrail = trail.isEmpty ? nil : trail
             nav.lastGameID = previous
-            nav.chapter = GameSections.canonical(nav.chapters?[previous] ?? .updates)
+            nav.chapter = GameSections.canonical(nav.trailChapters.flatMap { $0.indices.contains(trail.count) ? $0[trail.count] : nil } ?? nav.chapters?[previous] ?? .updates)
             return
         }
         let back = nav.returnTab
@@ -1776,6 +1785,10 @@ final class AppModel {
     func applyQALaunch(route: String?, overlay: Bool) {
         guard BuildChannel.showsInternalTools else { return }
         if overlay { showDebugOverlay = true; FoldAuditSwitch.enabled = true }
+        // `-qaDemo YES`: start from the demo Library whatever an earlier launch saved, so a test that needs a game tracked (or
+        // not) never depends on the test before it. A retried first-run test (empty Library) left Book and Tabletop RailSetTests
+        // with no Status on the rail (ui run 45623755710, bug-ui-runner-terminate-flake).
+        if UserDefaults.standard.bool(forKey: "qaDemo") { resetDemo() }
         if let route, let url = URL(string: "playscribe://\(route)") { handle(url: url) }
     }
 
