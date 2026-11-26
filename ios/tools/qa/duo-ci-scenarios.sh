@@ -107,6 +107,7 @@ removemenu) # s-06-remove-row-ax5-wrap + r060-version-chip-spoken: the game's st
     sim-use tap -x $((${x%.*} + ${w%.*} / 2)) -y $((${y%.*} + ${h%.*} / 2)) --device "$UDID" >/dev/null 2>&1; sleep 2; }
   launch -qaRoute two-update -UIPreferredContentSizeCategoryName $AX5; snap removemenu 0-deck-chips-closed-portrait-AX5
   launch -qaRoute gamepage/dawnwalker -qaOrientation portrait -UIPreferredContentSizeCategoryName $AX5; tapRail status; snap removemenu 1-closed-portrait-AX5
+  sim-use swipe --from 200,500 --to 200,200 --device "$UDID" >/dev/null 2>&1; sleep 2; snap removemenu 1b-closed-portrait-AX5-scrolled-to-remove
   launch -qaRoute gamepage/dawnwalker -qaOrientation landscape -UIPreferredContentSizeCategoryName $AX5; tapRail status; snap removemenu 2-closed-landscape-AX5
   launch -qaRoute gamepage/dawnwalker -qaOrientation portrait -UIPreferredContentSizeCategoryName $AX5; fold 90 portrait; tapRail status; snap removemenu 3-tabletop-AX5 ;;
 lane) # AX/VoiceOver lane (0.6.0): LANE_ROUTES (space list of -qaRoute values), each at AX5 in Closed portrait, Closed landscape and Tabletop;
