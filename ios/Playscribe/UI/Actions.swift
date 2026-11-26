@@ -42,12 +42,16 @@ struct ActionMenuContent: View {
     var sections: [ScreenAction.MenuSection]
     /// A confirmation dialog drops button icons, so the tick is drawn in the title there and also set as the selected trait.
     var inDialog = false
+    /// A system menu drops its item icons at accessibility sizes, so the checkmark Label showed no tick for the current choice
+    /// (bug-status-menu-ax5-no-check, Closed portrait AX5). There the tick is drawn in the text, as in a dialog; the spoken label stays
+    /// the plain title and the selected trait says which is current.
+    @Environment(\.dynamicTypeSize) private var typeSize
     var body: some View {
         ForEach(sections) { section in
             Section(section.title ?? "") {
                 ForEach(section.items) { item in
                     Button(role: item.destructive ? .destructive : nil, action: item.action) {
-                        if item.checked && inDialog { Text("\u{2713} \(item.title)") }
+                        if item.checked && (inDialog || typeSize.isAccessibilitySize) { Text("\u{2713} \(item.title)") }
                         else if item.checked { Label(item.title, systemImage: "checkmark") } else { Text(item.title) }
                     }
                     // A system dialog drops the selected trait (Mac, 3bb7345c), so in the dialog the label says it; menus keep the trait.
