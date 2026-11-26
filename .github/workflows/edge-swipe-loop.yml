@@ -1,0 +1,82 @@
+name: Edge swipe loop
+
+# bug-edge-swipe-test-flake: run one UI test many times, optionally with CPU burners to copy the load of a slow runner
+# (boot load was 261 to 533 on 3 cores when GameToGameTests' edge swipe failed). Reports pass or fail per iteration.
+on:
+  # A change to this workflow runs it on its own PR (both burner counts below), so it proves itself before it merges.
+  pull_request:
+    paths: ['.github/workflows/edge-swipe-loop.yml', 'ios/PlayscribeUITests/GameToGameTests.swift']
+  workflow_dispatch:
+    inputs:
+      test:
+        description: "UI test to loop (class/method)"
+        default: "GameToGameTests/testBackAndEdgeSwipeReturnToTheGameItWasOpenedFrom"
+      iterations:
+        description: "Iterations"
+        default: "10"
+      burners:
+        description: "CPU burner processes started after the build (0 = none; 6 on 3 cores copies a slow runner)"
+        default: "0"
+
+concurrency:
+  group: edge-swipe-loop-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  loop:
+    name: loop (burners ${{ matrix.burners }})
+    runs-on: xcode-27
+    strategy:
+      fail-fast: false
+      matrix:
+        burners: [0, 6]
+    timeout-minutes: 75
+    env:
+      XCODE_APP: /Applications/Xcode_27.1.app
+    steps:
+      - uses: actions/checkout@v4
+      - run: brew install xcodegen && (cd ios && xcodegen generate)
+      - run: sudo xcode-select -s "$XCODE_APP" && xcodebuild -version
+      - name: Pick the Duo simulator
+        run: |
+          udid=$(xcrun simctl list devices available -j | python3 -c "
+          import json, sys
+          d = json.load(sys.stdin)['devices']
+          phones = [x for k in d if 'iOS-27-1' in k for x in d[k] if 'iPhone' in x['name']]
+          phones.sort(key=lambda x: 'Duo' not in x['name'])
+          print(phones[0]['udid'] if phones else '')
+          ")
+          [ -n "$udid" ] || { echo "::error::No iOS 27.1 iPhone simulator"; exit 1; }
+          echo "UDID=$udid" >> "$GITHUB_ENV"
+      - name: Boot and build
+        run: |
+          xcrun simctl boot "$UDID" 2>/dev/null || true; xcrun simctl bootstatus "$UDID" -b > /dev/null
+          xcodebuild build-for-testing -project ios/Playscribe.xcodeproj -scheme PlayscribeUI \
+            -destination "id=$UDID" -derivedDataPath build/dd CODE_SIGNING_ALLOWED=NO > build.log 2>&1 \
+            || { grep -E 'error:' build.log | head -20; exit 1; }
+      - name: Loop the test
+        env:
+          TEST: ${{ inputs.test || 'GameToGameTests/testBackAndEdgeSwipeReturnToTheGameItWasOpenedFrom' }}
+          ITER: ${{ inputs.iterations || '10' }}
+          BURNERS: ${{ github.event_name == 'workflow_dispatch' && inputs.burners || matrix.burners }}
+        run: |
+          for i in $(seq 1 "$BURNERS"); do nohup bash -c 'while :; do :; done' >/dev/null 2>&1 & done
+          sleep 5
+          xcrun simctl spawn "$UDID" log stream --level info --predicate 'subsystem == "co.codeconnectors.playscribe" AND category == "swipeback"' > swipe-log.txt 2>&1 &
+          echo "### Load before the loop: $(sysctl -n vm.loadavg) on $(sysctl -n hw.ncpu) cores, burners $BURNERS, iterations $ITER" | tee -a "$GITHUB_STEP_SUMMARY"
+          xcodebuild test-without-building -project ios/Playscribe.xcodeproj -scheme PlayscribeUI \
+            -destination "id=$UDID" -derivedDataPath build/dd -collect-test-diagnostics never \
+            -only-testing:PlayscribeUITests/$TEST -test-iterations "$ITER" \
+            -resultBundlePath build/loop.xcresult CODE_SIGNING_ALLOWED=NO > loop.log 2>&1 || true
+          sleep 3
+          grep -E "edgeswipe" swipe-log.txt | cut -c1-24,60-260 | tee -a "$GITHUB_STEP_SUMMARY" | tail -400
+          grep -E "edgeswipe|Test Case .*(passed|failed)|error:" loop.log | cut -c1-300 | tee -a "$GITHUB_STEP_SUMMARY"
+          echo "### passes: $(grep -cE "Test Case .*passed" loop.log), failures: $(grep -cE "Test Case .*failed" loop.log)" | tee -a "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: edge-swipe-loop-${{ matrix.burners }}
+          path: |
+            loop.log
+            swipe-log.txt
+            build.log
