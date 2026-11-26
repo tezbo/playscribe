@@ -388,12 +388,21 @@ struct FullBleedVideo: View {
             ZStack(alignment: .topLeading) {
                 Color.black
                 Color.black
-                    .overlay { WebSurface(webView: controller.webView) }
+                    // YouTube's own iframe buttons (rewind, channel, thumbnails) are off and cannot be tapped here, so VoiceOver
+                    // gets one element for the picture instead (Iris, #655). Our band controls carry every action.
+                    .overlay { WebSurface(webView: controller.webView).accessibilityHidden(true) }
+                    // The picture as one VoiceOver element; it takes no touches (taps on the picture stay YouTube's).
+                    .overlay {
+                        Color.clear
+                            .accessibilityElement()
+                            .accessibilityLabel(title.isEmpty ? "Video" : "Video, \(title)")
+                            .accessibilityAddTraits(.isImage)
+                            .accessibilityIdentifier("videoFullScreenPicture")
+                    }
                     // Before playback only: our poster stands in for YouTube's start screen until Play.
                     .overlay { VideoStartCover(controller: controller, posterAsset: posterAsset, game: game) }
                     .frame(width: f.width, height: f.height)
                     .offset(x: f.minX, y: f.minY)
-                    .accessibilityIdentifier("videoFullScreenPicture")
                 if let division {
                     // Not visual: clear, so the picture shows across the fold, but it takes every tap there so nothing on the
                     // division is tappable (Nadia's take on the card).
@@ -1000,6 +1009,9 @@ struct FullScreenBands: View {
 
     private var hides: Bool { controller.isPlaying && !scrubbing && !voiceOver && !switchControl && !Self.qaStay }
 
+    /// At the end of the video the bands stay up and Play becomes Replay (Iris, #655), over YouTube's end screen.
+    private var ended: Bool { !controller.isPlaying && controller.duration > 0 && controller.current >= controller.duration - 0.5 }
+
     /// Internal builds: -qaBandsStay YES keeps the band controls up, so stills can show them (Iris, bug-071).
     static var qaStay: Bool {
         #if INTERNAL
@@ -1030,8 +1042,12 @@ struct FullScreenBands: View {
                 .offset(x: l.top.minX, y: l.top.minY)
                 HStack(spacing: 4) {
                     glyph("gobackward.10", "Back 10 seconds", id: "videoBack10") { controller.skip(-10) }
-                    glyph(controller.isPlaying ? "pause.fill" : "play.fill", controller.isPlaying ? "Pause" : "Play",
-                          id: "videoPlayPause", action: controller.playPause)
+                    if ended {
+                        glyph("arrow.counterclockwise", "Replay", id: "videoPlayPause") { controller.seek(to: 0); controller.playPause() }
+                    } else {
+                        glyph(controller.isPlaying ? "pause.fill" : "play.fill", controller.isPlaying ? "Pause" : "Play",
+                              id: "videoPlayPause", action: controller.playPause)
+                    }
                         .disabled(!controller.ready)
                     glyph("goforward.10", "Forward 10 seconds", id: "videoForward10") { controller.skip(10) }
                     if l.timeline == nil { timeline } else { Spacer(minLength: 0) }

@@ -43,6 +43,12 @@ final class FullScreenVideoTests: XCTestCase {
         print("qaBands after band tap: \(after)")
         XCTAssertFalse(after.contains("wakes=0"), "a tap in the top band did not reach our controls: \(after)")
         XCTAssertTrue(exit.waitForExistence(timeout: 3), "Exit full screen is not shown after a band tap")
+        // VoiceOver (Iris, #655): the scrubber speaks elapsed of total; the picture is one element; YouTube's iframe is hidden.
+        let scrubberValue = (any["videoScrubber"].value as? String) ?? ""
+        print("videoScrubber value: \(scrubberValue)")
+        XCTAssertTrue(scrubberValue.contains(" of "), "the scrubber does not speak elapsed of total: \(scrubberValue)")
+        XCTAssertTrue(any["videoFullScreenPicture"].exists, "the picture has no VoiceOver element")
+        XCTAssertFalse(app.webViews.firstMatch.exists, "YouTube's web view is still exposed to VoiceOver")
 
         // The controls fade 3 s after the last touch while playing, often before XCUITest can read Exit's frame (runs 45748630556
         // and 45751314856). So Exit's point comes from the measured geometry in qaFullScreen: the top row starts 12 pt inside
