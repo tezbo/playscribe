@@ -1,9 +1,5 @@
 import SwiftUI
 import UIKit
-import os
-
-// bug-edge-swipe-test-flake: measurement only, removed once the cause is fixed.
-private let swipeLog = Logger(subsystem: "co.codeconnectors.playscribe", category: "swipeback")
 
 /// Keeps the edge-swipe back gesture on a screen that hides the system back button (r053-tap-opens-tick-adds, Iris).
 /// UIKit turns the gesture off when the back button is hidden; this gives it a delegate that lets it begin whenever there
@@ -18,7 +14,6 @@ private struct SwipeBackEnabler: UIViewControllerRepresentable {
 
         override func viewDidAppear(_ animated: Bool) {
             super.viewDidAppear(animated)
-            swipeLog.notice("edgeswipe app: viewDidAppear nav=\(self.navigationController != nil) count=\(self.navigationController?.viewControllers.count ?? -1)")
             guard let nav = navigationController, let gesture = nav.interactivePopGestureRecognizer else { return }
             if configured !== nav {
                 previousDelegate = gesture.delegate
@@ -26,18 +21,9 @@ private struct SwipeBackEnabler: UIViewControllerRepresentable {
             }
             gesture.delegate = self
             gesture.isEnabled = true
-            if !observing { gesture.addTarget(self, action: #selector(popState(_:))); observing = true }
         }
 
-        private var observing = false
-        @objc private func popState(_ g: UIGestureRecognizer) {
-            swipeLog.notice("edgeswipe app: pop state=\(g.state.rawValue) at x=\(g.location(in: nil).x) delegateIsHost=\(g.delegate === self)")
-        }
-
-        func gestureRecognizer(_ g: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-            swipeLog.notice("edgeswipe app: shouldReceive x=\(touch.location(in: nil).x) enabled=\(g.isEnabled) count=\(self.navigationController?.viewControllers.count ?? -1)")
-            return true
-        }
+        func gestureRecognizer(_ g: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool { true }
 
         override func viewWillDisappear(_ animated: Bool) {
             super.viewWillDisappear(animated)
@@ -47,9 +33,7 @@ private struct SwipeBackEnabler: UIViewControllerRepresentable {
         }
 
         func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
-            let r = (navigationController?.viewControllers.count ?? 0) > 1
-            swipeLog.notice("edgeswipe app: shouldBegin=\(r) count=\(self.navigationController?.viewControllers.count ?? -1)")
-            return r
+            (navigationController?.viewControllers.count ?? 0) > 1
         }
     }
 }
