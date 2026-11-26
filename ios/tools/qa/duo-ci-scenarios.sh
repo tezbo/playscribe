@@ -115,7 +115,7 @@ brand) # s-06-brand-swap (#614): Home Screen icon light and dark (tinted cannot 
   for ap in light dark; do xcrun simctl ui "$UDID" appearance $ap >/dev/null 2>&1; xcrun simctl terminate "$UDID" $B >/dev/null 2>&1; fold 0 portrait; sleep 3; snap brand 1-home-icon-$ap; done
   xcrun simctl ui "$UDID" appearance light >/dev/null 2>&1
   launch -qaRoute settings; snap brand 2-settings-top
-  for k in 1 2 3 4 5; do sim-use swipe --from 233,520 --to 233,160 --device "$UDID" >/dev/null 2>&1; sleep 1; done; snap brand 3-settings-footer
+  scroll_end 233,520 233,160 settings-footer; snap brand 3-settings-footer
   launch -qaRoute caught-up; snap brand 4-library-caught-up
   launch -qaRoute two-update; snap brand 5-library-new-update
   xcrun simctl terminate "$UDID" $B >/dev/null 2>&1; fold 0 portrait; xcrun simctl launch "$UDID" $B -qaRoute library/playing >/dev/null; quick 6-splash-closed
