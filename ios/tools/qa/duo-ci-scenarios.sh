@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Quinn's five cloud runs on a booted, app-installed iPhone Duo (hosted runner or Mac). Needs sim-use.
-#   ios/tools/qa/duo-ci-scenarios.sh UDID OUTDIR [scenario ...]    (default: all)   scenarios: continuity trailer closedax5 schemes video axchips deckwide plusend switchax switchtt heroswipe herolong lane
+#   ios/tools/qa/duo-ci-scenarios.sh UDID OUTDIR [scenario ...]    (default: all)   scenarios: continuity trailer closedax5 schemes video axchips deckwide plusend switchax switchtt heroswipe herolong removemenu lane
 # Every step saves <sha>-<scenario>-<step>-<display>-shot.png and -ui.txt (outline with frames, ids and the pose line).
 set -uo pipefail
 UDID=$1; OUT=$2; shift 2; SCEN=${*:-continuity trailer closedax5 schemes video}
@@ -101,6 +101,14 @@ tt) # Tabletop/Open shots with an assertion: TT_ROUTE, TT_STEPS ("angle:orientat
     snap tt "a$a-$o-$([ "${TT_AX5:-no}" = yes ] && echo ax5 || echo std)-first"
     if [ "$o" = portrait ]; then scroll_end 300,900 300,520 "a$a-$o"; else scroll_end 300,560 300,200 "a$a-$o"; fi; snap tt "a$a-$o-$([ "${TT_AX5:-no}" = yes ] && echo ax5 || echo std)-end"
   done ;;
+removemenu) # s-06-remove-row-ax5-wrap + r060-version-chip-spoken: the game's status menu open (Remove row) at AX5 in Closed portrait, Closed landscape and Tabletop; the deck outline carries the spoken chip label
+  tapRail() { local f x y w h; f=$(sim-use ui --device "$UDID" 2>/dev/null | grep "#rail.$1" | head -1 | grep -o '([0-9.,]* [0-9.x]*)' | tr -d '()'); [ -z "$f" ] && { echo "no #rail.$1"; return 1; }
+    x=${f%%,*}; y=${f#*,}; y=${y%% *}; w=${f#* }; w=${w%x*}; h=${f##*x}
+    sim-use tap -x $((${x%.*} + ${w%.*} / 2)) -y $((${y%.*} + ${h%.*} / 2)) --device "$UDID" >/dev/null 2>&1; sleep 2; }
+  launch -qaRoute two-update -UIPreferredContentSizeCategoryName $AX5; snap removemenu 0-deck-chips-closed-portrait-AX5
+  launch -qaRoute gamepage/dawnwalker -qaOrientation portrait -UIPreferredContentSizeCategoryName $AX5; tapRail status; snap removemenu 1-closed-portrait-AX5
+  launch -qaRoute gamepage/dawnwalker -qaOrientation landscape -UIPreferredContentSizeCategoryName $AX5; tapRail status; snap removemenu 2-closed-landscape-AX5
+  launch -qaRoute gamepage/dawnwalker -qaOrientation portrait -UIPreferredContentSizeCategoryName $AX5; fold 90 portrait; tapRail status; snap removemenu 3-tabletop-AX5 ;;
 lane) # AX/VoiceOver lane (0.6.0): LANE_ROUTES (space list of -qaRoute values), each at AX5 in Closed portrait, Closed landscape and Tabletop;
   # first screen then scrolled to the end, so a baseline on main and the PR share one matrix. LANE_AX (AX5|std) picks the text size.
   size=$AX5; [ "${LANE_AX:-AX5}" = std ] && size=UICTContentSizeCategoryL
