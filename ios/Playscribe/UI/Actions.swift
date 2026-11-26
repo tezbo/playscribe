@@ -110,9 +110,11 @@ struct RailMenuList: View {
         // The title is pinned outside the scroll area so it can never fill the list (Mac, 4318d26: at AX5 it filled all 300 pt and no
         // row showed). Text is held at AX2 inside: the rows stay whole words and the four choices fit without a drag where they can.
         VStack(alignment: .leading, spacing: 0) {
-            Text(title).font(PlayscribeFont.footnote).foregroundStyle(PlayscribeRole.textSecondary).lineLimit(1)
-                .padding(.horizontal, 16).padding(.top, 12).padding(.bottom, 4)
-                .accessibilityAddTraits(.isHeader)
+            if !title.isEmpty {
+                Text(title).font(PlayscribeFont.footnote).foregroundStyle(PlayscribeRole.textSecondary).lineLimit(1)
+                    .padding(.horizontal, 16).padding(.top, 12).padding(.bottom, 4)
+                    .accessibilityAddTraits(.isHeader)
+            }
             ScrollView {
                 VStack(alignment: .leading, spacing: 0) {
                     ForEach(sections) { section in
@@ -122,9 +124,9 @@ struct RailMenuList: View {
                         }
                         ForEach(section.items) { item in
                             Button(role: item.destructive ? .destructive : nil) { done(); item.action() } label: {
-                                HStack(spacing: 8) {
-                                    // The last two words stay together ("Deliverance II" does not split across lines); the spoken label stays the plain title.
-                                    Text(RailMenuList.keepTail(item.title)).multilineTextAlignment(.leading).fixedSize(horizontal: false, vertical: true)
+                                HStack(alignment: .firstTextBaseline, spacing: 8) {
+                                    // The last two words stay together ("Deliverance II" does not split across lines), except the destructive row, which wraps on plain whole words ("Remove from / library", Iris s-06 option 1); the spoken label stays the plain title.
+                                    Text(item.destructive ? item.title : RailMenuList.keepTail(item.title)).multilineTextAlignment(.leading).fixedSize(horizontal: false, vertical: true)
                                         .accessibilityLabel(item.spoken ?? item.title)
                                     Spacer(minLength: 8)
                                     if item.checked { Image(systemName: "checkmark").accessibilityHidden(true) }
@@ -173,7 +175,8 @@ struct RailButton: View {
                 Button { preAction?(); choosing = true } label: { icon }
                     .buttonStyle(RailPressStyle())
                     .popover(isPresented: $choosing) {
-                        RailMenuList(title: action.title, sections: sections) { choosing = false }
+                        // The status menu's one header is its section line ("In your library as…"), so the pinned title would repeat it.
+                        RailMenuList(title: action.id == "status" ? "" : action.title, sections: sections) { choosing = false }
                             .presentationCompactAdaptation(.popover)
                     }
                     .id(sections.tickKey)
@@ -289,7 +292,7 @@ extension AppModel {
                                 kind: .menu(notifyMenu(gameID, header: "Notify me about \(name)")), priority: .high)]
         if let status = entry(gameID)?.status {
             var menu = statusMenu(gameID)
-            if !menu.isEmpty { menu[0].title = "\(name) is in your library as…" }
+            if !menu.isEmpty { menu[0].title = "In your library as…" }
             out.append(ScreenAction(id: "status", title: "Status: \(status.label)", systemImage: status.symbol, kind: .menu(menu), priority: .high))
         }
         // 0.5.6 hotfix (Iris): Check for updates, Links, Share and (side by side only) Swap sides live behind More, so the rail is

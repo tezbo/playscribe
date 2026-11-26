@@ -281,7 +281,7 @@ struct ReleasePage: View {
             .font(PlayscribeFont.subheadline).foregroundStyle(PlayscribeRole.textSecondary)
             VStack(alignment: .leading, spacing: 2) {
                 Text(status.primary).font(PlayscribeFont.subheadline.weight(.semibold))
-                if let v = status.version { Text(v).font(PlayscribeFont.subheadline).monospacedDigit().foregroundStyle(PlayscribeRole.textSecondary) }
+                if let v = status.version { Text(v.keepingVersionsTogether).font(PlayscribeFont.subheadline).monospacedDigit().lineLimit(1).minimumScaleFactor(typeSize.isAccessibilitySize ? 0.6 : 1).foregroundStyle(PlayscribeRole.textSecondary) }
             }
             .accessibilityElement(children: .ignore).accessibilityLabel(status.spoken)
             .accessibilityAddTraits(.isStaticText)   // read as text, never audited as a control (d194c511)
