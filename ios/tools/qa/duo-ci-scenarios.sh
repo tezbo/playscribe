@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Quinn's five cloud runs on a booted, app-installed iPhone Duo (hosted runner or Mac). Needs sim-use.
-#   ios/tools/qa/duo-ci-scenarios.sh UDID OUTDIR [scenario ...]    (default: all)   scenarios: continuity trailer closedax5 schemes video axchips deckwide plusend heroswipe herolong lane
+#   ios/tools/qa/duo-ci-scenarios.sh UDID OUTDIR [scenario ...]    (default: all)   scenarios: continuity trailer closedax5 schemes video axchips deckwide plusend switchax switchtt heroswipe herolong lane
 # Every step saves <sha>-<scenario>-<step>-<display>-shot.png and -ui.txt (outline with frames, ids and the pose line).
 set -uo pipefail
 UDID=$1; OUT=$2; shift 2; SCEN=${*:-continuity trailer closedax5 schemes video}
@@ -147,6 +147,34 @@ heroswipe) # r054-closed-ax5-hero-headline-4-lines: every hero card in Closed po
     launch -qaRoute ${HERO_ROUTE:-many-updates} -qaOrientation portrait -UIPreferredContentSizeCategoryName $c
     snap heroswipe 0-closed-portrait-$n
     for k in 1 2 3 4 5; do sim-use swipe --from 340,280 --to 40,280 --duration 0.5 --device "$UDID" >/dev/null 2>&1; sleep 2; snap heroswipe $k-closed-portrait-$n; done
+  done ;;
+switchax) # bug-playing-upcoming-switch-ax5-small: switch + filter chips, each state, light and dark; Closed landscape AX5; Tabletop AX5
+  for ap in light dark; do for t in playing upcoming; do
+    launch -qaRoute library/$t -qaAppearance $ap -UIPreferredContentSizeCategoryName UICTContentSizeCategoryL; snap switchax 1-closed-portrait-std-$ap-$t
+    launch -qaRoute library/$t -qaAppearance $ap -UIPreferredContentSizeCategoryName $AX5; snap switchax 2-closed-portrait-AX5-$ap-$t
+    if [ $t = playing ]; then for k in 1 2 3; do sim-use swipe --from 233,560 --to 233,160 --device "$UDID" >/dev/null 2>&1; sleep 1; done
+      sleep 1; snap switchax 2b-closed-portrait-AX5-$ap-chips; fi
+  done; done
+  for t in playing upcoming; do
+    launch -qaRoute library/$t -qaOrientation landscape -UIPreferredContentSizeCategoryName $AX5; snap switchax 3-closed-landscape-AX5-$t
+    launch -qaRoute library/$t -UIPreferredContentSizeCategoryName $AX5; fold 90 portrait; snap switchax 4-tabletop-AX5-$t
+    sim-use swipe --from 335,880 --to 335,620 --device "$UDID" >/dev/null 2>&1; sleep 2; snap switchax 4b-tabletop-AX5-$t-scrolled
+  done
+  # A real tap on the chip (Closed portrait AX5): Playing, then Upcoming by label.
+  launch -qaRoute library/playing -UIPreferredContentSizeCategoryName $AX5
+  echo "tap Upcoming: $(sim-use tap --label "Upcoming" --device "$UDID" 2>&1 | head -2)"; sleep 2; snap switchax 5-closed-portrait-AX5-tapped-upcoming ;;
+switchtt) # bug-playing-upcoming-switch-ax5-small: real Tabletop at AX5. Tries portrait-first then fold, and fold-then-portrait, at hinge angles 90 120 60 130 until the app reports "pose: tabletop"
+  for t in playing upcoming; do
+    launch -qaRoute library/$t -UIPreferredContentSizeCategoryName $AX5; got=no
+    for ord in rotate-first fold-first; do for ang in 90 120 60 130; do
+      if [ $ord = rotate-first ]; then sim-use ios rotate portrait --device "$UDID" >/dev/null 2>&1; sleep 3; sim-use ios fold $ang --device "$UDID" >/dev/null 2>&1; sleep 5
+      else sim-use ios fold $ang --device "$UDID" >/dev/null 2>&1; sleep 4; sim-use ios rotate portrait --device "$UDID" >/dev/null 2>&1; sleep 4; fi
+      pl=$(sim-use ui --device "$UDID" 2>/dev/null | grep -o "pose: [a-z]*" | head -1); echo "switchtt $t $ord $ang: $pl"
+      [ "$pl" = "pose: tabletop" ] && { got=yes; break 2; }
+    done; done
+    echo "switchtt $t: tabletop reached: $got"
+    snap switchtt 4-tabletop-AX5-$t
+    sim-use swipe --from 335,880 --to 335,620 --device "$UDID" >/dev/null 2>&1; sleep 2; snap switchtt 4b-tabletop-AX5-$t-scrolled
   done ;;
 plusend) # bug-psplus-card-missing-cover-empty-grid + r060-psplus-compact-ax3: the end of the Library (PS Plus card) in every pose, std and AX5.
   # Each step logs the element type of every PS Plus title in the outline: each must be a Button (never a bare text element).

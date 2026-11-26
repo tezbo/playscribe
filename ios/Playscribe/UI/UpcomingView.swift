@@ -48,19 +48,69 @@ extension AppModel {
 struct LibraryTabPicker: View {
     @Environment(AppModel.self) private var model
     @Environment(\.duo) private var duo
+    @Environment(\.dynamicTypeSize) private var typeSize
+
+    /// Accessibility sizes swap the segmented control for two single-select chips: the system control keeps near-standard
+    /// text at AX5 while everything round it is huge (bug-playing-upcoming-switch-ax5-small, Nadia).
+    static func usesChips(_ size: DynamicTypeSize) -> Bool { size.isAccessibilitySize }
+
     var body: some View {
         @Bindable var model = model
-        Picker("Library", selection: $model.libraryTab) {
-            ForEach(LibraryTab.allCases) { Text($0.label).tag($0) }
+        Group {
+            if Self.usesChips(typeSize) {
+                chips
+            } else {
+                Picker("Library", selection: $model.libraryTab) {
+                    ForEach(LibraryTab.allCases) { Text($0.label).tag($0) }
+                }
+                .pickerStyle(.segmented)
+                .frame(minHeight: 44)
+                .accessibilityIdentifier("libraryTabPicker")
+            }
         }
-        .pickerStyle(.segmented)
-        .frame(minHeight: 44)
-        .accessibilityIdentifier("libraryTabPicker")
         // Book: exactly the left page wide, so the control never crosses the fold (AX3, 7fe84f4).
         .frame(width: duo.pose == .book ? duo.division.map { max(0, $0.minX - 24 - 16) } : nil, alignment: .leading)
         // Never wider than LibraryControl.maxWidth, leading: in Open landscape it stretched to about 1750 px (Iris).
         .frame(maxWidth: LibraryControl.maxWidth, alignment: .leading)
         .tappableFrame()
+    }
+
+    /// Side by side, each half the width, when both labels fit whole on one line; else stacked full width. Never cut.
+    private var chips: some View {
+        // The id and the container sit on each branch, inside ViewThatFits: on the ViewThatFits itself they never reached the
+        // tree (cloud run 45548323603: "the switch keeps its id" failed; the tree showed a bare Group "Library").
+        ViewThatFits(in: .horizontal) {
+            HStack(spacing: 8) { ForEach(LibraryTab.allCases) { chip($0, oneLine: true) } }
+                .modifier(SwitchContainer())
+            VStack(spacing: 8) { ForEach(LibraryTab.allCases) { chip($0, oneLine: false) } }
+                .modifier(SwitchContainer())
+        }
+    }
+
+    private struct SwitchContainer: ViewModifier {
+        func body(content: Content) -> some View {
+            content
+                .accessibilityElement(children: .contain)
+                .accessibilityLabel("Library")
+                .accessibilityIdentifier("libraryTabPicker")
+        }
+    }
+
+    /// The filter-chip look (FilterBar): selection is the fill, the weight and the selected trait, never colour alone.
+    private func chip(_ tab: LibraryTab, oneLine: Bool) -> some View {
+        let on = model.libraryTab == tab
+        return Button { model.libraryTab = tab } label: {
+            Text(tab.label)
+                .font(PlayscribeFont.subheadline.weight(on ? .semibold : .regular))
+                .lineLimit(oneLine ? 1 : 2)
+                .fixedSize(horizontal: oneLine, vertical: true)
+                .padding(.horizontal, 10).padding(.vertical, 6)
+                .frame(maxWidth: .infinity, minHeight: 44)
+                .modifier(SelectableChipGround(on: on))
+        }
+        .buttonStyle(.plain)
+        .accessibilityAddTraits(on ? .isSelected : [])
+        .accessibilityIdentifier("libraryTab-\(tab.rawValue)")
     }
 }
 

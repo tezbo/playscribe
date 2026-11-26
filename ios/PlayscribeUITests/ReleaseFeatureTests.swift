@@ -37,6 +37,28 @@ final class ReleaseFeatureTests: XCTestCase {
         return true
     }
 
+    /// J-11 at AX5 (bug-playing-upcoming-switch-ax5-small): the switch is two chips under the same id, the chosen one carries
+    /// the selected trait, and a tap moves it.
+    func testSwitchChipsCarryTheSelectedTraitAtAX5() throws {
+        app.launchArguments = ["-qaRoute", "fill-library/12", "-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityXXXL"]
+        app.launch()
+        let any = app.descendants(matching: .any)
+        let playing = any["libraryTab-playing"], upcoming = any["libraryTab-upcoming"]
+        if !upcoming.waitForExistence(timeout: 20) {
+            // What the tree did show, so a miss says why (the segmented control would be one element labelled Library).
+            let seen = app.debugDescription.split(separator: "\n").filter { $0.contains("Playing") || $0.contains("Upcoming") || $0.contains("libraryTab") || $0.contains("Segmented") }
+            XCTFail("the Upcoming chip (AX5 swaps the segmented control for chips); tree: \(seen.prefix(8).joined(separator: " | "))")
+            return
+        }
+        XCTAssertTrue(any["libraryTabPicker"].exists, "the switch keeps its container id")
+        XCTAssertTrue(playing.isSelected, "Playing is selected on the playing route")
+        XCTAssertFalse(upcoming.isSelected, "only one chip is selected")
+        upcoming.tap()
+        let moved = expectation(for: NSPredicate(format: "isSelected == true"), evaluatedWith: upcoming)
+        wait(for: [moved], timeout: 5)
+        XCTAssertFalse(playing.isSelected, "the selection moved to Upcoming")
+    }
+
     private func button(_ prefix: String) -> XCUIElement {
         app.buttons.matching(NSPredicate(format: "label BEGINSWITH %@", prefix)).firstMatch
     }

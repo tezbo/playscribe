@@ -422,9 +422,15 @@ struct LibraryShelf: View {
                 // Book: the control stays on the left page; it never crosses the fold (Iris, hero-wide-layouts).
                 if closedWide {
                     // Closed landscape: the control and the search field share one row, 44 pt each (Iris, cf6c889).
-                    HStack(spacing: 12) {
-                        LibraryTabPicker().frame(width: 220, height: 44)
+                    // At accessibility sizes the switch is two chips (LibraryTabPicker) and takes its own row, search under it.
+                    if LibraryTabPicker.usesChips(typeSize) {
+                        LibraryTabPicker().frame(maxWidth: .infinity, alignment: .leading)
                         if model.libraryTab == .playing && !all.isEmpty { searchField(binding: $model.libraryQuery) }
+                    } else {
+                        HStack(spacing: 12) {
+                            LibraryTabPicker().frame(width: 220, height: 44)
+                            if model.libraryTab == .playing && !all.isEmpty { searchField(binding: $model.libraryQuery) }
+                        }
                     }
                 } else if !heroOnRightPage {
                     // Tabletop at AX5 (Iris, #455 at 0877dfc and a8859d3): the compact card keeps the lower half to itself, first; the
@@ -757,7 +763,7 @@ struct FilterBar: View {
                 .padding(.horizontal, 10)
                 .padding(.vertical, typeSize.isAccessibilitySize ? 6 : 0)
                 .frame(maxWidth: typeSize.isAccessibilitySize ? .infinity : nil, minHeight: 44)
-                .background(on ? PlayscribeRole.selectedChipFill : PlayscribeRole.chipFill, in: Capsule())
+                .modifier(SelectableChipGround(on: on))
         }
         .buttonStyle(.plain)
         .accessibilityAddTraits(on ? .isSelected : [])
@@ -1602,3 +1608,14 @@ private struct FeedStatusLine: View {
     static var whyLine: String { why.sorted { $0.value > $1.value }.map { "\($0.key)=\($0.value)" }.joined(separator: " ") }
 }
 #endif
+
+/// The ground of a single-select chip, shared by the Library's filter chips and its Playing/Upcoming chips: the fill, plus a
+/// 1.5 pt action-colour outline on the selected one, so selection never rests on a 1.14:1 fill difference (Iris, #645).
+struct SelectableChipGround: ViewModifier {
+    var on: Bool
+    func body(content: Content) -> some View {
+        content
+            .background(on ? PlayscribeRole.selectedChipFill : PlayscribeRole.chipFill, in: Capsule())
+            .overlay { if on { Capsule().strokeBorder(PlayscribeRole.action, lineWidth: 1.5) } }
+    }
+}
