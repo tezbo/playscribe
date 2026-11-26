@@ -37,8 +37,12 @@ struct SplashView: View {
             // QA: `-qaSplashHold <seconds>` keeps the splash up so stills are not a race with the fade.
             let hold = UserDefaults.standard.double(forKey: "qaSplashHold")
             try? await Task.sleep(for: .milliseconds(reduceMotion ? 0 : 800) + .seconds(hold))
+            // A pose change at launch (the Duo settling into Book or Tabletop) rebuilds this view and cancels its task:
+            // `try?` would swallow that and dismiss the splash at once. The rebuilt view runs its own timer instead.
+            if Task.isCancelled { return }
             withAnimation(.easeOut(duration: 0.3)) { opacity = 0 }
             try? await Task.sleep(for: .milliseconds(300))
+            if Task.isCancelled { return }
             onDone()
         }
     }
