@@ -998,7 +998,16 @@ struct FullScreenBands: View {
         return Layout(top: row(left, right, y: topY), transport: row(left, right, y: bottomY), timeline: nil)
     }
 
-    private var hides: Bool { controller.isPlaying && !scrubbing && !voiceOver && !switchControl }
+    private var hides: Bool { controller.isPlaying && !scrubbing && !voiceOver && !switchControl && !Self.qaStay }
+
+    /// Internal builds: -qaBandsStay YES keeps the band controls up, so stills can show them (Iris, bug-071).
+    static var qaStay: Bool {
+        #if INTERNAL
+        UserDefaults.standard.bool(forKey: "qaBandsStay")
+        #else
+        false
+        #endif
+    }
 
     var body: some View {
         let l = Self.layout(picture: picture, screen: screen, safe: safe, division: division, avoiding: housings)

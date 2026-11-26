@@ -144,9 +144,11 @@ fullscreen) # bug-071: full-screen video Fit with our controls in the bands; the
   echo "band tap (portrait reading): $(sim-use tap -x 12 -y 339 --device "$UDID" 2>&1 | head -1)"; sleep 0.5; frames 4b
   snap fullscreen 4-band-tap-shows
   tapl "Exit full screen" 4; snap fullscreen 5-exited
-  fold 0 landscape-left; enter 6-closed-landscape; tapl "Exit full screen" 3
-  fold 180 landscape-left; enter 7-flat-landscape
-  fold 90 landscape-left; sleep 1; snap fullscreen 8-book; frames 8
+  # The same poses again with the controls held up (-qaBandsStay, internal), so the stills show them (Iris).
+  launch -qaRoute trailer/dQw4w9WgXcQ/dawnwalker -qaOverlay YES -qaVideoTime YES -qaBandsStay YES
+  tapl Play 8; fold 0 landscape-left; enter 6-closed-landscape-shown
+  fold 180 landscape-left; sleep 2; snap fullscreen 7-flat-landscape-shown; frames 7
+  fold 90 landscape-left; sleep 2; snap fullscreen 8-book-shown; frames 8
   fold 90 portrait; sleep 2; snap fullscreen 9-tabletop-ends-it ;;
 fsxctest) # bug-071: XCUITest taps (sim-use taps did not reach the bands after the turn): enter, band tap, Exit, in Closed
   fold 0 portrait
