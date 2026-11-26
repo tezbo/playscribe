@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Quinn's five cloud runs on a booted, app-installed iPhone Duo (hosted runner or Mac). Needs sim-use.
-#   ios/tools/qa/duo-ci-scenarios.sh UDID OUTDIR [scenario ...]    (default: all)   scenarios: continuity trailer closedax5 schemes video axchips deckwide plusend switchax switchtt
+#   ios/tools/qa/duo-ci-scenarios.sh UDID OUTDIR [scenario ...]    (default: all)   scenarios: continuity trailer closedax5 schemes video axchips deckwide plusend switchax switchtt heroswipe herolong lane
 # Every step saves <sha>-<scenario>-<step>-<display>-shot.png and -ui.txt (outline with frames, ids and the pose line).
 set -uo pipefail
 UDID=$1; OUT=$2; shift 2; SCEN=${*:-continuity trailer closedax5 schemes video}
@@ -101,6 +101,17 @@ tt) # Tabletop/Open shots with an assertion: TT_ROUTE, TT_STEPS ("angle:orientat
     snap tt "a$a-$o-$([ "${TT_AX5:-no}" = yes ] && echo ax5 || echo std)-first"
     if [ "$o" = portrait ]; then scroll_end 300,900 300,520 "a$a-$o"; else scroll_end 300,560 300,200 "a$a-$o"; fi; snap tt "a$a-$o-$([ "${TT_AX5:-no}" = yes ] && echo ax5 || echo std)-end"
   done ;;
+lane) # AX/VoiceOver lane (0.6.0): LANE_ROUTES (space list of -qaRoute values), each at AX5 in Closed portrait, Closed landscape and Tabletop;
+  # first screen then scrolled to the end, so a baseline on main and the PR share one matrix. LANE_AX (AX5|std) picks the text size.
+  size=$AX5; [ "${LANE_AX:-AX5}" = std ] && size=UICTContentSizeCategoryL
+  for r in ${LANE_ROUTES:-library/playing}; do n=$(echo "$r" | tr '/' '_')
+    launch -qaRoute "$r" -qaOrientation portrait -UIPreferredContentSizeCategoryName $size; snap lane "$n-1-closed-portrait"
+    [ "${LANE_SCROLL:-no}" = yes ] && { scroll_end 233,560 233,120 portrait; snap lane "$n-1b-closed-portrait-end"; }
+    launch -qaRoute "$r" -qaOrientation landscape -UIPreferredContentSizeCategoryName $size; snap lane "$n-2-closed-landscape"
+    [ "${LANE_SCROLL:-no}" = yes ] && { scroll_end 339,380 339,60 landscape; snap lane "$n-2b-closed-landscape-end"; }
+    launch -qaRoute "$r" -qaOrientation portrait -UIPreferredContentSizeCategoryName $size; fold 90 portrait; snap lane "$n-3-tabletop"
+    [ "${LANE_SCROLL:-no}" = yes ] && { scroll_end 300,900 300,520 tabletop; snap lane "$n-3b-tabletop-end"; }
+  done ;;
 axchips) # bug-closed-landscape-ax5-no-games + r060-filter-pills-grid-ax5: overlay off, first screen then scrolled (chips in view)
   for ax in AX3:UICTContentSizeCategoryAccessibilityL AX5:$AX5; do n=${ax%%:*}; c=${ax#*:}
     launch -qaRoute library/playing -qaOrientation landscape -UIPreferredContentSizeCategoryName $c
@@ -123,6 +134,20 @@ deckwide) # bug-deck-card-closed-landscape-ax5-dots-order: the deck card in Clos
       [ $((k % 2)) = 0 ] && snap deckwide 2-closed-landscape-$n-swipe$k; done
   done
   launch -qaRoute library/playing -UIPreferredContentSizeCategoryName $AX5; snap deckwide 3-closed-portrait-AX5 ;;
+herolong) # r054-closed-ax5-hero-headline-4-lines: the longest Dawnwalker headline leads the deck, at rest, in Closed portrait, Closed landscape and Tabletop at AX5 (then Closed portrait std)
+  for ax in AX5:$AX5 std:UICTContentSizeCategoryL; do n=${ax%%:*}; c=${ax#*:}
+    launch -qaRoute long-hero/dawnwalker -qaOrientation portrait -UIPreferredContentSizeCategoryName $c; snap herolong 1-closed-portrait-$n
+    [ "$n" = AX5 ] || continue
+    launch -qaRoute long-hero/dawnwalker -qaOrientation landscape -UIPreferredContentSizeCategoryName $c; snap herolong 2-closed-landscape-$n
+    for k in 1 2 3 4; do sim-use swipe --from 339,380 --to 339,150 --duration 0.5 --device "$UDID" >/dev/null 2>&1; sleep 2; snap herolong 2$k-closed-landscape-$n-scrolled$k; done
+    launch -qaRoute long-hero/dawnwalker -qaOrientation portrait -UIPreferredContentSizeCategoryName $c; fold 90 portrait; snap herolong 3-tabletop-$n
+  done ;;
+heroswipe) # r054-closed-ax5-hero-headline-4-lines: every hero card in Closed portrait, AX5 then std (J-5d); horizontal swipes on the deck
+  for ax in AX5:$AX5 std:UICTContentSizeCategoryL; do n=${ax%%:*}; c=${ax#*:}
+    launch -qaRoute ${HERO_ROUTE:-many-updates} -qaOrientation portrait -UIPreferredContentSizeCategoryName $c
+    snap heroswipe 0-closed-portrait-$n
+    for k in 1 2 3 4 5; do sim-use swipe --from 340,280 --to 40,280 --duration 0.5 --device "$UDID" >/dev/null 2>&1; sleep 2; snap heroswipe $k-closed-portrait-$n; done
+  done ;;
 switchax) # bug-playing-upcoming-switch-ax5-small: switch + filter chips, each state, light and dark; Closed landscape AX5; Tabletop AX5
   for ap in light dark; do for t in playing upcoming; do
     launch -qaRoute library/$t -qaAppearance $ap -UIPreferredContentSizeCategoryName UICTContentSizeCategoryL; snap switchax 1-closed-portrait-std-$ap-$t
