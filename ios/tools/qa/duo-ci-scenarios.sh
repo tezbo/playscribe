@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Quinn's five cloud runs on a booted, app-installed iPhone Duo (hosted runner or Mac). Needs sim-use.
-#   ios/tools/qa/duo-ci-scenarios.sh UDID OUTDIR [scenario ...]    (default: all)   scenarios: continuity trailer closedax5 schemes video axchips deckwide plusend heroswipe lane
+#   ios/tools/qa/duo-ci-scenarios.sh UDID OUTDIR [scenario ...]    (default: all)   scenarios: continuity trailer closedax5 schemes video axchips deckwide plusend heroswipe herolong lane
 # Every step saves <sha>-<scenario>-<step>-<display>-shot.png and -ui.txt (outline with frames, ids and the pose line).
 set -uo pipefail
 UDID=$1; OUT=$2; shift 2; SCEN=${*:-continuity trailer closedax5 schemes video}
@@ -134,6 +134,13 @@ deckwide) # bug-deck-card-closed-landscape-ax5-dots-order: the deck card in Clos
       [ $((k % 2)) = 0 ] && snap deckwide 2-closed-landscape-$n-swipe$k; done
   done
   launch -qaRoute library/playing -UIPreferredContentSizeCategoryName $AX5; snap deckwide 3-closed-portrait-AX5 ;;
+herolong) # r054-closed-ax5-hero-headline-4-lines: the longest Dawnwalker headline leads the deck, at rest, in Closed portrait, Closed landscape and Tabletop at AX5 (then Closed portrait std)
+  for ax in AX5:$AX5 std:UICTContentSizeCategoryL; do n=${ax%%:*}; c=${ax#*:}
+    launch -qaRoute long-hero/dawnwalker -qaOrientation portrait -UIPreferredContentSizeCategoryName $c; snap herolong 1-closed-portrait-$n
+    [ "$n" = AX5 ] || continue
+    launch -qaRoute long-hero/dawnwalker -qaOrientation landscape -UIPreferredContentSizeCategoryName $c; snap herolong 2-closed-landscape-$n
+    launch -qaRoute long-hero/dawnwalker -qaOrientation portrait -UIPreferredContentSizeCategoryName $c; fold 90 portrait; snap herolong 3-tabletop-$n
+  done ;;
 heroswipe) # r054-closed-ax5-hero-headline-4-lines: every hero card in Closed portrait, AX5 then std (J-5d); horizontal swipes on the deck
   for ax in AX5:$AX5 std:UICTContentSizeCategoryL; do n=${ax%%:*}; c=${ax#*:}
     launch -qaRoute ${HERO_ROUTE:-many-updates} -qaOrientation portrait -UIPreferredContentSizeCategoryName $c
