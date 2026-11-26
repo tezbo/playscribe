@@ -122,9 +122,9 @@ struct RailMenuList: View {
                         }
                         ForEach(section.items) { item in
                             Button(role: item.destructive ? .destructive : nil) { done(); item.action() } label: {
-                                HStack(spacing: 8) {
-                                    // The last two words stay together ("Deliverance II" does not split across lines); the spoken label stays the plain title.
-                                    Text(RailMenuList.keepTail(item.title)).multilineTextAlignment(.leading).fixedSize(horizontal: false, vertical: true)
+                                HStack(alignment: .firstTextBaseline, spacing: 8) {
+                                    // The last two words stay together ("Deliverance II" does not split across lines), except the destructive row, which wraps on plain whole words ("Remove from / library", Iris s-06 option 1); the spoken label stays the plain title.
+                                    Text(item.destructive ? item.title : RailMenuList.keepTail(item.title)).multilineTextAlignment(.leading).fixedSize(horizontal: false, vertical: true)
                                         .accessibilityLabel(item.spoken ?? item.title)
                                     Spacer(minLength: 8)
                                     if item.checked { Image(systemName: "checkmark").accessibilityHidden(true) }
