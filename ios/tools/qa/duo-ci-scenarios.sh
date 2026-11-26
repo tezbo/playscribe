@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # Quinn's five cloud runs on a booted, app-installed iPhone Duo (hosted runner or Mac). Needs sim-use.
-#   ios/tools/qa/duo-ci-scenarios.sh UDID OUTDIR [scenario ...]    (default: all)   scenarios: continuity trailer closedax5 schemes video axchips deckwide plusend switchax switchtt rails heroswipe herolong removemenu lane
+#   ios/tools/qa/duo-ci-scenarios.sh UDID OUTDIR [scenario ...]    (default: all)   scenarios: continuity trailer closedax5 schemes video axchips deckwide plusend switchax switchtt rails heroswipe herolong removemenu lane fullscreen blocked fsxctest
 # Every step saves <sha>-<scenario>-<step>-<display>-shot.png and -ui.txt (outline with frames, ids and the pose line).
 set -uo pipefail
-UDID=$1; OUT=$2; shift 2; SCEN=${*:-continuity trailer closedax5 schemes video}
+UDID=$1; OUT=$2; shift 2; FAILED=""; SCEN=${*:-continuity trailer closedax5 schemes video}
 SHA=$(git rev-parse --short HEAD 2>/dev/null || echo nosha); B=co.codeconnectors.playscribe; mkdir -p "$OUT"
 AX5=UICTContentSizeCategoryAccessibilityXXXL
 # Rotate first, fold second, then check the active display matches the angle (inner for any open angle, outer for 0); redo once if not.
@@ -235,6 +235,42 @@ schemes) # dark and light for the pose set
     snap schemes $ap-1-closed; fold 180 landscape-left; snap schemes $ap-2-flat-landscape
     fold 90 landscape-left; snap schemes $ap-3-book; fold 90 portrait; snap schemes $ap-4-tabletop; fold 180 portrait; snap schemes $ap-5-flat-portrait
   done ;;
+fullscreen) # bug-071: full-screen video Fit with our controls in the bands; the WebView frame in each -ui.txt is the picture.
+  # Our controls hide 3 s after the last touch while playing, so each pose is shot within 1 s of entering, then hidden.
+  frames() { echo "frames $1: $(sim-use ui --device "$UDID" 2>/dev/null | grep -E 'qaFullScreen|qaBands|qaVideoTime|qaVideoState|WebView|Show player controls|mirrorAudit|videoExitFullScreen|videoPlayPause|videoScrubber|videoBack10|videoForward10' | cut -c1-140 | tr '\n' ';')"; }
+  tapl() { echo "tap $1: $(sim-use tap --label "$1" --device "$UDID" 2>&1 | head -1)"; sleep "${2:-4}"; }
+  enter() { tapl "Full screen" 1; snap fullscreen "$1-entered"; frames "$1"; }
+  launch -qaRoute trailer/dQw4w9WgXcQ/dawnwalker -qaOverlay YES -qaVideoTime YES
+  tapl Play 8; snap fullscreen 1-closed-portrait-inline; frames 1
+  enter 2-closed-portrait
+  sleep 3; frames 2b-still-playing
+  sleep 5; snap fullscreen 3-controls-hidden; frames 3
+  # Which coordinate space sim-use taps in after the turn is not known, so the band is tapped in both readings.
+  echo "band tap: $(sim-use tap -x 339 -y 12 --device "$UDID" 2>&1 | head -1)"; sleep 0.5; frames 4a
+  echo "band tap (portrait reading): $(sim-use tap -x 12 -y 339 --device "$UDID" 2>&1 | head -1)"; sleep 0.5; frames 4b
+  snap fullscreen 4-band-tap-shows
+  tapl "Exit full screen" 4; snap fullscreen 5-exited
+  # The same poses again with the controls held up (-qaBandsStay, internal), so the stills show them (Iris).
+  launch -qaRoute trailer/dQw4w9WgXcQ/dawnwalker -qaOverlay YES -qaVideoTime YES -qaBandsStay YES
+  tapl Play 8; fold 0 landscape-left; enter 6-closed-landscape-shown; tapl "Exit full screen" 3
+  fold 180 landscape-left; enter 7-flat-landscape-shown
+  fold 90 landscape-left; sleep 2; snap fullscreen 8-book-shown; frames 8
+  fold 90 portrait; sleep 2; snap fullscreen 9-tabletop-ends-it
+  # Every full-screen tree (those with our qaFullScreen probe) must keep YouTube's buttons from VoiceOver; fails the job.
+  "$(dirname "$0")/check-no-youtube-buttons.sh" $(grep -l qaFullScreen "$OUT/$SHA"-fullscreen-*-ui.txt) || FAILED="$FAILED fullscreen-youtube-buttons" ;;
+blocked) # R-12: a video YouTube refuses (IFrame error 150) shows Open in YouTube in every pose, never a full-screen button
+  # A turn left over from an earlier scenario can keep the Closed scene in landscape (c46af75): rotate away and back first.
+  fold 0 landscape-left; sleep 2; fold 0 portrait; sleep 2
+  launch -qaRoute video-blocked/dawnwalker/dawnwalker@1.1 -qaOverlay YES; sleep 6; snap blocked 1-closed-portrait
+  fold 0 landscape-left; sleep 3; snap blocked 2-closed-landscape
+  fold 180 landscape-left; sleep 3; snap blocked 3-flat-landscape
+  fold 90 landscape-left; sleep 3; snap blocked 4-book
+  fold 90 portrait; sleep 3; snap blocked 5-tabletop ;;
+fsxctest) # bug-071: XCUITest taps (sim-use taps did not reach the bands after the turn): enter, band tap, Exit, in Closed
+  fold 0 portrait
+  xcodebuild test -project ios/Playscribe.xcodeproj -scheme PlayscribeUI -destination "id=$UDID" -derivedDataPath build/dd-ui \
+    -only-testing:PlayscribeUITests/FullScreenVideoTests -resultBundlePath "$OUT/fsxctest.xcresult" CODE_SIGNING_ALLOWED=NO > "$OUT/fsxctest.log" 2>&1
+  echo "fsxctest exit $?"; grep -E 'qaFullScreen|qaBands|videoExitFullScreen frame|error:|Test Case|\*\* TEST' "$OUT/fsxctest.log" | cut -c1-400 ;;
 newest) # bug-072: Dawnwalker left on Gallery, relaunch, open it from its Library tile: What's new, Closed portrait and Open portrait
   tapTile() { local f; f=$(sim-use ui --device "$UDID" 2>/dev/null | grep 'The Blood of Dawnwalker, last' | head -1 | grep -o '([0-9.,]* [0-9.x]*)' | tr -d '()'); local x y w h; x=${f%%,*}; y=${f#*,}; y=${y%% *}; w=${f#* }; w=${w%x*}; h=${f##*x}
     sim-use tap -x $((${x%.*} + ${w%.*} / 2)) -y $((${y%.*} + ${h%.*} / 2)) --device "$UDID" >/dev/null 2>&1; sleep 3; }
@@ -251,3 +287,4 @@ video) # row 9: hinge sweep recording with frame timing
   if command -v ffprobe >/dev/null; then ffprobe -v error -select_streams v -show_entries frame=pts_time -of csv=p=0 "$OUT/$SHA-video-sweep.mp4" \
     | python3 -c 'import sys;t=[float(x) for x in sys.stdin if x.strip()];g=[(b-a)*1000 for a,b in zip(t,t[1:])];print("frames",len(t),"(frames are emitted only when the screen changes: gaps are NOT hitches; row 9 needs the app frame log) max gap ms",round(max(g),1) if g else 0,"gaps>100ms",sum(x>100 for x in g))' | tee "$OUT/$SHA-video-frame-gaps.txt"; fi ;;
 esac; done
+[ -z "${FAILED:-}" ] || { echo "FAILED:$FAILED"; exit 1; }

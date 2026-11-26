@@ -57,6 +57,10 @@ final class YouTubeController: NSObject, WKScriptMessageHandler {
         webView.isOpaque = false
         webView.backgroundColor = .black
         webView.scrollView.isScrollEnabled = false
+        // The player fills the frame we give it. By default the web view's scroll view insets its content by any safe area
+        // the frame overlaps, which shrank the full-screen picture (cloud run 45743580991: Closed landscape drew about
+        // 443 x 332 inside a 672 x 378 frame, offset by the 84 pt leading inset; Open flat stopped 84 pt short of the edge).
+        webView.scrollView.contentInsetAdjustmentBehavior = .never
         super.init()
         content.add(self, name: "player")
         playRequested = autoplay
@@ -131,7 +135,10 @@ final class YouTubeController: NSObject, WKScriptMessageHandler {
         ready = false   // the player is rebuilt; its onReady sets this again
         // Paused, the rebuilt player would show YouTube's thumbnail: our art returns until it buffers or plays (Iris on #552).
         if !isPlaying { playerShown = false }
-        run("setControls(\(on ? 1 : 0))")
+        // bug-071 (cloud run 45716362816 at b6104b0): asking the live player for its time during the full-screen switch, while
+        // the scene turned, rebuilt it at 3:33 of 3:34 with a black picture. The time and play state we already hold (updated
+        // every 0.5 s) are passed in instead.
+        run("setControls(\(on ? 1 : 0),\(current.isFinite ? current : 0),\(isPlaying || playRequested ? "true" : "false"))")
     }
     private func run(_ js: String) { webView.evaluateJavaScript(js) }
 
@@ -168,11 +175,12 @@ final class YouTubeController: NSObject, WKScriptMessageHandler {
                     onStateChange:function(e){post({event:'state',state:e.data})},
                     onError:function(e){post({event:'error',code:e.data})}}});
         }
-        function setControls(c){
+        function setControls(c,t,play){
           if(c===controls){return}
           controls=c;
           if(!player||!player.getCurrentTime){return}
-          var t=player.getCurrentTime(), play=player.getPlayerState()===1;
+          if(typeof t!=='number'){t=player.getCurrentTime()}
+          if(typeof play!=='boolean'){play=player.getPlayerState()===1}
           player.destroy();
           var d=document.createElement('div');d.id='p';document.body.appendChild(d);
           build(t,play);
@@ -218,7 +226,9 @@ struct PlayerView: View {
                             // (Quinn, Mac at c072400: Open portrait showed Close twice).
                             VideoUnavailable(videoID: video.youtubeID, title: video.label, code: controller.errorCode, showsClose: duo.pose == .tabletop) { close() }
                         } else if fullScreen && FullBleedVideo.offered(in: duo.pose) {
-                            FullBleedVideo(controller: controller, posterAsset: video.posterAsset, game: model.game(gameID)) { fullScreen = false }
+                            FullBleedVideo(controller: controller, posterAsset: video.posterAsset, game: model.game(gameID),
+                                           title: [video.label, model.game(gameID)?.name ?? ""].filter { !$0.isEmpty }.joined(separator: ", "),
+                                           division: duo.division, occlusions: duo.occlusions) { fullScreen = false }
                         } else {
                             layout(duo: duo, release: release, video: video, controller: controller)
                         }
@@ -230,8 +240,11 @@ struct PlayerView: View {
                 }
                 .background(.black)
                 .overlay(alignment: .bottomLeading) { VideoTimeProbe(controller: controller) }
-                .onChange(of: [duo.pose == .tabletop, controller != nil], initial: true) { controller?.setNativeControls(duo.pose != .tabletop) }
-                // Book and Tabletop have no full screen: leaving Closed or Open ends it, and it doesn't come back on its own.
+                .onChange(of: [duo.pose == .tabletop, controller != nil, fullScreen], initial: true) {
+                    // bug-071: in full screen our band controls drive the player, so YouTube's are off (controls=0).
+                    controller?.setNativeControls(duo.pose != .tabletop && !fullScreen)
+                }
+                // Tabletop has no full screen: folding into it ends it, and it doesn't come back on its own.
                 .onChange(of: FullBleedVideo.offered(in: duo.pose)) { _, offered in if !offered { fullScreen = false } }
                 .toolbarVisibility(duo.pose == .tabletop || fullScreen ? .hidden : .automatic, for: .navigationBar)
                 .toolbar {
@@ -304,110 +317,146 @@ struct PlayerView: View {
     }
 }
 
-/// R-13 (Terry on build 16, 21 Nov: "no full screen option when playing videos"): our own full-screen mode. The same web view
-/// moves into a black, full-window frame (playback carries on, P-2), the navigation bar and home indicator hide, and the video
-/// is 16:9 as large as the window allows, centred. YouTube's own controls stay; ours is one Exit full screen button, never on
-/// YouTube's top controls (Iris): in the black margin above the video when there are 52 pt, else top leading inside the safe area,
-/// fading after 4 s and back on any tap (always shown under VoiceOver). The VoiceOver escape gesture also leaves. Offered in Closed (both orientations) and
-/// Open (flat): in Book a full-bleed video would run across the hinge with YouTube's controls on it, and Tabletop's standing half
-/// is already the video's stage. No mirror here: the reflection stays Tabletop only.
+/// R-13 (Terry on build 16, 21 Nov: "no full screen option when playing videos"), bug-071 (Terry on beta 5: "aren't truly full
+/// screen"): our own full-screen mode. The same web view moves into a black frame the size of the whole screen, safe area
+/// ignored (playback carries on, P-2); the navigation bar, status bar and home indicator hide. The picture is 16:9 Fit, as large
+/// as the screen allows, centred: Iris's spec on the bug-071 card. YouTube's Required Minimum Functionality says "You must not
+/// display overlays, frames, or other visual elements in front of any part of a YouTube embedded player", so nothing of ours
+/// is ever drawn over the picture (Nadia's policy_decision on the card): Fill (cropping) is dropped, and every control sits in
+/// the black letterbox bands, which are kept at least `minBand` tall so a 44 pt target fits (Closed landscape's natural band is
+/// 42 pt, so there the picture is 3 pt shorter than the screen allows). Offered in Closed and Open (both orientations: from
+/// portrait it asks the scene for landscape, as YouTube and Netflix do, and Exit turns back) and in Book, where the picture runs
+/// across the fold and a guard band over the division takes the taps there (CLAUDE.md: nothing tappable intersects a
+/// division). Tabletop keeps its own player. The VoiceOver escape gesture also leaves. No mirror here: Tabletop only.
 struct FullBleedVideo: View {
     var controller: YouTubeController
     var posterAsset: String?
     var game: CatalogGame?
+    /// The top band's title, e.g. "Update 1.2 trailer, The Blood of Dawnwalker".
+    var title: String = ""
+    /// Book: the active fold, in DuoReader's (safe-area) coordinates.
+    var division: CGRect? = nil
+    /// Active occlusions (camera housing), in DuoReader's coordinates. The picture never runs under one.
+    var occlusions: [CGRect] = []
     var onExit: () -> Void
 
-    static func offered(in pose: Pose) -> Bool { pose == .closed || pose == .flat }
+    static func offered(in pose: Pose) -> Bool { pose != .tabletop }
 
-    /// The 16:9 frame that fits `size`, centred, leaving `reserve` above it (and the same below, so it stays centred). The
-    /// reserve is the safe area's top plus room for Exit, so the way out always shows in the black margin, never on YouTube's
-    /// controls and never faded (Iris on dbf1bc12: Closed landscape had no visible Exit; "a full-screen mode with no visible
-    /// way out is a trap").
-    static func frame(in size: CGSize, reserve: CGFloat = 0) -> CGRect {
+    /// The least height of a letterbox band, so a 44 pt control fits in it (policy_decision 3).
+    static let minBand: CGFloat = 44
+
+    /// Fit: the 16:9 frame as large as `size` (the whole screen) allows, with at least `band` above and below it, and clear of
+    /// every rect in `avoiding` (screen coordinates). An occlusion over the picture pushes back only the side it sits on (spec 1,
+    /// "that side only"): either the nearest top or bottom edge, or the nearest leading or trailing edge, whichever leaves the
+    /// larger picture. The picture is centred in what remains. The safe area is not taken off: the status bar and home indicator
+    /// are hidden, and the camera housing is an occlusion, measured. Cloud run 45730726202: widening both bands for Closed
+    /// landscape's 84 x 82 corner housing left 536 x 302; pushing only the top edge leaves 604 x 340.
+    static func fit(in size: CGSize, band: CGFloat = minBand, avoiding occlusions: [CGRect] = []) -> CGRect {
         guard size.width > 0, size.height > 0 else { return .zero }
-        let w = min(size.width, max(0, size.height - 2 * reserve) * 16 / 9)
-        let h = w * 9 / 16
-        return CGRect(x: (size.width - w) / 2, y: (size.height - h) / 2, width: w, height: h)
+        struct Insets { var top, bottom, left, right: CGFloat }
+        func frame(_ i: Insets) -> CGRect {
+            let rw = max(0, size.width - i.left - i.right), rh = max(0, size.height - i.top - i.bottom)
+            let w = min(rw, rh * 16 / 9), h = w * 9 / 16
+            return CGRect(x: i.left + (rw - w) / 2, y: i.top + (rh - h) / 2, width: w, height: h)
+        }
+        var insets = Insets(top: band, bottom: band, left: 0, right: 0)
+        for _ in 0..<(occlusions.count * 2) {
+            let f = frame(insets)
+            guard let o = occlusions.first(where: { f.intersects($0) }) else { break }
+            var vertical = insets, horizontal = insets
+            if o.midY < size.height / 2 { vertical.top = max(vertical.top, o.maxY) }
+            else { vertical.bottom = max(vertical.bottom, size.height - o.minY) }
+            if o.midX < size.width / 2 { horizontal.left = max(horizontal.left, o.maxX) }
+            else { horizontal.right = max(horizontal.right, size.width - o.minX) }
+            insets = frame(vertical).width >= frame(horizontal).width ? vertical : horizontal
+        }
+        return frame(insets)
     }
 
-    @Environment(\.accessibilityVoiceOverEnabled) private var voiceOver
-    /// Where the video fills the height, the Exit button fades after 4 s and any tap brings it back (Iris on R-13).
-    @State private var exitShown = true
-    @State private var fadeTask: Task<Void, Never>?
-    @State private var tapRelay = TapRelay()
-
-    /// Room the Exit button needs above the video to sit in the black margin, off YouTube's own top controls (Iris: 52 pt).
-    static let marginForExit: CGFloat = 52
-
-    /// True when the black margin above the video, inside the safe area, can hold the Exit button.
-    static func exitInMargin(video: CGRect, safeTop: CGFloat) -> Bool { video.minY - safeTop >= marginForExit }
+    /// True when the scene was turned to landscape on entry, so Exit turns it back.
+    @State private var turned = false
 
     var body: some View {
         GeometryReader { geo in
-            let full = CGSize(width: geo.size.width + geo.safeAreaInsets.leading + geo.safeAreaInsets.trailing,
-                              height: geo.size.height + geo.safeAreaInsets.top + geo.safeAreaInsets.bottom)
-            let f = Self.frame(in: full, reserve: geo.safeAreaInsets.top + Self.marginForExit)
-            let inMargin = Self.exitInMargin(video: f, safeTop: geo.safeAreaInsets.top)
+            let safe = geo.safeAreaInsets
+            let full = CGSize(width: geo.size.width + safe.leading + safe.trailing, height: geo.size.height + safe.top + safe.bottom)
+            let toScreen = { (r: CGRect) in r.offsetBy(dx: safe.leading, dy: safe.top) }
+            // The picture is never smaller than before bug-071 (644 x 362 in Closed landscape): it takes the spec's 672 x 378 and
+            // lets the camera sit over its corner, as hardware rather than anything of ours (Iris). Clearing the measured housing would
+            // leave 604 x 340. Our band controls keep clear of the housing (FullScreenBands.layout).
+            let f = Self.fit(in: full)
             ZStack(alignment: .topLeading) {
                 Color.black
                 Color.black
-                    .overlay { WebSurface(webView: controller.webView) }
+                    // YouTube's own iframe buttons (rewind, channel, thumbnails) are off and cannot be tapped here, so VoiceOver
+                    // gets one element for the picture instead (Iris, #655). Our band controls carry every action.
+                    .overlay { WebSurface(webView: controller.webView).accessibilityHidden(true) }
+                    // The picture as one VoiceOver element; it takes no touches (taps on the picture stay YouTube's).
+                    .overlay {
+                        Color.clear
+                            .accessibilityElement()
+                            .accessibilityLabel(title.isEmpty ? "Video" : "Video, \(title)")
+                            .accessibilityAddTraits(.isImage)
+                            .accessibilityIdentifier("videoFullScreenPicture")
+                    }
+                    // Before playback only: our poster stands in for YouTube's start screen until Play.
                     .overlay { VideoStartCover(controller: controller, posterAsset: posterAsset, game: game) }
                     .frame(width: f.width, height: f.height)
                     .offset(x: f.minX, y: f.minY)
-                // While Exit is faded, the first tap only brings it back and never reaches YouTube, so leaving full screen
-                // doesn't pause the video first (Mac at 015cae17). Once Exit shows, taps go to YouTube's player again.
-                if !(inMargin || voiceOver || exitShown) {
+                if let division {
+                    // Not visual: clear, so the picture shows across the fold, but it takes every tap there so nothing on the
+                    // division is tappable (Nadia's take on the card).
+                    let d = toScreen(division)
                     Color.clear
                         .contentShape(Rectangle())
-                        .onTapGesture { showExit() }
+                        .onTapGesture {}
+                        .frame(width: d.width, height: d.height)
+                        .offset(x: d.minX, y: d.minY)
                         .accessibilityHidden(true)
                 }
-                exitButton
-                    .opacity(inMargin || voiceOver || exitShown ? 1 : 0)
-                    .allowsHitTesting(inMargin || voiceOver || exitShown)
-                    .animation(.easeInOut(duration: 0.25), value: exitShown)
-                    .padding(.top, geo.safeAreaInsets.top + 4)
-                    .padding(.leading, geo.safeAreaInsets.leading + 12)
-                    .padding(.trailing, geo.safeAreaInsets.trailing + 12)
-                    .frame(width: full.width, alignment: inMargin ? .topTrailing : .topLeading)
+                FullScreenBands(controller: controller, title: title, picture: f, screen: full, safe: safe,
+                                division: division.map(toScreen), housings: occlusions.map(toScreen), onExit: leave)
+                #if INTERNAL
+                // QA: what the frame math saw, for the cloud fullscreen scenario (the picture measured 522 x 294 in Closed
+                // landscape at dd0f09d where 672 x 378 was expected).
+                Color.clear.frame(width: 1, height: 1)
+                    .accessibilityElement()
+                    .accessibilityIdentifier("qaFullScreen")
+                    .accessibilityValue("occ=\(occlusions.map(toScreen).map { "\(Int($0.minX)),\(Int($0.minY)),\(Int($0.width))x\(Int($0.height))" }.joined(separator: ";")) pic=\(Int(f.minX)),\(Int(f.minY)),\(Int(f.width))x\(Int(f.height)) safe=\(Int(safe.top)),\(Int(safe.leading)),\(Int(safe.bottom)),\(Int(safe.trailing)) full=\(Int(full.width))x\(Int(full.height))")
+                    .offset(x: 2, y: 2)
+                #endif
             }
             .frame(width: full.width, height: full.height)
-            .offset(x: -geo.safeAreaInsets.leading, y: -geo.safeAreaInsets.top)
-            .onChange(of: inMargin, initial: true) { _, m in m ? cancelFade() : showExit() }
+            .offset(x: -safe.leading, y: -safe.top)
         }
-        .accessibilityAction(.escape, onExit)
+        .accessibilityAction(.escape, leave)
         .persistentSystemOverlays(.hidden)
+        .statusBarHidden()
         .overlay(alignment: .topLeading) { MirrorAudit(on: false) }
-        .onAppear { tapRelay.attach(to: controller.webView) { showExit() } }
-        .onDisappear { tapRelay.detach(); cancelFade() }
-    }
-
-    private var exitButton: some View {
-        Button(action: onExit) {
-            Image(systemName: "arrow.down.right.and.arrow.up.left")
-                .font(.system(size: 22, weight: .semibold))
-                .foregroundStyle(.white)
-                .frame(width: 44, height: 44)
-                .background(.black.opacity(0.6), in: Circle())
-        }
-        .accessibilityLabel("Exit full screen")
-        .accessibilityIdentifier("videoExitFullScreen")
-        .tappableFrame()
-    }
-
-    private func showExit() {
-        exitShown = true
-        fadeTask?.cancel()
-        fadeTask = Task { @MainActor in
-            try? await Task.sleep(for: .seconds(4))
-            if !Task.isCancelled { exitShown = false }
+        .onDisappear(perform: turnBack)
+        .onAppear {
+            if division == nil, VideoOrientation.isPortrait {
+                turned = true
+                // Turn only once the player has rebuilt with our controls (at most 3 s), so the rebuild and WebKit's response to
+                // the turn never overlap (cloud run 45716362816).
+                Task { @MainActor in
+                    for _ in 0..<30 where !controller.ready { try? await Task.sleep(for: .milliseconds(100)) }
+                    VideoOrientation.request(.landscape)
+                }
+            }
         }
     }
 
-    private func cancelFade() {
-        fadeTask?.cancel()
-        exitShown = true
+    private func leave() {
+        turnBack()
+        onExit()
+    }
+
+    /// Full screen can also end without Exit (folding to Tabletop, closing the video): the scene still goes back to portrait.
+    private func turnBack() {
+        guard turned else { return }
+        turned = false
+        VideoOrientation.request(.portrait)
     }
 
     /// The navigation bar button that enters full screen.
@@ -883,5 +932,260 @@ struct VideoUnavailable: View {
             }
             if showsClose { Button("Close", action: onClose).hitTarget() }
         }
+    }
+}
+
+/// bug-071: full screen from portrait asks the scene for landscape, as YouTube and Netflix do, and Exit turns it back. A request
+/// only: the scene's supported orientations still decide, so a later turn of the phone follows the device as before.
+@MainActor
+enum VideoOrientation {
+    private static var scene: UIWindowScene? {
+        UIApplication.shared.connectedScenes.compactMap { $0 as? UIWindowScene }.first { $0.activationState == .foregroundActive }
+    }
+
+    static var isPortrait: Bool { scene?.effectiveGeometry.interfaceOrientation.isPortrait ?? false }
+
+    static func request(_ mask: UIInterfaceOrientationMask) {
+        guard let scene else { return }
+        scene.requestGeometryUpdate(.iOS(interfaceOrientations: mask)) { error in NSLog("videoOrientation: \(error)") }
+    }
+}
+
+/// bug-071, Iris's specBands: our controls in full screen. They live only in the black letterbox bands, never in front of the
+/// player (YouTube RMF), as plain white glyphs with no glass. Top band: Exit full screen and the title. Bottom band: back 10,
+/// play/pause, forward 10, elapsed, the scrubber and remaining. In Book the transport is on the leading page and the scrubber on
+/// the trailing one, nothing within 8 pt of the division. They fade together (opacity, 0.25 s) 3 s after the last touch while
+/// playing, and show again on a tap in a band; a tap on the picture is YouTube's (policy_touches on the card), so it never
+/// shows ours. While hidden, the first band tap only shows them. VoiceOver and Switch Control keep them shown.
+struct FullScreenBands: View {
+    @Bindable var controller: YouTubeController
+    var title: String
+    /// The picture, the screen and the safe insets, in screen coordinates.
+    var picture: CGRect
+    var screen: CGSize
+    var safe: EdgeInsets
+    /// Book: the division in screen coordinates.
+    var division: CGRect?
+    /// Camera housings in screen coordinates: the control rows keep clear of them.
+    var housings: [CGRect] = []
+    var onExit: () -> Void
+
+    @Environment(\.accessibilityVoiceOverEnabled) private var voiceOver
+    @Environment(\.accessibilitySwitchControlEnabled) private var switchControl
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @State private var shown = true
+    @State private var scrubbing = false
+    @State private var hideTask: Task<Void, Never>?
+    /// QA: band taps seen, for the cloud fullscreen scenario.
+    @State private var wakes = 0
+    static let hideAfter: Duration = .seconds(3)
+    /// Nothing within this of the division (Iris).
+    static let foldClearance: CGFloat = 8
+
+    /// The rows the controls sit in, in screen coordinates. Without a division: one top row and one bottom row across the safe
+    /// width. With one: the top row and the transport end before the division, and the timeline starts after it.
+    struct Layout: Equatable {
+        var top: CGRect
+        var transport: CGRect
+        var timeline: CGRect?
+    }
+
+    /// Clearance between a control row and a camera housing (Iris, bug-071: Exit starts at x 92 or more past an 84 pt housing).
+    static let housingClearance: CGFloat = 8
+
+    static func layout(picture: CGRect, screen: CGSize, safe: EdgeInsets, division: CGRect?, avoiding housings: [CGRect] = []) -> Layout {
+        let left = safe.leading + 12, right = screen.width - safe.trailing - 12
+        // Vertically centred in a band; in a deep band (portrait under rotation lock) at the edge nearest the picture (Iris).
+        let topBand = picture.minY, bottomBand = screen.height - picture.maxY
+        let topY = topBand > 2 * 44 + 16 ? picture.minY - 44 - 8 : (topBand - 44) / 2
+        let bottomY = bottomBand > 2 * 44 + 16 ? picture.maxY + 8 : picture.maxY + (bottomBand - 44) / 2
+        // A row whose band a housing reaches into starts, or ends, clear of it on that side (spec: no control or text in it).
+        func row(_ x0: CGFloat, _ x1: CGFloat, y: CGFloat) -> CGRect {
+            var a = x0, b = x1
+            for h in housings where h.minY < y + 44 && h.maxY > y && h.minX < b && h.maxX > a {
+                if h.midX < screen.width / 2 { a = max(a, h.maxX + housingClearance) } else { b = min(b, h.minX - housingClearance) }
+            }
+            return CGRect(x: a, y: y, width: max(0, b - a), height: 44)
+        }
+        if let d = division {
+            let leadEnd = d.minX - foldClearance, trailStart = d.maxX + foldClearance
+            return Layout(top: row(left, leadEnd, y: topY), transport: row(left, leadEnd, y: bottomY),
+                          timeline: row(trailStart, right, y: bottomY))
+        }
+        return Layout(top: row(left, right, y: topY), transport: row(left, right, y: bottomY), timeline: nil)
+    }
+
+    private var hides: Bool { controller.isPlaying && !scrubbing && !voiceOver && !switchControl && !Self.qaStay }
+
+    /// At the end of the video the bands stay up and Play becomes Replay (Iris, #655), over YouTube's end screen.
+    private var ended: Bool { !controller.isPlaying && controller.duration > 0 && controller.current >= controller.duration - 0.5 }
+
+    /// Internal builds: -qaBandsStay YES keeps the band controls up, so stills can show them (Iris, bug-071).
+    static var qaStay: Bool {
+        #if INTERNAL
+        UserDefaults.standard.bool(forKey: "qaBandsStay")
+        #else
+        false
+        #endif
+    }
+
+    var body: some View {
+        let l = Self.layout(picture: picture, screen: screen, safe: safe, division: division, avoiding: housings)
+        ZStack(alignment: .topLeading) {
+            // The bands themselves take taps (to show the controls), never the picture.
+            bandCatcher(CGRect(x: 0, y: 0, width: screen.width, height: picture.minY))
+            bandCatcher(CGRect(x: 0, y: picture.maxY, width: screen.width, height: screen.height - picture.maxY))
+            Group {
+                HStack(spacing: 12) {
+                    glyph("chevron.down", "Exit full screen", id: "videoExitFullScreen", action: onExit)
+                    Text(title)
+                        .font(PlayscribeFont.caption)
+                        .foregroundStyle(.white.opacity(0.7))
+                        .lineLimit(1)
+                        .truncationMode(.tail)
+                        .accessibilityAddTraits(.isHeader)
+                    Spacer(minLength: 0)
+                }
+                .frame(width: l.top.width, height: 44)
+                .offset(x: l.top.minX, y: l.top.minY)
+                HStack(spacing: 4) {
+                    glyph("gobackward.10", "Back 10 seconds", id: "videoBack10") { controller.skip(-10) }
+                    Group {
+                        if ended {
+                            glyph("arrow.counterclockwise", "Replay", id: "videoPlayPause") { controller.seek(to: 0); controller.playPause() }
+                        } else {
+                            glyph(controller.isPlaying ? "pause.fill" : "play.fill", controller.isPlaying ? "Pause" : "Play",
+                                  id: "videoPlayPause", action: controller.playPause)
+                        }
+                    }
+                    .disabled(!controller.ready)
+                    glyph("goforward.10", "Forward 10 seconds", id: "videoForward10") { controller.skip(10) }
+                    if l.timeline == nil { timeline } else { Spacer(minLength: 0) }
+                }
+                .frame(width: l.transport.width, height: 44)
+                .offset(x: l.transport.minX, y: l.transport.minY)
+                if let t = l.timeline {
+                    timeline.frame(width: t.width, height: 44).offset(x: t.minX, y: t.minY)
+                }
+            }
+            .opacity(shown ? 1 : 0)
+            .allowsHitTesting(shown)
+            .accessibilityHidden(!shown)
+        }
+        .frame(width: screen.width, height: screen.height, alignment: .topLeading)
+        .foregroundStyle(.white)
+        .dynamicTypeSize(...DynamicTypeSize.xxxLarge)
+        #if INTERNAL
+        .overlay(alignment: .topLeading) {
+            Color.clear.frame(width: 1, height: 1)
+                .accessibilityElement()
+                .accessibilityIdentifier("qaBands")
+                .accessibilityValue("shown=\(shown ? 1 : 0) wakes=\(wakes)")
+                .offset(x: 4, y: 2)
+        }
+        #endif
+        .onChange(of: hides, initial: true) { _, on in on ? schedule() : show() }
+        .onDisappear { hideTask?.cancel() }
+    }
+
+    private var timeline: some View {
+        HStack(spacing: 8) {
+            Text(PlayerTime.format(controller.current))
+            BandScrubber(controller: controller, scrubbing: $scrubbing)
+            Text("-" + PlayerTime.format(max(0, controller.duration - controller.current)))
+        }
+        .font(PlayscribeFont.footnote.monospacedDigit())
+        .foregroundStyle(.white.opacity(0.85))
+        .lineLimit(1)
+        .fixedSize(horizontal: false, vertical: true)
+    }
+
+    private func bandCatcher(_ r: CGRect) -> some View {
+        Color.clear
+            .contentShape(Rectangle())
+            .onTapGesture { wake() }
+            .frame(width: r.width, height: max(0, r.height))
+            .offset(x: r.minX, y: r.minY)
+            .accessibilityHidden(true)
+    }
+
+    private func glyph(_ symbol: String, _ label: String, id: String, action: @escaping () -> Void) -> some View {
+        Button { action(); wake() } label: {
+            Image(systemName: symbol).font(.system(size: 20, weight: .semibold)).frame(width: 44, height: 44).contentShape(Rectangle())
+        }
+        .accessibilityLabel(label)
+        .accessibilityIdentifier(id)
+        .accessibilityShowsLargeContentViewer { Label(label, systemImage: symbol) }
+        .tappableFrame()
+    }
+
+    private func wake() {
+        wakes += 1
+        show()
+        if hides { schedule() }
+    }
+
+    private func show() {
+        hideTask?.cancel()
+        guard !shown else { return }
+        withAnimation(reduceMotion ? nil : .easeInOut(duration: 0.25)) { shown = true }
+    }
+
+    private func schedule() {
+        hideTask?.cancel()
+        hideTask = Task { @MainActor in
+            try? await Task.sleep(for: Self.hideAfter)
+            guard !Task.isCancelled, hides else { return }
+            withAnimation(reduceMotion ? nil : .easeInOut(duration: 0.25)) { shown = false }
+        }
+    }
+}
+
+/// specBands scrubber: a 4 pt track (white 30%) with white fill and a 12 pt thumb that grows to 20 pt while dragging, in a
+/// 44 pt hit area. VoiceOver: adjustable in 10 s steps, read as time.
+struct BandScrubber: View {
+    @Bindable var controller: YouTubeController
+    @Binding var scrubbing: Bool
+    @State private var dragTime: Double?
+
+    var body: some View {
+        GeometryReader { geo in
+            let d = max(1, controller.duration)
+            let t = dragTime ?? controller.current
+            let x = geo.size.width * CGFloat(min(1, max(0, t / d)))
+            ZStack(alignment: .leading) {
+                Capsule().fill(.white.opacity(0.3)).frame(height: 4)
+                Capsule().fill(.white).frame(width: x, height: 4)
+                Circle().fill(.white)
+                    .frame(width: scrubbing ? 20 : 12, height: scrubbing ? 20 : 12)
+                    .offset(x: x - (scrubbing ? 10 : 6))
+                    .animation(.easeOut(duration: 0.15), value: scrubbing)
+            }
+            .frame(maxHeight: .infinity)
+            .contentShape(Rectangle())
+            .gesture(DragGesture(minimumDistance: 0)
+                .onChanged { g in
+                    scrubbing = true
+                    dragTime = Double(min(1, max(0, g.location.x / max(1, geo.size.width)))) * d
+                }
+                .onEnded { _ in
+                    if let dragTime { controller.seek(to: dragTime) }
+                    dragTime = nil
+                    scrubbing = false
+                })
+        }
+        .frame(height: 44)
+        .accessibilityElement()
+        .accessibilityLabel("Playback position")
+        .accessibilityValue("\(PlayerTime.spoken(controller.current)) of \(PlayerTime.spoken(controller.duration))")
+        .accessibilityAdjustableAction { dir in
+            switch dir {
+            case .increment: controller.skip(10)
+            case .decrement: controller.skip(-10)
+            @unknown default: break
+            }
+        }
+        .accessibilityIdentifier("videoScrubber")
+        .tappableFrame()
     }
 }

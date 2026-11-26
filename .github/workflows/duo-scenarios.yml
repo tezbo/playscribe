@@ -29,8 +29,10 @@ jobs:
         run: |
           if [ -n "$APP_REF" ]; then
             cp ios/tools/qa/duo-ci-scenarios.sh /tmp/duo-ci-scenarios.sh
+            cp ios/tools/qa/check-no-youtube-buttons.sh /tmp/check-no-youtube-buttons.sh
             git fetch --depth=1 origin "refs/heads/$APP_REF" && git checkout -q FETCH_HEAD
             cp /tmp/duo-ci-scenarios.sh ios/tools/qa/duo-ci-scenarios.sh
+            cp /tmp/check-no-youtube-buttons.sh ios/tools/qa/check-no-youtube-buttons.sh
           fi
       - run: sudo xcode-select -s /Applications/Xcode_27.1.app && brew install xcodegen ffmpeg && (cd ios && xcodegen generate)
       - name: Install sim-use
@@ -60,6 +62,7 @@ jobs:
           SCENARIOS: ${{ inputs.scenarios || 'continuity trailer closedax5 schemes video' }}
         run: |
           mkdir -p out
+          set -o pipefail   # a scenario check that fails (exit 1) fails the job, not just tee
           ios/tools/qa/duo-ci-scenarios.sh "$UDID" out $SCENARIOS 2>&1 | tee out/scenarios.log
       - uses: actions/upload-artifact@v4
         if: always()

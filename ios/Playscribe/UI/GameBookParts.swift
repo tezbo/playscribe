@@ -660,7 +660,11 @@ struct TrailerView: View {
                                                video: ReleaseVideo(youtubeID: videoID, label: name, duration: nil, posted: "", posterAsset: nil),
                                                game: game, gameName: game?.name ?? "", release: nil, onClose: close)
                         } else if fullScreen && FullBleedVideo.offered(in: duo.pose) {
-                            FullBleedVideo(controller: controller, posterAsset: nil, game: gameID.flatMap { model.game($0) }) { fullScreen = false }
+                            // The video's own title, then the game (Iris's specBands), never the game twice.
+                            let gameName = gameID.flatMap { model.game($0)?.name } ?? ""
+                            FullBleedVideo(controller: controller, posterAsset: nil, game: gameID.flatMap { model.game($0) },
+                                           title: name == gameName || gameName.isEmpty ? name : "\(name), \(gameName)",
+                                           division: duo.division, occlusions: duo.occlusions) { fullScreen = false }
                         } else {
                             framed(controller)
                         }
@@ -668,7 +672,10 @@ struct TrailerView: View {
                 }
                 .background(Color.black)
                 .overlay(alignment: .bottomLeading) { VideoTimeProbe(controller: controller) }
-                .onChange(of: [duo.pose == .tabletop, controller != nil], initial: true) { controller?.setNativeControls(duo.pose != .tabletop) }
+                .onChange(of: [duo.pose == .tabletop, controller != nil, fullScreen], initial: true) {
+                    // bug-071: in full screen our band controls drive the player, so YouTube's are off (controls=0).
+                    controller?.setNativeControls(duo.pose != .tabletop && !fullScreen)
+                }
                 .onChange(of: FullBleedVideo.offered(in: duo.pose)) { _, offered in if !offered { fullScreen = false } }
                 .toolbarVisibility(duo.pose == .tabletop || fullScreen ? .hidden : .automatic, for: .navigationBar)
                 .toolbar {
