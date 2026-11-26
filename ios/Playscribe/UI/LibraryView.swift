@@ -809,15 +809,39 @@ struct FilterBar: View {
 }
 
 extension View {
-    /// R-7: a scrolling chip row fades at its edges instead of clipping hard.
-    func edgeFade(_ width: CGFloat = 24) -> some View {
-        mask {
-            HStack(spacing: 0) {
-                LinearGradient(colors: [.clear, .black], startPoint: .leading, endPoint: .trailing).frame(width: 8)
-                Rectangle()
-                LinearGradient(colors: [.black, .clear], startPoint: .leading, endPoint: .trailing).frame(width: width)
+    /// R-7: a scrolling row fades only an edge that has more content beyond it (Terry, 26 Nov: the left edge of "You might
+    /// also like" was dimmed at rest, which reads as a cut-off tile). At rest only the trailing edge fades; the leading edge
+    /// fades once the row is scrolled; a row that fits fades nowhere. Apply to the horizontal ScrollView itself.
+    func edgeFade(_ width: CGFloat = 24) -> some View { modifier(RailEdgeFade(width: width)) }
+}
+
+/// Which edges of a horizontal scroll view have more content beyond them.
+struct RailEdges: Equatable {
+    var leading = false
+    var trailing = false
+
+    static func of(offset: CGFloat, viewport: CGFloat, content: CGFloat, inset: CGFloat = 0) -> RailEdges {
+        RailEdges(leading: offset > 1, trailing: offset + viewport < content - 1 + inset)
+    }
+}
+
+private struct RailEdgeFade: ViewModifier {
+    var width: CGFloat
+    @State private var edges = RailEdges()
+
+    func body(content: Content) -> some View {
+        content
+            .onScrollGeometryChange(for: RailEdges.self) { g in
+                .of(offset: g.contentOffset.x + g.contentInsets.leading, viewport: g.containerSize.width,
+                    content: g.contentSize.width, inset: g.contentInsets.leading)
+            } action: { _, new in edges = new }
+            .mask {
+                HStack(spacing: 0) {
+                    if edges.leading { LinearGradient(colors: [.clear, .black], startPoint: .leading, endPoint: .trailing).frame(width: 8) }
+                    Rectangle()
+                    if edges.trailing { LinearGradient(colors: [.black, .clear], startPoint: .leading, endPoint: .trailing).frame(width: width) }
+                }
             }
-        }
     }
 }
 
