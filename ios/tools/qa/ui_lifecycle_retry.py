@@ -25,6 +25,10 @@ LIFECYCLE = re.compile(
     r"|Application '?co\.codeconnectors\.playscribe'? does not have a process ID"
     r"|Failed to launch co\.codeconnectors\.playscribe"
     r"|Failed to get matching snapshots?: Timed out while evaluating UI query"
+    # Quinn (26 Nov, ui run at 68c0e47, GameToGameTests): XCTest could not learn whether the app finished launching, the
+    # same runner overload. Both halves of the message are matched, as they can be reported apart.
+    r"|Failed to get launch progress"
+    r"|Timed out while requesting launch progress"
 )
 
 
@@ -68,6 +72,12 @@ def self_test():
     term = "RailSetTests.swift:125: Failed to terminate co.codeconnectors.playscribe:27492: Failed to terminate co.codeconnectors.playscribe:0"
     pid = "Application 'co.codeconnectors.playscribe' does not have a process ID"
     snap = "RailSetTests.swift:21: Failed to get matching snapshots: Timed out while evaluating UI query."
+    # Verbatim from /mnt/project-files/qa/newest/ui-lifecycle-68c0e47.txt (line 233).
+    progress = ("GameToGameTests.swift:52: error: -[PlayscribeUITests.GameToGameTests testBackAndEdgeSwipeReturnToTheGameItWasOpenedFrom] : "
+                "Failed to get launch progress for <XCUIApplicationImpl: 0x1099fa700 co.codeconnectors.playscribe at "
+                "/Users/runner/work/playscribe/playscribe/build/dd/Build/Products/Debug-iphonesimulator/Playscribe.app>: "
+                "Timed out while requesting launch progress.")
+    requesting = "GameToGameTests.swift:52: Timed out while requesting launch progress."
     edge = "GameToGameTests.swift:63: XCTAssertFalse failed - edge swipe: still on the second game"
     wait = "RailSetTests.swift:21: XCTAssertTrue failed - the game page did not load"
     passed = case("RailSetTests/testClosedAX5()", result="Passed")
@@ -75,6 +85,10 @@ def self_test():
         (run(case("RailSetTests/testClosedStd()", term), passed), (0, ["RailSetTests/testClosedStd()"])),
         (run(case("ReleaseFeatureTests/testFirstRunWelcomeAndSkip()", pid)), (0, ["ReleaseFeatureTests/testFirstRunWelcomeAndSkip()"])),
         (run(case("RailSetTests/testClosedLandscapeStd()", snap)), (0, ["RailSetTests/testClosedLandscapeStd()"])),
+        (run(case("ReleaseFeatureTests/testPinnedAddBar()", progress)), (0, ["ReleaseFeatureTests/testPinnedAddBar()"])),
+        (run(case("GameToGameTests/testBack()", requesting)), (0, ["GameToGameTests/testBack()"])),
+        # Launch progress beside an assertion in the same test: no retry.
+        (run(case("ReleaseFeatureTests/testPinnedAddBar()", progress, wait)), (1, ["ReleaseFeatureTests/testPinnedAddBar()"])),
         # An assertion beside a lifecycle error in the same test: no retry.
         (run(case("GameToGameTests/testBack()", edge, term)), (1, ["GameToGameTests/testBack()"])),
         # One lifecycle failure and one assertion failure in another test: no retry for either.
