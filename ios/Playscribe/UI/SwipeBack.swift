@@ -26,6 +26,17 @@ private struct SwipeBackEnabler: UIViewControllerRepresentable {
             }
             gesture.delegate = self
             gesture.isEnabled = true
+            if !observing { gesture.addTarget(self, action: #selector(popState(_:))); observing = true }
+        }
+
+        private var observing = false
+        @objc private func popState(_ g: UIGestureRecognizer) {
+            swipeLog.notice("edgeswipe app: pop state=\(g.state.rawValue) at x=\(g.location(in: nil).x) delegateIsHost=\(g.delegate === self)")
+        }
+
+        func gestureRecognizer(_ g: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+            swipeLog.notice("edgeswipe app: shouldReceive x=\(touch.location(in: nil).x) enabled=\(g.isEnabled) count=\(self.navigationController?.viewControllers.count ?? -1)")
+            return true
         }
 
         override func viewWillDisappear(_ animated: Bool) {
