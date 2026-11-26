@@ -377,7 +377,10 @@ struct FullBleedVideo: View {
             let safe = geo.safeAreaInsets
             let full = CGSize(width: geo.size.width + safe.leading + safe.trailing, height: geo.size.height + safe.top + safe.bottom)
             let toScreen = { (r: CGRect) in r.offsetBy(dx: safe.leading, dy: safe.top) }
-            let f = Self.fit(in: full, avoiding: occlusions.map(toScreen))
+            // The picture is never smaller than before bug-071 (644 x 362 in Closed landscape): it takes the spec's 672 x 378 and
+            // lets the camera sit over its corner, as hardware rather than anything of ours. Clearing the measured housing would
+            // leave 604 x 340. Only our band controls keep clear of it, through the safe leading and trailing insets.
+            let f = Self.fit(in: full)
             ZStack(alignment: .topLeading) {
                 Color.black
                 Color.black
