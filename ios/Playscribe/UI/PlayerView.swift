@@ -57,6 +57,10 @@ final class YouTubeController: NSObject, WKScriptMessageHandler {
         webView.isOpaque = false
         webView.backgroundColor = .black
         webView.scrollView.isScrollEnabled = false
+        // The player fills the frame we give it. By default the web view's scroll view insets its content by any safe area
+        // the frame overlaps, which shrank the full-screen picture (cloud run 45743580991: Closed landscape drew about
+        // 443 x 332 inside a 672 x 378 frame, offset by the 84 pt leading inset; Open flat stopped 84 pt short of the edge).
+        webView.scrollView.contentInsetAdjustmentBehavior = .never
         super.init()
         content.add(self, name: "player")
         playRequested = autoplay
