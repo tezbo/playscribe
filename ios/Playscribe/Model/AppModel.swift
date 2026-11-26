@@ -1042,7 +1042,8 @@ final class AppModel {
         // bright one for the Tabletop reflection's bright-frame check (Iris, #556).
         case "trailer" where !parts.isEmpty:
             if parts.count > 1 { openGame(parts[1]) }
-            trailer = (parts[0], parts.count > 1 ? (game(parts[1])?.name ?? "Video") : "Video", parts.count > 1 ? parts[1] : nil)
+            // Named as a game's fallback Gallery row is ("Trailer"), so the full-screen title reads video, then game (bug-071).
+            trailer = (parts[0], parts.count > 1 ? "Trailer" : "Video", parts.count > 1 ? parts[1] : nil)
         case "video-blocked" where parts.count >= 2:
             // R-12: 150 (owner blocks other apps) by default; any other code shows the generic reason.
             qaVideoError = parts.count > 2 ? Int(parts[2]) ?? 150 : 150
