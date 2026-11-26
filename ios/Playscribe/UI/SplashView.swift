@@ -34,7 +34,9 @@ struct SplashView: View {
                 opened = true
                 progress = 1
             }
-            try? await Task.sleep(for: .milliseconds(reduceMotion ? 0 : 800))
+            // QA: `-qaSplashHold <seconds>` keeps the splash up so stills are not a race with the fade.
+            let hold = UserDefaults.standard.double(forKey: "qaSplashHold")
+            try? await Task.sleep(for: .milliseconds(reduceMotion ? 0 : 800) + .seconds(hold))
             withAnimation(.easeOut(duration: 0.3)) { opacity = 0 }
             try? await Task.sleep(for: .milliseconds(300))
             onDone()
