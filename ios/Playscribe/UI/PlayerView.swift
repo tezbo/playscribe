@@ -378,8 +378,8 @@ struct FullBleedVideo: View {
             let full = CGSize(width: geo.size.width + safe.leading + safe.trailing, height: geo.size.height + safe.top + safe.bottom)
             let toScreen = { (r: CGRect) in r.offsetBy(dx: safe.leading, dy: safe.top) }
             // The picture is never smaller than before bug-071 (644 x 362 in Closed landscape): it takes the spec's 672 x 378 and
-            // lets the camera sit over its corner, as hardware rather than anything of ours. Clearing the measured housing would
-            // leave 604 x 340. Only our band controls keep clear of it, through the safe leading and trailing insets.
+            // lets the camera sit over its corner, as hardware rather than anything of ours (Iris). Clearing the measured housing would
+            // leave 604 x 340. Our band controls keep clear of the housing (FullScreenBands.layout).
             let f = Self.fit(in: full)
             ZStack(alignment: .topLeading) {
                 Color.black
@@ -402,7 +402,7 @@ struct FullBleedVideo: View {
                         .accessibilityHidden(true)
                 }
                 FullScreenBands(controller: controller, title: title, picture: f, screen: full, safe: safe,
-                                division: division.map(toScreen), onExit: leave)
+                                division: division.map(toScreen), housings: occlusions.map(toScreen), onExit: leave)
                 #if INTERNAL
                 // QA: what the frame math saw, for the cloud fullscreen scenario (the picture measured 522 x 294 in Closed
                 // landscape at dd0f09d where 672 x 378 was expected).
@@ -945,6 +945,8 @@ struct FullScreenBands: View {
     var safe: EdgeInsets
     /// Book: the division in screen coordinates.
     var division: CGRect?
+    /// Camera housings in screen coordinates: the control rows keep clear of them.
+    var housings: [CGRect] = []
     var onExit: () -> Void
 
     @Environment(\.accessibilityVoiceOverEnabled) private var voiceOver
@@ -967,26 +969,35 @@ struct FullScreenBands: View {
         var timeline: CGRect?
     }
 
-    static func layout(picture: CGRect, screen: CGSize, safe: EdgeInsets, division: CGRect?) -> Layout {
+    /// Clearance between a control row and a camera housing (Iris, bug-071: Exit starts at x 92 or more past an 84 pt housing).
+    static let housingClearance: CGFloat = 8
+
+    static func layout(picture: CGRect, screen: CGSize, safe: EdgeInsets, division: CGRect?, avoiding housings: [CGRect] = []) -> Layout {
         let left = safe.leading + 12, right = screen.width - safe.trailing - 12
         // Vertically centred in a band; in a deep band (portrait under rotation lock) at the edge nearest the picture (Iris).
         let topBand = picture.minY, bottomBand = screen.height - picture.maxY
         let topY = topBand > 2 * 44 + 16 ? picture.minY - 44 - 8 : (topBand - 44) / 2
         let bottomY = bottomBand > 2 * 44 + 16 ? picture.maxY + 8 : picture.maxY + (bottomBand - 44) / 2
+        // A row whose band a housing reaches into starts, or ends, clear of it on that side (spec: no control or text in it).
+        func row(_ x0: CGFloat, _ x1: CGFloat, y: CGFloat) -> CGRect {
+            var a = x0, b = x1
+            for h in housings where h.minY < y + 44 && h.maxY > y && h.minX < b && h.maxX > a {
+                if h.midX < screen.width / 2 { a = max(a, h.maxX + housingClearance) } else { b = min(b, h.minX - housingClearance) }
+            }
+            return CGRect(x: a, y: y, width: max(0, b - a), height: 44)
+        }
         if let d = division {
             let leadEnd = d.minX - foldClearance, trailStart = d.maxX + foldClearance
-            return Layout(top: CGRect(x: left, y: topY, width: max(0, leadEnd - left), height: 44),
-                          transport: CGRect(x: left, y: bottomY, width: max(0, leadEnd - left), height: 44),
-                          timeline: CGRect(x: trailStart, y: bottomY, width: max(0, right - trailStart), height: 44))
+            return Layout(top: row(left, leadEnd, y: topY), transport: row(left, leadEnd, y: bottomY),
+                          timeline: row(trailStart, right, y: bottomY))
         }
-        return Layout(top: CGRect(x: left, y: topY, width: max(0, right - left), height: 44),
-                      transport: CGRect(x: left, y: bottomY, width: max(0, right - left), height: 44), timeline: nil)
+        return Layout(top: row(left, right, y: topY), transport: row(left, right, y: bottomY), timeline: nil)
     }
 
     private var hides: Bool { controller.isPlaying && !scrubbing && !voiceOver && !switchControl }
 
     var body: some View {
-        let l = Self.layout(picture: picture, screen: screen, safe: safe, division: division)
+        let l = Self.layout(picture: picture, screen: screen, safe: safe, division: division, avoiding: housings)
         ZStack(alignment: .topLeading) {
             // The bands themselves take taps (to show the controls), never the picture.
             bandCatcher(CGRect(x: 0, y: 0, width: screen.width, height: picture.minY))

@@ -90,6 +90,26 @@ struct FullBleedVideoTests {
         #expect(l.top.height == 44 && l.transport.height == 44 && l.timeline == nil)
     }
 
+    /// Iris (bug-071): the picture keeps the whole-screen fit and may run under the camera, but no control or text ever sits in
+    /// a measured housing region; in Closed landscape-right Exit starts at x 92 or more. Housings from cloud run 45730726202.
+    @Test(arguments: [(CGSize(width: 678, height: 466), EdgeInsets(top: 0, leading: 84, bottom: 34, trailing: 0),
+                       [CGRect(x: 29, y: 29, width: 37, height: 37), CGRect(x: 0, y: 0, width: 84, height: 82)]),
+                      (CGSize(width: 678, height: 466), EdgeInsets(top: 0, leading: 0, bottom: 34, trailing: 84),
+                       [CGRect(x: 611, y: 399, width: 37, height: 37), CGRect(x: 594, y: 384, width: 84, height: 82)]),
+                      (CGSize(width: 678, height: 466), EdgeInsets(),
+                       [CGRect(x: 29, y: 29, width: 37, height: 37), CGRect(x: 0, y: 0, width: 84, height: 82)]),
+                      (CGSize(width: 951, height: 669), EdgeInsets(top: 24, leading: 0, bottom: 20, trailing: 0),
+                       [CGRect(x: 867, y: 0, width: 84, height: 124)])])
+    func noControlRowSitsInAHousing(screen: CGSize, safe: EdgeInsets, housings: [CGRect]) {
+        let f = FullBleedVideo.fit(in: screen)
+        let l = FullScreenBands.layout(picture: f, screen: screen, safe: safe, division: nil, avoiding: housings)
+        for r in [l.top, l.transport] {
+            #expect(r.width > 200, "\(r) is too narrow to hold its controls")
+            for h in housings { #expect(!r.intersects(h.insetBy(dx: -FullScreenBands.housingClearance, dy: 0)), "\(r) is in housing \(h)") }
+        }
+        if housings.contains(where: { $0.minX == 0 && $0.minY == 0 }) { #expect(l.top.minX >= 92, "Exit starts at \(l.top.minX)") }
+    }
+
     /// Book: transport and title on the leading page, the timeline on the trailing page, nothing within 8 pt of the division,
     /// and the guard (the division itself) is all that covers the fold.
     @Test func bookSplitsTheRowsAroundTheFold() {
