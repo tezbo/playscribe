@@ -9,14 +9,14 @@ Playscribe 0.6 is a fresh coat: light and dark appearance, clearer art, one deck
 
 Your Duo checks for beta 6
 1. Full-screen video: play an update video or a trailer and tap full screen, Closed, Open and in Book. The picture is as big as the screen allows, with our controls (Exit, play, skip 10 seconds and the timeline) in the black bands, never on the picture. In portrait, full screen asks you to turn the phone. Exit and the video keeps playing.
-2. Open Control Resonant (or any game you’ve read before), go to its Gallery, close Playscribe fully and open it again. Open the same game: it shows its newest update, not the Gallery. Back from a game you just left still returns you to where you were.
-3. Open a game, then unfold to Book and to Open landscape. The Back button at the top of the rail shows its arrow, and VoiceOver reads it.
-4. Scroll to the PS Plus card at the end of the Library. Every game in it opens its page, including one without a cover, and the covers fill the row.
+2. Open a game with more than one update, like Control Resonant, and go to its Gallery. Close Playscribe fully and open it again. Open the same game: it shows its newest update, not the Gallery.
+3. Open a game, then unfold to Book and to Open landscape. The Back button at the top of the rail on the right shows its arrow, and with VoiceOver on it says “Back”.
+4. Scroll to the PlayStation Plus card at the end of the Library. Every game in it opens its page, including one without a cover, and the covers fill the row with no empty gaps.
 
-Also check, at the largest text size (Settings, Accessibility, Display & Text Size, Larger Text)
+Also check, at the largest text size (your phone’s Settings, Accessibility, Display & Text Size, Larger Text: turn on Larger Accessibility Sizes and drag the slider to the far right)
 5. Closed landscape: the Library shows games first, with the filter chips after them, and Playing and Upcoming are two large chips you can read.
-6. The deck card leads with the patch name, with its dots under the card, not on the text.
-7. The Status menu on a game shows a tick next to the current choice.
+6. The deck card leads with the patch name, and the page dots sit below the card and never cover its text.
+7. On a game, tap the game controller button, then Status. The current choice has a tick before its name.
 
 Feedback you send through TestFlight, including its comment, may appear in our public issue tracker, so leave out personal details.
 
