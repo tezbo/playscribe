@@ -200,12 +200,18 @@ struct WebSurface: UIViewRepresentable {
     /// out-of-process elements: at 34cd99b XCUITest still found YouTube's "Show player controls" (3,44 12x12) at the
     /// full-screen picture's corner. One web view serves inline and full screen, so both surfaces set the same value.
     var hidesWebContent = false
+    /// At 66564e9 accessibilityElementsHidden alone still left that button in XCUITest's tree, so the host page also marks
+    /// its body aria-hidden, which WebKit applies to the whole iframe subtree.
     func makeUIView(context: Context) -> WKWebView {
-        webView.accessibilityElementsHidden = hidesWebContent
+        apply(to: webView)
         return webView
     }
-    func updateUIView(_ uiView: WKWebView, context: Context) {
-        uiView.accessibilityElementsHidden = hidesWebContent
+    func updateUIView(_ uiView: WKWebView, context: Context) { apply(to: uiView) }
+    private func apply(to view: WKWebView) {
+        view.accessibilityElementsHidden = hidesWebContent
+        view.evaluateJavaScript(hidesWebContent
+            ? "document.body&&document.body.setAttribute('aria-hidden','true')"
+            : "document.body&&document.body.removeAttribute('aria-hidden')")
     }
 }
 

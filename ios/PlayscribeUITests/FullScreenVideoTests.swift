@@ -55,6 +55,13 @@ final class FullScreenVideoTests: XCTestCase {
         print("webViews (XCUITest, informational): \(app.webViews.count)")
         let stray = any.matching(NSPredicate(format: "label == %@", "Show player controls")).allElementsBoundByIndex
         for e in stray { print("Show player controls: \(e.frame) hittable \(e.isHittable)") }
+        if stray.contains(where: { $0.isHittable }) {
+            // Where the stray element sits in the tree (which web view, which ancestor), for the next fix.
+            let tree = app.debugDescription.components(separatedBy: "\n")
+            for (i, line) in tree.enumerated() where line.contains("Show player controls") {
+                print("tree around stray:\n" + tree[max(0, i - 25)...min(tree.count - 1, i + 3)].joined(separator: "\n"))
+            }
+        }
         XCTAssertFalse(stray.contains { $0.isHittable }, "YouTube's iframe elements are still exposed over the picture")
 
         // The controls fade 3 s after the last touch while playing, often before XCUITest can read Exit's frame (runs 45748630556
