@@ -184,8 +184,13 @@ jobs:
           unfold_after_launch() { # $1 = hinge angle, $2 = test
             xcrun simctl boot "$UDID" 2>/dev/null || true; xcrun simctl bootstatus "$UDID" -b > /dev/null
             fold closed; sim-use ios rotate portrait --device "$UDID"; sleep 5
+            # The pid of the app now running, if any. The previous test's app can still be listed when this test's xcodebuild
+            # starts (slow runner, 26 Nov, #658 inner: Open landscape "launched on the inner display"): the job below matched
+            # it, unfolded 10 s later and only then did the new app launch, already on the inner display. Wait for a new pid.
+            app_pid() { xcrun simctl spawn "$UDID" launchctl list 2>/dev/null | awk '/UIKitApplication:co.codeconnectors.playscribe\[/ && $1 != "-" {print $1}'; }
+            old_pid=$(app_pid)
             ( for i in $(seq 1 180); do
-                xcrun simctl spawn "$UDID" launchctl list 2>/dev/null | grep -q 'UIKitApplication:co.codeconnectors.playscribe\[' && break
+                cur=$(app_pid); [ -n "$cur" ] && [ "$cur" != "$old_pid" ] && break
                 sleep 1
               done
               sleep 10
