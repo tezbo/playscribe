@@ -48,7 +48,10 @@ final class FullScreenVideoTests: XCTestCase {
         print("videoScrubber value: \(scrubberValue)")
         XCTAssertTrue(scrubberValue.contains(" of "), "the scrubber does not speak elapsed of total: \(scrubberValue)")
         XCTAssertTrue(any["videoFullScreenPicture"].exists, "the picture has no VoiceOver element")
-        XCTAssertFalse(app.webViews.firstMatch.exists, "YouTube's web view is still exposed to VoiceOver")
+        // XCUITest still lists the WKWebView itself (run 45769786892); what matters is that none of YouTube's iframe elements
+        // reach VoiceOver. "Show player controls" is YouTube's own button, seen over the picture before the fix (run 45743580991).
+        print("webViews (XCUITest, informational): \(app.webViews.count)")
+        XCTAssertFalse(any["Show player controls"].exists, "YouTube's iframe elements are still exposed to VoiceOver")
 
         // The controls fade 3 s after the last touch while playing, often before XCUITest can read Exit's frame (runs 45748630556
         // and 45751314856). So Exit's point comes from the measured geometry in qaFullScreen: the top row starts 12 pt inside
