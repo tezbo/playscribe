@@ -44,8 +44,16 @@ final class FullScreenVideoTests: XCTestCase {
         XCTAssertFalse(after.contains("wakes=0"), "a tap in the top band did not reach our controls: \(after)")
         XCTAssertTrue(exit.waitForExistence(timeout: 3), "Exit full screen is not shown after a band tap")
 
-        print("videoExitFullScreen frame before Exit: \(exit.frame) hittable \(exit.isHittable)")
-        exit.tap()
+        // The controls fade 3 s after the last touch while playing, faster than XCUITest can query and then tap the element
+        // (run 45748630556: frame (96, 0, 44, 44), gone by the tap). So tap where Exit sits: the first tap shows the controls,
+        // the second is Exit.
+        let at = exit.frame
+        print("videoExitFullScreen frame: \(at)")
+        XCTAssertTrue(at.minX >= 92 && at.maxY <= 44, "Exit is not in the top band clear of the camera housing: \(at)")
+        sleep(4)
+        let point = app.windows.firstMatch.coordinate(withNormalizedOffset: .zero).withOffset(CGVector(dx: at.midX, dy: at.midY))
+        point.tap()
+        point.tap()
         XCTAssertTrue(enter.waitForExistence(timeout: 10), "Exit full screen did not leave full screen")
         app.terminate()
     }
