@@ -165,6 +165,13 @@ extension String {
         return out
     }
 
+    /// A version chip as VoiceOver should say it ("v1.012" → "version 1 point 012"), so it is never read as a number or a date.
+    var spokenVersion: String {
+        var t = self.replacingOccurrences(of: "\u{2060}", with: "")
+        if let f = t.first, f == "v" || f == "V", t.dropFirst().first?.isNumber == true { t.removeFirst() }
+        return "version " + t.replacingOccurrences(of: ".", with: " point ")
+    }
+
     /// ISO day ("2026-09-03") to a Date at noon UTC.
     var isoDay: Date? {
         var c = DateComponents()

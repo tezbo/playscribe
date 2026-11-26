@@ -380,7 +380,7 @@ struct DeckCardView: View {
         let dateText = card.date.map(AppModel.tileDay) ?? ""
         if let r = card.release {
             let summary = (r.summary?.isEmpty == false) ? ", \(r.summary!)" : ""
-            return "\(card.unread ? card.chipText + ", " : "")\(r.ps5Headline ?? r.displayName), \(card.game.name), \(r.deckVersionChip.map { $0 + ", " } ?? "")\(dateText)\(summary)"
+            return "\(card.unread ? card.chipText + ", " : "")\(r.ps5Headline ?? r.displayName), \(card.game.name), \(r.deckVersionChip.map { $0.spokenVersion + ", " } ?? "")\(dateText)\(summary)"
         }
         return "\(card.game.name), released \(dateText), \(DeckCard.noReleaseLine(tracked: tracked).lowercased())"
     }
@@ -612,6 +612,7 @@ struct DeckChips: View {
 
     private func chip(_ text: String, filled: Bool) -> some View {
         Text(text.keepingVersionsTogether).font(PlayscribeFont.caption).monospacedDigit().lineLimit(1)
+            .accessibilityLabel(text == card.release?.deckVersionChip ? text.spokenVersion : text)
             .foregroundStyle(filled ? PlayscribeColor.ink950 : PlayscribeColor.accent)
             .padding(.horizontal, 8).frame(minHeight: 22)
             .modifier(DeckChipGround(filled: filled))
@@ -785,6 +786,7 @@ struct WideDeckCard: View {
 
     private func chip(_ text: String, filled: Bool) -> some View {
         Text(text.keepingVersionsTogether).font(PlayscribeFont.caption).monospacedDigit().lineLimit(1)
+            .accessibilityLabel(text == card.release?.deckVersionChip ? text.spokenVersion : text)
             .foregroundStyle(filled ? PlayscribeColor.ink950 : PlayscribeColor.accent)
             .padding(.horizontal, 8).padding(.vertical, 2).frame(minHeight: 22)
             .modifier(DeckChipGround(filled: filled))
@@ -1008,7 +1010,7 @@ struct DeckStage: View {
                 FlowLayout(spacing: 8) {
                     if upcomingLine != nil { Text("Coming soon").foregroundStyle(PlayscribeColor.accent) }
                     if card.unread { Text(card.chipText).foregroundStyle(PlayscribeColor.accent) }
-                    if let v = card.release?.deckVersionChip { Text(v.keepingVersionsTogether).monospacedDigit().foregroundStyle(PlayscribeColor.textPrimary.opacity(0.9)) }
+                    if let v = card.release?.deckVersionChip { Text(v.keepingVersionsTogether).monospacedDigit().accessibilityLabel(v.spokenVersion).foregroundStyle(PlayscribeColor.textPrimary.opacity(0.9)) }
                 }
                 .font(PlayscribeFont.caption)
                 .shadow(color: .black.opacity(0.6), radius: 3)
