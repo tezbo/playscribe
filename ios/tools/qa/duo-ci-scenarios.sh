@@ -146,8 +146,8 @@ fullscreen) # bug-071: full-screen video Fit with our controls in the bands; the
   tapl "Exit full screen" 4; snap fullscreen 5-exited
   # The same poses again with the controls held up (-qaBandsStay, internal), so the stills show them (Iris).
   launch -qaRoute trailer/dQw4w9WgXcQ/dawnwalker -qaOverlay YES -qaVideoTime YES -qaBandsStay YES
-  tapl Play 8; fold 0 landscape-left; enter 6-closed-landscape-shown
-  fold 180 landscape-left; sleep 2; snap fullscreen 7-flat-landscape-shown; frames 7
+  tapl Play 8; fold 0 landscape-left; enter 6-closed-landscape-shown; tapl "Exit full screen" 3
+  fold 180 landscape-left; enter 7-flat-landscape-shown
   fold 90 landscape-left; sleep 2; snap fullscreen 8-book-shown; frames 8
   fold 90 portrait; sleep 2; snap fullscreen 9-tabletop-ends-it ;;
 fsxctest) # bug-071: XCUITest taps (sim-use taps did not reach the bands after the turn): enter, band tap, Exit, in Closed
