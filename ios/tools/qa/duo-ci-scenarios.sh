@@ -196,8 +196,8 @@ unfoldupdate2) # bug-075 other doors: scrolled mid-update, and an update opened 
   fold 180 portrait; sleep 3; snap unfoldupdate2 1b-open-portrait
   fold 90 landscape-left; sleep 3; snap unfoldupdate2 1c-book
   launch -qaRoute two-update/updates; sleep 2; snap unfoldupdate2 2a-updates-tab
-  row=$(sim-use ui --device "$UDID" 2>/dev/null | grep -E "Button .*Out on PS5|Button .*New" | head -1 | grep -o '([0-9.]*,[0-9.]* [0-9.]*x[0-9.]*)' | tr -d '()x,' | awk '{split($1,a,",");print int(a[1]+$2/2) "," int(a[2]+$3/2)}'); echo "row tap: $row"
-  [ -n "$row" ] && sim-use tap -x ${row%,*} -y ${row#*,} --device "$UDID" >/dev/null 2>&1; sleep 3; snap unfoldupdate2 2b-updates-opened
+  row=$(sim-use ui --device "$UDID" 2>/dev/null | grep -E "Button .*(Out on PS5|New)" | head -1 | python3 -c 'import re,sys;m=re.search(r"\(([0-9.]+),([0-9.]+) ([0-9.]+)x([0-9.]+)\)",sys.stdin.read());print("%d,%d"%(float(m[1])+float(m[3])/2,float(m[2])+float(m[4])/2)) if m else None' 2>/dev/null); echo "row tap: $row"
+  [ -n "$row" ] && [ "$row" != None ] && sim-use tap -x ${row%,*} -y ${row#*,} --device "$UDID" >/dev/null 2>&1; sleep 3; snap unfoldupdate2 2b-updates-opened
   fold 180 portrait; sleep 3; snap unfoldupdate2 2c-open-portrait
   fold 90 landscape-left; sleep 3; snap unfoldupdate2 2d-book
   fold 180 portrait; sleep 3; snap unfoldupdate2 2e-open-portrait-again
