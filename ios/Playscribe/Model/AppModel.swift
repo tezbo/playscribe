@@ -1250,6 +1250,24 @@ final class AppModel {
             data.simulated.removeAll { $0.id == release.id }
             data.simulated.insert(release, at: 0)
             openRelease(gameID: gameID, releaseID: release.id)
+        // QA (INTERNAL, copy-update-list-year-and-reported): "ps4-update/<game>" opens a PS4 patch on a PS5 row (reported, not official),
+        // whose PS5 line reads "PS4 update, plays on PS5", in the game's update list and on its page.
+        case "ps4-update" where parts.count == 1:
+            let gameID = parts[0]
+            let now = Date.now
+            var release = Release(
+                id: "qa-ps4-update-\(gameID)", gameID: gameID, displayName: "Patch 9.8",
+                kind: .patch, kindBasis: .studio, announcedAt: now,
+                notes: [NoteSection(title: "Fixes", items: [NoteItem(text: "Fixes a crash on first load.")])], sourceIDs: [],
+                platforms: [PlatformRelease(platform: .ps5, status: .live,
+                                            version: nil,
+                                            liveAt: Field(value: now, verification: .reported, sourceID: "simulated", checkedAt: now),
+                                            bundles: [], verification: .reported)],
+                headline: "A PS4 patch that plays on PS5", summary: nil, keyChanges: [], simulated: true, arrivesAt: now)
+            release.ps4 = true
+            data.simulated.removeAll { $0.id == release.id }
+            data.simulated.insert(release, at: 0)
+            openRelease(gameID: gameID, releaseID: release.id)
         // QA (INTERNAL, 0.5.6 Card B): "ps5-state/<game>/<live|live-version|live-reported|announced|not-planned|none>" opens a simulated update in
         // that PS5 state, so every status wording can be shot without the network. live-version carries a PS5 number (01.004.000)
         // and a PC number is on the page's PC row (never shown as PS5's). The name is neutral so no PC number reads as PS5's.
