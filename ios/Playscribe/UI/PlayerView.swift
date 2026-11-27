@@ -194,6 +194,48 @@ final class YouTubeController: NSObject, WKScriptMessageHandler {
     }
 }
 
+/// bug-inline-video-voiceover-stray-iframe: inline (YouTube's own controls on), VoiceOver reached the iframe's unlabelled
+/// pieces (a 12 x 12 "Show player controls", a caption line). VoiceOver now gets one player element instead, carrying the
+/// transport as actions: double-tap plays or pauses (and the magic tap), swipe up or down skips 10 s, and the rotor has
+/// Back 10 seconds, Forward 10 seconds and Captions. Touch is unchanged: the element takes no hits, so YouTube's controls
+/// still work under the finger. Before Play, VideoStartCover's Play is the only element.
+struct InlineVideoSurface: View {
+    var controller: YouTubeController
+    var title: String
+    var body: some View {
+        WebSurface(webView: controller.webView)
+            .accessibilityHidden(true)
+            .overlay {
+                if controller.playerShown {
+                    Rectangle().fill(.clear)
+                        .allowsHitTesting(false)
+                        .accessibilityElement()
+                        .accessibilityLabel(title.isEmpty ? "Video" : "Video, \(title)")
+                        .accessibilityValue(value)
+                        .accessibilityAddTraits(.startsMediaSession)
+                        .accessibilityAction { controller.playPause() }
+                        .accessibilityAction(.magicTap) { controller.playPause() }
+                        .accessibilityAdjustableAction { direction in
+                            switch direction {
+                            case .increment: controller.skip(10)
+                            case .decrement: controller.skip(-10)
+                            @unknown default: break
+                            }
+                        }
+                        .accessibilityAction(named: "Back 10 seconds") { controller.skip(-10) }
+                        .accessibilityAction(named: "Forward 10 seconds") { controller.skip(10) }
+                        .accessibilityAction(named: controller.captionsOn ? "Turn captions off" : "Turn captions on") { controller.toggleCaptions() }
+                        .accessibilityIdentifier("inlinePlayer")
+                }
+            }
+    }
+    private var value: String {
+        let state = controller.isPlaying ? "Playing" : "Paused"
+        guard controller.duration > 0 else { return state }
+        return "\(state), \(PlayerTime.spoken(controller.current)) of \(PlayerTime.spoken(controller.duration))"
+    }
+}
+
 struct WebSurface: UIViewRepresentable {
     var webView: WKWebView
     func makeUIView(context: Context) -> WKWebView { webView }
@@ -272,7 +314,7 @@ struct PlayerView: View {
         // A web view has no intrinsic size, so a 16:9 box carries the size and the view fills it.
         // Before Play, our poster and our Play (VideoStartCover), never YouTube's start screen (Mac at c072400).
         let surface = Color.black.aspectRatio(16 / 9, contentMode: .fit)
-            .overlay { WebSurface(webView: controller.webView) }
+            .overlay { InlineVideoSurface(controller: controller, title: [video.label, model.game(gameID)?.name ?? ""].filter { !$0.isEmpty }.joined(separator: ", ")) }
             .overlay { VideoStartCover(controller: controller, posterAsset: video.posterAsset, game: model.game(gameID)) }
         let gameName = model.game(gameID)?.name ?? ""
         switch duo.pose {
