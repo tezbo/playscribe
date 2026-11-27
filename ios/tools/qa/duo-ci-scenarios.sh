@@ -185,6 +185,12 @@ switchax) # bug-playing-upcoming-switch-ax5-small: switch + filter chips, each s
   # A real tap on the chip (Closed portrait AX5): Playing, then Upcoming by label.
   launch -qaRoute library/playing -UIPreferredContentSizeCategoryName $AX5
   echo "tap Upcoming: $(sim-use tap --label "Upcoming" --device "$UDID" 2>&1 | head -2)"; sleep 2; snap switchax 5-closed-portrait-AX5-tapped-upcoming ;;
+unfoldupdate) # bug-075: an update open in Closed stays the update through Book, Open portrait, Tabletop and back (J-1, pose parity)
+  launch -qaRoute release/dawnwalker/dawnwalker@1.1; snap unfoldupdate 1-closed
+  fold 90 landscape-left; sleep 3; snap unfoldupdate 2-book
+  fold 180 portrait; sleep 3; snap unfoldupdate 3-open-portrait
+  fold 120 portrait; sleep 3; snap unfoldupdate 4-tabletop
+  fold 0 portrait; sleep 3; snap unfoldupdate 5-closed-again ;;
 rails) # R-7: the four sideways rails, at rest (trailing fade only) and scrolled (leading fade too)
   launch -qaRoute gamepage/dawnwalker; scroll_end 233,560 233,160 similar; rail 1-youmightalsolike '#similarGame'
   launch -qaRoute fill-library/12 -UIPreferredContentSizeCategoryName UICTContentSizeCategoryL; rail 2-library-chips 'Button +"All '
