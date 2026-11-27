@@ -241,6 +241,10 @@ struct MarkRightPageLit: View {
                 .fill(RadialGradient(colors: [Color(hex: "#FFB04F").opacity(0.55), Color(hex: "#FFB04F").opacity(0)],
                                      center: .center, startRadius: 0, endRadius: 15 * k))
                 .frame(width: 30 * k, height: 30 * k)
+                // Feathered: zero at the page's inner edge (4.5 units in from the halo's leading side), full 16 pt later.
+                .mask(LinearGradient(stops: [.init(color: .clear, location: 4.5 / 30),
+                                             .init(color: .black, location: min(1, 4.5 / 30 + 16 / (30 * k)))],
+                                     startPoint: .leading, endPoint: .trailing))
                 .offset(x: (10.5 - 15) * k, y: (-6.9 - 15) * k)
             SparkShape().fill(BrandMark.emberSpark)
                 .frame(width: 19 * k, height: 19 * k)
