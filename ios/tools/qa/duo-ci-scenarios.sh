@@ -269,6 +269,13 @@ fullscreen) # bug-071: full-screen video Fit with our controls in the bands; the
     echo "exit tap at ($xy) from $g: $(sim-use tap -x ${xy% *} -y ${xy#* } --device "$UDID" 2>&1 | head -1)"; sleep 4
     sim-use ui --device "$UDID" 2>/dev/null | grep -q qaFullScreen || { echo "exit reading: $xy"; break; }
   done
+  # bug-073 measurement: where taps injected at these device points land in the turned window (qaLastTap, window space).
+  if sim-use ui --device "$UDID" 2>/dev/null | grep -q qaFullScreen; then
+    for xy in "12 339" "339 12" "233 339" "22 118" "444 118" "22 560" "118 22"; do
+      sim-use tap -x ${xy% *} -y ${xy#* } --device "$UDID" >/dev/null 2>&1; sleep 0.3
+      echo "probe tap at device ($xy) landed at: $(sim-use ui --device "$UDID" 2>/dev/null | grep -o 'tap=[a-z0-9,]*' | head -1)"
+    done
+  fi
   snap fullscreen 5-exited
   # bug-073: hidden, then a picture tap, then Exit leaves full screen and turns back to portrait; fails the job.
   t5=$(ls "$OUT/$SHA"-fullscreen-5-exited-*-ui.txt | head -1)

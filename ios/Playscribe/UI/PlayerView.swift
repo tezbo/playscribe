@@ -378,6 +378,12 @@ struct FullBleedVideo: View {
     /// bug-073: taps on the picture, heard without taking them from the player, so any tap brings the band controls back.
     @State private var pictureTaps = 0
     @State private var tapRelay = TapRelay()
+    #if INTERNAL
+    /// QA (bug-073): where the last touch landed, in the window's own coordinates, so the cloud scenario can see where a tap
+    /// injected in the device's space arrives once the app has turned the scene.
+    @State private var qaTouchProbe = TapRelay()
+    @State private var qaLastTap: CGPoint?
+    #endif
 
     var body: some View {
         GeometryReader { geo in
@@ -425,6 +431,11 @@ struct FullBleedVideo: View {
                 Color.clear.frame(width: 1, height: 1)
                     .accessibilityElement()
                     .accessibilityIdentifier("qaFullScreen")
+                Color.clear.frame(width: 1, height: 1)
+                    .accessibilityElement()
+                    .accessibilityIdentifier("qaLastTap")
+                    .accessibilityValue(qaLastTap.map { "tap=\(Int($0.x)),\(Int($0.y))" } ?? "tap=none")
+                    .offset(x: 6, y: 2)
                     .accessibilityValue("occ=\(occlusions.map(toScreen).map { "\(Int($0.minX)),\(Int($0.minY)),\(Int($0.width))x\(Int($0.height))" }.joined(separator: ";")) pic=\(Int(f.minX)),\(Int(f.minY)),\(Int(f.width))x\(Int(f.height)) safe=\(Int(safe.top)),\(Int(safe.leading)),\(Int(safe.bottom)),\(Int(safe.trailing)) full=\(Int(full.width))x\(Int(full.height))")
                     .offset(x: 2, y: 2)
                 #endif
@@ -436,9 +447,20 @@ struct FullBleedVideo: View {
         .persistentSystemOverlays(.hidden)
         .statusBarHidden()
         .overlay(alignment: .topLeading) { MirrorAudit(on: false) }
-        .onDisappear { tapRelay.detach(); turnBack() }
+        .onDisappear {
+            tapRelay.detach()
+            #if INTERNAL
+            qaTouchProbe.detach()
+            #endif
+            turnBack()
+        }
         .onAppear {
             tapRelay.attach(to: controller.webView) { pictureTaps += 1 }
+            #if INTERNAL
+            if let window = controller.webView.window {
+                qaTouchProbe.attach(to: window) { [weak window] r in qaLastTap = window.map { r.location(in: $0) } }
+            }
+            #endif
             if division == nil, VideoOrientation.isPortrait {
                 turned = true
                 // Turn only once the player has rebuilt with our controls (at most 3 s), so the rebuild and WebKit's response to
@@ -500,12 +522,17 @@ struct VideoTimeProbe: View {
 /// Hears taps on the web view without taking them from YouTube's player (R-13: a tap brings the Exit button back).
 final class TapRelay: NSObject, UIGestureRecognizerDelegate {
     private var recognizer: UITapGestureRecognizer?
-    private var onTap: (() -> Void)?
+    private var onTap: ((UITapGestureRecognizer) -> Void)?
 
     func attach(to view: UIView, onTap: @escaping () -> Void) {
+        attach(to: view) { (_: UITapGestureRecognizer) in onTap() }
+    }
+
+    /// The same, handing over the recognizer (for where the tap landed).
+    func attach(to view: UIView, onTap: @escaping (UITapGestureRecognizer) -> Void) {
         detach()
         self.onTap = onTap
-        let r = UITapGestureRecognizer(target: self, action: #selector(tapped))
+        let r = UITapGestureRecognizer(target: self, action: #selector(tapped(_:)))
         r.cancelsTouchesInView = false
         r.delaysTouchesBegan = false
         r.delaysTouchesEnded = false
@@ -520,7 +547,7 @@ final class TapRelay: NSObject, UIGestureRecognizerDelegate {
         onTap = nil
     }
 
-    @objc private func tapped() { onTap?() }
+    @objc private func tapped(_ r: UITapGestureRecognizer) { onTap?(r) }
 
     func gestureRecognizer(_ g: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith other: UIGestureRecognizer) -> Bool { true }
 }
