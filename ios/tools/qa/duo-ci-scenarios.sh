@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Quinn's five cloud runs on a booted, app-installed iPhone Duo (hosted runner or Mac). Needs sim-use.
-#   ios/tools/qa/duo-ci-scenarios.sh UDID OUTDIR [scenario ...]    (default: all)   scenarios: continuity trailer closedax5 schemes video axchips deckwide plusend switchax switchtt heroswipe herolong removemenu brand brandbook edgefade lane
+#   ios/tools/qa/duo-ci-scenarios.sh UDID OUTDIR [scenario ...]    (default: all)   scenarios: continuity trailer closedax5 schemes video axchips deckwide plusend switchax switchtt heroswipe herolong removemenu brand brandbook edgefade deckdots lane
 # Every step saves <sha>-<scenario>-<step>-<display>-shot.png and -ui.txt (outline with frames, ids and the pose line).
 set -uo pipefail
 UDID=$1; OUT=$2; shift 2; SCEN=${*:-continuity trailer closedax5 schemes video}
@@ -127,6 +127,13 @@ brandbook) # #614: the splash in Book only (light), four frames; a lighter run t
   xcrun simctl ui "$UDID" appearance light >/dev/null 2>&1
   xcrun simctl terminate "$UDID" $B >/dev/null 2>&1; fold 90 landscape-left; T0=$(date +%s); xcrun simctl launch "$UDID" $B -qaRoute library/playing -qaSplashHold 40 >/dev/null; sleep 3
   for i in 1 2 3 4; do xcrun simctl io "$UDID" screenshot --display=$(did) "$OUT/$SHA-brandbook-splash-book-$i-inner-shot.png" >/dev/null 2>&1; echo "brandbook frame $i at +$(( $(date +%s) - T0 )) s after launch (hold 40 s)"; done ;;
+deckdots) # #664 (bug-deck-dots-under-bottom-fade-ax5): Closed portrait Library, deck dots vs the bottom fade. AX5 at rest, after landscape-and-back, after a scroll and back to the top; standard size at rest
+  launch -qaRoute library/playing -qaOrientation portrait -UIPreferredContentSizeCategoryName $AX5; snap deckdots 1-ax5-rest
+  sim-use ios rotate landscape-left --device "$UDID" >/dev/null 2>&1; sleep 4; snap deckdots 2-ax5-landscape
+  sim-use ios rotate portrait --device "$UDID" >/dev/null 2>&1; sleep 5; snap deckdots 3-ax5-rotated-back
+  sim-use swipe --from 233,560 --to 233,200 --duration 0.5 --device "$UDID" >/dev/null 2>&1; sleep 2; snap deckdots 4-ax5-scrolled
+  sim-use swipe --from 233,200 --to 233,640 --duration 0.5 --device "$UDID" >/dev/null 2>&1; sleep 3; snap deckdots 5-ax5-scrolled-back-to-top
+  launch -qaRoute library/playing -qaOrientation portrait -UIPreferredContentSizeCategoryName UICTContentSizeCategoryL; snap deckdots 6-std-rest ;;
 edgefade) # #613 (bug-063, bug-library-tabbar-edge-fade): game page and Library mid-scroll and at the end, std and AX5, Closed portrait and Open portrait (fold 180; swipes start above the bottom tab bar, y 780); ui.txt carries qaBarPinned
   for sz in std AX5; do size=UICTContentSizeCategoryL; [ $sz = AX5 ] && size=$AX5
     for pose in closed open; do
