@@ -263,7 +263,8 @@ fullscreen) # bug-071: full-screen video Fit with our controls in the bands; the
   # a picture tap, then Exit at once, before the 3 s auto-hide. Exit's centre comes from the measured geometry, as in the UI test.
   g=$(echo "$t4" | grep -o 'pic=[0-9,x]* safe=[0-9,]*' | head -1); pic=${g#pic=}; pic=${pic%% *}; sf=${g#*safe=}
   lx=$(( $(echo "$sf" | cut -d, -f2) + 12 + 22 )); ly=$(( ( $(echo "$pic" | cut -d, -f2) - 44 ) / 2 + 22 ))
-  for xy in "$((466 - ly)) $lx" "$ly $((678 - lx))"; do
+  # Also (y, x): every result so far fits it (6cba5b0 missed with both rotations; 12,339 woke the top band, 339,12 hit the picture).
+  for xy in "$ly $lx" "$((466 - ly)) $lx" "$ly $((678 - lx))"; do
     sleep 5; echo "picture tap: $(sim-use tap -x 233 -y 339 --device "$UDID" 2>&1 | head -1)"
     echo "exit tap at ($xy) from $g: $(sim-use tap -x ${xy% *} -y ${xy#* } --device "$UDID" 2>&1 | head -1)"; sleep 4
     sim-use ui --device "$UDID" 2>/dev/null | grep -q qaFullScreen || { echo "exit reading: $xy"; break; }

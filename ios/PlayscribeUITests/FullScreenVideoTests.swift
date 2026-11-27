@@ -109,8 +109,8 @@ final class FullScreenVideoTests: XCTestCase {
         XCTAssertTrue(exit.waitForExistence(timeout: 5), "Exit is not shown on entering full screen")
         // From portrait the app turns its scene and the device stays portrait, as on a phone with rotation lock (Terry's case).
         // Every tap below is then a coordinate in the device's portrait space, where a point (x, y) of the turned scene is
-        // (466 - y, x) or (y, 678 - x), depending on which way it turned (both are tried for Exit; run 46062665843 missed with the
-        // first alone). Element queries are not used for taps: XCUITest has no hit points here.
+        // not settled: (y, x), (466 - y, x) or (y, 678 - x) are each tried for Exit (runs 46062665843 and 46067124185 missed with
+        // the two rotations). Element queries are not used for taps: XCUITest has no hit points here.
         sleep(1)
         // Exit's point from the measured geometry, as above: XCUITest's own queries are slower than the 3 s auto-hide.
         let geometry = (any["qaFullScreen"].value as? String) ?? ""
@@ -125,7 +125,8 @@ final class FullScreenVideoTests: XCTestCase {
         guard pic.count == 4, safe.count == 4 else { return }
         let origin = app.coordinate(withNormalizedOffset: .zero)
         func points(_ x: CGFloat, _ y: CGFloat) -> [XCUICoordinate] {
-            (startLandscape ? [CGVector(dx: x, dy: y)] : [CGVector(dx: 466 - y, dy: x), CGVector(dx: y, dy: 678 - x)]).map { origin.withOffset($0) }
+            (startLandscape ? [CGVector(dx: x, dy: y)]
+                : [CGVector(dx: y, dy: x), CGVector(dx: 466 - y, dy: x), CGVector(dx: y, dy: 678 - x)]).map { origin.withOffset($0) }
         }
         let exitPoints = points(safe[1] + 12 + 22, (pic[1] - 44) / 2 + 22)
         let pictureMiddle = points(pic[0] + pic[2] / 2, pic[1] + pic[3] / 2)[0]   // the middle is the same point either way
