@@ -269,7 +269,8 @@ export const parseMojangNotes = (sourceId: string, entries: MojangEntry[], bodie
       url: 'https://www.minecraft.net/en-us/articles',
       title: e.version ? `Update ${e.version}` : e.title,
       publishedAt: new Date(e.date).toISOString(),
-      body: (bodies[e.version ?? e.title] ?? e.body ?? e.shortText ?? e.title).replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim(),
+      // The body keeps its markup: the notes parser turns headings and list items into sections and items, which flattening to one line lost.
+      body: (bodies[e.version ?? e.title] ?? e.body ?? e.shortText ?? e.title).trim(),
     }))
 
 /**
@@ -314,7 +315,8 @@ const mojangNotes = async (fetchFn: FetchFn, s: SourceDef): Promise<Post[]> => {
       // the short text stands in
     }
   }
-  return parseMojangNotes(s.id, d.entries, bodies)
+  // Only the entries read in full become updates: an older one's short teaser would make an update with no real notes.
+  return parseMojangNotes(s.id, d.entries.slice(0, 5).filter((e) => bodies[e.version ?? e.title]), bodies)
 }
 
 /**

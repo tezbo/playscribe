@@ -263,6 +263,8 @@ Next step: parse the monthly "PS Plus Essential games for <month>" article from 
 
 ### Push Square patch tag (2026-11-06)
 
+Minecraft's `minecraft-bedrock-notes` (Mojang's launcher file, Bedrock is the PlayStation edition) is `ps5Signal: always`: its retail notes are about every Bedrock platform, so a post that says "PlayStation" and not "PS5" still makes the update. The body keeps its HTML, so headings and list items become note sections and items (a flattened body was one 60,000-character item, bug-074). The newest 5 entries are read in full and only those become updates.
+
 `pushsquare-patches` reads Push Square's `/tags/Patches` list beside `/tags/updates`. The older list is where its PS4-era patch articles live (Assassin's Creed Odyssey 1.0.3 to 1.50, 2018 to 2019), tagged PS4. Same rules as the updates list: facts only, reported, one request per page at the site's Crawl-delay. PS4 posts in it count only for a game that plays on PS5 (no native PS5 release, or the post predates it) and are labelled `ps4`.
 
 ### Search aliases in the PS5 index (field `k`, #298)

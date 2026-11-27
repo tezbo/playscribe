@@ -10,13 +10,14 @@
 // raises it locally from the feed's `alert`).
 import { config } from '../config.ts'
 import { openDb } from '../db.ts'
-import { exportStatic } from '../export.ts'
+import { exportOneGame, exportStatic } from '../export.ts'
 import { failingSources, healthSummary } from '../health.ts'
 import { infoContractProblems } from '../contract.ts'
 import { feedProblems } from '../quality.ts'
 import { appendFileSync, writeFileSync } from 'node:fs'
 import { Igdb } from '../ingest/igdb.ts'
 import { runIngest, seedGames } from '../ingest/pipeline.ts'
+import { checkOneGame } from '../ingest/checkOne.ts'
 import { deriveAutoRegistry, seedAutoGames } from '../ingest/autoRegistry.ts'
 import { fetchPlus, plusMissingCovers, resolvePlusCovers } from '../plusAuto.ts'
 import { loadPlus } from '../plus.ts'
@@ -32,15 +33,20 @@ await seedGames(deps)
 // Auto-onboarding (0.5.4): AUTO_SLICE games a run from the derived registry (0 or unset = off; the dry run in feed.yml still prints
 // what it would add). Only a full poll seeds and polls them; the hot run and a backfill never do.
 const autoSlice = Number(process.env.AUTO_SLICE ?? 0) || 0
-if (autoSlice > 0 && exportDir && !args.includes('--hot') && !args.includes('--backfill')) {
+if (autoSlice > 0 && exportDir && !args.includes('--hot') && !args.includes('--backfill') && !args.includes('--igdb')) {
   const auto = deriveAutoRegistry(`${exportDir}/v1/info`)
   const seeded = seedAutoGames(db, auto.games)
   console.log(`auto-onboarding: ${auto.games.length} derived games (${seeded.written} rows written, ${seeded.retired} retired), skipped ${JSON.stringify(auto.skipped)}`)
 }
 const until = args.includes('--backfill') ? new Date(args[args.indexOf('--backfill') + 1]!).toISOString() : undefined
-const summary = await runIngest(deps, { force: args.includes('--force') || !!until, until, hot: args.includes('--hot'), noNewReleases: args.includes('--repair-only'), games: args.includes('--games') ? args[args.indexOf('--games') + 1]!.split(',').filter(Boolean) : undefined, autoSlice, autoBudgetMs: Number(process.env.AUTO_BUDGET_MS ?? 9 * 60_000) })
+// --igdb <id>: the relay's one-game check (source on add): that game only, read now, and what was found recorded.
+const igdbArg = args.includes('--igdb') ? Math.trunc(Number(args[args.indexOf('--igdb') + 1])) : 0
+if (args.includes('--igdb') && !(igdbArg > 0)) throw new Error('--igdb needs an IGDB id')
+const checked = igdbArg ? await checkOneGame(deps, igdbArg) : null
+if (checked) console.log('source check:', JSON.stringify(checked))
+const summary = igdbArg ? { polled: [], errors: [], skipped: [] } as unknown as Awaited<ReturnType<typeof runIngest>> : await runIngest(deps, { force: args.includes('--force') || !!until, until, hot: args.includes('--hot'), noNewReleases: args.includes('--repair-only'), games: args.includes('--games') ? args[args.indexOf('--games') + 1]!.split(',').filter(Boolean) : undefined, autoSlice, autoBudgetMs: Number(process.env.AUTO_BUDGET_MS ?? 9 * 60_000) })
 console.log(JSON.stringify(summary, null, 2))
-if (!args.includes('--hot')) {
+if (!args.includes('--hot') && !igdbArg) {
   await fetchPlus(db, fetch, console.log)
   await resolvePlusCovers(db, igdb, console.log, loadPlus().months)
   for (const m of plusMissingCovers(db, loadPlus().months)) console.log(`::warning title=PS Plus entry without cover art::${m}`)
@@ -60,7 +66,8 @@ else if (process.env.PUSH_QUEUE) {
 } else alerts = await pushNewPs5(db, apns, { maxAgeHours: config.pushMaxAgeHours })
 if (alerts.length) console.log('alerts:', JSON.stringify(alerts))
 apns?.close()
-if (exportDir) console.log('exported', exportStatic(db, exportDir))
+// A one-game check (--igdb) rewrites only that game's files on top of the feed already in the output folder; without one it exports all.
+if (exportDir) console.log('exported', checked && exportOneGame(db, exportDir, checked.gameId) ? { oneGame: checked.gameId } : exportStatic(db, exportDir))
 // Feed health: sources failing 3 polls in a row, and the exported data's quality rules.
 const sick = failingSources(db)
 for (const h of sick) console.log(`::error title=Source failing::${h.sourceId} failed ${h.failStreak} polls in a row: ${h.lastError ?? h.lastStatus}`)

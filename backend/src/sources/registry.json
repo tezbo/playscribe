@@ -391,7 +391,7 @@
           ],
           "trust": "official",
           "fetch": "auto",
-          "ps5Signal": "explicit"
+          "ps5Signal": "always"
         }
       ],
       "links": {
@@ -2330,6 +2330,22 @@
           "ps5Signal": "explicit"
         }
       ]
+    },
+    "roblox": {
+      "name": "Roblox",
+      "aliases": [],
+      "igdbId": 17269,
+      "ps5TitleIds": [],
+      "sources": [],
+      "links": {
+        "official": "https://www.roblox.com/",
+        "patchNotes": "https://devforum.roblox.com/c/updates/release-notes/62"
+      },
+      "sourceGap": {
+        "reason": "Roblox updates its client and experiences on the server every week with no player-facing patch notes. The only official notes are the Developer Forum release notes (devforum.roblox.com/c/updates/release-notes/62, RSS), written for creators about Studio and the Engine and linking out to the Creator Hub, so they are not a player patch source.",
+        "next": "Priya: watch for a player-facing Roblox update page or feed. Until then the app says plainly that Roblox lists no notes.",
+        "since": "2026-11-27"
+      }
     }
   }
 }

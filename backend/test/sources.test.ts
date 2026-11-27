@@ -2,6 +2,7 @@ import assert from 'node:assert/strict'
 import { test } from 'node:test'
 import { openDb } from '../src/db.ts'
 import { readFileSync } from 'node:fs'
+import { extractNotes } from '../src/ingest/notes.ts'
 import { bandaiUpdateLinks, parseBandaiArticle, parseStatuspage, blueskyTitle, parseMojangNotes, parseRiotNews } from '../src/ingest/adapters.ts'
 import { pcNumberIsTitled, runIngest, seedGames } from '../src/ingest/pipeline.ts'
 import { registry } from '../src/registry.ts'
@@ -143,7 +144,16 @@ test('Minecraft: Mojang\'s Bedrock patch-notes file makes one dated update per e
     { title: 'Broken', date: 'soon' },
   ], { '26.60': '<p>Added drops</p><p>Fixed a crash</p>' })
   assert.deepEqual(posts.map((p) => [p.title, p.publishedAt]), [['Update 26.60', '2026-10-27T00:00:00.000Z'], ['Update 26.40', '2026-08-04T15:46:00.367Z']])
-  assert.equal(posts[0]!.body, 'Added drops Fixed a crash')
+  // The body keeps its markup, so the notes parser can make sections and items of it (bug-074: one 60,000-character item was shown as nothing).
+  const sections = extractNotes(posts[0]!.body)
+  assert.deepEqual(sections.map((s) => [s.title, s.items.map((i) => i.text)]), [['Changes', ['Added drops', 'Fixed a crash']]])
+  const big = parseMojangNotes('m', [{ title: 'x', version: '26.50', date: '2026-09-15' }], { '26.50': '<p>Wilderness Bound is out now!<h1>Game Drop 3</h1><h2>Camp</h2><ul><li>New structure in:<ul><li>Meadow<li>Forest</ul><li>Chests hold loot</ul><h2>Blocks</h2><ul><li>Wool Stairs added</ul>' })
+  assert.deepEqual(extractNotes(big[0]!.body).map((s) => [s.title, s.items.length]), [['Changes', 1], ['Camp', 4], ['Blocks', 1]])
+})
+
+test('Minecraft: the Bedrock notes are about every Bedrock platform, so a post that says "PlayStation" and not "PS5" still counts (bug-074)', () => {
+  const src = registry.games.minecraft!.sources.find((s) => s.id === 'minecraft-bedrock-notes')!
+  assert.equal(src.ps5Signal, 'always')
 })
 
 test('Valorant: the game-updates page lists patch notes with Riot\'s own publish time; other categories are skipped', () => {
@@ -298,4 +308,51 @@ test('moving a release date to the official PS5 time sends no alert for an old u
   assert.equal(date(near), '2026-09-05T08:00:00.000Z', 'four days later, backed by no official time: moved')
   assert.equal(queueNewPs5(db, { maxAgeHours: 72 }).jobs.length, before, 'the move changes no alert: the 72 h and 30-day guards read the PS5 live time')
   assert.equal(before, 0)
+})
+
+// s-07-source-on-add-backend: one IGDB game through the Feed.
+test('a one-game check finds the game on IGDB, reads its Steam news, and records what it found', async () => {
+  const { checkOneGame } = await import('../src/ingest/checkOne.ts')
+  const at = new Date(Date.now() - 20 * 3600e3).toISOString()
+  const db = openDb(':memory:')
+  const igdb = { async byId(id: number) { return id === 555 ? { igdbId: 555, name: 'Brand New Game', coverImageId: 'cc1', artworkImageId: '', ps5Release: '2026-01-01', ps5ReleasePrecision: null, steamAppId: 4242 } : id === 556 ? { igdbId: 556, name: 'No Steam Game', steamAppId: null } : null } } as never
+  const deps = { db, igdb, fetchFn: fakeFetch({ 'https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid=4242&': steamNews([{ gid: 'p1', title: 'Patch 1.2 notes', date: at, contents: 'Fixed a crash.', tags: ['patchnotes'] }]) }) }
+  await seedGames({ ...deps, igdb: null })
+  const r = await checkOneGame(deps, 555)
+  assert.deepEqual([r.status, r.releases], ['polled', 1])
+  assert.equal((db.prepare('SELECT status FROM source_checks WHERE igdb_id = 555').get() as { status: string }).status, 'polled')
+  assert.equal((await checkOneGame(deps, 556)).status, 'no-source')
+  assert.equal((await checkOneGame(deps, 557)).status, 'unknown')
+  assert.deepEqual(store.sourceChecks(db).map((c) => [c.igdbId, c.status]).sort(), [[555, 'polled'], [556, 'no-source'], [557, 'unknown']])
+  // A later derivation that does not list the game must not retire it.
+  assert.equal(store.retireAutoGames(db, new Set()), 0)
+})
+
+test('a one-game export rewrites only that game, its index entry, latest and the check record; the rest of the feed is untouched', async () => {
+  const { exportStatic, exportOneGame } = await import('../src/export.ts')
+  const { mkdtempSync, readFileSync, writeFileSync } = await import('node:fs')
+  const { tmpdir } = await import('node:os')
+  const { join } = await import('node:path')
+  const at = new Date(Date.now() - 20 * 3600e3).toISOString()
+  const db = openDb(':memory:')
+  const deps = { db, igdb: null, fetchFn: fakeFetch({ 'https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid=252950&': steamNews([{ gid: 'r1', title: 'Rocket League S24 Patch Notes v2.76', date: at, contents: 'Fixed a crash.', tags: ['patchnotes'] }]) }) }
+  await seedGames(deps)
+  await runIngest(deps, { force: true, games: ['rocket-league'] })
+  const dir = mkdtempSync(join(tmpdir(), 'one-'))
+  exportStatic(db, dir)
+  const other = join(dir, 'v1/games/dawnwalker.json')
+  writeFileSync(other, 'SENTINEL') // a full export would rewrite this
+  const before = JSON.parse(readFileSync(join(dir, 'v1/index.json'), 'utf8')).games.length
+  store.recordSourceCheck(db, { igdbId: 9, gameId: null, name: 'X', status: 'no-source', releases: 0 })
+  assert.equal(exportOneGame(db, dir, 'rocket-league'), true)
+  assert.equal(readFileSync(other, 'utf8'), 'SENTINEL')
+  const idx = JSON.parse(readFileSync(join(dir, 'v1/index.json'), 'utf8')).games
+  assert.equal(idx.length, before)
+  assert.deepEqual(idx.map((g: { id: string }) => g.id), [...idx.map((g: { id: string }) => g.id)].sort())
+  assert.equal(idx.find((g: { id: string }) => g.id === 'rocket-league').releaseCount, 1)
+  assert.equal(JSON.parse(readFileSync(join(dir, 'v1/source-checks.json'), 'utf8')).checks[0].status, 'no-source')
+  const full = mkdtempSync(join(tmpdir(), 'full-'))
+  exportStatic(db, full)
+  for (const f of ['index.json', 'latest.json', 'games/rocket-league.json']) assert.equal(readFileSync(join(dir, 'v1', f), 'utf8'), readFileSync(join(full, 'v1', f), 'utf8'), `${f} is what a full export writes`)
+  assert.equal(exportOneGame(db, join(dir, 'nowhere'), 'rocket-league'), false, 'no index to build on: the caller exports everything')
 })
