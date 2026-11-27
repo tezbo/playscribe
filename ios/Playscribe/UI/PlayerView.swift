@@ -249,9 +249,10 @@ struct PlayerView: View {
                 .toolbarVisibility(duo.pose == .tabletop || fullScreen ? .hidden : .automatic, for: .navigationBar)
                 .toolbar {
                     ToolbarItem(placement: .cancellationAction) {
-                        // bug-r12-close-38pt: the bar's own icon button measured 38 x 38 in Closed landscape and Book (R-12 screen
-                        // included, where it is the only Close); the label carries the 44 pt target itself (G-7).
-                        Button(action: close) { Label("Close", systemImage: "xmark").labelStyle(.iconOnly).hitTarget() }
+                        // bug-r12-close-38pt: the bar's own icon button measured 38 x 38 in Closed and Book (R-12 screen included,
+                        // where it is the only Close), and a 44 pt frame on its label was ignored by the bar (run 46049484027); the
+                        // large control size is the bar's 44 pt button (G-7).
+                        Button(action: close) { Label("Close", systemImage: "xmark") }.controlSize(.large)
                     }
                     if FullBleedVideo.offered(in: duo.pose), controller?.failed == false {
                         ToolbarItem(placement: .primaryAction) { FullBleedVideo.EnterButton { fullScreen = true } }
@@ -465,7 +466,8 @@ struct FullBleedVideo: View {
     struct EnterButton: View {
         var action: () -> Void
         var body: some View {
-            Button(action: action) { Label("Full screen", systemImage: "arrow.up.left.and.arrow.down.right").labelStyle(.iconOnly).hitTarget() }
+            Button(action: action) { Label("Full screen", systemImage: "arrow.up.left.and.arrow.down.right") }
+                .controlSize(.large)
                 .accessibilityIdentifier("videoFullScreen")
         }
     }
