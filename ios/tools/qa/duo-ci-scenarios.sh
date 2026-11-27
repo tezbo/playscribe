@@ -129,6 +129,15 @@ brandbook) # #614: the splash in Book only (light), four frames; a lighter run t
   for i in 1 2 3 4; do xcrun simctl io "$UDID" screenshot --display=$(did) "$OUT/$SHA-brandbook-splash-book-$i-inner-shot.png" >/dev/null 2>&1; echo "brandbook frame $i at +$(( $(date +%s) - T0 )) s after launch (hold 40 s)"; done ;;
 deckdots) # #664 (bug-deck-dots-under-bottom-fade-ax5): Closed portrait Library, deck dots vs the bottom fade. AX5 at rest, after landscape-and-back, after a scroll and back to the top; standard size at rest
   launch -qaRoute library/playing -qaOrientation portrait -UIPreferredContentSizeCategoryName $AX5; snap deckdots 1-ax5-rest
+  # Pixel gate (Iris, #664): the lit page dot (x 492 of 1375 on the outer shot, between y 1500 and 1900) keeps the action colour (160,78,13) +-4.
+  python3 -I - "$OUT"/$SHA-deckdots-1-ax5-rest-outer-shot.png <<'PY' || echo "DECKDOTS PIXEL FAIL"
+import sys
+from PIL import Image
+im = Image.open(sys.argv[1]).convert("RGB"); w = im.size[0]; x = int(492 * w / 1375)
+best = min(((sum(abs(a - b) for a, b in zip(im.getpixel((x, y)), (160, 78, 13))), y, im.getpixel((x, y))) for y in range(1500, min(im.size[1], 1900))))
+ok = all(abs(a - b) <= 4 for a, b in zip(best[2], (160, 78, 13)))
+print("deckdots lit dot pixel", best[2], "at y", best[1], "PASS" if ok else "FAIL"); sys.exit(0 if ok else 1)
+PY
   sim-use ios rotate landscape-left --device "$UDID" >/dev/null 2>&1; sleep 4; snap deckdots 2-ax5-landscape
   sim-use ios rotate portrait --device "$UDID" >/dev/null 2>&1; sleep 5; snap deckdots 3-ax5-rotated-back
   sim-use swipe --from 233,560 --to 233,200 --duration 0.5 --device "$UDID" >/dev/null 2>&1; sleep 2; snap deckdots 4-ax5-scrolled
