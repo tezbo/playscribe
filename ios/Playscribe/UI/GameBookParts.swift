@@ -177,6 +177,9 @@ struct PageArtBand: View {
         .frame(maxWidth: .infinity)
         .clipped()
         .modifier(ExtensionUnlessSlim(slim: slim || !extendsUnderRail))
+        // bug-076 (Iris, Closed): the art runs to the trailing screen edge, behind the rail column, as the update page's does in
+        // portrait. The rail's controls keep their own glass; nothing else moves. Other poses keep their band as it was.
+        .ignoresSafeArea(.container, edges: duo.pose == .closed ? .trailing : [])
         .accessibilityHidden(true)
     }
 }
