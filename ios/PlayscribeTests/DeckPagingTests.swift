@@ -94,6 +94,25 @@ struct DeckPagingTests {
         #expect(PageEdge.spoken(lit: [0], count: 5) == "Update 1 of 5")
     }
 
+    /// The adjustable indicator carries a label and a real string value in every state, never numeric or "nan" (beta 6 gate).
+    @Test func indicatorValueIsAWordsStringInEveryState() throws {
+        #expect(PageEdge.label == "Latest updates")
+        for count in 2...6 { for lead in 0..<count {
+            let cards = (0..<count).map { DeckCard(game: CatalogGame(id: "n\($0)", name: "Game \($0)", platforms: [.ps5], coverage: .none), release: nil, unread: false, date: nil) }
+            for visible in 1...2 {
+                let lit = PageEdge.lit(cards: cards, current: cards[lead].id, visible: visible)
+                let v = PageEdge.spoken(lit: lit, count: count)
+                #expect(v.hasPrefix("Update") && v.contains(" of \(count)") && !v.lowercased().contains("nan") && Double(v) == nil)
+            }
+        } }
+        #expect(PageEdge.spoken(lit: [], count: 3) == "Updates")
+        let root = URL(fileURLWithPath: #filePath).deletingLastPathComponent().deletingLastPathComponent().appendingPathComponent("Playscribe/UI")
+        for f in ["LatestUpdatesDeck.swift", "FrontCover.swift"] {
+            let src = try String(contentsOf: root.appendingPathComponent(f), encoding: .utf8)
+            #expect(src.contains(".accessibilityValue(") && src.contains(".accessibilityAdjustableAction"), "\(f): adjustable needs a value")
+        }
+    }
+
     /// Fixed sizes: the indicator never scales with Dynamic Type, and never animates (Iris).
     @Test func indicatorHasFixedSizesAndNoAnimation() throws {
         #expect(PageEdge.dot == 6 && PageEdge.gap == 10)
