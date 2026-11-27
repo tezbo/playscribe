@@ -98,6 +98,8 @@ struct LatestUpdatesDeck: View {
 
     /// The page edge (44 pt leaves) and the 8 pt gap above it; the card takes the rest of maxHeight.
     private static let pageEdgeHeight: CGFloat = 52
+    /// The dots sit in the top of that row: what the fade may cover below them (Iris, #664: the headline keeps 3 lines at AX5).
+    private static let dotsRowSlack: CGFloat = 16
     /// Accessibility sizes: room for the "+N more updates" chip on its own row (two wrapped lines and a gap).
     private static let chipRowAX: CGFloat = 96
 
@@ -114,13 +116,13 @@ struct LatestUpdatesDeck: View {
         }
     }
 
-    /// Where the deck starts on the screen at rest (the first layout, before any scroll), for the Closed portrait AX cap.
-    @State private var restTop: CGFloat?
+    /// Where the deck starts below the top of the Library's scroll content. A scroll, a rotation or a fold does not change it, so it is
+    /// read live (no one-time capture) and is the deck's distance from the top of the screen at rest.
+    @State private var contentTop: CGFloat = 0
 
     var body: some View {
         content.namedFrame("latestDeck")
-            .onGeometryChange(for: CGFloat.self) { $0.frame(in: .global).minY } action: { if restTop == nil, $0 > 0 { restTop = $0 } }
-            .onChange(of: duo.size) { _, _ in restTop = nil }
+            .onGeometryChange(for: CGFloat.self) { $0.frame(in: .named(LibraryScroll.contentSpace)).minY } action: { contentTop = max(0, $0) }
     }
 
     /// `base`, or at accessibility sizes the tallest caption plus the page edge when that is more.
@@ -153,7 +155,7 @@ struct LatestUpdatesDeck: View {
             // Beta 6 (Iris, #613 regression): the Library's bottom edge fade covers the last 56 pt of the screen, and the dots row is the
             // deck's last 52 pt. So the deck, from where it starts at rest, ends one fade short of the screen bottom: the card
             // plus its dots clear the fade at rest. Never below the base height (`axArtHeight`).
-            let room = duo.size.height - max(0, restTop ?? 0) - EdgeFade.maxHeight - 4
+            let room = duo.size.height - contentTop - EdgeFade.maxHeight - 4 + Self.dotsRowSlack
             return max(axArtHeight + (cards.count > 1 ? Self.pageEdgeHeight : 0), room.rounded(.down))
         }
         return (duo.size.height * 0.5).rounded(.down) + 4

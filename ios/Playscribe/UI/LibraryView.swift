@@ -650,6 +650,7 @@ struct LibraryShelf: View {
             .padding(.horizontal, 16)
             .padding(.vertical, 12)
             .padding(.trailing, railWidth)
+            .coordinateSpace(name: LibraryScroll.contentSpace)
             if duo.pose != .tabletop { EdgeFadeClearance() }
         }
         // Terry, 8 Nov: no way to put the keyboard away. Scrolling dismisses it, and so does a tap outside the field.
@@ -1646,4 +1647,9 @@ struct SelectableChipGround: ViewModifier {
             .background(on ? PlayscribeRole.selectedChipFill : PlayscribeRole.chipFill, in: Capsule())
             .overlay { if on { Capsule().strokeBorder(PlayscribeRole.action, lineWidth: 1.5) } }
     }
+}
+
+/// Names the Library's scroll content so a view in it can read where it sits from the content's top, which a scroll does not change.
+enum LibraryScroll {
+    static let contentSpace = "libraryContent"
 }
