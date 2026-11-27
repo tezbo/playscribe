@@ -299,3 +299,21 @@ test('moving a release date to the official PS5 time sends no alert for an old u
   assert.equal(queueNewPs5(db, { maxAgeHours: 72 }).jobs.length, before, 'the move changes no alert: the 72 h and 30-day guards read the PS5 live time')
   assert.equal(before, 0)
 })
+
+// s-07-source-on-add-backend: one IGDB game through the Feed.
+test('a one-game check finds the game on IGDB, reads its Steam news, and records what it found', async () => {
+  const { checkOneGame } = await import('../src/ingest/checkOne.ts')
+  const at = new Date(Date.now() - 20 * 3600e3).toISOString()
+  const db = openDb(':memory:')
+  const igdb = { async byId(id: number) { return id === 555 ? { igdbId: 555, name: 'Brand New Game', coverImageId: 'cc1', artworkImageId: '', ps5Release: '2026-01-01', ps5ReleasePrecision: null, steamAppId: 4242 } : id === 556 ? { igdbId: 556, name: 'No Steam Game', steamAppId: null } : null } } as never
+  const deps = { db, igdb, fetchFn: fakeFetch({ 'https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid=4242&': steamNews([{ gid: 'p1', title: 'Patch 1.2 notes', date: at, contents: 'Fixed a crash.', tags: ['patchnotes'] }]) }) }
+  await seedGames({ ...deps, igdb: null })
+  const r = await checkOneGame(deps, 555)
+  assert.deepEqual([r.status, r.releases], ['polled', 1])
+  assert.equal((db.prepare('SELECT status FROM source_checks WHERE igdb_id = 555').get() as { status: string }).status, 'polled')
+  assert.equal((await checkOneGame(deps, 556)).status, 'no-source')
+  assert.equal((await checkOneGame(deps, 557)).status, 'unknown')
+  assert.deepEqual(store.sourceChecks(db).map((c) => [c.igdbId, c.status]).sort(), [[555, 'polled'], [556, 'no-source'], [557, 'unknown']])
+  // A later derivation that does not list the game must not retire it.
+  assert.equal(store.retireAutoGames(db, new Set()), 0)
+})

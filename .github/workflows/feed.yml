@@ -17,9 +17,9 @@ on:
   workflow_dispatch:
     inputs:
       action:
-        description: 'poll, backfill (read history back to the since date), confirm (a person checked an official post naming PS5), dismiss (a review item) or info (refresh every game''s description and trailers now)'
+        description: 'poll, backfill (read history back to the since date), confirm (a person checked an official post naming PS5), dismiss (a review item) info (refresh every game''s description and trailers now) or check (read one IGDB game now, as the relay''s source-on-add route sends it)'
         type: choice
-        options: [poll, backfill, confirm, dismiss, info]
+        options: [poll, backfill, confirm, dismiss, info, check]
         default: poll
       hot:
         description: 'poll: hot set only (the :47 run), as the relay Worker cron sends it'
@@ -51,6 +51,9 @@ on:
         description: 'backfill: only drop or fix rows that already exist; create no release and no news item'
         type: boolean
         default: false
+      igdb_id:
+        description: 'check: the IGDB id of the one game to read now (the relay sends it; it is the only input a check takes)'
+        required: false
       games:
         description: 'backfill: only these game ids, comma-separated (e.g. no-mans-sky). Empty = every game.'
         required: false
@@ -135,6 +138,16 @@ jobs:
           # rest of the run and never alerts for a release the feed does not hold (12 Nov: Rogue Prince pushed 3 times, never published).
           PUSH_QUEUE: ${{ runner.temp }}/push-queue.json
         run: npm run ingest --silent -- $HOT_RUN --export "$GITHUB_WORKSPACE/out"
+      # Source on add (relay POST /v1/sources/check): one game, read now. Records what it found in source_checks and publishes.
+      - name: Check one game
+        if: inputs.action == 'check'
+        working-directory: backend
+        env:
+          IGDB_ID: ${{ inputs.igdb_id }}
+          PUSH_QUEUE: ${{ runner.temp }}/push-queue.json
+        run: |
+          case "$IGDB_ID" in ''|*[!0-9]*) echo "::error::igdb_id must be a whole number"; exit 1;; esac
+          npm run ingest --silent -- --igdb "$IGDB_ID" --export "$GITHUB_WORKSPACE/out"
       - name: Backfill
         if: inputs.action == 'backfill'
         working-directory: backend

@@ -71,6 +71,14 @@ These only matter once APNs is on. For now the app keeps follows on the device.
 
 Errors are `{ error: "<message>" }` with 400, 401 (bad or missing device key), 404 or 503.
 
+### Source on add (0.7, `s-07-source-on-add`)
+
+A game the player adds that the feed has no page for is read now instead of waiting for the slow rotation.
+
+- `POST` to the relay's `/v1/sources/check` with `{ "igdbId": 329130 }` and nothing else (no device key, no token). Any other field, or an id that is not a whole number from 1 to 99,999,999, is a 400. Answer `202 { "queued": true }`; `429` with `Retry-After` when the game was checked in the last 10 minutes (600), the address made more than 5 a minute (60) or the day's 100 checks are used (3600); `502` when the check could not be started. The route is not a follow: nothing about the device is stored.
+- It starts the Feed workflow with `action: check` and the id. The run looks the game up (the feed's own row, else IGDB for its Steam page), reads its sources now, records what it found and publishes, normally within a few minutes (GitHub's queue, not the route, sets the time). A game that has releases then has its `games/<id>.json` as usual and joins the rotation.
+- `v1/source-checks.json`: `{ "version": 1, "checks": [{ "igdbId", "gameId", "status", "releaseCount", "checkedAt" }] }`, newest first, at most 500. `status` is `polled` (a source was read; `releaseCount` is what it holds), `no-source` (IGDB lists no Steam page and the registry has none: the source queue reads these) or `unknown` (IGDB has no such game). `checkedAt` is when the Feed looked, so the app can say "Checked, nothing found" with the time. Ids, statuses and times only.
+
 ### Follow list without alerts (0.5.4, "Help keep my games up to date")
 
 The opt-in in Settings sends the follow list so the Feed job polls those games hourly instead of on the slow rotation. It

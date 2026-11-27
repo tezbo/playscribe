@@ -109,6 +109,17 @@ CREATE TABLE IF NOT EXISTS follows (
 );
 
 -- IGDB cover per PS Plus lineup title, resolved by name once (null = looked, not found; retried after a week).
+-- A one-game check asked for through the relay (source on add): what the Feed found for that IGDB game, and when.
+-- status: polled (a source was read), no-source (no Steam page or registry source: Priya's source queue reads these), unknown (IGDB has no such game).
+CREATE TABLE IF NOT EXISTS source_checks (
+  igdb_id INTEGER PRIMARY KEY,
+  game_id TEXT,
+  name TEXT,
+  status TEXT NOT NULL,
+  releases INTEGER NOT NULL DEFAULT 0,
+  checked_at TEXT NOT NULL
+);
+
 CREATE TABLE IF NOT EXISTS plus_covers (
   name TEXT PRIMARY KEY,
   cover_id TEXT,
