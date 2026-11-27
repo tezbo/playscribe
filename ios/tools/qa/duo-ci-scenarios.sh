@@ -247,17 +247,17 @@ fullscreen) # bug-071: full-screen video Fit with our controls in the bands; the
   sleep 5; snap fullscreen 3-controls-hidden; frames 3
   # bug-073 (Terry, beta 6: in Closed a band tap never brought the controls back; in Open it did): a picture tap after the turn,
   # in the middle of the screen, which is on the picture in either coordinate reading. wakes counts it.
-  echo "picture tap: $(sim-use tap -x 339 -y 233 --device "$UDID" 2>&1 | head -1)"; sleep 0.5; frames 4p; snap fullscreen 4p-picture-tap
-  # bug-073: the picture tap brought the controls back with Exit, in Closed after the turn; fails the job.
-  t4=$(ls "$OUT/$SHA"-fullscreen-4p-picture-tap-*-ui.txt | head -1)
-  if grep -q 'shown=1' "$t4" && grep -q '#videoExitFullScreen' "$t4"; then echo "ok picture tap shows Exit"
-  else echo "FAIL picture tap: $(grep -E 'qaBands|videoExitFullScreen' "$t4" | tr '\n' ';')"; FAILED="$FAILED fullscreen-picture-tap"; fi
+  echo "picture tap: $(sim-use tap -x 339 -y 233 --device "$UDID" 2>&1 | head -1)"; t4=$(sim-use ui --device "$UDID" 2>/dev/null); snap fullscreen 4p-picture-tap
+  # bug-073: the picture tap brought the controls back with Exit, in Closed after the turn (read at once: they hide in 3 s); fails the job.
+  echo "frames 4p: $(echo "$t4" | grep -E 'qaBands|videoExitFullScreen' | cut -c1-140 | tr '\n' ';')"
+  if echo "$t4" | grep -q 'shown=1' && echo "$t4" | grep -q '#videoExitFullScreen'; then echo "ok picture tap shows Exit"
+  else echo "FAIL picture tap"; FAILED="$FAILED fullscreen-picture-tap"; fi
   sleep 5
   # Which coordinate space sim-use taps in after the turn is not known, so the band is tapped in both readings.
   echo "band tap: $(sim-use tap -x 339 -y 12 --device "$UDID" 2>&1 | head -1)"; sleep 0.5; frames 4a
   echo "band tap (portrait reading): $(sim-use tap -x 12 -y 339 --device "$UDID" 2>&1 | head -1)"; sleep 0.5; frames 4b
   snap fullscreen 4-band-tap-shows
-  sleep 5; echo "picture tap: $(sim-use tap -x 339 -y 233 --device "$UDID" 2>&1 | head -1)"; sleep 0.5
+  sleep 5; echo "picture tap: $(sim-use tap -x 339 -y 233 --device "$UDID" 2>&1 | head -1)"
   tapl "Exit full screen" 4; snap fullscreen 5-exited
   # bug-073: hidden, then a picture tap, then Exit leaves full screen and turns back to portrait; fails the job.
   t5=$(ls "$OUT/$SHA"-fullscreen-5-exited-*-ui.txt | head -1)
