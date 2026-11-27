@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Quinn's five cloud runs on a booted, app-installed iPhone Duo (hosted runner or Mac). Needs sim-use.
-#   ios/tools/qa/duo-ci-scenarios.sh UDID OUTDIR [scenario ...]    (default: all)   scenarios: continuity trailer closedax5 schemes video axchips deckwide plusend switchax switchtt rails heroswipe herolong removemenu lane fullscreen blocked fsxctest
+#   ios/tools/qa/duo-ci-scenarios.sh UDID OUTDIR [scenario ...]    (default: all)   scenarios: continuity trailer closedax5 schemes video axchips deckwide plusend switchax switchtt rails heroswipe herolong removemenu lane fullscreen blocked tour fsxctest
 # Every step saves <sha>-<scenario>-<step>-<display>-shot.png and -ui.txt (outline with frames, ids and the pose line).
 set -uo pipefail
 UDID=$1; OUT=$2; shift 2; FAILED=""; SCEN=${*:-continuity trailer closedax5 schemes video}
@@ -258,6 +258,15 @@ fullscreen) # bug-071: full-screen video Fit with our controls in the bands; the
   fold 90 portrait; sleep 2; snap fullscreen 9-tabletop-ends-it
   # Every full-screen tree (those with our qaFullScreen probe) must keep YouTube's buttons from VoiceOver; fails the job.
   "$(dirname "$0")/check-no-youtube-buttons.sh" $(grep -l qaFullScreen "$OUT/$SHA"-fullscreen-*-ui.txt) || FAILED="$FAILED fullscreen-youtube-buttons" ;;
+tour) # bug-077: the first-run tour's game row (step 1, empty Library) offers only games whose newest PS5 update has notes,
+  # in Popular order: never Roblox (no updates in the feed) or GTA V (newest update has no notes). Closed portrait and Book.
+  launch -qaRoute tour/1/empty -qaOverlay YES; sleep 12; snap tour 1-closed-portrait
+  fold 90 landscape-left; sleep 4; snap tour 2-book
+  for f in "$OUT/$SHA"-tour-*-ui.txt; do
+    echo "tour row $(basename "$f"): $(grep -E '^ +@[0-9]+ +Button ' "$f" | grep -vE 'Add your first game|Skip|Next|qa' | sed -E 's/^ *@[0-9]+ +Button +//' | cut -c1-40 | tr '\n' ';')"
+    if grep -qE '"(Roblox|Grand Theft Auto V)"' "$f"; then echo "FAIL $(basename "$f"): the tour offers a game without notes"; FAILED="$FAILED tour-row"; fi
+  done
+  fold 0 portrait ;;
 blocked) # R-12: a video YouTube refuses (IFrame error 150) shows Open in YouTube in every pose, never a full-screen button
   # A turn left over from an earlier scenario can keep the Closed scene in landscape (c46af75): rotate away and back first.
   fold 0 landscape-left; sleep 2; fold 0 portrait; sleep 2

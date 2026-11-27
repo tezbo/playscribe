@@ -57,6 +57,40 @@ extension AppModel {
         return games.compactMap { releases($0).first(where: hasSpoilers) }.min { Self.newer($0, $1, by: \.latestDate) }
     }
 
+    /// bug-077: while the tour runs (its welcome card or any step), the empty Library's game row offers only games whose newest
+    /// PS5 update has notes, so the first game a new player opens reads well (Jun's blind playtest: GTA V opened on an update
+    /// with no notes). Outside the tour the Popular strip is unfiltered: any game can still be found and added (Nadia).
+    var tourActive: Bool { tourWelcome || tourStep != nil }
+
+    /// The tour's row: Popular on PS5 in its own order, keeping the games whose newest PS5 update the app has, from the feed or
+    /// the bundled data, has a notes body. A game with no update the app knows of is skipped, as is one only listed by IGDB.
+    func tourPopular(limit: Int) -> [CatalogGame] {
+        let known = Set((data.simulated + allReleasesMerged).map(\.gameID))
+        var byIGDB: [Int: String] = [:]
+        for g in feedIndexGames ?? [] { if let i = g.igdbId, byIGDB[i] == nil { byIGDB[i] = g.id } }
+        for g in games.values { if let i = g.igdbID { byIGDB[i] = g.id } }   // the catalogue's own id wins
+        return Self.tourGames(PS5Index.shared.popular(limit: Self.tourSearchDepth), limit: limit) { g in
+            guard let i = g.igdbID, let id = byIGDB[i], known.contains(id) else { return false }
+            return Self.newestPS5HasNotes(releases(id))
+        }
+    }
+
+    /// How far down Popular the tour looks for games with notes.
+    static let tourSearchDepth = 400
+
+    /// The first `limit` games of `popular`, in order, that qualify.
+    static func tourGames(_ popular: [CatalogGame], limit: Int, qualifies: (CatalogGame) -> Bool) -> [CatalogGame] {
+        var out: [CatalogGame] = []
+        for g in popular where out.count < limit && qualifies(g) { out.append(g) }
+        return out
+    }
+
+    /// Whether the newest PS5 update among `releases` (newest by its PS5 date, any order in) has a notes body.
+    static func newestPS5HasNotes(_ releases: [Release]) -> Bool {
+        guard let newest = releases.filter(\.isPS5Listed).sorted(by: { newer($0, $1, by: \.ps5Date) }).first else { return false }
+        return newest.notes.contains { !$0.items.isEmpty }
+    }
+
     /// A step also advances when the person does the thing it points at (opens a game, opens Updates, flips the switch).
     func tourNoticed(openedGame: Bool = false, tab: AppTab? = nil, spoilersToggled: Bool = false) {
         switch tourStep {
