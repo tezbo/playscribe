@@ -680,7 +680,7 @@ struct TrailerView: View {
                 .toolbarVisibility(duo.pose == .tabletop || fullScreen ? .hidden : .automatic, for: .navigationBar)
                 .toolbar {
                     ToolbarItem(placement: .cancellationAction) {
-                        Button(action: close) { Label("Close", systemImage: "xmark") }
+                        Button(action: close) { Label("Close", systemImage: "xmark").labelStyle(.iconOnly).hitTarget() }   // bug-r12-close-38pt
                     }
                     if FullBleedVideo.offered(in: duo.pose), controller?.failed == false {
                         ToolbarItem(placement: .primaryAction) { FullBleedVideo.EnterButton { fullScreen = true } }
