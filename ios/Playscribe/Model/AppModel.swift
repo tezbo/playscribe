@@ -928,7 +928,10 @@ final class AppModel {
         } else {
             // The reading place goes back with it (the Page's anchor to the pushed page's).
             let pageKey = "page-\(g)-\(Chapter.updates.rawValue)"
-            if let a = nav.anchors[pageKey] { nav.anchors[ReleaseDetailView.anchorKey(p.ref.releaseID)] = a }
+            if let a = nav.anchors[pageKey] {
+                nav.anchors[ReleaseDetailView.anchorKey(p.ref.releaseID)] = a
+                nav.anchors[ReleaseDetailView.restoreKey(p.ref.releaseID)] = a   // the pushed page comes up there once (bug-075)
+            }
             nav.detailReleaseID = p.ref.releaseID
         }
     }
