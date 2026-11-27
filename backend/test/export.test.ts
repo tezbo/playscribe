@@ -5,7 +5,7 @@ import { join } from 'node:path'
 import { test } from 'node:test'
 import { confirmPlatform } from '../src/confirm.ts'
 import { openDb } from '../src/db.ts'
-import { exportStatic } from '../src/export.ts'
+import { exportStatic, SHAPE_STAMP } from '../src/export.ts'
 import { registry } from '../src/registry.ts'
 import { runIngest, seedGames } from '../src/ingest/pipeline.ts'
 import { fakeFetch, rss } from './helpers.ts'
@@ -28,6 +28,10 @@ test('static feed: index, per-game files, latest and review, stable across quiet
   assert.equal(read('games/wukong.json').releases[0].platforms[0].verification, 'pending')
   assert.equal(read('review.json').items[0].releaseId, 'wukong@1.2')
   assert.equal(read('latest.json').releases.length, 1)
+  // The shape floor: an index entry's updatedAt is never before SHAPE_STAMP (so a device re-reads the history once after a change of shape),
+  // while the feed's own updatedAt stays the real newest data change.
+  assert.ok(index.games.find((g: any) => g.id === 'wukong').updatedAt >= SHAPE_STAMP)
+  assert.ok(index.updatedAt < SHAPE_STAMP && read('latest.json').updatedAt < SHAPE_STAMP)
 
   const before = readFileSync(join(out, 'v1', 'index.json'), 'utf8')
   await runIngest(deps, { force: true })
