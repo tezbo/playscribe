@@ -58,11 +58,9 @@ if (process.argv[1]?.endsWith('baseline-coverage.ts')) {
   }
   const full = [...rows.values()].filter((r) => FIELDS.every((f) => !f.required || r[f.key])).length
   lines.push('', `Games with every required field: ${full} of ${n} (${((100 * full) / n).toFixed(1)}%).`)
-  const miss = (key: string) => index.filter((g) => !rows.get(g.id)![key]).map((g) => g.id)
   lines.push('', '## Games missing a required field', '')
   const out = [...rows.entries()].filter(([, r]) => !FIELDS.every((f) => !f.required || r[f.key]))
   lines.push(`${out.length} games miss at least one required field; first 40 by id:`, '', ...out.slice(0, 40).map(([id, r]) => `- ${id}: ${FIELDS.filter((f) => f.required && !r[f.key]).map((f) => f.label).join(', ')}`))
-  void miss
   const text = lines.join('\n') + '\n'
   if (md) writeFileSync(md, text); else console.log(text)
   const under = process.argv.includes('--fail-under') ? Number(process.argv[process.argv.indexOf('--fail-under') + 1]) : 0
