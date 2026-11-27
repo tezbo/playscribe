@@ -67,6 +67,10 @@ export interface Release {
   platforms: PlatformRelease[]
   /** Catch-up summary derived from the notes (src/digest.ts). */
   digest: Digest
+  /** A line quoted from the update's own official notes, or the post title's subtitle: the app's second line. Absent when nothing fits, never a filler. */
+  headline?: string
+  /** Up to 3 lines quoted from the official notes (src/digest.ts headlinesOf). */
+  keyChanges?: string[]
   revision: number
   updatedAt: string
 }

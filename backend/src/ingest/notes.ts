@@ -25,7 +25,7 @@ export const toLines = (body: string) =>
       .replace(/<br\s*\/?>|<\/p>|<\/li>|<\/div>|\[\/?p\]|\[\/?list\]|\[\/?olist\]/gi, '\n')
       .replace(/\[img\][\s\S]*?\[\/img\]|\[previewyoutube[^\]]*\][\s\S]*?\[\/previewyoutube\]/gi, '')
       .replace(/\[\/\*\]/g, '')
-      .replace(/\[\/?[a-z0-9]+(=[^\]]*)?\]/gi, '')
+      .replace(/\[\/?[a-z0-9]+(?:[= ][^\]]*)?\]/gi, '')
       .replace(/<[^>]+>/g, ''),
   )
     .split('\n')
@@ -172,14 +172,17 @@ export const extractNotes = (body: string, fallbackTitle = 'Changes', steamOnly 
       lastItem = null
       continue
     }
-    const heading = line.startsWith('## ') ? line.slice(3).trim() : !line.startsWith('- ') && line.length <= 60 && line.endsWith(':') ? line.slice(0, -1).trim() : null
+    // A heading is a short label. A whole sentence in a heading tag ("[h2]The new patch 1.0.5 has been released to fix some issues.[/h2]") is the
+    // post's text, so it is an item: otherwise a post that is only such headings reads as having no notes at all.
+    const sentence = (t: string) => t.length > 70 || (/[.!?]$/.test(t) && t.split(/\s+/).length >= 6)
+    const heading = line.startsWith('## ') ? (sentence(line.slice(3).trim()) ? null : line.slice(3).trim()) : !line.startsWith('- ') && line.length <= 60 && line.endsWith(':') ? line.slice(0, -1).trim() : null
     if (heading) {
       lastItem = null
       open(heading.replace(/:$/, ''))
       continue
     }
     const bullet = line.startsWith('- ') || line === '-'
-    const text = line.replace(/^-( |$)/, '').trim()
+    const text = line.replace(/^-( |$)/, '').replace(/^## /, '').trim()
     if (!text) continue
     // A plain line right after an item inside a list describes that item.
     if (!bullet && inList && lastItem) {
@@ -199,7 +202,7 @@ export const extractNotes = (body: string, fallbackTitle = 'Changes', steamOnly 
   return sections.filter((s) => s.items.length)
 }
 
-const STRAY_MARKUP = /\[\/(?:\*|[a-z0-9]+)\]|\[\*\]/gi
+const STRAY_MARKUP = /\[\/(?:\*|[a-z0-9]+)\]|\[\*\]|\[(?:p|b|i|u|h\d|list|olist|url|img|quote|code|spoiler|noparse|hr|table|tr|td|th)(?:[= ][^\]]*)?\]/gi
 /** Stray BBCode left in stored text by an older parser ("[/*]" items): strip it, and drop what it leaves empty. */
 const stripStray = (items: NoteItem[]): NoteItem[] =>
   items.map((i) => ({ ...i, text: i.text.replace(STRAY_MARKUP, '').replace(/\s+/g, ' ').trim() })).filter((i) => i.text.length > 0)

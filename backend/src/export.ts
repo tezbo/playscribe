@@ -16,6 +16,10 @@ import { gameFromRow, getRelease, listReleases, newsOf, releaseFromRow, sourceCh
 //   v1/review.json         open review items (public post links only)
 //   v1/plus.json           the hand-curated PS Plus monthly games (src/sources/plus.json)
 // Output is deterministic for the same data, so an unchanged run produces no commit.
+// The app re-reads a game's history only when its index entry's updatedAt moves. A change to how every release is written (27 Nov 2026: a headline and
+// key changes added to each) moves nothing in the data, so every entry is floored at the moment of the change: each device re-reads its library games once.
+// A later real update is newer than the floor and wins. Raise it again for the next change of shape.
+export const SHAPE_STAMP = '2026-11-27T21:30:00.000Z'
 const write = (path: string, data: unknown) => writeFileSync(path, JSON.stringify(data, null, 1) + '\n')
 
 /**
@@ -32,7 +36,8 @@ const writeGame = (db: DB, root: string, g: ReturnType<typeof gameFromRow>, auto
   const noSource = registry.games[g.id]?.sources.length === 0
   if (!autoIds.has(g.id)) write(join(root, 'news', `${g.id}.json`), { items: newsOf(db, g.id) })
   write(join(root, 'games', `${g.id}.json`), { game: g, releases, issues: issuesOf(g.id, releases) })
-  return { ...g, latestReleaseId: releases[0]?.id ?? null, releaseCount: releases.length, updatedAt: updatedAt || null, ...(noSource ? { patchSource: false } : {}) }
+  // `changed` is the real newest data change (it feeds the feed's own updatedAt); the entry's updatedAt carries the floor.
+  return { entry: { ...g, latestReleaseId: releases[0]?.id ?? null, releaseCount: releases.length, updatedAt: updatedAt ? (updatedAt > SHAPE_STAMP ? updatedAt : SHAPE_STAMP) : null, ...(noSource ? { patchSource: false } : {}) }, changed: updatedAt }
 }
 
 /**
@@ -53,11 +58,12 @@ export const exportOneGame = (db: DB, outDir: string, gameId: string | null): bo
   mkdirSync(join(root, 'games'), { recursive: true })
   const autoIds = new Set((db.prepare('SELECT id FROM games WHERE auto = 1').all() as { id: string }[]).map((r) => r.id))
   const retired = new Set((db.prepare('SELECT id FROM games WHERE auto = 2').all() as { id: string }[]).map((r) => r.id))
-  const entry = writeGame(db, root, gameFromRow(row), autoIds, retired)
+  const written = writeGame(db, root, gameFromRow(row), autoIds, retired)
+  const entry = written?.entry
   const games = current.games.filter((g) => g.id !== gameId)
   if (entry) games.push(entry)
   games.sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0))
-  const newest = [current.updatedAt ?? '', entry?.updatedAt ?? ''].reduce((m, x) => (x > m ? x : m), '')
+  const newest = [current.updatedAt ?? '', written?.changed ?? ''].reduce((m, x) => (x > m ? x : m), '')
   write(join(root, 'index.json'), { version: 1, updatedAt: newest || null, games })
   const latest = (db.prepare('SELECT * FROM releases ORDER BY updated_at DESC, id LIMIT 100').all() as Record<string, any>[]).map((r) => releaseFromRow(db, r))
   write(join(root, 'latest.json'), { updatedAt: newest || '1970-01-01T00:00:00.000Z', releases: latest })
@@ -78,10 +84,10 @@ export const exportStatic = (db: DB, outDir: string) => {
   const autoIds = new Set((db.prepare('SELECT id FROM games WHERE auto = 1').all() as { id: string }[]).map((r) => r.id))
   const retired = new Set((db.prepare('SELECT id FROM games WHERE auto = 2').all() as { id: string }[]).map((r) => r.id))
   for (const g of games) {
-    const e = writeGame(db, root, g, autoIds, retired)
-    if (!e) continue
-    if (e.updatedAt && e.updatedAt > newest) newest = e.updatedAt
-    index.push(e)
+    const w = writeGame(db, root, g, autoIds, retired)
+    if (!w) continue
+    if (w.changed && w.changed > newest) newest = w.changed
+    index.push(w.entry)
   }
   const latest = (db.prepare('SELECT * FROM releases ORDER BY updated_at DESC, id LIMIT 100').all() as Record<string, any>[]).map((r) => releaseFromRow(db, r))
   const review = (db.prepare('SELECT * FROM review_items WHERE resolved_at IS NULL ORDER BY created_at, id').all() as Record<string, any>[]).map((i) => ({
