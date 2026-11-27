@@ -114,7 +114,14 @@ struct LatestUpdatesDeck: View {
         }
     }
 
-    var body: some View { content.namedFrame("latestDeck") }
+    /// Where the deck starts on the screen at rest (the first layout, before any scroll), for the Closed portrait AX cap.
+    @State private var restTop: CGFloat?
+
+    var body: some View {
+        content.namedFrame("latestDeck")
+            .onGeometryChange(for: CGFloat.self) { $0.frame(in: .global).minY } action: { if restTop == nil, $0 > 0 { restTop = $0 } }
+            .onChange(of: duo.size) { _, _ in restTop = nil }
+    }
 
     /// `base`, or at accessibility sizes the tallest caption plus the page edge when that is more.
     private func grown(_ base: CGFloat) -> CGFloat {
@@ -142,7 +149,13 @@ struct LatestUpdatesDeck: View {
     /// runs past a screen; a headline that still needs more ends on a whole-word ellipsis. J-5's half stays at standard sizes and in every
     /// other pose (ux-acceptance J-5, Closed portrait AX exception).
     private var axCap: CGFloat {
-        if typeSize.isAccessibilitySize && duo.pose == .closed && !duo.isLandscape { return duo.size.height.rounded(.down) }
+        if typeSize.isAccessibilitySize && duo.pose == .closed && !duo.isLandscape {
+            // Beta 6 (Iris, #613 regression): the Library's bottom edge fade covers the last 56 pt of the screen, and the dots row is the
+            // deck's last 52 pt. So the deck, from where it starts at rest, ends one fade short of the screen bottom: the card
+            // plus its dots clear the fade at rest. Never below the base height (`axArtHeight`).
+            let room = duo.size.height - max(0, restTop ?? 0) - EdgeFade.maxHeight - 4
+            return max(axArtHeight + (cards.count > 1 ? Self.pageEdgeHeight : 0), room.rounded(.down))
+        }
         return (duo.size.height * 0.5).rounded(.down) + 4
     }
 
