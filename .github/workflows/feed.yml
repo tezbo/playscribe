@@ -196,6 +196,12 @@ jobs:
           npm run upcoming --silent -- "$GITHUB_WORKSPACE/out" && date -u +%FT%TZ > "$stamp"
       # Always runs, and Publish does not run if it fails: the state database goes to a public branch, so it must hold
       # no device and no APNs token. Counts only in the log.
+      # Dawnwalker baseline (s-07-dawnwalker-baseline-every-game): every published game against the checklist, in the run summary. Never fails the run.
+      - name: Baseline coverage
+        if: (github.event_name == 'schedule' && github.event.schedule != '47 * * * *') || (inputs.action == 'poll' && !inputs.hot) || inputs.action == 'check'
+        continue-on-error: true
+        working-directory: backend
+        run: npx tsx scripts/baseline-coverage.ts "$GITHUB_WORKSPACE/out" --md "$RUNNER_TEMP/baseline.md" && cat "$RUNNER_TEMP/baseline.md" >> "$GITHUB_STEP_SUMMARY"
       - name: Scrub devices
         if: always()
         working-directory: backend
