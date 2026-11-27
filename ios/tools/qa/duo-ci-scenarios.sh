@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Quinn's five cloud runs on a booted, app-installed iPhone Duo (hosted runner or Mac). Needs sim-use.
-#   ios/tools/qa/duo-ci-scenarios.sh UDID OUTDIR [scenario ...]    (default: all)   scenarios: continuity trailer closedax5 schemes video axchips deckwide plusend switchax switchtt rails heroswipe herolong removemenu lane fullscreen blocked fsxctest
+#   ios/tools/qa/duo-ci-scenarios.sh UDID OUTDIR [scenario ...]    (default: all)   scenarios: continuity trailer closedax5 schemes video axchips deckwide plusend switchax switchtt rails heroswipe herolong removemenu lane fullscreen inline blocked fsxctest
 # Every step saves <sha>-<scenario>-<step>-<display>-shot.png and -ui.txt (outline with frames, ids and the pose line).
 set -uo pipefail
 UDID=$1; OUT=$2; shift 2; FAILED=""; SCEN=${*:-continuity trailer closedax5 schemes video}
@@ -258,6 +258,17 @@ fullscreen) # bug-071: full-screen video Fit with our controls in the bands; the
   fold 90 portrait; sleep 2; snap fullscreen 9-tabletop-ends-it
   # Every full-screen tree (those with our qaFullScreen probe) must keep YouTube's buttons from VoiceOver; fails the job.
   "$(dirname "$0")/check-no-youtube-buttons.sh" $(grep -l qaFullScreen "$OUT/$SHA"-fullscreen-*-ui.txt) || FAILED="$FAILED fullscreen-youtube-buttons" ;;
+inline) # bug-inline-video-voiceover-stray-iframe: the inline player, playing, in Closed portrait, Closed landscape and Book,
+  # for an update video (PlayerView) and a trailer (the game page's player). VoiceOver gets one player element; fails the job.
+  tapl() { echo "tap $1: $(sim-use tap --label "$1" --device "$UDID" 2>&1 | head -1)"; sleep "${2:-4}"; }
+  for r in video/dawnwalker/dawnwalker@1.1:update trailer/dQw4w9WgXcQ/dawnwalker:trailer; do route=${r%%:*}; n=${r##*:}
+    launch -qaRoute "$route" -qaOverlay YES -qaVideoTime YES
+    tapl Play 8; snap inline $n-1-closed-portrait
+    fold 0 landscape-left; sleep 3; snap inline $n-2-closed-landscape
+    fold 90 landscape-left; sleep 3; snap inline $n-3-book
+    fold 0 portrait; sleep 2
+  done
+  "$(dirname "$0")/check-inline-player.sh" "$OUT/$SHA"-inline-*-ui.txt || FAILED="$FAILED inline-player" ;;
 blocked) # R-12: a video YouTube refuses (IFrame error 150) shows Open in YouTube in every pose, never a full-screen button
   # A turn left over from an earlier scenario can keep the Closed scene in landscape (c46af75): rotate away and back first.
   fold 0 landscape-left; sleep 2; fold 0 portrait; sleep 2
