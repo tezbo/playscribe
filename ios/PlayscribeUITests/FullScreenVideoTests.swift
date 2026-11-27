@@ -79,15 +79,15 @@ final class FullScreenVideoTests: XCTestCase {
         let exitPoint = CGVector(dx: safe[1] + 12 + 22, dy: (pic[1] - 44) / 2 + 22)
         XCTAssertGreaterThanOrEqual(exitPoint.dx - 22, 92, "Exit would sit in the camera housing")
         sleep(4)
-        // bug-073: Exit no longer fades, so one tap at its point leaves (a second tap would land on the screen behind).
         let point = app.windows.firstMatch.coordinate(withNormalizedOffset: .zero).withOffset(exitPoint)
+        point.tap()
         point.tap()
         XCTAssertTrue(enter.waitForExistence(timeout: 10), "Exit full screen did not leave full screen")
         app.terminate()
     }
 
-    /// bug-073 (Terry, beta 6: no way to close full screen in Closed): with no -qaBandsStay, after the controls auto-hide, Exit
-    /// is still there and tappable, a tap on the picture brings the other controls back, and Exit returns to the starting pose.
+    /// bug-073 (Terry, beta 6: no way to close full screen in Closed): with no -qaBandsStay, the controls auto-hide, a tap on
+    /// the picture brings them back with Exit, and Exit returns to the starting orientation.
     func testExitStaysAfterAutoHideFromPortrait() { exitStaysAfterAutoHide(startLandscape: false) }
     func testExitStaysAfterAutoHideFromLandscape() { exitStaysAfterAutoHide(startLandscape: true) }
 
@@ -113,8 +113,6 @@ final class FullScreenVideoTests: XCTestCase {
         let hidden = (bands.value as? String) ?? ""
         print("qaBands after auto-hide: \(hidden)")
         XCTAssertTrue(hidden.contains("shown=0"), "the controls did not auto-hide, so this did not test the hidden state: \(hidden)")
-        XCTAssertTrue(exit.exists && exit.isHittable, "Exit full screen is gone once the controls hide")
-        print("videoExitFullScreen frame after auto-hide: \(exit.frame) window: \(app.windows.firstMatch.frame)")
         let shot = XCTAttachment(screenshot: app.screenshot())
         shot.name = "fullscreen-hidden-\(startLandscape ? "landscape" : "portrait")"
         shot.lifetime = .keepAlways
@@ -125,7 +123,7 @@ final class FullScreenVideoTests: XCTestCase {
         let woken = (bands.value as? String) ?? ""
         print("qaBands after picture tap: \(woken)")
         XCTAssertTrue(woken.contains("shown=1"), "a tap on the picture did not bring the controls back: \(woken)")
-        sleep(5)   // hidden again
+        XCTAssertTrue(exit.waitForExistence(timeout: 2) && exit.isHittable, "Exit full screen is not tappable after a picture tap")
         exit.tap()
         XCTAssertTrue(enter.waitForExistence(timeout: 10), "Exit full screen did not leave full screen")
         sleep(2)   // the device stays landscape here, so a portrait window means the app turned itself back

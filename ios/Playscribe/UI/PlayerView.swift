@@ -959,8 +959,8 @@ enum VideoOrientation {
 /// player (YouTube RMF), as plain white glyphs with no glass. Top band: Exit full screen and the title. Bottom band: back 10,
 /// play/pause, forward 10, elapsed, the scrubber and remaining. In Book the transport is on the leading page and the scrubber on
 /// the trailing one, nothing within 8 pt of the division. They fade together (opacity, 0.25 s) 3 s after the last touch while
-/// playing, and show again on a tap in a band; a tap on the picture is YouTube's (policy_touches on the card), so it never
-/// shows ours. While hidden, the first band tap only shows them. VoiceOver and Switch Control keep them shown.
+/// playing, and show again on any tap: in a band, or on the picture (bug-073, Terry on beta 6: in Closed a band tap never
+/// brought them back, so there was no way out; the picture tap is heard without being taken from YouTube). While hidden, the first band tap only shows them. VoiceOver and Switch Control keep them shown.
 struct FullScreenBands: View {
     @Bindable var controller: YouTubeController
     var title: String
@@ -1041,13 +1041,9 @@ struct FullScreenBands: View {
             // The bands themselves take taps (to show the controls), never the picture.
             bandCatcher(CGRect(x: 0, y: 0, width: screen.width, height: picture.minY))
             bandCatcher(CGRect(x: 0, y: picture.maxY, width: screen.width, height: screen.height - picture.maxY))
-            // bug-073 (Terry, beta 6: no way to close full screen in Closed once the controls faded): Exit never fades. It sits in
-            // the top band, never over the picture, so it can always be found, tapped and reached by VoiceOver.
-            glyph("chevron.down", "Exit full screen", id: "videoExitFullScreen", action: onExit)
-                .offset(x: l.top.minX, y: l.top.minY)
             Group {
                 HStack(spacing: 12) {
-                    Color.clear.frame(width: 44, height: 44).accessibilityHidden(true)   // Exit's place, drawn above
+                    glyph("chevron.down", "Exit full screen", id: "videoExitFullScreen", action: onExit)
                     Text(title)
                         .font(PlayscribeFont.caption)
                         .foregroundStyle(.white.opacity(0.7))
