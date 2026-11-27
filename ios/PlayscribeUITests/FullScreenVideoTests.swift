@@ -126,7 +126,7 @@ final class FullScreenVideoTests: XCTestCase {
         let origin = app.coordinate(withNormalizedOffset: .zero)
         func points(_ x: CGFloat, _ y: CGFloat) -> [XCUICoordinate] {
             (startLandscape ? [CGVector(dx: x, dy: y)]
-                : [CGVector(dx: y, dy: x), CGVector(dx: 466 - y, dy: x), CGVector(dx: y, dy: 678 - x)]).map { origin.withOffset($0) }
+                : [CGVector(dx: y, dy: x), CGVector(dx: 466 - y, dy: x), CGVector(dx: y, dy: 678 - x), CGVector(dx: x, dy: y)]).map { origin.withOffset($0) }
         }
         let exitPoints = points(safe[1] + 12 + 22, (pic[1] - 44) / 2 + 22)
         let pictureMiddle = points(pic[0] + pic[2] / 2, pic[1] + pic[3] / 2)[0]   // the middle is the same point either way

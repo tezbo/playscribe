@@ -264,18 +264,19 @@ fullscreen) # bug-071: full-screen video Fit with our controls in the bands; the
   g=$(echo "$t4" | grep -o 'pic=[0-9,x]* safe=[0-9,]*' | head -1); pic=${g#pic=}; pic=${pic%% *}; sf=${g#*safe=}
   lx=$(( $(echo "$sf" | cut -d, -f2) + 12 + 22 )); ly=$(( ( $(echo "$pic" | cut -d, -f2) - 44 ) / 2 + 22 ))
   # Also (y, x): every result so far fits it (6cba5b0 missed with both rotations; 12,339 woke the top band, 339,12 hit the picture).
-  for xy in "$ly $lx" "$((466 - ly)) $lx" "$ly $((678 - lx))"; do
+  # bug-073 measurement, before any Exit try: where taps injected at these device points land in the turned window (qaLastTap,
+  # window space). The picture, bands and corners; 118,22 last, as it may be Exit.
+  for xy in "233 339" "339 233" "12 339" "339 12" "300 444" "444 300" "22 118" "444 118" "22 560" "118 22"; do
+    sim-use ui --device "$UDID" 2>/dev/null | grep -q qaFullScreen || break
+    sim-use tap -x ${xy% *} -y ${xy#* } --device "$UDID" >/dev/null 2>&1; sleep 0.3
+    echo "probe tap at device ($xy) landed at: $(sim-use ui --device "$UDID" 2>/dev/null | grep -o 'tap=[a-z0-9,-]*' | head -1)"
+  done
+  # Identity (device = window) as a fourth reading.
+  for xy in "$ly $lx" "$((466 - ly)) $lx" "$ly $((678 - lx))" "$lx $ly"; do
     sleep 5; echo "picture tap: $(sim-use tap -x 233 -y 339 --device "$UDID" 2>&1 | head -1)"
     echo "exit tap at ($xy) from $g: $(sim-use tap -x ${xy% *} -y ${xy#* } --device "$UDID" 2>&1 | head -1)"; sleep 4
     sim-use ui --device "$UDID" 2>/dev/null | grep -q qaFullScreen || { echo "exit reading: $xy"; break; }
   done
-  # bug-073 measurement: where taps injected at these device points land in the turned window (qaLastTap, window space).
-  if sim-use ui --device "$UDID" 2>/dev/null | grep -q qaFullScreen; then
-    for xy in "12 339" "339 12" "233 339" "22 118" "444 118" "22 560" "118 22"; do
-      sim-use tap -x ${xy% *} -y ${xy#* } --device "$UDID" >/dev/null 2>&1; sleep 0.3
-      echo "probe tap at device ($xy) landed at: $(sim-use ui --device "$UDID" 2>/dev/null | grep -o 'tap=[a-z0-9,]*' | head -1)"
-    done
-  fi
   snap fullscreen 5-exited
   # bug-073: hidden, then a picture tap, then Exit leaves full screen and turns back to portrait; fails the job.
   t5=$(ls "$OUT/$SHA"-fullscreen-5-exited-*-ui.txt | head -1)
