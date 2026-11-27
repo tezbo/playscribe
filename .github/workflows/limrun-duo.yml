@@ -1,11 +1,12 @@
 name: Limrun Duo (interactive/video/parity)
 
 # Real iPhone Duo on Limrun's cloud, for what the free sim-use CI shoot cannot do (video, release parity).
-# Manual only, costs credits (~2 per simulator minute). Needs the repo Actions secret LIMRUN_API_KEY;
-# until it exists this workflow exits green with a notice and spends nothing.
+# Manual only, costs credits (~2 per simulator minute). Needs the repo Actions secret LIMRUN_API_KEY; without it the
+# job fails (Quinn, beta 6 gate: a skipped shoot must never read as a pass) and spends nothing.
 on:
   workflow_dispatch:
     inputs:
+      route: { description: 'QA route to open (-qaRoute), e.g. gamepage/dawnwalker', default: 'library/playing' }
       steps: { description: 'angle[:orientation] list', default: '0 180 90:landscape-left' }
       record: { description: 'Record video (1 = yes)', default: '' }
 
@@ -20,18 +21,17 @@ jobs:
         id: gate
         run: |
           if [ -z "$LIM_API_KEY" ]; then
-            echo "::notice::LIMRUN_API_KEY is not set (repo Settings > Secrets and variables > Actions). Skipping; no credits spent."
-            echo "### Skipped: LIMRUN_API_KEY secret missing" >> "$GITHUB_STEP_SUMMARY"
-            echo "run=no" >> "$GITHUB_OUTPUT"
-          else echo "run=yes" >> "$GITHUB_OUTPUT"; fi
+            echo "::error::LIMRUN_API_KEY is not set (repo Settings > Secrets and variables > Actions). Nothing was shot; no credits spent."
+            echo "### Failed: LIMRUN_API_KEY secret missing, nothing was shot" >> "$GITHUB_STEP_SUMMARY"
+            exit 1
+          fi
       - uses: actions/checkout@v4
-        if: steps.gate.outputs.run == 'yes'
       - name: Shoot
-        if: steps.gate.outputs.run == 'yes'
         env:
           RECORD: ${{ inputs.record }}
           STEPS: ${{ inputs.steps }}
-        run: ios/tools/qa/limrun-duo.sh out library/playing "$STEPS"
+          ROUTE: ${{ inputs.route }}
+        run: ios/tools/qa/limrun-duo.sh out "$ROUTE" "$STEPS"
       - uses: actions/upload-artifact@v4
-        if: always() && steps.gate.outputs.run == 'yes'
+        if: always()
         with: { name: limrun-duo, path: out }

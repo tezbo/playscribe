@@ -24,9 +24,9 @@ trap '$LIM delete "$ID" >/dev/null 2>&1; $LIM_X delete "$X" >/dev/null 2>&1' EXI
 $LIM_X attach-simulator "$ID" --id "$X" >/dev/null
 $LIM_X build . --id "$X" --scheme Playscribe --xcodegen-spec project.yml --xcode-version 27.1 | tail -2
 [ -n "${RECORD:-}" ] && $LIM record start --id "$ID" >/dev/null 2>&1 || true
-# NOTE: `lim ios launch-app` (24 Nov) has no launch-argument option, only --env, so -qaRoute and the other
-# -qa flags cannot be passed here and the first-run tour shows. Use duo-poses.yml (sim-use on CI) for routes.
-$LIM launch-app co.codeconnectors.playscribe --detach --id "$ID" >/dev/null
+# `lim ios launch-app` has no launch-argument option (only --env), so the app is launched through lim's simctl pass-through,
+# which takes -qaRoute and any extra -qa flags (lim 0.63.0 `ios simctl --help`).
+$LIM simctl --id "$ID" -- launch booted co.codeconnectors.playscribe -qaRoute "$ROUTE" "$@" >/dev/null
 sleep 6; n=0
 for s in $STEPS; do
   n=$((n+1)); ang=${s%%:*}; ori=${s#*:}; [ "$ori" = "$s" ] && ori=portrait
