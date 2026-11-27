@@ -3,7 +3,7 @@ import { now, type DB } from './db.ts'
 import newsSources from './sources/news-sources.json' with { type: 'json' }
 import { alertOf } from './alerts.ts'
 import { artworkUrl, squareCoverUrl } from './artwork.ts'
-import { digestOf } from './digest.ts'
+import { digestOf, handWrittenHeadlines, headlinesOf } from './digest.ts'
 import { PS5_LAUNCH } from './ps5-dates.ts'
 import { tagNotes } from './ingest/notes.ts'
 import type { Field, Game, KindBasis, NoteSection, Platform, PlatformRelease, PlatformStatus, Release, ReleaseKind, ReleaseLinks, Verification } from './types.ts'
@@ -127,6 +127,7 @@ export const releaseFromRow = (db: DB, r: Row): Release => {
     announcedAt: r.announced_at,
     notes,
     digest: digestOf(notes),
+    ...(handWrittenHeadlines().has(r.id) ? {} : headlinesOf(notes, r.display_name)),
     sourceIds,
     links: json(r.links, {}),
     platforms: platformRows.map((p) => platformFromRow(p, json(r.links, {}))),

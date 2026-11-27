@@ -356,3 +356,8 @@ test('a one-game export rewrites only that game, its index entry, latest and the
   for (const f of ['index.json', 'latest.json', 'games/rocket-league.json']) assert.equal(readFileSync(join(dir, 'v1', f), 'utf8'), readFileSync(join(full, 'v1', f), 'utf8'), `${f} is what a full export writes`)
   assert.equal(exportOneGame(db, join(dir, 'nowhere'), 'rocket-league'), false, 'no index to build on: the caller exports everything')
 })
+
+test('a sentence in a heading tag is the post\'s text, not a heading: a post of only such lines still has notes (data-notes-coverage-all-games)', () => {
+  const sections = extractNotes('[h2]Thank you for playing. The new patch version 1.0.5 has been released to fix some issues.[/h2]\n[h3]Collect all of your favorite pirates and craft badges![/h3]\n[h2]Bug Fixes[/h2][list][*]Fixed a crash[/list]')
+  assert.deepEqual(sections.map((s) => [s.title, s.items.map((i) => i.text)]), [['Changes', ['Thank you for playing. The new patch version 1.0.5 has been released to fix some issues.', 'Collect all of your favorite pirates and craft badges!']], ['Bug Fixes', ['Fixed a crash']]])
+})

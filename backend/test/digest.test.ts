@@ -25,3 +25,18 @@ test('digest: top new lines only when headings are clean', () => {
 test('digest: empty notes are all zero', () => {
   assert.deepEqual(digestOf([]), { new: 0, fixed: 0, balance: 0, other: 0, ps5: 0 })
 })
+
+// data-notes-coverage-all-games: the Feed sent no headline, so the app showed "Fixes and tuning" for every update with notes.
+test('headlinesOf: quotes the most significant official item, never a greeting; the title subtitle comes first; nothing fits means none', async () => {
+  const { headlinesOf, titleSubtitle } = await import('../src/digest.ts')
+  const item = (text: string, category: 'new' | 'fixed' | 'balance' | 'other', pcOnly = false) => ({ text, category, pcOnly, ps5ProOnly: false })
+  const out = headlinesOf([
+    { title: 'Changes', items: [item('Hello everyone, thanks for playing this update!', 'other'), item('Fixed a crash when opening the map', 'fixed'), item('Added Idus Knight and Heavy Knight as new starting classes', 'new'), item('Added a PC-only DLSS toggle for the menu', 'new', true)] },
+  ])
+  assert.equal(out.headline, 'Added Idus Knight and Heavy Knight as new starting classes')
+  assert.deepEqual(out.keyChanges, ['Added Idus Knight and Heavy Knight as new starting classes', 'Fixed a crash when opening the map'])
+  assert.equal(titleSubtitle('Update 7.2: The Decimation'), 'The Decimation')
+  assert.equal(titleSubtitle('Update 1.4'), null)
+  assert.equal(headlinesOf([{ title: 'Changes', items: [item('Hi all', 'other')] }], 'Patch 2').headline, undefined)
+  assert.equal(headlinesOf([{ title: 'Changes', items: [item('Fixed a crash when opening the map during the second chapter and the long chase that follows it in the old town', 'fixed')] }]).headline?.endsWith('…'), true)
+})
