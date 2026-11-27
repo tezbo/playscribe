@@ -8,7 +8,7 @@ SHA=$(git rev-parse --short HEAD 2>/dev/null || echo nosha); B=co.codeconnectors
 AX5=UICTContentSizeCategoryAccessibilityXXXL
 # Rotate first, fold second, then check the active display matches the angle (inner for any open angle, outer for 0); redo once if not.
 fold() {
-  for try in 1 2 3; do
+  for try in 1 2 3 4 5; do
     sim-use ios rotate "${2:-portrait}" --device "$UDID" >/dev/null 2>&1; sim-use ios fold "$1" --device "$UDID" >/dev/null 2>&1; sleep 5
     local d o; read -r d o <<<"$(sim-use ios fold --json --device "$UDID" 2>/dev/null | python3 -c 'import json,sys;a=json.load(sys.stdin)["data"]["posture"]["activeDisplay"];print(a["id"],a["orientation"])' 2>/dev/null || echo "1 ?")"
     # inner display must also report the requested orientation (portrait above 0 deg is Tabletop below 140, landscape is Book)
