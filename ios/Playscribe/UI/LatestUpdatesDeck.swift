@@ -98,6 +98,8 @@ struct LatestUpdatesDeck: View {
 
     /// The page edge (44 pt leaves) and the 8 pt gap above it; the card takes the rest of maxHeight.
     private static let pageEdgeHeight: CGFloat = 52
+    /// The dots sit in the top of that row: what the fade may cover below them (Iris, #664: the headline keeps 3 lines at AX5).
+    private static let dotsRowSlack: CGFloat = 24
     /// Accessibility sizes: room for the "+N more updates" chip on its own row (two wrapped lines and a gap).
     private static let chipRowAX: CGFloat = 96
 
@@ -114,7 +116,14 @@ struct LatestUpdatesDeck: View {
         }
     }
 
-    var body: some View { content.namedFrame("latestDeck") }
+    /// Where the deck starts below the top of the Library's scroll content. A scroll, a rotation or a fold does not change it, so it is
+    /// read live (no one-time capture) and is the deck's distance from the top of the screen at rest.
+    @State private var contentTop: CGFloat = 0
+
+    var body: some View {
+        content.namedFrame("latestDeck")
+            .onGeometryChange(for: CGFloat.self) { $0.frame(in: .named(LibraryScroll.contentSpace)).minY } action: { contentTop = max(0, $0) }
+    }
 
     /// `base`, or at accessibility sizes the tallest caption plus the page edge when that is more.
     private func grown(_ base: CGFloat) -> CGFloat {
@@ -142,7 +151,13 @@ struct LatestUpdatesDeck: View {
     /// runs past a screen; a headline that still needs more ends on a whole-word ellipsis. J-5's half stays at standard sizes and in every
     /// other pose (ux-acceptance J-5, Closed portrait AX exception).
     private var axCap: CGFloat {
-        if typeSize.isAccessibilitySize && duo.pose == .closed && !duo.isLandscape { return duo.size.height.rounded(.down) }
+        if typeSize.isAccessibilitySize && duo.pose == .closed && !duo.isLandscape {
+            // Beta 6 (Iris, #613 regression): the Library's bottom edge fade covers the last 56 pt of the screen, and the dots row is the
+            // deck's last 52 pt. So the deck, from where it starts at rest, ends one fade short of the screen bottom: the card
+            // plus its dots clear the fade at rest (the fade is 28 pt here, `EdgeFade.axLibraryClosedCap`; the room still counts 56, so the dots stay put and clear the thinner fade). Never below the base height (`axArtHeight`).
+            let room = duo.size.height - contentTop - EdgeFade.maxHeight - 4 + Self.dotsRowSlack
+            return max(axArtHeight + (cards.count > 1 ? Self.pageEdgeHeight : 0), room.rounded(.down))
+        }
         return (duo.size.height * 0.5).rounded(.down) + 4
     }
 

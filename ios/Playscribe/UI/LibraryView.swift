@@ -650,6 +650,7 @@ struct LibraryShelf: View {
             .padding(.horizontal, 16)
             .padding(.vertical, 12)
             .padding(.trailing, railWidth)
+            .coordinateSpace(name: LibraryScroll.contentSpace)
             if duo.pose != .tabletop { EdgeFadeClearance() }
         }
         // Terry, 8 Nov: no way to put the keyboard away. Scrolling dismisses it, and so does a tap outside the field.
@@ -670,7 +671,8 @@ struct LibraryShelf: View {
         .modifier(ScrolledTopEdge(active: duo.pose == .tabletop, ink: PlayscribeRole.bg))
         // bug-library-tabbar-edge-fade (R-7): tiles fade out where the page ends above the floating tab bar, as on the game page.
         // Not in Tabletop: its lower half keeps its own edges.
-        .fadesAtBottomEdge(active: duo.pose != .tabletop)
+        .fadesAtBottomEdge(active: duo.pose != .tabletop,
+                         cap: typeSize.isAccessibilitySize && duo.pose == .closed && !duo.isLandscape ? EdgeFade.axLibraryClosedCap : EdgeFade.maxHeight)
         // The pill and toasts sit at the bottom edge; the page ends above them (0.5.1 spec 2, Iris). Shared by every page.
         // No soft-edge mask: it made the Open portrait large "Library" title vanish (354d15c, 9914a80), see MessageClearance.
         .clearsMessages()
@@ -1646,4 +1648,9 @@ struct SelectableChipGround: ViewModifier {
             .background(on ? PlayscribeRole.selectedChipFill : PlayscribeRole.chipFill, in: Capsule())
             .overlay { if on { Capsule().strokeBorder(PlayscribeRole.action, lineWidth: 1.5) } }
     }
+}
+
+/// Names the Library's scroll content so a view in it can read where it sits from the content's top, which a scroll does not change.
+enum LibraryScroll {
+    static let contentSpace = "libraryContent"
 }
