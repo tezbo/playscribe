@@ -1,0 +1,68 @@
+name: iOS UI one test
+
+# One UI test, N times, on the Closed (outer) display of the Duo simulator, for a flaky-test question: does it fail alone, on this
+# branch, or only after other tests? Dispatch from any branch that has this file; app_ref is the branch whose app and tests run.
+#   gh workflow run ios-ui-one.yml -R tezbo/playscribe --ref <branch with this file> -f app_ref=<branch> \
+#     -f test=GameToGameTests/testBackAndEdgeSwipeReturnToTheGameItWasOpenedFrom -f iterations=3
+# Not a required check. Evidence only; the full ios-ui.yml stays the gate.
+on:
+  workflow_dispatch:
+    inputs:
+      test: { description: 'Class/method under PlayscribeUITests, e.g. GameToGameTests/testBackAndEdgeSwipeReturnToTheGameItWasOpenedFrom', required: true }
+      iterations: { description: 'Times to run it', default: '3' }
+      app_ref: { description: 'Branch or SHA to build and test (default: the dispatched ref)', default: '' }
+
+jobs:
+  one:
+    runs-on: xcode-27
+    timeout-minutes: 40
+    env:
+      XCODE_APP: /Applications/Xcode_27.1.app
+      DIAG: -collect-test-diagnostics never
+      TEST: ${{ inputs.test }}
+      ITER: ${{ inputs.iterations }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.app_ref || github.ref }}
+      - run: brew install xcodegen && (cd ios && xcodegen generate)
+      - run: sudo xcode-select -s "$XCODE_APP" && xcodebuild -version
+      - name: Pick and boot the Duo simulator
+        run: |
+          udid=$(xcrun simctl list devices available -j | python3 -c "
+          import json, sys
+          d = json.load(sys.stdin)['devices']
+          phones = [x for k in d if 'iOS-27-1' in k for x in d[k] if 'iPhone' in x['name']]
+          phones.sort(key=lambda x: 'Duo' not in x['name'])
+          print(phones[0]['udid'] if phones else '')
+          ")
+          [ -n "$udid" ] || { echo "::error::No iOS 27.1 iPhone simulator"; exit 1; }
+          echo "UDID=$udid" >> "$GITHUB_ENV"
+          for d in $(xcrun simctl list devices booted -j | python3 -c "import json,sys; print(' '.join(x['udid'] for v in json.load(sys.stdin)['devices'].values() for x in v))"); do
+            [ "$d" = "$udid" ] || xcrun simctl shutdown "$d" || true
+          done
+          xcrun simctl boot "$udid" 2>/dev/null || true; xcrun simctl bootstatus "$udid" -b > /dev/null
+      - name: Build for testing
+        run: |
+          xcodebuild build-for-testing -project ios/Playscribe.xcodeproj -scheme PlayscribeUI \
+            -destination "id=$UDID" -derivedDataPath build/dd CODE_SIGNING_ALLOWED=NO > build.log 2>&1 \
+            || { grep -E 'error:' build.log | head -20; exit 1; }
+      - name: Run the test
+        run: |
+          xcrun simctl boot "$UDID" 2>/dev/null || true; xcrun simctl bootstatus "$UDID" -b > /dev/null
+          status=0
+          for i in $(seq 1 "$ITER"); do
+            xcodebuild test-without-building -project ios/Playscribe.xcodeproj -scheme PlayscribeUI \
+              -destination "id=$UDID" -derivedDataPath build/dd $DIAG -only-testing:"PlayscribeUITests/$TEST" \
+              -resultBundlePath "build/One-$i.xcresult" CODE_SIGNING_ALLOWED=NO > "one-$i.log" 2>&1 && r=passed || { r=failed; status=1; }
+            echo "### run $i of $ITER: $r" | tee -a "$GITHUB_STEP_SUMMARY"
+            grep -E 'error:|Test Case .* (passed|failed)|Executed|\*\* TEST' "one-$i.log" | tail -8 | tee -a "$GITHUB_STEP_SUMMARY"
+          done
+          exit "$status"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ios-ui-one
+          path: |
+            one-*.log
+            build.log
