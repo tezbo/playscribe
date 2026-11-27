@@ -125,7 +125,8 @@ brand) # s-06-brand-swap (#614): Home Screen icon light and dark (tinted cannot 
 brandbook) # #614: the splash in Book only (light), four frames; a lighter run than brand
   quick() { local d; d=$(did); local n; [ "$d" = 3 ] && n=inner || n=outer; for i in 1 2 3 4; do xcrun simctl io "$UDID" screenshot --display=$d "$OUT/$SHA-brandbook-$1-$i-$n-shot.png" >/dev/null 2>&1; done; }
   xcrun simctl ui "$UDID" appearance light >/dev/null 2>&1
-  xcrun simctl terminate "$UDID" $B >/dev/null 2>&1; fold 90 landscape-left; xcrun simctl launch "$UDID" $B -qaRoute library/playing -qaSplashHold 12 >/dev/null; sleep 3; quick splash-book ;;
+  xcrun simctl terminate "$UDID" $B >/dev/null 2>&1; fold 90 landscape-left; T0=$(date +%s); xcrun simctl launch "$UDID" $B -qaRoute library/playing -qaSplashHold 40 >/dev/null; sleep 3
+  for i in 1 2 3 4; do xcrun simctl io "$UDID" screenshot --display=$(did) "$OUT/$SHA-brandbook-splash-book-$i-inner-shot.png" >/dev/null 2>&1; echo "brandbook frame $i at +$(( $(date +%s) - T0 )) s after launch (hold 40 s)"; done ;;
 edgefade) # #613 (bug-063, bug-library-tabbar-edge-fade): game page and Library mid-scroll and at the end, std and AX5, Closed portrait and Open portrait (fold 180; swipes start above the bottom tab bar, y 780); ui.txt carries qaBarPinned
   for sz in std AX5; do size=UICTContentSizeCategoryL; [ $sz = AX5 ] && size=$AX5
     for pose in closed open; do
