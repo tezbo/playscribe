@@ -96,6 +96,8 @@ extension Date {
     var dayMonth: String { DayLabelMemo.shared.label(self, short: false) }
     fileprivate var shortDayUncached: String { formatted(Date.FormatStyle(locale: Self.dayFirst, timeZone: .gmt).day().month(.abbreviated).year()) }
     fileprivate var dayMonthUncached: String { formatted(Date.FormatStyle(locale: Self.dayFirst, timeZone: .gmt).day().month(.abbreviated)) }
+    /// "22 October 2026": the day VoiceOver reads for a patch date (UTC day, day first, the month in full).
+    var spokenDay: String { formatted(Date.FormatStyle(locale: Self.dayFirst, timeZone: .gmt).day().month(.wide).year()) }
     /// "16 Oct" this year, "16 Oct 2025" before (years counted in UTC too).
     var dayMonthOrYear: String { Self.utc.isDate(self, equalTo: .now, toGranularity: .year) ? dayMonth : shortDay }
     /// A moment on this device ("Checked 7 Nov, 11:20"): the device's own zone, not the patch rule above.

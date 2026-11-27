@@ -150,7 +150,7 @@ struct ReleaseTag: View {
         switch release.ps5State {
         case .onPS5: if release.simulated == true { Tag(text: "Simulated", tint: .simulated) }
         case .announced: Tag(text: "Announced", tint: .ember)
-        case .reported: if release.ps4 == true { Tag(text: "Reported", tint: PlayscribeRole.textSecondary) }
+        case .reported: EmptyView()   // a PS4 patch's PS5 line says "PS4 update, plays on PS5" (the PS4 tag stays with the title)
         case .notPlanned: Tag(text: "Not planned for PS5", tint: PlayscribeRole.textSecondary)
         case .pending: EmptyView()
         }
@@ -377,7 +377,7 @@ struct Facts: View {
         switch release.ps5State {
         case .onPS5: "Released"
         case .announced: "Announced for PS5"
-        case .reported: "Reported on PS5"
+        case .reported: release.isPS4PlayingOnPS5 ? Release.ps4PlaysOnPS5 : "Reported on PS5"
         case .notPlanned: "Not planned for PS5"
         case .pending: "Released"
         }
