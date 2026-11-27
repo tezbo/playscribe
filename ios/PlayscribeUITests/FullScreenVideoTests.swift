@@ -79,10 +79,60 @@ final class FullScreenVideoTests: XCTestCase {
         let exitPoint = CGVector(dx: safe[1] + 12 + 22, dy: (pic[1] - 44) / 2 + 22)
         XCTAssertGreaterThanOrEqual(exitPoint.dx - 22, 92, "Exit would sit in the camera housing")
         sleep(4)
+        // bug-073: Exit no longer fades, so one tap at its point leaves (a second tap would land on the screen behind).
         let point = app.windows.firstMatch.coordinate(withNormalizedOffset: .zero).withOffset(exitPoint)
-        point.tap()
         point.tap()
         XCTAssertTrue(enter.waitForExistence(timeout: 10), "Exit full screen did not leave full screen")
         app.terminate()
+    }
+
+    /// bug-073 (Terry, beta 6: no way to close full screen in Closed): with no -qaBandsStay, after the controls auto-hide, Exit
+    /// is still there and tappable, a tap on the picture brings the other controls back, and Exit returns to the starting pose.
+    func testExitStaysAfterAutoHideFromPortrait() { exitStaysAfterAutoHide(startLandscape: false) }
+    func testExitStaysAfterAutoHideFromLandscape() { exitStaysAfterAutoHide(startLandscape: true) }
+
+    private func exitStaysAfterAutoHide(startLandscape: Bool) {
+        XCUIDevice.shared.orientation = startLandscape ? .landscapeLeft : .portrait
+        let app = XCUIApplication()
+        app.launchArguments = ["-qaRoute", "trailer/dQw4w9WgXcQ/dawnwalker", "-qaVideoTime", "YES"]
+        app.launch()
+        let any = app.descendants(matching: .any)
+        let play = any["videoPlay"]
+        XCTAssertTrue(play.waitForExistence(timeout: 60), "the trailer did not load")
+        expectation(for: NSPredicate(format: "isEnabled == true"), evaluatedWith: play)
+        waitForExpectations(timeout: 60)
+        play.tap()
+        let enter = any["videoFullScreen"]
+        XCTAssertTrue(enter.waitForExistence(timeout: 15), "no Full screen button")
+        enter.tap()
+        let exit = any["videoExitFullScreen"], bands = any["qaBands"]
+        XCTAssertTrue(exit.waitForExistence(timeout: 5), "Exit is not shown on entering full screen")
+        // From portrait the app turns its scene; turn the simulated device to match, as above, so hit points are computed.
+        XCUIDevice.shared.orientation = .landscapeLeft
+        sleep(6)   // the controls hide 3 s after the last touch while playing
+        let hidden = (bands.value as? String) ?? ""
+        print("qaBands after auto-hide: \(hidden)")
+        XCTAssertTrue(hidden.contains("shown=0"), "the controls did not auto-hide, so this did not test the hidden state: \(hidden)")
+        XCTAssertTrue(exit.exists && exit.isHittable, "Exit full screen is gone once the controls hide")
+        print("videoExitFullScreen frame after auto-hide: \(exit.frame) window: \(app.windows.firstMatch.frame)")
+        let shot = XCTAttachment(screenshot: app.screenshot())
+        shot.name = "fullscreen-hidden-\(startLandscape ? "landscape" : "portrait")"
+        shot.lifetime = .keepAlways
+        add(shot)
+        // Any tap brings the controls back: here one on the middle of the picture.
+        app.windows.firstMatch.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
+        sleep(1)
+        let woken = (bands.value as? String) ?? ""
+        print("qaBands after picture tap: \(woken)")
+        XCTAssertTrue(woken.contains("shown=1"), "a tap on the picture did not bring the controls back: \(woken)")
+        sleep(5)   // hidden again
+        exit.tap()
+        XCTAssertTrue(enter.waitForExistence(timeout: 10), "Exit full screen did not leave full screen")
+        sleep(2)   // the device stays landscape here, so a portrait window means the app turned itself back
+        let window = app.windows.firstMatch.frame
+        print("window after Exit: \(window)")
+        XCTAssertEqual(window.width > window.height, startLandscape, "Exit did not return to the starting orientation: \(window)")
+        app.terminate()
+        XCUIDevice.shared.orientation = .portrait
     }
 }

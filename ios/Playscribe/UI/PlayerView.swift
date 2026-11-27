@@ -375,6 +375,9 @@ struct FullBleedVideo: View {
 
     /// True when the scene was turned to landscape on entry, so Exit turns it back.
     @State private var turned = false
+    /// bug-073: taps on the picture, heard without taking them from the player, so any tap brings the band controls back.
+    @State private var pictureTaps = 0
+    @State private var tapRelay = TapRelay()
 
     var body: some View {
         GeometryReader { geo in
@@ -414,7 +417,7 @@ struct FullBleedVideo: View {
                         .offset(x: d.minX, y: d.minY)
                         .accessibilityHidden(true)
                 }
-                FullScreenBands(controller: controller, title: title, picture: f, screen: full, safe: safe,
+                FullScreenBands(controller: controller, title: title, pictureTaps: pictureTaps, picture: f, screen: full, safe: safe,
                                 division: division.map(toScreen), housings: occlusions.map(toScreen), onExit: leave)
                 #if INTERNAL
                 // QA: what the frame math saw, for the cloud fullscreen scenario (the picture measured 522 x 294 in Closed
@@ -433,8 +436,9 @@ struct FullBleedVideo: View {
         .persistentSystemOverlays(.hidden)
         .statusBarHidden()
         .overlay(alignment: .topLeading) { MirrorAudit(on: false) }
-        .onDisappear(perform: turnBack)
+        .onDisappear { tapRelay.detach(); turnBack() }
         .onAppear {
+            tapRelay.attach(to: controller.webView) { pictureTaps += 1 }
             if division == nil, VideoOrientation.isPortrait {
                 turned = true
                 // Turn only once the player has rebuilt with our controls (at most 3 s), so the rebuild and WebKit's response to
@@ -960,6 +964,8 @@ enum VideoOrientation {
 struct FullScreenBands: View {
     @Bindable var controller: YouTubeController
     var title: String
+    /// bug-073: counts taps on the picture; each one shows the controls like a band tap.
+    var pictureTaps = 0
     /// The picture, the screen and the safe insets, in screen coordinates.
     var picture: CGRect
     var screen: CGSize
@@ -1035,9 +1041,13 @@ struct FullScreenBands: View {
             // The bands themselves take taps (to show the controls), never the picture.
             bandCatcher(CGRect(x: 0, y: 0, width: screen.width, height: picture.minY))
             bandCatcher(CGRect(x: 0, y: picture.maxY, width: screen.width, height: screen.height - picture.maxY))
+            // bug-073 (Terry, beta 6: no way to close full screen in Closed once the controls faded): Exit never fades. It sits in
+            // the top band, never over the picture, so it can always be found, tapped and reached by VoiceOver.
+            glyph("chevron.down", "Exit full screen", id: "videoExitFullScreen", action: onExit)
+                .offset(x: l.top.minX, y: l.top.minY)
             Group {
                 HStack(spacing: 12) {
-                    glyph("chevron.down", "Exit full screen", id: "videoExitFullScreen", action: onExit)
+                    Color.clear.frame(width: 44, height: 44).accessibilityHidden(true)   // Exit's place, drawn above
                     Text(title)
                         .font(PlayscribeFont.caption)
                         .foregroundStyle(.white.opacity(0.7))
@@ -1085,6 +1095,7 @@ struct FullScreenBands: View {
         }
         #endif
         .onChange(of: hides, initial: true) { _, on in on ? schedule() : show() }
+        .onChange(of: pictureTaps) { wake() }
         .onDisappear { hideTask?.cancel() }
     }
 

@@ -245,6 +245,10 @@ fullscreen) # bug-071: full-screen video Fit with our controls in the bands; the
   enter 2-closed-portrait
   sleep 3; frames 2b-still-playing
   sleep 5; snap fullscreen 3-controls-hidden; frames 3
+  # bug-073: once the controls have hidden, Exit is still in VoiceOver's tree (and drawn); fails the job.
+  t3=$(ls "$OUT/$SHA"-fullscreen-3-controls-hidden-*-ui.txt | head -1)
+  if grep -q 'shown=0' "$t3" && grep -q '#videoExitFullScreen' "$t3"; then echo "ok exit after auto-hide"
+  else echo "FAIL exit after auto-hide: $(grep -E 'qaBands|videoExitFullScreen' "$t3" | tr '\n' ';')"; FAILED="$FAILED fullscreen-exit-hidden"; fi
   # Which coordinate space sim-use taps in after the turn is not known, so the band is tapped in both readings.
   echo "band tap: $(sim-use tap -x 339 -y 12 --device "$UDID" 2>&1 | head -1)"; sleep 0.5; frames 4a
   echo "band tap (portrait reading): $(sim-use tap -x 12 -y 339 --device "$UDID" 2>&1 | head -1)"; sleep 0.5; frames 4b
