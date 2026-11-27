@@ -258,16 +258,17 @@ fullscreen) # bug-071: full-screen video Fit with our controls in the bands; the
   fold 90 portrait; sleep 2; snap fullscreen 9-tabletop-ends-it
   # Every full-screen tree (those with our qaFullScreen probe) must keep YouTube's buttons from VoiceOver; fails the job.
   "$(dirname "$0")/check-no-youtube-buttons.sh" $(grep -l qaFullScreen "$OUT/$SHA"-fullscreen-*-ui.txt) || FAILED="$FAILED fullscreen-youtube-buttons" ;;
-inline) # bug-inline-video-voiceover-stray-iframe: the inline player, playing, in Closed portrait, Closed landscape and Book,
-  # for an update video (PlayerView) and a trailer (the game page's player). VoiceOver gets one player element; fails the job.
+inline) # bug-inline-video-voiceover-stray-iframe: the inline player, playing, in Closed portrait, Closed landscape and Book. VoiceOver
+  # gets one player element; fails the job. The trailer player only: the one update video in the fixtures (dawnwalker@1.1) is
+  # refused by YouTube (error 150, run 46049181536), and both players use the same InlineVideoSurface. Each pose starts fresh, so
+  # the trailer never reaches its end (it had at 213 s in Book).
   tapl() { echo "tap $1: $(sim-use tap --label "$1" --device "$UDID" 2>&1 | head -1)"; sleep "${2:-4}"; }
-  for r in video/dawnwalker/dawnwalker@1.1:update trailer/dQw4w9WgXcQ/dawnwalker:trailer; do route=${r%%:*}; n=${r##*:}
-    launch -qaRoute "$route" -qaOverlay YES -qaVideoTime YES
-    tapl Play 8; snap inline $n-1-closed-portrait
-    fold 0 landscape-left; sleep 3; snap inline $n-2-closed-landscape
-    fold 90 landscape-left; sleep 3; snap inline $n-3-book
-    fold 0 portrait; sleep 2
+  for p in 0:portrait:1-closed-portrait 0:landscape-left:2-closed-landscape 90:landscape-left:3-book; do
+    launch -qaRoute trailer/dQw4w9WgXcQ/dawnwalker -qaOverlay YES -qaVideoTime YES
+    a=${p%%:*}; rest=${p#*:}; o=${rest%%:*}; n=${rest#*:}
+    fold "$a" "$o"; sleep 3; tapl Play 8; snap inline trailer-$n
   done
+  fold 0 portrait
   "$(dirname "$0")/check-inline-player.sh" "$OUT/$SHA"-inline-*-ui.txt || FAILED="$FAILED inline-player" ;;
 blocked) # R-12: a video YouTube refuses (IFrame error 150) shows Open in YouTube in every pose, never a full-screen button
   # A turn left over from an earlier scenario can keep the Closed scene in landscape (c46af75): rotate away and back first.
