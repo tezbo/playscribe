@@ -229,6 +229,10 @@ struct Release: Codable, Hashable, Identifiable {
     var launch: Bool?
     /// The label the app shows on a PS4 patch; nil otherwise. Never a version number.
     var ps4Label: String? { ps4 == true ? "PS4 update" : nil }
+    /// A PS4 patch on a PS5 row (the game plays it through backward compatibility): its PS5 line says so in these words, where
+    /// any other reported row says "Reported on PS5" (Ezra, 27 Nov).
+    static let ps4PlaysOnPS5 = "PS4 update, plays on PS5"
+    var isPS4PlayingOnPS5: Bool { ps4 == true && ps5State == .reported }
 
     // JSON keys follow docs/api.md (camelCase "Id").
     enum CodingKeys: String, CodingKey {

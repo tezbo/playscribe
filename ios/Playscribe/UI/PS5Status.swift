@@ -27,7 +27,7 @@ struct PS5StatusLines: Equatable {
                 return n.isEmpty ? nil : reported ? "Reported as \(shown) on PS5" : "This update is \(shown) on PS5"
             }
         case .announced: primary = "Announced for PS5"
-        case .reported: primary = "Reported on PS5"
+        case .reported: primary = r.isPS4PlayingOnPS5 ? Release.ps4PlaysOnPS5 : "Reported on PS5"
         case .notPlanned: primary = "Not planned for PS5"
         // Not live and not announced: the page still says so in plain words (the list rows show nothing for it).
         case .pending: primary = "Not on PS5 yet"

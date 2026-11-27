@@ -8,6 +8,8 @@ struct UpdateRowText: Equatable {
     var title: String
     var headline: String?
     var date: String
+    /// What VoiceOver reads for the date: the year always, the month in full ("22 October 2026").
+    var spokenDate: String
     var status: String?
 
     init(_ r: Release) {
@@ -22,7 +24,10 @@ struct UpdateRowText: Equatable {
             title = name
             headline = head.flatMap { $0.caseInsensitiveCompare(name) == .orderedSame ? nil : $0 }
         }
-        date = (r.isPS5Listed ? r.ps5Date : r.latestDate).dayMonthOrYear
+        // The year on every row, "22 Oct 2026" (UTC day): a list that shows it on some rows only reads as inconsistent (Jun, Ezra 27 Nov).
+        let day = r.isPS5Listed ? r.ps5Date : r.latestDate
+        date = day.shortDay
+        spokenDate = day.spokenDay
         status = Self.status(r)
     }
 
@@ -31,7 +36,7 @@ struct UpdateRowText: Equatable {
         switch r.ps5State {
         case .onPS5: "Out on PS5"
         case .announced: "Announced for PS5"
-        case .reported: "Reported on PS5"
+        case .reported: r.isPS4PlayingOnPS5 ? Release.ps4PlaysOnPS5 : "Reported on PS5"
         case .notPlanned: "Not planned for PS5"
         case .pending: nil
         }
@@ -80,9 +85,10 @@ struct UpdateRowLabel: View {
             }
             .font(PlayscribeFont.caption).foregroundStyle(PlayscribeRole.textSecondary)
             // The chips that are not the PS5 line stay with the row (never drop chips): PS4 update, Simulated.
-            if release.ps4Label != nil || (release.simulated == true && release.ps5State == .onPS5) {
+            // A PS4 patch that plays on PS5 says so in its PS5 line; the chip would only repeat it.
+            if (release.ps4Label != nil && !release.isPS4PlayingOnPS5) || (release.simulated == true && release.ps5State == .onPS5) {
                 FlowLayout(spacing: 6) {
-                    if let l = release.ps4Label { Tag(text: l, tint: PlayscribeRole.textSecondary) }
+                    if let l = release.ps4Label, !release.isPS4PlayingOnPS5 { Tag(text: l, tint: PlayscribeRole.textSecondary) }
                     if release.simulated == true, release.ps5State == .onPS5 { Tag(text: "Simulated", tint: .simulated) }
                 }
                 .padding(.top, 2)
@@ -106,9 +112,9 @@ struct UpdateRowLabel: View {
         var parts = [t.title]
         if unread { parts.append("New") }
         if let h = t.headline { parts.append(h) }
-        parts.append(t.date)
+        parts.append(t.spokenDate)
         if let s = t.status { parts.append(s) }
-        if let l = release.ps4Label { parts.append(l) }
+        if let l = release.ps4Label, !release.isPS4PlayingOnPS5 { parts.append(l) }
         return parts.joined(separator: ", ")
     }
 }
