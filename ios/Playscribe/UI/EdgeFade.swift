@@ -15,6 +15,8 @@ struct EdgeFade: ViewModifier {
     var placement: Placement
     var ink: Color
     var active: Bool
+    /// The tallest this fade may be. 56 pt by default; the Library asks for less at AX sizes in Closed portrait (`axLibraryClosedCap`).
+    var cap: CGFloat = EdgeFade.maxHeight
     /// 24 pt at standard text, growing with Dynamic Type so an AX5 line (about 60 pt) still fades over most of its height.
     @ScaledMetric(relativeTo: .body) private var scaled: CGFloat = EdgeFade.height
     /// The fade's height at standard text (Iris names the final value; R-7).
@@ -22,7 +24,10 @@ struct EdgeFade: ViewModifier {
     /// Never more than this, so at AX5 the fade covers less than one line's worth of the visible page.
     static let maxHeight: CGFloat = 56
 
-    var fadeHeight: CGFloat { min(scaled, Self.maxHeight) }
+    /// #664 (J-5d): the Library's Closed portrait AX fade, thinner, so the deck's page dots sit above it at rest with the lit dot at full colour.
+    static let axLibraryClosedCap: CGFloat = 28
+
+    var fadeHeight: CGFloat { min(scaled, cap) }
 
     func body(content: Content) -> some View {
         switch placement {
@@ -64,8 +69,8 @@ extension View {
     /// The scroll view's content fades out at its bottom edge. End the content with `EdgeFadeClearance()` so its last row comes
     /// to rest clear of the fade. Apply it to the scroll view before `clearsMessages()`, so the fade sits on the page's edge, not
     /// in the pad below it.
-    func fadesAtBottomEdge(ink: Color = PlayscribeRole.bg, active: Bool = true) -> some View {
-        modifier(EdgeFade(placement: .bottom, ink: ink, active: active))
+    func fadesAtBottomEdge(ink: Color = PlayscribeRole.bg, active: Bool = true, cap: CGFloat = EdgeFade.maxHeight) -> some View {
+        modifier(EdgeFade(placement: .bottom, ink: ink, active: active, cap: cap))
     }
 }
 

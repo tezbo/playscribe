@@ -154,7 +154,7 @@ struct LatestUpdatesDeck: View {
         if typeSize.isAccessibilitySize && duo.pose == .closed && !duo.isLandscape {
             // Beta 6 (Iris, #613 regression): the Library's bottom edge fade covers the last 56 pt of the screen, and the dots row is the
             // deck's last 52 pt. So the deck, from where it starts at rest, ends one fade short of the screen bottom: the card
-            // plus its dots clear the fade at rest. Never below the base height (`axArtHeight`).
+            // plus its dots clear the fade at rest (the fade is 28 pt here, `EdgeFade.axLibraryClosedCap`; the room still counts 56, so the dots stay put and clear the thinner fade). Never below the base height (`axArtHeight`).
             let room = duo.size.height - contentTop - EdgeFade.maxHeight - 4 + Self.dotsRowSlack
             return max(axArtHeight + (cards.count > 1 ? Self.pageEdgeHeight : 0), room.rounded(.down))
         }
