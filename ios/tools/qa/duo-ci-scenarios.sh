@@ -95,7 +95,7 @@ else: print("down")' "${H:-466}")
   snap alertscard 2-alerts-card; echo "$ui" | grep -E "Turn on alerts|Not now" ;;
 tt) # Tabletop/Open shots with an assertion: TT_ROUTE, TT_STEPS ("angle:orientation ..."), TT_AX5 (yes|no); pose line and tree per step
   extra=(); [ "${TT_AX5:-no}" = yes ] && extra=(-UIPreferredContentSizeCategoryName $AX5)
-  launch -qaRoute "${TT_ROUTE:-library/playing}" -qaOverlay YES "${extra[@]}"
+  launch -qaRoute "${TT_ROUTE:-library/playing}" -qaOverlay YES ${extra[@]+"${extra[@]}"}
   for st in ${TT_STEPS:-90:portrait}; do
     a=${st%%:*}; o=${st#*:}; fold "$a" "$o"
     snap tt "a$a-$o-$([ "${TT_AX5:-no}" = yes ] && echo ax5 || echo std)-first"
