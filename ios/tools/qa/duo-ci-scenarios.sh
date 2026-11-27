@@ -191,6 +191,17 @@ unfoldupdate) # bug-075: an update open in Closed stays the update through Open 
   fold 90 landscape-left; sleep 3; snap unfoldupdate 3-book
   fold 120 portrait; sleep 3; snap unfoldupdate 4-tabletop
   fold 0 portrait; sleep 3; snap unfoldupdate 5-closed-again ;;
+unfoldupdate2) # bug-075 other doors: scrolled mid-update, and an update opened from the Updates tab
+  launch -qaRoute release/dawnwalker/dawnwalker@1.1; sim-use swipe --from 233,560 --to 233,160 --duration 0.6 --device "$UDID" >/dev/null 2>&1; sleep 2; snap unfoldupdate2 1a-closed-scrolled
+  fold 180 portrait; sleep 3; snap unfoldupdate2 1b-open-portrait
+  fold 90 landscape-left; sleep 3; snap unfoldupdate2 1c-book
+  launch -qaRoute two-update/updates; sleep 2; snap unfoldupdate2 2a-updates-tab
+  row=$(sim-use ui --device "$UDID" 2>/dev/null | grep -E "Button .*Out on PS5|Button .*New" | head -1 | grep -o '([0-9.]*,[0-9.]* [0-9.]*x[0-9.]*)' | tr -d '()x,' | awk '{split($1,a,",");print int(a[1]+$2/2) "," int(a[2]+$3/2)}'); echo "row tap: $row"
+  [ -n "$row" ] && sim-use tap -x ${row%,*} -y ${row#*,} --device "$UDID" >/dev/null 2>&1; sleep 3; snap unfoldupdate2 2b-updates-opened
+  fold 180 portrait; sleep 3; snap unfoldupdate2 2c-open-portrait
+  fold 90 landscape-left; sleep 3; snap unfoldupdate2 2d-book
+  fold 180 portrait; sleep 3; snap unfoldupdate2 2e-open-portrait-again
+  fold 0 portrait; sleep 3; snap unfoldupdate2 2f-closed-again ;;
 rails) # R-7: the four sideways rails, at rest (trailing fade only) and scrolled (leading fade too)
   launch -qaRoute gamepage/dawnwalker; scroll_end 233,560 233,160 similar; rail 1-youmightalsolike '#similarGame'
   launch -qaRoute fill-library/12 -UIPreferredContentSizeCategoryName UICTContentSizeCategoryL; rail 2-library-chips 'Button +"All '
