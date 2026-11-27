@@ -10,7 +10,7 @@
 // raises it locally from the feed's `alert`).
 import { config } from '../config.ts'
 import { openDb } from '../db.ts'
-import { exportStatic } from '../export.ts'
+import { exportOneGame, exportStatic } from '../export.ts'
 import { failingSources, healthSummary } from '../health.ts'
 import { infoContractProblems } from '../contract.ts'
 import { feedProblems } from '../quality.ts'
@@ -66,7 +66,8 @@ else if (process.env.PUSH_QUEUE) {
 } else alerts = await pushNewPs5(db, apns, { maxAgeHours: config.pushMaxAgeHours })
 if (alerts.length) console.log('alerts:', JSON.stringify(alerts))
 apns?.close()
-if (exportDir) console.log('exported', exportStatic(db, exportDir))
+// A one-game check (--igdb) rewrites only that game's files on top of the feed already in the output folder; without one it exports all.
+if (exportDir) console.log('exported', checked && exportOneGame(db, exportDir, checked.gameId) ? { oneGame: checked.gameId } : exportStatic(db, exportDir))
 // Feed health: sources failing 3 polls in a row, and the exported data's quality rules.
 const sick = failingSources(db)
 for (const h of sick) console.log(`::error title=Source failing::${h.sourceId} failed ${h.failStreak} polls in a row: ${h.lastError ?? h.lastStatus}`)

@@ -317,3 +317,32 @@ test('a one-game check finds the game on IGDB, reads its Steam news, and records
   // A later derivation that does not list the game must not retire it.
   assert.equal(store.retireAutoGames(db, new Set()), 0)
 })
+
+test('a one-game export rewrites only that game, its index entry, latest and the check record; the rest of the feed is untouched', async () => {
+  const { exportStatic, exportOneGame } = await import('../src/export.ts')
+  const { mkdtempSync, readFileSync, writeFileSync } = await import('node:fs')
+  const { tmpdir } = await import('node:os')
+  const { join } = await import('node:path')
+  const at = new Date(Date.now() - 20 * 3600e3).toISOString()
+  const db = openDb(':memory:')
+  const deps = { db, igdb: null, fetchFn: fakeFetch({ 'https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid=252950&': steamNews([{ gid: 'r1', title: 'Rocket League S24 Patch Notes v2.76', date: at, contents: 'Fixed a crash.', tags: ['patchnotes'] }]) }) }
+  await seedGames(deps)
+  await runIngest(deps, { force: true, games: ['rocket-league'] })
+  const dir = mkdtempSync(join(tmpdir(), 'one-'))
+  exportStatic(db, dir)
+  const other = join(dir, 'v1/games/dawnwalker.json')
+  writeFileSync(other, 'SENTINEL') // a full export would rewrite this
+  const before = JSON.parse(readFileSync(join(dir, 'v1/index.json'), 'utf8')).games.length
+  store.recordSourceCheck(db, { igdbId: 9, gameId: null, name: 'X', status: 'no-source', releases: 0 })
+  assert.equal(exportOneGame(db, dir, 'rocket-league'), true)
+  assert.equal(readFileSync(other, 'utf8'), 'SENTINEL')
+  const idx = JSON.parse(readFileSync(join(dir, 'v1/index.json'), 'utf8')).games
+  assert.equal(idx.length, before)
+  assert.deepEqual(idx.map((g: { id: string }) => g.id), [...idx.map((g: { id: string }) => g.id)].sort())
+  assert.equal(idx.find((g: { id: string }) => g.id === 'rocket-league').releaseCount, 1)
+  assert.equal(JSON.parse(readFileSync(join(dir, 'v1/source-checks.json'), 'utf8')).checks[0].status, 'no-source')
+  const full = mkdtempSync(join(tmpdir(), 'full-'))
+  exportStatic(db, full)
+  for (const f of ['index.json', 'latest.json', 'games/rocket-league.json']) assert.equal(readFileSync(join(dir, 'v1', f), 'utf8'), readFileSync(join(full, 'v1', f), 'utf8'), `${f} is what a full export writes`)
+  assert.equal(exportOneGame(db, join(dir, 'nowhere'), 'rocket-league'), false, 'no index to build on: the caller exports everything')
+})
