@@ -2,6 +2,7 @@ import assert from 'node:assert/strict'
 import { test } from 'node:test'
 import { openDb } from '../src/db.ts'
 import { readFileSync } from 'node:fs'
+import { extractNotes } from '../src/ingest/notes.ts'
 import { bandaiUpdateLinks, parseBandaiArticle, parseStatuspage, blueskyTitle, parseMojangNotes, parseRiotNews } from '../src/ingest/adapters.ts'
 import { pcNumberIsTitled, runIngest, seedGames } from '../src/ingest/pipeline.ts'
 import { registry } from '../src/registry.ts'
@@ -143,7 +144,16 @@ test('Minecraft: Mojang\'s Bedrock patch-notes file makes one dated update per e
     { title: 'Broken', date: 'soon' },
   ], { '26.60': '<p>Added drops</p><p>Fixed a crash</p>' })
   assert.deepEqual(posts.map((p) => [p.title, p.publishedAt]), [['Update 26.60', '2026-10-27T00:00:00.000Z'], ['Update 26.40', '2026-08-04T15:46:00.367Z']])
-  assert.equal(posts[0]!.body, 'Added drops Fixed a crash')
+  // The body keeps its markup, so the notes parser can make sections and items of it (bug-074: one 60,000-character item was shown as nothing).
+  const sections = extractNotes(posts[0]!.body)
+  assert.deepEqual(sections.map((s) => [s.title, s.items.map((i) => i.text)]), [['Changes', ['Added drops', 'Fixed a crash']]])
+  const big = parseMojangNotes('m', [{ title: 'x', version: '26.50', date: '2026-09-15' }], { '26.50': '<p>Wilderness Bound is out now!<h1>Game Drop 3</h1><h2>Camp</h2><ul><li>New structure in:<ul><li>Meadow<li>Forest</ul><li>Chests hold loot</ul><h2>Blocks</h2><ul><li>Wool Stairs added</ul>' })
+  assert.deepEqual(extractNotes(big[0]!.body).map((s) => [s.title, s.items.length]), [['Changes', 1], ['Camp', 4], ['Blocks', 1]])
+})
+
+test('Minecraft: the Bedrock notes are about every Bedrock platform, so a post that says "PlayStation" and not "PS5" still counts (bug-074)', () => {
+  const src = registry.games.minecraft!.sources.find((s) => s.id === 'minecraft-bedrock-notes')!
+  assert.equal(src.ps5Signal, 'always')
 })
 
 test('Valorant: the game-updates page lists patch notes with Riot\'s own publish time; other categories are skipped', () => {
