@@ -133,50 +133,68 @@ struct ArtView: View {
     }
 }
 
-/// The Playscribe mark: an open book whose spine is the hinge, with a spark rising from it.
-/// The two pages are separate shapes so layouts can split the mark across the fold.
+/// The Playscribe mark, Warm refresh (Terry picked 13 Nov; kit in gamebook/brand/identity/final, mark.svg and mark-rest.svg):
+/// an open book whose spine is the hinge, a ribbon bookmark, and an ember spark above it. Drawn on the kit's 64-unit grid.
+/// The two pages are separate shapes so layouts can split the mark across the fold (the splash in Book).
+nonisolated enum MarkGrid {
+    static func point(_ x: CGFloat, _ y: CGFloat, in r: CGRect, origin: CGPoint = .zero, unit: CGSize = CGSize(width: 64, height: 64)) -> CGPoint {
+        CGPoint(x: r.minX + (x - origin.x) * r.width / unit.width, y: r.minY + (y - origin.y) * r.height / unit.height)
+    }
+    /// Each page's box on the grid: x 7.6 to 31.2 (left) or 32.8 to 56.4 (right), y 19.4 to 56.3.
+    static let pageBox = CGSize(width: 23.6, height: 36.9)
+    static let pageTop: CGFloat = 19.4
+}
+
 nonisolated struct MarkPage: Shape {
     enum Side { case left, right }
     var side: Side
 
     func path(in rect: CGRect) -> Path {
-        // Drawn on the prototype's 24 × 48 grid per page.
-        let sx = rect.width / 24, sy = rect.height / 48
+        // mark.svg: M31.2 25C25.2 20.6 16.8 19.4 9.4 21.3Q7.6 21.8 7.6 23.7V50.4Q7.6 52.9 10 52.4C17.2 50.8 25 51.8 31.2 56.3Z,
+        // and its mirror (x -> 64 - x) for the right page. Drawn into the page's own box.
+        let ox: CGFloat = side == .left ? 7.6 : 32.8
         func p(_ x: CGFloat, _ y: CGFloat) -> CGPoint {
-            let lx = side == .left ? x : x - 24
-            return CGPoint(x: rect.minX + lx * sx, y: rect.minY + y * sy)
+            let gx = side == .left ? x : 64 - x
+            return MarkGrid.point(gx, y, in: rect, origin: CGPoint(x: ox, y: MarkGrid.pageTop), unit: MarkGrid.pageBox)
         }
         var path = Path()
-        if side == .left {
-            path.move(to: p(24, 13.5))
-            path.addCurve(to: p(6.5, 11.2), control1: p(18.6, 10.4), control2: p(12.2, 9.6))
-            path.addLine(to: p(5.4, 12.65))
-            path.addLine(to: p(5.4, 35.75))
-            path.addCurve(to: p(7.3, 37.17), control1: p(5.4, 36.75), control2: p(6.35, 37.45))
-            path.addCurve(to: p(24, 39.37), control1: p(12.7, 35.67), control2: p(18.7, 36.37))
-        } else {
-            path.move(to: p(24, 13.5))
-            path.addCurve(to: p(41.5, 11.2), control1: p(29.4, 10.4), control2: p(35.8, 9.6))
-            path.addLine(to: p(42.6, 12.65))
-            path.addLine(to: p(42.6, 35.75))
-            path.addCurve(to: p(40.7, 37.17), control1: p(42.6, 36.75), control2: p(41.65, 37.45))
-            path.addCurve(to: p(24, 39.37), control1: p(35.3, 35.67), control2: p(29.3, 36.37))
-        }
+        path.move(to: p(31.2, 25))
+        path.addCurve(to: p(9.4, 21.3), control1: p(25.2, 20.6), control2: p(16.8, 19.4))
+        path.addQuadCurve(to: p(7.6, 23.7), control: p(7.6, 21.8))
+        path.addLine(to: p(7.6, 50.4))
+        path.addQuadCurve(to: p(10, 52.4), control: p(7.6, 52.9))
+        path.addCurve(to: p(31.2, 56.3), control1: p(17.2, 50.8), control2: p(25, 51.8))
         path.closeSubpath()
         return path
     }
 }
 
+/// A four-point spark (mark.svg: the large one centred at 32, 12.5, radius 9.5; the small one at 47, 8, radius 3.6).
 nonisolated struct SparkShape: Shape {
     func path(in r: CGRect) -> Path {
-        let s = r.width / 12
-        func p(_ x: CGFloat, _ y: CGFloat) -> CGPoint { CGPoint(x: r.minX + x * s, y: r.minY + y * s) }
+        // Normalised from the kit's large spark: points at the box edges, waists pulled in by 0.3 of the radius.
+        func p(_ x: CGFloat, _ y: CGFloat) -> CGPoint { CGPoint(x: r.minX + x * r.width, y: r.minY + y * r.height) }
         var path = Path()
-        path.move(to: p(6, 0))
-        path.addCurve(to: p(12, 6), control1: p(6.4, 3.2), control2: p(7.6, 4.6))
-        path.addCurve(to: p(6, 12), control1: p(7.6, 7.4), control2: p(6.4, 8.8))
-        path.addCurve(to: p(0, 6), control1: p(5.6, 8.8), control2: p(4.4, 7.4))
-        path.addCurve(to: p(6, 0), control1: p(4.4, 4.6), control2: p(5.6, 3.2))
+        path.move(to: p(0.5, 0))
+        path.addCurve(to: p(1, 0.5), control1: p(0.55, 0.3), control2: p(0.7, 0.45))
+        path.addCurve(to: p(0.5, 1), control1: p(0.7, 0.55), control2: p(0.55, 0.7))
+        path.addCurve(to: p(0, 0.5), control1: p(0.45, 0.7), control2: p(0.3, 0.55))
+        path.addCurve(to: p(0.5, 0), control1: p(0.3, 0.45), control2: p(0.45, 0.3))
+        path.closeSubpath()
+        return path
+    }
+}
+
+/// The ribbon bookmark hanging from the right page (mark.svg: M36.5 52.2L42.5 52.8V62L39.5 59.4L36.5 62Z).
+nonisolated struct MarkRibbon: Shape {
+    func path(in rect: CGRect) -> Path {
+        func p(_ x: CGFloat, _ y: CGFloat) -> CGPoint { MarkGrid.point(x, y, in: rect) }
+        var path = Path()
+        path.move(to: p(36.5, 52.2))
+        path.addLine(to: p(42.5, 52.8))
+        path.addLine(to: p(42.5, 62))
+        path.addLine(to: p(39.5, 59.4))
+        path.addLine(to: p(36.5, 62))
         path.closeSubpath()
         return path
     }
@@ -185,26 +203,108 @@ nonisolated struct SparkShape: Shape {
 struct MarkPageView: View {
     var side: MarkPage.Side
     var height: CGFloat
+    /// mark-on-light.svg: darker pages, so the cream ones do not vanish on vellum.
+    var onLight = false
     var body: some View {
         MarkPage(side: side)
-            .fill(LinearGradient(colors: side == .left ? [.brand1, .brand3] : [.brand2, .brand1],
+            .fill(LinearGradient(colors: side == .left ? [Color(hex: onLight ? "#E6D8BC" : "#EBDDC1"), Color(hex: "#CDB68D")]
+                                                       : [Color(hex: onLight ? "#EFE3C8" : "#FBF4E6"), Color(hex: onLight ? "#DCCBA5" : "#EBDDC1")],
                                  startPoint: side == .left ? .topLeading : .topTrailing,
                                  endPoint: side == .left ? .bottomTrailing : .bottomLeading))
-            .frame(width: height / 2, height: height)
+            .overlay { if side == .left { lines([(31.6, 14.6), (36.6, 14.6), (41.6, 10.2)], x: 12.4) } else { lines([(31.6, 14.6), (36.6, 11)], x: 37) } }
+            .frame(width: height * MarkGrid.pageBox.width / MarkGrid.pageBox.height, height: height)
+    }
+
+    /// The text lines on each page: 2.3-unit rules in ink at 28%.
+    private func lines(_ rows: [(CGFloat, CGFloat)], x: CGFloat) -> some View {
+        GeometryReader { g in
+            let ox: CGFloat = side == .left ? 7.6 : 32.8
+            let k = g.size.height / MarkGrid.pageBox.height
+            ForEach(rows.indices, id: \.self) { i in
+                Capsule().fill(Color(hex: "#0F0E14").opacity(0.28))
+                    .frame(width: rows[i].1 * k, height: 2.3 * k)
+                    .position(x: (x - ox + rows[i].1 / 2) * k, y: (rows[i].0 - MarkGrid.pageTop + 1.15) * k)
+            }
+        }
     }
 }
 
+/// The lit mark's spark, halo and ribbon, drawn in the trailing page's own box so the splash in Book can split the mark across
+/// the hinge (Iris, #614): the spark and halo sit over the page's inner top corner, the ribbon hangs from its inner bottom edge,
+/// and nothing falls in the hinge gap, so the halo is cut at the page's inner edge.
+struct MarkRightPageLit: View {
+    var height: CGFloat
+    var body: some View {
+        let k = height / MarkGrid.pageBox.height
+        ZStack(alignment: .topLeading) {
+            Circle()
+                .fill(RadialGradient(colors: [Color(hex: "#FFB04F").opacity(0.55), Color(hex: "#FFB04F").opacity(0)],
+                                     center: .center, startRadius: 0, endRadius: 15 * k))
+                .frame(width: 30 * k, height: 30 * k)
+                // Feathered: zero at the page's inner edge (4.5 units in from the halo's leading side), full 16 pt later.
+                .mask(LinearGradient(stops: [.init(color: .clear, location: 4.5 / 30),
+                                             .init(color: .black, location: min(1, 4.5 / 30 + 16 / (30 * k)))],
+                                     startPoint: .leading, endPoint: .trailing))
+                .offset(x: (10.5 - 15) * k, y: (-6.9 - 15) * k)
+            SparkShape().fill(BrandMark.emberSpark)
+                .frame(width: 19 * k, height: 19 * k)
+                .offset(x: (10.5 - 9.5) * k, y: (-6.9 - 9.5) * k)
+            SparkShape().fill(BrandMark.emberSpark)
+                .frame(width: 7.2 * k, height: 7.2 * k)
+                .offset(x: (24 - 3.6) * k, y: (-11.4 - 3.6) * k)
+            MarkRibbon().fill(BrandMark.emberSpark)
+                .frame(width: 64 * k, height: 64 * k)
+                .offset(x: (-32.8) * k, y: (-19.4) * k)
+        }
+        .frame(width: height * MarkGrid.pageBox.width / MarkGrid.pageBox.height, height: height, alignment: .topLeading)
+        // Nothing left of the page's inner edge, and the halo above is free to rise.
+        .mask(alignment: .topLeading) { Rectangle().frame(width: 10_000, height: 10_000).offset(y: -5_000) }
+        .allowsHitTesting(false)
+    }
+}
+
+/// The mark's two states (README, Behaviour): `lit`, the spark and ribbon glow ember with a halo, when there is an unread
+/// update; at rest (mark-rest.svg) they are dim vellum #A8916A with no halo, when caught up. Static either way, so Reduce
+/// Motion has nothing to stop: no flicker.
 struct BrandMark: View {
     var size: CGFloat = 28
+    var lit = true
+    /// On a vellum ground (the light-mode splash): the mark-on-light.svg page tones.
+    var onLight = false
+
+    static let restInk = Color(hex: "#A8916A")
+    /// Lit while any game in the library has an unread update; at rest when caught up.
+    static func isLit(totalUnread: Int) -> Bool { totalUnread > 0 }
+    static let emberSpark = LinearGradient(colors: [Color(hex: "#FFC86A"), Color(hex: "#F2813A")], startPoint: .top, endPoint: .bottom)
+
     var body: some View {
-        HStack(spacing: 0) {
-            MarkPageView(side: .left, height: size)
-            MarkPageView(side: .right, height: size)
+        let u = size / 64
+        ZStack(alignment: .topLeading) {
+            if lit {
+                Circle()
+                    .fill(RadialGradient(colors: [Color(hex: "#FFB04F").opacity(0.55), Color(hex: "#FFB04F").opacity(0)],
+                                         center: .center, startRadius: 0, endRadius: 15 * u))
+                    .frame(width: 30 * u, height: 30 * u)
+                    .offset(x: 17 * u, y: -2.5 * u)
+            }
+            HStack(spacing: 1.6 * u) {
+                MarkPageView(side: .left, height: MarkGrid.pageBox.height * u, onLight: onLight)
+                MarkPageView(side: .right, height: MarkGrid.pageBox.height * u, onLight: onLight)
+            }
+            .offset(x: 7.6 * u, y: MarkGrid.pageTop * u)
+            MarkRibbon().fill(lit ? AnyShapeStyle(Self.emberSpark) : AnyShapeStyle(Self.restInk))
+            spark(at: CGPoint(x: 32, y: 12.5), radius: 9.5, u: u)
+            spark(at: CGPoint(x: 47, y: 8), radius: 3.6, u: u)
         }
-        .overlay(alignment: .top) {
-            SparkShape().fill(Color.spark).frame(width: size * 0.26, height: size * 0.26).offset(y: size * 0.02)
-        }
+        .frame(width: size, height: size)
         .accessibilityHidden(true)
+    }
+
+    private func spark(at c: CGPoint, radius: CGFloat, u: CGFloat) -> some View {
+        SparkShape()
+            .fill(lit ? AnyShapeStyle(Self.emberSpark) : AnyShapeStyle(Self.restInk))
+            .frame(width: radius * 2 * u, height: radius * 2 * u)
+            .offset(x: (c.x - radius) * u, y: (c.y - radius) * u)
     }
 }
 

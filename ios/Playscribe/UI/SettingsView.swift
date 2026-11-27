@@ -307,9 +307,13 @@ struct SettingsView: View {
                                 .accessibilityIdentifier("appVersion")
                         }
                     } footer: {
-                        Text("Artwork and trailers belong to their publishers. \(Brand.trademarkNotice)")
-                            // The form's last line: the UI tests scroll to it to prove every row above is reachable.
-                            .accessibilityIdentifier("settingsLastLine")
+                        VStack(alignment: .leading, spacing: 12) {
+                            // s-06-brand-swap: the Warm refresh mark signs off the page, lit while an update is unread.
+                            SettingsSignature(lit: BrandMark.isLit(totalUnread: model.totalUnread))
+                            Text("Artwork and trailers belong to their publishers. \(Brand.trademarkNotice)")
+                                // The form's last line: the UI tests scroll to it to prove every row above is reachable.
+                                .accessibilityIdentifier("settingsLastLine")
+                        }
                     }
                 }
             }
@@ -373,5 +377,20 @@ struct PanelHeader: View {
         .frame(minHeight: 60)
         .padding(.top, 6)
         .background(PlayscribeRole.bg)
+    }
+}
+
+/// The Settings footer's lockup (s-06-brand-swap): the mark beside the name, scaling with the text like the cover lockup.
+struct SettingsSignature: View {
+    var lit: Bool
+    @ScaledMetric(relativeTo: .footnote) private var glyph: CGFloat = 28
+    var body: some View {
+        HStack(spacing: 8) {
+            BrandMark(size: min(glyph, 56), lit: lit)
+            Text(Brand.name).font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeRole.textPrimary)
+        }
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(Brand.name)
+        .accessibilityIdentifier("settingsSignature")
     }
 }

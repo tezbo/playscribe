@@ -382,10 +382,11 @@ struct FrontCoverPlate: View {
 /// The Playscribe lockup on the cover (placeholder until Terry picks a wordmark): the book glyph scales with the word, so
 /// at accessibility sizes it is not a tiny mark beside a large name (Iris, #467). Capped at AX3 like the plate.
 struct CoverLockup: View {
+    @Environment(AppModel.self) private var model
     @ScaledMetric(relativeTo: .subheadline) private var glyph: CGFloat = 22
     var body: some View {
         HStack(spacing: 6) {
-            BrandMark(size: glyph)
+            BrandMark(size: glyph, lit: BrandMark.isLit(totalUnread: model.totalUnread))
             Text(Brand.name).font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.onDarkText)
         }
         .accessibilityElement(children: .combine)
