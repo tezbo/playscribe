@@ -202,6 +202,13 @@ jobs:
         continue-on-error: true
         working-directory: backend
         run: npx tsx scripts/baseline-coverage.ts "$GITHUB_WORKSPACE/out" --md "$RUNNER_TEMP/baseline.md" && cat "$RUNNER_TEMP/baseline.md" >> "$GITHUB_STEP_SUMMARY"
+      # Popular strip (data-notes-sources-15-press-only): the tour opens a game from the app's Popular strip, so each of its first 18 games must show
+      # notes. A warning per game that does not. Never fails the run (a failing Feed run emails Terry); `--fail` is for a person checking.
+      - name: Popular strip notes
+        if: (github.event_name == 'schedule' && github.event.schedule != '47 * * * *') || (inputs.action == 'poll' && !inputs.hot)
+        continue-on-error: true
+        working-directory: backend
+        run: npx tsx scripts/popular-notes.ts "$GITHUB_WORKSPACE/out"
       - name: Scrub devices
         if: always()
         working-directory: backend
