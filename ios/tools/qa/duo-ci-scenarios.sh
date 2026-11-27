@@ -264,9 +264,11 @@ inline) # bug-inline-video-voiceover-stray-iframe: the inline player, playing, i
   # the trailer never reaches its end (it had at 213 s in Book).
   tapl() { echo "tap $1: $(sim-use tap --label "$1" --device "$UDID" 2>&1 | head -1)"; sleep "${2:-4}"; }
   for p in 0:portrait:1-closed-portrait 0:landscape-left:2-closed-landscape 90:landscape-left:3-book; do
-    launch -qaRoute trailer/dQw4w9WgXcQ/dawnwalker -qaOverlay YES -qaVideoTime YES
     a=${p%%:*}; rest=${p#*:}; o=${rest%%:*}; n=${rest#*:}
-    fold "$a" "$o"; sleep 3; tapl Play 8; snap inline trailer-$n
+    # Fold first, then launch in that pose (run 46062669586: folding to Book right after a launch never left the cover display).
+    xcrun simctl terminate "$UDID" $B >/dev/null 2>&1; fold "$a" "$o"
+    xcrun simctl launch "$UDID" $B -qaRoute trailer/dQw4w9WgXcQ/dawnwalker -qaOverlay YES -qaVideoTime YES >/dev/null; sleep 8
+    tapl Play 8; snap inline trailer-$n
   done
   fold 0 portrait
   "$(dirname "$0")/check-inline-player.sh" "$OUT/$SHA"-inline-*-ui.txt || FAILED="$FAILED inline-player" ;;
