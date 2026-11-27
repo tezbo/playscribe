@@ -249,11 +249,19 @@ fullscreen) # bug-071: full-screen video Fit with our controls in the bands; the
   t3=$(ls "$OUT/$SHA"-fullscreen-3-controls-hidden-*-ui.txt | head -1)
   if grep -q 'shown=0' "$t3" && grep -q '#videoExitFullScreen' "$t3"; then echo "ok exit after auto-hide"
   else echo "FAIL exit after auto-hide: $(grep -E 'qaBands|videoExitFullScreen' "$t3" | tr '\n' ';')"; FAILED="$FAILED fullscreen-exit-hidden"; fi
+  # bug-073 (Terry, beta 6: in Closed a band tap never brought the controls back; in Open it did): a picture tap after the turn,
+  # in the middle of the screen, which is on the picture in either coordinate reading. wakes counts it.
+  echo "picture tap: $(sim-use tap -x 339 -y 233 --device "$UDID" 2>&1 | head -1)"; sleep 0.5; frames 4p
+  sleep 5
   # Which coordinate space sim-use taps in after the turn is not known, so the band is tapped in both readings.
   echo "band tap: $(sim-use tap -x 339 -y 12 --device "$UDID" 2>&1 | head -1)"; sleep 0.5; frames 4a
   echo "band tap (portrait reading): $(sim-use tap -x 12 -y 339 --device "$UDID" 2>&1 | head -1)"; sleep 0.5; frames 4b
   snap fullscreen 4-band-tap-shows
-  tapl "Exit full screen" 4; snap fullscreen 5-exited
+  sleep 5; tapl "Exit full screen" 4; snap fullscreen 5-exited
+  # bug-073: Exit, tapped after the controls hid again, leaves full screen and turns back to portrait; fails the job.
+  t5=$(ls "$OUT/$SHA"-fullscreen-5-exited-*-ui.txt | head -1)
+  if ! grep -q qaFullScreen "$t5" && ! head -1 "$t5" | grep -q landscape; then echo "ok exit returns to portrait"
+  else echo "FAIL exit: $(head -1 "$t5"); $(grep -c qaFullScreen "$t5") qaFullScreen"; FAILED="$FAILED fullscreen-exit"; fi
   # The same poses again with the controls held up (-qaBandsStay, internal), so the stills show them (Iris).
   launch -qaRoute trailer/dQw4w9WgXcQ/dawnwalker -qaOverlay YES -qaVideoTime YES -qaBandsStay YES
   tapl Play 8; fold 0 landscape-left; enter 6-closed-landscape-shown; tapl "Exit full screen" 3
