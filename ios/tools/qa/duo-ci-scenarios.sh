@@ -260,11 +260,12 @@ fullscreen) # bug-071: full-screen video Fit with our controls in the bands; the
   # The device stays portrait while the app has turned its scene (as on a phone with rotation lock), and sim-use taps in the
   # device's portrait space: a landscape point (x, y) is (466 - y, x) there (run 46050038868: the band woke only at the portrait
   # reading). Exit's point comes from its frame in the woken tree above, so it is tapped at once, before the 3 s auto-hide.
-  ef=$(echo "$t4" | grep '#videoExitFullScreen' | grep -oE '\([0-9.]+,[0-9.]+ [0-9.]+x[0-9.]+\)' | tr -d '()')
-  ex=${ef%%,*}; ey=${ef#*,}; ey=${ey%% *}; ew=${ef#* }; ew=${ew%x*}; eh=${ef##*x}
-  px=$((466 - ${ey%.*} - ${eh%.*} / 2)); py=$((${ex%.*} + ${ew%.*} / 2))
+  # Exit's centre from the measured geometry (as the UI test does): 12 pt inside the safe leading inset, centred in the top band
+  # (run 46058102769: Exit's own frame is not in the tree when the controls have already hidden again).
+  g=$(echo "$t4" | grep -o 'pic=[0-9,x]* safe=[0-9,]*' | head -1); pic=${g#pic=}; pic=${pic%% *}; sf=${g#*safe=}
+  py=$(( $(echo "$sf" | cut -d, -f2) + 12 + 22 )); ly=$(( ( $(echo "$pic" | cut -d, -f2) - 44 ) / 2 + 22 )); px=$((466 - ly))
   sleep 5; echo "picture tap: $(sim-use tap -x 233 -y 339 --device "$UDID" 2>&1 | head -1)"
-  echo "exit tap at ($px,$py) from $ef: $(sim-use tap -x $px -y $py --device "$UDID" 2>&1 | head -1)"; sleep 4; snap fullscreen 5-exited
+  echo "exit tap at ($px,$py) from $g: $(sim-use tap -x $px -y $py --device "$UDID" 2>&1 | head -1)"; sleep 4; snap fullscreen 5-exited
   # bug-073: hidden, then a picture tap, then Exit leaves full screen and turns back to portrait; fails the job.
   t5=$(ls "$OUT/$SHA"-fullscreen-5-exited-*-ui.txt | head -1)
   if ! grep -q qaFullScreen "$t5" && ! head -1 "$t5" | grep -q landscape; then echo "ok exit returns to portrait"
