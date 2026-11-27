@@ -302,6 +302,8 @@ struct AddGameSheet: View {
                         // the row stays one "Search" field. Row insets are moved inside so no dead strip is left.
                         TextField("Search \(PS5Index.shared.count.formatted()) PS5 games", text: $query)
                             .autocorrectionDisabled()
+                            .textInputAutocapitalization(.never)
+                            .accessibilityIdentifier("addSearchField")
                             .submitLabel(.search)
                             .focused($searchFocused)
                             .frame(minHeight: 44)
