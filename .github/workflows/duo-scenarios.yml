@@ -30,9 +30,11 @@ jobs:
           if [ -n "$APP_REF" ]; then
             cp ios/tools/qa/duo-ci-scenarios.sh /tmp/duo-ci-scenarios.sh
             cp ios/tools/qa/check-no-youtube-buttons.sh /tmp/check-no-youtube-buttons.sh
+            cp ios/tools/qa/check-close-target.sh /tmp/check-close-target.sh
             git fetch --depth=1 origin "refs/heads/$APP_REF" && git checkout -q FETCH_HEAD
             cp /tmp/duo-ci-scenarios.sh ios/tools/qa/duo-ci-scenarios.sh
             cp /tmp/check-no-youtube-buttons.sh ios/tools/qa/check-no-youtube-buttons.sh
+            cp /tmp/check-close-target.sh ios/tools/qa/check-close-target.sh
           fi
       - run: sudo xcode-select -s /Applications/Xcode_27.1.app && brew install xcodegen ffmpeg && (cd ios && xcodegen generate)
       - name: Install sim-use

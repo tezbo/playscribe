@@ -265,7 +265,9 @@ blocked) # R-12: a video YouTube refuses (IFrame error 150) shows Open in YouTub
   fold 0 landscape-left; sleep 3; snap blocked 2-closed-landscape
   fold 180 landscape-left; sleep 3; snap blocked 3-flat-landscape
   fold 90 landscape-left; sleep 3; snap blocked 4-book
-  fold 90 portrait; sleep 3; snap blocked 5-tabletop ;;
+  fold 90 portrait; sleep 3; snap blocked 5-tabletop
+  # bug-r12-close-38pt (G-7): Close is at least 44 x 44 in every pose; fails the job.
+  "$(dirname "$0")/check-close-target.sh" "$OUT/$SHA"-blocked-*-ui.txt || FAILED="$FAILED blocked-close-target" ;;
 fsxctest) # bug-071: XCUITest taps (sim-use taps did not reach the bands after the turn): enter, band tap, Exit, in Closed
   fold 0 portrait
   xcodebuild test -project ios/Playscribe.xcodeproj -scheme PlayscribeUI -destination "id=$UDID" -derivedDataPath build/dd-ui \
