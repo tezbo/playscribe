@@ -104,3 +104,6 @@ including `whsec_` as the key, five-minute window) against the Worker secret `LI
 - The existing cron (:22 and :52) pushes one fixed Team alert, "A Limrun simulator is still running", for any instance open more than 20 minutes.
 - `GET /admin/limrun` (admin token) lists the month counters and open instances. Minutes are instance lifetime, an approximation of billed minutes; the billed figure is the Limrun usage analytics API.
 - Secret: Limrun shows the signing secret once in Console > Settings > Webhooks. Add it as the repository secret `LIMRUN_WEBHOOK_SECRET`, then run the Relay deploy workflow.
+
+## Source on add (0.7)
+`POST /v1/sources/check { igdbId }` (docs/api.md "Source on add") dispatches the Feed workflow with `action: check`, using the same `FEED_DISPATCH_TOKEN` as the cron. It stores nothing about the caller. KV cost per accepted check: two writes (`ck:<id>` for the 10-minute cooldown, `c:<day>` for the 100-a-day cap), so at most 200 of the day's 1,000. `relay/deploy.sh` adds a `CHECK_LIMIT` Rate Limiting binding (5 a minute per address). A run waits behind a running Feed job (`concurrency: feed`), so the answer can lag a full poll by a few minutes.

@@ -5,7 +5,7 @@ import { issuesOf } from './issues.ts'
 import { loadPlus } from './plus.ts'
 import { storedPlusMonths, withPlusCovers } from './plusAuto.ts'
 import { registry } from './registry.ts'
-import { gameFromRow, getRelease, listReleases, newsOf, releaseFromRow } from './store.ts'
+import { gameFromRow, getRelease, listReleases, newsOf, releaseFromRow, sourceChecks } from './store.ts'
 
 // Writes the read side of the API as static files, so the app can sync from any static host
 // (the `feed` branch on GitHub, see .github/workflows/feed.yml). Shapes match docs/api.md.
@@ -60,6 +60,8 @@ export const exportStatic = (db: DB, outDir: string) => {
   // "updatedAt" is the newest data change, not the run time, so quiet runs leave files untouched.
   write(join(root, 'index.json'), { version: 1, updatedAt: newest || null, games: index })
   // latest.json's updatedAt must always be a date: the 0.2.0 app (Latest.updatedAt: Date) cannot decode null from an empty feed.
+  // What the Feed found when a game was added in the app (docs/api.md): the app reads this for a game with no page yet. Ids and times only.
+  write(join(root, 'source-checks.json'), { version: 1, checks: sourceChecks(db) })
   write(join(root, 'latest.json'), { updatedAt: newest || '1970-01-01T00:00:00.000Z', releases: latest })
   write(join(root, 'review.json'), { items: review })
   // Manual months override the automatic ones, month by month.

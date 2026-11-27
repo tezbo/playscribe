@@ -603,6 +603,50 @@ export async function dispatchFeed(env, cron, now = Date.now(), fetchImpl = fetc
   }
 }
 
+/** Source on add: POST /v1/sources/check { igdbId } runs one game through the Feed now. The id is the only field; nothing about the
+ *  device or the person is stored or sent. Limits: 5 a minute per address (CHECK_LIMIT binding), one run per game every 10 minutes, 100 a day. */
+export const MAX_CHECKS_PER_DAY = 100
+export const CHECK_COOLDOWN_SECONDS = 600
+export async function dispatchCheck(env, igdbId, fetchImpl = fetch) {
+  const token = env.FEED_DISPATCH_TOKEN
+  if (!token) return false
+  try {
+    const r = await fetchImpl(`https://api.github.com/repos/${FEED_REPO}/actions/workflows/${FEED_WORKFLOW}/dispatches`, {
+      method: 'POST',
+      headers: { authorization: `Bearer ${token}`, accept: 'application/vnd.github+json', 'user-agent': 'playscribe-relay', 'x-github-api-version': '2022-11-28', 'content-type': 'application/json' },
+      body: JSON.stringify({ ref: 'main', inputs: { action: 'check', igdb_id: String(igdbId) } }),
+    })
+    return r.status === 204
+  } catch {
+    return false
+  }
+}
+const tooMany = (msg, seconds) => {
+  const r = bad(msg, 429)
+  r.headers.set('retry-after', String(seconds))
+  return r
+}
+const sourceCheck = async (env, request) => {
+  const parsed = await readJson(request)
+  if (parsed.tooBig) return bad('body too large', 413)
+  const extra = Object.keys(parsed.body).filter((k) => k !== 'igdbId')
+  if (extra.length) return bad(`only igdbId may be sent here, not ${extra.sort().join(', ')}`)
+  const id = parsed.body.igdbId
+  if (!Number.isInteger(id) || id < 1 || id > 99_999_999) return bad('igdbId must be a whole number')
+  if (env.CHECK_LIMIT) {
+    const { success } = await env.CHECK_LIMIT.limit({ key: request.headers.get('cf-connecting-ip') ?? 'unknown' })
+    if (!success) return tooMany('too many checks from this address, try again in a minute', 60)
+  }
+  if (await env.KV.get(`ck:${id}`)) return tooMany('that game was checked a moment ago', CHECK_COOLDOWN_SECONDS)
+  const dayKey = `c:${now().slice(0, 10)}`
+  const todays = Number((await env.KV.get(dayKey)) ?? 0)
+  if (todays >= MAX_CHECKS_PER_DAY) return tooMany('too many checks today, try again tomorrow', 3600)
+  if (!(await dispatchCheck(env, id, env.fetchImpl ?? fetch))) return bad('could not start the check, try again later', 502)
+  await env.KV.put(`ck:${id}`, '1', { expirationTtl: CHECK_COOLDOWN_SECONDS })
+  await env.KV.put(dayKey, String(todays + 1), { expirationTtl: 172800 })
+  return json({ queued: true }, 202)
+}
+
 export default {
   async scheduled(controller, env, ctx) {
     const result = await dispatchFeed(env, controller.cron)
@@ -619,6 +663,7 @@ export default {
       if (pathname === '/v1/devices' && m === 'POST') return await register(env, request)
       if (pathname === '/v1/devices/me' && m === 'PATCH') return await patchMe(env, request)
       if (pathname === '/v1/devices/me' && m === 'DELETE') return await deleteMe(env, request)
+      if (pathname === '/v1/sources/check' && m === 'POST') return await sourceCheck(env, request)
       if (pathname === '/v1/follows' && m === 'POST') return await registerFollows(env, request)
       if (pathname === '/v1/devices/me/follows' && m === 'PUT') return await putFollows(env, request)
       if (pathname === '/v1/devices/me/follows' && m === 'GET') {

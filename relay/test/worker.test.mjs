@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
-import worker, { FOLLOWS_TTL_SECONDS, MAX_NEW_PER_DAY, dispatchFeed, FEED_HOT_CRON, FEED_FULL_CRON, parseBlocklist, limrunLeakCheck, LIMRUN_LEAK_MS } from '../worker.js'
+import worker, { MAX_CHECKS_PER_DAY, CHECK_COOLDOWN_SECONDS, FOLLOWS_TTL_SECONDS, MAX_NEW_PER_DAY, dispatchFeed, FEED_HOT_CRON, FEED_FULL_CRON, parseBlocklist, limrunLeakCheck, LIMRUN_LEAK_MS } from '../worker.js'
 
 // A KV that counts writes, because the free plan allows 1,000 a day and a relaunch must not spend any.
 const fakeKv = () => {
@@ -600,4 +600,71 @@ test('limrun webhook: a terminated event with no created event is counted as unm
   await limHook(env, { id: 'z', type: 'instance.terminated', instanceId: 'ios_euna_zzz', product: 'ios', occurredAt: '2026-11-24T10:00:00Z' })
   const r = await (await call(env, 'GET', '/admin/limrun', undefined, ADMIN)).json()
   assert.deepEqual(r.usage['2026-11:unmatched'], { minutes: 0, count: 1 })
+})
+
+// s-07-source-on-add-backend: POST /v1/sources/check { igdbId } runs one game through the Feed.
+const checkEnv = (status = 204) => {
+  const calls = []
+  const env = { KV: fakeKv(), FEED_DISPATCH_TOKEN: 'ghp', fetchImpl: async (url, init) => { calls.push({ url, init }); return new Response(null, { status }) } }
+  return { env, calls }
+}
+const check = (env, body, ip = '1.1.1.1') => worker.fetch(new Request('https://relay.test/v1/sources/check', { method: 'POST', headers: { 'content-type': 'application/json', 'cf-connecting-ip': ip }, body: JSON.stringify(body) }), env)
+
+test('source check: an id starts a one-game Feed run with that id and nothing else', async () => {
+  const { env, calls } = checkEnv()
+  const r = await check(env, { igdbId: 12345 })
+  assert.equal(r.status, 202)
+  assert.deepEqual(await r.json(), { queued: true })
+  assert.match(calls[0].url, /\/actions\/workflows\/feed\.yml\/dispatches$/)
+  assert.deepEqual(JSON.parse(calls[0].init.body), { ref: 'main', inputs: { action: 'check', igdb_id: '12345' } })
+  assert.equal(calls[0].init.headers.authorization, 'Bearer ghp')
+})
+
+test('source check: any field beyond igdbId is refused, and so is a bad id; nothing is dispatched', async () => {
+  const { env, calls } = checkEnv()
+  assert.equal((await check(env, { igdbId: 1, deviceKey: 'k' })).status, 400)
+  assert.equal((await check(env, { igdbId: 1, name: 'x' })).status, 400)
+  for (const igdbId of [0, -3, 1.5, '12', null, 100_000_000]) assert.equal((await check(env, { igdbId })).status, 400)
+  assert.equal((await check(env, {})).status, 400)
+  assert.equal(calls.length, 0)
+  assert.equal(env.KV.writes, 0)
+})
+
+test('source check: one run per game per 10 minutes, 5 a minute per address, 100 a day', async () => {
+  const { env, calls } = checkEnv()
+  assert.equal((await check(env, { igdbId: 7 })).status, 202)
+  const again = await check(env, { igdbId: 7 })
+  assert.equal(again.status, 429)
+  assert.equal(again.headers.get('retry-after'), String(CHECK_COOLDOWN_SECONDS))
+  assert.equal(env.KV.ttl.get('ck:7'), CHECK_COOLDOWN_SECONDS)
+  assert.equal(calls.length, 1)
+  const seen = {}
+  env.CHECK_LIMIT = { limit: async ({ key }) => ({ success: (seen[key] = (seen[key] ?? 0) + 1) <= 2 }) }
+  assert.equal((await check(env, { igdbId: 8 }, '9.9.9.9')).status, 202)
+  assert.equal((await check(env, { igdbId: 9 }, '9.9.9.9')).status, 202)
+  const limited = await check(env, { igdbId: 10 }, '9.9.9.9')
+  assert.equal(limited.status, 429)
+  assert.equal(limited.headers.get('retry-after'), '60')
+  assert.equal((await check(env, { igdbId: 10 }, '8.8.8.8')).status, 202) // another address is untouched
+  const day = `c:${new Date().toISOString().slice(0, 10)}`
+  await env.KV.put(day, String(MAX_CHECKS_PER_DAY))
+  const over = await check(env, { igdbId: 11 }, '7.7.7.7')
+  assert.equal(over.status, 429)
+  assert.equal(over.headers.get('retry-after'), '3600')
+})
+
+test('source check: a refused dispatch is a 502 and spends no cooldown or daily count', async () => {
+  const { env } = checkEnv(403)
+  assert.equal((await check(env, { igdbId: 5 })).status, 502)
+  assert.equal(await env.KV.get('ck:5'), null)
+  assert.equal(env.KV.writes, 0)
+  const none = { KV: fakeKv() }
+  assert.equal((await check(none, { igdbId: 5 })).status, 502)
+})
+
+test('source check: a blocked address gets 403 like every /v1 route', async () => {
+  const { env, calls } = checkEnv()
+  env.BLOCKLIST = '6.6.6.6'
+  assert.equal((await check(env, { igdbId: 5 }, '6.6.6.6')).status, 403)
+  assert.equal(calls.length, 0)
 })

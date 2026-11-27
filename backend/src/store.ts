@@ -82,7 +82,8 @@ export const upsertAutoGame = (db: DB, g: GameInput & { steamIsPcPort?: boolean 
 /** Auto rows no longer in the derived set (the game joined the hand registry, or lost its Steam link) are retired (auto = 2):
  * not polled, not exported, history kept. A later derivation that lists the id again reactivates it. Returns the count retired. */
 export const retireAutoGames = (db: DB, keep: Set<string>) => {
-  const rows = db.prepare('SELECT id FROM games WHERE auto = 1').all() as { id: string }[]
+  // A game added through a one-game check (source_checks) stays, whether or not the derived set lists it.
+  const rows = db.prepare('SELECT id FROM games WHERE auto = 1 AND id NOT IN (SELECT game_id FROM source_checks WHERE game_id IS NOT NULL)').all() as { id: string }[]
   let n = 0
   for (const { id } of rows) if (!keep.has(id)) { db.prepare('UPDATE games SET auto = 2 WHERE id = ?').run(id); n++ }
   return n
@@ -615,3 +616,16 @@ export const preferOfficialDate = (db: DB, releaseId: string): void => {
   if (!first || first <= r.announced_at || Date.parse(first) - Date.parse(r.announced_at) > 14 * 86400e3) return
   db.prepare('UPDATE releases SET announced_at = ?, updated_at = ? WHERE id = ?').run(first, now(), releaseId)
 }
+
+export type SourceCheckStatus = 'polled' | 'no-source' | 'unknown'
+export const recordSourceCheck = (db: DB, c: { igdbId: number; gameId: string | null; name: string | null; status: SourceCheckStatus; releases: number }, at = now()) =>
+  db.prepare(
+    `INSERT INTO source_checks (igdb_id, game_id, name, status, releases, checked_at) VALUES (?, ?, ?, ?, ?, ?)
+     ON CONFLICT (igdb_id) DO UPDATE SET game_id = excluded.game_id, name = COALESCE(excluded.name, name), status = excluded.status, releases = excluded.releases, checked_at = excluded.checked_at`,
+  ).run(c.igdbId, c.gameId, c.name, c.status, c.releases, at)
+
+/** What the app reads for a game it added that has no feed page yet: newest checks first, capped so the file stays small. */
+export const sourceChecks = (db: DB, limit = 500) =>
+  (db.prepare('SELECT igdb_id, game_id, name, status, releases, checked_at FROM source_checks ORDER BY checked_at DESC, igdb_id LIMIT ?').all(limit) as Record<string, any>[]).map((r) => ({
+    igdbId: r.igdb_id as number, gameId: (r.game_id as string | null) ?? null, status: r.status as SourceCheckStatus, releaseCount: r.releases as number, checkedAt: r.checked_at as string,
+  }))

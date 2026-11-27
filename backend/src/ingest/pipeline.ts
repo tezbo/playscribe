@@ -414,6 +414,8 @@ export interface IngestOpts {
   games?: string[]
   /** A backfill that only drops and repairs rows that exist: no new release and no new news item is created (bug-060). */
   noNewReleases?: boolean
+  /** With `games`: a derived game that is named is polled like a tracked one (a one-game check through the relay). */
+  named?: boolean
   /** Auto-onboarding: how many auto games (store.nextAutoSlice) to poll after the tracked ones, 0 for none. */
   autoSlice?: number
   /** Auto-onboarding: stop the slice once the whole run has taken this long (the job has a 20 min limit). */
@@ -434,6 +436,7 @@ export const runIngest = async (deps: IngestDeps, opts: IngestOpts = {}): Promis
   const hot = hotGameIds(deps.db)
   const tracked = trackedGames(deps.db).filter((g) => (!opts.hot || hot.has(g.id)) && (!opts.games || opts.games.includes(g.id)))
   const repairOnly = new Set<string>()
+  if (opts.named && opts.games && !opts.until) tracked.push(...namedAutoGames(deps.db, opts.games, new Set(tracked.map((t) => t.id))))
   if (opts.until && !opts.hot) {
     // A backfill with games named reads a derived game whenever it is named (bug-060: rows of games with no PS5 row were never reached).
     const repair = opts.games ? namedAutoGames(deps.db, opts.games, new Set(tracked.map((t) => t.id))) : autoRepairGames(deps.db, new Set(tracked.map((t) => t.id)))
