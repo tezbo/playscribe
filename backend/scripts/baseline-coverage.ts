@@ -13,7 +13,7 @@ export const FIELDS: Field[] = [
   { key: 'story', label: 'Story', need: 'info.storyline', required: false },
   { key: 'genres', label: 'Genres', need: 'info.genres', required: true },
   { key: 'trailers', label: 'Trailers', need: 'info.videos', required: false },
-  { key: 'official', label: 'Official site link', need: 'info.links.official', required: false },
+  { key: 'official', label: 'Official site link', need: 'info.links.official', required: true },
   { key: 'notes', label: 'Patch-notes link', need: 'info.links.patchNotes', required: true },
   { key: 'similar', label: 'Games like this', need: 'info.similar', required: false },
   { key: 'ps5date', label: 'PS5 release date', need: 'game.ps5Release', required: true },
