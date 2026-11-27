@@ -107,8 +107,9 @@ final class FullScreenVideoTests: XCTestCase {
         enter.tap()
         let exit = any["videoExitFullScreen"], bands = any["qaBands"]
         XCTAssertTrue(exit.waitForExistence(timeout: 5), "Exit is not shown on entering full screen")
-        // From portrait the app turns its scene; turn the simulated device to match, as above, so hit points are computed.
-        XCUIDevice.shared.orientation = .landscapeLeft
+        // From portrait the app turns its scene and the device stays portrait, as on a phone with rotation lock (Terry's case).
+        // Every tap below is then a coordinate in the device's portrait space, where a point (x, y) of the turned scene is
+        // (466 - y, x) (Duo scenario, run 46050038868). Element queries are not used for taps: XCUITest has no hit points here.
         sleep(1)
         // Exit's point from the measured geometry, as above: XCUITest's own queries are slower than the 3 s auto-hide.
         let geometry = (any["qaFullScreen"].value as? String) ?? ""
@@ -121,9 +122,12 @@ final class FullScreenVideoTests: XCTestCase {
         XCTAssertEqual(pic.count, 4, "qaFullScreen has no picture frame: \(geometry)")
         XCTAssertEqual(safe.count, 4, "qaFullScreen has no safe insets: \(geometry)")
         guard pic.count == 4, safe.count == 4 else { return }
-        let window = app.windows.firstMatch
-        let exitPoint = window.coordinate(withNormalizedOffset: .zero).withOffset(CGVector(dx: safe[1] + 12 + 22, dy: (pic[1] - 44) / 2 + 22))
-        let pictureMiddle = window.coordinate(withNormalizedOffset: .zero).withOffset(CGVector(dx: pic[0] + pic[2] / 2, dy: pic[1] + pic[3] / 2))
+        let origin = app.coordinate(withNormalizedOffset: .zero)
+        func point(_ x: CGFloat, _ y: CGFloat) -> XCUICoordinate {
+            origin.withOffset(startLandscape ? CGVector(dx: x, dy: y) : CGVector(dx: 466 - y, dy: x))
+        }
+        let exitPoint = point(safe[1] + 12 + 22, (pic[1] - 44) / 2 + 22)
+        let pictureMiddle = point(pic[0] + pic[2] / 2, pic[1] + pic[3] / 2)
         sleep(5)   // the controls hide 3 s after the last touch while playing
         let hidden = (bands.value as? String) ?? ""
         print("qaBands after auto-hide: \(hidden)")
@@ -142,7 +146,7 @@ final class FullScreenVideoTests: XCTestCase {
         pictureMiddle.tap()
         exitPoint.tap()
         XCTAssertTrue(enter.waitForExistence(timeout: 10), "Exit full screen did not leave full screen after a picture tap")
-        sleep(2)   // the device stays landscape here, so a portrait window means the app turned itself back
+        sleep(2)   // the device never turned, so the window's shape is the app's own turn back
         let after = app.windows.firstMatch.frame
         print("window after Exit: \(after)")
         XCTAssertEqual(after.width > after.height, startLandscape, "Exit did not return to the starting orientation: \(after)")
