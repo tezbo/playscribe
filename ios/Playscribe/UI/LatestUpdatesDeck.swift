@@ -99,7 +99,7 @@ struct LatestUpdatesDeck: View {
     /// The page edge (44 pt leaves) and the 8 pt gap above it; the card takes the rest of maxHeight.
     private static let pageEdgeHeight: CGFloat = 52
     /// The dots sit in the top of that row: what the fade may cover below them (Iris, #664: the headline keeps 3 lines at AX5).
-    private static let dotsRowSlack: CGFloat = 16
+    private static let dotsRowSlack: CGFloat = 24
     /// Accessibility sizes: room for the "+N more updates" chip on its own row (two wrapped lines and a gap).
     private static let chipRowAX: CGFloat = 96
 
