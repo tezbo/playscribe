@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Quinn's five cloud runs on a booted, app-installed iPhone Duo (hosted runner or Mac). Needs sim-use.
-#   ios/tools/qa/duo-ci-scenarios.sh UDID OUTDIR [scenario ...]    (default: all)   scenarios: continuity trailer closedax5 schemes video axchips deckwide plusend switchax switchtt rails heroswipe herolong removemenu lane fullscreen blocked fsxctest
+#   ios/tools/qa/duo-ci-scenarios.sh UDID OUTDIR [scenario ...]    (default: all)   scenarios: continuity trailer closedax5 schemes video axchips deckwide plusend switchax switchtt rails onehero heroswipe herolong removemenu lane fullscreen blocked fsxctest
 # Every step saves <sha>-<scenario>-<step>-<display>-shot.png and -ui.txt (outline with frames, ids and the pose line).
 set -uo pipefail
 UDID=$1; OUT=$2; shift 2; FAILED=""; SCEN=${*:-continuity trailer closedax5 schemes video}
@@ -185,6 +185,10 @@ switchax) # bug-playing-upcoming-switch-ax5-small: switch + filter chips, each s
   # A real tap on the chip (Closed portrait AX5): Playing, then Upcoming by label.
   launch -qaRoute library/playing -UIPreferredContentSizeCategoryName $AX5
   echo "tap Upcoming: $(sim-use tap --label "Upcoming" --device "$UDID" 2>&1 | head -2)"; sleep 2; snap switchax 5-closed-portrait-AX5-tapped-upcoming ;;
+onehero) # one update only: no dead space under the hero (r053-hero-pager-gap); Closed, Open portrait, Book
+  launch -qaRoute one-update; snap onehero 1-closed
+  fold 180 portrait; snap onehero 2-open-portrait
+  fold 90 landscape-left; snap onehero 3-book ;;
 rails) # R-7: the four sideways rails, at rest (trailing fade only) and scrolled (leading fade too)
   launch -qaRoute gamepage/dawnwalker; scroll_end 233,560 233,160 similar; rail 1-youmightalsolike '#similarGame'
   launch -qaRoute fill-library/12 -UIPreferredContentSizeCategoryName UICTContentSizeCategoryL; rail 2-library-chips 'Button +"All '
