@@ -476,7 +476,8 @@ struct CoverLeaves: View {
         .animation(.easeInOut(duration: 0.4), value: backed)
         .allowsHitTesting(false)
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel(PageEdge.spoken(lit: lit, count: cards.count))
+        .accessibilityLabel(PageEdge.label)
+        .accessibilityValue(PageEdge.spoken(lit: lit, count: cards.count))
         .accessibilityIdentifier("coverIndicator")
         .accessibilityAdjustableAction { direction in
             let delta = direction == .increment ? 1 : direction == .decrement ? -1 : 0

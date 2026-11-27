@@ -857,6 +857,10 @@ struct PageEdge: View {
         return CGRect(x: CGFloat(a) * (dot + gap), y: 0, width: CGFloat(b - a) * (dot + gap) + dot, height: dot)
     }
 
+    /// An adjustable element needs a real string value: with only a label its value read as "nan" (beta 6 gate, #deckIndicator).
+    /// The label names the control, the value says where the deck is (HIG adjustable pattern; Iris).
+    static let label = "Latest updates"
+
     /// "Update 2 of 5", "Updates 2 and 3 of 5".
     static func spoken(lit: Set<Int>, count: Int) -> String {
         let n = lit.sorted().map { $0 + 1 }
@@ -927,7 +931,8 @@ struct PageEdge: View {
         .contentShape(.accessibility, Rectangle())
         .allowsHitTesting(false)
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel(Self.spoken(lit: lit, count: cards.count))
+        .accessibilityLabel(Self.label)
+        .accessibilityValue(Self.spoken(lit: lit, count: cards.count))
         .accessibilityIdentifier("deckIndicator")
         // VoiceOver swipe up or down moves the deck one card (Quinn and Iris on #512).
         .accessibilityAdjustableAction { direction in
