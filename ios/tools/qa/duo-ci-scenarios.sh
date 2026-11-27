@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Quinn's five cloud runs on a booted, app-installed iPhone Duo (hosted runner or Mac). Needs sim-use.
-#   ios/tools/qa/duo-ci-scenarios.sh UDID OUTDIR [scenario ...]    (default: all)   scenarios: continuity trailer closedax5 schemes video axchips deckwide plusend switchax switchtt heroswipe herolong removemenu brand edgefade lane
+#   ios/tools/qa/duo-ci-scenarios.sh UDID OUTDIR [scenario ...]    (default: all)   scenarios: continuity trailer closedax5 schemes video axchips deckwide plusend switchax switchtt heroswipe herolong removemenu brand brandbook edgefade lane
 # Every step saves <sha>-<scenario>-<step>-<display>-shot.png and -ui.txt (outline with frames, ids and the pose line).
 set -uo pipefail
 UDID=$1; OUT=$2; shift 2; SCEN=${*:-continuity trailer closedax5 schemes video}
@@ -122,6 +122,10 @@ brand) # s-06-brand-swap (#614): Home Screen icon light and dark (tinted cannot 
   xcrun simctl terminate "$UDID" $B >/dev/null 2>&1; fold 90 landscape-left; xcrun simctl launch "$UDID" $B -qaRoute library/playing -qaSplashHold 12 >/dev/null; sleep 3; quick 7-splash-book
   xcrun simctl terminate "$UDID" $B >/dev/null 2>&1; fold 90 portrait; xcrun simctl launch "$UDID" $B -qaRoute library/playing -qaSplashHold 12 >/dev/null; sleep 3; quick 8-splash-tabletop
   xcrun simctl ui "$UDID" appearance dark >/dev/null 2>&1; xcrun simctl terminate "$UDID" $B >/dev/null 2>&1; fold 0 portrait; xcrun simctl launch "$UDID" $B -qaRoute library/playing -qaSplashHold 12 >/dev/null; sleep 3; quick 9-splash-closed-dark; xcrun simctl ui "$UDID" appearance light >/dev/null 2>&1 ;;
+brandbook) # #614: the splash in Book only (light), four frames; a lighter run than brand
+  quick() { local d; d=$(did); local n; [ "$d" = 3 ] && n=inner || n=outer; for i in 1 2 3 4; do xcrun simctl io "$UDID" screenshot --display=$d "$OUT/$SHA-brandbook-$1-$i-$n-shot.png" >/dev/null 2>&1; done; }
+  xcrun simctl ui "$UDID" appearance light >/dev/null 2>&1
+  xcrun simctl terminate "$UDID" $B >/dev/null 2>&1; fold 90 landscape-left; xcrun simctl launch "$UDID" $B -qaRoute library/playing -qaSplashHold 12 >/dev/null; sleep 3; quick splash-book ;;
 edgefade) # #613 (bug-063, bug-library-tabbar-edge-fade): game page and Library mid-scroll and at the end, std and AX5, Closed portrait and Open portrait (fold 180; swipes start above the bottom tab bar, y 780); ui.txt carries qaBarPinned
   for sz in std AX5; do size=UICTContentSizeCategoryL; [ $sz = AX5 ] && size=$AX5
     for pose in closed open; do
