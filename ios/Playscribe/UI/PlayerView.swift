@@ -1077,7 +1077,6 @@ struct FullScreenBands: View {
             bandCatcher(CGRect(x: 0, y: picture.maxY, width: screen.width, height: screen.height - picture.maxY))
             Group {
                 HStack(spacing: 12) {
-                    glyph("chevron.down", "Exit full screen", id: "videoExitFullScreen", action: onExit)
                     Text(title)
                         .font(PlayscribeFont.caption)
                         .foregroundStyle(.white.opacity(0.7))
@@ -1088,7 +1087,12 @@ struct FullScreenBands: View {
                 }
                 .frame(width: l.top.width, height: 44)
                 .offset(x: l.top.minX, y: l.top.minY)
+                // bug-073: Exit leads the bottom row in every pose. In Closed, once the scene has turned, the top ~70 pt take no
+                // taps (hosted Duo run 46086481097), so an Exit in the 44 pt top band could not be reached there.
                 HStack(spacing: 4) {
+                    // A 16 pt gap before Back 10 (Iris), so a thumb aiming for one doesn't hit the other.
+                    glyph("chevron.down", "Exit full screen", id: "videoExitFullScreen", action: onExit)
+                        .padding(.trailing, 12)
                     glyph("gobackward.10", "Back 10 seconds", id: "videoBack10") { controller.skip(-10) }
                     Group {
                         if ended {

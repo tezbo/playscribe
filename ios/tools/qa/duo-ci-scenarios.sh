@@ -261,21 +261,14 @@ fullscreen) # bug-071: full-screen video Fit with our controls in the bands; the
   # device's portrait space. Which way the scene is turned there is not settled (the band tap at 12,339 in run 46050038868 fits
   # both), so Exit is tried at each reading: a landscape point (x, y) is (466 - y, x) or (y, 678 - x). Each try starts hidden:
   # a picture tap, then Exit at once, before the 3 s auto-hide. Exit's centre comes from the measured geometry, as in the UI test.
-  g=$(echo "$t4" | grep -o 'pic=[0-9,x]* safe=[0-9,]*' | head -1); pic=${g#pic=}; pic=${pic%% *}; sf=${g#*safe=}
-  lx=$(( $(echo "$sf" | cut -d, -f2) + 12 + 22 )); ly=$(( ( $(echo "$pic" | cut -d, -f2) - 44 ) / 2 + 22 ))
+  g=$(echo "$t4" | grep -o 'pic=[0-9,x]* safe=[0-9,]* full=[0-9x]*' | head -1); pic=${g#pic=}; pic=${pic%% *}; sf=${g#*safe=}; sf=${sf%% *}
+  fh=${g##*x}; pmax=$(( $(echo "$pic" | cut -d, -f2) + ${pic##*x} )); band=$(( fh - pmax ))
+  lx=$(( $(echo "$sf" | cut -d, -f2) + 12 + 22 ))
+  if [ "$band" -gt 104 ]; then ly=$(( pmax + 8 + 22 )); else ly=$(( pmax + (band - 44) / 2 + 22 )); fi
   # Also (y, x): every result so far fits it (6cba5b0 missed with both rotations; 12,339 woke the top band, 339,12 hit the picture).
-  # bug-073 measurement, before any Exit try: where taps injected at these device points land in the turned window (qaLastTap,
-  # window space). The picture, bands and corners; 118,22 last, as it may be Exit.
-  # Run 46083290466 (758b83f): taps land at the same point in window space (no rotation), except the top strip, where they
-  # never arrive (339,12 and 118,22 left the last value). Here each probe follows a reset tap, to find where the strip ends.
-  for xy in "339 12" "118 22" "118 30" "118 36" "118 42" "118 50" "118 60" "118 80" "339 30" "339 44" "339 60"; do
-    sim-use ui --device "$UDID" 2>/dev/null | grep -q qaFullScreen || break
-    sim-use tap -x 233 -y 339 --device "$UDID" >/dev/null 2>&1; sleep 0.3
-    sim-use tap -x ${xy% *} -y ${xy#* } --device "$UDID" >/dev/null 2>&1; sleep 0.3
-    echo "probe tap at device ($xy) landed at: $(sim-use ui --device "$UDID" 2>/dev/null | grep -o 'tap=[a-z0-9,-]*' | head -1)"
-  done
-  # Identity (device = window) as a fourth reading.
-  for xy in "$ly $lx" "$((466 - ly)) $lx" "$ly $((678 - lx))" "$lx $ly"; do
+  # bug-073 measurement (runs 46083290466, 46086481097): after the turn sim-use taps land at the same point in window space,
+  # but nothing in the top ~70 pt arrives (118,60 lost, 118,80 landed), so Exit now leads the bottom row.
+  for xy in "$lx $ly" "$ly $lx" "$((466 - ly)) $lx" "$ly $((678 - lx))"; do
     sleep 5; echo "picture tap: $(sim-use tap -x 233 -y 339 --device "$UDID" 2>&1 | head -1)"
     echo "exit tap at ($xy) from $g: $(sim-use tap -x ${xy% *} -y ${xy#* } --device "$UDID" 2>&1 | head -1)"; sleep 4
     sim-use ui --device "$UDID" 2>/dev/null | grep -q qaFullScreen || { echo "exit reading: $xy"; break; }
@@ -287,10 +280,19 @@ fullscreen) # bug-071: full-screen video Fit with our controls in the bands; the
   else echo "FAIL exit: $(head -1 "$t5"); $(grep -c qaFullScreen "$t5") qaFullScreen"; FAILED="$FAILED fullscreen-exit"; fi
   # The same poses again with the controls held up (-qaBandsStay, internal), so the stills show them (Iris).
   launch -qaRoute trailer/dQw4w9WgXcQ/dawnwalker -qaOverlay YES -qaVideoTime YES -qaBandsStay YES
-  tapl Play 8; fold 0 landscape-left; enter 6-closed-landscape-shown; tapl "Exit full screen" 3
+  tapl Play 8; enter 5b-closed-portrait-turned-shown; tapl "Exit full screen" 3
+  fold 0 landscape-left; enter 6-closed-landscape-shown; tapl "Exit full screen" 3
   fold 180 landscape-left; enter 7-flat-landscape-shown
   fold 90 landscape-left; sleep 2; snap fullscreen 8-book-shown; frames 8
   fold 90 portrait; sleep 2; snap fullscreen 9-tabletop-ends-it
+  # bug-073: the same at AX5 (Iris); the band glyphs cap at xxxLarge, so the row must look the same.
+  fold 0 portrait; sleep 2
+  launch -qaRoute trailer/dQw4w9WgXcQ/dawnwalker -qaOverlay YES -qaVideoTime YES -qaBandsStay YES -UIPreferredContentSizeCategoryName $AX5
+  tapl Play 8; enter 10-closed-portrait-turned-shown-ax5; tapl "Exit full screen" 3
+  fold 0 landscape-left; enter 11-closed-landscape-shown-ax5; tapl "Exit full screen" 3
+  fold 180 landscape-left; enter 12-flat-landscape-shown-ax5
+  fold 90 landscape-left; sleep 2; snap fullscreen 13-book-shown-ax5; frames 13
+  fold 0 portrait; sleep 2
   # Every full-screen tree (those with our qaFullScreen probe) must keep YouTube's buttons from VoiceOver; fails the job.
   "$(dirname "$0")/check-no-youtube-buttons.sh" $(grep -l qaFullScreen "$OUT/$SHA"-fullscreen-*-ui.txt) || FAILED="$FAILED fullscreen-youtube-buttons" ;;
 blocked) # R-12: a video YouTube refuses (IFrame error 150) shows Open in YouTube in every pose, never a full-screen button

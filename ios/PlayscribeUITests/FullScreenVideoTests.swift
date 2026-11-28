@@ -65,18 +65,21 @@ final class FullScreenVideoTests: XCTestCase {
 
         // The controls fade 3 s after the last touch while playing, often before XCUITest can read Exit's frame (runs 45748630556
         // and 45751314856). So Exit's point comes from the measured geometry in qaFullScreen: the top row starts 12 pt inside
-        // the safe leading inset and is centred in the top band. The first tap shows the controls, the second is Exit.
+        // the safe leading inset and leads the bottom row (bug-073), centred in the bottom band. The first tap shows the controls,
+        // the second is Exit.
         let geometry = (probe.value as? String) ?? ""
         func numbers(after key: String) -> [CGFloat] {
             guard let r = geometry.range(of: key + "=") else { return [] }
             let field = geometry[r.upperBound...].prefix { $0 != " " }
             return field.split(whereSeparator: { $0 == "," || $0 == "x" }).compactMap { Double($0).map { CGFloat($0) } }
         }
-        let pic = numbers(after: "pic"), safe = numbers(after: "safe")
+        let pic = numbers(after: "pic"), safe = numbers(after: "safe"), full = numbers(after: "full")
         XCTAssertEqual(pic.count, 4, "qaFullScreen has no picture frame: \(geometry)")
         XCTAssertEqual(safe.count, 4, "qaFullScreen has no safe insets: \(geometry)")
-        guard pic.count == 4, safe.count == 4 else { return }
-        let exitPoint = CGVector(dx: safe[1] + 12 + 22, dy: (pic[1] - 44) / 2 + 22)
+        XCTAssertEqual(full.count, 2, "qaFullScreen has no screen size: \(geometry)")
+        guard pic.count == 4, safe.count == 4, full.count == 2 else { return }
+        let exitY = Self.bottomRowMiddle(pictureMaxY: pic[1] + pic[3], screenHeight: full[1])
+        let exitPoint = CGVector(dx: safe[1] + 12 + 22, dy: exitY)
         XCTAssertGreaterThanOrEqual(exitPoint.dx - 22, 92, "Exit would sit in the camera housing")
         sleep(4)
         let point = app.windows.firstMatch.coordinate(withNormalizedOffset: .zero).withOffset(exitPoint)
@@ -119,16 +122,18 @@ final class FullScreenVideoTests: XCTestCase {
             let field = geometry[r.upperBound...].prefix { $0 != " " }
             return field.split(whereSeparator: { $0 == "," || $0 == "x" }).compactMap { Double($0).map { CGFloat($0) } }
         }
-        let pic = numbers(after: "pic"), safe = numbers(after: "safe")
+        let pic = numbers(after: "pic"), safe = numbers(after: "safe"), full = numbers(after: "full")
         XCTAssertEqual(pic.count, 4, "qaFullScreen has no picture frame: \(geometry)")
         XCTAssertEqual(safe.count, 4, "qaFullScreen has no safe insets: \(geometry)")
-        guard pic.count == 4, safe.count == 4 else { return }
+        XCTAssertEqual(full.count, 2, "qaFullScreen has no screen size: \(geometry)")
+        guard pic.count == 4, safe.count == 4, full.count == 2 else { return }
+        let exitY = Self.bottomRowMiddle(pictureMaxY: pic[1] + pic[3], screenHeight: full[1])
         let origin = app.coordinate(withNormalizedOffset: .zero)
         func points(_ x: CGFloat, _ y: CGFloat) -> [XCUICoordinate] {
             (startLandscape ? [CGVector(dx: x, dy: y)]
-                : [CGVector(dx: y, dy: x), CGVector(dx: 466 - y, dy: x), CGVector(dx: y, dy: 678 - x), CGVector(dx: x, dy: y)]).map { origin.withOffset($0) }
+                : [CGVector(dx: x, dy: y), CGVector(dx: y, dy: x), CGVector(dx: 466 - y, dy: x), CGVector(dx: y, dy: 678 - x)]).map { origin.withOffset($0) }
         }
-        let exitPoints = points(safe[1] + 12 + 22, (pic[1] - 44) / 2 + 22)
+        let exitPoints = points(safe[1] + 12 + 22, exitY)
         let pictureMiddle = points(pic[0] + pic[2] / 2, pic[1] + pic[3] / 2)[0]   // the middle is the same point either way
         sleep(5)   // the controls hide 3 s after the last touch while playing
         let hidden = (bands.value as? String) ?? ""
@@ -157,5 +162,12 @@ final class FullScreenVideoTests: XCTestCase {
         XCTAssertEqual(after.width > after.height, startLandscape, "Exit did not return to the starting orientation: \(after)")
         app.terminate()
         XCUIDevice.shared.orientation = .portrait
+    }
+
+    /// The middle of the bottom control row, as FullScreenBands.layout places it: centred in the bottom band, or 8 pt under the
+    /// picture in a deep band.
+    static func bottomRowMiddle(pictureMaxY: CGFloat, screenHeight: CGFloat) -> CGFloat {
+        let band = screenHeight - pictureMaxY
+        return (band > 2 * 44 + 16 ? pictureMaxY + 8 : pictureMaxY + (band - 44) / 2) + 22
     }
 }
