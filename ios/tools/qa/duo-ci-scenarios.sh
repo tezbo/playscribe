@@ -281,12 +281,15 @@ newest) # bug-072: Dawnwalker left on Gallery, relaunch, open it from its Librar
   fold 180 portrait; sleep 3; snap newest 4-open-portrait-library; tapTile; snap newest 5-open-portrait-game-opened ;;
 headerart) # bug-076: Closed header art edge to edge, title 20 pt under it; game page and update page, portrait and landscape, std and AX5
   for g in dawnwalker minecraft; do
-    launch -qaRoute gamepage/$g; snap headerart $g-page-portrait
+    launch -qaRoute gamepage/$g; sleep 6; snap headerart $g-page-portrait
     launch -qaRoute gamepage/$g -qaOrientation landscape; snap headerart $g-page-landscape
     launch -qaRoute gamepage/$g -UIPreferredContentSizeCategoryName $AX5; snap headerart $g-page-portrait-ax5
   done
-  launch -qaRoute one-update; snap headerart update-portrait
-  launch -qaRoute one-update -qaOrientation landscape; snap headerart update-landscape
+  launch -qaRoute release/dawnwalker/dawnwalker@1.1; snap headerart update-portrait
+  launch -qaRoute release/dawnwalker/dawnwalker@1.1 -qaOrientation landscape; snap headerart update-landscape
+  launch -qaRoute release/dawnwalker/dawnwalker@1.1 -UIPreferredContentSizeCategoryName $AX5; snap headerart update-portrait-ax5
+  launch -qaRoute gamepage/dawnwalker -AppleInterfaceStyle Dark; snap headerart dawnwalker-page-portrait-dark
+  launch -qaRoute gamepage/dawnwalker -AppleInterfaceStyle Dark -qaOrientation landscape; snap headerart dawnwalker-page-landscape-dark
   launch -qaRoute gamepage/dawnwalker; fold 120 portrait; snap headerart tabletop-unchanged ;;
 video) # row 9: hinge sweep recording with frame timing
   launch -qaRoute library/playing; fold 180 landscape-left
