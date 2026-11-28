@@ -87,6 +87,7 @@ struct LatestUpdatesDeck: View {
     /// Compact only: updates beyond the deck's cards; a trailing "+N more updates" chip in the dots row opens the list.
     var moreCount: Int = 0
     @State private var current: String?
+    @State private var swiping = false
     /// Accessibility sizes: each card's measured height. The deck's frame grows to the tallest, so a long headline
     /// grows the card instead of overflowing it upwards.
     @State private var captionH: CGFloat = 0
@@ -284,6 +285,8 @@ struct LatestUpdatesDeck: View {
             .fixedSize(horizontal: false, vertical: wideAX)
             .onGeometryChange(for: CGFloat.self) { $0.size.width } action: { if scrollHeight != nil, abs($0 - pagerWidth) > 0.5 { pagerWidth = $0 } }
             .scrollPosition(id: $current)
+            .onScrollPhaseChange { _, phase in swiping = phase != .idle }
+            .environment(\.deckSwiping, swiping)
             .onScrollGeometryChange(for: Bool.self, of: { g in
                 g.contentSize.width > g.containerSize.width + 1
                     && g.contentOffset.x + g.containerSize.width >= g.contentSize.width + g.contentInsets.trailing - 1
@@ -423,7 +426,7 @@ struct CompactDeckCard: View {
             .frame(height: height, alignment: .bottomLeading)
             .background {
                 ZStack(alignment: .bottomLeading) {
-                    ArtView(asset: card.game.keyArtAsset, game: card.game)
+                    DeckArt(game: card.game, cardID: card.id)
                     // Increase Contrast / Reduce Transparency: a solid ink scrim behind the caption, not a fade.
                     if contrast == .increased || reduceTransparency || qaSolid {
                         PlayscribeColor.ink950.opacity(0.92).frame(height: height * 0.45)
@@ -746,7 +749,7 @@ struct WideDeckCard: View {
         .frame(maxWidth: .infinity, minHeight: height, alignment: .leading)
         .background {
             ZStack {
-                ArtView(asset: card.game.keyArtAsset, game: card.game)
+                DeckArt(game: card.game, cardID: card.id)
                 LinearGradient(colors: [PlayscribeColor.ink950.opacity(0.92), PlayscribeColor.ink950.opacity(0.7), .clear],
                                startPoint: .leading, endPoint: .trailing)
             }
@@ -760,7 +763,7 @@ struct WideDeckCard: View {
     private var standardCard: some View {
         GeometryReader { g in
             ZStack(alignment: .leading) {
-                ArtView(asset: card.game.keyArtAsset, game: card.game)
+                DeckArt(game: card.game, cardID: card.id)
                 LinearGradient(colors: [PlayscribeColor.ink950.opacity(0.92), PlayscribeColor.ink950.opacity(0.7), .clear],
                                startPoint: .leading, endPoint: .trailing)
                 VStack(alignment: .leading, spacing: 6) {
@@ -828,7 +831,7 @@ struct DeckCardArt: View {
         // The 16:9 box comes from a clear base, so the art's own size never sets the card's height (a Book
         // hero came out as tall as the screen when the proposal had no height).
         Color.clear.aspectRatio(16 / 9, contentMode: .fit)
-            .overlay { ArtView(asset: card.game.keyArtAsset, game: card.game) }
+            .overlay { DeckArt(game: card.game, cardID: card.id) }
             .clipped()
             .modifier(FixedArtHeight(height: height))
             .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
@@ -1011,7 +1014,7 @@ struct DeckStage: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background {
                 ZStack {
-                    ArtView(asset: card.game.keyArtAsset, game: card.game, drift: true)
+                    DeckArt(game: card.game, cardID: nil)
                     // A fixed scrim, independent of the art and of the caption's height: clear at the top of the stage, ink 950 at
                     // 0.8 from the caption block down (Iris, Quinn: stage legibility).
                     // At accessibility sizes the caption is tall and sits higher in the stage, so the scrim reaches full strength sooner

@@ -12,13 +12,19 @@ struct CoverReduceMotionPixelTests {
     private let size = CGSize(width: 233, height: 339)   // the Closed cover at half size, scale 1
 
     /// A cover page whose key art passes the murky check, so Key-art motion would run on it.
-    private func movingCard() throws -> (AppModel, DeckCard) {
+    private func movingCards() throws -> (AppModel, [DeckCard]) {
         let m = AppModel(storeURL: URL.temporaryDirectory.appending(path: "rm-\(UUID().uuidString).json"))
         m.resetToManyUpdatesDemo()
-        let card = try #require(m.latestDeck.first { card in
+        let cards = m.latestDeck.filter { card in
             card.game.keyArtAsset.map { !KeyArtQuality.isMurky(asset: $0) } ?? false
-        }, "a deck card with key art that moves")
-        return (m, card)
+        }
+        #expect(!cards.isEmpty, "a deck card with key art that moves")
+        return (m, cards)
+    }
+
+    private func movingCard() throws -> (AppModel, DeckCard) {
+        let (m, cards) = try movingCards()
+        return (m, try #require(cards.first))
     }
 
     private func frame(_ model: AppModel, _ card: DeckCard, at seconds: Double, reduceMotion: Bool) throws -> [UInt8] {
@@ -62,9 +68,15 @@ struct CoverReduceMotionPixelTests {
 
     @Test func withoutReduceMotionTheSameFramesDiffer() throws {
         defer { restore() }
-        let (m, card) = try movingCard()
-        let early = try frame(m, card, at: 1, reduceMotion: false)
-        let late = try frame(m, card, at: 6, reduceMotion: false)
-        #expect(changed(early, late) > 0.05, "Key-art motion: only \(changed(early, late) * 100)% changed in 5 s")
+        // bug-080: the murky check also reads the 1.08 crop, so the first card that passes can be a quiet one (flat sky, little
+        // detail to shift). The control needs only one moving cover to prove the comparison catches motion.
+        let (m, cards) = try movingCards()
+        var best = 0.0
+        for card in cards {
+            let early = try frame(m, card, at: 1, reduceMotion: false)
+            let late = try frame(m, card, at: 6, reduceMotion: false)
+            best = max(best, changed(early, late))
+        }
+        #expect(best > 0.05, "Key-art motion: at most \(best * 100)% changed in 5 s")
     }
 }

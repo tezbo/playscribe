@@ -1,4 +1,5 @@
 import CoreGraphics
+import UIKit
 import Foundation
 import Testing
 @testable import Playscribe
@@ -78,5 +79,19 @@ struct KeyArtMotionTests {
         #expect(KeyArtQuality.isMurky(mean: 0.05, spread: 0.2))      // too dark
         #expect(KeyArtQuality.isMurky(asset: "wukong-hero"))
         #expect(!KeyArtQuality.isMurky(asset: "kcd2-hero"))
+    }
+
+    /// bug-080 (Iris): the murky check also reads the central crop the 1.08 push-in leaves, so a frame whose edges carry the detail
+    /// (a dark centre inside bright edges) stays still.
+    @Test func murkyCheckReadsTheZoomedCrop() throws {
+        let side = 64
+        let renderer = UIGraphicsImageRenderer(size: CGSize(width: side, height: side), format: { let f = UIGraphicsImageRendererFormat(); f.scale = 1; return f }())
+        let image = renderer.image { ctx in
+            UIColor.white.setFill(); ctx.fill(CGRect(x: 0, y: 0, width: side, height: side))
+            UIColor.black.setFill(); ctx.fill(CGRect(x: 8, y: 8, width: side - 16, height: side - 16))
+        }
+        let whole = try #require(KeyArtQuality.stats(image))
+        let crop = try #require(KeyArtQuality.stats(image, crop: 1 / (1 + KeyArtPath.maxScale)))
+        #expect(crop.mean < whole.mean)   // the crop drops bright edge pixels
     }
 }

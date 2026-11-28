@@ -90,13 +90,25 @@ enum KeyArtQuality {
 
     @MainActor static func isMurky(asset: String) -> Bool {
         if let hit = cache[asset] { return hit }
-        let result = UIImage(named: asset).flatMap(stats).map { isMurky(mean: $0.mean, spread: $0.spread) } ?? true
+        // Checked at 1.00 and on the central crop the full 1.08 push-in leaves (Iris, 28 Nov): the zoom can push bright art under
+        // the headline, or lose the detail, that the whole frame has.
+        let result = UIImage(named: asset).map { image in
+            [1.0, 1 / (1 + KeyArtPath.maxScale)].contains { crop in
+                stats(image, crop: crop).map { isMurky(mean: $0.mean, spread: $0.spread) } ?? true
+            }
+        } ?? true
         cache[asset] = result
         return result
     }
 
-    static func stats(_ image: UIImage) -> (mean: Double, spread: Double)? {
-        guard let cg = image.cgImage else { return nil }
+    static func stats(_ image: UIImage, crop: Double = 1) -> (mean: Double, spread: Double)? {
+        guard var cg = image.cgImage else { return nil }
+        if crop < 1 {
+            let w = Double(cg.width), h = Double(cg.height)
+            let rect = CGRect(x: w * (1 - crop) / 2, y: h * (1 - crop) / 2, width: w * crop, height: h * crop).integral
+            guard let cropped = cg.cropping(to: rect) else { return nil }
+            cg = cropped
+        }
         let side = 16
         var px = [UInt8](repeating: 0, count: side * side * 4)
         let drawn: Bool = px.withUnsafeMutableBytes { buf in
@@ -185,5 +197,48 @@ struct KeyArtMotionArt: View {
         let focal = CGPoint(x: r.minX + fx * r.width, y: r.minY + fy * r.height)
         return KeyArtPath.make(size: size, focal: focal, target: CGPoint(x: size.width / 2, y: size.height * focusTargetY),
                                maxFocalY: size.height * maxFocalY)
+    }
+}
+
+// MARK: - Library hero art
+
+private struct DeckSwipingKey: EnvironmentKey { static let defaultValue = false }
+extension EnvironmentValues {
+    /// True while the deck is being dragged or is settling, so its art holds still (Iris, 28 Nov).
+    var deckSwiping: Bool {
+        get { self[DeckSwipingKey.self] }
+        set { self[DeckSwipingKey.self] = newValue }
+    }
+}
+
+/// The Library hero's art (bug-080): Key-art motion on the deck card in view, the same engine in every pose. Only the current
+/// card moves, and never while a video plays, while the deck is swiped, under Reduce Motion, in Low Power Mode (KeyArtMotionArt),
+/// in Still mode, or for art that fails the murky check. The still frame is the same crop the hero always had. Art with no
+/// bundled asset (catalogue games) stays a plain still ArtView.
+struct DeckArt: View {
+    var game: CatalogGame
+    /// The deck card this art belongs to; nil for a stage that is always the current one.
+    var cardID: String?
+    @Environment(AppModel.self) private var model
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @Environment(\.deckSwiping) private var swiping
+    @AppStorage(CoverMotion.key) private var stored: CoverMotion = CoverMotion.defaultMode
+    @AppStorage(YouTubeController.autoplayKey) private var autoplay = false
+
+    var body: some View {
+        if let asset = game.keyArtAsset, UIImage(named: asset) != nil {
+            KeyArtMotionArt(asset: asset, game: game, focus: CoverFocus(x: 0.5, y: 0.5), focusTargetY: 0.5, maxFocalY: 1,
+                            moving: moving(asset))
+        } else {
+            ArtView(asset: game.keyArtAsset, game: game)
+        }
+    }
+
+    private func moving(_ asset: String) -> Bool {
+        let reduce = reduceMotion || FrontCoverPage.qaReduceMotion
+        guard stored.resolved(reduceMotion: reduce, autoplay: autoplay) != .still else { return false }
+        guard !swiping, model.player == nil, model.trailer == nil else { return false }
+        if let cardID, (model.deckSelection ?? model.latestDeck.first?.id) != cardID { return false }
+        return !KeyArtQuality.isMurky(asset: asset)
     }
 }
