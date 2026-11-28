@@ -293,6 +293,8 @@ notify) # bug-079: every notification type opens its own screen, cold (app not r
         f=$(sim-use ui --device "$UDID" 2>/dev/null | grep '#NotificationShortLookView' | head -1 | grep -o '([0-9.]*,[0-9.]* [0-9.]*x[0-9.]*)' | tr -d '()' | tr ',x' '  ')
         [ -n "$f" ] && break; [ $k -ge 2 ] && sim-use ui --device "$UDID" 2>/dev/null | head -1 | grep -q 'App: Settings' && break; sleep 0.5
       done
+      # Let the banner finish sliding in before the tap: a tap mid-animation was ignored in 3 of 12 cases (run 46144042900).
+      sleep 1.2
       if [ -n "$f" ]; then read -r fx fy fw fh <<<"$f"; echo "banner $1 at $f"
         sim-use tap -x $(python3 -c "print(int($fx+$fw/2))") -y $(python3 -c "print(int($fy+$fh/2))") --device "$UDID" >/dev/null 2>&1
       else sim-use tap -x "${BX:-233}" -y 60 --device "$UDID" >/dev/null 2>&1; fi
