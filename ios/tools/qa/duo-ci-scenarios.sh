@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Quinn's five cloud runs on a booted, app-installed iPhone Duo (hosted runner or Mac). Needs sim-use.
-#   ios/tools/qa/duo-ci-scenarios.sh UDID OUTDIR [scenario ...]    (default: all)   scenarios: continuity trailer closedax5 schemes video axchips deckwide plusend switchax switchtt rails heroswipe herolong removemenu lane fullscreen blocked fsxctest
+#   ios/tools/qa/duo-ci-scenarios.sh UDID OUTDIR [scenario ...]    (default: all)   scenarios: listplace continuity trailer closedax5 schemes video axchips deckwide plusend switchax switchtt rails heroswipe herolong removemenu lane fullscreen blocked fsxctest
 # Every step saves <sha>-<scenario>-<step>-<display>-shot.png and -ui.txt (outline with frames, ids and the pose line).
 set -uo pipefail
 UDID=$1; OUT=$2; shift 2; FAILED=""; SCEN=${*:-continuity trailer closedax5 schemes video}
@@ -296,6 +296,14 @@ newest) # bug-072: Dawnwalker left on Gallery, relaunch, open it from its Librar
   snap newest 2-closed-relaunched-library; tapTile; snap newest 3-closed-game-opened
   xcrun simctl terminate "$UDID" $B >/dev/null 2>&1; xcrun simctl launch "$UDID" $B >/dev/null; sleep 8
   fold 180 portrait; sleep 3; snap newest 4-open-portrait-library; tapTile; snap newest 5-open-portrait-game-opened ;;
+listplace) # polish-pose-change-scroll-anchor: the topmost update row survives Closed, Open portrait, Book, Tabletop, Closed (state line names the first rows)
+  launch -qaRoute gamepage/dawnwalker
+  sim-use swipe --from 233,560 --to 233,160 --duration 0.6 --device "$UDID" >/dev/null 2>&1; sleep 2
+  state closed; snap listplace 1-closed
+  fold 180 portrait; sleep 3; state open-portrait; snap listplace 2-open-portrait
+  fold 90 landscape-left; sleep 3; state book; snap listplace 3-book
+  fold 120 portrait; sleep 3; state tabletop; snap listplace 4-tabletop
+  fold 0 portrait; sleep 3; state closed-again; snap listplace 5-closed-again ;;
 video) # row 9: hinge sweep recording with frame timing
   launch -qaRoute library/playing; fold 180 landscape-left
   sim-use record-video --device "$UDID" --fps 60 --output "$OUT/$SHA-video-sweep.mp4" >/dev/null 2>&1 & rp=$!
