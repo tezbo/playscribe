@@ -290,25 +290,23 @@ notify) # bug-079: every notification type opens its own screen, cold (app not r
   qresp() { local c; c=$(xcrun simctl get_app_container "$UDID" $B data 2>/dev/null) && cat "$c/Documents/qa-last-response.txt" 2>/dev/null; }
   qclear() { local c; c=$(xcrun simctl get_app_container "$UDID" $B data 2>/dev/null) && rm -f "$c/Documents/qa-last-response.txt"; }
   banner() {
-    local try n; qclear; for try in 1 2; do
+    local try n t; qclear; for try in 1 2; do
+      # sim-use tracks the app it last drove; once that process is gone its tree warns "has not relaunched since it
+      # disappeared" and the banner never showed in it, so taps fell back to a blind position (run 46160156530). Re-baseline
+      # it so the tree is SpringBoard's (or Settings'), banner included.
+      sim-use app-state --reset --device "$UDID" >/dev/null 2>&1
       xcrun simctl push "$UDID" $B "$(dirname "$0")/$1.apns" >/dev/null
-      # On the home screen sim-use sees the banner (#NotificationShortLookView, run 46135595243): tap its middle once it shows
-      # (Book's came later than 1.5 s). Over another app it can't, so the top centre.
-      local f="" k; for k in 1 2 3 4 5 6 7 8; do
-        f=$(sim-use ui --device "$UDID" 2>/dev/null | grep '#NotificationShortLookView' | head -1 | grep -o '([0-9.]*,[0-9.]* [0-9.]*x[0-9.]*)' | tr -d '()' | tr ',x' '  ')
-        [ -n "$f" ] && break; [ $k -ge 2 ] && sim-use ui --device "$UDID" 2>/dev/null | head -1 | grep -q 'App: Settings' && break; sleep 0.5
-      done
-      if [ -n "$f" ]; then read -r fx fy fw fh <<<"$f"; echo "banner $1 at $f"
-        # A tap on the home-screen banner sometimes does nothing (run 46154680084: the app never came up, the banner was
-        # still showing). Tap again while sim-use still sees the banner, up to 3 taps; never once it is gone, as the next
-        # tap would land inside the app.
-        local t; for t in 1 2 3; do
-          sim-use tap -x $(python3 -c "print(int($fx+$fw/2))") -y $(python3 -c "print(int($fy+$fh/2))") --device "$UDID" >/dev/null 2>&1
+      # Tap the banner by its element (#NotificationShortLookView, run 46135595243) once it shows; tap again while it is
+      # still showing, up to 3 taps (a tap mid-slide was ignored, run 46154680084), never once it is gone, as the next tap
+      # would land inside the app. If it never shows, one tap at the top centre.
+      if sim-use tap "#NotificationShortLookView" --wait-timeout 5 --device "$UDID" >/dev/null 2>&1; then echo "banner $1 tapped"
+        for t in 1 2 3; do
           for n in 1 2 3; do sleep 1; [ -n "$(qresp)" ] && break 3; done
           sim-use ui --device "$UDID" 2>/dev/null | grep -q '#NotificationShortLookView' || break
           echo "notify $1: banner still showing after tap $t"
+          sim-use tap "#NotificationShortLookView" --device "$UDID" >/dev/null 2>&1
         done
-      else sim-use tap -x "${BX:-233}" -y 60 --device "$UDID" >/dev/null 2>&1; fi
+      else echo "banner $1 not seen"; sim-use tap -x "${BX:-233}" -y 60 --device "$UDID" >/dev/null 2>&1; fi
       # Wait up to 12 s for the app to report the response (a cold launch is slow).
       for n in 1 2 3 4 5 6; do sleep 2; [ -n "$(qresp)" ] && break 2; done
       echo "notify $1: after try $try: $(sim-use ui --device "$UDID" 2>/dev/null | head -1)"
