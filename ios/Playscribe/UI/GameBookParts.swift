@@ -811,9 +811,9 @@ struct ContentsView: View {
         Task { @MainActor in
             try? await Task.sleep(for: .milliseconds(300))
             position.scrollTo(id: place.id, anchor: .top)
-            guard place.within > 0 else { return }
-            try? await Task.sleep(for: .milliseconds(150))
-            position.scrollTo(y: liveOffset + CGFloat(place.within))
+            try? await Task.sleep(for: .milliseconds(250))
+            let now = marks.tops[place.id] ?? 0
+            position.scrollTo(y: liveOffset + now - (insetTop + 1) + CGFloat(place.within))
         }
     }
 }

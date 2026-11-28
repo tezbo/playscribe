@@ -142,9 +142,10 @@ struct GamePageColumn: View {
             Task { @MainActor in
                 // The row first (it may not be built yet in a lazy list), then the distance into it once it is at the top.
                 position.scrollTo(id: place.id, anchor: .top)
-                guard place.within > 0 else { return }
-                try? await Task.sleep(for: .milliseconds(150))
-                position.scrollTo(y: liveOffset + CGFloat(place.within))
+                try? await Task.sleep(for: .milliseconds(250))
+                // Corrected by where the row actually sits now (a pinned bar or inset moves "top"), not by an assumed zero.
+                let now = marks.tops[place.id] ?? 0
+                position.scrollTo(y: liveOffset + now - (insetTop + 1) + CGFloat(place.within))
             }
             return true
         }
