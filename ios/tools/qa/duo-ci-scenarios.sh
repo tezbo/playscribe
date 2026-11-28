@@ -286,7 +286,11 @@ notify) # bug-079: every notification type opens its own screen, cold (app not r
   # What the tap opened is still checked below either way.
   banner() {
     local try; for try in 1 2; do
-      xcrun simctl push "$UDID" $B "$(dirname "$0")/$1.apns" >/dev/null; sleep 1.5; sim-use tap -x "${BX:-233}" -y 60 --device "$UDID" >/dev/null 2>&1; sleep 5
+      xcrun simctl push "$UDID" $B "$(dirname "$0")/$1.apns" >/dev/null; sleep 1.5
+      # By the banner's title where sim-use can see it (the home screen: Book's banner is not at the portrait top centre,
+      # run 46125376411), else at the top centre.
+      sim-use tap --label "$(python3 -c 'import json,sys;print(json.load(open(sys.argv[1]))["aps"]["alert"]["title"])' "$(dirname "$0")/$1.apns")" --device "$UDID" >/dev/null 2>&1 \
+        || sim-use tap -x "${BX:-233}" -y 60 --device "$UDID" >/dev/null 2>&1; sleep 5
       sim-use ui --device "$UDID" 2>/dev/null | head -1 | grep -q 'App: Playscribe' && break
       echo "notify $1: banner missed on try $try"
     done; sleep 4; }
