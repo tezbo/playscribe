@@ -308,10 +308,10 @@ blocked) # R-12: a video YouTube refuses (IFrame error 150) shows Open in YouTub
 fsxctest) # bug-071: XCUITest taps (sim-use taps did not reach the bands after the turn): enter, band tap, Exit, in Closed
   # The landscape case runs on its own after a landscape fold: XCUIDevice's orientation alone left the Duo's cover display
   # portrait (run 46107453270).
-  fsx() { xcodebuild test -project ios/Playscribe.xcodeproj -scheme PlayscribeUI -destination "id=$UDID" -derivedDataPath build/dd-ui \
-    "$@" -resultBundlePath "$OUT/fsxctest-$1.xcresult" CODE_SIGNING_ALLOWED=NO > "$OUT/fsxctest-$1.log" 2>&1; local rc=$?
-    echo "fsxctest $1 exit $rc"; grep -E 'qaFullScreen|qaBands|videoExitFullScreen frame|window after|error:|Test Case|\*\* TEST' "$OUT/fsxctest-$1.log" | cut -c1-400
-    [ $rc -eq 0 ] || FAILED="$FAILED fsxctest-$1"; }
+  fsx() { local name=$name; shift; xcodebuild test -project ios/Playscribe.xcodeproj -scheme PlayscribeUI -destination "id=$UDID" -derivedDataPath build/dd-ui \
+    "$@" -resultBundlePath "$OUT/fsxctest-$name.xcresult" CODE_SIGNING_ALLOWED=NO > "$OUT/fsxctest-$name.log" 2>&1; local rc=$?
+    echo "fsxctest $name exit $rc"; grep -E 'qaFullScreen|qaBands|videoExitFullScreen frame|window after|error:|Test Case|\*\* TEST' "$OUT/fsxctest-$name.log" | cut -c1-400
+    [ $rc -eq 0 ] || FAILED="$FAILED fsxctest-$name"; }
   fold 0 portrait
   fsx portrait -only-testing:PlayscribeUITests/FullScreenVideoTests -skip-testing:PlayscribeUITests/FullScreenVideoTests/testExitStaysAfterAutoHideFromLandscape
   fold 0 landscape-left; sleep 3
