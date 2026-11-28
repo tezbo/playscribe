@@ -138,15 +138,6 @@ private struct ExtensionUnlessSlim: ViewModifier {
     }
 }
 
-/// The width of the page's own column (its content, without the rail strip in Closed), set by the page that holds the art band.
-private struct PageColumnWidthKey: EnvironmentKey { static let defaultValue: CGFloat = 0 }
-extension EnvironmentValues {
-    var pageColumnWidth: CGFloat {
-        get { self[PageColumnWidthKey.self] }
-        set { self[PageColumnWidthKey.self] = newValue }
-    }
-}
-
 /// The art band at the top of the Page, extended under the rail. The faded key-art header is the
 /// default (A8, header-fade handoff): key art top-trailing under a left and a bottom fade into
 /// ink; a portrait cover alone sits right over a blurred copy of itself; no art at all falls back
@@ -162,7 +153,6 @@ struct PageArtBand: View {
     /// extension effect stretched catalogue art past it (Terry, 0.5.0 build 6). There it is a slim, clipped band.
     private var slim: Bool { duo.isLandscape && duo.pose == .closed }
     @Environment(\.dynamicTypeSize) private var typeSize
-    @Environment(\.pageColumnWidth) private var pageColumnWidth
     /// Iris, #529 (std / AX5): Closed portrait 130 / 84, Closed landscape 88 / 52, Open, Open portrait and Book 170 / 110.
     static func height(pose: Pose, landscape: Bool, ax: Bool) -> CGFloat {
         switch pose {
@@ -178,7 +168,7 @@ struct PageArtBand: View {
         Group {
             if coverOnly || (asset == nil && game?.heroArtURL == nil && game?.coverURL != nil) {
                 // Closed: the band runs on under the rail, so the thumbnail keeps clear of that strip (bug-076, Quinn on 381234).
-                CoverHeader(game: game, asset: asset, columnWidth: duo.pose == .closed ? pageColumnWidth : 0)
+                CoverHeader(game: game, asset: asset)
             } else {
                 ArtView(asset: asset, game: game)
                     .modifier(hasArt ? FadeMask() : FadeMask(enabled: false))
@@ -222,15 +212,20 @@ struct FadeMask: ViewModifier {
 struct CoverHeader: View {
     var game: CatalogGame?
     var asset: String?
-    /// Closed: the page's own column width. The band runs on past it under the rail, and the thumbnail keeps clear of that strip
-    /// (bug-076, Quinn on 381234). 0 (other poses) keeps the thumbnail at the band's edge.
-    var columnWidth: CGFloat = 0
+    @Environment(\.colorScheme) private var scheme
+    /// bug-076 (Iris, Tomb Raider: Catalyst): a warm, dim wash of the cover's colours across the whole full-bleed band (scaled past the
+    /// edges so the blur has no smear), the thumbnail at the leading margin like a book on a shelf: clear of the rail and housing in
+    /// every pose by construction.
     var body: some View {
         GeometryReader { geo in
-            ZStack(alignment: .trailing) {
-                cover.scaledToFill().frame(width: geo.size.width, height: geo.size.height).blur(radius: 30).brightness(-0.35).clipped()
-                cover.scaledToFit().frame(height: geo.size.height * 0.6).padding(.trailing, 24 + (columnWidth > 0 ? max(0, geo.size.width - columnWidth) : 0))
+            ZStack(alignment: .leading) {
+                cover.scaledToFill().frame(width: geo.size.width, height: geo.size.height).clipped()
+                    .scaleEffect(1.3).blur(radius: 40).clipped()
+                Color.black.opacity(scheme == .dark ? 0.55 : 0.45)
+                cover.scaledToFit().frame(height: geo.size.height * 0.6).padding(.leading, 20)
             }
+            .frame(width: geo.size.width, height: geo.size.height)
+            .clipped()
         }
         .modifier(FadeMask())
     }
@@ -1245,7 +1240,6 @@ struct ReleaseDetailView: View {
     @Environment(\.duo) private var duo
     @State private var position = ScrollPosition(idType: String.self)
     @State private var insetTop: CGFloat = 0
-    @State private var columnWidth: CGFloat = 0
     @State private var marks = ReadingPlace.Marks()
     var gameID: String
     var releaseID: String
@@ -1262,8 +1256,6 @@ struct ReleaseDetailView: View {
                 }
             }
             .padding(.bottom, 24)
-            .onGeometryChange(for: CGFloat.self) { $0.size.width } action: { columnWidth = $0 }
-            .environment(\.pageColumnWidth, columnWidth)
             .environment(\.readingMarks, marks)
         }
         .scrollPosition($position)

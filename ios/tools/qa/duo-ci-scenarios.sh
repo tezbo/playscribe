@@ -282,7 +282,12 @@ newest) # bug-072: Dawnwalker left on Gallery, relaunch, open it from its Librar
 noart) # bug-076: no-hero-art game (Tomb Raider: Catalyst, 381234): the thumbnail stays left of the rail strip in Closed
   launch -qaRoute index-game/381234; sleep 6; snap noart 1-portrait
   launch -qaRoute index-game/381234 -qaOrientation landscape; sleep 6; snap noart 2-landscape
-  launch -qaRoute index-game/381234 -UIPreferredContentSizeCategoryName $AX5; sleep 6; snap noart 3-portrait-ax5 ;;
+  launch -qaRoute index-game/381234 -UIPreferredContentSizeCategoryName $AX5; sleep 6; snap noart 3-portrait-ax5
+  launch -qaRoute index-game/381234 -qaAppearance dark; sleep 6; snap noart 4-portrait-dark
+  launch -qaRoute index-game/381234 -qaAppearance dark -qaOrientation landscape; sleep 6; snap noart 5-landscape-dark
+  launch -qaRoute index-game/381234 -qaOrientation landscape -UIPreferredContentSizeCategoryName $AX5; sleep 6; snap noart 6-landscape-ax5
+  launch -qaRoute index-game/389434; sleep 6; snap noart 7-other-portrait
+  launch -qaRoute index-game/389434 -qaOrientation landscape; sleep 6; snap noart 8-other-landscape ;;
 headerart) # bug-076: Closed header art edge to edge, title 20 pt under it; game page and update page, portrait and landscape, std and AX5
   for g in dawnwalker minecraft; do
     launch -qaRoute gamepage/$g; sleep 6; snap headerart $g-page-portrait

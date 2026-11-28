@@ -10,7 +10,6 @@ struct GamePageColumn: View {
     @Environment(\.duo) private var duo
     @State private var position = ScrollPosition(idType: String.self)
     @State private var liveOffset: CGFloat = 0
-    @State private var columnWidth: CGFloat = 0
     #if INTERNAL
     /// QA (#596, Terry's blank "View game" page): the scroll view's content and visible heights, for the page marker.
     @State private var qaGeometry: [CGFloat] = [0, 0]
@@ -40,7 +39,6 @@ struct GamePageColumn: View {
                 .padding(.bottom, 8)
                 .frame(maxWidth: Self.readingWidth + 40, alignment: .leading)
                 .frame(maxWidth: .infinity)
-                .onGeometryChange(for: CGFloat.self) { $0.size.width } action: { columnWidth = $0 }
                 Color.clear.frame(height: 0).id("sectionTop")
                     .onGeometryChange(for: CGFloat.self) { $0.frame(in: .scrollView).minY } action: { anchorY = $0 }
                 Section {
@@ -55,7 +53,6 @@ struct GamePageColumn: View {
             }
             EdgeFadeClearance()
         }
-        .environment(\.pageColumnWidth, columnWidth)
         // The list fades out at the page's bottom edge instead of cutting a row at full brightness where the scroll view ends above
         // the floating tab bar (Quinn, #526 at feaff25, Open portrait); the page ends one fade lower, so its last row rests clear.
         .fadesAtBottomEdge()
