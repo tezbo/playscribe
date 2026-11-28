@@ -1,7 +1,7 @@
 import SwiftUI
 
 /// s-06 (0.5.6, spec.md "Game page", s3.png): what one row of a game's update list says, patch first. Line one is the patch
-/// name (the studio's display name, "Patch 1.7.3"), line two the headline ("Fixes and tuning"), line three the date and the
+/// name (the studio's display name, "Patch 1.7.3"), line two the headline (the feed's own words, never a filler), line three the date and the
 /// PS5 line ("Out on PS5"). A release with no patch name leads with its headline alone, so a row is never blank. No version
 /// number appears here (a PC number is never shown as a PS5 one), and nothing is joined with a dot.
 struct UpdateRowText: Equatable {

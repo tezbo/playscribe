@@ -267,10 +267,8 @@ struct ReleasePage: View {
             if r.isPS5Listed && typeSize.isAccessibilitySize { HStack { Spacer(minLength: 0); ShareUpdateButton(release: r) } }
             if let h = ps5Page ? r.ps5Headline : r.headline {
                 WholeWordText(text: h, font: PlayscribeFont.title2, lines: typeSize.isAccessibilitySize ? 4 : 3, color: nil)
-            } else if !r.notes.isEmpty {
-                Text("Fixes and tuning").font(PlayscribeFont.title2)
             }
-            // Date and read time share one row (a gap, not a dot); at AX sizes they stack.
+            // No headline in the feed: no subtitle at all, never a filler (bug-078). Date and read time share one row (a gap, not a dot); at AX sizes they stack.
             let dateRow = typeSize.isAccessibilitySize ? AnyLayout(VStackLayout(alignment: .leading, spacing: 2)) : AnyLayout(HStackLayout(spacing: 12))
             dateRow {
                 Text((r.isPS5Listed ? r.ps5Date : r.latestDate).shortDay)

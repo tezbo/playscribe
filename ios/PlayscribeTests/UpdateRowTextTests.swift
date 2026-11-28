@@ -63,4 +63,17 @@ struct UpdateRowTextTests {
         #expect(spoken == "Patch 1.7.3, New, Fixes and tuning, \(t.date), Out on PS5, PS4 update")
         for s in [t.title, t.headline ?? "", t.date, t.status ?? "", spoken] { #expect(!s.contains("·")) } // dot-ok
     }
+
+    /// bug-078: where a headline shows, it is the feed's own words or nothing. The app never invents a filler such as
+    /// "Fixes and tuning" for a release that has none.
+    @Test("No invented headline filler in the app's views")
+    func noInventedHeadline() throws {
+        let ui = URL(fileURLWithPath: #filePath).deletingLastPathComponent().deletingLastPathComponent().appendingPathComponent("Playscribe/UI")
+        let files = try FileManager.default.contentsOfDirectory(at: ui, includingPropertiesForKeys: nil).filter { $0.pathExtension == "swift" }
+        #expect(!files.isEmpty)
+        for f in files {
+            let src = try String(contentsOf: f, encoding: .utf8)
+            #expect(!src.contains("Text(\"Fixes and tuning\")"), "\(f.lastPathComponent) draws an invented headline")
+        }
+    }
 }

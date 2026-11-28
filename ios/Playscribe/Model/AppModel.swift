@@ -1250,6 +1250,23 @@ final class AppModel {
             data.simulated.removeAll { $0.id == release.id }
             data.simulated.insert(release, at: 0)
             openRelease(gameID: gameID, releaseID: release.id)
+        // QA (INTERNAL, bug-078): "no-headline/<game>" opens a live PS5 update that has notes and no headline, so the page
+        // shows no second line under the title (never a filler such as "Fixes and tuning").
+        case "no-headline" where parts.count == 1:
+            let gameID = parts[0]
+            let now = Date.now
+            let release = Release(
+                id: "qa-no-headline-\(gameID)", gameID: gameID, displayName: "Patch 9.9",
+                kind: .major, kindBasis: .studio, announcedAt: now,
+                notes: [NoteSection(title: "Fixes", items: [NoteItem(text: "Fixes a crash on first load.")])], sourceIDs: [],
+                platforms: [PlatformRelease(platform: .ps5, status: .live,
+                                            version: Field(value: "9.9", verification: .official, sourceID: "simulated", checkedAt: now),
+                                            liveAt: Field(value: now, verification: .official, sourceID: "simulated", checkedAt: now),
+                                            bundles: [], verification: .official)],
+                headline: nil, summary: nil, keyChanges: [], simulated: true, arrivesAt: now)
+            data.simulated.removeAll { $0.id == release.id }
+            data.simulated.insert(release, at: 0)
+            openRelease(gameID: gameID, releaseID: release.id)
         // QA (INTERNAL, 0.5.6 Card B): "ps5-state/<game>/<live|live-version|live-reported|announced|not-planned|none>" opens a simulated update in
         // that PS5 state, so every status wording can be shot without the network. live-version carries a PS5 number (01.004.000)
         // and a PC number is on the page's PC row (never shown as PS5's). The name is neutral so no PC number reads as PS5's.
