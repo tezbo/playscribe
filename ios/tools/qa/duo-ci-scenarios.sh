@@ -284,8 +284,13 @@ notify) # bug-079: every notification type opens its own screen, cold (app not r
   # The banner shows for a few seconds and the tap sometimes came after it went (run 46120429490: Settings still in front). When
   # Playscribe is not in front 5 s after the tap, the banner was missed, not mis-routed: the same payload is pushed and tapped once more.
   # What the tap opened is still checked below either way.
+  # The app writes what the tap delivered to Documents/qa-last-response.txt (INTERNAL). That file, not sim-use's tree, says
+  # whether the tap reached the app: after a relaunch the tree can still show the home screen (run 46149163927), and a retry
+  # then tapped inside the app.
+  qresp() { local c; c=$(xcrun simctl get_app_container "$UDID" $B data 2>/dev/null) && cat "$c/Documents/qa-last-response.txt" 2>/dev/null; }
+  qclear() { local c; c=$(xcrun simctl get_app_container "$UDID" $B data 2>/dev/null) && rm -f "$c/Documents/qa-last-response.txt"; }
   banner() {
-    local try n; for try in 1 2; do
+    local try n; qclear; for try in 1 2; do
       xcrun simctl push "$UDID" $B "$(dirname "$0")/$1.apns" >/dev/null
       # On the home screen sim-use sees the banner (#NotificationShortLookView, run 46135595243): tap its middle once it shows
       # (Book's came later than 1.5 s). Over another app it can't, so the top centre.
@@ -293,23 +298,22 @@ notify) # bug-079: every notification type opens its own screen, cold (app not r
         f=$(sim-use ui --device "$UDID" 2>/dev/null | grep '#NotificationShortLookView' | head -1 | grep -o '([0-9.]*,[0-9.]* [0-9.]*x[0-9.]*)' | tr -d '()' | tr ',x' '  ')
         [ -n "$f" ] && break; [ $k -ge 2 ] && sim-use ui --device "$UDID" 2>/dev/null | head -1 | grep -q 'App: Settings' && break; sleep 0.5
       done
-      # Let the banner finish sliding in before the tap: a tap mid-animation was ignored in 3 of 12 cases (run 46144042900).
-      sleep 1.2
       if [ -n "$f" ]; then read -r fx fy fw fh <<<"$f"; echo "banner $1 at $f"
         sim-use tap -x $(python3 -c "print(int($fx+$fw/2))") -y $(python3 -c "print(int($fy+$fh/2))") --device "$UDID" >/dev/null 2>&1
       else sim-use tap -x "${BX:-233}" -y 60 --device "$UDID" >/dev/null 2>&1; fi
-      # Wait up to 12 s for Playscribe to come up (a cold launch is slow): a second tap at the top of the app would land on the
-      # status bar and scroll the page back to its top (run 46129610326).
-      for n in 1 2 3 4 5 6; do sleep 2; sim-use ui --device "$UDID" 2>/dev/null | head -2 | grep -q 'App: Playscribe' && break 2; done
+      # Wait up to 12 s for the app to report the response (a cold launch is slow).
+      for n in 1 2 3 4 5 6; do sleep 2; [ -n "$(qresp)" ] && break 2; done
       echo "notify $1: banner missed on try $try"
-    done; sleep 3; }
+    done
+    # Give the screen time to settle and sim-use time to see the app before the still.
+    for n in 1 2 3 4 5; do sim-use ui --device "$UDID" 2>/dev/null | head -2 | grep -q 'App: Playscribe' && break; sleep 1; done; sleep 3; }
   for kind in release plus-leaving release-day issue-fixed date-move team; do
     for mode in cold warm; do
       launch -qaRoute settings
       if [ $mode = cold ]; then xcrun simctl terminate "$UDID" $B >/dev/null 2>&1; else xcrun simctl launch "$UDID" com.apple.Preferences >/dev/null; fi
       sleep 5; banner $kind; snap notify "$kind-$mode"
       t=$(ls "$OUT/$SHA"-notify-$kind-$mode-*-ui.txt | head -1)
-      r=$(grep -o 'qa-response: [^"]*' "$t" | head -1)
+      r="qa-response: $(qresp)"
       ps=$(grep -E 'Heading +"PS Plus' "$t" | head -1)
       echo "notify $kind $mode: $r; PS Plus heading: $ps"
       # PS Plus: the card's heading is on screen (it scrolls to the top, or as far as the page goes).
@@ -330,7 +334,7 @@ notify) # bug-079: every notification type opens its own screen, cold (app not r
         xcrun simctl terminate "$UDID" $B >/dev/null 2>&1; fold $ang $ori; sleep 2
         BX=$bx banner $kind; snap notify "$kind-cold-$pname-${size%%-*}"
         t=$(ls "$OUT/$SHA"-notify-$kind-cold-$pname-${size%%-*}-*-ui.txt | head -1)
-        echo "notify $kind $pname $size: $(grep -o 'qa-response: [^"]*' "$t" | head -1)"
+        echo "notify $kind $pname $size: qa-response: $(qresp)"
         # Book: no banner shows on the inner display, so the alert is opened in Closed and the Duo unfolded (Iris).
         if [ $pname = closed ]; then fold 90 landscape-left; sleep 3; snap notify "$kind-cold-closed-unfolded-book-${size%%-*}"; fi
       done

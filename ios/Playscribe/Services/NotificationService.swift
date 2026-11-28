@@ -362,6 +362,11 @@ extension NotificationService: UNUserNotificationCenterDelegate {
             self.launchedFromNotification = true
             #if INTERNAL
             self.qaLastResponse = "\(route); model \(self.model == nil ? "nil" : "set")"
+            // The hosted notify scenario reads this file to know the tap reached the app, as sim-use's tree can still show
+            // the home screen after a relaunch (run 46149163927).
+            if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+                try? self.qaLastResponse?.write(to: dir.appendingPathComponent("qa-last-response.txt"), atomically: true, encoding: .utf8)
+            }
             #endif
             self.model?.open(route)
             done()
