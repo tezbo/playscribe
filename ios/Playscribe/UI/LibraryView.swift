@@ -656,11 +656,15 @@ struct LibraryShelf: View {
             if duo.pose != .tabletop { EdgeFadeClearance() }
         }
         // bug-079: a PS Plus notification tap brings the PS Plus card to the top of the page, cold or warm. A plain scroll: no
-        // highlight (Iris). Waits a moment on a cold start, so the card's lineup has laid out.
+        // highlight (Iris). On a cold start the page is rebuilt as the pose settles (Tabletop came up at the top in run
+        // 46125376411), so it scrolls again over the first few seconds; a rebuilt page's own task picks the request up.
         .task(id: model.plusCardFocus) {
             guard model.plusCardFocus else { return }
-            try? await Task.sleep(for: .milliseconds(400))
-            proxy.scrollTo("plusCard", anchor: .top)
+            for wait in [400, 800, 1300] {   // at 0.4, 1.2 and 2.5 s
+                try? await Task.sleep(for: .milliseconds(wait))
+                if Task.isCancelled { return }
+                proxy.scrollTo("plusCard", anchor: .top)
+            }
             model.plusCardFocus = false
         }
         }
