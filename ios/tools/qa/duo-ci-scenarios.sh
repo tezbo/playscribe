@@ -281,7 +281,15 @@ notify) # bug-079: every notification type opens its own screen, cold (app not r
   sim-use tap --label "Allow" --device "$UDID" >/dev/null 2>&1; sleep 2
   # The Settings app's first launch is slow; the first three warm banners in run 46117585194 came while it was still starting.
   xcrun simctl launch "$UDID" com.apple.Preferences >/dev/null; sleep 8
-  banner() { xcrun simctl push "$UDID" $B "$(dirname "$0")/$1.apns" >/dev/null; sleep 2; sim-use tap -x 233 -y 60 --device "$UDID" >/dev/null 2>&1; sleep 9; }
+  # The banner shows for a few seconds and the tap sometimes came after it went (run 46120429490: Settings still in front). When
+  # Playscribe is not in front 5 s after the tap, the banner was missed, not mis-routed: the same payload is pushed and tapped once more.
+  # What the tap opened is still checked below either way.
+  banner() {
+    local try; for try in 1 2; do
+      xcrun simctl push "$UDID" $B "$(dirname "$0")/$1.apns" >/dev/null; sleep 1.5; sim-use tap -x "${BX:-233}" -y 60 --device "$UDID" >/dev/null 2>&1; sleep 5
+      sim-use ui --device "$UDID" 2>/dev/null | head -1 | grep -q 'App: Playscribe' && break
+      echo "notify $1: banner missed on try $try"
+    done; sleep 4; }
   for kind in release plus-leaving release-day issue-fixed date-move team; do
     for mode in cold warm; do
       launch -qaRoute settings
@@ -298,7 +306,22 @@ notify) # bug-079: every notification type opens its own screen, cold (app not r
       esac
       echo "$r" | grep -q "$want" || { echo "FAIL notify $kind $mode: wanted $want"; FAILED="$FAILED notify-$kind-$mode"; }
     done
-  done ;;
+  done
+  # Stills Iris asked for: cold start from the PS Plus and update alerts in Closed portrait, Book and Tabletop, at standard and
+  # AX5 (system text size, as a notification launch carries no launch arguments). The banner is tapped at the top centre.
+  for size in large accessibility-extra-extra-extra-large; do
+    xcrun simctl ui "$UDID" content_size $size
+    for p in "0 portrait 233 closed" "90 landscape-left 475 book" "90 portrait 334 tabletop"; do
+      read -r ang ori bx pname <<<"$p"
+      for kind in plus-leaving release; do
+        xcrun simctl terminate "$UDID" $B >/dev/null 2>&1; fold $ang $ori; sleep 2
+        BX=$bx banner $kind; snap notify "$kind-cold-$pname-${size%%-*}"
+        t=$(ls "$OUT/$SHA"-notify-$kind-cold-$pname-${size%%-*}-*-ui.txt | head -1)
+        echo "notify $kind $pname $size: $(grep -o 'qa-response: [^"]*' "$t" | head -1)"
+      done
+    done
+  done
+  xcrun simctl ui "$UDID" content_size large; fold 0 portrait ;;
 blocked) # R-12: a video YouTube refuses (IFrame error 150) shows Open in YouTube in every pose, never a full-screen button
   # A turn left over from an earlier scenario can keep the Closed scene in landscape (c46af75): rotate away and back first.
   fold 0 landscape-left; sleep 2; fold 0 portrait; sleep 2
