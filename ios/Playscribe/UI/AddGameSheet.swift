@@ -665,7 +665,8 @@ struct OnboardingActions: View {
             if !bookLeft {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 10) {
-                    ForEach(PS5Index.shared.popular(limit: fit)) { g in
+                    // bug-077: during the tour, only games whose newest PS5 update has notes.
+                    ForEach(model.tourActive ? model.tourPopular(limit: fit) : PS5Index.shared.popular(limit: fit)) { g in
                         PopularCover(game: g, width: size, height: (size * 4 / 3).rounded())
                     }
                 }
@@ -690,7 +691,7 @@ struct OnboardingRightPage: View {
             VStack(alignment: .leading, spacing: 14) {
                 Text("Popular on PS5").font(PlayscribeFont.title3)
                 LazyVGrid(columns: Array(repeating: GridItem(.fixed(tile), spacing: 10, alignment: .top), count: 3), alignment: .leading, spacing: 10) {
-                    ForEach(PS5Index.shared.popular(limit: 18)) { g in
+                    ForEach(model.tourActive ? model.tourPopular(limit: 18) : PS5Index.shared.popular(limit: 18)) { g in
                         PopularCover(game: g, width: tile, height: (tile * 4 / 3).rounded())
                     }
                 }

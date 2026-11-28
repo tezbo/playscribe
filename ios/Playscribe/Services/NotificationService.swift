@@ -560,6 +560,10 @@ enum PushRegistrar {
     }
 
     static var baseURL: URL? {
+        #if INTERNAL
+        // QA: -qaNoFeed YES runs as if the feed were unreachable (a first launch offline), e.g. for the tour's fallback (bug-077).
+        if UserDefaults.standard.bool(forKey: "qaNoFeed") { return nil }
+        #endif
         guard let s = Bundle.main.object(forInfoDictionaryKey: "PlayscribeAPIBaseURL") as? String, !s.isEmpty else { return nil }
         return URL(string: s)
     }

@@ -41,6 +41,9 @@ extension FeedClient {
 extension AppModel {
     /// The cached histories, at launch.
     func loadCachedHistories() {
+        #if INTERNAL
+        if UserDefaults.standard.bool(forKey: "qaNoFeed") { return }   // as on a first launch with no feed yet
+        #endif
         if let raw = try? Data(contentsOf: FeedClient.indexCacheURL), let idx = try? JSONCoding.decoder.decode(FeedClient.Index.self, from: raw) {
             feedIndexGames = idx.games
         }
