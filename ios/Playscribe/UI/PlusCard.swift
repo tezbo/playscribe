@@ -76,7 +76,7 @@ struct PlusCard: View {
     }
 
     var body: some View {
-        if let (month, lastChance) = PlusLogic.visibleMonth(PlusStore.shared.months, cardOff: model.data.plusCardOff) {
+        if let (month, lastChance) = PlusLogic.visibleMonth(PlusStore.shared.months, cardOff: model.plusCardForced ? nil : model.data.plusCardOff) {
             let claimBy = PlusLogic.claimByText(month)
             let limit = Self.maxCovers
             let shown = Array(month.games.prefix(limit))
@@ -139,9 +139,11 @@ struct PlusCard: View {
     }
 
     private func compactHeading(lastChance: Bool, claimBy: String) -> some View {
-        Text("\(lastChance ? "Last chance" : "This month"), claim by \(claimBy)")
+        // The same tokens as the standard card (Iris, #683): ink heading, secondary date. The ember heading measured 1.65:1 on the
+        // light card at AX5.
+        (Text(lastChance ? "Last chance" : "This month").foregroundStyle(PlayscribeRole.textPrimary)
+            + Text(", claim by \(claimBy)").foregroundStyle(PlayscribeRole.textSecondary))
             .font(PlayscribeFont.subheadline.weight(.semibold))
-            .foregroundStyle(lastChance ? PlayscribeColor.ember500 : PlayscribeRole.textPrimary)
             .fixedSize(horizontal: false, vertical: true)
             .accessibilityLabel(lastChance ? "PS Plus, last chance, claim by \(claimBy)" : "PS Plus, this month, claim by \(claimBy)")
             .accessibilityAddTraits(.isHeader)

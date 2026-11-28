@@ -314,6 +314,83 @@ fullscreen) # bug-071: full-screen video Fit with our controls in the bands; the
   fold 0 portrait; sleep 2
   # Every full-screen tree (those with our qaFullScreen probe) must keep YouTube's buttons from VoiceOver; fails the job.
   "$(dirname "$0")/check-no-youtube-buttons.sh" $(grep -l qaFullScreen "$OUT/$SHA"-fullscreen-*-ui.txt) || FAILED="$FAILED fullscreen-youtube-buttons" ;;
+notify) # bug-079: every notification type opens its own screen, cold (app not running) and warm (app in the background, left
+  # on another screen), no banner. Each payload (ios/tools/qa/*.apns) is pushed with simctl and its banner tapped at the top.
+  launch -qaRoute ask-notifications; sleep 3; sim-use ui --device "$UDID" 2>/dev/null | grep -iE 'allow|notif' | head -3
+  sim-use tap --label "Allow" --device "$UDID" >/dev/null 2>&1; sleep 2
+  # The Settings app's first launch is slow; the first three warm banners in run 46117585194 came while it was still starting.
+  xcrun simctl launch "$UDID" com.apple.Preferences >/dev/null; sleep 8
+  # The banner shows for a few seconds and the tap sometimes came after it went (run 46120429490: Settings still in front). When
+  # Playscribe is not in front 5 s after the tap, the banner was missed, not mis-routed: the same payload is pushed and tapped once more.
+  # What the tap opened is still checked below either way.
+  # The app writes what the tap delivered to Documents/qa-last-response.txt (INTERNAL). That file, not sim-use's tree, says
+  # whether the tap reached the app: after a relaunch the tree can still show the home screen (run 46149163927), and a retry
+  # then tapped inside the app.
+  qresp() { local c; c=$(xcrun simctl get_app_container "$UDID" $B data 2>/dev/null) && cat "$c/Documents/qa-last-response.txt" 2>/dev/null; }
+  qclear() { local c; c=$(xcrun simctl get_app_container "$UDID" $B data 2>/dev/null) && rm -f "$c/Documents/qa-last-response.txt"; }
+  banner() {
+    # Three pushes at most: in each of the last two runs one push of 24 never got a tap through (a different case each time).
+    local try n t; qclear; for try in 1 2 3; do
+      # sim-use tracks the app it last drove; once that process is gone its tree warns "has not relaunched since it
+      # disappeared" and the banner never showed in it, so taps fell back to a blind position (run 46160156530). Re-baseline
+      # it so the tree is SpringBoard's (or Settings'), banner included.
+      sim-use app-state --reset --device "$UDID" >/dev/null 2>&1
+      xcrun simctl push "$UDID" $B "$(dirname "$0")/$1.apns" >/dev/null
+      # Tap the banner by its element (#NotificationShortLookView, run 46135595243) once it shows; tap again while it is
+      # still showing, up to 3 taps (a tap mid-slide was ignored, run 46154680084), never once it is gone, as the next tap
+      # would land inside the app. If it never shows, one tap at the top centre.
+      if sim-use tap "#NotificationShortLookView" --wait-timeout 5 --device "$UDID" >/dev/null 2>&1; then echo "banner $1 tapped"
+        for t in 1 2 3; do
+          for n in 1 2 3; do sleep 1; [ -n "$(qresp)" ] && break 3; done
+          sim-use ui --device "$UDID" 2>/dev/null | grep -q '#NotificationShortLookView' || break
+          echo "notify $1: banner still showing after tap $t"
+          sim-use tap "#NotificationShortLookView" --device "$UDID" >/dev/null 2>&1
+        done
+      else echo "banner $1 not seen"; sim-use tap -x "${BX:-233}" -y 60 --device "$UDID" >/dev/null 2>&1; fi
+      # Wait up to 12 s for the app to report the response (a cold launch is slow).
+      for n in 1 2 3 4 5 6; do sleep 2; [ -n "$(qresp)" ] && break 2; done
+      echo "notify $1: after try $try: $(sim-use ui --device "$UDID" 2>/dev/null | head -1)"
+      echo "notify $1: banner missed on try $try"
+    done
+    # Give the screen time to settle and sim-use time to see the app before the still.
+    for n in 1 2 3 4 5; do sim-use ui --device "$UDID" 2>/dev/null | head -2 | grep -q 'App: Playscribe' && break; sleep 1; done; sleep 3; }
+  # Warm-up, not checked: the run's first banner tap brought nothing up in 3 runs in a row (46165471106: "tapped" twice,
+  # still SpringBoard), whatever the kind; every later one landed. One throwaway team alert first, then all 12 are checked.
+  launch -qaRoute settings; xcrun simctl terminate "$UDID" $B >/dev/null 2>&1; sleep 5; banner team; echo "notify warm-up: $(qresp)"
+  for kind in release plus-leaving release-day issue-fixed date-move team; do
+    for mode in cold warm; do
+      launch -qaRoute settings
+      if [ $mode = cold ]; then xcrun simctl terminate "$UDID" $B >/dev/null 2>&1; else xcrun simctl launch "$UDID" com.apple.Preferences >/dev/null; fi
+      sleep 5; banner $kind; snap notify "$kind-$mode"
+      t=$(ls "$OUT/$SHA"-notify-$kind-$mode-*-ui.txt | head -1)
+      r="qa-response: $(qresp)"
+      ps=$(grep -E 'Heading +"PS Plus' "$t" | head -1)
+      echo "notify $kind $mode: $r; PS Plus heading: $ps"
+      # PS Plus: the card's heading is on screen (it scrolls to the top, or as far as the page goes).
+      if [ $kind = plus-leaving ] && [ -z "$ps" ]; then echo "FAIL notify $kind $mode: PS Plus card not on screen"; FAILED="$FAILED notify-$kind-$mode-card"; fi
+      case $kind in
+        release) want='dawnwalker/dawnwalker@1.1' ;; plus-leaving) want='plus card' ;; team) want='library' ;; *) want='game dawnwalker' ;;
+      esac
+      echo "$r" | grep -q "$want" || { echo "FAIL notify $kind $mode: wanted $want"; FAILED="$FAILED notify-$kind-$mode"; }
+    done
+  done
+  # Stills Iris asked for: cold start from the PS Plus and update alerts in Closed portrait, Book and Tabletop, at standard and
+  # AX5 (system text size, as a notification launch carries no launch arguments). The banner is tapped at the top centre.
+  for size in large accessibility-extra-extra-extra-large; do
+    xcrun simctl ui "$UDID" content_size $size
+    for p in "0 portrait 233 closed" "90 portrait 334 tabletop"; do
+      read -r ang ori bx pname <<<"$p"
+      for kind in plus-leaving release; do
+        xcrun simctl terminate "$UDID" $B >/dev/null 2>&1; fold $ang $ori; sleep 2
+        BX=$bx banner $kind; snap notify "$kind-cold-$pname-${size%%-*}"
+        t=$(ls "$OUT/$SHA"-notify-$kind-cold-$pname-${size%%-*}-*-ui.txt | head -1)
+        echo "notify $kind $pname $size: qa-response: $(qresp)"
+        # Book: no banner shows on the inner display, so the alert is opened in Closed and the Duo unfolded (Iris).
+        if [ $pname = closed ]; then fold 90 landscape-left; sleep 3; snap notify "$kind-cold-closed-unfolded-book-${size%%-*}"; fi
+      done
+    done
+  done
+  xcrun simctl ui "$UDID" content_size large; fold 0 portrait ;;
 blocked) # R-12: a video YouTube refuses (IFrame error 150) shows Open in YouTube in every pose, never a full-screen button
   # A turn left over from an earlier scenario can keep the Closed scene in landscape (c46af75): rotate away and back first.
   fold 0 landscape-left; sleep 2; fold 0 portrait; sleep 2

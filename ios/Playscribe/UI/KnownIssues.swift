@@ -53,7 +53,7 @@ extension AppModel {
             for i in issues where i.isAddressed && isFollowing(i) && !alerted.contains(i.id) {
                 alerted.insert(i.id)
                 guard let at = i.addressedAt, at > cutoff, notifyLevel(gameID) != .off, !data.pauseAll else { continue }
-                NotificationService.shared.issueFixed(id: i.id, game: game(gameID)?.name ?? "", text: i.text,
+                NotificationService.shared.issueFixed(id: i.id, gameID: gameID, game: game(gameID)?.name ?? "", text: i.text,
                                                       version: fixedInName(i, gameID: gameID))
             }
         }
@@ -142,8 +142,9 @@ struct FollowingList: View {
 }
 
 extension NotificationService {
-    func issueFixed(id: String, game: String, text: String, version: String?) {
+    func issueFixed(id: String, gameID: String, game: String, text: String, version: String?) {
         let c = UNMutableNotificationContent()
+        c.userInfo = ["kind": "issue-fixed", "gameId": gameID]   // bug-079: opens the game's page
         c.title = game
         c.body = "Fixed in \(version ?? "a new update"): \(LinkedText.clean(text))"
         UNUserNotificationCenter.current().add(UNNotificationRequest(identifier: "issue-\(id)", content: c, trigger: nil))

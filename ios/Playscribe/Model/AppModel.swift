@@ -988,6 +988,49 @@ final class AppModel {
         }
     }
 
+    /// bug-079: a notification tap opens the screen it is about, cold or warm, in every pose (NotificationRoute). No banner.
+    func open(_ route: NotificationRoute) {
+        // Whatever sheet was up (Settings, links) goes, so the screen the alert is about is what shows.
+        settingsOpen = false
+        linksSheetOpen = false
+        switch route {
+        case let .release(gameID, releaseID):
+            openRelease(gameID: gameID, releaseID: releaseID)
+        case let .game(gameID):
+            tick()
+            player = nil
+            addSheetOpen = false
+            nav.tab = .library
+            nav.returnTab = nil
+            nav.gameTrail = nil
+            openGame(gameID)
+            nav.returnTab = nil
+        case .plusCard:
+            showLibrary()
+            // Iris: shown even if the card is off in Settings, for this visit only (the tap is the player asking for it).
+            plusCardForced = true
+            plusCardFocus = true
+        case .library:
+            showLibrary()
+            libraryAnchor = nil
+        }
+    }
+
+    private func showLibrary() {
+        tick()
+        player = nil
+        addSheetOpen = false
+        nav.tab = .library
+        nav.returnTab = nil
+        nav.gameTrail = nil
+        nav.gameID = nil
+    }
+
+    /// bug-079: the PS Plus card shows for this Library visit even when switched off, after its notification was tapped.
+    var plusCardForced = false
+    /// bug-079: set by a PS Plus notification tap; the Library scrolls the PS Plus card to its top, then clears it.
+    var plusCardFocus = false
+
     /// N-6 (0.5.6, Card D): a notification or link opens the update page itself. Back goes to the game's What's new, then
     /// the Library, whatever tab was showing.
     private func openPushed(_ gameID: String, _ releaseID: String) {
