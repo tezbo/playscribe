@@ -227,7 +227,8 @@ struct CoverHeader: View {
             .frame(width: geo.size.width, height: geo.size.height)
             .clipped()
         }
-        .modifier(FadeMask())
+        // Dark: only the bottom fade into the page. The leading fade would dim the thumbnail the band is built around.
+        .modifier(FadeMask(enabled: false))
     }
 
     @ViewBuilder private var cover: some View {
