@@ -148,11 +148,12 @@ final class FullScreenVideoTests: XCTestCase {
         let woken = (bands.value as? String) ?? ""
         print("qaBands after picture tap: \(woken)")
         XCTAssertTrue(woken.contains("wakes=1"), "a tap on the picture did not bring the controls back: \(woken)")
-        // Hidden again, then the way out: a picture tap and, at once, Exit.
+        // Hidden again, then the way out: a tap on the hidden Exit's band brings the controls back and the second tap is Exit.
+        // One double tap, because two separate XCUITest taps wait for an idle app in between, and while the video plays that
+        // took 7 s, past the 3 s auto-hide (run 46091146257, landscape: picture tap at t 79.8 s, Exit tap at 87.1 s).
         for exitPoint in exitPoints where !enter.exists {
             sleep(5)
-            pictureMiddle.tap()
-            exitPoint.tap()
+            exitPoint.doubleTap()
             _ = enter.waitForExistence(timeout: 5)
         }
         XCTAssertTrue(enter.waitForExistence(timeout: 5), "Exit full screen did not leave full screen after a picture tap")
