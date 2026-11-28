@@ -729,6 +729,9 @@ struct ContentsView: View {
     @State private var position = ScrollPosition(idType: String.self)
     @State private var anchorY: CGFloat = 0
     @State private var tocPinned = false
+    /// polish-pose-change-scroll-anchor: the update list's place (a row and the distance into it), shared with the one-column page.
+    @State private var marks = ReadingPlace.Marks()
+    @State private var insetTop: CGFloat = 0
     var gameID: String
 
     private var leading: CGFloat { duo.hingeInset(16, facingHinge: pageOnLeft) }
@@ -785,6 +788,13 @@ struct ContentsView: View {
             .modifier(ScrolledTopEdge(active: duo.pose == .tabletop, ink: PlayscribeRole.surface))
             .clearsMessages()
             .scrollPosition($position)
+            .environment(\.readingMarks, marks)
+            .onScrollGeometryChange(for: CGFloat.self) { $0.contentInsets.top } action: { _, top in insetTop = top }
+            // Saved here, restored in the one-column poses; Book and Tabletop do not yet scroll to it (card follow-up).
+            .onScrollPhaseChange { old, phase in
+                guard phase == .idle, old == .interacting || old == .decelerating, model.section(gameID) == .updates else { return }
+                model.nav.anchors[ReadingPlace.listKey(gameID)] = ReadingPlace.rowPlace(marks.tops, slack: insetTop + 1)
+            }
             .accessibilityIdentifier("contentsScroll")
             .scrollIndicators(.hidden)
         }
@@ -1057,7 +1067,7 @@ struct ReleaseTimeline: View {
         }
         .buttonStyle(.plain)
         .accessibilityIdentifier("releaseRow-\(r.displayName)")
-        .id("row-\(r.id)")
+        .readingMark("row-\(r.id)")
         .accessibilityAddTraits(selected ? .isSelected : [])
         .tappableFrame()
         .readToggleActions(r)

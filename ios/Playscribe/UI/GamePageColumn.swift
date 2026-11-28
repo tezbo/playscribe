@@ -10,6 +10,9 @@ struct GamePageColumn: View {
     @Environment(\.duo) private var duo
     @State private var position = ScrollPosition(idType: String.self)
     @State private var liveOffset: CGFloat = 0
+    /// polish-pose-change-scroll-anchor: where each update row's top sits, so the place is saved as a row and the distance into it.
+    @State private var marks = ReadingPlace.Marks()
+    @State private var insetTop: CGFloat = 0
     #if INTERNAL
     /// QA (#596, Terry's blank "View game" page): the scroll view's content and visible heights, for the page marker.
     @State private var qaGeometry: [CGFloat] = [0, 0]
@@ -50,6 +53,7 @@ struct GamePageColumn: View {
             }
             EdgeFadeClearance()
         }
+        .environment(\.readingMarks, marks)
         // The list fades out at the page's bottom edge instead of cutting a row at full brightness where the scroll view ends above
         // the floating tab bar (Quinn, #526 at feaff25, Open portrait); the page ends one fade lower, so its last row rests clear.
         .fadesAtBottomEdge()
@@ -80,15 +84,17 @@ struct GamePageColumn: View {
             }
         }
         #endif
-        .onScrollPhaseChange { _, phase in
-            if phase == .idle { model.nav.anchors[anchorKey(section)] = String(Int(liveOffset)) }
+        .onScrollGeometryChange(for: CGFloat.self) { $0.contentInsets.top } action: { _, top in insetTop = top }
+        .onScrollPhaseChange { old, phase in
+            // The list's place is saved only when the reader scrolled: a restore's own scroll may settle before its row is built.
+            if phase == .idle { saveListPlace(section, readerScrolled: old == .interacting || old == .decelerating) }
         }
         .onAppear { restore(section) }
         .onChange(of: duo.pose) { restore(model.section(gameID)) }
         // Card C: switching a section keeps the bar where it is. A section seen before comes back at its own scroll; a new one
         // starts at its top, under the pinned bar, or where it is if the bar has not reached the top.
         .onChange(of: section) { old, new in
-            model.nav.anchors[anchorKey(old)] = String(Int(liveOffset))
+            saveListPlace(old, readerScrolled: true)
             if !restore(new), barPinned { position.scrollTo(id: "sectionTop", anchor: .top) }
         }
         .background(PlayscribeRole.bg)
@@ -122,8 +128,27 @@ struct GamePageColumn: View {
 
     private func anchorKey(_ s: Chapter) -> String { "column-\(gameID)-\(s.rawValue)" }
 
-    /// Scrolls to the saved offset for a section, after layout. False when there is none.
+    /// The reading place of a section: the update list keeps a row and the distance into it, shared with Book and Tabletop (the Contents
+    /// list); every other section keeps its pixel offset.
+    private func saveListPlace(_ s: Chapter, readerScrolled: Bool) {
+        model.nav.anchors[anchorKey(s)] = String(Int(liveOffset))
+        guard s == .updates, readerScrolled else { return }
+        model.nav.anchors[ReadingPlace.listKey(gameID)] = ReadingPlace.rowPlace(marks.tops, slack: insetTop + 1)
+    }
+
+    /// Scrolls to the saved place for a section, after layout. False when there is none.
     @discardableResult private func restore(_ s: Chapter) -> Bool {
+        if s == .updates, let place = ReadingPlace.parseRowPlace(model.nav.anchors[ReadingPlace.listKey(gameID)]) {
+            Task { @MainActor in
+                // The row first (it may not be built yet in a lazy list), then the distance into it once it is at the top.
+                position.scrollTo(id: place.id, anchor: .top)
+                try? await Task.sleep(for: .milliseconds(250))
+                // Corrected by where the row actually sits now (a pinned bar or inset moves "top"), not by an assumed zero.
+                let now = marks.tops[place.id] ?? 0
+                position.scrollTo(y: liveOffset + now - (insetTop + 1) + CGFloat(place.within))
+            }
+            return true
+        }
         guard let y = model.nav.anchors[anchorKey(s)].flatMap(Double.init), y > 0 else { return false }
         Task { @MainActor in position.scrollTo(y: y) }
         return true
