@@ -178,7 +178,7 @@ struct PageArtBand: View {
         Group {
             if coverOnly || (asset == nil && game?.heroArtURL == nil && game?.coverURL != nil) {
                 // Closed: the band runs on under the rail, so the thumbnail keeps clear of that strip (bug-076, Quinn on 381234).
-                CoverHeader(game: game, asset: asset, railInset: duo.pose == .closed && pageColumnWidth > 0 ? max(0, duo.size.width - pageColumnWidth) : 0)
+                CoverHeader(game: game, asset: asset, columnWidth: duo.pose == .closed ? pageColumnWidth : 0)
             } else {
                 ArtView(asset: asset, game: game)
                     .modifier(hasArt ? FadeMask() : FadeMask(enabled: false))
@@ -222,13 +222,14 @@ struct FadeMask: ViewModifier {
 struct CoverHeader: View {
     var game: CatalogGame?
     var asset: String?
-    /// Closed: how far the band runs past the page's column under the rail; the thumbnail keeps clear of it (bug-076, Quinn on 381234).
-    var railInset: CGFloat = 0
+    /// Closed: the page's own column width. The band runs on past it under the rail, and the thumbnail keeps clear of that strip
+    /// (bug-076, Quinn on 381234). 0 (other poses) keeps the thumbnail at the band's edge.
+    var columnWidth: CGFloat = 0
     var body: some View {
         GeometryReader { geo in
             ZStack(alignment: .trailing) {
                 cover.scaledToFill().frame(width: geo.size.width, height: geo.size.height).blur(radius: 30).brightness(-0.35).clipped()
-                cover.scaledToFit().frame(height: geo.size.height * 0.6).padding(.trailing, 24 + railInset)
+                cover.scaledToFit().frame(height: geo.size.height * 0.6).padding(.trailing, 24 + (columnWidth > 0 ? max(0, geo.size.width - columnWidth) : 0))
             }
         }
         .modifier(FadeMask())
