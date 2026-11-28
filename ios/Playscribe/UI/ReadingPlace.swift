@@ -23,6 +23,28 @@ enum ReadingPlace {
         return String(a.dropFirst("mark:".count))
     }
 
+    /// A list's reading place (polish-pose-change-scroll-anchor): the topmost update row and how far into it the reader is. A raw offset
+    /// lands 30 to 130 pt off once a pose change reflows the rows; a row and an offset into it lands within a few points.
+    struct RowPlace: Equatable { var id: String; var within: Int }
+    static let rowPrefix = "row-"
+
+    /// "row:<row id>@<points into it>" for the lowest row whose top is at or above the top of the view; nil above the first row.
+    static func rowPlace(_ tops: [String: CGFloat], slack: CGFloat = 1) -> String? {
+        let rows = tops.filter { $0.key.hasPrefix(rowPrefix) }
+        guard let id = current(rows, slack: slack), let top = rows[id] else { return nil }
+        return "row:\(id)@\(max(0, Int((slack - top).rounded())))"
+    }
+
+    static func parseRowPlace(_ anchor: String?) -> RowPlace? {
+        guard let a = anchor, a.hasPrefix("row:"), let at = a.lastIndex(of: "@") else { return nil }
+        let id = String(a[a.index(a.startIndex, offsetBy: 4)..<at])
+        guard !id.isEmpty, let within = Int(a[a.index(after: at)...]) else { return nil }
+        return RowPlace(id: id, within: max(0, within))
+    }
+
+    /// The key that keeps a game's update-list place, shared by every pose that shows the list.
+    static func listKey(_ gameID: String) -> String { "list-\(gameID)" }
+
     /// The key that keeps the pixel offset beside a mark: the fallback when the new layout has no such section
     /// (All updates is in the other pane side by side).
     static func offsetKey(_ key: String) -> String { key + "#y" }

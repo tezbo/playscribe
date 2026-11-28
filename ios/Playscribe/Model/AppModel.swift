@@ -928,7 +928,10 @@ final class AppModel {
         } else {
             // The reading place goes back with it (the Page's anchor to the pushed page's).
             let pageKey = "page-\(g)-\(Chapter.updates.rawValue)"
-            if let a = nav.anchors[pageKey] { nav.anchors[ReleaseDetailView.anchorKey(p.ref.releaseID)] = a }
+            if let a = nav.anchors[pageKey] {
+                nav.anchors[ReleaseDetailView.anchorKey(p.ref.releaseID)] = a
+                nav.anchors[ReleaseDetailView.restoreKey(p.ref.releaseID)] = a   // the pushed page comes up there once (bug-075)
+            }
             nav.detailReleaseID = p.ref.releaseID
         }
     }
@@ -1247,6 +1250,23 @@ final class AppModel {
                                             bundles: [], verification: .official)],
                 headline: "A long invented title for layout checks", summary: "QA fixture. Not a real release.", keyChanges: [],
                 simulated: true, arrivesAt: now)
+            data.simulated.removeAll { $0.id == release.id }
+            data.simulated.insert(release, at: 0)
+            openRelease(gameID: gameID, releaseID: release.id)
+        // QA (INTERNAL, bug-078): "no-headline/<game>" opens a live PS5 update that has notes and no headline, so the page
+        // shows no second line under the title (never a filler such as "Fixes and tuning").
+        case "no-headline" where parts.count == 1:
+            let gameID = parts[0]
+            let now = Date.now
+            let release = Release(
+                id: "qa-no-headline-\(gameID)", gameID: gameID, displayName: "Patch 9.9",
+                kind: .major, kindBasis: .studio, announcedAt: now,
+                notes: [NoteSection(title: "Fixes", items: [NoteItem(text: "Fixes a crash on first load.")])], sourceIDs: [],
+                platforms: [PlatformRelease(platform: .ps5, status: .live,
+                                            version: Field(value: "9.9", verification: .official, sourceID: "simulated", checkedAt: now),
+                                            liveAt: Field(value: now, verification: .official, sourceID: "simulated", checkedAt: now),
+                                            bundles: [], verification: .official)],
+                headline: nil, summary: nil, keyChanges: [], simulated: true, arrivesAt: now)
             data.simulated.removeAll { $0.id == release.id }
             data.simulated.insert(release, at: 0)
             openRelease(gameID: gameID, releaseID: release.id)

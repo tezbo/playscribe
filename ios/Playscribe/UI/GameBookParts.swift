@@ -107,6 +107,8 @@ struct PageView: View {
         // read at (RootView copies it here; 0.5.6 hotfix).
         .onChange(of: model.nav.selected?[gameID]) { _, new in
             if let new, ReadingPlace.mark(model.nav.anchors[anchorKey])?.hasPrefix("mark-\(new)-") == true { restore(); return }
+            // The update unfolding moved here, read between its title and its first section: no section to return to, so its pixel offset (bug-075).
+            if let new, model.nav.pagedPush?.ref.releaseID == new, let a = model.nav.anchors[anchorKey], ReadingPlace.mark(a) == nil, Double(a) != nil { restore(); return }
             position.scrollTo(edge: .top)
         }
         .background(PlayscribeRole.bg)
@@ -280,10 +282,8 @@ struct ReleasePage: View {
             if r.isPS5Listed && typeSize.isAccessibilitySize { HStack { Spacer(minLength: 0); ShareUpdateButton(release: r) } }
             if let h = ps5Page ? r.ps5Headline : r.headline {
                 WholeWordText(text: h, font: PlayscribeFont.title2, lines: typeSize.isAccessibilitySize ? 4 : 3, color: nil)
-            } else if !r.notes.isEmpty {
-                Text("Fixes and tuning").font(PlayscribeFont.title2)
             }
-            // Date and read time share one row (a gap, not a dot); at AX sizes they stack.
+            // No headline in the feed: no subtitle at all, never a filler (bug-078). Date and read time share one row (a gap, not a dot); at AX sizes they stack.
             let dateRow = typeSize.isAccessibilitySize ? AnyLayout(VStackLayout(alignment: .leading, spacing: 2)) : AnyLayout(HStackLayout(spacing: 12))
             dateRow {
                 Text((r.isPS5Listed ? r.ps5Date : r.latestDate).shortDay)
@@ -742,6 +742,9 @@ struct ContentsView: View {
     @State private var position = ScrollPosition(idType: String.self)
     @State private var anchorY: CGFloat = 0
     @State private var tocPinned = false
+    /// polish-pose-change-scroll-anchor: the update list's place (a row and the distance into it), shared with the one-column page.
+    @State private var marks = ReadingPlace.Marks()
+    @State private var insetTop: CGFloat = 0
     var gameID: String
 
     private var leading: CGFloat { duo.hingeInset(16, facingHinge: pageOnLeft) }
@@ -798,6 +801,13 @@ struct ContentsView: View {
             .modifier(ScrolledTopEdge(active: duo.pose == .tabletop, ink: PlayscribeRole.surface))
             .clearsMessages()
             .scrollPosition($position)
+            .environment(\.readingMarks, marks)
+            .onScrollGeometryChange(for: CGFloat.self) { $0.contentInsets.top } action: { _, top in insetTop = top }
+            // Saved here, restored in the one-column poses; Book and Tabletop do not yet scroll to it (card follow-up).
+            .onScrollPhaseChange { old, phase in
+                guard phase == .idle, old == .interacting || old == .decelerating, model.section(gameID) == .updates else { return }
+                model.nav.anchors[ReadingPlace.listKey(gameID)] = ReadingPlace.rowPlace(marks.tops, slack: insetTop + 1)
+            }
             .accessibilityIdentifier("contentsScroll")
             .scrollIndicators(.hidden)
         }
@@ -1070,7 +1080,7 @@ struct ReleaseTimeline: View {
         }
         .buttonStyle(.plain)
         .accessibilityIdentifier("releaseRow-\(r.displayName)")
-        .id("row-\(r.id)")
+        .readingMark("row-\(r.id)")
         .accessibilityAddTraits(selected ? .isSelected : [])
         .tappableFrame()
         .readToggleActions(r)
@@ -1242,11 +1252,15 @@ struct ReleaseDetailView: View {
     @State private var position = ScrollPosition(idType: String.self)
     @State private var insetTop: CGFloat = 0
     @State private var marks = ReadingPlace.Marks()
+    @State private var liveOffset: CGFloat = 0
     var gameID: String
     var releaseID: String
 
     /// Where this pushed release was read (0.5.6): unfolding moves it onto the Page, which picks this up (RootView).
     static func anchorKey(_ releaseID: String) -> String { "detail-\(releaseID)" }
+    /// Set when folding back to one column pushes this release again (AppModel.enterOneColumn): the pushed page comes up at that place,
+    /// once. A normal open still starts at the top (bug-075).
+    static func restoreKey(_ releaseID: String) -> String { "detail-restore-\(releaseID)" }
 
     var body: some View {
         ScrollView {
@@ -1261,9 +1275,24 @@ struct ReleaseDetailView: View {
         }
         .scrollPosition($position)
         .onScrollGeometryChange(for: CGFloat.self) { $0.contentInsets.top } action: { _, top in insetTop = top }
+        .onScrollGeometryChange(for: CGFloat.self) { $0.contentOffset.y + $0.contentInsets.top } action: { _, y in liveOffset = y }
         .onScrollPhaseChange { old, phase in
             guard phase == .idle, old == .interacting || old == .decelerating else { return }
+            // The section the reader is in; between the title and the first section there is none, so the pixel offset stands in for
+            // it (bug-075: that place was lost, and Book opened the update at its top).
             model.nav.anchors[Self.anchorKey(releaseID)] = ReadingPlace.current(marks.tops, slack: insetTop + 1).map(ReadingPlace.encode)
+                ?? (liveOffset > 0 ? String(Int(liveOffset)) : nil)
+        }
+        .onAppear {
+            guard let saved = model.nav.anchors[Self.restoreKey(releaseID)] else { return }
+            model.nav.anchors[Self.restoreKey(releaseID)] = nil
+            let mark = ReadingPlace.mark(saved)
+            Task { @MainActor in
+                if mark == nil, let y = Double(saved), y > 0 { position.scrollTo(y: y); return }
+                guard let mark else { return }
+                try? await Task.sleep(for: .milliseconds(300))
+                position.scrollTo(id: mark, anchor: .top)
+            }
         }
         // Closed portrait to landscape rewraps the notes: back to the section, not the old offset.
         .onChange(of: duo.isLandscape) {

@@ -26,4 +26,26 @@ struct ReadingPlaceTests {
         #expect(ReadingPlace.mark("812") == nil)
         #expect(ReadingPlace.mark(nil) == nil)
     }
+
+    /// polish-pose-change-scroll-anchor: the list's place is the topmost row plus how far into it the reader is, so a pose change
+    /// that reflows the rows lands on the same row within 8 pt (the old raw offset landed 30 to 130 pt off).
+    @Test func listPlaceIsTheTopmostRowAndTheDistanceIntoIt() {
+        let tops: [String: CGFloat] = ["row-a": -310, "row-b": -42, "row-c": 96, "row-d": 280]
+        let a = ReadingPlace.rowPlace(tops, slack: 0)
+        #expect(a == "row:row-b@42")
+        #expect(ReadingPlace.parseRowPlace(a) == ReadingPlace.RowPlace(id: "row-b", within: 42))
+    }
+
+    @Test func listPlaceIgnoresMarksThatAreNotRows() {
+        #expect(ReadingPlace.rowPlace(["balance": -5, "row-x": -20], slack: 0) == "row:row-x@20")
+        #expect(ReadingPlace.rowPlace(["balance": -5], slack: 0) == nil)
+        #expect(ReadingPlace.rowPlace(["row-x": 60], slack: 0) == nil, "above the first row there is no row place")
+    }
+
+    @Test func listPlaceParsesOnlyItsOwnStrings() {
+        #expect(ReadingPlace.parseRowPlace("mark:balance") == nil)
+        #expect(ReadingPlace.parseRowPlace("412") == nil)
+        #expect(ReadingPlace.parseRowPlace("row:row-x@-3") == ReadingPlace.RowPlace(id: "row-x", within: 0))
+        #expect(ReadingPlace.parseRowPlace("row:row-x@") == nil)
+    }
 }

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Quinn's five cloud runs on a booted, app-installed iPhone Duo (hosted runner or Mac). Needs sim-use.
-#   ios/tools/qa/duo-ci-scenarios.sh UDID OUTDIR [scenario ...]    (default: all)   scenarios: noart headerart continuity trailer closedax5 schemes video axchips deckwide plusend switchax switchtt rails heroswipe herolong removemenu lane fullscreen blocked fsxctest
+#   ios/tools/qa/duo-ci-scenarios.sh UDID OUTDIR [scenario ...]    (default: all)   scenarios: listplace noart headerart continuity trailer closedax5 schemes video axchips deckwide plusend switchax switchtt rails heroswipe herolong removemenu lane fullscreen blocked fsxctest
 # Every step saves <sha>-<scenario>-<step>-<display>-shot.png and -ui.txt (outline with frames, ids and the pose line).
 set -uo pipefail
 UDID=$1; OUT=$2; shift 2; FAILED=""; SCEN=${*:-continuity trailer closedax5 schemes video}
@@ -185,6 +185,23 @@ switchax) # bug-playing-upcoming-switch-ax5-small: switch + filter chips, each s
   # A real tap on the chip (Closed portrait AX5): Playing, then Upcoming by label.
   launch -qaRoute library/playing -UIPreferredContentSizeCategoryName $AX5
   echo "tap Upcoming: $(sim-use tap --label "Upcoming" --device "$UDID" 2>&1 | head -2)"; sleep 2; snap switchax 5-closed-portrait-AX5-tapped-upcoming ;;
+unfoldupdate) # bug-075: an update open in Closed stays the update through Open portrait, Book, Tabletop and back (J-1, pose parity)
+  launch -qaRoute release/dawnwalker/dawnwalker@1.1; snap unfoldupdate 1-closed
+  fold 180 portrait; sleep 3; snap unfoldupdate 2-open-portrait
+  fold 90 landscape-left; sleep 3; snap unfoldupdate 3-book
+  fold 120 portrait; sleep 3; snap unfoldupdate 4-tabletop
+  fold 0 portrait; sleep 3; snap unfoldupdate 5-closed-again ;;
+unfoldupdate2) # bug-075 other doors: scrolled mid-update, and an update opened from the Updates tab
+  launch -qaRoute release/dawnwalker/dawnwalker@1.1; sim-use swipe --from 233,560 --to 233,160 --duration 0.6 --device "$UDID" >/dev/null 2>&1; sleep 2; snap unfoldupdate2 1a-closed-scrolled
+  fold 180 portrait; sleep 3; snap unfoldupdate2 1b-open-portrait
+  fold 90 landscape-left; sleep 3; snap unfoldupdate2 1c-book
+  launch -qaRoute two-update/updates; sleep 2; snap unfoldupdate2 2a-updates-tab
+  row=$(sim-use ui --device "$UDID" 2>/dev/null | grep -E "Button .*(Out on PS5|New)" | head -1 | python3 -c 'import re,sys;m=re.search(r"\(([0-9.]+),([0-9.]+) ([0-9.]+)x([0-9.]+)\)",sys.stdin.read());print("%d,%d"%(float(m[1])+float(m[3])/2,float(m[2])+float(m[4])/2)) if m else None' 2>/dev/null); echo "row tap: $row"
+  [ -n "$row" ] && [ "$row" != None ] && sim-use tap -x ${row%,*} -y ${row#*,} --device "$UDID" >/dev/null 2>&1; sleep 3; snap unfoldupdate2 2b-updates-opened
+  fold 180 portrait; sleep 3; snap unfoldupdate2 2c-open-portrait
+  fold 90 landscape-left; sleep 3; snap unfoldupdate2 2d-book
+  fold 180 portrait; sleep 3; snap unfoldupdate2 2e-open-portrait-again
+  fold 0 portrait; sleep 3; snap unfoldupdate2 2f-closed-again ;;
 rails) # R-7: the four sideways rails, at rest (trailing fade only) and scrolled (leading fade too)
   launch -qaRoute gamepage/dawnwalker; scroll_end 233,560 233,160 similar; rail 1-youmightalsolike '#similarGame'
   launch -qaRoute fill-library/12 -UIPreferredContentSizeCategoryName UICTContentSizeCategoryL; rail 2-library-chips 'Button +"All '
@@ -240,22 +257,61 @@ fullscreen) # bug-071: full-screen video Fit with our controls in the bands; the
   frames() { echo "frames $1: $(sim-use ui --device "$UDID" 2>/dev/null | grep -E 'qaFullScreen|qaBands|qaVideoTime|qaVideoState|WebView|Show player controls|mirrorAudit|videoExitFullScreen|videoPlayPause|videoScrubber|videoBack10|videoForward10' | cut -c1-140 | tr '\n' ';')"; }
   tapl() { echo "tap $1: $(sim-use tap --label "$1" --device "$UDID" 2>&1 | head -1)"; sleep "${2:-4}"; }
   enter() { tapl "Full screen" 1; snap fullscreen "$1-entered"; frames "$1"; }
-  launch -qaRoute trailer/dQw4w9WgXcQ/dawnwalker -qaOverlay YES -qaVideoTime YES
+  # -qaHideAfter 20: the controls still auto-hide, but after 20 s, as sim-use took up to 12.5 s between two taps (run 46096007450).
+  launch -qaRoute trailer/dQw4w9WgXcQ/dawnwalker -qaOverlay YES -qaVideoTime YES -qaHideAfter 20
   tapl Play 8; snap fullscreen 1-closed-portrait-inline; frames 1
   enter 2-closed-portrait
   sleep 3; frames 2b-still-playing
-  sleep 5; snap fullscreen 3-controls-hidden; frames 3
+  sleep 20; snap fullscreen 3-controls-hidden; frames 3
+  # bug-073 (Terry, beta 6: in Closed a band tap never brought the controls back; in Open it did): a picture tap after the turn,
+  # in the middle of the screen, which is on the picture in either coordinate reading. wakes counts it.
+  echo "picture tap: $(sim-use tap -x 339 -y 233 --device "$UDID" 2>&1 | head -1)"; t4=$(sim-use ui --device "$UDID" 2>/dev/null); snap fullscreen 4p-picture-tap
+  # bug-073: the picture tap brought the controls back with Exit, in Closed after the turn (read at once: they hide in 3 s); fails the job.
+  echo "frames 4p: $(echo "$t4" | grep -E 'qaBands|videoExitFullScreen' | cut -c1-140 | tr '\n' ';')"
+  if echo "$t4" | grep -q 'shown=1' && echo "$t4" | grep -q '#videoExitFullScreen'; then echo "ok picture tap shows Exit"
+  else echo "FAIL picture tap"; FAILED="$FAILED fullscreen-picture-tap"; fi
+  sleep 22
   # Which coordinate space sim-use taps in after the turn is not known, so the band is tapped in both readings.
   echo "band tap: $(sim-use tap -x 339 -y 12 --device "$UDID" 2>&1 | head -1)"; sleep 0.5; frames 4a
   echo "band tap (portrait reading): $(sim-use tap -x 12 -y 339 --device "$UDID" 2>&1 | head -1)"; sleep 0.5; frames 4b
   snap fullscreen 4-band-tap-shows
-  tapl "Exit full screen" 4; snap fullscreen 5-exited
+  # The device stays portrait while the app has turned its scene (as on a phone with rotation lock), and sim-use taps in the
+  # device's portrait space. Which way the scene is turned there is not settled (the band tap at 12,339 in run 46050038868 fits
+  # both), so Exit is tried at each reading: a landscape point (x, y) is (466 - y, x) or (y, 678 - x). Each try starts hidden:
+  # a picture tap, then Exit at once, before the 3 s auto-hide. Exit's centre comes from the measured geometry, as in the UI test.
+  g=$(echo "$t4" | grep -o 'pic=[0-9,x]* safe=[0-9,]* full=[0-9x]*' | head -1); pic=${g#pic=}; pic=${pic%% *}; sf=${g#*safe=}; sf=${sf%% *}
+  [ -n "$g" ] || { echo "FAIL no geometry in qaFullScreen"; FAILED="$FAILED fullscreen-geometry"; g="pic=0,0,0x0 safe=0,0,0,0 full=0x0"; pic=0,0,0x0; sf=0,0,0,0; }
+  fh=${g##*x}; pmax=$(( $(echo "$pic" | cut -d, -f2) + ${pic##*x} )); band=$(( fh - pmax ))
+  lx=$(( $(echo "$sf" | cut -d, -f2) + 12 + 22 ))
+  if [ "$band" -gt 104 ]; then ly=$(( pmax + 8 + 22 )); else ly=$(( pmax + (band - 44) / 2 + 22 )); fi
+  # Also (y, x): every result so far fits it (6cba5b0 missed with both rotations; 12,339 woke the top band, 339,12 hit the picture).
+  # bug-073 measurement (runs 46083290466, 46086481097): after the turn sim-use taps land at the same point in window space,
+  # but nothing in the top ~70 pt arrives (118,60 lost, 118,80 landed), so Exit now leads the bottom row.
+  for xy in "$lx $ly" "$ly $lx" "$((466 - ly)) $lx" "$ly $((678 - lx))"; do
+    sleep 22; echo "picture tap: $(sim-use tap -x 233 -y 339 --device "$UDID" 2>&1 | head -1)"
+    echo "exit tap at ($xy) from $g: $(sim-use tap -x ${xy% *} -y ${xy#* } --device "$UDID" 2>&1 | head -1)"; sleep 4
+    sim-use ui --device "$UDID" 2>/dev/null | grep -q qaFullScreen || { echo "exit reading: $xy"; break; }
+  done
+  snap fullscreen 5-exited
+  # bug-073: hidden, then a picture tap, then Exit leaves full screen and turns back to portrait; fails the job.
+  t5=$(ls "$OUT/$SHA"-fullscreen-5-exited-*-ui.txt | head -1)
+  if ! grep -q qaFullScreen "$t5" && ! head -1 "$t5" | grep -q landscape; then echo "ok exit returns to portrait"
+  else echo "FAIL exit: $(head -1 "$t5"); $(grep -c qaFullScreen "$t5") qaFullScreen"; FAILED="$FAILED fullscreen-exit"; fi
   # The same poses again with the controls held up (-qaBandsStay, internal), so the stills show them (Iris).
   launch -qaRoute trailer/dQw4w9WgXcQ/dawnwalker -qaOverlay YES -qaVideoTime YES -qaBandsStay YES
-  tapl Play 8; fold 0 landscape-left; enter 6-closed-landscape-shown; tapl "Exit full screen" 3
+  tapl Play 8; enter 5b-closed-portrait-turned-shown; tapl "Exit full screen" 3
+  fold 0 landscape-left; enter 6-closed-landscape-shown; tapl "Exit full screen" 3
   fold 180 landscape-left; enter 7-flat-landscape-shown
   fold 90 landscape-left; sleep 2; snap fullscreen 8-book-shown; frames 8
   fold 90 portrait; sleep 2; snap fullscreen 9-tabletop-ends-it
+  # bug-073: the same at AX5 (Iris); the band glyphs cap at xxxLarge, so the row must look the same.
+  fold 0 portrait; sleep 2
+  launch -qaRoute trailer/dQw4w9WgXcQ/dawnwalker -qaOverlay YES -qaVideoTime YES -qaBandsStay YES -UIPreferredContentSizeCategoryName $AX5
+  tapl Play 8; enter 10-closed-portrait-turned-shown-ax5; tapl "Exit full screen" 3
+  fold 0 landscape-left; enter 11-closed-landscape-shown-ax5; tapl "Exit full screen" 3
+  fold 180 landscape-left; enter 12-flat-landscape-shown-ax5
+  fold 90 landscape-left; sleep 2; snap fullscreen 13-book-shown-ax5; frames 13
+  fold 0 portrait; sleep 2
   # Every full-screen tree (those with our qaFullScreen probe) must keep YouTube's buttons from VoiceOver; fails the job.
   "$(dirname "$0")/check-no-youtube-buttons.sh" $(grep -l qaFullScreen "$OUT/$SHA"-fullscreen-*-ui.txt) || FAILED="$FAILED fullscreen-youtube-buttons" ;;
 blocked) # R-12: a video YouTube refuses (IFrame error 150) shows Open in YouTube in every pose, never a full-screen button
@@ -267,10 +323,17 @@ blocked) # R-12: a video YouTube refuses (IFrame error 150) shows Open in YouTub
   fold 90 landscape-left; sleep 3; snap blocked 4-book
   fold 90 portrait; sleep 3; snap blocked 5-tabletop ;;
 fsxctest) # bug-071: XCUITest taps (sim-use taps did not reach the bands after the turn): enter, band tap, Exit, in Closed
+  # The landscape case runs on its own after a landscape fold: XCUIDevice's orientation alone left the Duo's cover display
+  # portrait (run 46107453270).
+  fsx() { local name=$1; shift; xcodebuild test -project ios/Playscribe.xcodeproj -scheme PlayscribeUI -destination "id=$UDID" -derivedDataPath build/dd-ui \
+    "$@" -resultBundlePath "$OUT/fsxctest-$name.xcresult" CODE_SIGNING_ALLOWED=NO > "$OUT/fsxctest-$name.log" 2>&1; local rc=$?
+    echo "fsxctest $name exit $rc"; grep -E 'qaFullScreen|qaBands|videoExitFullScreen frame|window after|error:|Test Case|\*\* TEST' "$OUT/fsxctest-$name.log" | cut -c1-400
+    [ $rc -eq 0 ] || FAILED="$FAILED fsxctest-$name"; }
   fold 0 portrait
-  xcodebuild test -project ios/Playscribe.xcodeproj -scheme PlayscribeUI -destination "id=$UDID" -derivedDataPath build/dd-ui \
-    -only-testing:PlayscribeUITests/FullScreenVideoTests -resultBundlePath "$OUT/fsxctest.xcresult" CODE_SIGNING_ALLOWED=NO > "$OUT/fsxctest.log" 2>&1
-  echo "fsxctest exit $?"; grep -E 'qaFullScreen|qaBands|videoExitFullScreen frame|error:|Test Case|\*\* TEST' "$OUT/fsxctest.log" | cut -c1-400 ;;
+  fsx portrait -only-testing:PlayscribeUITests/FullScreenVideoTests -skip-testing:PlayscribeUITests/FullScreenVideoTests/testExitStaysAfterAutoHideFromLandscape
+  fold 0 landscape-left; sleep 3
+  fsx landscape -only-testing:PlayscribeUITests/FullScreenVideoTests/testExitStaysAfterAutoHideFromLandscape
+  fold 0 portrait ;;
 newest) # bug-072: Dawnwalker left on Gallery, relaunch, open it from its Library tile: What's new, Closed portrait and Open portrait
   tapTile() { local f; f=$(sim-use ui --device "$UDID" 2>/dev/null | grep 'The Blood of Dawnwalker, last' | head -1 | grep -o '([0-9.,]* [0-9.x]*)' | tr -d '()'); local x y w h; x=${f%%,*}; y=${f#*,}; y=${y%% *}; w=${f#* }; w=${w%x*}; h=${f##*x}
     sim-use tap -x $((${x%.*} + ${w%.*} / 2)) -y $((${y%.*} + ${h%.*} / 2)) --device "$UDID" >/dev/null 2>&1; sleep 3; }
@@ -303,6 +366,14 @@ headerart) # bug-076: Closed header art edge to edge, title 20 pt under it; game
   launch -qaRoute index-game/381234; sleep 6; snap headerart noart-portrait
   launch -qaRoute index-game/381234 -qaOrientation landscape; sleep 6; snap headerart noart-landscape
   launch -qaRoute gamepage/dawnwalker; fold 120 portrait; snap headerart tabletop-unchanged ;;
+listplace) # polish-pose-change-scroll-anchor: the topmost update row survives Closed, Book, Open landscape, Tabletop, Closed (state line names the first rows)
+  launch -qaRoute gamepage/dawnwalker
+  sim-use swipe --from 233,560 --to 233,160 --duration 0.6 --device "$UDID" >/dev/null 2>&1; sleep 2
+  state closed; snap listplace 1-closed
+  fold 90 landscape-left; sleep 3; state book; snap listplace 2-book
+  fold 180 landscape-left; sleep 3; state open-landscape; snap listplace 3-open-landscape
+  fold 120 portrait; sleep 3; state tabletop; snap listplace 4-tabletop
+  fold 0 portrait; sleep 3; state closed-again; snap listplace 5-closed-again ;;
 video) # row 9: hinge sweep recording with frame timing
   launch -qaRoute library/playing; fold 180 landscape-left
   sim-use record-video --device "$UDID" --fps 60 --output "$OUT/$SHA-video-sweep.mp4" >/dev/null 2>&1 & rp=$!

@@ -210,9 +210,7 @@ struct ReleaseBody: View {
                 // At accessibility sizes: the standing 4 whole-word line cap, "…" only when it still overflows.
                 if typeSize.isAccessibilitySize { WholeWordText(text: h, font: PlayscribeFont.title3, lines: 4) }
                 else { Text(h).font(PlayscribeFont.title3) }
-            } else if !headerInPage, !r.notes.isEmpty {
-                Text("Fixes and tuning").font(PlayscribeFont.title3)
-            }
+            }   // No headline in the feed: no subtitle, never a filler (bug-078)
             if let note = dayOneNote {
                 Text(note).font(PlayscribeFont.subheadline.weight(.semibold)).foregroundStyle(PlayscribeColor.accent)
                     .fixedSize(horizontal: false, vertical: true)

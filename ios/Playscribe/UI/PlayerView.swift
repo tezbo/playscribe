@@ -375,6 +375,15 @@ struct FullBleedVideo: View {
 
     /// True when the scene was turned to landscape on entry, so Exit turns it back.
     @State private var turned = false
+    /// bug-073: taps on the picture, heard without taking them from the player, so any tap brings the band controls back.
+    @State private var pictureTaps = 0
+    @State private var tapRelay = TapRelay()
+    #if INTERNAL
+    /// QA (bug-073): where the last touch landed, in the window's own coordinates, so the cloud scenario can see where a tap
+    /// injected in the device's space arrives once the app has turned the scene.
+    @State private var qaTouchProbe = TapRelay()
+    @State private var qaLastTap: CGPoint?
+    #endif
 
     var body: some View {
         GeometryReader { geo in
@@ -414,7 +423,7 @@ struct FullBleedVideo: View {
                         .offset(x: d.minX, y: d.minY)
                         .accessibilityHidden(true)
                 }
-                FullScreenBands(controller: controller, title: title, picture: f, screen: full, safe: safe,
+                FullScreenBands(controller: controller, title: title, pictureTaps: pictureTaps, picture: f, screen: full, safe: safe,
                                 division: division.map(toScreen), housings: occlusions.map(toScreen), onExit: leave)
                 #if INTERNAL
                 // QA: what the frame math saw, for the cloud fullscreen scenario (the picture measured 522 x 294 in Closed
@@ -422,8 +431,14 @@ struct FullBleedVideo: View {
                 Color.clear.frame(width: 1, height: 1)
                     .accessibilityElement()
                     .accessibilityIdentifier("qaFullScreen")
-                    .accessibilityValue("occ=\(occlusions.map(toScreen).map { "\(Int($0.minX)),\(Int($0.minY)),\(Int($0.width))x\(Int($0.height))" }.joined(separator: ";")) pic=\(Int(f.minX)),\(Int(f.minY)),\(Int(f.width))x\(Int(f.height)) safe=\(Int(safe.top)),\(Int(safe.leading)),\(Int(safe.bottom)),\(Int(safe.trailing)) full=\(Int(full.width))x\(Int(full.height))")
+                    // pic, safe and full lead: sim-use cuts long values (run 46089197299 lost full= after the occlusions).
+                    .accessibilityValue("pic=\(Int(f.minX)),\(Int(f.minY)),\(Int(f.width))x\(Int(f.height)) safe=\(Int(safe.top)),\(Int(safe.leading)),\(Int(safe.bottom)),\(Int(safe.trailing)) full=\(Int(full.width))x\(Int(full.height)) occ=\(occlusions.map(toScreen).map { "\(Int($0.minX)),\(Int($0.minY)),\(Int($0.width))x\(Int($0.height))" }.joined(separator: ";"))")
                     .offset(x: 2, y: 2)
+                Color.clear.frame(width: 1, height: 1)
+                    .accessibilityElement()
+                    .accessibilityIdentifier("qaLastTap")
+                    .accessibilityValue(qaLastTap.map { "tap=\(Int($0.x)),\(Int($0.y))" } ?? "tap=none")
+                    .offset(x: 6, y: 2)
                 #endif
             }
             .frame(width: full.width, height: full.height)
@@ -433,8 +448,27 @@ struct FullBleedVideo: View {
         .persistentSystemOverlays(.hidden)
         .statusBarHidden()
         .overlay(alignment: .topLeading) { MirrorAudit(on: false) }
-        .onDisappear(perform: turnBack)
+        .onDisappear {
+            tapRelay.detach()
+            #if INTERNAL
+            qaTouchProbe.detach()
+            #endif
+            turnBack()
+        }
         .onAppear {
+            tapRelay.attach(to: controller.webView) { pictureTaps += 1 }
+            #if INTERNAL
+            // The web view may not be in a window yet at onAppear; keep trying for 5 s.
+            Task { @MainActor in
+                for _ in 0..<50 {
+                    if let window = controller.webView.window {
+                        qaTouchProbe.attach(to: window) { [weak window] r in qaLastTap = window.map { r.location(in: $0) } }
+                        break
+                    }
+                    try? await Task.sleep(for: .milliseconds(100))
+                }
+            }
+            #endif
             if division == nil, VideoOrientation.isPortrait {
                 turned = true
                 // Turn only once the player has rebuilt with our controls (at most 3 s), so the rebuild and WebKit's response to
@@ -496,12 +530,17 @@ struct VideoTimeProbe: View {
 /// Hears taps on the web view without taking them from YouTube's player (R-13: a tap brings the Exit button back).
 final class TapRelay: NSObject, UIGestureRecognizerDelegate {
     private var recognizer: UITapGestureRecognizer?
-    private var onTap: (() -> Void)?
+    private var onTap: ((UITapGestureRecognizer) -> Void)?
 
     func attach(to view: UIView, onTap: @escaping () -> Void) {
+        attach(to: view) { (_: UITapGestureRecognizer) in onTap() }
+    }
+
+    /// The same, handing over the recognizer (for where the tap landed).
+    func attach(to view: UIView, onTap: @escaping (UITapGestureRecognizer) -> Void) {
         detach()
         self.onTap = onTap
-        let r = UITapGestureRecognizer(target: self, action: #selector(tapped))
+        let r = UITapGestureRecognizer(target: self, action: #selector(tapped(_:)))
         r.cancelsTouchesInView = false
         r.delaysTouchesBegan = false
         r.delaysTouchesEnded = false
@@ -516,7 +555,7 @@ final class TapRelay: NSObject, UIGestureRecognizerDelegate {
         onTap = nil
     }
 
-    @objc private func tapped() { onTap?() }
+    @objc private func tapped(_ r: UITapGestureRecognizer) { onTap?(r) }
 
     func gestureRecognizer(_ g: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith other: UIGestureRecognizer) -> Bool { true }
 }
@@ -955,11 +994,13 @@ enum VideoOrientation {
 /// player (YouTube RMF), as plain white glyphs with no glass. Top band: Exit full screen and the title. Bottom band: back 10,
 /// play/pause, forward 10, elapsed, the scrubber and remaining. In Book the transport is on the leading page and the scrubber on
 /// the trailing one, nothing within 8 pt of the division. They fade together (opacity, 0.25 s) 3 s after the last touch while
-/// playing, and show again on a tap in a band; a tap on the picture is YouTube's (policy_touches on the card), so it never
-/// shows ours. While hidden, the first band tap only shows them. VoiceOver and Switch Control keep them shown.
+/// playing, and show again on any tap: in a band, or on the picture (bug-073, Terry on beta 6: in Closed a band tap never
+/// brought them back, so there was no way out; the picture tap is heard without being taken from YouTube). While hidden, the first band tap only shows them. VoiceOver and Switch Control keep them shown.
 struct FullScreenBands: View {
     @Bindable var controller: YouTubeController
     var title: String
+    /// bug-073: counts taps on the picture; each one shows the controls like a band tap.
+    var pictureTaps = 0
     /// The picture, the screen and the safe insets, in screen coordinates.
     var picture: CGRect
     var screen: CGSize
@@ -978,7 +1019,15 @@ struct FullScreenBands: View {
     @State private var hideTask: Task<Void, Never>?
     /// QA: band taps seen, for the cloud fullscreen scenario.
     @State private var wakes = 0
-    static let hideAfter: Duration = .seconds(3)
+    static var hideAfter: Duration {
+        #if INTERNAL
+        // QA: -qaHideAfter <seconds>. Hosted simulators took 2.7 s in one run and 12.5 s in the next between two injected
+        // taps (runs 46091146257, 46096007450), so the tap-then-Exit check can't race the 3 s hide there.
+        let q = UserDefaults.standard.double(forKey: "qaHideAfter")
+        if q > 0 { return .seconds(q) }
+        #endif
+        return .seconds(3)
+    }
     /// Nothing within this of the division (Iris).
     static let foldClearance: CGFloat = 8
 
@@ -1037,7 +1086,6 @@ struct FullScreenBands: View {
             bandCatcher(CGRect(x: 0, y: picture.maxY, width: screen.width, height: screen.height - picture.maxY))
             Group {
                 HStack(spacing: 12) {
-                    glyph("chevron.down", "Exit full screen", id: "videoExitFullScreen", action: onExit)
                     Text(title)
                         .font(PlayscribeFont.caption)
                         .foregroundStyle(.white.opacity(0.7))
@@ -1048,7 +1096,12 @@ struct FullScreenBands: View {
                 }
                 .frame(width: l.top.width, height: 44)
                 .offset(x: l.top.minX, y: l.top.minY)
+                // bug-073: Exit leads the bottom row in every pose. In Closed, once the scene has turned, the top ~70 pt take no
+                // taps (hosted Duo run 46086481097), so an Exit in the 44 pt top band could not be reached there.
                 HStack(spacing: 4) {
+                    // A 16 pt gap before Back 10 (Iris), so a thumb aiming for one doesn't hit the other.
+                    glyph("chevron.down", "Exit full screen", id: "videoExitFullScreen", action: onExit)
+                        .padding(.trailing, 12)
                     glyph("gobackward.10", "Back 10 seconds", id: "videoBack10") { controller.skip(-10) }
                     Group {
                         if ended {
@@ -1085,6 +1138,7 @@ struct FullScreenBands: View {
         }
         #endif
         .onChange(of: hides, initial: true) { _, on in on ? schedule() : show() }
+        .onChange(of: pictureTaps) { wake() }
         .onDisappear { hideTask?.cancel() }
     }
 
