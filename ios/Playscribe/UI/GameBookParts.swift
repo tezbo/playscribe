@@ -732,10 +732,6 @@ struct ContentsView: View {
     /// polish-pose-change-scroll-anchor: the update list's place (a row and the distance into it), shared with the one-column page.
     @State private var marks = ReadingPlace.Marks()
     @State private var insetTop: CGFloat = 0
-    @State private var liveOffset: CGFloat = 0
-    #if INTERNAL
-    @State private var qaList = "none"
-    #endif
     var gameID: String
 
     private var leading: CGFloat { duo.hingeInset(16, facingHinge: pageOnLeft) }
@@ -793,45 +789,18 @@ struct ContentsView: View {
             .clearsMessages()
             .scrollPosition($position)
             .environment(\.readingMarks, marks)
-            .onScrollGeometryChange(for: CGFloat.self) { $0.contentOffset.y + $0.contentInsets.top } action: { _, y in liveOffset = y }
             .onScrollGeometryChange(for: CGFloat.self) { $0.contentInsets.top } action: { _, top in insetTop = top }
+            // Saved here, restored in the one-column poses; Book and Tabletop do not yet scroll to it (card follow-up).
             .onScrollPhaseChange { old, phase in
                 guard phase == .idle, old == .interacting || old == .decelerating, model.section(gameID) == .updates else { return }
                 model.nav.anchors[ReadingPlace.listKey(gameID)] = ReadingPlace.rowPlace(marks.tops, slack: insetTop + 1)
             }
-            .onAppear { restoreList() }
-            #if INTERNAL
-            .overlay(alignment: .topLeading) {
-                if AppModel.isQALaunch {
-                    Text("qa-list: \(qaList) saved \(model.nav.anchors[ReadingPlace.listKey(gameID)] ?? "nil")").font(.system(size: 1)).opacity(0.01)
-                        .allowsHitTesting(false).accessibilityIdentifier("qaListPlace")
-                }
-            }
-            #endif
             .accessibilityIdentifier("contentsScroll")
             .scrollIndicators(.hidden)
         }
         // Book: the page colour, so the art fades into it as on the right page; Tabletop's lower half stays ink1.
         .background(duo.pose == .book ? PlayscribeRole.bg : PlayscribeRole.surface)
         .foldAudited()
-    }
-
-    /// Book and Tabletop come up at the row the reader was at in another pose, and the distance into it (Closed, Open and back included).
-    private func restoreList() {
-        #if INTERNAL
-        qaList = "appear section \(model.section(gameID).rawValue)"
-        #endif
-        guard model.section(gameID) == .updates, let place = ReadingPlace.parseRowPlace(model.nav.anchors[ReadingPlace.listKey(gameID)]) else { return }
-        Task { @MainActor in
-            try? await Task.sleep(for: .milliseconds(300))
-            position.scrollTo(id: place.id, anchor: .top)
-            try? await Task.sleep(for: .milliseconds(250))
-            let now = marks.tops[place.id] ?? 0
-            #if INTERNAL
-            qaList = "restored \(place.id) within \(place.within) now \(Int(now)) offset \(Int(liveOffset)) inset \(Int(insetTop))"
-            #endif
-            position.scrollTo(y: liveOffset + now - (insetTop + 1) + CGFloat(place.within))
-        }
     }
 }
 
