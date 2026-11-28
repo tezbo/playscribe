@@ -279,15 +279,20 @@ notify) # bug-079: every notification type opens its own screen, cold (app not r
   # on another screen), no banner. Each payload (ios/tools/qa/*.apns) is pushed with simctl and its banner tapped at the top.
   launch -qaRoute ask-notifications; sleep 3; sim-use ui --device "$UDID" 2>/dev/null | grep -iE 'allow|notif' | head -3
   sim-use tap --label "Allow" --device "$UDID" >/dev/null 2>&1; sleep 2
+  # The Settings app's first launch is slow; the first three warm banners in run 46117585194 came while it was still starting.
+  xcrun simctl launch "$UDID" com.apple.Preferences >/dev/null; sleep 8
   banner() { xcrun simctl push "$UDID" $B "$(dirname "$0")/$1.apns" >/dev/null; sleep 2; sim-use tap -x 233 -y 60 --device "$UDID" >/dev/null 2>&1; sleep 9; }
   for kind in release plus-leaving release-day issue-fixed date-move team; do
     for mode in cold warm; do
       launch -qaRoute settings
       if [ $mode = cold ]; then xcrun simctl terminate "$UDID" $B >/dev/null 2>&1; else xcrun simctl launch "$UDID" com.apple.Preferences >/dev/null; fi
-      sleep 3; banner $kind; snap notify "$kind-$mode"
+      sleep 5; banner $kind; snap notify "$kind-$mode"
       t=$(ls "$OUT/$SHA"-notify-$kind-$mode-*-ui.txt | head -1)
       r=$(grep -o 'qa-response: [^"]*' "$t" | head -1)
-      echo "notify $kind $mode: $r; plusCard $(grep '#plusCard' "$t" | grep -o '([0-9.,]* [0-9.x]*)' | head -1)"
+      ps=$(grep -E 'Heading +"PS Plus' "$t" | head -1)
+      echo "notify $kind $mode: $r; PS Plus heading: $ps"
+      # PS Plus: the card's heading is on screen (it scrolls to the top, or as far as the page goes).
+      if [ $kind = plus-leaving ] && [ -z "$ps" ]; then echo "FAIL notify $kind $mode: PS Plus card not on screen"; FAILED="$FAILED notify-$kind-$mode-card"; fi
       case $kind in
         release) want='dawnwalker/dawnwalker@1.1' ;; plus-leaving) want='plus card' ;; team) want='library' ;; *) want='game dawnwalker' ;;
       esac
