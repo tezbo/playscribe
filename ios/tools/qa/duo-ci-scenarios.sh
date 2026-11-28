@@ -285,15 +285,15 @@ notify) # bug-079: every notification type opens its own screen, cold (app not r
   # Playscribe is not in front 5 s after the tap, the banner was missed, not mis-routed: the same payload is pushed and tapped once more.
   # What the tap opened is still checked below either way.
   banner() {
-    local try; for try in 1 2; do
+    local try n; for try in 1 2; do
       xcrun simctl push "$UDID" $B "$(dirname "$0")/$1.apns" >/dev/null; sleep 1.5
-      # By the banner's title where sim-use can see it (the home screen: Book's banner is not at the portrait top centre,
-      # run 46125376411), else at the top centre.
-      sim-use tap --label "$(python3 -c 'import json,sys;print(json.load(open(sys.argv[1]))["aps"]["alert"]["title"])' "$(dirname "$0")/$1.apns")" --device "$UDID" >/dev/null 2>&1 \
-        || sim-use tap -x "${BX:-233}" -y 60 --device "$UDID" >/dev/null 2>&1; sleep 5
-      sim-use ui --device "$UDID" 2>/dev/null | head -1 | grep -q 'App: Playscribe' && break
+      [ -n "${BANNER_DUMP:-}" ] && echo "banner tree $1: $(sim-use ui --device "$UDID" 2>/dev/null | grep -iE 'notification|banner|PS Plus|Dawnwalker|Playscribe' | head -4 | tr '\n' ';')"
+      sim-use tap -x "${BX:-233}" -y 60 --device "$UDID" >/dev/null 2>&1
+      # Wait up to 12 s for Playscribe to come up (a cold launch is slow): a second tap at the top of the app would land on the
+      # status bar and scroll the page back to its top (run 46129610326).
+      for n in 1 2 3 4 5 6; do sleep 2; sim-use ui --device "$UDID" 2>/dev/null | head -2 | grep -q 'App: Playscribe' && break 2; done
       echo "notify $1: banner missed on try $try"
-    done; sleep 4; }
+    done; sleep 3; }
   for kind in release plus-leaving release-day issue-fixed date-move team; do
     for mode in cold warm; do
       launch -qaRoute settings
@@ -319,7 +319,7 @@ notify) # bug-079: every notification type opens its own screen, cold (app not r
       read -r ang ori bx pname <<<"$p"
       for kind in plus-leaving release; do
         xcrun simctl terminate "$UDID" $B >/dev/null 2>&1; fold $ang $ori; sleep 2
-        BX=$bx banner $kind; snap notify "$kind-cold-$pname-${size%%-*}"
+        BANNER_DUMP=1 BX=$bx banner $kind; snap notify "$kind-cold-$pname-${size%%-*}"
         t=$(ls "$OUT/$SHA"-notify-$kind-cold-$pname-${size%%-*}-*-ui.txt | head -1)
         echo "notify $kind $pname $size: $(grep -o 'qa-response: [^"]*' "$t" | head -1)"
       done
