@@ -266,8 +266,8 @@ tour) # bug-077: the first-run tour's game row (step 1, empty Library) offers on
   fold 0 portrait; sleep 2
   launch -qaRoute tour/1/empty -qaNoFeed YES -qaOverlay YES; sleep 12; snap tour 3-closed-portrait-no-feed
   t3=$(ls "$OUT/$SHA"-tour-3-*-ui.txt | head -1)
-  n3=$(grep -E '^ +@[0-9]+ +Button ' "$t3" | grep -vcE 'Add your first game|Skip|Next|qa')
-  echo "tour row without the feed: $n3 buttons"
+  n3=$(grep -c '#popularAdd' "$t3")
+  echo "tour row without the feed: $n3 games: $(grep '#popularAdd' "$t3" | cut -d'"' -f2 | tr '\n' ';')"
   if [ "$n3" -lt 3 ]; then echo "FAIL tour row empty without the feed"; FAILED="$FAILED tour-no-feed"; fi
   for f in $(ls "$OUT/$SHA"-tour-*-ui.txt | grep -v -- -tour-3-); do
     echo "tour row $(basename "$f"): $(grep -E '^ +@[0-9]+ +Button ' "$f" | grep -vE 'Add your first game|Skip|Next|qa' | sed -E 's/^ *@[0-9]+ +Button +//' | cut -c1-40 | tr '\n' ';')"
