@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Quinn's five cloud runs on a booted, app-installed iPhone Duo (hosted runner or Mac). Needs sim-use.
-#   ios/tools/qa/duo-ci-scenarios.sh UDID OUTDIR [scenario ...]    (default: all)   scenarios: headerart continuity trailer closedax5 schemes video axchips deckwide plusend switchax switchtt rails heroswipe herolong removemenu lane fullscreen blocked fsxctest
+#   ios/tools/qa/duo-ci-scenarios.sh UDID OUTDIR [scenario ...]    (default: all)   scenarios: noart headerart continuity trailer closedax5 schemes video axchips deckwide plusend switchax switchtt rails heroswipe herolong removemenu lane fullscreen blocked fsxctest
 # Every step saves <sha>-<scenario>-<step>-<display>-shot.png and -ui.txt (outline with frames, ids and the pose line).
 set -uo pipefail
 UDID=$1; OUT=$2; shift 2; FAILED=""; SCEN=${*:-continuity trailer closedax5 schemes video}
@@ -279,6 +279,10 @@ newest) # bug-072: Dawnwalker left on Gallery, relaunch, open it from its Librar
   snap newest 2-closed-relaunched-library; tapTile; snap newest 3-closed-game-opened
   xcrun simctl terminate "$UDID" $B >/dev/null 2>&1; xcrun simctl launch "$UDID" $B >/dev/null; sleep 8
   fold 180 portrait; sleep 3; snap newest 4-open-portrait-library; tapTile; snap newest 5-open-portrait-game-opened ;;
+noart) # bug-076: no-hero-art game (Tomb Raider: Catalyst, 381234): the thumbnail stays left of the rail strip in Closed
+  launch -qaRoute index-game/381234; sleep 6; snap noart 1-portrait
+  launch -qaRoute index-game/381234 -qaOrientation landscape; sleep 6; snap noart 2-landscape
+  launch -qaRoute index-game/381234 -UIPreferredContentSizeCategoryName $AX5; sleep 6; snap noart 3-portrait-ax5 ;;
 headerart) # bug-076: Closed header art edge to edge, title 20 pt under it; game page and update page, portrait and landscape, std and AX5
   for g in dawnwalker minecraft; do
     launch -qaRoute gamepage/$g; sleep 6; snap headerart $g-page-portrait
