@@ -322,13 +322,15 @@ notify) # bug-079: every notification type opens its own screen, cold (app not r
   # AX5 (system text size, as a notification launch carries no launch arguments). The banner is tapped at the top centre.
   for size in large accessibility-extra-extra-extra-large; do
     xcrun simctl ui "$UDID" content_size $size
-    for p in "0 portrait 233 closed" "90 landscape-left 475 book" "90 portrait 334 tabletop"; do
+    for p in "0 portrait 233 closed" "90 portrait 334 tabletop"; do
       read -r ang ori bx pname <<<"$p"
       for kind in plus-leaving release; do
         xcrun simctl terminate "$UDID" $B >/dev/null 2>&1; fold $ang $ori; sleep 2
         BX=$bx banner $kind; snap notify "$kind-cold-$pname-${size%%-*}"
         t=$(ls "$OUT/$SHA"-notify-$kind-cold-$pname-${size%%-*}-*-ui.txt | head -1)
         echo "notify $kind $pname $size: $(grep -o 'qa-response: [^"]*' "$t" | head -1)"
+        # Book: no banner shows on the inner display, so the alert is opened in Closed and the Duo unfolded (Iris).
+        if [ $pname = closed ]; then fold 90 landscape-left; sleep 3; snap notify "$kind-cold-closed-unfolded-book-${size%%-*}"; fi
       done
     done
   done
