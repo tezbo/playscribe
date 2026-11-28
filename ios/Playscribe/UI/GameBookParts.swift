@@ -153,6 +153,7 @@ struct PageArtBand: View {
     /// extension effect stretched catalogue art past it (Terry, 0.5.0 build 6). There it is a slim, clipped band.
     private var slim: Bool { duo.isLandscape && duo.pose == .closed }
     @Environment(\.dynamicTypeSize) private var typeSize
+    @State private var columnWidth: CGFloat = 0
     /// Iris, #529 (std / AX5): Closed portrait 130 / 84, Closed landscape 88 / 52, Open, Open portrait and Book 170 / 110.
     static func height(pose: Pose, landscape: Bool, ax: Bool) -> CGFloat {
         switch pose {
@@ -165,21 +166,30 @@ struct PageArtBand: View {
         let asset = model.backdrop(gameID, chapter: model.section(gameID), tall: false)
         let coverOnly = asset != nil && asset == game?.coverAsset && asset != game?.heroAsset
         let hasArt = asset != nil || game?.heroArtURL != nil || game?.coverURL != nil
-        Group {
-            if coverOnly || (asset == nil && game?.heroArtURL == nil && game?.coverURL != nil) {
-                CoverHeader(game: game, asset: asset)
-            } else {
-                ArtView(asset: asset, game: game)
-                    .modifier(hasArt ? FadeMask() : FadeMask(enabled: false))
+        let height = Self.height(pose: duo.pose, landscape: duo.isLandscape, ax: typeSize.isAccessibilitySize)
+        // The sizer takes the column's own width (the safe width: Closed's rail column is outside it). The art is its overlay, drawn on to the
+        // trailing screen edge below, so how far it runs past the column is known: the no-art cover thumbnail stays out of that strip.
+        Color.clear
+            .frame(height: height)
+            .frame(maxWidth: .infinity)
+            .onGeometryChange(for: CGFloat.self) { $0.size.width } action: { columnWidth = $0 }
+            .overlay(alignment: .topLeading) {
+                Group {
+                    if coverOnly || (asset == nil && game?.heroArtURL == nil && game?.coverURL != nil) {
+                        CoverHeader(game: game, asset: asset, railInset: duo.pose == .closed && columnWidth > 0 ? max(0, duo.size.width - columnWidth) : 0)
+                    } else {
+                        ArtView(asset: asset, game: game)
+                            .modifier(hasArt ? FadeMask() : FadeMask(enabled: false))
+                    }
+                }
+                .frame(height: height)
+                .frame(maxWidth: .infinity)
+                .clipped()
+                .modifier(ExtensionUnlessSlim(slim: slim || !extendsUnderRail))
+                // bug-076 (Iris, Closed): the art runs to the trailing screen edge, behind the rail column, as the update page's does in
+                // portrait. The rail's controls keep their own glass; nothing else moves. Other poses keep their band as it was.
+                .ignoresSafeArea(.container, edges: duo.pose == .closed ? .trailing : [])
             }
-        }
-        .frame(height: Self.height(pose: duo.pose, landscape: duo.isLandscape, ax: typeSize.isAccessibilitySize))
-        .frame(maxWidth: .infinity)
-        .clipped()
-        .modifier(ExtensionUnlessSlim(slim: slim || !extendsUnderRail))
-        // bug-076 (Iris, Closed): the art runs to the trailing screen edge, behind the rail column, as the update page's does in
-        // portrait. The rail's controls keep their own glass; nothing else moves. Other poses keep their band as it was.
-        .ignoresSafeArea(.container, edges: duo.pose == .closed ? .trailing : [])
         .accessibilityHidden(true)
     }
 }
@@ -211,11 +221,13 @@ struct FadeMask: ViewModifier {
 struct CoverHeader: View {
     var game: CatalogGame?
     var asset: String?
+    /// Closed: how far the band runs past the page's column under the rail; the thumbnail keeps clear of it (bug-076, Quinn on 381234).
+    var railInset: CGFloat = 0
     var body: some View {
         GeometryReader { geo in
             ZStack(alignment: .trailing) {
                 cover.scaledToFill().frame(width: geo.size.width, height: geo.size.height).blur(radius: 30).brightness(-0.35).clipped()
-                cover.scaledToFit().frame(height: geo.size.height * 0.6).padding(.trailing, 24)
+                cover.scaledToFit().frame(height: geo.size.height * 0.6).padding(.trailing, 24 + railInset)
             }
         }
         .modifier(FadeMask())

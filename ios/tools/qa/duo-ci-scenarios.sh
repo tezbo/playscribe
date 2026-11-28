@@ -291,6 +291,8 @@ headerart) # bug-076: Closed header art edge to edge, title 20 pt under it; game
   launch -qaRoute release/dawnwalker/dawnwalker@1.1 -qaAppearance dark; snap headerart update-portrait-dark
   launch -qaRoute gamepage/dawnwalker -qaAppearance dark; snap headerart dawnwalker-page-portrait-dark
   launch -qaRoute gamepage/dawnwalker -qaAppearance dark -qaOrientation landscape; snap headerart dawnwalker-page-landscape-dark
+  launch -qaRoute index-game/381234; sleep 6; snap headerart noart-portrait
+  launch -qaRoute index-game/381234 -qaOrientation landscape; sleep 6; snap headerart noart-landscape
   launch -qaRoute gamepage/dawnwalker; fold 120 portrait; snap headerart tabletop-unchanged ;;
 video) # row 9: hinge sweep recording with frame timing
   launch -qaRoute library/playing; fold 180 landscape-left
