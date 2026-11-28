@@ -314,6 +314,9 @@ notify) # bug-079: every notification type opens its own screen, cold (app not r
     done
     # Give the screen time to settle and sim-use time to see the app before the still.
     for n in 1 2 3 4 5; do sim-use ui --device "$UDID" 2>/dev/null | head -2 | grep -q 'App: Playscribe' && break; sleep 1; done; sleep 3; }
+  # Warm-up, not checked: the run's first banner tap brought nothing up in 3 runs in a row (46165471106: "tapped" twice,
+  # still SpringBoard), whatever the kind; every later one landed. One throwaway team alert first, then all 12 are checked.
+  launch -qaRoute settings; xcrun simctl terminate "$UDID" $B >/dev/null 2>&1; sleep 5; banner team; echo "notify warm-up: $(qresp)"
   for kind in release plus-leaving release-day issue-fixed date-move team; do
     for mode in cold warm; do
       launch -qaRoute settings
