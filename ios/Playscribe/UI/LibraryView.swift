@@ -94,7 +94,7 @@ struct LibraryStage: View {
     @ViewBuilder private var legacyStage: some View {
         let game = model.featuredGame
         ZStack(alignment: .bottomLeading) {
-            ArtView(asset: game?.keyArtAsset, game: game, drift: true)
+            if let game { DeckArt(game: game, cardID: nil) } else { ArtView(asset: nil, game: nil) }
             LinearGradient(colors: [.clear, .black.opacity(0.75)], startPoint: .center, endPoint: .bottom)
             VStack(alignment: .leading, spacing: 8) {
                 if let game {
