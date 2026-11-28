@@ -290,7 +290,8 @@ notify) # bug-079: every notification type opens its own screen, cold (app not r
   qresp() { local c; c=$(xcrun simctl get_app_container "$UDID" $B data 2>/dev/null) && cat "$c/Documents/qa-last-response.txt" 2>/dev/null; }
   qclear() { local c; c=$(xcrun simctl get_app_container "$UDID" $B data 2>/dev/null) && rm -f "$c/Documents/qa-last-response.txt"; }
   banner() {
-    local try n t; qclear; for try in 1 2; do
+    # Three pushes at most: in each of the last two runs one push of 24 never got a tap through (a different case each time).
+    local try n t; qclear; for try in 1 2 3; do
       # sim-use tracks the app it last drove; once that process is gone its tree warns "has not relaunched since it
       # disappeared" and the banner never showed in it, so taps fell back to a blind position (run 46160156530). Re-baseline
       # it so the tree is SpringBoard's (or Settings'), banner included.
