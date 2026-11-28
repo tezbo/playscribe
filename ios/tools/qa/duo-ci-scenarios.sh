@@ -266,8 +266,11 @@ fullscreen) # bug-071: full-screen video Fit with our controls in the bands; the
   # Also (y, x): every result so far fits it (6cba5b0 missed with both rotations; 12,339 woke the top band, 339,12 hit the picture).
   # bug-073 measurement, before any Exit try: where taps injected at these device points land in the turned window (qaLastTap,
   # window space). The picture, bands and corners; 118,22 last, as it may be Exit.
-  for xy in "233 339" "339 233" "12 339" "339 12" "300 444" "444 300" "22 118" "444 118" "22 560" "118 22"; do
+  # Run 46083290466 (758b83f): taps land at the same point in window space (no rotation), except the top strip, where they
+  # never arrive (339,12 and 118,22 left the last value). Here each probe follows a reset tap, to find where the strip ends.
+  for xy in "339 12" "118 22" "118 30" "118 36" "118 42" "118 50" "118 60" "118 80" "339 30" "339 44" "339 60"; do
     sim-use ui --device "$UDID" 2>/dev/null | grep -q qaFullScreen || break
+    sim-use tap -x 233 -y 339 --device "$UDID" >/dev/null 2>&1; sleep 0.3
     sim-use tap -x ${xy% *} -y ${xy#* } --device "$UDID" >/dev/null 2>&1; sleep 0.3
     echo "probe tap at device ($xy) landed at: $(sim-use ui --device "$UDID" 2>/dev/null | grep -o 'tap=[a-z0-9,-]*' | head -1)"
   done
