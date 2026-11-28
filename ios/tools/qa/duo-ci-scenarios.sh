@@ -299,10 +299,19 @@ notify) # bug-079: every notification type opens its own screen, cold (app not r
         [ -n "$f" ] && break; [ $k -ge 2 ] && sim-use ui --device "$UDID" 2>/dev/null | head -1 | grep -q 'App: Settings' && break; sleep 0.5
       done
       if [ -n "$f" ]; then read -r fx fy fw fh <<<"$f"; echo "banner $1 at $f"
-        sim-use tap -x $(python3 -c "print(int($fx+$fw/2))") -y $(python3 -c "print(int($fy+$fh/2))") --device "$UDID" >/dev/null 2>&1
+        # A tap on the home-screen banner sometimes does nothing (run 46154680084: the app never came up, the banner was
+        # still showing). Tap again while sim-use still sees the banner, up to 3 taps; never once it is gone, as the next
+        # tap would land inside the app.
+        local t; for t in 1 2 3; do
+          sim-use tap -x $(python3 -c "print(int($fx+$fw/2))") -y $(python3 -c "print(int($fy+$fh/2))") --device "$UDID" >/dev/null 2>&1
+          for n in 1 2 3; do sleep 1; [ -n "$(qresp)" ] && break 3; done
+          sim-use ui --device "$UDID" 2>/dev/null | grep -q '#NotificationShortLookView' || break
+          echo "notify $1: banner still showing after tap $t"
+        done
       else sim-use tap -x "${BX:-233}" -y 60 --device "$UDID" >/dev/null 2>&1; fi
       # Wait up to 12 s for the app to report the response (a cold launch is slow).
       for n in 1 2 3 4 5 6; do sleep 2; [ -n "$(qresp)" ] && break 2; done
+      echo "notify $1: after try $try: $(sim-use ui --device "$UDID" 2>/dev/null | head -1)"
       echo "notify $1: banner missed on try $try"
     done
     # Give the screen time to settle and sim-use time to see the app before the still.
