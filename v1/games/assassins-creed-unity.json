@@ -1,0 +1,836 @@
+{
+ "game": {
+  "id": "assassins-creed-unity",
+  "igdbId": 5606,
+  "name": "Assassin's Creed Unity",
+  "cover": {
+   "imageId": "co1xiq",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co1xiq.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar65td",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar65td.jpg"
+  },
+  "ps5Release": null,
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "assassins-creed-unity@patch-2026-03-05",
+   "gameId": "assassins-creed-unity",
+   "displayName": "PS5 update",
+   "kind": "silent",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-03-05T14:15:00.000Z",
+   "notes": [],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "pushsquare-patches"
+   ],
+   "links": {},
+   "platforms": [
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-05T14:15:00.000Z",
+      "verification": "reported",
+      "sourceId": "pushsquare-patches",
+      "checkedAt": "2026-11-06T10:15:14.541Z"
+     },
+     "bundles": [],
+     "verification": "reported"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-06T10:15:14.541Z"
+  },
+  {
+   "id": "assassins-creed-unity@5",
+   "gameId": "assassins-creed-unity",
+   "displayName": "Patch 5",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2015-02-20T13:56:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Patch 5 for Assassin’s Creed Unity is rolling out today on PC. The patch should resolve numerous reported issues including the ‘Find Leon’ objective not showing up and the relocking of weapon and equipment rewards after they’ve been earned.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Additionally, we will be unlocking all content exclusive to Initiates and the Companion App, including both blue and gold chests. Players can still progress on the Companion App, they just will no longer be required to complete content to unlock in-game chests.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "PC-specific fixes that address performance, connectivity and general stability issues will be available when the PC update releases today.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "For patch notes please visit this forum post.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Live Updates Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "assassins-creed-unity-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/289650/view/515997419753393222"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2015-02-20T13:56:55.000Z",
+      "verification": "official",
+      "sourceId": "assassins-creed-unity-steam",
+      "checkedAt": "2026-11-22T21:23:08.657Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-22T21:23:08.656Z"
+  },
+  {
+   "id": "assassins-creed-unity@4",
+   "gameId": "assassins-creed-unity",
+   "displayName": "Patch 4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2014-12-12T02:14:01.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "As part of our ongoing efforts to provide the best experience for our players, we will be releasing Patch 4 for Assassin’s Creed Unity today for Steam. This patch is mainly focused on alleviating performance issues and improving the overall experience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Part of the team’s effort to enhance frame rate for players involves replacing and updating portions of the Paris city map where we are seeing issues. This explains the large size of this title update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch 4 delivers a variety fixes including",
+     "items": [
+      {
+       "text": "Performance & Stability: Frame rate drops, game crashes, lost progression",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Gameplay: Navigation, lock picking chests",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Online: Connectivity, matchmaking, companion app",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Stability, Performance and Save Game",
+     "items": [
+      {
+       "text": "Fixed numerous random crashes both on Campaign and Coop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Implemented multiple optimizations and fixes to improve overall performance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed save issue caused by the companion app on the main menu (loss of data)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed save issue caused by contacts list (crash occurring). Users should now have access to save",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay (navigation, fight, stealth)",
+     "items": [
+      {
+       "text": "Fixed various navigation issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues with lock picking chests",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed additional haystack issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Character, AI and Crowd",
+     "items": [
+      {
+       "text": "Fixed various character, crowd station and NPC issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Online, Matchmaking, Connectivity and Replication",
+     "items": [
+      {
+       "text": "Fixed various matchmaking and connection issues both in matches and when starting a match.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various issues with voice chat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed join-in-progress issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various replication issues between host and clients",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues with player rank and COOP/heist rewards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues with Helix credits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues with the My Club feature",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Menus and HUD",
+     "items": [
+      {
+       "text": "Fixed HUD icon issues and issues with map information",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various Initiates issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed additional issues with notifications",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Mission tweaks (campaign, coop and side content)",
+     "items": [
+      {
+       "text": "Fixed various low occurrence walkthrough breaks in both Campaign and COOP",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed various NPC issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed issue with the quest log disappearing for specific side missions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "World and 3D",
+     "items": [
+      {
+       "text": "Fixed various collision and mesh issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed additional issues where player would fall through the world",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed specific areas where textures were missing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "PC-Specific",
+     "items": [
+      {
+       "text": "Fixed crash on \"Quit to Windows\" in free roam mode",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed crash on accepting multiple \"Join the club\" requests",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed issues with TXAA",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed issues with PCSS",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed issues with textures on NPCs",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed black texture issues on MSAA-4x, MSAA-8x and TXAA",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Right Control now can be assigned as a hotkey",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Minor UI fixes",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 24,
+    "balance": 3,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "assassins-creed-unity-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/289650/view/524998195197228048"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2014-12-12T02:14:01.000Z",
+      "verification": "official",
+      "sourceId": "assassins-creed-unity-steam",
+      "checkedAt": "2026-11-22T21:23:08.645Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 2,
+   "updatedAt": "2026-11-22T21:23:08.647Z"
+  },
+  {
+   "id": "assassins-creed-unity@3",
+   "gameId": "assassins-creed-unity",
+   "displayName": "Patch 3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2014-11-25T17:58:24.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Thanks to your collaboration and support via our Customer Support channels and this Live Update blog, we have assembled Patch 3 and are preparing to deploy it on console and PC this week. The rollout itself will begin later this week on PC.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Patch 3 includes over three hundred fixes designed to improve your Assassin’s Creed Unity experience. While you might notice some improvements to framerate as a result of Patch 3, we still have a future patch planned to further address framerate concerns.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can find a detailed list of fixes in our Forums, but here’s a quick overview of some of the updates you’ll find in Patch 3:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Stability and Performance",
+     "items": [
+      {
+       "text": "Fixed numerous random crashes in Campaign and Co-op modes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed specific framerate drops",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved task scheduling",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tweaked performance for Reach High Points (Synchronization)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay (Navigation, Fight and Stealth)",
+     "items": [
+      {
+       "text": "Fixed various navigation issues where players could get stuck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various haystack issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various cover issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various camera issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various animation issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various Booster issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "AI & Crowd",
+     "items": [
+      {
+       "text": "Fixed various animation issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various detection issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various crowd station issues (bonfires)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Matchmaking, Connectivity and Replication",
+     "items": [
+      {
+       "text": "Fixed various matchmaking issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various host migration issues (hand-off occurs more smoothly)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed join-in-progress issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various replication issues between host and clients",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various issues in the My Club menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Menus and HUD",
+     "items": [
+      {
+       "text": "Fixed various menu issues and pop-up overlap issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Mission objective & updating issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues in customization menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some localization inconsistencies in menus",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some issues in the credits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Mission Tweaks (Campaign, Co-op and Side Content)",
+     "items": [
+      {
+       "text": "Fixed various low-repro walkthrough breaks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed various NPC navigation issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed inconsistencies in some missions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "World and 3D",
+     "items": [
+      {
+       "text": "Adjusted various collisions and navigation mesh issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Progression and Difficulty",
+     "items": [
+      {
+       "text": "Adjusted various Community Event rewards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "PC-Specific",
+     "items": [
+      {
+       "text": "Fixed save game corruption in some cases",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed temporal blur from SLI",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed graphical corruptions in Character Customization menu",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed crash in Character Customization menu on controller auto-switch",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Alt+Enter switches windows correctly",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "NPC on side monitors show correctly",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Minor UI improvements",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Additionally, we have already begun working on Patch 4 and we expect to have further updates on it in the coming week.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The Live Updates Team",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 23,
+    "balance": 5,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "assassins-creed-unity-steam"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/289650/view/522745035834934466"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2014-11-25T17:58:24.000Z",
+      "verification": "official",
+      "sourceId": "assassins-creed-unity-steam",
+      "checkedAt": "2026-11-22T21:23:08.643Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-22T21:23:08.641Z"
+  }
+ ],
+ "issues": []
+}

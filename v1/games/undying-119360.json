@@ -1,0 +1,2257 @@
+{
+ "game": {
+  "id": "undying-119360",
+  "igdbId": 119360,
+  "name": "Undying",
+  "cover": {
+   "imageId": "co9e7w",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co9e7w.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "arksg",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/arksg.jpg"
+  },
+  "ps5Release": "2025-02-11",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "undying-119360@major-2024-07-18",
+   "gameId": "undying-119360",
+   "displayName": "Patch Update 7/18",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-07-18T10:24:35.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed some common bugs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-638990"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/638990/view/5969041959964365532"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-07-18T10:24:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-638990",
+      "checkedAt": "2026-11-12T16:50:33.444Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:33.444Z"
+  },
+  {
+   "id": "undying-119360@major-2024-07-16",
+   "gameId": "undying-119360",
+   "displayName": "Patch Update July 16",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-07-16T14:13:13.000Z",
+   "notes": [
+    {
+     "title": "Story Mode",
+     "items": [
+      {
+       "text": "Fixed an issue that could cause characters to have an additional damage reduction effect.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Experience Optimization",
+     "items": [
+      {
+       "text": "Improved task attribution in the camp.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Increased backpack slot limit to 200; items to increase backpack slots cannot be used once the limit is reached.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added buttons and prompts for incrementing and decrementing by 10 on various crafting benches.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Implemented a mechanism for Cody, the main character, to take shelter from the rain indoors and for camp NPCs to avoid poisonous fog indoors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Significantly optimized NPC mechanics to reduce lag in the camp caused by these processes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enhanced interactions and prompts for workbench-type facilities unable to enter production mode due to power supply issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Mechanism Adjustments",
+     "items": [
+      {
+       "text": "NPCs outside the home no longer have increasing health with each day; instead, their damage reduction is enhanced (NPCs in the LynnBay settlement are not affected by this change).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Changed workbench power consumption mechanism to consume power at a set rate during production.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed an issue where weapons could not be repaired if their durability exceeded the initial maximum after enhancement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Cody could still be commanded while in a frenzied state.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where symptoms cured but with remaining effects still counted in certain conditions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where item icons would remain on the main interface after being dragged and traded.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where new mechanisms like building, new workbenches, and research were not compatible with Anling's symptom effect .",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where players could not interact with a bed locked by an NPC due to illness, even if the NPC was not in the bed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Modified the text for the farm learning task to research planting boxes, instructing players to equip the sketch book for research.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed multiple issues related to Anling's facility repair.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where arrow towers did not drop arrows when destroyed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where crows would fall into the ground in certain camp locations upon death.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Cody would have a \"killed good person\" dialogue after killing a hostile NPC who requested to join.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where barbed wire in some unsafe areas could not be attacked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where it was sometimes difficult to select rabbits in LynnBay.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Cody would discover already found rabbit holes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Anling could move freely with a trolley during a frenzy if she was using the trolley before the frenzy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the main character could use materials from home storage for repairs, but the display remained red.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Cody would continue the building animation for a long time after construction was complete.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where NPCs would not resume a task after failing and interrupting it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 19,
+    "balance": 3,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-638990"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/638990/view/6000566704284077730"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-07-16T14:13:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-638990",
+      "checkedAt": "2026-11-12T16:50:33.444Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:33.444Z"
+  },
+  {
+   "id": "undying-119360@major-2024-07-06",
+   "gameId": "undying-119360",
+   "displayName": "Patch Update July 5",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-07-06T01:00:19.000Z",
+   "notes": [
+    {
+     "title": "Story Mode",
+     "items": [
+      {
+       "text": "Bug Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where the camera would not move during the slingshot tutorial mission",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a clipping issue with a tree and a crate in a turbulent area",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Kingdom Mode",
+     "items": [
+      {
+       "text": "Experience Optimization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimized NPC dining logic",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved NPC task selection logic to prevent a task from becoming unmanageable after being claimed but not completed, ensuring it can still be taken over by other NPCs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Optimized Farm construction",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Significantly reduced lag caused by an excessive number of buffs on the protagonist",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Disabled the automatic fake doors in the Crown Carnival",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added new garlic and onion order tasks to the outskirts farm",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Increased the stack limit for Baked Potato: Bug Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed an issue where NPCs with low health would not take medicine from the Trauma First Aid Kit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the animation issue when NPCs use the Trauma First Aid Kit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the error that allowed NPCs to trade during a zombie horde attack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Cody's incorrect dialogue trigger when killing a traitor NPC, mistaking it for killing a good person",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the issue where NPCs became hostile during a zombie horde attack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the issue where NPCs could still construct buildings after dying",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the issue where NPCs could not trade after surviving for more than 100 days",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the issue where NPCs would not work at the Kiln",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the issue where the Maintenance Desk and Reinforcement Table couldn't use materials from the camp storage boxes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the missing progress display when player is working at the Disassembly Table, Maintenance Desk and Reinforcement Table",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue with missing textures and incorrect resource spawn locations in the scene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the issue where Cody would get stuck after being revived with a trauma first aid kit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the issue where NPCs would target beds already occupied by other NPCs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 15,
+    "balance": 1,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-638990"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/638990/view/5842939267340502858"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-07-06T01:00:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-638990",
+      "checkedAt": "2026-11-12T16:50:33.443Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:33.443Z"
+  },
+  {
+   "id": "undying-119360@major-2024-07-01",
+   "gameId": "undying-119360",
+   "displayName": "Patch Update July 1st - Kingdom Mode",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-07-01T07:07:50.000Z",
+   "notes": [
+    {
+     "title": "Experience Optimization",
+     "items": [
+      {
+       "text": "* Added support for gamepad controls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* NPCs will no longer eat and drink continuously; they will only eat and drink when their hunger value or thirst value is below 50%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Issue Fixes",
+     "items": [
+      {
+       "text": "* Fixed an issue where NPCs would not work properly after an enemy raid ended.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed an issue where NPCs were found performing construction actions next to the player's bed upon waking up",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed an issue where Anling could not attack with previously equipped weapons during madness state unless the weapon was switched or re-equipped.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed an issue where NPCs appeared with hostile icons (red) on the minimap and had red health bars during a zombie siege.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* NPC health will no longer reset during enemy raids.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-638990"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/638990/view/5842939267323204333"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-07-01T07:07:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-638990",
+      "checkedAt": "2026-11-12T16:50:33.443Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:33.443Z"
+  },
+  {
+   "id": "undying-119360@major-2024-06-25",
+   "gameId": "undying-119360",
+   "displayName": "Patch Update June 25 - Kingdom Mode",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-25T10:49:23.000Z",
+   "notes": [
+    {
+     "title": "This update is only for the Kingdom Mode",
+     "items": [
+      {
+       "text": "Fixed issues with harvesting and NPC pathfinding.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Unsafe Areas around the Main Locations did not match the Main Location's style.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Cody being unable to harvest the Fishing Nets at home.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the repair material quantity for the slingshot being greater than the crafting quantity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed NPCs taking a group of seeds but only planting one plot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed NPCs experiencing positional shifts after playing animations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some broken cars in Unsafe Areas being non-interactable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed NPCs not working on the farm.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed text errors in NPC self-talk.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed NPCs not participating in building construction.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 10,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-638990"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/638990/view/5759622039994058097"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-25T10:49:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-638990",
+      "checkedAt": "2026-11-12T16:50:33.442Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:33.442Z"
+  },
+  {
+   "id": "undying-119360@major-2024-06-22",
+   "gameId": "undying-119360",
+   "displayName": "Patch Update 6/22",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-22T16:25:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed some common bugs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-638990"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/638990/view/5759622039983974793"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-22T16:25:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-638990",
+      "checkedAt": "2026-11-12T16:50:33.442Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:33.442Z"
+  },
+  {
+   "id": "undying-119360@major-2024-06-21",
+   "gameId": "undying-119360",
+   "displayName": "Patch Update 6/21",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-21T09:36:47.000Z",
+   "notes": [
+    {
+     "title": "Story Mode",
+     "items": [
+      {
+       "text": "Fixed an issue where the dialogue bubble content was incorrect when Anling was dying.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issues related to cat behavior and achievements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Experience Optimization",
+     "items": [
+      {
+       "text": "Lowered the priority for NPCs to enter houses to avoid rain.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Optimized the mechanism so that NPCs can actively leave the house after waking up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimized the issue where NPCs would stay idle for a long time after completing a task.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Issue Fixes",
+     "items": [
+      {
+       "text": "Fixed an issue where in the construction and demolition mode, both demolition and movement interactions could take effect simultaneously, causing freezing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where having a dagger in the backpack would cause numerous errors when breaking free from a grapple and failing to actually break free.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where NPCs would not perform other tasks when the target for planting behavior was already occupied.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the problem of NPCs crowding together when it rains.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a lag issue after it rains.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an error with removing refrigerators, where the second removal would cause them to disappear but get stuck in the construction interface and be unable to exit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the slot number display error in the refrigerator interface.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the issue where NPCs would overlap when sitting at the Dining Table.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the issue where the Distribution Box switch function was ineffective.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a series of issues with removing blueprints.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the problem of being unable to abandon order tasks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the issue where Cody could remotely execute the unlock command.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 14,
+    "balance": 1,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-638990"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/638990/view/5759622039979293211"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-21T09:36:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-638990",
+      "checkedAt": "2026-11-12T16:50:33.442Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:33.442Z"
+  },
+  {
+   "id": "undying-119360@major-2024-06-15",
+   "gameId": "undying-119360",
+   "displayName": "Patch Update 6/15",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-15T11:21:35.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed some common bugs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-638990"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/638990/view/6890025005355926423"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-15T11:21:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-638990",
+      "checkedAt": "2026-11-12T16:50:33.441Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:33.441Z"
+  },
+  {
+   "id": "undying-119360@major-2024-06-14",
+   "gameId": "undying-119360",
+   "displayName": "Patch Update June 14th",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-14T06:40:14.000Z",
+   "notes": [
+    {
+     "title": "Both Game Modes",
+     "items": [
+      {
+       "text": "Fixed an issue with some achievements counting duplicates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a translation issue related to outfit names",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Story Mode",
+     "items": [
+      {
+       "text": "Fixed a diary bug that was incorrectly closed in the Huff Canning Factory Laboratory",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a diary location that was incorrectly marked as the Huff Canning Factory instead of the Aries Town Police Station",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated the icon for the circuit board required for the mission to avoid confusion with another material item",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Kingdom Mode",
+     "items": [
+      {
+       "text": "Experience optimization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Based on player feedback, slightly increased the infection speed in the large map red zone to generate more Unsafe Areas and survivors requesting to join the camp",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted the trading value of some items to be within a reasonable range for trading and other functions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased generator storage capacity from 1,200 to 6,000",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Modified the description of the battery regarding storage capacity from 24,000 to 1,000",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased the stack quantity of some basic supplies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced the probability of having too many NPC requests to join LynnBay at the same time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Issue Fixes",
+     "items": [
+      {
+       "text": "Fixed an issue where tools used by Cody could not be dropped or moved in the bag after use",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where special scene items with 0 durability would disappear when leaving the scene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the issue of incorrect display of repair material consumption for the back door of the Survivor Campground",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the issue of NPCs being able to trade and talk after death",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the issue of canceling production when exiting build mode next to a production task table",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the issue of negative item quantities appearing in the Outskirts Farm set storage box",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the issue where NPCs would not use water towers other than the first one in the farm set with multiple water towers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an error related to key bindings",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed the issue of no pathway templates being opened when entering the haunted house for the first time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted the interaction range of repairing the rappelling rope in LynnBay to prevent Cody from getting stuck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the error of three new stone weapons not being recognized as weapons in certain functions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the issue of Cody being interrupted while holding hands with the rabbit hole and then being unable to water the planting box.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 15,
+    "balance": 4,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-638990"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/638990/view/6890025005351568043"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-14T06:40:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-638990",
+      "checkedAt": "2026-11-12T16:50:33.441Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:33.441Z"
+  },
+  {
+   "id": "undying-119360@major-2024-06-06",
+   "gameId": "undying-119360",
+   "displayName": "Patch Update June 06 - Kingdom Mode",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-06T02:49:16.000Z",
+   "notes": [
+    {
+     "title": "This update is only for the Kingdom Mode",
+     "items": [
+      {
+       "text": "Important",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjust the durability drop rules of LynnBay buildings. The settlement period is changed from 0.5 hours to 24 hours.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Significantly slow down the spread of red zones on the world map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increase the duration of a single day from 22 minutes to 26 minutes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Experience optimization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Speed ​​up water tower filling speed by 400%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduce the duration of the poisonous fog in LynnBay before day 70th",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mining and logging no longer consume additional tool durability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed the anvil's repair material to iron ingots instead of steelbar",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bug fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix the issue where NPC body temperature is not affected by the weather",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix the issue where an error occurs when interacting with a water well without water",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix the issue where frame drops occur and NPCs do not perform the next task if items are not collected after crafting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix the issue where farm fences cannot be clicked to remove",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix the issue where farm fences can be built overlapping",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix the issue where specific blueprints cannot be moved",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix the issue where moving facilities does not consider the character placement range",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix the issue where poisoned herbs, mushrooms, and wild vegetables do not display \"Poisoned\" under toxic fog weather in unstable areas",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 8,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-638990"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/638990/view/5746109972547287315"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-06T02:49:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-638990",
+      "checkedAt": "2026-11-12T16:50:33.440Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:33.440Z"
+  },
+  {
+   "id": "undying-119360@major-2024-06-03",
+   "gameId": "undying-119360",
+   "displayName": "Patch Update June 03",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-03T14:39:50.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed a bug related to the achievements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-638990"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/638990/view/5742731639344871950"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-03T14:39:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-638990",
+      "checkedAt": "2026-11-12T16:50:33.439Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:33.440Z"
+  },
+  {
+   "id": "undying-119360@major-2024-05-31",
+   "gameId": "undying-119360",
+   "displayName": "Patch Update 5/31",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-31T16:14:14.000Z",
+   "notes": [
+    {
+     "title": "Story mode changes",
+     "items": [
+      {
+       "text": "Fixed the issue that the game would get stuck after Cody got sick in the bed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Kingdom mode changes",
+     "items": [
+      {
+       "text": "Experience optimization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "NPC trading function will now be available after completing events at various locations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased the stackable limit for some basic resources",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Optimized the scanning effect starting point for researching items such as \"Well,\" \"Planting Box,\" and \"Fence\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Interaction issue fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the issue that camp NPCs couldn't work at Work Bench",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the issue when Cody upgrade vehicle could cause AI to freeze",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the issue that items on the trolley would disappear after returning to LynnBay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the issue that the character range wouldn't disappear after placing transportable items",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected the dialogue text bubbles for Cody and Anling at the water tower and well when they are out of water",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the issue where the main character couldn't interact with building the \"Farm Fence\" facility",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Prevented players from confusing subsequent tasks by sleeping before completing the task of unlocking the Cargo Box",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Prevented camp NPCs from leaving the camp beyond the yellow line",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Production & camp facility",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a new low-level building: Simple Medicine Bench",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated the recipes for the Cooking Pot and Outdoor Oven",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the issue where the Distribution Box couldn't be detected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the issue that enemies couldn't destroy transportable items after they were built",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Interface display issue fixes and optimizations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Optimized the display of cargo box order titles in the order interface, now you can see the location where the order was placed from the title",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the issue of incorrect UI display at 21:9 resolution",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Adjusted the display area of the building set description interface text to solve the problem of incomplete display in multiple languages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "A prompt will now appear when the \"Farm\" building set is completed/invalidated and will be displayed on the camp interface",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the issue of the numbers in the research item demand panel being reversed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the issue where the research item icon couldn't be displayed after hiding and equipping tools",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Players will now receive prompts when it rains or there is poisonous fog in LynnBay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the incorrect display of the number of slots on the dining table and the incorrect display of the title and number of slots on the Trauma First Aid Kit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the issue that NPC mini-map icons would appear red during battles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the issue where the scroll function in the interface description area of various tables was disabled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Weakened the icon display when selecting locations on the map, highlighting the infection progress",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Corrected thelocation information on the map, removing the need to research items such as \"Dining Table,\" \"Trauma First Aid Kit,\" and \"Distribution Box\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the issue that Cody upgraded the car, which would cause the tracking not to disappear",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Other issue fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the issue that zombies would gather at the door when there were buildings on the LynnBay high platform",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the issue of abnormal weather data in the camp",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the issue of NPC coughing incorrectly in poisonous fog",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the issue that NPCs would only restore satiety value when using items that restore both satiety and water at the dining table.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where some zombies did not display the perspective effect after being blocked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where arrow towers built in high places could not attack enemies on the ground",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue when Cody upgrading car would cause the tracking to not disappear",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue using the mouse could drag the wrong item into the first aid kit",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "When NPCs are sick and bedridden, all \"Herb,\" \"medicines,\" and \"first aid items\" can now be used to restore their health points (50 points per item)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted the sleeping positions of some NPCs in beds to avoid serious clipping",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed an issue where players would pause causing damage to enemies during camp siege battles when they were too far away",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where NPCs would still lose health points when indoors in the camp or under an umbrella to avoid rain",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the fence gate in the abandoned courtyard of the forest park could not be opened",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where it was difficult to interact with sick bedridden NPCs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where modifying PC key bindings would sometimes cause the program to crash",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue where supplies in main locations were not generated properly in storage boxes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Anling use of a dagger for Sneak Attack would cause the action to freeze",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 31,
+    "balance": 3,
+    "other": 13,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-638990"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/638990/view/5742731639334176936"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-31T16:14:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-638990",
+      "checkedAt": "2026-11-12T16:50:33.439Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:33.439Z"
+  },
+  {
+   "id": "undying-119360@major-2024-05-23",
+   "gameId": "undying-119360",
+   "displayName": "Patch Update 5/22",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-23T03:02:54.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed some story related issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-638990"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/638990/view/5741605105605711965"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-23T03:02:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-638990",
+      "checkedAt": "2026-11-12T16:50:33.438Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:33.438Z"
+  },
+  {
+   "id": "undying-119360@major-2024-05-16",
+   "gameId": "undying-119360",
+   "displayName": "Patch Update: Loading optimized",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-16T04:39:48.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dear Moms,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're thrilled to announce some significant improvements to the loading issues you may have encountered in story mode levels. Our team has been hard at work addressing these issues to ensure a smoother gaming experience for you and your fellow players. Here's a breakdown of what we've accomplished:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've resolved various errors that were causing freezes, camera angle problems, and other disruptions during level loading.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Significant optimizations have been made to the speed of scene switching between Anling's house (1st and 2nd floor), the backyard, and the neighborhood outside the front door.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We understand the frustration these issues may have caused, and we apologize for any inconvenience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Balancing the introduction of new gameplay with the resolution of existing problems has been our top priority, and we appreciate your patience and support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you encounter any similar issues during your gaming sessions, please don't hesitate to reach out to us on our Official Discord server at discord.gg/playundying. Your feedback is invaluable to us as we continue to improve the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In other exciting news, we're thrilled to announce that the first version of \"Kingdom Mode\" (version: Pioneering) is almost ready for launch! Stay tuned for more updates on this eagerly awaited feature.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for being part of the Undying community, and we look forward to bringing you even more exciting experiences in the future.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Warm regards,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Vanimals Dev Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Skystone Publishing Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-638990"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/638990/view/5747233970417217115"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-16T04:39:48.000Z",
+      "verification": "official",
+      "sourceId": "steam-638990",
+      "checkedAt": "2026-11-12T16:50:33.437Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:33.437Z"
+  },
+  {
+   "id": "undying-119360@major-2024-04-07",
+   "gameId": "undying-119360",
+   "displayName": "Update Announcement \"Kingdom Mode Preview\"",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-04-07T08:30:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Kingdom Preview update coming soon with a massive overhaul of the entire game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This new game mode (preview version) will allow players to completely customize their experience by allowing players to customize their base with pieces of the environment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Vanimals Dev team & Skystone Games",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-638990"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/638990/view/5756237364318347246"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-04-07T08:30:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-638990",
+      "checkedAt": "2026-11-12T16:50:33.437Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:33.437Z"
+  },
+  {
+   "id": "undying-119360@major-2024-03-29",
+   "gameId": "undying-119360",
+   "displayName": "Patch Update March 29",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-03-29T03:08:03.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dear Moms,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We hope this message finds you well! We're thrilled to share some exciting updates and fixes that we've been diligently working on to enhance your gaming experience. Here's a rundown of what's new:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Data Balancing",
+     "items": [
+      {
+       "text": "Tranquil Difficulty: We've heard your feedback, and under the difficulty setting, we've boosted the durability of all weapons from 140% to 160%, making your survival journey even smoother.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased Base Durability: We've made adjustments to the base durability of several weapons to ensure better gameplay balance:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Crowbar: 20 → 30",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Handgun: 40 → 50",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Pickaxe: 20 → 30",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Chainsaw: 200 → 300",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Enhancement Options: Now, you can enhance the durability of select weapons right from the comfort of your home! Here's a list of weapons and the number of enhancement levels available:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Handgun: 3 levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Shotgun: 3 levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Pickaxe: 3 levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Slingshot: 5 levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "War Sword: 5 levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "We've squashed pesky bugs to ensure a smoother gaming experience:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "No more interruptions in background music (BGMs) or sound effects (SFXs).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "You can now revisit the enhancement banner using your keyboard after reaching the maximum enhancement level for weapons.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Various minor UI issues have been addressed and fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We're also excited to announce that a preview video showcasing our progress on the highly anticipated Kingdom Mode (survival mode) will be available very soon! Stay tuned for an exclusive sneak peek!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "As always, your feedback is invaluable to us. Please don't hesitate to reach out if you encounter any issues or have suggestions for further improvements. Your support and enthusiasm drive us to create the best gaming experience possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Best regards,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Vanimals Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Skystone Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 8,
+    "balance": 12,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-638990"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/638990/view/5749481331439074802"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-03-29T03:08:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-638990",
+      "checkedAt": "2026-11-12T16:50:33.436Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:33.436Z"
+  },
+  {
+   "id": "undying-119360@major-2024-01-08",
+   "gameId": "undying-119360",
+   "displayName": "Patch Update Jan 8, 2024",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-01-08T11:15:15.000Z",
+   "notes": [
+    {
+     "title": "Cody",
+     "items": [
+      {
+       "text": "After learning the skill [Stress: Calm], Cody will no longer freeze in place due to excessive fear.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The tolerance range for \"Cody gets scared when away from Mom\" has been doubled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed an issue where triggering a certain plot event while Cody is sick could lead to a game freeze.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a key conflict issue when using the chainsaw to cut down trees.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several minor bugs related to the chainsaw.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed incorrect item display for NPC stakes in the Face Up Face Down card game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected some text errors in the prompts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 5,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-638990"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/638990/view/5410576585195267460"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-01-08T11:15:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-638990",
+      "checkedAt": "2026-11-12T16:50:33.435Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:33.435Z"
+  }
+ ],
+ "issues": []
+}

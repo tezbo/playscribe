@@ -1,0 +1,1244 @@
+{
+ "game": {
+  "id": "sn-ultimate-freeriding-317533",
+  "igdbId": 317533,
+  "name": "Snø: Ultimate Freeriding",
+  "cover": {
+   "imageId": "co9g10",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co9g10.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar34vn",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar34vn.jpg"
+  },
+  "ps5Release": "2026-10-28",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "sn-ultimate-freeriding-317533@1.0.06.00",
+   "gameId": "sn-ultimate-freeriding-317533",
+   "displayName": "Update 1.0.06.00",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-12T13:49:43.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We updated the version of the game engine we use (Unity). SNØ 1.0.06.00 and onwards will be using this newer version. This was done in order to better prepare the game for future updates and developments.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ideally you should not experience any changes in gameplay or performance, except for the ones I snuck in below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "These are all the changes in 1.0.06.00",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🧘 Lower Zen mode intensity - Zen mode intensity slider now produce more visible results at lower percentages. Previously the Zen mode density multiplier modified max obstacles on each chunk by using CeilToInt (effectively not being able to go below 1 obstacle per world chunk). Now it uses RoundToInt instead, allowing obstacle counts on chunks to actually reach 0.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🪲 Removed some unnecessary debugging code in the Zen mode slow-mo controller*",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you experience issues with this build, please let us know in the Steam forums or on our Discord. Thanks!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "* Did you know?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Double tap and hold Trick in Zen mode to enter slow-mo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2943150"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2943150/view/1832065502823915"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-12T13:49:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-2943150",
+      "checkedAt": "2026-11-12T10:24:22.173Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:22.173Z"
+  },
+  {
+   "id": "sn-ultimate-freeriding-317533@1.0.5.44",
+   "gameId": "sn-ultimate-freeriding-317533",
+   "displayName": "Patch 1.0.5.44",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-04-16T15:27:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "🎓 Localization bugs - Fixed and improved a few broken translation lines in the following languages: Chinese, Portuguese, Japanese, Polish, Ukrainian",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2943150"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2943150/view/1830163047257799"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-16T15:27:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-2943150",
+      "checkedAt": "2026-11-12T10:24:22.172Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:22.172Z"
+  },
+  {
+   "id": "sn-ultimate-freeriding-317533@1.0.5.43",
+   "gameId": "sn-ultimate-freeriding-317533",
+   "displayName": "Patch 1.0.5.43",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-04-16T09:55:26.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This small patch aims to stabilize a few aspects of the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "🏔️ Mountain load issue - Fixed issue where reloading a game from the leaderboard after death caused world to unload without reloading the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⛔ Game freeze - Fixed rare issue causing game to sometimes freeze when trying to load data from save file",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🪲 Debug Logs - Removed some unecessary logging messages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2943150"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2943150/view/1830163047256948"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-16T09:55:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-2943150",
+      "checkedAt": "2026-11-12T10:24:22.171Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:22.171Z"
+  },
+  {
+   "id": "sn-ultimate-freeriding-317533@1.0.5.36",
+   "gameId": "sn-ultimate-freeriding-317533",
+   "displayName": "Patch 1.0.5.36",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-04-01T19:25:43.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🏔️ Peak of the Week stability fix - Fixed a bug causing the game to sometimes crash when starting game from Peak of the Week Leaderboard.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🧊 Peak of the Week freeze - Fixed a bug causing game to freeze when attempting to upload wrong peak of the week score data (typically when week rollover happens during a run). Instead of freezing, game now returns to main menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🎖️ Peak of the Week error detection - The game now try to detect Peak of the Week Steam leaderboard entries containing wrong seed data, and ignores these when writing the in-game leaderboard.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🪲 Minor optimization - Removed some unnecessary lines of debugging code",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "📈 Minor optimization - Cached relevant chunk populators at beginnning of run, reducing CPU load and memory garbage for each new world chunk",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Known issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🌋 Loading mountains from leaderboards jank - World can sometimes fail to unload properly on first button press when starting or retrying game from leaderboard. Game usually picks up upon second button press.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2943150"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2943150/view/1828894815555759"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-01T19:25:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-2943150",
+      "checkedAt": "2026-11-12T10:24:22.171Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:22.171Z"
+  },
+  {
+   "id": "sn-ultimate-freeriding-317533@patch-2026-04-01",
+   "gameId": "sn-ultimate-freeriding-317533",
+   "displayName": "April 1st Patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-04-01T12:22:49.000Z",
+   "notes": [
+    {
+     "title": "Bugfixes",
+     "items": [
+      {
+       "text": "🎮 Joystick bug - New attempt at fixing issue still causing some players to lose in air rotational control after the Pole Hunt Major Update*",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Additions",
+     "items": [
+      {
+       "text": "🎁 Silly surprise - Catch a rabbit today (April 1st) to become extra stylish",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Known issues",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "🏔️ Peak of the week bug - Game may crash when loading peak of the week from the leaderboard",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "* Joystick bug more info: This time around I have used another strategy for the fix, so I'm much more certain this one is final. This update will again reset any remapping you have done. Apologies for the inconvenience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0,
+    "topNew": [
+     "🎁 Silly surprise - Catch a rabbit today (April 1st) to become extra stylish",
+     "Known issues",
+     "🏔️ Peak of the week bug - Game may crash when loading peak of the week from the leaderboard"
+    ]
+   },
+   "sourceIds": [
+    "steam-2943150"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2943150/view/1828894815554601"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-01T12:22:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-2943150",
+      "checkedAt": "2026-11-12T10:24:22.170Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:22.170Z"
+  },
+  {
+   "id": "sn-ultimate-freeriding-317533@1.0.5.21",
+   "gameId": "sn-ultimate-freeriding-317533",
+   "displayName": "Patch 1.0.5.21",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-29T17:46:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Bugfix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🎮 Joystick air lean bug - New attempt at making the transition to the Pole Hunt update smooth for previous players. The game should now automatically restore joystick controls back to defaults after updating.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⚠️Updating to 1.0.5.21 will once again restore joystick inputs to default!⚠️",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Apologies for all the little patches, but I really want this little \"auto-restore-to-default-upon-updating-to-1.0.5.xx\" feature to work properly. I've gotten multiple reports from confused players who have updated and found their left/right input suddenly not working. This has also been one of those \"one time only\" features that are hard to retrigger and fix when they don't work first try. Hopefully this was it!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Big thanks to all who have reported this bug. It has been helpful in finding the solution.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🤔 Still having trouble?! 🤔",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please go to the settings->show/edit controller screen and hit Restore. That will also fix the problem!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Alex",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2943150"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2943150/view/1828441623108366"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-29T17:46:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-2943150",
+      "checkedAt": "2026-11-12T10:24:22.170Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:22.170Z"
+  },
+  {
+   "id": "sn-ultimate-freeriding-317533@1.0.5.17",
+   "gameId": "sn-ultimate-freeriding-317533",
+   "displayName": "Patch 1.0.5.17",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-29T00:46:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "SNØ 1.0.5.17 Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🏅Leaderboard score upload bug - Fixed bug that prevented new scores to be uploaded to the new Score Dash and Infinite Run leaderboards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🎮 Controls restore bug - Some players who have tested an early version of the Pole Hunt have reported issues with joystick controls. This patch will once again force a controls restore to make sure everyone gets the fix.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you still experience issues with joystick controls after this patch, try manually hitting the restore-button from inside the controller settings menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "SNØ 1.0.5.18 Fix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🔉 Audio Mixer issue - The \"change outfit\" sound is now affected by the SFX volume slider",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2943150"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2943150/view/1828441623107481"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-29T00:46:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-2943150",
+      "checkedAt": "2026-11-12T10:24:22.169Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:22.169Z"
+  },
+  {
+   "id": "sn-ultimate-freeriding-317533@1.0.5.11",
+   "gameId": "sn-ultimate-freeriding-317533",
+   "displayName": "Patch 1.0.5.11",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-28T16:39:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Bugfixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🛟 Fixed faulty obstacle in Snow Park mode - The obstacle was not set up properly, missing colliders, not yielding points and failed to unload when reloading a mountain or changing modes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2943150"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2943150/view/1828441623106869"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-28T16:39:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-2943150",
+      "checkedAt": "2026-11-12T10:24:22.168Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:22.168Z"
+  },
+  {
+   "id": "sn-ultimate-freeriding-317533@major-2026-03-28",
+   "gameId": "sn-ultimate-freeriding-317533",
+   "displayName": "MAJOR UPDATE - Pole Hunt 🚩",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-28T13:35:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello again!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It is exciting times for SNØ!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have finally begun looking into the possibility of getting SNØ over to consoles! In order to prepare SNØ for a cross platform future, we have spent the last couple of months attending to some issues that needed fixing, as well as adding some new requested features!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⚠️ IMPORTANT NOTES ABOUT UPDATE 1.0.5 ⚠️",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some of the bugs we discovered while working with this update was not possible to fix without causing a bit of friction. Please bear with us, and read on for more details about why.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⚠️🏅 Due to a scoring bug, the leaderboards for Infinite Run and Score Dash will be archived, replaced by new empty ones",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⚠️🎮 Remapping for joysticks/gamepads will be reset",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⚠️✅ Some checkbox settings might have to be toggled back and forth in order to work again",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "These are all the changed in SNØ 1.0.5.10",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Additions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🚠 Pole Hunt - New game mode where the point is to ride as far as you can before the timer runs out. The mountain is transformed into an abandoned snowpark during this mode, and you extend your time by passing poles. It also comes with its own leaderboard. Let the hunt for the ultimate snow park begin!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🎿New riding stile - Is it a ski? is it a Snowboard? No! It's a Monoski! It's stylish, from the 80s and comes with a complementary headband. Find it somewhere beyond the 1000 m mark.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🧘 Zen mode slider - Adjust the density of obstacles in Zen-mode freely between 10 and 100 % of normal density. Available in the settings menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🚮 Clear high score - It is now possible to delete your high score, should you want it. The button is hidden by default. Navigate to the top left of the main menu and it will reveal itself.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⛑️Head piece - Generated skins now have a chance of including helmet, headband, hooded and an unhooded head. This will not affect already generated skins.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🚩Poles - Replaced all instances of red poles in normal snow park biome with the single pole. The groups of poles have been transferred to Pole Hunt as time extension objects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🔒 Stay on mountain icon - The icon for staying on same mountain now features a lock instead of a heart to make it more clear what the option does",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Scoring Changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🪂 New swoop chaining - Get extra points by chaining swoops with the glider within the same combo",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🎯 Bullseye scoring bump - More obstacles with holes in them give a flat point reward for passing through them. You also get slightly more points for this now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🔄️ Rotation scoring bump - Spinning in air yield slightly more points per degree and per full rotation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🚩 Pass by scoring bug - Fixed bug causing pass by scoring to potentially yield a much bigger combo chain than intended. More details in bugfixes below.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bugfixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🪂 Glider pattern - Fixed bug causing glider patterns to be applied wrong (scale and offset). This may result in some unlocked gliders appearing slightly different.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🎮 Air Rotation bug - Fixed bug causing joystick triggers to rotate you in both y and z-axis. Now you will only rotate about your Y-axis when using triggers in air (using the default settings). If you have remapped your joystick input you will have to remap them again after this update. since this fix to this issue made it necessary to restore remapped inputs to default.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🏔️ Peak Of The Week - Attempt at fixing bug caused by week rollover between play sessions**",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "✅ Settings bug - Fixed bug causing certain checkbox based settings to sometimes not load properly. If your game behaves strange (HUD not appearing in game etc.), check your settings, and toggle relevant option back and forth to fix the issue. From there on out it should be fine. Sorry about the inconvenience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⚰️ Obstacle tags - Fixed some missing tags on some obstacles, making it easier to understand what caused a crash (tree, rock, obstacle, ice or creature)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🚩 Pass by scoring bug - Fixed bug that caused pass by scoring to inconsistently yield way more points than intended when passing obstacles consisting of multiple colliders. Two players taking practically the same amount of risk could be rewarded vastly different scores, based on whether a very specific condition was met. Since the fix practically makes it more difficult to reach high scores, we saw it as necessary to archive the leaderboards to keep the competition fair.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for reading! If you experience any issues with this update, please do not hesitate to reach out on our Discord or here in the Steam forums!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Happy easter, and happy pole hunting! 🐣",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Alex",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "*🚠 Pole Rush was created based on our community's desire for a \"slalom\" mode, as well as several requests for more snow park options. While it's not really slalom, nor really snow park, we think the new mode is fitting for SNØ!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "**🏔️ Peak of the Week uses real time, and edge cases are tough to test thoroughly without seeing it in the real world. Please let us know if you still experience issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 35,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2943150"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2943150/view/1828441623106563"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-28T13:35:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-2943150",
+      "checkedAt": "2026-11-12T10:24:22.167Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:22.167Z"
+  },
+  {
+   "id": "sn-ultimate-freeriding-317533@patch-2026-02-10",
+   "gameId": "sn-ultimate-freeriding-317533",
+   "displayName": "Seasonal skin patch",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-02-10T16:07:53.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added seasonal skin collection for event Cortina 26",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2943150"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2943150/view/1823825466508842"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-10T16:07:53.000Z",
+      "verification": "official",
+      "sourceId": "steam-2943150",
+      "checkedAt": "2026-11-12T10:24:22.166Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:22.166Z"
+  },
+  {
+   "id": "sn-ultimate-freeriding-317533@1.0.4.29",
+   "gameId": "sn-ultimate-freeriding-317533",
+   "displayName": "Update 1.0.4.29",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-10-17T13:05:47.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Bugfixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🛷 Sled unlock - Sled unlock now persist between sessions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2943150"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2943150/view/1813674388971166"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-17T13:05:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-2943150",
+      "checkedAt": "2026-11-12T10:24:22.165Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:22.166Z"
+  },
+  {
+   "id": "sn-ultimate-freeriding-317533@1.0.4.25",
+   "gameId": "sn-ultimate-freeriding-317533",
+   "displayName": "Hotfix 1.0.4.25",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-16T21:34:57.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "📺 CRT-setting - fixed a bug that caused the CRT setting to not appear in the settings menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🛷 Sled unlocking - The golden sled used for unlocking the sled can now spawn a little closer to the top of the mountain",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2943150"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2943150/view/1813674388950116"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-16T21:34:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-2943150",
+      "checkedAt": "2026-11-12T10:24:22.165Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:22.165Z"
+  },
+  {
+   "id": "sn-ultimate-freeriding-317533@1.0.4.23",
+   "gameId": "sn-ultimate-freeriding-317533",
+   "displayName": "Patch 1.0.4.23",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-03T17:24:52.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This update comes with some minor fixes and some behind the scenes preparations for a (near) future winter update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here are the things that are new in SNØ 1.0.04.23",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "🎃 Spooktøber skins - October skins feature slightly different colors and will now be tagged \"Spooktøber 2025\" instead of \"Halloween\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "🔁 Annual skins - Some skin drops (among others the Spooktøber skins) will be made available on an annual basis.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "⌛ 5 second rule - Upon detecting no ground, players are granted 5 seconds to get back above ground before the game ends the run automatically.*",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "💨 Snow mist - Fixed bug that made the misty snow trail behind the player invisible. Issue caused by the snow-to-sand recoloring system introduced in the 2025 summer update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "🔐 Security patch - We updated our version of the Unity game engine to address a recently discovered security issue affecting a lot of games made with Unity. SNØ 1.0.4.22 was exported using Unity 2022.3.62f2, a version of the editor where the security issue is fixed. Read more about the issue on Unity's own website here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Preparations",
+     "items": [
+      {
+       "text": "🎁 Stay Tuned - Incoming Game Addition",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Alex",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "PS",
+     "items": [
+      {
+       "text": "*5 second rule explained ⌛",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Someone reported a bug where they died instantly as they paraglided above a big square shaped hole.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The hole appeared because a world chunk failed to load, and the player died because the game controller automatically ends the run if no ground is detected below the player, assuming that something buggy has happened.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The root cause of this issue (a world chunk failing to load) is very hard to track down as no one else have reported it. But we've come up with an alternative solution that makes it possible to survive these holes should you ever come across one. The game controller now grants you 5 seconds to get back above ground to safety before the game ends the run automatically.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 11,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2943150"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2943150/view/1811772772515853"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-03T17:24:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-2943150",
+      "checkedAt": "2026-11-12T10:24:22.164Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:24:22.164Z"
+  }
+ ],
+ "issues": []
+}

@@ -1,0 +1,4161 @@
+{
+ "game": {
+  "id": "microsoft-flight-simulator-2024-252830",
+  "igdbId": 252830,
+  "name": "Microsoft Flight Simulator 2024",
+  "cover": {
+   "imageId": "co91qm",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co91qm.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar357n",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar357n.jpg"
+  },
+  "ps5Release": "2025-12-08",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "microsoft-flight-simulator-2024-252830@7.2",
+   "gameId": "microsoft-flight-simulator-2024-252830",
+   "displayName": "Update 7.2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-11-05T23:46:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"https://clan.fastly.steamstatic.com/images//45216946/b3c18192d99bc41723686e10785dd34daef97e88.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "RELEASE NOTES Sim Update 7.2 – 1.9.24.0",
+     "items": [
+      {
+       "text": "If you are playing on PC, outdated packages in your Community Folder may have an unexpected impact on the title’s performance and behavior.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "If you suffer from stability issues or long loading times, move your Community package(s) to another folder before relaunching the title.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "General Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed loading of BMP files used by XML gauges on PS5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Reverted a change to drag simulation calculations to the pre-SU7 version to ensure backwards compatibility with certain third-party add-on aircraft.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "\\ Fixed an issue where helicopters can experience excessive RPM and unexpected lift when the Turbulence setting in Assistances was set to Realistic.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "\\ Fixed an issue where the values in the in-flight Camera menu were not being correctly read / set.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Aircraft",
+     "items": [
+      {
+       "text": "Fixed an issue that caused aircraft using Bleed Air Starters (B737, F18, …) to sometimes be unable to start their engines when the air temperature has been setup to be quite low.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "DevMode",
+     "items": [
+      {
+       "text": "Fixed exterior profiling randomly using wrong camera angles in SimObject Profiler.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "SDK",
+     "items": [
+      {
+       "text": "\\ Fixed a crash that occurs when “custom simconnect events with numerical id” are used with F:KeyEvent.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "WASM API",
+     "items": [
+      {
+       "text": "Fixed WASM function fsNetworkHttpRequestGetState returning an 8-bit enum value as 32-bit without clearing the upper 24-bits on PS5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 7,
+    "balance": 0,
+    "other": 3,
+    "ps5": 2
+   },
+   "sourceIds": [
+    "steam-2537590"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2537590/view/1848664643343555"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-05T23:46:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-2537590",
+      "checkedAt": "2026-11-19T11:48:11.766Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-05T23:46:06.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2537590",
+      "checkedAt": "2026-11-19T11:48:11.766Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-11-05T23:46:06.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:18.262Z"
+  },
+  {
+   "id": "microsoft-flight-simulator-2024-252830@23",
+   "gameId": "microsoft-flight-simulator-2024-252830",
+   "displayName": "Update 23",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-26T18:11:27.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Watch YouTube Video",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The European countries of Estonia, Latvia, Lithuania, and Poland offer an incredible range of spectacular sights and experiences. Steeped in history and filled with beautiful vistas of natural splendor and architectural masterpieces, the region offers endless opportunities for exploration. Poland, one of the largest countries in Central Europe by both landmass and population, comprises a tremendous variety of destinations, including urban skylines of Warsaw, northern Baltic shorelines, broad river valleys, and mountains. The three contiguous Baltic States of Lithuania, Latvia, and Estonia lie to the northeast of Poland. Lithuania, Poland’s northeastern neighbor, is renowned for its lakes, lush forests, and Baltic coastline. Latvia, located directly to the north of Lithuania, offers treasures including white sand Baltic beaches, interior wetlands, and picturesque villages. Estonia, located directly north of Latvia, is defined by extensive Baltic shorelines on its northern and western borders and two large Baltic Islands dotted with seaside hamlets.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For the first time in the franchise’s history, Microsoft Flight Simulator delivers a much-anticipated update to this region with World Update 23: Poland and the Baltics.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Microsoft Flight Simulator team partnered with Bing Places, Asobo, and Gaya to bring this incredible addition to the Microsoft Flight Simulator world to life. The update comprises 12 areas of interest (AOIs) rendered using updated photogrammetry, TIN (triangulated irregular network) surface texturing, and digital elevation model (DEM) data. Eight of these AOIs are located in Poland, two in Lithuania, one in Latvia, and one in Estonia.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Microsoft Flight Simulator World Update 23: Poland and the Baltics is FREE to all owners of Microsoft Flight Simulator. Ensure that your simulator is updated to the latest version, download World Update 23, and explore the wonders of Estonia, Latvia, Lithuania, and Poland. The sky is calling!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Read more information here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2537590"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2537590/view/1847286114046193"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-26T18:11:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-2537590",
+      "checkedAt": "2026-11-19T11:48:11.765Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-26T18:11:27.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2537590",
+      "checkedAt": "2026-11-19T11:48:11.765Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-26T18:11:27.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:18.261Z"
+  },
+  {
+   "id": "microsoft-flight-simulator-2024-252830@7.1",
+   "gameId": "microsoft-flight-simulator-2024-252830",
+   "displayName": "Update 7.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-23T16:40:37.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"https://clan.fastly.steamstatic.com/images//45216946/b3c18192d99bc41723686e10785dd34daef97e88.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "RELEASE NOTES Sim Update 7.1 - Release - 1.9.21.0",
+     "items": [
+      {
+       "text": "If you are playing on PC, outdated packages in your community folder may have an unexpected impact on the title’s performance and behavior.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "If you suffer from stability issues or long loading times, move your community package(s) to another folder before relaunching the title.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2537590"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2537590/view/1847286114037158"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-23T16:40:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-2537590",
+      "checkedAt": "2026-11-19T11:48:11.764Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-23T16:40:37.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2537590",
+      "checkedAt": "2026-11-19T11:48:11.764Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-23T16:40:37.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:18.261Z"
+  },
+  {
+   "id": "microsoft-flight-simulator-2024-252830@7",
+   "gameId": "microsoft-flight-simulator-2024-252830",
+   "displayName": "Update 7",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-13T22:44:53.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"https://clan.fastly.steamstatic.com/images//45216946/b3c18192d99bc41723686e10785dd34daef97e88.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "RELEASE NOTES Sim Update 7 - Release - 1.9.18.0",
+     "items": [
+      {
+       "text": "If you are playing on PC, outdated packages in your community folder may have an unexpected impact on the title’s performance and behavior. If you suffer from stability issues or long loading times, move your community package(s) to another folder before relaunching the title.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2537590"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2537590/view/1846651706672616"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-13T22:44:53.000Z",
+      "verification": "official",
+      "sourceId": "steam-2537590",
+      "checkedAt": "2026-11-19T11:48:11.764Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-13T22:44:53.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2537590",
+      "checkedAt": "2026-11-19T11:48:11.764Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-10-13T22:44:53.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:18.260Z"
+  },
+  {
+   "id": "microsoft-flight-simulator-2024-252830@6",
+   "gameId": "microsoft-flight-simulator-2024-252830",
+   "displayName": "Update 6",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-08-13T18:03:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"https://clan.fastly.steamstatic.com/images//45216946/b3c18192d99bc41723686e10785dd34daef97e88.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "RELEASE NOTES Sim Update 6 - Release - 1.8.14.0",
+     "items": [
+      {
+       "text": "If you are playing on PC, outdated packages in your community folder may have an unexpected impact on the title’s performance and behavior. If you suffer from stability issues or long loading times, move your community package(s) to another folder before relaunching the title.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2537590"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2537590/view/1840944183777571"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-13T18:03:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-2537590",
+      "checkedAt": "2026-11-19T11:48:11.763Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-08-13T18:03:05.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2537590",
+      "checkedAt": "2026-11-19T11:48:11.763Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-08-13T18:03:05.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:24:18.239Z"
+  },
+  {
+   "id": "microsoft-flight-simulator-2024-252830@22",
+   "gameId": "microsoft-flight-simulator-2024-252830",
+   "displayName": "Update 22",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-02T20:03:41.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Watch YouTube Video",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Microsoft Flight Simulator: World Update 22 celebrates the beauty of the United States in honor of the nation’s 250th birthday!",
+     "items": [
+      {
+       "text": "The United States of America is home to some of the most beautiful landscapes in the world, including breathtaking mountains, serene coastlines, austere deserts, and lush forests. The nation protects these beautiful natural wonders in world-renowned national parks and national forests like Death Valley National Park, Olympic National Park, Acadia National Park, and Mount Hood National Forest. Microsoft Flight Simulator highlights the magnificence and heritage of America’s famed destinations for pilots in World Update 22, released in conjunction with and in celebration of the 250th anniversary of the country. The update also includes a series of missions for pilots to immerse themselves in the grandeur of these remarkable protected lands.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45216946/e9ebf2c651c032a3af5d70fb476b1f8891c8c851.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Microsoft Flight Simulator team partnered with Bing Places, Vexcel, Gaya, and Asobo to create World Update 22. The 250th anniversary of the United States is a historic milestone, and Microsoft Flight Simulator has created World Update 22 to reflect the country’s beauty. The immense update includes 31 areas of interest (AOIs) rendered using updated photogrammetry, TIN (triangulated irregular network) surface texturing, and digital elevation modeling (DEM). Areas of interest throughout the United States in this update include:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Arches National Park: Located just north of the city of Moab in eastern Utah, this park protects some of the natural world’s most intriguing forms, sandstone arches and related features.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Badlands National Park: Located in South Dakota, this national park features steeply eroded buttes of colorful sediment and vast stretches of prairie.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Big Bend National Park: A massive swath of southwestern Texas wilderness characterized by rugged mountains, windswept plains, and airy solitude is protected by this park.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Black Canyon of the Gunnison National Park: Located in western Colorado, this area protects the deep, steeply incised Black Canyon of the Gunnison River, a landscape defined by ancient dark Precambrian rock.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bryce Canyon National Park: One of the gems of southern Utah, it features a stunningly beautiful high natural amphitheater of stone spires, multi-colored cliffs, meadows, and stands of forest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45216946/0d4a3cdbeffdc3b1d8112ae230ca9b073e43a0d0.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Canyon de Chelly National Monument: Located on Navajo tribal lands in northeastern Arizona, it features ancient cliff ruins, prehistoric rock art, cliffs, and dramatic spires.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Canyonlands National Park: Located in southeastern Utah, this area is defined by sweeping vistas of bare rock, soaring towers, and the Colorado and Green Rivers that course through this wilderness of stone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45216946/863b1268b34ab2826667ac63bdbf4c282a990cdb.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Capitol Reef National Park: Located in south-central Utah, visitors can find some of America’s most beautiful desert landscapes including sheer cliffs, towers, and natural arches.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Carlsbad Caverns National Park: Located in southeastern New Mexico’s Chihuahuan Desert, there are a diverse array of caves amid a beautiful desert landscape.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crater Lake National Park: Located in south-central Oregon, visitors can find one of the world’s most fascinating landscapes, Mount Mazama and Crater Lake within its caldera.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Death Valley National Park: An enormous, multifaceted desert wilderness in eastern California and adjacent Nevada.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Grand Teton National Park: Located in northwestern Wyoming, the steep, dramatic Grand Tetons and some of the world’s most spectacular mountains serve as a stunning backdrop including parts of Jackson Hole.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45216946/1153fa0d99d70a83242390327cac414be7d3ed61.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Great Basin National Park: Located in eastern Nevada near the border with Utah, the park protects high mountains, stands of ancient bristlecone pines, and several species of wildlife.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Great Sand Dunes National Park: Located in south-central Colorado, visitors will find one of the natural world’s most distinctive wonders: a massive dune field pressed against the Rocky Mountains, the world’s largest alpine valley.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Guadalupe Mountains National Park: Located in in west Texas, just south of the New Mexico border, Guadalupe Mountain National Park features the state’s highest mountain, Guadalupe Peak, extensive grasslands, and wildlife.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Joshua Tree National Park: Located in the desert region of southern California, it features a vast region of evocative boulders, peaks, and its namesake, the iconic Joshua Tree.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Kings Canyon National Park: Located in California’s southern Sierra Nevada mountains, this park encompasses some of the most beautiful high mountain wilderness in the United States, including soaring granite peaks, deep glacially carved valleys, rushing rivers, and high alpine lakes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lassen Volcanic National Park: Home to several hydrothermal sites, cinder cones, and its highest point, Lassen Peak, this park in northern California also features a dormant active volcano.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mesa Verde National Park: Located in the southwest corner of Colorado, it preserves the largest collection of archaeological sites in the United States and the stunning wilderness surrounding them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mount Hood National Forest: Located in north-central Oregon, this forest features extensive stands of Pacific Northwest Forest, Mount Hood, Oregon’s highest point and one of the Cascade Range’s most notable volcanic peaks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "North Cascades National Park: Located in northern Washington state, this park protects the heart of the North Cascade Range, defined by rugged and heavily glaciated alpine landscapes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45216946/3c42c887242954a0aa396f7d5f0f9b327b2e3723.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Olympic National Park: Located on the Olympic Peninsula of northwestern Washington State, featuring a massive wilderness of glaciated peaks, temperate rainforest, and rugged coastline.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Petrified Forest National Park: Located in northeastern Arizona, with the Painted Desert, ancient ruins and rock art capturing visitors’ attention, and the Rainbow Forest, an extensive collection of petrified wood.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pinnacles National Park: Protects a unique landscape in California’s Coast Ranges comprising an extinct volcano moved by actions of the San Andreas Fault.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Redwood National Park: Located in northern California along the Pacific coastline, featuring the Coast Redwood, the tallest tree species on Earth.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rocky Mountain National Park: Located northwest of Denver, Colorado, visitors will find some of the most beautiful and captivating alpine wilderness found anywhere on the planet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Saguaro National Park: Located in southern Arizona, it protects extensive stands of the Saguaro Cactus, iconic of the Desert Southwest, and a beautiful surrounding desert landscape.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sequoia National Park: Located in California’s southern Sierra Nevada mountains, this park protects stands of giant sequoia trees, the largest living species on Earth.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Theodore Roosevelt National Park: Located in western North Dakota, it is a paradise of meandering rivers, extensive grasslands, and broad mesas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Wind Cave National Park: Located in southwestern South Dakota, the park features extensive rolling prairie roamed by large herd of free-roaming American bison.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Zion National Park: Located in southwestern Utah, the park protects a unique region defined by sandstone cliffs, desert monoliths, rivers, and lush stands of forest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45216946/0a3f9e69929bd7ad7e01b790a28d7aa1d8c9e471.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Microsoft Flight Simulator World Update 22: United States National Parks also includes 46 of points of interest (POIs), including visitor centers, lodges, lookouts, resorts, and spectacular natural wonders like Shiprock in northwestern New Mexico, the Totem Pole in Arizona, and Delicate Arch in Utah, among many others along with three guided tours and nine discovery flights.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Guided Tours",
+     "items": [
+      {
+       "text": "The guided tour is a new mission type debuting in this release that provides detailed narratives of locations while Microsoft Flight Simulator pilots explore the areas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bryce Canyon National Park: Take to the skies above one of Utah’s famed national parks in an Airbus Helicopters H125 helicopter in this Microsoft Flight Simulator Guided Tour. Your tour guide will help you navigate to some of the park’s most spectacular sights like Sunrise Point and Pink Cliffs while explaining the natural and human history of this spectacular area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Grand Canyon National Park: This Microsoft Flight Simulator Guided Tour begins on the South Rim of Arizona’s Grand Canyon of the Colorado River and explores some of the most stunning features that have made this such a renowned destination, including The Dragon, Point Imperial, and Buddha Temple. Your tour guide provides background on natural history, human history, and gives insight on specific points of interest while you explore the Grand Canyon in a Draco X.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Grand Teton National Park: Explore the stunning Grand Teton mountains and Jackson Hole region of northwestern Wyoming in a Diamond Aircraft DA62 in this Microsoft Flight Simulator Guided Tour. The itinerary starts in Jackson Hole and winds up Moran Canyon to the Cathedral Group, which comprises the highest peaks of the area, including Grand Teton. Your tour guide will provide you with intriguing facts about the area’s natural and human history as you soar above some of the most spectacular mountain scenery in the world. The Grand Teton Guided Tour includes a beautifully handcrafted rendition of Jackson Hole Airport (KJAC) by Microsoft Flight Simulator’s long-term partner, Gaya.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45216946/9082a7569f5d602885a37cc842416008f9a4d3d2.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Discovery Flights",
+     "items": [
+      {
+       "text": "Acadia National Park: Located on Mount Desert Island and surrounding lands of the middle coast of Maine, this park protects a unique mountain and coastal environment.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Arches National Park: Located just north of the city of Moab in eastern Utah, visitors will find some of the natural world’s most intriguing forms, natural sandstone arches, spires, and balancing rocks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crater Lake National Park: Oregon’s famous national park protects one of the world’s most intriguing creations, Mount Mazama, and the lake within its caldera, Crater Lake.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dry Tortugas National Park: Located 70 miles west-northwest of Key West, Florida, is one of America’s smallest, least visited, and most intriguing national parks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Everglades National Park: Located on the southern tip of the Florida Peninsula, is a paradise of wetlands, coastline, and wildlife.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Great Smoky Mountains National Park: Located along the border of the U.S. states of Tennessee and North Carolina, featuring the central portion of the Great Smoky Mountains, a subrange of the Appalachian Mountains.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Olympic National Park: Located on the Olympic Peninsula of northwestern Washington State, with a massive wilderness of glaciated peaks, temperate rainforest, and rugged coastline.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Zion National Park: Located in southwestern Utah and protecting a unique region defined by sandstone cliffs, desert monoliths, rivers, and lush stands of forest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45216946/6cb795899536e502907b64a1c095378d14a59de8.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Microsoft Flight Simulator World Update 22: United States National Parks is FREE to all owners. Ensure that your simulator is updated to the latest version, download World Update 22, and celebrate the magnificence of the United States. The sky is calling!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Microsoft Flight Simulator 2024 is available for Xbox Series X|S and PC with Xbox Game Pass, PC Game Pass, Windows, and Steam, PlayStation 5, and on supported mobile phones, tablets, and lower-spec PCs via Xbox Cloud Gaming. For the latest information on Microsoft Flight Simulator, stay tuned to @MSFSOfficial on X (formerly known as Twitter) or visit our website at: www.flightsimulator.com.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "xboxSeries"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 57,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-2537590"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2537590/view/1836506165568946"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-02T20:03:41.000Z",
+      "verification": "official",
+      "sourceId": "steam-2537590",
+      "checkedAt": "2026-11-19T11:48:11.762Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-02T20:03:41.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2537590",
+      "checkedAt": "2026-11-19T11:48:11.762Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-07-02T20:03:41.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:19:04.777Z"
+  },
+  {
+   "id": "microsoft-flight-simulator-2024-252830@5.1",
+   "gameId": "microsoft-flight-simulator-2024-252830",
+   "displayName": "Update 5.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-06-29T20:12:16.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"https://clan.fastly.steamstatic.com/images//45216946/b3c18192d99bc41723686e10785dd34daef97e88.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Microsoft Flight Simulator 2024 | Sim Update 5.1 – Release Notes – 1.7.35.0",
+     "items": [
+      {
+       "text": "If you are playing on PC, outdated packages in your community folder may have an unexpected impact on the title’s performance and behavior.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "If you suffer from stability issues or long loading times, move your community package(s) to another folder before relaunching the title.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Stability & Performance",
+     "items": [
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved handling of texture mip streaming quality during high memory pressure conditions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved terrain degradation when memory is getting low.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various crashes and improved memory usage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Glass Cockpits",
+     "items": [
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue with the electrical system that caused some avionics & systems to think that a circuit had been powered off periodically causing some reboots and loss of function.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Career",
+     "items": [
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mission availability times now take runway lighting systems at both the departure and arrival airports into account, allowing missions to start or end at night when adequate lighting is available.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "General Bug Fixes",
+     "items": [
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed burn ground effect in firefighting missions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "On PlayStation 5, fixed an issue that would prevent to launch heavy cargo missions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Traffic",
+     "items": [
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Air Traffic",
+     "items": [
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed 3rd Party Traffic add-on problem with pushback not working.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "SDK",
+     "items": [
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "On PlayStation 5, fixed HTTPS request failure from Coherent due to SSL handshake error.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Audio",
+     "items": [
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed attenuation factors being calculated with a one frame delay for legacy sounds (based on WAV files)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "WASM API",
+     "items": [
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed base address for virtual allocs of WASM modules linear memory on PS5 (avoids crash with the Aerostar 600)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Fixed WASM failures on PS5 when modules have been built with SDK 1.6.9 and higher (avoids crashes with the 2024 version of the ATR)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Added support for dynamic VFS on-demand files to avoid using too much memory when accessing streamed files through WASI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "JS API",
+     "items": [
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes swapped parameters in new JS map listener weather radar methods added in SU5.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 15,
+    "balance": 0,
+    "other": 19,
+    "ps5": 4
+   },
+   "sourceIds": [
+    "steam-2537590"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2537590/view/1836506165560919"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-29T20:12:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-2537590",
+      "checkedAt": "2026-11-19T11:48:11.761Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-06-29T20:12:16.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2537590",
+      "checkedAt": "2026-11-19T11:48:11.761Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-06-29T20:12:16.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:19:04.775Z"
+  },
+  {
+   "id": "microsoft-flight-simulator-2024-252830@21",
+   "gameId": "microsoft-flight-simulator-2024-252830",
+   "displayName": "Update 21",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-05T15:32:44.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Available today, World Update 21: Australia sets a new standard in realism for pilots in the Microsoft Flight Simulator world!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Australia is home to some of the world’s most spectacular sights and destinations, including stunning coastlines, vast deserts, beautiful mountains, and architectural marvels. Renowned attractions include the Sydney Opera House, one of the most distinctive structures in the world; the Twelve Apostles, iconic sea stacks on the Southern Ocean coastline; vast sweeps of interior desert; and lush stands of rainforest. World Update 21 delivers Australia to Microsoft Flight Simulator aviators like never before and includes a collection of missions for pilots to explore some of the finest sights that this wonderful country offers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Microsoft Flight Simulator team partnered with Bing Maps, Vexcel, Gaya and Asobo to create World Update 21, the first update to Australia in the Microsoft Flight Simulator world since we released World Update 7 in January of 2021. An immense update that sets new standards in lifelike realism and visual fidelity, the release includes 40 areas of interest (AOIs) recreated using updated photogrammetry and TIN (triangulated irregular network) surface texturing. Coverage of AOIs spans all six Australian states and its two main self-governing territories. Areas of interest throughout Australia’s regions covered in this update include:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New South Wales",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45216946/fc34c1961621def652034de90571728aa322c993.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Albury: Located on the Bank of the Murray River, a popular tourist metropolitan area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Blue Mountains: Known for sandstone cliffs, deep gorges, and iconic geologic formations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Central Coast: Region of several national parks, beaches, and several picturesque towns.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Chatswood: Bustling commercial suburb in Sydney’s Lower North Shore.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Coffs Harbour: Locally called Coffs, this city is where lush mountains meet beautiful beaches of the Mid North Coast.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Minto: A modern suburb of southwestern Sydney.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Newcastle-Maitland: Located adjacent to one another north of Sydney, Newcastle is known for its beaches and Maitland is a gateway to renowned Hunter Valley vineyards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Springwood: Nestled in the Blue Mountains, a historic town that serves as a gateway to several regional natural areas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Sydney: The capital of New South Wales and Australia’s most populous city, it is widely heralded as one of the world’s most sophisticated metropolitan areas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Wagga Wagga: Australia’s most populous inland city, known for its beautiful botanic gardens and rich Aboriginal history.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Wollongong: Internationally famous for its dramatic coastal setting and surfing beaches.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Queensland",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45216946/d59b215e1f866b9832d726ef7d90563c49444af6.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Brisbane: The capital of Queensland, a modern, outdoor-oriented city hosting the 2032 Olympics.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bundaberg: Located on the southern Queensland coast, it is one of the major gateways to the Great Barrier Reef and an important sugar cane hub.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cairns: Located in coastal North Queensland, it is also one of the key entry points to the Great Barrier Reef and Wet Tropics rainforest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gold Coast: Coastal region known for surfside skyscrapers and expansive beaches.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hervey Bay: Located on the southern Queensland coast, one of Australia’s premier whale watching destinations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Kippa-Ring: A renowned commercial suburb in the city of Moreton Bay on the Redcliffe Peninsula along Queensland’s southern coast.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mackay: Called the “sugar capital” of Australia, it is a beautiful port city on Queensland’s central coast and serves the sugar cane processing and mining industries.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sunshine Coast: One of Australia’s premier travel destinations due to its white-sand beaches, surfing, and the Australia Zoo.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Toowoomba: Australia’s second most populous inland city, known as the “Garden City” due to its more than 150 parks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Townsville: Located on the northeastern coast of Queensland adjacent to the central portion of the Great Barrier Reef; a major industrial hub.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "South Australia",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45216946/8e9a32525378f4030290973512b14544ea5ab850.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adelaide: The coastal capital of South Australia, a planned city surrounded by lush parks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Woodcroft: Picturesque suburb of southern Adelaide.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Tasmania",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45216946/d1443610a3d134cbeb77aa045097e9597071af44.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hobart: The capital of and largest city in Tasmania known for its dramatic natural setting and colonial buildings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Launceston: A historic city in northern Tasmania known for its 19th-century architecture.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Victoria",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45216946/61703efc9c8028490963ba667b9a1fbd4fa0d111.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Melbourne: The capital of Victoria, and Australia’s center of culture and sports.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Geelong: A major port city known for its rich history, the eastern anchor of the famous Great Ocean Road.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bendigo: A town known for its 1850s gold rush history and Victorian-era architecture.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Frankston: Located on the eastern coast of Port Phillip, southeast of Melbourne, known for its beaches and boardwalk.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mildura: Located in northwestern Victoria along the border with New South Wales, a major producer of grapes, citrus, and dried fruits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Moorabbin: A key suburb in the greater Melbourne metropolitan area, a renowned aviation destination, notably due to the Moorabbin Air Museum.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mooroolbark: a key suburb of Outer Eastern Melbourne known for its Aboriginal history.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shepparton: This diverse city in northern Victoria is known for its agricultural vibrancy, notably its fruit processing industry.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Western Australia",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45216946/e169aa91fa2a4413e183abf1f5162eebc3a1bf67.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Perth: The capital of Western Australia known for its beautiful beaches, surrounding desert national parks, and its relative isolation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Jandakot: A southern suburb of Perth, a major aviation hub due to its busy general aviation airport, Jandakot Airport (YPJT), and several aviation-related industries like flight training and air tourism.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Joondalup: Located just inland of the Indian Ocean, it is a major northern suburb of Perth that is often called the “city of the north.”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mandurah: A vibrant coastal city south of Perth known for its large estuary with abundant bird and maritime wildlife.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bunbury: A coastal city south of Perth, called the “city of dolphins” and known for its beaches and marine life.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Australian Capital Territory",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45216946/5421d797cf6ed76d17016e4fc462cd924ac9fa99.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Canberra: The national capital of Australia, it is one of the world’s best known planned cities and features stunning architecture and several renowned urban parks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Northern Territory",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45216946/001ff345a6e38afecf518db36f2ef1eaf58e5d17.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Darwin: The capital and most populous city of Australia’s Northern Territory known as the center of the Northern Territory’s extensive natural attractions, including coastal and desert destinations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Microsoft Flight Simulator: World Update 21 also includes dozens of points of interest (POIs), including parks, dams, lighthouses, observatories, and major buildings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The update comprises six meticulously handcrafted airports from Microsoft Flight Simulator’s long-term partner, Gaya:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Broken Hill Airport (YBHI): Located deep in the outback desert of far-western New South Wales, it is a key regional hub for the area and an important base for the Royal Flying Doctor Service, which services healthcare to Australia’s rural and remote regions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45216946/2d21d79c8cb35d6b64fc6bcb79345cbddddf4ab6.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Broome International Airport (YBRM): Located on the Indian Ocean coast of the northwestern part of Western Australia, this airport is known as the Gateway to the Kimberley, a renowned desert and coastal wilderness area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45216946/5d762c859594341e4a230992e55c04e94078733b.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Coober Pedy Airport (YCBP): Located amid the world’s premier opal mining region in the outback of South Australia, this airport is a small facility with a paved runway and a gravel runway serving the town of Coober Pedy and surroundings.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45216946/933ddfd3b9b05fcb5656191b59e618c6cea815ba.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bathurst Airport (YBTH): A small airport located outside the New South Wales town of Bathurst in Australia’s Central Tablelands region, an area known for its beautiful low mountains.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45216946/fab29166f7141ca999988999b34e4012e28f0507.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "RAAF Base Tindal / Katherine Tindal Airport (YPTN): Located to the east-southeast of the town of Katherine in Australia’s Northern Territory, this is a dual-use military (Royal Australian Air Force, RAAF) / civilian aerodrome.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45216946/1b94f263946c9a53333dfef53e6e30f828030a85.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lord Howe Island Airport (YLHI): This small airport provides air transportation to Lord Howe Island. Prior to its opening in September 1974, Lord Howe Island was served by flying boats. YLHI is an important transit and refueling point for light aircraft flying between Australia and New Zealand.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45216946/db707abcb929ced1b42c7d72441e67472f69738e.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Microsoft Flight Simulator World Update 21: Australia features several incredible missions for both Microsoft Flight Simulator (2020) and Microsoft Flight Simulator 2024.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Microsoft Flight Simulator 2024 World Update 21 Missions",
+     "items": [
+      {
+       "text": "Three Discovery Flights: Canberra, Cocos Islands, and Whitsunday Islands",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Five Precision Landings: Broome International Airport (YBRM) in a Boeing 737, Coober Pedy Airport in a CubCrafters XCub, RAAF Base Tindal / Katherine Tindal Airport (YPTN) in a Boeing F/A-18 Super Hornet, Mount Wedge helipad (Y904T) in a Robinson R66 helicopter, and South Solitary Island (YUXF1) in a Robinson 66 helcopter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Two Low Altitude Challenges: Lake Eildon in a Boeing F/A-18 Super Hornet and Kimbolton in a Aero Vodochody L-39 Albatros",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Two Rally Race Challenges: Three Sisters and the Twelve Apostles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Microsoft Flight Simulator (2020) World Update 21 Missions",
+     "items": [
+      {
+       "text": "Three Discovery Flights: Canberra, Cocos Islands, and Whitsunday Islands",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Three Landing Challenges: Broome International Airport (YBRM) in an Airbus A320, Coober Pedy Airport in a CubCrafters XCub, and RAAF Base Tindal / Katherine Tindal Airport (YPTN) in a Boeing F/A-18 Super Hornet",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "One Bush Trip: Australia’s Great Ocean Road",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Microsoft Flight Simulator World Update 21: Australia is FREE to all owners of Microsoft Flight Simulator. Ensure that your simulator is updated to the latest version, download World Update 21, and explore the wonders of Australia. The sky is calling!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Microsoft Flight Simulator is available for Xbox Series X|S and PC with Xbox Game Pass, PC Game Pass, Windows, and Steam, PlayStation 5, and on Xbox One and supported mobile phones, tablets, and lower-spec PCs via Xbox Cloud Gaming. For the latest information on Microsoft Flight Simulator, stay tuned to @MSFSOfficial on X (formerly known as Twitter) or visit our website at: www.flightsimulator.com.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "xboxSeries"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 12,
+    "fixed": 0,
+    "balance": 0,
+    "other": 63,
+    "ps5": 1,
+    "topNew": [
+     "[img src=\"{STEAM_CLAN_IMAGE}/45216946/fc34c1961621def652034de90571728aa322c993.png\"]",
+     "Albury: Located on the Bank of the Murray River, a popular tourist metropolitan area.",
+     "Blue Mountains: Known for sandstone cliffs, deep gorges, and iconic geologic formations."
+    ]
+   },
+   "sourceIds": [
+    "steam-2537590"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2537590/view/1831432155580463"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-05T15:32:44.000Z",
+      "verification": "official",
+      "sourceId": "steam-2537590",
+      "checkedAt": "2026-11-19T11:48:11.759Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-05T15:32:44.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2537590",
+      "checkedAt": "2026-11-19T11:48:11.760Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-05-05T15:32:44.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:19:04.773Z"
+  },
+  {
+   "id": "microsoft-flight-simulator-2024-252830@5",
+   "gameId": "microsoft-flight-simulator-2024-252830",
+   "displayName": "Update 5",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-02-13T18:33:54.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45216946/71808e8adb2d88f9b80d5d98ccdce276c0d1556d.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Welcome to the Microsoft Flight Simulator 2024 Sim Update 5 public beta test!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Sim Update 05 Beta is now available on Steam, Windows PC, and Xbox.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "pc",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "The release notes for the first SU5 test build (1.7.6.0) can be found on our forums here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changes to Career/Challenge League in the Sim Update 5 Beta",
+     "items": [
+      {
+       "text": "Just like the recent Sim Update 4 Beta, Career and Challenge League will have separate progress and leaderboards from the live build.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This means Career mode progress in the live build will not carry over to the flighting build, and vice versa. In addition, Challenge League in the flighting build will have a separate leaderboard from the live build.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Making Career and Challenge League progress separate in the flighting build allows us to test additional changes and fixes that cannot be tested in the live build. All Career specializations will be unlocked by default in the flighting build to allow participants to preview changes that might not be available (based on Career mode progress) in the live build.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Will joining the Sim Update 5 Beta (and future Sim Update Betas) impact my progress in Career mode on the live build?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "No, Career mode progress is locked to the live build. No Career progress made in the flighting build will carry over to the live build. However, all Career mode specializations are unlocked by default in the flighting build.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Will my leaderboard records in Challenge League transfer when the flighting build becomes the live build?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "No, Challenge League leaderboards in the flighting build will always be separate from the live build.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Will progress in other game modes (Discovery, Free Flight, etc.) be separate in the flighting build and live build?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "No, only progress in Career and Challenge League are affected. This could change in the future.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Will content I own or purchase in the Marketplace be available on both the flighting build and the live build?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Yes, all content owned or purchased in the live build or the flighting build will always be available in both builds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please find instructions to join the Sim Update 05 Beta below. You must own Microsoft Flight Simulator 2024 (or have an appropriate Xbox Game Pass subscription) to participate on the platform of your choice.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "What to Know Before You Join",
+     "items": [
+      {
+       "text": "While in Multiplayer Mode, you will only see users who are in the same build as you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "How to Join or Leave the Beta on Steam",
+     "items": [
+      {
+       "text": "Open your Steam Library",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Right-click Microsoft Flight Simulator 2024",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Click “Properties”",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Click “Betas”",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Select “flight_sim_beta – Sim Update 5\"",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "If you would like to exit the pre-release test before it ends and revert back to the live build, follow these instructions:",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Open your Steam Library",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Right-click Microsoft Flight Simulator 2024",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Click “Properties”",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Click “Betas”",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Select “None”",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 17,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2537590"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2537590/view/1824644522840220"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-13T18:33:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-2537590",
+      "checkedAt": "2026-11-19T11:48:11.758Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-30T17:07:50.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-2537590",
+      "checkedAt": "2026-11-19T11:48:11.758Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-04-30T17:07:50.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:22:46.021Z"
+  },
+  {
+   "id": "microsoft-flight-simulator-2024-252830@20",
+   "gameId": "microsoft-flight-simulator-2024-252830",
+   "displayName": "Update 20",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-09-25T10:30:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45216946/41794042f617fceb19e37002461044eede65a77b.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Japan is a nation of beauty and intrigue, filled with breathtaking vistas of towering mountains, iconic architecture, and renowned cities. The country beholds some of the world’s most alluring and famous sights, including Mount Fuji, Japan’s highest mountain, Osaka Castle, a revered historical monument, and soaring skylines throughout Tokyo, Kyoto, Sapporo, and other metropolises. World Update 20 reveals Japan in stunning, vibrant detail—and the release comes with a great selection of missions throughout this storied country to immerse Microsoft Flight Simulator aviators in its beauty and history.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45216946/e97140204989556b49157bc8fdca5f010b1a7c6c.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Microsoft partnered with Bing Maps, Gaya, and Asobo to build World Update 20, one of the largest Flight Simulator world updates to date. The release includes 23 areas of interest recreated in vivid detail using updated photogrammetry and TIN (triangulated irregular network) surface texturing. Regions where new photogrammetry cities have been added include Hiroshima (1 AOI), Kyoto (1 AOI), Osaka (3 AOIs), Sapporo (2 AOIs), and Tokyo (16 AOIs).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The update also comprises 67 points of interest, including: Osaka Castle, one of the most important historical locations in Japan; Akinada Bridge, a beautiful suspension bridge that spans the Seto Inland Sea; Shosanbetsu Observatory, an important astronomical observatory; Enoshima Sea Candle, a distinctive lighthouse and observation tower; and Fukuoka Tower, the tallest seaside tower in Japan.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The update comes with five highly detailed, handcrafted airports from Microsoft’s long-term partner Gaya:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hokkaido Spaceport (JP-0052): Also known as Taiki Multi-Purpose Aerospace Park, this facility is located outside of Taiki Town on the island of Hokkaido and comprises a single asphalt runway.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Kitakyushu Airport (RJFR): Built on an artificial island outside of Kitakyushu on the Seto Island Sea, this airport comprises a single asphalt / concrete runway and is one of six in Japan that operates 24 hours per day.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rishiri Airport (RJER): located near the town of Rishiri on the volcanic island of Rishiri, the airport has a single asphalt runway.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Sado Airport (RJSD): Located in the city of Sado, on the island of Sado, the facility has a single asphalt runway.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Satsuma Iōjima Airport (RJX7): A private airfield in the village of Mishima, on the island of Iōjima, which comprises a single asphalt runway.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "World Update 20 features immersive missions for both Flight Simulator 2020 and 2024 that wonderfully showcase the areas highlighted in this release: three discovery flights, three landing challenges, one bush trip, and one spotlight event.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The discovery flights include: Chubu-Sangaku National Park, a renowned region of towering peaks and lush forests on the island of Honshū; Kyoto, one of the oldest cities in Japan; and Sapporo, the largest city on the island of Hokkaido.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Test your piloting skills at Ōmura Airport (RJFU) in a strong wind challenge; Rishiri Airport (RJER) in a famous challenge; and at Sado Airport (RJSD) in a famous challenge.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Visit Japan’s most famous mountains in the Mount Fuji to Mount Yōtei bush trip.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Take a discovery flight around the Makuhari Messe complex at the edge of Tokyo Bay in the spotlight event.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Additionally, World Update 20: Japan for Flight Simulator 2024 includes a low altitude challenge at Tsushima Island and a rally race challenge at Setonaikai National Park.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "World Update 20: Japan is FREE to all owners of Microsoft Flight Simulator. Ensure that your simulator is updated to the latest version (1.39.9.0 for MSFS 2020 / 1.5.27.0 for MSFS 2024 / 1.5.27.0 for MSFS2024 on Windows PC – Steam as of 09/25/2025), download World Update 20, and take to the skies throughout Japan!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Microsoft Flight Simulator is available for Xbox Series X|S and PC with Xbox Game Pass, PC Game Pass, Windows, and Steam, and on Xbox One and supported mobile phones, tablets, and lower-spec PCs via Xbox Cloud Gaming. For the latest information on Microsoft Flight Simulator, stay tuned to @MSFSOfficial on Twitter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 18,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2537590"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2537590/view/1811772772240522"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-25T10:30:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-2537590",
+      "checkedAt": "2026-11-19T11:48:11.756Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:19:04.619Z"
+  },
+  {
+   "id": "microsoft-flight-simulator-2024-252830@4",
+   "gameId": "microsoft-flight-simulator-2024-252830",
+   "displayName": "Update 4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-09-08T22:53:21.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45216946/ee9ea71fd2193f504ff5e486a6928474d991d4e0.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Welcome to the Microsoft Flight Simulator 2024 Sim Update 4 public beta test!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Sim Update 04 Beta is now available on Steam, Windows PC, and Xbox.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "pc",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "The release notes for the first SU4 test build (1.6.3.0) can be found on our forums here.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Changes to Career/Challenge League",
+     "items": [
+      {
+       "text": "Just like the recent Sim Update 3 Beta, Career and Challenge League will have separate progress and leaderboards from the live build.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This means Career mode progress in the live build will not carry over to the flighting build, and vice versa. In addition, Challenge League in the flighting build will have a separate leaderboard from the live build.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Making Career and Challenge League progress separate in the flighting build allows us to test additional changes and fixes that cannot be tested in the live build. All Career specializations will be unlocked by default in the flighting build to allow participants to preview changes that might not be available (based on Career mode progress) in the live build.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Will joining the Sim Update 4 Beta (and future Sim Update Betas) impact my progress in Career mode on the live build?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "No, Career mode progress is locked to the live build. No Career progress made in the flighting build will carry over to the live build. However, all Career mode specializations are unlocked by default in the flighting build.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Will my leaderboard records in Challenge League transfer when the flighting build becomes the live build?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "No, Challenge League leaderboards in the flighting build will always be separate from the live build.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Will progress in other game modes (Discovery, Free Flight, etc.) be separate in the flighting build and live build?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "No, only progress in Career and Challenge League are affected. This could change in the future.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Will content I own or purchase in the Marketplace be available on both the flighting build and the live build?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Yes, all content owned or purchased in the live build or the flighting build will always be available in both builds.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please find instructions to join the Sim Update 04 Beta below. You must own Microsoft Flight Simulator 2024 (or have an appropriate Xbox Game Pass subscription) to participate on the platform of your choice.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "What to Know Before You Join",
+     "items": [
+      {
+       "text": "MS Store PC Users: There is always a risk that you may have to re-install the sim when joining/leaving a flight, so please keep this in mind before participating.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you have MSFS content installed completely on a custom path, you will have a much lower chance that a full re-install will be necessary when the update is officially released. However, if your sim content is installed in the default path selected by the in-game content manager, you may have to reinstall the whole sim when moving from the test build to the public build. We recommend that those who wish to test with us ensure your sim content is located in a custom path before joining the flight to avoid full reinstallations in the future (Details on how to do this can be found here). The best set up would be for your store app to live on the default C: drive and sim content on a custom drive.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please remember if you decide to join the Beta and install the build, you will likely have to re-install your sim if you wish to leave the Beta before it ends. If you did not opt out of the last Beta, you will automatically stay in this Beta and receive the next build.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In addition, while in Multiplayer Mode, you will only see users who are in the same build as you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "##",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "How to Join or Leave the Beta on Steam",
+     "items": [
+      {
+       "text": "Open your Steam Library",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Right-click Microsoft Flight Simulator 2024",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Click “Properties”",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Click “Betas”",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Select “flight_sim_beta – Sim Update 4″",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "If you would like to exit the pre-release test before it ends and revert back to the live build, follow these instructions:",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Open your Steam Library",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Right-click Microsoft Flight Simulator 2024",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Click “Properties”",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Click “Betas”",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Select “None”",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Microsoft Flight Simulator 2024 Insider Program FAQ",
+     "items": [
+      {
+       "text": "Why transition to the website sign-up for flighting?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Moving forward, leveraging the website will allow us to send direct communication to participants who have opted-in (such as when a new flighting opportunity is available), create bespoke flighting audiences (such as specific groups focused on VR, accessibility, performance, etc.), and create private forums accessible to specific flighting participants. These tools will help us gather better feedback and reach more participants in the future.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I’m already participating in flighting for Microsoft Flight Simulator 2024, do I need to do anything?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steam users are unaffected by these changes, and the flight_sim_2024_beta branch will remain accessible to all flighting participants on Steam.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "We would still encourage all current participants to complete the website sign-up (including those participating on Steam), but it is not required at this time.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 24,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2537590"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2537590/view/1809869180177540"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-08T22:53:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-2537590",
+      "checkedAt": "2026-11-19T11:48:11.755Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-19T11:48:11.757Z"
+  },
+  {
+   "id": "microsoft-flight-simulator-2024-252830@3",
+   "gameId": "microsoft-flight-simulator-2024-252830",
+   "displayName": "Update 3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-08-20T15:28:39.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45216946/b3c18192d99bc41723686e10785dd34daef97e88.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "RELEASE NOTES Sim Update 3 - Release - 1.5.27.0",
+     "items": [
+      {
+       "text": "If you are playing on PC, outdated packages in your community folder may have an unexpected impact on the title’s performance and behavior.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "If you suffer from stability issues or long loading times, move your community package(s) to another folder before relaunching the title.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Content and Features",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added filters in controls settings menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added loading spinner when aircraft are loading",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Do not display Helipad/port markers when flying a plane",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reworked character / fauna / airport graphic settings for more coherence between platforms",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added ForceFlare parameter to LightAttributes section of FX files",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added fade in on images for Marketplace item, Profile, Briefing, Activities, HQ, Home, Career, Challenges, Controls, Install, Red Bull",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "It is now possible to click and drag on all the sliders of the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Click here to continue reading the Sim Update 3 Release Notes!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 0,
+    "balance": 1,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2537590"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2537590/view/1808601382414131"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-20T15:28:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-2537590",
+      "checkedAt": "2026-11-19T11:48:11.754Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:19:04.611Z"
+  },
+  {
+   "id": "microsoft-flight-simulator-2024-252830@11",
+   "gameId": "microsoft-flight-simulator-2024-252830",
+   "displayName": "Update 11",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-06-27T13:08:52.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Launched in celebration of FlightSimExpo 2025, held in Providence, Rhode Island in late June, City Update 11: Northeastern United States highlights several areas of interest (AOIs) across four northeastern U.S. states: Massachusetts, New Jersey, New York, and Rhode Island. This update comprises a spectacular mix of locations throughout this storied region of the United States, including portions of New England, one of the most important heritage areas in the nation. Microsoft and partners created each AOI using recent high-resolution aerial and satellite imagery, digital elevation models (DEMs), and TIN (triangulated irregular network) surface texturing. City Update 11 invites exploration throughout the sights of this historically renowned part of America, where each flight is filled with expansive vistas and intriguing landmarks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Areas of Interest included, by state",
+     "items": [
+      {
+       "text": "Massachusetts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Boston: The capital of and most populous city in the state of Massachusetts, Boston serves as the primary cultural, financial, and logistical hub of the New England region. Founded in 1630, Boston is one of the oldest cities in the United States and is one of the most renowned of the country’s heritage sites, notably due to its role in the American Revolution.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45216946/1a887c0f5012c377bbdc0bf67b519912200bb580.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Plymouth: The Mayflower Pilgrims landed at Plymouth in 1620, making it one of the most important historical sites in the United States. Called “America’s Hometown,” Plymouth is located 40 miles south of Boston and is the oldest settlement in New England.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Jersey",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Northeastern New Jersey: Cities include Newark, Hackensack, and Paterson, all of which are members of the greater New York metropolitan area. Newark, one of the oldest cities in the United States, is renowned for its contribution to the industrial development of the country and as a modern transportation hub. Hackensack is known for its historical importance during the American Revolution where George Washington established a headquarters. Paterson became a key location in the Industrial Revolution due to the energy supplied by the Great Falls of the Passaic River, around which the city was initially constructed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Central Jersey: This AOI focuses on cities in the eastern portion of Central Jersey, including Elizabeth, New Brunswick, and Edison. Elizabeth was the first capital of New Jersey and is one of the state’s oldest cities. New Brunswick played an important role in the American Revolution and is an important university center. Edison (originally called Raritan Township) was named after famed American inventor Thomas Edison who established his research laboratory in the area and created several important innovations, including the incandescent light bulb and the phonograph.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New York",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Brooklyn: Located on the western end of Long Island, Brooklyn is the most populous of the five boroughs of New York City. It lies just south of the borough of Queens and is connected to the borough of Manhattan by one tunnel and three bridges that span the East River. Brooklyn offers some of the most stunning views in all of New York City, notably of the Brooklyn Bridge, the East River, and lower Manhattan.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45216946/0e31b5963fecbfcbe2f54419e760af57e897a3c6.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Manhattan: Manhattan is one of the most renowned urban centers in the world. The smallest borough by area of the five boroughs that compose New York City, Manhattan is often cited as the capital of several global industries, including finance, media, and entertainment. Known for its iconic architecture, Manhattan is home to the tallest building in both the United States and the Western Hemisphere, One World Trade Center (1,776 feet tall), and the second tallest in the Nation and the Western Hemisphere, Central Park Tower (1,550 feet tall).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45216946/868432f997b1a24d6fd1e4874a46087da383a9da.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Long Island’s East End: One of the most beautiful areas in the northeastern United States, Long Island’s East End is renowned for its pastoral landscapes, historic villages, colonial architecture, and maritime vistas. The update includes Southampton, one of the core towns of the well-known Hamptons resort area, and Montauk, the easternmost point in New York State and home to the spectacular Montauk Point Lighthouse.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45216946/94f8500158ea990c60e1dff55d3b897ca4f823d0.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rhode Island",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The update’s Rhode Island AOI covers all major cities in the state, including Providence, Cranston, and Warwick. Providence, established in 1636, is the capital and most populous city in the state. Providence, along with the cities of Cranston and Warwick to its south, are located along the mouth of the Providence River at the northern extremity of Narragansett Bay, which opens to the Atlantic Ocean.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/45216946/6bdca744679c3425b7a8e53d3520c1f0047ccf9e.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "City Update 11: Northeastern United States is available FREE to all owners of Microsoft Flight Simulator. Ensure that you have the latest simulator version installed (1.38.2.0 for MSFS2020 / 1.3.23.0 for MSFS2024 / 1.3.25.0 for MSFS2024 on Windows PC - Steam as of 06/27/2025), download City Update 11, and take to the skies above the Northeastern United States!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Microsoft Flight Simulator is available for Xbox Series X|S and PC with Xbox Game Pass, PC Game Pass, Windows, and Steam, and on Xbox One and supported mobile phones, tablets, and lower-spec PCs via Xbox Cloud Gaming. For the latest information on Microsoft Flight Simulator, stay tuned to @MSFSOfficial on Twitter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 0,
+    "balance": 0,
+    "other": 17,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2537590"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2537590/view/1803527891543242"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-06-27T13:08:52.000Z",
+      "verification": "official",
+      "sourceId": "steam-2537590",
+      "checkedAt": "2026-11-19T11:48:11.753Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:19:04.605Z"
+  },
+  {
+   "id": "microsoft-flight-simulator-2024-252830@10",
+   "gameId": "microsoft-flight-simulator-2024-252830",
+   "displayName": "Update 10",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-22T15:24:27.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This release spotlights a diverse selection of the country’s most beautiful locations, from Dallas, Texas to Honolulu, Hawaii.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Microsoft Flight Simulator City Update 10: United States I delivers five spectacular cities throughout the United States in vibrant detail: Dallas and Fort Worth, Texas; Denver, Colorado; San Francisco, California; and Honolulu, Hawaii. Each city has been crafted using the latest aerial and satellite imagery, digital elevation models (DEMs), and TIN (triangulated irregular network) surface texturing. The exquisite detail offered in this latest release will inspire aviators to explore these storied cities and admire their landmarks throughout every season, at any time of the day or night.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Dallas and Fort Worth, Texas",
+     "items": [
+      {
+       "text": "Dallas, and its sister city to the west, Fort Worth, were established in the 1800s as railroad hubs to serve the cotton, livestock, and oil industries of Texas. Today, the Dallas-Fort Worth Metroplex, a key urban anchor in north Texas, is the most populous metropolitan area in the state. The region is a major international hub of several industries, including manufacturing, defense, finance, and tourism. The metroplex offers spectacular sights, including the iconic Fountain Place and a 720-foot-tall modernist skyscraper in Dallas; 777 Main Street in Fort Worth, a striking building that stands 525 feet tall; and the 561-foot-tall Reunion Tower, one of the most recognizable buildings in Dallas.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Denver, Colorado",
+     "items": [
+      {
+       "text": "Known as the “Mile High City” (its official elevation is 5,280 feet, exactly one mile above sea level), Denver is both the most populous city in Colorado and the state’s capital. Established in 1858 by prospectors who led what would come to be known as the Pike’s Peak gold rush, Denver became an important railroad city in 1870. It blossomed into a major metropolitan center in the 20th century, characterized by a stunning skyline set against the high Rocky Mountains. Some of the sights for pilots to behold include Republic Plaza, the city’s highest building at 714 feet; 1144 Fifteenth, one of the world’s most spectacular modern skyscrapers; the Rocky Mountains to its west; and the vast, oceanic plains east of Denver.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "San Francisco, California",
+     "items": [
+      {
+       "text": "Called by many the most beautiful city in the world, San Francisco is squarely located where the San Francisco Bay opens to the Pacific Ocean. The city was formally established in 1850 due to the boom in population from the California Gold Rush, which began in 1848. Set along a spectacular section of Pacific Ocean coastline, San Francisco offers a wonderful selection of sights, including the world-renowned Golden Gate Bridge; the iconic Transamerica Building; Alcatraz Island; and the San Francisco-Oakland Bay Bridge.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Honolulu, Hawaii",
+     "items": [
+      {
+       "text": "The capital and most populous city of the state of Hawaii, Honolulu is known for its beautiful architecture set against the tropical blue and green waters of the Pacific Ocean. Located on the southeastern coast of the island of Oahu, Honolulu boasts human history that dates back many centuries and was incorporated as a city in 1907. Meaning “sheltered port” in Hawaiian, Honolulu features numerous sights for the aerial visitor, including its spectacular skyline; Diamond Head, an extinct volcanic cone just to the southeast of the city; the waters of the Pacific Ocean; and the spectacular Koʻolau Range inland of the metropolitan area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "City Update 10: United States I is available FREE to all owners of Microsoft Flight Simulator and Microsoft Flight Simulator 2024. Ensure that you have the latest simulator version installed, download City Update 10, and explore. The sky is calling!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Microsoft Flight Simulator and Microsoft Flight Simulator 2024 are available for Xbox Series X|S and PC with Xbox Game Pass, PC Game Pass, Windows, and Steam, and on Xbox One and supported mobile phones, tablets, and lower-spec PCs via Xbox Cloud Gaming. For the latest information on Microsoft Flight Simulator products, stay tuned to @MSFSOfficial on X (formerly Twitter) or visit www.flightsimulator.com.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2537590"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2537590/view/1797185861802258"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-22T15:24:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-2537590",
+      "checkedAt": "2026-11-19T11:48:11.752Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:22:45.989Z"
+  },
+  {
+   "id": "microsoft-flight-simulator-2024-252830@1.3.25.0",
+   "gameId": "microsoft-flight-simulator-2024-252830",
+   "displayName": "Update 1.3.25.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-03-28T15:09:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We have just deployed a hotfix to resolve an issue affecting Steam users launching MSFS 2024 for the first time. This is a Steam-only build and will not be deployed to players on PC (MS Store) or Xbox.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "pc",
+        "xboxSeries"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "RELEASE NOTES Sim Update 1 - Release - 1.3.25",
+     "items": [
+      {
+       "text": "Fixed an issue which sometimes prevented the Xbox account sign-in UI from appearing when launching Microsoft Flight Simulator 2024 for the first time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "xboxSeries"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2537590"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2537590/view/1795283637855612"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-28T15:09:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-2537590",
+      "checkedAt": "2026-11-19T11:48:11.751Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:22:45.986Z"
+  },
+  {
+   "id": "microsoft-flight-simulator-2024-252830@2",
+   "gameId": "microsoft-flight-simulator-2024-252830",
+   "displayName": "Update 2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-03-25T17:44:16.000Z",
+   "notes": [
+    {
+     "title": "RELEASE NOTES Sim Update 2 - Release - 1.4.20.0",
+     "items": [
+      {
+       "text": "If you are playing on PC, outdated packages in your community folder may have an unexpected impact on the title’s performance and behavior.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "If you suffer from stability issues or long loading times, move your community package(s) to another folder before relaunching the title.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Windows PC/Steam",
+     "items": [
+      {
+       "text": "NVIDIA has released their latest GeForce Game Ready Driver (576.28), and we recommend all NVIDIA GPU owners update to the latest driver version. More recent NVIDIA driver versions resolve certain crashes with Microsoft Flight Simulator 2024 and improve performance and stability. More details available at: https://www.nvidia.com/en-us/drivers/details/245376/",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "New Content and Features",
+     "items": [
+      {
+       "text": "Dumps Console logs when reporting an issue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Renamed \"Gyro drift\" to \"Gyro drift compensation\" to be more in line with other assistance (ON: Less realistic, OFF: More realistic)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Readded turbulence assistance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a Wake Turbulence Visualization option",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a Wake Turbulence assistance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "It is now possible to filter seaplane base airports using the World Map filters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "A new validation process has been developed to give more information and control to aircraft developers over the Career compatibility.A new field has been added in the FLTSIM section \"targeted_specializations\" (supported by the SimObjectEditor) to list the expected specialization with which the given aircraft should be compatible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "During the ingestion process, the field will be compared to the result of the career compatibility process to confirm its result.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "A new field has been added in the FLTSIM section \"targeted_specializations\" (supported by the SimObjectEditor) to list the expected specialization with which the given aircraft should be compatible. During the ingestion process, the field will be compared to the result of the career compatibility process to confirm its result. THIS FIELD MUST BE FILLED TO BE COMPATIBLE WITH CAREER",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Stability & Performance",
+     "items": [
+      {
+       "text": "Added option to reduce rolling cache size, at the cost of clearing current cache.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved loading times for packages with lots of individual files",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where rapidly switching between tabs in the settings menu could lead to unexpected behavior and performance issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduced request count when loading models by precomputing model statistics on package ingestion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare crash when internet connection was lost.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash when suspending the sim on Xbox.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Improved the time it takes to open the in game panels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash when changing DLSS quality mode during VR.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Reduced performance hit when avatar is near objects with complex collisions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed crash when many avatars meet up online",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a potential infinite loading when importing config files",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare crash caused by live traffic",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved rolling cache usage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed crashes inside GPU drivers due to off-by-one error inside our texture loading code.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed double focus issue is UI Lists",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Aircraft Selector showing an empty tile when opened",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added more information to debug FPS panel (available VRAM on device, lat/long/alt, GPU) to make it easier to diagnose issues reported by users sharing screenshots in forums",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed crash when trying to remove a FacilityAirport from the cache while the QMID has no matching entry",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some infinite loadings on boot due to deadlocks inside IO code.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 9,
+    "fixed": 16,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2537590"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2537590/view/1799817379471250"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-15T15:09:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-2537590",
+      "checkedAt": "2026-11-19T11:48:11.752Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:22:45.985Z"
+  },
+  {
+   "id": "microsoft-flight-simulator-2024-252830@1",
+   "gameId": "microsoft-flight-simulator-2024-252830",
+   "displayName": "Update 1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-01-23T22:05:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "If you are playing on PC, outdated packages in your community folder may have an unexpected impact on the title’s performance and behavior.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "If you suffer from stability issues or long loading times, move your community package(s) to another folder before relaunching the title.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Marketplace",
+     "items": [
+      {
+       "text": "Many of you are eagerly anticipating the inclusion of the Marketplace. We are excited to share that the Marketplace is coming shortly, as we are making final tweaks to ensure it meets everyone’s expectations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Stability & Performance",
+     "items": [
+      {
+       "text": "Fixed rare crash during airport generation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed crash when selecting livery after reloading the game while not flying the default variation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed crash when using ‘Skip to’ feature at beginning of exam.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed potential crash when switching ON/OFF the VR mode during a flight",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Renamed “Bandwidth” to “Download” in DisplayFPS panel to avoid misinterpretation by the community",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Optimized texture memory usage of WASM gauges",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed crash when closing the game during package mounting.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed crash when many avatars meet up online",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed crash on Xbox that would occur when accessing areas close to the antemeridian, such as the Savusavu Airport (NFNS) for instance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Improved loading times for packages with lots of individual files",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "General Bug Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the controller was losing inputs if the user went into the filters advanced map layers leaves the sub menu then go back in it",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where going to the world map filters layers would sometimes soft lock the user when going to another page",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed community packages preventing streamed packages with the same name from being found by the sim.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed wrong HUD color (purple/white instead of green) on some aircraft",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed scene flickering on Xbox sometimes when memory usage is high",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Added profanity check on Callsign and FlightNumber in aircraft configurator",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where non selectable aircraft were not taken into consideration by various system after a mount/unmount or after a Build Package",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where going into a showcase “Fixed camera” in the camera panel would cause the camera to go in the cockpit view when reopening the same panel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed multiplayer nameplate display range to low",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed UI render issue of items outside of their frame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Deluxe/Premium/Aviator content not being streamed when booting the game for the first time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The camera panel no longer forces the cockpit view when opened",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed swapped colors between Offline and Online friends",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed missing music on legacy Discovery flight Activities",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed CLOCK_HOURS/MINUTES_INC/DEC events not behaving as expected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several time-related issues such as ZULU/CLOCK SET events not behaving as expected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed usage of real time instead of flight time when initializing switches (fixes light issues when starting a flight with a sim time that is different from the real time)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed community packages being duplicated inside content.xml on each boot. Already existing duplicates are removed from file on boot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Increased screen exposure under heavy cloud cover",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Backwards Compatibility Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed FS2020 planes exterior lights bleeding into cockpit when displayed in FS2024",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed wrong font selected when rendering XML Gauge elements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Forced 2024 SimVar AMBIENT LIGHT SENSOR to return a very high value if requested from a 2020 sim (can happen if referencing an instrument that has been updated in 2024)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed textures referenced in FX files not properly loaded when the package is streamed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed emissives brightness",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Click here to continue reading the Release Notes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "MSFS Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 37,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2537590"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2537590/view/1789580505318389"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-23T22:05:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-2537590",
+      "checkedAt": "2026-11-19T11:48:11.749Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 2,
+   "updatedAt": "2026-11-12T16:22:45.982Z"
+  },
+  {
+   "id": "microsoft-flight-simulator-2024-252830@1.2.11.0",
+   "gameId": "microsoft-flight-simulator-2024-252830",
+   "displayName": "Hotfix 1.2.11.0",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2025-01-09T18:02:43.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "If you are playing on PC, outdated packages in your community folder may have an unexpected impact on the title's performance and behavior. If you suffer from stability issues or long loading times, move your community package(s) to another folder before relaunching the title.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "General Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed a scenario in which avionics were not functioning on Xbox Series S and Low/Medium graphics setting on PC",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "pc",
+        "xboxSeries"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2537590"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2537590/view/1788311419022325"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-01-09T18:02:43.000Z",
+      "verification": "official",
+      "sourceId": "steam-2537590",
+      "checkedAt": "2026-11-19T11:48:11.749Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:22:45.956Z"
+  },
+  {
+   "id": "microsoft-flight-simulator-2024-252830@1.1.10.0",
+   "gameId": "microsoft-flight-simulator-2024-252830",
+   "displayName": "Update 1.1.10.0",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-12-02T19:02:08.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "If you are playing on PC, outdated packages in your community folder may have an unexpected impact on the title's performance and behavior.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "If you suffer from stability issues or long loading times, move your community package(s) to another folder before relaunching the title.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Stability & Performance",
+     "items": [
+      {
+       "text": "Fixed a crash that could occur when navigating fast between the challenges.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash when trying to adjust Tobii Eye Tracker hardware in the settings menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various crashes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "General Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed remaining broken jetways.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Updated the message asking the player to link the Steam account.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed unloading/reloading of WASM gauges upon restarting a flight.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "JS API",
+     "items": [
+      {
+       "text": "Traffic GUID object was broken due to the value being encoded in 64 bits which can not be handled in Javascript. The value is now in 32 bits.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Aircraft",
+     "items": [
+      {
+       "text": "Fixed impact damage threshold for the contact points of the basket that was causing a back-on-track loop that hardlocked the game for hot air balloon and FlyDOO.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Model behavior",
+     "items": [
+      {
+       "text": "Fixed a crash when hovering interactions only defining an event_id and a tooltip (backward compatibility with FSX simple interactions).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Flow/Progression",
+     "items": [
+      {
+       "text": "Fix a bug when leaving flight while in slewmode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "MyLibrary",
+     "items": [
+      {
+       "text": "Added tags on disabled items to better reflect why they are disabled.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a tag to warn the player if an item has not been verified by the creator.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 9,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2537590"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2537590/view/1784506359151953"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-02T19:02:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-2537590",
+      "checkedAt": "2026-11-19T11:48:11.748Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:22:45.955Z"
+  },
+  {
+   "id": "microsoft-flight-simulator-2024-252830@1.1.9.0",
+   "gameId": "microsoft-flight-simulator-2024-252830",
+   "displayName": "Update 1.1.9.0",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2024-11-22T21:03:06.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "If you are playing on PC, outdated packages in your community folder may have an unexpected impact on the title's performance and behavior.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "If you suffer from stability issues or long loading times, move your community package(s) to another folder before relaunching the title.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Stability & Performance",
+     "items": [
+      {
+       "text": "Fixed a crash when you selected \"As Arrival\" in the EFB",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a crash that could occur when closing and invoking the Camera menu after changing the Drone focus mode option to a value other than undefined",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various crashes across the title",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "General Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed missing cursor on Xbox Live sign-in popup",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Fixed an issue where you could lose focus when creating a new input profile.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Aircraft selection is accessible via the control menu, but can only be changed from the home page.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where you could get stuck when accessing the menu bar from any help page.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 7,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2537590"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2537590/view/1783872412025919"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-22T21:03:06.000Z",
+      "verification": "official",
+      "sourceId": "steam-2537590",
+      "checkedAt": "2026-11-19T11:48:11.748Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:22:45.936Z"
+  },
+  {
+   "id": "microsoft-flight-simulator-2024-252830@major-2024-11-20",
+   "gameId": "microsoft-flight-simulator-2024-252830",
+   "displayName": "Microsoft Flight Simulator 2024 Launch Day Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-11-20T01:04:00.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We have worked hard with our partners, including Asobo and others, to bring you an amazing sim experience. The excitement for the sim today has been overwhelming, but we encountered an issue with one of our services handling the new systems in the game like career mode and various missions. The server responsible for handling data requests got overloaded, causing delays and errors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As a result, players are experiencing long loading times and missing content like aircraft. We have solved the issues and are now bringing players in at a steady pace. We sincerely apologize for the inconvenience and appreciate your patience. We will keep you updated on our social channels, forums, and website. Thank you very much for all your feedback and support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2537590"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2537590/view/1783872411931538"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-20T01:04:00.000Z",
+      "verification": "official",
+      "sourceId": "steam-2537590",
+      "checkedAt": "2026-11-19T11:48:11.747Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:22:45.935Z"
+  }
+ ],
+ "issues": []
+}

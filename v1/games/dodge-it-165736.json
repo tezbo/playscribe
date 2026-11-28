@@ -1,0 +1,766 @@
+{
+ "game": {
+  "id": "dodge-it-165736",
+  "igdbId": 165736,
+  "name": "Dodge It!",
+  "cover": {
+   "imageId": "co5gxu",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co5gxu.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar11h3",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar11h3.jpg"
+  },
+  "ps5Release": "2023-09-06",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "dodge-it-165736@1.3.1",
+   "gameId": "dodge-it-165736",
+   "displayName": "Update 1.3.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-11-01T03:42:31.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Small Update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed gas mask in shop bug.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "added countdown when unpause.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1720050"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1720050/view/4186652357037171905"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-11-01T03:42:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-1720050",
+      "checkedAt": "2026-11-12T02:59:09.225Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:09.225Z"
+  },
+  {
+   "id": "dodge-it-165736@1.3.0",
+   "gameId": "dodge-it-165736",
+   "displayName": "Update 1.3.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-10-05T21:24:04.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "all UI is now animated.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "added Gamepad 100% fonctional.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "new player stat box unfortunately player avatar, name and field of view button is now removed from the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "implemented a coin system to purchase cosmetic.: added a logo to remove glasses and mask.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "fixed some other small bug.: Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 1,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1720050"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1720050/view/3938951840899601400"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-10-05T21:24:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-1720050",
+      "checkedAt": "2026-11-12T02:59:09.224Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:09.224Z"
+  },
+  {
+   "id": "dodge-it-165736@1.2.9",
+   "gameId": "dodge-it-165736",
+   "displayName": "Update 1.2.9",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-09-26T16:41:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed black dot that overlap red dot on spawn, now it find a new position when the black dot is overlapped, we have not removed the button to respawn black dot in case random bug happen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed exploit for the first jump where player dont move, now player automatically move on the first jump to prevent idle jump bot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added Pause & Unpause with ESC & P.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Restart with R on dead screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The player is now less heavy.: Discord",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 2,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1720050"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1720050/view/3936699406881327665"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-09-26T16:41:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-1720050",
+      "checkedAt": "2026-11-12T02:59:09.223Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:09.223Z"
+  },
+  {
+   "id": "dodge-it-165736@1.2.8",
+   "gameId": "dodge-it-165736",
+   "displayName": "Update 1.2.8",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-09-22T13:30:39.000Z",
+   "notes": [
+    {
+     "title": "Achievements",
+     "items": [
+      {
+       "text": "Fixed achievement not unlocking when achieved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed paid achievement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Other",
+     "items": [
+      {
+       "text": "Small adjustement on rank info dead screen which was not centered.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed the 8Bit texture reset on dead screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where you could pause the game on dead screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "added small tutorial for key with ( ? ) button.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 3,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1720050"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1720050/view/3936699406866283377"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-09-22T13:30:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-1720050",
+      "checkedAt": "2026-11-12T02:59:09.222Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:09.222Z"
+  },
+  {
+   "id": "dodge-it-165736@1.2.6",
+   "gameId": "dodge-it-165736",
+   "displayName": "Update 1.2.6",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-09-15T23:34:24.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Removed the music in background.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added R key to reload the ball.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Removed (?) button now all rank info is visible when player is dead",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a new rank for 160+ score.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a logo for Field Of View Slider.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1720050"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1720050/view/3936698772942790361"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-09-15T23:34:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-1720050",
+      "checkedAt": "2026-11-12T02:59:09.221Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:09.222Z"
+  },
+  {
+   "id": "dodge-it-165736@1.2.5",
+   "gameId": "dodge-it-165736",
+   "displayName": "Update 1.2.5",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-09-11T17:11:27.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "music added to the game thank to IlySfl: https://soundcloud.com/jvgojp56e3ah",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "added reload when ball is stuck or impossible to get (-1 score)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "fixed a bug where the black ball cant be touch when overlaped the red ball",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1720050"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1720050/view/4020014731802741818"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-09-11T17:11:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-1720050",
+      "checkedAt": "2026-11-12T02:59:09.221Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:09.221Z"
+  },
+  {
+   "id": "dodge-it-165736@1.2.4",
+   "gameId": "dodge-it-165736",
+   "displayName": "Update 1.2.4",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-09-10T22:26:31.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "new shop UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "you now have the choice to choose the color and mask separately from the glasses, the background is now separate from the player color.: more coming soon!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1720050"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1720050/view/4020014731799898372"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-09-10T22:26:31.000Z",
+      "verification": "official",
+      "sourceId": "steam-1720050",
+      "checkedAt": "2026-11-12T02:59:09.220Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:09.220Z"
+  },
+  {
+   "id": "dodge-it-165736@1.2.3",
+   "gameId": "dodge-it-165736",
+   "displayName": "Update 1.2.3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-09-09T00:15:19.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Gpu Optimisation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2 new rank",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "player now not appear in the leaderboard in the background",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "fixed blur screen on dead screen for 1920x1080 screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed steamvr to start when the game is launched.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "adding 500 player to leaderboard instead of 250.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1720050"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1720050/view/4020014731792891385"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-09-09T00:15:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-1720050",
+      "checkedAt": "2026-11-12T02:59:09.219Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:09.219Z"
+  },
+  {
+   "id": "dodge-it-165736@1.2",
+   "gameId": "dodge-it-165736",
+   "displayName": "Update 1.2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-08-31T19:53:26.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Game Optimization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adding movement with arrow on keyboard and W key to jump",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "New shop UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "discord server link updated in game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "added player avatar name on main UI and info new location.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "slidder bar FOV added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "screenshot button when game paused",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "250 people is now show in the leaderboard",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1720050"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1720050/view/4018887653999375735"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-08-31T19:53:26.000Z",
+      "verification": "official",
+      "sourceId": "steam-1720050",
+      "checkedAt": "2026-11-12T02:59:09.218Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:09.218Z"
+  },
+  {
+   "id": "dodge-it-165736@1.1",
+   "gameId": "dodge-it-165736",
+   "displayName": "Update 1.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-08-29T12:13:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Resolved bug for leaderboard",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Game Optimization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adding DEV to Show on leaderboard",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1720050"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1720050/view/4018887653990932374"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-08-29T12:13:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-1720050",
+      "checkedAt": "2026-11-12T02:59:09.217Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:09.217Z"
+  }
+ ],
+ "issues": []
+}

@@ -1,0 +1,1318 @@
+{
+ "game": {
+  "id": "football-manager-27-420884",
+  "igdbId": 420884,
+  "name": "Football Manager 27",
+  "cover": {
+   "imageId": "cod0sj",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/cod0sj.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar6vlk",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar6vlk.jpg"
+  },
+  "ps5Release": "2026-11-10",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "football-manager-27-420884@27.1.1",
+   "gameId": "football-manager-27-420884",
+   "displayName": "Update 27.1.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-11-24T14:22:12.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/46407636/fbec8211bca29e08929af327497084ae90bcf12e.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've released another small update on Steam, Epic and Microsoft Store. This update addresses some community-raised issues, following the release of Update 27.1.0 last week:",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a backend issue with the Steam Workshop. You may have to restart Steam for this change to take effect.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Made a balancing tweak to reduce the number of Yellow Cards shown in matches.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Made a change to ensure the Live Table no longer updates league positional changes prior to a highlight showing a goal being scored.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a rare technical issue preventing some Microsoft Stores users from opening the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Looking ahead, we'll have another update coming in December, packed with improvements, feedback suggestions, and general optimisation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Within this, we're aiming to include a preference setting that allows players to toggle between numeric and worded Staff Attributes. This is subject to QA checks and testing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We'll keep you all posted with any further news, as well as a Changelist preview, closer to the time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-4530370"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/4530370/view/1849827110446366"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-24T14:22:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-4530370",
+      "checkedAt": "2026-11-24T19:24:56.091Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-24T14:22:12.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-4530370",
+      "checkedAt": "2026-11-24T19:24:56.093Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-11-24T14:22:12.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-24T19:24:56.093Z"
+  },
+  {
+   "id": "football-manager-27-420884@27.1.0",
+   "gameId": "football-manager-27-420884",
+   "displayName": "Update 27.1.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-11-16T15:04:12.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/46407636/bf3132a48a5dc6d1cb6871c2dae089ffc1b6f132.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hello everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're extremely grateful for the reception and support towards FM27 after launching on Nov 10. Focus has now turned to delivering meaningful updates across all platforms to ensure we address community feedback and tackle reports raised via our Bug Tracker.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The first of these content updates is set to roll out later this week for FM27, FM27 Console, and FM27 Touch players, including adjustments to the Match Engine.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Match Engine changes require thorough testing and assessment. Feedback from our Alpha Testers, as well as our internal reviews, point towards improvements to some of the community-highlighted pain points: pressing, player reactions, decision making, and more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Elsewhere in Update 27.1.0, we've made tweaks to AI transfer balancing, inclusion of transparent attribute borders, and an assortment of database and licensing changes. Additionally, the Information Display options are now available for anyone with a screen resolution of 1080p or higher.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "An update for FM27 Mobile will also be made available this week, featuring further Match Engine balancing, particularly around goalscoring, and addressing reports of lineups changing between matchdays.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Here’s a further breakdown of the changes in FM27 Update 27.1.0.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Technical",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Numerous crash fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various UI performance improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved loading times on lower-end PCs when loading larger databases",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Information Display setting now allows anyone with a screen resolution of 1080p or higher to select their preferred Information Display. This can be found within Preferences.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "MacOS Retina displays now default to 75% render scaling to improve performance. This can be changed under custom graphics quality settings in Preferences",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Performance/Quality toggle options on Macs to prioritise either performance or render quality",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved scrolling and right click functionality when using the trackpad on a Mac",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The game processing screen no longer appears during very short processing periods",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various localisation fixes across multiple languages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Research",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Assorted database and licensing changes, including the addition of some players not previously included",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Match Engine - Attacking",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improvements to player passing and dribbling decisions during counter-attack transitions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweaked the frequency of attackers drifting offside, in turn leading to fewer disallowed goals",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved passing decisions for offside movements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved player decision-making when in shooting positions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved movement for AMC role to move wider in possession",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved passing accuracy for short passes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved logic for players receiving short and long passes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved accuracy for passes when under minimal pressure",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Players will no longer unintentionally control the ball with their head",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a rare issue causing goalkeepers to punch the ball when up for attacking set pieces",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Match Engine – Defending",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Multiple tweaks to Out of Possession (OOP) pressing decisions and intensity",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved OOP pressing in wide areas",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved pressing aggression of the Holding Full Back role",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Further reduced the frequency of pushes leading to fouls and yellow cards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweaked the frequency of a Wide Midfielder going narrow when OOP",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reworked the secondary markers' covering position and pressure when defending",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Last-man defender won't step up as high, both in a general sense and specificaly when their team has a corner kick",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved player reactions when winning possession in 50/50 duels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved goalkeeper reactions in possession, leading to a reduced number of own goals from back passes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed rare occasions of goalkeeper rushing out of goal and missing the ball",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved player reactions to VAR checks to prevent the outcome getting given away prior to the decision",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "AI Managers won't select the Dropping DM role as frequently when playing with two defensive midfielders",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Art and Animation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More relevant highlights are now shown when playing on ‘Extended’",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Decreased the length of highlights of when viewing goals from past matches",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed various in game camera angles that would show during specific moments (goal replays, free kicks, ball going out of play)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the first penalty highlight sometimes being skipped during a penalty shootout",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Floodlights no longer turn on and off repeatedly during late afternoon and early evening matches",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Crowds are no longer incorrectly removed when switching camera modes after changing the camera zoom level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Decreased loading times when entering matches in very large stadiums",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "2D Classic Player Discs no longer display as darkly as before",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Snow should no longer make the match ball difficult to see",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a display issue of one of the tops not displaying properly on 3D wheelchair managers during the Manager Creator",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some female Newgen portraits having overly bright lighting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue causing kits to appear black in the pre-match changing room when at a neutral venue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Custom 3D kits should now display with the correct colours on the Start Screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjustments made to the ball shadow during daylight matches",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Gameplay",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Balancing tweaks made to Match Exposure progression within Tactical Effectiveness, especially when training multiple tactics",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Training Contribution of semi-pro clubs will now increase more logically within Tactical Effectiveness",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a 'Tactical Effectiveness' column to the 'Player Discovery' and 'Scout - Position' views within 'National Pool - Player Database'",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Tweaks to AI transfer balancing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweaks to Newgen penalty taking attributes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Clubs that fail UEFA Financial Fair Play rules are now given the correct fine",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Terminate and Recall Loan actions no longer appear active in the secondary navigation when they aren't available",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue preventing you from sorting by another column after first sorting by Name within Team Talk's",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Messages are no longer taken through in an incorrect order",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue causing some players to not appear within the Squad Registration for Conference League registration",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tweaked the number of negative personalities being attributed to Newgen staff",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "User will no longer be told they've been sacked due to failure to win previous match if they did win the previous match",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a freeze within the loan interaction when discussing loan playing time promise",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix to an issue where, when a user offered a player out via TransferRoom Out and received no interest, they were prevented from offering them out again",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Some clubs no longer unexpectedly start the game with the \"Repair financial damage\" objective",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue with the game not stopping during processing when asked a media question on Transfer Deadline Day",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If a player has their work permit application rejected, it will state if the player also does not qualify for an ESC slot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Players no longer illogically request a relegation release clause higher than the minimum fee release clause",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a rare issue where scouts could go outside scouting range when the responsibility was delegated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Interface",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a slider to enable transparent attribute borders",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Match Events tile now includes yellow cards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Player informational tooltip no longer flickers when the cursor is near the edge of the tooltip icon",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "User’s team is now correctly highlighted during cup draws",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Scoreboard no longer shows the final result in Past Match highlights",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added optional tiles to appear on more screens when playing in higher resolutions like 4K - Current Injuries, Transfer History, Transfer Room In/Out, Club Site, Player Report - Personal, Shortlists, Youth Set Up, Overall and Recruitment Feedback, and the Dynamics Overview.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Players are now sorted by position on the Tactics screen by default",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "“Orange” injuries now display differently to “Red” injuries on the Tactics Pitch",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Subs underneath the tactics pitch now display the correct colour to reflect injuries",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Multiple improvements to the tactics visualiser",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Player/Team Stats are now clickable hyperlinks on the Competitions page",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue causing some player role arrows to point in the wrong direction",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Role descriptions within Tactics are longer cut off",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where changing a player’s role in the Player Instructions panel did not automatically update default instructions (this was a visual issue only; instructions were still being applied)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduced delay when switching between In Possession/Out of Possession tabs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Player Shirt icons are now correctly scaled on the formation display within Opposition Instructions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Multiple dropdowns improved to contain centralized text",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed state saving on the Transfer Hub when selecting a filter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Attribute Search will now sort alphabetically in user’s preferred language, not just in English",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Edit Position/Role button now works as intended when creating a new Recruitment Focus",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Match Momentum and XG Graph Story now display the correct colours",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "'Average Positions' visualisation now displays players on the pitch, rather than players with the most minutes played",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Competitions > Stages now displays any point deduction explanation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a Win on Penalties/Loss on Penalties column within the league table for appropriate competitions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Removed separator lines showing on some scoreboards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Player partnership lines no longer remain on the Tactics pitch after a completed substitution",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Redesigned the Match UI to ensure a symetrical distribution of tiles/blocks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue causing the Dugout to duplicate in Small scaling",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Live Table now highlights the user's team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "AI formation changes are now displayed within the AI Tactic card/tile between highlights",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Change to the Post Match Breaking News screen - nation flags removed for domestic competitions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Condition icons will now correctly update during a match",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Player Stats screen now shows substitutions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More columns can now be added within the Match Tactics screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Match Prediction percentage bars now fill correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Competitions, Rules, and Scheduling",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Argentina - Premier League: Added extra time to playoff stages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Australia - A-League: Fixes to Scholarship players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Brazil – Updates to formatting and scheduling for the Brazilian Cup, State Championships, and Youth Championship",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Canada - Canadian Premier League: updated the North Star Cup format for 2026",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "England - Carabao Cup: Third round matches will no longer be scheduled during the September international break in future seasons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "England - Premier League: improvements made to accuracy of TV scheduling",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "England - FA Cup: Updated prize money",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "England - National League Cup: National League teams now always at home",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "England - National League Cup: Group stage matchups now always National League vs U21 team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "England - National League Cup: Updated prize money",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "England - Youth competitions: Added winter breaks for youth comps; some comps now correctly stop for international breaks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Europe - Champions League: the pot order for the draw is no longer always the same",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Europe - Updated 2026/27 squad registration window deadlines for both Men and Women's European competitions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Greece - Rule updates for Greek Cup; Super Cup; Superleague 2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Iceland - Domestic Cup: U19 teams no longer enter the senior Icelandic Cup",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Latvia - Tonybet Virsliga: Removed the \"maximum of 1 homegrown player\" squad registration rule",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Northern Ireland - National Conference League Cup: Updated format and schedule",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Poland - PKO Bank Polski Ekstraklasa: Updated match rules for 2026/27",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Poland - Polish FA Cup: Updated 2026/27 format",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Portugal - Portuguese League Cup: The 2026/27 season no longer starts with the 2027/28 format",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Scotland - Reserve League & Cup: Removed these competitions from game due to being discontinued",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "South America - Updated Copa Libertadores and Copa Sudamericana formats and schedules for 2027 season",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "South Korea - Updated foreign player match rules for K League 1; K League 2; Korean Cup & Korean Super Cup",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "World - Women's World Cup: group stage matches no longer overlap",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various other competition fixes across multiple nations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Online",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Various online-related crashes fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue causing users to lose control of their team during matches if online idle processing timers were selected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare issue where the host wouldn’t be able to click on Player Profiles, hyperlinks and competitions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Online synchronising messages no longer appear during replays within matches",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Spectators can no longer rewind online matches",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated text prompts during online matches to give users a more detailed reason why the game has stopped",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Continue button now animates while waiting for other users in the lobby",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved synchronising of human vs human matches, as well as when spectating",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Shuffle Draft",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a \"5 possible substitutes from 5 named\" preference when Squad Size preference is 16 or more",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a rare issue where players removed during re-draft would be added back to the squad if the user manager left the lobby",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where one team was being given home advantage when playing at a neutral venue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where players named in the Team of the Tournament were not displaying any stats or ratings if they had changed clubs during a re-draft",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several instances of users being shown Career mode information",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "In-Game Editor/Pre-Game Editor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More visual cues to make it clearer what is being edited",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In-Game Editor can now be opened using the right click Actions menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a “Maximise Tactical Understanding” Quick Action for individual players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reduced row height for lists in tables so more data can be shown on screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed an issue where the sub navigation bar was not showing correctly when the IGE was navigated to using the back button",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Section header will now highlight when a user enters a new section",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Key Attributes widget separates set-piece attributes to match Player Report format",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a soft lock for imported saves from FM24 when using the IGE for a nation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 21,
+    "fixed": 25,
+    "balance": 5,
+    "other": 114,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-4530370"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/4530370/view/1849458702689885"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-16T15:04:12.000Z",
+      "verification": "official",
+      "sourceId": "steam-4530370",
+      "checkedAt": "2026-11-19T11:43:33.102Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-16T15:04:12.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-4530370",
+      "checkedAt": "2026-11-23T15:25:36.950Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-11-23T15:04:12.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-23T15:25:36.950Z"
+  },
+  {
+   "id": "football-manager-27-420884@1",
+   "gameId": "football-manager-27-420884",
+   "displayName": "Update 1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-11-02T16:22:38.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/46407636/bf3132a48a5dc6d1cb6871c2dae089ffc1b6f132.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hey everyone, hope you’re doing well,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]A small update for FM27 is being rolled out now across all platforms supporting the Free Play Launch Preview. This update addresses a couple of reported issues that the team were able to identify, solve, and verify over the weekend:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a clickable scroll bar to the Advanced Setup screen to help players select clubs at the bottom of a league list",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Resolved issue causing squad registration messages to sometimes not appear for UEFA club competitions, leading to unregistered senior players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved issue causing the Save Game option to not be selectable if players experienced the issue above with UEFA squad registration not appearing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "[p align=\"start\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]As we covered last week, an additional FM27 update is planned, to support the full launch from 10 November, bringing further optimisations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]Following this will be the game’s first post-launch update, where more player reports will be addressed. One area of focus here is the 3D match engine, where we’re combining internal data and player reports (including on defensive behaviour, pressing, chance creation and more) to establish what changes can and should be implemented.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]We’ll keep you posted on all of this on the way to FM27’s official launch and beyond. Thank you to everyone who has used our bug reporting system to report something; please continue to do this if you experience anything you’d like the team to investigate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[p align=\"start\"]Thanks all!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-4530370"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/4530370/view/1847920302248809"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-02T16:22:38.000Z",
+      "verification": "official",
+      "sourceId": "steam-4530370",
+      "checkedAt": "2026-11-19T11:43:33.100Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T03:00:32.886Z"
+  }
+ ],
+ "issues": []
+}

@@ -1,0 +1,107 @@
+{
+ "game": {
+  "id": "void-miner-346911",
+  "igdbId": 346911,
+  "name": "Void Miner",
+  "cover": {
+   "imageId": "co9wm7",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co9wm7.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar4rka",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar4rka.jpg"
+  },
+  "ps5Release": "2026-05-22",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "void-miner-346911@post-2025-12-17",
+   "gameId": "void-miner-346911",
+   "displayName": "Optimization and QOL changes",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-12-17T16:35:24.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Cursor Additions. 3 Colors and 2 Sizes to pick from",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Localization Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Balance changes, some upgrades were too cheap/expensive so i tweaked them based on player feedback",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UI fixes, some text overfilled the background they were on",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Ultrawide resolution: Ultrawides are now forced into a 16:9 resolution so the game is immediatly playable",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Change build to IL2CPP for better optimization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3772240"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3772240/view/1819386365087222"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-17T16:35:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-3772240",
+      "checkedAt": "2026-11-12T16:50:54.421Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:54.421Z"
+  }
+ ],
+ "issues": []
+}

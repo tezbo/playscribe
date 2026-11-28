@@ -1,0 +1,451 @@
+{
+ "game": {
+  "id": "exodemon-27740",
+  "igdbId": 27740,
+  "name": "Exodemon",
+  "cover": {
+   "imageId": "co2hvn",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co2hvn.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar6oxi",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar6oxi.jpg"
+  },
+  "ps5Release": "2021-05-13",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "exodemon-27740@major-2021-05-10",
+   "gameId": "exodemon-27740",
+   "displayName": "Exodemon console ports and Update status",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-05-10T17:00:53.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "It has been a long journey and it’s almost at the end!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I’m here to announce Exodemon will release on May 13th for all consoles, PS4, PS5, Xbox One, Xbox Series and Switch, I still need to sort some things out but the Steam update should not take long to be released as well.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "This update will bring a lot of changes, level design tweaks on most levels, new enemy balance, an entire new ending level and more.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I’ll be honest, I almost gave up on releasing the next update, it was really hard to stay motivated and overcome the huge amount of issues the project recovery process caused.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A while ago Jandusoft contacted me about porting the game for the consoles, that was the last push I needed to finish everything and wrap things up, we had a bunch of performance issues, shader bugs, but in the end, everything went fine.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The guys from Jandusoft were awesome solving the porting problems. Exodemon is a project of passion I made almost entirely on my own, I can read my code, I can find all assets but I didn’t expect anyone to have to deal with my mess but they managed it!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "MS Store - https://www.microsoft.com/en-us/p/exodemon/9p57fs4wcp3g",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Nintendo E-Shop - https://www.nintendo.com/games/detail/exodemon-switch/",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It’s really easy to underestimate the amount of work that goes on developing a game, without mentioning the emotional toll it brings, You all have always been very understanding with the issues the game has and the time it’s taking to launch a new update, for that I’m very thankful.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I hope you can wait a little longer and I hope you all have a great time playing the new update when it launches!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 10,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-516820"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/516820/view/4072920612516846847"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-05-10T17:00:53.000Z",
+      "verification": "official",
+      "sourceId": "steam-516820",
+      "checkedAt": "2026-11-12T02:59:58.724Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:58.724Z"
+  },
+  {
+   "id": "exodemon-27740@major-2019-10-25",
+   "gameId": "exodemon-27740",
+   "displayName": "Big news and update status.",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-10-25T15:05:58.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi folks, how are you doing?",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It’s been a while since our last update, we are very busy with our daily jobs and we are using all our free time to fix and improve Exodemon in these last 3 months.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "First of all we had to make a set of tools to help us to recover the levels, after that we started the manual process of replacing all the broken objects in every level for valid versions of these objects, fixing a lot of lost references, baking all the lights again (a process that takes from 15 to 40 minutes), well, a lot of work.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here is a list of what is already done",
+     "items": [
+      {
+       "text": "Unity engine updated to latest version, this may bring a significant performance boost.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All levels recovered.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Loading screen glitch fixed and some improvements on it’s design.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some missing geometry in levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Lots of small performance improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New sound system, we lost all the data from our custom system, so we decided to use FMOD instead.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved level decoration in some of the levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Some minor level design changes, such as enemy positions, item locations, item amount, etc.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Claw attacks kills the enemies instantly if they are low on health.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Overall weapon rebalance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Charge weapon redesigned.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Final level redone from scratch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Most shaders redone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Correct particle direction on hitting walls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Overall enemies rebalance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Door animations reworked.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "What else needs to be done for the next update",
+     "items": [
+      {
+       "text": "Fix debug/cheats console.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix score calculations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Linux and MacOS support.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Configure all of the sounds’ volumes and areas/falloff.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Lots of small bug fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "What’s planned for future updates",
+     "items": [
+      {
+       "text": "Level selection.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Difficulty options on new game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Steam cards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We believe it’ll take an additional 2 to 3 months to actually release this big update. We don’t want to rush and release a mess again!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Other news, today we are raising Exodemon’s Steam price to 9.99 (USD) to match the amount of work we are doing in the game. It’s important to do it right now, instead of doing it when the update comes live, because Steam locks a lot of features for developers when the price is changed, so the earlier the better in this case.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "None of the early purchases will be affected by this price change. ;)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for all your support and understanding, it has been an awesome experience to ship our first game in such a wonderful company!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 3,
+    "balance": 0,
+    "other": 25,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-516820"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/516820/view/2504491307407453651"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-10-25T15:05:58.000Z",
+      "verification": "official",
+      "sourceId": "steam-516820",
+      "checkedAt": "2026-11-12T02:59:58.722Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:58.723Z"
+  },
+  {
+   "id": "exodemon-27740@1.11",
+   "gameId": "exodemon-27740",
+   "displayName": "Update 1.11",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2019-08-04T16:59:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi folks, we managed make some small fixes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "1.11 Main changes",
+     "items": [
+      {
+       "text": "If you got killed right before teleporting to the next level, you'll no longer be stuck on a softlock by dying instantly when the new level loads.: Your health will show as empty but it'll correct itself once you take damage or get a health pickup.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pause menu \"Reload\" button now shows as \"Restart\": Those are some minor changes, bigger problems will be adressed in upcoming updates.: Thank you everyone who provided feedback, every bit of information will lead to us to make a better game for everyone! :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-516820"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/516820/view/2412159905937304895"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2019-08-04T16:59:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-516820",
+      "checkedAt": "2026-11-12T02:59:58.720Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:58.721Z"
+  }
+ ],
+ "issues": []
+}

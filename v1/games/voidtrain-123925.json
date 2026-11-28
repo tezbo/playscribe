@@ -1,0 +1,1268 @@
+{
+ "game": {
+  "id": "voidtrain-123925",
+  "igdbId": 123925,
+  "name": "Voidtrain",
+  "cover": {
+   "imageId": "coaowg",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coaowg.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar4ox7",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar4ox7.jpg"
+  },
+  "ps5Release": "2026-07-30",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "voidtrain-123925@1.06",
+   "gameId": "voidtrain-123925",
+   "displayName": "Hotfix 1.06",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-03-11T10:35:37.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello, Engineers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Small hotfix 1.06 has been released for Steam, EGS, and Xbox platforms. If you don’t see it yet, please restart the launcher or store app you use to run the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "When refueling any engine with cells from containers, the used cell would disappear, but no cell was taken from the container. Fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tour-de-Void DLC content: researching rail skins would unlock the wrong skins and behave incorrectly. Fixed for both new cases and for players who already encountered the issue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For Xbox console players and Xbox PC Game Pass users: patch 1.06 is a combined update that includes patches 1.05 and 1.06.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1159690"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1159690/view/1826992588589613"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-11T10:35:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-1159690",
+      "checkedAt": "2026-11-12T16:50:55.440Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:55.440Z"
+  },
+  {
+   "id": "voidtrain-123925@1.05",
+   "gameId": "voidtrain-123925",
+   "displayName": "Patch 1.05",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-02-11T20:10:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello, Engineers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Patch 1.05 and the Tour de Void DLC are now live. If you haven’t received the update yet, please restart Steam or application you use to launch the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch Notes",
+     "items": [
+      {
+       "text": "Significantly increased inventory capacity for both players and containers (+2 rows, i.e. +12 slots at maximum backpack upgrades; and +2 rows, i.e. +12 base slots at maximum container upgrades).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added an alternative function allowing players to pick up all items within a radius, in addition to picking up specific items (single-item pickup remains available).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Depot generation changes: not all depots now contain a combat arena with soldiers. Depots now have a chance to generate either a combat arena or a peaceful variant featuring a Rofleemo unpacking area and reward chests.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Builder Book improvements: filtering and sorting have been added to all main sections (tier-based sorting for main tabs; decor section now supports sorting by floor type and visual themes).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When one or more recipes are pinned, their components are now highlighted and displayed above other components at workstations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Interactive decor objects: players can now lie down or sit on decorative beds, poufs, and chairs (animations cancel on any input).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Explosive fish on puzzle islands and explosive beetles in arenas now move faster but have significantly reduced health.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chaos quest: fixed bugs related to exhibit task completion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where the Armory table could not detect resources stored in the player inventory or train containers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where transferring food from containers to the Rofleemo dining station did not reduce the amount of food in containers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the weapon perk “Last X% of ammo increases melee attack speed by Y%” not working.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed interaction issues with the Memorial Island arch and train objects that could occur after character death.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed various legacy bugs related to path generation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "What is “Tour de Void”?",
+     "items": [
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/4108450/Voidtrain__Tour_de_Void/\"]Leaving some of your Rofleemo behind at a depot is always a little sad, isn’t it? The Engineer moves deeper into the Void, while they are left behind simply because there’s no room for them on the crew. Eventually, unopened ambers containing Rofleemo begin to pile up as well, since your dream team is already complete.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/35856769/d3bb2aa6a7c2273e1087217cb6fc69bce23c3017.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "With “Tour de Void,” this finally changes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The DLC introduces a new mechanic that allows Rofleemo to travel with you temporarily as tourists, so they can reach their desired station and stay there safely.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/35856769/21e1e775a3af09edd92c151bb3dec4a1233acb61.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Build a Tourist Stand, place tourist seats, and welcome Rofleemo passengers aboard. During their journey, they will offer tasks and challenges. Complete them to earn tickets, which can be exchanged at the Tourist Stand for a wide range of rewards: including new rail skins, character items (skins for bracer and hammer), train decorations, useful perks, upgrades, and even trophies for your train. [img src=\"{STEAM_CLAN_IMAGE}/35856769/d4d48ec89f824f1bb73354dc583cd5cdc5f0c985.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 5,
+    "balance": 0,
+    "other": 15,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1159690"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1159690/view/1824459501604773"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-02-11T20:10:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-1159690",
+      "checkedAt": "2026-11-12T16:50:55.438Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 3,
+   "updatedAt": "2026-11-12T16:50:55.439Z"
+  },
+  {
+   "id": "voidtrain-123925@1.04",
+   "gameId": "voidtrain-123925",
+   "displayName": "Patch 1.04",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-01-12T13:49:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello, Engineers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve released Patch 1.04, focused on improving the game’s QoL and fixing several issues.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The patch is available on all platforms (Steam, Epic Games, Xbox Consoles / Game Pass). If you don’t see it yet, please restart the launcher or store app you use to run the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Added a teleportation feature from puzzle islands and memorial islands to the train. Players can use it via a HUD action that appears in these locations; teleportation is available at any time while staying there.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Crafting now automatically pulls required resources from containers without any additional requirements or actions. Previously, you had to assign a Rofleemo to a crafting station to unlock this perk.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When building objects on the train (via the construction book), resources are now pulled not only from the player’s inventory but also from all containers on the train.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Resource collection from Lootcatchers and water collectors (water condensers) is now multi-collect. This means you no longer need to collect resources from each object individually by repeatedly pressing the collect button.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The “Move Similar Items to Containers” feature is now a multi-function and distributes similar items across all containers within the wagon the player is currently in.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A separate “Rofleemo” tab/category has been added to the construction book, displaying the relevant buildable objects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Resource consumption from containers and the inventory now starts from the last slot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The shark can no longer regenerate health after taking damage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shark attacks on the train have been rebalanced and now occur less frequently.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The shark now drops more fat and leather; additionally, it can now also drop research samples (a source of research points).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where the safety cable lagged behind and moved slowly while traveling along the train.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Increased acid drop rate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Enemy health (soldiers) has been slightly reduced.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The grappling hook technology, as well as its magnetic item collection upgrade, is now available slightly earlier in the research tree.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Trainkeepers now refill Lootcatchers significantly faster.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Equip animations for the hammer, construction book, and journal are now disabled by default in the base settings. To see them in full, enable the corresponding option in Settings > Game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The weapon “Handling” stat, which affected weapon equip speed, has been completely removed. Base equip speed is now static and averaged (leaning toward faster equip) for both primary weapons and the revolver.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The winch firing range has been increased. Movement speed while using the winch has been increased, and aiming at embedded rings has been made more comfortable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The wording of the temporary objective between quests has been changed from “Move forward” to “Reach the next depot”, as the ultimate goal is always to reach the next depot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "On memorial islands, trading now takes place at the basic resource level (wood, zinc, scrap metal, chemicals, etc.), rather than higher-tier resources.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you for playing VoidTrain! [img src=\"https://community.fastly.steamstatic.com/economy/emoticon/rofleemo_love\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 1,
+    "other": 21,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1159690"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1159690/view/1821288646585895"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-01-12T13:49:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-1159690",
+      "checkedAt": "2026-11-12T16:50:55.437Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:55.437Z"
+  },
+  {
+   "id": "voidtrain-123925@1.03",
+   "gameId": "voidtrain-123925",
+   "displayName": "Patch 1.03",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-12-04T18:38:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello, Engineers! ːvoidtrainː",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Patch 1.03 is now live and available on all platforms (Steam, Epic Games, Xbox Consoles / Game Pass). If you still don’t see it, please restart the launcher/store app you use to run the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Achievement “Very Useful Engine” for Xbox players: a forced unlock has been implemented for players who met the requirements before patch 1.02 but were never able to receive it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "All consumable categories (including food) have been added to the quick-access wheel. Since there are many items, the wheel now shows categories, and items within a category are consumed from highest to lowest quality. If you want to use them in a different order, you can still do so from the inventory.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When building Rofleemo's beds and Lootcatcher's nests, the reached maximum limit is now displayed in the build mode via the book (a hint has also been added explaining how to increase these limits).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Player-to-player collision has been removed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The “It ain't much, but it's honest work” achievement can now be obtained on all tiers of gardens.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved network replication in the “Meeting” quest in Chapter 2.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "If you save and load right at the beginning of the boost toward the depot during the final quest of Chapter 2 (“Prophecy”), the train would fail to stop in the tunnel and just keep going forever — fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "On the first infected story outpost, there was a small chance an environment element could spawn blocking the path — fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If a mutated shark tried to affect a player who was playing backgammon, it could break that player’s character controls — fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added various sound effects for gardens.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adjusted core sound volume (it was barely audible before).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Shotgun sound optimization.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Slightly increased the radius and volume of the grappling hook and the winch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changed the player hit sound (more readable) + added adaptive mixing for it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The kill sound is now slightly louder in the overall combat mix.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Basic impact sounds on enemies are now slightly louder and more expressive.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hitting enemy armor is now slightly louder.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added replication for most workbench sounds (previously clients didn’t hear them).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adjusted workbench volumes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added sound replication for mines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added sound replication for Lootcatchers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Thank you for playing VoidTrain! ːrofleemo_loveː",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 0,
+    "balance": 2,
+    "other": 17,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1159690"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1159690/view/1818118366174103"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-12-04T18:38:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-1159690",
+      "checkedAt": "2026-11-12T16:50:55.436Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:55.436Z"
+  },
+  {
+   "id": "voidtrain-123925@1.02",
+   "gameId": "voidtrain-123925",
+   "displayName": "Patch 1.02",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-21T23:29:40.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello, Engineers! ːvoidtrainː ːvoidwagonː ːvoidwagonː ːvoidwagonː",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve rolled out another update (and not the last one) with more fixes and improvements based on the feedback we’ve been gathering since release.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The update 1.02 is now available on all platforms: Steam, EGS, Xbox consoles, and PC Game Pass. If you still don’t see it, please restart the launcher/store you use to run the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Incorrect resource counts when using Rofleemo with “extra resource” perk.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If a crafting station had a Rofleemo assigned with a perk that grants bonus resources, the displayed amount could be incorrect once it reached a full stack. This issue is now fixed, and the limit on how many items can be crafted at once has been removed entirely (regardless of world settings or stack size).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed collision between the player and Rofleemo while moving.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This should make walking around the train much smoother. We’ve also seen requests to remove collisions between players. Player collision is tied into a large number of mechanics, checks, and story scenes, so disabling it would require deeper rework and extensive testing. We haven’t dropped the idea entirely — we just need time to find a safe solution for the next 1.03 update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Locked technologies could be researched from a gamepad if the player had enough resources. Fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Chapter 2 Research Institute quest marker disappearing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When searching for the pheromone sample, the quest marker could vanish if players proceeded in a different order than the game expected. Fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Pinned recipes for the ram and turrets now automatically unpin after construction.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Previously this had to be done manually in the journal.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Quest “Speed” not progressing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If the quest was already obtained at a point when the player had progressed beyond the steam engine stage, it wouldn’t complete. Fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rofleemo drinking all raw water when leaving the depot.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Using raw water as a food source for Rofleemo was a bug. This has been fixed, only cooked meals and boiled water now apply.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Significantly increased seed drop chance from small void fish",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Weapons can now be dismantled via the Recycler.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Maximum stack multiplier increased to x10.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Can be changed at any time from world settings or when starting/loading a game. This means regular items can now stack up to 100 (previously 50).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Base stack size for new players is now 30.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Splitting stacks via Enter in the inventory could cause items to disappear.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This was previously fixed for the host, now fixed for clients as well.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Trolley engine could still be built even with a Tesla engine installed, breaking functionality.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Reduced weapon jam chance.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Full hunger bar not healing to 100 HP after researching max HP tech.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Missing description for Ammo Container II.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "“Basic Defense” technology not appearing for some players with old saves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If players had already passed the depot where it would normally unlock, it would not appear. Fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "First Rofleemo bed quest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rofleemo now provides more leather (please read the quest carefully — don’t spend the leather elsewhere immediately!).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Exit game prompt now explicitly clarifies that progress will be saved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Invisible extra pyramids in some puzzles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In rare cases 1-2 invisible pyramids existed alongside the intended three. They didn’t block completion but could confuse players since they were interactive. Fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Quest for building a new wagon sometimes didn’t complete on the first attempt.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Rofleemo stationed on turrets disappearing when entering the depot with the scientist boss, only reappearing after arriving at the next depot. Fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Xbox / Game Pass Specific Fixes",
+     "items": [
+      {
+       "text": "Achievement “Very useful engine” could not be unlocked. Fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Crash when rearranging wagons. Fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Excessive pop-ups suggesting subscription to Game Pass. Improved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Thank you for playing VoidTrain and helping us make the game better! ːrofleemo_loveː",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "PS Earlier this week we also released Patch 1.01. If you missed it, you can check out its patch notes as well.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed",
+       "platforms": [
+        "xboxSeries"
+       ]
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 8,
+    "balance": 1,
+    "other": 35,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1159690"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1159690/view/1816849002015806"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-21T23:29:40.000Z",
+      "verification": "official",
+      "sourceId": "steam-1159690",
+      "checkedAt": "2026-11-12T16:50:55.435Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:55.435Z"
+  },
+  {
+   "id": "voidtrain-123925@1.01",
+   "gameId": "voidtrain-123925",
+   "displayName": "Patch 1.01",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-11-17T20:57:59.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello, Engineers!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We’ve prepared the hotfix patch with a number of changes and fixes, including some based on your feedback. Patch 1.01 is now live. Please restart Steam/EGS if it hasn’t downloaded automatically. The patch is also available for Xbox console players and PC Game Pass users.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "Our team is already preparing the next one, but it will take some time to develop, so stay tuned for updates, and thank you so much for your feedback!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added support for ultrawide monitors and fixed journal display issues on them.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Depot building: the camera now appears on the opposite side to provide easier access to train pins without overlapping issues. Pin-hover readability has been improved. Camera behavior has been refined to prevent horizon distortion.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated EOS SDK to version 1.181.2, improving the stability of online play and cross-play. Please report any connection issues — we review all reports and address them as quickly as possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A new option has been added in Settings > Game to disable the creature on the Research Table and the Lootcatchers. To avoid visual desync in co-op, we recommend all players in the session use the same setting state.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "When splitting an item stack in the inventory by pressing Enter and manually entering the amount, the specified number of items disappeared (fixed for the host player).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A test difficulty-options button was unintentionally available in the game settings, fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The version number in the bottom-right corner was partially covering the option-scrolling button in the character customization menu, fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a typo in the sensitivity setting name and improved several perk descriptions for better clarity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added deadzone settings for gamepads (separate controls for the right and left sticks).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Wall lamps blocked movement through wagon passages when placed too close to them — fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The shower effect at the Lootcatcher station disappeared incorrectly and could stack, fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where input from various devices (keyboard, mouse, controller) was delayed due to background applications when playing in borderless or windowed mode. Now we force the focus on the game window, and the input lag should be gone for players who were experiencing it.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a bug that prevented players from retrieving a heavy item from its slot with a normal press of X/Left D-Pad, requiring the selector instead. This fix also applies retroactively to affected save files.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Researching the Conveyor technology did not grant the intended +1k Energy capacity to the Thermogenerator, has been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In addition to the general changes and fixes mentioned above, there will also be several adjustments specific to the console version / PC Game Pass version. We mention them additionally to inform Xbox players what to expect from the patch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "The Inventory and Game Menu buttons have been reassigned on gamepads to match common control standards.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A Display Settings tab has been added to the console versions of the game, providing options for Motion Blur, FOV, and Brightness.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Some game settings were not saving correctly and were resetting after restarting the game, fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For players who were on the beta steam branch: we’re removing it, and the game should automatically switch to the default branch. If it doesn’t, please restart Steam.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 2,
+    "balance": 0,
+    "other": 17,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1159690"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1159690/view/1816307528971869"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-11-17T20:57:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-1159690",
+      "checkedAt": "2026-11-12T16:50:55.434Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:55.434Z"
+  },
+  {
+   "id": "voidtrain-123925@hotfix-2024-11-01",
+   "gameId": "voidtrain-123925",
+   "displayName": "Hotfix for co-op inventory issue",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-11-01T19:48:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The game has been updated to version 15232.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The main change in this version addresses an issue that some players encountered during multiplayer sessions with more than two players. Backpacks and other equipment slots were not working correctly, allowing items to be duplicated or, conversely, lost. This issue has been resolved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1159690"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1159690/view/6146943657173943770"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-11-01T19:48:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-1159690",
+      "checkedAt": "2026-11-12T16:50:55.427Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:50:55.427Z"
+  }
+ ],
+ "issues": []
+}

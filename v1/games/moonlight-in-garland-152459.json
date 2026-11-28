@@ -1,0 +1,875 @@
+{
+ "game": {
+  "id": "moonlight-in-garland-152459",
+  "igdbId": 152459,
+  "name": "Moonlight In Garland",
+  "cover": {
+   "imageId": "co46zb",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co46zb.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar219d",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar219d.jpg"
+  },
+  "ps5Release": "2026-10-07",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "moonlight-in-garland-152459@2.0",
+   "gameId": "moonlight-in-garland-152459",
+   "displayName": "Update 2.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-08-22T01:01:30.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey Neighbours!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Just a little update today to do some housekeeping for release next week. This marks the official version change to 2.0.0A! It’s mostly polish and I’ve changed the EA gifts to register to your user id rather than be per save file so if you’re thinking of starting a new game at release feel free!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And one last reminder that I’ll be streaming the release on Twitch and Youtube (@violetlebeaux) so some join me to celebrate the milestone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Stream time: 1:30pm Weds 27th Aug AEST (Tuesday night in the US)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Now back to working on the next update for me, hope you all have a great weekend!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "See you in Garland!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "<3 Violet",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "_______________________________________________________________________",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "2.0.0A - Patch (PC and Mac) (Full and Demo) - 22/08/25",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "_______________________________________________________________________",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Current song: Level Clear! - Tom Cardy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "General",
+     "items": [
+      {
+       "text": "Updated News section and added auto tab select on title screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some general typos",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Steam achievements - Fixed typo preventing Pinewood Move in achievement from being sent.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Player movement - Fixed being sucked out through walls if stuck in an exterior.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mail - Fixed Fortune and Luck mail sending on first year.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mail - Added gift icon.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New game - Fixed new game choice being stuck (note, if you start a new game before choosing an apartment you may still soft lock and need to fully close the game)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added furniture highlight when refilling cleaning cloth.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added outdoor water fountains around the city for refilling cleaning clothes/watering cans etc.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Help - Added debugger toggle option.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Help - Removed help options on title screen",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hotbar - fixed can’t tab though empty spots by keyboard in some situations.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Audio - Fixed ambient audio not resetting when quitting to main menu.: UI/Display",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some issues when resizing windows and going between windowed/fullscreen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted scroll speed for different FPS/devices/sizes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Vsync - Toggling vsync was causing issues with jittering on some displays regardless of the setting. It’s off by default but I’ve changed the refresh so if you want to enable, you may need to exit and reopen the game for it to take effect.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Controls",
+     "items": [
+      {
+       "text": "Updated wording in custom controls for better cross platform support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added auto pause when controller disconnected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed some issues with alt-tabbing on PC: Weddings/Petal Events",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed crash when inviting non-core NPCs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed incorrect NPC names in UI.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Randomised heart explosion and fixed image being incorrect.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Early Access gifts",
+     "items": [
+      {
+       "text": "These will now be registered to your player ID and stored in your settings file.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To register this, please open any old save file, save in and save settings in the current version.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you ever need to delete your settings file just open a bugs ticket and I’m happy to reenable for you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 4,
+    "balance": 1,
+    "other": 24,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1441770"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1441770/view/1808601382461605"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-22T01:01:30.000Z",
+      "verification": "official",
+      "sourceId": "steam-1441770",
+      "checkedAt": "2026-11-12T08:24:32.021Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 2,
+   "updatedAt": "2026-11-12T08:24:32.022Z"
+  },
+  {
+   "id": "moonlight-in-garland-152459@1.3",
+   "gameId": "moonlight-in-garland-152459",
+   "displayName": "Hotfix 1.3",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-03-05T00:26:47.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey Neighbours!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Hope you're having a good month! It's finally getting colder here in Melbourne and I'm excited for winter!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This update marks a huge behind the scenes milestone in terms of development as almost all the content on the original early access roadmap is complete. It's hard to reflect this accurately in the changelog but I've rebuilt almost all of the systems stuff to a manageable state now. So instead of chasing my tail redoing my previous work, from here I can focus on new content, fixing bugs and polishing the gameplay so it's . That means adding more of your requests, pets, furniture, collectables, jobs, donatables and more mini games.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Festivals",
+     "items": [
+      {
+       "text": "There are 6 new festivals in Garland to celebrate throughout the seasons including a special event to ring in the new year by watching the midnight fireworks from your rooftop with your friends.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The rest of the festivals are like fun traveling markets with exclusive furniture and food to enjoy but as the Garland City Council expands it's budget I'll be adding more mini games and relationship events to them all as well.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Herbs",
+     "items": [
+      {
+       "text": "You'll now find wild herbs sprouting all over Garland, use your cutters to snip them and you can collect all kinds of useful plants. These will be used for cooking and brewing herbal teas so start building a collection now. Don't forget to check out the beach for shells and the farm/mountains for mushrooms in autumn.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Speaking of foraging, the beach and university areas are now open to explore, though the Council is being slow at approving permits for new buildings there...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Save files",
+     "items": [
+      {
+       "text": "This update is a big update to the format of save files which will allow better compatibility as well as straight up text editing of files. I've tried super hard to make everything as compatible as possible but I always recommend backing up your save file before upgrading and, as always, if you have any problems with the upgrade: just reach out in the discord and I'm happy to help!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We're holding a community movie night in the Garland discord community in early June, I'll be sharing behind the scenes stuff so make sure you drop by!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thank you as always for sticking around with me this long, it's been a hell of a year so far and I'm excited for what's coming to Garland next!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "StarSong).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Foraging",
+     "items": [
+      {
+       "text": "Added shells and beach items to spawn on beach locations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added mushrooms to spawn in Autumn in Farm/Mountains.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Herbs that spawn randomly in grassy areas, use your cutters to harvest them and get a random herb which will be used later in a tea brewing mini game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Furniture placement",
+     "items": [
+      {
+       "text": "Fixed issue when exiting a room holding furniture would occasionally leave a piece of furniture in the doorway.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added option to snap placement to grid (this is a real WIP).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added functionality for rugs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adjusted placement logic.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed issue not being able to place pet furniture.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "BE - CC 3 - can see where furniture is being placed during minigame now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "PE - Sophie 1 - can see where boxes are being placed during minigame now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Player Hair Customisation",
+     "items": [
+      {
+       "text": "Note: your hair and clothing colour may appear incorrect in the load screen on old saves but should appear normally once loaded in.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Player hair/beard/fringe and colours are now set after the initial customisation like clothing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New hair styles/hair colours can be purchased at the hair salon in Garland North. Once used, they are added to your customisation options at the vanity/mirror.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Vanity/Mirror - fixed randomise option to only be available options.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Opened hair stylist shop with daily styles/colours.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added hair stylist intro cutscene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Sage’s special budget random style cutscene.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New colours for hair/fringe/beard: Yellow, Dk Yellow, Lt Orange, Orange, Red, Lt Pink, Pink, Dk Pink, Lt Purple, Dk Purple, Dk Blue, Lt Blue, Lt Green, Dk Green, Hazel, Lt Brown, Brown, Dk Brown, Lt Grey, Grey, Black, White.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Shops",
+     "items": [
+      {
+       "text": "Added energy drinks to vending machines.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed NPCs occasionally sliding away while shopkeeping (looking at you Tobias >_>).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed issue with same-obj-items buying the first available one in the shop rather than the one you click on.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Locations",
+     "items": [
+      {
+       "text": "Note: new locations will not appear on mini map yet, map update is in the works.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added beach area south of Garland Central (WIP).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added university area (WIP).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated farm area layout.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated mountain area layout.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Moved some lighting in Garland West/CBD and added new lamps.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed dirt patches in Garland Central park.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted grass colour.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Removed construction blocks from Garland West > Uni and Garland Central >Beach.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated Boat shed exterior.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Boats now bob in the water.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Festivals",
+     "items": [
+      {
+       "text": "Added new festival days: Fortune and Luck Brunch, Beach BBQ, Moonflower Festival, Twilight Equinox, MidWinter, New Years.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Each festival has an info booth, furniture shop and snack shop with new special items only available at the festivals.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added NPC dialogue for all festivals.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added reminder mail for all festivals.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Schedule - All NPCs will be at the festival locations all day. Might change this in the future when more complicated schedules are added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added various decor, weather, lighting etc. during festival days.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New Years - Added fireworks event at your building rooftop.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed swan boat ride with partner giving wrong notification emotes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Petal Events - Added check so that petal events can run during festival days as long as they aren’t in the festival location.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Weather",
+     "items": [
+      {
+       "text": "Added butterfly weather for Moonflower Festival.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added fireworks weather for New Years.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Save files",
+     "items": [
+      {
+       "text": "Save files and persistence have been completely reformatted to allow easy text file editing and future adjustments for better cross platform compatibility.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "On load of an old save file, various upgrades to new systems will take place.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I’ve tried really hard to keep everything compatible with old files but if you have any issues with your save please let me know in the discord community and I’ll get your file sorted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Daily Tasks - Any open tasks will reset during upgrade.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Load screen - Hair/Clothes may appear the wrong colour on the load screen but once in game it should be fine.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rooftops - Plants, decor and items loaded from very old save files which were on rooftops or tables may revert to being on the ground during upgrade.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shops - Items currently for sale will reset during upgrade.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Player storage",
+     "items": [
+      {
+       "text": "Changes to player storage in back end, functionally there are no differences but on load your previous storage will be converted to the new format.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Any items in storage outside your apartment will be moved back to your apartment storage during this upgrade - sorry!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Any copies of items that were backed up for safe keeping or in old version apartments will be transferred to your apartment storage too so you might end up with a nice windfall!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Backend/Optimisations",
+     "items": [
+      {
+       "text": "Moved dictionary and info storage from ds_grid format to struct arrays and overhauled all scripts for: festivals, calendar, mail, shops, inventory, player inventory, player_info, tasks, daily tasks, photo data, countdowns, transactions, loans, relationships, rock tumbler, player apps, stored music, private detective, building info, apartments, news, help, stock market etc.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Shops - Total rework of how shops are handled to allow for future customisations including changing item info to be global access rather than in room persistence.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dev mode - Added dev mode only screenshot export for future postcard feature.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Time - Full refactor for time related functions. obj_daycycle > obj_game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Transitions - Full refactor for transitions and lift functionality.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Player storage - Converted to be global access rather than stored in apartment persistence.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Mail - Full refactor and added nightly mail queue system.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tasks - Added listener functions for future optimisations (this will help with a lot of slow down issues next update).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Rock Tumbler - Refactored rock tumbler into basic shop functions to allow other shop storage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Daily dialogue - Moved to be stored in relationship struct for ease of access.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed unused logs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Updated spawning, detection and general player logic.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 19,
+    "fixed": 5,
+    "balance": 2,
+    "other": 50,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1441770"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1441770/view/1793384379322530"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-05T00:26:47.000Z",
+      "verification": "official",
+      "sourceId": "steam-1441770",
+      "checkedAt": "2026-11-12T08:24:31.966Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 5,
+   "updatedAt": "2026-11-12T08:24:31.985Z"
+  }
+ ],
+ "issues": []
+}

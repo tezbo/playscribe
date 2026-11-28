@@ -1,0 +1,640 @@
+{
+ "game": {
+  "id": "derelikt-206842",
+  "igdbId": 206842,
+  "name": "Derelikt",
+  "cover": {
+   "imageId": "coa07m",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coa07m.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar3r94",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar3r94.jpg"
+  },
+  "ps5Release": "2026-11-13",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "derelikt-206842@3",
+   "gameId": "derelikt-206842",
+   "displayName": "Hotfix 3",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-11-25T16:16:08.000Z",
+   "notes": [
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "Fixed an edge-case issue where enemies could get massive HP buffs from nearby Oculuses",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug in LVL 05 that allowed for skipping the central security hack",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a visual issue where the player’s HP could appear incorrect until opening the inventory",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Improvements",
+     "items": [
+      {
+       "text": "Cheats can now be entered in the “Cheats” menu during gameplay, without having to quit back to main menu",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved the responsiveness of inputting cheats",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Additionally, we have also resolved the lingering inventory problem which resulted in items disappearing from said inventory or occupying spaces designated for other items. Let us know, if you encounter the bug after this hotfix.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 3,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0,
+    "topNew": [
+     "Cheats can now be entered in the “Cheats” menu during gameplay, without having to quit back to main menu",
+     "Improved the responsiveness of inputting cheats"
+    ]
+   },
+   "sourceIds": [
+    "steam-3810510"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3810510/view/1850460852981868"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-25T16:16:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-3810510",
+      "checkedAt": "2026-11-25T21:24:27.401Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-25T16:16:08.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3810510",
+      "checkedAt": "2026-11-25T21:24:27.405Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-11-25T16:16:08.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-25T21:24:27.405Z"
+  },
+  {
+   "id": "derelikt-206842@1",
+   "gameId": "derelikt-206842",
+   "displayName": "Patch 1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-11-23T16:27:34.000Z",
+   "notes": [
+    {
+     "title": "INCOMING TRANSMISSION",
+     "items": [
+      {
+       "text": "Administrator clearance upgraded.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Your field reports came through loud and clear, so we’re deploying a software update to the outpost as requested.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "FOV slider, a stash near every save point, improved key remapping, and toggle options for sprinting and crouching.",
+     "items": [
+      {
+       "text": "Just to name a few of the changes included in this update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Let us know if everything is running more smoothly, and don’t hesitate to report back if you spot any glitches or weird interference.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Also, if this update fixed the specific issues that made your first playthrough rough, we’d be super grateful if you updated your review. Every bit of support helps boost the signal from Von Neumann Outpost even further.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "New features and improvements",
+     "items": [
+      {
+       "text": "Added adjustable FOV option",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added toggle options for sprinting and crouching",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Streamer Mode option (in the Sound section in the Options, available from the main menu)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added player's stash next to every save pod",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reduced Self-Damage with the Sentinel Arm weapon from 35 to 1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "General improvements to menu navigation on controllers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug fixes",
+     "items": [
+      {
+       "text": "Fixed lot of collisions that could cause player to become stuck",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed enemy state persistence and position restoration on load that could cause enemies to \"respawn\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where selecting an unequipped Glyph could reduce the player’s health",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where it became impossible to stash items away after reading documents",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed possible level skip in LVL 06",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed UI Screens persisting after player's death, causing a softlock",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the total amount of all possible documents to find shown in the statistics.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed items respawning on top of destroyed barrels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed Kruger's Coin Half when revisiting LVL 06",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed glass collision in front of Vlodnikov in LVL 07 if it was destroyed in the cutscene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed the duplicate of Hartman in LVL 04 after Player enters LVL 07",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a possible autosave corruption when trying to manually save a game too quickly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where it was possible to use a hotkey to use a medpack during a cutscene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in the battery puzzle where certain pieces could change their rotation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed few issues regarding controls remapping (especially remapping the arrow keys and mouse scroll)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed bunch of graphical glitches",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed some door's collisions remaining in place even when the doors were opened: Let us know how DERELIKT feels now on your end.: Discord: https://discord.gg/Cxp8rzUSX5: Talk soon!: [img src=\"{STEAM_CLAN_IMAGE}/45664223/837feb3f28a9199565f25131081dd9a6a06b4fa0.png\"][img src=\"{STEAM_CLAN_IMAGE}/45664223/9b4552647e4d6ba5012fff7fd36a5b78a2f613a3.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 16,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0,
+    "topNew": [
+     "Added adjustable FOV option",
+     "Added toggle options for sprinting and crouching",
+     "Added Streamer Mode option (in the Sound section in the Options, available from the main menu)"
+    ]
+   },
+   "sourceIds": [
+    "steam-3810510"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3810510/view/1849827110442278"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-23T16:27:34.000Z",
+      "verification": "official",
+      "sourceId": "steam-3810510",
+      "checkedAt": "2026-11-23T20:24:22.712Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-23T16:27:34.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3810510",
+      "checkedAt": "2026-11-23T20:24:22.714Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-11-23T16:27:34.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-23T20:24:22.715Z"
+  },
+  {
+   "id": "derelikt-206842@2",
+   "gameId": "derelikt-206842",
+   "displayName": "Hotfix 2",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-11-15T16:22:39.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Small number of fixes and improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As usual, please report any issues you encounter. Share your feedback, write reviews - we read them all!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Replaced music track playing during the gym fight to avoid potential strikes for content creators",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed player being able to heal during Cutscenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed explosive barrels not exploding when there's an item placed on top of the barrel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added HUD Feature to indicate no full Magazine is available",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "- If no full magazine is available, the magazine counter in the HUD (the number on the right side) will now appear greyed out to notify you that your next reload may not be a full one. Time to stack some ammo in your inventory!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed not being able to shoot enemies through certain railings in LVL 05",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed leftover collision after pillar collapses over kill volume, allowing the player to stand in mid-air",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 4,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3810510"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3810510/view/1849458702686684"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-15T16:22:39.000Z",
+      "verification": "official",
+      "sourceId": "steam-3810510",
+      "checkedAt": "2026-11-19T11:40:59.488Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-15T16:22:39.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3810510",
+      "checkedAt": "2026-11-19T11:40:59.488Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-11-15T16:22:39.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-15T17:10:44.200Z"
+  },
+  {
+   "id": "derelikt-206842@hotfix-2026-11-14",
+   "gameId": "derelikt-206842",
+   "displayName": "Hotfix",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-11-14T18:05:27.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Flashlight batteries replaced by heavy duty 24h super space battery from AOC",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "An improvement when player is given an item with full inventory - the key item will be placed inside inventory, pushing one stack of low tier ammo on the ground",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed Robots being audible from across the map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Schiller' Door Softlock in level 6",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where an Abomination could spawn in clear sight when player destroyed a door with an explosive barrel in level 4 (Exo Labs)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare case where Lightning Rifle disappears during reload",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed downed Abominations being invulnerable to explosives",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Proxy Spawn Animations in level 9",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed possible performance issues on level 3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Documents and Insight are now counted correctly on the save screen\". For existing saves, this issue will fix itself after saving again.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The option to change FOV is coming along with more improvements and fixes!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thanks to everybody for their reports, feedback and opinions. We read them all!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 7,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3810510"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3810510/view/1849458702684191"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-14T18:05:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-3810510",
+      "checkedAt": "2026-11-19T11:40:59.488Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-14T18:05:27.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-3810510",
+      "checkedAt": "2026-11-19T11:40:59.488Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-11-14T18:05:27.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-14T18:23:26.443Z"
+  }
+ ],
+ "issues": []
+}

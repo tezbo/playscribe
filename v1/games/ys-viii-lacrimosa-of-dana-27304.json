@@ -1,0 +1,494 @@
+{
+ "game": {
+  "id": "ys-viii-lacrimosa-of-dana-27304",
+  "igdbId": 27304,
+  "name": "Ys VIII: Lacrimosa of Dana",
+  "cover": {
+   "imageId": "co234k",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co234k.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar4eq3",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar4eq3.jpg"
+  },
+  "ps5Release": "2022-11-15",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "ys-viii-lacrimosa-of-dana-27304@major-2020-01-17",
+   "gameId": "ys-viii-lacrimosa-of-dana-27304",
+   "displayName": "Full Changelog by Durante - 1/17 Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2020-01-17T21:20:54.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "New improvements have been made to graphics, performance/stability, and input/UI. In addition, an experimental local co-op feature has been added to the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Check out all the exciting quality-of-life changes that are included in the available game update patch:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "GRAPHICS/PERFORMANCE",
+     "items": [
+      {
+       "text": "Arbitrary main rendering resolution enabled",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved frame-pacing and animation sync accuracy at all framerates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved menu opening/closing behavior",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Character and enemy animations now correctly timed at 100+ FPS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Support for high-refresh monitors and >60 Hz V-sync",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Replaced ineffective anti-aliasing blur filter with high-quality screenspace AA",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Bloom, refraction, and glare post-processing effects now scale with resolution",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minimap rendering resolution now adapts to rendering resolution, preventing pixelated map at high resolution",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Greatly improved quality of menu backgrounds (replacing low-res screen capture)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved standard shadow filtering without performance loss, plus two new, higher quality filter options",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added option for rendering additional environment shadows",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added supersampling/subsampling option (which also affects secondary 3D rendering)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved shadow rendering performance by preventing unnecessary memory traffic",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed animation speed of HUD elements at >30 FPS (e.g. full health bar)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved the quality of volumetric lighting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Implemented HBAO+ ambient occlusion as alternative higher-quality SSAO option",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a draw distance setting which applies to grass/clutter, monsters and NPCs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Implemented anisotropic filtering setting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added high-quality texture pack (generated from original sources, partially with AI upsampling, and full mipmaps)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Character poses in the equip menu now update at >30 FPS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "INPUT/UI",
+     "items": [
+      {
+       "text": "Improved camera mouse controls, replacing joystick emulation with direct 1:1 control",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Movement keys are now individually bindable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added keybinding for walking (slow movement) with keyboard/mouse controls",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Changed default bindings to fit common usage by PC gamers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "STABILITY",
+     "items": [
+      {
+       "text": "Fixed multiple video memory leaks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed potential crash when switching between languages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Switched to 64-bit build to prevent address space fragmentation issues in long sessions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Improved render thread synchronization to prevent specific types of race condition crashes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Removed superfluous asset encryption",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "MISCELLANEOUS",
+     "items": [
+      {
+       "text": "Fixed unlocking of some achievements when playing with mouse/keyboard controls",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed several typos and dialogue/text issues throughout the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed slightly-too-low cloud save limit when using a very large number of saves",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "CO-OP MODE (Experimental)",
+     "items": [
+      {
+       "text": "2-Player local co-op mode has been added",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "About coop mode",
+     "items": [
+      {
+       "text": "Need to supply two Xinput controllers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You must have 2 or more characters in the party in order for the second player to join the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "SP is shared",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Second player does not receive the “AI cheats” (ie. AI controlled characters only take half damage, whereas second player in co-op mode will take the full amount of damage.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Not officially supported and limited support will be available for troubleshooting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "To enable co-op mode",
+     "items": [
+      {
+       "text": "Open Steam libraries through the Steam client",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Right-click on Ys VIII: Lacrimosa of DANA, and click “Properties”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Click “Set Launch Options”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Input “--coop” into the parameter and click “OK.”",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Launch the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Press “Start” on the second controller to enable second player",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 12,
+    "fixed": 8,
+    "balance": 0,
+    "other": 23,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-579180"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/579180/view/3690071589845905776"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2020-01-17T21:20:54.000Z",
+      "verification": "official",
+      "sourceId": "steam-579180",
+      "checkedAt": "2026-11-12T16:51:48.411Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:48.411Z"
+  },
+  {
+   "id": "ys-viii-lacrimosa-of-dana-27304@major-2018-06-30",
+   "gameId": "ys-viii-lacrimosa-of-dana-27304",
+   "displayName": "New Update 6/29/2018",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2018-06-30T01:42:59.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We have pushed the preview branch into the default branch and it includes the following fixes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Slowdowns caused by blur effects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fast forwarding during cutscenes / event scenes should be smoother",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Map shadows",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Additional stability improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Additional performance improvements in various areas",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Additional text bugs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Once again, thank you everyone for your continued support!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-Sean",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-579180"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/579180/view/2499943313660876106"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2018-06-30T01:42:59.000Z",
+      "verification": "official",
+      "sourceId": "steam-579180",
+      "checkedAt": "2026-11-12T16:51:48.410Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T16:51:48.410Z"
+  }
+ ],
+ "issues": []
+}

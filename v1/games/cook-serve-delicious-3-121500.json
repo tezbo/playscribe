@@ -1,0 +1,365 @@
+{
+ "game": {
+  "id": "cook-serve-delicious-3-121500",
+  "igdbId": 121500,
+  "name": "Cook, Serve, Delicious! 3?!",
+  "cover": {
+   "imageId": "co1wbk",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co1wbk.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "arakb",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/arakb.jpg"
+  },
+  "ps5Release": "2024-04-25",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "cook-serve-delicious-3-121500@2",
+   "gameId": "cook-serve-delicious-3-121500",
+   "displayName": "Hotfix 2",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-06-25T21:10:33.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "A small fix that was causing the end of day theme music to not play. Stupid bug! You go squish now! ːcsdmadː ːcsd2angryː",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1000030"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1000030/view/5124581515266881218"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-25T21:10:33.000Z",
+      "verification": "official",
+      "sourceId": "steam-1000030",
+      "checkedAt": "2026-11-11T21:58:26.434Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:26.434Z"
+  },
+  {
+   "id": "cook-serve-delicious-3-121500@1",
+   "gameId": "cook-serve-delicious-3-121500",
+   "displayName": "Hotfix 1",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-06-22T02:00:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Just a quick patch to fix the Discord integration for the game (in case you didn't know, it has Discord Rich Presence!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1000030"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1000030/view/5124581515253035535"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-06-22T02:00:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-1000030",
+      "checkedAt": "2026-11-11T21:58:26.434Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:26.434Z"
+  },
+  {
+   "id": "cook-serve-delicious-3-121500@major-2022-08-10",
+   "gameId": "cook-serve-delicious-3-121500",
+   "displayName": "Cook, Serve, Delicious! 3?! Update! Lots of fixes to gamepad controls & more!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2022-08-10T00:33:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Howdy howdy y'all! So as we're looking to future proof CSD 3 for the years to come something we've wanted to do for a while is redo a lot of the gamepad control code, specifically for co-op. There were moments when menus could overlap each other and such, and those problems were much more pronounced when using an xinput controller such as a PS4 pad.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "So we've gone in and replaced a lot of the code to better support two gamepads at a time on PC, and fixed the broken xinput gamepad support since our last patch (apologies for that!). Full details are below- and hey, if you haven't wishlisted our next game, Cook Serve Forever, perhaps you could check it out! It's coming very soon and wishlists GREATLY help us!!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "PATCH NOTES",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Overhauled gamepad support, specifically for two player co-op, to better prevent rare issues with menu overlaps and bugs when using xinput and non-xinput pads.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed xinput gamepad support (such as PS4 gamepads) for single player and co-op.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "We plan on releasing a patch in the future that updates the links in the Socials menu as well as adding a \"do not show again\" toggle for the opening splash box. Thanks so much y'all for all of the support!!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1000030"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1000030/view/4607764924144492700"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-08-10T00:33:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-1000030",
+      "checkedAt": "2026-11-11T21:58:26.433Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:26.433Z"
+  },
+  {
+   "id": "cook-serve-delicious-3-121500@patch-2022-06-24",
+   "gameId": "cook-serve-delicious-3-121500",
+   "displayName": "CSD 3 New Patch Released!",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-06-24T23:28:04.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone! We just released a new CSD 3 build for both PC and Mac, woo! Here's all the changes:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UPDATE: If you are having issues with the Mac build after updating (it will not start and throws a Steam error code) please uninstall and then reinstall the game and that should fix it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you update the Mac version, but do not see your save files in the game, they are not deleted! You'll need to copy them over to a new folder like so:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-navigate to ~/Library/Application Support/com.yoyogames.macyoyorunner and copy the .ini files you see there (XS_CSD3_LocalSave.ini).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-if it's not there, try looking in ~/Library/Application Support/net.vertigogaming.csdthree",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "-copy these files to ~/Library/Application Support/net.vertigogaming.cookservedelicious3",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We apologize for the issue!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "All Versions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved performance by rebuilding the game using the latest Game Maker 2.2 edition, which is why the patch download is so large.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved performance in the opening menu screen as well as the first tutorial with changes to the texture loading system.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Replaced opening text splash with a new Cook Serve Forever splash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed and improved some visual menu elements to better integrate gamepad and PC/mouse controls.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Mac Version",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The game now runs on a new build for Mac that properly integrates all Steam features into the game (up until now we had a separate beta branch to use if players wanted to use certain Steam features like Achievements).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As always, you can roll back to the previous version in the Beta Branch should you need to (right click CSD 3 on Steam, properties, then beta branches and select v1.01)",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "In case you didn't know, Cook Serve Forever was announced recently! If you love cookin' and servin' then you're gonna love our all new take on this series. Check it out and wishlist/follow today, every wishlist and follow helps TREMENDOUSLY!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I hope everyone is doing well in these difficult times, sending much love to everyone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 0,
+    "balance": 0,
+    "other": 13,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1000030"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1000030/view/4474904295735002162"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-24T23:28:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-1000030",
+      "checkedAt": "2026-11-11T21:58:26.432Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:58:26.432Z"
+  }
+ ],
+ "issues": []
+}

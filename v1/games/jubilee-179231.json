@@ -1,0 +1,484 @@
+{
+ "game": {
+  "id": "jubilee-179231",
+  "igdbId": 179231,
+  "name": "Jubilee",
+  "cover": {
+   "imageId": "cocqyl",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/cocqyl.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar1fnw",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar1fnw.jpg"
+  },
+  "ps5Release": "2024-02-09",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "jubilee-179231@major-2021-12-22",
+   "gameId": "jubilee-179231",
+   "displayName": "Update: Very Tiny Fix",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-12-22T17:00:15.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "In the previous update, there was a little bug with the Dax achievement being hard to get for players who already had the older version of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This update provides a simple backup method for obtaining the achievement. If you don't have the achievement, but you do have him unlocked, try this:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Start a new game with Dax. The achievement for unlocking him should trigger automatically.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "------",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "OK -- I hope that you have fun playing! Thanks for everything.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Have a wonderful Christmas! 🎄",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1774220"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1774220/view/4224938027296332708"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-12-22T17:00:15.000Z",
+      "verification": "official",
+      "sourceId": "steam-1774220",
+      "checkedAt": "2026-11-12T07:24:22.012Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:22.012Z"
+  },
+  {
+   "id": "jubilee-179231@major-2021-12-12",
+   "gameId": "jubilee-179231",
+   "displayName": "Major update!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-12-12T16:47:38.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello! This is the third update for Jubilee-- and it's a big one:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Playable Character: Dax",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "His skateboard makes him more slippery to control than his sister, but he has high top speed and gets sick hangtime with his kickflip.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dax is unlocked after Jubilee has discovered all of the shines in the game world.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "(If you've already discovered all the shrines in a previous save, simply activate one of the shrine checkpoints and Dax will be unlocked. You won't see a pop-up notice, but he'll be available for new games).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Small Changes and Bug Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a \"focus pause\"-related bug that could freeze up the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a display bug that wouldn't update your HUD properly if you fast-traveled during the banking effect",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Moved \"Lionheart\" (the hippie NPC with the bike) slightly to give the player some more jumping space",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Darkened the \"danger\" signs again to prevent confusion that they might be platforms",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a very tiny bug that set the cursor to the wrong line when cancelling out of deleting saved data",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the arbitrary hook for the ending lightbeam, so external timers would match the in-game timer",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "This update shouldn't break anything with save files from previous versions... I think. :P",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Please contact me if anything goes wrong, or as always-- if you find more bugs or anything else that needs to be fixed. Thanks for playing the game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 4,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1774220"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1774220/view/4224936849662001016"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-12-12T16:47:38.000Z",
+      "verification": "official",
+      "sourceId": "steam-1774220",
+      "checkedAt": "2026-11-12T07:24:22.012Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:22.012Z"
+  },
+  {
+   "id": "jubilee-179231@major-2021-11-20",
+   "gameId": "jubilee-179231",
+   "displayName": "Second Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-11-20T00:27:41.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Okay-- it's the second day that Jubilee's been out, and it's the second update. We're two for two!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This is another small update that patches some bugs and it provides one notable feature that improves quality of life for players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "NEW QoL ADDITIONS",
+     "items": [
+      {
+       "text": "Added confirmation screens for the \"Quit to Title\" and \"Quit Game\" options from the menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a confirmation screen for fast-traveling to shrines from the menu. This one only appears if the player has gems on hand.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "BUG FIXES/MINOR CHANGES",
+     "items": [
+      {
+       "text": "Fixed a bug that caused the 100%-gem reward NPC to appear too early.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added some spikes in H.E.C.K. to prevent possibility of a collision bug.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a simple display bug in the options menu: volume sliders now show \"0%\" instead of \"00%\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a typo in the display text of the secret pages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a menu cursor memory position bug when canceling from delete save data.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added an arbitrary hidden variable when the player wakes up in a new game (first input) so external speedrun autosplitters can read it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Anyways-- been working a lot to get these fixes and improvements out really quickly. Hopefully we won't need too many more updates in the future. But if you find something, let me know.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Thanks for playing the game! Tell your friends about it :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 8,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1774220"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1774220/view/4227186657146269720"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-11-20T00:27:41.000Z",
+      "verification": "official",
+      "sourceId": "steam-1774220",
+      "checkedAt": "2026-11-12T07:24:22.011Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:22.011Z"
+  },
+  {
+   "id": "jubilee-179231@major-2021-11-19",
+   "gameId": "jubilee-179231",
+   "displayName": "First Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2021-11-19T01:50:25.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Thank you for a great first day of Jubilee! Since the launch (and before it), I've been watching streams of the game, and I've implemented some improvements based on what I've seen from players.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "I'm happy to share with you the first update. Been working on this all day to get this out as soon as possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Big Updates",
+     "items": [
+      {
+       "text": "Save Slots! There are now four save slots. You can change the active save slot by simply pressing left/right on the title screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a new option that will make life easier for speedrunners (it's unlocked after the first time the player reaches any ending).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Small Updates",
+     "items": [
+      {
+       "text": "Added an extra checkpoint in Skylantis.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Shift key can now be used to jump.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug in the shrine menu, now correctly displays the current zone's gem information when your cursor is on the \"return\" button.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted Kjalstar's position and hitbox (the NPC near the bayou entrance) so he doesn't get in the way of a jump.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed a bug that potentially locked up the endgame \"return to world\" screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Subtly changed the color of the death-warning signs, hopefully they blend into the background better and look less like platforms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This update shouldn't break anything, even though the new save slots are a significant addition. If you have any problems or find any errors with the update, send me a message on twitter. Thank you!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 2,
+    "balance": 1,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1774220"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1774220/view/4227186657142837165"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-11-19T01:50:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-1774220",
+      "checkedAt": "2026-11-12T07:24:22.010Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T07:24:22.010Z"
+  }
+ ],
+ "issues": []
+}

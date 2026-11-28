@@ -1,0 +1,2879 @@
+{
+ "game": {
+  "id": "brave-escape-280567",
+  "igdbId": 280567,
+  "name": "Brave Escape",
+  "cover": {
+   "imageId": "co9sie",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co9sie.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar37lt",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar37lt.jpg"
+  },
+  "ps5Release": "2026-07-24",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "brave-escape-280567@1.8.0",
+   "gameId": "brave-escape-280567",
+   "displayName": "Update 1.8.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-07-23T13:43:25.000Z",
+   "notes": [
+    {
+     "title": "We are officially launching on PlayStation 5, Xbox One, and Xbox Series X|S on July 24th!",
+     "items": [
+      {
+       "text": "From day one, our goal has been to make this a cooperative adventure you can play with anyone. Players on PC, PlayStation, and Xbox will be able to team up and play together online seamlessly from launch day.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "pc",
+        "xboxSeries"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Cool",
+     "items": [
+      {
+       "text": "Requirements: Complete the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44658531/74f87d3f254677bc321c3a77dcc54315fa80154d.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Engineer",
+     "items": [
+      {
+       "text": "Requirements: Collect 10 Red RAM",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44658531/eaf225597ae2bacd36f84381a2b6b81e185aa5da.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Cookie & Dougie",
+     "items": [
+      {
+       "text": "This skin was only available temporarily during the Battle for the Habitats event and is removed in this patch. If you'd still like to use it, you can enable it by launching the game with the -skin_bfth launch argument.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Audio",
+     "items": [
+      {
+       "text": "Improved the speed of loading sound effects.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Framework",
+     "items": [
+      {
+       "text": "Upgraded to MonoGame v3.8.5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Localization",
+     "items": [
+      {
+       "text": "Changed “Rumble” to “Vibration” to be more platform agnostic.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added missing translations for “Skins”.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Design",
+     "items": [
+      {
+       "text": "Added some missing sprites on Glacial Fall’s drone levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated splash art to include our sound designer's logo.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a purchase button for the Friend's Pass on title screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Performance",
+     "items": [
+      {
+       "text": "Improved frame rate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved memory allocation to reduce occasional stutters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved logging overhead.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "UI",
+     "items": [
+      {
+       "text": "Level name, death stats and player names are now always displayed in the Pause Menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Friend names will always resize to fit if the name is too big.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Friend names will be automatically changed on save file UI if a change is detected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Friend profile icons will now be displayed on save file UI.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can now press up to get to the end of the Pause Menu, and down to get to the top.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A network issue icon will now flash in the top right of the screen when internet is not available.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Glacial Falls - Exit",
+     "items": [
+      {
+       "text": "Fixed tutorial so it persisted on death.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Glowing Depths - Level 22",
+     "items": [
+      {
+       "text": "Adjusted spikes to be more forgiving. (Standard)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Serpent’s Hollow - Exit",
+     "items": [
+      {
+       "text": "Adjusted ceiling height in small area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Thunder Ridge - Bonus 6",
+     "items": [
+      {
+       "text": "Fixed an issue where the camera would go outside of the level.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Thunder Ridge - Bonus 8",
+     "items": [
+      {
+       "text": "Adjusted ceiling at the end be more forgiving. (Standard)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed a bug where the game could crash if the guest left the lobby during the countdown.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where Floyd would play transform out animation before dying.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where it kept trying to recreate a lobby while a prompt was active.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where viewing Credits could cause prompts not to work.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where Skins preview would show over certain prompts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the “Long Live The King” and “Get Boosted” achievements only tracked when the player controlling Colin or Floyd did not already have the achievement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the \"Strategic Pause” achievement only tracked when the host did not already have the achievement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where level name didn’t change instantly when changing the Language.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where losing an online connection for more than 15 seconds could cause the game to be unplayable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the invite code didn’t refresh correctly when a player left the lobby.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where returning to the lobby and playing again could cause a crash.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where artifacts were sometimes displayed in the corner of the magnet track platforms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the reset colors prompt sometimes didn’t appear.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several levels that had a rare visual flicker.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 7,
+    "fixed": 16,
+    "balance": 3,
+    "other": 15,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-1354260"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1354260/view/1839041357026744"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-07-23T13:43:25.000Z",
+      "verification": "official",
+      "sourceId": "steam-1354260",
+      "checkedAt": "2026-11-11T21:57:33.791Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:33.791Z"
+  },
+  {
+   "id": "brave-escape-280567@1.7.1",
+   "gameId": "brave-escape-280567",
+   "displayName": "Update 1.7.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-05-05T12:14:10.000Z",
+   "notes": [
+    {
+     "title": "Idle Animations",
+     "items": [
+      {
+       "text": "You can now configure how idle animations are played.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "On: Idle animations and sounds always play (default).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Quiet: Idle animations play without sound effects (no boombox mode).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Off: Idle animations never play.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Player movement is no longer locked when exiting boombox mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Ancient Cave - Bonus 1",
+     "items": [
+      {
+       "text": "Fixed an issue where players could stand offscreen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Ancient Cave - Bonus 2",
+     "items": [
+      {
+       "text": "Lowered platform by pressure plate.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Serpent’s Hollow - Level 17",
+     "items": [
+      {
+       "text": "Adjusted camera down.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Audio",
+     "items": [
+      {
+       "text": "Upgraded FMOD to version 2.03.13",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted volume of Colin’s 3..2..1.. sound.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Cross-play",
+     "items": [
+      {
+       "text": "Upgraded EOS SDK to 1.19.0.7-CL52449437",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Design",
+     "items": [
+      {
+       "text": "Added PS5 create and options controller icons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new",
+       "platforms": [
+        "ps5"
+       ]
+      },
+      {
+       "text": "Version number on title screen is now using a monospaced font.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Localization",
+     "items": [
+      {
+       "text": "Russian/Ukrainian fixes courtesy of Sergey Khoroshykh.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Saves",
+     "items": [
+      {
+       "text": "Deleting a save is now done in the background thread.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Settings",
+     "items": [
+      {
+       "text": "Saving settings during game load is now done in the background thread.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed a bug where it would show skin preview while loading a lobby.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where keys and buttons could get stuck if they were pressed before entering the Steam Overlay.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a bug where some controllers were still processed when Steam Overlay was active.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a bug where receiving an empty packet from Epic Online Services would never be processed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the host could not recover a failed Epic Online Services P2P connection before the game started.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 4,
+    "balance": 3,
+    "other": 11,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-1354260"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1354260/view/1831432155579884"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-05-05T12:14:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-1354260",
+      "checkedAt": "2026-11-11T21:57:33.790Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:33.790Z"
+  },
+  {
+   "id": "brave-escape-280567@1.7.0",
+   "gameId": "brave-escape-280567",
+   "displayName": "Update 1.7.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-04-22T12:47:19.000Z",
+   "notes": [
+    {
+     "title": "Bonus Levels",
+     "items": [
+      {
+       "text": "All 7 worlds now include 10 Bonus Levels each, unlocked by collecting the world's green ram.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "5 worlds have been restructured - Serpent's Hollow, Thunder Ridge, Moai Chambers, Glooming Depths, and Glacial Falls. 5 existing levels from each have been moved into the Bonus category, and 5 brand new levels have been added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The remaining 2 worlds have received 10 brand new Bonus Levels added directly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "45 new levels in total. 70 Bonus Levels across the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Secret Levels and Red RAM are now available in Easy difficulty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Battle for the Habitats",
+     "items": [
+      {
+       "text": "Brave Escape is participating in Battle for the Habitats, a global games event running from Earth Day (April 22) to World Environment Day (June 5). The event spans 100+ games with a goal of raising $1 million for the Rainforest Alliance and Oceana. As part of the event, two free exclusive character skins have been added:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cockatoo skin — inspired by Cookie, one of the event's hero animals.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Dugong skin — inspired by Dougie, one of the event's hero animals.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44658531/62c1d623ed7f07673ad608394dc39f9271f51a22.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Max FPS",
+     "items": [
+      {
+       "text": "You can now configure the maximum FPS the game renders at.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Options: 60, 120, 240, or Off (uncapped)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To uncap FPS: set Vsync=Off and MaxFrameRate=Off",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "For true Vsync: set Vsync=On and MaxFrameRate=Off",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Improvements",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44658531/9dfb067cca335b0363fb7ac6071ef37b70173226.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Difficulty Renaming",
+     "items": [
+      {
+       "text": "To better reflect the intended experience of each mode, we’ve renamed our difficulties to Standard and Brave. We believe these titles provide a clearer picture of the challenge ahead. This change is purely cosmetic and has no impact on actual gameplay.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Standard (formerly Casual)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Outlines and Transparency",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44658531/e473107d49148da4ed708167108fd2c8d6683fa9.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Colin and Floyd can now be configured to display an outline when they overlap each other. These outlines can also be configured to always appear.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Colin can be configured to appear transparent when overlapping Floyd.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Audio",
+     "items": [
+      {
+       "text": "Added a 3.. 2.. 1.. countdown sound effect.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Upgraded FMOD to 2.03.12.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Design",
+     "items": [
+      {
+       "text": "General",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New title screen (let there be light... and animations).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved UI throughout title screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added more detail sprites to world select room.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Created new icons to represent event characters for tutorials.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved the Prologue; refined art and added animations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved ground and background tile sprite colors and variation for all caves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved inner tiles of all ground tiles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved lighting from torches in all caves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved end of level flag animation in all caves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added colors to pressure plate sprite arrows in all caves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added torch light flicker to several caves.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added ambient plant movement to most caves and made them interactable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved tutorial signs for Snake, Moai, and Drone events.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Increased contrast in Colin's face.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Ancient Cave",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved moving ground tiles in Ancient Cave.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved background colors and contrast.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added particles to the Ancient Cave torches and made them interactable.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adjusted the background parallax speed in the Ancient Cave.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Glacial Falls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved floating iceberg sprite.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Revised background.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added charging sign sprite to charging stations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added wind particles to Drone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added idle particles to Wind Tunnels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Increased the number of snow particles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Glooming Depths",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved background; added and refined details.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a surface animation when landing on Switch Platforms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Moai Chambers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved spawn indicators for Fireballs and Geysers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved color for all lava sprites and their frozen counterparts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved lava pool light.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved colors of background.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved moving ground tiles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved lava spawner sprites.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Thunder Ridge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved power source sprite.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added more foreground/background details with plants.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Serpent's Hollow",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New background.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved tree sprite colors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved stake trap sprite.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added land particles to falling leaf platforms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added pollen particles to Bouncy Flowers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The Expanse",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New animation for Black Holes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Changed color for grippy wall tiles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved broken ground tile sprites.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Hidden Levels now have a teleporter at the end instead of a flag.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Gameplay",
+     "items": [
+      {
+       "text": "Snake in Serpent's Hollow now has a movement cancel built in, making it more responsive when changing direction right after entering a new cell.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Snake boost in Serpent's Hollow has been changed to the Jump keybind for consistency with other events.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Venus Trap platform timings have been improved — longer delay time and shorter chomp time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Performance",
+     "items": [
+      {
+       "text": "All libraries are now built and trimmed into the game, reducing install size and improving startup speed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved the speed of creating magnet gravity grids.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved the speed of the magnet beam shader.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved the speed of creating slime.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Saving the game is now done on a background thread, improving level reload times.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved several areas by properly caching queries.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved interactions with the GPU to only occur during draw frames.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Disabled some systems that were always running when they didn't need to be.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved some UI input to be processed on the same frame instead of the next frame.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Updated to Steamworks 1.64",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "Saves",
+     "items": [
+      {
+       "text": "Saves are now always shared between the Demo and the Main game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added a warning if trying to play a save from a newer version of the game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a warning if trying to play a full game save on the demo.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added both difficulty flags to save slots instead of just Standard mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Lobbies",
+     "items": [
+      {
+       "text": "You will now enter the lobby room before the other player joins.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "You can view the Steam profile of the other player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "More detailed errors are now displayed if creating or joining a lobby fails.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed a bug where some systems still ran while the game was trying to exit early.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed one of the slime colliders being one pixel too tall.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug in Settings where changing the controller didn't update keybind images.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a bug where the guest couldn't hear levels being selected in the world select.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where collecting the hard drives at the end of levels was not synced over the network.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where you may hear players die after completing specific levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 47,
+    "fixed": 5,
+    "balance": 5,
+    "other": 38,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1354260"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1354260/view/1830797770230578"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-22T12:47:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-1354260",
+      "checkedAt": "2026-11-11T21:57:33.789Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:33.789Z"
+  },
+  {
+   "id": "brave-escape-280567@1.7",
+   "gameId": "brave-escape-280567",
+   "displayName": "Update 1.7",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2026-04-08T15:14:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey everyone, A free update is coming to Brave Escape at the end of April, and we wanted to give you a little peek at what's to come.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "World Restructuring & New Bonus Levels",
+     "items": [
+      {
+       "text": "Five worlds are getting a restructure - levels are being reorganized, and 5 levels from each world are being moved out of the main path and into a brand new category: Bonus Levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Serpent's Hollow",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Thunder Ridge",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Moai Chambers",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Glooming Depths",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Glacial Falls",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Each world will have 10 bonus levels unlocked by collecting the world's green ram - that's 45 new levels in total.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Visual improvements",
+     "items": [
+      {
+       "text": "On the visual side, the game is getting a brand new title screen along with improvements to the lighting system across the game - and many others.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44658531/faa599f8cf9764923eab6b6fbdddf3619bdd8551.gif\"] More details soon. Thanks for playing!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Hit Start Team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 10,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0,
+    "topNew": [
+     "Serpent's Hollow",
+     "Thunder Ridge",
+     "Moai Chambers"
+    ]
+   },
+   "sourceIds": [
+    "steam-1354260"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1354260/view/1829528821304612"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-04-08T15:14:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-1354260",
+      "checkedAt": "2026-11-11T21:57:33.787Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:33.787Z"
+  },
+  {
+   "id": "brave-escape-280567@1.5.0.9",
+   "gameId": "brave-escape-280567",
+   "displayName": "Update 1.5.0.9",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-10-08T14:16:35.000Z",
+   "notes": [
+    {
+     "title": "Disabling Epic Online Services",
+     "items": [
+      {
+       "text": "We’ve received several reports of connection issues with Epic Online Services (EOS).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As a workaround we have added a new launch argument that allows you to completely disable EOS and use Steam Lobby/P2P services instead.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In order for this to work both players must be running the same application (e.g., both using the main game or both using the Friend’s Pass).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "How to Disable EOS",
+     "items": [
+      {
+       "text": "Right-click Brave Escape in your Steam Library.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Select Properties.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Under the General tab, find Launch Options.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Paste the following command: -noepic",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We plan to add in-game options to let you choose between Steam and EOS in a future update.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1354260"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1354260/view/1813041031176193"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-08T14:16:35.000Z",
+      "verification": "official",
+      "sourceId": "steam-1354260",
+      "checkedAt": "2026-11-11T21:57:33.787Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:33.787Z"
+  },
+  {
+   "id": "brave-escape-280567@1.5.0.8",
+   "gameId": "brave-escape-280567",
+   "displayName": "Update 1.5.0.8",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-09-18T19:55:29.000Z",
+   "notes": [
+    {
+     "title": "Improvements",
+     "items": [
+      {
+       "text": "You can now unlock the achievements \"You're Pretty Good\" and \"Look At Them Go\" without starting a new game. Just open Level Select, choose Ancient Cave – Level 1, and complete it either with 0 deaths or in under 8 minutes to earn the achievement.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed some incorrect cross-platform icons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Textures are now being preloaded quicker.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "macOS now using an app bundle.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Improved macOS build so the game correctly launches outside of Steam.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 1,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0,
+    "topNew": [
+     "Fixed some incorrect cross-platform icons.",
+     "Textures are now being preloaded quicker.",
+     "macOS now using an app bundle."
+    ]
+   },
+   "sourceIds": [
+    "steam-1354260"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1354260/view/1811138915402149"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-18T19:55:29.000Z",
+      "verification": "official",
+      "sourceId": "steam-1354260",
+      "checkedAt": "2026-11-11T21:57:33.786Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:33.786Z"
+  },
+  {
+   "id": "brave-escape-280567@1.4.1",
+   "gameId": "brave-escape-280567",
+   "displayName": "Update 1.4.1",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-08-11T20:01:02.000Z",
+   "notes": [
+    {
+     "title": "Visual",
+     "items": [
+      {
+       "text": "Updated flame color in Final Expanse.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed an issue where Colin could occasionally die while Floyd was the Snake, due to networking lag.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Serpent's Hollow - Level 30",
+     "items": [
+      {
+       "text": "Adjusted ceiling height to be more forgiving.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 1,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1354260"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1354260/view/1807332909709464"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-11T20:01:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-1354260",
+      "checkedAt": "2026-11-11T21:57:33.785Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:33.785Z"
+  },
+  {
+   "id": "brave-escape-280567@1.4.0",
+   "gameId": "brave-escape-280567",
+   "displayName": "Update 1.4.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-05-03T23:02:36.000Z",
+   "notes": [
+    {
+     "title": "New Movement Particles",
+     "items": [
+      {
+       "text": "Added new particle effects for moving, jumping, boosting, and landing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed an issue where the jump animation could play incorrectly during reverse gravity.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "The Expanse - Exit 2",
+     "items": [
+      {
+       "text": "Removed some meteors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0,
+    "topNew": [
+     "Added new particle effects for moving, jumping, boosting, and landing."
+    ]
+   },
+   "sourceIds": [
+    "steam-1354260"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1354260/view/1798454487682000"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-05-03T23:02:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-1354260",
+      "checkedAt": "2026-11-11T21:57:33.785Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:33.785Z"
+  },
+  {
+   "id": "brave-escape-280567@1.3.0",
+   "gameId": "brave-escape-280567",
+   "displayName": "Update 1.3.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-24T16:43:57.000Z",
+   "notes": [
+    {
+     "title": "Colin",
+     "items": [
+      {
+       "text": "Arms Crossed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Feeling the Heat",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "...Sigh",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Floyd",
+     "items": [
+      {
+       "text": "Ready to Go!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Screensaver Corner Shot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "System Reboot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Break Mode",
+     "items": [
+      {
+       "text": "If both players are idle and near each other, Floyd will transform into a boombox while Colin relaxes and listens. Colin can seek backward, and Floyd can seek forward through songs using the Use Item button. Moving either character will exit Break Mode.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed a bug where some buttons could stick around if you left the level during a dialogue.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Improvements",
+     "items": [
+      {
+       "text": "Made Borderless Fullscreen the default option instead of Exclusive Fullscreen.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added a simpler way to handle the death bounds in The Expanse exit levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Separated Colin’s upper and lower half so his arms go in front of the rope attached on his hip.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The transition to Credits after beating the game is now a fade instead of a slide.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Moai Chambers - Level 23",
+     "items": [
+      {
+       "text": "Modified spikes. Removed flame spitters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The Expanse - Exit 5",
+     "items": [
+      {
+       "text": "Lengthened the ending and improved the look of the final area.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 1,
+    "balance": 0,
+    "other": 9,
+    "ps5": 0,
+    "topNew": [
+     "Added a simpler way to handle the death bounds in The Expanse exit levels.",
+     "Separated Colin’s upper and lower half so his arms go in front of the rope attached on his hip.",
+     "The transition to Credits after beating the game is now a fade instead of a slide."
+    ]
+   },
+   "sourceIds": [
+    "steam-1354260"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1354260/view/1797820624465561"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-24T16:43:57.000Z",
+      "verification": "official",
+      "sourceId": "steam-1354260",
+      "checkedAt": "2026-11-11T21:57:33.784Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:33.784Z"
+  },
+  {
+   "id": "brave-escape-280567@1.2.0",
+   "gameId": "brave-escape-280567",
+   "displayName": "Update 1.2.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-04T21:39:01.000Z",
+   "notes": [
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed a bug where sounds fading out during level reloads were affected by the new listener position. Now, a new listener is used for the next level, while old sounds continue on their original listener until they finish fading out.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where display settings were being applied twice during launch.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where Floyd would continue to use the magnet if input was released inside Pause menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "New Features",
+     "items": [
+      {
+       "text": "All exit levels (except The Expanse) will now speed up if you get ahead of the camera allowing you finish faster.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Localization",
+     "items": [
+      {
+       "text": "Added Korean translation! Thank you Jaehyeon Park.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Polish translation! Thank you Piotr \"Viddaer\" Samulik.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Glowing Depths - Level 8 (Casual Mode)",
+     "items": [
+      {
+       "text": "Modified Spikes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Glowing Depths - Level 10 (Casual Mode)",
+     "items": [
+      {
+       "text": "Removed Moving Tiles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Glowing Depths - Level 12 (Casual Mode)",
+     "items": [
+      {
+       "text": "Modified Ground Tiles.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Modified Falling Platforms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Moai Chambers - Level 12 (Casual Mode)",
+     "items": [
+      {
+       "text": "Modified Flame Spitters.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 3,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1354260"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1354260/view/1795917897370075"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-04T21:39:01.000Z",
+      "verification": "official",
+      "sourceId": "steam-1354260",
+      "checkedAt": "2026-11-11T21:57:33.783Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:33.783Z"
+  },
+  {
+   "id": "brave-escape-280567@1.1.1",
+   "gameId": "brave-escape-280567",
+   "displayName": "Patch 1.1.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-03-14T18:28:27.000Z",
+   "notes": [
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed a bug where the game would crash if too many old resources were being reused.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where hours on the level timer were being rounded up.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1354260"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1354260/view/1794102528116035"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-14T18:28:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-1354260",
+      "checkedAt": "2026-11-11T21:57:33.782Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:33.782Z"
+  },
+  {
+   "id": "brave-escape-280567@1.1.0",
+   "gameId": "brave-escape-280567",
+   "displayName": "Update 1.1.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-03-13T17:26:09.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We’re excited to announce a new feature for Brave Escape - Casual Mode! Does your friend have trouble with platforming (or maybe you’re that friend)? This new mode is designed to make your adventure a bit smoother.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Casual Mode",
+     "items": [
+      {
+       "text": "Added Casual difficulty, a more approachable experience with fewer spikes and more forgiving timing, ideal for players less experienced with precision platformers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "You can swap between Casual and Standard difficulty at any time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Secret levels are only accessible when playing the level on Standard difficulty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Localization",
+     "items": [
+      {
+       "text": "Added Chinese translation! Thank you Skyler Jiang.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Russian & Ukrainian translation! Thank you Petro Kovaliv.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Visual",
+     "items": [
+      {
+       "text": "Improved the clarity of the countdown timer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed order of caves in Lobby to match World Select.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "The Expanse - Finale 4",
+     "items": [
+      {
+       "text": "Modified meteors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Serpent’s Hollow - Level 22",
+     "items": [
+      {
+       "text": "Added camera zone.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 1,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1354260"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1354260/view/1794102528079765"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-13T17:26:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-1354260",
+      "checkedAt": "2026-11-11T21:57:33.781Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:33.781Z"
+  },
+  {
+   "id": "brave-escape-280567@1.0.16",
+   "gameId": "brave-escape-280567",
+   "displayName": "Patch 1.0.16",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-02-24T19:04:14.000Z",
+   "notes": [
+    {
+     "title": "We’ve improved save file recovery",
+     "items": [
+      {
+       "text": "Backups are now created when a save is overwritten or deleted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Saves are written to a temporary location before being moved, reducing corruption risk.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed a networking bug that caused a visual error with Floyd’s tool if Colin picked up the rope while Floyd was on it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Localization",
+     "items": [
+      {
+       "text": "Improved word and character breaks per language.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 1,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1354260"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1354260/view/1792116353332211"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-24T19:04:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-1354260",
+      "checkedAt": "2026-11-11T21:57:33.780Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:33.780Z"
+  },
+  {
+   "id": "brave-escape-280567@1.0.14",
+   "gameId": "brave-escape-280567",
+   "displayName": "Patch 1.0.14",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-02-19T22:35:28.000Z",
+   "notes": [
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed a bug where you couldn’t get on the rope when it overlapped one way platforms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where some spikes in The Glowing Depths did not have a collider.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the game would crash if a non network entity killed the player.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the player could die when trying to grab the rope while entities were being refrozen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Visual",
+     "items": [
+      {
+       "text": "Improved the background of save files.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Glacial Falls - Level 25",
+     "items": [
+      {
+       "text": "Modified ground that blocked wind platform.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 4,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1354260"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1354260/view/1792116353173772"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-19T22:35:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-1354260",
+      "checkedAt": "2026-11-11T21:57:33.780Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:33.780Z"
+  },
+  {
+   "id": "brave-escape-280567@1.0.11",
+   "gameId": "brave-escape-280567",
+   "displayName": "Patch 1.0.11",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-02-14T17:33:03.000Z",
+   "notes": [
+    {
+     "title": "Features",
+     "items": [
+      {
+       "text": "Added a new option called Session to Show Deaths and Show Level Time. Session will reset the deaths and in-game time (IGT) whenever a level is loaded from world select. This is useful if you are trying to speedrun a specific cavern using LiveSplit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Localization",
+     "items": [
+      {
+       "text": "Added German translation. Thank you Melanie Burgmer!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed a bug where the time played was incorrect when over 24 hours.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Improvements",
+     "items": [
+      {
+       "text": "The random seed per level used for visuals is now based on the level name.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Serpent’s Hollow - Level 22",
+     "items": [
+      {
+       "text": "Modified spikes. Added a Venus Trap Platform to assist with timing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Serpent’s Hollow - Level 26",
+     "items": [
+      {
+       "text": "Fixed Level End Flag position.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Moai Chambers - Level 23",
+     "items": [
+      {
+       "text": "Modified spikes and falling platforms.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The Expanse - Level 8",
+     "items": [
+      {
+       "text": "Modified sinking ground positions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 2,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1354260"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1354260/view/1791580426003456"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-14T17:33:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-1354260",
+      "checkedAt": "2026-11-11T21:57:33.779Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:33.779Z"
+  },
+  {
+   "id": "brave-escape-280567@1.0.8",
+   "gameId": "brave-escape-280567",
+   "displayName": "Patch 1.0.8",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-02-11T23:15:03.000Z",
+   "notes": [
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed a bug where switching devices during dialogue could cause text to display incorrectly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several bugs causing LiveSplit to not work correctly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed incorrect colliders on the fans in Glacial Falls.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Graphical error on Serpent’s Hollow - Level 10",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a bug where the last save file was not transferred from the demo.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Localization",
+     "items": [
+      {
+       "text": "Added Italian translation. Thank you Davide Mirto!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adjusted some French translations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Improvements",
+     "items": [
+      {
+       "text": "Player will now grab the other side of the rope if their initial side is blocked by spikes. If both sides are blocked, they won’t grab it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Slime jumpers will now cancel their land animation to jump more consistently with the player’s jump.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Reset the Cheers To You achievement because its stats were off. If you have gotten this achievement just recomplete a level to trigger it again.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Visual",
+     "items": [
+      {
+       "text": "Added new jump and land particles to Slime Jumpers.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added new respawn animation for the Falling Blocks.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Ancient Cave - Secret 5",
+     "items": [
+      {
+       "text": "Modified moving platform timing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 5,
+    "balance": 1,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1354260"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1354260/view/1791482680836147"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-11T23:15:03.000Z",
+      "verification": "official",
+      "sourceId": "steam-1354260",
+      "checkedAt": "2026-11-11T21:57:33.778Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:33.778Z"
+  },
+  {
+   "id": "brave-escape-280567@1.0.4",
+   "gameId": "brave-escape-280567",
+   "displayName": "Patch 1.0.4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-02-07T22:29:18.000Z",
+   "notes": [
+    {
+     "title": "Features",
+     "items": [
+      {
+       "text": "Added some static data to help integration with LiveSplit. Thanks @Coltaho for helping us get it started!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed a bug where the jungle leaf animation wasn’t properly looping.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Localization",
+     "items": [
+      {
+       "text": "Fixed capitalization in the Pause Menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed prologue text (Portuguese BR).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Renamed a few achievements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Visual",
+     "items": [
+      {
+       "text": "Made visual updates to the secret levels.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Level Select",
+     "items": [
+      {
+       "text": "Reordered caverns based on difficulty.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Glacial Falls - Level 9",
+     "items": [
+      {
+       "text": "Modified pressure grid timing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Glacial Falls - Exit",
+     "items": [
+      {
+       "text": "Modified spikes near the rotating platform to allow players to progress without waiting. Adjusted the size of the oscillating platform.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The Expanse - Finale 3",
+     "items": [
+      {
+       "text": "Modified meteors and spikes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 3,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0,
+    "topNew": [
+     "Added some static data to help integration with LiveSplit. Thanks @Coltaho for helping us get it started!"
+    ]
+   },
+   "sourceIds": [
+    "steam-1354260"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1354260/view/1790848102666521"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-02-07T22:29:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-1354260",
+      "checkedAt": "2026-11-11T21:57:33.777Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T21:57:33.777Z"
+  }
+ ],
+ "issues": []
+}

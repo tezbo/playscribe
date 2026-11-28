@@ -1,0 +1,888 @@
+{
+ "game": {
+  "id": "strike-force-heroes-277203",
+  "igdbId": 277203,
+  "name": "Strike Force Heroes",
+  "cover": {
+   "imageId": "co7f4y",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co7f4y.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar2orl",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar2orl.jpg"
+  },
+  "ps5Release": "2025-11-05",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "strike-force-heroes-277203@hotfix-2024-06-26",
+   "gameId": "strike-force-heroes-277203",
+   "displayName": "Heroes costume/weapons hotfix",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2024-06-26T16:57:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey heroes!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "After some traumatic personal events, I've taken a step away from online development for a while, and thus was not aware of this bug until recently, nor able to fix it until now.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This small update fixes a bug where specific Story/Cameo characters no longer have their unique loadouts.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "v1.27",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a longstanding bug where the story Heroes have randomized costumes and weapons",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a longstanding bug where the story Heroes ignore the first weapon in gungame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Edit",
+     "items": [
+      {
+       "text": "v1.28",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue caused by v1.27 where bots did not appear in custom games: (they were looking for their story loadouts, which didn't exist)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1981820"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1981820/view/5842939267306468465"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-06-26T16:57:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-1981820",
+      "checkedAt": "2026-11-12T15:39:44.301Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:39:44.301Z"
+  },
+  {
+   "id": "strike-force-heroes-277203@major-2024-05-19",
+   "gameId": "strike-force-heroes-277203",
+   "displayName": "Serious Bugfixes & Balance update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-05-19T01:39:49.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey heroes!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "After it's been a hot minute (1 month!) but we've noticed a number of serious bugs in the game that were introduced in the Ninja DLC. So we're put together a mega update with not only a ton of serious bug fixes, but also a number of huge balance changes to bonus objectives, missions and overall gameplay!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This update should make the overall experience feel much smoother, and less unfairly difficult at times.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "v1.26",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Additions",
+     "items": [
+      {
+       "text": "Added 5 new Legendary outfits based on Community member AniArtistMe for his incredible bug spotting!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Hero Select & Shop no longer behave strangely on first load",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Prototype mission rewards no longer softlock the game in rare situations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Tear Gas now properly works on the Missile & Speeding Train maps",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Kevlar Vests now properly works in FFA/Solo type games",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Wrath of the Tiger properly gives -25% damage taken instead of -75%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Disabling Passives/Abilities/Gadgets in custom mode now works as expected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Setting specific weapons allowed in custom mode now works as expected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a rare bug where switching classes in a FFA mode will put you on blue team",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Unique characters (Riggs, Bull, Toad, etc) now have their proper class & loadout again",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Winning/Losing a match will always display the correct winning score",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Bayonet's execute now works as expected",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "BoStaff no longer has a damage delay when attacking",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted AI jumps on Hijack, Missile, Crash, and Foundry",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The volume of rocket trails are now adjusted by Sound Volume",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a few spelling/text issues in game and menus",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Balance",
+     "items": [
+      {
+       "text": "(Gameplay)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted many Bonus objectives in missions to make them more easily obtainable",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "At the results screen, deaths are now only -3 points instead of -5",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Challenge mission \"Self Experiments\" & Alt versions has 1 less enemy",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Ninja will show up as a random enemy/ally 25% less often to avoid Melee spam",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Lowered enemy Hp by 10% on gungame (since you can't use your own gear)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "In Juggernaut, the Juggernaut can no longer gain extra armor (same as heals)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Kevlar Vest ability now gives +30% more armor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Kevlar Vest armor is capped for enemies above lvl 30",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Pheonix blade removed from all enemies in SideOps 8, 8-1, 8-2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Challenge 6-2: Health reduced, Enemies reduced by 1",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Challenge 8-1: +40% Health",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Challenge 10 & Alt versions: you have faster drone charge rate while enemies are slower.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Challenge 10-1: Enemies deal -20% damage",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Your own weapons sounds are only 10% quieter instead of 20% quieter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Melee Enemies attack slightly slower",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Melee Enemies now do much less damage (even less at lower levels): (Menus)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Gadgets appear in the shop ~15% less frequently: (Ninja Weapons)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Kunai: FireRate -20%, Impact -10%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Healing Salve: Ammo -4, FireRate -10%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Baseball: ProjectileSpeed +15%, Range +10%, Accuracy +10%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Spikeball: Range +10%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Rock: FireRate +15%, ProjectileSpeed +10%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Bostaff: DashDistance -66%, FireRate -10%, Impact +10%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Nunchucks: Dash Removed, FireRate +5%, Impact -20%, Range -5%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Chakram: Range/Duration +15%: (Other Weapons)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "M202: SpareClips +2",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "ALL Melee weapon Impact +10%: As always, thanks for sticking around as we continue to fix & improve the game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 15,
+    "balance": 28,
+    "other": 4,
+    "ps5": 0,
+    "topNew": [
+     "Added 5 new Legendary outfits based on Community member AniArtistMe for his incredible bug spotting!"
+    ]
+   },
+   "sourceIds": [
+    "steam-1981820"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1981820/view/5747233970427696881"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-05-19T01:39:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-1981820",
+      "checkedAt": "2026-11-12T15:39:44.300Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:39:44.300Z"
+  },
+  {
+   "id": "strike-force-heroes-277203@1.22",
+   "gameId": "strike-force-heroes-277203",
+   "displayName": "Update 1.22",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-02-16T17:08:45.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "While the game was meant to be played among friends, the party list makes it possible to play with strangers, however lately many players have been hacking their game to get items they shouldn't have,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This mini update addresses many of those issues by removing items that players should normally not be able to obtain.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The full rundown are below!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "v1.22",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removes skills being used from other classes they don't belong to",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removes boss/challenge weapons from players inventories",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Changes unreleased DLC classes back to normal class",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removes unreleased DLC items from players inventories",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removes outfits that players do not own (DLC/Kickstarter/etc)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Plus a few other minor changes to reduce hacking.: And as always, I'll continue to monitor and make adjustments as the game needs!: <3 Sky9 Games",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1981820"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1981820/view/8033928544496724952"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-02-16T17:08:45.000Z",
+      "verification": "official",
+      "sourceId": "steam-1981820",
+      "checkedAt": "2026-11-12T15:39:44.299Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:39:44.299Z"
+  },
+  {
+   "id": "strike-force-heroes-277203@1.19",
+   "gameId": "strike-force-heroes-277203",
+   "displayName": "Hotfix 1.19",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-12-28T17:17:34.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "v1.19 Holiday Hotfix",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Just a small fix while out for the holidays -- More fixes and updates coming in the new year! :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Restored the final cutscene which was corrupted, resulting in it not playing properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed some overlapping text in the credits: <3 Justin & Mike",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1981820"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1981820/view/5410576585156095516"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-12-28T17:17:34.000Z",
+      "verification": "official",
+      "sourceId": "steam-1981820",
+      "checkedAt": "2026-11-12T15:39:44.298Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:39:44.298Z"
+  },
+  {
+   "id": "strike-force-heroes-277203@1.17",
+   "gameId": "strike-force-heroes-277203",
+   "displayName": "Hotfix 1.17",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2023-12-13T14:39:09.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Just some small hotfixes before we take a small holiday break. See ya on the other side!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Custom game no longer starts scrolled to the bottom",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a few Hud bugs introduced in the previous update",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Final cutscene no longer shows the global leader without a mustache for a brief moment",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "<3 Justin",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1981820"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1981820/view/5397065151386208959"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-12-13T14:39:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-1981820",
+      "checkedAt": "2026-11-12T15:39:44.297Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:39:44.297Z"
+  },
+  {
+   "id": "strike-force-heroes-277203@major-2023-12-09",
+   "gameId": "strike-force-heroes-277203",
+   "displayName": "Strike Force Heroes Christmas Update!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-12-09T01:22:19.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "CHRISTMAS UPDATE!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It's the most wonderful time of the year!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "To help everyone get in the spirit, we're updating the game with free Christmas themed skins and a new map! Each Hero receives a brand new Legendary skin (with female variants) that can be found in the shop and slot machine.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The new map, Training Grounds, is available in Custom Game and Daily Missions, complete with holiday appropriate music! While the skins are permanent, the Christmas themed map is only here for a limited time, after which the Heroes will take down the decorations (the map will stay, just without the Christmas theme).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Look forward to further content updates and patches in the coming months and be sure to join our Discord, where our members were able to vote on which skins made it into the game! We hope you all enjoy this update and have a safe and Happy Holiday season!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "<3 Justin & Mike",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "v1.16 Patch Notes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Daily Missions now exclusively feature the new festive Training map",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New festive Training map is can now be picked in Custom mode",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "4 new festive outfits permanently added to the Shop & Slot machine!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added some Holiday Cheer to the game!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "More resolution fixes. While the game doesn't fully support ultrawide, it should feel less clunky",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Daily Mission rewards are now a higher rarity (same as boss fights)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Daily Mission no longer displays English titles to Non-English languages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Domination scores in (Custom/Daily) lowered overall by about 30%",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed more visual resolution issues. While the game doesn't Fully support",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 3,
+    "fixed": 2,
+    "balance": 0,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1981820"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1981820/view/5395938616799935541"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-12-09T01:22:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-1981820",
+      "checkedAt": "2026-11-12T15:39:44.294Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:39:44.295Z"
+  }
+ ],
+ "issues": []
+}

@@ -1,0 +1,1170 @@
+{
+ "game": {
+  "id": "disaster-band-229138",
+  "igdbId": 229138,
+  "name": "Disaster Band",
+  "cover": {
+   "imageId": "coct8n",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coct8n.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar2564",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar2564.jpg"
+  },
+  "ps5Release": "2024-07-11",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "disaster-band-229138@major-2024-07-01",
+   "gameId": "disaster-band-229138",
+   "displayName": "Tour Update",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-07-01T18:00:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "To all band members old and young,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "It means the world to us and it feels good to see that your passion for music games aligns with ours.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the next few weeks, we will focus on the console versions for PlayStation 5, Xbox Series X|S and Nintendo Switch, but will take care of critical bugs that the new update might have caused, of course.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other",
+       "platforms": [
+        "ps5",
+        "xboxSeries"
+       ]
+      },
+      {
+       "text": "We want to make sure that we can give the fresh members of the Disaster Band family the same experience that you can enjoy on PC already.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "In particular in terms of multiplayer and the cross-platform-compatibility, so everybody can join and jam with everybody, regardless of their preferred platform.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We'll see you on the Disaster stage!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Produktivkeller Studios and SunDust",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 6,
+    "ps5": 1
+   },
+   "sourceIds": [
+    "steam-2216360"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2216360/view/5842939267324856764"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-07-01T18:00:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-2216360",
+      "checkedAt": "2026-11-12T02:59:04.146Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:04.146Z"
+  },
+  {
+   "id": "disaster-band-229138@1.15.0.2",
+   "gameId": "disaster-band-229138",
+   "displayName": "Update 1.15.0.2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-02-26T14:09:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Another round of updating for Disaster Band!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Disaster Band will start to move to mod.io soon for adding modding content and Steam Workshop will be in read only mode afterwards. We’ll provide further details in another update!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Make UI while playing songs responsive for Steam Deck.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Change width of header on narrow resolution to not intersect with back button.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Anchor elements in the corner when resolution is narrower than 16 to 9 so they don't get cut off on Steam Deck.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fix position of instrument label in player list in lobby when player is not ready.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fix cursor configuration so the click happens where the cursor points at (there was a small offset).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Add fallback logic for parsing 'Last Played' date on song information (could fail after changing the system language).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Update region badge in lobby when language changes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fix backwards navigation in connect screen with controller (B button now works).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Players left or joined notifications (on the left) on Steam Deck no longer get cut off.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Kick Player button in lobby on Steam Deck is no longer covered by the player list on the right.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Add a lobby browser to easily find open multiplayer sessions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add automatic matchmaking for multiplayer sessions in the current region (Quick Join).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2216360"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2216360/view/5728086065196637634"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-02-26T14:09:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-2216360",
+      "checkedAt": "2026-11-12T02:59:04.144Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:04.144Z"
+  },
+  {
+   "id": "disaster-band-229138@1.13.4.0",
+   "gameId": "disaster-band-229138",
+   "displayName": "Update 1.13.4.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-02-19T15:00:05.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello everyone!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Disaster Band receives a new update. We also want to take the opportunity to announce that Disaster Band will start to move to mod.io for adding modding content and Steam Workshop will be in read only mode afterwards. We’ll provide further details in the near future!",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      }
+     ]
+    },
+    {
+     "title": "1.13.4.0",
+     "items": [
+      {
+       "text": "Add animated character for playing the Timpani.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added animated character for playing the Cat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added animated character for playing the Whistler.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added animated character for playing the Singer.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added animated character for playing the Kazoo.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2216360"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2216360/view/8033928544507333222"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-02-19T15:00:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-2216360",
+      "checkedAt": "2026-11-12T02:59:04.143Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:04.144Z"
+  },
+  {
+   "id": "disaster-band-229138@1.12",
+   "gameId": "disaster-band-229138",
+   "displayName": "Update 1.12",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-04-06T15:04:21.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello fellow Disaster Bandmates!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The good things keep on coming.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In this case a new content patch that not only gives you more choice in terms of songs and instruments, e.g., now you can play the traditional Chinese instrument Erhu, but also some technical improvements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "But we don’t want to keep you longer than necessary from taking center stage so here are the changes and additions:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Background tracks can now be either .mp3 files or .wav files, to allow for smaller song directories. Also, the .wav files of all the base tracks have been replaced with .mp3 files.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A new hint after the start screen has been added that shows the user Steam workshop songs that he has not subscribed to. This can be adjusted and also disabled in the settings.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "A button to download the missing song will be shown to the user when the host selects a Steam workshop song that is missing. The game no longer has to be restarted.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "The animation for the Theremin is now more satisfying. There now is more visual feedback for pressing the play button.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A new animation for the Choir has been added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A new traditional Chinese instrument, the Erhu, has been added, including a custom animation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A new instrument has been added: The Cat. Miaow!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A new song 'Frère Jacques' has been added.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enjoy while we prepare the next content serving coming to your screen very soon!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The teams from",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Produktivkeller Studios and Toplitz Productions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 13,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2216360"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2216360/view/5121196841288722193"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-04-06T15:04:21.000Z",
+      "verification": "official",
+      "sourceId": "steam-2216360",
+      "checkedAt": "2026-11-12T02:59:04.142Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:04.142Z"
+  },
+  {
+   "id": "disaster-band-229138@1.11",
+   "gameId": "disaster-band-229138",
+   "displayName": "Update 1.11",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-03-27T15:24:19.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello chaos musicians,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "another week, another update for your favorite rhythm game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This time we kept it short and sweet, so next time you take this show on the road you have one more encore song as well as two more instruments to choose from.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Over the next few weeks there will be more to follow.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "But for now let's stay in the present... These are this weeks' patch additions:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add custom character animation for the theremin.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add new Song: 'Prelude No.1'",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add new Instrument: 'Vocal Soloist'",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Add new Instrument: 'Whistler'",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "And remember: Don't stop the music!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The teams from",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Produktivkeller and Toplitz Productions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 12,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2216360"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2216360/view/5143713753743554007"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-27T15:24:19.000Z",
+      "verification": "official",
+      "sourceId": "steam-2216360",
+      "checkedAt": "2026-11-12T02:59:04.141Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:04.141Z"
+  },
+  {
+   "id": "disaster-band-229138@1.10.3.0",
+   "gameId": "disaster-band-229138",
+   "displayName": "Update 1.10.3.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-03-13T16:05:09.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello fellow disaster musicians,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "we can announce the next stop on our update tour, where we not only have some fixes in store, but perform new songs with new instruments.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We hope you enjoy the additions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Added",
+     "items": [
+      {
+       "text": "Add custom character animation for the electrical guitar.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Add new Song: 'The Blue Danube'.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Add new Song: 'Morning Mood'.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Add new Instrument: 'Timpani'.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Add new Instrument: 'Kazoo'.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Fixed",
+     "items": [
+      {
+       "text": "An issue that could break the UI in the lobby if a savegame with an unknown date format was loaded.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "An issue in multiplayer that notes played by others would be audible twice for the local player even though they were just played once.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "An issue that could occur when multiple keys to play a note would be pressed very fast and would cause a single note to be audible indefinitely.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Important: All new instruments will be released with a barrel organist as a character animation. This is a placeholder that will be replaced when the actual animation for the new instrument is ready.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "More chaos with more songs and more instruments to follow...",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The teams from",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Produktivkeller Studios and Toplitz Productions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 7,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0,
+    "topNew": [
+     "Add custom character animation for the electrical guitar.",
+     "Add new Song: 'The Blue Danube'.",
+     "Add new Song: 'Morning Mood'."
+    ]
+   },
+   "sourceIds": [
+    "steam-2216360"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2216360/view/5070528810307140907"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-13T16:05:09.000Z",
+      "verification": "official",
+      "sourceId": "steam-2216360",
+      "checkedAt": "2026-11-12T02:59:04.141Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:04.141Z"
+  },
+  {
+   "id": "disaster-band-229138@1.9.0.0",
+   "gameId": "disaster-band-229138",
+   "displayName": "Update 1.9.0.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-03-03T17:41:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello, friends of the world's most chaotic band!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "There will be rock and there will be spherical! With the electric guitar, the rock feeling is coming into play, and with the theremin, you get a touchless instrument that you can cuddle with your computer mouse from now on.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Plus, two classics of music history: the \"Ride of the Valkyries\" and \"Amazing Grace\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Plug in the instruments, warm up your fingers and get playing!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Added",
+     "items": [
+      {
+       "text": "Added new Song: 'Ride of the Valkyries'.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added new Song: 'Amazing Grace'.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a new Instrument: 'Electrical Guitar'.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a new Instrument: 'Theremin'.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Have fun!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "The teams from Produktivkeller and SunDust",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 0,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0,
+    "topNew": [
+     "Added new Song: 'Ride of the Valkyries'.",
+     "Added new Song: 'Amazing Grace'.",
+     "Added a new Instrument: 'Electrical Guitar'."
+    ]
+   },
+   "sourceIds": [
+    "steam-2216360"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2216360/view/5070528176566462264"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-03-03T17:41:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-2216360",
+      "checkedAt": "2026-11-12T02:59:04.140Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:04.140Z"
+  },
+  {
+   "id": "disaster-band-229138@major-2023-02-22",
+   "gameId": "disaster-band-229138",
+   "displayName": "Disaster Band: Update with choir and new track",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-02-22T22:07:10.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello chaos musicians,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "we proudly give you a new update for Disaster Band.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Next to a few optimizations like improved instrument sounds we present a new song (the title track \"Derp Derp\") and a new instrument, the choir, which is a perfect addition to any band configuration.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Feature",
+     "items": [
+      {
+       "text": "Instrument improvement: Adjusted loudness, added reverb and new samples for several instruments.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Instrument improvement: Glissandi can now be played across the entire two octave range.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Instrument improvement: Introduced a new system for pitching between notes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added new song: Derp Derp.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added new custom cursor in treble clef shape.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added new instrument Choir.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Set default volume of all adjustable channels to 80%.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Automatically selecting last used instrument and song.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Making instrument selection scalable and added a badge for new instruments.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "BPM can now also be declared as a floating point number in metadata.json.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Set volume for other players to 80% and volume of self to 90%, by default.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "FIXED",
+     "items": [
+      {
+       "text": "Making sure to always start a new note when hitting the play button fast multiple times in a row.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Clean-up tones after the track ends.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved multiple errors that were logged when exiting the music arena.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Finally, we have a small outlook on the next content update which can be expected within the next few days:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "You can look forward to further instruments (e.g., electric guitar), which of course you can use in the new tracks like the \"Ride of the Valkyries\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 11,
+    "fixed": 5,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0,
+    "topNew": [
+     "Instrument improvement: Adjusted loudness, added reverb and new samples for several instruments.",
+     "Instrument improvement: Glissandi can now be played across the entire two octave range.",
+     "Instrument improvement: Introduced a new system for pitching between notes."
+    ]
+   },
+   "sourceIds": [
+    "steam-2216360"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2216360/view/5059268543354593211"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-02-22T22:07:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-2216360",
+      "checkedAt": "2026-11-12T02:59:04.139Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:04.139Z"
+  },
+  {
+   "id": "disaster-band-229138@1.6.0.0",
+   "gameId": "disaster-band-229138",
+   "displayName": "Update 1.6.0.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2023-01-17T09:57:10.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A new small fix for you!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Added",
+     "items": [
+      {
+       "text": "Using green as default note color.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Fixed",
+     "items": [
+      {
+       "text": "Cleaned up memory of background track manually when unloading the 'Music Arena' and does not load background tracks to memory in lobby to prevent excessive RAM usage.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Set default maximum FPS to 60 to prevent GPUs from burning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Load settings in splash screen to remove stuttering when opening the settings, the first time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Accuracy Rating of player will no longer break when a song contains overlapping notes in a glissando (Happened in track from workshop).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 4,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0,
+    "topNew": [
+     "Using green as default note color."
+    ]
+   },
+   "sourceIds": [
+    "steam-2216360"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2216360/view/5035620840548771565"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2023-01-17T09:57:10.000Z",
+      "verification": "official",
+      "sourceId": "steam-2216360",
+      "checkedAt": "2026-11-12T02:59:04.138Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T02:59:04.138Z"
+  }
+ ],
+ "issues": []
+}

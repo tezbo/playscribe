@@ -1,0 +1,886 @@
+{
+ "game": {
+  "id": "rogue-loops-323755",
+  "igdbId": 323755,
+  "name": "Rogue Loops",
+  "cover": {
+   "imageId": "co93li",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co93li.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar37gg",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar37gg.jpg"
+  },
+  "ps5Release": "2025-06-21",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "rogue-loops-323755@1.2.3",
+   "gameId": "rogue-loops-323755",
+   "displayName": "Patch 1.2.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-15T11:59:37.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This update brings several improvements, balance tweaks, and bug fixes based on player feedback and internal testing. Here's what's new in version 1.2.3:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjustments and fixes made to the Abyss boss encounter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Buff/Curse card drop algorithm reworked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a bug causing some enemies to appear invisible",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Balance tweaks applied to certain relics",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "UI scaling adjustments implemented",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased font size in some areas for better readability",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The Bug Reports button now correctly redirects on Steam Deck",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Display settings are now saved in local files instead of the cloud",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue causing some mouse/keyboard glyphs to appear incorrectly",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed a bug causing some currency icons to display incorrectly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Burning Wall was made easier without changing its overall difficulty level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed an issue where Amber’s bow was visible when it shouldn't be",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved a bug that allowed players to start the game without selecting a character",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Elemental Ghost relics have been reworked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Improved display of active bonuses in the Well of Wishes UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a bug that made scrolling difficult in certain UI elements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Corrected various translation errors",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Resolved font issues in non-Latin alphabet languages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 7,
+    "balance": 1,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3275010"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3275010/view/1796631172405584"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-15T11:59:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-3275010",
+      "checkedAt": "2026-11-12T10:23:25.836Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:25.836Z"
+  },
+  {
+   "id": "rogue-loops-323755@major-2025-04-12",
+   "gameId": "rogue-loops-323755",
+   "displayName": "Major Update: New Talent Tree, Loop Bazaar and Gamepad Improvements",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-12T03:28:50.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Before diving into the details of this update, we want to emphasize that we've been carefully listening to all the feedback from our players. Your input has always been a guiding light for us. Thanks to both your criticisms and the things you've enjoyed, we've been able to take the game much further. We'll continue to improve and update the game based on this feedback.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "One of our greatest sources of motivation throughout this process has been the Steam Reviews and feedbacks from you. Your Steam Reviews not only inspire us but also help new players discover the game. If you're enjoying the game, please don't forget to share your thoughts with us. Every Steam Review and feedback is truly valuable to us.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Apart from bug fixes, this patch brings two important changes to Rogue Loops:",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "The Complete Rework of Wishes of the Well (Talent Tree)",
+     "items": [
+      {
+       "text": "We were previously fond of the old structure — its visual design, thematic fit, and depth. However, we’ve come to understand that it could feel overwhelming for players. On top of that, many minor talents didn’t quite justify the Blue Essence spent on them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "So, we’ve rebuilt it from the ground up. The new system is much simpler, yet significantly more impactful. It’s easier to understand, more rewarding to engage with, and designed to complement your runs in more meaningful ways.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Loop Bazaar – A New Purpose After the Loop",
+     "items": [
+      {
+       "text": "We’ve added a new structure that gives players more reasons to keep pushing forward after a run. This includes a quest-giving NPC and a powerful shop that fuels your meta progression like never before.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Meet Khairon — a long-lost soul who entered the Loop years before the Velmont family. Having lost many comrades and even his own arm, Khairon now offers powerful rewards in exchange for fulfilling his requests. These include potent talent relics and stat boosts, as well as guidance on some of the deeper mysteries of the Loop itself.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Features, Bug Fixes, and Other Improvements",
+     "items": [
+      {
+       "text": "* Fixed a bug that caused room completion rewards to display incorrectly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed an issue where character speed would break after dashing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed distortion in relic icon sizes in the UI.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed an issue where relics in the inventory could not be selected in some cases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Corrected several translation errors.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed a bug that prevented some players from purchasing items in Merchant Shops.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Resolved several invisible collision issues in Swamp and Ice Forest biomes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Updated the notification system that sometimes failed to show new updates on NPCs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed various UI issues that occurred under different screen resolutions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Improved visibility for some Room Debuffs that were not clear enough.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Slightly increased Circe’s attack speed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Nerfed some Room Debuffs like Burning Wall, Fear Wave, and Rat Nest.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Adjusted the balance of fire-related skills and relics.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Improved some talents (e.g., Well of Wishes) and relics.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Updated lighting in the newly added palace-themed biome.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Adjusted enemy health in the Ice Forest biome.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Adjusted enemy health in the Palace biome.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Tweaked the Curse Bar system used to access the Boss.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Fixed UI misalignments caused by text length differences across some languages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Nightmare and Hell difficulty modes balanced.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "* Skill cooldowns balanced.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Gamepad Aim System Improvement",
+     "items": [
+      {
+       "text": "We've made significant improvements to the gamepad-based aim system, which was one of the most requested features by the community. We've refined the controls to provide a smoother and more intuitive aiming experience, making it easier for players to take control and enhance their gameplay. This is just one of the many ways we're working to make your experience even better.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "As we mentioned earlier, your feedback has been instrumental in shaping Rogue Loops. But just as important have been your supportive messages and positive reviews, which truly keep the development team inspired and this game moving forward.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Thank you all for being part of the journey. See you in the next patch notes!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Break the Loop!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 21,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3275010"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3275010/view/1796631172298152"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-12T03:28:50.000Z",
+      "verification": "official",
+      "sourceId": "steam-3275010",
+      "checkedAt": "2026-11-12T10:23:25.835Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:25.835Z"
+  },
+  {
+   "id": "rogue-loops-323755@1.1.0",
+   "gameId": "rogue-loops-323755",
+   "displayName": "Update 1.1.0",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-07T19:43:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "A brand new biome, smarter enemies, improved fire builds, and a full difficulty rework… Welcome to our biggest update yet! Here’s what’s coming in update 1.1.0!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🕳️ Abyss in the Void Biome",
+     "items": [
+      {
+       "text": "A new region has been added to the Loop, featuring eerie visuals, biome-specific traps, and dangerous curses. Dive in, if you dare.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "👹 6 New Enemies",
+     "items": [
+      {
+       "text": "Six unique enemy types now roam the loop. Each brings new behavior patterns that will test your reflexes and tactics in fresh ways.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🔥 Fire Synergies Update",
+     "items": [
+      {
+       "text": "Fire builds felt underwhelming — not anymore. Two new fire relics have been added, and all fire-related skills and relics have been reviewed and rebalanced to bring the heat.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "💎 Rarity & Balance Updates",
+     "items": [
+      {
+       "text": "Several relics and skills had their drop rates adjusted. Some have been buffed to better match their rarity, making them more satisfying to find and use.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "💀 Viri’Dax Boss Rework",
+     "items": [
+      {
+       "text": "Viri’Dax is now fairer but still deadly. His attacks are more readable, and those skull crystals are less oppressive.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "📈 Difficulty Overhaul",
+     "items": [
+      {
+       "text": "The game's early stages are now more welcoming to new players. Difficulty scaling has been redesigned to better match player progression.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "🎯 Tutorial Improvements",
+     "items": [
+      {
+       "text": "The dummy in the skill tutorial now explains Perfect Skill timing more clearly — and is more helpful overall.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "🐛 Bug Fixes",
+     "items": [
+      {
+       "text": "– Fixed several UI issues in skill descriptions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "– Fixed missing or early-stopping boss music",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "– Fixed missing combat feedback (e.g., Immunity, Backstab)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "– Translation issues corrected in multiple languages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "– Missing character fixes for non-Latin alphabets",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "– Relic descriptions in shops now display correctly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "– UI select sound no longer plays incorrectly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "– Improved some room colliders",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "– Fixed rare issue where a room wouldn’t end after all enemies were killed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "– Resolved overlapping SFX issues causing excessive noise",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "______________",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "🛠️ What's Next?",
+     "items": [
+      {
+       "text": "This is just the beginning. We're already working on new updates — with a strong focus on making the endgame longer, richer, and more fun. Stay tuned… the loop is far from over.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 11,
+    "balance": 2,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3275010"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3275010/view/1795917897462279"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-07T19:43:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-3275010",
+      "checkedAt": "2026-11-12T10:23:25.834Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:25.834Z"
+  },
+  {
+   "id": "rogue-loops-323755@1.0.13",
+   "gameId": "rogue-loops-323755",
+   "displayName": "Update 1.0.13",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-04-05T15:25:41.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Thank You for the Support! First of all, a huge thank you to everyone who has supported Rogue Loops in its first 24 hours! The positive feedback has been amazing, and we’re incredibly grateful for all your kind words and enthusiasm. Since this is our studio’s first game, it’s truly incredible to see such an overwhelming response from the community.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "That said, we’re actively working on a patch to address the issues reported, and most of the problems we've received so far have already been resolved. We want to assure you that we're committed to making the game the best experience it can be.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch Notes",
+     "items": [
+      {
+       "text": "• The perfect skill system has been improved.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• You can now see character stats in the buff/debuff selection screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Meta progression economy has been adjusted.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Inconsistencies in the movements of certain bosses have been corrected.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Audio issues with some enemies have been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• A bug preventing the music from playing properly in certain situations has been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• A bug causing subtitles to start off disabled in settings has been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Improvements have been made in the interface navigation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• The character unlocking issue caused by old save files has been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "• Numerous minor visual bugs have been fixed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We appreciate your patience as we continue working on these updates, and we will keep you posted as soon as the patch is live. Keep the feedback coming – it’s essential for helping us improve Rogue Loops! Thanks again for your incredible support!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 13,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3275010"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3275010/view/1795917897393347"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-05T15:25:41.000Z",
+      "verification": "official",
+      "sourceId": "steam-3275010",
+      "checkedAt": "2026-11-12T10:23:25.833Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:25.833Z"
+  },
+  {
+   "id": "rogue-loops-323755@0.2",
+   "gameId": "rogue-loops-323755",
+   "displayName": "UPDATE 0.2",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2024-12-27T05:55:55.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This document details a major content update for Rogue Loops. In this first document of our major update notes series, we'll be sharing new curses, new buffs, and a bunch of other new environmental elements.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New Buffs, New Curses",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "We are already happy with the curse and buff designs in the current version of the game and the variety of mechanics they provide, but we have added major structures that can create a more unique experience with each of your runs.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Simply put, we've strengthened the structure of these curses and buffs to support the sense of change in the environment and the idea of building your own Loop. We're happy with the state of their design, but you may see minor improvements in upcoming updates.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "A GROWING WORLD",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The environment designs in the current version already offered us a world design that made the game playable and accessible. As the demo release date approached, we decided that the replayability of the game did not match the idea of constantly seeing a similar environment, and we enlarged the visual world in our game by more than 10 times(Yes, more than 10 Times) and we will add more before release the full version of Rogue Loops.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "OLD ENDINGS, NEW BEGINNINGS",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The world of Rogue Loops continues to expand! We’re excited to remind you that the game’s demo will be released on January 6, 2025, and that we’re working on the final release. In the days following the demo’s release, we plan to share with you some visuals of the updates we’ve been working on for the final version of the game, as well as the goals we have on our roadmap for the game to be completed. Stay tuned—it’s almost done and we can’t wait to share it with you soon!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We hope you’re as excited as we are about these new ideas and the journey ahead. These and many other features are still in development and will be part of the game soon, but for now, Rogue Loops remains a work in progress. If you have any feedback or question, feel free to share them in the comments below!We'll be focusing on synergies and new bioms in the next update, so stay tuned! follow our Discord channel to stay updated on our progress, upcoming updates, and future plans",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 8,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-3275010"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/3275010/view/1786573930868430"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2024-12-27T05:55:55.000Z",
+      "verification": "official",
+      "sourceId": "steam-3275010",
+      "checkedAt": "2026-11-12T10:23:25.831Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T10:23:25.831Z"
+  }
+ ],
+ "issues": []
+}

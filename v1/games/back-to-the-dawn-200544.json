@@ -1,0 +1,1663 @@
+{
+ "game": {
+  "id": "back-to-the-dawn-200544",
+  "igdbId": 200544,
+  "name": "Back to the Dawn",
+  "cover": {
+   "imageId": "coa4pz",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/coa4pz.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar3v7t",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar3v7t.jpg"
+  },
+  "ps5Release": "2026-10-22",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "back-to-the-dawn-200544@2.0.0.34",
+   "gameId": "back-to-the-dawn-200544",
+   "displayName": "Update 2.0.0.34",
+   "kind": "patch",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-10-15T06:26:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello inmates,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As usual, thank you everyone for your support and feedback!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fix",
+     "items": [
+      {
+       "text": "Fixed an issue where the \"Furious Counter\" skill was incorrectly acquired under certain conditions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the logic for painting-related actions in the General Building, regarding the check for whether the player possesses the required paint (item must be carried).",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in keyboard and mouse mode where Owen’s Rapport would be displayed while in the Mailroom at night.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an intermittent issue where the quest prompt failed to pop up, causing the game to freeze.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed incorrect collage-related actions.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in keyboard and mouse mode where the cursor would disappear if the dialogue mode was toggled while viewing a card.",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "fixed",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed an issue with the stamp animation during the ending scene at the border.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where prompt boxes would remain on screen within the combat interface.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the combat idle animation for Apache the Condor.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed several typos in the Chinese text.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If you come across any issues, please let us know by filling out our bug report form. Your feedback is crucial in helping us improve the game and ensure your prison escape experience is as smooth and thrilling as possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 9,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1735700"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1735700/view/1846651706676512"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-15T06:26:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-1735700",
+      "checkedAt": "2026-11-11T18:34:22.531Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:22.531Z"
+  },
+  {
+   "id": "back-to-the-dawn-200544@2.0.0.31",
+   "gameId": "back-to-the-dawn-200544",
+   "displayName": "Update 2.0.0.31",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2026-03-05T02:29:22.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello inmates,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "As usual, thank you everyone for your support and feedback!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Optimization",
+     "items": [
+      {
+       "text": "Added Chinese voice-over. You may enable and disable it in \\.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fix",
+     "items": [
+      {
+       "text": "Fixed an issue where skipping TV programs on the 2nd floor of the lobby could cause save file corruption.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where character positioning was incorrect after selecting \"Restart\" after failing a Ultimate Fight match.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If you come across any issues, please let us know by filling out our bug report form. Your feedback is crucial in helping us improve the game and ensure your prison escape experience is as smooth and thrilling as possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 3,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1735700"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1735700/view/1826362059919807"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-03-05T02:29:22.000Z",
+      "verification": "official",
+      "sourceId": "steam-1735700",
+      "checkedAt": "2026-11-11T18:34:22.530Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:22.530Z"
+  },
+  {
+   "id": "back-to-the-dawn-200544@2.0.0.29",
+   "gameId": "back-to-the-dawn-200544",
+   "displayName": "Update 2.0.0.29",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-10-31T02:32:46.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello inmates,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/41416966/fd5d183ff77393ed3973bb05725a4a0662c4bac5.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Optimizations & Adjustments",
+     "items": [
+      {
+       "text": "Added auto-play for conversations, with adjustable playback speeds in \\.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added chat history, allowing you to view the last three days of conversations in the \\ tab on the main interface.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Increased speed for boxing matches from 2x to 4x.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "You can now end cooking tasks early in the kitchen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fix",
+     "items": [
+      {
+       "text": "The Charmer skill now works correctly while bonding with Chris.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Text improvements for Simplified Chinese and Korean",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "\"Back to the Dawn X Roulette Hero\" Bundle OUT NOW!",
+     "items": [
+      {
+       "text": "Get the Back to the Dawn X Roulette Hero\" Bundle to get two wonderful animal-themed games! Buy it now to stack the discounts from the Publisher Sale with the bundle discount!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/bundle/59630/_x/\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you come across any issues, please let us know by filling out our bug report form. Your feedback is crucial in helping us improve the game and ensure your prison escape experience is as smooth and thrilling as possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 4,
+    "other": 5,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1735700"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1735700/view/1815034432889943"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-10-31T02:32:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-1735700",
+      "checkedAt": "2026-11-11T18:34:22.529Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 2,
+   "updatedAt": "2026-11-11T18:34:22.530Z"
+  },
+  {
+   "id": "back-to-the-dawn-200544@2.0.0.27",
+   "gameId": "back-to-the-dawn-200544",
+   "displayName": "Update 2.0.0.27",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-08-08T08:10:13.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello inmates,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Optimizations & Adjustments",
+     "items": [
+      {
+       "text": "Added a fast travel feature, limited to the Main Building, located next to the quick return to cell button in the lower left corner.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Optimized the Item Encyclopedia feature so that when viewing prisoners who possess a specific item, their locations are displayed simultaneously.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted the initial display of the \"Leave it to Bob\" option in the Boiler Room Water Pipe mini-game.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted the placement of the Kangaroo after losing money and leaving the club on the 20th day in a certain branch to make it more logical.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added a clue for delivering multiple quest items, requiring all items to be on hand for delivery.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted the Fox's location after 21 days when Black Panther is the protagonist, so that it will vary based on the number of days since the wallet was given.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted the action switching interval for prisoners playing basketball in the exercise area, appropriately delaying the delay.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fix：",
+     "items": [
+      {
+       "text": "Fixed an issue with the ending scene display being incorrect;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where accepting the quest \"Bruce's Money Problem\" after the eighth day might prevent the main storyline from progressing;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the dialog box in the Boxing Ring and while bonding with Jumbo the Elephant was partially obscured by the screen edge;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where characters moving items in the narrow space of the guard room's cleaning room might cause a freeze;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where triggering the Endure Challenge while holding a mop in the guard room's cleaning room could cause a freeze;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the positions of some prisoners in the nighttime relationship screen were incorrectly displayed;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where some prisoners' positions were wrong after a riot;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the character information in the lower right corner of the portrait might be wrong;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Witness roll buff still applied during nighttime prayers in the church;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in Thomas' route where on the afternoon of 10th day, Bernard the Capybara's level in the recreation area was incorrect.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue in Thomas' route where on the afternoon of 10th day, Rudolph the Reindeer's level in the general building was incorrect.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where checking Dr. Harry's window during non-riot lockdown would trigger riot-related phrases.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the pop-up window for viewing cultural artifact skills could occasionally be closed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where a blur filter could occasionally appear in certain scenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where you could still trigger the listening function after listening to inmates who have taken laxatives and left.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where Fenra's character information could occasionally appear on the Sharp Tooth Gang relationship screen.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where a certain quick jump option could allow players to reach the ground level during the day.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where focus points would not be restored after winning certain battles when the \"Esports Legend\" skill was activated.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the \"Game of Kings I\" skill description did not match its actual effect.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where, in multiplayer 1v2 combat, after performing a super-speed action in controller mode, it was possible to continue attacking a downed character.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where clicking options in the opening scene of the cafe in the Fox arc could cause a freeze.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where, after the 14th day roll call, clicking options in the dialogue with Bruce could cause a freeze if the Warden's invitation to a boxing match event was triggered.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If you come across any issues, please let us know by filling out our bug report form. Your feedback is crucial in helping us improve the game and ensure your prison escape experience is as smooth and thrilling as possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 23,
+    "balance": 7,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1735700"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1735700/view/1807332909597332"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-08T08:10:13.000Z",
+      "verification": "official",
+      "sourceId": "steam-1735700",
+      "checkedAt": "2026-11-11T18:34:22.528Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:22.528Z"
+  },
+  {
+   "id": "back-to-the-dawn-200544@2.0.0.26",
+   "gameId": "back-to-the-dawn-200544",
+   "displayName": "Update 2.0.0.26",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-07-29T10:36:04.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Dear inmates,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Optimizations & Adjustments",
+     "items": [
+      {
+       "text": "Improved the loading speed when using Memory Recall, with a faster loading animation and removal of scene information display.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Optimized performance in sewer-related scenes.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted the Befriended condition. You must now befriend a prisoner before you can deepen your understanding of them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted the trigger time for Thomas’s monologue when already befriended in Start New Game+. It can now be triggered on Day 1.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Improved collision detection for the package cart on the first floor of the prison.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added the method to claim the Artbook in the DLC Bundle Guide on the main menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted the method of claiming items from the package cart. The cart will now display a maximum of 100 item records at a time. After collecting items, reopening the cart will refresh and show the remaining items.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted the UI layout of the Memory Recall (Load/Save) feature to improve the visibility of the New Save button.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted the save logic in Fenra’s chapter. Automatic Memory Recall saves will no longer be generated during this chapter.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fixes",
+     "items": [
+      {
+       "text": "Fixed a softlock issue that occurred after helping prisoners play cards in the General Building when time passed 5:30 PM.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where placing a Toothbrush Shank under Hakuna’s bed would show time consumption but did not actually consume time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the Black Panther escape cutscene with Fenra would get stuck in the operating room.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where players could challenge Crunchy in the hospital.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where entering the hospital examination room by guessing the password would result in a prompt saying the player had no password upon exit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed abnormal door behavior for the Church Lounge and the Staff Block cleaning room.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where weapons with cutting traits could not use combat skills, specifically the Holy Sword.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where invisible walls appeared around chairs in the cafeteria.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a text display issue where speaking to the guard in the Staff Block and going to the infirmary would result in garbled text.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where having the Iron Throne skill would prevent stamina gain when using the toilet in certain locations.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If you come across any issues, please let us know by filling out our bug report form. Your feedback is crucial in helping us improve the game and ensure your prison escape experience is as smooth and thrilling as possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 11,
+    "balance": 9,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1735700"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1735700/view/1806064758767892"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-29T10:36:04.000Z",
+      "verification": "official",
+      "sourceId": "steam-1735700",
+      "checkedAt": "2026-11-11T18:34:22.527Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:22.527Z"
+  },
+  {
+   "id": "back-to-the-dawn-200544@post-2025-07-28",
+   "gameId": "back-to-the-dawn-200544",
+   "displayName": "OST Music Revision",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-07-28T13:07:56.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Added a new track: \"Eyes on the Screen – Battle Mix\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Replaced the track: \"Gambling\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 0,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1735700"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1735700/view/1806064758738691"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-28T13:07:56.000Z",
+      "verification": "official",
+      "sourceId": "steam-1735700",
+      "checkedAt": "2026-11-11T18:34:22.527Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:22.527Z"
+  },
+  {
+   "id": "back-to-the-dawn-200544@2.0.0.25",
+   "gameId": "back-to-the-dawn-200544",
+   "displayName": "Update 2.0.0.25",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-07-24T12:26:17.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Inmates!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Optimization and adjustments：",
+     "items": [
+      {
+       "text": "Soda can now be consumed in batches;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "A new prompt for the steps to claim the Supporter Pack DLC has been added to the main menu;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The option to apply for a psychiatric evaluation from Dr. Beth has been adjusted, and it has been moved to the same floor as the injection. It will no longer disappear after chatting;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The use of the inspection doors on both sides of the pipe area has been optimized. You can now unlock and enter and exit freely from the Recreation Yard;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Changed the jumping conditions of the jump point at the Recreation Yard's sewers. Now you can perform the jump challenge when the power is off;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Fix",
+     "items": [
+      {
+       "text": "Fixed the issue where the rooftop jailbreak might fail to trigger the action of hiding the glider component;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the issue that Black Panther did not receive the betting point bonus after buying 10 lottery tickets;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the issue that the infinite mode of \"Mineworld\" could not be played in segregation;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the issue that Thomas and Bill behaved abnormally when bathing in the bathroom at night on D19;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the issue that the seating arrangement of prisoners in the church was wrong in the afternoon on D19;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the issue that there was a chance that the animation could be triggered and the opponent could not fall to the ground after being defeated in battle;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where the \"Not enough time\" dialogue would still trigger even if the player completed the action within the required time limit.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If you come across any issues, please let us know by filling out our bug report form. Your feedback is crucial in helping us improve the game and ensure your prison escape experience is as smooth and thrilling as possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 8,
+    "balance": 5,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1735700"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1735700/view/1806064758608951"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-24T12:26:17.000Z",
+      "verification": "official",
+      "sourceId": "steam-1735700",
+      "checkedAt": "2026-11-11T18:34:22.526Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:22.526Z"
+  },
+  {
+   "id": "back-to-the-dawn-200544@2.0.0.24",
+   "gameId": "back-to-the-dawn-200544",
+   "displayName": "Update 2.0.0.24",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-07-23T04:53:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello inmates! Thank you all for your support and feedback!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixed an issue where players could get stuck or clip through the environment when interacting with the doors of the Chapel Lounge and the Staff Block Cleaning Room.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If you come across any issues, please let us know by filling out our bug report form. Your feedback is crucial in helping us improve the game and ensure your prison escape experience is as smooth and thrilling as possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 0,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1735700"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1735700/view/1806064758565975"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-23T04:53:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-1735700",
+      "checkedAt": "2026-11-11T18:34:22.526Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:22.526Z"
+  },
+  {
+   "id": "back-to-the-dawn-200544@2.0.0.23",
+   "gameId": "back-to-the-dawn-200544",
+   "displayName": "Update 2.0.0.23",
+   "kind": "hotfix",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-07-22T09:51:32.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello Inmates!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Improvements and adjustments：",
+     "items": [
+      {
+       "text": "Removed the reputation level requirement for choosing the \"Persuade him to let go\" option when Crunchy blackmails Thomas at the cafeteria door on the first and seventh afternoons, and appropriately lowered the challenge point requirement;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Bob can now go to the mental rehabilitation unit at night to use \"hacking skills\" to crack the \"consultation room door\" and \"pharmacy door\" after performing \"Dr. Harry's psychological treatment\".",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "If Bob now asks Richard and Franklin to make \"special tools\" during the day and completes their request before the evening arrives, he can get the \"special tools\" that night. (If the requirements are completed at night, you still need to wait until the roll call tomorrow morning to get the tools);",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The width of the \"green success area\" for the \"cutting vegetables\" task in the kitchen helper game has been widened;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The speed of the red progress bar after the stewing timeout has been slowed down, so that the stew is less likely to be \"burnt\";",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "The time required to complete a \"grinding\" task has been shortened;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fix",
+     "items": [
+      {
+       "text": "Fixed the issue with duplicated psychiatric evaluation certificates being obtained.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If you come across any issues, please let us know by filling out our bug report form. Your feedback is crucial in helping us improve the game and ensure your prison escape experience is as smooth and thrilling as possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 6,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1735700"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1735700/view/1805431065493397"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-22T09:51:32.000Z",
+      "verification": "official",
+      "sourceId": "steam-1735700",
+      "checkedAt": "2026-11-11T18:34:22.525Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:22.525Z"
+  },
+  {
+   "id": "back-to-the-dawn-200544@2.0.0.22",
+   "gameId": "back-to-the-dawn-200544",
+   "displayName": "Update 2.0.0.22",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-07-21T16:58:18.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello, fellow inmates!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've been collecting feedback from you all, and we may be a little slow in responding because we're busy with bug fixes, game improvements and general gamedev-ing, so please bear with us.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "In the new version, we've upgrading the Black Panther Arc experience and updated the following: (spoiler warning on the mission flow!)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Optimizations and Tweaks",
+     "items": [
+      {
+       "text": "Optimized the logic of releasing water from sluice gate \\ at the sewer cave-in when Bob is the protagonist, so that the water will all be released on the same night as opening the sluice gate, and there is no need to release sluice gate \\ again;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted the rapport requirement for real-time display of prisoner location, now you can see the real-time location of the prisoner from the Relationships screen after befriending;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "When using Bob as the protagonist, even after getting to know Thomas in-depth, subsequent weeks can still trigger the Find Wallet dialog;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "With Bob as the protagonist, if the skill “Clue Hunter” has already been acquired, finding wolf fur will no longer trigger the skill discovery pop-up box;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "When Bob is the protagonist, if you enter the boiler room in the reverse direction, the first time you complete the sewage pipe mini-game, a success message will not pop up;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added clue hints for relevant interactions that need to be triggered in order to travel to the boiler room from the pipe area in Cell Block B;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted the number of side dishes required to work as a cover in the Cooking Room, reducing the requirement to 1 side dish;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted the difficulty of the Sewer Jumps by lowering the Agility attribute of all jump points by 2 points, and simultaneously lowering the Challenge Point requirement by 2 points;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted the completion requirement of the Captain Bruce's mission “Pay Phone \"Bugging\"”, and reduced the number of eavesdropping to 6;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted the cost of bribing Fernando to provide the surgery room with electricity to 200 dollars;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "In the first week with Bob as the main character, if the progress of the main line is not reached, the player will be temporarily prevented from changing cells;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Optimized the unlocking of the door in the upper left corner of the recreation area, so that Bob will automatically open the deadbolt to unlock the door when he reaches the designated area;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted the trigger conditions for thinking about crate puzzles in the Sewer's Electrical Room, reducing the number of crate pushes required and lowering the intelligence requirement for Thinking to 4;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added a camera prompt after starting the electricity in the electrical room to trigger a shortcut to the cistern;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted the number of times the item \"Corrosive Solution\" can be used, increasing it to be usable 4 times;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Optimized the art and audio performance of characters and scenes related to the Black Panther Arc.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixed the issue where the first arrival action to reach the sewers from the north corner of the sewers could trigger twice;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the issue where the Tiger Combo triggered by a Rush action causing a critical hit that cannot be covered by the Pelican;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where trash cans remained closed when prisoners have rummaged through them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "\\[Prison and Power] Bundle is now live!",
+     "items": [
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/41416966/7981013da0b231ebaf9b8587cc4cc79a3af9c4c2.jpg\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The Sultan's Game x Back to the Dawn bundle is here! Get 10% off your purchase with this adrenaline-filled deal!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Will you stay imprisoned or come to power? It's up to you!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you come across any issues, please let us know by filling out our bug report form. Your feedback is crucial in helping us improve the game and ensure your prison escape experience is as smooth and thrilling as possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 16,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1735700"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1735700/view/1805431065470547"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-21T16:58:18.000Z",
+      "verification": "official",
+      "sourceId": "steam-1735700",
+      "checkedAt": "2026-11-11T18:34:22.524Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:22.524Z"
+  },
+  {
+   "id": "back-to-the-dawn-200544@2.0.0.21",
+   "gameId": "back-to-the-dawn-200544",
+   "displayName": "Update 2.0.0.21",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-07-19T12:17:27.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello inmates!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Improvements and adjustments",
+     "items": [
+      {
+       "text": "Adjusted the combat skill \"Disarm Stance\", which will give an additional 8% dodge chance during its effect;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted the combat skill \"Riot Control\", which will hit the target when used and will deduct an additional 10 points of the opponent's energy;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted the recipe for the \"Hang Glider Keel\", reducing the required 9 dowels to 6; Using \\[Snap Gun] to pry the second lock of the double wafer lock on the side door of the pipeline area will not consume an additional focus point;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added task clues for how to approach the dining cart to hide the watch;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added floating highlight and interactive white label prompts for the interaction of the wooden board at the railing of the sewer;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted the location arrangement of Phil the Otter on the third morning, so that Bob has the opportunity to \"talk\" with Phil alone;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted the objective hints for the main quest related to the Cistern.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced the attribute requirements of the high platform jump action at the lower position of the sewer ventilation area from 10 to 8, and the completion points were also reduced by 2 points;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Optimized action trigger that will lead to a route to the nameless open space. Now after checking the iron mesh, the player will be directly prompted how to go there;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added prompts for the hidden tool mission stage, and Bob will mark the suspected location on the map;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Bob’s 1v3 ambush will now affect the actual combat based on his Strength attribute.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted the initial acquaintance status of Lin the Pangolin when Bob the Panther is the protagonist.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted the unarmed attack type of the Pelican and Swan from blunt to slashing.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Reduced the Swan’s maximum HP by 10.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Updated the performance point deduction rules for moving prison cells. After moving a cell once, subsequent moves will no longer consume performance points.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    },
+    {
+     "title": "Bug Fix：",
+     "items": [
+      {
+       "text": "Fixed the issue that the player get stuck on the ladder when the player interacted with the prison roof and ladder to view the iron barrel;",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the issue that the gray cat could not be beaten on the fifth night when Black Panther was the protagonist.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where invisible walls could occasionally appear in the cafeteria.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed an issue where completing the underground waterway route could sometimes prevent the first objective of the “Breakout” mission from being completed.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a misalignment issue with the Fox's bathing position on Day 11.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "If you come across any issues, please let us know by filling out our bug report form. Your feedback is crucial in helping us improve the game and ensure your prison escape experience is as smooth and thrilling as possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 15,
+    "other": 1,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1735700"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1735700/view/1805431065401014"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-19T12:17:27.000Z",
+      "verification": "official",
+      "sourceId": "steam-1735700",
+      "checkedAt": "2026-11-11T18:34:22.523Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:22.524Z"
+  },
+  {
+   "id": "back-to-the-dawn-200544@2.0.0.20",
+   "gameId": "back-to-the-dawn-200544",
+   "displayName": "Update 2.0.0.20",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-07-18T14:48:22.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello inmates!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Here are the details of this update",
+     "items": [
+      {
+       "text": "Fixed the bug where after retrieving \"Wesley's Recording Watch\", there is a chance that the subsequent actions cannot be triggered, causing the progress of the main quest to be stuck. (For players who have already encountered this issue, subsequent actions for the main quest will be triggered after leaving the cooking room or actively interacting with the prisoner crafting table.)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Additionally, due to a Steam technical issue, there are currently two purchase options showing on the store page. Please make sure to choose the one with the discount! We’re urgently working to resolve this and apologize for the inconvenience.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We would also like to address an issue related to the support packs: the Back to the Dawn Concept Art Collection is currently only available in Simplified Chinese due to scheduling and typesetting challenges. We plan to add other languages at a later date and hope for your understanding. Thank you for your patience!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you come across any issues, please let us know by filling out our bug report form. Your feedback is crucial in helping us improve the game and ensure your prison escape experience is as smooth and thrilling as possible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 1,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1735700"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1735700/view/1805431065372474"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-07-18T14:48:22.000Z",
+      "verification": "official",
+      "sourceId": "steam-1735700",
+      "checkedAt": "2026-11-11T18:34:22.523Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-11T18:34:22.523Z"
+  }
+ ],
+ "issues": []
+}

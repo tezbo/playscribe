@@ -1,0 +1,1034 @@
+{
+ "game": {
+  "id": "tavern-manager-simulator-290509",
+  "igdbId": 290509,
+  "name": "Tavern Manager Simulator",
+  "cover": {
+   "imageId": "cod1mg",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/cod1mg.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar6pg4",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar6pg4.jpg"
+  },
+  "ps5Release": "2026-02-05",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "tavern-manager-simulator-290509@1.5.4",
+   "gameId": "tavern-manager-simulator-290509",
+   "displayName": "Update 1.5.4",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2025-09-29T19:40:23.000Z",
+   "notes": [
+    {
+     "title": "Improvements",
+     "items": [
+      {
+       "text": "The price change in the menu has been reworked. Now it should work more efficiently and clearly.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a \"feed all fairies\" button with one of their upgrades for those who are tired of pressing all the buttons.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "Fixed axe animation.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The concierge now correctly interrupts cleaning if you clean up faster than her.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "The clock in the player's room now shows the correct time.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the wiping of spills on a single VIP table.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the fairy service at the table in front of the stairs against the wall between levels 12 and 13.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 5,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0,
+    "topNew": [
+     "The price change in the menu has been reworked. Now it should work more efficiently and clearly.",
+     "Added a \"feed all fairies\" button with one of their upgrades for those who are tired of pressing all the buttons."
+    ]
+   },
+   "sourceIds": [
+    "steam-2756770"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2756770/view/1811772772384715"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-29T19:40:23.000Z",
+      "verification": "official",
+      "sourceId": "steam-2756770",
+      "checkedAt": "2026-11-12T15:40:17.994Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:17.994Z"
+  },
+  {
+   "id": "tavern-manager-simulator-290509@1.5.2",
+   "gameId": "tavern-manager-simulator-290509",
+   "displayName": "Patch 1.5.2",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-09-02T19:08:08.000Z",
+   "notes": [
+    {
+     "title": "Improvements",
+     "items": [
+      {
+       "text": "added 2 more warehouse expansion levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "the observer sees a little further",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "fairies can now fly into the room under the king's room",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "guests will not try to go under the new stairs, and the tracks under the stairs should disappear",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "treasure items should no longer fall through the display case and visitors no longer drop them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "items that have already fallen through the floor should return to the inventory",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fairies near the houses should not block hungry fairies and push less",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "stuck riders on horses should disappear over time or after a reboot",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "if you thought that the tables were missing from the store, now you will see them",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "the tutorial about the end of the game is shown only 1 time",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "a bed with bamboo is correctly placed at the far wall of the tavern on the 8th level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fix for saving the position of the pitchfork",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "small edits in the Simplified Chinese localization",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 11,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0,
+    "topNew": [
+     "added 2 more warehouse expansion levels",
+     "the observer sees a little further"
+    ]
+   },
+   "sourceIds": [
+    "steam-2756770"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2756770/view/1809235871757484"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-09-02T19:08:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-2756770",
+      "checkedAt": "2026-11-12T15:40:17.994Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:17.994Z"
+  },
+  {
+   "id": "tavern-manager-simulator-290509@1.5.1",
+   "gameId": "tavern-manager-simulator-290509",
+   "displayName": "Patch 1.5.1",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-08-20T17:47:16.000Z",
+   "notes": [
+    {
+     "title": "Few fixes",
+     "items": [
+      {
+       "text": "fixed rare cases when items would fall out of the player's hands",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed several small bugs that could freeze mini-games",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed when the window with the list of items taken for debts was too long and blocked the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "fixed cases when fairies stopped carrying soup",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "the fairy in the hotel cleans up a little faster",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "voting on Twitch requires at least 2 people (instead of 3)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2756770"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2756770/view/1808601382417683"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-20T17:47:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-2756770",
+      "checkedAt": "2026-11-12T15:40:17.993Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:17.993Z"
+  },
+  {
+   "id": "tavern-manager-simulator-290509@major-2025-08-13",
+   "gameId": "tavern-manager-simulator-290509",
+   "displayName": "KING & CONCERTS UPDATE",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-08-13T16:02:36.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "This is our biggest update yet, celebrating the game's anniversary! We've added 4 new tavern levels and new mechanics!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🎶Musicians and Concerts",
+     "items": [
+      {
+       "text": "What's a tavern without bards? Hire musicians and organize concerts in your tavern. Let your patrons dance!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44820925/7df8a49461598fe399c80d6489d37f8edba02a8d.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "👑Long Live the King!",
+     "items": [
+      {
+       "text": "The King himself may visit your tavern. Organize a grand feast for him, and perhaps he'll decide that your tavern is the best in the entire kingdom.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44820925/9684524e0c65a3825f65e1d8b5df222174d57793.png\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "🏺Artifact Display Cases and Magic Flowers",
+     "items": [
+      {
+       "text": "Put your artifacts on public display for all patrons to admire. And if you want to speed up your fairies, use the flowers they love so much.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[img src=\"{STEAM_CLAN_IMAGE}/44820925/27bccf88237e9d2760b1ab5bda801572bd9daf88.gif\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "---",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Improvements",
+     "items": [
+      {
+       "text": "🧚‍♀️ A fairy concierge will take care of the hotel",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "🏨 The hotel can be closed, and the hall can be decorated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "🪓 Axe upgrades will make chopping wood easier",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "🛠️New decorations like railings and small stairs will allow you to beautifully partition tables",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "👁️‍🗨️ A spotter will notify you of an approaching thief",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "💰 The loan size increases with your reputation level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "🖼️ Lots of new decorations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "🏆Extended level progression with rewards if you choose to play after completing the main storyline",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "---",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "Fixes",
+     "items": [
+      {
+       "text": "🤔 Sometimes patrons would stand up but not leave",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "🧼 Wiping stains is no longer laggy, and there are more types of stains",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "🎵 Sometimes the music wouldn't start playing immediately when the game launched",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "🧚‍♀️ Sometimes the fairies would forget about the soup",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "🌫️ Less windy and foggy weather, reduced lightning brightness, quieter wind",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "🌧️ Rain and fog should not appear inside the building",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "💬 Sometimes it was possible to get stuck in a dialogue by clicking on characters too quickly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "📌Interactive decor is now marked with a special icon in the inventory and shop",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "✉️ The letter is removed after catching the goblin",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "🍔 Characters now hold food better",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    },
+    {
+     "title": "Return to the tavern and build the Best Tavern Ever!",
+     "items": [
+      {
+       "text": "🎉 Announcement: Anime Shop Simulator",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you want to support us, then add our next game to your wishlist - a co-op anime shop simulator",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Manage your own anime shop . Play solo or team up with friends in 4-player co-op mode to grow your business. Stock shelves with manga, figures, and collectible cards in this immersive first-person game 🕹️",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/3393280?utm_source=news_english/\"]or buy a DLC with unique tavern signs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "[dynamiclink href=\"https://store.steampowered.com/app/3387950/Tavern_Manager_Simulator_Supporter_Pack_DLC/\"]",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 9,
+    "fixed": 10,
+    "balance": 0,
+    "other": 13,
+    "ps5": 0,
+    "topNew": [
+     "🧚‍♀️ A fairy concierge will take care of the hotel",
+     "🏨 The hotel can be closed, and the hall can be decorated",
+     "🪓 Axe upgrades will make chopping wood easier"
+    ]
+   },
+   "sourceIds": [
+    "steam-2756770"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2756770/view/1807966710819664"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-08-13T16:02:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-2756770",
+      "checkedAt": "2026-11-12T15:40:17.992Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:17.992Z"
+  },
+  {
+   "id": "tavern-manager-simulator-290509@1.4.6",
+   "gameId": "tavern-manager-simulator-290509",
+   "displayName": "Patch 1.4.6",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-04-15T17:44:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "We have made several changes to the game to improve performance and raise the average FPS.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "If you encounter any new problems, please send information about the bug with its description. This can be done in the game by clicking on the button \"Found a bug? Let us know!\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2756770"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2756770/view/1796631172414015"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-04-15T17:44:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-2756770",
+      "checkedAt": "2026-11-12T15:40:17.991Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:17.991Z"
+  },
+  {
+   "id": "tavern-manager-simulator-290509@1.4.5",
+   "gameId": "tavern-manager-simulator-290509",
+   "displayName": "Patch 1.4.5",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-03-27T12:05:05.000Z",
+   "notes": [
+    {
+     "title": "Few fixes",
+     "items": [
+      {
+       "text": "Fixed situations where the freezer stopped working",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed riders not being able to mount a horse",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed situations where visitors were incorrectly facing the counter-table",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Horses should not disappear when loading the game",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed disappearing environmental objects (flag, waterfall, fence)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed non-working decoration points",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Additional minor visual improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 7,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2756770"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2756770/view/1795283637817912"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-27T12:05:05.000Z",
+      "verification": "official",
+      "sourceId": "steam-2756770",
+      "checkedAt": "2026-11-12T15:40:17.991Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:17.991Z"
+  },
+  {
+   "id": "tavern-manager-simulator-290509@1.4.3",
+   "gameId": "tavern-manager-simulator-290509",
+   "displayName": "Patch 1.4.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2025-03-05T15:50:46.000Z",
+   "notes": [
+    {
+     "title": "Fixes in the hotel",
+     "items": [
+      {
+       "text": "We tried to fix all the cases you sent us about jammed doors and missing keys in the hotel. Thanks for your messages.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "It is now easier to jump over railings and into windows",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Death bones no longer threaten the construction site",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "More clear tips on what to do when cleaning and in which room there is dirt",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "You can put your favorite cactus on the reception desk. We didn't think you loved them so much",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fed and hungry horses are counted even when the tavern is closed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 6,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-2756770"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2756770/view/1793384379343818"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-05T15:50:46.000Z",
+      "verification": "official",
+      "sourceId": "steam-2756770",
+      "checkedAt": "2026-11-12T15:40:17.990Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:17.990Z"
+  },
+  {
+   "id": "tavern-manager-simulator-290509@major-2025-03-01",
+   "gameId": "tavern-manager-simulator-290509",
+   "displayName": "Big Update: Hotel is here!",
+   "kind": "major",
+   "kindBasis": "studio",
+   "announcedAt": "2025-03-01T15:33:08.000Z",
+   "notes": [
+    {
+     "title": "🏨 UPDATE: HOTEL 🏨",
+     "items": [
+      {
+       "text": "We've been preparing for this moment for a long time and finally added a BIG construction site! Now your guests have a place to relax after a delicious lunch - meet the HOTEL! You will have to greet guests, clean the rooms and keep things cozy.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "But first, the hotel needs to be built, and a team of highly skilled goblins will help you with this. Don't worry - they will NOT steal your sausage!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The hotel becomes available from level 11.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Other Important Improvements",
+     "items": [
+      {
+       "text": "💧 Water Supply Updates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "New upgrades for the well and water supply system.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Ability to store water and collect it in the new water pump.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Water reserves in the kitchen to spend less time refilling it.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "💰 Price Controller",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Now you can adjust the prices of dishes!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "More visitors or a calm atmosphere? Choose the balance that suits you.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "🆘 New button \"Help, item stuck!\"",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "If an item has fallen through the floor or is stuck after an upgrade, solve the problem right in the pause menu.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "🧚 Flexible customization of fairy waitresses",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Determine which halls they work in.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Choose whether they will do cleaning.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Set their priorities so that the work is more efficient!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "✅ Fixes and minor improvements",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Visitors no longer get stuck near the toilet.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fairies now have cute wings and work magic while working.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "In the VIP hall, the screens have become lower - orders are now visible.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "NPC walking animations play correctly even if you slightly... hit them.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    },
+    {
+     "title": "The update is now available! Thank you for playing! ❤️",
+     "items": [
+      {
+       "text": "If you want to support us, then add our next game to your wishlist - a co-op anime shop simulator",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "or buy a DLC with unique tavern signs",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 18,
+    "fixed": 0,
+    "balance": 0,
+    "other": 5,
+    "ps5": 0,
+    "topNew": [
+     "💧 Water Supply Updates",
+     "New upgrades for the well and water supply system.",
+     "Ability to store water and collect it in the new water pump."
+    ]
+   },
+   "sourceIds": [
+    "steam-2756770"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/2756770/view/1792751526077822"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2025-03-01T15:33:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-2756770",
+      "checkedAt": "2026-11-12T15:40:17.989Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T15:40:17.989Z"
+  }
+ ],
+ "issues": []
+}

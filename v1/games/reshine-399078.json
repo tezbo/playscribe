@@ -1,0 +1,406 @@
+{
+ "game": {
+  "id": "reshine-399078",
+  "igdbId": 399078,
+  "name": "Reshine",
+  "cover": {
+   "imageId": "cobylu",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/cobylu.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar5rao",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar5rao.jpg"
+  },
+  "ps5Release": "2026-11-26",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "reshine-399078@hotfix-2026-11-27",
+   "gameId": "reshine-399078",
+   "displayName": "Hotfix (ID 5183)",
+   "kind": "hotfix",
+   "kindBasis": "studio",
+   "announcedAt": "2026-11-27T15:31:24.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hey there!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've just pushed a hotfix with some of the issues you have noticed and reported to us. Thank you for all your reports, comments, reviews and feedback, keep them coming!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "The launch went really well, and we're blown away by your reception of Reshine - but we'll write more about this next week :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch notes",
+     "items": [
+      {
+       "text": "Potential fix for the comparison mode being broken for some folks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed v-sync setting",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Proper image of Blaise Pascal in Roulette Wheel's trivia",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Replaced Paint Spray with Primer in some stages of Sewing Machine (no noticeable difference in how it works, just a proper label is now displayed when using it)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed a few typos in texts",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed the resolution at which pictures in photo mode are taken",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 3,
+    "balance": 0,
+    "other": 6,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-4253570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/4253570/view/1850460852990105"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-27T15:31:24.000Z",
+      "verification": "official",
+      "sourceId": "steam-4253570",
+      "checkedAt": "2026-11-27T18:58:47.142Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    },
+    {
+     "platform": "ps5",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-11-27T15:31:24.000Z",
+      "verification": "assumed",
+      "sourceId": "steam-4253570",
+      "checkedAt": "2026-11-27T18:58:47.145Z"
+     },
+     "bundles": [],
+     "verification": "assumed",
+     "alert": {
+      "style": "standard",
+      "from": "2026-11-27T15:31:24.000Z"
+     }
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-27T18:58:47.145Z"
+  },
+  {
+   "id": "reshine-399078@patch-2026-10-22",
+   "gameId": "reshine-399078",
+   "displayName": "A patch (ID 4718) for demo has just arrived",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-22T15:33:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hello,",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "This is a small patch with one important change that we heard you asking for: it was way too easy to accidentally click on an already fully painted part and reset its color. To prevent that from happening again, the color won't reset when clicking on such a part anymore; you can just go back and continue working on the remaining parts :)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch notes",
+     "items": [
+      {
+       "text": "Paint color resets only when a new color is chosen, not when color selection panel appears",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed broken tool hiding animation when pressing Back during color choosing",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed saving customization options when making them before starting the restoration of any object",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "No longer showing parts' 3D widgets when they're fully restored",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Implemented new accessibility setting: Reduced laser flickering",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed a weird yellow blink on one edge of the vinyl record",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed a typo in the Polish entry message",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 4,
+    "balance": 0,
+    "other": 4,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-4253570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/4253570/view/1847286114033213"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-22T15:33:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-4253570",
+      "checkedAt": "2026-11-26T00:23:17.583Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-26T00:23:17.583Z"
+  },
+  {
+   "id": "reshine-399078@patch-2026-10-20",
+   "gameId": "reshine-399078",
+   "displayName": "A patch (ID 4690) for demo has just arrived",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2026-10-20T12:25:41.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Hi there!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "We've been going through your feedback, and you have a lot of great ideas. Also, you've found quite a few bugs, so we've just pushed a hotfix to address some of these!",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    },
+    {
+     "title": "Patch notes",
+     "items": [
+      {
+       "text": "Fixed screws' rotation direction when screwing them in",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added Traditional Chinese to the language combobox",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Gamepad no longer vibrates if you are playing using a mouse & keyboard",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "other",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Added a setting for turning off gamepad vibrations",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a setting for fixing laser rotation",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added a setting for skipping the electrolysis minigame",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Disappearing sounds fixed",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tweaks in electrolysis minigame input (frequency changing on arrows / A, D / D-pad)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed translation of \"Choose paint color\" phrase (were always shown in English)",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Dust particles no longer affect reflections",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Minor tweaks to some sound volumes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Allow resetting progress on objects that are disassembled but have no parts cleaned up yet",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tutorial tweak: don't show \"UV light\" tutorial if making progress",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tutorial tweak: don't show \"Locate fasteners hint\" tutorial if another tutorial is being shown",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tutorial tweak: hide \"Locate fasteners hint\" tutorial if fastener clicked",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 2,
+    "balance": 0,
+    "other": 10,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-4253570"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/4253570/view/1846651706695024"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2026-10-20T12:25:41.000Z",
+      "verification": "official",
+      "sourceId": "steam-4253570",
+      "checkedAt": "2026-11-26T00:23:17.580Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-26T00:23:17.580Z"
+  }
+ ],
+ "issues": []
+}

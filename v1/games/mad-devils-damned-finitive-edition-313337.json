@@ -1,0 +1,1027 @@
+{
+ "game": {
+  "id": "mad-devils-damned-finitive-edition-313337",
+  "igdbId": 313337,
+  "name": "Mad Devils: Damned-finitive Edition",
+  "cover": {
+   "imageId": "co8ofi",
+   "url": "https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co8ofi.jpg"
+  },
+  "squareCover": null,
+  "artwork": {
+   "imageId": "ar336a",
+   "url": "https://images.igdb.com/igdb/image/upload/t_1080p/ar336a.jpg"
+  },
+  "ps5Release": "2024-08-13",
+  "ps5ReleasePrecision": "day",
+  "ps5TitleIds": []
+ },
+ "releases": [
+  {
+   "id": "mad-devils-damned-finitive-edition-313337@1.1.0",
+   "gameId": "mad-devils-damned-finitive-edition-313337",
+   "displayName": "Patch 1.1.0",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2022-11-16T21:23:28.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Patch 1.1.0 Released.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adding Chinese and Traditional Chinese language support.",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 0,
+    "balance": 0,
+    "other": 2,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1439630"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1439630/view/4789043687471663455"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-11-16T21:23:28.000Z",
+      "verification": "official",
+      "sourceId": "steam-1439630",
+      "checkedAt": "2026-11-12T08:23:58.937Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:58.937Z"
+  },
+  {
+   "id": "mad-devils-damned-finitive-edition-313337@1.0.9",
+   "gameId": "mad-devils-damned-finitive-edition-313337",
+   "displayName": "Update 1.0.9",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2022-06-23T22:09:20.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "UI",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed dropdowns cutting off top and bottom entries",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Expanded dropdown selection size",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed character select menu breaking in editor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added extra null checks to prevent HUD from staying disabled: Subtitles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Minor spelling/punctuation fixes: Cutscenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed numerous cutscene issues: Levels",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added Malkov confrontation cutscene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added missing dialogue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added ambush encounter",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed overlapping cutscenes cutting each other off",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted truck push dialogue to time better in sequence",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed final cutscene always enabling, regardless of whether it was previously played",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Moved rail electricity effect, since it doesn't do anything and might dissuade players from the critical path",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Removed trigger for nonexistent memory dialogue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Covered up void hole at level exit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted timing on some end level dialogue",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Added debug tool to destroy artillery camp",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed hint guide system",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Adjusted War activation timing to better match dialogue length",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Minor War activation fix: Languages",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added Portuguese translation: Loading Scene",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Version number will now match Project version number: Misc",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Barrier text won't appear after conditions have been met",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed combination barriers breaking if game is loaded after defeating pre-spawned enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 6,
+    "fixed": 7,
+    "balance": 3,
+    "other": 9,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1439630"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1439630/view/4474904295731158876"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2022-06-23T22:09:20.000Z",
+      "verification": "official",
+      "sourceId": "steam-1439630",
+      "checkedAt": "2026-11-12T08:23:58.936Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:58.936Z"
+  },
+  {
+   "id": "mad-devils-damned-finitive-edition-313337@1.0.7",
+   "gameId": "mad-devils-damned-finitive-edition-313337",
+   "displayName": "Patch 1.0.7",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-09-21T20:48:36.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Balance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increasing Bat and Heavy Health values for longer interactions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added 'hint' mortar shots",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "When players aren't near any active artillery camps, a stray mortar shell will occasionally fly by from the direction of an uncleared cam. This shell has a longer lasting smoke trail, in the hopes of leading players towards the camp",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed issue where character health was set from wrong source",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Increasing health of Demon Dogs and Heavy Grunts to be more reflective of their physical size/aggressiveness",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Enclaves",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added opening instructions text",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added delay between level load and enemy spawn",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added results/reward text before reloading level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Buffed rewards on timed enclave",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Enclaves can now spawn between different random encounters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added more encounters",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Adjusted existing encounter difficulty",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Rebalanced rewards",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed enemies not spawning if enclave checkpoint data is not cleared properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "All remaining enemies will die on enclave success",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 2,
+    "balance": 3,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1439630"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1439630/view/5418383147754835503"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-09-21T20:48:36.000Z",
+      "verification": "official",
+      "sourceId": "steam-1439630",
+      "checkedAt": "2026-11-12T08:23:58.936Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:58.936Z"
+  },
+  {
+   "id": "mad-devils-damned-finitive-edition-313337@1.0.6",
+   "gameId": "mad-devils-damned-finitive-edition-313337",
+   "displayName": "Update 1.0.6",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-08-17T19:28:49.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Tutorial",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Tutorial messages now update to use current controller mapping",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added tutorials for Active Reloading, Respawning, Switching Characters, Cover System, Powers, Grenade use",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Balance",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Balance to enemy health values and new health scaling for difficulty settings",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "New balance for boss battles",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Level loading",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Skip initial cutscenes if save file already exists",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Level 8",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Added clearer level instructions",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed navmesh to prevent enemies spawning inside objects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added new effects",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Improved hit colliders",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Fixed cannon colliders",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 5,
+    "fixed": 2,
+    "balance": 0,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1439630"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1439630/view/4516534149074528502"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-08-17T19:28:49.000Z",
+      "verification": "official",
+      "sourceId": "steam-1439630",
+      "checkedAt": "2026-11-12T08:23:58.935Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:58.935Z"
+  },
+  {
+   "id": "mad-devils-damned-finitive-edition-313337@1.0.5",
+   "gameId": "mad-devils-damned-finitive-edition-313337",
+   "displayName": "Update 1.0.5",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-06-28T20:54:16.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Camera Shake",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Fixed camera moving to first player view in coop during screenshake",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed camera angle not resetting properly during more intense screenshake: Options",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed options menu coming up blank",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed audio settings not saving/loading properly",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added option to disable screenshake",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added option to disable controller vibration",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added option to disable mouse cursor during gameplay",
+       "ps5ProOnly": false,
+       "pcOnly": true,
+       "category": "new",
+       "platforms": [
+        "pc"
+       ]
+      },
+      {
+       "text": "Fixed error when changing gore settings on main menu: Cursor",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Cursor is invisible during cutscenes",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Cursor is invisible during dialogue events",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 2,
+    "fixed": 5,
+    "balance": 0,
+    "other": 3,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1439630"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1439630/view/4032392655079472478"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-06-28T20:54:16.000Z",
+      "verification": "official",
+      "sourceId": "steam-1439630",
+      "checkedAt": "2026-11-12T08:23:58.935Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:58.935Z"
+  },
+  {
+   "id": "mad-devils-damned-finitive-edition-313337@1.0.4",
+   "gameId": "mad-devils-damned-finitive-edition-313337",
+   "displayName": "Patch 1.0.4",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-06-14T19:46:02.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "New Pause Menu Options",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Restart Level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Reload Checkpoint",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      },
+      {
+       "text": "Added Return to HUB",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 4,
+    "fixed": 0,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1439630"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1439630/view/5019805792176609279"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-06-14T19:46:02.000Z",
+      "verification": "official",
+      "sourceId": "steam-1439630",
+      "checkedAt": "2026-11-12T08:23:58.934Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:58.934Z"
+  },
+  {
+   "id": "mad-devils-damned-finitive-edition-313337@1.0.3",
+   "gameId": "mad-devils-damned-finitive-edition-313337",
+   "displayName": "Patch 1.0.3",
+   "kind": "patch",
+   "kindBasis": "studio",
+   "announcedAt": "2021-06-07T16:58:08.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Boss Updates",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Famine",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Offset physical attack colliders so attacks won't miss players",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted power cast positions so effective range isn't lost",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted vomit collision plane",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Pestilence",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Thrown corpses spawn further away to prevent collision with Pestilence",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Adjusted surrounding scenery to mitigate clipping",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "War",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Increased block size to prevent bullets from going under shield",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Fixed War sometimes still being damaged when shield is hit",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed shield starting activated",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Increased feel detector range during physical powers to compensate for pushing away closer enemies",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Offset physical attack colliders so attacks don't go over player's heads",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "other"
+      },
+      {
+       "text": "Reduced cannon power",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      },
+      {
+       "text": "Adjusted cannon aim",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "balance"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 0,
+    "fixed": 2,
+    "balance": 7,
+    "other": 7,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1439630"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1439630/view/4093189347058062458"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-06-07T16:58:08.000Z",
+      "verification": "official",
+      "sourceId": "steam-1439630",
+      "checkedAt": "2026-11-12T08:23:58.934Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:58.934Z"
+  },
+  {
+   "id": "mad-devils-damned-finitive-edition-313337@1.0.2",
+   "gameId": "mad-devils-damned-finitive-edition-313337",
+   "displayName": "Update 1.0.2",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-05-22T00:18:14.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed issue causing spontaneous enemy death",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed save bug",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed Enclave checkpoint error in Steelworks",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed error with character unlock conditions for Miller and Malkov",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added game credits",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 4,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1439630"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1439630/view/4069544181433435516"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-05-22T00:18:14.000Z",
+      "verification": "official",
+      "sourceId": "steam-1439630",
+      "checkedAt": "2026-11-12T08:23:58.933Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:58.933Z"
+  },
+  {
+   "id": "mad-devils-damned-finitive-edition-313337@1.0.1",
+   "gameId": "mad-devils-damned-finitive-edition-313337",
+   "displayName": "Update 1.0.1",
+   "kind": "major",
+   "kindBasis": "inferred",
+   "announcedAt": "2021-05-15T01:10:37.000Z",
+   "notes": [
+    {
+     "title": "Changes",
+     "items": [
+      {
+       "text": "Fixed issue causing spontaneous player death",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed networking player state issue resulting in instability during online co-op",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Fixed camera issue causing missing textures in HUB level",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "fixed"
+      },
+      {
+       "text": "Added level restart option",
+       "ps5ProOnly": false,
+       "pcOnly": false,
+       "category": "new"
+      }
+     ]
+    }
+   ],
+   "digest": {
+    "new": 1,
+    "fixed": 3,
+    "balance": 0,
+    "other": 0,
+    "ps5": 0
+   },
+   "sourceIds": [
+    "steam-1439630"
+   ],
+   "links": {
+    "steamNotes": "https://store.steampowered.com/news/app/1439630/view/4767601588116035020"
+   },
+   "platforms": [
+    {
+     "platform": "pc",
+     "status": "live",
+     "version": null,
+     "sizeBytes": null,
+     "liveAt": {
+      "value": "2021-05-15T01:10:37.000Z",
+      "verification": "official",
+      "sourceId": "steam-1439630",
+      "checkedAt": "2026-11-12T08:23:58.933Z"
+     },
+     "bundles": [],
+     "verification": "official"
+    }
+   ],
+   "revision": 1,
+   "updatedAt": "2026-11-12T08:23:58.933Z"
+  }
+ ],
+ "issues": []
+}
