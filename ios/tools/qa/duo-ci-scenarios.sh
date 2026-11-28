@@ -306,10 +306,17 @@ blocked) # R-12: a video YouTube refuses (IFrame error 150) shows Open in YouTub
   fold 90 landscape-left; sleep 3; snap blocked 4-book
   fold 90 portrait; sleep 3; snap blocked 5-tabletop ;;
 fsxctest) # bug-071: XCUITest taps (sim-use taps did not reach the bands after the turn): enter, band tap, Exit, in Closed
+  # The landscape case runs on its own after a landscape fold: XCUIDevice's orientation alone left the Duo's cover display
+  # portrait (run 46107453270).
+  fsx() { xcodebuild test -project ios/Playscribe.xcodeproj -scheme PlayscribeUI -destination "id=$UDID" -derivedDataPath build/dd-ui \
+    "$@" -resultBundlePath "$OUT/fsxctest-$1.xcresult" CODE_SIGNING_ALLOWED=NO > "$OUT/fsxctest-$1.log" 2>&1; local rc=$?
+    echo "fsxctest $1 exit $rc"; grep -E 'qaFullScreen|qaBands|videoExitFullScreen frame|window after|error:|Test Case|\*\* TEST' "$OUT/fsxctest-$1.log" | cut -c1-400
+    [ $rc -eq 0 ] || FAILED="$FAILED fsxctest-$1"; }
   fold 0 portrait
-  xcodebuild test -project ios/Playscribe.xcodeproj -scheme PlayscribeUI -destination "id=$UDID" -derivedDataPath build/dd-ui \
-    -only-testing:PlayscribeUITests/FullScreenVideoTests -resultBundlePath "$OUT/fsxctest.xcresult" CODE_SIGNING_ALLOWED=NO > "$OUT/fsxctest.log" 2>&1
-  echo "fsxctest exit $?"; grep -E 'qaFullScreen|qaBands|videoExitFullScreen frame|error:|Test Case|\*\* TEST' "$OUT/fsxctest.log" | cut -c1-400 ;;
+  fsx portrait -only-testing:PlayscribeUITests/FullScreenVideoTests -skip-testing:PlayscribeUITests/FullScreenVideoTests/testExitStaysAfterAutoHideFromLandscape
+  fold 0 landscape-left; sleep 3
+  fsx landscape -only-testing:PlayscribeUITests/FullScreenVideoTests/testExitStaysAfterAutoHideFromLandscape
+  fold 0 portrait ;;
 newest) # bug-072: Dawnwalker left on Gallery, relaunch, open it from its Library tile: What's new, Closed portrait and Open portrait
   tapTile() { local f; f=$(sim-use ui --device "$UDID" 2>/dev/null | grep 'The Blood of Dawnwalker, last' | head -1 | grep -o '([0-9.,]* [0-9.x]*)' | tr -d '()'); local x y w h; x=${f%%,*}; y=${f#*,}; y=${y%% *}; w=${f#* }; w=${w%x*}; h=${f##*x}
     sim-use tap -x $((${x%.*} + ${w%.*} / 2)) -y $((${y%.*} + ${h%.*} / 2)) --device "$UDID" >/dev/null 2>&1; sleep 3; }
