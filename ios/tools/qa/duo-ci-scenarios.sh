@@ -246,6 +246,8 @@ plusend) # bug-psplus-card-missing-cover-empty-grid + r060-psplus-compact-ax3: t
     pose 90 portrait; to_plus 450,800 450,520 tabletop; plus $n-5-tabletop
     pose 180 portrait; to_plus 500,850 500,150 open-portrait; plus $n-6-open-portrait
   done ;;
+deckmotionp) # bug-080 (Iris): dark Closed portrait with the deck hero card in view, key art frozen at 0 s and 24 s
+  for t in 0 24; do launch -qaRoute two-update -qaOrientation portrait -qaAppearance dark -qaMotionTime $t; snap deckmotionp t$t-dark-closed-portrait; done ;;
 deckmotion) # bug-080: deck hero key-art motion frozen at 0 s and 24 s (-qaMotionTime), light and dark, Closed portrait, Book and Tabletop; then one AX5 Closed card
   for t in 0 24; do for ap in light dark; do
     launch -qaRoute two-update -qaAppearance $ap -qaMotionTime $t; snap deckmotion t$t-$ap-1-closed
