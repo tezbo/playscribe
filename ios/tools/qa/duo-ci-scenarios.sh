@@ -262,6 +262,7 @@ fullscreen) # bug-071: full-screen video Fit with our controls in the bands; the
   # both), so Exit is tried at each reading: a landscape point (x, y) is (466 - y, x) or (y, 678 - x). Each try starts hidden:
   # a picture tap, then Exit at once, before the 3 s auto-hide. Exit's centre comes from the measured geometry, as in the UI test.
   g=$(echo "$t4" | grep -o 'pic=[0-9,x]* safe=[0-9,]* full=[0-9x]*' | head -1); pic=${g#pic=}; pic=${pic%% *}; sf=${g#*safe=}; sf=${sf%% *}
+  [ -n "$g" ] || { echo "FAIL no geometry in qaFullScreen"; FAILED="$FAILED fullscreen-geometry"; g="pic=0,0,0x0 safe=0,0,0,0 full=0x0"; pic=0,0,0x0; sf=0,0,0,0; }
   fh=${g##*x}; pmax=$(( $(echo "$pic" | cut -d, -f2) + ${pic##*x} )); band=$(( fh - pmax ))
   lx=$(( $(echo "$sf" | cut -d, -f2) + 12 + 22 ))
   if [ "$band" -gt 104 ]; then ly=$(( pmax + 8 + 22 )); else ly=$(( pmax + (band - 44) / 2 + 22 )); fi

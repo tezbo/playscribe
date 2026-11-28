@@ -431,7 +431,8 @@ struct FullBleedVideo: View {
                 Color.clear.frame(width: 1, height: 1)
                     .accessibilityElement()
                     .accessibilityIdentifier("qaFullScreen")
-                    .accessibilityValue("occ=\(occlusions.map(toScreen).map { "\(Int($0.minX)),\(Int($0.minY)),\(Int($0.width))x\(Int($0.height))" }.joined(separator: ";")) pic=\(Int(f.minX)),\(Int(f.minY)),\(Int(f.width))x\(Int(f.height)) safe=\(Int(safe.top)),\(Int(safe.leading)),\(Int(safe.bottom)),\(Int(safe.trailing)) full=\(Int(full.width))x\(Int(full.height))")
+                    // pic, safe and full lead: sim-use cuts long values (run 46089197299 lost full= after the occlusions).
+                    .accessibilityValue("pic=\(Int(f.minX)),\(Int(f.minY)),\(Int(f.width))x\(Int(f.height)) safe=\(Int(safe.top)),\(Int(safe.leading)),\(Int(safe.bottom)),\(Int(safe.trailing)) full=\(Int(full.width))x\(Int(full.height)) occ=\(occlusions.map(toScreen).map { "\(Int($0.minX)),\(Int($0.minY)),\(Int($0.width))x\(Int($0.height))" }.joined(separator: ";"))")
                     .offset(x: 2, y: 2)
                 Color.clear.frame(width: 1, height: 1)
                     .accessibilityElement()
