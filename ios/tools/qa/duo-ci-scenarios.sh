@@ -275,6 +275,25 @@ fullscreen) # bug-071: full-screen video Fit with our controls in the bands; the
   fold 90 portrait; sleep 2; snap fullscreen 9-tabletop-ends-it
   # Every full-screen tree (those with our qaFullScreen probe) must keep YouTube's buttons from VoiceOver; fails the job.
   "$(dirname "$0")/check-no-youtube-buttons.sh" $(grep -l qaFullScreen "$OUT/$SHA"-fullscreen-*-ui.txt) || FAILED="$FAILED fullscreen-youtube-buttons" ;;
+notify) # bug-079: every notification type opens its own screen, cold (app not running) and warm (app in the background, left
+  # on another screen), no banner. Each payload (ios/tools/qa/*.apns) is pushed with simctl and its banner tapped at the top.
+  launch -qaRoute ask-notifications; sleep 3; sim-use ui --device "$UDID" 2>/dev/null | grep -iE 'allow|notif' | head -3
+  sim-use tap --label "Allow" --device "$UDID" >/dev/null 2>&1; sleep 2
+  banner() { xcrun simctl push "$UDID" $B "$(dirname "$0")/$1.apns" >/dev/null; sleep 2; sim-use tap -x 233 -y 60 --device "$UDID" >/dev/null 2>&1; sleep 9; }
+  for kind in release plus-leaving release-day issue-fixed date-move team; do
+    for mode in cold warm; do
+      launch -qaRoute settings
+      if [ $mode = cold ]; then xcrun simctl terminate "$UDID" $B >/dev/null 2>&1; else xcrun simctl launch "$UDID" com.apple.Preferences >/dev/null; fi
+      sleep 3; banner $kind; snap notify "$kind-$mode"
+      t=$(ls "$OUT/$SHA"-notify-$kind-$mode-*-ui.txt | head -1)
+      r=$(grep -o 'qa-response: [^"]*' "$t" | head -1)
+      echo "notify $kind $mode: $r; plusCard $(grep '#plusCard' "$t" | grep -o '([0-9.,]* [0-9.x]*)' | head -1)"
+      case $kind in
+        release) want='dawnwalker/dawnwalker@1.1' ;; plus-leaving) want='plus card' ;; team) want='library' ;; *) want='game dawnwalker' ;;
+      esac
+      echo "$r" | grep -q "$want" || { echo "FAIL notify $kind $mode: wanted $want"; FAILED="$FAILED notify-$kind-$mode"; }
+    done
+  done ;;
 blocked) # R-12: a video YouTube refuses (IFrame error 150) shows Open in YouTube in every pose, never a full-screen button
   # A turn left over from an earlier scenario can keep the Closed scene in landscape (c46af75): rotate away and back first.
   fold 0 landscape-left; sleep 2; fold 0 portrait; sleep 2

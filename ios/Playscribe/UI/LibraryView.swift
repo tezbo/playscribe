@@ -270,7 +270,7 @@ struct LibraryShelf: View {
             // Book and Tabletop place it higher up (keepCurrentAsk); Closed and Open keep it here.
             if model.showsKeepCurrentCard && duo.pose != .book && duo.pose != .tabletop { KeepCurrentCard() }
             CatchUpCard()
-            PlusCard()
+            PlusCard().id("plusCard")
         }
         // Never wider than the column it sits in (Iris: the card ran past the left page's search field in Book).
         .frame(maxWidth: pageWidth, alignment: .leading)
@@ -413,6 +413,7 @@ struct LibraryShelf: View {
         let rows = duo.pose == .tabletop && letter != nil
             ? model.shownRows().filter { LetterIndex.matches($0.game.name, letter ?? "") } : model.shownRows()
         let all = model.libraryRows
+        ScrollViewReader { proxy in
         ScrollView {
             VStack(alignment: .leading, spacing: 14) {
                 if duo.pose != .tabletop && !heroOnRightPage {
@@ -654,6 +655,15 @@ struct LibraryShelf: View {
             .coordinateSpace(name: LibraryScroll.contentSpace)
             if duo.pose != .tabletop { EdgeFadeClearance() }
         }
+        // bug-079: a PS Plus notification tap brings the PS Plus card to the top of the page, cold or warm. A plain scroll: no
+        // highlight (Iris). Waits a moment on a cold start, so the card's lineup has laid out.
+        .task(id: model.plusCardFocus) {
+            guard model.plusCardFocus else { return }
+            try? await Task.sleep(for: .milliseconds(400))
+            proxy.scrollTo("plusCard", anchor: .top)
+            model.plusCardFocus = false
+        }
+        }
         // Terry, 8 Nov: no way to put the keyboard away. Scrolling dismisses it, and so does a tap outside the field.
         .dismissesKeyboardOnOutsideTap()
         .onScrollPhaseChange { _, phase in scrollFlags.interacting = (phase == .interacting) }
@@ -678,6 +688,8 @@ struct LibraryShelf: View {
         // No soft-edge mask: it made the Open portrait large "Library" title vanish (354d15c, 9914a80), see MessageClearance.
         .clearsMessages()
         .refreshable { await model.refreshFeed() }
+        // bug-079: the switched-off PS Plus card shown for a notification tap goes when the visit ends.
+        .onDisappear { model.plusCardForced = false }
         .overlay(alignment: .topLeading) {
             if FoldAuditSwitch.enabled {
                 ZStack {

@@ -76,7 +76,7 @@ struct PlusCard: View {
     }
 
     var body: some View {
-        if let (month, lastChance) = PlusLogic.visibleMonth(PlusStore.shared.months, cardOff: model.data.plusCardOff) {
+        if let (month, lastChance) = PlusLogic.visibleMonth(PlusStore.shared.months, cardOff: model.plusCardForced ? nil : model.data.plusCardOff) {
             let claimBy = PlusLogic.claimByText(month)
             let limit = Self.maxCovers
             let shown = Array(month.games.prefix(limit))

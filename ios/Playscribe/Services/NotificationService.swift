@@ -101,6 +101,7 @@ final class NotificationService: NSObject {
                 content.title = g.name
                 content.body = "Out today on PS5"
                 content.sound = .default
+                content.userInfo = ["kind": "release-day", "gameId": g.id]
                 // The UTC day number, at 09:00 on the device: "out today" never disagrees with the printed date.
                 var parts = Date.utcCalendar.dateComponents([.year, .month, .day], from: day)
                 parts.hour = 9
@@ -137,6 +138,7 @@ final class NotificationService: NSObject {
                 let content = UNMutableNotificationContent()
                 content.title = "PS Plus games leaving soon"
                 content.body = i.body
+                content.userInfo = ["kind": "plus-leaving"]
                 if i.passive { content.interruptionLevel = .passive } else { content.sound = .default }
                 center.add(UNNotificationRequest(identifier: i.id, content: content,
                                                  trigger: UNCalendarNotificationTrigger(dateMatching: i.parts, repeats: false)))
@@ -161,6 +163,7 @@ final class NotificationService: NSObject {
             content.title = g.name
             content.body = [line, g.ps5DateLine.flatMap { $0 == "Release date TBA" ? nil : $0 }].compactMap { $0 }.joined(separator: ". ")
             content.interruptionLevel = .passive
+            content.userInfo = ["kind": "date-move", "gameId": g.id]
             center.add(UNNotificationRequest(identifier: "date-move-\(key)", content: content, trigger: nil))
         }
         model.data.notifiedMoves = done
@@ -352,19 +355,54 @@ extension NotificationService: UNUserNotificationCenterDelegate {
     /// N-6: tapping opens that release in whatever pose the device is in. The handler is called on the main actor (see above).
     nonisolated func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse,
                                             withCompletionHandler completionHandler: @escaping () -> Void) {
-        let info = response.notification.request.content.userInfo
-        let gameID = info["gameId"] as? String
-        let releaseID = info["releaseId"] as? String
+        let route = NotificationRoute(identifier: response.notification.request.identifier,
+                                      userInfo: response.notification.request.content.userInfo)
         nonisolated(unsafe) let done = completionHandler
         Task { @MainActor in
-            if let gameID, let releaseID {
-                self.launchedFromNotification = true
-                #if INTERNAL
-                self.qaLastResponse = "\(gameID)/\(releaseID); model \(self.model == nil ? "nil" : "set")"
-                #endif
-                self.model?.openRelease(gameID: gameID, releaseID: releaseID)
-            }
+            self.launchedFromNotification = true
+            #if INTERNAL
+            self.qaLastResponse = "\(route); model \(self.model == nil ? "nil" : "set")"
+            #endif
+            self.model?.open(route)
             done()
+        }
+    }
+}
+
+/// bug-079 (Terry, beta 6: the PS Plus alert opened the app wherever it was): every notification opens its own screen.
+/// Read from the payload's `gameId` / `releaseId` / `kind`, or, for a local alert an older build scheduled without them,
+/// from its identifier. Anything else (team alerts) opens the Library at the top.
+nonisolated enum NotificationRoute: Equatable, Sendable, CustomStringConvertible {
+    /// A PS5 update (pushed, simulated or day-one): that update's page; Back goes to the game's page.
+    case release(gameID: String, releaseID: String)
+    /// A game's own alert (release day, date move, issue fixed): the game's page.
+    case game(String)
+    /// PS Plus leaving soon: the Library, scrolled to the PS Plus card.
+    case plusCard
+    case library
+
+    init(identifier: String, userInfo: [AnyHashable: Any]) {
+        let gameID = (userInfo["gameId"] as? String).flatMap { $0.isEmpty ? nil : $0 }
+        let kind = userInfo["kind"] as? String
+        if let gameID, let releaseID = userInfo["releaseId"] as? String, !releaseID.isEmpty {
+            self = .release(gameID: gameID, releaseID: releaseID)
+        } else if kind == "plus-leaving" || identifier.hasPrefix("plus-leaving-") {
+            self = .plusCard
+        } else if let gameID {
+            self = .game(gameID)
+        } else if identifier.hasPrefix("release-day-"), identifier.count > "release-day-".count {
+            self = .game(String(identifier.dropFirst("release-day-".count)))
+        } else {
+            self = .library
+        }
+    }
+
+    var description: String {
+        switch self {
+        case let .release(g, r): "\(g)/\(r)"
+        case let .game(g): "game \(g)"
+        case .plusCard: "plus card"
+        case .library: "library"
         }
     }
 }
