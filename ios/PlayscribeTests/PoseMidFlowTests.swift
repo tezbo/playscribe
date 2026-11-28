@@ -65,6 +65,26 @@ struct PoseMidFlowTests {
         #expect(m.nav.detailReleaseID == r.id, "back in Closed the pushed update shows again")
     }
 
+    /// bug-075 (Jun): an update read between its title and its first section has no section to return to; its place goes with it as a
+    /// pixel offset, onto the Page in Book and back onto the pushed page (once) in Closed.
+    @Test func aReadingPlaceBetweenTitleAndFirstSectionSurvivesAFoldAndBack() throws {
+        let m = model()
+        let r = try history(m)[1]
+        m.openGame(r.gameID, chapter: .updates)
+        m.listTap(r.gameID, releaseID: r.id, pushes: true)
+        m.nav.anchors[ReleaseDetailView.anchorKey(r.id)] = "420"
+
+        m.livePose = .book
+        m.leaveOneColumn()
+        let pageKey = "page-\(r.gameID)-\(Chapter.updates.rawValue)"
+        #expect(m.nav.anchors[pageKey] == "420", "the Page takes the place the pushed update was read at")
+
+        m.livePose = .closed
+        m.enterOneColumn()
+        #expect(m.nav.detailReleaseID == r.id)
+        #expect(m.nav.anchors[ReleaseDetailView.restoreKey(r.id)] == "420", "and the pushed page is told where to come up")
+    }
+
     /// A tab change before the waiting push lands wins: the push is dropped.
     @Test func aWaitingUpdatesPushIsDroppedIfTheReaderLeavesTheTab() throws {
         let m = model()

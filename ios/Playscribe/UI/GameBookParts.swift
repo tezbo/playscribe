@@ -107,6 +107,8 @@ struct PageView: View {
         // read at (RootView copies it here; 0.5.6 hotfix).
         .onChange(of: model.nav.selected?[gameID]) { _, new in
             if let new, ReadingPlace.mark(model.nav.anchors[anchorKey])?.hasPrefix("mark-\(new)-") == true { restore(); return }
+            // The update unfolding moved here, read between its title and its first section: no section to return to, so its pixel offset (bug-075).
+            if let new, model.nav.pagedPush?.ref.releaseID == new, let a = model.nav.anchors[anchorKey], ReadingPlace.mark(a) == nil, Double(a) != nil { restore(); return }
             position.scrollTo(edge: .top)
         }
         .background(PlayscribeRole.bg)
@@ -1227,11 +1229,15 @@ struct ReleaseDetailView: View {
     @State private var position = ScrollPosition(idType: String.self)
     @State private var insetTop: CGFloat = 0
     @State private var marks = ReadingPlace.Marks()
+    @State private var liveOffset: CGFloat = 0
     var gameID: String
     var releaseID: String
 
     /// Where this pushed release was read (0.5.6): unfolding moves it onto the Page, which picks this up (RootView).
     static func anchorKey(_ releaseID: String) -> String { "detail-\(releaseID)" }
+    /// Set when folding back to one column pushes this release again (AppModel.enterOneColumn): the pushed page comes up at that place,
+    /// once. A normal open still starts at the top (bug-075).
+    static func restoreKey(_ releaseID: String) -> String { "detail-restore-\(releaseID)" }
 
     var body: some View {
         ScrollView {
@@ -1246,9 +1252,24 @@ struct ReleaseDetailView: View {
         }
         .scrollPosition($position)
         .onScrollGeometryChange(for: CGFloat.self) { $0.contentInsets.top } action: { _, top in insetTop = top }
+        .onScrollGeometryChange(for: CGFloat.self) { $0.contentOffset.y + $0.contentInsets.top } action: { _, y in liveOffset = y }
         .onScrollPhaseChange { old, phase in
             guard phase == .idle, old == .interacting || old == .decelerating else { return }
+            // The section the reader is in; between the title and the first section there is none, so the pixel offset stands in for
+            // it (bug-075: that place was lost, and Book opened the update at its top).
             model.nav.anchors[Self.anchorKey(releaseID)] = ReadingPlace.current(marks.tops, slack: insetTop + 1).map(ReadingPlace.encode)
+                ?? (liveOffset > 0 ? String(Int(liveOffset)) : nil)
+        }
+        .onAppear {
+            guard let saved = model.nav.anchors[Self.restoreKey(releaseID)] else { return }
+            model.nav.anchors[Self.restoreKey(releaseID)] = nil
+            let mark = ReadingPlace.mark(saved)
+            Task { @MainActor in
+                if mark == nil, let y = Double(saved), y > 0 { position.scrollTo(y: y); return }
+                guard let mark else { return }
+                try? await Task.sleep(for: .milliseconds(300))
+                position.scrollTo(id: mark, anchor: .top)
+            }
         }
         // Closed portrait to landscape rewraps the notes: back to the section, not the old offset.
         .onChange(of: duo.isLandscape) {
