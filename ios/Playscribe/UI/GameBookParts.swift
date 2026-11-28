@@ -169,6 +169,7 @@ struct PageArtBand: View {
         let hasArt = asset != nil || game?.heroArtURL != nil || game?.coverURL != nil
         Group {
             if coverOnly || (asset == nil && game?.heroArtURL == nil && game?.coverURL != nil) {
+                // Closed: the band runs on under the rail, so the thumbnail keeps clear of that strip (bug-076, Quinn on 381234).
                 CoverHeader(game: game, asset: asset)
             } else {
                 ArtView(asset: asset, game: game)
@@ -179,6 +180,9 @@ struct PageArtBand: View {
         .frame(maxWidth: .infinity)
         .clipped()
         .modifier(ExtensionUnlessSlim(slim: slim || !extendsUnderRail))
+        // bug-076 (Iris, Closed): the art runs to the trailing screen edge, behind the rail column, as the update page's does in
+        // portrait. The rail's controls keep their own glass; nothing else moves. Other poses keep their band as it was.
+        .ignoresSafeArea(.container, edges: duo.pose == .closed ? .trailing : [])
         .accessibilityHidden(true)
     }
 }
@@ -210,14 +214,23 @@ struct FadeMask: ViewModifier {
 struct CoverHeader: View {
     var game: CatalogGame?
     var asset: String?
+    @Environment(\.colorScheme) private var scheme
+    /// bug-076 (Iris, Tomb Raider: Catalyst): a warm, dim wash of the cover's colours across the whole full-bleed band (scaled past the
+    /// edges so the blur has no smear), the thumbnail at the leading margin like a book on a shelf: clear of the rail and housing in
+    /// every pose by construction.
     var body: some View {
         GeometryReader { geo in
-            ZStack(alignment: .trailing) {
-                cover.scaledToFill().frame(width: geo.size.width, height: geo.size.height).blur(radius: 30).brightness(-0.35).clipped()
-                cover.scaledToFit().frame(height: geo.size.height * 0.6).padding(.trailing, 24)
+            ZStack(alignment: .leading) {
+                cover.scaledToFill().frame(width: geo.size.width, height: geo.size.height).clipped()
+                    .scaleEffect(1.3).blur(radius: 40).clipped()
+                Color.black.opacity(scheme == .dark ? 0.55 : 0.45)
+                cover.scaledToFit().frame(height: geo.size.height * 0.6).padding(.leading, 20)
             }
+            .frame(width: geo.size.width, height: geo.size.height)
+            .clipped()
         }
-        .modifier(FadeMask())
+        // Dark: only the bottom fade into the page. The leading fade would dim the thumbnail the band is built around.
+        .modifier(FadeMask(enabled: false))
     }
 
     @ViewBuilder private var cover: some View {

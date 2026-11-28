@@ -22,6 +22,8 @@ struct GamePageColumn: View {
     /// Where the zero-height anchor above the Section sits in the scroll view; the header compares itself with it.
     @State private var anchorY: CGFloat = 0
     var gameID: String
+    /// bug-076: the title starts 20 pt under the art in Closed, scaled with text size (it was a fixed 4 pt, tight to the art).
+    @ScaledMetric(relativeTo: .body) private var titleGap: CGFloat = 20
 
     /// Spec: "reading width capped at 600 pt" on the open display; Closed is narrower than that anyway.
     static let readingWidth: CGFloat = 600
@@ -36,6 +38,7 @@ struct GamePageColumn: View {
                     titleBlock
                 }
                 .padding(.horizontal, 20)
+                .padding(.top, duo.pose == .closed ? titleGap : 0)
                 .padding(.bottom, 8)
                 .frame(maxWidth: Self.readingWidth + 40, alignment: .leading)
                 .frame(maxWidth: .infinity)
