@@ -240,11 +240,12 @@ fullscreen) # bug-071: full-screen video Fit with our controls in the bands; the
   frames() { echo "frames $1: $(sim-use ui --device "$UDID" 2>/dev/null | grep -E 'qaFullScreen|qaBands|qaVideoTime|qaVideoState|WebView|Show player controls|mirrorAudit|videoExitFullScreen|videoPlayPause|videoScrubber|videoBack10|videoForward10' | cut -c1-140 | tr '\n' ';')"; }
   tapl() { echo "tap $1: $(sim-use tap --label "$1" --device "$UDID" 2>&1 | head -1)"; sleep "${2:-4}"; }
   enter() { tapl "Full screen" 1; snap fullscreen "$1-entered"; frames "$1"; }
-  launch -qaRoute trailer/dQw4w9WgXcQ/dawnwalker -qaOverlay YES -qaVideoTime YES
+  # -qaHideAfter 20: the controls still auto-hide, but after 20 s, as sim-use took up to 12.5 s between two taps (run 46096007450).
+  launch -qaRoute trailer/dQw4w9WgXcQ/dawnwalker -qaOverlay YES -qaVideoTime YES -qaHideAfter 20
   tapl Play 8; snap fullscreen 1-closed-portrait-inline; frames 1
   enter 2-closed-portrait
   sleep 3; frames 2b-still-playing
-  sleep 5; snap fullscreen 3-controls-hidden; frames 3
+  sleep 20; snap fullscreen 3-controls-hidden; frames 3
   # bug-073 (Terry, beta 6: in Closed a band tap never brought the controls back; in Open it did): a picture tap after the turn,
   # in the middle of the screen, which is on the picture in either coordinate reading. wakes counts it.
   echo "picture tap: $(sim-use tap -x 339 -y 233 --device "$UDID" 2>&1 | head -1)"; t4=$(sim-use ui --device "$UDID" 2>/dev/null); snap fullscreen 4p-picture-tap
@@ -252,7 +253,7 @@ fullscreen) # bug-071: full-screen video Fit with our controls in the bands; the
   echo "frames 4p: $(echo "$t4" | grep -E 'qaBands|videoExitFullScreen' | cut -c1-140 | tr '\n' ';')"
   if echo "$t4" | grep -q 'shown=1' && echo "$t4" | grep -q '#videoExitFullScreen'; then echo "ok picture tap shows Exit"
   else echo "FAIL picture tap"; FAILED="$FAILED fullscreen-picture-tap"; fi
-  sleep 5
+  sleep 22
   # Which coordinate space sim-use taps in after the turn is not known, so the band is tapped in both readings.
   echo "band tap: $(sim-use tap -x 339 -y 12 --device "$UDID" 2>&1 | head -1)"; sleep 0.5; frames 4a
   echo "band tap (portrait reading): $(sim-use tap -x 12 -y 339 --device "$UDID" 2>&1 | head -1)"; sleep 0.5; frames 4b
@@ -270,7 +271,7 @@ fullscreen) # bug-071: full-screen video Fit with our controls in the bands; the
   # bug-073 measurement (runs 46083290466, 46086481097): after the turn sim-use taps land at the same point in window space,
   # but nothing in the top ~70 pt arrives (118,60 lost, 118,80 landed), so Exit now leads the bottom row.
   for xy in "$lx $ly" "$ly $lx" "$((466 - ly)) $lx" "$ly $((678 - lx))"; do
-    sleep 5; echo "picture tap: $(sim-use tap -x 233 -y 339 --device "$UDID" 2>&1 | head -1)"
+    sleep 22; echo "picture tap: $(sim-use tap -x 233 -y 339 --device "$UDID" 2>&1 | head -1)"
     echo "exit tap at ($xy) from $g: $(sim-use tap -x ${xy% *} -y ${xy#* } --device "$UDID" 2>&1 | head -1)"; sleep 4
     sim-use ui --device "$UDID" 2>/dev/null | grep -q qaFullScreen || { echo "exit reading: $xy"; break; }
   done

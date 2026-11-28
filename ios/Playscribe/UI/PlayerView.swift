@@ -1019,7 +1019,15 @@ struct FullScreenBands: View {
     @State private var hideTask: Task<Void, Never>?
     /// QA: band taps seen, for the cloud fullscreen scenario.
     @State private var wakes = 0
-    static let hideAfter: Duration = .seconds(3)
+    static var hideAfter: Duration {
+        #if INTERNAL
+        // QA: -qaHideAfter <seconds>. Hosted simulators took 2.7 s in one run and 12.5 s in the next between two injected
+        // taps (runs 46091146257, 46096007450), so the tap-then-Exit check can't race the 3 s hide there.
+        let q = UserDefaults.standard.double(forKey: "qaHideAfter")
+        if q > 0 { return .seconds(q) }
+        #endif
+        return .seconds(3)
+    }
     /// Nothing within this of the division (Iris).
     static let foldClearance: CGFloat = 8
 

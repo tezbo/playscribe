@@ -97,7 +97,9 @@ final class FullScreenVideoTests: XCTestCase {
     private func exitStaysAfterAutoHide(startLandscape: Bool) {
         XCUIDevice.shared.orientation = startLandscape ? .landscapeLeft : .portrait
         let app = XCUIApplication()
-        app.launchArguments = ["-qaRoute", "trailer/dQw4w9WgXcQ/dawnwalker", "-qaVideoTime", "YES"]
+        // The controls still auto-hide, after 20 s rather than 3, so a tap and the next one can't race the hide (see hideWait).
+        app.launchArguments = ["-qaRoute", "trailer/dQw4w9WgXcQ/dawnwalker", "-qaVideoTime", "YES", "-qaHideAfter", "20"]
+        let hideWait: UInt32 = 22
         app.launch()
         let any = app.descendants(matching: .any)
         let play = any["videoPlay"]
@@ -135,7 +137,7 @@ final class FullScreenVideoTests: XCTestCase {
         }
         let exitPoints = points(safe[1] + 12 + 22, exitY)
         let pictureMiddle = points(pic[0] + pic[2] / 2, pic[1] + pic[3] / 2)[0]   // the middle is the same point either way
-        sleep(5)   // the controls hide 3 s after the last touch while playing
+        sleep(hideWait)   // the controls hide hideAfter seconds after the last touch while playing
         let hidden = (bands.value as? String) ?? ""
         print("qaBands after auto-hide: \(hidden)")
         XCTAssertTrue(hidden.contains("shown=0"), "the controls did not auto-hide, so this did not test the hidden state: \(hidden)")
@@ -148,12 +150,12 @@ final class FullScreenVideoTests: XCTestCase {
         let woken = (bands.value as? String) ?? ""
         print("qaBands after picture tap: \(woken)")
         XCTAssertTrue(woken.contains("wakes=1"), "a tap on the picture did not bring the controls back: \(woken)")
-        // Hidden again, then the way out: a tap on the hidden Exit's band brings the controls back and the second tap is Exit.
-        // One double tap, because two separate XCUITest taps wait for an idle app in between, and while the video plays that
-        // took 7 s, past the 3 s auto-hide (run 46091146257, landscape: picture tap at t 79.8 s, Exit tap at 87.1 s).
+        // Hidden again, then the way out: a picture tap and then Exit. -qaHideAfter keeps the controls up long enough for the
+        // second tap: XCUITest waits for an idle app between taps, 7 s while the video plays (run 46091146257).
         for exitPoint in exitPoints where !enter.exists {
-            sleep(5)
-            exitPoint.doubleTap()
+            sleep(hideWait)
+            pictureMiddle.tap()
+            exitPoint.tap()
             _ = enter.waitForExistence(timeout: 5)
         }
         XCTAssertTrue(enter.waitForExistence(timeout: 5), "Exit full screen did not leave full screen after a picture tap")
