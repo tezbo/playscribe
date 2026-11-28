@@ -101,6 +101,12 @@ final class FullScreenVideoTests: XCTestCase {
         app.launchArguments = ["-qaRoute", "trailer/dQw4w9WgXcQ/dawnwalker", "-qaVideoTime", "YES", "-qaHideAfter", "20"]
         let hideWait: UInt32 = 22
         app.launch()
+        // The orientation set before launch did not always hold (run 46102953542 started portrait in the landscape case), so
+        // it is set again once the app is up, and the start is checked before anything is tapped.
+        XCUIDevice.shared.orientation = startLandscape ? .landscapeLeft : .portrait
+        sleep(2)
+        let start = app.windows.firstMatch.frame
+        XCTAssertEqual(start.width > start.height, startLandscape, "the app did not start in the asked orientation: \(start)")
         let any = app.descendants(matching: .any)
         let play = any["videoPlay"]
         XCTAssertTrue(play.waitForExistence(timeout: 60), "the trailer did not load")
