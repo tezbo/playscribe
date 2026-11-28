@@ -36,6 +36,18 @@ struct TourGamesTests {
         let withNotes: Set = ["minecraft", "witcher-3", "marvel-rivals", "battlefield-6"]
         let row = AppModel.tourGames(popular, limit: 3) { withNotes.contains($0.id) }
         #expect(row.map(\.id) == ["minecraft", "witcher-3", "marvel-rivals"])
-        #expect(AppModel.tourGames(popular, limit: 10) { _ in false }.isEmpty)
+    }
+
+    @Test("Fewer than 3 games with notes (first launch before the feed syncs): the row is plain Popular, never empty (Quinn, #677)")
+    func fallsBackToPopularBelowThree() {
+        let popular = ["roblox", "gta5", "minecraft", "witcher-3", "marvel-rivals"].map {
+            CatalogGame(id: $0, name: $0, platforms: [.ps5], coverage: .none)
+        }
+        #expect(AppModel.tourGames(popular, limit: 4) { _ in false }.map(\.id) == ["roblox", "gta5", "minecraft", "witcher-3"])
+        #expect(AppModel.tourGames(popular, limit: 4) { $0.id == "minecraft" || $0.id == "witcher-3" }.map(\.id)
+                == ["roblox", "gta5", "minecraft", "witcher-3"])
+        // Three that qualify is enough: the filter holds.
+        let three: Set = ["gta5", "witcher-3", "marvel-rivals"]
+        #expect(AppModel.tourGames(popular, limit: 4) { three.contains($0.id) }.map(\.id) == ["gta5", "witcher-3", "marvel-rivals"])
     }
 }

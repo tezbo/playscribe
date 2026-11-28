@@ -78,11 +78,15 @@ extension AppModel {
     /// How far down Popular the tour looks for games with notes.
     static let tourSearchDepth = 400
 
-    /// The first `limit` games of `popular`, in order, that qualify.
+    /// The fewest games the tour's row may offer; below it the row falls back to plain Popular (Quinn on #677).
+    static let tourMinimum = 3
+
+    /// The first `limit` games of `popular`, in order, that qualify. When fewer than `tourMinimum` qualify (a first launch
+    /// before the feed has synced, or offline), the first `limit` of Popular unfiltered, so the tour never comes up empty.
     static func tourGames(_ popular: [CatalogGame], limit: Int, qualifies: (CatalogGame) -> Bool) -> [CatalogGame] {
         var out: [CatalogGame] = []
         for g in popular where out.count < limit && qualifies(g) { out.append(g) }
-        return out
+        return out.count < min(tourMinimum, limit) ? Array(popular.prefix(limit)) : out
     }
 
     /// Whether the newest PS5 update among `releases` (newest by its PS5 date, any order in) has a notes body.

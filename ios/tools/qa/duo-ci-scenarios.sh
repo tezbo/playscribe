@@ -262,7 +262,14 @@ tour) # bug-077: the first-run tour's game row (step 1, empty Library) offers on
   # in Popular order: never Roblox (no updates in the feed) or GTA V (newest update has no notes). Closed portrait and Book.
   launch -qaRoute tour/1/empty -qaOverlay YES; sleep 12; snap tour 1-closed-portrait
   fold 90 landscape-left; sleep 4; snap tour 2-book
-  for f in "$OUT/$SHA"-tour-*-ui.txt; do
+  # Quinn on #677: with no feed (a first launch offline) fewer than 3 games qualify, so the row is plain Popular, never empty.
+  fold 0 portrait; sleep 2
+  launch -qaRoute tour/1/empty -qaNoFeed YES -qaOverlay YES; sleep 12; snap tour 3-closed-portrait-no-feed
+  t3=$(ls "$OUT/$SHA"-tour-3-*-ui.txt | head -1)
+  n3=$(grep -E '^ +@[0-9]+ +Button ' "$t3" | grep -vcE 'Add your first game|Skip|Next|qa')
+  echo "tour row without the feed: $n3 buttons"
+  if [ "$n3" -lt 3 ]; then echo "FAIL tour row empty without the feed"; FAILED="$FAILED tour-no-feed"; fi
+  for f in $(ls "$OUT/$SHA"-tour-*-ui.txt | grep -v -- -tour-3-); do
     echo "tour row $(basename "$f"): $(grep -E '^ +@[0-9]+ +Button ' "$f" | grep -vE 'Add your first game|Skip|Next|qa' | sed -E 's/^ *@[0-9]+ +Button +//' | cut -c1-40 | tr '\n' ';')"
     if grep -qE '"(Roblox|Grand Theft Auto V)"' "$f"; then echo "FAIL $(basename "$f"): the tour offers a game without notes"; FAILED="$FAILED tour-row"; fi
   done
