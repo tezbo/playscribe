@@ -286,9 +286,16 @@ notify) # bug-079: every notification type opens its own screen, cold (app not r
   # What the tap opened is still checked below either way.
   banner() {
     local try n; for try in 1 2; do
-      xcrun simctl push "$UDID" $B "$(dirname "$0")/$1.apns" >/dev/null; sleep 1.5
-      [ -n "${BANNER_DUMP:-}" ] && echo "banner tree $1: $(sim-use ui --device "$UDID" 2>/dev/null | grep -iE 'notification|banner|PS Plus|Dawnwalker|Playscribe' | head -4 | tr '\n' ';')"
-      sim-use tap -x "${BX:-233}" -y 60 --device "$UDID" >/dev/null 2>&1
+      xcrun simctl push "$UDID" $B "$(dirname "$0")/$1.apns" >/dev/null
+      # On the home screen sim-use sees the banner (#NotificationShortLookView, run 46135595243): tap its middle once it shows
+      # (Book's came later than 1.5 s). Over another app it can't, so the top centre.
+      local f="" k; for k in 1 2 3 4 5 6 7 8; do
+        f=$(sim-use ui --device "$UDID" 2>/dev/null | grep '#NotificationShortLookView' | head -1 | grep -o '([0-9.]*,[0-9.]* [0-9.]*x[0-9.]*)' | tr -d '()' | tr ',x' '  ')
+        [ -n "$f" ] && break; [ $k -ge 2 ] && sim-use ui --device "$UDID" 2>/dev/null | head -1 | grep -q 'App: Settings' && break; sleep 0.5
+      done
+      if [ -n "$f" ]; then read -r fx fy fw fh <<<"$f"; echo "banner $1 at $f"
+        sim-use tap -x $(python3 -c "print(int($fx+$fw/2))") -y $(python3 -c "print(int($fy+$fh/2))") --device "$UDID" >/dev/null 2>&1
+      else sim-use tap -x "${BX:-233}" -y 60 --device "$UDID" >/dev/null 2>&1; fi
       # Wait up to 12 s for Playscribe to come up (a cold launch is slow): a second tap at the top of the app would land on the
       # status bar and scroll the page back to its top (run 46129610326).
       for n in 1 2 3 4 5 6; do sleep 2; sim-use ui --device "$UDID" 2>/dev/null | head -2 | grep -q 'App: Playscribe' && break 2; done
@@ -319,7 +326,7 @@ notify) # bug-079: every notification type opens its own screen, cold (app not r
       read -r ang ori bx pname <<<"$p"
       for kind in plus-leaving release; do
         xcrun simctl terminate "$UDID" $B >/dev/null 2>&1; fold $ang $ori; sleep 2
-        BANNER_DUMP=1 BX=$bx banner $kind; snap notify "$kind-cold-$pname-${size%%-*}"
+        BX=$bx banner $kind; snap notify "$kind-cold-$pname-${size%%-*}"
         t=$(ls "$OUT/$SHA"-notify-$kind-cold-$pname-${size%%-*}-*-ui.txt | head -1)
         echo "notify $kind $pname $size: $(grep -o 'qa-response: [^"]*' "$t" | head -1)"
       done
